@@ -4,6 +4,7 @@ Local-first workflow packets for David's AI/NLP/FORGE/Brain system.
 
 This repo holds the programmable parts of the pipeline:
 
+- engine runtime
 - folder contracts
 - station source code
 - prompts
@@ -56,6 +57,18 @@ Each packet can either run a full pipeline or stop at one station.
 - Route: vault drop, R2 publish, Substack queue, Postgres warehouse, NAS archive
 - Signals: gap, duplicate, quality, ready, upstream
 
+## Engine Layer
+
+The working Python engine imported from `D:\BIL` lives under `engines/`.
+
+- `engines/pipeline/station_base.py`: station base classes, manifests, signals
+- `engines/pipeline/pipeline_engine.py`: watcher, registry, routing, logging
+- `engines/pipeline/llm_hub.py`: queued LLM checkpoint layer
+- `engines/pipeline/stations/classifier.py`: working Station 1
+- `engines/pipeline/stations/media_transformer.py`: working Station 2
+
+See `docs/engine-import-map.md`.
+
 ## LLM Checkpoints
 
 Each stage can have a large language model checkpoint:
@@ -94,6 +107,13 @@ inventory protocol before changing files:
 6. preserve originals or archive them instead of deleting
 
 See `docs/claude-cli-operating-pattern.md`.
+
+## Wiki Layer
+
+The Karpathy-style Obsidian wiki layer is installed locally as `olw 0.8.3` and
+has a test workspace at `D:\FAP\wiki-compiler`.
+
+See `docs/karpathy-wiki-layer.md`.
 
 ## First Use
 

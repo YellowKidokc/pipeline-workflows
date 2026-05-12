@@ -21,3 +21,21 @@ Describe what this workflow accepts, what it produces, and where the result goes
 - `RUN_PIPELINE.bat`: run full workflow
 - `RUN_THIS_STAGE.bat`: run this packet only
 - `TROUBLESHOOT.bat`: dependency and folder checks
+
+## Wiki Compiler Layer
+
+This packet is the home for the Karpathy-style Obsidian wiki compiler layer.
+
+On David's machine the installed test workspace is:
+
+```text
+D:\FAP\wiki-compiler
+```
+
+Run:
+
+```bat
+CHECK_WIKI_LAYER.bat
+```
+
+to confirm `olw`, Ollama model config, raw sources, and generated draft pages.
