@@ -1,4 +1,4 @@
-"""Station 7: compile final Obsidian page layers."""
+"""Station 7: compile production Obsidian page from mapped paper."""
 from __future__ import annotations
 
 import json
@@ -9,7 +9,7 @@ from ..station_base import Manifest, SignalType, StationBase, StationVerdict
 
 
 class WikiCompilerStation(StationBase):
-    """Compile 7-layer vault page using sidecars + LLM-generated sections."""
+    """Compile 7-layer vault page; submits LLM jobs for narrative layers."""
 
     def __init__(self, input_dir: str, output_dir: str, queue_dir: str | None = None, **kwargs):
         super().__init__("wiki-compiler", input_dir, output_dir, file_extensions=[".md", ".txt"], **kwargs)
@@ -17,23 +17,57 @@ class WikiCompilerStation(StationBase):
 
     def process(self, file_path: Path, manifest: Manifest) -> tuple[StationVerdict, float, str]:
         text = file_path.read_text(encoding="utf-8", errors="replace")
+        jobs = self._submit_layer_jobs(file_path, text)
+        layer_content = self._collect_layer_jobs(jobs)
+        if any(v is None for v in layer_content.values()):
+            return StationVerdict.HOLD, 0.0, "waiting for wiki layer generation jobs"
+
         frontmatter = {
-            "file": file_path.name,
+            "source_file": file_path.name,
             "scores": manifest.scores,
-            "metadata": manifest.metadata,
-            "history": manifest.history,
+            "axiom_mappings": manifest.metadata.get("axioms", {}),
+            "epistemic_state": manifest.metadata.get("epistemic_state", "hypothesis"),
+            "pipeline_history": manifest.history,
         }
-        body = (
+        page = self._assemble_page(frontmatter, text, layer_content)
+        out_file = self.output_dir / f"{file_path.stem}.md"
+        out_file.write_text(page, encoding="utf-8")
+        self.emit_signal(SignalType.READY, f"Compiled vault page {out_file.name}")
+        return StationVerdict.PASS, 0.9, "wiki compiled"
+
+    def _submit_layer_jobs(self, file_path: Path, text: str) -> dict[str, str]:
+        state_file = file_path.with_suffix(file_path.suffix + ".wiki_jobs.json")
+        if state_file.exists():
+            return json.loads(state_file.read_text(encoding="utf-8"))
+        jobs = {
+            "layer1": self.hub.submit("wiki-compiler", str(file_path), "executive_summary", backend="claude_api", priority="batch", input_text=text[:5000]),
+            "layer2": self.hub.submit("wiki-compiler", str(file_path), "plain_language", backend="claude_api", priority="batch", input_text=text[:5000]),
+            "layer4": self.hub.submit("wiki-compiler", str(file_path), "grade_paper", backend="claude_api", priority="batch", input_text=text[:5000]),
+            "layer5": self.hub.submit("wiki-compiler", str(file_path), "vault_page_compiler", backend="claude_api", priority="batch", input_text=text[:5000]),
+            "layer7": self.hub.submit("wiki-compiler", str(file_path), "vault_page_compiler", backend="claude_api", priority="batch", input_text=text[:5000]),
+        }
+        state_file.write_text(json.dumps(jobs, indent=2), encoding="utf-8")
+        return jobs
+
+    def _collect_layer_jobs(self, jobs: dict[str, str]) -> dict[str, str | None]:
+        content = {}
+        for layer, job_id in jobs.items():
+            completed = Path(self.hub.queue_dir) / "completed" / f"{job_id}.json"
+            if not completed.exists():
+                content[layer] = None
+                continue
+            job = json.loads(completed.read_text(encoding="utf-8"))
+            content[layer] = job.get("result", "").strip() or json.dumps(job.get("result_json", {}), indent=2)
+        return content
+
+    def _assemble_page(self, frontmatter: dict, text: str, layers: dict[str, str | None]) -> str:
+        return (
             f"---\n{json.dumps(frontmatter, indent=2)}\n---\n\n"
-            "## Layer 1: Executive Summary\nPending LLM summary.\n\n"
-            "## Layer 2: Plain Language\nPending LLM translation.\n\n"
+            f"## Layer 1: Executive Summary\n{layers['layer1']}\n\n"
+            f"## Layer 2: Plain Language\n{layers['layer2']}\n\n"
             f"## Layer 3: The Paper\n{text}\n\n"
-            "## Layer 4: Academic Register\nPending LLM academic layer.\n\n"
-            "## Layer 5: Knowledge Graph\nPending LLM graph links.\n\n"
+            f"## Layer 4: Academic Register\n{layers['layer4']}\n\n"
+            f"## Layer 5: Knowledge Graph\n{layers['layer5']}\n\n"
             f"## Layer 6: Data Layer\n```json\n{json.dumps(frontmatter, indent=2)}\n```\n\n"
-            "## Layer 7: Impact Notes\nPending LLM impact notes.\n"
+            f"## Layer 7: Impact Notes\n{layers['layer7']}\n"
         )
-        out = self.output_dir / file_path.with_suffix(".md").name
-        out.write_text(body, encoding="utf-8")
-        self.emit_signal(SignalType.READY, f"Compiled vault page: {out.name}")
-        return StationVerdict.PASS, 0.85, "Compiled wiki layers"
