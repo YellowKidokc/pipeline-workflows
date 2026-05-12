@@ -47,7 +47,7 @@ logger = logging.getLogger("FAP-Boot")
 # ══════════════════════════════════════════════════════════════════
 # FAP DIRECTORY STRUCTURE
 # ══════════════════════════════════════════════════════════════════
-FAP_ROOT = r"D:\FAP"
+FAP_ROOT = os.environ.get("FAP_ROOT", r"D:\FAP")
 DIRS = {
     "intake":       os.path.join(FAP_ROOT, "intake"),
     "classified":   os.path.join(FAP_ROOT, "classified"),
@@ -72,7 +72,7 @@ def create_directories():
         os.makedirs(path, exist_ok=True)
         logger.info(f"  Dir: {path}")
     # Sub-review folders per station
-    for station in ["classifier", "media-transform-router", "lossless", "vectorizer", "grader", "axiom-mapper"]:
+    for station in ["classifier", "media-transform-router", "lossless-formatter", "vectorizer", "paper-grader", "axiom-mapper", "wiki-compiler"]:
         os.makedirs(os.path.join(DIRS["review"], station), exist_ok=True)
         os.makedirs(os.path.join(DIRS["rejected"], station), exist_ok=True)
 
