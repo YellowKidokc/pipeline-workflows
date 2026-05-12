@@ -31,6 +31,11 @@ sys.path.insert(0, str(BIL_ROOT))
 from engines.pipeline.pipeline_engine import PipelineEngine
 from engines.pipeline.stations.classifier import ClassifierStation
 from engines.pipeline.stations.media_transformer import MediaTransformStation
+from engines.pipeline.stations.lossless_formatter import LosslessFormatterStation
+from engines.pipeline.stations.vectorizer import VectorizerStation
+from engines.pipeline.stations.paper_grader import PaperGraderStation
+from engines.pipeline.stations.axiom_mapper import AxiomMapperStation
+from engines.pipeline.stations.wiki_compiler import WikiCompilerStation
 
 logging.basicConfig(
     level=logging.INFO,
@@ -42,7 +47,7 @@ logger = logging.getLogger("FAP-Boot")
 # ══════════════════════════════════════════════════════════════════
 # FAP DIRECTORY STRUCTURE
 # ══════════════════════════════════════════════════════════════════
-FAP_ROOT = r"D:\FAP"
+FAP_ROOT = os.environ.get("FAP_ROOT", r"D:\FAP")
 DIRS = {
     "intake":       os.path.join(FAP_ROOT, "intake"),
     "classified":   os.path.join(FAP_ROOT, "classified"),
@@ -67,7 +72,7 @@ def create_directories():
         os.makedirs(path, exist_ok=True)
         logger.info(f"  Dir: {path}")
     # Sub-review folders per station
-    for station in ["classifier", "media-transform-router", "lossless", "vectorizer", "grader", "axiom-mapper"]:
+    for station in ["classifier", "media-transform-router", "lossless-formatter", "vectorizer", "paper-grader", "axiom-mapper", "wiki-compiler"]:
         os.makedirs(os.path.join(DIRS["review"], station), exist_ok=True)
         os.makedirs(os.path.join(DIRS["rejected"], station), exist_ok=True)
 
@@ -99,8 +104,11 @@ def create_engine(pg_dsn: str = None) -> PipelineEngine:
     )
     engine.register_station(media_transformer, pipeline_name="paper-mill", order=2)
 
-    # Stations 3-7 are next: lossless, vectorizer, grader, axiom rigor,
-    # and portal/final package. They should be full StationBase subclasses.
+    engine.register_station(LosslessFormatterStation(input_dir=DIRS["media_routed"], output_dir=DIRS["lossless"], review_dir=os.path.join(DIRS["review"], "lossless"), fail_dir=os.path.join(DIRS["rejected"], "lossless")), pipeline_name="paper-mill", order=3)
+    engine.register_station(VectorizerStation(input_dir=DIRS["lossless"], output_dir=DIRS["vectorized"], review_dir=os.path.join(DIRS["review"], "vectorizer"), fail_dir=os.path.join(DIRS["rejected"], "vectorizer")), pipeline_name="paper-mill", order=4)
+    engine.register_station(PaperGraderStation(input_dir=DIRS["vectorized"], output_dir=DIRS["graded"], review_dir=os.path.join(DIRS["review"], "paper-grader"), fail_dir=os.path.join(DIRS["rejected"], "paper-grader")), pipeline_name="paper-mill", order=5)
+    engine.register_station(AxiomMapperStation(input_dir=DIRS["graded"], output_dir=DIRS["axiom_mapped"], review_dir=os.path.join(DIRS["review"], "axiom-mapper"), fail_dir=os.path.join(DIRS["rejected"], "axiom-mapper")), pipeline_name="paper-mill", order=6)
+    engine.register_station(WikiCompilerStation(input_dir=DIRS["axiom_mapped"], output_dir=DIRS["output"], review_dir=os.path.join(DIRS["review"], "wiki-compiler"), fail_dir=os.path.join(DIRS["rejected"], "wiki-compiler")), pipeline_name="paper-mill", order=7)
 
     # Signal handler: log to console + could push to comms
     def on_signal(sig):
