@@ -1,5 +1,13 @@
 {
-  "profile": "BrainHandoff",
-  "inherits": "brain",
-  "notes": "Turn working-session material into handoff-first durable records."
+  "model_lane": "fast",
+  "llm_backend": "ollama",
+  "stt_cleanup_aggressiveness": 0.8,
+  "stop_for_review": false,
+  "output_destinations": [
+    "brain_ollama",
+    "vault",
+    "full_conv"
+  ],
+  "summary_detail_level": "standard",
+  "workflow": "BrainHandoff"
 }

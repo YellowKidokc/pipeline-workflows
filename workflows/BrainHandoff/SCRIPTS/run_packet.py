@@ -1,32 +1,24 @@
 from __future__ import annotations
-
-import argparse
+import argparse, json
 from pathlib import Path
+from engines.pipeline.station_base import Manifest
+from engines.pipeline.stations.lossless_formatter import LosslessFormatterStation
+from engines.pipeline.stations.vectorizer import VectorizerStation
+from engines.pipeline.stations.paper_grader import PaperGraderStation
 
-
-ROOT = Path(__file__).resolve().parents[1]
-
-
-def ensure_dirs() -> None:
-    for name in ["INPUT", "OUTPUT", "REVIEW", "ARCHIVE", "ERROR", "CONFIG", "PROMPTS", "SCRIPTS", "LOGS"]:
-        (ROOT / name).mkdir(exist_ok=True)
-
-
-def main() -> int:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--mode", choices=["pipeline", "stage"], default="stage")
-    args = parser.parse_args()
-    ensure_dirs()
-    inputs = sorted((ROOT / "INPUT").glob("*"))
-    log = ROOT / "LOGS" / "last_run.log"
-    log.write_text(
-        f"mode={args.mode}\ninputs={len(inputs)}\nstatus=template-only\n",
-        encoding="utf-8",
-    )
-    print(f"{ROOT.name}: {args.mode} run complete. Inputs found: {len(inputs)}")
-    print("Template runner only. Replace with station calls.")
-    return 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+def run(inp:Path):
+    out=inp.parent/'OUTPUT'; out.mkdir(exist_ok=True)
+    loss=LosslessFormatterStation(str(inp.parent),str(out/'lossless'))
+    vec=VectorizerStation(str(out/'lossless'),str(out/'vectorized'))
+    grade=PaperGraderStation(str(out/'vectorized'),str(out/'graded'),queue_dir=str(inp.parent/'_queue'))
+    rubric=[]
+    for fp in inp.glob('*.md'):
+        m=Manifest(file_path=str(fp),file_hash='-',pipeline_name='brain-handoff',current_station='lossless')
+        v1=loss.process(fp,m); cleaned=loss.output_dir/f'{fp.stem}.md'
+        v2=vec.process(cleaned,m)
+        v3=grade.process(cleaned,m)
+        rubric.append({"file":fp.name,"lossless":v1[1],"vectorized":v2[1],"grade_status":v3[0].value})
+    (out/'session_rubric.json').write_text(json.dumps(rubric,indent=2),encoding='utf-8')
+if __name__=='__main__':
+    ap=argparse.ArgumentParser(); ap.add_argument('--input',required=True)
+    run(Path(ap.parse_args().input))

@@ -1,5 +1,3 @@
 @echo off
-setlocal
-cd /d "%~dp0"
-python SCRIPTS\run_packet.py --mode pipeline
+python "%~dp0SCRIPTS\run_packet.py" --input "%~1"
 pause
