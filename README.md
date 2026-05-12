@@ -1,0 +1,100 @@
+# Pipeline Workflows
+
+Local-first workflow packets for David's AI/NLP/FORGE/Brain system.
+
+This repo holds the programmable parts of the pipeline:
+
+- folder contracts
+- station source code
+- prompts
+- preference profiles
+- launchers
+- schemas
+- setup and troubleshooting scripts
+- small test fixtures
+
+This repo does **not** hold the local model brain:
+
+- no NLP model weights
+- no Ollama/Hugging Face model folders
+- no vector indexes
+- no private vault dumps
+- no runtime databases
+- no secrets
+
+## Mental Model
+
+The station graph is the internal machine room. The consumer-facing workflow is a simple packet:
+
+```text
+PROCESS_NAME/
+  INPUT/
+  OUTPUT/
+  REVIEW/
+  ARCHIVE/
+  ERROR/
+  CONFIG/
+  PREFS/
+  PROMPTS/
+  SCRIPTS/
+  LOGS/
+  RUN_PIPELINE.bat
+  RUN_THIS_STAGE.bat
+  TROUBLESHOOT.bat
+  README.md
+```
+
+Each packet can either run a full pipeline or stop at one station.
+
+## Stages
+
+- Intake: classify, identify, detect format, deduplicate
+- Transform: clean, extract, vectorize, build HTML, render TTS, create thumbnails
+- Validate: grade, audit, map axioms, cross-check
+- Route: vault drop, R2 publish, Substack queue, Postgres warehouse, NAS archive
+- Signals: gap, duplicate, quality, ready, upstream
+
+## LLM Checkpoints
+
+Each stage can have a large language model checkpoint:
+
+- Intake LLM: what is this and where should it go?
+- Transform LLM: what should be extracted, cleaned, or converted?
+- Validate LLM: did it pass the gate?
+- Route LLM: where should the result land?
+- Signal LLM: what should the system ask upstream?
+
+## Preference Layer
+
+The preference layer is the control surface above the stations. It says how a
+workflow should behave before any station starts:
+
+- which model lane to use
+- whether to run fast, strong, or backup mode
+- how aggressively to clean speech-to-text text
+- whether to stop for review or keep routing
+- where outputs should land
+- how much detail David wants in summaries
+
+Global defaults live in `preferences/defaults.json`. Workflow packets can
+override them in `workflows/PROCESS_NAME/PREFS/preferences.json`.
+
+## First Use
+
+Create a new workflow packet:
+
+```bat
+scripts\create_workflow_packet.bat PaperGrading
+```
+
+Then drop files into:
+
+```text
+workflows/PaperGrading/INPUT/
+```
+
+Run:
+
+```bat
+workflows\PaperGrading\RUN_PIPELINE.bat
+```
