@@ -1,5 +1,3 @@
 @echo off
-setlocal
-cd /d "%~dp0"
-python SCRIPTS\run_packet.py --mode stage
+python "%~dp0SCRIPTS\process_transcript.py"
 pause

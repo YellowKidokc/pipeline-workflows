@@ -1,1 +1,3 @@
-Write 2-3 sentence executive summary of the paper.
+You are summarizing a Theophysics paper. Write exactly 2-3 sentences.
+Document:
+{{INPUT}}

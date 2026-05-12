@@ -1,1 +1,3 @@
-Extract structured claims and map each to candidate axioms. Return JSON with claims, mappings, gaps, contradictions, confidence.
+Extract discrete factual or theoretical claims and return JSON array with category + confidence.
+Document:
+{{INPUT}}

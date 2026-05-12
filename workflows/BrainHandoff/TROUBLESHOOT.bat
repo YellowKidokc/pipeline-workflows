@@ -1,5 +1,3 @@
 @echo off
-setlocal
-cd /d "%~dp0"
-python SCRIPTS\troubleshoot.py
+python "%~dp0SCRIPTS\batch_reprocess.py"
 pause
