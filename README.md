@@ -12,6 +12,8 @@ This repo holds the programmable parts of the pipeline:
 - schemas
 - setup and troubleshooting scripts
 - small test fixtures
+- CLI partner operating patterns
+- production vault output specs
 
 This repo does **not** hold the local model brain:
 
@@ -78,6 +80,20 @@ workflow should behave before any station starts:
 
 Global defaults live in `preferences/defaults.json`. Workflow packets can
 override them in `workflows/PROCESS_NAME/PREFS/preferences.json`.
+
+## Claude CLI Pattern
+
+For folder reorganization or vault compilation, Claude CLI should run the
+inventory protocol before changing files:
+
+1. inventory source folders
+2. hash files and identify duplicates
+3. infer rename/move candidates
+4. report unknowns and wait for David's approval
+5. execute only the approved plan
+6. preserve originals or archive them instead of deleting
+
+See `docs/claude-cli-operating-pattern.md`.
 
 ## First Use
 
