@@ -54,6 +54,8 @@ class CorrectionLogger:
             return h.hexdigest()[:16]
         except FileNotFoundError:
             return "file_not_found"
+        except OSError:
+            return "unhashable"
 
     def log_correction(
         self,
