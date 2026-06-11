@@ -308,6 +308,13 @@
       "canary": { "result": "review", "kind": "manual-review" },
       "category": "framework",
       "notes": "FastAPI server"
+    },
+    "theophysics-classifier": {
+      "path": "C:\\Users\\lowes\\Documents\\theophysics_classifier",
+      "type": "local", "has_run_bat": true, "status": "active",
+      "canary": { "result": "untested", "kind": "self-test" },
+      "category": "analysis",
+      "notes": "Truth Machine v1. 10-step deterministic pipeline: ingest->7Q classify->YAML rules->dependency graph->contradictions->kill chain->truth pressure->graph export->reports. 17 Postgres tables in q7 schema, 5 enums, 7 engine scaffolds. No LLM. Pure rules."
     }
   }
 }
