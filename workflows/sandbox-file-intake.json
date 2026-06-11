@@ -18,11 +18,18 @@
       "depends_on": ["intake"]
     },
     {
+      "name": "manifest-entry",
+      "station": "_manifest",
+      "description": "Orchestrator built-in: record the packet in MANIFEST.json before scoring",
+      "on_error": "stop",
+      "depends_on": ["fis-classify"]
+    },
+    {
       "name": "bil-score",
       "station": "preference-engine",
       "description": "BIL scores relevance: does David care about this?",
       "on_error": "skip",
-      "depends_on": ["fis-classify"]
+      "depends_on": ["manifest-entry"]
     },
     {
       "name": "propose-route",
@@ -35,6 +42,27 @@
         "engine": "ollama:phi4",
         "prompt": "Given this classification and relevance score, where should this file go? Respond with: vault, archive, review, or reject."
       }
+    },
+    {
+      "name": "await-approval",
+      "station": "_await_approval",
+      "description": "Orchestrator built-in: HOLD until a human writes CONFIG/approval.json {\"approved\": true}. Nothing moves without it.",
+      "on_error": "stop",
+      "depends_on": ["propose-route"]
+    },
+    {
+      "name": "log-correction",
+      "station": "_log_correction",
+      "description": "Orchestrator built-in: if the human changed the proposal (REVIEW/corrections.json), log it as BIL training data",
+      "on_error": "skip",
+      "depends_on": ["await-approval"]
+    },
+    {
+      "name": "archive-input",
+      "station": "_archive_input",
+      "description": "Orchestrator built-in: COPY processed INPUT files to ARCHIVE. Copies only — INPUT and originals untouched.",
+      "on_error": "stop",
+      "depends_on": ["log-correction"]
     }
   ],
   "preference_profile": "defaults.json",

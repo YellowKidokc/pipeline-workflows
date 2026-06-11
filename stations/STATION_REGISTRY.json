@@ -3,8 +3,9 @@
     "description": "Station Registry — single source of truth for all FORGE pipeline stations",
     "rule": "Every station has ONE entry. Workflows resolve paths from this file.",
     "updated": "2026-06-10",
-    "canary_last_run": "2026-06-04T09:15:44",
-    "canary_summary": { "pass": 23, "review": 8, "fail": 1, "skipped": 9 }
+    "canary_last_run": "2026-06-10",
+    "canary_summary": { "active": 52, "degraded": 0, "dead": 0 },
+    "canary_tool": "scripts/canary.py"
   },
   "stations": {
     "7q-classifier": {
@@ -36,7 +37,7 @@
       "type": "local", "has_run_bat": true, "status": "active",
       "canary": { "result": "pass", "kind": "self-test" },
       "category": "analysis",
-      "notes": "Outputs to Qdrant at 192.168.1.177:6333"
+      "notes": "Outputs to Qdrant (endpoint: services.qdrant in pipeline.config.json)"
     },
     "hdbscan-cluster": {
       "path": "X:\\Backside\\stations\\hdbscan-cluster.station",
@@ -280,8 +281,8 @@
       "category": "graph"
     },
     "link-research": {
-      "path": "\\\\dlowenas\\brain\\Backside\\apps\\link-research-engine-main",
-      "type": "remote", "has_run_bat": true, "status": "active",
+      "path": "X:\\Backside\\stations\\link-research.station",
+      "type": "local", "has_run_bat": true, "status": "active",
       "category": "graph"
     },
     "obsidian-export": {

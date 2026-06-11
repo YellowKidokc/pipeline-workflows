@@ -49,6 +49,13 @@ databases/
 STATUS.json
 MANIFEST.json
 logs/corrections/*.jsonl
+*.log
+
+# Local machine config — commit pipeline.config.example.json instead
+pipeline.config.json
+
+# Model weight formats — never in repo
+*.safetensors
 
 # Caches and build products
 __pycache__/

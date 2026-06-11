@@ -22,7 +22,7 @@
     {
       "name": "route", "station": "postgres-sync",
       "description": "Write results to Postgres + vault", "on_error": "stop", "depends_on": ["truth-machine", "framework-check"],
-      "targets": { "vault": "O:\\_Theophysics_v4\\", "postgres": "192.168.1.97:5432", "r2": "theophysics-media" }
+      "targets": { "vault": "O:\\_Theophysics_v4\\", "postgres": "services.postgres in pipeline.config.json", "r2": "theophysics-media" }
     }
   ],
   "preference_profile": "paper_grading.json",

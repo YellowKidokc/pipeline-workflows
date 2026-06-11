@@ -1,0 +1,13 @@
+{
+  "slot": 13,
+  "name": "Implicit Collaborative Filtering",
+  "library": "implicit",
+  "status": "installed",
+  "path": "X:\\Backside\\_models\\_Models\\P01_implicit",
+  "port": null,
+  "feeds_into": ["station_routing", "P07_markovify"],
+  "fed_by": ["P05_ppk", "correction_logger", "bil_events"],
+  "config": {
+    "notes": "Installed, needs wiring. Learns station co-occurrence patterns from approval/correction history."
+  }
+}

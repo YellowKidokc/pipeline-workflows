@@ -1,54 +1,159 @@
 {
   "_meta": {
-    "description": "Model Registry — 19 slots for the FORGE preference and NLP pipeline",
-    "rule": "Configs only. Weights stay on NAS at \\\\dlowenas\\brain\\Backside\\_models\\_Models\\",
+    "description": "Model Registry — single source of truth for all 19 FORGE model slots. Everything references this registry, not hardcoded paths.",
+    "rule": "Configs only. Weights stay on NAS under X:\\Backside\\_models\\_Models\\ and are never committed.",
+    "layout": "M01-M12 = NLP rack, P01-P07 = preference rack. Renamed 2026-06-10, see MODEL_RENAME_LEDGER_20260610.md on the NAS.",
     "updated": "2026-06-10"
   },
   "slots": {
-    "01_summarizer": { "slot": 1, "name": "Summarizer", "library": "transformers", "status": "active", "category": "nlp" },
-    "02_embedder": { "slot": 2, "name": "Sentence Embedder", "library": "sentence-transformers", "status": "active", "category": "nlp" },
-    "03_contradiction": { "slot": 3, "name": "Contradiction Detector", "library": "transformers/deberta", "status": "active", "category": "nlp" },
-    "04_clip": { "slot": 4, "name": "CLIP Image-Text", "library": "openai/clip", "status": "active", "category": "nlp" },
-    "05_whisper": { "slot": 5, "name": "Whisper Transcriber", "library": "openai/whisper", "status": "active", "category": "nlp" },
-    "06_llm": { "slot": 6, "name": "Local LLM", "library": "ollama", "status": "active", "category": "nlp" },
-    "07_ner": { "slot": 7, "name": "Named Entity Recognition", "library": "transformers", "status": "active", "category": "nlp" },
-    "08_sentiment": { "slot": 8, "name": "Sentiment Analysis", "library": "transformers", "status": "active", "category": "nlp" },
-    "09_topic": { "slot": 9, "name": "Topic Modeling", "library": "bertopic", "status": "active", "category": "nlp" },
-    "10_qa": { "slot": 10, "name": "Question Answering", "library": "transformers", "status": "active", "category": "nlp" },
-    "11_reranker": { "slot": 11, "name": "Reranker", "library": "sentence-transformers", "status": "active", "category": "nlp" },
-    "12_classifier": { "slot": 12, "name": "Zero-Shot Classifier", "library": "transformers", "status": "active", "category": "nlp" },
-    "13_implicit": {
+    "M01_summarizer": {
+      "slot": 1, "name": "Summarizer", "library": "transformers",
+      "status": "active", "category": "nlp",
+      "path": "X:\\Backside\\_models\\_Models\\M01_summarizer",
+      "old_name": "01_summarizer",
+      "notes": "BART. Overlapping copy kept at _legacy\\bart_summarizer by request."
+    },
+    "M02_embedder": {
+      "slot": 2, "name": "Sentence Embedder", "library": "sentence-transformers",
+      "status": "installed", "category": "nlp",
+      "path": "X:\\Backside\\_models\\_Models\\M02_embedder",
+      "old_name": "02_embedder",
+      "notes": "DEGRADED: zero-byte config.json/model.safetensors/tokenizer.json (audit 2026-05-24, re-verified 2026-06-10). Canonical safe copy: _Models\\sbert_minilm (MiniLM-L6). Repair M02 before retiring sbert_minilm."
+    },
+    "M03_contradiction": {
+      "slot": 3, "name": "Contradiction Detector", "library": "transformers/deberta",
+      "status": "installed", "category": "nlp",
+      "path": "X:\\Backside\\_models\\_Models\\M03_contradiction",
+      "old_name": "03_contradiction",
+      "notes": "DEGRADED: zero-byte metadata files. Canonical safe copy: _Models\\deberta_nli. Repair M03 before retiring deberta_nli."
+    },
+    "M04_imager": {
+      "slot": 4, "name": "Image-Text (CLIP)", "library": "transformers/clip",
+      "status": "active", "category": "nlp",
+      "path": "X:\\Backside\\_models\\_Models\\M04_imager",
+      "old_name": "04_imager",
+      "notes": "openai/clip-vit-base-patch32. Identical clip_vision copy moved to _legacy."
+    },
+    "M05_transcriber": {
+      "slot": 5, "name": "Whisper Transcriber", "library": "faster-whisper",
+      "status": "active", "category": "nlp",
+      "path": "X:\\Backside\\_models\\_Models\\M05_transcriber",
+      "old_name": "05_transcriber",
+      "notes": "Whisper large-v3. Redundant whisper_large_v3 copy moved to _legacy."
+    },
+    "M06_llm": {
+      "slot": 6, "name": "Local LLM", "library": "transformers/ollama",
+      "status": "active", "category": "nlp",
+      "path": "X:\\Backside\\_models\\_Models\\M06_llm",
+      "old_name": "06_llm",
+      "notes": "Mistral 7B weights. Checkpoint inference runs via Ollama phi4 (see pipeline.config.json). Redundant mistral_7b copy moved to _legacy."
+    },
+    "M07_fact_verify": {
+      "slot": 7, "name": "Fact Verification", "library": "transformers",
+      "status": "installed", "category": "nlp",
+      "path": "X:\\Backside\\_models\\_Models\\M07_fact_verify",
+      "old_name": "07_fact_verify",
+      "notes": "Contains multivers, scifact, roberta_nli subfolders."
+    },
+    "M08_contradiction_deep": {
+      "slot": 8, "name": "Deep Contradiction (RoBERTa NLI)", "library": "transformers",
+      "status": "installed", "category": "nlp",
+      "path": "X:\\Backside\\_models\\_Models\\M08_contradiction_deep",
+      "old_name": "08_contradiction_deep"
+    },
+    "M09_claim_extract": {
+      "slot": 9, "name": "Claim Extraction", "library": "transformers",
+      "status": "installed", "category": "nlp",
+      "path": "X:\\Backside\\_models\\_Models\\M09_claim_extract",
+      "old_name": "09_claim_extract",
+      "notes": "factdetect."
+    },
+    "M10_timeline": {
+      "slot": 10, "name": "Timeline Reasoning", "library": "transformers",
+      "status": "installed", "category": "nlp",
+      "path": "X:\\Backside\\_models\\_Models\\M10_timeline",
+      "old_name": "10_timeline",
+      "notes": "TISER."
+    },
+    "M11_math_verify": {
+      "slot": 11, "name": "Math Verification", "library": "transformers",
+      "status": "empty", "category": "nlp",
+      "path": "X:\\Backside\\_models\\_Models\\M11_math_verify",
+      "old_name": "11_math_verify",
+      "notes": "Folder exists, no weights yet."
+    },
+    "M12_paper_review": {
+      "slot": 12, "name": "Paper Review", "library": "transformers",
+      "status": "empty", "category": "nlp",
+      "path": "X:\\Backside\\_models\\_Models\\M12_paper_review",
+      "old_name": "12_paper_review",
+      "notes": "Folder exists, no weights yet."
+    },
+    "P01_implicit": {
       "slot": 13, "name": "Implicit Collaborative Filtering", "library": "implicit",
       "status": "installed", "category": "preference",
-      "notes": "Learns station co-occurrence patterns",
-      "feeds_into": ["station_routing"], "fed_by": ["correction_logger", "bil_events"]
+      "path": "X:\\Backside\\_models\\_Models\\P01_implicit",
+      "old_name": "13_preference_implicit",
+      "notes": "Installed, needs wiring. Learns station co-occurrence patterns.",
+      "feeds_into": ["station_routing", "P07_markovify"],
+      "fed_by": ["P05_ppk", "correction_logger", "bil_events"]
     },
-    "14_recbole": { "slot": 14, "name": "RecBole Recommendation", "library": "recbole", "status": "placeholder", "category": "preference" },
-    "15_lightfm": { "slot": 15, "name": "LightFM Hybrid Recommendation", "library": "lightfm", "status": "placeholder", "category": "preference" },
-    "16_paper_recommender": { "slot": 16, "name": "Paper Recommender", "library": "semanticscholar", "status": "active", "category": "preference" },
-    "17_ppk": {
+    "P02_recbole": {
+      "slot": 14, "name": "RecBole Recommendation", "library": "recbole",
+      "status": "placeholder", "category": "preference",
+      "path": "X:\\Backside\\_models\\_Models\\P02_recbole",
+      "old_name": "14_preference_recbole"
+    },
+    "P03_lightfm": {
+      "slot": 15, "name": "LightFM Hybrid Recommendation", "library": "lightfm",
+      "status": "placeholder", "category": "preference",
+      "path": "X:\\Backside\\_models\\_Models\\P03_lightfm",
+      "old_name": "15_preference_lightfm"
+    },
+    "P04_paper_recommender": {
+      "slot": 16, "name": "Paper Recommender", "library": "semanticscholar",
+      "status": "empty", "category": "preference",
+      "path": "X:\\Backside\\_models\\_Models\\P04_paper_recommender",
+      "old_name": "16_paper_recommender",
+      "notes": "Slot folder is empty; the working implementation is X:\\Backside\\stations\\paper-recommender.station."
+    },
+    "P05_ppk": {
       "slot": 17, "name": "Portable Preference Kernel", "library": "custom/json-weights",
       "status": "active", "category": "preference",
+      "path": "X:\\Backside\\_models\\_Models\\P05_ppk",
+      "old_name": "17_portable_preference_kernel",
       "notes": "JSON weights only. Copy to USB = portable identity. No personal data.",
-      "feeds_into": ["station_routing", "13_implicit"], "fed_by": ["18_river"]
+      "feeds_into": ["station_routing", "P01_implicit"],
+      "fed_by": ["P06_river"]
     },
-    "18_river": {
+    "P06_river": {
       "slot": 18, "name": "River Streaming ML", "library": "river", "version": "0.25",
       "status": "active", "category": "preference",
+      "path": "X:\\Backside\\_models\\_Models\\P06_river",
+      "old_name": "18_river_streaming",
       "port": 8420, "endpoint": "http://localhost:8420",
       "notes": "Real-time online learning inside BIL server. Microsecond latency.",
-      "feeds_into": ["17_ppk"], "fed_by": ["bil_events", "clipboard", "browser", "file_classify"]
+      "feeds_into": ["P05_ppk"],
+      "fed_by": ["bil_events", "clipboard", "browser", "file_classify"]
     },
-    "19_markovify": {
+    "P07_markovify": {
       "slot": 19, "name": "Markovify Text Prediction", "library": "markovify",
       "status": "installed", "category": "preference",
-      "notes": "Needs training corpus from clipboard + vault writing",
-      "feeds_into": ["autocomplete"], "fed_by": ["clipboard_history", "vault_text"]
+      "path": "X:\\Backside\\_models\\_Models\\P07_markovify",
+      "old_name": "19_markovify_text",
+      "notes": "Installed, needs training corpus from clipboard + vault writing.",
+      "feeds_into": ["autocomplete"],
+      "fed_by": ["P01_implicit", "clipboard_history", "vault_text"]
     }
   },
-  "preference_chain_order": ["18_river", "17_ppk", "13_implicit", "19_markovify"],
+  "preference_chain_order": ["P06_river", "P05_ppk", "P01_implicit", "P07_markovify"],
   "bil_signal_weights": {
-    "manual_approval": 1.0, "file_reused_later": 0.9, "copied_text": 0.8,
+    "manual_approval": 1.0, "file_reused": 0.9, "copied_text": 0.8,
     "bookmark_save": 0.7, "long_dwell_scroll": 0.5, "opened_tab": 0.2, "accidental_visit": 0.0
-  }
+  },
+  "canonical_fallbacks": {
+    "sbert_minilm": "Safe canonical embedder copy until M02_embedder is repaired. Used by X:\\BIL\\vectorize_mda.py and map_framework_coverage.py.",
+    "deberta_nli": "Safe canonical NLI copy until M03_contradiction is repaired."
+  },
+  "legacy": ["_legacy\\bart_summarizer", "_legacy\\clip_vision", "_legacy\\whisper_large_v3", "_legacy\\mistral_7b", "_legacy\\legacy-model-layer"]
 }

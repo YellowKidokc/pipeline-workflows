@@ -12,17 +12,15 @@ import hashlib
 import json
 import logging
 import os
+import shutil
 import sys
 import time
+import urllib.error
+import urllib.request
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
-
-try:
-    import requests
-except ImportError:  # pragma: no cover - setup.py reports this explicitly
-    requests = None
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
@@ -32,8 +30,11 @@ from engines.pipeline.external_adapter import ExternalStationAdapter
 from engines.pipeline.station_base import Manifest, StationBase, StationVerdict
 
 LOG = logging.getLogger("FORGE.orchestrator")
-TERMINAL_RESULTS = {"pass", "skip", "review", "hold"}
+# "hold" is deliberately NOT terminal: a held stage (e.g. _await_approval) re-runs on resume.
+TERMINAL_RESULTS = {"pass", "skip", "review"}
 FAILED_RESULTS = {"fail"}
+# Orchestrator built-in stages. Names start with "_" and never touch STATION_REGISTRY.
+BUILTIN_STATIONS = {"_manifest", "_await_approval", "_log_correction", "_archive_input"}
 
 
 @dataclass
@@ -153,8 +154,17 @@ class Orchestrator:
                         else:
                             LOG.warning("Stage %s failed; on_error=continue", stage["name"])
 
-                    if result.result in {"review", "hold"}:
-                        status["status"] = result.result
+                    if result.result == "hold":
+                        # Waiting on a human. Stop here; resume re-runs the held stage.
+                        completed.discard(stage["name"])
+                        status["status"] = "hold"
+                        self._write_status(packet, status)
+                        self._update_manifest(packet, workflow["name"], stage["name"], status, input_files)
+                        LOG.info("Workflow held at stage=%s — %s", stage["name"], result.notes)
+                        return status
+
+                    if result.result == "review":
+                        status["status"] = "review"
 
         self._write_status(packet, status)
         self._update_manifest(packet, workflow["name"], status.get("current_stage", "completed"), status, input_files)
@@ -197,6 +207,8 @@ class Orchestrator:
         workflow: dict[str, Any],
         input_hash: str,
     ) -> list[StageResult]:
+        if station_name in BUILTIN_STATIONS:
+            return [self._run_builtin(station_name, stage, packet, workflow)]
         try:
             station = self._station(station_name, packet)
         except Exception as exc:
@@ -230,6 +242,59 @@ class Orchestrator:
             )
         return stage_results
 
+    def _run_builtin(self, station_name: str, stage: dict[str, Any], packet: Path, workflow: dict[str, Any]) -> StageResult:
+        """Built-in stages the orchestrator handles itself. Copies only — never deletes."""
+        name = stage["name"]
+        if station_name == "_manifest":
+            # MANIFEST is updated after every stage anyway; this stage exists so
+            # workflows can make the manifest checkpoint explicit.
+            return StageResult(name, station_name, "pass", 1.0, "manifest checkpoint recorded")
+
+        if station_name == "_await_approval":
+            approval_file = packet / "CONFIG" / "approval.json"
+            if not approval_file.exists():
+                return StageResult(
+                    name, station_name, "hold", 0.0,
+                    'waiting for human approval — create CONFIG/approval.json with {"approved": true} and re-run',
+                )
+            try:
+                decision = load_json(approval_file)
+            except Exception as exc:
+                return StageResult(name, station_name, "hold", 0.0, f"approval.json unreadable: {exc}")
+            if decision.get("approved") is True:
+                return StageResult(name, station_name, "pass", 1.0, f"approved by {decision.get('by', 'human')}")
+            return StageResult(name, station_name, "fail", 0.0, f"rejected: {decision.get('reason', 'no reason given')}")
+
+        if station_name == "_log_correction":
+            corrections_file = packet / "REVIEW" / "corrections.json"
+            if not corrections_file.exists():
+                return StageResult(name, station_name, "skip", 1.0, "no corrections recorded")
+            try:
+                from scripts.correction_logger import CorrectionLogger
+
+                entries = load_json(corrections_file)
+                if isinstance(entries, dict):
+                    entries = [entries]
+                logger = CorrectionLogger(bil_endpoint=self.config.get("services", {}).get("bil_server", "http://localhost:8420"))
+                for entry in entries:
+                    logger.log_correction(workflow=workflow["name"], **entry)
+                return StageResult(name, station_name, "pass", 1.0, f"logged {len(entries)} correction(s) to BIL feed")
+            except Exception as exc:
+                return StageResult(name, station_name, "fail", 0.0, f"correction logging failed: {exc}")
+
+        if station_name == "_archive_input":
+            archive_dir = packet / "ARCHIVE"
+            archive_dir.mkdir(parents=True, exist_ok=True)
+            copied = 0
+            for file_path in iter_packet_inputs(packet / "INPUT"):
+                dest = archive_dir / file_path.relative_to(packet / "INPUT")
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(file_path, dest)
+                copied += 1
+            return StageResult(name, station_name, "pass", 1.0, f"archived {copied} input file(s) (copies; INPUT untouched)")
+
+        return StageResult(name, station_name, "fail", 0.0, f"unknown builtin: {station_name}")
+
     def _station(self, station_name: str, packet: Path) -> StationBase:
         if self.dry_run:
             return DryRunStation(station_name, packet / "INPUT", packet / "OUTPUT")
@@ -246,16 +311,16 @@ class Orchestrator:
         model = engine.split(":", 1)[1] if ":" in engine else self.config.get("services", {}).get("ollama_model", "phi4")
         if self.dry_run:
             return StageResult(stage["name"], "llm_gate", "pass", 1.0, "dry-run llm gate skipped")
-        if requests is None:
-            return StageResult(stage["name"], "llm_gate", "review", 0.0, "requests unavailable for Ollama gate")
         try:
-            response = requests.post(
+            request = urllib.request.Request(
                 f"{ollama_url.rstrip('/')}/api/generate",
-                json={"model": model, "prompt": prompt, "stream": False},
-                timeout=60,
+                data=json.dumps({"model": model, "prompt": prompt, "stream": False}).encode("utf-8"),
+                headers={"Content-Type": "application/json"},
+                method="POST",
             )
-            response.raise_for_status()
-            text = response.json().get("response", "").strip()
+            with urllib.request.urlopen(request, timeout=60) as response:
+                body = json.loads(response.read().decode("utf-8"))
+            text = body.get("response", "").strip()
             verdict = "pass" if text and "reject" not in text.lower() and "fail" not in text.lower() else "review"
             (packet / "LOGS" / f"{stage['name']}.llm_gate.json").write_text(json.dumps({"prompt": prompt, "response": text}, indent=2), encoding="utf-8")
             return StageResult(stage["name"], "llm_gate", verdict, 1.0 if verdict == "pass" else 0.5, text[:500])

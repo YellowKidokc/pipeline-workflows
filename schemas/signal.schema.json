@@ -2,14 +2,36 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "PipelineSignal",
   "type": "object",
-  "required": ["type", "workflow", "station", "severity", "message", "created_at"],
+  "required": ["type", "severity", "source_station", "timestamp"],
   "properties": {
-    "type": { "enum": ["GAP", "DUPLICATE", "QUALITY", "READY", "UPSTREAM"] },
-    "workflow": { "type": "string" },
-    "station": { "type": "string" },
-    "severity": { "enum": ["info", "review", "warning", "fail", "hold"] },
-    "message": { "type": "string" },
-    "source": { "type": "string" },
-    "created_at": { "type": "string" }
+    "type": {
+      "enum": ["GAP", "DUPLICATE", "QUALITY", "READY", "UPSTREAM"]
+    },
+    "severity": {
+      "enum": ["info", "review", "warning", "fail", "hold"]
+    },
+    "source_station": {
+      "type": "string",
+      "description": "Station name from STATION_REGISTRY.json that raised the signal"
+    },
+    "timestamp": {
+      "type": "string",
+      "description": "ISO-8601"
+    },
+    "action_required": {
+      "type": "boolean",
+      "description": "True if a human must act before the packet can continue"
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Signal-specific data"
+    },
+    "workflow": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    }
   }
 }

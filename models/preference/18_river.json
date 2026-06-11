@@ -1,0 +1,15 @@
+{
+  "slot": 18,
+  "name": "River Streaming ML",
+  "library": "river",
+  "version": "0.25",
+  "status": "active",
+  "path": "X:\\Backside\\_models\\_Models\\P06_river",
+  "port": 8420,
+  "endpoint": "http://localhost:8420",
+  "feeds_into": ["P05_ppk"],
+  "fed_by": ["bil_events", "clipboard", "browser", "file_classify"],
+  "config": {
+    "notes": "ACTIVE inside the BIL server. Real-time online learning, microsecond latency."
+  }
+}

@@ -11,7 +11,7 @@
     { "name": "vectorize", "station": "sbert-embedder", "on_error": "skip", "depends_on": ["summarize"] },
     {
       "name": "route", "station": "postgres-sync", "on_error": "stop", "depends_on": ["vectorize"],
-      "targets": { "vault": "O:\\_Theophysics_v4\\", "postgres": "192.168.1.97:5432" }
+      "targets": { "vault": "O:\\_Theophysics_v4\\", "postgres": "services.postgres in pipeline.config.json" }
     }
   ],
   "preference_profile": "defaults.json",

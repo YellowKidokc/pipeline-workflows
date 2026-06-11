@@ -22,15 +22,10 @@ Usage:
 import json
 import hashlib
 import os
+import urllib.request
 from datetime import datetime
 from pathlib import Path
 from typing import Optional
-
-try:
-    import requests
-    HAS_REQUESTS = True
-except ImportError:
-    HAS_REQUESTS = False
 
 
 class CorrectionLogger:
@@ -111,14 +106,14 @@ class CorrectionLogger:
 
     def _push_to_bil(self, event: dict):
         """Send correction to BIL server for immediate learning."""
-        if not HAS_REQUESTS:
-            return
         try:
-            requests.post(
+            request = urllib.request.Request(
                 f"{self.bil_endpoint}/bil/correction",
-                json=event,
-                timeout=5,
+                data=json.dumps(event).encode("utf-8"),
+                headers={"Content-Type": "application/json"},
+                method="POST",
             )
+            urllib.request.urlopen(request, timeout=5).close()
         except Exception:
             pass  # BIL offline is fine — local log is the source of truth
 
