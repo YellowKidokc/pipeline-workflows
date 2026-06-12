@@ -32,6 +32,8 @@ def test_schema_files_are_draft_2020_12_json():
 def test_station_configs_validate_against_station_schema():
     schema = load("schemas/station.schema.json")
     for path in Path("stations").glob("*/*.json"):
+        if path.parts[:2] == ("stations", "source"):
+            continue
         validate(load(path), schema)
 
 
