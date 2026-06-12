@@ -1,0 +1,38 @@
+{
+  "generated": "2026-06-12T19:07:15.551109+00:00",
+  "findings": [
+    {
+      "kind": "noncanonical_root",
+      "path": "logs",
+      "recommendation": "move_or_explain",
+      "target": "david/DOES_NOT_FIT.md",
+      "reason": "Top-level folder is outside the current architecture."
+    }
+  ],
+  "suggested_moves": [
+    {
+      "from": "schemas/model.schema.json",
+      "to": "contracts/model.schema.json",
+      "reason": "Schemas are contracts. Keep compatibility alias if code imports old path.",
+      "status": "needs_review"
+    },
+    {
+      "from": "schemas/workflow.schema.json",
+      "to": "contracts/workflow.schema.json",
+      "reason": "Workflow schema belongs with contracts.",
+      "status": "needs_review"
+    },
+    {
+      "from": "schemas/station.schema.json",
+      "to": "contracts/station.schema.json",
+      "reason": "Station schema belongs with contracts.",
+      "status": "needs_review"
+    },
+    {
+      "from": "models/preference/*.json",
+      "to": "preferences/engines/",
+      "reason": "Preference engine configs should live with preferences; model registry stays in models/.",
+      "status": "needs_review"
+    }
+  ]
+}
