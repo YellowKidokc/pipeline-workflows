@@ -5,10 +5,20 @@
   "status": "active",
   "path": "X:\\Backside\\_models\\_Models\\P05_ppk",
   "port": null,
-  "feeds_into": ["station_routing", "P01_implicit"],
-  "fed_by": ["P06_river"],
+  "feeds_into": [
+    "station_routing",
+    "P01_implicit"
+  ],
+  "fed_by": [
+    "P06_river"
+  ],
   "config": {
     "notes": "JSON weights only. Copy to USB = portable identity. No personal data.",
     "runtime_model": "X:\\Backside\\stations\\file-intelligence.station\\_ppk_runtime\\portable_preference_kernel.json"
+  },
+  "_meta": {
+    "canonical_registry": "../MODEL_REGISTRY.json",
+    "slot_key": "P05_ppk",
+    "mirror_role": "Nested preference slot mirror; update models/MODEL_REGISTRY.json first."
   }
 }

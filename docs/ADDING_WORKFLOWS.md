@@ -4,7 +4,7 @@ A workflow is a DAG defined in JSON. No code.
 
 ## 1. Define the DAG
 
-Create `workflows/<name>.json` validating against `schemas/workflow.schema.json`:
+Create `workflows/<name>.json` validating against `schemas/workflow.schema.json` (compatibility path) and its mirror `contracts/schemas/workflow.schema.json`:
 
 ```json
 {
@@ -35,7 +35,7 @@ Rules:
 - `on_error`: `stop` | `skip` | `continue`.
 - `llm_gate` on a stage runs an Ollama phi4 checkpoint. Local only.
 - Human gates: add a stage with station `_await_approval`. The run HOLDs until
-  someone writes `CONFIG/approval.json` `{"approved": true}` in the packet.
+  someone writes `CONFIG/approval.json` `{"approved": true}` in the packet. The interface is documented at `contracts/schemas/approval.schema.json` and mirrored at `schemas/approval.schema.json`.
 
 ## 2. Register it
 

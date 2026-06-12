@@ -1,25 +1,111 @@
 {
   "_meta": {
-    "description": "NLP model rack — slots 01-12 (M01-M12). Resolve canonical paths via models/MODEL_REGISTRY.json.",
+    "description": "NLP model rack \u2014 slots 01-12 (M01-M12). Resolve canonical paths via models/MODEL_REGISTRY.json.",
     "models_root": "X:\\Backside\\_models\\_Models",
-    "updated": "2026-06-10"
+    "updated": "2026-06-10",
+    "canonical_registry": "../MODEL_REGISTRY.json",
+    "mirror_role": "Nested NLP rack mirror for M01-M12; update models/MODEL_REGISTRY.json first."
   },
   "slots": [
-    { "slot": 1,  "name": "summarizer",         "library": "transformers",        "status": "active",    "path": "X:\\Backside\\_models\\_Models\\M01_summarizer" },
-    { "slot": 2,  "name": "embedder",           "library": "sentence-transformers","status": "installed", "path": "X:\\Backside\\_models\\_Models\\M02_embedder",
+    {
+      "slot": 1,
+      "name": "summarizer",
+      "library": "transformers",
+      "status": "active",
+      "path": "X:\\Backside\\_models\\_Models\\M01_summarizer",
+      "slot_key": "M01_summarizer"
+    },
+    {
+      "slot": 2,
+      "name": "embedder",
+      "library": "sentence-transformers",
+      "status": "installed",
+      "path": "X:\\Backside\\_models\\_Models\\M02_embedder",
       "fallback_path": "X:\\Backside\\_models\\_Models\\sbert_minilm",
-      "notes": "M02 has zero-byte metadata files; use sbert_minilm fallback until repaired." },
-    { "slot": 3,  "name": "contradiction",      "library": "transformers/deberta", "status": "installed", "path": "X:\\Backside\\_models\\_Models\\M03_contradiction",
+      "notes": "M02 has zero-byte metadata files; use sbert_minilm fallback until repaired.",
+      "slot_key": "M02_embedder"
+    },
+    {
+      "slot": 3,
+      "name": "contradiction",
+      "library": "transformers/deberta",
+      "status": "installed",
+      "path": "X:\\Backside\\_models\\_Models\\M03_contradiction",
       "fallback_path": "X:\\Backside\\_models\\_Models\\deberta_nli",
-      "notes": "M03 has zero-byte metadata files; use deberta_nli fallback until repaired." },
-    { "slot": 4,  "name": "imager",             "library": "transformers/clip",    "status": "active",    "path": "X:\\Backside\\_models\\_Models\\M04_imager" },
-    { "slot": 5,  "name": "transcriber",        "library": "faster-whisper",       "status": "active",    "path": "X:\\Backside\\_models\\_Models\\M05_transcriber" },
-    { "slot": 6,  "name": "llm",                "library": "transformers/ollama",  "status": "active",    "path": "X:\\Backside\\_models\\_Models\\M06_llm" },
-    { "slot": 7,  "name": "fact_verify",        "library": "transformers",         "status": "installed", "path": "X:\\Backside\\_models\\_Models\\M07_fact_verify" },
-    { "slot": 8,  "name": "contradiction_deep", "library": "transformers",         "status": "installed", "path": "X:\\Backside\\_models\\_Models\\M08_contradiction_deep" },
-    { "slot": 9,  "name": "claim_extract",      "library": "transformers",         "status": "installed", "path": "X:\\Backside\\_models\\_Models\\M09_claim_extract" },
-    { "slot": 10, "name": "timeline",           "library": "transformers",         "status": "installed", "path": "X:\\Backside\\_models\\_Models\\M10_timeline" },
-    { "slot": 11, "name": "math_verify",        "library": "transformers",         "status": "empty",     "path": "X:\\Backside\\_models\\_Models\\M11_math_verify" },
-    { "slot": 12, "name": "paper_review",       "library": "transformers",         "status": "empty",     "path": "X:\\Backside\\_models\\_Models\\M12_paper_review" }
+      "notes": "M03 has zero-byte metadata files; use deberta_nli fallback until repaired.",
+      "slot_key": "M03_contradiction"
+    },
+    {
+      "slot": 4,
+      "name": "imager",
+      "library": "transformers/clip",
+      "status": "active",
+      "path": "X:\\Backside\\_models\\_Models\\M04_imager",
+      "slot_key": "M04_imager"
+    },
+    {
+      "slot": 5,
+      "name": "transcriber",
+      "library": "faster-whisper",
+      "status": "active",
+      "path": "X:\\Backside\\_models\\_Models\\M05_transcriber",
+      "slot_key": "M05_transcriber"
+    },
+    {
+      "slot": 6,
+      "name": "llm",
+      "library": "transformers/ollama",
+      "status": "active",
+      "path": "X:\\Backside\\_models\\_Models\\M06_llm",
+      "slot_key": "M06_llm"
+    },
+    {
+      "slot": 7,
+      "name": "fact_verify",
+      "library": "transformers",
+      "status": "installed",
+      "path": "X:\\Backside\\_models\\_Models\\M07_fact_verify",
+      "slot_key": "M07_fact_verify"
+    },
+    {
+      "slot": 8,
+      "name": "contradiction_deep",
+      "library": "transformers",
+      "status": "installed",
+      "path": "X:\\Backside\\_models\\_Models\\M08_contradiction_deep",
+      "slot_key": "M08_contradiction_deep"
+    },
+    {
+      "slot": 9,
+      "name": "claim_extract",
+      "library": "transformers",
+      "status": "installed",
+      "path": "X:\\Backside\\_models\\_Models\\M09_claim_extract",
+      "slot_key": "M09_claim_extract"
+    },
+    {
+      "slot": 10,
+      "name": "timeline",
+      "library": "transformers",
+      "status": "installed",
+      "path": "X:\\Backside\\_models\\_Models\\M10_timeline",
+      "slot_key": "M10_timeline"
+    },
+    {
+      "slot": 11,
+      "name": "math_verify",
+      "library": "transformers",
+      "status": "empty",
+      "path": "X:\\Backside\\_models\\_Models\\M11_math_verify",
+      "slot_key": "M11_math_verify"
+    },
+    {
+      "slot": 12,
+      "name": "paper_review",
+      "library": "transformers",
+      "status": "empty",
+      "path": "X:\\Backside\\_models\\_Models\\M12_paper_review",
+      "slot_key": "M12_paper_review"
+    }
   ]
 }
