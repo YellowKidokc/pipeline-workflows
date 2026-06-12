@@ -10,14 +10,15 @@ feeds the P06 River hot loop before preference state is compacted toward P05 PPK
 - `source/bil/` mirrors the Python adapter/server shape from the BIL package.
 - `source/browser/` mirrors the browser extension signal collector shape.
 - `requirements.txt` records optional runtime dependencies for the NAS/body layer.
+- `EVENT_MAP.json` is the machine-readable bridge from BIL observations to the preference-event contract.
 - GitHub keeps this as source/spec only; live services, data, logs, JSONL event
   streams, databases, and learned model state remain runtime/NAS-side.
 
 ## Preference loop fit
 
 ```text
-Browser / folders / manual signals
-  -> BIL endpoints
+browser/folder/manual signal
+  -> BIL adapter or runtime endpoint
   -> contracts/schemas/preference-event.schema.json
   -> P06_river hot online learning
   -> P05_ppk portable preference kernel
@@ -39,8 +40,9 @@ learning. This snapshot does not activate live wiring by itself.
 | Tab opened | `browser_extension` | `opened_tab` | `0.2` |
 | Accidental/short visit | `browser_extension` | `accidental_visit` | `0.0` |
 
-Browser extension signals are passive preference inputs. They should calibrate
-future routing and ranking, never block the active pipeline.
+Browser extension signals are passive preference inputs. Folder observations are passive unless promoted by a human review. Manual approvals and corrections are active signals. All should calibrate future routing and ranking, never block the active pipeline.
+
+`EVENT_MAP.json` mirrors this table for tests and future adapters.
 
 ## Not included
 

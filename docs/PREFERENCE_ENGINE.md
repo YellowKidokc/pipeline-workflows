@@ -57,9 +57,15 @@ data — without it, the system never gets smarter.
 
 The repo-safe BIL source shape lives at `preferences/engines/bil/`. It maps
 browser, folder, and manual observations into `contracts/schemas/preference-event.schema.json`
-for the P06 River hot loop. This is source/spec only: live services, JSONL event
-streams, learned River state, browser installation, and PPK persistence remain
-runtime/NAS-side.
+for the P06 River hot loop.
+
+```text
+browser/folder/manual signal -> BIL -> preference event -> P06_river -> P05_ppk
+```
+
+The machine-readable mapping is `preferences/engines/bil/EVENT_MAP.json`. This
+is source/spec only: live services, JSONL event streams, learned River state,
+browser installation, and PPK persistence remain runtime/NAS-side.
 
 ## Portable Identity
 

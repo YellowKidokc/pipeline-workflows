@@ -4,10 +4,7 @@ import re
 import sys
 from pathlib import Path
 
-try:
-    from jsonschema import Draft202012Validator
-except ImportError:  # pragma: no cover - CI may not install jsonschema
-    Draft202012Validator = None
+import pytest
 
 
 BIL_ROOT = Path("preferences/engines/bil")
@@ -49,6 +46,7 @@ def test_bil_source_snapshot_shape_exists():
         assert (SOURCE_ROOT / relative).is_file(), f"missing BIL source file: {relative}"
     assert (BIL_ROOT / "README.md").is_file()
     assert (BIL_ROOT / "requirements.txt").is_file()
+    assert (BIL_ROOT / "EVENT_MAP.json").is_file()
 
 
 def test_bil_source_snapshot_has_no_secret_assignments_or_runtime_artifacts():
@@ -75,5 +73,27 @@ def test_bil_event_mapping_matches_preference_event_contract():
     assert event["signal"] == "bookmark_save"
     assert event["weight"] == 0.7
 
-    if Draft202012Validator is not None:
-        Draft202012Validator(load("contracts/schemas/preference-event.schema.json")).validate(event)
+    jsonschema = pytest.importorskip("jsonschema")
+    jsonschema.Draft202012Validator(load("contracts/schemas/preference-event.schema.json")).validate(event)
+
+
+def test_bil_event_map_matches_adapter_weights_and_contract():
+    sys.path.insert(0, str(SOURCE_ROOT))
+    from bil.config import SIGNAL_WEIGHTS
+
+    event_map = load(BIL_ROOT / "EVENT_MAP.json")
+    assert event_map["contract"] == "contracts/schemas/preference-event.schema.json"
+    assert event_map["hot_loop_slot"] == "P06_river"
+    assert event_map["compaction_target"] == "P05_ppk"
+    assert set(event_map["signals"]) == set(SIGNAL_WEIGHTS)
+    for signal, config in event_map["signals"].items():
+        assert config["default_weight"] == SIGNAL_WEIGHTS[signal]
+
+
+def test_bil_modules_import_without_starting_runtime_services():
+    sys.path.insert(0, str(SOURCE_ROOT))
+    import bil.bil_server as bil_server
+
+    assert bil_server.DEFAULT_PORT == 8420
+    assert hasattr(bil_server, "run")
+    assert bil_server.MODEL.snapshot() == {}
