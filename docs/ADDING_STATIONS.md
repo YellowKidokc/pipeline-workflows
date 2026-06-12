@@ -17,7 +17,7 @@ or a package entry (`*.ps1`, `pyproject.toml`, `package.json`).
 
 Add `stations/<category>/<name>.json` (categories: analysis, framework,
 processing, media, graph, intelligence). It must validate against
-`schemas/station.schema.json`:
+`schemas/station.schema.json` (compatibility path) and its mirror `contracts/schemas/station.schema.json`:
 
 ```json
 {

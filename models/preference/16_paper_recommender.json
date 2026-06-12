@@ -5,9 +5,18 @@
   "status": "empty",
   "path": "X:\\Backside\\_models\\_Models\\P04_paper_recommender",
   "port": null,
-  "feeds_into": ["paper-recommender"],
-  "fed_by": ["sbert-embedder"],
+  "feeds_into": [
+    "paper-recommender"
+  ],
+  "fed_by": [
+    "sbert-embedder"
+  ],
   "config": {
     "notes": "Slot folder is empty; the working implementation is X:\\Backside\\stations\\paper-recommender.station."
+  },
+  "_meta": {
+    "canonical_registry": "../MODEL_REGISTRY.json",
+    "slot_key": "P04_paper_recommender",
+    "mirror_role": "Nested preference slot mirror; update models/MODEL_REGISTRY.json first."
   }
 }

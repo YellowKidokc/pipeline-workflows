@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ExportManifest",
+  "description": "Manifest for files exported from a workflow or station. Describes outputs without embedding generated payloads.",
+  "type": "object",
+  "required": ["export_id", "created_at", "source", "artifacts"],
+  "properties": {
+    "export_id": { "type": "string" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "source": {
+      "type": "object",
+      "required": ["workflow"],
+      "properties": {
+        "workflow": { "type": "string" },
+        "packet_id": { "type": "string" },
+        "station": { "type": "string" },
+        "input_hash": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "type"],
+        "properties": {
+          "path": { "type": "string", "description": "Output path or URI; generated content stays outside the contract file" },
+          "type": { "type": "string", "description": "Artifact kind such as markdown, html, json, audio, image, or manifest" },
+          "sha256": { "type": "string" },
+          "bytes": { "type": "integer", "minimum": 0 },
+          "destination": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "metadata": { "type": "object", "additionalProperties": true }
+  },
+  "additionalProperties": true
+}

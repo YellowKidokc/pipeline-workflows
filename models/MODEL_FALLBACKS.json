@@ -1,0 +1,27 @@
+{
+  "_meta": {
+    "description": "Canonical fallback map for degraded model slots. Resolve slot identity in models/MODEL_REGISTRY.json first.",
+    "updated": "2026-06-12",
+    "canonical_registry": "models/MODEL_REGISTRY.json",
+    "rule": "Fallback paths are NAS runtime references only; no fallback weights are committed."
+  },
+  "fallbacks": {
+    "sbert_minilm": {
+      "for_slot": "M02_embedder",
+      "reason": "M02 metadata/weight files are degraded; MiniLM is the safe canonical embedder copy.",
+      "path": "X:\\Backside\\_models\\_Models\\sbert_minilm",
+      "consumers": [
+        "X:\\BIL\\vectorize_mda.py",
+        "map_framework_coverage.py"
+      ],
+      "retirement_condition": "M02_embedder is repaired and verified non-zero."
+    },
+    "deberta_nli": {
+      "for_slot": "M03_contradiction",
+      "reason": "M03 metadata files are degraded; DeBERTa NLI is the safe canonical contradiction fallback.",
+      "path": "X:\\Backside\\_models\\_Models\\deberta_nli",
+      "consumers": [],
+      "retirement_condition": "M03_contradiction is repaired and verified non-zero."
+    }
+  }
+}
