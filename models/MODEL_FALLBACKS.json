@@ -3,7 +3,10 @@
     "description": "Canonical fallback map for degraded model slots. Resolve slot identity in models/MODEL_REGISTRY.json first.",
     "updated": "2026-06-12",
     "canonical_registry": "models/MODEL_REGISTRY.json",
-    "rule": "Fallback paths are NAS runtime references only; no fallback weights are committed."
+    "rule": "Fallback paths are NAS runtime references only; no fallback weights are committed.",
+    "current_models_root": "X:\\Backside\\_models\\_Models",
+    "proposed_models_root": "X:\\Models",
+    "models_root_env": "MODELS_ROOT"
   },
   "fallbacks": {
     "sbert_minilm": {
@@ -14,14 +17,20 @@
         "X:\\BIL\\vectorize_mda.py",
         "map_framework_coverage.py"
       ],
-      "retirement_condition": "M02_embedder is repaired and verified non-zero."
+      "retirement_condition": "M02_embedder is repaired and verified non-zero.",
+      "current_path": "X:\\Backside\\_models\\_Models\\sbert_minilm",
+      "target_path": "X:\\Models\\_fallbacks\\sbert_minilm",
+      "target_bucket": "_fallbacks"
     },
     "deberta_nli": {
       "for_slot": "M03_contradiction",
       "reason": "M03 metadata files are degraded; DeBERTa NLI is the safe canonical contradiction fallback.",
       "path": "X:\\Backside\\_models\\_Models\\deberta_nli",
       "consumers": [],
-      "retirement_condition": "M03_contradiction is repaired and verified non-zero."
+      "retirement_condition": "M03_contradiction is repaired and verified non-zero.",
+      "current_path": "X:\\Backside\\_models\\_Models\\deberta_nli",
+      "target_path": "X:\\Models\\_fallbacks\\deberta_nli",
+      "target_bucket": "_fallbacks"
     }
   }
 }
