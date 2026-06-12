@@ -5,9 +5,20 @@
   "status": "installed",
   "path": "X:\\Backside\\_models\\_Models\\P07_markovify",
   "port": null,
-  "feeds_into": ["autocomplete"],
-  "fed_by": ["P01_implicit", "clipboard_history", "vault_text"],
+  "feeds_into": [
+    "autocomplete"
+  ],
+  "fed_by": [
+    "P01_implicit",
+    "clipboard_history",
+    "vault_text"
+  ],
   "config": {
     "notes": "Installed, needs training corpus from clipboard + vault writing."
+  },
+  "_meta": {
+    "canonical_registry": "../MODEL_REGISTRY.json",
+    "slot_key": "P07_markovify",
+    "mirror_role": "Nested preference slot mirror; update models/MODEL_REGISTRY.json first."
   }
 }

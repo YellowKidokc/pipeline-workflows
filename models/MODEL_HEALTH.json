@@ -1,0 +1,90 @@
+{
+  "_meta": {
+    "description": "Human-auditable health overlay for the model slots in models/MODEL_REGISTRY.json.",
+    "updated": "2026-06-12",
+    "canonical_registry": "models/MODEL_REGISTRY.json",
+    "rule": "This file describes slot readiness only. It does not contain weights or generated artifacts."
+  },
+  "summary": {
+    "active": [
+      "M01_summarizer",
+      "M04_imager",
+      "M05_transcriber",
+      "M06_llm",
+      "P05_ppk",
+      "P06_river"
+    ],
+    "installed": [
+      "M07_fact_verify",
+      "M08_contradiction_deep",
+      "M09_claim_extract",
+      "M10_timeline",
+      "P01_implicit",
+      "P07_markovify"
+    ],
+    "degraded": [
+      "M02_embedder",
+      "M03_contradiction"
+    ],
+    "placeholder": [
+      "P02_recbole",
+      "P03_lightfm"
+    ],
+    "empty": [
+      "M11_math_verify",
+      "M12_paper_review",
+      "P04_paper_recommender"
+    ]
+  },
+  "slots": {
+    "M02_embedder": {
+      "health": "degraded",
+      "registry_status": "installed",
+      "issue": "Zero-byte config.json/model.safetensors/tokenizer.json reported in NAS audits.",
+      "fallback_key": "sbert_minilm",
+      "action": "Repair M02 before retiring the safe MiniLM fallback copy."
+    },
+    "M03_contradiction": {
+      "health": "degraded",
+      "registry_status": "installed",
+      "issue": "Zero-byte metadata files reported in NAS audits.",
+      "fallback_key": "deberta_nli",
+      "action": "Repair M03 before retiring the safe DeBERTa NLI fallback copy."
+    },
+    "M11_math_verify": {
+      "health": "empty",
+      "registry_status": "empty",
+      "issue": "Slot folder exists on NAS, but no weights are assigned yet.",
+      "fallback_key": null,
+      "action": "Treat as unavailable until an approval packet assigns weights."
+    },
+    "M12_paper_review": {
+      "health": "empty",
+      "registry_status": "empty",
+      "issue": "Slot folder exists on NAS, but no weights are assigned yet.",
+      "fallback_key": null,
+      "action": "Treat as unavailable until an approval packet assigns weights."
+    },
+    "P02_recbole": {
+      "health": "placeholder",
+      "registry_status": "placeholder",
+      "issue": "Preference slot is reserved but not wired.",
+      "fallback_key": null,
+      "action": "Do not route live BIL decisions here until wiring is approved."
+    },
+    "P03_lightfm": {
+      "health": "placeholder",
+      "registry_status": "placeholder",
+      "issue": "Preference slot is reserved but not wired.",
+      "fallback_key": null,
+      "action": "Do not route live BIL decisions here until wiring is approved."
+    },
+    "P04_paper_recommender": {
+      "health": "empty",
+      "registry_status": "empty",
+      "issue": "Slot folder is empty; working implementation lives as a station mirror on NAS.",
+      "fallback_key": null,
+      "action": "Use the paper-recommender station; do not infer model weights exist."
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PreferenceEvent",
+  "description": "BIL preference-learning event emitted by approvals, corrections, reuse, browsing, clipboard, or station routing observations.",
+  "type": "object",
+  "required": ["event_type", "timestamp", "source", "signal", "weight"],
+  "properties": {
+    "event_type": { "const": "preference_event" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "source": { "type": "string", "description": "Emitter such as approval_gate, correction_logger, clipboard, browser, station_runner, or bil_server" },
+    "signal": {
+      "enum": ["manual_approval", "manual_correction", "file_reused", "copied_text", "bookmark_save", "long_dwell_scroll", "opened_tab", "accidental_visit"]
+    },
+    "weight": { "type": "number", "minimum": 0, "maximum": 1, "description": "BIL learning strength for this observation" },
+    "subject": { "type": "string", "description": "File, station, route, document, or preference target being scored" },
+    "workflow": { "type": "string" },
+    "station": { "type": "string" },
+    "packet_id": { "type": "string" },
+    "metadata": { "type": "object", "additionalProperties": true }
+  },
+  "additionalProperties": true
+}

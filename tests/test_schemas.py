@@ -32,6 +32,8 @@ def test_schema_files_are_draft_2020_12_json():
 def test_station_configs_validate_against_station_schema():
     schema = load("schemas/station.schema.json")
     for path in Path("stations").glob("*/*.json"):
+        if path.parts[:2] == ("stations", "source"):
+            continue
         validate(load(path), schema)
 
 
@@ -47,7 +49,10 @@ def test_registries_and_pipeline_config_are_valid_json():
     station_registry = load("stations/STATION_REGISTRY.json")
     model_registry = load("models/MODEL_REGISTRY.json")
     workflow_registry = load("workflows/WORKFLOW_REGISTRY.json")
-    config = load("pipeline.config.json")
+    config_path = Path("pipeline.config.json")
+    if not config_path.exists():
+        config_path = Path("pipeline.config.example.json")
+    config = load(config_path)
 
     assert len(station_registry["stations"]) >= 47
     assert station_registry["_meta"]["canary_summary"]

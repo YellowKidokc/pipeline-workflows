@@ -42,15 +42,24 @@ Passive behavior is useful but weaker.
 | opened_tab | 0.2 |
 | accidental_visit | 0.0 |
 
-These weights are mirrored in `models/MODEL_REGISTRY.json` → `bil_signal_weights`.
+These weights are mirrored in `models/MODEL_REGISTRY.json` → `bil_signal_weights`. Preference event shape is documented at `contracts/schemas/preference-event.schema.json` and mirrored at `schemas/preference-event.schema.json`.
 
 ## Correction Data
 
 `scripts/correction_logger.py` writes structured JSONL
-(`logs/corrections/corrections.jsonl`, schema: `schemas/correction.schema.json`)
+(`logs/corrections/corrections.jsonl`, compatibility schema: `schemas/correction.schema.json`, contract mirror: `contracts/schemas/correction.schema.json`)
 and pushes each event to BIL. If BIL is offline, the local JSONL remains the
 source of truth and can be replayed later. The correction log IS the training
 data — without it, the system never gets smarter.
+
+
+## BIL Source Snapshot
+
+The repo-safe BIL source shape lives at `preferences/engines/bil/`. It maps
+browser, folder, and manual observations into `contracts/schemas/preference-event.schema.json`
+for the P06 River hot loop. This is source/spec only: live services, JSONL event
+streams, learned River state, browser installation, and PPK persistence remain
+runtime/NAS-side.
 
 ## Portable Identity
 
