@@ -12,6 +12,7 @@
     "media-pipeline": { "file": "workflows/media-pipeline.json", "phase": 2, "status": "planned", "description": "YouTube/audio -> transcript -> classify -> vault" },
     "knowledge-graph": { "file": "workflows/knowledge-graph.json", "phase": 2, "status": "planned", "description": "Claims -> vectors -> graph -> Postgres" },
     "preference-learning": { "file": "workflows/preference-learning.json", "phase": 3, "status": "planned", "description": "Continuous preference feedback loop" },
+    "prompt-evolution": { "file": "workflows/prompt-evolution.json", "phase": 1, "status": "planned", "description": "Prompts become proposed workflow/repo changes with approval and BIL feedback" },
     "idle-processor": { "file": "workflows/idle-processor.json", "phase": 3, "status": "planned", "description": "Scheduled idle-time batch processing" }
   }
 }

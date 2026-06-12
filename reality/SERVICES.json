@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "description": "Repo-safe service map. No credentials.",
+    "updated": "2026-06-12"
+  },
+  "services": {
+    "bil_server": {
+      "url": "http://localhost:8420",
+      "role": "preference event intake and online learning"
+    },
+    "ollama": {
+      "url": "http://localhost:11434",
+      "default_model": "phi4",
+      "role": "local LLM checkpoints"
+    },
+    "postgres": {
+      "host_env": "POSTGRES_HOST",
+      "port_env": "POSTGRES_PORT",
+      "role": "warehouse and graph persistence"
+    },
+    "comms_hub": {
+      "url": "https://comms.dlowehomelab.com",
+      "role": "AI communications hub"
+    }
+  }
+}

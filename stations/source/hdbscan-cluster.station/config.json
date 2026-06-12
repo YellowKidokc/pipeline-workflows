@@ -1,0 +1,31 @@
+{
+    "python_path": "C:\\Users\\lowes\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "source": {
+        "type": "postgres",
+        "table": "youtube_apologetics",
+        "id_col": "id",
+        "embedding_col": "sbert_embedding",
+        "cluster_col": "cluster_id",
+        "label_col": "deberta_label",
+        "title_col": "title",
+        "where": null
+    },
+    "files_source": {
+        "input_npz": "",
+        "output_dir": "EXPORTS\\csv"
+    },
+    "model_settings": {
+        "min_cluster_size": 10,
+        "min_samples": null,
+        "metric": "euclidean",
+        "cluster_selection_method": "eom",
+        "cluster_selection_epsilon": 0.0
+    },
+    "summary": {
+        "top_titles_per_cluster": 5,
+        "report_path": "EXPORTS\\csv\\hdbscan_summary.csv",
+        "flag_unmapped_threshold": 0.5
+    },
+    "log_dir": "_LOGS",
+    "model_cache_dir": "D:\\brain\\_MODELS\\hub"
+}

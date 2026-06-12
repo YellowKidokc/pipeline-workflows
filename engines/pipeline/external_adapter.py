@@ -19,14 +19,16 @@ import json
 import subprocess
 import shutil
 import logging
-import hashlib
+import os
+import re
+import sys
 from pathlib import Path
 from typing import Optional
-from datetime import datetime
 
 from .station_base import StationBase, StationVerdict, Manifest, SignalType
 
 logger = logging.getLogger("FORGE.adapter")
+PACKET_LEVEL_STATIONS = {"file-intelligence", "preference-engine", "classify-documents"}
 
 
 class ExternalStationAdapter(StationBase):
@@ -56,7 +58,14 @@ class ExternalStationAdapter(StationBase):
         self.station_path = Path(station_path)
         self.has_run_bat = has_run_bat
         self.timeout_seconds = timeout_seconds
-        self.run_bat = self.station_path / "RUN.bat"
+        self.run_bat = self._find_run_script()
+
+    def _find_run_script(self) -> Path:
+        for name in ("RUN.bat", "START_BIL.bat", "RUN_PIPELINE.bat", "run.bat"):
+            candidate = self.station_path / name
+            if candidate.exists():
+                return candidate
+        return self.station_path / "RUN.bat"
 
     @classmethod
     def from_registry(
@@ -88,6 +97,7 @@ class ExternalStationAdapter(StationBase):
         station_path = Path(entry["path"])
         input_dir = str(station_path / "INPUT")
         output_dir = str(station_path / "OUTPUT")
+        timeout_seconds = int(entry.get("timeout_seconds", 300))
         # Some stations use DROP_PAPERS_HERE instead of INPUT
         if not Path(input_dir).exists():
             alt_input = station_path / "DROP_PAPERS_HERE"
@@ -106,6 +116,7 @@ class ExternalStationAdapter(StationBase):
             input_dir=input_dir,
             output_dir=output_dir,
             has_run_bat=entry.get("has_run_bat", True),
+            timeout_seconds=timeout_seconds,
         )
 
     def process(self, file_path: Path, manifest: Manifest) -> tuple[StationVerdict, float, str]:
@@ -118,12 +129,16 @@ class ExternalStationAdapter(StationBase):
         3. Check OUTPUT dir for results
         4. Return verdict based on what happened
         """
-        if not self.has_run_bat or not self.run_bat.exists():
-            self.emit_signal(
-                SignalType.ERROR,
-                f"Station {self.name} has no RUN.bat at {self.run_bat}",
-            )
-            return StationVerdict.FAIL, 0.0, f"No RUN.bat found at {self.station_path}"
+        packet = packet_path(manifest)
+        if self.name in PACKET_LEVEL_STATIONS:
+            marker = packet / "LOGS" / f"{self.name}.packet.done" if packet else None
+            if marker and marker.exists():
+                return StationVerdict.PASS, 1.0, f"{self.name} already ran for packet"
+
+        file_hash = manifest.file_hash or Manifest.compute_hash(str(file_path))
+        file_marker = done_marker(packet, self.name, file_hash)
+        if file_marker and file_marker.exists():
+            return StationVerdict.PASS, 1.0, f"Idempotency: already processed (hash={file_hash})"
 
         # 1. Copy input file to station's INPUT dir (NEVER move originals)
         station_input = self.station_path / "INPUT"
@@ -131,34 +146,28 @@ class ExternalStationAdapter(StationBase):
         dest_file = station_input / file_path.name
         shutil.copy2(str(file_path), str(dest_file))
 
-        # 2. Check idempotency — has this exact file been processed before?
         archive = self.station_path / "ARCHIVE"
         if archive.exists():
-            file_hash = Manifest.compute_hash(str(file_path))
             for archived in archive.iterdir():
                 if archived.is_file():
                     try:
                         if Manifest.compute_hash(str(archived)) == file_hash:
-                            return (
-                                StationVerdict.PASS,
-                                1.0,
-                                f"Idempotency: already processed (hash={file_hash})",
-                            )
+                            mark_done(file_marker)
+                            return StationVerdict.PASS, 1.0, f"Idempotency: already processed (hash={file_hash})"
                     except Exception:
                         continue
 
-        # 3. Run RUN.bat
+        # 2. Run station entrypoint. Batch stations get the packet contract via env;
+        # Python module stations receive the concrete file and packet output path.
         try:
-            result = subprocess.run(
-                ["cmd.exe", "/d", "/c", str(self.run_bat)],
-                capture_output=True,
-                text=True,
-                timeout=self.timeout_seconds,
-                cwd=str(self.station_path),
-            )
+            before = snapshot_files(self.station_path / "OUTPUT") | snapshot_files(packet / "OUTPUT" if packet else None)
+            result = self._run_entrypoint(dest_file, manifest)
             exit_code = result.returncode
             stdout = result.stdout.strip()
             stderr = result.stderr.strip()
+            fis_errors = re.search(r"Errors:\s*([1-9]\d*)", stdout + "\n" + stderr)
+            if self.name == "file-intelligence" and ("[E]" in stdout or "[E]" in stderr or fis_errors):
+                exit_code = 1
         except subprocess.TimeoutExpired:
             self.emit_signal(
                 SignalType.ERROR,
@@ -169,15 +178,19 @@ class ExternalStationAdapter(StationBase):
             self.emit_signal(SignalType.ERROR, f"Station {self.name} execution error: {e}")
             return StationVerdict.FAIL, 0.0, f"Execution error: {e}"
 
-        # 4. Check for output
+        # 3. Check for output
         station_output = self.station_path / "OUTPUT"
-        output_files = list(station_output.glob("*")) if station_output.exists() else []
-        new_outputs = [f for f in output_files if f.is_file()]
+        packet_output = packet / "OUTPUT" if packet else None
+        after = snapshot_files(station_output) | snapshot_files(packet_output)
+        new_outputs = sorted(after - before)
 
         if exit_code == 0:
             notes = f"Exit 0. stdout={stdout[:200]}" if stdout else "Exit 0. No stdout."
             if stderr:
                 notes += f" stderr={stderr[:200]}"
+            if new_outputs:
+                notes += f" outputs={len(new_outputs)}"
+            mark_done(file_marker)
             self.emit_signal(SignalType.READY, f"{self.name} completed: {file_path.name}")
             return StationVerdict.PASS, 1.0, notes
         elif exit_code == 2:
@@ -190,5 +203,136 @@ class ExternalStationAdapter(StationBase):
             )
             return StationVerdict.FAIL, 0.0, f"Exit {exit_code}. stderr={stderr[:200]}"
 
+    def _run_entrypoint(self, dest_file: Path, manifest: Manifest) -> subprocess.CompletedProcess:
+        packet = packet_path(manifest)
+        if self.name in PACKET_LEVEL_STATIONS:
+            marker = packet / "LOGS" / f"{self.name}.packet.done" if packet else None
+            if marker and marker.exists():
+                return subprocess.CompletedProcess(args=[], returncode=0, stdout=f"{self.name} already ran for packet", stderr="")
+        else:
+            marker = None
+        env = dict(os.environ)
+        env["FORGE_INPUT"] = str((packet / "INPUT") if packet else self.input_dir)
+        env["FORGE_OUTPUT"] = str((packet / "OUTPUT") if packet else self.output_dir)
+        env["FORGE_PACKET"] = str(packet or "")
+        env["FORGE_FILE"] = str(dest_file)
+        env["PYTHONUTF8"] = "1"
+        pipeline_py = self.station_path / "pipeline.py"
+        if self.name == "file-intelligence":
+            result = self._run_file_intelligence(packet, env)
+            if marker and result.returncode == 0:
+                marker.write_text("ok", encoding="utf-8")
+            return result
+        if pipeline_py.exists():
+            result = self._run_pipeline_py(packet, env)
+            if marker and self.name in PACKET_LEVEL_STATIONS and result.returncode == 0:
+                marker.write_text("ok", encoding="utf-8")
+            return result
+        if self.run_bat.exists():
+            cmd = ["cmd.exe", "/d", "/c", str(self.run_bat)]
+            if self.name == "file-intelligence":
+                cmd.extend(["backfill", "--path", str((packet / "INPUT") if packet else self.input_dir)])
+            result = subprocess.run(
+                cmd,
+                capture_output=True,
+                text=True,
+                timeout=self.timeout_seconds,
+                cwd=str(self.station_path),
+                env=env,
+            )
+            if marker and self.name in PACKET_LEVEL_STATIONS and result.returncode in {0, 2}:
+                marker.write_text("ok", encoding="utf-8")
+            return result
+        pyproject = self.station_path / "pyproject.toml"
+        convert_module = self.station_path / "src" / "theophysics_conversion" / "convert.py"
+        if pyproject.exists() and convert_module.exists():
+            existing = env.get("PYTHONPATH", "")
+            env["PYTHONPATH"] = str(self.station_path / "src") + (os.pathsep + existing if existing else "")
+            return subprocess.run(
+                [
+                    sys.executable,
+                    "-m",
+                    "theophysics_conversion.convert",
+                    str(dest_file),
+                    "--export-root",
+                    str((packet / "OUTPUT") if packet else self.output_dir),
+                ],
+                capture_output=True,
+                text=True,
+                timeout=self.timeout_seconds,
+                cwd=str(self.station_path),
+                env=env,
+            )
+        self.emit_signal(SignalType.ERROR, f"Station {self.name} has no runnable entrypoint at {self.station_path}")
+        return subprocess.CompletedProcess(args=[], returncode=1, stdout="", stderr=f"No runnable entrypoint in {self.station_path}")
+
+    def _run_file_intelligence(self, packet: Optional[Path], env: dict[str, str]) -> subprocess.CompletedProcess:
+        existing = env.get("PYTHONPATH", "")
+        env["PYTHONPATH"] = str(self.station_path) + (os.pathsep + existing if existing else "")
+        return subprocess.run(
+            [sys.executable, "-m", "fis.backfill", "--path", str((packet / "INPUT") if packet else self.input_dir)],
+            capture_output=True,
+            text=True,
+            timeout=self.timeout_seconds,
+            cwd=str(self.station_path),
+            env=env,
+        )
+
+    def _run_pipeline_py(self, packet: Optional[Path], env: dict[str, str]) -> subprocess.CompletedProcess:
+        config_path = self.station_path / "config.json"
+        original = None
+        if config_path.exists():
+            original = config_path.read_text(encoding="utf-8")
+            try:
+                config = json.loads(original)
+            except json.JSONDecodeError:
+                config = {}
+        else:
+            config = {}
+        config["input_dir"] = str((packet / "INPUT") if packet else self.input_dir)
+        config["output_dir"] = str((packet / "OUTPUT" / self.name) if packet else self.output_dir)
+        config.setdefault("text_extensions", [".txt", ".md", ".html"])
+        if ".html" not in config.get("text_extensions", []):
+            config["text_extensions"] = list(config.get("text_extensions", [])) + [".html"]
+        try:
+            config_path.write_text(json.dumps(config, indent=2), encoding="utf-8")
+            return subprocess.run(
+                [sys.executable, str(self.station_path / "pipeline.py")],
+                capture_output=True,
+                text=True,
+                timeout=self.timeout_seconds,
+                cwd=str(self.station_path),
+                env=env,
+            )
+        finally:
+            if original is not None:
+                config_path.write_text(original, encoding="utf-8")
+            elif config_path.exists():
+                config_path.unlink()
+
     def __repr__(self):
         return f"<ExternalStation:{self.name} path={self.station_path} run_bat={self.has_run_bat}>"
+
+
+def packet_path(manifest: Manifest) -> Optional[Path]:
+    packet = manifest.metadata.get("packet")
+    return Path(packet) if packet else None
+
+
+def done_marker(packet: Optional[Path], station_name: str, file_hash: str) -> Optional[Path]:
+    if not packet:
+        return None
+    return packet / "LOGS" / f"{station_name}.{file_hash}.done"
+
+
+def mark_done(marker: Optional[Path]) -> None:
+    if not marker:
+        return
+    marker.parent.mkdir(parents=True, exist_ok=True)
+    marker.write_text("ok", encoding="utf-8")
+
+
+def snapshot_files(path: Optional[Path]) -> set[str]:
+    if not path or not path.exists():
+        return set()
+    return {str(file_path) for file_path in path.rglob("*") if file_path.is_file()}

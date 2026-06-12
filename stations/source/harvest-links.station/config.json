@@ -1,0 +1,24 @@
+{
+    "name": "harvest-links",
+    "description": "URLs (Excel/CSV/Postgres query) -> fetch + extract text -> SBERT embed -> DeBERTa classify -> HDBSCAN cluster -> Postgres + CSV.",
+    "input": {
+        "type": "excel",
+        "path": "",
+        "url_column": "url",
+        "postgres_query": "SELECT id, url FROM harvested_links_apologetics WHERE id NOT IN (SELECT source_id FROM harvest_results) LIMIT 500"
+    },
+    "fetch": {
+        "user_agent": "Mozilla/5.0 (compatible; BrainHarvester/1.0; +contact_david)",
+        "timeout_sec": 20,
+        "max_chars": 20000,
+        "skip_if_status_not_200": true,
+        "extract_strategy": "readability_then_body"
+    },
+    "target": {
+        "table": "harvest_results",
+        "ensure_table": true
+    },
+    "summary_csv": "X:\\Backside\\stations\\harvest-links.station\\EXPORTS\\harvest_summary_YYYYMMDD.csv",
+    "log_dir": "X:\\Backside\\_LOGS",
+    "cluster_after": true
+}

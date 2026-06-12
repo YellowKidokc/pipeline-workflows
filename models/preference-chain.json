@@ -1,0 +1,14 @@
+{
+  "_meta": {
+    "description": "Preference chain order and learning loops.",
+    "updated": "2026-06-12"
+  },
+  "chain": ["P06_river", "P05_ppk", "P01_implicit", "P03_lightfm", "P07_markovify"],
+  "loops": {
+    "hot": ["approve.py", "correction_logger.py", "P06_river"],
+    "identity": ["P06_river", "P05_ppk"],
+    "pattern": ["corrections", "station_cooccurrence", "P01_implicit", "P03_lightfm"],
+    "voice": ["accepted_text", "vault_text", "P07_markovify"],
+    "audit": ["monthly_review", "six_month_review", "defaults_update"]
+  }
+}

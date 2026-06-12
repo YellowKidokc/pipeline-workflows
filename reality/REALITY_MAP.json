@@ -1,0 +1,35 @@
+{
+  "_meta": {
+    "description": "Repo-safe map of the FORGE/Pipeline runtime reality.",
+    "updated": "2026-06-12",
+    "rule": "Paths and contracts belong here; heavy artifacts and secrets stay on NAS/local machines."
+  },
+  "system": {
+    "fis": {
+      "role": "perception",
+      "question": "What is this file?",
+      "registry_key": "file-intelligence"
+    },
+    "bil": {
+      "role": "preference",
+      "question": "Does David care?",
+      "service": "http://localhost:8420"
+    },
+    "pipeline": {
+      "role": "action",
+      "question": "What happens next?",
+      "repo": "https://github.com/YellowKidokc/pipeline-workflows"
+    }
+  },
+  "doctrine": {
+    "vectorize_before_classify": true,
+    "copy_inputs_never_move_originals": true,
+    "human_approval_before_destructive_actions": true,
+    "repo_is_governor_nas_is_runtime": true
+  },
+  "registries": {
+    "stations": "stations/STATION_REGISTRY.json",
+    "models": "models/MODEL_REGISTRY.json",
+    "workflows": "workflows/WORKFLOW_REGISTRY.json"
+  }
+}

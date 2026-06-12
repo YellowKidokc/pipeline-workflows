@@ -1,0 +1,20 @@
+{
+  "_meta": {
+    "description": "Fallbacks for degraded or empty model slots.",
+    "updated": "2026-06-12"
+  },
+  "fallbacks": {
+    "M02_embedder": {
+      "fallback": "X:\\Backside\\_models\\_Models\\sbert_minilm",
+      "reason": "M02 has zero-byte metadata/weight files."
+    },
+    "M03_contradiction": {
+      "fallback": "X:\\Backside\\_models\\_Models\\deberta_nli",
+      "reason": "M03 has zero-byte metadata files."
+    },
+    "P04_paper_recommender": {
+      "fallback": "X:\\Backside\\stations\\paper-recommender.station",
+      "reason": "Slot folder is empty; working implementation is station-based."
+    }
+  }
+}

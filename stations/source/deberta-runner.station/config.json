@@ -1,0 +1,50 @@
+{
+    "python_path": "C:\\Users\\lowes\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "source": {
+        "type": "postgres",
+        "table": "youtube_apologetics",
+        "id_col": "id",
+        "text_cols": ["title", "description"],
+        "label_col": "deberta_label",
+        "confidence_col": "deberta_confidence",
+        "where": null
+    },
+    "files_source": {
+        "input_dir": "",
+        "output_dir": "EXPORTS\\json",
+        "text_extensions": [".txt", ".md"]
+    },
+    "labels": [
+        "evidence for God existence",
+        "resurrection of Jesus",
+        "Bible contradictions",
+        "evolution vs creation",
+        "Old Testament violence",
+        "religion as coping mechanism",
+        "problem of evil and suffering",
+        "Bible written by humans",
+        "religion causes harm",
+        "morality without God",
+        "religious indoctrination",
+        "intelligent design fine tuning",
+        "which God is real",
+        "ontological argument",
+        "slavery in the Bible",
+        "God is unfalsifiable",
+        "God of the gaps",
+        "cherry picking Bible",
+        "prayer does not work",
+        "cosmological argument",
+        "divine hiddenness"
+    ],
+    "model_settings": {
+        "model_name": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+        "device": "auto",
+        "batch_size": 50,
+        "multi_label": false,
+        "max_text_chars": 2000,
+        "hypothesis_template": "This text is about {}."
+    },
+    "log_dir": "_LOGS",
+    "model_cache_dir": "D:\\brain\\_MODELS\\hub"
+}

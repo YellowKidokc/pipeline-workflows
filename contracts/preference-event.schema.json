@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://faiththruphysics.com/schemas/preference-event.schema.json",
+  "title": "FORGE Preference Event",
+  "type": "object",
+  "required": ["event_type", "timestamp", "source", "weight"],
+  "properties": {
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "human_correction",
+        "manual_approval",
+        "manual_rejection",
+        "file_reused",
+        "copied_text",
+        "bookmark_save",
+        "long_dwell_scroll",
+        "opened_tab",
+        "workflow_selected",
+        "route_override"
+      ]
+    },
+    "timestamp": { "type": "string" },
+    "source": { "type": "string" },
+    "workflow": { "type": "string" },
+    "stage": { "type": "string" },
+    "file_path": { "type": "string" },
+    "file_hash": { "type": "string" },
+    "old_value": {},
+    "new_value": {},
+    "reason": { "type": "string" },
+    "weight": { "type": "number", "minimum": 0, "maximum": 1 },
+    "feeds": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": ["P06_river", "P05_ppk"]
+    }
+  },
+  "additionalProperties": true
+}

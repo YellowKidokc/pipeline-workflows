@@ -1,0 +1,20 @@
+{
+  "_meta": {
+    "description": "Repo-safe model health summary. Detailed artifacts stay on NAS.",
+    "updated": "2026-06-12"
+  },
+  "health_sources": [
+    "models/MODEL_REGISTRY.json",
+    "NAS model audits",
+    "station canary reports"
+  ],
+  "known_issues": {
+    "M02_embedder": "Degraded; use sbert_minilm fallback until repaired.",
+    "M03_contradiction": "Degraded; use deberta_nli fallback until repaired.",
+    "M11_math_verify": "Empty slot.",
+    "M12_paper_review": "Empty slot.",
+    "P02_recbole": "Placeholder.",
+    "P03_lightfm": "Placeholder.",
+    "P04_paper_recommender": "Slot empty; implementation exists as station."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "station": "mda-citation-spine",
+  "version": "0.1.0",
+  "purpose": "Run copied OpenAI NLP stages against MDA articles and normalize outputs into claims, citation, and falsification packets.",
+  "inputs": {
+    "articles_dir": "X:\\WORKFLOWS\\MDA-PUBLICATION\\01_LOSSLESS\\articles",
+    "existing_claim_audits_dir": "X:\\Backside\\MDA\\03_FINAL_READY",
+    "existing_rigor_dir": "X:\\Backside\\MDA\\06_RIGOR_GATES\\Unsorted"
+  },
+  "outputs": {
+    "exports_dir": "X:\\Backside\\stations\\mda-citation-spine.station\\EXPORTS",
+    "workflow_exports_hint": "X:\\WORKFLOWS\\MDA-PUBLICATION\\EXPORTS"
+  },
+  "openai_runner": {
+    "path": "X:\\Backside\\stations\\mda-citation-spine.station\\openai_runner\\run_all.py",
+    "copied_from": "Z:\\_Theophysics_v3\\00_SYSTEM\\01_ENGINE\\81_OPENAI_BLANK\\run_all.py",
+    "default_tools": "7q_judge,academic,extractor",
+    "annotate_source": false,
+    "api_key_source": "OPENAI_API_KEY environment variable preferred; no live key is stored in this station."
+  },
+  "rules": [
+    "Do not mutate 01_LOSSLESS articles.",
+    "Do not copy secret config.txt files from old OpenAI folders.",
+    "Candidate citations are not verified citations.",
+    "Every extracted claim needs a kill condition or gets flagged NEEDS_KILL_CONDITION.",
+    "Outputs are review packets until a human promotes them."
+  ]
+}

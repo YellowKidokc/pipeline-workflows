@@ -1,0 +1,17 @@
+{
+  "name": "session-handoff-drop",
+  "description": "Drop a session recap page into DROP_HERE and generate a machine-readable JSON manifest plus a markdown startup brief. Mirrors outputs to NAS and vault session-log locations.",
+  "input_dir": "X:\\Backside\\stations\\session-handoff-drop.station\\DROP_HERE",
+  "output_dir": "X:\\Backside\\stations\\session-handoff-drop.station\\EXPORTS",
+  "archive_dir": "X:\\Backside\\stations\\session-handoff-drop.station\\ARCHIVE",
+  "vault_output_dir": "X:\\Backside\\stations\\session-handoff-drop.station\\MIRROR_VAULT",
+  "nas_output_dir": "X:\\Backside\\stations\\session-handoff-drop.station\\MIRROR_NAS",
+  "default_ai_partner": "Codex",
+  "default_date": "2026-05-04",
+  "canonical_inputs": [
+    "X:\\Backside\\stations\\session-handoff-drop.station\\REFERENCE\\02_CANONICAL_FRAMING.md",
+    "X:\\Backside\\stations\\session-handoff-drop.station\\REFERENCE\\_TEN_LAWS_EQUATIONS.md"
+  ],
+  "text_extensions": [".txt", ".md", ".html", ".htm"],
+  "log_dir": "X:\\Backside\\_logs"
+}

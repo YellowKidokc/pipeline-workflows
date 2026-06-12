@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://faiththruphysics.com/schemas/export-manifest.schema.json",
+  "title": "FORGE Export Manifest",
+  "description": "Local copy of the export manifest contract for export folders. Canonical contract also lives at contracts/export-manifest.schema.json.",
+  "type": "object",
+  "required": ["name", "status", "source_map", "created_at"],
+  "properties": {
+    "name": { "type": "string" },
+    "status": { "type": "string", "enum": ["active", "ready", "published", "archived"] },
+    "series_total": { "type": "integer", "minimum": 0 },
+    "series_ready": { "type": "integer", "minimum": 0 },
+    "source_map": { "type": "array" },
+    "cleanup_candidates": { "type": "array" },
+    "created_at": { "type": "string" },
+    "updated_at": { "type": "string" }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,39 @@
+{
+  "name": "reading-level-glossary",
+  "description": "Scan text/markdown/html for target reading grade and produce glossary support for difficult terms.",
+  "input_dir": "X:\\Backside\\stations\\reading-level-glossary.station\\DROP_HERE",
+  "output_dir": "X:\\Backside\\stations\\reading-level-glossary.station\\EXPORTS",
+  "archive_dir": "X:\\Backside\\stations\\reading-level-glossary.station\\ARCHIVE",
+  "target_grade": 8.0,
+  "target_label": "8th grade",
+  "max_glossary_terms": 80,
+  "min_word_count": 20,
+  "recursive": false,
+  "archive_inputs": false,
+  "text_extensions": [
+    ".txt",
+    ".md",
+    ".html",
+    ".htm"
+  ],
+  "always_glossary_terms": [
+    "atonement",
+    "axiom",
+    "biaxiosum",
+    "canonical",
+    "coherence",
+    "consciousness",
+    "decoherence",
+    "entropy",
+    "epistemology",
+    "grace",
+    "isomorphism",
+    "logos",
+    "noether",
+    "ontology",
+    "sigma",
+    "substrate",
+    "symmetry",
+    "theophysics"
+  ]
+}

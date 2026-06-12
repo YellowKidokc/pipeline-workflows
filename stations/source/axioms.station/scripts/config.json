@@ -1,0 +1,37 @@
+{
+  "name": "axioms-paper-grader",
+  "description": "Axioms workflow intake for paper scoring, claim extraction, 7Q forward/reverse review, axiom snapshots, and report exports.",
+  "input_dir": "\\\\dlowenas\\brain\\Backside\\workflows\\axioms.workflow\\00_INBOX_DROP_PAPERS_HERE",
+  "output_dir": "\\\\dlowenas\\brain\\Backside\\workflows\\axioms.workflow\\01_OUTBOX_REPORTS",
+  "archive_dir": "\\\\dlowenas\\brain\\Backside\\workflows\\axioms.workflow\\04_ARCHIVE_ORIGINALS",
+  "report_dir": "\\\\dlowenas\\brain\\Backside\\workflows\\axioms.workflow\\03_FINAL_READY",
+  "schema_path": "\\\\dlowenas\\brain\\brain\\00_WORKFLOWS\\paper-proof-grader\\MASTER_VARIABLE_SCHEMA.md",
+  "text_extensions": [".txt", ".md", ".html", ".htm"],
+  "document_extensions": [".pdf", ".docx"],
+  "qdrant": {
+    "enabled": true,
+    "url": "http://192.168.1.177:6333",
+    "collection": "axioms_paper_grader"
+  },
+  "embedding": {
+    "enabled": true,
+    "infinity_url": "http://192.168.1.177:7997",
+    "model_name": "sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "classification": {
+    "deberta_path": "D:\\brain\\03_DEBERTA",
+    "model_name": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "use_zero_shot_scores": true
+  },
+  "claims": {
+    "extractor_path": "D:\\brain\\08_CLAIMS",
+    "run_7qs": true
+  },
+  "outputs": {
+    "json": true,
+    "markdown": true,
+    "html": true,
+    "excel": true
+  },
+  "log_dir": "\\\\dlowenas\\brain\\Backside\\workflows\\axioms.workflow\\_LOGS"
+}

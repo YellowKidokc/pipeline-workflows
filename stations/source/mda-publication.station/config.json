@@ -1,0 +1,21 @@
+{
+  "station_id": "mda-publication",
+  "workflow_id": "mda-publication",
+  "station_root": "X:\\Backside\\stations\\mda-publication.station",
+  "legacy_output_root": "X:\\Backside\\MDA",
+  "station_output_root": "\\\\dlowenas\\brain\\Backside\\station_outputs",
+  "required_upstream_order": [
+    "lossless-context",
+    "sbert-embedder",
+    "hdbscan-cluster",
+    "categorization-router",
+    "paper-grader-nlp",
+    "paper-proof-grader",
+    "math-layer",
+    "7q-classifier"
+  ],
+  "scripts": {
+    "route_outputs": "scripts\\ROUTE_MDA_OUTPUTS.ps1",
+    "regen_scorecards": "scripts\\REGEN_SCORECARDS.py"
+  }
+}

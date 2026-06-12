@@ -42,3 +42,39 @@ def test_external_adapter_process_mock(monkeypatch, tmp_path):
     assert score == 1.0
     assert "Exit 0" in notes
     assert (station_root / "INPUT" / source.name).read_text(encoding="utf-8") == "hello"
+
+
+def test_external_adapter_packet_file_idempotency(monkeypatch, tmp_path):
+    station_root = tmp_path / "mock.station"
+    packet_root = tmp_path / "packet"
+    (station_root / "INPUT").mkdir(parents=True)
+    (station_root / "OUTPUT").mkdir()
+    (packet_root / "OUTPUT").mkdir(parents=True)
+    (packet_root / "LOGS").mkdir()
+    (station_root / "RUN.bat").write_text("echo ok", encoding="utf-8")
+    source = tmp_path / "source.txt"
+    source.write_text("hello", encoding="utf-8")
+    calls = {"count": 0}
+
+    def fake_run(*args, **kwargs):
+        calls["count"] += 1
+        (station_root / "OUTPUT" / "source.out").write_text("done", encoding="utf-8")
+        return subprocess.CompletedProcess(args=args[0], returncode=0, stdout="ok", stderr="")
+
+    monkeypatch.setattr(subprocess, "run", fake_run)
+    adapter = ExternalStationAdapter("mock", str(station_root), str(station_root / "INPUT"), str(station_root / "OUTPUT"))
+    manifest = Manifest(
+        file_path=str(source),
+        file_hash=Manifest.compute_hash(str(source)),
+        pipeline_name="p",
+        current_station="mock",
+        metadata={"packet": str(packet_root)},
+    )
+
+    first = adapter.process(source, manifest)
+    second = adapter.process(source, manifest)
+
+    assert first[0] == StationVerdict.PASS
+    assert second[0] == StationVerdict.PASS
+    assert "Idempotency" in second[2]
+    assert calls["count"] == 1

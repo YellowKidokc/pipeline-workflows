@@ -1,40 +1,67 @@
 # Preference Engine
 
-The preference layer observes and calibrates. It never blocks packet execution.
+The preference engine is a stack, not one library.
 
-## Learning Chain
+The preference layer observes and calibrates. It should not silently perform destructive actions or bypass packet approval.
 
 ```text
-Events → River (P06) → PPK (P05) → Implicit (P01) → Markovify (P07)
+P06_river       hot loop      live event learning
+P05_ppk         identity      portable preference kernel
+P01_implicit    pattern loop  station/workflow co-occurrence
+P03_lightfm     hybrid loop   behavior + metadata recommendation
+P07_markovify   voice loop    text/style prediction
 ```
 
-1. **River** (`P06_river`, slot 18) — online learning from immediate events and
-   corrections. Runs ACTIVE inside the BIL server at `http://localhost:8420`,
-   microsecond latency.
-2. **PPK** (`P05_ppk`, slot 17) — Portable Preference Kernel. JSON weights only;
-   copy to USB = portable identity, no personal data. The routing/preference spine.
-3. **Implicit** (`P01_implicit`, slot 13) — recalculates collaborative/relevance
-   patterns from accumulated behavior. Installed, needs wiring.
-4. **Markovify** (`P07_markovify`, slot 19) — text prediction. Installed, needs a
-   training corpus from clipboard + vault writing.
+Slot folders live at `X:\Backside\_models\_Models\P01-P07`. Resolve paths through `models/MODEL_REGISTRY.json`, not hardcoded folder names.
 
-Slot folders live at `X:\Backside\_models\_Models\P01-P07` (renamed from
-13-19 on 2026-06-10). Resolve paths via `models/MODEL_REGISTRY.json`.
+## Feedback Spine
+
+```text
+human decision
+  -> approve.py / correction_logger.py
+  -> preference event
+  -> BIL / P06 River
+  -> P05 PPK
+  -> P01 Implicit / P03 LightFM
+  -> workflow recommendation
+  -> review
+  -> correction event
+```
+
+## Loops
+
+- hot loop: immediate River updates from actions and corrections
+- identity loop: River distills into PPK
+- pattern loop: implicit/LightFM learn workflow choices
+- voice loop: Markovify learns accepted phrasing
+- audit loop: monthly or 6-month review freezes what worked and retires bad defaults
+
+## Engines
+
+| Engine | Slot | Role | Source |
+|---|---|---|---|
+| River | P06 | online learning from immediate events and corrections | https://github.com/online-ml/river |
+| PPK | P05 | portable JSON preference identity | custom |
+| Implicit | P01 | collaborative pattern learning from behavior | https://github.com/benfred/implicit |
+| LightFM | P03 | hybrid behavior + metadata recommendation | https://github.com/lyst/lightfm |
+| Markovify | P07 | lightweight accepted-text prediction | https://github.com/jsvine/markovify |
 
 ## BIL Endpoints
 
-- `http://localhost:8420` — BIL server (River). Start with
-  `START_BIL.bat` in `X:\Backside\stations\preference-engine.station`.
+- `http://localhost:8420` — BIL server / River hot loop.
 - `POST /bil/correction` — correction events from `scripts/correction_logger.py`.
 
-## BIL Signal Weights
+If BIL is offline, local JSONL remains the source of truth and can be replayed later.
 
-Human correction is the strongest signal because it is an explicit override.
-Passive behavior is useful but weaker.
+## Signal Weights
+
+Human correction is the strongest signal because it is an explicit override. Passive behavior is useful but weaker.
 
 | Signal | Weight |
-| --- | --- |
+|---|---:|
 | manual_approval | 1.0 |
+| manual_rejection | 1.0 |
+| human_correction | 1.0 |
 | file_reused | 0.9 |
 | copied_text | 0.8 |
 | bookmark_save | 0.7 |
@@ -42,19 +69,14 @@ Passive behavior is useful but weaker.
 | opened_tab | 0.2 |
 | accidental_visit | 0.0 |
 
-These weights are mirrored in `models/MODEL_REGISTRY.json` → `bil_signal_weights`.
+Canonical weights live in `preferences/signal-weights.json`.
 
 ## Correction Data
 
-`scripts/correction_logger.py` writes structured JSONL
-(`logs/corrections/corrections.jsonl`, schema: `schemas/correction.schema.json`)
-and pushes each event to BIL. If BIL is offline, the local JSONL remains the
-source of truth and can be replayed later. The correction log IS the training
-data — without it, the system never gets smarter.
+`scripts/correction_logger.py` writes structured JSONL to `logs/corrections/corrections.jsonl` by default and pushes each event to BIL when available.
+
+The correction log is training data. Without it, the system does not improve.
 
 ## Portable Identity
 
-PPK's whole model is a JSON file
-(`file-intelligence.station\_ppk_runtime\portable_preference_kernel.json`).
-Copying that file moves David's learned preferences to any machine — no
-retraining, no personal data, no infrastructure.
+PPK's real weights stay in the P05 model slot. GitHub may contain `weights.example.json`, but not David's real learned preference artifact.

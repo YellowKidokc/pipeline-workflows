@@ -1,0 +1,12 @@
+{
+    "name": "youtube-scrape",
+    "description": "Scrape YouTube via 05_YOUTUBE then backfill SBERT, DeBERTa, HDBSCAN over the youtube_apologetics table.",
+    "steps": {
+        "scrape": true,
+        "embed": true,
+        "classify": true,
+        "cluster": true
+    },
+    "table": "youtube_apologetics",
+    "log_dir": "X:\\Backside\\_LOGS"
+}

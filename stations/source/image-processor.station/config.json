@@ -1,0 +1,35 @@
+{
+    "python_path": "C:\\Users\\lowes\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "input_dir": "",
+    "output_dir": "",
+    "image_extensions": [".jpg", ".jpeg", ".png", ".webp", ".bmp", ".tiff"],
+    "actions": {
+        "ocr": true,
+        "classify": true
+    },
+    "ocr_settings": {
+        "languages": ["en"],
+        "gpu": false,
+        "min_confidence": 0.3
+    },
+    "clip_settings": {
+        "model_name": "openai/clip-vit-base-patch32",
+        "device": "auto",
+        "labels": [
+            "a screenshot of a tweet",
+            "a religious illustration",
+            "a chart or diagram",
+            "a meme with text",
+            "a photograph of a person",
+            "a book or page",
+            "a logo or icon",
+            "a photograph of nature",
+            "a photograph of architecture",
+            "a thumbnail with bold text"
+        ],
+        "top_k": 3,
+        "prompt_template": "a photo of {}"
+    },
+    "log_dir": "D:\\brain\\_LOGS",
+    "model_cache_dir": "D:\\brain\\_MODELS\\hub"
+}

@@ -1,0 +1,16 @@
+{
+  "profile": "prompt_evolution",
+  "model_lane": "strong",
+  "llm_backend": "ollama",
+  "stop_for_review": true,
+  "preserve_originals": true,
+  "threshold_pass": 0.85,
+  "threshold_fail": 0.25,
+  "output_destinations": ["review", "proposed_patch"],
+  "summary_detail_level": "dense",
+  "learning": {
+    "log_human_edits": true,
+    "feed_bil": true,
+    "feed_ppk": true
+  }
+}

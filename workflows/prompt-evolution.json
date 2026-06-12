@@ -1,0 +1,47 @@
+{
+  "name": "prompt-evolution",
+  "description": "Turn prompts dropped by David into proposed workflow/repo changes with approval and feedback logging.",
+  "version": "0.1.0",
+  "stages": [
+    {
+      "name": "intake",
+      "station": "file-intelligence",
+      "description": "Identify prompt intent and source context."
+    },
+    {
+      "name": "vectorize",
+      "station": "sbert-embedder",
+      "description": "Create semantic context before classification.",
+      "depends_on": ["intake"]
+    },
+    {
+      "name": "preference-score",
+      "station": "preference-engine",
+      "description": "Score whether this prompt matches David's current direction.",
+      "depends_on": ["vectorize"],
+      "on_error": "review"
+    },
+    {
+      "name": "propose-change",
+      "station": "llm_gate",
+      "description": "Compare prompt to registries and propose a patch plan.",
+      "depends_on": ["preference-score"],
+      "llm_gate": {
+        "model": "phi4",
+        "prompt": "Given the prompt, registries, and repo contracts, propose the smallest safe workflow/repo change. Return plan or review."
+      }
+    },
+    {
+      "name": "await-approval",
+      "station": "_await_approval",
+      "description": "Hold until David approves."
+    },
+    {
+      "name": "log-correction",
+      "station": "_log_correction",
+      "description": "Log edits, rejection, or approval as BIL training data.",
+      "depends_on": ["await-approval"]
+    }
+  ],
+  "preference_profile": "prompt_evolution.json"
+}

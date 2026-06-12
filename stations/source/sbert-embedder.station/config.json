@@ -1,0 +1,28 @@
+{
+    "python_path": "C:\\Users\\lowes\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "infinity_url": "http://192.168.1.177:7997",
+    "qdrant_url": "http://192.168.1.177:6333",
+    "qdrant_collection": null,
+    "vector_distance": "cosine",
+    "source": {
+        "type": "files",
+        "table": "youtube_apologetics",
+        "id_col": "id",
+        "text_cols": ["title", "description"],
+        "payload_cols": ["title", "channel_title", "video_id", "description"],
+        "text_preview_chars": 300,
+        "where": null
+    },
+    "files_source": {
+        "input_dir": "X:\\WORKFLOWS\\MDA-PUBLICATION\\01_LOSSLESS\\articles",
+        "output_dir": "X:\\WORKFLOWS\\MDA-PUBLICATION\\EXPORTS\\sbert_embeddings",
+        "text_extensions": [".txt", ".md"]
+    },
+    "model_settings": {
+        "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+        "batch_size": 200,
+        "http_batch_size": 32,
+        "normalize_embeddings": true
+    },
+    "log_dir": "X:\\WORKFLOWS\\MDA-PUBLICATION\\EXPORTS\\_LOGS"
+}

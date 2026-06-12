@@ -1,0 +1,10 @@
+{
+    "name": "classify-documents",
+    "description": "Walk a directory of text files: SBERT embed each, DeBERTa classify each, write joint JSON sidecars and a CSV summary.",
+    "input_dir": "X:\\WORKFLOWS\\MDA-PUBLICATION\\01_LOSSLESS\\articles",
+    "output_dir": "X:\\WORKFLOWS\\MDA-PUBLICATION\\EXPORTS\\classification",
+    "text_extensions": [".txt", ".md"],
+    "summary_csv": "classify_summary.csv",
+    "log_dir": "X:\\WORKFLOWS\\MDA-PUBLICATION\\EXPORTS\\_LOGS",
+    "model_mode": "fallback"
+}
