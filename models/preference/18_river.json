@@ -7,9 +7,21 @@
   "path": "X:\\Backside\\_models\\_Models\\P06_river",
   "port": 8420,
   "endpoint": "http://localhost:8420",
-  "feeds_into": ["P05_ppk"],
-  "fed_by": ["bil_events", "clipboard", "browser", "file_classify"],
+  "feeds_into": [
+    "P05_ppk"
+  ],
+  "fed_by": [
+    "bil_events",
+    "clipboard",
+    "browser",
+    "file_classify"
+  ],
   "config": {
     "notes": "ACTIVE inside the BIL server. Real-time online learning, microsecond latency."
+  },
+  "_meta": {
+    "canonical_registry": "../MODEL_REGISTRY.json",
+    "slot_key": "P06_river",
+    "mirror_role": "Nested preference slot mirror; update models/MODEL_REGISTRY.json first."
   }
 }
