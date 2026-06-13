@@ -47,7 +47,7 @@ def test_registries_and_pipeline_config_are_valid_json():
     station_registry = load("stations/STATION_REGISTRY.json")
     model_registry = load("models/MODEL_REGISTRY.json")
     workflow_registry = load("workflows/WORKFLOW_REGISTRY.json")
-    config = load("pipeline.config.json")
+    config = load("pipeline.config.example.json")
 
     assert len(station_registry["stations"]) >= 47
     assert station_registry["_meta"]["canary_summary"]

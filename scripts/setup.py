@@ -13,6 +13,7 @@ from urllib.error import URLError
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CONFIG = REPO_ROOT / "pipeline.config.json"
+EXAMPLE_CONFIG = REPO_ROOT / "pipeline.config.example.json"
 VALIDATED_CONFIG = REPO_ROOT / "pipeline.validated.config.json"
 
 
@@ -43,6 +44,8 @@ def check_tcp(name: str, host: str, port: int, timeout: float = 2.0) -> dict:
 
 
 def validate(config_path: Path = DEFAULT_CONFIG, output_path: Path = VALIDATED_CONFIG) -> dict:
+    if config_path == DEFAULT_CONFIG and not config_path.exists():
+        config_path = EXAMPLE_CONFIG
     config = json.loads(config_path.read_text(encoding="utf-8"))
     services = config.get("services", {})
     report = {

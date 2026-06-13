@@ -76,12 +76,13 @@ class LLMHub:
     dispatches to backends, tracks costs, logs everything.
     """
 
-    def __init__(self, queue_dir: str = r"D:\FAP\_queue",
-                 prompts_dir: str = r"D:\FAP\wiki\prompts",
-                 log_dir: str = r"D:\FAP\logs"):
-        self.queue_dir = Path(queue_dir)
-        self.prompts_dir = Path(prompts_dir)
-        self.log_dir = Path(log_dir)
+    def __init__(self, queue_dir: str | None = None,
+                 prompts_dir: str | None = None,
+                 log_dir: str | None = None):
+        fap_root = Path(os.environ.get("FAP_ROOT", "."))
+        self.queue_dir = Path(queue_dir or os.environ.get("FAP_QUEUE_DIR", fap_root / "_queue"))
+        self.prompts_dir = Path(prompts_dir or os.environ.get("FAP_PROMPTS_DIR", fap_root / "wiki" / "prompts"))
+        self.log_dir = Path(log_dir or os.environ.get("FAP_LOG_DIR", self.queue_dir.parent / "logs"))
         self._backends = {}
         self._running = False
         self._lock = threading.Lock()
@@ -431,7 +432,7 @@ class LLMHub:
 
     def update_wiki_page(self, station_name: str, stats: dict):
         """Auto-update a station's wiki page with latest stats."""
-        wiki_dir = Path(r"D:\FAP\wiki\stations")
+        wiki_dir = Path(os.environ.get("FAP_WIKI_STATIONS_DIR", Path(os.environ.get("FAP_ROOT", ".")) / "wiki" / "stations"))
         wiki_dir.mkdir(parents=True, exist_ok=True)
         page = wiki_dir / f"{station_name}.md"
 

@@ -25,6 +25,9 @@ This repo does **not** hold the local model brain:
 - no runtime databases
 - no secrets
 
+Local runtime config belongs in `pipeline.config.json`. Git keeps only
+`pipeline.config.example.json`.
+
 ## Mental Model
 
 The station graph is the internal machine room. The consumer-facing workflow is a simple packet:

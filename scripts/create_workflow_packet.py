@@ -20,9 +20,7 @@ def copy_template(name: str) -> Path:
             text = path.read_text(encoding="utf-8")
             path.write_text(text.replace("WORKFLOW_NAME", name), encoding="utf-8")
     for folder in ["INPUT", "OUTPUT", "REVIEW", "ARCHIVE", "ERROR", "LOGS"]:
-        gitkeep = target / folder / ".gitkeep"
-        gitkeep.parent.mkdir(parents=True, exist_ok=True)
-        gitkeep.write_text("", encoding="utf-8")
+        (target / folder).mkdir(parents=True, exist_ok=True)
     return target
 
 

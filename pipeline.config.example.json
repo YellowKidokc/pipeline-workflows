@@ -1,12 +1,12 @@
 {
   "_meta": {
-    "description": "FORGE system configuration — paths, ports, connection strings",
-    "rule": "Use placeholders for secrets. Never commit real tokens or passwords.",
-    "updated": "2026-06-10"
+    "description": "FORGE local config template. Copy to pipeline.config.json for runtime use.",
+    "rule": "Local paths, credentials, generated validation output, and machine-specific endpoints are not source truth.",
+    "updated": "2026-06-12"
   },
   "paths": {
     "stations_root": "X:\\Backside\\stations",
-    "models_root": "\\\\dlowenas\\brain\\Backside\\_models\\_Models",
+    "models_root": "X:\\Backside\\_models\\_Models",
     "vault": "O:\\_Theophysics_v4",
     "workflows_active": "X:\\WORKFLOWS",
     "mda_workflow": "X:\\WORKFLOWS\\MDA-PUBLICATION",
@@ -19,9 +19,9 @@
     "postgres": {
       "host": "192.168.1.97",
       "port": 5432,
-      "database": "kj",
+      "database": "bible",
       "user": "postgres",
-      "password": "YOUR_POSTGRES_PASSWORD"
+      "password": "SET_LOCALLY"
     },
     "bil_server": "http://localhost:8420",
     "sync_server": "http://localhost:3456",
@@ -32,7 +32,7 @@
   },
   "cloudflare": {
     "r2_bucket": "theophysics-media",
-    "r2_public": "pub-8ca8fed850be4a3b98d5b2ac32428fcf.r2.dev",
+    "r2_public": "SET_LOCALLY",
     "site": "faiththruphysics.com",
     "bible_site": "bible.theophysics.pro"
   },

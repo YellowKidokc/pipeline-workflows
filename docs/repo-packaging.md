@@ -14,6 +14,9 @@ Put these in Git:
 
 Keep these local:
 
+- `pipeline.config.json`
+- packet `INPUT/`, `OUTPUT/`, `REVIEW/`, `ARCHIVE/`, `ERROR/`, and `LOGS/`
+- `STATUS.json` and `MANIFEST.json`
 - model weights
 - embeddings
 - vector databases
