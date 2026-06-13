@@ -1,19 +1,17 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "ContractSchemaMap",
-  "description": "Maps contract schema mirrors to preserved compatibility paths during the contracts/ reorg.",
-  "type": "object",
-  "contracts_root": "contracts/schemas",
-  "compatibility_root": "schemas",
-  "mirrors": {
-    "workflow": { "contract": "contracts/schemas/workflow.schema.json", "compatibility": "schemas/workflow.schema.json" },
-    "station": { "contract": "contracts/schemas/station.schema.json", "compatibility": "schemas/station.schema.json" },
-    "model": { "contract": "contracts/schemas/model.schema.json", "compatibility": "schemas/model.schema.json" },
-    "preference-event": { "contract": "contracts/schemas/preference-event.schema.json", "compatibility": "schemas/preference-event.schema.json" },
-    "correction": { "contract": "contracts/schemas/correction.schema.json", "compatibility": "schemas/correction.schema.json" },
-    "approval": { "contract": "contracts/schemas/approval.schema.json", "compatibility": "schemas/approval.schema.json" },
-    "export-manifest": { "contract": "contracts/schemas/export-manifest.schema.json", "compatibility": "schemas/export-manifest.schema.json" },
-    "manifest": { "contract": "contracts/schemas/manifest.schema.json", "compatibility": "schemas/manifest.schema.json" }
-  },
-  "rule": "Keep both paths valid until consumers deliberately migrate from schemas/ to contracts/."
+    "title": "ContractSchemaMap",
+    "description": "Maps contract schema mirrors to preserved compatibility paths during the contracts/ reorg.",
+    "contracts_root": "contracts/schemas",
+    "compatibility_root": "schemas",
+    "mirrors": {
+          "workflow": { "contract": "contracts/schemas/workflow.schema.json", "compatibility": "schemas/workflow.schema.json" },
+          "station": { "contract": "contracts/schemas/station.schema.json", "compatibility": "schemas/station.schema.json" },
+          "model": { "contract": "contracts/schemas/model.schema.json", "compatibility": "schemas/model.schema.json" },
+          "preference-event": { "contract": "contracts/schemas/preference-event.schema.json", "compatibility": "schemas/preference-event.schema.json" },
+          "correction": { "contract": "contracts/schemas/correction.schema.json", "compatibility": "schemas/correction.schema.json" },
+          "approval": { "contract": "contracts/schemas/approval.schema.json", "compatibility": "schemas/approval.schema.json" },
+          "export-manifest": { "contract": "contracts/schemas/export-manifest.schema.json", "compatibility": "schemas/export-manifest.schema.json" },
+          "manifest": { "contract": "contracts/schemas/manifest.schema.json", "compatibility": "schemas/manifest.schema.json" }
+    },
+    "rule": "Keep both paths valid until consumers deliberately migrate from schemas/ to contracts/."
 }
