@@ -88,3 +88,16 @@ def test_model_root_migration_packet_covers_slots_fallbacks_and_audit():
         assert (fallback_key, "MOVE_TO_FALLBACKS") in dispositions
     assert any(item["disposition"] == "NEEDS_DAVID_CALL" for item in packet["dispositions"])
     assert packet["hardcoded_reference_audit"]
+
+
+def test_preference_chain_order_matches_preference_chain_json():
+    registry = load("models/MODEL_REGISTRY.json")
+    chain = load("models/preference-chain.json")
+
+    registry_order = registry["_meta"]["preference_chain_order"]
+    chain_order = [entry["slot_key"] for entry in sorted(chain["chain"], key=lambda e: e["order"])]
+
+    assert registry_order == chain_order, (
+        f"preference_chain_order in MODEL_REGISTRY.json does not match "
+        f"the chain order in preference-chain.json: {registry_order!r} != {chain_order!r}"
+    )
