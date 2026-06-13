@@ -17,7 +17,9 @@ class PreferenceCounter:
         self._scores: dict[str, float] = defaultdict(float)
 
     def learn_one(self, event: dict) -> None:
-        subject = event.get("subject") or event.get("signal") or "unknown"
+        subject = event.get("subject")
+        if not subject:
+                                            subject = "unknown"
         self._scores[str(subject)] += float(event.get("weight", 0) or 0)
 
     def predict_one(self, subject: str) -> float:
