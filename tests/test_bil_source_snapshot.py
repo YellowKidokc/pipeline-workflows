@@ -36,6 +36,7 @@ def import_bil_api():
     sys.path.insert(0, str(SOURCE_ROOT))
     spec = importlib.util.spec_from_file_location("bil.bil_api", SOURCE_ROOT / "bil" / "bil_api.py")
     module = importlib.util.module_from_spec(spec)
+    assert spec is not None, f"Could not load spec from {SOURCE_ROOT / 'bil' / 'bil_api.py'}"
     assert spec.loader is not None
     spec.loader.exec_module(module)
     return module
