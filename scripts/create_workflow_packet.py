@@ -14,7 +14,7 @@ def copy_template(name: str) -> Path:
     target = WORKFLOWS / name
     if target.exists():
         raise SystemExit(f"Workflow already exists: {target}")
-    shutil.copytree(TEMPLATE, target)
+    shutil.copytree(TEMPLATE, target, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
     for path in target.rglob("*"):
         if path.is_file():
             text = path.read_text(encoding="utf-8")
