@@ -38,9 +38,13 @@ def test_model_health_and_fallbacks_make_degraded_empty_slots_visible():
         assert slot_key in registry["slots"]
         assert slot_key in health["slots"]
 
+    current_root = fallbacks["_meta"]["current_models_root"]
     for fallback in fallbacks["fallbacks"].values():
         assert fallback["for_slot"] in degraded_slots
-        assert fallback["path"].startswith("X:\\Backside\\_models\\_Models")
+        assert fallback["path"].startswith(current_root)
+        assert fallback["current_path"] == fallback["path"]
+        assert fallback["target_path"].startswith(fallbacks["_meta"]["proposed_models_root"] + "\\_fallbacks")
+        assert fallback["target_bucket"] == "_fallbacks"
 
 
 def test_nested_model_configs_point_back_to_registry():
@@ -57,3 +61,43 @@ def test_nested_model_configs_point_back_to_registry():
         data = load(str(path))
         assert data["_meta"]["canonical_registry"] == "../MODEL_REGISTRY.json"
         assert data["_meta"]["slot_key"] in registry_slots
+
+
+def test_model_registry_paths_are_under_current_models_root():
+    registry = load("models/MODEL_REGISTRY.json")
+    current_root = registry["_meta"]["current_models_root"]
+
+    assert registry["_meta"]["models_root_env"] == "MODELS_ROOT"
+    assert registry["_meta"]["proposed_models_root"] == "X:\\Models"
+    for slot in registry["slots"].values():
+        assert slot["path"].startswith(current_root + "\\")
+
+
+def test_model_root_migration_packet_covers_slots_fallbacks_and_audit():
+    registry = load("models/MODEL_REGISTRY.json")
+    fallbacks = load("models/MODEL_FALLBACKS.json")
+    packet = load("models/MODEL_ROOT_MIGRATION_PACKET.json")
+    dispositions = {(item["item"], item["disposition"]) for item in packet["dispositions"]}
+
+    assert packet["_meta"]["current_models_root"] == registry["_meta"]["current_models_root"]
+    assert packet["_meta"]["target_models_root"] == registry["_meta"]["proposed_models_root"]
+    assert packet["_meta"]["models_root_env"] == "MODELS_ROOT"
+    for slot_key in registry["slots"]:
+        assert (slot_key, "KEEP_AS_MODEL_SLOT") in dispositions
+    for fallback_key in fallbacks["fallbacks"]:
+        assert (fallback_key, "MOVE_TO_FALLBACKS") in dispositions
+    assert any(item["disposition"] == "NEEDS_DAVID_CALL" for item in packet["dispositions"])
+    assert packet["hardcoded_reference_audit"]
+
+
+def test_preference_chain_order_matches_preference_chain_json():
+    registry = load("models/MODEL_REGISTRY.json")
+    chain = load("models/preference-chain.json")
+
+    registry_order = registry["_meta"]["preference_chain_order"]
+    chain_order = [entry["slot_key"] for entry in sorted(chain["chain"], key=lambda e: e["order"])]
+
+    assert registry_order == chain_order, (
+        f"preference_chain_order in MODEL_REGISTRY.json does not match "
+        f"the chain order in preference-chain.json: {registry_order!r} != {chain_order!r}"
+    )

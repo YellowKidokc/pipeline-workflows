@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BILPreferenceEventMap",
+  "description": "Repo-safe mapping from BIL observations to contracts/schemas/preference-event.schema.json. This is config/spec only; live event streams remain runtime/NAS-side.",
+  "contract": "contracts/schemas/preference-event.schema.json",
+  "hot_loop_slot": "P06_river",
+  "compaction_target": "P05_ppk",
+  "offline_truth": "Local JSONL correction/preference logs remain replayable source truth if BIL is offline.",
+  "signals": {
+    "manual_approval": {
+      "source": "approval_gate",
+      "input_kind": "manual",
+      "default_weight": 1.0,
+      "passive": false,
+      "notes": "Explicit human approval signal."
+    },
+    "manual_correction": {
+      "source": "correction_logger",
+      "input_kind": "manual",
+      "default_weight": 1.0,
+      "passive": false,
+      "notes": "Explicit human correction signal; strongest training input."
+    },
+    "file_reused": {
+      "source": "folder_observer",
+      "input_kind": "folder",
+      "default_weight": 0.9,
+      "passive": true,
+      "notes": "A file being reused/opened again suggests continuing relevance."
+    },
+    "copied_text": {
+      "source": "browser_extension",
+      "input_kind": "browser",
+      "default_weight": 0.8,
+      "passive": true,
+      "notes": "Copied text is a strong passive interest signal."
+    },
+    "bookmark_save": {
+      "source": "browser_extension",
+      "input_kind": "browser",
+      "default_weight": 0.7,
+      "passive": true,
+      "notes": "Bookmark/save action indicates durable interest."
+    },
+    "long_dwell_scroll": {
+      "source": "browser_extension",
+      "input_kind": "browser",
+      "default_weight": 0.5,
+      "passive": true,
+      "notes": "Long dwell or deep scroll indicates moderate interest."
+    },
+    "opened_tab": {
+      "source": "browser_extension",
+      "input_kind": "browser",
+      "default_weight": 0.2,
+      "passive": true,
+      "notes": "Opening a tab is weak evidence until reinforced by dwell/save/copy."
+    },
+    "accidental_visit": {
+      "source": "browser_extension",
+      "input_kind": "browser",
+      "default_weight": 0.0,
+      "passive": true,
+      "notes": "Short or accidental visits should not train preference upward."
+    }
+  }
+}

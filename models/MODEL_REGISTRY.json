@@ -1,7 +1,7 @@
 {
   "_meta": {
     "description": "Model Registry \u2014 single source of truth for all 19 FORGE model slots. Everything references this registry, not hardcoded paths.",
-    "rule": "Configs only. Weights stay on NAS under X:\\Backside\\_models\\_Models\\ and are never committed.",
+    "rule": "Configs only. Weights stay on NAS under MODELS_ROOT (currently X:\\Backside\\_models\\_Models; proposed X:\\Models) and are never committed.",
     "layout": "M01-M12 = NLP rack, P01-P07 = preference rack. Renamed 2026-06-10, see MODEL_RENAME_LEDGER_20260610.md on the NAS.",
     "updated": "2026-06-12",
     "source_of_truth": "models/MODEL_REGISTRY.json owns all M01-M12 and P01-P07 slot identities; nested model configs are mirrors and must point back here.",
@@ -15,7 +15,11 @@
       "GitHub stores config/spec only; NAS stores weights/runtime.",
       "Do not commit model weights, generated outputs, secrets, vector indexes, or databases.",
       "Vectorize before classify."
-    ]
+    ],
+    "current_models_root": "X:\\Backside\\_models\\_Models",
+    "proposed_models_root": "X:\\Models",
+    "models_root_env": "MODELS_ROOT",
+    "migration_packet": "models/MODEL_ROOT_MIGRATION_PACKET.json"
   },
   "slots": {
     "M01_summarizer": {
