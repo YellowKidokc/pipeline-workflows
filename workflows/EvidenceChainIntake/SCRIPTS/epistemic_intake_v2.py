@@ -826,6 +826,7 @@ def process_one(path: Path, run_id: str, timeout: int, retries: int, dry_run: bo
 def main() -> int:
     parser = argparse.ArgumentParser(description="Three-call epistemic intake v2")
     parser.add_argument("--input", type=Path, default=INBOX)
+    parser.add_argument("--file", type=Path, help="Process one exact source file, allowing restart from its saved checkpoint")
     parser.add_argument("--all", action="store_true", help="Process every eligible file. Default is one test file.")
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--dry-run", action="store_true", help="Validate discovery and input reading without API calls or moves.")
@@ -856,7 +857,13 @@ def main() -> int:
             return 1
 
     input_root = args.input.resolve()
-    files = sorted(p for p in input_root.rglob("*") if p.is_file() and p.suffix.lower() in ALLOWED)
+    if args.file:
+        exact_file = args.file.resolve()
+        if not exact_file.is_file() or exact_file.suffix.lower() not in ALLOWED:
+            raise FileNotFoundError(f"Exact eligible source file not found: {exact_file}")
+        files = [exact_file]
+    else:
+        files = sorted(p for p in input_root.rglob("*") if p.is_file() and p.suffix.lower() in ALLOWED)
     limit = args.limit if args.limit is not None else (None if args.all else 1)
     if limit is not None:
         files = files[: max(0, limit)]

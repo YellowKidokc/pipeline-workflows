@@ -71,9 +71,22 @@ def load_json(path: Path, default: Any) -> Any:
 
 def atomic_json(path: Path, value: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    temp = path.with_suffix(path.suffix + ".tmp")
+    temp = path.with_name(f".{path.name}.{os.getpid()}.{time.time_ns()}.tmp")
     temp.write_text(json.dumps(value, indent=2, ensure_ascii=False), encoding="utf-8")
-    temp.replace(path)
+    try:
+        for attempt in range(5):
+            try:
+                temp.replace(path)
+                return
+            except PermissionError:
+                if attempt == 4:
+                    raise
+                time.sleep(0.25 * (attempt + 1))
+    finally:
+        try:
+            temp.unlink(missing_ok=True)
+        except OSError:
+            pass
 
 
 def is_zero(value: Any) -> bool:
