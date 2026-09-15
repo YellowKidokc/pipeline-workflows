@@ -1,1 +1,87 @@
-{"default_profile":"christian","clean_transcript":true,"remove_stage_directions":true,"remove_fillers":true,"paragraph_words":200,"theme_threshold":0.35,"api_budget_usd":5.0}
+{
+  "default_profile": "christian",
+  "clean_transcript": true,
+  "remove_stage_directions": true,
+  "remove_fillers": true,
+  "paragraph_words": 200,
+  "theme_threshold": 0.35,
+  "api_budget_usd": 5.0,
+  "stations": [
+    "s0_intake",
+    "s1_chunks",
+    "s2_entities",
+    "s3_resolve",
+    "s4_dates",
+    "s5_claims",
+    "s6_themes",
+    "s7_citations",
+    "s8_checkbacks",
+    "s9_validate",
+    "s10_project"
+  ],
+  "default_trigger": "idle",
+  "idle_minutes": 30,
+  "max_desktop_cpu": 30,
+  "night_start_hour": 1,
+  "stop_hour": 7,
+  "nas_runs_while_busy": true,
+  "ledger": "openintel.sqlite",
+  "collection": "GEN",
+  "nas_nlp_url": "http://192.168.2.50:8765",
+  "channel_triggers": {},
+  "profile_stations": {
+    "general": [
+      "s0_intake",
+      "s1_chunks",
+      "s2_entities",
+      "s3_resolve",
+      "s4_dates",
+      "s5_claims",
+      "s6_themes",
+      "s8_checkbacks",
+      "s9_validate",
+      "s10_project"
+    ],
+    "science": [
+      "s0_intake",
+      "s1_chunks",
+      "s2_entities",
+      "s3_resolve",
+      "s4_dates",
+      "s5_claims",
+      "s6_themes",
+      "s8_checkbacks",
+      "s9_validate",
+      "s10_project"
+    ],
+    "conspiracy": [
+      "s0_intake",
+      "s1_chunks",
+      "s2_entities",
+      "s3_resolve",
+      "s4_dates",
+      "s5_claims",
+      "s6_themes",
+      "s8_checkbacks",
+      "s9_validate",
+      "s10_project"
+    ],
+    "christian": [
+      "s0_intake",
+      "s1_chunks",
+      "s2_entities",
+      "s3_resolve",
+      "s4_dates",
+      "s5_claims",
+      "s6_themes",
+      "s7_citations",
+      "s8_checkbacks",
+      "s9_validate",
+      "s10_project"
+    ]
+  },
+  "ollama_url": "http://192.168.2.50:11434",
+  "ollama_model": "qwen2.5:7b",
+  "llm_api_url": "",
+  "llm_api_key": ""
+}

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Lossless YouTube channel markdown refinery."""
 from __future__ import annotations
-import argparse, datetime as dt, html, json, os, re, shutil, sys, urllib.request
+import argparse, datetime as dt, hashlib, html, json, os, re, shutil, sys, urllib.request
 from collections import Counter
 from pathlib import Path
 
@@ -116,16 +116,18 @@ def main():
     a=ap.parse_args(); cfg=config(); dry=a.dry_run or cfg.get("dry_run",False); prof=a.profile or cfg["default_profile"]
     prefs=json.loads((PACKET/"PREFS"/"preferences.json").read_text()); source=a.input or next((PACKET/"INPUT").glob("*.md"),None)
     if not source: raise SystemExit("No input markdown found")
-    channel,videos=parse(source); out=Path(cfg["vault_root"])/"YouTube"/safe(channel); themes,extras,_=profile(prof)
+    channel,videos=parse(source); videos=[v for v in videos if a.chapter is None or v["chapter"]==a.chapter]; out=Path(cfg["vault_root"])/"YouTube"/safe(channel); themes,extras,_=profile(prof)
+    if not videos: raise SystemExit(f"Chapter {a.chapter} not found")
     print(f"PLAN: {len(videos)} chapters -> {out}")
     if dry: return 0
     out.mkdir(parents=True,exist_ok=True); index=[]; any_nas_failed=False
     for v in videos:
+        v["profile"]=prof
         nas_failed=False
         filename=f'{safe(channel)} - {cfg["chapter_prefix"]} {v["chapter"]:03d} - {safe(v["title"])}.md'; dest=out/filename; index.append(f'- [[{dest.stem}|{v["chapter"]:03d}. {v["title"]}]]')
         cleaned=clean_text(v["transcript"],prefs) if prefs.get("clean_transcript",True) and v["transcript"] else None
         fields={}
-        if v["transcript"]:
+        if v["transcript"] and not a.split_only:
             fields={"people":[],"places":[],"organizations":[],"themes":[],"scripture_refs":sorted(set(SCRIPTURE_RE.findall(v["transcript"])),key=str.lower),"dates_mentioned":sorted(set(DATE_RE.findall(v["transcript"]))),"events":[],"timeline":[],"key_claims":[],"summary":"","extracted_by":{"ner":"nas-nlp","themes":"nas-nlp/deberta-zeroshot","llm":"not_run"},"extracted_at":dt.date.today().isoformat()}
             try:
                 fields.update(extract_entities(v["transcript"],cfg["nas_nlp_url"])); z=nas(cfg["nas_nlp_url"],"/zeroshot",{"text":v["transcript"][:12000],"labels":themes})
@@ -136,12 +138,18 @@ def main():
         new=note(channel,v,prof,"extracted" if v["transcript"] and not nas_failed else "cleaned",cleaned,fields,cfg["chapter_prefix"])
         if dest.exists() and "<!-- manual -->" in dest.read_text(encoding="utf-8"):
             manual=dest.read_text(encoding="utf-8").split("<!-- manual -->",1)[1]; new=new.split("<!-- manual -->",1)[0]+"<!-- manual -->"+manual
+        if a.ledger and v["transcript"]:
+            video_id,source_id,statement_count=ledger_extract(a.ledger,a.collection,channel,v,a.split_only)
+            print(f"Ledger candidates: {source_id}, {statement_count} statements")
+            if a.station_chain:
+                sys.path.insert(0,str(PACKET/"SCRIPTS")); from breakdown import run_video
+                run_video(a.ledger,video_id)
         dest.write_text(new,encoding="utf-8")
         if a.ledger and v["transcript"]:
             source_id,statement_count=ledger_extract(a.ledger,a.collection,channel,v)
             print(f"Ledger candidates: {source_id}, {statement_count} statements")
     (out/f"{safe(channel)} - 000 Index.md").write_text(f"# {channel} - Videos\n\n"+"\n".join(index)+"\n",encoding="utf-8")
     archive=PACKET/"ARCHIVE"/source.name; archive.parent.mkdir(exist_ok=True)
-    if source.resolve()!=archive.resolve(): shutil.move(source,archive)
+    if not a.keep_input and source.resolve()!=archive.resolve(): shutil.move(source,archive)
     print(f"Wrote {len(videos)} chapters and index" + ("; NAS failures sent to REVIEW" if any_nas_failed else "")); return 0
 if __name__=="__main__": raise SystemExit(main())
