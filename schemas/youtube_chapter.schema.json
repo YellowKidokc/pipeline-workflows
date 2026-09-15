@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pipeline-workflows.local/schemas/youtube_chapter.schema.json",
+  "title": "YouTube chapter note front matter",
+  "type": "object",
+  "required": ["type", "channel", "chapter", "title", "video_id", "url", "status", "profile"],
+  "properties": {
+    "type": {"const": "youtube_chapter"}, "channel": {"type": "string", "minLength": 1},
+    "chapter": {"type": "integer", "minimum": 1}, "title": {"type": "string", "minLength": 1},
+    "video_id": {"type": "string"}, "url": {"type": "string"}, "transcript_language": {"type": "string"},
+    "status": {"enum": ["split", "cleaned", "extracted", "reviewed", "no_transcript"]},
+    "profile": {"type": "string"}, "people": {"type": "array", "items": {"type": "string"}},
+    "places": {"type": "array", "items": {"type": "string"}}, "organizations": {"type": "array", "items": {"type": "string"}},
+    "themes": {"type": "array", "items": {"type": "string"}}, "scripture_refs": {"type": "array", "items": {"type": "string"}},
+    "events": {"type": "array"}, "timeline": {"type": "array"}, "key_claims": {"type": "array"}, "summary": {"type": "string"},
+    "extracted_by": {"type": "object"}, "extracted_at": {"type": "string", "format": "date"}
+  }, "additionalProperties": true
+}
