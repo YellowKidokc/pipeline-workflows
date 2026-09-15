@@ -10,4 +10,6 @@ A lossless workflow packet for combined YouTube channel/playlist Markdown export
 
 Use `--dry-run` to print the destination and chapter count without creating, moving, or changing anything. Generated content is bounded by markers; content after `<!-- manual -->` is retained on reruns. A failed NAS request creates a reason file under `REVIEW` and does not stop the remaining chapters.
 
+Pass `--ledger /path/to/openintel.sqlite --collection MKU` to write one source and its atomic transcript statements to the OpenIntel ledger. Every extracted record starts at `CANDIDATE`; the workflow never promotes machine output. Accusatory statements naming a person are conservatively marked sensitive and cannot enter public projections. Sentences containing multiple, potentially conflicting years create machine hunches for human review rather than claims.
+
 The packet intentionally has no required Python packages. PyYAML/jsonschema/dateparser can be installed for downstream integrations, but core splitting, cleaning, regex extraction, and HTTP use the standard library.

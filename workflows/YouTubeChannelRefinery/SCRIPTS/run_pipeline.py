@@ -11,6 +11,8 @@ META_RE=re.compile(r"^\*\*(Video ID|URL|Transcript Language):\*\*\s*(.*)$",re.M)
 SCRIPTURE_RE=re.compile(r"\b(?:[1-3]\s*)?(?:Genesis|Exodus|Psalms?|Isaiah|Matthew|Mark|Luke|John|Romans|Corinthians|Galatians|Ephesians|Philippians|Colossians|Thessalonians|Timothy|Titus|Hebrews|James|Peter|Jude|Revelation)\s+\d{1,3}:\d{1,3}(?:[-–]\d{1,3})?",re.I)
 DATE_RE=re.compile(r"\b(?:c\.\s*)?(?:AD\s*)?\d{3,4}(?:[-–]\d{2,4})?\b",re.I)
 BAD='<>:"/\\|?*'
+ACCUSATION_RE=re.compile(r"\b(?:killed|murdered|stole|fraud|criminal|lied|abused|corrupt|guilty|cover(?:ed)? up)\b",re.I)
+PERSON_RE=re.compile(r"\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,3}\b")
 
 def config():
     base={"vault_root":str(PACKET/"OUTPUT"),"nas_nlp_url":"http://192.168.2.50:8765","ollama_url":"http://192.168.2.50:11434","default_profile":"christian","chapter_prefix":"Chapter","dry_run":False}
@@ -87,8 +89,30 @@ def note(channel,v,profile_name,status="split",cleaned=None,fields=None,prefix="
         raw_callout="\n> [!quote]- Raw transcript\n"+"\n".join("> "+x for x in raw.splitlines())+"\n"
     return f'{yaml_block(data)}\n\n# {prefix} {v["chapter"]:03d} — {v["title"]}\n<!-- generated:start -->{generated}\n## Transcript\n{body}{raw_callout}\n<!-- generated:end -->\n\n<!-- manual -->\n'
 
+def ledger_extract(ledger_path,collection,channel,v):
+    """Write source/statement/hunch candidates. Nothing machine-made is accepted."""
+    if str(REPO) not in sys.path: sys.path.insert(0,str(REPO))
+    from openintel.ledger import Ledger
+    ledger=Ledger(ledger_path); ledger.initialize()
+    source_id=ledger.add_source(collection,title=v["title"],url=v["url"],source_type="youtube",legacy_ids=[v["video_id"]] if v["video_id"] else [])
+    statements=[]
+    for number,sentence in enumerate(re.split(r"(?<=[.!?])\s+",re.sub(r"\s+"," ",v["transcript"]).strip()),1):
+        if not sentence: continue
+        sensitive=bool(ACCUSATION_RE.search(sentence) and PERSON_RE.search(sentence))
+        statements.append(ledger.add_statement(collection,source_id,sentence,locator=f"chapter:{v['chapter']}:sentence:{number}",sensitive=sensitive))
+    # Conflicting four-digit years in one sentence are a reviewable machine hunch, not a finding.
+    for statement_id in statements:
+        row=ledger.db.execute("SELECT statement_text,sensitive FROM statements WHERE id=?",(statement_id,)).fetchone()
+        years=set(re.findall(r"\b(?:19|20)\d{2}\b",row[0]))
+        if len(years)>1:
+            hid=ledger.next_id("HNCH",collection); now=dt.datetime.now(dt.timezone.utc).isoformat()
+            with ledger.db:
+                ledger.db.execute("INSERT INTO hunches(id,collection,written_by,written_at,gut_statement,what_triggered_it,what_would_make_it_real,what_would_kill_it,sensitive) VALUES(?,?,?,?,?,?,?,?,?)",(hid,collection.upper(),"system extraction",now,"The dates may conflict or describe an unexplained timeline change",statement_id,"Check the source context and independent chronology","The dates refer to distinct, explicitly identified events",row[1]))
+                ledger.db.execute("INSERT INTO links(from_id,to_id,link_type,source,created_at) VALUES(?,?,'TRIGGERED_BY','youtube-refinery',?)",(hid,statement_id,now))
+    ledger.close(); return source_id,len(statements)
+
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument("--input",type=Path); ap.add_argument("--profile"); ap.add_argument("--stage",choices=["split","clean","extract","validate","route","all"],default="all"); ap.add_argument("--dry-run",action="store_true")
+    ap=argparse.ArgumentParser(); ap.add_argument("--input",type=Path); ap.add_argument("--profile"); ap.add_argument("--stage",choices=["split","clean","extract","validate","route","all"],default="all"); ap.add_argument("--dry-run",action="store_true"); ap.add_argument("--ledger",type=Path); ap.add_argument("--collection",default="GEN")
     a=ap.parse_args(); cfg=config(); dry=a.dry_run or cfg.get("dry_run",False); prof=a.profile or cfg["default_profile"]
     prefs=json.loads((PACKET/"PREFS"/"preferences.json").read_text()); source=a.input or next((PACKET/"INPUT").glob("*.md"),None)
     if not source: raise SystemExit("No input markdown found")
@@ -113,6 +137,9 @@ def main():
         if dest.exists() and "<!-- manual -->" in dest.read_text(encoding="utf-8"):
             manual=dest.read_text(encoding="utf-8").split("<!-- manual -->",1)[1]; new=new.split("<!-- manual -->",1)[0]+"<!-- manual -->"+manual
         dest.write_text(new,encoding="utf-8")
+        if a.ledger and v["transcript"]:
+            source_id,statement_count=ledger_extract(a.ledger,a.collection,channel,v)
+            print(f"Ledger candidates: {source_id}, {statement_count} statements")
     (out/f"{safe(channel)} - 000 Index.md").write_text(f"# {channel} - Videos\n\n"+"\n".join(index)+"\n",encoding="utf-8")
     archive=PACKET/"ARCHIVE"/source.name; archive.parent.mkdir(exist_ok=True)
     if source.resolve()!=archive.resolve(): shutil.move(source,archive)
