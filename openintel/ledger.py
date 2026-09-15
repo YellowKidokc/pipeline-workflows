@@ -36,20 +36,10 @@ class Ledger:
 
     def initialize(self) -> None:
         self.db.executescript((ROOT / "schema.sql").read_text(encoding="utf-8"))
-        # CREATE TABLE IF NOT EXISTS does not add columns to ledgers created by
-        # earlier builds. Keep these additive migrations safe to run at startup.
-        self._ensure_column("statements", "attribution_confidence", "TEXT")
-        self._ensure_column("claims", "claimed_evidence", "TEXT")
-        self._ensure_column("claims", "counterclaim", "TEXT")
         self.db.execute("INSERT OR REPLACE INTO metadata VALUES('schema_version','2.1-openintel')")
         for code in ("EVENT", "PROGRAM", "INSTITUTION", "PROPAGANDA", "PROPHETIC", "PHENOMENON", "PATTERN", "SYMBOL", "CULTURAL"):
             self.db.execute("INSERT OR IGNORE INTO case_types(code,label) VALUES(?,?)", (code, code.title()))
         self.db.commit()
-
-    def _ensure_column(self, table: str, column: str, declaration: str) -> None:
-        columns = {row[1] for row in self.db.execute(f"PRAGMA table_info({table})")}
-        if column not in columns:
-            self.db.execute(f"ALTER TABLE {table} ADD COLUMN {column} {declaration}")
 
     def next_id(self, kind: str, collection: str, source_number: int | None = None) -> str:
         kind, collection = kind.upper(), collection.upper()

@@ -31,8 +31,6 @@ python workflows/YouTubeChannelRefinery/SCRIPTS/run_pipeline.py \
 
 Transcript sentences are immutable source statements, not claims. Extraction creates only candidates. Accusatory person-naming text is conservatively sensitive and excluded from the public views. Conflicting-year observations become machine hunches.
 
-The refinery's S0–S10 station chain persists videos, chunks, statement-linked entity mentions, aliases, theme confidence, scripture references, station state, and CKG projections in small independently rerunnable passes. Use `breakdown.py station <name> --video <id> --ledger <path>` to rerun one pass. The watcher/prompt/scheduler flow queues stable downloads for immediate, idle, tonight, split-only, or skipped handling and resumes at video boundaries.
-
 ## Hunch re-check
 
 ```bash

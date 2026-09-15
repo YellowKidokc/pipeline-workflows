@@ -89,19 +89,14 @@ def note(channel,v,profile_name,status="split",cleaned=None,fields=None,prefix="
         raw_callout="\n> [!quote]- Raw transcript\n"+"\n".join("> "+x for x in raw.splitlines())+"\n"
     return f'{yaml_block(data)}\n\n# {prefix} {v["chapter"]:03d} — {v["title"]}\n<!-- generated:start -->{generated}\n## Transcript\n{body}{raw_callout}\n<!-- generated:end -->\n\n<!-- manual -->\n'
 
-def ledger_extract(ledger_path,collection,channel,v,split_only=False):
+def ledger_extract(ledger_path,collection,channel,v):
     """Write source/statement/hunch candidates. Nothing machine-made is accepted."""
     if str(REPO) not in sys.path: sys.path.insert(0,str(REPO))
     from openintel.ledger import Ledger
     ledger=Ledger(ledger_path); ledger.initialize()
-    existing=ledger.db.execute("SELECT id FROM sources WHERE url=? AND url != ''",(v["url"],)).fetchone()
-    source_id=existing[0] if existing else ledger.add_source(collection,title=v["title"],url=v["url"],source_type="youtube",legacy_ids=[v["video_id"]] if v["video_id"] else [])
-    key=v["video_id"] or hashlib.sha256((channel+str(v["chapter"])).encode()).hexdigest()[:12]
-    video_id=f"VID-{collection.upper()}-{key}"
-    with ledger.db:
-        ledger.db.execute("INSERT INTO videos(id,source_id,collection,channel,chapter,title,url,profile,raw_transcript) VALUES(?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET raw_transcript=excluded.raw_transcript,title=excluded.title,url=excluded.url,profile=excluded.profile",(video_id,source_id,collection.upper(),channel,v["chapter"],v["title"],v["url"],v.get("profile","general"),v["transcript"]))
+    source_id=ledger.add_source(collection,title=v["title"],url=v["url"],source_type="youtube",legacy_ids=[v["video_id"]] if v["video_id"] else [])
     statements=[]
-    for number,sentence in enumerate([] if split_only else re.split(r"(?<=[.!?])\s+",re.sub(r"\s+"," ",v["transcript"]).strip()),1):
+    for number,sentence in enumerate(re.split(r"(?<=[.!?])\s+",re.sub(r"\s+"," ",v["transcript"]).strip()),1):
         if not sentence: continue
         sensitive=bool(ACCUSATION_RE.search(sentence) and PERSON_RE.search(sentence))
         statements.append(ledger.add_statement(collection,source_id,sentence,locator=f"chapter:{v['chapter']}:sentence:{number}",sensitive=sensitive))
@@ -114,10 +109,10 @@ def ledger_extract(ledger_path,collection,channel,v,split_only=False):
             with ledger.db:
                 ledger.db.execute("INSERT INTO hunches(id,collection,written_by,written_at,gut_statement,what_triggered_it,what_would_make_it_real,what_would_kill_it,sensitive) VALUES(?,?,?,?,?,?,?,?,?)",(hid,collection.upper(),"system extraction",now,"The dates may conflict or describe an unexplained timeline change",statement_id,"Check the source context and independent chronology","The dates refer to distinct, explicitly identified events",row[1]))
                 ledger.db.execute("INSERT INTO links(from_id,to_id,link_type,source,created_at) VALUES(?,?,'TRIGGERED_BY','youtube-refinery',?)",(hid,statement_id,now))
-    ledger.close(); return video_id,source_id,len(statements)
+    ledger.close(); return source_id,len(statements)
 
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument("--input",type=Path); ap.add_argument("--profile"); ap.add_argument("--stage",choices=["split","clean","extract","validate","route","all"],default="all"); ap.add_argument("--dry-run",action="store_true"); ap.add_argument("--ledger",type=Path); ap.add_argument("--collection",default="GEN"); ap.add_argument("--station-chain",action="store_true"); ap.add_argument("--chapter",type=int); ap.add_argument("--keep-input",action="store_true"); ap.add_argument("--split-only",action="store_true")
+    ap=argparse.ArgumentParser(); ap.add_argument("--input",type=Path); ap.add_argument("--profile"); ap.add_argument("--stage",choices=["split","clean","extract","validate","route","all"],default="all"); ap.add_argument("--dry-run",action="store_true"); ap.add_argument("--ledger",type=Path); ap.add_argument("--collection",default="GEN")
     a=ap.parse_args(); cfg=config(); dry=a.dry_run or cfg.get("dry_run",False); prof=a.profile or cfg["default_profile"]
     prefs=json.loads((PACKET/"PREFS"/"preferences.json").read_text()); source=a.input or next((PACKET/"INPUT").glob("*.md"),None)
     if not source: raise SystemExit("No input markdown found")
@@ -150,6 +145,9 @@ def main():
                 sys.path.insert(0,str(PACKET/"SCRIPTS")); from breakdown import run_video
                 run_video(a.ledger,video_id)
         dest.write_text(new,encoding="utf-8")
+        if a.ledger and v["transcript"]:
+            source_id,statement_count=ledger_extract(a.ledger,a.collection,channel,v)
+            print(f"Ledger candidates: {source_id}, {statement_count} statements")
     (out/f"{safe(channel)} - 000 Index.md").write_text(f"# {channel} - Videos\n\n"+"\n".join(index)+"\n",encoding="utf-8")
     archive=PACKET/"ARCHIVE"/source.name; archive.parent.mkdir(exist_ok=True)
     if not a.keep_input and source.resolve()!=archive.resolve(): shutil.move(source,archive)

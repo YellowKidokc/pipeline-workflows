@@ -86,7 +86,7 @@ def test_refinery_ledger_candidates_and_sensitive_gate(tmp_path):
     spec = importlib.util.spec_from_file_location("refinery_ledger", path)
     refinery = importlib.util.module_from_spec(spec); spec.loader.exec_module(refinery)
     video = {"chapter": 1, "title": "Test", "video_id": "abc", "url": "https://youtu.be/abc", "transcript": "John Smith lied in 2020 and 2021."}
-    _, _, count = refinery.ledger_extract(tmp_path / "ledger.sqlite", "COW", "Channel", video)
+    _, count = refinery.ledger_extract(tmp_path / "ledger.sqlite", "COW", "Channel", video)
     assert count == 1
     db = sqlite3.connect(tmp_path / "ledger.sqlite")
     assert db.execute("SELECT sensitive,lifecycle FROM statements").fetchone() == (1, "CANDIDATE")

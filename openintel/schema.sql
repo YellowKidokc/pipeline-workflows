@@ -26,12 +26,12 @@ CREATE TABLE IF NOT EXISTS sources (
 );
 CREATE TABLE IF NOT EXISTS statements (
  id TEXT PRIMARY KEY CHECK(id GLOB 'STMT-*-*-????'), collection TEXT NOT NULL, legacy_ids TEXT NOT NULL DEFAULT '[]', case_id TEXT REFERENCES cases(id), source_id TEXT NOT NULL REFERENCES sources(id), speaker_entity_id TEXT,
- statement_text TEXT NOT NULL, statement_hash TEXT NOT NULL UNIQUE, made_at TEXT, context TEXT, locator TEXT, attribution_confidence TEXT CHECK(attribution_confidence IN ('HIGH','MED','LOW') OR attribution_confidence IS NULL),
+ statement_text TEXT NOT NULL, statement_hash TEXT NOT NULL UNIQUE, made_at TEXT, context TEXT, locator TEXT,
  lifecycle TEXT NOT NULL DEFAULT 'CANDIDATE' CHECK(lifecycle IN ('CANDIDATE','REVIEW','ACCEPTED','REJECTED')), rejection_reason TEXT, sensitive INTEGER NOT NULL DEFAULT 0 CHECK(sensitive IN (0,1)), public_projection INTEGER NOT NULL DEFAULT 0 CHECK(public_projection IN (0,1)),
  CHECK(lifecycle != 'REJECTED' OR rejection_reason IS NOT NULL), CHECK(sensitive = 0 OR public_projection = 0)
 );
 CREATE TABLE IF NOT EXISTS claims (
- id TEXT PRIMARY KEY CHECK(id GLOB 'CLM-*-????'), collection TEXT NOT NULL, legacy_ids TEXT NOT NULL DEFAULT '[]', case_id TEXT REFERENCES cases(id), statement_id TEXT REFERENCES statements(id), claim_text TEXT NOT NULL, claim_type TEXT, claimed_evidence TEXT, counterclaim TEXT,
+ id TEXT PRIMARY KEY CHECK(id GLOB 'CLM-*-????'), collection TEXT NOT NULL, legacy_ids TEXT NOT NULL DEFAULT '[]', case_id TEXT REFERENCES cases(id), statement_id TEXT REFERENCES statements(id), claim_text TEXT NOT NULL, claim_type TEXT,
  rating TEXT NOT NULL DEFAULT 'UNRATED' CHECK(rating IN ('T1','T1-T2','T2','T2-T3','T3','T3-T4','T4','T4-T5','T5','Mixed','UNRATED')),
  lifecycle TEXT NOT NULL DEFAULT 'CANDIDATE' CHECK(lifecycle IN ('CANDIDATE','REVIEW','ACCEPTED','REJECTED')), rejection_reason TEXT, sensitive INTEGER NOT NULL DEFAULT 0, public_projection INTEGER NOT NULL DEFAULT 0,
  CHECK(lifecycle != 'REJECTED' OR rejection_reason IS NOT NULL), CHECK(sensitive = 0 OR public_projection = 0)
@@ -60,14 +60,6 @@ CREATE TABLE IF NOT EXISTS suppression_log (id TEXT PRIMARY KEY, case_id TEXT RE
 CREATE TABLE IF NOT EXISTS statistical_anomalies (id TEXT PRIMARY KEY, case_id TEXT REFERENCES cases(id), legacy_ids TEXT NOT NULL DEFAULT '[]', anomaly_type TEXT, observed_count INTEGER, expected_count REAL, sigma_deviation REAL, p_value REAL, rating TEXT DEFAULT 'UNRATED', lifecycle TEXT DEFAULT 'CANDIDATE');
 CREATE TABLE IF NOT EXISTS ocs_audit_log (id INTEGER PRIMARY KEY AUTOINCREMENT, case_id TEXT REFERENCES cases(id), old_score REAL, new_score REAL, old_rating TEXT, new_rating TEXT, reason TEXT, changed_at TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS hunch_matches (hunch_id TEXT REFERENCES hunches(id), record_id TEXT NOT NULL, method TEXT NOT NULL, score REAL NOT NULL, checked_at TEXT NOT NULL, signal_id TEXT REFERENCES signals(id), PRIMARY KEY(hunch_id,record_id,method));
-CREATE TABLE IF NOT EXISTS videos (id TEXT PRIMARY KEY, source_id TEXT UNIQUE REFERENCES sources(id), collection TEXT NOT NULL, channel TEXT NOT NULL, chapter INTEGER NOT NULL, title TEXT NOT NULL, url TEXT, published_at TEXT, duration TEXT, profile TEXT NOT NULL, raw_transcript TEXT, cleaned_transcript TEXT, status TEXT NOT NULL DEFAULT 'CANDIDATE', UNIQUE(channel,chapter));
-CREATE TABLE IF NOT EXISTS transcript_chunks (id TEXT PRIMARY KEY, video_id TEXT REFERENCES videos(id), ordinal INTEGER NOT NULL, text TEXT NOT NULL, start_locator TEXT NOT NULL, end_locator TEXT NOT NULL, UNIQUE(video_id,ordinal));
-CREATE TABLE IF NOT EXISTS entity_mentions (id INTEGER PRIMARY KEY AUTOINCREMENT, video_id TEXT REFERENCES videos(id), chunk_id TEXT REFERENCES transcript_chunks(id), statement_id TEXT REFERENCES statements(id), mention_text TEXT NOT NULL, entity_type TEXT NOT NULL, entity_id TEXT REFERENCES entities(id), confidence REAL, lifecycle TEXT NOT NULL DEFAULT 'CANDIDATE', UNIQUE(video_id,chunk_id,mention_text,entity_type));
-CREATE TABLE IF NOT EXISTS entity_aliases (alias TEXT COLLATE NOCASE PRIMARY KEY, entity_id TEXT NOT NULL REFERENCES entities(id), confidence REAL NOT NULL DEFAULT 1.0, reviewed INTEGER NOT NULL DEFAULT 0);
-CREATE TABLE IF NOT EXISTS theme_mentions (video_id TEXT REFERENCES videos(id), chunk_id TEXT REFERENCES transcript_chunks(id), theme TEXT NOT NULL, confidence REAL NOT NULL, PRIMARY KEY(video_id,chunk_id,theme));
-CREATE TABLE IF NOT EXISTS scripture_refs (video_id TEXT REFERENCES videos(id), statement_id TEXT REFERENCES statements(id), reference TEXT NOT NULL, usage TEXT NOT NULL DEFAULT 'unclassified', PRIMARY KEY(video_id,reference,statement_id));
-CREATE TABLE IF NOT EXISTS scholars_cited (video_id TEXT REFERENCES videos(id), name TEXT NOT NULL, work TEXT NOT NULL DEFAULT '', statement_id TEXT REFERENCES statements(id), PRIMARY KEY(video_id,name,work));
-CREATE TABLE IF NOT EXISTS station_runs (video_id TEXT REFERENCES videos(id), station TEXT NOT NULL, status TEXT NOT NULL CHECK(status IN ('RUNNING','DONE','FAILED')), started_at TEXT NOT NULL, finished_at TEXT, detail TEXT, PRIMARY KEY(video_id,station));
 CREATE INDEX IF NOT EXISTS idx_hunch_status ON hunches(hunch_status, lifecycle);
 CREATE INDEX IF NOT EXISTS idx_statements_case ON statements(case_id);
 CREATE INDEX IF NOT EXISTS idx_claims_case ON claims(case_id);
