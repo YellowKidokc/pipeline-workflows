@@ -134,3 +134,7 @@ Run:
 ```bat
 workflows\PaperGrading\RUN_PIPELINE.bat
 ```
+
+## Shared system entry point
+
+Run `SYSTEM.bat list` for readable workflow names. Both repositories expose the same front door for workflow runs, folder watching, folder-task assessment, provider profiles, and audited file routing. See [Combined system guide](docs/COMBINED_SYSTEM.md) for ownership, setup, examples, and limits.

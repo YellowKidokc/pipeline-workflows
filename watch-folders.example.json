@@ -1,0 +1,15 @@
+{
+  "state_root": "D:/PipelineRuntime/watch-state",
+  "watches": [
+    {
+      "enabled": false,
+      "folder": "D:/PipelineRuntime/inbox",
+      "patterns": [
+        "*.md",
+        "*.txt"
+      ],
+      "workflow": "review-document",
+      "settle_seconds": 2
+    }
+  ]
+}

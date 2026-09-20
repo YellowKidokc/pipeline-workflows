@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import json
+import hashlib
+import math
 from pathlib import Path
 
 from ..llm_hub import LLMHub
@@ -17,7 +19,8 @@ class PaperGraderStation(StationBase):
 
     def process(self, file_path: Path, manifest: Manifest) -> tuple[StationVerdict, float, str]:
         job_state_file = file_path.with_suffix(file_path.suffix + ".grade.json")
-        if not job_state_file.exists():
+        digest = hashlib.sha256(file_path.read_bytes()).hexdigest()
+        if not job_state_file.exists() or json.loads(job_state_file.read_text(encoding="utf-8")).get("source_sha256") != digest:
             return self._submit(file_path, job_state_file)
         return self._collect(job_state_file)
 
@@ -29,9 +32,9 @@ class PaperGraderStation(StationBase):
             prompt_name="grade_paper",
             backend="ollama",
             priority="standard",
-            input_text=text[:4000],
+            input_text=text,
         )
-        state_file.write_text(json.dumps({"job_id": job_id, "status": "submitted"}, indent=2), encoding="utf-8")
+        state_file.write_text(json.dumps({"job_id": job_id, "status": "submitted", "source_sha256": hashlib.sha256(file_path.read_bytes()).hexdigest()}, indent=2), encoding="utf-8")
         return StationVerdict.HOLD, 0.0, f"submitted grade job {job_id}"
 
     def _collect(self, state_file: Path) -> tuple[StationVerdict, float, str]:
@@ -39,12 +42,23 @@ class PaperGraderStation(StationBase):
         job_id = state.get("job_id", "")
         completed = Path(self.hub.queue_dir) / "completed" / f"{job_id}.json"
         if not completed.exists():
+            failed = Path(self.hub.queue_dir) / "failed" / f"{job_id}.json"
+            if failed.exists():
+                failure = json.loads(failed.read_text(encoding="utf-8"))
+                return StationVerdict.REVIEW, 0.0, f"Grading incomplete: {failure.get('error', 'model job failed or requires review')}"
             return StationVerdict.HOLD, 0.0, f"waiting for completed/{job_id}.json"
         job = json.loads(completed.read_text(encoding="utf-8"))
         payload = self._extract_payload(job)
-        score = float(payload.get("overall_score", payload.get("score", 0.5)))
+        try:
+            score = float(payload.get("overall_score", payload.get("score")))
+        except (TypeError, ValueError):
+            return StationVerdict.REVIEW, 0.0, "Invalid grading response: missing numeric score"
+        if not math.isfinite(score) or not 0 <= score <= 1:
+            return StationVerdict.REVIEW, 0.0, "Invalid grading response: score must be between 0 and 1"
         verdict = StationVerdict.REVIEW
-        if score >= self.threshold_pass:
+        if payload.get("verdict") in {"fail", "review"}:
+            verdict = StationVerdict.REVIEW
+        elif score >= self.threshold_pass:
             verdict = StationVerdict.PASS
         elif score <= self.threshold_fail:
             verdict = StationVerdict.FAIL

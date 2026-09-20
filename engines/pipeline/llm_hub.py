@@ -77,10 +77,10 @@ class LLMHub:
     """
 
     def __init__(self, queue_dir: str = r"D:\FAP\_queue",
-                 prompts_dir: str = r"D:\FAP\wiki\prompts",
+                 prompts_dir: str | None = None,
                  log_dir: str = r"D:\FAP\logs"):
         self.queue_dir = Path(queue_dir)
-        self.prompts_dir = Path(prompts_dir)
+        self.prompts_dir = Path(prompts_dir) if prompts_dir else Path(__file__).resolve().parents[2] / "prompts" / "fap"
         self.log_dir = Path(log_dir)
         self._backends = {}
         self._running = False
@@ -124,7 +124,6 @@ class LLMHub:
             "cost_per_1k_tokens": 0.0,        # free
             "escalation_threshold": 0.55,     # below this → claude
             "escalation_target": "claude_api",
-            "max_input_chars": 4000,
             "tasks": [
                 "classify_document",
                 "stt_cleanup",
@@ -143,7 +142,6 @@ class LLMHub:
             "cost_per_1k_tokens": 0.003,
             "escalation_threshold": 0.40,     # below this → David
             "escalation_target": "human_review",
-            "max_input_chars": 16000,
             "tasks": [
                 "grade_paper",
                 "cross_domain_analysis",
@@ -201,7 +199,7 @@ class LLMHub:
             prompt_name=prompt_name,
             backend=backend,
             priority=priority,
-            input_text=input_text[:8000],  # truncate for safety
+            input_text=input_text,  # Preserve the whole source; never silently crop it.
         )
 
         # Write to queue
@@ -337,7 +335,14 @@ class LLMHub:
         start = time.time()
 
         try:
-            if backend == "ollama":
+            if backend.startswith("pof:"):
+                from .pof_bridge import call_pof
+                response = call_pof({'action': 'evaluate', 'execute': True,
+                    'profile': backend.split(':', 1)[1], 'text': full_prompt})
+                result = {'status': 'completed', 'result': response['text'],
+                    'cost_tokens': response['input_tokens'] + response['output_tokens'],
+                    'receipt': response['receipt']}
+            elif backend == "ollama":
                 result = self._call_ollama(full_prompt, config)
             elif backend == "claude_api":
                 result = self._call_claude(full_prompt, config)
@@ -357,9 +362,15 @@ class LLMHub:
                 "model": config.get("model", "mistral"),
                 "prompt": prompt,
                 "stream": False,
+                # UTF-8 bytes provide a conservative input-token budget. Request
+                # enough context for the entire prompt rather than Ollama's default.
+                "options": {"num_ctx": len(prompt.encode("utf-8")) + 2048, "num_predict": 2048},
             }, timeout=config.get("timeout", 60))
             if r.ok:
-                resp = r.json().get("response", "")
+                data = r.json()
+                if data.get("done_reason") == "length":
+                    return {"status": "failed", "error": "Incomplete model output: context/output limit reached; full review required"}
+                resp = data.get("response", "")
                 return {
                     "status": "completed",
                     "result": resp,
@@ -387,6 +398,8 @@ class LLMHub:
             }, timeout=config.get("timeout", 120))
             if r.ok:
                 data = r.json()
+                if data.get("stop_reason") in {"max_tokens", "model_context_window_exceeded"}:
+                    return {"status": "failed", "error": "Incomplete model output: context/output limit reached; full review required"}
                 text = "".join(
                     b.get("text", "") for b in data.get("content", [])
                     if b.get("type") == "text"

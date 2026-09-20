@@ -1,8 +1,9 @@
 """Corpus triage: inventory, dedup, classify, framework tag, rank, report."""
 from __future__ import annotations
-import argparse, hashlib, json
+import argparse, hashlib, json, sys
 from collections import defaultdict
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 from engines.pipeline.station_base import Manifest
 from engines.pipeline.stations.classifier import ClassifierStation
 from engines.pipeline.stations.framework_classifier import FrameworkClassifierStation
@@ -14,18 +15,30 @@ def sha256(fp:Path)->str:
     h=hashlib.sha256(); h.update(fp.read_bytes()); return h.hexdigest()
 
 def triage(source:Path, output:Path)->dict:
+    source, output = source.resolve(), output.resolve()
+    if not source.is_dir():
+        raise ValueError(f"Source folder does not exist: {source}")
+    if source == output or source.is_relative_to(output):
+        raise ValueError("Output must not be the source or an ancestor of it")
     output.mkdir(parents=True,exist_ok=True)
     rows=[]; groups=defaultdict(list)
-    cls=ClassifierStation(str(source),str(output/'classified')); fw=FrameworkClassifierStation(str(source),str(output/'framework'))
-    for fp in source.rglob('*'):
+    cls=ClassifierStation(str(output/'_work'),str(output/'classified')); fw=FrameworkClassifierStation(str(output/'_work'),str(output/'framework'),queue_dir=str(output/'_queue'))
+    for fp in list(source.rglob('*')):
+        if fp.is_relative_to(output):
+            continue
         if fp.is_dir() or fp.suffix.lower() in SKIP_EXT or any(p in SKIP_DIR for p in fp.parts):
             continue
         h=sha256(fp); groups[h].append(str(fp))
         row={"path":str(fp),"size":fp.stat().st_size,"ext":fp.suffix.lower(),"sha256":h,"modified":fp.stat().st_mtime,"duplicate":False,"quality":0.1}
         if fp.suffix.lower() in {'.md','.txt','.html'}:
             m=Manifest(file_path=str(fp),file_hash=h,pipeline_name='triage',current_station='classifier')
-            _,cscore,_=cls.process(fp,m)
-            _,fscore,_=fw.process(fp,m)
+            text=fp.read_text(encoding='utf-8',errors='replace')
+            laws=cls._detect_laws(text)
+            doc_type=cls._detect_doc_type(text,fp)
+            cscore=cls._compute_confidence(laws,doc_type)
+            m.metadata.update(doc_type=doc_type,laws=laws)
+            data=fw._rule_tag(fp.read_text(encoding='utf-8',errors='replace'),fp)
+            fscore=data['confidence']
             words=len(fp.read_text(encoding='utf-8',errors='replace').split())
             row.update({"classifier_score":cscore,"framework_score":fscore,"quality":fscore if words>=200 else 0.2,"doc_type":m.metadata.get('doc_type','unknown'),"laws":m.metadata.get('laws',[])})
         rows.append(row)
@@ -36,7 +49,7 @@ def triage(source:Path, output:Path)->dict:
     ranked=sorted(rows,key=lambda r:r.get('quality',0),reverse=True)
     (output/'triage_manifest.json').write_text(json.dumps(ranked,indent=2),encoding='utf-8')
     (output/'duplicates.json').write_text(json.dumps({h:p for h,p in groups.items() if len(p)>1},indent=2),encoding='utf-8')
-    report=f"# Triage Report\n\nTotal files: {len(rows)}\nUnique hashes: {len(groups)}\nDuplicates: {sum(1 for v in groups.values() if len(v)>1)}\n\n## Top 20\n" + "\n".join(f"- {r['path']} ({r.get('quality',0):.2f})" for r in ranked[:20])
+    report=f"# Triage Report\n\nTotal files: {len(rows)}\nUnique hashes: {len(groups)}\nDuplicates: {sum(1 for v in groups.values() if len(v)>1)}\n\n## Top 20 by heuristic framework relevance (not truth or evidence strength)\n" + "\n".join(f"- {r['path']} ({r.get('quality',0):.2f})" for r in ranked[:20])
     (output/'triage_report.md').write_text(report,encoding='utf-8')
     return {"total":len(rows),"unique":len(groups)}
 

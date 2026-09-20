@@ -21,3 +21,7 @@ Describe what this workflow accepts, what it produces, and where the result goes
 - `RUN_PIPELINE.bat`: run full workflow
 - `RUN_THIS_STAGE.bat`: run this packet only
 - `TROUBLESHOOT.bat`: dependency and folder checks
+
+## Current launcher status
+
+The packet entrypoint is not connected to processing stations. It exits with code 2 and reports NOT CONFIGURED; it does not grade or process documents. The shared station implementations are separate from this packet.

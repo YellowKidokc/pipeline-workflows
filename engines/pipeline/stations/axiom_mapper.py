@@ -18,7 +18,7 @@ class AxiomMapperStation(StationBase):
     def process(self, file_path: Path, manifest: Manifest) -> tuple[StationVerdict, float, str]:
         sidecar = file_path.with_suffix(file_path.suffix + ".axioms.json")
         if not sidecar.exists():
-            job_id = self.hub.submit("axiom-mapper", str(file_path), "extract_claims", backend="claude_api", priority="batch", input_text=file_path.read_text(encoding="utf-8")[:8000])
+            job_id = self.hub.submit("axiom-mapper", str(file_path), "extract_claims", backend="claude_api", priority="batch", input_text=file_path.read_text(encoding="utf-8"))
             sidecar.write_text(json.dumps({"job_id": job_id, "status": "submitted"}, indent=2), encoding="utf-8")
             return StationVerdict.HOLD, 0.0, f"submitted axiom-map job {job_id}"
 
@@ -33,16 +33,15 @@ class AxiomMapperStation(StationBase):
         gaps = payload.get("gaps", [])
         contradictions = payload.get("contradictions", [])
         for gap in gaps:
-            self.emit_signal(SignalType.GAP, f"Missing coverage for axiom {gap}", {"axiom": gap})
+            self.emit_signal(SignalType.GAP, f"Unresolved root/supporting-node mapping: {gap}", {"axiom": gap})
         for contradiction in contradictions:
             self.emit_signal(SignalType.QUALITY, f"Contradiction detected: {contradiction}", {"claim": contradiction})
         coverage = len({m.get('axiom') for m in mappings if isinstance(m, dict) and m.get('axiom')})
-        breadth_score = min(0.6, coverage / 22)
         confidence = float(payload.get("confidence", 0.5))
-        score = min(1.0, breadth_score + 0.4 * confidence)
-        sidecar.write_text(json.dumps({"claims": claims, "mappings": mappings, "gaps": gaps, "contradictions": contradictions, "score": score}, indent=2), encoding="utf-8")
-        verdict = StationVerdict.PASS if score >= self.threshold_pass else StationVerdict.REVIEW
-        return verdict, score, "axiom mapping collected"
+        score = max(0.0, min(1.0, confidence))
+        sidecar.write_text(json.dumps({"job_id": meta.get("job_id"), "claims": claims, "mappings": mappings, "gaps": gaps, "contradictions": contradictions, "score": score}, indent=2), encoding="utf-8")
+        verdict = StationVerdict.PASS if score >= self.threshold_pass and not contradictions and not gaps else StationVerdict.REVIEW
+        return verdict, score, "root/supporting-node mapping collected; coverage is not proof"
 
     def _extract_payload(self, job: dict) -> dict:
         if isinstance(job.get("result_json"), dict):

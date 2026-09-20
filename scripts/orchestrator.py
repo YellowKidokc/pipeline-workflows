@@ -165,6 +165,9 @@ class Orchestrator:
 
                     if result.result == "review":
                         status["status"] = "review"
+                        self._write_status(packet, status)
+                        self._update_manifest(packet, workflow["name"], stage["name"], status, input_files)
+                        return status
 
         self._write_status(packet, status)
         self._update_manifest(packet, workflow["name"], status.get("current_stage", "completed"), status, input_files)
@@ -301,6 +304,9 @@ class Orchestrator:
         entry = self.registry.get("stations", {}).get(station_name)
         if not entry:
             raise ValueError(f"Station {station_name!r} not found in {self.registry_path}")
+        if entry.get("type") == "pof":
+            from engines.pipeline.pof_bridge import POFReviewStation
+            return POFReviewStation(station_name, packet, entry, self.config)
         return ExternalStationAdapter.from_registry(station_name, registry_path=str(self.registry_path), config_path=str(self.config_path))
 
     def _run_llm_gate(self, stage: dict[str, Any], packet: Path) -> StageResult:
@@ -353,9 +359,17 @@ class Orchestrator:
     def _load_or_create_status(self, packet: Path, workflow: dict[str, Any], input_hash: str, resume: bool) -> dict[str, Any]:
         status_path = packet / "STATUS.json"
         if resume and status_path.exists():
-            return load_json(status_path)
+            previous = load_json(status_path)
+            if previous.get('input_hash') != input_hash or previous.get('workflow') != workflow['name']:
+                raise ValueError('Packet source or workflow changed; use a new packet or --no-resume')
+            if previous.get('dry_run', False) != self.dry_run:
+                raise ValueError('Preview and execution histories cannot be reused; use --no-resume')
+            if previous.get('status') == 'review':
+                raise ValueError('Packet requires review; resolve it before explicitly restarting with --no-resume')
+            return previous
         return {
             "packet_id": packet.name,
+            "dry_run": self.dry_run,
             "workflow": workflow["name"],
             "current_stage": "pending",
             "status": "active",

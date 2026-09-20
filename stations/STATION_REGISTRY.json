@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "description": "Station Registry — single source of truth for all FORGE pipeline stations",
+    "description": "Station Registry â€” single source of truth for all FORGE pipeline stations",
     "rule": "Every station has ONE entry. Workflows resolve paths from this file.",
     "updated": "2026-06-10",
     "canary_last_run": "2026-06-10",
@@ -236,7 +236,7 @@
       "type": "local", "has_run_bat": true, "status": "fail",
       "canary": { "result": "fail", "kind": "cli-presence" },
       "category": "analysis",
-      "notes": "pqa CLI not installed — install with repo instructions"
+      "notes": "pqa CLI not installed â€” install with repo instructions"
     },
     "ai-research-agents": {
       "path": "X:\\Backside\\stations\\ai-research-agents.station",
@@ -316,6 +316,14 @@
       "canary": { "result": "untested", "kind": "self-test" },
       "category": "analysis",
       "notes": "Truth Machine v1. 10-step deterministic pipeline: ingest->7Q classify->YAML rules->dependency graph->contradictions->kill chain->truth pressure->graph export->reports. 17 Postgres tables in q7 schema, 5 enums, 7 engine scaffolds. No LLM. Pure rules."
+    },
+    "pof-source-review": {
+      "type": "pof",
+      "status": "review",
+      "profile": "deepseek",
+      "category": "analysis",
+      "description": "Full-source candidate review using POF provider profiles",
+      "timeout_seconds": 600
     }
   }
 }
