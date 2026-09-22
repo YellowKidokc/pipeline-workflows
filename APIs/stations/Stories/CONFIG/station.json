@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "name": "Stories",
+  "description": "Preserves a story, rewrites its opening, explores separate ideas, and optionally drafts a revision",
+  "workflow": "stories-v1",
+  "provider": {"name": "mock", "model": "mock-v1", "timeout_seconds": 120, "retry_limit": 3},
+  "concurrency": 12,
+  "token_limits": {"input_chars": 24000, "output_tokens": 3000},
+  "queue": {"settle_seconds": 1, "priority_weight": 3},
+  "series_context": {"policy": "independent-files-no-cross-story-context", "ordering": "lexical-relative-path"},
+  "steps": [
+    {"name": "read_story", "type": "api", "prompt": "01_READ_STORY.md", "input": "source"},
+    {"name": "alternative_opening", "type": "api", "prompt": "02_REWRITE_OPENING.md", "input": "source"},
+    {"name": "exploratory_ideas", "type": "api", "prompt": "03_EXPLORE_IDEAS.md", "input": "source"},
+    {"name": "optional_revised_draft", "type": "api", "prompt": "04_PREPARE_REVISED_DRAFT.md", "input": "source"},
+    {"name": "validated", "type": "validate"}
+  ],
+  "handoff": {"enabled": false, "destination": "../NEXT_STATION/INBOX"},
+  "dependencies": ["Python 3.10+"]
+}
