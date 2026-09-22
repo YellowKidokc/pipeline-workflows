@@ -138,6 +138,11 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest='command', required=True)
     sub.add_parser('list', help='List workflows with readable descriptions')
+    drop = sub.add_parser('drop', help='Portable DeepSeek routing and local Obsidian preparation')
+    drop.add_argument('action', choices=['init','once','watch','status','retry','stop','relink','resolve','reprocess'])
+    drop.add_argument('--workspace', default=str(ROOT / 'DropWorkspace'))
+    drop.add_argument('--job')
+    drop.add_argument('--route', choices=['youtube','document','prompt'])
     sub.add_parser('providers', help='List POF profiles without credentials')
     run = sub.add_parser('run', help='Preview or execute a named workflow')
     run.add_argument('workflow'); run.add_argument('packet'); run.add_argument('--execute', action='store_true')
@@ -155,6 +160,13 @@ def main(argv=None):
         cmd = sub.add_parser(name); cmd.add_argument('source'); cmd.add_argument('destination'); cmd.add_argument('--execute', action='store_true')
     undo = sub.add_parser('undo'); undo.add_argument('count', type=int, default=1, nargs='?'); undo.add_argument('--execute', action='store_true')
     args = parser.parse_args(argv)
+    if args.command == 'drop':
+        from drop_pipeline.runner import main as drop_main
+        values=[args.action,'--workspace',args.workspace]
+        if args.job: values.extend(['--job',args.job])
+        if args.route: values.extend(['--route',args.route])
+        drop_main(values)
+        return 0
     if args.command == 'list':
         result = {'status': 'inspected', 'workflows': []}
         for path in sorted((ROOT / 'workflows').glob('*.json')):
