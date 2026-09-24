@@ -49,6 +49,13 @@ PROCESS_NAME/
 
 Each packet can either run a full pipeline or stop at one station.
 
+## Portable API workspace
+
+The `API/API/` workspace defines the recursive priority, series, general, and
+hold inbox lanes plus the shared lifecycle for the six-station Complete Grading
+Bundle. See [`API/API/README.md`](API/API/README.md) for scheduling, completion
+barrier, retry, state-history, and `PROCESSED` rules.
+
 ## Stages
 
 - Intake: classify, identify, detect format, deduplicate
