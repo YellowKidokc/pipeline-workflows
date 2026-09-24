@@ -1,0 +1,97 @@
+{
+  "claims": [
+    {
+      "id": "KC-001",
+      "claim": "The Cross is the unique configuration satisfying all five conditions of perfect repair (justice, mercy, freedom, record, and restoration) simultaneously.",
+      "plain_english": "There is only one way to fix everything that's broken without violating justice, mercy, freedom, or truth \u2014 and that way is the Cross.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "Lean 4 formal proof: JusticeMercyOperator.lean theorem cross_is_unique_solution (Thm 125) \u2014 exhaustive case elimination shows any configuration meeting all five conditions is identical to the Cross.",
+      "what_would_break_it": "If a different configuration (e.g., offender pays, debt waived, coerced third party, shared cost) could satisfy all five conditions simultaneously, the uniqueness claim would be false."
+    },
+    {
+      "id": "KC-002",
+      "claim": "Corrupted systems cannot self-repair using only corrupted resources; external conversion is required.",
+      "plain_english": "If something is broken from the inside, it can't fix itself \u2014 help has to come from outside.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "PolarityDiscipline.lean and SignConversionDiscipline.lean: destructive signs cannot self-redeem through ordinary multiplication; burden coupling shows two negatives stay negative; only external Christic conversion flips a negative burden to positive.",
+      "what_would_break_it": "If a corrupted system could produce a positive outcome using only its own corrupted resources (e.g., self-improvement achieving moral conversion), the claim would be false."
+    },
+    {
+      "id": "KC-003",
+      "claim": "Good is ontologically prior to evil \u2014 evil is parasitic on prior good.",
+      "plain_english": "Evil can't exist on its own; it only makes sense as a corruption of something good that came first.",
+      "type": "theological",
+      "strength": "moderate",
+      "evidence_given": "Sign arithmetic enforces asymmetry: positive is generative, negative is parasitic. Incoherent records not retained; negative states require prior positive substrate to deviate from. Formal model in PolarityDiscipline.lean and SignConversionDiscipline.lean.",
+      "what_would_break_it": "If evil could exist independently without borrowing from good (e.g., a dualist framework where evil is co-eternal and self-sufficient), the claim would be false."
+    },
+    {
+      "id": "KC-004",
+      "claim": "The Maxwell/Trinity isomorphism holds: quaternion electromagnetics is structurally isomorphic to the relational Trinity under a five-condition structural specification.",
+      "plain_english": "The math that describes electricity and magnetism has the same shape as the Christian doctrine of the Trinity \u2014 and this isn't a coincidence you can fake.",
+      "type": "mathematical",
+      "strength": "strong",
+      "evidence_given": "MaxwellTrinity.lean: 24 theorems. Quaternion EM and relational Trinity both pass all 5 ValidTriadic conditions. TriadicIso is proved. Five false positives (Heaviside EM, Modalism, static single-field EM, arbitrary 3-part system, relabeled role system) are all formally rejected. Each guard is load-bearing.",
+      "what_would_break_it": "If a false positive (e.g., Heaviside EM or Modalism) could pass all five conditions and the TriadicIso, the isomorphism claim would be false."
+    },
+    {
+      "id": "KC-005",
+      "claim": "Coherence requires a prior, stable, truth-bearing, generative, and authoritative standard \u2014 the God-shape.",
+      "plain_english": "For anything to make sense, there has to be a standard of truth that isn't broken itself \u2014 and that standard looks like God.",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "Lane 1 argument: coherence functional defined; zero-factor collapse proved in Core.lean; self-grounding substrate defined; missing source/relation/command forces bridge score to zero. The naming step (Q7) is not formally provable but the shape is argued.",
+      "what_would_break_it": "If a broken or contingent system could serve as its own final standard of coherence without regress or contradiction, the claim would be false."
+    },
+    {
+      "id": "KC-006",
+      "claim": "The bridge matrix (10-factor signature) is structurally valid: all 10 canonical bridge rows pass signature validation, and semantic swaps (grace\u2194faith, entropy\u2194grace, etc.) are correctly rejected.",
+      "plain_english": "There are exactly 10 key concepts that connect physics and theology, and swapping any two of them breaks the pattern \u2014 the math catches the mistake.",
+      "type": "mathematical",
+      "strength": "strong",
+      "evidence_given": "BridgeMatrix.lean: 21 theorems. All 10 canonical rows valid. Grace\u2194Faith swap, Entropy\u2194Grace swap, K\u2194F swap, C\u2194R swap all rejected. Product alone is blind to semantic swaps; signature layer catches what arithmetic misses.",
+      "what_would_break_it": "If a semantic swap (e.g., grace\u2194faith) could pass both the product and signature validation, the structural validity claim would be false."
+    },
+    {
+      "id": "KC-007",
+      "claim": "The master equation is invariant under the canonical physical-to-spiritual substitution: \u03c7(physical) = \u03c7(spiritual).",
+      "plain_english": "The same equation that describes how the universe works also describes how the spiritual world works \u2014 they're the same formula.",
+      "type": "mathematical",
+      "strength": "strong",
+      "evidence_given": "MasterEquationInvariance.lean: 8 theorems. Canonical substitution preserves signatures for all 10 factors. \u03c7(physical) = \u03c7(spiritual) under canonical map. Both product and signature needed \u2014 neither alone suffices.",
+      "what_would_break_it": "If the canonical substitution did not preserve the master equation (i.e., \u03c7(physical) \u2260 \u03c7(spiritual)), the invariance claim would be false."
+    },
+    {
+      "id": "KC-008",
+      "claim": "The Cross is the unique solution to the justice/mercy convergence problem \u2014 any configuration satisfying all five conditions is identical to the Cross.",
+      "plain_english": "There is exactly one way to be perfectly just and perfectly merciful at the same time, and that way is the Cross.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "JusticeMercyOperator.lean: 14 theorems. Existence AND uniqueness proved by exhaustive case elimination. Justice and Mercy share 4 components, differ in exactly one coordinate: who pays the cost. Cross satisfies all 5 conditions; every alternative fails at least one.",
+      "what_would_break_it": "If a configuration other than the Cross could satisfy all five conditions (proportionality, impartiality, truth-naming, victim-restoration, and cost-bearer), the uniqueness claim would be false."
+    },
+    {
+      "id": "KC-009",
+      "claim": "The resurrection is not repair \u2014 it is mission return: substrate identity is preserved through incarnation, death, and resurrection, and the post-resurrection state is richer than the pre-incarnate state.",
+      "plain_english": "The resurrection isn't just fixing what was broken \u2014 it's completing a mission, and the result is better than the starting point.",
+      "type": "theological",
+      "strength": "moderate",
+      "evidence_given": "MissionReturnOperator.lean: 13 theorems. Substrate identity preserved through incarnation, cross, and resurrection. Resolution drops from infinite to finite (incarnation) then returns to infinite (resurrection). Entropy and death contact records carried. Post-resurrection \u2260 pre-incarnate: it is richer.",
+      "what_would_break_it": "If the resurrection were merely a return to the pre-incarnate state (a reset) or if substrate identity were lost, the claim would be false."
+    },
+    {
+      "id": "KC-010",
+      "claim": "The Lean 4 corpus proves internal structural consistency: 287 theorems, 0 axioms, 0 sorry, 0 admit \u2014 but it does not prove that the formal models faithfully represent real physics and theology.",
+      "plain_english": "The computer checked every step of the logic and found no errors, but that doesn't mean the math matches the real world \u2014 that's a separate question.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The entire corpus: 287 named theorems across 16 Lean files, all compiling with zero sorry/admit/axioms. The overclaim guard runs on every theorem, explicitly stating what each proves and does not prove. SPEC-01 through SPEC-05 name the limits.",
+      "what_would_break_it": "If any theorem failed to compile (i.e., contained a sorry, admit, or axiom), the consistency claim would be false. If the formal models were shown to be unfaithful abstractions of the real domains, the relevance claim would be weakened."
+    }
+  ],
+  "strongest_claim": "KC-001",
+  "weakest_claim": "KC-005",
+  "overall_argument_strength": "strong"
+}

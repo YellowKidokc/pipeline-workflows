@@ -1,0 +1,138 @@
+{
+  "chi_variables": {
+    "G": {
+      "present": true,
+      "strength": 10,
+      "evidence": "The entire document is about the Grace Operator G, defined as a non-unitary, idempotent operator acting on a two-state system. Properties include G^2 = G, G dagger G != I, rank(G)=1, external origin."
+    },
+    "M": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit mention of meaning, mass-force, motion, inertia, or will."
+    },
+    "E": {
+      "present": true,
+      "strength": 6,
+      "evidence": "E9.1: Grace-coupled energy E_grace = integral G(t) rho(x,t) d^3x. Energy is referenced as energetic substrate."
+    },
+    "S": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No mention of strong force, love, binding, or confinement."
+    },
+    "T": {
+      "present": true,
+      "strength": 5,
+      "evidence": "Reference to Second Law of Thermodynamics in Swap Test: 'a closed system that could reverse its own entropy would violate the Second Law.' Also mentions entropy in connection to ISO-003."
+    },
+    "K": {
+      "present": true,
+      "strength": 4,
+      "evidence": "References to Godel/Tarski/Turing/Clausius/Landauer/Leibniz impossibility theorems (ISO-002) which involve knowledge, information, and logical boundaries."
+    },
+    "R": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No mention of relativity, relationship, frame structure, or proper time."
+    },
+    "Q": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Quantum measurement is explicitly discussed: 'measurement-like operations in quantum mechanics share structural properties with grace: they are irreversible, they collapse superposition to a definite state, and they originate from outside the system being measured.' Also references Hilbert space, two-state system, projection operators."
+    },
+    "F": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No mention of weak force, sin-conservation, moral decay, or conserved deficit."
+    },
+    "C": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Coherence is central: 'closed systems cannot increase coherence without external input' (P9.1). The operator G maps to a positive state, restoring coherence. Christ is implicitly referenced through theological doctrine of grace, but not explicitly named as operator."
+    },
+    "variables_present_count": 6,
+    "dominant_variables": [
+      "G",
+      "C",
+      "Q"
+    ],
+    "absent_variables": [
+      "M",
+      "S",
+      "R",
+      "F"
+    ],
+    "chi_coverage_pct": "60%"
+  },
+  "physics_process_detection": {
+    "maps_to_physics": true,
+    "physics_domain": "quantum mechanics",
+    "specific_process": "quantum measurement / state collapse via projection operator",
+    "equation_present": "G = |+1><+1| + |+1><-1| = [[1, 0], [1, 0]]; G^2 = G; G dagger G != I; det(G)=0; rank(G)=1",
+    "isomorphism_detected": true,
+    "isomorphism_type": "structural",
+    "isomorphism_quality": 8
+  },
+  "laws_invoked": {
+    "explicit": [
+      "Law 6 (Grace/External Input)",
+      "Law 9 (Morality/Sign)",
+      "Law 4 (Incompleteness/Godel Boundary)"
+    ],
+    "implicit": [
+      "Law 5 (Thermodynamics/Judgment) via entropy reference",
+      "Law 8 (Quantum/Faith) via measurement collapse"
+    ],
+    "symmetry_pairs_active": [
+      "1-8 (Gravitation/Sin-Grace with Quantum/Faith-Doubt)",
+      "5-6 (Thermodynamics/Judgment with Information/Logos-Chaos)"
+    ]
+  },
+  "theological_structure": {
+    "trinity_present": true,
+    "trinity_structure": "Grace operator is sourced from the Trinity (ISO-001), acts on the soul field (ISO-014), and is mediated through Christ (implicitly as the agent of grace). The Father as source, Son as mediator, Spirit as applicator are structurally present but not fully elaborated.",
+    "father_aspect": {
+      "present": true,
+      "evidence": "Grace is described as external divine intervention, originating from God (the Father) as source. References Ephesians 2:8-9."
+    },
+    "son_aspect": {
+      "present": true,
+      "evidence": "Hebrews 10:14 cited: 'by one sacrifice he has made perfect forever those who are being sanctified' \u2014 Christ's sacrifice is the once-for-all act that maps to idempotency."
+    },
+    "spirit_aspect": {
+      "present": false,
+      "evidence": "No explicit mention of the Holy Spirit, though the application of grace could be implied."
+    },
+    "cross_reference": true,
+    "grace_mechanism": true,
+    "sin_entropy": true,
+    "redemption_arc": true
+  },
+  "axiom_alignment": {
+    "axioms_touched": [
+      "A9.1",
+      "A9.2",
+      "HM.3",
+      "HM.4",
+      "BC8"
+    ],
+    "axiom_count": 5,
+    "strongest_axiom_connection": "A9.1 (Grace opens closed systems)"
+  },
+  "lean_connection": {
+    "formal_claim_present": true,
+    "could_be_formalized": true,
+    "relevant_lean_module": "ChristOperatorDiscipline",
+    "proof_status": "testable"
+  },
+  "framework_alignment_score": {
+    "total": 78,
+    "breakdown": {
+      "chi_coverage": 12,
+      "physics_mapping": 18,
+      "theological_depth": 18,
+      "axiom_grounding": 16,
+      "formal_rigor": 14
+    }
+  }
+}

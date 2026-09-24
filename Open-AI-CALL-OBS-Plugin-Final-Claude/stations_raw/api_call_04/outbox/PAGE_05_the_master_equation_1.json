@@ -1,0 +1,282 @@
+{
+  "thesis": {
+    "one_sentence": "The coherence functional \u03c7(W) is the sovereign output of a nine-factor multiplicative integral, where each factor corresponds to a theological axiom, and any factor zeroing kills the whole.",
+    "thesis_type": "mathematical",
+    "thesis_strength": 8,
+    "thesis_paragraph": "The Claim"
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "The Master Equation \u03c7(W) = C_W[\u222d (G\u00b7M\u00b7E\u00b7S\u00b7T\u00b7K\u00b7R\u00b7Q\u00b7F) dx dy dt] is the correct formalization of coherence.",
+      "type": "mathematical",
+      "evidence": "The equation is derived from the axiom spine (Page 02) and Lean-verified with 503 compiled theorems.",
+      "evidence_type": "proof",
+      "evidence_strength": 7,
+      "assumption": "The axiom spine is correct and complete.",
+      "overclaim_risk": 5,
+      "overclaim_diagnosis": "The derivation is presented as forced by axioms, but the mapping from axioms to variables is interpretive, not deductive."
+    },
+    {
+      "id": "C2",
+      "claim": "The composition is multiplicative, not additive, because the structural veto requires it: if any single factor goes to zero, the whole goes to zero.",
+      "type": "mathematical",
+      "evidence": "Proof: In a multiplicative composition, any zero factor annihilates the product. The integral of a function that is identically zero on any factor's support is zero.",
+      "evidence_type": "proof",
+      "evidence_strength": 9,
+      "assumption": "The integral is over a domain where each factor is a function that can be zero on a set of positive measure.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C3",
+      "claim": "The structural veto is not a design choice but a mathematical non-negotiable.",
+      "type": "mathematical",
+      "evidence": "Same proof as C2.",
+      "evidence_type": "proof",
+      "evidence_strength": 9,
+      "assumption": "The multiplicative form is the only possible form that satisfies the veto.",
+      "overclaim_risk": 3,
+      "overclaim_diagnosis": "The paper asserts necessity but does not prove that no other functional form (e.g., min, product of sigmoids) could also enforce a veto."
+    },
+    {
+      "id": "C4",
+      "claim": "The equation has four forms (product, ratio, dynamic, field) that are exact transformations of one object.",
+      "type": "mathematical",
+      "evidence": "The paper states they are related by exact transformations but does not provide the transformations.",
+      "evidence_type": "argument",
+      "evidence_strength": 4,
+      "assumption": "The transformations exist and are invertible.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "The claim of exact transformations is asserted without derivation or proof; the ratio form is not obviously equivalent to the product form."
+    },
+    {
+      "id": "C5",
+      "claim": "Each axiom in the spine demands a measurable degree of freedom, mapped to a variable.",
+      "type": "interpretive",
+      "evidence": "Table mapping axioms to variables (e.g., Existence \u2192 E, Distinction \u2192 K).",
+      "evidence_type": "argument",
+      "evidence_strength": 3,
+      "assumption": "Theological axioms have measurable degrees of freedom.",
+      "overclaim_risk": 8,
+      "overclaim_diagnosis": "The mapping is asserted without justification that these axioms are measurable or that the mapping is unique."
+    },
+    {
+      "id": "C6",
+      "claim": "In a closed system (G=0), d\u03c7/dt \u2264 0, meaning coherence decays without external Grace.",
+      "type": "mathematical",
+      "evidence": "Lean-verified proof: d\u03c7/dt|_{G=0} = -S + \u0393(W) \u2264 0 because S > |\u0393| always.",
+      "evidence_type": "proof",
+      "evidence_strength": 7,
+      "assumption": "S > |\u0393| always holds; \u0393(W) is bounded.",
+      "overclaim_risk": 4,
+      "overclaim_diagnosis": "The inequality S > |\u0393| is stated as always true but not proven from first principles."
+    },
+    {
+      "id": "C7",
+      "claim": "The ratio form \u03c7 = \u03a6_order / \u03a6_disorder makes the war between order and disorder visible.",
+      "type": "interpretive",
+      "evidence": "Analogy to signal-to-noise ratio and free energy.",
+      "evidence_type": "argument",
+      "evidence_strength": 3,
+      "assumption": "The ratio is meaningful and not just a formal manipulation.",
+      "overclaim_risk": 6,
+      "overclaim_diagnosis": "The paper claims the combat picture is not metaphorical, but the mapping from theological terms to physical quantities is analogical, not proven."
+    },
+    {
+      "id": "C8",
+      "claim": "The field form connects to the Lagrangian via Euler-Lagrange equations.",
+      "type": "mathematical",
+      "evidence": "Statement that Lagrangian density L generates equations of motion for \u03c7.",
+      "evidence_type": "argument",
+      "evidence_strength": 2,
+      "assumption": "A Lagrangian density exists for \u03c7.",
+      "overclaim_risk": 8,
+      "overclaim_diagnosis": "No Lagrangian is provided; the claim is a promissory note to Page 06."
+    },
+    {
+      "id": "C9",
+      "claim": "The ten variables are non-fungible: you cannot compensate for zero grace with infinite knowledge.",
+      "type": "normative",
+      "evidence": "Structural veto theorem.",
+      "evidence_type": "argument",
+      "evidence_strength": 5,
+      "assumption": "The variables are independent and non-substitutable.",
+      "overclaim_risk": 4,
+      "overclaim_diagnosis": "The claim is a theological interpretation of the mathematical veto, not a mathematical result."
+    },
+    {
+      "id": "C10",
+      "claim": "The equation answers all three metaphysical questions from Page 01.",
+      "type": "interpretive",
+      "evidence": "Cross-link to Page 01.",
+      "evidence_type": "citation",
+      "evidence_strength": 1,
+      "assumption": "The metaphysical questions are well-posed and answerable by this equation.",
+      "overclaim_risk": 9,
+      "overclaim_diagnosis": "No demonstration of how the equation answers the questions is given in this page."
+    }
+  ],
+  "definitions": {
+    "explicit": [
+      {
+        "term": "\u03c7 (chi)",
+        "definition": "Coherence \u2014 the master integrator, sovereign output of the system",
+        "location": "Spiritual Terms Introduced"
+      },
+      {
+        "term": "Grace (G)",
+        "definition": "External ordering/repair input \u2014 cannot be self-generated (BC2)",
+        "location": "Spiritual Terms Introduced"
+      },
+      {
+        "term": "Sin (S)",
+        "definition": "Moral entropy \u2014 refusal, closure, disorder; directional and irreversible",
+        "location": "Spiritual Terms Introduced"
+      },
+      {
+        "term": "Free Will (W)",
+        "definition": "Regime selector via Q and C_W \u2014 constructive or destructive",
+        "location": "Spiritual Terms Introduced"
+      },
+      {
+        "term": "Structural Veto",
+        "definition": "Any factor \u2192 0 kills \u03c7 \u2014 mathematical non-negotiable",
+        "location": "Spiritual Terms Introduced"
+      },
+      {
+        "term": "C_W wrapper",
+        "definition": "Consciousness/coherence as integrating functional, not a tenth factor",
+        "location": "Spiritual Terms Introduced"
+      }
+    ],
+    "implied": [
+      {
+        "term": "coherence",
+        "usage_implies": "A scalar quantity that integrates nine factors and is the output of the system"
+      },
+      {
+        "term": "entropy",
+        "usage_implies": "Both physical and moral disorder, subject to the Second Law"
+      },
+      {
+        "term": "faith",
+        "usage_implies": "Pre-measurement commitment, analogous to quantum superposition"
+      }
+    ],
+    "undefined_but_critical": [
+      "\u03a6_order",
+      "\u03a6_disorder",
+      "\u0393_coupling(W)",
+      "moral-physical space",
+      "Fourier duals in the moral-physical space"
+    ],
+    "terms_doing_hidden_work": [
+      "coherence",
+      "moral entropy",
+      "external",
+      "closed system",
+      "non-fungible"
+    ]
+  },
+  "assumptions": [
+    {
+      "assumption": "The axiom spine (Page 02) is correct and complete.",
+      "type": "conceptual",
+      "if_this_fails": "The entire derivation collapses."
+    },
+    {
+      "assumption": "The mapping from axioms to variables is unique and measurable.",
+      "type": "methodological",
+      "if_this_fails": "The equation is not uniquely determined."
+    },
+    {
+      "assumption": "S > |\u0393| always holds in a closed system.",
+      "type": "mathematical",
+      "if_this_fails": "The dynamic form's BC2 inequality may not hold."
+    },
+    {
+      "assumption": "The four forms are exactly transformable.",
+      "type": "mathematical",
+      "if_this_fails": "The claim of a unified object is weakened."
+    },
+    {
+      "assumption": "The integral domain is such that a zero factor on a set of positive measure kills the integral.",
+      "type": "mathematical",
+      "if_this_fails": "The structural veto theorem may not apply."
+    }
+  ],
+  "argument_structure": {
+    "premises": [
+      "P1: The axiom spine (Page 02) demands nine variables.",
+      "P2: The composition must be multiplicative to enforce the structural veto.",
+      "P3: The structural veto is a mathematical non-negotiable.",
+      "P4: The equation has four forms that are exact transformations.",
+      "P5: The dynamic form shows coherence decays without external Grace."
+    ],
+    "intermediate_conclusions": [
+      "IC1: The Master Equation is the unique formalization of coherence.",
+      "IC2: The structural veto implies non-fungibility of variables.",
+      "IC3: The ratio form reveals the combat between order and disorder."
+    ],
+    "final_conclusion": "The Master Equation is the correct, forced mathematical structure that integrates theological axioms into a single coherence functional.",
+    "weakest_link": "The claim that the four forms are exact transformations (C4) \u2014 no transformations are provided.",
+    "unproven_jumps": [
+      "From axioms to variables: no proof that each axiom demands a measurable degree of freedom.",
+      "From product form to ratio form: no transformation given.",
+      "From field form to Lagrangian: no Lagrangian provided.",
+      "From equation to answering metaphysical questions: no demonstration."
+    ]
+  },
+  "overclaim_detection": [
+    {
+      "pattern": "model-to-reality",
+      "location": "The Claim: 'The equation was not designed \u2014 it was forced.'",
+      "diagnosis": "The paper claims the equation is forced by axioms, but the mapping from axioms to variables is interpretive, not deductive."
+    },
+    {
+      "pattern": "definition-to-discovery",
+      "location": "Spiritual Terms Introduced: 'Sin (S) \u2014 Moral entropy \u2014 refusal, closure, disorder; directional and irreversible'",
+      "diagnosis": "The paper defines a term and then treats it as a discovered physical quantity without empirical grounding."
+    },
+    {
+      "pattern": "textual-possibility-to-actual-practice",
+      "location": "The Claim: 'The equation has four forms... related by exact transformations.'",
+      "diagnosis": "The paper asserts exact transformations exist but does not provide them, treating a promissory note as a proven fact."
+    }
+  ],
+  "counterarguments": {
+    "addressed": [],
+    "missing": [
+      "The mapping from theological axioms to mathematical variables is arbitrary and not unique.",
+      "The claim of exact transformations between forms is unsubstantiated.",
+      "The equation is not empirically testable in any conventional sense.",
+      "The assumption that S > |\u0393| always holds is not justified."
+    ],
+    "smartest_critic_would_say": "You have not shown that the mapping from axioms to variables is forced rather than chosen; the equation is a formalization of your theology, not a discovery forced by mathematics."
+  },
+  "falsifiability": {
+    "kill_conditions_stated": [
+      "If any factor is zero, \u03c7 = 0 (structural veto)."
+    ],
+    "kill_conditions_missing": [
+      "If the axiom spine is incomplete or incorrect.",
+      "If the four forms are not exactly transformable.",
+      "If S \u2264 |\u0393| in a closed system.",
+      "If the equation does not answer the metaphysical questions."
+    ],
+    "testability": "arguable_from_text"
+  },
+  "novelty": {
+    "what_is_new": "A multiplicative integral of nine theological variables as a formal definition of coherence, with a structural veto and four representations.",
+    "novelty_type": "new_formalization",
+    "closest_existing_work": "Integrated information theory (IIT) of consciousness, which also uses a mathematical functional (\u03a6) to quantify consciousness.",
+    "novelty_score": 6
+  },
+  "compression": {
+    "one_sentence": "The Master Equation defines coherence as a multiplicative integral of nine theological variables, where any zero factor kills the whole, and presents four equivalent forms.",
+    "three_sentences": "The Master Equation \u03c7(W) = C_W[\u222d (G\u00b7M\u00b7E\u00b7S\u00b7T\u00b7K\u00b7R\u00b7Q\u00b7F) dx dy dt] is presented as the forced mathematical consequence of the axiom spine, with a structural veto that makes each factor load-bearing. The equation has four forms\u2014product, ratio, dynamic, and field\u2014claimed to be exact transformations of one object. The dynamic form shows that without external Grace, coherence decays, formalizing the Second Law of thermodynamics in a moral-physical substrate.",
+    "strongest_defensible_version": "A multiplicative integral of nine variables, each mapped to a theological axiom, defines a coherence functional \u03c7 that is zero if any variable is zero, and the dynamic form shows that in a closed system with no external input, \u03c7 decays.",
+    "weakest_version_still_true": "A mathematical object \u03c7 is defined as a product of nine factors, and if any factor is zero, the product is zero."
+  }
+}

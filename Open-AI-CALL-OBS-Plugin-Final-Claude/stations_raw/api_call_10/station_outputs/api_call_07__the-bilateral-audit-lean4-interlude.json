@@ -1,0 +1,79 @@
+{
+  "claims": [
+    {
+      "id": "KC-001",
+      "claim": "The bilateral audit gains a formal layer showing what has been proved and what remains outside Lean.",
+      "plain_english": "The audit now includes a computer-checked proof system that clearly marks which parts are proven and which are not.",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "The document states this as a description of the Lean 4 Evidence Layer, but provides no specific proof or formal verification details.",
+      "what_would_break_it": "If the Lean 4 formalization were incomplete, inconsistent, or failed to capture the audit's key claims, this claim would be false."
+    },
+    {
+      "id": "KC-002",
+      "claim": "Formal verification strengthens the audit by naming its limits.",
+      "plain_english": "Using a computer proof system makes the audit stronger because it clearly shows what it can and cannot prove.",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "The document repeats this statement multiple times but does not provide specific examples of limits or how naming them strengthens the audit.",
+      "what_would_break_it": "If formal verification introduced errors, omitted important claims, or failed to identify genuine limits, this claim would be false."
+    },
+    {
+      "id": "KC-003",
+      "claim": "The Maxwell / Trinity Isomorphism is the load-bearing structure of the argument.",
+      "plain_english": "The connection between Maxwell's equations and the Trinity is the main support for the whole argument.",
+      "type": "theological",
+      "strength": "speculative",
+      "evidence_given": "The document names this isomorphism but provides no derivation, equations, or theological analysis.",
+      "what_would_break_it": "If the isomorphism were mathematically invalid, theologically unsound, or not actually load-bearing, this claim would be false."
+    },
+    {
+      "id": "KC-004",
+      "claim": "The Cross Is the Unique Solution.",
+      "plain_english": "The crucifixion is the only possible answer that fits the formal system.",
+      "type": "theological",
+      "strength": "speculative",
+      "evidence_given": "The document states this as a section title and repeats the phrase, but provides no proof or reasoning.",
+      "what_would_break_it": "If there were multiple solutions, or if the formal system did not uniquely determine the Cross, this claim would be false."
+    },
+    {
+      "id": "KC-005",
+      "claim": "The Lean 4 formalization covers which parts of the audit survive machine-checked formalization.",
+      "plain_english": "The computer proof system checks which parts of the audit are correct and which are not.",
+      "type": "empirical",
+      "strength": "moderate",
+      "evidence_given": "The document asserts this as the purpose of the Lean 4 layer, but does not present any formal verification results or specific claims that were checked.",
+      "what_would_break_it": "If the Lean 4 formalization did not actually check the audit's claims, or if it produced incorrect results, this claim would be false."
+    },
+    {
+      "id": "KC-006",
+      "claim": "The interlude sends the reader to the canonical page instead of replacing it.",
+      "plain_english": "This short page directs readers to the full, official version rather than trying to be a substitute.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document contains explicit links and references to the canonical page, and states this intention directly.",
+      "what_would_break_it": "If the canonical page did not exist, was inaccessible, or did not contain the full argument, this claim would be false."
+    },
+    {
+      "id": "KC-007",
+      "claim": "The bilateral audit is a formal argument that can be checked by Lean 4.",
+      "plain_english": "The audit is a structured argument that can be verified by a computer proof assistant.",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "The document describes the Lean 4 Evidence Layer but does not provide any actual Lean 4 code, proof scripts, or verification results.",
+      "what_would_break_it": "If the audit were not formalizable, or if Lean 4 could not verify its key claims, this claim would be false."
+    },
+    {
+      "id": "KC-008",
+      "claim": "The Lean 4 Evidence Layer is part of the Faith Through Physics project.",
+      "plain_english": "This computer proof system is part of a larger project that connects physics and faith.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document is hosted under the Faith Through Physics domain and references the project throughout.",
+      "what_would_break_it": "If the Lean 4 layer were not actually part of the project, or if the project disavowed it, this claim would be false."
+    }
+  ],
+  "strongest_claim": "KC-006",
+  "weakest_claim": "KC-004",
+  "overall_argument_strength": "developing"
+}

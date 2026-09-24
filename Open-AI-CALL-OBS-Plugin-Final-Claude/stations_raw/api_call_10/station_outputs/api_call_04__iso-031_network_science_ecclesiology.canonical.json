@@ -1,0 +1,293 @@
+{
+  "thesis": {
+    "one_sentence": "The growth, structure, resilience, and information diffusion patterns of the early Christian church as described in the New Testament are accurately modeled by network science concepts such as scale-free networks, preferential attachment, small-world properties, and weak-tie theory, revealing a structural isomorphism between the two domains.",
+    "thesis_type": "interpretive",
+    "thesis_strength": 8,
+    "thesis_paragraph": "THE MAPPING"
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Church growth in Acts follows a preferential attachment pattern where new converts disproportionately connect to established apostolic centers.",
+      "type": "empirical",
+      "evidence": "The narrative of Acts shows growth from Jerusalem to Antioch to Ephesus to Rome, and the paper cites Matthew 25:29 as a verbal formulation of the mechanism.",
+      "evidence_type": "citation",
+      "evidence_strength": 6,
+      "assumption": "The textual descriptions of growth in Acts are historically reliable and can be interpreted as a network formation process.",
+      "overclaim_risk": 6,
+      "overclaim_diagnosis": "The paper claims the pattern matches preferential attachment, but the evidence is narrative and qualitative, not a quantitative degree distribution from a complete dataset."
+    },
+    {
+      "id": "C2",
+      "claim": "The early church network exhibits small-world properties: short average path lengths and high clustering.",
+      "type": "empirical",
+      "evidence": "The gospel reached from Jerusalem to Rome in ~30 years via personal chains; Romans 16 lists 26 individuals known to Paul in a city he never visited; house churches are described as tightly knit.",
+      "evidence_type": "citation",
+      "evidence_strength": 5,
+      "assumption": "The textual data (Romans 16, Acts) can be reconstructed into a network with measurable path lengths and clustering coefficients.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "The paper asserts small-world properties without computing actual path lengths or clustering coefficients from a complete network dataset; it relies on qualitative descriptions."
+    },
+    {
+      "id": "C3",
+      "claim": "Apostolic figures (Paul, Peter, Barnabas, etc.) function as high-degree hub nodes in a scale-free degree distribution.",
+      "type": "interpretive",
+      "evidence": "Paul connects churches across multiple regions; 1 Corinthians 12 states 'not all are apostles,' implying a power-law distribution of connectivity.",
+      "evidence_type": "citation",
+      "evidence_strength": 5,
+      "assumption": "The connectivity of figures in the New Testament can be quantified and compared to a power-law distribution.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "The paper claims a power-law degree distribution without providing a degree distribution plot or statistical test; it infers from qualitative descriptions."
+    },
+    {
+      "id": "C4",
+      "claim": "Cross-cultural missionaries function as weak ties (bridge ties) that enable gospel diffusion across disconnected clusters.",
+      "type": "interpretive",
+      "evidence": "Examples: Philip to Samaritans (Acts 8), Peter to Cornelius (Acts 10), Paul to Gentiles (Acts 13+).",
+      "evidence_type": "citation",
+      "evidence_strength": 6,
+      "assumption": "Granovetter's weak-tie theory applies to ancient social networks in the same way as modern ones.",
+      "overclaim_risk": 4,
+      "overclaim_diagnosis": "The mapping is plausible and well-supported by examples; the risk is low because the claim is analogical rather than quantitative."
+    },
+    {
+      "id": "C5",
+      "claim": "The early church network was resilient to random persecution (random node removal) but vulnerable to targeted hub attack (leader execution).",
+      "type": "empirical",
+      "evidence": "General persecution did not destroy the church; targeted execution of leaders (James, Peter, Paul) caused disruption but the network survived because it had propagated past the hubs.",
+      "evidence_type": "citation",
+      "evidence_strength": 6,
+      "assumption": "The historical record of persecution and survival is accurate and can be interpreted as a network resilience phenomenon.",
+      "overclaim_risk": 5,
+      "overclaim_diagnosis": "The paper claims the network survived targeted attack because of its scale-free topology, but alternative explanations (theological, sociological) are not ruled out."
+    },
+    {
+      "id": "C6",
+      "claim": "Hub apostasy (e.g., Diotrephes in 3 John) causes cascading failure proportional to the hub's degree.",
+      "type": "interpretive",
+      "evidence": "Paul warns of leaders drawing away disciples (Acts 20:30); Diotrephes rejects apostolic authority and causes local disruption.",
+      "evidence_type": "citation",
+      "evidence_strength": 4,
+      "assumption": "The concept of cascading failure in networks applies to social/religious networks in the same way as to technological networks.",
+      "overclaim_risk": 6,
+      "overclaim_diagnosis": "The paper claims a proportional relationship between hub degree and damage, but the textual evidence does not quantify either variable."
+    },
+    {
+      "id": "C7",
+      "claim": "The network diameter of the early church expanded from Jerusalem to the 'ends of the earth' as described in Acts 1:8.",
+      "type": "interpretive",
+      "evidence": "Acts 1:8 provides a geographic expansion plan; the narrative of Acts traces this expansion.",
+      "evidence_type": "citation",
+      "evidence_strength": 5,
+      "assumption": "Network diameter (maximum shortest path) is a meaningful measure for the geographic and social spread of the gospel.",
+      "overclaim_risk": 4,
+      "overclaim_diagnosis": "The mapping is metaphorical rather than quantitative; the claim is reasonable as an analogy."
+    },
+    {
+      "id": "C8",
+      "claim": "Organic church growth (relational, unplanned) produces scale-free networks, while institutional growth produces regular or random networks.",
+      "type": "descriptive",
+      "evidence": "The Acts church grew organically without central planning; later institutional Christianity developed dioceses and hierarchies.",
+      "evidence_type": "argument",
+      "evidence_strength": 4,
+      "assumption": "The distinction between organic and institutional growth maps cleanly onto the mathematical distinction between scale-free and regular/random networks.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "The paper claims a dichotomy that may be oversimplified; many historical church structures have mixed characteristics."
+    },
+    {
+      "id": "C9",
+      "claim": "The gift distribution in the church (1 Corinthians 12) follows a power-law pattern: rare high-connectivity gifts (apostle, prophet) and common low-connectivity gifts (service, mercy).",
+      "type": "interpretive",
+      "evidence": "1 Corinthians 12:28-29 lists gifts in order of rarity and connectivity.",
+      "evidence_type": "citation",
+      "evidence_strength": 4,
+      "assumption": "The rarity of a gift correlates with its connectivity in the network, and the distribution is power-law rather than some other heavy-tailed distribution.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "The paper asserts a power-law distribution without statistical evidence; the textual data only suggests ordinal rarity, not a specific mathematical distribution."
+    },
+    {
+      "id": "C10",
+      "claim": "The isomorphism is structural (topological), not metric or causal; network science models the sociological pattern, not the spiritual substance.",
+      "type": "descriptive",
+      "evidence": "The paper explicitly states what is NOT claimed: the church is not a network in the mathematical sense; the Spirit is not a network parameter.",
+      "evidence_type": "argument",
+      "evidence_strength": 8,
+      "assumption": "The distinction between structural isomorphism and causal explanation is clear and maintained throughout the paper.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": "The paper is careful to limit its claims; the risk of overclaim is low here."
+    }
+  ],
+  "definitions": {
+    "explicit": [
+      {
+        "term": "Scale-free network",
+        "definition": "A network with a power-law degree distribution, where a few nodes have many connections and most have few.",
+        "location": "DOMAINS"
+      },
+      {
+        "term": "Preferential attachment",
+        "definition": "The process where new nodes connect to existing nodes with probability proportional to the existing node's degree.",
+        "location": "MATHEMATICAL FORM A"
+      },
+      {
+        "term": "Small-world network",
+        "definition": "A network with short average path lengths and high clustering coefficient relative to a random network.",
+        "location": "MATHEMATICAL FORM A"
+      },
+      {
+        "term": "Bridge ties",
+        "definition": "Weak ties connecting otherwise disconnected clusters, disproportionately important for information diffusion.",
+        "location": "MATHEMATICAL FORM A"
+      },
+      {
+        "term": "Structural isomorphism",
+        "definition": "A mapping between two domains where the relational structure is preserved, but not necessarily the metric or causal details.",
+        "location": "CLASSIFICATION"
+      }
+    ],
+    "implied": [
+      {
+        "term": "Church",
+        "usage_implies": "A social network of believers with measurable relational connections."
+      },
+      {
+        "term": "Gospel",
+        "usage_implies": "Information that diffuses through the network."
+      },
+      {
+        "term": "Apostle",
+        "usage_implies": "A high-degree hub node in the network."
+      },
+      {
+        "term": "Persecution",
+        "usage_implies": "Node removal from the network."
+      }
+    ],
+    "undefined_but_critical": [
+      "organic growth",
+      "institutional growth",
+      "spiritual substance"
+    ],
+    "terms_doing_hidden_work": [
+      "structural isomorphism",
+      "topology",
+      "pattern"
+    ]
+  },
+  "assumptions": [
+    {
+      "assumption": "The textual descriptions in Acts and the Pauline epistles provide a reliable and sufficiently complete dataset for network reconstruction.",
+      "type": "empirical",
+      "if_this_fails": "The entire empirical basis for the isomorphism collapses."
+    },
+    {
+      "assumption": "Network science concepts (preferential attachment, small-world, scale-free) apply to ancient social networks in the same way as to modern technological or biological networks.",
+      "type": "methodological",
+      "if_this_fails": "The mapping becomes metaphorical rather than structural."
+    },
+    {
+      "assumption": "The distinction between organic and institutional growth is clear and maps onto the mathematical distinction between scale-free and regular/random networks.",
+      "type": "conceptual",
+      "if_this_fails": "Claim C8 becomes unsupported."
+    },
+    {
+      "assumption": "The rarity of spiritual gifts in 1 Corinthians 12 correlates with connectivity in the network, and the distribution is power-law.",
+      "type": "empirical",
+      "if_this_fails": "Claim C9 loses its quantitative basis."
+    },
+    {
+      "assumption": "The resilience of the early church under persecution is primarily due to its network topology rather than theological or sociological factors.",
+      "type": "causal",
+      "if_this_fails": "The explanatory power of the isomorphism is weakened."
+    }
+  ],
+  "argument_structure": {
+    "premises": [
+      "P1: Network science describes properties of scale-free networks: preferential attachment, small-world path lengths, high clustering, resilience to random failure, vulnerability to hub attack, weak-tie diffusion.",
+      "P2: The New Testament describes the early church's growth, structure, and response to persecution.",
+      "P3: The patterns in the New Testament match the properties of scale-free networks on multiple independent dimensions (preferential attachment, small-world, clustering, resilience, weak ties, cascading failure, diameter expansion, gift distribution).",
+      "P4: The match is structural (topological) and not metric or causal."
+    ],
+    "intermediate_conclusions": [
+      "IC1: The early church network exhibits scale-free properties.",
+      "IC2: Network science provides a useful model for understanding the sociological structure of the early church."
+    ],
+    "final_conclusion": "There is a structural isomorphism between network science and New Testament ecclesiology, meaning the early church's growth and resilience patterns are accurately modeled by network theory.",
+    "weakest_link": "The assumption that the textual data is sufficient and reliable for network reconstruction (P2 and P3).",
+    "unproven_jumps": [
+      "From qualitative narrative to quantitative network properties (e.g., power-law degree distribution).",
+      "From textual descriptions of resilience to the claim that topology is the primary explanation.",
+      "From the rarity of gifts to a power-law distribution."
+    ]
+  },
+  "overclaim_detection": [
+    {
+      "pattern": "some-to-all",
+      "location": "Claims C1, C2, C3, C5, C9",
+      "diagnosis": "The paper takes a few examples (e.g., Paul's travels, Romans 16, Acts 12) and claims they demonstrate universal network properties (scale-free, small-world, power-law) without a complete dataset."
+    },
+    {
+      "pattern": "correlation-to-causation",
+      "location": "Claim C5",
+      "diagnosis": "The paper implies that the church's survival under persecution is caused by its scale-free topology, but correlation does not rule out other causes (theological, sociological)."
+    },
+    {
+      "pattern": "model-to-reality",
+      "location": "Claims C1, C2, C3, C9",
+      "diagnosis": "The paper treats the network model as if it captures the actual structure of the early church, but the model is an abstraction that may oversimplify or misrepresent the historical reality."
+    },
+    {
+      "pattern": "definition-to-discovery",
+      "location": "Claim C9",
+      "diagnosis": "The paper defines gift rarity as a power-law distribution and then 'discovers' that the distribution is power-law, but the definition is not independently established."
+    },
+    {
+      "pattern": "textual-possibility-to-actual-practice",
+      "location": "Claims C1, C2, C3",
+      "diagnosis": "The paper interprets textual descriptions (e.g., Acts, Romans 16) as evidence of actual network properties, but the texts may be selective, theological, or incomplete."
+    }
+  ],
+  "counterarguments": {
+    "addressed": [
+      "The church is not a network in the mathematical sense; the model captures sociological topology, not spiritual substance.",
+      "Network science does not explain the Holy Spirit's role.",
+      "Preferential attachment does not prove Matthew 25:29 is about network science.",
+      "Scale-free networks are not inherently better than designed networks.",
+      "Not all church growth is reducible to sociology."
+    ],
+    "missing": [
+      "The textual data (Acts, epistles) is incomplete and biased; we cannot reconstruct a full network.",
+      "The early church may have had other structural features (e.g., hierarchical, institutional) that the scale-free model ignores.",
+      "The resilience of the early church may be better explained by theological factors (e.g., belief in resurrection, community support) than by network topology.",
+      "The concept of 'structural isomorphism' may be too vague to be falsifiable."
+    ],
+    "smartest_critic_would_say": "The paper claims a structural isomorphism based on qualitative textual evidence, but without a complete, quantitative network dataset (e.g., a full edge list from the New Testament), the claims of scale-free degree distributions, small-world path lengths, and power-law gift distributions are untestable and therefore not scientific."
+  },
+  "falsifiability": {
+    "kill_conditions_stated": [
+      "Demonstrate a scale-free network robust to targeted hub removal.",
+      "Demonstrate that preferential attachment does not produce power-law distributions.",
+      "Demonstrate that the early church grew through a non-scale-free mechanism (uniform degree distribution, central planning, long path lengths).",
+      "Demonstrate that institutionally structured churches are equally resilient to persecution.",
+      "Show that the structural features do not match between network science and the Acts narrative."
+    ],
+    "kill_conditions_missing": [
+      "Show that the textual data is insufficient to determine the network structure (e.g., missing edges, biased sampling).",
+      "Show that alternative network models (e.g., random, regular, hierarchical) fit the data equally well or better.",
+      "Show that the claimed isomorphism is not predictive (i.e., does not generate testable hypotheses beyond the original data)."
+    ],
+    "testability": "arguable_from_text"
+  },
+  "novelty": {
+    "what_is_new": "The paper systematically maps ten independent correspondences between network science and New Testament ecclesiology, including preferential attachment, small-world properties, resilience, weak ties, cascading failure, and gift distribution, while explicitly limiting the claim to structural isomorphism.",
+    "novelty_type": "new_combination",
+    "closest_existing_work": "Rodney Stark's sociological analysis of early church growth (The Rise of Christianity) and network science applications to religious groups, but the paper claims a structural isomorphism rather than a causal or sociological explanation.",
+    "novelty_score": 7
+  },
+  "compression": {
+    "one_sentence": "The early Christian church's growth, structure, and resilience as described in the New Testament are structurally isomorphic to scale-free networks in network science.",
+    "three_sentences": "Network science describes properties of scale-free networks: preferential attachment, small-world path lengths, high clustering, resilience to random failure, vulnerability to hub attack, and weak-tie diffusion. The New Testament describes the early church's growth (preferential attachment to apostolic centers), structure (tight-knit house churches connected by itinerant apostles), and resilience (survival under persecution targeting leaders). The paper argues that these patterns match on ten independent dimensions, establishing a structural isomorphism between the two domains.",
+    "strongest_defensible_version": "The early church's growth and resilience patterns, as qualitatively described in the New Testament, are consistent with the properties of scale-free networks, suggesting that network science provides a useful analogical model for understanding the sociological structure of the early church.",
+    "weakest_version_still_true": "There are interesting analogies between the growth and resilience patterns of the early church as described in the New Testament and the properties of scale-free networks in network science."
+  }
+}

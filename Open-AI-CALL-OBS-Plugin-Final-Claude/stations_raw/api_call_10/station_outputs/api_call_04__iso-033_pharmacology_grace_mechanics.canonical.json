@@ -1,0 +1,301 @@
+{
+  "thesis": {
+    "one_sentence": "The reception dynamics of grace in Christian theology are structurally isomorphic to pharmacological dose-response, receptor binding, and competitive inhibition kinetics, as formalized by the Hill equation.",
+    "thesis_type": "interpretive",
+    "thesis_strength": 8,
+    "thesis_paragraph": "THE MAPPING"
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Grace reception follows a sigmoidal threshold response governed by the Hill equation, with spiritual transformation as a function of grace exposure and faith-receptor density.",
+      "type": "interpretive",
+      "evidence": "The Hill equation E = E_max x [D]^n / (EC_50^n + [D]^n) is presented as a mathematical model for grace reception, with theological substitutions for each variable.",
+      "evidence_type": "argument",
+      "evidence_strength": 6,
+      "assumption": "The Hill equation is a valid model for spiritual transformation, and grace exposure can be meaningfully quantified or ordered.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "The paper claims a structural isomorphism but provides no empirical data on grace exposure or transformation; the mapping is purely formal and analogical."
+    },
+    {
+      "id": "C2",
+      "claim": "Sin functions as a competitive antagonist that right-shifts the grace-response curve, requiring more grace exposure to achieve the same effect.",
+      "type": "interpretive",
+      "evidence": "The competitive inhibition equation E = E_max x [D]^n / ((EC_50(1 + [A]/K_i))^n + [D]^n) is applied with sin as antagonist [S] and K_sin as inhibition constant.",
+      "evidence_type": "argument",
+      "evidence_strength": 5,
+      "assumption": "Sin occupies the same 'receptor' as grace, and its effect is purely competitive (not non-competitive or irreversible).",
+      "overclaim_risk": 8,
+      "overclaim_diagnosis": "The paper assumes sin's effect is competitive without theological or empirical justification; sin could be non-competitive or allosteric."
+    },
+    {
+      "id": "C3",
+      "claim": "Faith is the receptor through which grace couples to the human agent, and faith-receptor density (Hill coefficient n) determines the steepness of the conversion threshold.",
+      "type": "interpretive",
+      "evidence": "The Hill coefficient n is mapped to 'faith-receptor density' with predictions about community faith density sharpening conversion thresholds.",
+      "evidence_type": "argument",
+      "evidence_strength": 4,
+      "assumption": "Faith can be modeled as a receptor with variable density, and community interaction increases cooperativity (n > 1).",
+      "overclaim_risk": 9,
+      "overclaim_diagnosis": "The paper reifies 'faith' as a physical receptor without justification; the mapping from community density to Hill coefficient is speculative."
+    },
+    {
+      "id": "C4",
+      "claim": "The therapeutic window in pharmacology maps to the 'narrow way' (Matthew 7:14) as a receptor-availability constraint, not a grace-supply constraint.",
+      "type": "interpretive",
+      "evidence": "The therapeutic window concept is described as the range between minimum effective dose and toxic dose, applied to grace reception.",
+      "evidence_type": "argument",
+      "evidence_strength": 3,
+      "assumption": "Grace is objectively unlimited (Romans 5:20) and the bottleneck is entirely on the receptor side.",
+      "overclaim_risk": 6,
+      "overclaim_diagnosis": "The paper asserts grace is unlimited without addressing theological debates about limited atonement or divine sovereignty."
+    },
+    {
+      "id": "C5",
+      "claim": "Tolerance (receptor downregulation) in pharmacology maps to presumption on grace (Hebrews 6:4-6), where repeated exposure without response decreases sensitivity.",
+      "type": "interpretive",
+      "evidence": "Hebrews 6:4-6 is cited as describing grace-tolerance, and the pharmacological concept of tolerance is invoked.",
+      "evidence_type": "citation",
+      "evidence_strength": 4,
+      "assumption": "The 'impossible to restore to repentance' passage describes a reversible downregulation, not irreversible apostasy.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "The paper interprets a contested theological passage as supporting a specific pharmacological mechanism without exegetical justification."
+    },
+    {
+      "id": "C6",
+      "claim": "Spiritual hunger (Matthew 5:6) upregulates faith-receptors, analogous to receptor upregulation from deprivation in pharmacology.",
+      "type": "interpretive",
+      "evidence": "Matthew 5:6 is cited, and the concept of receptor upregulation from drug holidays is applied.",
+      "evidence_type": "citation",
+      "evidence_strength": 3,
+      "assumption": "Spiritual deprivation increases receptivity in a manner structurally identical to pharmacological upregulation.",
+      "overclaim_risk": 6,
+      "overclaim_diagnosis": "The paper assumes a direct analogy without evidence that spiritual hunger operates via the same mechanism."
+    },
+    {
+      "id": "C7",
+      "claim": "Pharmacokinetics (ADME) maps to the means of grace: absorption = hearing the Word, distribution = Spirit's work, metabolism = sanctification, excretion = absent (grace is retained).",
+      "type": "interpretive",
+      "evidence": "Each ADME step is given a theological correlate with scriptural references (Romans 10:17, 1 Corinthians 12:11, Philippians 2:12-13).",
+      "evidence_type": "argument",
+      "evidence_strength": 4,
+      "assumption": "The means of grace follow a sequential pathway analogous to drug absorption, distribution, metabolism, and excretion.",
+      "overclaim_risk": 8,
+      "overclaim_diagnosis": "The mapping is forced: excretion is declared 'absent' to fit theology, which is a post-hoc adjustment rather than a genuine structural parallel."
+    },
+    {
+      "id": "C8",
+      "claim": "The Hill equation with large n approaches a step function identical to the sign operator in ISO-012, showing the dose-response curve is a continuous relaxation of the binary sign flip.",
+      "type": "mathematical",
+      "evidence": "The mathematical limit as n \u2192 \u221e of the Hill equation is a Heaviside step function, which is the sign operator's binary spectrum.",
+      "evidence_type": "proof",
+      "evidence_strength": 9,
+      "assumption": "The sign operator in ISO-012 is correctly defined and the limit is mathematically valid.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C9",
+      "claim": "The mapping makes testable predictions: conversion events should cluster bimodally, community faith density should correlate with threshold steepness, and sin delays but cannot permanently block grace.",
+      "type": "empirical",
+      "evidence": "Predictions are listed: bimodal conversion distribution, correlation with community density, and reversibility of sin blockade.",
+      "evidence_type": "argument",
+      "evidence_strength": 3,
+      "assumption": "These predictions are empirically testable with available data (e.g., revival history, conversion narratives).",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "The paper claims testability but provides no methodology or data; the predictions are vague and may be unfalsifiable in practice."
+    },
+    {
+      "id": "C10",
+      "claim": "The mapping is falsifiable: if grace reception is dose-independent, sin does not impede grace, tolerance is impossible, the Hill equation is wrong, or conversion is linear, the isomorphism fails.",
+      "type": "methodological",
+      "evidence": "Five specific kill conditions are listed in Test 4, each with a theological and pharmacological counterpart.",
+      "evidence_type": "argument",
+      "evidence_strength": 7,
+      "assumption": "These conditions are actually testable and would be accepted as falsifying by both domains.",
+      "overclaim_risk": 5,
+      "overclaim_diagnosis": "The conditions are stated but not operationalized; e.g., 'dose-independent grace reception' is not defined with measurable variables."
+    }
+  ],
+  "definitions": {
+    "explicit": [
+      {
+        "term": "Hill equation",
+        "definition": "E = E_max x [D]^n / (EC_50^n + [D]^n)",
+        "location": "THE MAPPING"
+      },
+      {
+        "term": "Competitive inhibition",
+        "definition": "E = E_max x [D]^n / ((EC_50(1 + [A]/K_i))^n + [D]^n)",
+        "location": "THE MAPPING"
+      },
+      {
+        "term": "alpha (coupling coefficient)",
+        "definition": "E_max = maximum openness to grace; determined by autonomy parameter u from ISO-002, where alpha = 1 - u",
+        "location": "Mathematical Form B"
+      },
+      {
+        "term": "GT_50",
+        "definition": "Grace threshold for 50% transformation (tipping point)",
+        "location": "Mathematical Form B"
+      },
+      {
+        "term": "n (Hill coefficient)",
+        "definition": "Faith-receptor density; cooperativity of response",
+        "location": "Mathematical Form B"
+      }
+    ],
+    "implied": [
+      {
+        "term": "grace",
+        "usage_implies": "A quantifiable or orderable input that can be 'exposed' to a receptor system"
+      },
+      {
+        "term": "faith",
+        "usage_implies": "A structural receptor with variable density and cooperativity"
+      },
+      {
+        "term": "sin",
+        "usage_implies": "A competitive antagonist with a measurable inhibition constant K_sin"
+      },
+      {
+        "term": "spiritual transformation",
+        "usage_implies": "An observable, measurable output (E) that can be plotted against grace exposure"
+      }
+    ],
+    "undefined_but_critical": [
+      "grace availability (how is [G] measured or ordered?)",
+      "spiritual transformation (what counts as E? how is it observed?)",
+      "faith-receptor density (how is n measured?)",
+      "K_sin (what is the inhibition constant for sin?)"
+    ],
+    "terms_doing_hidden_work": [
+      "structural isomorphism",
+      "coupling topology",
+      "receptor-availability constraint",
+      "dose-independent"
+    ]
+  },
+  "assumptions": [
+    {
+      "assumption": "Grace can be meaningfully treated as a variable [G] that can be 'exposed' to a receptor system, with varying concentrations or intensities.",
+      "type": "conceptual",
+      "if_this_fails": "The entire mathematical model collapses because there is no independent variable to plot against transformation."
+    },
+    {
+      "assumption": "Spiritual transformation (E) is observable and measurable, at least ordinally, to allow comparison with dose-response curves.",
+      "type": "empirical",
+      "if_this_fails": "The model cannot be tested or falsified; it becomes a purely formal analogy with no empirical content."
+    },
+    {
+      "assumption": "Faith operates as a receptor with variable density and cooperativity, and community interaction increases the Hill coefficient n.",
+      "type": "conceptual",
+      "if_this_fails": "The mapping from Hill coefficient to community faith density is unsupported, and predictions about conversion steepness are baseless."
+    },
+    {
+      "assumption": "Sin's effect on grace reception is purely competitive (reversible by sufficient grace), not non-competitive or irreversible.",
+      "type": "theological",
+      "if_this_fails": "The competitive inhibition equation is the wrong model; sin might block grace in a way that cannot be overcome by more grace."
+    },
+    {
+      "assumption": "The Hill equation is the correct model for both pharmacology and theology; no other function (e.g., exponential, logistic with different parameters) fits better.",
+      "type": "mathematical",
+      "if_this_fails": "The isomorphism is based on a specific mathematical form that may not be uniquely appropriate."
+    },
+    {
+      "assumption": "The 'means of grace' (prayer, Scripture, sacraments, community) can be treated as the 'dose' [G] with a consistent effect across individuals.",
+      "type": "methodological",
+      "if_this_fails": "The dose-response model cannot be applied because the 'dose' is not standardized or comparable."
+    }
+  ],
+  "argument_structure": {
+    "premises": [
+      "P1: Pharmacological dose-response follows the Hill equation with sigmoidal threshold, competitive inhibition, tolerance, and ADME.",
+      "P2: Christian theology describes grace reception as having threshold effects (conversion), sin as blocking grace, and means of grace as pathways.",
+      "P3: Both domains exhibit the same five-part architecture: sigmoidal response, competitive binding, therapeutic window, tolerance/sensitization, and pharmacokinetic pathway.",
+      "P4: The mathematical forms can be mapped by substituting theological variables for pharmacological ones.",
+      "P5: The mapping generates testable predictions and falsification conditions."
+    ],
+    "intermediate_conclusions": [
+      "IC1: The Hill equation with theological substitutions describes grace reception dynamics.",
+      "IC2: Sin functions as a competitive antagonist, not an absolute blocker.",
+      "IC3: Faith-receptor density (Hill coefficient) determines threshold steepness.",
+      "IC4: The mapping is a structural isomorphism, not a mere analogy."
+    ],
+    "final_conclusion": "The reception dynamics of grace are structurally isomorphic to pharmacological dose-response, receptor binding, and competitive inhibition kinetics, as formalized by the Hill equation.",
+    "weakest_link": "The assumption that grace exposure [G] and spiritual transformation (E) are measurable or even orderable in a way that fits the Hill equation.",
+    "unproven_jumps": [
+      "From formal mathematical substitution to claiming a structural isomorphism (not just analogy).",
+      "From the Hill equation's mathematical properties to specific theological predictions (e.g., bimodal conversion distribution).",
+      "From scriptural passages (e.g., Hebrews 6:4-6) to specific pharmacological mechanisms (receptor downregulation).",
+      "From 11 correspondences to a probability of chance match (p < 0.05^11) without accounting for selection bias or multiple comparisons."
+    ]
+  },
+  "overclaim_detection": [
+    {
+      "pattern": "model-to-reality",
+      "location": "THE MAPPING (Mathematical Form B and Shared Structure)",
+      "diagnosis": "The paper presents a mathematical model (Hill equation) as describing actual grace reception dynamics, but provides no evidence that grace exposure or transformation follow this equation; it is a formal analogy, not an empirical finding."
+    },
+    {
+      "pattern": "correlation-to-causation",
+      "location": "Tests (Test 1, Prediction Constraint)",
+      "diagnosis": "The paper claims that because both domains share a mathematical structure, the pharmacological model constrains theological predictions (e.g., sin cannot permanently block grace). This assumes the isomorphism is causal or structural, not merely descriptive."
+    },
+    {
+      "pattern": "definition-to-discovery",
+      "location": "THE MAPPING (What Is NOT Claimed section)",
+      "diagnosis": "The paper defines faith as a 'receptor' and sin as a 'competitive antagonist,' then treats the mathematical consequences as discoveries about theology (e.g., sin delays but cannot ultimately prevent grace). This is a definitional sleight-of-hand."
+    },
+    {
+      "pattern": "some-to-all",
+      "location": "Tests (Test 3, Connection Density)",
+      "diagnosis": "The paper lists 11 correspondences and calculates a probability of chance match, but many correspondences are not independent (e.g., sigmoidal response and Hill equation are the same feature), and the selection of correspondences is post-hoc."
+    },
+    {
+      "pattern": "textual-possibility-to-actual-practice",
+      "location": "Tests (Test 1, Prediction in Domain B)",
+      "diagnosis": "The paper claims that means of grace 'should show threshold-dependent effects' and that community faith density 'should correlate with conversion threshold steepness,' but provides no empirical data; these are possibilities, not demonstrated facts."
+    }
+  ],
+  "counterarguments": {
+    "addressed": [
+      "The paper explicitly states what is NOT claimed: grace is not a chemical, faith is not a physical receptor, sin does not literally compete at a binding site, etc.",
+      "The paper addresses the swap test: enzyme kinetics (Michaelis-Menten) is a special case, but the pharmacological model is more complete."
+    ],
+    "missing": [
+      "Theological objections: Does the model imply that God's grace is constrained by human receptivity? Does it undermine divine sovereignty?",
+      "Empirical objections: How would one measure 'grace exposure' or 'spiritual transformation' to test the model? Are there any existing data that support or contradict the sigmoidal pattern?",
+      "Mathematical objections: The Hill equation is a phenomenological model; why should it apply to theology when other sigmoidal functions (e.g., logistic, Weibull) might fit as well or better?",
+      "Philosophical objections: Is the concept of 'structural isomorphism' doing too much work? Could any two domains with threshold behavior be mapped this way?"
+    ],
+    "smartest_critic_would_say": "The mapping is a formal analogy that redefines theological terms (faith, sin, grace) in pharmacological language, then treats the mathematical consequences as discoveries about theology. But the key variables\u2014grace exposure, spiritual transformation, faith-receptor density\u2014are not independently measurable, so the model is unfalsifiable and the claimed isomorphism is a metaphor, not a scientific finding."
+  },
+  "falsifiability": {
+    "kill_conditions_stated": [
+      "Grace reception is dose-independent (no correlation with means of grace).",
+      "Sin does not impede grace (habitual sin leaves receptivity unchanged).",
+      "Tolerance is impossible (repeated exposure without response never decreases sensitivity).",
+      "The Hill equation is wrong (dose-response is not sigmoidal).",
+      "Conversion is linear (no threshold behavior)."
+    ],
+    "kill_conditions_missing": [
+      "What if the Hill equation fits but with different parameters for different individuals? The model would still hold but be trivial.",
+      "What if grace exposure and transformation are correlated but not sigmoidal (e.g., logarithmic)? The model would be wrong but the kill conditions might not detect it.",
+      "What if the mapping holds for some theological traditions but not others (e.g., Calvinist vs. Arminian)? The model does not specify which theology it applies to."
+    ],
+    "testability": "requires_external_evidence"
+  },
+  "novelty": {
+    "what_is_new": "A formal mathematical mapping of grace reception dynamics to the Hill equation from pharmacology, including competitive inhibition by sin, tolerance, and ADME pathways, with explicit falsification conditions and connection to other isomorphisms in the research initiative.",
+    "novelty_type": "new_formalization",
+    "closest_existing_work": "Analogies between grace and medicine (e.g., Augustine's 'medicine of Christ'), but no prior formal mathematical mapping using the Hill equation and receptor kinetics.",
+    "novelty_score": 7
+  },
+  "compression": {
+    "one_sentence": "The paper argues that the dynamics of grace reception in Christian theology are structurally isomorphic to pharmacological dose-response, receptor binding, and competitive inhibition, as formalized by the Hill equation.",
+    "three_sentences": "The paper maps the Hill equation from pharmacology to grace reception, with grace as the agonist, faith as the receptor, and sin as a competitive antagonist. It identifies five shared structural features: sigmoidal threshold response, competitive binding, therapeutic window, tolerance/sensitization, and pharmacokinetic pathways. The mapping generates testable predictions and falsification conditions, but relies on unmeasured variables and redefinitions of theological terms.",
+    "strongest_defensible_version": "The Hill equation provides a formal mathematical analogy for describing threshold effects, competitive inhibition, and tolerance in grace reception, if one accepts that grace exposure, faith receptivity, and spiritual transformation can be treated as ordered variables.",
+    "weakest_version_still_true": "There is a formal similarity between the mathematical structure of pharmacological dose-response (Hill equation) and certain theological descriptions of grace reception (threshold conversion, sin as blockage, means of grace as pathways), but this similarity does not constitute evidence that grace actually follows these dynamics."
+  }
+}

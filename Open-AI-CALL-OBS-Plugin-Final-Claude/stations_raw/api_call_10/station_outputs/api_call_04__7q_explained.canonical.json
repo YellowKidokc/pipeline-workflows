@@ -1,0 +1,290 @@
+{
+  "thesis": {
+    "one_sentence": "The 7Q Framework provides a complete, adversarial method for analyzing any claim by forcing it through seven sequential questions that reveal hidden assumptions, kill conditions, and cross-domain implications.",
+    "thesis_type": "normative",
+    "thesis_strength": 8,
+    "thesis_paragraph": "The document's title and opening sections establish the framework as a method to be applied, with the running example demonstrating its application."
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Every claim can be analyzed through seven sequential questions (Q0-Q7) that reveal its structure, dependencies, and vulnerabilities.",
+      "type": "normative",
+      "evidence": "The document walks through all seven questions using the GR claim as a running example, showing each question's output.",
+      "evidence_type": "argument",
+      "evidence_strength": 6,
+      "assumption": "The seven questions are exhaustive and non-overlapping for any claim.",
+      "overclaim_risk": 5,
+      "overclaim_diagnosis": "The framework is demonstrated on only one claim (GR), so its universality is asserted but not proven across diverse claim types."
+    },
+    {
+      "id": "C2",
+      "claim": "Q0 (posture) is a precondition for honest inquiry; frameworks that skip it are poisoned from the start.",
+      "type": "normative",
+      "evidence": "Examples of logical positivism and behaviorism as frameworks that 'arrived decided'.",
+      "evidence_type": "citation",
+      "evidence_strength": 4,
+      "assumption": "The cited frameworks failed primarily due to lack of Q0 posture, not other factors.",
+      "overclaim_risk": 6,
+      "overclaim_diagnosis": "The claim attributes failure of entire philosophical movements to a single cause without rigorous historical analysis."
+    },
+    {
+      "id": "C3",
+      "claim": "Q1 (identity) forces classification of claim type and tier, revealing hidden strength (e.g., causal vs. descriptive).",
+      "type": "descriptive",
+      "evidence": "The GR example: classifying it as causal rather than descriptive reveals it is a stronger claim.",
+      "evidence_type": "case_study",
+      "evidence_strength": 7,
+      "assumption": "The classification scheme (type, tier) is the correct one for all claims.",
+      "overclaim_risk": 3,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C4",
+      "claim": "Q2 (domain) reveals cross-domain dependencies and isomorphisms that the claim's originator may not have seen.",
+      "type": "descriptive",
+      "evidence": "GR depends on Riemannian geometry, which also appears in machine learning, economics, and information geometry.",
+      "evidence_type": "argument",
+      "evidence_strength": 6,
+      "assumption": "The appearance of the same mathematical structure in different domains implies a meaningful isomorphism, not just analogy.",
+      "overclaim_risk": 5,
+      "overclaim_diagnosis": "The claim asserts 'isomorphism' but only shows surface-level structural similarity; deeper equivalence is not proven."
+    },
+    {
+      "id": "C5",
+      "claim": "Q3 (assertion) forces precision and generates a negation that splits bundled claims into independently killable parts.",
+      "type": "normative",
+      "evidence": "The GR claim splits into two: (1) mass-energy causes curvature, (2) objects follow geodesics; Newton's gravity fails only the first.",
+      "evidence_type": "case_study",
+      "evidence_strength": 8,
+      "assumption": "The negation generated is the logical opposite, not a weaker or strawman version.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C6",
+      "claim": "Q4 (evidence) requires that evidence be tested for whether it equally supports competing models.",
+      "type": "normative",
+      "evidence": "GR's evidence (Mercury precession, lensing, waves, GPS) is unique to GR; no competing model matches all four.",
+      "evidence_type": "case_study",
+      "evidence_strength": 9,
+      "assumption": "The four pieces of evidence are indeed unique to GR and not also predicted by some future theory.",
+      "overclaim_risk": 3,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C7",
+      "claim": "Q5 (dependencies) exposes hidden roots, such as the smooth manifold assumption in GR, which is the source of the incompatibility with quantum mechanics.",
+      "type": "descriptive",
+      "evidence": "GR assumes spacetime is a smooth continuous manifold; quantum gravity theories challenge this at Planck scale.",
+      "evidence_type": "argument",
+      "evidence_strength": 7,
+      "assumption": "The smooth manifold assumption is indeed the primary root of the GR-QM incompatibility, not just one of many.",
+      "overclaim_risk": 4,
+      "overclaim_diagnosis": "The claim simplifies a complex problem (quantum gravity) to a single assumption, which may be an overstatement."
+    },
+    {
+      "id": "C8",
+      "claim": "Q6 (consequences) forces predictions that the claim's author may not have foreseen, demonstrating the claim's generative power.",
+      "type": "descriptive",
+      "evidence": "GR forced black holes, gravitational waves, and GPS time dilation, none of which Einstein originally predicted.",
+      "evidence_type": "case_study",
+      "evidence_strength": 9,
+      "assumption": "These consequences were truly forced by the math, not just discovered later as compatible.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C9",
+      "claim": "Q7 (falsification) identifies five ways a claim can die; a claim that cannot be killed is not science.",
+      "type": "normative",
+      "evidence": "GR has survived three of four death conditions; the fourth (singularities) is still live.",
+      "evidence_type": "case_study",
+      "evidence_strength": 8,
+      "assumption": "The five death types are exhaustive and mutually exclusive.",
+      "overclaim_risk": 4,
+      "overclaim_diagnosis": "The claim that a claim 'isn't science' if it can't be killed is a strong Popperian stance that is itself debatable."
+    },
+    {
+      "id": "C10",
+      "claim": "The 7Q Framework works without the originator present; it can be handed to any AI, student, or scientist.",
+      "type": "normative",
+      "evidence": "The document states this as a test, but provides no evidence of independent replication.",
+      "evidence_type": "none",
+      "evidence_strength": 1,
+      "assumption": "The framework is sufficiently clear and complete to be applied by others without additional guidance.",
+      "overclaim_risk": 9,
+      "overclaim_diagnosis": "This is a promissory claim with zero evidence; the framework has only been demonstrated by its author on one example."
+    }
+  ],
+  "definitions": {
+    "explicit": [
+      {
+        "term": "Q0",
+        "definition": "Precondition: posture of openness before inquiry; 'the inquirer cannot be the ground of inquiry'",
+        "location": "Q0 section"
+      },
+      {
+        "term": "Q1",
+        "definition": "Identity: name and classify the claim (type, tier)",
+        "location": "Q1 section"
+      },
+      {
+        "term": "Q2",
+        "definition": "Domain: anchor the claim in domain, scale, and cross-domain presence",
+        "location": "Q2 section"
+      },
+      {
+        "term": "Q3",
+        "definition": "Assertion: state the claim precisely with zero hedging, generate negation",
+        "location": "Q3 section"
+      },
+      {
+        "term": "Q4",
+        "definition": "Evidence: attach external justification, test if it equally supports competitors",
+        "location": "Q4 section"
+      },
+      {
+        "term": "Q5",
+        "definition": "Dependencies: expose hidden foundations, trace to axioms or circularity",
+        "location": "Q5 section"
+      },
+      {
+        "term": "Q6",
+        "definition": "Consequences: generate forced predictions and cross-domain implications",
+        "location": "Q6 section"
+      },
+      {
+        "term": "Q7",
+        "definition": "Falsification: identify death conditions (five types)",
+        "location": "Q7 section"
+      }
+    ],
+    "implied": [
+      {
+        "term": "isomorphism",
+        "usage_implies": "Structural equivalence across domains, not just analogy"
+      },
+      {
+        "term": "kill conditions",
+        "usage_implies": "Specific, testable ways a claim can be proven false"
+      },
+      {
+        "term": "tree",
+        "usage_implies": "A claim and its full analytical structure"
+      }
+    ],
+    "undefined_but_critical": [
+      "theophysics",
+      "POF 2828"
+    ],
+    "terms_doing_hidden_work": [
+      "adversarial",
+      "honest",
+      "posture",
+      "soil",
+      "seed",
+      "tree",
+      "axe"
+    ]
+  },
+  "assumptions": [
+    {
+      "assumption": "The seven questions are exhaustive and non-overlapping for any claim.",
+      "type": "conceptual",
+      "if_this_fails": "The framework would miss important aspects of some claims or double-count."
+    },
+    {
+      "assumption": "The five death types in Q7 are exhaustive and mutually exclusive.",
+      "type": "conceptual",
+      "if_this_fails": "Some claims might die in ways not captured, or a single failure could fit multiple types."
+    },
+    {
+      "assumption": "The framework's application to one example (GR) demonstrates its universality.",
+      "type": "methodological",
+      "if_this_fails": "The framework may only work for well-established scientific claims, not for normative, interpretive, or theological claims."
+    },
+    {
+      "assumption": "The 'posture' of Q0 is a necessary precondition for honest inquiry.",
+      "type": "moral",
+      "if_this_fails": "The framework could still produce valid results even if the inquirer arrives with preconceptions."
+    },
+    {
+      "assumption": "The framework can be applied by anyone without the originator's presence.",
+      "type": "methodological",
+      "if_this_fails": "The framework would require expert guidance, undermining its claimed universality."
+    }
+  ],
+  "argument_structure": {
+    "premises": [
+      "P1: Every claim can be analyzed through seven sequential questions (Q0-Q7).",
+      "P2: These questions reveal hidden assumptions, kill conditions, and cross-domain implications.",
+      "P3: The GR claim 'mass-energy curves spacetime' is a representative example.",
+      "P4: Applying the seven questions to GR reveals its structure, dependencies, and vulnerabilities."
+    ],
+    "intermediate_conclusions": [
+      "IC1: The seven questions work on the GR example.",
+      "IC2: The framework exposes things the claim's author didn't see (e.g., hidden root, forced consequences).",
+      "IC3: The framework can be applied to any claim."
+    ],
+    "final_conclusion": "The 7Q Framework is a complete, universal method for analyzing any claim.",
+    "weakest_link": "The jump from one example (GR) to universal applicability (IC3) is unsupported.",
+    "unproven_jumps": [
+      "From 'works on GR' to 'works on any claim'.",
+      "From 'framework described' to 'framework works without originator present'.",
+      "From 'identifies hidden assumptions' to 'identifies all important hidden assumptions'."
+    ]
+  },
+  "overclaim_detection": [
+    {
+      "pattern": "some-to-all",
+      "location": "Throughout, especially in the final claim about working without the originator",
+      "diagnosis": "The framework is demonstrated on one claim (GR) but claimed to work for all claims universally."
+    },
+    {
+      "pattern": "definition-to-discovery",
+      "location": "Q2 section on isomorphism",
+      "diagnosis": "The appearance of Riemannian geometry in multiple domains is called an 'isomorphism' but only structural similarity is shown, not proven equivalence."
+    },
+    {
+      "pattern": "model-to-reality",
+      "location": "Q5 section on smooth manifold assumption",
+      "diagnosis": "The claim that this assumption is 'the' root of GR-QM incompatibility simplifies a complex problem to a single factor."
+    }
+  ],
+  "counterarguments": {
+    "addressed": [
+      "The possibility that the framework is not universal (implicitly addressed by the test at the end).",
+      "The possibility that the GR example is cherry-picked (implicitly addressed by claiming it's representative)."
+    ],
+    "missing": [
+      "The framework has not been tested on non-scientific claims (e.g., moral, aesthetic, theological).",
+      "The framework's categories (type, tier, death types) may not be exhaustive or may overlap.",
+      "The framework assumes a Popperian falsificationist view of science, which is itself contested."
+    ],
+    "smartest_critic_would_say": "You have demonstrated the 7Q Framework on exactly one claim\u2014a well-established, mathematically precise physical theory. This is the easiest possible case. The framework's categories (type, tier, death types) are arbitrary and untested on normative, interpretive, or metaphysical claims. Until you show it works on a controversial claim in ethics, theology, or social science, you have not shown it is universal\u2014only that it can describe a physics textbook."
+  },
+  "falsifiability": {
+    "kill_conditions_stated": [
+      "If the framework fails on a claim that is not a well-established physical theory.",
+      "If the framework cannot be applied by someone other than the author."
+    ],
+    "kill_conditions_missing": [
+      "What specific evidence would show the framework is not universal? (e.g., a claim where Q1-Q7 produce no useful output).",
+      "What would count as a failure of the framework? (e.g., missing a critical assumption that later proves false)."
+    ],
+    "testability": "arguable_from_text"
+  },
+  "novelty": {
+    "what_is_new": "A structured, sequential, adversarial framework for claim analysis that forces explicit consideration of posture, identity, domain, precision, evidence, dependencies, consequences, and falsification.",
+    "novelty_type": "new_combination",
+    "closest_existing_work": "Popperian falsification, Toulmin's argument model, and various critical thinking frameworks (e.g., Paul-Elder) are combined into a single sequential process with a metaphorical tree structure.",
+    "novelty_score": 6
+  },
+  "compression": {
+    "one_sentence": "The 7Q Framework proposes a seven-step method for analyzing any claim by forcing it through questions about identity, domain, assertion, evidence, dependencies, consequences, and falsification, demonstrated on general relativity.",
+    "three_sentences": "The 7Q Framework is a method for analyzing any claim through seven sequential questions (Q0-Q7) that reveal its type, domain, precision, evidence, hidden dependencies, forced consequences, and kill conditions. The framework is demonstrated on the claim 'mass-energy curves spacetime' from general relativity, showing how each question uncovers something the claim's author may not have seen, such as the hidden smooth manifold assumption that drives the incompatibility with quantum mechanics. The document claims the framework is universal and can be applied by anyone without the originator's presence, but this claim is supported only by the single example.",
+    "strongest_defensible_version": "The 7Q Framework provides a useful, structured method for analyzing scientific claims, as demonstrated on general relativity, by forcing explicit consideration of claim type, domain, precision, evidence, dependencies, consequences, and falsification.",
+    "weakest_version_still_true": "The document describes a seven-question framework for analyzing claims and applies it to one example from physics."
+  }
+}

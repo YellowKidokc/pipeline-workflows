@@ -1,0 +1,424 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "information_theory",
+        "type": "mathematics",
+        "strength": 10
+      },
+      {
+        "name": "thermodynamics",
+        "type": "physics",
+        "strength": 8
+      },
+      {
+        "name": "textual_criticism",
+        "type": "other",
+        "strength": 9
+      },
+      {
+        "name": "biblical_studies",
+        "type": "theology",
+        "strength": 7
+      },
+      {
+        "name": "epistemology",
+        "type": "philosophy",
+        "strength": 5
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Information/Logos as the core metric of textual coherence and transmission fidelity",
+        "strength": 10
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Thermo/Judgment as entropy increase over time (Second Law, Landauer's Principle)",
+        "strength": 8
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence/Christ as the measured property of the Bible's textual stability",
+        "strength": 9
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Energy/Spirit as the unexpected preservation force defying entropy",
+        "strength": 6
+      },
+      {
+        "variable": "G",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "M",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "S",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "R",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "Q",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "F",
+        "present": false,
+        "role": "",
+        "strength": 0
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "Existence of the text as a coherent entity across time"
+      },
+      {
+        "id": "A1.2",
+        "invoked": true,
+        "how": "Distinction between Bible and challenger texts in coherence metrics"
+      },
+      {
+        "id": "A2.1",
+        "invoked": true,
+        "how": "Substrate of information in manuscripts and copies"
+      },
+      {
+        "id": "A5.1",
+        "invoked": true,
+        "how": "Observation of textual agreement percentages as empirical data"
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "Information Conservation: the Bible's coherence defies expected entropy loss"
+      },
+      {
+        "id": "T3.1",
+        "invoked": true,
+        "how": "Coherence Cannot Self-Increase: the Bible's high coherence requires external explanation"
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "External Grace: the preservation is attributed to divine action beyond natural processes"
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": false,
+        "manifestations": []
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "Christ as the coherence that is measured"
+        ]
+      },
+      "spirit": {
+        "present": true,
+        "manifestations": [
+          "preservation power, energy defying entropy"
+        ]
+      },
+      "trinitarian_structure": "implicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-001",
+        "domain_a": "information_theory",
+        "domain_b": "theology",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-002",
+        "domain_a": "thermodynamics",
+        "domain_b": "theology",
+        "strength": 7,
+        "type": "analogical"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "divine_preservation",
+        "context": "The Bible's coherence attributed to supernatural preservation",
+        "weight": 9
+      },
+      {
+        "concept": "revelation",
+        "context": "The text as divinely revealed and protected",
+        "weight": 6
+      },
+      {
+        "concept": "truth",
+        "context": "Coherence as a measure of truth transmission",
+        "weight": 7
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "entropy",
+        "context": "Information degradation over time as a universal law",
+        "weight": 10
+      },
+      {
+        "concept": "coherence",
+        "context": "Measured textual agreement across manuscripts",
+        "weight": 10
+      },
+      {
+        "concept": "expectation_vs_reality",
+        "context": "Gap between predicted and actual coherence",
+        "weight": 8
+      },
+      {
+        "concept": "anomaly",
+        "context": "The Bible's coherence as a statistical outlier",
+        "weight": 9
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 8
+      },
+      {
+        "fruit": "truth",
+        "present": true,
+        "strength": 9
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "domain:information_theory",
+      "to": "chi_variable:K",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "domain:thermodynamics",
+      "to": "chi_variable:T",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "chi_variable:K",
+      "to": "chi_variable:C",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "axiom:T3.1",
+      "to": "chi_variable:C",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "axiom:BC2",
+      "to": "theological_concept:divine_preservation",
+      "relation": "derives_from",
+      "weight": 9
+    },
+    {
+      "from": "logical_concept:entropy",
+      "to": "logical_concept:coherence",
+      "relation": "contradicts",
+      "weight": 10
+    },
+    {
+      "from": "logical_concept:anomaly",
+      "to": "theological_concept:divine_preservation",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "isomorphism:ISO-001",
+      "to": "domain:information_theory",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "isomorphism:ISO-001",
+      "to": "domain:biblical_studies",
+      "relation": "maps_to",
+      "weight": 9
+    }
+  ],
+  "tags": {
+    "primary": [
+      "coherence",
+      "information_theory",
+      "bible_preservation",
+      "textual_criticism",
+      "entropy"
+    ],
+    "pillar": [
+      "pillar/mathematics",
+      "pillar/theology"
+    ],
+    "series": "convergence",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [],
+    "academic": [
+      {
+        "ref": "Landauer's Principle",
+        "context": "Information degradation requires energy dissipation"
+      },
+      {
+        "ref": "Second Law of Thermodynamics",
+        "context": "Entropy increases over time"
+      }
+    ],
+    "internal": [],
+    "total_count": 2
+  },
+  "word_anomalies": [
+    {
+      "word": "coherence_score",
+      "frequency": 3,
+      "significance": "Central metric combining six stress factors"
+    },
+    {
+      "word": "entropy_bits_per_year",
+      "frequency": 1,
+      "significance": "Quantified information degradation rate"
+    },
+    {
+      "word": "sigma_deviation",
+      "frequency": 1,
+      "significance": "Statistical measure of anomaly significance"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "Challenging: presents a test that expects to show the Bible as an information-theoretic anomaly",
+    "Q1_identity": "An interactive argument demonstrating the Bible's textual coherence defies information theory",
+    "Q2_domain": "Information theory applied to textual criticism and theology",
+    "Q3_claim": "The Bible's transmission coherence is a statistical impossibility under natural information theory",
+    "Q4_support": "Six-factor coherence metric comparing Bible to other ancient texts",
+    "Q5_dependencies": "Landauer's Principle, Second Law of Thermodynamics, textual criticism data",
+    "Q6_consequences": "If true, the Bible's preservation requires a supernatural explanation",
+    "Q7_kill": "If a challenger text with similar transmission parameters shows comparable coherence, or if the Bible's numbers are falsified"
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "information_theory_basics",
+      "textual_criticism_data"
+    ],
+    "required_by": [
+      "the_inversion"
+    ],
+    "parallel_to": [
+      "dictionary"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 20,
+    "total_edges": 8,
+    "dominant_domain": "information_theory",
+    "dominant_chi": "K",
+    "connectivity_score": 7,
+    "one_sentence": "This document uses information theory to argue that the Bible's textual coherence is a supernatural anomaly."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": false,
+      "how": ""
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Truth (K) and Coherence (C) are directly linked in the coherence metric"
+    },
+    "4_7_love_relationship": {
+      "active": false,
+      "how": ""
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Judgment (T) as entropy and Logos (K) as information are opposed"
+    },
+    "pairs_active_count": 2
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 8
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 10
+    },
+    "love": {
+      "present": false,
+      "strength": 0
+    },
+    "judgment": {
+      "present": true,
+      "strength": 7
+    },
+    "logos": {
+      "present": true,
+      "strength": 10
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": true,
+      "strength": 6
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": true,
+      "strength": 9
+    },
+    "operators_present_count": 6
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "dictionary"
+    ],
+    "read_after": [
+      "the_inversion"
+    ]
+  }
+}

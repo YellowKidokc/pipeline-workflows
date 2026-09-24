@@ -1,0 +1,133 @@
+{
+  "alpha_estimate": {
+    "value": "0.5",
+    "interpretation": "balanced",
+    "evidence": "The document presents a structural isomorphism between control theory and divine providence, emphasizing both accountability (error correction, discipline) and mercy (grace, restoration, attenuation of suffering). It does not assign full cost to the offender (alpha=1) nor to a third party (alpha=0), but describes a system where correction is applied through multiple modes (proportional, integral, derivative) that balance justice and mercy."
+  },
+  "justice_metrics": {
+    "accountability": {
+      "score": 8,
+      "evidence": "The document holds humans accountable for deviation from God's purpose (sin), with clear feedback mechanisms (conscience, consequences, sanctification). It states that 'the error signal IS the gap between what is and what should be' and that discipline is stabilizing."
+    },
+    "cost_acknowledgment": {
+      "score": 7,
+      "evidence": "It acknowledges real costs: sin has consequences (Galatians 6:7), discipline yields righteousness (Hebrews 12:11), and suffering persists (disturbance is attenuated, not eliminated). However, it does not detail specific costs borne by individuals."
+    },
+    "consequence_honesty": {
+      "score": 8,
+      "evidence": "The document is honest about consequences: proportional correction (immediate), integral (cumulative), and derivative (anticipatory). It does not soften the reality of judgment (positive feedback as destabilization, 'God gave them over')."
+    },
+    "standard_clarity": {
+      "score": 9,
+      "evidence": "The standard is clearly defined: God's purpose/telos (setpoint) is the reference. Deviation is sin. The PID controller provides a precise mathematical structure for correction. The mapping is explicit and well-defined."
+    },
+    "proportionality": {
+      "score": 8,
+      "evidence": "The document emphasizes proportionality: proportional mode (correction proportional to current error), integral mode (cumulative correction over time), derivative mode (anticipatory). It states that 'divine correction is TUNED to the individual' and that excessive gain causes instability."
+    },
+    "justice_total": "80%"
+  },
+  "mercy_metrics": {
+    "compassion": {
+      "score": 6,
+      "evidence": "The document shows care for the human agent by describing providence as working through human dynamics (G_human) rather than overriding them. It mentions 'grace that precedes the sin' (prevenient grace) and that discipline is for love (Hebrews 12:6). However, the tone is analytical rather than explicitly compassionate."
+    },
+    "restoration_focus": {
+      "score": 8,
+      "evidence": "The primary goal is restoration: the system drives Y(s) toward R_telos(s) (God's purpose). Sanctification is described as 'accumulated corrective pressure toward the setpoint' and 'all things work together for good' (Romans 8:28). The controller aims to eliminate steady-state error, not to punish."
+    },
+    "grace_extension": {
+      "score": 7,
+      "evidence": "Grace is present as the controller output (C_providence) that drives toward the setpoint. Derivative mode is described as 'prevenient grace' that applies correction before the error occurs. However, the document does not emphasize unearned benefit or second chances explicitly."
+    },
+    "record_preservation": {
+      "score": 9,
+      "evidence": "The document preserves truth: the error signal (sin) is acknowledged, not erased. The integral mode accumulates past error history. The Nyquist criterion formalizes conditions for stability. Mercy does not erase the record; it works through it."
+    },
+    "cost_bearing": {
+      "score": 5,
+      "evidence": "The document mentions that the controller works through the plant dynamics, not around them, but does not explicitly describe a voluntary cost-bearer (e.g., Christ). The Cross is not directly discussed. The focus is on the system's structure rather than a specific act of cost-bearing."
+    },
+    "mercy_total": "70%"
+  },
+  "anti_patterns": {
+    "vengeance": {
+      "score": 2,
+      "evidence": "The document explicitly rejects vengeance: discipline is described as stabilizing (negative feedback), not punitive. It states that 'negative feedback is not punishment; it is the mechanism by which the system is KEPT STABLE.' Positive feedback (judgment) is described as a consequence of the system's own choices, not surplus punishment."
+    },
+    "enabling": {
+      "score": 1,
+      "evidence": "The document does not pretend consequences don't exist. It acknowledges sin, error, and the need for correction. The integral mode ensures that accumulated error is addressed. There is no enabling behavior."
+    },
+    "self_righteousness": {
+      "score": 1,
+      "evidence": "The document does not judge from a position of superiority. It describes a universal system where all humans are subject to the same feedback dynamics. The author acknowledges the limitations of the mapping (e.g., 'NOT claiming God is a PID controller')."
+    },
+    "cheap_grace": {
+      "score": 2,
+      "evidence": "Grace is not cheap: the controller output (grace) is part of a system that includes accountability, consequences, and cumulative correction. The derivative mode (prevenient grace) is anticipatory but still tied to the error signal. The document explicitly rejects open-loop theology (deism) as inferior."
+    },
+    "scapegoating": {
+      "score": 1,
+      "evidence": "No scapegoating is present. The document does not transfer cost to an unwilling party. The controller works through the plant dynamics, and the human agent retains agency. The Cross is not discussed, so no scapegoat is identified."
+    }
+  },
+  "cross_configuration_test": {
+    "judge_identified": false,
+    "judge_is_payer": false,
+    "justice_maximal": false,
+    "mercy_maximal": false,
+    "record_preserved": true,
+    "freedom_maintained": true,
+    "cross_score": 2,
+    "cross_present": false
+  },
+  "beatitude_thresholds": {
+    "poor_in_spirit": {
+      "crossed": true,
+      "evidence": "The document acknowledges human limitation: 'the plant can be made uncontrollable by internal structural changes' and 'the human agent can modify G_human sufficiently to violate the stability criterion.' It recognizes that humans cannot self-correct (open-loop systems cannot self-correct)."
+    },
+    "mourning": {
+      "crossed": false,
+      "evidence": "The document does not explicitly grieve what is broken. It describes sin as an error signal but does not express sorrow over it."
+    },
+    "meekness": {
+      "crossed": true,
+      "evidence": "Power under control: the document describes divine governance as working through human dynamics, not overriding them. The controller respects the plant dynamics. The author is careful not to overclaim ('NOT claiming God is a PID controller')."
+    },
+    "hunger_for_righteousness": {
+      "crossed": true,
+      "evidence": "The document actively pursues justice: it seeks to understand how providence drives toward the setpoint (righteousness). The PID controller is designed to eliminate steady-state error, reflecting a hunger for alignment with God's purpose."
+    },
+    "merciful": {
+      "crossed": false,
+      "evidence": "The document describes mercy (grace, attenuation of suffering) but does not extend mercy at personal cost. The author does not model cost-bearing."
+    },
+    "pure_in_heart": {
+      "crossed": true,
+      "evidence": "Single-minded integrity: the document maintains a clear, consistent mapping between control theory and theology. It does not mix motives or introduce extraneous elements. The focus is on the structural isomorphism."
+    },
+    "peacemaker": {
+      "crossed": true,
+      "evidence": "The document reconciles opposing sides: it resolves the sovereignty-free-will paradox by showing they are compatible in a controlled system. It also reconciles Calvinist and Arminian positions by formalizing them as different assumptions about loop gain bounds."
+    },
+    "persecuted": {
+      "crossed": false,
+      "evidence": "The document does not describe maintaining its position despite cost. It is a theoretical paper, not a testimony of persecution."
+    },
+    "thresholds_crossed": 5
+  },
+  "composite": {
+    "justice_score": 80,
+    "mercy_score": 70,
+    "anti_pattern_penalty": 7,
+    "cross_bonus": 0,
+    "beatitude_bonus": 25,
+    "total_jm_score": 168,
+    "maximum_possible": 270,
+    "grade": "B+"
+  },
+  "diagnosis": "This document presents a highly structured, balanced view of divine governance as a feedback control system, emphasizing both accountability (justice) and restoration (mercy) through three temporal modes of correction. It excels in standard clarity, proportionality, and record preservation, but lacks explicit cost-bearing and the Cross configuration, resulting in a mercy score that is lower than justice. The document is a strong example of balanced justice-mercy posture with a formal, analytical approach.",
+  "strongest_moment": "The resolution of the sovereignty-free-will paradox: 'the controller does NOT replace the plant. G_human(s) remains the human's own transfer function... The controller works THROUGH the plant dynamics, not against them.' This simultaneously upholds accountability (the plant has its own dynamics) and mercy (the controller works with, not against, the human).",
+  "biggest_gap": "The document lacks a clear cost-bearer or voluntary sacrifice (the Cross configuration). Mercy is present as a system property (grace, attenuation) but not as a personal act of cost-bearing. To improve, it could explicitly model how the judge (God) absorbs the cost of sin while maintaining justice, as in the Cross."
+}

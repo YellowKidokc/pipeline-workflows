@@ -1,0 +1,291 @@
+{
+  "thesis": {
+    "one_sentence": "The unique, infinite-capacity repair configuration (Christ) is transferable to any agent with nonzero openness, making salvation universally available through a minimal condition.",
+    "thesis_type": "mathematical",
+    "thesis_strength": 9,
+    "thesis_paragraph": "The Claim"
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Without external input, coherence decays to zero exponentially (closed system decay).",
+      "type": "mathematical",
+      "evidence": "Equation: c(t) = c0 * e^{-\u03c3t} \u2192 0; Lean verification of theorem closed_moral_system_decays (C22).",
+      "evidence_type": "proof",
+      "evidence_strength": 10,
+      "assumption": "The moral sector is a closed system when \u0393_ext = 0, and the Second Law applies analogously.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C2",
+      "claim": "Finite external sources raise the coherence floor but cap it below unity.",
+      "type": "mathematical",
+      "evidence": "Equation: C* = \u039b/(\u039b+S) < 1; Lean verification of finite_source_raises_floor (C25).",
+      "evidence_type": "proof",
+      "evidence_strength": 10,
+      "assumption": "The entropy production rate S is positive and finite.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C3",
+      "claim": "An infinite source with any nonzero openness drives coherence to 1.",
+      "type": "mathematical",
+      "evidence": "Equation: \u010b = -\u03c3c + \u03b2O\u0393_ext(1-c); \u03b5-form convergence proof; Lean verification of mustard seed \u03b5-form.",
+      "evidence_type": "proof",
+      "evidence_strength": 10,
+      "assumption": "\u0393_ext \u2192 \u221e (unbounded source) and O > 0.",
+      "overclaim_risk": 3,
+      "overclaim_diagnosis": "The proof assumes \u0393_ext is infinite, but the document does not empirically demonstrate that any actual source (e.g., Christ) is infinite; it relies on Page 15's certification."
+    },
+    {
+      "id": "C4",
+      "claim": "The saving distinction is O = 0 versus O > 0, never magnitude.",
+      "type": "mathematical",
+      "evidence": "At O=0, coupling term vanishes \u2192 decay; at O=\u03b5>0, product \u03b5\u00b7\u221e is infinite \u2192 convergence to 1.",
+      "evidence_type": "proof",
+      "evidence_strength": 10,
+      "assumption": "\u0393_ext is infinite; otherwise, magnitude of O matters.",
+      "overclaim_risk": 4,
+      "overclaim_diagnosis": "The claim 'never magnitude' depends on \u0393_ext being infinite; if \u0393_ext is finite, magnitude of O does matter."
+    },
+    {
+      "id": "C5",
+      "claim": "Faith gates, grace powers: both are required and neither is sufficient alone.",
+      "type": "interpretive",
+      "evidence": "Effective coupling = O\u00b7G; O without G or G without O leads to decay.",
+      "evidence_type": "argument",
+      "evidence_strength": 8,
+      "assumption": "O and G are independent and multiplicative.",
+      "overclaim_risk": 3,
+      "overclaim_diagnosis": "The document asserts this as a theorem, but the interpretation of O as 'faith' and G as 'grace' is an interpretive mapping, not derived from the math alone."
+    },
+    {
+      "id": "C6",
+      "claim": "The Incarnation is the coupling interface for the infinite source to enter the finite system.",
+      "type": "interpretive",
+      "evidence": "\u0393_ext channel; impedance-matching layer analogy.",
+      "evidence_type": "argument",
+      "evidence_strength": 5,
+      "assumption": "The mathematical concept of \u0393_ext corresponds to the historical Incarnation.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "The document maps a mathematical term (\u0393_ext channel) to a specific theological event without independent evidence that the event instantiates the term."
+    },
+    {
+      "id": "C7",
+      "claim": "Pentecost makes the source available to all agents with O>0, not just those physically proximate.",
+      "type": "interpretive",
+      "evidence": "\u0393_ext goes from delta function (local) to constant (global).",
+      "evidence_type": "argument",
+      "evidence_strength": 5,
+      "assumption": "The mathematical change in \u0393_ext corresponds to the historical event of Pentecost.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "Same as C6: a mathematical formalism is mapped to a specific historical claim without empirical support."
+    },
+    {
+      "id": "C8",
+      "claim": "The physician theorem: the sicker you are, the faster the repair works.",
+      "type": "mathematical",
+      "evidence": "The (1-c) term in \u010b = -\u03c3c + \u03b2O\u0393_ext(1-c) is maximal at c=0 and minimal at c=1.",
+      "evidence_type": "proof",
+      "evidence_strength": 10,
+      "assumption": "The dynamics are correctly modeled by the given differential equation.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C9",
+      "claim": "Eleven theorems are all Lean-verified at Level 5, zero sorry, zero local axioms.",
+      "type": "empirical",
+      "evidence": "Verification artifacts table listing Lean cluster status.",
+      "evidence_type": "citation",
+      "evidence_strength": 9,
+      "assumption": "The Lean verification is correct and complete.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C10",
+      "claim": "The cascade from closed-system decay to infinite-source convergence is independently falsifiable and independently proven.",
+      "type": "descriptive",
+      "evidence": "Each theorem is listed with its Lean verification.",
+      "evidence_type": "argument",
+      "evidence_strength": 8,
+      "assumption": "The theorems are logically independent and each is falsifiable in principle.",
+      "overclaim_risk": 4,
+      "overclaim_diagnosis": "The document claims independent falsifiability but does not specify empirical tests for the theological interpretations."
+    }
+  ],
+  "definitions": {
+    "explicit": [
+      {
+        "term": "Fixed point",
+        "definition": "The attractor state the dynamics converge toward (C=1)",
+        "location": "Spiritual Terms Introduced table"
+      },
+      {
+        "term": "Transferable",
+        "definition": "The fixed point can be offered \u2014 it is not exclusive",
+        "location": "Spiritual Terms Introduced table"
+      },
+      {
+        "term": "Openness (O)",
+        "definition": "The coupling gate \u2014 O>0 is the only requirement",
+        "location": "Spiritual Terms Introduced table"
+      },
+      {
+        "term": "Mustard seed",
+        "definition": "O=0 vs O>0 is the entire distinction \u2014 magnitude irrelevant",
+        "location": "Spiritual Terms Introduced table"
+      },
+      {
+        "term": "Finite grace",
+        "definition": "Real help, bounded ceiling \u2014 therapy, community, law",
+        "location": "Spiritual Terms Introduced table"
+      },
+      {
+        "term": "Infinite source",
+        "definition": "Unbounded capacity coupled through O>0 \u21d2 C\u21921",
+        "location": "Spiritual Terms Introduced table"
+      },
+      {
+        "term": "Incarnation",
+        "definition": "The coupling interface \u2014 how infinite source enters finite system",
+        "location": "Spiritual Terms Introduced table"
+      },
+      {
+        "term": "Pentecost",
+        "definition": "The distribution mechanism \u2014 source available to all with O>0",
+        "location": "Spiritual Terms Introduced table"
+      }
+    ],
+    "implied": [
+      {
+        "term": "Coherence (C)",
+        "usage_implies": "A scalar measure of moral or spiritual health, bounded between 0 and 1"
+      },
+      {
+        "term": "Grace operator (G)",
+        "usage_implies": "The divine contribution, possibly infinite in capacity"
+      },
+      {
+        "term": "Entropy production rate (S)",
+        "usage_implies": "A measure of moral decay or disorder"
+      }
+    ],
+    "undefined_but_critical": [
+      "moral sector",
+      "Second Law applied to the moral sector",
+      "saturation constraint"
+    ],
+    "terms_doing_hidden_work": [
+      "\u0393_ext (infinite source)",
+      "O (openness)",
+      "G (grace operator)",
+      "the product O\u00b7G"
+    ]
+  },
+  "assumptions": [
+    {
+      "assumption": "The moral sector obeys a dynamical law analogous to the Second Law of thermodynamics.",
+      "type": "conceptual",
+      "if_this_fails": "The entire decay and repair dynamics lose their physical justification."
+    },
+    {
+      "assumption": "\u0393_ext is infinite for the specific source identified (Christ).",
+      "type": "empirical",
+      "if_this_fails": "The mustard seed theorem (C4) fails; magnitude of O would matter."
+    },
+    {
+      "assumption": "Openness O is a scalar that can be arbitrarily small but nonzero.",
+      "type": "mathematical",
+      "if_this_fails": "The basin of attraction for C=1 would not be the entire O>0 region."
+    },
+    {
+      "assumption": "The Lean verification correctly models the intended theological dynamics.",
+      "type": "methodological",
+      "if_this_fails": "The mathematical proofs may not correspond to the theological claims."
+    },
+    {
+      "assumption": "The historical events of Incarnation and Pentecost instantiate the mathematical terms \u0393_ext channel and distribution mechanism.",
+      "type": "empirical",
+      "if_this_fails": "The interpretive claims (C6, C7) are unsupported."
+    }
+  ],
+  "argument_structure": {
+    "premises": [
+      "P1: Without external input, coherence decays to zero (Theorem 1).",
+      "P2: Finite sources raise the floor but cap below unity (Theorem 2).",
+      "P3: An infinite source with any O>0 drives C\u21921 (Theorem 3).",
+      "P4: The saving distinction is O=0 vs O>0 (Theorem 4).",
+      "P5: Faith gates, grace powers (Theorem 5).",
+      "P6: Incarnation and Pentecost provide the interface and distribution (Theorem 6)."
+    ],
+    "intermediate_conclusions": [
+      "IC1: The repair exists, is unique, and has unbounded capacity (from Pages 13-15).",
+      "IC2: The fixed point is transferable to any agent with O>0."
+    ],
+    "final_conclusion": "The repair (Christ) is available to every agent with any nonzero openness; a crack is enough.",
+    "weakest_link": "The assumption that \u0393_ext is infinite for the specific source (Christ) \u2014 this is not empirically demonstrated but certified by Page 15.",
+    "unproven_jumps": [
+      "From mathematical terms (\u0393_ext, O, G) to specific theological events (Incarnation, Pentecost).",
+      "From the mathematical model to the claim that the dynamics 'do the rest' without further conditions."
+    ]
+  },
+  "overclaim_detection": [
+    {
+      "pattern": "model-to-reality",
+      "location": "The entire document, especially The Physician Theorem and Spiritual Terms Introduced",
+      "diagnosis": "The paper claims that the mathematical model proves theological truths (e.g., 'the physician goes to the sick, mathematically'), but the model is a formal analogy; the proof only shows that if the model holds, then the conclusions follow. The mapping to reality is assumed, not proven."
+    },
+    {
+      "pattern": "definition-to-discovery",
+      "location": "Spiritual Terms Introduced table",
+      "diagnosis": "Terms like 'Incarnation' and 'Pentecost' are defined in terms of the model, but the paper presents them as discoveries derived from the math, when in fact the math was designed to match them."
+    },
+    {
+      "pattern": "some-to-all",
+      "location": "The Claim: 'the repair is available to every agent with any nonzero openness'",
+      "diagnosis": "The model shows that if O>0 and \u0393_ext is infinite, then C\u21921. But the paper claims this applies to 'every agent' without addressing whether all agents have access to the specific infinite source (Christ) or whether O can be nonzero in practice."
+    }
+  ],
+  "counterarguments": {
+    "addressed": [
+      "That finite grace (therapy, community) is insufficient \u2014 the paper acknowledges it raises the floor but caps below unity.",
+      "That the mustard seed claim seems too easy \u2014 the paper argues it is a fixed-point theorem, not a motivational poster."
+    ],
+    "missing": [
+      "The objection that the model is a formal analogy and does not prove anything about actual salvation.",
+      "The objection that 'openness' is not a well-defined empirical quantity and cannot be measured.",
+      "The objection that the infinite source (Christ) is not empirically verified to be infinite.",
+      "The objection that the model assumes a specific theological framework (Christianity) and is not general."
+    ],
+    "smartest_critic_would_say": "Your model proves that if there is an infinite source of grace and if openness is nonzero, then coherence converges to 1. But you have not shown that the historical Jesus is that infinite source, nor that 'openness' is a real, measurable quantity in human agents. You have built a mathematical machine that outputs exactly what you put into it \u2014 the theological conclusions were baked into the definitions of the terms."
+  },
+  "falsifiability": {
+    "kill_conditions_stated": [
+      "If \u0393_ext is finite, the mustard seed theorem fails.",
+      "If O=0, decay occurs.",
+      "If the Lean verification had a sorry or local axiom, the proofs would be invalid."
+    ],
+    "kill_conditions_missing": [
+      "If openness cannot be defined or measured, the model is untestable.",
+      "If the infinite source is not actually available to all agents, the transferability claim fails.",
+      "If coherence is not a real property of agents, the entire model is vacuous."
+    ],
+    "testability": "requires_external_evidence"
+  },
+  "novelty": {
+    "what_is_new": "A formal mathematical proof that the minimal condition for salvation (nonzero openness) is sufficient given an infinite source, framed as a fixed-point theorem with Lean verification.",
+    "novelty_type": "new_formalization",
+    "closest_existing_work": "Theological arguments about sola fide (faith alone) and prevenient grace; mathematical fixed-point theorems in dynamical systems.",
+    "novelty_score": 7
+  },
+  "compression": {
+    "one_sentence": "Using a Lean-verified dynamical model, this paper proves that any agent with nonzero openness converges to perfect coherence when coupled to an infinite source, formalizing the Christian doctrine that a mustard seed of faith is sufficient for salvation.",
+    "three_sentences": "The paper extends previous results (Pages 13-15) that a unique, infinite-capacity repair configuration exists. It proves that this fixed point is transferable: any agent with openness O>0 will converge to coherence C=1 when coupled to the infinite source, regardless of the magnitude of O. Eleven Lean-verified theorems establish the cascade from closed-system decay to infinite-source convergence, with the mustard seed theorem as the key result.",
+    "strongest_defensible_version": "Given a formal dynamical model of moral coherence with an infinite external source, the model proves that any nonzero openness leads to convergence to maximal coherence, and this result is verified in Lean.",
+    "weakest_version_still_true": "A mathematical model has been constructed and verified in Lean in which, under the assumption of an infinite external source, any nonzero coupling parameter leads to convergence to the maximum state."
+  }
+}

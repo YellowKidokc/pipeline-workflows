@@ -1,0 +1,70 @@
+{
+  "claims": [
+    {
+      "id": "KC-001",
+      "claim": "The framework was tested across seven checks because real theories must risk failure.",
+      "plain_english": "A real theory has to be tested in ways that could prove it wrong, and this framework was tested with seven such checks.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document states this as a core principle and points to the tests as evidence.",
+      "what_would_break_it": "If the framework was not actually tested or if the tests were not designed to risk falsification."
+    },
+    {
+      "id": "KC-002",
+      "claim": "The page points to the tests instead of asking for trust.",
+      "plain_english": "Instead of asking you to believe without proof, the page shows you the actual tests that were run.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document repeats this phrase multiple times as a key design principle.",
+      "what_would_break_it": "If the page actually asked for trust without providing test details, or if the tests were not accessible."
+    },
+    {
+      "id": "KC-003",
+      "claim": "The page names the load-bearing structure before asking the reader to follow the full derivation.",
+      "plain_english": "Before diving into the complicated details, the page first tells you the main ideas that hold everything up.",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "The document describes this as a deliberate structural choice in the timeline.",
+      "what_would_break_it": "If the load-bearing structure was not actually named, or if the derivation did not depend on it."
+    },
+    {
+      "id": "KC-004",
+      "claim": "The interlude sends the reader to the canonical page instead of replacing it.",
+      "plain_english": "This short summary doesn't try to be the full version; it directs you to the complete, official page for the full argument.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document explicitly states this and provides a link to the canonical page.",
+      "what_would_break_it": "If the interlude actually replaced the canonical page or if the canonical page did not exist."
+    },
+    {
+      "id": "KC-005",
+      "claim": "The framework was tested like a serious scientific proposal.",
+      "plain_english": "The framework was put through the same kind of rigorous testing that real scientific theories go through.",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "The document claims this but does not detail the tests themselves on this page.",
+      "what_would_break_it": "If the tests were not rigorous, not reproducible, or not comparable to scientific standards."
+    },
+    {
+      "id": "KC-006",
+      "claim": "The full canonical treatment remains linked below for the complete argument, tables, proofs, and source structure.",
+      "plain_english": "The complete version with all the evidence, math, and sources is available through a link on this page.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document states this and provides a link to the canonical page.",
+      "what_would_break_it": "If the linked page did not contain the complete argument, tables, proofs, or source structure."
+    },
+    {
+      "id": "KC-007",
+      "claim": "The page is the short reader-facing interlude.",
+      "plain_english": "This page is a brief summary meant for readers who want the main points without all the details.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document explicitly identifies itself as an interlude.",
+      "what_would_break_it": "If the page was actually the full treatment or if it contained more detail than an interlude should."
+    }
+  ],
+  "strongest_claim": "KC-001",
+  "weakest_claim": "KC-005",
+  "overall_argument_strength": "moderate"
+}

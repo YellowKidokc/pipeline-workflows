@@ -1,0 +1,251 @@
+{
+  "thesis": {
+    "one_sentence": "The Isomorphism Registry documents and evaluates claimed structural correspondences between two domains within the Theophysics framework, using a four-test protocol to discriminate genuine structural isomorphisms from mere analogies.",
+    "thesis_type": "descriptive",
+    "thesis_strength": 8,
+    "thesis_paragraph": "1"
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Each ISO record documents a claimed structural correspondence between two domains.",
+      "type": "descriptive",
+      "evidence": "The document lists 36 ISO records with IDs, domains, status, confidence, and type.",
+      "evidence_type": "citation",
+      "evidence_strength": 9,
+      "assumption": "The records are accurately described and exist as separate files.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C2",
+      "claim": "The Four-Test Protocol (HYP-ISO-001) is the discrimination method used to evaluate all records.",
+      "type": "descriptive",
+      "evidence": "The protocol is described with four tests: Prediction Constraint, Symmetric Breaking, Connection Density, and Falsifiability Invitation.",
+      "evidence_type": "citation",
+      "evidence_strength": 8,
+      "assumption": "The protocol is consistently applied to all records.",
+      "overclaim_risk": 3,
+      "overclaim_diagnosis": "The document claims the protocol is used but does not show evidence of its application to each record."
+    },
+    {
+      "id": "C3",
+      "claim": "Connection Density of 7+ independent correspondences is statistically improbable as chance.",
+      "type": "empirical",
+      "evidence": "No statistical analysis or citation is provided.",
+      "evidence_type": "none",
+      "evidence_strength": 2,
+      "assumption": "There is a known statistical distribution for independent correspondences across domains.",
+      "overclaim_risk": 8,
+      "overclaim_diagnosis": "The claim asserts statistical improbability without any supporting data or reference."
+    },
+    {
+      "id": "C4",
+      "claim": "The swap test is mandatory; if roles are interchangeable, the mapping is arbitrary.",
+      "type": "normative",
+      "evidence": "Stated as a rule in the document.",
+      "evidence_type": "argument",
+      "evidence_strength": 5,
+      "assumption": "The swap test is a valid and sufficient criterion for distinguishing isomorphisms from arbitrary mappings.",
+      "overclaim_risk": 4,
+      "overclaim_diagnosis": "The rule is asserted without justification or discussion of counterexamples."
+    },
+    {
+      "id": "C5",
+      "claim": "An isomorphism that can't be falsified isn't an isomorphism \u2014 it's a belief.",
+      "type": "normative",
+      "evidence": "Stated as a rule.",
+      "evidence_type": "argument",
+      "evidence_strength": 5,
+      "assumption": "Falsifiability is a necessary condition for a structural isomorphism claim to be scientific.",
+      "overclaim_risk": 3,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C6",
+      "claim": "Observation precedes explanation; 'OBSERVATION CONFIRMED, MECHANISM UNSOLVED' is a valid status.",
+      "type": "normative",
+      "evidence": "Stated as a rule.",
+      "evidence_type": "argument",
+      "evidence_strength": 4,
+      "assumption": "Observations can be confirmed independently of a mechanistic explanation.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C7",
+      "claim": "The registry includes 36 records with varying statuses (Testing, Candidate, Undetermined) and confidence levels.",
+      "type": "descriptive",
+      "evidence": "The table lists 36 entries with IDs, domains, status, confidence, and type.",
+      "evidence_type": "citation",
+      "evidence_strength": 9,
+      "assumption": "The table accurately reflects the content of the individual record files.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C8",
+      "claim": "Each record includes mapping, swap test, bidirectional predictions, falsification criteria, and honest classification.",
+      "type": "descriptive",
+      "evidence": "Stated in the 'What This Is' section.",
+      "evidence_type": "citation",
+      "evidence_strength": 6,
+      "assumption": "The individual record files actually contain all these elements.",
+      "overclaim_risk": 4,
+      "overclaim_diagnosis": "The document claims each record includes these elements but does not verify it for the listed records."
+    },
+    {
+      "id": "C9",
+      "claim": "The visual registry is available by opening 'Isomorphism_Registry.html' in a browser.",
+      "type": "descriptive",
+      "evidence": "Instruction provided in the document.",
+      "evidence_type": "citation",
+      "evidence_strength": 7,
+      "assumption": "The file exists and is accessible.",
+      "overclaim_risk": 1,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C10",
+      "claim": "To add a new record, one must copy the template, fill every field, run all tests honestly, and update the README and HTML.",
+      "type": "normative",
+      "evidence": "Listed as instructions.",
+      "evidence_type": "citation",
+      "evidence_strength": 6,
+      "assumption": "The template and tests are adequate for ensuring quality.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": null
+    }
+  ],
+  "definitions": {
+    "explicit": [
+      {
+        "term": "Isomorphism Registry",
+        "definition": "Structural isomorphism records documenting cross-domain mappings in the Theophysics framework.",
+        "location": "Section 'What This Is'"
+      },
+      {
+        "term": "Four-Test Protocol",
+        "definition": "A discrimination method with four tests: Prediction Constraint, Symmetric Breaking, Connection Density, and Falsifiability Invitation.",
+        "location": "Section 'Discrimination Method'"
+      }
+    ],
+    "implied": [
+      {
+        "term": "Structural isomorphism",
+        "usage_implies": "A correspondence that is not merely analogical but has predictive and falsifiable properties."
+      },
+      {
+        "term": "Swap test",
+        "usage_implies": "A test where the roles of the two domains are interchanged to check if the mapping remains meaningful."
+      }
+    ],
+    "undefined_but_critical": [
+      "Theophysics framework",
+      "Structural correspondence",
+      "Bidirectional predictions",
+      "Honest classification"
+    ],
+    "terms_doing_hidden_work": [
+      "Structural isomorphism",
+      "Falsifiability",
+      "Connection Density"
+    ]
+  },
+  "assumptions": [
+    {
+      "assumption": "The Four-Test Protocol is a valid and sufficient method for discriminating structural isomorphisms from analogies.",
+      "type": "methodological",
+      "if_this_fails": "The entire classification system (Testing, Candidate, etc.) becomes arbitrary."
+    },
+    {
+      "assumption": "Connection Density of 7+ is statistically improbable as chance.",
+      "type": "empirical",
+      "if_this_fails": "The confidence levels based on connection density are unsupported."
+    },
+    {
+      "assumption": "The swap test is a reliable indicator of arbitrary mappings.",
+      "type": "methodological",
+      "if_this_fails": "Some records may be misclassified as arbitrary when they are not."
+    },
+    {
+      "assumption": "Falsifiability is a necessary condition for a claim to be considered a structural isomorphism.",
+      "type": "conceptual",
+      "if_this_fails": "The distinction between isomorphism and belief collapses."
+    },
+    {
+      "assumption": "The individual record files exist and contain the claimed elements (mapping, swap test, etc.).",
+      "type": "empirical",
+      "if_this_fails": "The registry is incomplete or inaccurate."
+    }
+  ],
+  "argument_structure": {
+    "premises": [
+      "P1: The Isomorphism Registry documents structural correspondences between domains.",
+      "P2: All records are evaluated against the Four-Test Protocol.",
+      "P3: The Four-Test Protocol includes Prediction Constraint, Symmetric Breaking, Connection Density, and Falsifiability Invitation.",
+      "P4: Connection Density of 7+ is statistically improbable as chance.",
+      "P5: The swap test is mandatory; if roles are interchangeable, the mapping is arbitrary.",
+      "P6: An isomorphism that can't be falsified isn't an isomorphism \u2014 it's a belief.",
+      "P7: Observation precedes explanation; 'OBSERVATION CONFIRMED, MECHANISM UNSOLVED' is a valid status."
+    ],
+    "intermediate_conclusions": [
+      "IC1: The registry provides a systematic method for evaluating cross-domain mappings.",
+      "IC2: Records are classified with statuses (Testing, Candidate, Undetermined) and confidence levels."
+    ],
+    "final_conclusion": "The Isomorphism Registry is a structured, protocol-driven effort to identify and document genuine structural isomorphisms within the Theophysics framework, with built-in safeguards against overclaiming.",
+    "weakest_link": "The claim that Connection Density of 7+ is statistically improbable as chance (P4) is unsupported by evidence.",
+    "unproven_jumps": [
+      "From describing the protocol to asserting its validity without justification.",
+      "From stating the rules to implying they are consistently followed across all records."
+    ]
+  },
+  "overclaim_detection": [
+    {
+      "pattern": "some-to-all",
+      "location": "Section 'Discrimination Method'",
+      "diagnosis": "The document claims the Four-Test Protocol is used to evaluate all records, but does not provide evidence that it has been applied to each of the 36 listed records."
+    },
+    {
+      "pattern": "definition-to-discovery",
+      "location": "Section 'Discrimination Method', Test 3",
+      "diagnosis": "The claim that 7+ correspondences are 'statistically improbable as chance' is presented as a fact, but no statistical definition or calculation is provided."
+    }
+  ],
+  "counterarguments": {
+    "addressed": [
+      "The document acknowledges that 'Analogy Only' is not a failure but an honest classification.",
+      "It states that an unfalsifiable isomorphism is a belief, not an isomorphism."
+    ],
+    "missing": [
+      "The possibility that the Four-Test Protocol itself may be flawed or insufficient.",
+      "The challenge that the domains chosen are arbitrary and the correspondences are cherry-picked.",
+      "The objection that the framework lacks external validation or peer review."
+    ],
+    "smartest_critic_would_say": "The entire registry is a collection of subjective analogies dressed up in scientific language; the Four-Test Protocol is applied post-hoc to justify pre-existing beliefs, and the claim of statistical improbability for 7+ correspondences is a bluff without any supporting data."
+  },
+  "falsifiability": {
+    "kill_conditions_stated": [
+      "An isomorphism that can't be falsified isn't an isomorphism \u2014 it's a belief.",
+      "The swap test: if roles are interchangeable, the mapping is arbitrary."
+    ],
+    "kill_conditions_missing": [
+      "What specific evidence would disprove a claimed isomorphism?",
+      "How would one determine that a record has failed the Four-Test Protocol?",
+      "What would cause a record to be downgraded from 'Testing' to 'Candidate' or removed entirely?"
+    ],
+    "testability": "arguable_from_text"
+  },
+  "novelty": {
+    "what_is_new": "The systematic application of a four-test protocol to discriminate structural isomorphisms from analogies in a theological-physics framework, with a registry of 36 candidate mappings.",
+    "novelty_type": "new_combination",
+    "closest_existing_work": "General discussions of structural isomorphism in mathematics and science, but not applied to theology-physics mappings with a formal protocol.",
+    "novelty_score": 6
+  },
+  "compression": {
+    "one_sentence": "The Isomorphism Registry documents and evaluates 36 claimed structural correspondences between domains in the Theophysics framework using a four-test protocol to distinguish genuine isomorphisms from analogies.",
+    "three_sentences": "The Isomorphism Registry is a collection of records documenting claimed structural correspondences between two domains within the Theophysics framework. Each record is evaluated against the Four-Test Protocol, which includes tests for prediction constraint, symmetric breaking, connection density, and falsifiability. The registry currently lists 36 records with varying statuses and confidence levels, and provides rules for adding new records and ensuring honest classification.",
+    "strongest_defensible_version": "The Isomorphism Registry provides a structured method for documenting and evaluating claimed structural correspondences between domains in the Theophysics framework, using a four-test protocol that includes falsifiability criteria.",
+    "weakest_version_still_true": "The document describes a registry of 36 entries that are claimed to be structural isomorphisms, along with a set of rules and a protocol for evaluating them."
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "title_analysis": {
+    "current_title": "The Lean 4 Corpus",
+    "clarity": 8,
+    "specificity": 6,
+    "curiosity_pull": 7,
+    "accuracy_to_content": 9,
+    "overclaim_risk": 3,
+    "suggested_titles": {
+      "academic": "The Lean 4 Corpus: Formal Verification of Theophysics Structural Claims",
+      "provocative": "287 Theorems, Zero Gaps: The Machine-Verified Case for Theophysics",
+      "minimal": "The Lean 4 Corpus",
+      "series": "Theophysics Formal Verification Series: The Lean 4 Corpus"
+    }
+  },
+  "opening_analysis": {
+    "hook_strength": 7,
+    "thesis_visible_by_paragraph": 3,
+    "problem_visible_by_paragraph": 1,
+    "opening_type": "claim",
+    "first_sentence_pull": 8,
+    "diagnosis": "The opening uses strong numbers and bold claims to hook the reader immediately. The problem (internal structural consistency) is stated in paragraph 1. The thesis (the framework is internally consistent) appears by paragraph 3. However, the opening could benefit from a clearer statement of why this matters to the reader, and the distinction between formal proof and domain judgment is introduced early but could be more prominent."
+  },
+  "coherence": {
+    "score": 9,
+    "ideas_fit_together": true,
+    "logical_gaps": [],
+    "contradictions": [],
+    "unresolved_tensions": [
+      "The document claims Lean proves internal consistency but also acknowledges that Lean cannot verify the model's faithfulness to reality. This tension is acknowledged but not fully resolved."
+    ]
+  },
+  "flow": {
+    "score": 8,
+    "smooth_transitions": true,
+    "missing_bridges": [
+      "Transition from the 7 Lanes to the Formal Architecture could be smoother.",
+      "Transition from the Formal Architecture to the Complete Corpus could be smoother."
+    ],
+    "redundant_passages": [
+      "The 'What Lean Proves' and 'Does NOT Prove' columns are repeated in each lane table, which is consistent but could be streamlined.",
+      "The 'Honest Accounting' section repeats some points from the 'Specification Gaps' section."
+    ],
+    "suggested_reorder": "Consider moving the 'Honest Accounting' section before the 'Adversarial Testing' section to maintain a logical flow from formal results to limitations."
+  },
+  "paragraph_function_map": [
+    {
+      "paragraph_number": 1,
+      "function": "hook",
+      "main_point": "The Lean 4 Corpus contains 287 machine-verified theorems with zero gaps.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 2,
+      "function": "context",
+      "main_point": "Lean 4 is an interactive theorem prover that verifies logical steps.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 3,
+      "function": "claim",
+      "main_point": "Lean proves internal structural consistency of the framework.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 4,
+      "function": "context",
+      "main_point": "The overclaim guard runs on every theorem.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 5,
+      "function": "transition",
+      "main_point": "The argument architecture is presented in 7 lanes.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 6,
+      "function": "context",
+      "main_point": "Seven independent lines of inquiry converge on the same structural shape.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 7,
+      "function": "definition",
+      "main_point": "Lane 1: The Coherence Lane defines the God-shape as a prior, stable, truth-bearing source of order.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 8,
+      "function": "definition",
+      "main_point": "Lane 2: The Moral/Duality Lane defines the God-shape as a prior source of goodness from which evil deviates.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 9,
+      "function": "definition",
+      "main_point": "Lane 3: The Information/Logic Lane defines the God-shape as self-grounding Logos.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 10,
+      "function": "definition",
+      "main_point": "Lane 4: The Consciousness Lane defines the God-shape as a personal or supra-personal ground of consciousness.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 11,
+      "function": "definition",
+      "main_point": "Lane 5: The God-Builder/Imagination Lane defines the God-shape as Genesis/Logos structure built by the reader.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 12,
+      "function": "definition",
+      "main_point": "Lane 6: The Repair/Salvation Lane defines the God-shape as Incarnation, Cross, Resurrection, Grace.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 13,
+      "function": "definition",
+      "main_point": "Lane 7: The Convergence Lane defines the God-shape as one destination reached by many roads.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 14,
+      "function": "transition",
+      "main_point": "The Formal Architecture section describes the 16 Lean files.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 15,
+      "function": "definition",
+      "main_point": "L0 Core.lean proves the dual-substrate foundation.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 16,
+      "function": "definition",
+      "main_point": "L1 StageMachine.lean is demoted to teaching layer.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 17,
+      "function": "definition",
+      "main_point": "L2 Mapping.lean is demoted to toy correspondence.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 18,
+      "function": "definition",
+      "main_point": "L3 BridgeMatrix.lean proves the bridge matrix with 10-factor signature.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 19,
+      "function": "definition",
+      "main_point": "L4 MasterEquationInvariance.lean proves master equation invariance.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 20,
+      "function": "definition",
+      "main_point": "L5 FieldBridgeControls.lean proves field bridge controls for Laws 3, 6, 7, 8.",
+      "belongs_here": true,
+      "problem": null
+    }
+  ],
+  "writing_quality": {
+    "overall_score": 8,
+    "title_strength": 7,
+    "opening_pull": 8,
+    "coherence": 9,
+    "flow": 8,
+    "paragraph_function_clarity": 9,
+    "style_consistency": 8,
+    "evidence_alignment": 9,
+    "terminology_stability": 9,
+    "reader_orientation": 7,
+    "conclusion_strength": 9
+  },
+  "reader_experience": {
+    "where_reader_gets_hooked": 1,
+    "where_reader_gets_lost": "never",
+    "where_reader_wants_to_stop": "never",
+    "emotional_arc": "builds",
+    "intellectual_arc": "builds"
+  },
+  "rearrangement_suggestions": [
+    "Move the 'Honest Accounting' section before 'Adversarial Testing' to maintain logical flow from formal results to limitations.",
+    "Consider moving the 'Specification Gaps' section after 'Formal Gaps' to group all limitations together.",
+    "The 'Complete Corpus' table could be moved to an appendix to avoid interrupting the narrative flow."
+  ],
+  "top_3_fixes": [
+    "Add a brief summary at the beginning of the 'Formal Architecture' section to orient the reader on how the layers build on each other.",
+    "Streamline the 'What Lean Proves' and 'Does NOT Prove' columns in the lane tables to reduce redundancy.",
+    "Add a concluding paragraph that ties the 'Compression' section back to the opening hook to create a stronger sense of closure."
+  ]
+}

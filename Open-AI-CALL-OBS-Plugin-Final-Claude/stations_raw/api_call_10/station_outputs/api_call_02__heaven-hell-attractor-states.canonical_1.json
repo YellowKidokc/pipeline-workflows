@@ -1,0 +1,146 @@
+{
+  "chi_variables": {
+    "G": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Grace/Gravity: 'G received, growth term dominant', 'O\u00b7G(1-C)', 'grace is what makes the trajectory reversible'"
+    },
+    "M": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit mention of Meaning/Mass-Force or motion/inertia/will as a distinct variable"
+    },
+    "E": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Energy/Spirit: 'energetic substrate' implied in thermodynamic decay, 'Second Law runs unopposed'"
+    },
+    "S": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Strong Force/Love: 'S\u00b7C' decay term, 'S' as binding/confinement in lower attractor, 'decay term runs unopposed'"
+    },
+    "T": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Thermodynamics/Judgment: 'Second Law to completion', 'entropy', 'cost', 'judgment reveals trajectory', 'fire tests work'"
+    },
+    "K": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Knowledge/Logos: 'Logos property', 'what has the Logos property survives', 'invariant'"
+    },
+    "R": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit mention of Relativity/Relationship or frame structure"
+    },
+    "Q": {
+      "present": true,
+      "strength": 5,
+      "evidence": "Quantum/Faith: 'measurement, selection, collapse' implied in judgment as revelation, 'fire reveals'"
+    },
+    "F": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Weak Force/Sin-Conservation: 'moral decay, conserved deficit', 'decay term runs unopposed', 'sin-entropy'"
+    },
+    "C": {
+      "present": true,
+      "strength": 10,
+      "evidence": "Coherence/Christ: 'C \u2192 1', 'dC/dt', 'maximum coherence', 'C is chi', 'global integration operator'"
+    },
+    "variables_present_count": 8,
+    "dominant_variables": [
+      "C",
+      "S",
+      "T"
+    ],
+    "absent_variables": [
+      "M",
+      "R"
+    ],
+    "chi_coverage_pct": "80%"
+  },
+  "physics_process_detection": {
+    "maps_to_physics": true,
+    "physics_domain": "thermodynamics",
+    "specific_process": "entropy production, attractor dynamics in dynamical systems, phase transition",
+    "equation_present": "dC/dt = O\u00b7G(1-C) - S\u00b7C",
+    "isomorphism_detected": true,
+    "isomorphism_type": "structural",
+    "isomorphism_quality": 9
+  },
+  "laws_invoked": {
+    "explicit": [
+      "Law 5: Thermodynamics/Judgment-Heat Death",
+      "Law 4: Strong Force/Love-Captivity"
+    ],
+    "implicit": [
+      "Law 1: Gravitation/Sin-Grace",
+      "Law 6: Information/Logos-Chaos",
+      "Law 8: Quantum/Faith-Doubt",
+      "Law 9: Weak Force/Moral Conservation",
+      "Law 10: Coherence/Christ-Decoherence"
+    ],
+    "symmetry_pairs_active": [
+      "1-8",
+      "4-7",
+      "5-6"
+    ]
+  },
+  "theological_structure": {
+    "trinity_present": true,
+    "trinity_structure": "Father as source/ground (grace, invariant), Son as mediator/word (Christ, coherence operator), Spirit as power/presence (growth term, sanctification)",
+    "father_aspect": {
+      "present": true,
+      "evidence": "Grace as source-field, 'invariant', 'Logos property'"
+    },
+    "son_aspect": {
+      "present": true,
+      "evidence": "Christ as coherence operator, 'C is chi', 'global integration operator'"
+    },
+    "spirit_aspect": {
+      "present": true,
+      "evidence": "Growth term, 'progressive sanctification', 'transformed from one degree of glory'"
+    },
+    "cross_reference": true,
+    "grace_mechanism": true,
+    "sin_entropy": true,
+    "redemption_arc": true
+  },
+  "axiom_alignment": {
+    "axioms_touched": [
+      "A1.1",
+      "A1.2",
+      "A2.1",
+      "A2.2",
+      "A5.1",
+      "BC4",
+      "BC6",
+      "A1.3",
+      "T3.1",
+      "BC2",
+      "BC7",
+      "BC8"
+    ],
+    "axiom_count": 12,
+    "strongest_axiom_connection": "A5.1 (Thermodynamic asymmetry and judgment)"
+  },
+  "lean_connection": {
+    "formal_claim_present": true,
+    "could_be_formalized": true,
+    "relevant_lean_module": "ChristOperatorDiscipline",
+    "proof_status": "testable"
+  },
+  "framework_alignment_score": {
+    "total": 88,
+    "breakdown": {
+      "chi_coverage": 16,
+      "physics_mapping": 18,
+      "theological_depth": 19,
+      "axiom_grounding": 18,
+      "formal_rigor": 17
+    }
+  }
+}

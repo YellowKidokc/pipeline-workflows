@@ -1,0 +1,137 @@
+{
+  "chi_variables": {
+    "G": {
+      "present": true,
+      "strength": 10,
+      "evidence": "Grace Operator G = [[1,0],[1,0]]; idempotent, non-unitary, external; maps both states to |+1>; central concept of the document."
+    },
+    "M": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit mention of meaning, mass-force, motion, inertia, or will."
+    },
+    "E": {
+      "present": true,
+      "strength": 5,
+      "evidence": "E9.1: Grace-coupled energy E_grace = integral G(t) rho(x,t) d^3x; energy as energetic substrate."
+    },
+    "S": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit mention of strong force or love."
+    },
+    "T": {
+      "present": true,
+      "strength": 4,
+      "evidence": "Reference to Second Law of Thermodynamics in Swap Test; entropy production as judgment/heat death."
+    },
+    "K": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Knowledge/Logos: operator algebra, idempotent operators, Hilbert space, mathematical formalism; information compression via projection."
+    },
+    "R": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit mention of relativity or relationship."
+    },
+    "Q": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Quantum mechanics: two-state Hilbert space, non-unitary operator, projection operator, measurement-like operations, collapse."
+    },
+    "F": {
+      "present": true,
+      "strength": 3,
+      "evidence": "Weak Force / Sin-Conservation: moral sign flip from -1 to +1; sin as conserved deficit; entropy/sin connection."
+    },
+    "C": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Coherence / Christ: grace operator as external intervention that increases coherence; Christ as source of grace; global integration operator."
+    },
+    "variables_present_count": 7,
+    "dominant_variables": [
+      "G",
+      "C",
+      "Q"
+    ],
+    "absent_variables": [
+      "M",
+      "S",
+      "R"
+    ],
+    "chi_coverage_pct": "70%"
+  },
+  "physics_process_detection": {
+    "maps_to_physics": true,
+    "physics_domain": "quantum mechanics",
+    "specific_process": "quantum measurement / projection / state collapse",
+    "equation_present": "G = [[1,0],[1,0]]; G^2 = G; G dagger G != I; det(G) = 0; rank(G) = 1",
+    "isomorphism_detected": true,
+    "isomorphism_type": "structural",
+    "isomorphism_quality": 8
+  },
+  "laws_invoked": {
+    "explicit": [
+      "Law 6 (Grace/External Input)",
+      "Law 9 (Morality/Sign)",
+      "Law 4 (Incompleteness/Godel Boundary)"
+    ],
+    "implicit": [
+      "Law 5 (Thermodynamics/Judgment)",
+      "Law 3 (Electromagnetism/Truth-Deception)"
+    ],
+    "symmetry_pairs_active": [
+      "1-8",
+      "5-6"
+    ]
+  },
+  "theological_structure": {
+    "trinity_present": true,
+    "trinity_structure": "Grace operator sourced from Trinity (ISO-001); Father as source, Son as mediator, Spirit as power; referenced in cross-connections.",
+    "father_aspect": {
+      "present": true,
+      "evidence": "Source of grace; external origin; divine intervention; God acts first (Ephesians 2:8-9)."
+    },
+    "son_aspect": {
+      "present": true,
+      "evidence": "Christ as source of grace; Hebrews 10:14 'by one sacrifice he has made perfect forever'; ChristOperatorDiscipline module."
+    },
+    "spirit_aspect": {
+      "present": true,
+      "evidence": "Grace as power/presence; sanctification as ongoing transformation; Spirit's role in application."
+    },
+    "cross_reference": true,
+    "grace_mechanism": true,
+    "sin_entropy": true,
+    "redemption_arc": true
+  },
+  "axiom_alignment": {
+    "axioms_touched": [
+      "A9.1",
+      "A9.2",
+      "HM.3",
+      "HM.4",
+      "BC8"
+    ],
+    "axiom_count": 5,
+    "strongest_axiom_connection": "A9.1 (Grace opens closed systems)"
+  },
+  "lean_connection": {
+    "formal_claim_present": true,
+    "could_be_formalized": true,
+    "relevant_lean_module": "ChristOperatorDiscipline",
+    "proof_status": "testable"
+  },
+  "framework_alignment_score": {
+    "total": 82,
+    "breakdown": {
+      "chi_coverage": 14,
+      "physics_mapping": 18,
+      "theological_depth": 18,
+      "axiom_grounding": 16,
+      "formal_rigor": 16
+    }
+  }
+}

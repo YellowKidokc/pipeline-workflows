@@ -1,0 +1,143 @@
+{
+  "chi_variables": {
+    "G": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit reference to Grace or Gravity."
+    },
+    "M": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit reference to Meaning or Mass-Force."
+    },
+    "E": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit reference to Energy or Spirit."
+    },
+    "S": {
+      "present": true,
+      "strength": 8,
+      "evidence": "S appears as the moral entropy / sin tax in the Lagrangian: L = chi(v^2 - S_e) and L_anti = -chi(v^2) + S*chi(t). Also 'S' as the action in Herglotz form: dS/dt = L(q, dot{q}, S, t)."
+    },
+    "T": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Thermodynamics invoked via dissipation, entropy increase, irreversibility: 'entropy increases, coherence degrades, sin accumulates irreversibly' and 'Dissipation: Entropy/sin as energy loss in the Herglotz contact form.'"
+    },
+    "K": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit reference to Knowledge or Logos."
+    },
+    "R": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit reference to Relativity or Relationship."
+    },
+    "Q": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit reference to Quantum or Faith."
+    },
+    "F": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Weak Force / Sin-Conservation: 'moral entropy / sin tax', 'sin accumulates irreversibly', 'evil has no independent grammar \u2014 only inversion of the constructive regime.'"
+    },
+    "C": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Coherence / Christ: chi(t) is the coherence field, multiplies everything, 'chi is the global coherence object', 'chi = 0 recovery theorem', 'coherence-weighted throughout.'"
+    },
+    "variables_present_count": 4,
+    "dominant_variables": [
+      "C",
+      "S",
+      "T"
+    ],
+    "absent_variables": [
+      "G",
+      "M",
+      "E",
+      "K",
+      "R",
+      "Q"
+    ],
+    "chi_coverage_pct": "40%"
+  },
+  "physics_process_detection": {
+    "maps_to_physics": true,
+    "physics_domain": "thermodynamics",
+    "specific_process": "entropy production, dissipation, irreversibility",
+    "equation_present": "L = chi(v^2 - S_e); L_anti = -chi(v^2) + S*chi(t); dS/dt = L(q, dot{q}, S, t); L + L_anti = 0",
+    "isomorphism_detected": true,
+    "isomorphism_type": "structural",
+    "isomorphism_quality": 9
+  },
+  "laws_invoked": {
+    "explicit": [
+      "Law 5: Thermodynamics / Judgment-Heat Death"
+    ],
+    "implicit": [
+      "Law 9: Weak Force / Moral Conservation",
+      "Law 10: Coherence / Christ-Decoherence"
+    ],
+    "symmetry_pairs_active": [
+      "5-6"
+    ]
+  },
+  "theological_structure": {
+    "trinity_present": false,
+    "trinity_structure": "none detected",
+    "father_aspect": {
+      "present": false,
+      "evidence": "No source/origin/ground language."
+    },
+    "son_aspect": {
+      "present": false,
+      "evidence": "No incarnation/image/word/mediator language."
+    },
+    "spirit_aspect": {
+      "present": true,
+      "evidence": "Spirit-form Lagrangian: 'The spirit form makes the structure transparent: kinetic minus potential, coherence-weighted throughout.' Also 'spirit_anti_sum_zero' Lean artifact."
+    },
+    "cross_reference": false,
+    "grace_mechanism": false,
+    "sin_entropy": true,
+    "redemption_arc": false
+  },
+  "axiom_alignment": {
+    "axioms_touched": [
+      "A1.1",
+      "A1.2",
+      "A2.1",
+      "A2.2",
+      "A5.1",
+      "BC4",
+      "BC6",
+      "T3.1",
+      "BC2",
+      "BC7",
+      "BC8"
+    ],
+    "axiom_count": 11,
+    "strongest_axiom_connection": "A5.1"
+  },
+  "lean_connection": {
+    "formal_claim_present": true,
+    "could_be_formalized": true,
+    "relevant_lean_module": "ChristOperatorDiscipline",
+    "proof_status": "proven"
+  },
+  "framework_alignment_score": {
+    "total": 82,
+    "breakdown": {
+      "chi_coverage": 8,
+      "physics_mapping": 18,
+      "theological_depth": 16,
+      "axiom_grounding": 20,
+      "formal_rigor": 20
+    }
+  }
+}

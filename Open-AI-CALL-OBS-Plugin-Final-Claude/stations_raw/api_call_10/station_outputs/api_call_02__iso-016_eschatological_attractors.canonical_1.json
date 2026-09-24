@@ -1,0 +1,143 @@
+{
+  "chi_variables": {
+    "G": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Grace coefficient gamma in dPhi/dt = sigma gamma (Phi_max - Phi) Phi; Grace Operator (ISO-013) can shift trajectory across basins."
+    },
+    "M": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Moral state Phi evolves under dynamics; moral sensitivity sigma; moral trajectories and decision-making."
+    },
+    "E": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Energetic substrate implied by coherence state evolution; logistic equation describes growth/saturation dynamics."
+    },
+    "S": {
+      "present": true,
+      "strength": 5,
+      "evidence": "Strong binding to attractors (Phi=0 or Phi=1); confinement in basins of attraction."
+    },
+    "T": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Thermodynamic irreversibility once deep in basin; entropy production; critical slowing near saddle; hysteresis."
+    },
+    "K": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Information compression via binary attractor structure; knowledge of final state from initial conditions; intelligibility of moral dynamics."
+    },
+    "R": {
+      "present": true,
+      "strength": 5,
+      "evidence": "Frame structure of phase space; proper time along trajectories; relationship between initial conditions and destiny."
+    },
+    "Q": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Measurement/collapse-like selection of attractor; sensitivity to small perturbations near saddle; quantum-like binary outcome."
+    },
+    "F": {
+      "present": true,
+      "strength": 4,
+      "evidence": "Weak force analog in moral decay; sin as conserved deficit; fallen starting condition Phi < 0.5 guarantees convergence to Hell without grace."
+    },
+    "C": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Coherence as the tracked quantity; Christ as global integration; C wraps the integral; Heaven as maximal coherence (Phi->1)."
+    },
+    "variables_present_count": 10,
+    "dominant_variables": [
+      "C",
+      "G",
+      "T"
+    ],
+    "absent_variables": [],
+    "chi_coverage_pct": "100%"
+  },
+  "physics_process_detection": {
+    "maps_to_physics": true,
+    "physics_domain": "dynamical systems theory, nonlinear dynamics, attractor theory",
+    "specific_process": "bifurcation to bistability, saddle-node dynamics, basin of attraction, critical slowing down",
+    "equation_present": "dPhi/dt = sigma gamma (Phi_max - Phi) Phi",
+    "isomorphism_detected": true,
+    "isomorphism_type": "structural",
+    "isomorphism_quality": 8
+  },
+  "laws_invoked": {
+    "explicit": [
+      "Law 6 (Grace)",
+      "Law 9 (Morality)",
+      "Law 10 (Destiny)"
+    ],
+    "implicit": [
+      "Law 1 (Gravitation/Sin-Grace)",
+      "Law 4 (Strong Force/Love-Captivity)",
+      "Law 5 (Thermodynamics/Judgment-Heat Death)",
+      "Law 8 (Quantum/Faith-Doubt)"
+    ],
+    "symmetry_pairs_active": [
+      "1-8",
+      "4-7",
+      "5-6"
+    ]
+  },
+  "theological_structure": {
+    "trinity_present": false,
+    "trinity_structure": "Not explicitly present; focus on binary eschatology and grace operator.",
+    "father_aspect": {
+      "present": false,
+      "evidence": "No explicit source/origin language beyond 'maximum moral potential'."
+    },
+    "son_aspect": {
+      "present": true,
+      "evidence": "Christ as global integration operator; Heaven as eternal alignment with God; narrow gate (Matthew 7:13-14)."
+    },
+    "spirit_aspect": {
+      "present": false,
+      "evidence": "No explicit power/presence/movement language."
+    },
+    "cross_reference": true,
+    "grace_mechanism": true,
+    "sin_entropy": true,
+    "redemption_arc": true
+  },
+  "axiom_alignment": {
+    "axioms_touched": [
+      "A1.1",
+      "A1.2",
+      "A2.1",
+      "A2.2",
+      "A5.1",
+      "BC4",
+      "BC6",
+      "A1.3",
+      "T3.1",
+      "BC2",
+      "BC7",
+      "BC8"
+    ],
+    "axiom_count": 12,
+    "strongest_axiom_connection": "A1.2 (Bimodal distribution of final states)"
+  },
+  "lean_connection": {
+    "formal_claim_present": true,
+    "could_be_formalized": true,
+    "relevant_lean_module": "IsomorphismTest",
+    "proof_status": "testable"
+  },
+  "framework_alignment_score": {
+    "total": 85,
+    "breakdown": {
+      "chi_coverage": 20,
+      "physics_mapping": 18,
+      "theological_depth": 15,
+      "axiom_grounding": 17,
+      "formal_rigor": 15
+    }
+  }
+}

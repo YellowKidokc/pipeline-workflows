@@ -1,0 +1,115 @@
+{
+  "fruits": {
+    "love": {
+      "score": 8,
+      "weight": 2.0,
+      "evidence": "The paper grounds itself in a commitment to truth-seeking through independent convergence, treating disagreement as informative rather than threatening. It extends an open invitation for falsification, reflecting a non-defensive, agape-like posture."
+    },
+    "joy": {
+      "score": 6,
+      "weight": 1.0,
+      "evidence": "The writing has a resonant, confident tone, especially in the 'Biaxiosum Rule' and conclusion, but the technical sections are more measured, reducing overall resonance."
+    },
+    "peace": {
+      "score": 7,
+      "weight": 1.5,
+      "evidence": "The method explicitly avoids engineered consensus, aiming for equilibrium through independent observation. The tone is balanced, acknowledging limitations and inviting critique without agitation."
+    },
+    "patience": {
+      "score": 8,
+      "weight": 1.0,
+      "evidence": "The paper absorbs the counterargument that convergence does not equal truth (Section 8) without reactive dismissal. It waits for independent results rather than forcing agreement."
+    },
+    "kindness": {
+      "score": 7,
+      "weight": 1.0,
+      "evidence": "The method lowers the activation energy for good by making falsification easy and inviting participation. The tone is generous toward other researchers, even when critiquing debate architectures."
+    },
+    "goodness": {
+      "score": 8,
+      "weight": 1.5,
+      "evidence": "The paper produces net positive output: a novel methodology with falsification criteria, a proof of concept, and an open invitation. The insight from divergence (ChatGPT's outlier) is a clear gain."
+    },
+    "faithfulness": {
+      "score": 9,
+      "weight": 1.5,
+      "evidence": "The method is time-translation symmetric: it applies the same logic to itself (the paper is its own test case) and maintains consistency across the argument. The author's declared position is stable throughout."
+    },
+    "gentleness": {
+      "score": 8,
+      "weight": 1.0,
+      "evidence": "The critique of debate architectures is firm but proportional, never ad hominem. The method applies only necessary force (minimum 3 systems, no communication) without overreach."
+    },
+    "self_control": {
+      "score": 9,
+      "weight": 1.0,
+      "evidence": "The paper explicitly avoids engineering consensus, using a PID-like feedback: it measures divergence, investigates, and adjusts only with explanation. The outlier protocol is a clear error-correction mechanism."
+    }
+  },
+  "anti_fruits": {
+    "hatred": {
+      "score": 1,
+      "weight": -2.0,
+      "evidence": "Minimal repulsion; the paper critiques debate methods but does so constructively, not dismissively. No personal attacks or rejection of opposing views."
+    },
+    "despair": {
+      "score": 1,
+      "weight": -1.0,
+      "evidence": "The tone is hopeful and confident, not off-resonance. The paper sees divergence as informative, not as failure."
+    },
+    "anxiety": {
+      "score": 1,
+      "weight": -1.5,
+      "evidence": "No unresolved forces; the method explicitly addresses potential confounds (training data, prompt contamination) and provides falsification criteria."
+    },
+    "impatience": {
+      "score": 1,
+      "weight": -1.0,
+      "evidence": "The paper does not react to small perturbations; it absorbs the limitation that convergence does not equal truth without overcorrecting."
+    },
+    "cruelty": {
+      "score": 0,
+      "weight": -1.0,
+      "evidence": "No evidence of high activation energy for good or easy activation for harm. The tone is consistently respectful."
+    },
+    "corruption": {
+      "score": 0,
+      "weight": -1.5,
+      "evidence": "Net positive output; no drain. The method is designed to avoid corruption by eliminating communication."
+    },
+    "betrayal": {
+      "score": 0,
+      "weight": -1.5,
+      "evidence": "The paper is consistent; no change in character over time. The author's position is declared and stable."
+    },
+    "harshness": {
+      "score": 1,
+      "weight": -1.0,
+      "evidence": "Critique is proportional; no excessive force. The paper acknowledges limitations and invites falsification."
+    },
+    "addiction": {
+      "score": 0,
+      "weight": -1.0,
+      "evidence": "No positive feedback loop; the method includes error correction (outlier protocol) and avoids self-reinforcing consensus."
+    }
+  },
+  "composite_scores": {
+    "fruits_raw": 70,
+    "fruits_weighted": 100.5,
+    "anti_fruits_raw": 5,
+    "anti_fruits_weighted": 7.5,
+    "net_score": 93.0,
+    "fruit_ratio": 0.9306,
+    "dominant_fruit": "faithfulness",
+    "dominant_anti_fruit": "hatred",
+    "phase_state": "above_threshold"
+  },
+  "phase_form": {
+    "chi": 0.93,
+    "chi_c": 0.5,
+    "phi": 0.99,
+    "interpretation": "fully activated"
+  },
+  "diagnosis": "The document exhibits strong spiritual-structural health, with high fruit expression across all categories, particularly faithfulness and self-control. The method's design inherently minimizes anti-fruits, resulting in a net positive and coherent framework.",
+  "prescription": "To further elevate fruit expression, consider expanding the proof of concept to additional domains to strengthen generalizability, and include more explicit acknowledgment of potential biases in the manager role to deepen self-control."
+}

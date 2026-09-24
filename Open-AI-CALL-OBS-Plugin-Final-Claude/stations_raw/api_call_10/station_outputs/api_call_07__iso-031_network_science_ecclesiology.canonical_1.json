@@ -1,0 +1,134 @@
+{
+  "alpha_estimate": {
+    "value": 0.5,
+    "interpretation": "balanced",
+    "evidence": "The document treats both justice (accountability, cost acknowledgment, consequence honesty) and mercy (compassion, restoration focus, grace extension) as equally important structural features of the early church network. It acknowledges costs (persecution, hub failure) and consequences (cascading failure) while also emphasizing restoration, bridge-building, and the diffusion of grace through weak ties."
+  },
+  "justice_metrics": {
+    "accountability": {
+      "score": 8,
+      "evidence": "The document holds the early church and its leaders accountable for their actions and failures (e.g., Diotrephes' hub failure, apostasy warnings). It does not excuse or minimize the consequences of sin or poor leadership."
+    },
+    "cost_acknowledgment": {
+      "score": 9,
+      "evidence": "It explicitly acknowledges the real costs of persecution, hub removal, and cascading failure. The resilience analysis is grounded in the reality that leaders were executed and communities suffered."
+    },
+    "consequence_honesty": {
+      "score": 9,
+      "evidence": "It does not soften the consequences of hub failure or persecution. The document states that targeted hub removal causes fragmentation and that apostasy can cascade through the network."
+    },
+    "standard_clarity": {
+      "score": 8,
+      "evidence": "The standard is clearly defined: the New Testament narrative and network science models. The document is explicit about what constitutes a match or mismatch between the two domains."
+    },
+    "proportionality": {
+      "score": 7,
+      "evidence": "The document generally maintains proportionality between the offense (e.g., hub failure) and the consequence (cascading failure). However, it does not deeply explore cases where consequences might be disproportionate."
+    },
+    "justice_total": "82%"
+  },
+  "mercy_metrics": {
+    "compassion": {
+      "score": 7,
+      "evidence": "The document shows care for the people behind the network nodes, particularly in its discussion of persecution and the survival of the church. However, the tone is analytical rather than empathetic."
+    },
+    "restoration_focus": {
+      "score": 6,
+      "evidence": "It acknowledges restoration through bridge ties and the propagation of the gospel, but does not explicitly focus on restoring broken individuals or communities."
+    },
+    "grace_extension": {
+      "score": 8,
+      "evidence": "The document highlights the gospel as 'grace' diffusing through the network, and the role of weak ties in extending unearned benefit to disconnected clusters (e.g., Samaritans, Gentiles)."
+    },
+    "record_preservation": {
+      "score": 9,
+      "evidence": "It preserves the truth of the New Testament narrative and the historical record of persecution and failure. It does not erase or soften the costs."
+    },
+    "cost_bearing": {
+      "score": 7,
+      "evidence": "The document notes that apostles and missionaries voluntarily bore the cost of persecution and death to spread the gospel. However, it does not deeply explore the personal cost-bearing of individual believers."
+    },
+    "mercy_total": "74%"
+  },
+  "anti_patterns": {
+    "vengeance": {
+      "score": 1,
+      "evidence": "No evidence of punishment beyond what the cost requires. The document does not advocate for or describe excessive punishment."
+    },
+    "enabling": {
+      "score": 1,
+      "evidence": "No evidence of pretending consequences don't exist. The document is honest about costs and failures."
+    },
+    "self_righteousness": {
+      "score": 2,
+      "evidence": "The document maintains an analytical tone and does not judge the early church or its leaders from a position of superiority. However, it does not explicitly acknowledge its own vulnerability."
+    },
+    "cheap_grace": {
+      "score": 2,
+      "evidence": "The document does not offer mercy without cost. It acknowledges that the gospel spread through suffering and sacrifice."
+    },
+    "scapegoating": {
+      "score": 1,
+      "evidence": "No evidence of transferring cost to an unwilling party. The document does not scapegoat any individual or group."
+    },
+    "anti_pattern_penalty": 7
+  },
+  "cross_configuration_test": {
+    "judge_identified": false,
+    "judge_is_payer": false,
+    "justice_maximal": false,
+    "mercy_maximal": false,
+    "record_preserved": true,
+    "freedom_maintained": true,
+    "cross_score": 2,
+    "cross_present": false
+  },
+  "beatitude_thresholds": {
+    "poor_in_spirit": {
+      "crossed": false,
+      "evidence": "The document does not acknowledge its own limitation or dependence."
+    },
+    "mourning": {
+      "crossed": false,
+      "evidence": "It does not grieve what is broken in the network or the church."
+    },
+    "meekness": {
+      "crossed": false,
+      "evidence": "The document does not demonstrate power under control; it is analytical, not relational."
+    },
+    "hunger_for_righteousness": {
+      "crossed": true,
+      "evidence": "It actively pursues justice through accountability, cost acknowledgment, and consequence honesty."
+    },
+    "merciful": {
+      "crossed": true,
+      "evidence": "It extends mercy through grace extension and restoration focus, though not at maximal personal cost."
+    },
+    "pure_in_heart": {
+      "crossed": true,
+      "evidence": "It maintains single-minded integrity in its analysis, not mixing agendas."
+    },
+    "peacemaker": {
+      "crossed": true,
+      "evidence": "It actively reconciles opposing sides (network science and theology) through the isomorphism."
+    },
+    "persecuted": {
+      "crossed": false,
+      "evidence": "The document does not maintain its position despite cost; it is a theoretical analysis, not a testimony of suffering."
+    },
+    "thresholds_crossed": 4
+  },
+  "composite": {
+    "justice_score": 82,
+    "mercy_score": 74,
+    "anti_pattern_penalty": 7,
+    "cross_bonus": 0,
+    "beatitude_bonus": 20,
+    "total_jm_score": 169,
+    "maximum_possible": 270,
+    "grade": "B+"
+  },
+  "diagnosis": "This document is a structurally balanced analysis that treats justice and mercy as complementary features of the early church network. It excels in accountability, cost acknowledgment, and grace extension, but lacks the personal cost-bearing and relational depth that would push it toward the Cross configuration. Its strength lies in its honest, integrated framework; its gap is the absence of a judge who pays the cost.",
+  "strongest_moment": "The identification of Matthew 25:29 as a verbal formulation of preferential attachment, 1,950 years before Barabasi \u2014 a moment of profound convergence that honors both justice (the truth of the pattern) and mercy (the grace of the gospel diffusing through the network).",
+  "biggest_gap": "The document does not identify a judge who voluntarily bears the cost of the offense, which is the defining feature of the Cross configuration. It remains at the level of structural analysis rather than personal sacrifice."
+}

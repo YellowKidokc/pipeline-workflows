@@ -1,0 +1,152 @@
+{
+  "chi_variables": {
+    "G": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit mention of Grace or Gravity as a source-field curvature."
+    },
+    "M": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit mention of Meaning or Mass-Force."
+    },
+    "E": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit mention of Energy or Spirit as an energetic substrate."
+    },
+    "S": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit mention of Strong Force or Love as binding."
+    },
+    "T": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Law 5 (Thermodynamics) is referenced: 'Judgment signal' and 'Heat death noise' as T_i and D_i for that law-sector."
+    },
+    "K": {
+      "present": true,
+      "strength": 9,
+      "evidence": "The entire page is about information theory (Shannon channel capacity). Law 6 is explicitly 'Shannon/Logos' and the Logos is defined as 'pure signal'."
+    },
+    "R": {
+      "present": true,
+      "strength": 5,
+      "evidence": "Law 8 (Relativity) is listed: 'Covenant (frame-invariant)' as signal, 'Frame lock' as noise."
+    },
+    "Q": {
+      "present": true,
+      "strength": 5,
+      "evidence": "Law 7 (Quantum) is listed: 'Faith amplitude' as signal, 'Doubt/measurement noise' as noise."
+    },
+    "F": {
+      "present": true,
+      "strength": 4,
+      "evidence": "Law 9 (Weak Force) is listed: 'Moral conservation signal' as signal, 'CP violation noise' as noise."
+    },
+    "C": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Law 10 (Coherence) is listed: 'Christ signal (\u03c7)' as signal, 'Decoherence' as noise. The page also states 'C IS chi, wraps the integral' in the header, and the channel equation is applied to total system coherence."
+    },
+    "variables_present_count": 6,
+    "dominant_variables": [
+      "K",
+      "C",
+      "T"
+    ],
+    "absent_variables": [
+      "G",
+      "M",
+      "E",
+      "S"
+    ],
+    "chi_coverage_pct": "60%"
+  },
+  "physics_process_detection": {
+    "maps_to_physics": true,
+    "physics_domain": "information theory",
+    "specific_process": "channel capacity theorem (Shannon-Hartley)",
+    "equation_present": "C_i = A_i * log_2(1 + T_i/D_i)",
+    "isomorphism_detected": true,
+    "isomorphism_type": "structural",
+    "isomorphism_quality": 9
+  },
+  "laws_invoked": {
+    "explicit": [
+      "Law 1 (Gravitation)",
+      "Law 2 (Motion)",
+      "Law 3 (Electromagnetism)",
+      "Law 4 (Strong Force)",
+      "Law 5 (Thermodynamics)",
+      "Law 6 (Shannon/Logos)",
+      "Law 7 (Quantum)",
+      "Law 8 (Relativity)",
+      "Law 9 (Weak Force)",
+      "Law 10 (Coherence)"
+    ],
+    "implicit": [],
+    "symmetry_pairs_active": [
+      "5-6",
+      "4-7",
+      "1-8",
+      "2-9",
+      "3-10"
+    ]
+  },
+  "theological_structure": {
+    "trinity_present": false,
+    "trinity_structure": "Not explicitly present; the page focuses on the receiver side and the Logos/Christ signal.",
+    "father_aspect": {
+      "present": false,
+      "evidence": "No explicit source/origin/ground language."
+    },
+    "son_aspect": {
+      "present": true,
+      "evidence": "Law 10: 'Christ signal (\u03c7)' and 'C IS chi, wraps the integral' \u2014 Christ as the global integration operator."
+    },
+    "spirit_aspect": {
+      "present": false,
+      "evidence": "No explicit power/presence/movement/energy language."
+    },
+    "cross_reference": false,
+    "grace_mechanism": false,
+    "sin_entropy": true,
+    "redemption_arc": true
+  },
+  "axiom_alignment": {
+    "axioms_touched": [
+      "A1.1",
+      "A1.2",
+      "A2.1",
+      "A2.2",
+      "A5.1",
+      "BC4",
+      "BC6",
+      "A1.3",
+      "T3.1",
+      "BC2",
+      "BC7",
+      "BC8"
+    ],
+    "axiom_count": 12,
+    "strongest_axiom_connection": "A5.1"
+  },
+  "lean_connection": {
+    "formal_claim_present": true,
+    "could_be_formalized": true,
+    "relevant_lean_module": "Core",
+    "proof_status": "proven"
+  },
+  "framework_alignment_score": {
+    "total": 85,
+    "breakdown": {
+      "chi_coverage": 12,
+      "physics_mapping": 18,
+      "theological_depth": 15,
+      "axiom_grounding": 20,
+      "formal_rigor": 20
+    }
+  }
+}

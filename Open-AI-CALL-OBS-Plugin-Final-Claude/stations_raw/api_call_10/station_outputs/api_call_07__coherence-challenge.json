@@ -1,0 +1,79 @@
+{
+  "claims": [
+    {
+      "id": "KC-001",
+      "claim": "Information degrades over time due to Landauer's Principle and the Second Law of Thermodynamics; every copy introduces noise, every translation loses signal, and every century of transmission increases entropy.",
+      "plain_english": "Information naturally gets worse as it gets older, like a photo fading or a message getting garbled when passed from person to person.",
+      "type": "empirical",
+      "strength": "strong",
+      "evidence_given": "References Landauer's Principle and the Second Law of Thermodynamics as established physical laws.",
+      "what_would_break_it": "If a physical process were found that reliably increases information fidelity over time without external intervention, or if Landauer's Principle were shown to be false for textual transmission."
+    },
+    {
+      "id": "KC-002",
+      "claim": "The Bible's transmission coherence (3,400 years, 40+ authors, 700+ languages, 1,500-year composition span, 25,000+ manuscripts, 25-year gap, 99.5% textual agreement) violates information-theoretic expectations.",
+      "plain_english": "The Bible has survived for thousands of years with very little change, even though it was copied by hand, translated into many languages, and faced attempts to destroy it. According to information theory, this shouldn't be possible.",
+      "type": "empirical",
+      "strength": "strong",
+      "evidence_given": "Lists specific numbers for age, authors, languages, composition span, manuscripts, gap, and textual agreement. The calculator compares these to other texts.",
+      "what_would_break_it": "If the Bible's textual agreement were actually much lower (e.g., below 95%), or if its transmission history were shown to be significantly different (e.g., far fewer manuscripts, much larger gap)."
+    },
+    {
+      "id": "KC-003",
+      "claim": "The Coherence Score is a composite of six stress factors (age, independent authors, languages, composition timespan, manuscript gap, textual agreement) that measures how much entropy a text faced and how well it survived.",
+      "plain_english": "The calculator gives a number that shows how much pressure a text was under (like age and number of translations) and how well it kept its original meaning.",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "Describes the six factors and provides a formula (coherenceScore function) that combines them into a single score.",
+      "what_would_break_it": "If the formula were shown to be arbitrary or not predictive of actual textual coherence, or if a different weighting produced opposite results."
+    },
+    {
+      "id": "KC-004",
+      "claim": "By information theory, a text with the Bible's transmission parameters should be 'incoherent noise'.",
+      "plain_english": "If you just looked at the numbers\u2014how old the Bible is, how many authors, how many translations\u2014you'd expect it to be a jumbled mess by now.",
+      "type": "predictive",
+      "strength": "moderate",
+      "evidence_given": "Relies on the entropy calculation and the coherence score comparison. The claim is that the Bible's actual coherence far exceeds what the entropy model predicts.",
+      "what_would_break_it": "If a rigorous information-theoretic model showed that the Bible's coherence is actually within expected bounds, or if the entropy calculation were flawed."
+    },
+    {
+      "id": "KC-005",
+      "claim": "The Bible's coherence exceeds challenger texts by a ratio that can be calculated and compared (e.g., 2\u00d7, 1.2\u00d7, etc.).",
+      "plain_english": "The calculator can compare the Bible to any other text and show how much more coherent the Bible is.",
+      "type": "empirical",
+      "strength": "moderate",
+      "evidence_given": "The calculator outputs a coherence ratio and provides preset values for several texts (Iliad, Quran, Vedas, etc.).",
+      "what_would_break_it": "If the calculator's results were shown to be inconsistent with actual scholarly consensus on textual coherence, or if the presets were inaccurate."
+    },
+    {
+      "id": "KC-006",
+      "claim": "The gap between expected and actual coherence for the Bible is a measurement that points to an 'external coherence source'.",
+      "plain_english": "Since the Bible is way more coherent than it should be, something outside normal information decay must be keeping it together.",
+      "type": "theological",
+      "strength": "speculative",
+      "evidence_given": "The sigma deviation and the explanation text suggest that the Bible's survival 'shouldn't happen without an external coherence source.' No specific external source is named, but the implication is divine preservation.",
+      "what_would_break_it": "If a natural explanation (e.g., exceptional scribal practices, cultural factors) could fully account for the Bible's coherence without invoking the supernatural."
+    },
+    {
+      "id": "KC-007",
+      "claim": "The Bible's coherence score is higher than that of Homer's Iliad, the Quran, the Vedas, Plato's Republic, the Tao Te Ching, and Shakespeare's First Folio when compared using the same six-factor model.",
+      "plain_english": "When you run the numbers, the Bible comes out more coherent than other famous old texts like the Iliad or the Quran.",
+      "type": "empirical",
+      "strength": "moderate",
+      "evidence_given": "Preset values for each text are provided, and the calculator computes a coherence score for each. The claim is that the Bible's score is higher.",
+      "what_would_break_it": "If the presets were inaccurate or if a different set of texts showed the Bible not being the most coherent."
+    },
+    {
+      "id": "KC-008",
+      "claim": "Coherence is the same variable underneath good, truth, beauty, and health.",
+      "plain_english": "The idea of 'coherence' isn't just about texts\u2014it's also related to what is good, true, beautiful, and healthy.",
+      "type": "structural",
+      "strength": "speculative",
+      "evidence_given": "This claim appears in a link to 'The Moral-Physical Dictionary' but is not argued in the main text. It is asserted without evidence.",
+      "what_would_break_it": "If coherence were shown to be unrelated to moral or aesthetic concepts, or if the link were purely metaphorical."
+    }
+  ],
+  "strongest_claim": "KC-002",
+  "weakest_claim": "KC-008",
+  "overall_argument_strength": "moderate"
+}

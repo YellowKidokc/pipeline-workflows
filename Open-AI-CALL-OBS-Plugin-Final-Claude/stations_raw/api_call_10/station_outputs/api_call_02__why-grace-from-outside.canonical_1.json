@@ -1,0 +1,138 @@
+{
+  "chi_variables": {
+    "G": {
+      "present": true,
+      "strength": 10,
+      "evidence": "Grace is defined as negentropic input from God, external source, central to the equation dC/dt = O\u00b7G(1-C) - S\u00b7C."
+    },
+    "M": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit reference to meaning, mass-force, motion, inertia, or will as a chi-variable."
+    },
+    "E": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Energy is discussed in terms of thermodynamic cost, Landauer's principle, and negentropy injection."
+    },
+    "S": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Strong Force / Love is implicitly present through the binding and confinement of grace and the Cross as thermodynamic necessity."
+    },
+    "T": {
+      "present": true,
+      "strength": 10,
+      "evidence": "Thermodynamics is the central physics domain; Second Law, entropy, decay term S, Landauer's principle are explicitly used."
+    },
+    "K": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Knowledge/Logos is referenced via information theory, Landauer's principle, and the Logos field."
+    },
+    "R": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit reference to relativity, relationship, frame structure, or proper time."
+    },
+    "Q": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit reference to quantum mechanics, measurement, faith, or collapse."
+    },
+    "F": {
+      "present": true,
+      "strength": 5,
+      "evidence": "Weak Force / Sin-Conservation is implied through sin as decoupling and the moral entropy that requires external payment."
+    },
+    "C": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Coherence/Christ is the central variable C in the equation, representing alignment with Logos, and Christ is the source of the Cross payment."
+    },
+    "variables_present_count": 6,
+    "dominant_variables": [
+      "G",
+      "T",
+      "C"
+    ],
+    "absent_variables": [
+      "M",
+      "R",
+      "Q"
+    ],
+    "chi_coverage_pct": "60%"
+  },
+  "physics_process_detection": {
+    "maps_to_physics": true,
+    "physics_domain": "thermodynamics",
+    "specific_process": "entropy production, negentropy injection, Landauer's principle (information erasure cost)",
+    "equation_present": "dC/dt = O\u00b7G(1-C) - S\u00b7C + G\u00b7\u03b4(t - t_init)",
+    "isomorphism_detected": true,
+    "isomorphism_type": "structural",
+    "isomorphism_quality": 9
+  },
+  "laws_invoked": {
+    "explicit": [
+      "Law 5: Thermodynamics / Judgment-Heat Death"
+    ],
+    "implicit": [
+      "Law 6: Information / Logos-Chaos",
+      "Law 9: Weak Force / Moral Conservation",
+      "Law 10: Coherence / Christ-Decoherence"
+    ],
+    "symmetry_pairs_active": [
+      "5-6"
+    ]
+  },
+  "theological_structure": {
+    "trinity_present": true,
+    "trinity_structure": "Father as source of grace (negentropy), Son as Christ who pays the Landauer cost on the Cross, Spirit as the ongoing work of openness and reception (O variable)",
+    "father_aspect": {
+      "present": true,
+      "evidence": "Grace is from outside the system, God as source of negentropy."
+    },
+    "son_aspect": {
+      "present": true,
+      "evidence": "Cross as thermodynamic necessity, Christ pays the cost, 'It is finished'."
+    },
+    "spirit_aspect": {
+      "present": true,
+      "evidence": "Openness O is the human variable, but the Spirit initiates the delta function and sustains the channel."
+    },
+    "cross_reference": true,
+    "grace_mechanism": true,
+    "sin_entropy": true,
+    "redemption_arc": true
+  },
+  "axiom_alignment": {
+    "axioms_touched": [
+      "A1.1",
+      "A1.2",
+      "A2.1",
+      "A2.2",
+      "A5.1",
+      "BC4",
+      "BC6",
+      "T3.1"
+    ],
+    "axiom_count": 8,
+    "strongest_axiom_connection": "A5.1 (Thermodynamic grounding of sin and grace)"
+  },
+  "lean_connection": {
+    "formal_claim_present": true,
+    "could_be_formalized": true,
+    "relevant_lean_module": "JusticeMercyOperator",
+    "proof_status": "testable"
+  },
+  "framework_alignment_score": {
+    "total": 85,
+    "breakdown": {
+      "chi_coverage": 12,
+      "physics_mapping": 19,
+      "theological_depth": 19,
+      "axiom_grounding": 18,
+      "formal_rigor": 17
+    }
+  }
+}

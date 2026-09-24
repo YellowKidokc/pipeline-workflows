@@ -1,0 +1,216 @@
+{
+  "title_analysis": {
+    "current_title": "The Lean 4 Corpus",
+    "clarity": 8,
+    "specificity": 7,
+    "curiosity_pull": 6,
+    "accuracy_to_content": 9,
+    "overclaim_risk": 2,
+    "suggested_titles": {
+      "academic": "The Lean 4 Corpus: 287 Machine-Verified Theorems for Theophysics",
+      "provocative": "287 Theorems, Zero Gaps: The Formal Architecture of Theophysics",
+      "minimal": "The Lean 4 Corpus",
+      "series": "Theophysics Formal Verification Series: The Lean 4 Corpus"
+    }
+  },
+  "opening_analysis": {
+    "hook_strength": 7,
+    "thesis_visible_by_paragraph": 3,
+    "problem_visible_by_paragraph": 1,
+    "opening_type": "claim",
+    "first_sentence_pull": 8,
+    "diagnosis": "The opening uses strong numbers (287, zero gaps) to grab attention immediately. The problem (internal structural consistency) is stated in paragraph 2. The thesis (the framework is internally consistent) appears in paragraph 3. The opening is effective but could benefit from a more narrative or question-based hook to draw in readers unfamiliar with formal verification."
+  },
+  "coherence": {
+    "score": 9,
+    "ideas_fit_together": true,
+    "logical_gaps": [],
+    "contradictions": [],
+    "unresolved_tensions": [
+      "The document claims Lean proves internal consistency but also acknowledges that Lean cannot verify domain faithfulness (SPEC-01). This tension is named but not fully resolved."
+    ]
+  },
+  "flow": {
+    "score": 8,
+    "smooth_transitions": true,
+    "missing_bridges": [
+      "Transition from the 7 Lanes to the Formal Architecture could be smoother; a brief sentence explaining how the lanes map to the Lean files would help."
+    ],
+    "redundant_passages": [
+      "The 'What Lean Proves' and 'Does NOT Prove' columns are repeated for each lane, which is consistent but could be condensed in a summary table."
+    ],
+    "suggested_reorder": "Consider moving the 'Compression' section (final argument) to after the 7 Lanes and before the Formal Architecture to provide a high-level conclusion earlier."
+  },
+  "paragraph_function_map": [
+    {
+      "paragraph_number": 1,
+      "function": "hook",
+      "main_point": "The document presents 287 machine-verified theorems with zero gaps.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 2,
+      "function": "context",
+      "main_point": "Lean 4 is an interactive theorem prover that verifies logical steps.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 3,
+      "function": "claim",
+      "main_point": "Lean proves internal structural consistency of the framework.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 4,
+      "function": "definition",
+      "main_point": "The overclaim guard ensures readers know what each theorem proves and does not prove.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 5,
+      "function": "context",
+      "main_point": "The argument architecture consists of seven independent lanes converging on the same shape.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 6,
+      "function": "transition",
+      "main_point": "Introduction to Lane 1: The Coherence Lane.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 7,
+      "function": "evidence",
+      "main_point": "Lane 1 questions and their Lean proofs are listed.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 8,
+      "function": "transition",
+      "main_point": "Introduction to Lane 2: The Moral / Duality Lane.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 9,
+      "function": "evidence",
+      "main_point": "Lane 2 questions and their Lean proofs are listed.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 10,
+      "function": "transition",
+      "main_point": "Introduction to Lane 3: The Information / Logic Lane.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 11,
+      "function": "evidence",
+      "main_point": "Lane 3 questions and their Lean proofs are listed.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 12,
+      "function": "transition",
+      "main_point": "Introduction to Lane 4: The Consciousness Lane.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 13,
+      "function": "evidence",
+      "main_point": "Lane 4 questions and their Lean proofs are listed.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 14,
+      "function": "transition",
+      "main_point": "Introduction to Lane 5: The God-Builder / Imagination Lane.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 15,
+      "function": "evidence",
+      "main_point": "Lane 5 questions and their Lean proofs are listed.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 16,
+      "function": "transition",
+      "main_point": "Introduction to Lane 6: The Repair / Salvation Lane.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 17,
+      "function": "evidence",
+      "main_point": "Lane 6 questions and their Lean proofs are listed.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 18,
+      "function": "transition",
+      "main_point": "Introduction to Lane 7: The Convergence Lane.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 19,
+      "function": "evidence",
+      "main_point": "Lane 7 questions and their Lean proofs are listed.",
+      "belongs_here": true,
+      "problem": null
+    },
+    {
+      "paragraph_number": 20,
+      "function": "synthesis",
+      "main_point": "The convergence of all lanes produces the same God-shaped structure.",
+      "belongs_here": true,
+      "problem": null
+    }
+  ],
+  "writing_quality": {
+    "overall_score": 8,
+    "title_strength": 7,
+    "opening_pull": 7,
+    "coherence": 9,
+    "flow": 8,
+    "paragraph_function_clarity": 9,
+    "style_consistency": 8,
+    "evidence_alignment": 9,
+    "terminology_stability": 8,
+    "reader_orientation": 7,
+    "conclusion_strength": 9
+  },
+  "reader_experience": {
+    "where_reader_gets_hooked": 1,
+    "where_reader_gets_lost": "never",
+    "where_reader_wants_to_stop": "never",
+    "emotional_arc": "builds",
+    "intellectual_arc": "builds"
+  },
+  "rearrangement_suggestions": [
+    "Move the 'Compression' section (final argument) to after the 7 Lanes and before the Formal Architecture to provide a high-level conclusion earlier.",
+    "Consider condensing the 'What Lean Proves' and 'Does NOT Prove' columns into a summary table for each lane to reduce repetition.",
+    "Add a brief transition sentence between the 7 Lanes and the Formal Architecture to explain how the lanes map to the Lean files."
+  ],
+  "top_3_fixes": [
+    "Add a narrative or question-based hook in the opening to draw in readers unfamiliar with formal verification.",
+    "Improve the transition from the 7 Lanes to the Formal Architecture with a sentence explaining the mapping.",
+    "Condense the repeated 'What Lean Proves' and 'Does NOT Prove' columns into a summary table for each lane to reduce redundancy."
+  ]
+}

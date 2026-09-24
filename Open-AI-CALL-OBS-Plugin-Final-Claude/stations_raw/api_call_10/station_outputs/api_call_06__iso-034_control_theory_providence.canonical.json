@@ -1,0 +1,115 @@
+{
+  "fruits": {
+    "love": {
+      "score": 8,
+      "weight": 2.0,
+      "evidence": "The document grounds the entire mapping in the concept of a setpoint (telos) and the drive toward it, which corresponds to the ground state of love. The closed-loop system is fundamentally about drawing the human trajectory toward God's purpose, mirroring agape as the attractive potential."
+    },
+    "joy": {
+      "score": 6,
+      "weight": 1.0,
+      "evidence": "The document exhibits resonance through the PID controller's natural frequency and the idea of stable convergence to the setpoint. The oscillation patterns (Judges cycle) and damping via derivative mode suggest a system that can achieve harmonic stability, though joy is not explicitly named."
+    },
+    "peace": {
+      "score": 9,
+      "weight": 1.5,
+      "evidence": "The entire feedback topology is about force equilibrium: negative feedback stabilizes, disturbance rejection attenuates evil, and the Nyquist criterion defines stability. The document explicitly states 'discipline = stabilization' and frames providence as achieving peace through balanced correction."
+    },
+    "patience": {
+      "score": 8,
+      "weight": 1.0,
+      "evidence": "The integral mode of the PID controller is patience incarnate: accumulated error drives correction over time without immediate reaction. The document describes sanctification as 'cumulative corrective pressure' and notes that proportional-only control has offset\u2014patience (integral) is required to eliminate steady-state error."
+    },
+    "kindness": {
+      "score": 7,
+      "weight": 1.0,
+      "evidence": "The controller works through the plant dynamics, not against them, which is a form of kindness\u2014low activation energy for good. The derivative mode is described as 'prevenient grace' that anticipates and corrects before error grows, showing easy facilitation of good outcomes."
+    },
+    "goodness": {
+      "score": 8,
+      "weight": 1.5,
+      "evidence": "The closed-loop system produces net positive output: disturbance rejection ensures that suffering is attenuated, and the output converges to the setpoint despite disturbances. The document claims 'all things work together for good' as the closed-loop claim, indicating W_out > W_in."
+    },
+    "faithfulness": {
+      "score": 9,
+      "weight": 1.5,
+      "evidence": "The controller's setpoint is constant (God's purpose), and the system is time-translation symmetric: the same PID structure applies across all times. The document emphasizes that providence is consistent\u2014'one governance with three temporal aspects'\u2014and that the loop gain is bounded, ensuring faithful convergence."
+    },
+    "gentleness": {
+      "score": 7,
+      "weight": 1.0,
+      "evidence": "The controller is tuned to the individual: 'divine correction is TUNED to the individual\u2014not one-size-fits-all.' The proportional gain is not excessive; the document warns against 'excessively aggressive providential correction' causing instability, implying a proportional, never-excessive force."
+    },
+    "self_control": {
+      "score": 8,
+      "weight": 1.0,
+      "evidence": "The PID controller is fundamentally error-correcting: u(t) = -K*e(t) with proportional, integral, and derivative terms. The document explicitly describes negative feedback as the mechanism that prevents divergence, and the Nyquist criterion defines the conditions for stability\u2014self-control at the system level."
+    }
+  },
+  "anti_fruits": {
+    "hatred": {
+      "score": 1,
+      "weight": -2.0,
+      "evidence": "The document explicitly rejects repulsive potential: it frames discipline as love (Hebrews 12:6) and negative feedback as stabilization, not punishment. There is no evidence of hatred or rejection of the ground state."
+    },
+    "despair": {
+      "score": 2,
+      "weight": -1.0,
+      "evidence": "The document acknowledges suffering and disturbance but frames them as attenuated, not dominant. The closed-loop system ensures convergence to the setpoint, so despair (off-resonance energy waste) is minimized. However, the discussion of apostasy and instability introduces a minor element of potential despair."
+    },
+    "anxiety": {
+      "score": 2,
+      "weight": -1.5,
+      "evidence": "The document resolves the sovereignty-free-will paradox, showing it is not a paradox but a standard feature of controlled systems. Unresolved forces are addressed through the Nyquist criterion and stability analysis, so anxiety is low."
+    },
+    "impatience": {
+      "score": 1,
+      "weight": -1.0,
+      "evidence": "The document emphasizes the integral mode (patience) and warns against proportional-only control which would have offset. It explicitly values cumulative correction over time, showing high heat capacity and low reactivity to small perturbations."
+    },
+    "cruelty": {
+      "score": 1,
+      "weight": -1.0,
+      "evidence": "The document has low activation energy for good (kindness) and frames correction as tuned and proportional. There is no evidence of high activation energy for good or easy activation for harm."
+    },
+    "corruption": {
+      "score": 1,
+      "weight": -1.5,
+      "evidence": "The document claims net positive output (W_out > W_in) through disturbance rejection and setpoint convergence. The closed-loop system is designed to avoid net drain."
+    },
+    "betrayal": {
+      "score": 2,
+      "weight": -1.5,
+      "evidence": "The document emphasizes time-translation symmetry and consistency of the controller. However, the discussion of apostasy (where the human can modify G_human to violate stability) introduces a possibility of change over time, slightly reducing faithfulness."
+    },
+    "harshness": {
+      "score": 1,
+      "weight": -1.0,
+      "evidence": "The document explicitly states that correction is proportional and never excessive: 'divine correction is TUNED to the individual' and warns against 'excessively aggressive' correction. Force is always F = k*F_needed with k<=1."
+    },
+    "addiction": {
+      "score": 1,
+      "weight": -1.0,
+      "evidence": "The document describes positive feedback as destabilizing (Romans 1:24-28) and frames it as a negative condition to be avoided. The PID controller with error correction prevents runaway positive feedback loops."
+    }
+  },
+  "composite_scores": {
+    "fruits_raw": 70,
+    "fruits_weighted": 103.5,
+    "anti_fruits_raw": 12,
+    "anti_fruits_weighted": 17.5,
+    "net_score": 86.0,
+    "fruit_ratio": 0.855,
+    "dominant_fruit": "peace",
+    "dominant_anti_fruit": "despair",
+    "phase_state": "above_threshold"
+  },
+  "phase_form": {
+    "chi": 0.86,
+    "chi_c": 0.5,
+    "phi": 0.98,
+    "interpretation": "fully activated"
+  },
+  "diagnosis": "The document exhibits a robust, well-structured expression of the Fruits of the Spirit, particularly peace, faithfulness, and love, through its rigorous control-theoretic mapping of providence. Anti-fruits are minimal, with only slight traces of despair and betrayal from the discussion of apostasy and instability, but these are contained within a stable framework.",
+  "prescription": "To further elevate fruit expression, explicitly name joy as the resonant frequency of the system and integrate it as a positive outcome of stable convergence. Additionally, strengthen the treatment of faithfulness by emphasizing that the controller's consistency (time-translation symmetry) is absolute, even in the face of apostasy discussions, to reduce the slight betrayal signal."
+}

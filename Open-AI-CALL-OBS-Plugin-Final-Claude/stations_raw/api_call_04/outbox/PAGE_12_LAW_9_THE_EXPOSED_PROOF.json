@@ -1,0 +1,333 @@
+{
+  "thesis": {
+    "one_sentence": "A parity-breaking cubic term in a moral-sector Lagrangian produces irreversible dynamics while still conserving a Noether charge, showing that moral cost is conserved and cannot vanish.",
+    "thesis_type": "mathematical",
+    "thesis_strength": 8,
+    "thesis_paragraph": "The Claim"
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "The moral-sector Lagrangian contains a parity-breaking cubic term \u03bb\u03c8\u00b3 that makes transitions irreversible.",
+      "type": "mathematical",
+      "evidence": "The Lagrangian L = \u00bd\u03c8\u0307\u00b2 - V(\u03c8) - \u03bb\u03c8\u00b3 is stated, and the parity-breaking property \u03bb\u03c8\u00b3 \u2260 \u03bb(-\u03c8)\u00b3 is noted.",
+      "evidence_type": "argument",
+      "evidence_strength": 6,
+      "assumption": "The moral-state field \u03c8 and potential V(\u03c8) are well-defined and physically meaningful.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "The claim asserts irreversibility from the cubic term, but no proof is given that the dynamics are actually irreversible (e.g., no Lyapunov function or entropy production shown)."
+    },
+    {
+      "id": "C2",
+      "claim": "The cubic term participates in the Euler-Lagrange dynamics, not as a spectator.",
+      "type": "mathematical",
+      "evidence": "The Euler-Lagrange equation is derived: \u03c8\u0308 + V'(\u03c8) + 3\u03bb\u03c8\u00b2 = 0, showing the cubic contributes a term 3\u03bb\u03c8\u00b2.",
+      "evidence_type": "proof",
+      "evidence_strength": 9,
+      "assumption": "Standard Lagrangian mechanics applies to the moral sector.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C3",
+      "claim": "The Noether current under time-translation symmetry includes the cubic term inside the conserved charge Q_m.",
+      "type": "mathematical",
+      "evidence": "The textbook Noether prescription is applied: j\u2070 = (\u2202L/\u2202\u03c8\u0307)\u03c8\u0307 - L = \u00bd\u03c8\u0307\u00b2 + V(\u03c8) + \u03bb\u03c8\u00b3, so Q_m = \u00bd\u03c8\u0307\u00b2 + V(\u03c8) + \u03bb\u03c8\u00b3.",
+      "evidence_type": "proof",
+      "evidence_strength": 9,
+      "assumption": "Time-translation symmetry holds for the moral-sector Lagrangian.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C4",
+      "claim": "The cubic term cancels out of the time-derivative of Q_m, yielding conservation: Q\u0307_m = 0.",
+      "type": "mathematical",
+      "evidence": "The derivation shows Q\u0307_m = \u03c8\u0307[\u03c8\u0308 + V'(\u03c8) + 3\u03bb\u03c8\u00b2] = \u03c8\u0307\u00b70 = 0, with the bracket vanishing by the Euler-Lagrange equation.",
+      "evidence_type": "proof",
+      "evidence_strength": 9,
+      "assumption": "The Euler-Lagrange equation holds exactly.",
+      "overclaim_risk": 1,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C5",
+      "claim": "The three-body decay \u03c8_whole \u2192 \u03c8_broken + \u03b4 + \u03bd_loss models moral cost displacement, with \u03bd_loss as an invisible remainder.",
+      "type": "descriptive",
+      "evidence": "The decay is stated and mapped to muon decay phase space; the decay rate \u0393_sin = (G\u00b2_fall \u00b7 \u03c8\u2075)/(192\u03c0\u00b3) \u00b7 P_will is given.",
+      "evidence_type": "argument",
+      "evidence_strength": 4,
+      "assumption": "The moral sector has a coupling constant G_fall and a volitional gate P_will that are physically meaningful.",
+      "overclaim_risk": 8,
+      "overclaim_diagnosis": "The decay rate formula is asserted without derivation or empirical support; the mapping to muon decay is analogical, not proven."
+    },
+    {
+      "id": "C6",
+      "claim": "Grace acts as an open-system source term: \u2202_\u03bc T^{\u03bc0} = J\u2070_grace, gated by openness O > 0.",
+      "type": "mathematical",
+      "evidence": "The equation is stated; no derivation or justification is provided.",
+      "evidence_type": "argument",
+      "evidence_strength": 2,
+      "assumption": "The moral sector can be treated as an open system with a source term J\u2070_grace.",
+      "overclaim_risk": 9,
+      "overclaim_diagnosis": "The claim introduces a new term without any derivation from first principles or connection to the earlier Lagrangian."
+    },
+    {
+      "id": "C7",
+      "claim": "Atonement dynamics satisfy dS_m/dt = \u03c3 - W_grace/T, where W_grace/T can reverse entropy production.",
+      "type": "mathematical",
+      "evidence": "The equation is stated; no derivation or justification is provided.",
+      "evidence_type": "argument",
+      "evidence_strength": 2,
+      "assumption": "The moral sector obeys a thermodynamic-like entropy balance with an external work term.",
+      "overclaim_risk": 9,
+      "overclaim_diagnosis": "The claim imports thermodynamic concepts without showing they apply to the moral sector; no definition of S_m, \u03c3, or T is given."
+    },
+    {
+      "id": "C8",
+      "claim": "Behavioral suppression without grace maximizes \u03bd_loss, displacing cost rather than eliminating it.",
+      "type": "normative",
+      "evidence": "Stated as a kill condition; no empirical or mathematical support is given.",
+      "evidence_type": "argument",
+      "evidence_strength": 1,
+      "assumption": "The three-body decay model is correct and \u03bd_loss is a measurable quantity.",
+      "overclaim_risk": 9,
+      "overclaim_diagnosis": "The claim asserts a behavioral consequence from a mathematical model without any evidence linking the two."
+    },
+    {
+      "id": "C9",
+      "claim": "No two-body moral decay \u03c8_whole \u2192 \u03c8_broken exists without \u03bd_loss.",
+      "type": "empirical",
+      "evidence": "Stated as a kill condition; no evidence is provided.",
+      "evidence_type": "argument",
+      "evidence_strength": 1,
+      "assumption": "The three-body structure is the only possible decay channel.",
+      "overclaim_risk": 9,
+      "overclaim_diagnosis": "The claim asserts a universal negative without any empirical or theoretical justification."
+    },
+    {
+      "id": "C10",
+      "claim": "The derivation is a textbook Noether derivation with every cancellation shown.",
+      "type": "descriptive",
+      "evidence": "The derivation steps are displayed in the document.",
+      "evidence_type": "proof",
+      "evidence_strength": 9,
+      "assumption": "The reader accepts the Lagrangian and symmetry as given.",
+      "overclaim_risk": 1,
+      "overclaim_diagnosis": null
+    }
+  ],
+  "definitions": {
+    "explicit": [
+      {
+        "term": "\u03c8",
+        "definition": "moral-state field",
+        "location": "The Derivation"
+      },
+      {
+        "term": "V(\u03c8)",
+        "definition": "symmetric potential",
+        "location": "The Derivation"
+      },
+      {
+        "term": "\u03bb\u03c8\u00b3",
+        "definition": "parity-breaking cubic term",
+        "location": "The Derivation"
+      },
+      {
+        "term": "Q_m",
+        "definition": "conserved charge = \u00bd\u03c8\u0307\u00b2 + V(\u03c8) + \u03bb\u03c8\u00b3",
+        "location": "The Noether Current"
+      },
+      {
+        "term": "\u03b4",
+        "definition": "visible damage",
+        "location": "The Three-Body Decay"
+      },
+      {
+        "term": "\u03bd_loss",
+        "definition": "invisible remainder",
+        "location": "The Three-Body Decay"
+      },
+      {
+        "term": "G_fall",
+        "definition": "moral-sector coupling constant",
+        "location": "The Three-Body Decay"
+      },
+      {
+        "term": "P_will",
+        "definition": "volitional gate",
+        "location": "The Three-Body Decay"
+      },
+      {
+        "term": "J\u2070_grace",
+        "definition": "open-system source term for grace",
+        "location": "Grace as Open-System Source Term"
+      },
+      {
+        "term": "O",
+        "definition": "openness",
+        "location": "Grace as Open-System Source Term"
+      }
+    ],
+    "implied": [
+      {
+        "term": "irreversible",
+        "usage_implies": "that the dynamics are not time-reversible, but no formal definition is given"
+      },
+      {
+        "term": "conserved",
+        "usage_implies": "that Q\u0307_m = 0, which is shown, but no broader conservation law is defined"
+      },
+      {
+        "term": "grace",
+        "usage_implies": "an external source that can modify the moral sector, but no physical definition is given"
+      }
+    ],
+    "undefined_but_critical": [
+      "grace",
+      "openness",
+      "atonement",
+      "moral cost",
+      "wholeness",
+      "broken state",
+      "volitional gate",
+      "moral-sector coupling constant"
+    ],
+    "terms_doing_hidden_work": [
+      "grace",
+      "openness",
+      "atonement",
+      "P_will",
+      "G_fall"
+    ]
+  },
+  "assumptions": [
+    {
+      "assumption": "The moral sector can be described by a Lagrangian with a scalar field \u03c8 and a symmetric potential V(\u03c8).",
+      "type": "conceptual",
+      "if_this_fails": "The entire derivation collapses."
+    },
+    {
+      "assumption": "Time-translation symmetry holds for the moral-sector Lagrangian.",
+      "type": "mathematical",
+      "if_this_fails": "Noether's theorem does not apply, and Q_m is not conserved."
+    },
+    {
+      "assumption": "The cubic term \u03bb\u03c8\u00b3 is the only parity-breaking term and is sufficient to model irreversibility.",
+      "type": "mathematical",
+      "if_this_fails": "The claim of irreversibility may be incomplete or incorrect."
+    },
+    {
+      "assumption": "The three-body decay structure is the correct model for moral cost displacement.",
+      "type": "conceptual",
+      "if_this_fails": "The mapping to muon decay and the decay rate formula are invalid."
+    },
+    {
+      "assumption": "Grace can be modeled as an open-system source term J\u2070_grace.",
+      "type": "conceptual",
+      "if_this_fails": "The atonement dynamics and the open-system extension are unsupported."
+    },
+    {
+      "assumption": "The moral sector obeys thermodynamic-like laws (entropy, work, temperature).",
+      "type": "conceptual",
+      "if_this_fails": "The atonement entropy equation is meaningless."
+    },
+    {
+      "assumption": "The volitional gate P_will is a meaningful parameter that can be nonzero.",
+      "type": "conceptual",
+      "if_this_fails": "The decay rate formula is not physically meaningful."
+    }
+  ],
+  "argument_structure": {
+    "premises": [
+      "P1: The moral-sector Lagrangian is L = \u00bd\u03c8\u0307\u00b2 - V(\u03c8) - \u03bb\u03c8\u00b3.",
+      "P2: The cubic term \u03bb\u03c8\u00b3 breaks parity, making dynamics irreversible.",
+      "P3: The Euler-Lagrange equation yields \u03c8\u0308 + V'(\u03c8) + 3\u03bb\u03c8\u00b2 = 0.",
+      "P4: Under time-translation symmetry, Noether's theorem gives a conserved current.",
+      "P5: The Noether charge is Q_m = \u00bd\u03c8\u0307\u00b2 + V(\u03c8) + \u03bb\u03c8\u00b3.",
+      "P6: The time-derivative Q\u0307_m vanishes by the Euler-Lagrange equation.",
+      "P7: Moral cost is conserved (Q\u0307_m = 0) yet irreversible (due to cubic).",
+      "P8: The three-body decay models cost displacement with an invisible remainder \u03bd_loss.",
+      "P9: Grace is an open-system source term that can modify the conservation.",
+      "P10: Atonement dynamics follow a thermodynamic entropy balance."
+    ],
+    "intermediate_conclusions": [
+      "IC1: The cubic term participates in dynamics and conservation.",
+      "IC2: The Noether charge includes the cubic term.",
+      "IC3: The cubic term cancels in the conservation proof.",
+      "IC4: Moral cost is conserved and irreversible."
+    ],
+    "final_conclusion": "Moral cost is conserved (cannot vanish) and irreversible, with grace as the only external source that can close the ledger.",
+    "weakest_link": "The assumption that the moral sector can be modeled by a Lagrangian with a cubic term and that Noether's theorem applies is unproven and likely untestable.",
+    "unproven_jumps": [
+      "From mathematical conservation to moral cost conservation.",
+      "From Lagrangian mechanics to behavioral consequences (suppression without grace).",
+      "From Noether current to the three-body decay model.",
+      "From closed-system conservation to open-system grace source term.",
+      "From thermodynamic analogy to atonement dynamics."
+    ]
+  },
+  "overclaim_detection": [
+    {
+      "pattern": "model-to-reality",
+      "location": "Entire document",
+      "diagnosis": "The paper claims that a mathematical derivation (Noether's theorem applied to a Lagrangian) proves that moral cost is conserved and irreversible in reality, but no empirical evidence or mapping to actual moral phenomena is provided."
+    },
+    {
+      "pattern": "definition-to-discovery",
+      "location": "Grace as Open-System Source Term",
+      "diagnosis": "The paper introduces a term J\u2070_grace and claims it represents grace, but this is a definition, not a discovery; no evidence that such a term exists in reality."
+    },
+    {
+      "pattern": "some-to-all",
+      "location": "Kill Conditions",
+      "diagnosis": "The paper claims that behavioral suppression without grace maximizes \u03bd_loss, but this is asserted for all cases without evidence."
+    },
+    {
+      "pattern": "correlation-to-causation",
+      "location": "Atonement Dynamics",
+      "diagnosis": "The paper claims that W_grace/T can reverse entropy production, implying a causal link between grace and moral repair, but no causal mechanism is shown."
+    }
+  ],
+  "counterarguments": {
+    "addressed": [
+      "The cubic term might break conservation \u2014 the paper shows it cancels.",
+      "The derivation might be metaphorical \u2014 the paper insists it is a textbook Noether derivation."
+    ],
+    "missing": [
+      "Why should the moral sector obey Lagrangian mechanics at all?",
+      "What empirical evidence supports the existence of \u03c8, V(\u03c8), \u03bb, or the cubic term?",
+      "How is the volitional gate P_will measured or defined?",
+      "What is the physical interpretation of the moral-sector coupling constant G_fall?",
+      "How does the three-body decay model relate to actual human moral experience?",
+      "The paper assumes time-translation symmetry \u2014 why should moral dynamics be time-translation invariant?"
+    ],
+    "smartest_critic_would_say": "The entire derivation is a formal exercise in Lagrangian mechanics applied to an undefined field \u03c8 with no empirical grounding; the claim that this proves anything about real moral cost is an unwarranted leap from mathematical formalism to metaphysical reality."
+  },
+  "falsifiability": {
+    "kill_conditions_stated": [
+      "Find a case where behavioral suppression alone eliminates the conserved displacement (i.e., \u03bd_loss = 0 without grace).",
+      "Find a two-body moral decay \u03c8_whole \u2192 \u03c8_broken with no \u03bd_loss."
+    ],
+    "kill_conditions_missing": [
+      "Show that the moral-sector Lagrangian does not have time-translation symmetry.",
+      "Show that the cubic term does not cancel in the conservation proof (i.e., find a mathematical error).",
+      "Show that the three-body decay rate formula contradicts empirical observations (if any).",
+      "Show that grace does not exist or cannot be modeled as an open-system source term."
+    ],
+    "testability": "unfalsifiable"
+  },
+  "novelty": {
+    "what_is_new": "The application of Noether's theorem to a Lagrangian with a parity-breaking cubic term to argue that moral cost is both irreversible and conserved, and the introduction of a three-body decay model for moral cost displacement.",
+    "novelty_type": "new_combination",
+    "closest_existing_work": "Noether's theorem in classical mechanics; parity violation in particle physics; open thermodynamic systems.",
+    "novelty_score": 6
+  },
+  "compression": {
+    "one_sentence": "A parity-breaking cubic term in a moral-sector Lagrangian yields irreversible dynamics while conserving a Noether charge, implying moral cost is conserved and cannot vanish, with grace as the only external source that can close the ledger.",
+    "three_sentences": "The paper derives a Noether charge from a Lagrangian with a cubic term, showing that the cubic term participates in the dynamics and cancels in the conservation proof, making moral cost both irreversible and conserved. It models moral cost displacement as a three-body decay with an invisible remainder, and introduces grace as an open-system source term that can reverse entropy production. The paper claims this is a rigorous mathematical proof, but it relies on unproven assumptions about the moral sector and lacks empirical grounding.",
+    "strongest_defensible_version": "If one accepts the Lagrangian and the applicability of Noether's theorem, then the derivation shows that a conserved charge exists that includes the cubic term, and that the cubic term cancels in the conservation proof.",
+    "weakest_version_still_true": "The paper presents a mathematical derivation of a conserved Noether charge for a specific Lagrangian with a cubic term, but makes no empirically testable claims about real moral phenomena."
+  }
+}

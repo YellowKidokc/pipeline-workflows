@@ -1,0 +1,275 @@
+{
+  "thesis": {
+    "one_sentence": "Morality is empirically measurable via coherence metrics, establishing a structural isomorphism between physical decoherence and moral degradation.",
+    "thesis_type": "empirical",
+    "thesis_strength": 6,
+    "thesis_paragraph": "C1 \u2014 Claim: Morality is empirically measurable via coherence metrics"
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Morality is empirically measurable via coherence metrics",
+      "type": "empirical",
+      "evidence": "World Values Survey trust data",
+      "evidence_type": "dataset",
+      "evidence_strength": 5,
+      "assumption": "Coherence can be operationalized as a measurable quantity in the moral domain",
+      "overclaim_risk": 8,
+      "overclaim_diagnosis": "Claims empirical measurability without specifying measurement units, instruments, or calibration standards; evidence only supports a weaker version (correlation with social trust indices)"
+    },
+    {
+      "id": "C2",
+      "claim": "Virtue increases coherence (coherence-building action)",
+      "type": "descriptive",
+      "evidence": "Structural mapping to physics: coherence functional C[chi]",
+      "evidence_type": "argument",
+      "evidence_strength": 3,
+      "assumption": "Virtue aligns with natural law and produces measurable order",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "No empirical evidence that virtue increases coherence; relies on analogy and theological assertion"
+    },
+    {
+      "id": "C3",
+      "claim": "Sin produces a decoherence signature (measurable disorder)",
+      "type": "empirical",
+      "evidence": "Decoherence theory (Zurek, Joos & Zeh)",
+      "evidence_type": "citation",
+      "evidence_strength": 4,
+      "assumption": "Moral violations produce physical decoherence effects detectable at some scale",
+      "overclaim_risk": 9,
+      "overclaim_diagnosis": "No specification of observable, timescale, magnitude, or distinguishability from other decoherence sources; claim is currently untestable"
+    },
+    {
+      "id": "C4",
+      "claim": "Natural law is a coherence conservation principle",
+      "type": "interpretive",
+      "evidence": "Structural parallel: nabla dot chi = 0 in physics",
+      "evidence_type": "argument",
+      "evidence_strength": 3,
+      "assumption": "Moral laws are analogous to physical conservation laws",
+      "overclaim_risk": 6,
+      "overclaim_diagnosis": "Metaphorical extension; no independent derivation of moral content from physics"
+    },
+    {
+      "id": "C5",
+      "claim": "Conscience is a local coherence gradient detector",
+      "type": "interpretive",
+      "evidence": "Analogy to physical systems detecting free energy gradients",
+      "evidence_type": "argument",
+      "evidence_strength": 2,
+      "assumption": "Conscience functions analogously to a physical sensor",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "Purely metaphorical; no evidence that conscience operates via coherence detection"
+    },
+    {
+      "id": "C6",
+      "claim": "Societies that systematically violate natural law show measurable coherence decline in social metrics",
+      "type": "empirical",
+      "evidence": "World Values Survey trust data, Putnam's 'Bowling Alone', post-1971 social decay metrics",
+      "evidence_type": "dataset",
+      "evidence_strength": 6,
+      "assumption": "Social trust and institutional effectiveness are valid proxies for moral coherence",
+      "overclaim_risk": 5,
+      "overclaim_diagnosis": "Correlation does not establish causation; confounds with economic, political, and cultural variables"
+    },
+    {
+      "id": "C7",
+      "claim": "The structural parallel between Second Law dynamics and moral degradation is robust",
+      "type": "descriptive",
+      "evidence": "Both describe irreversible processes in closed systems",
+      "evidence_type": "argument",
+      "evidence_strength": 7,
+      "assumption": "Moral systems are closed systems analogous to thermodynamic ones",
+      "overclaim_risk": 4,
+      "overclaim_diagnosis": "Analogy is strong but does not prove moral realism or empirical measurability"
+    },
+    {
+      "id": "C8",
+      "claim": "Coherence cannot spontaneously increase in a closed moral system without external input",
+      "type": "normative",
+      "evidence": "Link to ISO-002 (Terminus Sui)",
+      "evidence_type": "citation",
+      "evidence_strength": 4,
+      "assumption": "Moral systems obey a Second-Law-like principle",
+      "overclaim_risk": 6,
+      "overclaim_diagnosis": "Assumes closed system analogy holds; no empirical test proposed"
+    },
+    {
+      "id": "C9",
+      "claim": "The mapping holds for time-integrated, system-wide coherence but not for instantaneous, local coherence",
+      "type": "descriptive",
+      "evidence": "Swap test result: partial pass",
+      "evidence_type": "argument",
+      "evidence_strength": 6,
+      "assumption": "Time-averaged global coherence is the relevant measure",
+      "overclaim_risk": 3,
+      "overclaim_diagnosis": "Qualification is honest but limits testability"
+    },
+    {
+      "id": "C10",
+      "claim": "Moral realism is supported by the coherence framework",
+      "type": "interpretive",
+      "evidence": "Structural mapping to natural law tradition",
+      "evidence_type": "argument",
+      "evidence_strength": 3,
+      "assumption": "Coherence metrics capture objective moral structure",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "Framework provides analogy, not proof; moral anti-realism remains a viable alternative"
+    }
+  ],
+  "definitions": {
+    "explicit": [
+      {
+        "term": "Coherence C[chi]",
+        "definition": "Measurable quantity of organized information density, defined by functional C[chi] = integral sqrt(-g) [kinetic - V(chi) + L_int] d^4x",
+        "location": "Mathematical Form A"
+      },
+      {
+        "term": "Delta C",
+        "definition": "Coherence change under action: C[chi_after] - C[chi_before]",
+        "location": "Mathematical Form A"
+      },
+      {
+        "term": "Decoherence rate",
+        "definition": "Gamma_decoherence = -dC/dt = f(action_type, coupling_strength, environment)",
+        "location": "Mathematical Form A"
+      }
+    ],
+    "implied": [
+      {
+        "term": "Moral coherence",
+        "usage_implies": "A measurable quantity analogous to physical coherence, but no unit or protocol defined"
+      },
+      {
+        "term": "Virtue",
+        "usage_implies": "Coherence-building action aligned with natural law"
+      },
+      {
+        "term": "Sin",
+        "usage_implies": "Decoherence-inducing action violating natural law"
+      }
+    ],
+    "undefined_but_critical": [
+      "Moral coherence unit",
+      "Measurement protocol for moral coherence",
+      "Calibration standard"
+    ],
+    "terms_doing_hidden_work": [
+      "Coherence",
+      "Natural law",
+      "Moral realism",
+      "Decoherence signature"
+    ]
+  },
+  "assumptions": [
+    {
+      "assumption": "Coherence can be operationalized as a measurable quantity in the moral domain",
+      "type": "methodological",
+      "if_this_fails": "The central claim of empirical measurability collapses"
+    },
+    {
+      "assumption": "Moral systems are closed systems analogous to thermodynamic ones",
+      "type": "conceptual",
+      "if_this_fails": "The Second Law analogy and the claim that sin degrades irreversibly are undermined"
+    },
+    {
+      "assumption": "Social trust indices are valid proxies for moral coherence",
+      "type": "empirical",
+      "if_this_fails": "The empirical evidence for moral decay loses its connection to the coherence framework"
+    },
+    {
+      "assumption": "Moral realism is true (morality reflects objective structure)",
+      "type": "conceptual",
+      "if_this_fails": "There is nothing for coherence to measure; the framework becomes a metaphor"
+    },
+    {
+      "assumption": "The coherence functional C[chi] applies to moral systems",
+      "type": "mathematical",
+      "if_this_fails": "The formal mapping is invalid; only analogy remains"
+    }
+  ],
+  "argument_structure": {
+    "premises": [
+      "P1: Coherence is a measurable quantity in physics (C[chi] functional).",
+      "P2: Moral actions (virtue/sin) have structural parallels to coherence-building/decoherence processes.",
+      "P3: The Second Law of Thermodynamics describes irreversible degradation in closed systems.",
+      "P4: Moral degradation (sin) appears irreversible without external input (grace).",
+      "P5: Social metrics (trust, institutional effectiveness) show decline correlated with moral-structural changes."
+    ],
+    "intermediate_conclusions": [
+      "IC1: There is a robust structural isomorphism between physical decoherence and moral degradation.",
+      "IC2: Morality is empirically measurable via coherence metrics (at least at population scale)."
+    ],
+    "final_conclusion": "The moral physics framework provides a testable structural mapping between physics and theology, pending operationalization of moral coherence measurement.",
+    "weakest_link": "Operationalization gap: no defined unit, instrument, or calibration for moral coherence",
+    "unproven_jumps": [
+      "From structural analogy to empirical measurability (P11.1)",
+      "From social trust data to moral coherence measurement",
+      "From physical decoherence to sin producing a detectable physical signal"
+    ]
+  },
+  "overclaim_detection": [
+    {
+      "pattern": "model-to-reality",
+      "location": "C1 \u2014 Claim: Morality is empirically measurable via coherence metrics",
+      "diagnosis": "Claims empirical measurability based on a mathematical model (C[chi]) and social survey data, but no measurement protocol exists; the claim is a promissory note"
+    },
+    {
+      "pattern": "correlation-to-causation",
+      "location": "C6 \u2014 Societies that violate natural law show coherence decline",
+      "diagnosis": "Correlation between social trust decline and moral-structural changes does not establish that moral violations cause coherence decline; confounds are numerous"
+    },
+    {
+      "pattern": "some-to-all",
+      "location": "C3 \u2014 Sin produces a decoherence signature",
+      "diagnosis": "Claims a general decoherence signature for sin, but only provides examples (guilt, relational breakdown) without showing these are universal or measurable as physical decoherence"
+    },
+    {
+      "pattern": "definition-to-discovery",
+      "location": "A1 \u2014 Coherence as measurable moral quantity",
+      "diagnosis": "Defines coherence as a moral quantity, then treats this definition as a discovery that morality is measurable; the definition does the work, not evidence"
+    }
+  ],
+  "counterarguments": {
+    "addressed": [
+      "Morality does not reduce to physics (consciousness, will, relational depth)",
+      "A spectrometer cannot measure sin",
+      "Criminal organizations can be internally coherent",
+      "Moral relativism is not refuted by physics",
+      "Not every virtuous act produces a measurable signal"
+    ],
+    "missing": [
+      "The framework provides no way to distinguish moral coherence from mere social conformity or authoritarian control",
+      "The natural law tradition is contested within theology itself (e.g., Protestant critiques)",
+      "The Second Law analogy assumes moral systems are closed, but they may be open to divine or social input in ways that break the analogy",
+      "No account of how to weigh conflicting moral goods (e.g., truth-telling vs. kindness) in coherence terms"
+    ],
+    "smartest_critic_would_say": "You have not defined what 'moral coherence' means in measurable terms, nor provided any instrument to detect it. Without operationalization, your claim that morality is empirically measurable is not a scientific hypothesis but a philosophical assertion dressed in physics language. The structural analogy is interesting, but it does not constitute evidence."
+  },
+  "falsifiability": {
+    "kill_conditions_stated": [
+      "Show that societies with high measured 'moral coherence' do NOT outperform morally disordered societies on any objective metric",
+      "Show that 'decoherence signatures' from moral actions are indistinguishable from random noise",
+      "Show that morality is fully conventional with no objective structure",
+      "Show that coherence can spontaneously increase in a closed moral system without external input"
+    ],
+    "kill_conditions_missing": [
+      "Show that no measurement protocol for moral coherence can be developed in principle",
+      "Show that the coherence framework cannot distinguish between moral and immoral actions that produce similar social outcomes (e.g., a benevolent lie vs. a malevolent truth)",
+      "Show that the mapping between physical and moral coherence is purely metaphorical and cannot generate novel predictions"
+    ],
+    "testability": "requires_external_evidence"
+  },
+  "novelty": {
+    "what_is_new": "Proposes a formal structural isomorphism between physical decoherence (Second Law) and moral degradation (sin), with a mathematical coherence functional applied to moral systems",
+    "novelty_type": "new_formalization",
+    "closest_existing_work": "Natural law theology (Aquinas) + decoherence theory (Zurek) + social capital research (Putnam); the combination is novel",
+    "novelty_score": 7
+  },
+  "compression": {
+    "one_sentence": "This paper claims that morality is empirically measurable via coherence metrics by establishing a structural isomorphism between physical decoherence and moral degradation, but lacks the operationalization needed to make the claim testable.",
+    "three_sentences": "The paper proposes a formal mapping between physics (coherence, decoherence, Second Law) and theology (virtue, sin, natural law), arguing that moral actions have measurable coherence effects. The central claim\u2014that morality is empirically measurable via coherence metrics\u2014is supported by social trust data and structural analogy, but critically lacks defined measurement units, instruments, or calibration. The framework is a promising structural isomorphism that remains a philosophical analogy until operationalized.",
+    "strongest_defensible_version": "There is a robust structural analogy between physical decoherence and moral degradation, and social trust metrics show correlations consistent with the idea that moral-structural changes affect societal coherence.",
+    "weakest_version_still_true": "The Second Law of Thermodynamics and the concept of moral degradation both describe irreversible processes in closed systems, providing a useful analogy for theological reflection."
+  }
+}

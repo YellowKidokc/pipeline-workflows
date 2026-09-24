@@ -1,0 +1,70 @@
+{
+  "claims": [
+    {
+      "id": "KC-001",
+      "claim": "Five proofs converge on the limit that the system cannot close on itself.",
+      "plain_english": "There are five different ways to show that a system cannot fully define or complete itself from the inside.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document states this as the central thesis, referencing five proofs and a canonical page for full treatment.",
+      "what_would_break_it": "If any of the five proofs were shown to be invalid or if a system could be found that closes on itself from within."
+    },
+    {
+      "id": "KC-002",
+      "claim": "The limit is not a bug in the argument; it is the argument.",
+      "plain_english": "The fact that the system can't finish itself is not a mistake\u2014it's the main point of the whole paper.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "Repeated as a pull quote and a verdict block, emphasizing its centrality.",
+      "what_would_break_it": "If the limit turned out to be a correctable error or if the system could actually close on itself."
+    },
+    {
+      "id": "KC-003",
+      "claim": "The interlude sends the reader to the canonical page instead of replacing it.",
+      "plain_english": "This short page is just a preview; the full argument is on another page that you need to read for the complete proof.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document explicitly states this in multiple places and provides a link to the canonical page.",
+      "what_would_break_it": "If the canonical page did not exist or if the interlude contained the full argument."
+    },
+    {
+      "id": "KC-004",
+      "claim": "What happens when a system tries to finish itself from inside?",
+      "plain_english": "The central question of the paper is: what happens when something tries to complete or define itself using only its own internal resources?",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "This question is posed as the hero subtitle and section title, framing the entire discussion.",
+      "what_would_break_it": "If the question were answered trivially or if systems could self-close without limit."
+    },
+    {
+      "id": "KC-005",
+      "claim": "The structure in four moves: Convergence, Question, Deeper, Limit.",
+      "plain_english": "The argument is organized into four steps: showing convergence, asking the key question, going deeper into the limit, and arriving at the limit itself.",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "The timeline section explicitly lists these four moves with descriptions.",
+      "what_would_break_it": "If the argument could be structured in fewer or more steps without losing meaning."
+    },
+    {
+      "id": "KC-006",
+      "claim": "The interlude is a short reader-facing page; the full canonical treatment remains linked below.",
+      "plain_english": "This page is a summary for readers; the complete argument with proofs and tables is on another page that you can click to.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "Stated directly in the text and reinforced by the navigation links.",
+      "what_would_break_it": "If the canonical page were missing or if this page claimed to be the full treatment."
+    },
+    {
+      "id": "KC-007",
+      "claim": "The page names the load-bearing structure before asking the reader to follow the full derivation.",
+      "plain_english": "Before you dive into the detailed proof, this page tells you the main idea so you know what to look for.",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "The timeline node for 'The Question They Can't Escape' states this explicitly.",
+      "what_would_break_it": "If the full derivation did not actually follow the structure described here."
+    }
+  ],
+  "strongest_claim": "KC-001",
+  "weakest_claim": "KC-005",
+  "overall_argument_strength": "moderate"
+}

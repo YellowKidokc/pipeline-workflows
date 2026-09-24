@@ -1,0 +1,145 @@
+{
+  "chi_variables": {
+    "G": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Grace as the gospel diffusing through the network; preferential attachment as 'to those who have, more will be given' (Matthew 25:29) \u2014 a grace-like attraction mechanism."
+    },
+    "M": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Meaning/Mass-Force: the will and motion of the church as it grows and spreads; the 'movement' of the gospel through relational pathways."
+    },
+    "E": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Energy/Spirit: the Holy Spirit as the energetic substrate driving church growth; 'the Spirit is the cause of church growth; network topology describes the pattern.'"
+    },
+    "S": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Strong Force/Love: binding, confinement \u2014 house churches as high-clustering communities (clustering coefficient ~1.0); love as the binding force within the network."
+    },
+    "T": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Thermodynamics/Judgment: entropy production, cascading failure from hub apostasy; 'the damage from a hub's failure is proportional to the hub's degree'; sin as network decay."
+    },
+    "K": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Knowledge/Logos: information diffusion through weak ties; the gospel as information; 'bridge ties are disproportionately important for information diffusion'; Romans 16 as recoverable edge list."
+    },
+    "R": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Relativity/Relationship: frame structure, proper time \u2014 the network topology as relational frame; 'the social network connecting Jerusalem to Rome has a very short average path length.'"
+    },
+    "Q": {
+      "present": true,
+      "strength": 5,
+      "evidence": "Quantum/Faith: measurement, selection, collapse \u2014 preferential attachment as selection mechanism; faith as the 'measurement' that collapses the network into a particular growth pattern."
+    },
+    "F": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Weak Force/Sin-Conservation: moral decay, conserved deficit \u2014 cascading failure from hub apostasy; Diotrephes as hub node failure; sin as a conserved deficit that propagates."
+    },
+    "C": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Coherence/Christ: global integration operator \u2014 Christ as the source node from which all church structure emanates; 'the church is a spiritual reality with a sociological structure'; C wraps the integral as the unifying principle."
+    },
+    "variables_present_count": 10,
+    "dominant_variables": [
+      "S",
+      "C",
+      "E"
+    ],
+    "absent_variables": [],
+    "chi_coverage_pct": "100%"
+  },
+  "physics_process_detection": {
+    "maps_to_physics": true,
+    "physics_domain": "network science, information theory",
+    "specific_process": "preferential attachment, small-world network formation, cascading failure, information diffusion through weak ties",
+    "equation_present": "P(k) ~ k^(-gamma); Pi(i) = k_i / Sum(k_j); L ~ ln(N) / ln(k); C >> C_random",
+    "isomorphism_detected": true,
+    "isomorphism_type": "structural",
+    "isomorphism_quality": 9
+  },
+  "laws_invoked": {
+    "explicit": [
+      "Law 1 (Convergence)",
+      "Law 5 (Incompleteness)",
+      "Law 7 (Conservation under Transformation)",
+      "Law 9 (Grace)"
+    ],
+    "implicit": [
+      "Law 2 (Motion/Will-Repentance)",
+      "Law 4 (Strong Force/Love-Captivity)",
+      "Law 6 (Information/Logos-Chaos)",
+      "Law 8 (Quantum/Faith-Doubt)"
+    ],
+    "symmetry_pairs_active": [
+      "1-8",
+      "2-9",
+      "4-7",
+      "5-6"
+    ]
+  },
+  "theological_structure": {
+    "trinity_present": true,
+    "trinity_structure": "Father as source/origin of the network (the 'ground' of being), Son as the integrating principle (Christ as the source node), Spirit as the energetic substrate driving growth and diffusion",
+    "father_aspect": {
+      "present": true,
+      "evidence": "source/origin/ground language: 'the source node from which all church structure emanates'; God as the ultimate ground of the network."
+    },
+    "son_aspect": {
+      "present": true,
+      "evidence": "incarnation/image/word/mediator language: Christ as the integrating operator; 'the church is a spiritual reality with a sociological structure' \u2014 Christ as the head."
+    },
+    "spirit_aspect": {
+      "present": true,
+      "evidence": "power/presence/movement/energy language: 'the Spirit is the cause of church growth'; the Holy Spirit as the energetic substrate driving the network."
+    },
+    "cross_reference": true,
+    "grace_mechanism": true,
+    "sin_entropy": true,
+    "redemption_arc": true
+  },
+  "axiom_alignment": {
+    "axioms_touched": [
+      "A1.1",
+      "A1.2",
+      "A2.1",
+      "A2.2",
+      "A5.1",
+      "BC4",
+      "BC6",
+      "A1.3",
+      "T3.1",
+      "BC2",
+      "BC7",
+      "BC8"
+    ],
+    "axiom_count": 12,
+    "strongest_axiom_connection": "A1.1 (Existence \u2014 the network exists as real relational structure)"
+  },
+  "lean_connection": {
+    "formal_claim_present": true,
+    "could_be_formalized": true,
+    "relevant_lean_module": "IsomorphismTest",
+    "proof_status": "testable"
+  },
+  "framework_alignment_score": {
+    "total": 92,
+    "breakdown": {
+      "chi_coverage": 20,
+      "physics_mapping": 18,
+      "theological_depth": 19,
+      "axiom_grounding": 18,
+      "formal_rigor": 17
+    }
+  }
+}

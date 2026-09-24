@@ -1,0 +1,271 @@
+{
+  "thesis": {
+    "one_sentence": "The post-Flood patriarchal lifespan decline in Genesis 11 follows an exponential decay with an asymptotic floor, isomorphic to quantum decoherence, where the floor represents a persistent grace-driven coherence source.",
+    "thesis_type": "empirical",
+    "thesis_strength": 7,
+    "thesis_paragraph": "02"
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Post-Flood lifespans (Shem to Moses) decay exponentially with an asymptotic floor, best fit by C(t) = 337\u00b7e^{-t/214} + 93.",
+      "type": "empirical",
+      "evidence": "Regression on 14 post-Flood data points from Genesis 11, R\u00b2=0.888, p=4.73\u00d710\u207b\u2077.",
+      "evidence_type": "dataset",
+      "evidence_strength": 8,
+      "assumption": "The Genesis genealogies are historically accurate records of actual lifespans.",
+      "overclaim_risk": 6,
+      "overclaim_diagnosis": "The claim assumes the data points are precise historical lifespans, but the text may be symbolic or rounded."
+    },
+    {
+      "id": "C2",
+      "claim": "Pre-Flood lifespans (Adam to Noah) are constant with no trend (mean ~912 years, CV 5.9%, p=0.68).",
+      "type": "empirical",
+      "evidence": "9 data points from Genesis 5, statistical test for trend.",
+      "evidence_type": "dataset",
+      "evidence_strength": 7,
+      "assumption": "Pre-Flood lifespans are accurately recorded and not subject to different interpretive frameworks.",
+      "overclaim_risk": 5,
+      "overclaim_diagnosis": "Small sample size (n=9) and potential rounding reduce confidence in 'no trend' conclusion."
+    },
+    {
+      "id": "C3",
+      "claim": "The exponential+floor model fits the post-Flood data better than five alternative models (linear, power law, step, pure exponential, logistic), with \u0394AIC=5.3 over pure exponential.",
+      "type": "empirical",
+      "evidence": "AIC model comparison on 14 data points.",
+      "evidence_type": "dataset",
+      "evidence_strength": 7,
+      "assumption": "AIC is an appropriate model selection criterion for this data and the models are correctly specified.",
+      "overclaim_risk": 4,
+      "overclaim_diagnosis": "\u0394AIC=5.3 is moderate; not overwhelming evidence, and model selection depends on data quality."
+    },
+    {
+      "id": "C4",
+      "claim": "The asymptotic floor Lfloor=93 years converges with four independent sources: Psalm 90:10 (70-80 years), modern WHO data (73-82 years), Genesis 6:3 ceiling (120 years), and the regression itself.",
+      "type": "empirical",
+      "evidence": "Four independent data sources spanning 3400 years.",
+      "evidence_type": "citation",
+      "evidence_strength": 6,
+      "assumption": "Psalm 90:10 and Genesis 6:3 are interpreted as literal lifespan limits, not metaphorical or conditional.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "The convergence is approximate (93 vs 70-80 vs 73-82 vs 120) and the sources are not independent in a statistical sense; the regression floor is derived from the same data used to claim convergence."
+    },
+    {
+      "id": "C5",
+      "claim": "The Eber anomaly (464 years, +124 above curve, z=2.53\u03c3, p~0.6%) is a 'covenant grace signal'.",
+      "type": "interpretive",
+      "evidence": "Statistical outlier detection on the regression residuals.",
+      "evidence_type": "dataset",
+      "evidence_strength": 4,
+      "assumption": "The outlier is meaningful and not due to measurement error, rounding, or textual corruption.",
+      "overclaim_risk": 8,
+      "overclaim_diagnosis": "A single outlier with p~0.6% is not strong evidence for a theological signal; multiple testing or data mining could produce such an outlier by chance."
+    },
+    {
+      "id": "C6",
+      "claim": "The mapping is a Level 3 Structural Isomorphism, satisfying four separator tests: structural preservation, non-arbitrariness, constraint, and bidirectionality.",
+      "type": "interpretive",
+      "evidence": "The four tests are described and claimed to pass.",
+      "evidence_type": "argument",
+      "evidence_strength": 5,
+      "assumption": "The criteria for Level 3 isomorphism are well-defined and the tests are applied correctly.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "The tests are qualitative and self-assessed; bidirectionality is asserted but not demonstrated with independent predictions."
+    },
+    {
+      "id": "C7",
+      "claim": "The decoherence equation maps to theological grace: 'As long as G > 0, there is a nonzero equilibrium. Coherence can't hit zero because grace doesn't quit.'",
+      "type": "interpretive",
+      "evidence": "Analogy between decoherence floor and persistent grace.",
+      "evidence_type": "argument",
+      "evidence_strength": 3,
+      "assumption": "Grace can be modeled as a physical coherence source; the analogy is not just poetic but structurally valid.",
+      "overclaim_risk": 9,
+      "overclaim_diagnosis": "This is a metaphorical leap from a mathematical fit to a theological claim; no evidence links grace to coherence in a physical sense."
+    },
+    {
+      "id": "C8",
+      "claim": "The two-regime pattern (pre-Flood constant, post-Flood exponential decay) is a 'regime change at the Flood boundary'.",
+      "type": "historical",
+      "evidence": "Visual inspection and statistical tests on two groups of data.",
+      "evidence_type": "dataset",
+      "evidence_strength": 6,
+      "assumption": "The Flood is a real historical event that caused a change in lifespan dynamics.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "The data could be explained by different textual traditions or symbolic numbers; the Flood as a causal mechanism is not tested."
+    },
+    {
+      "id": "C9",
+      "claim": "Six kill conditions are stated that would falsify the isomorphism.",
+      "type": "descriptive",
+      "evidence": "List of six conditions in the document.",
+      "evidence_type": "argument",
+      "evidence_strength": 8,
+      "assumption": "The kill conditions are exhaustive and correctly identify what would break the claim.",
+      "overclaim_risk": 3,
+      "overclaim_diagnosis": "The conditions are reasonable but may not cover all possible counterevidence (e.g., alternative interpretations of the same data)."
+    },
+    {
+      "id": "C10",
+      "claim": "The isomorphism is bidirectional: physics predicts theology (floor from decoherence) and theology predicts physics (grace prevents total collapse).",
+      "type": "interpretive",
+      "evidence": "Assertion in Test D.",
+      "evidence_type": "argument",
+      "evidence_strength": 2,
+      "assumption": "Theological concepts can be mapped to physical quantities in a predictive way.",
+      "overclaim_risk": 9,
+      "overclaim_diagnosis": "No independent predictions are made or tested; the bidirectionality is claimed but not demonstrated."
+    }
+  ],
+  "definitions": {
+    "explicit": [
+      {
+        "term": "Quantum decoherence",
+        "definition": "A quantum system loses coherence through environmental coupling; off-diagonal elements of density matrix decay exponentially with an asymptotic floor.",
+        "location": "01"
+      },
+      {
+        "term": "Post-Flood patriarchal lifespans",
+        "definition": "Lifespans from Genesis 11 (Shem through Moses).",
+        "location": "01"
+      },
+      {
+        "term": "Level 3 \u2014 Structural Isomorphism",
+        "definition": "An isomorphism that passes four separator tests: structural preservation, non-arbitrariness, constraint, bidirectionality.",
+        "location": "05, 06"
+      }
+    ],
+    "implied": [
+      {
+        "term": "Grace",
+        "usage_implies": "A persistent external coherence source that prevents total collapse, analogous to a physical field maintaining quantum coherence."
+      },
+      {
+        "term": "Coherence",
+        "usage_implies": "A measure of order or integrity that decays over time unless sustained by an external source."
+      }
+    ],
+    "undefined_but_critical": [
+      "Theophysics",
+      "Isomorphism (beyond Level 3 definition)",
+      "Grace (as a physical quantity)"
+    ],
+    "terms_doing_hidden_work": [
+      "Grace",
+      "Coherence",
+      "Equilibrium",
+      "Regime change"
+    ]
+  },
+  "assumptions": [
+    {
+      "assumption": "The Genesis genealogies are historically accurate records of actual lifespans.",
+      "type": "empirical",
+      "if_this_fails": "The entire empirical basis collapses; the data points become symbolic or literary, not quantitative."
+    },
+    {
+      "assumption": "The Flood is a real historical event that caused a change in lifespan dynamics.",
+      "type": "historical",
+      "if_this_fails": "The two-regime pattern loses its causal explanation; the pre/post distinction becomes arbitrary."
+    },
+    {
+      "assumption": "Exponential decay with floor is the correct model for post-Flood lifespans.",
+      "type": "mathematical",
+      "if_this_fails": "The decoherence analogy is unsupported; a different model would break the isomorphism."
+    },
+    {
+      "assumption": "The four floor convergences are independent and meaningful.",
+      "type": "empirical",
+      "if_this_fails": "The floor parameter becomes a free fit; the claim of independent confirmation is weakened."
+    },
+    {
+      "assumption": "Grace can be modeled as a physical coherence source.",
+      "type": "conceptual",
+      "if_this_fails": "The theological interpretation becomes metaphorical rather than structural; the bidirectionality claim fails."
+    }
+  ],
+  "argument_structure": {
+    "premises": [
+      "P1: Pre-Flood lifespans are constant (~912 years).",
+      "P2: Post-Flood lifespans decay exponentially with a floor (C(t)=337\u00b7e^{-t/214}+93).",
+      "P3: The exponential+floor model fits best among six alternatives (\u0394AIC=5.3).",
+      "P4: The floor converges with four independent sources (Psalm 90:10, WHO data, Genesis 6:3, regression).",
+      "P5: Quantum decoherence is described by exponential decay with an asymptotic floor.",
+      "P6: The mapping passes four separator tests (structural preservation, non-arbitrariness, constraint, bidirectionality)."
+    ],
+    "intermediate_conclusions": [
+      "IC1: The post-Flood lifespan data follows a decoherence curve.",
+      "IC2: The floor is not arbitrary but independently confirmed.",
+      "IC3: The mapping is a Level 3 Structural Isomorphism."
+    ],
+    "final_conclusion": "The Genesis genealogies follow a quantum decoherence equation, demonstrating a structural isomorphism between decoherence physics and post-Flood lifespan decline, with grace as the persistent coherence source.",
+    "weakest_link": "The assumption that the genealogies are historically accurate quantitative data, rather than symbolic or literary constructs.",
+    "unproven_jumps": [
+      "From a mathematical fit to a theological interpretation of grace as a coherence source.",
+      "From passing qualitative separator tests to claiming bidirectionality without independent predictions.",
+      "From a single outlier (Eber) to a 'covenant grace signal'."
+    ]
+  },
+  "overclaim_detection": [
+    {
+      "pattern": "correlation-to-causation",
+      "location": "Throughout, especially in the claim that the decoherence equation explains the lifespan decline.",
+      "diagnosis": "The paper shows a correlation (exponential decay fits data) but claims causation (decoherence mechanism, grace as source) without evidence for the mechanism."
+    },
+    {
+      "pattern": "model-to-reality",
+      "location": "The claim that the floor converges with four sources, but the regression floor (93) is derived from the same data used to claim convergence, and the sources are not truly independent.",
+      "diagnosis": "The paper treats the model parameter as independently confirmed, but the convergence is approximate and partly circular."
+    },
+    {
+      "pattern": "definition-to-discovery",
+      "location": "The Eber anomaly is labeled a 'covenant grace signal' based on a single outlier.",
+      "diagnosis": "A statistical outlier is redefined as a theological signal without independent evidence."
+    },
+    {
+      "pattern": "textual-possibility-to-actual-practice",
+      "location": "The assumption that Genesis genealogies are historical records rather than literary devices.",
+      "diagnosis": "The paper treats a contested interpretive possibility (historical accuracy) as a given fact."
+    }
+  ],
+  "counterarguments": {
+    "addressed": [
+      "Alternative models (linear, power law, step, pure exponential, logistic) are tested and rejected.",
+      "Six kill conditions are stated, including literary construction and environmental explanations."
+    ],
+    "missing": [
+      "The possibility that the genealogies use symbolic or rounded numbers (e.g., 600, 120) that happen to fit an exponential curve by coincidence.",
+      "The objection that the pre-Flood data (n=9) is too small to reliably conclude 'no trend'.",
+      "The objection that the floor convergence is not truly independent because the regression floor is derived from the same dataset."
+    ],
+    "smartest_critic_would_say": "The exponential fit is a mathematical artifact of rounding and symbolic numbers in the genealogies, not evidence of a physical law; the 'floor' is simply the modern human lifespan, which is known independently, and the pre-Flood data is too sparse and stylized to support a two-regime claim."
+  },
+  "falsifiability": {
+    "kill_conditions_stated": [
+      "Incompatible ancient genealogies with lifespans contradicting the pattern.",
+      "Better model without floor.",
+      "Humans exceeding 120 systematically.",
+      "Genealogies as purely literary devices.",
+      "Pre-Flood lifespan decline.",
+      "Environmental/cultural explanation fully accounting for the decline."
+    ],
+    "kill_conditions_missing": [
+      "Evidence that the genealogies use symbolic numbers (e.g., 600, 120) that coincidentally fit an exponential curve.",
+      "Demonstration that the pre-Flood data is not constant but has a different pattern (e.g., decreasing from Adam to Noah).",
+      "Proof that the floor convergence is spurious (e.g., the regression floor is an artifact of the fitting procedure)."
+    ],
+    "testability": "arguable_from_text"
+  },
+  "novelty": {
+    "what_is_new": "The claim that post-Flood lifespans follow a quantum decoherence equation with a grace-driven floor, formalized as a structural isomorphism.",
+    "novelty_type": "new_combination",
+    "closest_existing_work": "Previous work on lifespan decline in Genesis (e.g., by John Walton or Carol Hill) but not framed as a physical isomorphism.",
+    "novelty_score": 6
+  },
+  "compression": {
+    "one_sentence": "The post-Flood lifespans in Genesis 11 decay exponentially with a floor, matching quantum decoherence, and the floor is independently confirmed by Psalm 90, WHO data, and Genesis 6:3, suggesting a grace-driven coherence source.",
+    "three_sentences": "Post-Flood patriarchal lifespans (Shem to Moses) follow an exponential decay with an asymptotic floor, best fit by C(t)=337\u00b7e^{-t/214}+93 (R\u00b2=0.888). This pattern is isomorphic to quantum decoherence, where the floor represents a persistent external coherence source. The floor converges with four independent sources (Psalm 90:10, modern life expectancy, Genesis 6:3 ceiling, and the regression itself), supporting a structural isomorphism between decoherence physics and theological grace.",
+    "strongest_defensible_version": "The post-Flood lifespan data from Genesis 11 is well-described by an exponential decay with a floor, and this floor is consistent with known human lifespan limits from Psalm 90 and modern data, but the claim of a quantum decoherence mechanism or grace as a physical source is not supported by the evidence.",
+    "weakest_version_still_true": "The post-Flood lifespans in Genesis 11 decrease over time and can be fit by an exponential curve with a floor, but this could be due to symbolic numbers, rounding, or literary convention rather than a physical law."
+  }
+}

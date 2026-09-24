@@ -1,0 +1,265 @@
+{
+  "thesis": {
+    "one_sentence": "The Christian theological concept of grace has the exact structural properties that formal impossibility theorems (G\u00f6del, Tarski, Turing, Clausius, Landauer, Leibniz) require of any external intervention that rescues a closed system from incoherence.",
+    "thesis_type": "interpretive",
+    "thesis_strength": 8,
+    "thesis_paragraph": "The Mapping section, specifically the table and the paragraph beginning 'Both domains describe systems that are structurally incapable of self-rescue.'"
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Six independent theorems (G\u00f6del, Tarski, Turing, Clausius, Landauer, Leibniz) prove that closed systems cannot self-validate, self-define truth, predict own termination, reverse own entropy, compute without external cost, or explain own existence.",
+      "type": "descriptive",
+      "evidence": "Citations to G\u00f6del (1931), Tarski (1936), Turing (1936), Clausius (1850), Landauer (1961), Leibniz (1714).",
+      "evidence_type": "citation",
+      "evidence_strength": 9,
+      "assumption": "The standard interpretations of these theorems are correct and applicable to the concept of a 'closed system' as defined here.",
+      "overclaim_risk": 3,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C2",
+      "claim": "The five properties of grace (externality, sufficiency, asymmetric cost, merit-independence, temporal priority) are derived by inverting the six theorems.",
+      "type": "interpretive",
+      "evidence": "The table mapping each theorem's lack to what grace provides.",
+      "evidence_type": "argument",
+      "evidence_strength": 7,
+      "assumption": "The inversion is logically valid and not merely a rhetorical parallel.",
+      "overclaim_risk": 5,
+      "overclaim_diagnosis": "The mapping is presented as a logical derivation, but it is an interpretive analogy; the theorems do not logically entail the specific theological properties of grace."
+    },
+    {
+      "id": "C3",
+      "claim": "The mapping to Ephesians 2:8-9 is one-to-one and non-redundant (swap test passed).",
+      "type": "interpretive",
+      "evidence": "The swap test analysis showing each property maps to a specific theorem.",
+      "evidence_type": "argument",
+      "evidence_strength": 6,
+      "assumption": "The interpretation of Ephesians 2:8-9 is correct and the mapping is exhaustive.",
+      "overclaim_risk": 6,
+      "overclaim_diagnosis": "The swap test is a thought experiment, not a formal proof; other interpretations of the biblical text could yield different mappings."
+    },
+    {
+      "id": "C4",
+      "claim": "The coupling coefficient \u03b1(u) describes the degree to which a system permits external input, with \u03b1(u=1)=0 (fully closed) and \u03b1(u=0)=1 (fully open).",
+      "type": "mathematical",
+      "evidence": "Definition provided in the text.",
+      "evidence_type": "argument",
+      "evidence_strength": 4,
+      "assumption": "The concept of 'autonomy parameter' u is well-defined and measurable in both domains.",
+      "overclaim_risk": 8,
+      "overclaim_diagnosis": "The coupling coefficient is a metaphorical formalism; no operational definition or measurement is given for u in the theological domain."
+    },
+    {
+      "id": "C5",
+      "claim": "Pelagianism is structurally incoherent, equivalent to a perpetual motion machine.",
+      "type": "interpretive",
+      "evidence": "Reference to the six theorems and the coupling coefficient.",
+      "evidence_type": "argument",
+      "evidence_strength": 5,
+      "assumption": "The analogy between theological self-salvation and physical perpetual motion is valid.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "The claim asserts structural equivalence without demonstrating that Pelagianism violates any specific theorem in a formal sense."
+    },
+    {
+      "id": "C6",
+      "claim": "Semi-Pelagianism is structurally incoherent, equivalent to partial self-validation.",
+      "type": "interpretive",
+      "evidence": "Reference to the six theorems.",
+      "evidence_type": "argument",
+      "evidence_strength": 4,
+      "assumption": "Partial self-validation is a coherent concept that maps to semi-Pelagianism.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "The analogy is asserted without rigorous demonstration of how semi-Pelagianism violates a specific theorem."
+    },
+    {
+      "id": "C7",
+      "claim": "Any coherent soteriology must have all five grace properties (G1-G5).",
+      "type": "normative",
+      "evidence": "Derivation from the six theorems.",
+      "evidence_type": "argument",
+      "evidence_strength": 5,
+      "assumption": "The six theorems are universally applicable to all soteriological systems.",
+      "overclaim_risk": 8,
+      "overclaim_diagnosis": "The claim generalizes from mathematical theorems about formal systems to theological systems without justification that the domains are isomorphic in the required sense."
+    },
+    {
+      "id": "C8",
+      "claim": "The Reformation debate (faith alone vs. faith + works) maps to whether u must be 0 for coherence.",
+      "type": "interpretive",
+      "evidence": "Reference to the coupling coefficient.",
+      "evidence_type": "argument",
+      "evidence_strength": 3,
+      "assumption": "The coupling coefficient model accurately captures the theological distinction.",
+      "overclaim_risk": 8,
+      "overclaim_diagnosis": "The mapping is highly reductive; the historical and theological complexity of the debate is not captured by a single parameter."
+    },
+    {
+      "id": "C9",
+      "claim": "The mathematics predicts that any viable rescue must have these five properties; the theology describes a rescue with exactly these five properties.",
+      "type": "interpretive",
+      "evidence": "The bidirectional flow described in the text.",
+      "evidence_type": "argument",
+      "evidence_strength": 4,
+      "assumption": "The prediction is logically sound and not circular.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "The 'prediction' is a restatement of the mapping; it is not an independent empirical prediction."
+    },
+    {
+      "id": "C10",
+      "claim": "Falsification conditions: breaking any of the six theorems removes the necessity of the corresponding grace property.",
+      "type": "descriptive",
+      "evidence": "List of six falsification conditions.",
+      "evidence_type": "argument",
+      "evidence_strength": 9,
+      "assumption": "The falsification conditions are correctly identified and are sufficient to test the thesis.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": null
+    }
+  ],
+  "definitions": {
+    "explicit": [
+      {
+        "term": "Terminus Sui",
+        "definition": "Closed System Incompleteness",
+        "location": "Domain A"
+      },
+      {
+        "term": "Grace",
+        "definition": "External, sufficient, asymmetric-cost, merit-independent, temporally prior divine intervention (Ephesians 2:8-9)",
+        "location": "Domain B"
+      },
+      {
+        "term": "Coupling Coefficient \u03b1(u)",
+        "definition": "\u03b1(u=1)=0 (fully closed) to \u03b1(u=0)=1 (fully open)",
+        "location": "The Mapping"
+      }
+    ],
+    "implied": [
+      {
+        "term": "Closed system",
+        "usage_implies": "A system that cannot access external resources or validation"
+      },
+      {
+        "term": "Coherent",
+        "usage_implies": "Internally consistent and self-sustaining"
+      }
+    ],
+    "undefined_but_critical": [
+      "autonomy parameter u",
+      "coherence restoration"
+    ],
+    "terms_doing_hidden_work": [
+      "structural necessity",
+      "logical inversion",
+      "coherence"
+    ]
+  },
+  "assumptions": [
+    {
+      "assumption": "The six theorems are correctly interpreted and applicable to the concept of a 'closed system' as used here.",
+      "type": "conceptual",
+      "if_this_fails": "The entire mapping collapses."
+    },
+    {
+      "assumption": "The mapping from theorem to grace property is a logical derivation, not just an analogy.",
+      "type": "methodological",
+      "if_this_fails": "The thesis becomes a suggestive metaphor rather than a structural isomorphism."
+    },
+    {
+      "assumption": "The theological concept of grace in Ephesians 2:8-9 is correctly characterized by the five properties.",
+      "type": "empirical",
+      "if_this_fails": "The mapping to the biblical text is invalid."
+    },
+    {
+      "assumption": "The coupling coefficient \u03b1(u) is a meaningful formalism that can be applied to theological systems.",
+      "type": "methodological",
+      "if_this_fails": "The quantitative claims about u=0 are unsupported."
+    },
+    {
+      "assumption": "Pelagianism and semi-Pelagianism are accurately represented as 'self-salvation' and 'partial self-salvation'.",
+      "type": "empirical",
+      "if_this_fails": "The critique of these positions is misdirected."
+    }
+  ],
+  "argument_structure": {
+    "premises": [
+      "P1: Six theorems prove closed systems cannot self-validate, self-define truth, self-predict termination, self-reverse entropy, compute without cost, or self-explain existence.",
+      "P2: Grace (as defined by Ephesians 2:8-9) has five properties: externality, sufficiency, asymmetric cost, merit-independence, temporal priority.",
+      "P3: These five properties are the logical inversions of the six theorems' impossibilities."
+    ],
+    "intermediate_conclusions": [
+      "IC1: Any system claiming self-sufficiency is incoherent.",
+      "IC2: Rescue of a closed system requires external intervention with the five properties.",
+      "IC3: The Christian concept of grace has exactly these properties."
+    ],
+    "final_conclusion": "The Christian description of grace has the exact structural properties that formal impossibility results require of any external intervention.",
+    "weakest_link": "The step from 'theorems require external intervention with these properties' to 'the Christian concept of grace is that intervention' is an interpretive leap, not a logical deduction.",
+    "unproven_jumps": [
+      "From 'theorems require external intervention' to 'that intervention is specifically the Christian grace'.",
+      "From 'the mapping is one-to-one' to 'the mapping is a structural isomorphism'.",
+      "From 'the coupling coefficient describes the topology' to 'u must be 0 for coherence'."
+    ]
+  },
+  "overclaim_detection": [
+    {
+      "pattern": "model-to-reality",
+      "location": "The Mapping section, especially the coupling coefficient",
+      "diagnosis": "The paper claims a structural isomorphism between mathematical theorems and theological concepts, but the mapping is interpretive and metaphorical, not a formal proof."
+    },
+    {
+      "pattern": "definition-to-discovery",
+      "location": "The claim that grace properties are 'derived by inverting the six theorems'",
+      "diagnosis": "The properties are not derived from the theorems; they are selected from theology and then mapped onto the theorems. The inversion is a post-hoc interpretation."
+    },
+    {
+      "pattern": "some-to-all",
+      "location": "The claim that 'any coherent soteriology must have all five grace properties'",
+      "diagnosis": "The paper generalizes from the Christian concept of grace to all possible soteriologies without justification."
+    }
+  ],
+  "counterarguments": {
+    "addressed": [
+      "Not claiming grace is a theorem",
+      "Not claiming the theorems were intended to prove grace",
+      "Not claiming this proves Christianity true",
+      "Not claiming other theological frameworks couldn't map here",
+      "Not claiming the coupling coefficient is measurable in the theological domain"
+    ],
+    "missing": [
+      "The mapping is an analogy, not a formal isomorphism; the theorems apply to formal systems, not to human beings or theological constructs.",
+      "The five properties of grace are not uniquely derived from the theorems; other properties could also be mapped.",
+      "The falsification conditions are impossible to meet (the theorems are well-established), making the thesis unfalsifiable in practice.",
+      "The coupling coefficient is a metaphor with no operational definition; it does no explanatory work."
+    ],
+    "smartest_critic_would_say": "The mapping is a clever analogy, but it is not a derivation. The theorems constrain what any external rescue must look like, but they do not entail that the Christian concept of grace is that rescue. You have selected properties of grace that fit the theorems, but you have not shown that the theorems uniquely pick out grace, nor that grace has no other properties that conflict with the theorems."
+  },
+  "falsifiability": {
+    "kill_conditions_stated": [
+      "A closed formal system that proves its own consistency",
+      "A formal language that defines its own truth predicate",
+      "A program that decides its own halting",
+      "An isolated thermodynamic system that spontaneously decreases its entropy",
+      "A computation that erases information with zero energy cost",
+      "A contingent entity that fully explains its own existence"
+    ],
+    "kill_conditions_missing": [
+      "A demonstration that the mapping is not an isomorphism but a false analogy",
+      "A theological framework that has the five properties but is not Christian grace",
+      "A coherent soteriology that lacks one of the five properties"
+    ],
+    "testability": "arguable_from_text"
+  },
+  "novelty": {
+    "what_is_new": "The systematic mapping of six formal impossibility theorems to the five properties of grace, presented as a structural isomorphism with a coupling coefficient.",
+    "novelty_type": "new_combination",
+    "closest_existing_work": "Previous work linking G\u00f6del's theorems to theology (e.g., by G\u00f6del himself or by thinkers like John Lucas), but not the full set of six theorems mapped to grace.",
+    "novelty_score": 7
+  },
+  "compression": {
+    "one_sentence": "Six formal impossibility theorems (G\u00f6del, Tarski, Turing, Clausius, Landauer, Leibniz) show that closed systems cannot self-rescue, and the Christian concept of grace has exactly the five properties (externality, sufficiency, asymmetric cost, merit-independence, temporal priority) that any external rescue must have.",
+    "three_sentences": "Six independent theorems prove that closed systems cannot validate themselves, define their own truth, predict their own termination, reverse their own entropy, compute without cost, or explain their own existence. The Christian concept of grace, as described in Ephesians 2:8-9, has five properties that are the logical inversions of these impossibilities: externality, sufficiency, asymmetric cost, merit-independence, and temporal priority. This mapping suggests that the structural necessity for grace is built into the fabric of mathematics and physics, and that any coherent soteriology must have these five properties.",
+    "strongest_defensible_version": "The six theorems demonstrate that any closed system requires external intervention with properties that are structurally analogous to the five properties of grace as defined in Ephesians 2:8-9.",
+    "weakest_version_still_true": "There is a structural analogy between the impossibility results of six formal theorems and the theological concept of grace, in that both involve the need for external input to resolve internal limitations."
+  }
+}

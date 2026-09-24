@@ -1,0 +1,277 @@
+{
+  "thesis": {
+    "one_sentence": "The Master Equation \u03c7(W) = C_W[\u222d(G\u00b7M\u00b7E\u00b7S\u00b7T\u00b7K\u00b7R\u00b7Q\u00b7F) dx dy dt] is a forced mathematical consequence of the axiom spine, where coherence is the sovereign output and any factor zeroing kills the whole.",
+    "thesis_type": "mathematical",
+    "thesis_strength": 9,
+    "thesis_paragraph": "The Claim"
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "The Master Equation is a multiplicative integral of nine factors, not a ten-factor product.",
+      "type": "mathematical",
+      "evidence": "The equation \u03c7(W) = C_W[\u222d(G\u00b7M\u00b7E\u00b7S\u00b7T\u00b7K\u00b7R\u00b7Q\u00b7F) dx dy dt] is presented and the wrapper C_W is distinguished from a tenth factor.",
+      "evidence_type": "argument",
+      "evidence_strength": 8,
+      "assumption": "The wrapper C_W is not a factor in the product.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C2",
+      "claim": "The equation was forced by the axioms, not designed.",
+      "type": "descriptive",
+      "evidence": "Each axiom in the spine demands a variable, and the composition is multiplicative because the structural veto requires it.",
+      "evidence_type": "argument",
+      "evidence_strength": 6,
+      "assumption": "The mapping from axioms to variables is unique and necessary.",
+      "overclaim_risk": 5,
+      "overclaim_diagnosis": "The paper asserts the mapping is forced, but alternative mappings or compositions are not ruled out."
+    },
+    {
+      "id": "C3",
+      "claim": "If any single factor goes to zero, the whole goes to zero (structural veto).",
+      "type": "mathematical",
+      "evidence": "Proof: In a multiplicative composition, any zero factor annihilates the product. The integral of a function that is identically zero on any factor's support is zero.",
+      "evidence_type": "proof",
+      "evidence_strength": 10,
+      "assumption": "The factors are independent and the integral is over a domain where each factor can be zero.",
+      "overclaim_risk": 1,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C4",
+      "claim": "The four forms (product, ratio, dynamic, field) are exact transformations of the same object.",
+      "type": "mathematical",
+      "evidence": "The paper states they are related by exact transformations, but no explicit transformations are given.",
+      "evidence_type": "argument",
+      "evidence_strength": 4,
+      "assumption": "The transformations exist and are invertible.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "The paper claims exact transformations but does not provide them, leaving the equivalence unproven."
+    },
+    {
+      "id": "C5",
+      "claim": "The dynamic form d\u03c7/dt = G - S + \u0393(W) quantifies BC2 (No-Self-Increase).",
+      "type": "mathematical",
+      "evidence": "The equation is given and Lean-verified for the closed system case (G=0) where d\u03c7/dt \u2264 0.",
+      "evidence_type": "proof",
+      "evidence_strength": 9,
+      "assumption": "The coupling term \u0393(W) is correctly defined and bounded.",
+      "overclaim_risk": 3,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C6",
+      "claim": "In a closed system (G=0), coherence decays: d\u03c7/dt \u2264 0.",
+      "type": "mathematical",
+      "evidence": "Lean-verified theorem: d\u03c7/dt|_{G=0} = -S + \u0393(W) \u2264 0 because S > |\u0393| always.",
+      "evidence_type": "proof",
+      "evidence_strength": 10,
+      "assumption": "The inequality S > |\u0393| holds universally.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C7",
+      "claim": "The ratio form \u03c7 = \u03a6_order / \u03a6_disorder makes the war between order and disorder visible.",
+      "type": "interpretive",
+      "evidence": "The ratio is analogous to signal-to-noise and free energy ratios.",
+      "evidence_type": "argument",
+      "evidence_strength": 5,
+      "assumption": "The mapping of factors to order and disorder is valid.",
+      "overclaim_risk": 6,
+      "overclaim_diagnosis": "The paper asserts the combat picture is not metaphorical, but the analogy to physical systems is not proven to be exact."
+    },
+    {
+      "id": "C8",
+      "claim": "The field form connects to the Lagrangian via Euler-Lagrange equations.",
+      "type": "mathematical",
+      "evidence": "The Lagrangian density L is introduced and the Euler-Lagrange equation is stated.",
+      "evidence_type": "argument",
+      "evidence_strength": 4,
+      "assumption": "The Lagrangian L exists and is well-defined.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "The Lagrangian is not given, so the connection is asserted but not demonstrated."
+    },
+    {
+      "id": "C9",
+      "claim": "The ten variables map uniquely to the axioms.",
+      "type": "descriptive",
+      "evidence": "A table maps each axiom to a variable and role.",
+      "evidence_type": "argument",
+      "evidence_strength": 5,
+      "assumption": "The mapping is one-to-one and exhaustive.",
+      "overclaim_risk": 6,
+      "overclaim_diagnosis": "The mapping is presented as forced, but alternative mappings or additional variables are not considered."
+    },
+    {
+      "id": "C10",
+      "claim": "The Lean4 verification artifacts confirm the structural veto and BC2 theorems.",
+      "type": "empirical",
+      "evidence": "503 compiled theorems, zero sorry, zero local axioms; specific theorems verified.",
+      "evidence_type": "citation",
+      "evidence_strength": 9,
+      "assumption": "The Lean4 code correctly implements the mathematical claims.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": null
+    }
+  ],
+  "definitions": {
+    "explicit": [
+      {
+        "term": "\u03c7 (chi)",
+        "definition": "Coherence \u2014 the master integrator, sovereign output of the system",
+        "location": "Spiritual Terms Introduced"
+      },
+      {
+        "term": "Grace (G)",
+        "definition": "External ordering/repair input \u2014 cannot be self-generated (BC2)",
+        "location": "Spiritual Terms Introduced"
+      },
+      {
+        "term": "Sin (S)",
+        "definition": "Moral entropy \u2014 refusal, closure, disorder; directional and irreversible",
+        "location": "Spiritual Terms Introduced"
+      },
+      {
+        "term": "Free Will (W)",
+        "definition": "Regime selector via Q and C_W \u2014 constructive or destructive",
+        "location": "Spiritual Terms Introduced"
+      },
+      {
+        "term": "Structural Veto",
+        "definition": "Any factor \u2192 0 kills \u03c7 \u2014 mathematical non-negotiable",
+        "location": "Spiritual Terms Introduced"
+      },
+      {
+        "term": "C_W wrapper",
+        "definition": "Consciousness/coherence as integrating functional, not a tenth factor",
+        "location": "Spiritual Terms Introduced"
+      }
+    ],
+    "implied": [
+      {
+        "term": "Entropy",
+        "usage_implies": "Physical and moral disorder are isomorphic under the Second Law"
+      },
+      {
+        "term": "Coherence",
+        "usage_implies": "A scalar quantity that can be integrated and differentiated, analogous to physical fields"
+      }
+    ],
+    "undefined_but_critical": [
+      "\u03a6_order",
+      "\u03a6_disorder",
+      "\u0393_coupling(W)",
+      "Lagrangian density L"
+    ],
+    "terms_doing_hidden_work": [
+      "wrapper",
+      "functional",
+      "exact transformations",
+      "Lean-proven"
+    ]
+  },
+  "assumptions": [
+    {
+      "assumption": "The mapping from axioms to variables is unique and necessary.",
+      "type": "conceptual",
+      "if_this_fails": "The Master Equation is not forced; alternative formulations are possible."
+    },
+    {
+      "assumption": "The four forms are related by exact transformations.",
+      "type": "mathematical",
+      "if_this_fails": "The forms are not equivalent, and the claim of a single object is false."
+    },
+    {
+      "assumption": "The inequality S > |\u0393| holds universally.",
+      "type": "mathematical",
+      "if_this_fails": "The closed-system decay theorem fails; coherence might not always decay."
+    },
+    {
+      "assumption": "The Lagrangian L exists and is well-defined.",
+      "type": "mathematical",
+      "if_this_fails": "The field form is not connected to the Lagrangian."
+    },
+    {
+      "assumption": "The Lean4 code correctly implements the mathematical claims.",
+      "type": "methodological",
+      "if_this_fails": "The verification artifacts are invalid."
+    }
+  ],
+  "argument_structure": {
+    "premises": [
+      "P1: The axiom spine (Page 02) demands a set of variables.",
+      "P2: Each variable corresponds to a measurable degree of freedom.",
+      "P3: The composition must be multiplicative to enforce the structural veto.",
+      "P4: The structural veto is a mathematical non-negotiable.",
+      "P5: The four forms are exact transformations of the same object.",
+      "P6: The dynamic form quantifies BC2.",
+      "P7: Lean4 verification confirms the theorems."
+    ],
+    "intermediate_conclusions": [
+      "IC1: The Master Equation is forced by the axioms.",
+      "IC2: Any zero factor kills coherence.",
+      "IC3: In a closed system, coherence decays."
+    ],
+    "final_conclusion": "The Master Equation is the correct mathematical representation of the theophysics framework, with coherence as the sovereign output.",
+    "weakest_link": "The claim that the four forms are exact transformations (no explicit transformations provided).",
+    "unproven_jumps": [
+      "From axioms to the specific multiplicative integral form.",
+      "From the product form to the ratio form without explicit transformation.",
+      "From the field form to the Lagrangian without specifying L."
+    ]
+  },
+  "overclaim_detection": [
+    {
+      "pattern": "model-to-reality",
+      "location": "The Claim: 'The equation was not designed \u2014 it was forced.'",
+      "diagnosis": "The paper claims the equation is forced by the axioms, but this is a mathematical model; alternative models are possible."
+    },
+    {
+      "pattern": "definition-to-discovery",
+      "location": "Spiritual Terms Introduced: 'Sin (S) \u2014 Moral entropy'",
+      "diagnosis": "The paper defines sin as moral entropy and treats it as a discovered physical quantity, but the mapping is definitional."
+    },
+    {
+      "pattern": "textual-possibility-to-actual-practice",
+      "location": "Verification Artifacts: 'Lean4 \u2014 503 compiled theorems'",
+      "diagnosis": "The Lean4 verification is claimed for specific theorems, but the full scope of the Master Equation's implications is not verified."
+    }
+  ],
+  "counterarguments": {
+    "addressed": [
+      "The structural veto is not a design choice but a mathematical necessity."
+    ],
+    "missing": [
+      "The four forms may not be equivalent without explicit transformations.",
+      "The mapping from axioms to variables is arbitrary.",
+      "The Lean4 verification may not cover all claims."
+    ],
+    "smartest_critic_would_say": "The Master Equation is a definitional framework, not a forced mathematical consequence; the mapping from axioms to variables is one of many possible, and the four forms are not proven equivalent."
+  },
+  "falsifiability": {
+    "kill_conditions_stated": [
+      "If any factor is zero and \u03c7 is non-zero, the structural veto fails.",
+      "If d\u03c7/dt > 0 in a closed system, BC2 fails."
+    ],
+    "kill_conditions_missing": [
+      "If the four forms are not equivalent, the claim of a single object fails.",
+      "If the Lagrangian L does not exist, the field form is disconnected."
+    ],
+    "testability": "arguable_from_text"
+  },
+  "novelty": {
+    "what_is_new": "The Master Equation as a multiplicative integral of nine factors with a wrapper, and the structural veto theorem.",
+    "novelty_type": "new_formalization",
+    "closest_existing_work": "Integrated information theory (IIT) and the free energy principle (FEP) in theoretical neuroscience.",
+    "novelty_score": 7
+  },
+  "compression": {
+    "one_sentence": "The Master Equation \u03c7(W) = C_W[\u222d(G\u00b7M\u00b7E\u00b7S\u00b7T\u00b7K\u00b7R\u00b7Q\u00b7F) dx dy dt] is a multiplicative integral forced by the axiom spine, where any zero factor kills coherence and the four forms are claimed equivalent.",
+    "three_sentences": "The Master Equation is a multiplicative integral of nine factors, with coherence as the sovereign output and a structural veto that annihilates the whole if any factor is zero. It has four forms (product, ratio, dynamic, field) claimed to be exact transformations, with the dynamic form quantifying the decay of coherence in closed systems. The equation is supported by Lean4 verification of specific theorems, but the equivalence of forms and the uniqueness of the mapping from axioms remain unproven.",
+    "strongest_defensible_version": "The Master Equation defines a mathematical structure where the product of nine factors, integrated and wrapped by C_W, yields a coherence measure \u03c7, with the property that any zero factor forces \u03c7=0, and in a closed system with G=0, d\u03c7/dt \u2264 0 under the assumption S > |\u0393|.",
+    "weakest_version_still_true": "The Master Equation is a proposed formalization of the theophysics framework, with a multiplicative structure and a wrapper, but its equivalence to other forms and its forced derivation from axioms are not established."
+  }
+}

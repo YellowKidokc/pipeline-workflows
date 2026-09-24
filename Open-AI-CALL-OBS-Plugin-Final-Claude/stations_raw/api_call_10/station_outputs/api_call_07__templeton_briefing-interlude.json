@@ -1,0 +1,79 @@
+{
+  "claims": [
+    {
+      "id": "KC-001",
+      "claim": "The document presents a machine-verifiable coherence architecture that bridges fragmented disciplines (physics, theology, mathematics) into a unified research program.",
+      "plain_english": "The paper claims to have built a system that can be checked by computers and that connects different fields like physics and religion into one big idea.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document asserts this as the core pitch: 'claim ladder plus formal proof layer, not a story.' It references a canonical page with full proofs and tables.",
+      "what_would_break_it": "If the formal proof layer cannot be implemented or verified, or if the claimed coherence does not hold under rigorous mathematical or empirical testing."
+    },
+    {
+      "id": "KC-002",
+      "claim": "The argument is structured as a three-tier claim ladder, not a narrative or analogy.",
+      "plain_english": "The argument is built like a stack of claims, each supporting the next, rather than being a story or a comparison.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document explicitly states: 'The pitch is claim ladder plus formal proof layer, not a story.' It names the three tiers but does not detail them here.",
+      "what_would_break_it": "If the claims are not logically connected or if the ladder collapses under scrutiny (e.g., a lower tier is false or unsupported)."
+    },
+    {
+      "id": "KC-003",
+      "claim": "The document provides a 'proof that cannot be dismissed' \u2014 a load-bearing structure that the reader must accept before following the full derivation.",
+      "plain_english": "The paper says it has a proof so solid that you can't ignore it, and you have to understand this proof before you can follow the rest of the argument.",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "The document names this as the second move in a four-move structure. It does not present the proof itself, only asserts its existence and importance.",
+      "what_would_break_it": "If the proof is found to contain logical gaps, errors, or relies on unproven assumptions, or if it cannot be independently verified."
+    },
+    {
+      "id": "KC-004",
+      "claim": "The document is a funder-facing bridge intended to persuade institutions (like the Templeton Foundation) that the work is a legitimate research program, not mere analogy.",
+      "plain_english": "This paper is designed to convince big funders that the ideas are real science, not just a cool comparison.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The subtitle and opening question explicitly state: 'What would persuade an institution that this is not analogy but a research program?' The document is labeled as a 'funder-facing bridge.'",
+      "what_would_break_it": "If funders or reviewers conclude that the work is indeed analogical or metaphorical rather than a rigorous, testable research program."
+    },
+    {
+      "id": "KC-005",
+      "claim": "The full argument, including proofs, tables, and source structure, is contained in a separate canonical page ('Coherence as Cosmic Intelligence | Templeton 2026').",
+      "plain_english": "The complete, detailed version of the argument is on another page, not this one.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document repeatedly directs readers to the canonical page: 'The full canonical treatment remains linked below for the complete argument, tables, proofs, and source structure.'",
+      "what_would_break_it": "If the canonical page does not exist, is inaccessible, or fails to deliver the promised proofs and structure."
+    },
+    {
+      "id": "KC-006",
+      "claim": "The document's argument depends on a 'master equation' that is not presented here but is referenced as the fourth move in the structure.",
+      "plain_english": "There is a central equation that the whole argument hinges on, but it's not shown in this document.",
+      "type": "mathematical",
+      "strength": "speculative",
+      "evidence_given": "The timeline lists 'The Master Equation' as the fourth move, with the note: 'The interlude sends the reader to the canonical page instead of replacing it.' No equation is given.",
+      "what_would_break_it": "If the master equation is mathematically invalid, inconsistent with known physics, or cannot be derived from the claims in the ladder."
+    },
+    {
+      "id": "KC-007",
+      "claim": "The document asserts that the coherence architecture is 'machine-verifiable' \u2014 meaning it can be checked by automated systems.",
+      "plain_english": "The paper claims that a computer can check whether the argument makes sense.",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "The subtitle and description use the phrase 'machine-verifiable coherence architecture.' No specific verification method or tool is mentioned.",
+      "what_would_break_it": "If the architecture cannot be formalized in a way that allows automated verification, or if existing verification tools fail to confirm the claimed coherence."
+    },
+    {
+      "id": "KC-008",
+      "claim": "The document bridges physics and theology (and mathematics) into a single coherence framework.",
+      "plain_english": "The paper tries to connect physics, religion, and math into one big idea that all fits together.",
+      "type": "theological",
+      "strength": "moderate",
+      "evidence_given": "The document's subtitle and description mention 'fragmented disciplines' and 'physics\u2194theology, math\u2194morality' in the extraction instructions. The document itself does not elaborate on how this bridge works.",
+      "what_would_break_it": "If the bridge relies on category errors, equivocation, or if the theological claims are not falsifiable or testable within the scientific framework."
+    }
+  ],
+  "strongest_claim": "KC-001",
+  "weakest_claim": "KC-006",
+  "overall_argument_strength": "developing"
+}

@@ -1,0 +1,589 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "epistemology",
+        "type": "philosophy",
+        "strength": 9
+      },
+      {
+        "name": "physics",
+        "type": "physics",
+        "strength": 8
+      },
+      {
+        "name": "general_relativity",
+        "type": "physics",
+        "strength": 7
+      },
+      {
+        "name": "logic",
+        "type": "mathematics",
+        "strength": 6
+      },
+      {
+        "name": "theology",
+        "type": "theology",
+        "strength": 3
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Information structure of the 7Q framework itself \u2014 the method is a knowledge representation system",
+        "strength": 8
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "Relationship between questions, between domains, between claim and evidence",
+        "strength": 7
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Judgment of claims \u2014 Q7 is explicitly about falsification and death conditions",
+        "strength": 6
+      },
+      {
+        "variable": "M",
+        "present": true,
+        "role": "Meaning of claims is the central object being analyzed",
+        "strength": 5
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence of the framework itself \u2014 the seven questions form a coherent system",
+        "strength": 5
+      },
+      {
+        "variable": "G",
+        "present": true,
+        "role": "Gravity as the running physics example (GR)",
+        "strength": 4
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Energy in the GR example (mass-energy curves spacetime)",
+        "strength": 3
+      },
+      {
+        "variable": "S",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "Q",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "F",
+        "present": false,
+        "role": "",
+        "strength": 0
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "The framework assumes existence of claims as objects to be analyzed"
+      },
+      {
+        "id": "A1.2",
+        "invoked": true,
+        "how": "Each claim is distinguished from others by Q1 identity classification"
+      },
+      {
+        "id": "A5.1",
+        "invoked": true,
+        "how": "The entire framework is an observation method \u2014 Q0 establishes posture of observation"
+      },
+      {
+        "id": "A1.3",
+        "invoked": true,
+        "how": "Information primacy \u2014 the 7Q framework treats claims as information structures"
+      },
+      {
+        "id": "T3.1",
+        "invoked": true,
+        "how": "The framework cannot self-increase \u2014 it is a method, not a claim generator"
+      },
+      {
+        "id": "BC4",
+        "invoked": true,
+        "how": "Three observers: the claim author, the framework analyst, and the reader \u2014 all distinct"
+      },
+      {
+        "id": "BC6",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC7",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC8",
+        "invoked": false,
+        "how": ""
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": false,
+        "manifestations": []
+      },
+      "son": {
+        "present": false,
+        "manifestations": []
+      },
+      "spirit": {
+        "present": false,
+        "manifestations": []
+      },
+      "trinitarian_structure": "none"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-001",
+        "domain_a": "epistemology",
+        "domain_b": "biology",
+        "strength": 8,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-002",
+        "domain_a": "epistemology",
+        "domain_b": "physics",
+        "strength": 7,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "humility",
+        "context": "Q0 posture \u2014 'arrive humble or don't arrive at all'",
+        "weight": 6
+      },
+      {
+        "concept": "judgment",
+        "context": "Q7 \u2014 death conditions as judgment of claims",
+        "weight": 4
+      },
+      {
+        "concept": "truth",
+        "context": "The framework is designed to find truth about claims",
+        "weight": 3
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "negation",
+        "context": "Q3 requires generating the negation of the claim",
+        "weight": 9
+      },
+      {
+        "concept": "contradiction",
+        "context": "Q7 \u2014 empirical contradiction as death condition",
+        "weight": 8
+      },
+      {
+        "concept": "implication",
+        "context": "Q6 \u2014 what MUST follow if claim is true",
+        "weight": 8
+      },
+      {
+        "concept": "sufficiency",
+        "context": "Q4 \u2014 evidence must be sufficient to distinguish from competitors",
+        "weight": 7
+      },
+      {
+        "concept": "necessity",
+        "context": "Q5 \u2014 what must already be true for claim to stand",
+        "weight": 7
+      },
+      {
+        "concept": "circularity",
+        "context": "Q5 \u2014 flagged as dependency that loops back into itself",
+        "weight": 6
+      },
+      {
+        "concept": "equivalence",
+        "context": "Q4 \u2014 could same evidence support competing model?",
+        "weight": 5
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "patience",
+        "present": true,
+        "strength": 7
+      },
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 5
+      },
+      {
+        "fruit": "self_control",
+        "present": true,
+        "strength": 4
+      },
+      {
+        "fruit": "love",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "axiom:A1.1",
+      "to": "chi_variable:K",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "axiom:A5.1",
+      "to": "chi_variable:K",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "chi_variable:K",
+      "to": "chi_variable:R",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "chi_variable:T",
+      "to": "chi_variable:K",
+      "relation": "derives_from",
+      "weight": 6
+    },
+    {
+      "from": "domain:epistemology",
+      "to": "domain:physics",
+      "relation": "contains",
+      "weight": 8
+    },
+    {
+      "from": "domain:epistemology",
+      "to": "domain:logic",
+      "relation": "contains",
+      "weight": 7
+    },
+    {
+      "from": "isomorphism:ISO-001",
+      "to": "domain:epistemology",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "isomorphism:ISO-001",
+      "to": "domain:biology",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "isomorphism:ISO-002",
+      "to": "domain:epistemology",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "isomorphism:ISO-002",
+      "to": "domain:physics",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "logical_concept:negation",
+      "to": "logical_concept:contradiction",
+      "relation": "produces",
+      "weight": 9
+    },
+    {
+      "from": "logical_concept:implication",
+      "to": "logical_concept:necessity",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:sufficiency",
+      "to": "logical_concept:equivalence",
+      "relation": "supports",
+      "weight": 6
+    },
+    {
+      "from": "theological_concept:humility",
+      "to": "axiom:A5.1",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "theological_concept:judgment",
+      "to": "chi_variable:T",
+      "relation": "maps_to",
+      "weight": 6
+    },
+    {
+      "from": "fruit:patience",
+      "to": "theological_concept:humility",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "fruit:faithfulness",
+      "to": "logical_concept:implication",
+      "relation": "supports",
+      "weight": 5
+    },
+    {
+      "from": "fruit:self_control",
+      "to": "logical_concept:negation",
+      "relation": "supports",
+      "weight": 4
+    },
+    {
+      "from": "domain:general_relativity",
+      "to": "domain:physics",
+      "relation": "contains",
+      "weight": 7
+    },
+    {
+      "from": "chi_variable:G",
+      "to": "domain:general_relativity",
+      "relation": "maps_to",
+      "weight": 4
+    }
+  ],
+  "tags": {
+    "primary": [
+      "7Q-framework",
+      "epistemology",
+      "claim-analysis",
+      "falsification",
+      "methodology"
+    ],
+    "pillar": [
+      "pillar/philosophy",
+      "pillar/mathematics"
+    ],
+    "series": "master-equation",
+    "classification": "foundational"
+  },
+  "citations": {
+    "scripture": [],
+    "academic": [
+      {
+        "ref": "Einstein, A. (1915). Die Feldgleichungen der Gravitation",
+        "context": "Running example \u2014 General Relativity"
+      },
+      {
+        "ref": "Popper, K. (1934). The Logic of Scientific Discovery",
+        "context": "Falsification concept in Q7"
+      },
+      {
+        "ref": "Kuhn, T. (1962). The Structure of Scientific Revolutions",
+        "context": "Paradigm shifts implied by Q7 death conditions"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "FP-001",
+        "context": "Theophysics framework \u2014 7Q is a core method"
+      },
+      {
+        "ref": "ISO-025",
+        "context": "Isomorphism between epistemology and biology (tree metaphor)"
+      }
+    ],
+    "total_count": 5
+  },
+  "word_anomalies": [
+    {
+      "word": "Q0",
+      "frequency": 8,
+      "significance": "Neologism \u2014 a pre-question posture, not a standard epistemological category"
+    },
+    {
+      "word": "death_conditions",
+      "frequency": 5,
+      "significance": "Technical term for falsification criteria, more specific than Popper's falsifiability"
+    },
+    {
+      "word": "isomorphism",
+      "frequency": 4,
+      "significance": "Used in technical sense of structural mapping between domains"
+    },
+    {
+      "word": "self_refutation",
+      "frequency": 2,
+      "significance": "Specific type of death condition \u2014 claim contradicts itself"
+    },
+    {
+      "word": "infinite_regress",
+      "frequency": 2,
+      "significance": "Specific type of death condition \u2014 dependency chain never terminates"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "Open inquiry \u2014 the framework itself is presented as a method, not a dogma. 'Arrive humble or don't arrive at all.'",
+    "Q1_identity": "This is a methodological framework for analyzing claims \u2014 a meta-epistemological tool. It is foundational, not a derived theorem.",
+    "Q2_domain": "Primary: epistemology/philosophy. Secondary: physics (via example), logic (via structure). Scale: universal \u2014 applies to any claim in any domain.",
+    "Q3_claim": "Any claim can be fully analyzed and understood through seven sequential questions: Q0 (posture), Q1 (identity), Q2 (domain), Q3 (assertion), Q4 (evidence), Q5 (dependencies), Q6 (consequences), Q7 (falsification).",
+    "Q4_support": "The framework is self-supporting \u2014 it demonstrates its own utility by analyzing a physics example (GR). The example shows the framework produces non-trivial insights (hidden roots, split negations, live kill conditions).",
+    "Q5_dependencies": "Depends on: existence of claims as objects (A1.1), ability to distinguish claims (A1.2), observation as valid method (A5.1), information primacy (A1.3), non-self-increase (T3.1), three observers (BC4). Chain terminates in axioms of the Theophysics framework.",
+    "Q6_consequences": "If true, this framework becomes the universal method for claim analysis. Forces: every claim must be analyzable through 7Q, every analysis must produce a kill condition, every domain must be comparable through isomorphisms.",
+    "Q7_kill": "Death #1 (self-refutation): If the framework cannot analyze itself through 7Q \u2014 but it does in this document. Death #2 (infinite regress): If Q0 requires its own Q0 \u2014 but Q0 is defined as a precondition, not a claim. Death #3 (explanatory failure): If applying 7Q to a claim produces no new insight \u2014 but the GR example shows it does. Status: alive. The framework survives its own test."
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "FP-001",
+      "ISO-025",
+      "axiom-layer"
+    ],
+    "required_by": [
+      "all-7q-analyses",
+      "claim-classification-system"
+    ],
+    "parallel_to": [
+      "master-equation-framework",
+      "axiom-explanation"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 28,
+    "total_edges": 20,
+    "dominant_domain": "epistemology",
+    "dominant_chi": "K (Information/Logos)",
+    "connectivity_score": 8,
+    "one_sentence": "This document establishes the 7Q framework as the universal method for claim analysis, demonstrating its power through a worked example from General Relativity."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": false,
+      "how": ""
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Truth (Q3 assertion precision) and coherence (framework internal consistency) are paired \u2014 the framework must be coherent to produce truth"
+    },
+    "4_7_love_relationship": {
+      "active": false,
+      "how": ""
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Judgment (Q7 death conditions) and Logos (Q1 identity/classification) are paired \u2014 you must know what something IS before you can judge it"
+    },
+    "pairs_active_count": 2
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": false,
+      "strength": 0
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 9
+    },
+    "love": {
+      "present": false,
+      "strength": 0
+    },
+    "judgment": {
+      "present": true,
+      "strength": 8
+    },
+    "logos": {
+      "present": true,
+      "strength": 9
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": false,
+      "strength": 0
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": false,
+      "strength": 0
+    },
+    "operators_present_count": 3
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "FP-001",
+      "axiom-layer"
+    ],
+    "read_after": [
+      "all-7q-analyses",
+      "claim-classification-system"
+    ]
+  }
+}

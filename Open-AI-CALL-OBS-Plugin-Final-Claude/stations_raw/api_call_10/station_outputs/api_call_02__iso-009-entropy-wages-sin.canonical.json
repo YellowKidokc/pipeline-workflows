@@ -1,0 +1,143 @@
+{
+  "chi_variables": {
+    "G": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit reference to Grace or Gravity as source-field curvature."
+    },
+    "M": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit reference to Meaning or Mass-Force."
+    },
+    "E": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Entropy is central; Boltzmann entropy S = k_B ln(\u03a9) is the core equation. Energy is implicit in thermodynamic framing."
+    },
+    "S": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit reference to Strong Force or Love as binding."
+    },
+    "T": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Thermodynamics is the primary physics domain: 'The wages of sin is death' is a thermodynamic statement. Entropy, system failure, and the limit lim(1-\u03b5)^t = 0 are explicitly discussed."
+    },
+    "K": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Knowledge/Logos is central: Truth as zero-entropy (\u03a9=1, S=0), lies as noise, information-theoretic mapping of sin. Shannon's Noisy Channel Theorem is invoked."
+    },
+    "R": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit reference to Relativity or Relationship."
+    },
+    "Q": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit reference to Quantum or Faith."
+    },
+    "F": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Weak Force / Sin-Conservation: Sin is treated as conserved deficit (entropy accumulation), not a legal category. 'The wages of sin is death' as thermodynamic consequence."
+    },
+    "C": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Coherence / Christ: Jesus claims ontological identification with zero-entropy substrate (John 14:6). Christ as the global integration operator (\u03a9God=1, SGod=0). The document wraps the entire analysis around this identification."
+    },
+    "variables_present_count": 5,
+    "dominant_variables": [
+      "T",
+      "K",
+      "C"
+    ],
+    "absent_variables": [
+      "G",
+      "M",
+      "S",
+      "R",
+      "Q"
+    ],
+    "chi_coverage_pct": "50%"
+  },
+  "physics_process_detection": {
+    "maps_to_physics": true,
+    "physics_domain": "thermodynamics, information theory",
+    "specific_process": "entropy production, noise accumulation, exponential decay of signal fidelity over time",
+    "equation_present": "S = k_B ln(\u03a9), L(n) = L0 * e^(\u03bbn), lim_{t\u2192\u221e} (1-\u03b5)^t = 0",
+    "isomorphism_detected": true,
+    "isomorphism_type": "structural",
+    "isomorphism_quality": 9
+  },
+  "laws_invoked": {
+    "explicit": [
+      "Law 5: Thermodynamics / Judgment-Heat Death",
+      "Law 6: Information / Logos-Chaos",
+      "Law 9: Weak Force / Moral Conservation",
+      "Law 10: Coherence / Christ-Decoherence"
+    ],
+    "implicit": [
+      "Law 3: Electromagnetism / Truth-Deception (truth vs lies as signal vs noise)"
+    ],
+    "symmetry_pairs_active": [
+      "5-6",
+      "9 (asymmetric)",
+      "10 (asymmetric)"
+    ]
+  },
+  "theological_structure": {
+    "trinity_present": false,
+    "trinity_structure": "Not explicitly present; focus is on Christ (Son) and God the Father (source of truth), but Holy Spirit is absent.",
+    "father_aspect": {
+      "present": true,
+      "evidence": "God as source of truth, zero-entropy substrate (\u03a9God=1). Reference to 'I am the Truth' (John 14:6) implies the Father as origin."
+    },
+    "son_aspect": {
+      "present": true,
+      "evidence": "Jesus Christ as 'the Way, the Truth, and the Life' \u2014 ontological identification with zero-entropy substrate. Christ as the global integration operator."
+    },
+    "spirit_aspect": {
+      "present": false,
+      "evidence": "No reference to the Holy Spirit."
+    },
+    "cross_reference": false,
+    "grace_mechanism": false,
+    "sin_entropy": true,
+    "redemption_arc": false
+  },
+  "axiom_alignment": {
+    "axioms_touched": [
+      "A1.1",
+      "A1.2",
+      "A2.1",
+      "A2.2",
+      "A5.1",
+      "BC4",
+      "BC6",
+      "T3.1"
+    ],
+    "axiom_count": 8,
+    "strongest_axiom_connection": "A5.1 (Entropy-Death isomorphism)"
+  },
+  "lean_connection": {
+    "formal_claim_present": true,
+    "could_be_formalized": true,
+    "relevant_lean_module": "IsomorphismTest",
+    "proof_status": "proven"
+  },
+  "framework_alignment_score": {
+    "total": 78,
+    "breakdown": {
+      "chi_coverage": 10,
+      "physics_mapping": 18,
+      "theological_depth": 15,
+      "axiom_grounding": 18,
+      "formal_rigor": 17
+    }
+  }
+}

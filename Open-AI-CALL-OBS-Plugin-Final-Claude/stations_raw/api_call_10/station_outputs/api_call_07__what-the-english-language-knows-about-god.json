@@ -1,0 +1,97 @@
+{
+  "claims": [
+    {
+      "id": "KC-001",
+      "claim": "Justice and mercy are semantically distant in English, scoring 0.200 on the Wu-Palmer similarity scale, indicating they require an external bridge to be reconciled.",
+      "plain_english": "The English language treats justice and mercy as very different ideas that don't naturally go together.",
+      "type": "empirical",
+      "strength": "strong",
+      "evidence_given": "Wu-Palmer similarity score of 0.200 between 'justice' and 'mercy' from WordNet, compared to higher scores for related terms like grace-coherence (0.667) and love-joy (0.857).",
+      "what_would_break_it": "If a different semantic similarity measure or a different lexical database gave a much higher score for justice-mercy, or if the methodology was flawed."
+    },
+    {
+      "id": "KC-002",
+      "claim": "The concept 'mediator' is the most semantically distant term from both 'mercy' and 'coherence' (score 0.154), meaning the very concept needed to bridge justice and mercy is structurally unreachable by those concepts.",
+      "plain_english": "The word 'mediator' is very far from 'mercy' and 'coherence' in meaning, even though those ideas need a mediator to connect.",
+      "type": "empirical",
+      "strength": "strong",
+      "evidence_given": "Wu-Palmer similarity scores: mercy-mediator = 0.154, coherence-mediator = 0.154, out of 60+ moral vocabulary terms.",
+      "what_would_break_it": "If a different set of moral terms or a different similarity metric showed 'mediator' was not the most distant, or if the WordNet synset selection was biased."
+    },
+    {
+      "id": "KC-003",
+      "claim": "Jesus (as defined by WordNet synsets like Savior, Redeemer) has a strong semantic connection to 'mediator' (0.632), bridging the gap that mercy and coherence cannot cross.",
+      "plain_english": "The word 'Jesus' is closely related to 'mediator' in the English language, unlike 'mercy' and 'coherence' which are far from it.",
+      "type": "empirical",
+      "strength": "strong",
+      "evidence_given": "Wu-Palmer similarity score Jesus-mediator = 0.632, compared to mercy-mediator = 0.154 and coherence-mediator = 0.154.",
+      "what_would_break_it": "If the WordNet synset for Jesus is not representative of how English speakers use the term, or if the similarity score is an artifact of the specific synset chosen."
+    },
+    {
+      "id": "KC-004",
+      "claim": "Love is equidistant from Jesus and death (both score 0.667), suggesting love is the meeting point where the cost of bridging justice and mercy is paid.",
+      "plain_english": "The word 'love' is equally close to 'Jesus' and 'death' in meaning, which suggests love is where they come together.",
+      "type": "empirical",
+      "strength": "moderate",
+      "evidence_given": "Wu-Palmer similarity scores: Jesus-love = 0.667, death-love = 0.667.",
+      "what_would_break_it": "If a different similarity measure or a different set of synsets gave different scores, or if the interpretation of 'meeting point' is not justified by the data alone."
+    },
+    {
+      "id": "KC-005",
+      "claim": "In English, positive moral terms (light, life, hope, God, courage, moral, coherence) are defined as primary, and their negative counterparts are defined as privations (absence, lack, departure) of the positive, with zero reversals in the tested pairs.",
+      "plain_english": "The English language defines good things as the real thing, and bad things as just the absence of good. This pattern never flips.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "Analysis of WordNet definitions for 20 pairs (e.g., light defined as 'absence of darkness'? Actually darkness is 'absence of light'; the document shows positive\u2192negative definitions). The document states zero reversals.",
+      "what_would_break_it": "If even one pair in the tested set showed the negative term defining the positive, or if a larger sample revealed reversals."
+    },
+    {
+      "id": "KC-006",
+      "claim": "The concept 'evil' does not semantically distinguish between moral and immoral vocabulary (average similarity 0.559 vs 0.557, gap 0.002), while 'good' does (0.585 vs 0.492, gap 0.093), indicating evil has no independent semantic territory.",
+      "plain_english": "The word 'evil' is just as close to good words as it is to bad words, meaning it doesn't have its own meaning\u2014it borrows from good.",
+      "type": "empirical",
+      "strength": "strong",
+      "evidence_given": "Average Wu-Palmer similarity of 'good' to moral terms = 0.585, to immoral terms = 0.492; for 'evil' to moral terms = 0.559, to immoral terms = 0.557.",
+      "what_would_break_it": "If the classification of terms as moral/immoral is biased, or if a different set of terms or similarity metric shows a larger gap for evil."
+    },
+    {
+      "id": "KC-007",
+      "claim": "Semantic chains from positive to negative concepts (e.g., life\u2192death\u2192decay\u2192corruption\u2192nihilism) show accelerating similarity, meaning moral descent picks up speed semantically.",
+      "plain_english": "When you follow the meaning from good words to bad words, each step gets closer and closer, like falling faster and faster.",
+      "type": "empirical",
+      "strength": "moderate",
+      "evidence_given": "Chain scores: life\u2192death = 0.727, death\u2192decay = 0.857, decay\u2192corruption = 0.909, corruption\u2192nihilism = 0.588. Also grace\u2192judgment = 0.364, judgment\u2192punishment = 0.714, etc.",
+      "what_would_break_it": "If the chain steps are not representative or if the pattern does not hold for other chains; the final step in the life chain actually decreases, which weakens the 'acceleration' claim."
+    },
+    {
+      "id": "KC-008",
+      "claim": "The word 'sacrifice' is the structural center of the resolution vocabulary, connecting to punishment, redemption, reconciliation, restoration, cost, and repair all at 0.714 or 0.625.",
+      "plain_english": "The word 'sacrifice' is the most connected word when it comes to fixing problems\u2014it links to punishment, redemption, and repair.",
+      "type": "empirical",
+      "strength": "moderate",
+      "evidence_given": "Wu-Palmer similarity scores: sacrifice-punishment = 0.714, sacrifice-redemption = 0.714, sacrifice-reconciliation = 0.714, sacrifice-restoration = 0.714, sacrifice-cost = 0.714, sacrifice-repair = 0.625.",
+      "what_would_break_it": "If other resolution terms (e.g., 'atonement', 'forgiveness') have higher or equal connectivity, or if the set of resolution concepts is cherry-picked."
+    },
+    {
+      "id": "KC-009",
+      "claim": "WordNet classifies 'atheism' as a type of 'religious orientation', and its semantic profile is nearly identical to 'faith' on terms like love, meaning, purpose, and life (all 0.714), but faith reaches further into justice, coherence, and hope.",
+      "plain_english": "The English language treats atheism as a kind of religious belief, not a scientific one. Atheism and faith care about the same big questions, but faith connects more strongly to justice, hope, and coherence.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "WordNet hypernym hierarchy showing atheism IS-A religious orientation. Similarity scores: atheism-love = 0.714, faith-love = 0.714; atheism-justice = 0.429, faith-justice = 0.800; atheism-hope = 0.667, faith-hope = 0.800.",
+      "what_would_break_it": "If WordNet's classification is outdated or not representative, or if a different lexical database classifies atheism differently."
+    },
+    {
+      "id": "KC-010",
+      "claim": "Neither atheism nor faith can semantically reach 'mediator' (both score 0.143), while Jesus does (0.632), suggesting that the mediator concept is uniquely accessible through the figure of Jesus.",
+      "plain_english": "Neither 'atheism' nor 'faith' is close to the word 'mediator', but 'Jesus' is. This means the idea of a mediator is only strongly connected to Jesus in the English language.",
+      "type": "empirical",
+      "strength": "moderate",
+      "evidence_given": "Wu-Palmer similarity: atheism-mediator = 0.143, faith-mediator = 0.143, Jesus-mediator = 0.632.",
+      "what_would_break_it": "If the WordNet synset for 'mediator' is not the best match, or if other religious figures (e.g., 'Moses', 'prophet') also score highly with mediator."
+    }
+  ],
+  "strongest_claim": "KC-001",
+  "weakest_claim": "KC-007",
+  "overall_argument_strength": "moderate"
+}

@@ -1,0 +1,146 @@
+{
+  "chi_variables": {
+    "G": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Grace operator (G) is central: 'grace operator (the divine contribution)', 'Effective coupling = O \u00b7 G', 'G without O: the power is available but the gate is shut'."
+    },
+    "M": {
+      "present": true,
+      "strength": 4,
+      "evidence": "Willpower mentioned: 'Willpower slows \u03c3; it does not change the sign.'"
+    },
+    "E": {
+      "present": true,
+      "strength": 5,
+      "evidence": "Energy/spirit: 'external source of grace', 'infinite source', 'grace powers'."
+    },
+    "S": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Binding/love: 'Strong Force / Love' implicit in 'repair', 'healing', 'physician goes to the sick'."
+    },
+    "T": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Thermodynamics/judgment: 'Second Law applied to the moral sector', 'entropy production rate S', 'closed system decay', 'c(t) = c0 \u00b7 e^{-\u03c3t}'."
+    },
+    "K": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Knowledge/logos: 'eleven theorems, all Lean-verified', 'fixed-point theorem', '\u03b5-form', 'derivation'."
+    },
+    "R": {
+      "present": true,
+      "strength": 5,
+      "evidence": "Relativity/relationship: 'relationship' implicit in 'coupling interface', 'distribution mechanism', 'available to all agents'."
+    },
+    "Q": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Quantum/faith: 'Faith is the gate', 'mustard seed theorem', 'O = 0 vs O > 0 is the entire distinction'."
+    },
+    "F": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Weak force/sin-conservation: 'moral decay', 'closed moral system decays', 'damage resists it'."
+    },
+    "C": {
+      "present": true,
+      "strength": 10,
+      "evidence": "Coherence/Christ: 'Christ is the transferable fixed point', 'C \u2192 1', 'coherence decays to zero', 'C* = \u039b/(\u039b+S) < 1'."
+    },
+    "variables_present_count": 10,
+    "dominant_variables": [
+      "C",
+      "G",
+      "T"
+    ],
+    "absent_variables": [],
+    "chi_coverage_pct": "100%"
+  },
+  "physics_process_detection": {
+    "maps_to_physics": true,
+    "physics_domain": "thermodynamics",
+    "specific_process": "entropy production, exponential decay, fixed-point convergence",
+    "equation_present": "c(t) = c0 \u00b7 e^{-\u03c3t}, C* = \u039b/(\u039b+S), \u010b = -\u03c3c + \u03b2O\u0393_ext(1-c)",
+    "isomorphism_detected": true,
+    "isomorphism_type": "structural",
+    "isomorphism_quality": 9
+  },
+  "laws_invoked": {
+    "explicit": [
+      "Law 5: Thermodynamics / Judgment-Heat Death",
+      "Law 6: Information / Logos-Chaos",
+      "Law 8: Quantum / Faith-Doubt",
+      "Law 9: Weak Force / Moral Conservation",
+      "Law 10: Coherence / Christ-Decoherence"
+    ],
+    "implicit": [
+      "Law 1: Gravitation / Sin-Grace",
+      "Law 2: Motion / Will-Repentance",
+      "Law 4: Strong Force / Love-Captivity",
+      "Law 7: Relativity / Relationship-Frame Lock"
+    ],
+    "symmetry_pairs_active": [
+      "1-8",
+      "2-9",
+      "4-7",
+      "5-6"
+    ]
+  },
+  "theological_structure": {
+    "trinity_present": true,
+    "trinity_structure": "Father (infinite source/grace), Son (incarnation as coupling interface), Spirit (Pentecost as distribution mechanism)",
+    "father_aspect": {
+      "present": true,
+      "evidence": "Infinite source, grace operator, unbounded capacity"
+    },
+    "son_aspect": {
+      "present": true,
+      "evidence": "Incarnation is the coupling interface \u2014 how the infinite source enters the finite system"
+    },
+    "spirit_aspect": {
+      "present": true,
+      "evidence": "Pentecost is the distribution mechanism \u2014 source made available to all agents with O > 0"
+    },
+    "cross_reference": true,
+    "grace_mechanism": true,
+    "sin_entropy": true,
+    "redemption_arc": true
+  },
+  "axiom_alignment": {
+    "axioms_touched": [
+      "A1.1",
+      "A1.2",
+      "A2.1",
+      "A2.2",
+      "A5.1",
+      "BC4",
+      "BC6",
+      "A1.3",
+      "T3.1",
+      "BC2",
+      "BC7",
+      "BC8"
+    ],
+    "axiom_count": 12,
+    "strongest_axiom_connection": "A5.1 (mustard seed theorem: O > 0 sufficient)"
+  },
+  "lean_connection": {
+    "formal_claim_present": true,
+    "could_be_formalized": true,
+    "relevant_lean_module": "ChristOperatorDiscipline",
+    "proof_status": "proven"
+  },
+  "framework_alignment_score": {
+    "total": 95,
+    "breakdown": {
+      "chi_coverage": 20,
+      "physics_mapping": 18,
+      "theological_depth": 20,
+      "axiom_grounding": 19,
+      "formal_rigor": 18
+    }
+  }
+}

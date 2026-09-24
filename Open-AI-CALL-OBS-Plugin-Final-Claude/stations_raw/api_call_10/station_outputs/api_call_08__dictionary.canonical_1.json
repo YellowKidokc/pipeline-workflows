@@ -1,0 +1,509 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "physics",
+        "type": "physics",
+        "strength": 9
+      },
+      {
+        "name": "theology",
+        "type": "theology",
+        "strength": 9
+      },
+      {
+        "name": "philosophy",
+        "type": "philosophy",
+        "strength": 7
+      },
+      {
+        "name": "information",
+        "type": "information",
+        "strength": 8
+      },
+      {
+        "name": "biology",
+        "type": "biology",
+        "strength": 6
+      },
+      {
+        "name": "mathematics",
+        "type": "mathematics",
+        "strength": 5
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "C",
+        "present": true,
+        "role": "central variable; coherence is the master measurement",
+        "strength": 10
+      },
+      {
+        "variable": "S",
+        "present": true,
+        "role": "strong force/love; mapped to relational coherence",
+        "strength": 7
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "thermo/judgment; entropy as decoherence",
+        "strength": 8
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "info/logos; truth and falsehood as coherence measures",
+        "strength": 8
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "relativity/relationship; loving vs hateful as relational coherence",
+        "strength": 6
+      },
+      {
+        "variable": "Q",
+        "present": true,
+        "role": "quantum/faith; coherent vs decoherent phase alignment",
+        "strength": 6
+      },
+      {
+        "variable": "F",
+        "present": true,
+        "role": "weak/sin; sin as decoherence in theological frame",
+        "strength": 7
+      },
+      {
+        "variable": "G",
+        "present": false,
+        "role": "not directly invoked",
+        "strength": 0
+      },
+      {
+        "variable": "M",
+        "present": false,
+        "role": "not directly invoked",
+        "strength": 0
+      },
+      {
+        "variable": "E",
+        "present": false,
+        "role": "not directly invoked",
+        "strength": 0
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "existence of coherence/decoherence as fundamental reality"
+      },
+      {
+        "id": "A1.2",
+        "invoked": true,
+        "how": "distinction between \u03c3=+1 and \u03c3=-1 as binary states"
+      },
+      {
+        "id": "A1.3",
+        "invoked": true,
+        "how": "information primacy; truth/falsehood as coherence measures"
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "information conservation; coherence is conserved across frames"
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "external grace; energy from outside needed to create order from disorder"
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": false,
+        "manifestations": []
+      },
+      "son": {
+        "present": false,
+        "manifestations": []
+      },
+      "spirit": {
+        "present": false,
+        "manifestations": []
+      },
+      "trinitarian_structure": "none"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-001",
+        "domain_a": "thermodynamics",
+        "domain_b": "theology",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-002",
+        "domain_a": "information theory",
+        "domain_b": "ethics",
+        "strength": 8,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-003",
+        "domain_a": "quantum mechanics",
+        "domain_b": "aesthetics",
+        "strength": 7,
+        "type": "analogical"
+      },
+      {
+        "id": "ISO-004",
+        "domain_a": "biology",
+        "domain_b": "theology",
+        "strength": 7,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "sin",
+        "context": "decoherence measured in theological frame",
+        "weight": 9
+      },
+      {
+        "concept": "holiness",
+        "context": "wholeness, structural integrity, coherence",
+        "weight": 8
+      },
+      {
+        "concept": "righteousness",
+        "context": "\u03c7-field alignment",
+        "weight": 7
+      },
+      {
+        "concept": "grace",
+        "context": "external energy needed to create order from disorder",
+        "weight": 6
+      },
+      {
+        "concept": "evil",
+        "context": "decoherence (\u03c3=-1) in moral frame",
+        "weight": 8
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "equivalence",
+        "context": "all 'good' words measure same variable; all 'evil' words measure same variable",
+        "weight": 9
+      },
+      {
+        "concept": "necessity",
+        "context": "second law of thermodynamics as necessary constraint",
+        "weight": 7
+      },
+      {
+        "concept": "contradiction",
+        "context": "moral relativism contradicts physical law",
+        "weight": 6
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "love",
+        "present": true,
+        "strength": 7
+      },
+      {
+        "fruit": "peace",
+        "present": true,
+        "strength": 6
+      },
+      {
+        "fruit": "goodness",
+        "present": true,
+        "strength": 8
+      },
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 5
+      },
+      {
+        "fruit": "self_control",
+        "present": false,
+        "strength": 0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "chi:C",
+      "to": "domain:physics",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "chi:C",
+      "to": "domain:theology",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "chi:S",
+      "to": "theological_concepts:sin",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "chi:T",
+      "to": "domain:physics",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "chi:K",
+      "to": "domain:information",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "axiom:A1.1",
+      "to": "chi:C",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "axiom:BC2",
+      "to": "theological_concepts:grace",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "ISO-001",
+      "to": "domain:physics",
+      "relation": "derives_from",
+      "weight": 9
+    },
+    {
+      "from": "ISO-001",
+      "to": "domain:theology",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "ISO-002",
+      "to": "domain:information",
+      "relation": "derives_from",
+      "weight": 8
+    },
+    {
+      "from": "ISO-002",
+      "to": "domain:philosophy",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "theological_concepts:sin",
+      "to": "chi:F",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "theological_concepts:holiness",
+      "to": "chi:C",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "logical_concepts:equivalence",
+      "to": "ISO-001",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "logical_concepts:necessity",
+      "to": "domain:physics",
+      "relation": "derives_from",
+      "weight": 7
+    },
+    {
+      "from": "fruits_detected:love",
+      "to": "chi:S",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "fruits_detected:goodness",
+      "to": "chi:C",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "axiom:BC7",
+      "to": "chi:K",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "axiom:A1.3",
+      "to": "chi:K",
+      "relation": "requires",
+      "weight": 8
+    }
+  ],
+  "tags": {
+    "primary": [
+      "coherence",
+      "moral-physical dictionary",
+      "isomorphism",
+      "sin as decoherence",
+      "second law"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/theology",
+      "pillar/philosophy"
+    ],
+    "series": "isomorphism",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [],
+    "academic": [],
+    "internal": [
+      {
+        "ref": "Master Equation",
+        "context": "chi as coherence function; \u03c3 = \u00b11 range"
+      }
+    ],
+    "total_count": 1
+  },
+  "word_anomalies": [
+    {
+      "word": "\u03c7-field",
+      "frequency": 1,
+      "significance": "technical term for coherence field from Master Equation"
+    },
+    {
+      "word": "negentropy flux",
+      "frequency": 1,
+      "significance": "technical term for life as coherence maintenance"
+    },
+    {
+      "word": "decoherence",
+      "frequency": 8,
+      "significance": "central concept; bridges quantum and moral domains"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "assertive; presents a universal mapping as discovered truth",
+    "Q1_identity": "a dictionary that maps moral, physical, and theological terms to a single variable",
+    "Q2_domain": "physics, theology, philosophy, information theory",
+    "Q3_claim": "all words for 'good' and 'evil' measure the same variable (coherence/decoherence)",
+    "Q4_support": "etymology, second law of thermodynamics, Master Equation framework",
+    "Q5_dependencies": "Master Equation, concept of coherence, second law of thermodynamics",
+    "Q6_consequences": "moral relativism is physically impossible; sin is real and measurable",
+    "Q7_kill": "if coherence is not a fundamental variable; if moral terms are not reducible to physical measurements"
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "Master Equation",
+      "Second Law of Thermodynamics"
+    ],
+    "required_by": [
+      "The Great Inversion",
+      "Terminus Sui"
+    ],
+    "parallel_to": [
+      "Truth Two \u00b7 Deep Dive"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 28,
+    "total_edges": 20,
+    "dominant_domain": "physics",
+    "dominant_chi": "C",
+    "connectivity_score": 9,
+    "one_sentence": "This document establishes a universal isomorphism between all moral, physical, and theological terms for 'good' and 'evil' as measurements of coherence/decoherence (\u03c7)."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": false,
+      "how": ""
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "truth and coherence are directly equated as \u03c3=+1"
+    },
+    "4_7_love_relationship": {
+      "active": true,
+      "how": "loving vs hateful mapped to relational coherence"
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "judgment (thermo) and logos (info) both measure coherence"
+    },
+    "pairs_active_count": 3
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 6
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 9
+    },
+    "love": {
+      "present": true,
+      "strength": 7
+    },
+    "judgment": {
+      "present": true,
+      "strength": 8
+    },
+    "logos": {
+      "present": true,
+      "strength": 8
+    },
+    "righteousness": {
+      "present": true,
+      "strength": 7
+    },
+    "faith": {
+      "present": false,
+      "strength": 0
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": false,
+      "strength": 0
+    },
+    "operators_present_count": 6
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "Master Equation",
+      "Truth Two \u00b7 Deep Dive"
+    ],
+    "read_after": [
+      "The Great Inversion",
+      "Terminus Sui"
+    ]
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "chi_variables": {
+    "G": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Grace as the external input that reverses moral entropy; 'grace' appears multiple times as the mechanism of reversal."
+    },
+    "M": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit mention of motion, inertia, will, or mass-force."
+    },
+    "E": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit mention of energy as spirit or energetic substrate."
+    },
+    "S": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Entropy (S) is the central variable in the physics domain; 'S = thermodynamic entropy' and 'dS/dt \u2265 0'."
+    },
+    "T": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Thermodynamics is the primary physics domain; Second Law, Clausius, Carnot, heat death explicitly discussed."
+    },
+    "K": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit mention of knowledge, information, or Logos."
+    },
+    "R": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit mention of relativity or relationship."
+    },
+    "Q": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit mention of quantum mechanics or faith."
+    },
+    "F": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Weak Force / Sin-Conservation: 'Sin as moral entropy', 'moral disorder increases monotonically', 'sin is not destruction of the moral field but system's inability to couple'."
+    },
+    "C": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Coherence field C is explicitly defined: 'div(C) = 0 \u2014 God's moral reality doesn't degrade', 'coherence is conserved'."
+    },
+    "variables_present_count": 5,
+    "dominant_variables": [
+      "T",
+      "G",
+      "C"
+    ],
+    "absent_variables": [
+      "M",
+      "E",
+      "K",
+      "R",
+      "Q"
+    ],
+    "chi_coverage_pct": "50%"
+  },
+  "physics_process_detection": {
+    "maps_to_physics": true,
+    "physics_domain": "thermodynamics",
+    "specific_process": "entropy production in isolated systems; Second Law of Thermodynamics",
+    "equation_present": "dS/dt \u2265 0; S = k_B ln(\u03a9)",
+    "isomorphism_detected": true,
+    "isomorphism_type": "structural",
+    "isomorphism_quality": 9
+  },
+  "laws_invoked": {
+    "explicit": [
+      "Law 5: Thermodynamics / Judgment",
+      "Law 9: Weak Force / Sin-Conservation"
+    ],
+    "implicit": [
+      "Law 1: Gravitation / Sin-Grace",
+      "Law 6: Information / Logos-Chaos"
+    ],
+    "symmetry_pairs_active": [
+      "5-6",
+      "1-8"
+    ]
+  },
+  "theological_structure": {
+    "trinity_present": false,
+    "trinity_structure": "Not explicitly present; grace is mentioned as external input but not trinitarian structure detailed.",
+    "father_aspect": {
+      "present": false,
+      "evidence": "No explicit source/origin language."
+    },
+    "son_aspect": {
+      "present": true,
+      "evidence": "Christ mentioned as the source bearing the cost: 'The cost is borne by the source (Christ), not the system.'"
+    },
+    "spirit_aspect": {
+      "present": false,
+      "evidence": "No explicit power/presence/movement language."
+    },
+    "cross_reference": true,
+    "grace_mechanism": true,
+    "sin_entropy": true,
+    "redemption_arc": true
+  },
+  "axiom_alignment": {
+    "axioms_touched": [
+      "A1.1"
+    ],
+    "axiom_count": 1,
+    "strongest_axiom_connection": "A1.1 (Existence)"
+  },
+  "lean_connection": {
+    "formal_claim_present": true,
+    "could_be_formalized": true,
+    "relevant_lean_module": "IsomorphismTest",
+    "proof_status": "testable"
+  },
+  "framework_alignment_score": {
+    "total": 78,
+    "breakdown": {
+      "chi_coverage": 10,
+      "physics_mapping": 18,
+      "theological_depth": 16,
+      "axiom_grounding": 14,
+      "formal_rigor": 20
+    }
+  }
+}

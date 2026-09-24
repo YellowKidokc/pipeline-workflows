@@ -1,0 +1,676 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "physics",
+        "type": "physics",
+        "strength": 10
+      },
+      {
+        "name": "theology",
+        "type": "theology",
+        "strength": 9
+      },
+      {
+        "name": "philosophy",
+        "type": "philosophy",
+        "strength": 5
+      },
+      {
+        "name": "information",
+        "type": "information",
+        "strength": 6
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": true,
+        "role": "Gravity mapped to Grace: gentlest force, shapes everything, cannot be shielded, always attractive, infinite range, non-coercive",
+        "strength": 10
+      },
+      {
+        "variable": "M",
+        "present": true,
+        "role": "Mass-Energy mapped to Meaning/Significance: nothing is insignificant, hidden magnitude, E=mc^2",
+        "strength": 9
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Electromagnetism mapped to Truth/Spirit: light self-sustaining, never degrades, maximum speed, undeniable",
+        "strength": 10
+      },
+      {
+        "variable": "S",
+        "present": true,
+        "role": "Strong Nuclear Force mapped to Love: strongest force, confinement, freedom inside bond, holds everything together",
+        "strength": 10
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Thermodynamics mapped to Necessity/Judgment: entropy always increases, closed systems decay, need external input",
+        "strength": 9
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Information Theory mapped to Logos/Word: optimal encoding, minimum description, information conservation",
+        "strength": 9
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "Relativity mapped to Faithfulness/Relationship: invariant interval, same laws in all frames, appears different but structurally identical",
+        "strength": 9
+      },
+      {
+        "variable": "Q",
+        "present": true,
+        "role": "Quantum Mechanics mapped to Faith/Possibility: superposition, observation collapses possibility, entanglement, uncertainty as space for choice",
+        "strength": 10
+      },
+      {
+        "variable": "F",
+        "present": true,
+        "role": "Weak Force mapped to Mercy/Sin: governs decay/transformation, stable inside bond, decays outside, bond re-forms",
+        "strength": 9
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence mapped to Christ/Completion: all waves in phase, multiplicative power, no asymmetry, integral of all laws",
+        "strength": 10
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": false,
+        "how": "Not directly invoked"
+      },
+      {
+        "id": "A1.2",
+        "invoked": false,
+        "how": "Not directly invoked"
+      },
+      {
+        "id": "A2.1",
+        "invoked": false,
+        "how": "Not directly invoked"
+      },
+      {
+        "id": "A2.2",
+        "invoked": false,
+        "how": "Not directly invoked"
+      },
+      {
+        "id": "A5.1",
+        "invoked": true,
+        "how": "Observation/measurement is central: quantum mechanics requires act of looking, physics properties are measured in laboratories"
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": "Not directly invoked"
+      },
+      {
+        "id": "BC6",
+        "invoked": false,
+        "how": "Not directly invoked"
+      },
+      {
+        "id": "A1.3",
+        "invoked": true,
+        "how": "Information primacy: information theory as fundamental, universe began in low-entropy state, information cannot be created or destroyed"
+      },
+      {
+        "id": "T3.1",
+        "invoked": false,
+        "how": "Not directly invoked"
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "External grace: thermodynamics shows closed systems cannot decrease entropy without external input, necessity of grace from outside"
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "Information conservation: information cannot be created or destroyed, only transformed"
+      },
+      {
+        "id": "BC8",
+        "invoked": false,
+        "how": "Not directly invoked"
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "source of all forces",
+          "ground of being",
+          "origin of the portrait"
+        ]
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "the Word (Logos)",
+          "the Person described by the equation",
+          "the answer to the equation is a Person",
+          "Christ as coherence"
+        ]
+      },
+      "spirit": {
+        "present": true,
+        "manifestations": [
+          "light as self-sustaining presence",
+          "energy/spirit from electromagnetism",
+          "the act of looking/measurement as engagement"
+        ]
+      },
+      "trinitarian_structure": "implicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-001",
+        "domain_a": "Gravity",
+        "domain_b": "Grace",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-002",
+        "domain_a": "Strong Nuclear Force",
+        "domain_b": "Love",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-003",
+        "domain_a": "Electromagnetism",
+        "domain_b": "Truth",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-004",
+        "domain_a": "Mass-Energy Equivalence",
+        "domain_b": "Significance/Meaning",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-005",
+        "domain_a": "Thermodynamics",
+        "domain_b": "Necessity of Grace",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-006",
+        "domain_a": "Information Theory",
+        "domain_b": "Logos/Word",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-007",
+        "domain_a": "Relativity",
+        "domain_b": "Faithfulness",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-008",
+        "domain_a": "Quantum Mechanics",
+        "domain_b": "Possibility/Faith",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-009",
+        "domain_a": "Weak Force",
+        "domain_b": "Mercy",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-010",
+        "domain_a": "Coherence",
+        "domain_b": "Christ/Completion",
+        "strength": 10,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "grace",
+        "context": "Mapped from gravity: gentlest force, shapes everything, cannot be shielded, always attractive, infinite range, non-coercive",
+        "weight": 10
+      },
+      {
+        "concept": "love",
+        "context": "Mapped from strong nuclear force: strongest force, confinement, freedom inside bond, holds everything together",
+        "weight": 10
+      },
+      {
+        "concept": "truth",
+        "context": "Mapped from electromagnetism: self-sustaining, never degrades, maximum speed, undeniable",
+        "weight": 10
+      },
+      {
+        "concept": "mercy",
+        "context": "Mapped from weak force: stable inside bond, decays outside, bond re-forms",
+        "weight": 9
+      },
+      {
+        "concept": "faith",
+        "context": "Mapped from quantum mechanics: superposition, observation collapses possibility, uncertainty as space for choice",
+        "weight": 10
+      },
+      {
+        "concept": "logos",
+        "context": "Mapped from information theory: optimal encoding, minimum description, information conservation",
+        "weight": 9
+      },
+      {
+        "concept": "faithfulness",
+        "context": "Mapped from relativity: invariant interval, same laws in all frames, appears different but structurally identical",
+        "weight": 9
+      },
+      {
+        "concept": "incarnation",
+        "context": "The Person described by the equation is Christ, the answer to the equation is a Person",
+        "weight": 10
+      },
+      {
+        "concept": "redemption",
+        "context": "Thermodynamics: need external input to reverse entropy; weak force: return to bond stops decay",
+        "weight": 8
+      },
+      {
+        "concept": "covenant",
+        "context": "Weak force: stable inside the bond (covenant), decaying outside",
+        "weight": 8
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "necessity",
+        "context": "Thermodynamics: entropy always increases, closed systems cannot decrease entropy without external input",
+        "weight": 9
+      },
+      {
+        "concept": "sufficiency",
+        "context": "Coherence: when all laws hold simultaneously, the integral completes",
+        "weight": 8
+      },
+      {
+        "concept": "implication",
+        "context": "The 24 properties derived from physics imply a specific Person",
+        "weight": 9
+      },
+      {
+        "concept": "convergence",
+        "context": "Ten independent branches of physics converge on a single portrait",
+        "weight": 10
+      },
+      {
+        "concept": "invariance",
+        "context": "Relativity: spacetime interval is invariant across all reference frames",
+        "weight": 8
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "love",
+        "present": true,
+        "strength": 10
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "patience",
+        "present": true,
+        "strength": 8
+      },
+      {
+        "fruit": "kindness",
+        "present": true,
+        "strength": 7
+      },
+      {
+        "fruit": "goodness",
+        "present": true,
+        "strength": 8
+      },
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 9
+      },
+      {
+        "fruit": "gentleness",
+        "present": true,
+        "strength": 9
+      },
+      {
+        "fruit": "self_control",
+        "present": false,
+        "strength": 0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "physics:gravity",
+      "to": "theology:grace",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "physics:strong_nuclear_force",
+      "to": "theology:love",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "physics:electromagnetism",
+      "to": "theology:truth",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "physics:mass_energy",
+      "to": "theology:significance",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "physics:thermodynamics",
+      "to": "theology:necessity_of_grace",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "physics:information_theory",
+      "to": "theology:logos",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "physics:relativity",
+      "to": "theology:faithfulness",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "physics:quantum_mechanics",
+      "to": "theology:faith",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "physics:weak_force",
+      "to": "theology:mercy",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "physics:coherence",
+      "to": "theology:christ",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "theology:grace",
+      "to": "theology:christ",
+      "relation": "part_of",
+      "weight": 9
+    },
+    {
+      "from": "theology:love",
+      "to": "theology:christ",
+      "relation": "part_of",
+      "weight": 10
+    },
+    {
+      "from": "theology:truth",
+      "to": "theology:christ",
+      "relation": "part_of",
+      "weight": 9
+    },
+    {
+      "from": "theology:faith",
+      "to": "theology:christ",
+      "relation": "part_of",
+      "weight": 9
+    },
+    {
+      "from": "theology:mercy",
+      "to": "theology:christ",
+      "relation": "part_of",
+      "weight": 8
+    },
+    {
+      "from": "theology:logos",
+      "to": "theology:christ",
+      "relation": "part_of",
+      "weight": 9
+    },
+    {
+      "from": "theology:faithfulness",
+      "to": "theology:christ",
+      "relation": "part_of",
+      "weight": 8
+    },
+    {
+      "from": "physics:coherence",
+      "to": "physics:all_forces",
+      "relation": "integrates",
+      "weight": 10
+    },
+    {
+      "from": "theology:christ",
+      "to": "philosophy:identity",
+      "relation": "produces",
+      "weight": 9
+    },
+    {
+      "from": "physics:thermodynamics",
+      "to": "theology:external_grace",
+      "relation": "requires",
+      "weight": 9
+    }
+  ],
+  "tags": {
+    "primary": [
+      "character-of-god",
+      "physics-to-theology",
+      "isomorphism",
+      "portrait",
+      "convergence"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/theology",
+      "pillar/philosophy"
+    ],
+    "series": "isomorphism",
+    "classification": "synthesis"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "John 1:1",
+        "context": "In the beginning was the Word... referenced as parallel to information theory/Logos"
+      },
+      {
+        "ref": "1 Corinthians 13:13",
+        "context": "The greatest of these is love - referenced as parallel to strong nuclear force being most connected"
+      },
+      {
+        "ref": "Hebrews 13:8",
+        "context": "Jesus Christ the same yesterday, today, and forever - referenced as parallel to relativity's invariance"
+      }
+    ],
+    "academic": [
+      {
+        "ref": "Shannon, C.E. - A Mathematical Theory of Communication",
+        "context": "Information theory: maximum rate of transmission without error"
+      },
+      {
+        "ref": "Kolmogorov, A.N. - Complexity theory",
+        "context": "Minimum program that generates output"
+      },
+      {
+        "ref": "Landauer, R. - Landauer's Principle",
+        "context": "Erasing information costs energy"
+      }
+    ],
+    "internal": [],
+    "total_count": 6
+  },
+  "word_anomalies": [
+    {
+      "word": "Hessian matrix",
+      "frequency": 1,
+      "significance": "Technical term from mathematics used to describe the connectivity analysis of the chi-variables"
+    },
+    {
+      "word": "confinement",
+      "frequency": 2,
+      "significance": "Physics term for strong force property, used analogically for love holding tighter when you run"
+    },
+    {
+      "word": "decoherence",
+      "frequency": 1,
+      "significance": "Quantum mechanics term for loss of quantum state, used as contrast to coherence/completion"
+    },
+    {
+      "word": "invariant interval",
+      "frequency": 1,
+      "significance": "Relativity term for the deep structure that remains constant across reference frames"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "Accumulative and declarative: the document does not argue but presents measured properties and reads them together as a portrait",
+    "Q1_identity": "A synthesis document that maps ten fundamental physical forces to ten theological attributes, constructing a portrait of Christ from physics alone",
+    "Q2_domain": "Physics and theology, with strong philosophical and information-theoretic components",
+    "Q3_claim": "The measured properties of ten fundamental forces, when read together, describe one specific Person (Jesus Christ) with mathematical precision",
+    "Q4_support": "24 properties derived from physics, each measured in laboratories and published in journals, converging on a single portrait",
+    "Q5_dependencies": "Depends on the established physics of gravity, strong force, electromagnetism, mass-energy, thermodynamics, information theory, relativity, quantum mechanics, weak force, and coherence",
+    "Q6_consequences": "Forces the conclusion that the universe is built to be understood theologically through physics; implies a personal Creator who wants to be found through science",
+    "Q7_kill": "Could be destroyed by showing that the mappings are arbitrary or that the properties do not uniquely point to Christ; or by demonstrating a fundamental contradiction in the physics-theology isomorphism"
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "foundational physics texts",
+      "theological doctrines of Christ's attributes"
+    ],
+    "required_by": [
+      "further isomorphism studies",
+      "theophysics synthesis documents"
+    ],
+    "parallel_to": [
+      "other isomorphism documents in the series"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 45,
+    "total_edges": 20,
+    "dominant_domain": "physics",
+    "dominant_chi": "C (Coherence/Christ)",
+    "connectivity_score": 9,
+    "one_sentence": "This document constructs a complete isomorphism between ten physical forces and ten theological attributes, culminating in the claim that the answer to the master equation is a Person (Christ)"
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": true,
+      "how": "Grace (gravity) and Faith (quantum) pair: gravity is gentle and patient, quantum requires faith to collapse possibility into actuality"
+    },
+    "2_9_will_conservation": {
+      "active": true,
+      "how": "Love (strong force) and Mercy (weak force) pair: love holds together, mercy governs transformation/decay"
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Truth (electromagnetism) and Coherence (Christ) pair: truth is self-sustaining and incorruptible, coherence is the integral completion"
+    },
+    "4_7_love_relationship": {
+      "active": true,
+      "how": "Significance (mass-energy) and Faithfulness (relativity) pair: nothing is insignificant, faithfulness is invariant across perspectives"
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Necessity (thermodynamics) and Logos (information) pair: entropy demands external input, Logos is the optimal encoding"
+    },
+    "pairs_active_count": 5
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 10
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 10
+    },
+    "love": {
+      "present": true,
+      "strength": 10
+    },
+    "judgment": {
+      "present": true,
+      "strength": 9
+    },
+    "logos": {
+      "present": true,
+      "strength": 9
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": true,
+      "strength": 10
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": true,
+      "strength": 10
+    },
+    "operators_present_count": 7
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "foundational physics overviews",
+      "theological attributes of Christ"
+    ],
+    "read_after": [
+      "detailed isomorphism proofs",
+      "master equation derivations"
+    ]
+  }
+}

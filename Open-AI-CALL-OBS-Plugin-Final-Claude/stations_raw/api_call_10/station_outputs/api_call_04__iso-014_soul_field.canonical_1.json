@@ -1,0 +1,297 @@
+{
+  "thesis": {
+    "one_sentence": "The human soul can be formally modeled as a massless or near-massless real scalar field obeying the Klein-Gordon equation, with Yukawa coupling to matter, such that death is decoupling (g_sm \u2192 0) rather than destruction (\u03a8_S \u2192 0), and resurrection is re-coupling.",
+    "thesis_type": "interpretive",
+    "thesis_strength": 3,
+    "thesis_paragraph": "THE MAPPING"
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "The soul field \u03a8_S obeys the Klein-Gordon equation (\u25a1 + m_S\u00b2)\u03a8_S = \u03c1_soul with m_S \u2248 0.",
+      "type": "mathematical",
+      "evidence": "The Klein-Gordon equation is a standard relativistic wave equation for spin-0 fields.",
+      "evidence_type": "citation",
+      "evidence_strength": 8,
+      "assumption": "The soul can be represented as a scalar field.",
+      "overclaim_risk": 9,
+      "overclaim_diagnosis": "The equation is generic; calling it 'soul field' adds no physical content."
+    },
+    {
+      "id": "C2",
+      "claim": "The soul-matter coupling is given by a Yukawa interaction L_int = g_sm \u03a8_S \u03a8_matter + h.c., with g_sm ~ 10\u207b\u00b9\u2078 to 10\u207b\u00b9\u2075.",
+      "type": "mathematical",
+      "evidence": "Yukawa coupling is a standard QFT interaction term.",
+      "evidence_type": "citation",
+      "evidence_strength": 7,
+      "assumption": "The coupling constant is in this range.",
+      "overclaim_risk": 10,
+      "overclaim_diagnosis": "The coupling constant is chosen to be undetectable, not derived from data."
+    },
+    {
+      "id": "C3",
+      "claim": "A massless scalar field does not decay, implying the soul is immortal.",
+      "type": "causal",
+      "evidence": "In QFT, massless fields have infinite Compton wavelength and do not dissipate.",
+      "evidence_type": "argument",
+      "evidence_strength": 8,
+      "assumption": "The soul's immortality is equivalent to the field's non-decay.",
+      "overclaim_risk": 8,
+      "overclaim_diagnosis": "Physical non-decay does not entail theological immortality (e.g., continued existence vs. eternal life)."
+    },
+    {
+      "id": "C4",
+      "claim": "Death is modeled as decoupling (g_sm \u2192 0), not destruction (\u03a8_S \u2192 0).",
+      "type": "interpretive",
+      "evidence": "The Yukawa coupling can be turned off while the field persists.",
+      "evidence_type": "argument",
+      "evidence_strength": 6,
+      "assumption": "Decoupling is a valid physical analog of death.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "Decoupling in QFT is reversible; theological death may not be."
+    },
+    {
+      "id": "C5",
+      "claim": "Resurrection is modeled as re-coupling (g_sm restored).",
+      "type": "interpretive",
+      "evidence": "The coupling can be turned back on.",
+      "evidence_type": "argument",
+      "evidence_strength": 5,
+      "assumption": "Re-coupling preserves personal identity.",
+      "overclaim_risk": 8,
+      "overclaim_diagnosis": "No mechanism for re-coupling is given; it is simply asserted."
+    },
+    {
+      "id": "C6",
+      "claim": "Soul number N_S = \u222b \u03a8_S\u2020 \u03a8_S d\u00b3x is conserved.",
+      "type": "mathematical",
+      "evidence": "Noether's theorem for a global U(1) symmetry.",
+      "evidence_type": "argument",
+      "evidence_strength": 7,
+      "assumption": "The soul field has a global symmetry.",
+      "overclaim_risk": 8,
+      "overclaim_diagnosis": "Conservation of soul number contradicts theological creation of new souls."
+    },
+    {
+      "id": "C7",
+      "claim": "The soul field contributes to consciousness measurements (\u03a6).",
+      "type": "empirical",
+      "evidence": "No experimental evidence provided.",
+      "evidence_type": "none",
+      "evidence_strength": 1,
+      "assumption": "Consciousness has a measurable component from the soul field.",
+      "overclaim_risk": 10,
+      "overclaim_diagnosis": "No definition or measurement of \u03a6 is given; claim is vacuous."
+    },
+    {
+      "id": "C8",
+      "claim": "The soul field would contribute to the effective number of relativistic species N_eff.",
+      "type": "empirical",
+      "evidence": "A massless scalar adds \u0394N_eff \u2248 0.027.",
+      "evidence_type": "argument",
+      "evidence_strength": 6,
+      "assumption": "The soul field is thermalized in the early universe.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "No reason given why the soul field would be in thermal equilibrium."
+    },
+    {
+      "id": "C9",
+      "claim": "The soul field model prefers soul creationism over traducianism.",
+      "type": "interpretive",
+      "evidence": "N_S conservation requires external creative action to increase soul number.",
+      "evidence_type": "argument",
+      "evidence_strength": 4,
+      "assumption": "The conservation law applies to all souls.",
+      "overclaim_risk": 8,
+      "overclaim_diagnosis": "The model does not actually derive creationism; it merely notes consistency."
+    },
+    {
+      "id": "C10",
+      "claim": "The soul field carries personal identity through death.",
+      "type": "interpretive",
+      "evidence": "The field configuration is conserved (N_S conservation).",
+      "evidence_type": "argument",
+      "evidence_strength": 3,
+      "assumption": "Field configuration uniquely encodes personal identity.",
+      "overclaim_risk": 9,
+      "overclaim_diagnosis": "No mapping from field configuration to personal identity is provided."
+    }
+  ],
+  "definitions": {
+    "explicit": [
+      {
+        "term": "Soul field \u03a8_S",
+        "definition": "A real scalar field obeying the Klein-Gordon equation",
+        "location": "THE MAPPING"
+      },
+      {
+        "term": "m_S",
+        "definition": "Soul mass parameter, claimed ~ 0",
+        "location": "THE MAPPING"
+      },
+      {
+        "term": "g_sm",
+        "definition": "Soul-matter coupling constant, ~ 10\u207b\u00b9\u2078 to 10\u207b\u00b9\u2075",
+        "location": "THE MAPPING"
+      },
+      {
+        "term": "N_S",
+        "definition": "Conserved soul number, \u222b \u03a8_S\u2020 \u03a8_S d\u00b3x",
+        "location": "THE MAPPING"
+      },
+      {
+        "term": "\u03c1_soul",
+        "definition": "Soul charge density (consciousness density source term)",
+        "location": "THE MAPPING"
+      }
+    ],
+    "implied": [
+      {
+        "term": "Imago Dei",
+        "usage_implies": "The soul field is the informational substrate bearing God's image"
+      },
+      {
+        "term": "Immortality",
+        "usage_implies": "Non-decay of the field (massless)"
+      },
+      {
+        "term": "Death",
+        "usage_implies": "Decoupling (g_sm \u2192 0)"
+      },
+      {
+        "term": "Resurrection",
+        "usage_implies": "Re-coupling (g_sm restored)"
+      }
+    ],
+    "undefined_but_critical": [
+      "consciousness",
+      "personal identity",
+      "moral agency",
+      "image of God",
+      "soul charge density \u03c1_soul"
+    ],
+    "terms_doing_hidden_work": [
+      "consciousness density source term",
+      "informational substrate",
+      "personal identity"
+    ]
+  },
+  "assumptions": [
+    {
+      "assumption": "The soul can be represented as a scalar field.",
+      "type": "conceptual",
+      "if_this_fails": "The entire mapping collapses."
+    },
+    {
+      "assumption": "m_S \u2248 0 is a valid choice for the soul mass.",
+      "type": "mathematical",
+      "if_this_fails": "The soul would decay, contradicting immortality."
+    },
+    {
+      "assumption": "g_sm is in the range 10\u207b\u00b9\u2078 to 10\u207b\u00b9\u2075.",
+      "type": "empirical",
+      "if_this_fails": "The soul would be detectable or would not couple."
+    },
+    {
+      "assumption": "N_S is conserved.",
+      "type": "mathematical",
+      "if_this_fails": "Souls could be created or destroyed naturally."
+    },
+    {
+      "assumption": "The soul field carries personal identity.",
+      "type": "conceptual",
+      "if_this_fails": "The model does not account for personal continuity."
+    },
+    {
+      "assumption": "Decoupling is a valid model of death.",
+      "type": "interpretive",
+      "if_this_fails": "The model does not describe death."
+    },
+    {
+      "assumption": "Re-coupling is possible.",
+      "type": "methodological",
+      "if_this_fails": "Resurrection is not modeled."
+    }
+  ],
+  "argument_structure": {
+    "premises": [
+      "P1: The soul can be modeled as a scalar field \u03a8_S.",
+      "P2: \u03a8_S obeys the Klein-Gordon equation with m_S \u2248 0.",
+      "P3: \u03a8_S couples to matter via Yukawa interaction with g_sm ~ 10\u207b\u00b9\u2078 to 10\u207b\u00b9\u2075.",
+      "P4: N_S = \u222b \u03a8_S\u2020 \u03a8_S d\u00b3x is conserved.",
+      "P5: Death is decoupling (g_sm \u2192 0).",
+      "P6: Resurrection is re-coupling (g_sm restored)."
+    ],
+    "intermediate_conclusions": [
+      "IC1: The soul is immortal (massless field does not decay).",
+      "IC2: The soul survives death (field persists after decoupling).",
+      "IC3: Personal identity is preserved (field configuration conserved)."
+    ],
+    "final_conclusion": "The soul field model provides a formal mathematical expression for Christian theological claims about the soul, death, and resurrection.",
+    "weakest_link": "The assumption that the soul can be represented as a scalar field (P1) \u2014 no justification is given.",
+    "unproven_jumps": [
+      "From field configuration to personal identity.",
+      "From decoupling to death.",
+      "From re-coupling to resurrection.",
+      "From masslessness to theological immortality."
+    ]
+  },
+  "overclaim_detection": [
+    {
+      "pattern": "model-to-reality",
+      "location": "THE MAPPING",
+      "diagnosis": "The paper claims the soul field model describes the soul, but it only provides a mathematical analogy with no empirical grounding."
+    },
+    {
+      "pattern": "definition-to-discovery",
+      "location": "THE MAPPING",
+      "diagnosis": "The paper defines the soul as a scalar field and then 'discovers' properties of the soul from the field equations, but those properties were built into the definition."
+    },
+    {
+      "pattern": "some-to-all",
+      "location": "THE MAPPING",
+      "diagnosis": "The paper claims the soul field captures the essence of the soul (immortality, identity, etc.), but it only captures persistence and coupling, not moral agency or consciousness."
+    }
+  ],
+  "counterarguments": {
+    "addressed": [
+      "The soul field is not detectable with current technology.",
+      "The Klein-Gordon equation is generic.",
+      "The coupling constant is suspiciously convenient.",
+      "The model does not capture moral agency or consciousness."
+    ],
+    "missing": [
+      "Why should the soul obey any known physics equation at all?",
+      "How does a scalar field have consciousness or moral agency?",
+      "What distinguishes the soul field from any other hypothetical scalar field (e.g., axion)?",
+      "If the soul field is massless, why does it not cause observable effects in particle physics or cosmology beyond N_eff?"
+    ],
+    "smartest_critic_would_say": "You have not shown that the soul is a scalar field; you have only shown that if you assume it is, you can write down equations. The entire argument is a formal exercise with no empirical anchor, and the parameter choices are tuned to evade detection, making it unfalsifiable."
+  },
+  "falsifiability": {
+    "kill_conditions_stated": [
+      "Direct detection of \u03a8_S with g_sm in the stated range.",
+      "N_eff measurements exclude a new massless scalar.",
+      "Consciousness fully explained by neural computation.",
+      "Personal identity shown not to survive bodily death."
+    ],
+    "kill_conditions_missing": [
+      "No specific experimental signature unique to the soul field (as opposed to any massless scalar) is given.",
+      "No lower bound on g_sm is provided; if not detected, g_sm can be lowered further.",
+      "The model does not specify how to distinguish the soul field from other hypothetical fields."
+    ],
+    "testability": "requires_external_evidence"
+  },
+  "novelty": {
+    "what_is_new": "Formalizing the soul as a Klein-Gordon field with decoupling as death and re-coupling as resurrection.",
+    "novelty_type": "new_combination",
+    "closest_existing_work": "Theological uses of quantum field theory (e.g., Polkinghorne, Peacocke) but not this specific mapping.",
+    "novelty_score": 4
+  },
+  "compression": {
+    "one_sentence": "The soul is modeled as a massless scalar field that couples to matter during life, decouples at death, and can re-couple at resurrection.",
+    "three_sentences": "The soul is represented as a real scalar field \u03a8_S obeying the Klein-Gordon equation with m_S \u2248 0, implying immortality. It couples to matter via a Yukawa interaction with a very small coupling constant g_sm ~ 10\u207b\u00b9\u2078, making it undetectable. Death is decoupling (g_sm \u2192 0) and resurrection is re-coupling, with soul number conserved.",
+    "strongest_defensible_version": "The Klein-Gordon equation provides a formal analogy for certain theological claims about the soul: persistence, coupling, and conservation.",
+    "weakest_version_still_true": "The Klein-Gordon equation can be used to write down a mathematical model that is consistent with some Christian theological claims about the soul, but this does not constitute evidence for those claims."
+  }
+}

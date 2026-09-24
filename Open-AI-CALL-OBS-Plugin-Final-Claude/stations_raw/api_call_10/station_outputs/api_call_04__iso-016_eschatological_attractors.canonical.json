@@ -1,0 +1,294 @@
+{
+  "thesis": {
+    "one_sentence": "The moral destiny of individuals is a dynamical system with two stable attractors (heaven and hell) and no neutral final state, where small perturbations near the saddle point produce dramatically different outcomes.",
+    "thesis_type": "interpretive",
+    "thesis_strength": 7,
+    "thesis_paragraph": "DOMAINS"
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Moral destiny can be modeled as a dynamical system with attractors.",
+      "type": "interpretive",
+      "evidence": "Logistic equation dPhi/dt = sigma gamma (Phi_max - Phi) Phi",
+      "evidence_type": "argument",
+      "evidence_strength": 6,
+      "assumption": "The logistic equation is an appropriate model for moral state evolution.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "The model is imposed through choice of dynamics, not derived from deeper principles."
+    },
+    {
+      "id": "C2",
+      "claim": "There are exactly two stable final states: heaven (Phi=1) and hell (Phi=0).",
+      "type": "interpretive",
+      "evidence": "Biblical references (Matthew 25:31-46, Matthew 7:13-14) and phase portrait analysis",
+      "evidence_type": "citation",
+      "evidence_strength": 5,
+      "assumption": "The binary sign variable sigma in {+1, -1} is a valid theological postulate.",
+      "overclaim_risk": 8,
+      "overclaim_diagnosis": "The binary outcome is a feature of the chosen equation, not a derived consequence."
+    },
+    {
+      "id": "C3",
+      "claim": "No neutral final state exists.",
+      "type": "descriptive",
+      "evidence": "Phase portrait shows only two stable fixed points (0 and 1) and one unstable saddle (0.5).",
+      "evidence_type": "argument",
+      "evidence_strength": 6,
+      "assumption": "The logistic equation's fixed points correspond to theological endpoints.",
+      "overclaim_risk": 6,
+      "overclaim_diagnosis": "Assumes that the mathematical structure maps directly to theological reality."
+    },
+    {
+      "id": "C4",
+      "claim": "Small perturbations near the saddle point (Phi=0.5) produce dramatically different outcomes.",
+      "type": "descriptive",
+      "evidence": "Dynamical systems theory: saddle point instability",
+      "evidence_type": "argument",
+      "evidence_strength": 7,
+      "assumption": "The saddle point is at Phi=0.5 and is sensitive to perturbations.",
+      "overclaim_risk": 5,
+      "overclaim_diagnosis": "The exact location of the saddle depends on parameters not experimentally determined."
+    },
+    {
+      "id": "C5",
+      "claim": "The narrow gate (Matthew 7:13-14) corresponds to the unstable saddle at Phi=0.5.",
+      "type": "interpretive",
+      "evidence": "Textual interpretation of Matthew 7:13-14",
+      "evidence_type": "citation",
+      "evidence_strength": 3,
+      "assumption": "The biblical 'narrow gate' is a metaphor for a dynamical saddle point.",
+      "overclaim_risk": 9,
+      "overclaim_diagnosis": "Equates a theological metaphor with a mathematical concept without justification."
+    },
+    {
+      "id": "C6",
+      "claim": "Grace can shift a trajectory from the Phi<0.5 basin to the Phi>0.5 basin.",
+      "type": "interpretive",
+      "evidence": "Reference to ISO-013 (Grace Operator)",
+      "evidence_type": "citation",
+      "evidence_strength": 4,
+      "assumption": "Grace acts as an external forcing function in the dynamical system.",
+      "overclaim_risk": 8,
+      "overclaim_diagnosis": "The mechanism of grace is not mathematically defined in this ISO."
+    },
+    {
+      "id": "C7",
+      "claim": "Population-level coherence distributions should be bimodal.",
+      "type": "empirical",
+      "evidence": "Prediction P12.1",
+      "evidence_type": "argument",
+      "evidence_strength": 3,
+      "assumption": "A coherence proxy can be defined and measured.",
+      "overclaim_risk": 9,
+      "overclaim_diagnosis": "No empirical data or measurement method is provided."
+    },
+    {
+      "id": "C8",
+      "claim": "Moral trajectories exhibit critical slowing near the saddle point.",
+      "type": "descriptive",
+      "evidence": "Generic property of saddle-node dynamics",
+      "evidence_type": "argument",
+      "evidence_strength": 7,
+      "assumption": "The system is near a saddle-node bifurcation.",
+      "overclaim_risk": 4,
+      "overclaim_diagnosis": "Critical slowing is a mathematical consequence, but its mapping to 'moral agonizing' is interpretive."
+    },
+    {
+      "id": "C9",
+      "claim": "Once deep in a basin, trajectory reversal requires increasingly large perturbations.",
+      "type": "descriptive",
+      "evidence": "Hysteresis property of attractor systems",
+      "evidence_type": "argument",
+      "evidence_strength": 7,
+      "assumption": "The system has hysteresis.",
+      "overclaim_risk": 4,
+      "overclaim_diagnosis": "Hysteresis is a mathematical property, but its mapping to 'hardening of heart' is interpretive."
+    },
+    {
+      "id": "C10",
+      "claim": "The mapping between physics and theology is a structural isomorphism.",
+      "type": "interpretive",
+      "evidence": "Shared structure: two stable endpoints, unstable middle, trajectory determined by initial conditions and inputs, irreversibility, sensitivity to perturbation, external input required to cross basins.",
+      "evidence_type": "argument",
+      "evidence_strength": 5,
+      "assumption": "The shared structure is not merely metaphorical but genuinely isomorphic.",
+      "overclaim_risk": 8,
+      "overclaim_diagnosis": "The document itself admits the mapping is imposed through choice of dynamics."
+    }
+  ],
+  "definitions": {
+    "explicit": [
+      {
+        "term": "Phi",
+        "definition": "Moral/coherence state in [0,1]",
+        "location": "DOMAINS"
+      },
+      {
+        "term": "sigma",
+        "definition": "Moral sensitivity (responsiveness to input)",
+        "location": "DOMAINS"
+      },
+      {
+        "term": "gamma",
+        "definition": "Grace coefficient",
+        "location": "DOMAINS"
+      },
+      {
+        "term": "Phi_max",
+        "definition": "Maximum moral potential (~1.0)",
+        "location": "DOMAINS"
+      },
+      {
+        "term": "Heaven",
+        "definition": "Maximal coherence (eternal alignment with God, Phi -> 1)",
+        "location": "DOMAINS"
+      },
+      {
+        "term": "Hell",
+        "definition": "Minimal coherence (eternal separation from God, Phi -> 0)",
+        "location": "DOMAINS"
+      }
+    ],
+    "implied": [
+      {
+        "term": "moral destiny",
+        "usage_implies": "A deterministic or quasi-deterministic trajectory toward a final state"
+      },
+      {
+        "term": "attractor",
+        "usage_implies": "A stable fixed point that trajectories converge to"
+      },
+      {
+        "term": "saddle point",
+        "usage_implies": "An unstable fixed point that separates basins of attraction"
+      },
+      {
+        "term": "basin of attraction",
+        "usage_implies": "The set of initial conditions that lead to a particular attractor"
+      }
+    ],
+    "undefined_but_critical": [
+      "coherence proxy",
+      "moral sensitivity",
+      "grace coefficient",
+      "moral state evolution equation derivation"
+    ],
+    "terms_doing_hidden_work": [
+      "bimodal",
+      "attractor",
+      "saddle point",
+      "basin of attraction",
+      "critical slowing",
+      "hysteresis"
+    ]
+  },
+  "assumptions": [
+    {
+      "assumption": "The logistic equation is an appropriate model for moral state evolution.",
+      "type": "mathematical",
+      "if_this_fails": "The entire attractor model collapses; other dynamics could produce different attractor structures."
+    },
+    {
+      "assumption": "The binary sign variable sigma = +/-1 is a valid theological postulate.",
+      "type": "conceptual",
+      "if_this_fails": "The bimodal structure is not guaranteed; continuous sigma could produce a continuum of outcomes."
+    },
+    {
+      "assumption": "Bimodal destiny (only two final states) is theologically correct.",
+      "type": "moral",
+      "if_this_fails": "The model is incompatible with universalism or any third-state theology (e.g., purgatory)."
+    },
+    {
+      "assumption": "The mapping between physics and theology is isomorphic, not merely metaphorical.",
+      "type": "methodological",
+      "if_this_fails": "The entire ISO reduces to a metaphor with no predictive or explanatory power."
+    },
+    {
+      "assumption": "A coherence proxy can be defined and measured empirically.",
+      "type": "empirical",
+      "if_this_fails": "Predictions P12.1 and P12.2 become untestable."
+    }
+  ],
+  "argument_structure": {
+    "premises": [
+      "P1: Moral destiny can be modeled as a dynamical system (A12.1).",
+      "P2: The logistic equation dPhi/dt = sigma gamma (Phi_max - Phi) Phi describes moral state evolution (E12.1).",
+      "P3: The logistic equation has two stable fixed points (Phi=0, Phi=1) and one unstable saddle (Phi=0.5).",
+      "P4: The binary sign variable sigma = +/-1 implies exactly two basins of attraction.",
+      "P5: Biblical witness (Matthew 25:31-46, Matthew 7:13-14) supports exactly two final states."
+    ],
+    "intermediate_conclusions": [
+      "IC1: There are exactly two stable final states (heaven and hell).",
+      "IC2: No neutral final state exists.",
+      "IC3: Small perturbations near the saddle produce dramatically different outcomes."
+    ],
+    "final_conclusion": "The moral destiny of individuals is a dynamical system with two stable attractors (heaven and hell) and no neutral final state, where small perturbations near the saddle point produce dramatically different outcomes.",
+    "weakest_link": "The choice of the logistic equation is imposed, not derived from deeper principles.",
+    "unproven_jumps": [
+      "From logistic equation to theological bimodality (the equation was chosen to produce bimodality).",
+      "From mathematical saddle point to biblical 'narrow gate' (no justification for the mapping).",
+      "From critical slowing to 'moral agonizing' (no empirical evidence).",
+      "From hysteresis to 'hardening of heart' (no empirical evidence)."
+    ]
+  },
+  "overclaim_detection": [
+    {
+      "pattern": "model-to-reality",
+      "location": "DOMAINS and THE MAPPING",
+      "diagnosis": "The logistic equation is chosen to produce bimodality, but the paper claims the bimodal structure emerges from the dynamics."
+    },
+    {
+      "pattern": "definition-to-discovery",
+      "location": "C5: narrow gate as saddle point",
+      "diagnosis": "The paper defines the narrow gate as a saddle point, then 'discovers' that it is a saddle point."
+    },
+    {
+      "pattern": "textual-possibility-to-actual-practice",
+      "location": "P12.1: bimodal population distribution",
+      "diagnosis": "The paper claims a testable prediction but provides no measurement method or empirical data."
+    }
+  ],
+  "counterarguments": {
+    "addressed": [
+      "Possibility of more than two attractors (Swap Test).",
+      "Catholic theology of purgatory as a metastable state.",
+      "Universalism as a single-attractor model.",
+      "The mapping being merely metaphorical."
+    ],
+    "missing": [
+      "The problem of evil: how does a dynamical system account for moral evil that is not simply 'low coherence'?",
+      "The role of divine sovereignty: does the model allow God to override the dynamics?",
+      "The problem of those who never hear the gospel: where do they fall in the basins?",
+      "The possibility of annihilationism (Phi=0 as non-existence, not eternal torment)."
+    ],
+    "smartest_critic_would_say": "You have chosen a dynamical equation that produces exactly the theological outcome you want, and then claimed that the outcome emerges from the dynamics. This is not a derivation; it is a mathematical encoding of your theological presuppositions. The model is unfalsifiable because any deviation from bimodality can be attributed to parameter choices or additional terms."
+  },
+  "falsifiability": {
+    "kill_conditions_stated": [
+      "Show that moral state distributions are unimodal (bell curve), not bimodal.",
+      "Show that the logistic equation does not produce the correct qualitative behavior.",
+      "Show that universalism is theologically correct.",
+      "Demonstrate a stable third attractor.",
+      "Show that the binary sign variable is an oversimplification."
+    ],
+    "kill_conditions_missing": [
+      "Show that the logistic equation is not the correct dynamics (e.g., moral growth is linear).",
+      "Show that no coherence proxy can be defined.",
+      "Show that the model makes no novel predictions that are not already known from theology."
+    ],
+    "testability": "requires_external_evidence"
+  },
+  "novelty": {
+    "what_is_new": "Applying dynamical systems theory (logistic equation, attractors, saddle points, critical slowing, hysteresis) to model eschatological outcomes and provide a mathematical framework for concepts like the narrow gate, hardening of heart, and the role of grace.",
+    "novelty_type": "new_application",
+    "closest_existing_work": "Mathematical theology or theophysics that uses dynamical systems, but this specific logistic equation model for heaven/hell is novel.",
+    "novelty_score": 6
+  },
+  "compression": {
+    "one_sentence": "This paper models moral destiny as a dynamical system with two stable attractors (heaven and hell) using a logistic equation, claiming no neutral final state exists and that small perturbations near the saddle point produce dramatically different outcomes.",
+    "three_sentences": "The paper proposes that moral state evolution follows a logistic equation dPhi/dt = sigma gamma (Phi_max - Phi) Phi, which has two stable fixed points (Phi=0 and Phi=1) corresponding to hell and heaven, and one unstable saddle (Phi=0.5) corresponding to the narrow gate. It claims that no neutral final state exists, that small perturbations near the saddle produce dramatically different outcomes, and that grace can shift trajectories between basins. However, the model is imposed through the choice of dynamics rather than derived from deeper principles, and its empirical predictions (bimodal population distributions, critical slowing) remain untested.",
+    "strongest_defensible_version": "If one accepts the logistic equation as a model for moral state evolution, then the dynamics produce two stable attractors (heaven and hell) and one unstable saddle (the narrow gate), with no neutral final state and sensitivity to initial conditions near the saddle.",
+    "weakest_version_still_true": "The logistic equation, when applied to a variable in [0,1], has two stable fixed points at 0 and 1 and one unstable fixed point at 0.5, and this mathematical structure can be used as a metaphor for certain theological concepts."
+  }
+}

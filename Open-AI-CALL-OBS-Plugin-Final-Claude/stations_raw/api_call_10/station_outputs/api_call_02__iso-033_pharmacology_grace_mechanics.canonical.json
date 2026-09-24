@@ -1,0 +1,148 @@
+{
+  "chi_variables": {
+    "G": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Grace is the central concept in Domain B, described as the 'divine ligand' that engages the human agent through faith. The mapping explicitly substitutes theological variables into the Hill equation, with grace as the agonist."
+    },
+    "M": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Meaning/Mass-Force is implicit in the concept of 'spiritual transformation' as the effect E, which involves motion and change in the human agent. The coupling coefficient alpha relates to autonomy and will."
+    },
+    "E": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Energy/Spirit is present in the 'energetic substrate' of grace reception, the Spirit distributing gifts (1 Corinthians 12:11), and the concept of transformation as an energetic process."
+    },
+    "S": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Strong Force/Love is present in the binding dynamics of grace to faith-receptors, the community reinforcement (Hill coefficient n > 1, 'where two or three are gathered'), and the irreversible binding of grace (no excretion)."
+    },
+    "T": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Thermodynamics/Judgment is present in the concept of sin as a competitive antagonist that right-shifts the grace-response curve, the entropy-like degradation of sin, and the threshold behavior of conversion."
+    },
+    "K": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Knowledge/Logos is present in the information-theoretic aspects of receptor binding kinetics, the Hill equation as a mathematical model, and the structural intelligibility of the mapping."
+    },
+    "R": {
+      "present": true,
+      "strength": 5,
+      "evidence": "Relativity/Relationship is present in the frame-dependent nature of grace reception (individual thresholds, community density), and the relational dynamics of agonist/antagonist competition."
+    },
+    "Q": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Quantum/Faith is present in the binary sign operator (ISO-012) as the limiting case of the Hill equation, the threshold behavior resembling quantum collapse, and faith as the receptor that selects grace."
+    },
+    "F": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Weak Force/Sin-Conservation is present in sin as a competitive antagonist that occupies the receptor, the conservation of sin's blocking effect (right-shift), and the structural asymmetry of grace retention (no excretion)."
+    },
+    "C": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Coherence/Christ is present as the global integration operator: the mapping wraps the entire dose-response framework into a coherent theological-pharmacological isomorphism. Christ is the ultimate agonist, and the irreversibility of justification (indelible character) reflects C's integrating role."
+    },
+    "variables_present_count": 10,
+    "dominant_variables": [
+      "G",
+      "C",
+      "S"
+    ],
+    "absent_variables": [],
+    "chi_coverage_pct": "100%"
+  },
+  "physics_process_detection": {
+    "maps_to_physics": true,
+    "physics_domain": "pharmacology",
+    "specific_process": "dose-response dynamics, receptor binding kinetics, competitive inhibition, Hill equation sigmoidal threshold response",
+    "equation_present": "E = E_max x [D]^n / (EC_50^n + [D]^n); E = alpha x [G]^n / (GT_50^n + [G]^n); E = alpha x [G]^n / ((GT_50(1 + [S]/K_sin))^n + [G]^n)",
+    "isomorphism_detected": true,
+    "isomorphism_type": "structural",
+    "isomorphism_quality": 9
+  },
+  "laws_invoked": {
+    "explicit": [
+      "Law 4 (Incompleteness)",
+      "Law 6 (Entropy)",
+      "Law 9 (Grace)"
+    ],
+    "implicit": [
+      "Law 1 (Gravitation/Sin-Grace)",
+      "Law 2 (Motion/Will-Repentance)",
+      "Law 3 (Electromagnetism/Truth-Deception)",
+      "Law 5 (Thermodynamics/Judgment-Heat Death)",
+      "Law 7 (Relativity/Relationship-Frame Lock)",
+      "Law 8 (Quantum/Faith-Doubt)",
+      "Law 10 (Coherence/Christ-Decoherence)"
+    ],
+    "symmetry_pairs_active": [
+      "1-8",
+      "2-9",
+      "3-10",
+      "4-7",
+      "5-6"
+    ]
+  },
+  "theological_structure": {
+    "trinity_present": true,
+    "trinity_structure": "Grace (Father as source), Christ (Son as agonist/ligand), Spirit (distribution and application of grace)",
+    "father_aspect": {
+      "present": true,
+      "evidence": "Grace as the divine act originating from the Father; the source of the ligand; the 'unlimited' grace per Romans 5:20"
+    },
+    "son_aspect": {
+      "present": true,
+      "evidence": "Christ as the ultimate agonist; the irreversibility of justification (indelible character) reflects Christ's work; the mapping connects to ISO-013 (Grace Operator as the agonist ligand)"
+    },
+    "spirit_aspect": {
+      "present": true,
+      "evidence": "The Spirit distributing gifts and conviction across the body (1 Corinthians 12:11); the means of grace as the pathway for the ligand to reach the receptor"
+    },
+    "cross_reference": true,
+    "grace_mechanism": true,
+    "sin_entropy": true,
+    "redemption_arc": true
+  },
+  "axiom_alignment": {
+    "axioms_touched": [
+      "A1.1",
+      "A1.2",
+      "A2.1",
+      "A2.2",
+      "A5.1",
+      "BC4",
+      "BC6",
+      "A1.3",
+      "T3.1",
+      "BC2",
+      "BC7",
+      "BC8"
+    ],
+    "axiom_count": 12,
+    "strongest_axiom_connection": "A1.1 (Existence) \u2014 the existence of the mapping itself and the entities involved (grace, faith, sin) is foundational"
+  },
+  "lean_connection": {
+    "formal_claim_present": true,
+    "could_be_formalized": true,
+    "relevant_lean_module": "BridgeMatrix",
+    "proof_status": "testable"
+  },
+  "framework_alignment_score": {
+    "total": 95,
+    "breakdown": {
+      "chi_coverage": 20,
+      "physics_mapping": 20,
+      "theological_depth": 20,
+      "axiom_grounding": 18,
+      "formal_rigor": 17
+    }
+  }
+}

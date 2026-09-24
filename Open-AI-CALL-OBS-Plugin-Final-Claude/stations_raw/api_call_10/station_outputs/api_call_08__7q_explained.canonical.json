@@ -1,0 +1,523 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "epistemology",
+        "type": "philosophy",
+        "strength": 9
+      },
+      {
+        "name": "physics",
+        "type": "physics",
+        "strength": 8
+      },
+      {
+        "name": "general_relativity",
+        "type": "physics",
+        "strength": 7
+      },
+      {
+        "name": "methodology",
+        "type": "philosophy",
+        "strength": 9
+      },
+      {
+        "name": "logic",
+        "type": "mathematics",
+        "strength": 6
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "K",
+        "present": true,
+        "role": "The 7Q framework is a method for extracting and structuring knowledge/information from claims",
+        "strength": 9
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "The framework judges claims, separating valid from invalid, true from false",
+        "strength": 7
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "The framework maps relationships between claims, evidence, and domains",
+        "strength": 6
+      },
+      {
+        "variable": "Q",
+        "present": true,
+        "role": "The framework requires faith in the process before inquiry begins (Q0 posture)",
+        "strength": 5
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "The framework seeks coherence across all seven questions for a complete object",
+        "strength": 8
+      },
+      {
+        "variable": "G",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "M",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "E",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "S",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "F",
+        "present": false,
+        "role": "",
+        "strength": 0
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "The framework assumes the existence of claims and objects of inquiry"
+      },
+      {
+        "id": "A1.2",
+        "invoked": true,
+        "how": "The framework distinguishes between different types of claims (causal, descriptive, etc.)"
+      },
+      {
+        "id": "A5.1",
+        "invoked": true,
+        "how": "The framework is built on the act of observation and classification of claims"
+      },
+      {
+        "id": "A1.3",
+        "invoked": true,
+        "how": "The framework treats information (the claim) as primary, prior to its validation"
+      },
+      {
+        "id": "BC4",
+        "invoked": true,
+        "how": "The framework implicitly requires three observers: the claimer, the evidence, and the framework itself"
+      },
+      {
+        "id": "BC6",
+        "invoked": true,
+        "how": "The framework acknowledges an infinite source of possible claims and evidence"
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "The framework conserves the information of the claim through its transformation across the seven questions"
+      },
+      {
+        "id": "BC8",
+        "invoked": true,
+        "how": "The framework requires voluntary coupling between the claim and the evidence"
+      },
+      {
+        "id": "A2.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "T3.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC2",
+        "invoked": false,
+        "how": ""
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": false,
+        "manifestations": []
+      },
+      "son": {
+        "present": false,
+        "manifestations": []
+      },
+      "spirit": {
+        "present": false,
+        "manifestations": []
+      },
+      "trinitarian_structure": "none"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-001",
+        "domain_a": "epistemology",
+        "domain_b": "biology",
+        "strength": 8,
+        "type": "analogical"
+      },
+      {
+        "id": "ISO-002",
+        "domain_a": "epistemology",
+        "domain_b": "physics",
+        "strength": 7,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "faith",
+        "context": "Q0 posture requires faith in the process before inquiry",
+        "weight": 5
+      },
+      {
+        "concept": "judgment",
+        "context": "The framework judges claims as valid or invalid",
+        "weight": 7
+      },
+      {
+        "concept": "truth",
+        "context": "The framework seeks truth through coherence across all questions",
+        "weight": 8
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "necessity",
+        "context": "Q6 forces necessary consequences of a claim",
+        "weight": 8
+      },
+      {
+        "concept": "sufficiency",
+        "context": "Q4 checks if evidence is sufficient to support the claim",
+        "weight": 7
+      },
+      {
+        "concept": "contradiction",
+        "context": "Q7 identifies contradictions that kill the claim",
+        "weight": 9
+      },
+      {
+        "concept": "implication",
+        "context": "Q6 derives implications from the claim",
+        "weight": 8
+      },
+      {
+        "concept": "equivalence",
+        "context": "The framework checks if evidence equally supports competing claims",
+        "weight": 6
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 6
+      },
+      {
+        "fruit": "patience",
+        "present": true,
+        "strength": 5
+      },
+      {
+        "fruit": "self_control",
+        "present": true,
+        "strength": 4
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "domain:epistemology",
+      "to": "domain:methodology",
+      "relation": "contains",
+      "weight": 9
+    },
+    {
+      "from": "domain:epistemology",
+      "to": "domain:physics",
+      "relation": "applies_to",
+      "weight": 8
+    },
+    {
+      "from": "chi_variable:K",
+      "to": "domain:epistemology",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:T",
+      "to": "axiom:A5.1",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "axiom:A1.1",
+      "to": "axiom:A1.2",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:contradiction",
+      "to": "axiom:A1.2",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:necessity",
+      "to": "chi_variable:K",
+      "relation": "derives_from",
+      "weight": 7
+    },
+    {
+      "from": "theological_concept:faith",
+      "to": "axiom:BC8",
+      "relation": "requires",
+      "weight": 6
+    },
+    {
+      "from": "theological_concept:judgment",
+      "to": "chi_variable:T",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "domain:general_relativity",
+      "to": "domain:physics",
+      "relation": "is_a",
+      "weight": 9
+    },
+    {
+      "from": "isomorphism:ISO-001",
+      "to": "domain:epistemology",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "isomorphism:ISO-002",
+      "to": "domain:physics",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "fruits_detected:faithfulness",
+      "to": "theological_concept:faith",
+      "relation": "supports",
+      "weight": 6
+    },
+    {
+      "from": "logical_concept:implication",
+      "to": "chi_variable:K",
+      "relation": "derives_from",
+      "weight": 8
+    },
+    {
+      "from": "axiom:BC7",
+      "to": "chi_variable:K",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "axiom:BC4",
+      "to": "domain:epistemology",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "axiom:BC6",
+      "to": "domain:epistemology",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "chi_variable:C",
+      "to": "logical_concept:contradiction",
+      "relation": "opposes",
+      "weight": 8
+    },
+    {
+      "from": "chi_variable:R",
+      "to": "domain:epistemology",
+      "relation": "maps_to",
+      "weight": 6
+    },
+    {
+      "from": "chi_variable:Q",
+      "to": "theological_concept:faith",
+      "relation": "maps_to",
+      "weight": 5
+    }
+  ],
+  "tags": {
+    "primary": [
+      "7Q framework",
+      "epistemology",
+      "methodology",
+      "claim analysis",
+      "knowledge graph"
+    ],
+    "pillar": [
+      "pillar/philosophy",
+      "pillar/mathematics"
+    ],
+    "series": "master-equation",
+    "classification": "foundational"
+  },
+  "citations": {
+    "scripture": [],
+    "academic": [],
+    "internal": [
+      {
+        "ref": "FP-005",
+        "context": "The 7Q framework is a foundational paper for the POF 2828 methodology"
+      }
+    ],
+    "total_count": 1
+  },
+  "word_anomalies": [
+    {
+      "word": "Q0",
+      "frequency": "10",
+      "significance": "A non-question precondition, unique to this framework"
+    },
+    {
+      "word": "kill conditions",
+      "frequency": "5",
+      "significance": "Technical term for falsification criteria"
+    },
+    {
+      "word": "isomorphism",
+      "frequency": "3",
+      "significance": "Structural mapping between domains, a key concept in POF 2828"
+    },
+    {
+      "word": "posture",
+      "frequency": "4",
+      "significance": "Used to describe the stance before inquiry, not a standard epistemological term"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "Open to inquiry, not pre-committed to any framework or conclusion",
+    "Q1_identity": "A methodological framework for analyzing any claim across seven dimensions",
+    "Q2_domain": "Epistemology, methodology, with applications to physics and other domains",
+    "Q3_claim": "Any claim can be fully understood by answering seven questions: identity, domain, assertion, evidence, dependencies, consequences, and falsification",
+    "Q4_support": "The framework is self-supporting through its own application to the example of general relativity, demonstrating its utility",
+    "Q5_dependencies": "Depends on the axioms of existence, distinction, observation, and information primacy; requires a posture of openness",
+    "Q6_consequences": "Forces a complete analysis of any claim, revealing hidden assumptions, generating predictions, and identifying kill conditions",
+    "Q7_kill": "The framework could be killed by demonstrating a claim that cannot be analyzed by these seven questions, or by showing that the framework itself fails one of its own questions"
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "FP-005",
+      "axiom-layer"
+    ],
+    "required_by": [
+      "all subsequent POF 2828 analyses"
+    ],
+    "parallel_to": [
+      "master-equation"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 30,
+    "total_edges": 20,
+    "dominant_domain": "epistemology",
+    "dominant_chi": "K",
+    "connectivity_score": 8,
+    "one_sentence": "This document establishes the 7Q framework as the universal classifier for all claims within the POF 2828 knowledge graph."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": false,
+      "how": ""
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "The framework seeks truth (T) through coherence (C) across all seven questions"
+    },
+    "4_7_love_relationship": {
+      "active": false,
+      "how": ""
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "The framework judges (T) claims based on information/logos (K)"
+    },
+    "pairs_active_count": 2
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": false,
+      "strength": 0
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 8
+    },
+    "love": {
+      "present": false,
+      "strength": 0
+    },
+    "judgment": {
+      "present": true,
+      "strength": 7
+    },
+    "logos": {
+      "present": true,
+      "strength": 9
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": true,
+      "strength": 5
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": false,
+      "strength": 0
+    },
+    "operators_present_count": 4
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "FP-005",
+      "axiom-layer"
+    ],
+    "read_after": [
+      "all subsequent POF 2828 analyses"
+    ]
+  }
+}

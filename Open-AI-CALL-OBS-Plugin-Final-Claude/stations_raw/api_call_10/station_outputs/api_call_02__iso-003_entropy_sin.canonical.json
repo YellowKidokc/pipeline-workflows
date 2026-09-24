@@ -1,0 +1,134 @@
+{
+  "chi_variables": {
+    "G": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Grace is the external input that reverses moral entropy; 'grace' appears multiple times as the mechanism of reversal."
+    },
+    "M": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit mention of motion, inertia, will, or mass-force."
+    },
+    "E": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit mention of energy as spirit or energetic substrate."
+    },
+    "S": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Entropy is the central concept; 'S' is used as the variable for entropy/sign."
+    },
+    "T": {
+      "present": true,
+      "strength": 10,
+      "evidence": "Thermodynamics is the primary domain; Second Law of Thermodynamics is the core concept."
+    },
+    "K": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit mention of knowledge, information, or Logos."
+    },
+    "R": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit mention of relativity or relationship."
+    },
+    "Q": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit mention of quantum or faith."
+    },
+    "F": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Sin is the moral entropy; 'sin' appears as the degradation operator and is linked to Law 9 (Weak Force/Sin)."
+    },
+    "C": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Coherence field C is explicitly defined as conserved (div(C)=0) and is the global integration operator; Christ is referenced as the source of external coherence."
+    },
+    "variables_present_count": 5,
+    "dominant_variables": [
+      "T",
+      "S",
+      "C"
+    ],
+    "absent_variables": [
+      "M",
+      "E",
+      "K",
+      "R",
+      "Q"
+    ],
+    "chi_coverage_pct": "50%"
+  },
+  "physics_process_detection": {
+    "maps_to_physics": true,
+    "physics_domain": "thermodynamics",
+    "specific_process": "entropy production in isolated systems (Second Law of Thermodynamics)",
+    "equation_present": "dS/dt \u2265 0; S = k_B ln(\u03a9); div(C) = 0",
+    "isomorphism_detected": true,
+    "isomorphism_type": "structural",
+    "isomorphism_quality": 9
+  },
+  "laws_invoked": {
+    "explicit": [
+      "Law 5: Thermodynamics / Judgment",
+      "Law 9: Weak Force / Sin",
+      "Law 1: Gravitation / Sin-Grace"
+    ],
+    "implicit": [
+      "Law 6: Information / Logos-Chaos (entropy-information connection)"
+    ],
+    "symmetry_pairs_active": [
+      "5-6",
+      "1-8"
+    ]
+  },
+  "theological_structure": {
+    "trinity_present": true,
+    "trinity_structure": "The external source of coherence (Christ) is distinguished from the system; grace is the mechanism; the coherence field is conserved (Father as source).",
+    "father_aspect": {
+      "present": true,
+      "evidence": "Conservation of coherence field (div(C)=0) implies a transcendent source that does not degrade."
+    },
+    "son_aspect": {
+      "present": true,
+      "evidence": "Christ is the external source that bears the cost of reversal; 'the cost is borne by the source (Christ), not the system'."
+    },
+    "spirit_aspect": {
+      "present": false,
+      "evidence": "No explicit mention of the Holy Spirit."
+    },
+    "cross_reference": true,
+    "grace_mechanism": true,
+    "sin_entropy": true,
+    "redemption_arc": true
+  },
+  "axiom_alignment": {
+    "axioms_touched": [
+      "A1.1"
+    ],
+    "axiom_count": 1,
+    "strongest_axiom_connection": "A1.1 (Existence)"
+  },
+  "lean_connection": {
+    "formal_claim_present": true,
+    "could_be_formalized": true,
+    "relevant_lean_module": "IsomorphismTest",
+    "proof_status": "testable"
+  },
+  "framework_alignment_score": {
+    "total": 78,
+    "breakdown": {
+      "chi_coverage": 10,
+      "physics_mapping": 18,
+      "theological_depth": 16,
+      "axiom_grounding": 14,
+      "formal_rigor": 20
+    }
+  }
+}

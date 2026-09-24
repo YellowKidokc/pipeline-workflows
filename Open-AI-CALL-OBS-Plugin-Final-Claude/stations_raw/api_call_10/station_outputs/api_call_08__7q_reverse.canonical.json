@@ -1,0 +1,500 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "epistemology",
+        "type": "philosophy",
+        "strength": 9
+      },
+      {
+        "name": "methodology",
+        "type": "philosophy",
+        "strength": 8
+      },
+      {
+        "name": "physics",
+        "type": "physics",
+        "strength": 6
+      },
+      {
+        "name": "theology",
+        "type": "theology",
+        "strength": 3
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "M",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "E",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "S",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "T",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Information structure survives across domains (isomorphism)",
+        "strength": 5
+      },
+      {
+        "variable": "R",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "Q",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "F",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence as survival criterion; the idea that holds together after destruction",
+        "strength": 7
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "Existence of the idea is tested through destruction; survival implies existence"
+      },
+      {
+        "id": "A1.2",
+        "invoked": true,
+        "how": "Distinction between hypothesis and conclusion; identity earned through process"
+      },
+      {
+        "id": "A2.1",
+        "invoked": true,
+        "how": "Substrate of logic and evidence required for the framework to operate"
+      },
+      {
+        "id": "A2.2",
+        "invoked": true,
+        "how": "Self-grounding: the method grounds itself by starting with destruction"
+      },
+      {
+        "id": "A5.1",
+        "invoked": true,
+        "how": "Observation (evidence) arrives after survival, confirming the structure"
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC6",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A1.3",
+        "invoked": true,
+        "how": "Information primacy: the structure of the argument is information that survives"
+      },
+      {
+        "id": "T3.1",
+        "invoked": true,
+        "how": "Coherence cannot self-increase: the idea must be tested externally (destruction)"
+      },
+      {
+        "id": "BC2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC7",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC8",
+        "invoked": false,
+        "how": ""
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": false,
+        "manifestations": []
+      },
+      "son": {
+        "present": false,
+        "manifestations": []
+      },
+      "spirit": {
+        "present": false,
+        "manifestations": []
+      },
+      "trinitarian_structure": "none"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-001",
+        "domain_a": "epistemology",
+        "domain_b": "physics",
+        "strength": 7,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-002",
+        "domain_a": "epistemology",
+        "domain_b": "information theory",
+        "strength": 6,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "survival",
+        "context": "Metaphor for truth: what survives destruction earns its identity",
+        "weight": 5
+      },
+      {
+        "concept": "judgment",
+        "context": "Destruction as a form of judgment on ideas",
+        "weight": 3
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "contradiction",
+        "context": "Self-refutation as a death condition",
+        "weight": 8
+      },
+      {
+        "concept": "necessity",
+        "context": "What the survivor necessarily produces (Q6)",
+        "weight": 9
+      },
+      {
+        "concept": "sufficiency",
+        "context": "Evidence as confirmation, not construction",
+        "weight": 7
+      },
+      {
+        "concept": "implication",
+        "context": "Consequences forced by the survivor",
+        "weight": 8
+      },
+      {
+        "concept": "equivalence",
+        "context": "Equivalence principle as foundational axiom in GR example",
+        "weight": 5
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 4
+      },
+      {
+        "fruit": "patience",
+        "present": true,
+        "strength": 3
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "methodology:7Q Reverse",
+      "to": "epistemology:survival",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "epistemology:destruction",
+      "to": "logical_concepts:contradiction",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "epistemology:survival",
+      "to": "logical_concepts:necessity",
+      "relation": "produces",
+      "weight": 9
+    },
+    {
+      "from": "epistemology:evidence",
+      "to": "logical_concepts:sufficiency",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "physics:General Relativity",
+      "to": "epistemology:survival",
+      "relation": "supports",
+      "weight": 6
+    },
+    {
+      "from": "information_theory:isomorphism",
+      "to": "epistemology:generalization",
+      "relation": "supports",
+      "weight": 6
+    },
+    {
+      "from": "axiom:A1.1",
+      "to": "methodology:7Q Reverse",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "axiom:A1.2",
+      "to": "methodology:7Q Reverse",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "axiom:T3.1",
+      "to": "methodology:7Q Reverse",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "chi_variable:C",
+      "to": "epistemology:survival",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "chi_variable:K",
+      "to": "epistemology:generalization",
+      "relation": "supports",
+      "weight": 5
+    },
+    {
+      "from": "logical_concepts:necessity",
+      "to": "methodology:Q6 Force",
+      "relation": "produces",
+      "weight": 9
+    },
+    {
+      "from": "logical_concepts:implication",
+      "to": "methodology:Q6 Force",
+      "relation": "produces",
+      "weight": 8
+    },
+    {
+      "from": "methodology:Q7 Destroy",
+      "to": "methodology:Q6 Force",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "methodology:Q6 Force",
+      "to": "methodology:Q5 Ground",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "methodology:Q5 Ground",
+      "to": "methodology:Q4 Support",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "methodology:Q4 Support",
+      "to": "methodology:Q3 State",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "methodology:Q3 State",
+      "to": "methodology:Q2 Generalize",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "methodology:Q2 Generalize",
+      "to": "methodology:Q1 Name",
+      "relation": "requires",
+      "weight": 9
+    }
+  ],
+  "tags": {
+    "primary": [
+      "methodology",
+      "epistemology",
+      "survival",
+      "destruction",
+      "identity"
+    ],
+    "pillar": [
+      "pillar/philosophy",
+      "pillar/mathematics"
+    ],
+    "series": "master-equation",
+    "classification": "foundational"
+  },
+  "citations": {
+    "scripture": [],
+    "academic": [],
+    "internal": [
+      {
+        "ref": "FP-005",
+        "context": "Companion to The 7Q Framework"
+      }
+    ],
+    "total_count": 1
+  },
+  "word_anomalies": [
+    {
+      "word": "kill zone",
+      "frequency": 1,
+      "significance": "Metaphor for the set of death conditions; central to the method"
+    },
+    {
+      "word": "forest fire",
+      "frequency": 1,
+      "significance": "Metaphor for destruction that clears away false ideas"
+    },
+    {
+      "word": "axe wound",
+      "frequency": 1,
+      "significance": "Metaphor for the initial destructive step"
+    },
+    {
+      "word": "dead tree",
+      "frequency": 1,
+      "significance": "Metaphor for an idea that produces nothing downstream"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "This document takes a critical, destructive stance before any constructive work begins.",
+    "Q1_identity": "A methodological framework for establishing truth through survival testing.",
+    "Q2_domain": "Epistemology and philosophy of science.",
+    "Q3_claim": "Truth is best established by starting with destruction and ending with a name, reversing the traditional scientific method.",
+    "Q4_support": "The method is self-supporting: it demonstrates its own logic through the GR example and the structure of the 7Q sequence.",
+    "Q5_dependencies": "Depends on the concepts of logical contradiction, necessity, and evidence as confirmation.",
+    "Q6_consequences": "Forces a re-evaluation of how claims are justified; prioritizes survival over confirmation.",
+    "Q7_kill": "Dies if the destruction step is impossible (no death conditions can be named) or if the survivor produces nothing."
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "The 7Q Framework (forward)"
+    ],
+    "required_by": [
+      "Any document applying the reverse method"
+    ],
+    "parallel_to": [
+      "The 7Q Framework (forward)"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 28,
+    "total_edges": 19,
+    "dominant_domain": "philosophy",
+    "dominant_chi": "C",
+    "connectivity_score": 8,
+    "one_sentence": "This document introduces a reverse epistemological method where identity is earned through survival of destruction, providing a rigorous alternative to confirmation-biased inquiry."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": false,
+      "how": ""
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Truth is what survives destruction; coherence is the property of the survivor"
+    },
+    "4_7_love_relationship": {
+      "active": false,
+      "how": ""
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Judgment (destruction) and Logos (information structure) are paired: destruction reveals the logical structure that survives"
+    },
+    "pairs_active_count": 2
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": false,
+      "strength": 0
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 8
+    },
+    "love": {
+      "present": false,
+      "strength": 0
+    },
+    "judgment": {
+      "present": true,
+      "strength": 7
+    },
+    "logos": {
+      "present": true,
+      "strength": 6
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": false,
+      "strength": 0
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": false,
+      "strength": 0
+    },
+    "operators_present_count": 3
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "The 7Q Framework (forward)"
+    ],
+    "read_after": [
+      "Applications of the 7Q Reverse method"
+    ]
+  }
+}

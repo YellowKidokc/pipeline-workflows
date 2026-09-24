@@ -1,0 +1,140 @@
+{
+  "thesis": {
+    "one_sentence": "The document describes a folder organization system for one-page stories, but does not make a substantive claim.",
+    "thesis_type": "descriptive",
+    "thesis_strength": 1,
+    "thesis_paragraph": "1"
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "The folder is organized as a reader-friendly lane system.",
+      "type": "descriptive",
+      "evidence": "The document lists lane names and their descriptions.",
+      "evidence_type": "argument",
+      "evidence_strength": 2,
+      "assumption": "The lane system is indeed reader-friendly.",
+      "overclaim_risk": 5,
+      "overclaim_diagnosis": "The claim of 'reader-friendly' is asserted without evidence or user testing."
+    },
+    {
+      "id": "C2",
+      "claim": "The structure is meant to make later HTML and GPT-driven editing easier.",
+      "type": "descriptive",
+      "evidence": "The document states this as a note.",
+      "evidence_type": "argument",
+      "evidence_strength": 1,
+      "assumption": "The structure will actually facilitate editing.",
+      "overclaim_risk": 6,
+      "overclaim_diagnosis": "The claim is stated as a purpose, not demonstrated."
+    },
+    {
+      "id": "C3",
+      "claim": "Keep new pages in the same lane as their closest thematic neighbors.",
+      "type": "normative",
+      "evidence": "The document states this as a note.",
+      "evidence_type": "argument",
+      "evidence_strength": 1,
+      "assumption": "Thematic neighbors can be reliably identified.",
+      "overclaim_risk": 3,
+      "overclaim_diagnosis": null
+    }
+  ],
+  "definitions": {
+    "explicit": [
+      {
+        "term": "starting-point",
+        "definition": "opening claims, first frames, and baseline setup",
+        "location": "Lanes section"
+      },
+      {
+        "term": "ruth-and-pushback",
+        "definition": "signal, resistance, distortion, and opposition",
+        "location": "Lanes section"
+      },
+      {
+        "term": "measure-and-judgment",
+        "definition": "measurement, evaluation, discernment, and tests",
+        "location": "Lanes section"
+      },
+      {
+        "term": "repair-and-order",
+        "definition": "restoration, reassembly, grace, and repair",
+        "location": "Lanes section"
+      },
+      {
+        "term": "breakdown-and-coherence",
+        "definition": "collapse, stability, coherence, and integration",
+        "location": "Lanes section"
+      },
+      {
+        "term": "one-offs",
+        "definition": "standalone pieces that do not yet belong to a larger lane",
+        "location": "Lanes section"
+      }
+    ],
+    "implied": [],
+    "undefined_but_critical": [],
+    "terms_doing_hidden_work": []
+  },
+  "assumptions": [
+    {
+      "assumption": "The lane system is reader-friendly.",
+      "type": "conceptual",
+      "if_this_fails": "The organization may not achieve its intended purpose."
+    },
+    {
+      "assumption": "The structure will make HTML and GPT-driven editing easier.",
+      "type": "methodological",
+      "if_this_fails": "The claimed benefit may not materialize."
+    }
+  ],
+  "argument_structure": {
+    "premises": [
+      "P1: The folder is organized as a reader-friendly lane system.",
+      "P2: The structure is meant to make later HTML and GPT-driven editing easier.",
+      "P3: Keep new pages in the same lane as their closest thematic neighbors."
+    ],
+    "intermediate_conclusions": [],
+    "final_conclusion": "The folder organization is intended to be reader-friendly and facilitate editing.",
+    "weakest_link": "The claim of reader-friendliness is unsupported.",
+    "unproven_jumps": [
+      "From stating the lane system to asserting it is reader-friendly."
+    ]
+  },
+  "overclaim_detection": [
+    {
+      "pattern": "definition-to-discovery",
+      "location": "Lanes section",
+      "diagnosis": "The document defines lanes and then assumes they are reader-friendly without evidence."
+    }
+  ],
+  "counterarguments": {
+    "addressed": [],
+    "missing": [
+      "The lane system may not be intuitive to all readers.",
+      "The structure may not actually simplify editing."
+    ],
+    "smartest_critic_would_say": "The lane system is arbitrary and may confuse readers more than a simple alphabetical or chronological order."
+  },
+  "falsifiability": {
+    "kill_conditions_stated": [],
+    "kill_conditions_missing": [
+      "If readers find the lane system confusing, the claim of reader-friendliness fails.",
+      "If editing becomes harder, the claimed benefit fails."
+    ],
+    "testability": "arguable_from_text"
+  },
+  "novelty": {
+    "what_is_new": "A specific lane-based organization for one-page stories.",
+    "novelty_type": "new_application",
+    "closest_existing_work": "Standard folder organization systems (e.g., by topic, date).",
+    "novelty_score": 2
+  },
+  "compression": {
+    "one_sentence": "The document describes a lane-based folder organization for one-page stories intended to be reader-friendly and facilitate editing.",
+    "three_sentences": "The document outlines a folder structure with six thematic lanes for organizing one-page stories. It claims this structure is reader-friendly and will make later HTML and GPT-driven editing easier. It provides notes on how to place new pages.",
+    "strongest_defensible_version": "The document proposes a lane-based folder organization for one-page stories.",
+    "weakest_version_still_true": "The document describes a folder organization with six lanes."
+  }
+}

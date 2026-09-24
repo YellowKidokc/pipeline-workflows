@@ -1,0 +1,133 @@
+{
+  "alpha_estimate": {
+    "value": "0.5",
+    "interpretation": "balanced",
+    "evidence": "The document presents a structural isomorphism between epidemiology and theology, acknowledging both the cost of sin (justice: sin spreads, requires containment, has real consequences) and the need for restoration (mercy: \u03b3 as grace rate, restoration, discipleship). It does not advocate for pure punishment (alpha=1) nor pure cost absorption (alpha=0), but a balanced dynamic where both accountability and grace operate."
+  },
+  "justice_metrics": {
+    "accountability": {
+      "score": 8,
+      "evidence": "The document holds individuals and communities accountable for sin propagation, explicitly linking leadership sin to disproportionate community impact (super-spreader prediction) and advocating church discipline (1 Cor 5) as a containment strategy."
+    },
+    "cost_acknowledgment": {
+      "score": 9,
+      "evidence": "It acknowledges real costs: sin spreads, causes defilement (Heb 12:15), and requires intervention (quarantine, discipline). The SIR model mathematically encodes the cost of unchecked sin."
+    },
+    "consequence_honesty": {
+      "score": 8,
+      "evidence": "It states real consequences without softening: apostasy epidemics, community holiness thresholds, and the failure of purely individualistic sanctification models when R\u2080 > 1."
+    },
+    "standard_clarity": {
+      "score": 9,
+      "evidence": "The standard is clear: the moral law is conserved (Axiom Dependencies: Conservation), and the community must maintain holiness. The SIR model provides a precise threshold (R\u2080 < 1) for health."
+    },
+    "proportionality": {
+      "score": 7,
+      "evidence": "The response is proportional: quarantine is not punishment but containment; discipline is paired with restoration (\u03b3). However, the document does not specify proportional penalties for different sins."
+    },
+    "justice_total": "82%"
+  },
+  "mercy_metrics": {
+    "compassion": {
+      "score": 6,
+      "evidence": "The document shows care for the community's health and the restoration of fallen individuals (\u03b3 as grace rate), but the focus is more on structural dynamics than personal compassion."
+    },
+    "restoration_focus": {
+      "score": 8,
+      "evidence": "It explicitly includes restoration (\u03b3) as a core component: 'restored individuals increase at restoration/grace rate \u03b3'. The goal is not just containment but recovery."
+    },
+    "grace_extension": {
+      "score": 7,
+      "evidence": "Grace is modeled as the recovery rate (\u03b3), which is necessary for community health. The document acknowledges that external input (grace) is required to sustain holiness when R\u2080 > 1."
+    },
+    "record_preservation": {
+      "score": 6,
+      "evidence": "The document preserves truth about sin's spread and consequences, but does not explicitly discuss whether mercy erases or preserves the record of sin."
+    },
+    "cost_bearing": {
+      "score": 5,
+      "evidence": "The document does not identify a specific party voluntarily absorbing cost for another. The cost of intervention (discipline, pastoral care) is implied but not explicitly borne by a third party."
+    },
+    "mercy_total": "64%"
+  },
+  "anti_patterns": {
+    "vengeance": {
+      "score": 2,
+      "evidence": "No evidence of punishment beyond what the cost requires. Discipline is framed as containment, not retribution."
+    },
+    "enabling": {
+      "score": 3,
+      "evidence": "The document does not pretend consequences don't exist; it explicitly models them. However, it does not address the risk of enabling through excessive leniency."
+    },
+    "self_righteousness": {
+      "score": 2,
+      "evidence": "The document acknowledges community vulnerability and the need for external grace, avoiding self-righteous judgment."
+    },
+    "cheap_grace": {
+      "score": 4,
+      "evidence": "Grace is modeled as a recovery rate (\u03b3), which requires effort (pastoral care, discipleship). But the document does not specify the cost of grace, leaving room for cheap grace interpretation."
+    },
+    "scapegoating": {
+      "score": 2,
+      "evidence": "No evidence of transferring cost to an unwilling party. Discipline is applied to the sinning member, not an innocent third party."
+    }
+  },
+  "cross_configuration_test": {
+    "judge_identified": false,
+    "judge_is_payer": false,
+    "justice_maximal": false,
+    "mercy_maximal": false,
+    "record_preserved": false,
+    "freedom_maintained": false,
+    "cross_score": 0,
+    "cross_present": false
+  },
+  "beatitude_thresholds": {
+    "poor_in_spirit": {
+      "crossed": true,
+      "evidence": "Acknowledges community limitation: 'communities without external input (grace, \u03b3) cannot sustain holiness when R\u2080 > 1'."
+    },
+    "mourning": {
+      "crossed": true,
+      "evidence": "Grieves the spread of sin and its consequences: 'apostasy epidemic', 'defile many' (Heb 12:15)."
+    },
+    "meekness": {
+      "crossed": false,
+      "evidence": "The document is analytical, not meek; it does not demonstrate power under control."
+    },
+    "hunger_for_righteousness": {
+      "crossed": true,
+      "evidence": "Actively pursues justice: advocates church discipline, containment, and community holiness."
+    },
+    "merciful": {
+      "crossed": true,
+      "evidence": "Extends mercy through restoration (\u03b3) and grace as necessary for community health."
+    },
+    "pure_in_heart": {
+      "crossed": false,
+      "evidence": "The document is structurally focused, not demonstrating single-minded integrity in a personal sense."
+    },
+    "peacemaker": {
+      "crossed": false,
+      "evidence": "Does not actively reconcile opposing sides; it analyzes dynamics but does not propose reconciliation."
+    },
+    "persecuted": {
+      "crossed": false,
+      "evidence": "No evidence of maintaining position despite cost."
+    },
+    "thresholds_crossed": 4
+  },
+  "composite": {
+    "justice_score": 82,
+    "mercy_score": 64,
+    "anti_pattern_penalty": 13,
+    "cross_bonus": 0,
+    "beatitude_bonus": 20,
+    "total_jm_score": 153,
+    "maximum_possible": 270,
+    "grade": "B"
+  },
+  "diagnosis": "This document presents a balanced, structurally rigorous analysis of sin propagation using epidemiological models, achieving a moderate justice score (82) by clearly holding communities accountable for sin's spread and prescribing containment strategies. However, its mercy score (64) is lower because it focuses on structural dynamics rather than personal compassion or cost-bearing, and it lacks a Cross configuration where justice and mercy are both maximal. The document is strongest in its honest acknowledgment of consequences and clear standards, but needs to develop explicit cost-bearing and record-preservation dimensions to move toward the Cross.",
+  "strongest_moment": "The identification of the 'leaven principle' (a little leaven leavens the whole lump) as the R\u2080 > 1 condition, which simultaneously acknowledges the justice of sin's spread and the mercy of containment through discipline.",
+  "biggest_gap": "The document lacks a clear identification of a judge who bears the cost of mercy, which is essential for the Cross configuration. It also does not address record preservation (mercy that preserves truth) or voluntary cost-bearing by a third party."
+}

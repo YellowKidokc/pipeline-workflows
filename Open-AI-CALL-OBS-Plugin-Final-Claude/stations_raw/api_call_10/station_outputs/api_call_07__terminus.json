@@ -1,0 +1,88 @@
+{
+  "claims": [
+    {
+      "id": "KC-001",
+      "claim": "Any consistent formal system F capable of expressing basic arithmetic cannot prove its own consistency using only its own axioms and rules of inference.",
+      "plain_english": "If a math system works and doesn't contradict itself, it can't prove that it doesn't contradict itself using only its own rules.",
+      "type": "mathematical",
+      "strength": "strong",
+      "evidence_given": "G\u00f6del's Second Incompleteness Theorem (1931), established mathematics.",
+      "what_would_break_it": "A counterexample where a consistent formal system proves its own consistency from within, which would contradict G\u00f6del's proof."
+    },
+    {
+      "id": "KC-002",
+      "claim": "No sufficiently powerful formal language can define its own truth predicate without generating paradox.",
+      "plain_english": "A system can't define what 'true' means using only its own words without creating a contradiction like 'this sentence is false.'",
+      "type": "mathematical",
+      "strength": "strong",
+      "evidence_given": "Tarski's Undefinability Theorem (1936), established mathematical logic.",
+      "what_would_break_it": "A formal language that defines its own truth predicate without paradox, contradicting Tarski's theorem."
+    },
+    {
+      "id": "KC-003",
+      "claim": "No algorithm can determine, for all possible program-input pairs, whether the program will halt or run forever.",
+      "plain_english": "A computer can't always predict if another program will stop or keep running forever.",
+      "type": "mathematical",
+      "strength": "strong",
+      "evidence_given": "Turing's Halting Problem (1936), established computer science.",
+      "what_would_break_it": "An algorithm that solves the halting problem for all possible program-input pairs, contradicting Turing's proof."
+    },
+    {
+      "id": "KC-004",
+      "claim": "In any closed system, total entropy can only increase or remain constant over time.",
+      "plain_english": "In a closed system, disorder always increases or stays the same; things fall apart on their own.",
+      "type": "empirical",
+      "strength": "strong",
+      "evidence_given": "Second Law of Thermodynamics (Clausius/Boltzmann), confirmed by countless physical experiments.",
+      "what_would_break_it": "A closed system where entropy spontaneously decreases without external input, violating the Second Law."
+    },
+    {
+      "id": "KC-005",
+      "claim": "Erasing one bit of information releases a minimum of kT\u00b7ln(2) joules of heat into the environment; information processing has irreducible thermodynamic cost.",
+      "plain_english": "Thinking and computing always cost energy; there's no free lunch even for information.",
+      "type": "empirical",
+      "strength": "strong",
+      "evidence_given": "Landauer's Principle (1961), supported by thermodynamics and information theory.",
+      "what_would_break_it": "A process that erases a bit of information without any heat dissipation, violating Landauer's bound."
+    },
+    {
+      "id": "KC-006",
+      "claim": "Any sufficiently complex closed system cannot: prove its own consistency, define its own truth, predict its own behavior, maintain its own order, or process information without irreversible cost.",
+      "plain_english": "Any complicated system that's closed off can't check itself, define truth for itself, predict itself, keep itself organized, or think without paying a price.",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "Convergence of the five theorems (G\u00f6del, Tarski, Turing, Second Law, Landauer) across logic, language, computation, physics, and information.",
+      "what_would_break_it": "A counterexample of a sufficiently complex closed system that succeeds at any of these five tasks, contradicting the unified claim."
+    },
+    {
+      "id": "KC-007",
+      "claim": "The universe has maintained extraordinary order for 13.8 billion years, exhibits truth, maintains consistency, and processes information, despite five proven theorems saying closed systems cannot do these things.",
+      "plain_english": "The universe stays organized and works consistently, even though math and physics say closed systems can't do that on their own.",
+      "type": "empirical",
+      "strength": "moderate",
+      "evidence_given": "Observation of cosmic order, physical laws holding, mathematics working, and information processing (e.g., reading this text).",
+      "what_would_break_it": "Evidence that the universe is not a closed system, or that the five theorems do not apply to the universe as a whole."
+    },
+    {
+      "id": "KC-008",
+      "claim": "Only a self-grounding terminus\u2014something necessary, self-existent, eternal, and the source of all coherence\u2014can logically explain the persistence of order, truth, consistency, and coherent information in the universe.",
+      "plain_english": "The only logical explanation for why the universe stays organized and true is something that grounds itself, like God.",
+      "type": "theological",
+      "strength": "speculative",
+      "evidence_given": "Argument from elimination: infinite regress and brute fact are rejected as incoherent or insufficient; the self-grounding terminus is presented as the only remaining option.",
+      "what_would_break_it": "A coherent alternative explanation that does not rely on a self-grounding entity, or a demonstration that infinite regress or brute fact is logically acceptable."
+    },
+    {
+      "id": "KC-009",
+      "claim": "The required properties of a self-grounding terminus are precisely the classical attributes of God: necessary existence, self-existence (aseity), simplicity, eternality, and the ground of all being.",
+      "plain_english": "The thing that grounds everything has to have the same qualities that people have traditionally said God has.",
+      "type": "theological",
+      "strength": "speculative",
+      "evidence_given": "Logical deduction from the properties needed for a self-grounding terminus (necessary, self-existent, eternal, simple, ground of being) and their correspondence to classical theism.",
+      "what_would_break_it": "A demonstration that a self-grounding terminus does not require these specific attributes, or that these attributes are not uniquely associated with God."
+    }
+  ],
+  "strongest_claim": "KC-001",
+  "weakest_claim": "KC-009",
+  "overall_argument_strength": "moderate"
+}

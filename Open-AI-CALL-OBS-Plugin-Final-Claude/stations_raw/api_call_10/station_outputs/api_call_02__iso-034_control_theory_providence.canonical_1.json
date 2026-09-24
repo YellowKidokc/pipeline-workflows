@@ -1,0 +1,150 @@
+{
+  "chi_variables": {
+    "G": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Providence as source-field curvature: 'C_providence(s) = K_p + K_i/s + K_d * s' \u2014 the controller is the source of corrective action, analogous to Grace/Gravity as the source-field that curves the trajectory toward the setpoint."
+    },
+    "M": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Human agency as motion/inertia: 'G_human(s) remains the human's own transfer function \u2014 personality, choices, tendencies' and 'the plant dynamics are real and the controller works through them' \u2014 meaning/mass-force as the will and inertia of the human system."
+    },
+    "E": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Energy as substrate: 'The controller does not create energy; it redirects existing dynamics' (Axiom Conservation) and the loop gain as 'greater is he who is in you' \u2014 energetic substrate of providential action."
+    },
+    "S": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Strong Force/Love as binding: 'Negative feedback as stabilization \u2014 discipline = stabilization' (Hebrews 12:6) and 'the loop gain of providence exceeds the disturbance magnitude' \u2014 love as the binding force that holds the system to the setpoint."
+    },
+    "T": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Thermodynamics/Judgment as entropy and cost: 'Positive feedback as destabilization \u2014 error grows without bound' (Romans 1:24-28), 'steady-state error' as the cost of incomplete correction, and 'the integral of centuries of deviation drives the correction of exile' \u2014 judgment as entropy production and cost."
+    },
+    "K": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Knowledge/Logos as information and intelligibility: 'Controllability and observability \u2014 God can reach any human state AND can know any human state' (Psalm 139:2), and the entire mapping as a formal information-theoretic structure \u2014 the PID controller is a knowledge-based correction mechanism."
+    },
+    "R": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Relativity/Relationship as frame structure: 'The TRAJECTORY depends on G_human. Two different plants with the same controller and setpoint take DIFFERENT PATHS to the same endpoint' \u2014 relationship as the frame-dependent proper time of each individual's path."
+    },
+    "Q": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Quantum/Faith as measurement and collapse: 'The error signal IS the gap between what is and what should be' \u2014 measurement of deviation as a quantum-like collapse of the state into the error signal, and 'faith-doubt' as the selection of which feedback mode is active."
+    },
+    "F": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Weak Force/Sin-Conservation as moral decay: 'The plant can be made uncontrollable by internal structural changes... the unforgivable sin \u2014 a structural change that makes the plant uncontrollable' \u2014 sin as a conserved deficit that decays the controllability of the system."
+    },
+    "C": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Coherence/Christ as global integration operator: 'C IS chi, wraps the integral' \u2014 the entire closed-loop transfer function is the integration of all components; 'the setpoint as attractor' (ISO-016) and 'the controller output that drives toward setpoint' (Law 9) \u2014 Christ as the coherence that integrates the whole system toward the telos."
+    },
+    "variables_present_count": 10,
+    "dominant_variables": [
+      "K",
+      "C",
+      "G"
+    ],
+    "absent_variables": [],
+    "chi_coverage_pct": "100%"
+  },
+  "physics_process_detection": {
+    "maps_to_physics": true,
+    "physics_domain": "control theory",
+    "specific_process": "feedback control with PID correction, stability analysis via Nyquist criterion, disturbance rejection, controllability/observability",
+    "equation_present": "Y(s) = [G(s)C(s) / (1 + G(s)C(s)H(s))] * R(s) + [G(s) / (1 + G(s)C(s)H(s))] * D(s); C(s) = K_p + K_i/s + K_d * s",
+    "isomorphism_detected": true,
+    "isomorphism_type": "structural",
+    "isomorphism_quality": 9
+  },
+  "laws_invoked": {
+    "explicit": [
+      "Law 3 (Feedback/Recursion)",
+      "Law 4 (Incompleteness)",
+      "Law 6 (Entropy)",
+      "Law 9 (Grace)"
+    ],
+    "implicit": [
+      "Law 1 (Gravitation/Sin-Grace \u2014 the source-field curvature of the controller)",
+      "Law 2 (Motion/Will-Repentance \u2014 human plant dynamics)",
+      "Law 5 (Thermodynamics/Judgment-Heat Death \u2014 steady-state error and positive feedback destabilization)",
+      "Law 7 (Relativity/Relationship-Frame Lock \u2014 individual trajectories)",
+      "Law 8 (Quantum/Faith-Doubt \u2014 measurement of error)",
+      "Law 10 (Coherence/Christ-Decoherence \u2014 the setpoint as attractor)"
+    ],
+    "symmetry_pairs_active": [
+      "1-8",
+      "2-9",
+      "3-10",
+      "4-7",
+      "5-6"
+    ]
+  },
+  "theological_structure": {
+    "trinity_present": true,
+    "trinity_structure": "Three temporal modes of providence: Proportional (Father \u2014 immediate correction/conscience), Integral (Spirit \u2014 cumulative sanctification over history), Derivative (Son \u2014 prophetic warning/prevenient grace). These are three components of ONE controller, not three separate acts.",
+    "father_aspect": {
+      "present": true,
+      "evidence": "Proportional mode: immediate correction proportional to current sin \u2014 conscience, natural consequences (Galatians 6:7). Father as source of the setpoint and the law."
+    },
+    "son_aspect": {
+      "present": true,
+      "evidence": "Derivative mode: anticipatory correction based on rate of change \u2014 prophetic warning (Ezekiel 3:17), prevenient grace. Son as the Word who warns and the mediator who provides the setpoint (Romans 8:28-29)."
+    },
+    "spirit_aspect": {
+      "present": true,
+      "evidence": "Integral mode: cumulative correction over time \u2014 sanctification as integral of error history (Romans 8:28). Spirit as the one who applies the cumulative corrective pressure toward the telos."
+    },
+    "cross_reference": true,
+    "grace_mechanism": true,
+    "sin_entropy": true,
+    "redemption_arc": true
+  },
+  "axiom_alignment": {
+    "axioms_touched": [
+      "A1.1 (Existence)",
+      "Incompleteness of Closed Systems",
+      "Conservation",
+      "A1.2",
+      "A2.1",
+      "A2.2",
+      "A5.1",
+      "BC4",
+      "BC6",
+      "A1.3",
+      "T3.1",
+      "BC2",
+      "BC7",
+      "BC8"
+    ],
+    "axiom_count": 14,
+    "strongest_axiom_connection": "Incompleteness of Closed Systems \u2014 open-loop systems cannot self-correct; the mapping explicitly contrasts open-loop (deism) with closed-loop (theism) as the core structural difference."
+  },
+  "lean_connection": {
+    "formal_claim_present": true,
+    "could_be_formalized": true,
+    "relevant_lean_module": "IsomorphismTest",
+    "proof_status": "testable"
+  },
+  "framework_alignment_score": {
+    "total": 92,
+    "breakdown": {
+      "chi_coverage": 20,
+      "physics_mapping": 19,
+      "theological_depth": 19,
+      "axiom_grounding": 18,
+      "formal_rigor": 16
+    }
+  }
+}

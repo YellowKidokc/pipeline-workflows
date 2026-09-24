@@ -1,0 +1,70 @@
+{
+  "claims": [
+    {
+      "id": "KC-001",
+      "claim": "The method is the evidence.",
+      "plain_english": "The way you do something proves whether it's true, not just the results you get.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document repeats this phrase as a central thesis and uses it to structure the entire interlude.",
+      "what_would_break_it": "If the document provided separate evidence for its claims that did not depend on the method itself."
+    },
+    {
+      "id": "KC-002",
+      "claim": "Agreement can form without coercion.",
+      "plain_english": "People can come to the same conclusion without being forced or pressured.",
+      "type": "empirical",
+      "strength": "moderate",
+      "evidence_given": "The document frames this as the central question but provides no empirical examples or data.",
+      "what_would_break_it": "If all known cases of agreement involve some form of coercion or pressure."
+    },
+    {
+      "id": "KC-003",
+      "claim": "The interlude sends the reader to the canonical page instead of replacing it.",
+      "plain_english": "This short version points you to the full version for the real argument.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document explicitly states this and provides links to the canonical page.",
+      "what_would_break_it": "If the interlude contained the full argument and the canonical page was not needed."
+    },
+    {
+      "id": "KC-004",
+      "claim": "The full canonical treatment contains tables, proofs, and source structure.",
+      "plain_english": "The complete version has detailed evidence like tables and math proofs.",
+      "type": "structural",
+      "strength": "speculative",
+      "evidence_given": "The document claims this but does not show any tables or proofs in the interlude.",
+      "what_would_break_it": "If the canonical page does not actually contain tables, proofs, or source structure."
+    },
+    {
+      "id": "KC-005",
+      "claim": "The structure of the argument is presented in four moves: Name Your Ground, The Problem with Making Things Agree, The Method, Proof of Concept.",
+      "plain_english": "The argument has four clear steps that build on each other.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document lays out these four steps in a timeline with descriptions.",
+      "what_would_break_it": "If the argument actually requires more or fewer steps to be coherent."
+    },
+    {
+      "id": "KC-006",
+      "claim": "The problem appears when you try to make things agree.",
+      "plain_english": "Trying to force agreement creates a problem.",
+      "type": "empirical",
+      "strength": "moderate",
+      "evidence_given": "The document poses this as a question but does not describe the problem in detail.",
+      "what_would_break_it": "If making things agree is always straightforward and never creates problems."
+    },
+    {
+      "id": "KC-007",
+      "claim": "The interlude is a short reader-facing version, not the full argument.",
+      "plain_english": "This is a summary for readers, not the complete work.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document explicitly states this and directs readers to the canonical page.",
+      "what_would_break_it": "If the interlude contained the full argument and the canonical page was redundant."
+    }
+  ],
+  "strongest_claim": "KC-001",
+  "weakest_claim": "KC-004",
+  "overall_argument_strength": "developing"
+}

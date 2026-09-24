@@ -1,0 +1,115 @@
+{
+  "fruits": {
+    "love": {
+      "score": 8,
+      "weight": 2.0,
+      "evidence": "The document grounds its entire framework in the concept of coherence as a binding force, analogous to the strong force/love. It presents a vision of restoration through small groups acting in self-giving, non-coercive ways (e.g., 'three families handing out pamphlets'). The tone is ultimately hopeful and seeks the good of the civilization."
+    },
+    "joy": {
+      "score": 4,
+      "weight": 1.0,
+      "evidence": "The document has moments of resonant insight (e.g., 'the click' of the synchronization problem), but the overall tone is more diagnostic and urgent than joyful. The joy is in the discovery of the pattern, not in a sustained resonant frequency."
+    },
+    "peace": {
+      "score": 5,
+      "weight": 1.5,
+      "evidence": "The document identifies force equilibrium as a key property of healthy systems (SUM(F)=0). It describes a state of 'critical slowing down' and 'supercooled' metastability. However, the document itself is not at peace; it is a call to action against decay, containing unresolved tension."
+    },
+    "patience": {
+      "score": 7,
+      "weight": 1.0,
+      "evidence": "The document demonstrates high heat capacity by absorbing and presenting the strongest counterarguments (e.g., the 'Adversarial' reading, the 'Audit' section). It does not dismiss opposing views but integrates them into the framework. It acknowledges uncertainty and the long timescale of recovery (generations for institutional trust)."
+    },
+    "kindness": {
+      "score": 6,
+      "weight": 1.0,
+      "evidence": "The document has a low activation energy for good: it offers a simple, actionable first step ('Be blessed'). The tone is accessible and seeks to empower the reader. However, the diagnosis of decay is harsh and could be perceived as unkind to the culture it describes."
+    },
+    "goodness": {
+      "score": 7,
+      "weight": 1.5,
+      "evidence": "The document's net output is positive: it provides a framework for understanding and a path to recovery. It explicitly states that recovery is possible and that small actions have outsized effects. The 'Audit' section shows a net positive by acknowledging limitations honestly."
+    },
+    "faithfulness": {
+      "score": 8,
+      "weight": 1.5,
+      "evidence": "The document exhibits strong time-translation symmetry. It consistently applies the same sequence (Semantic \u2192 Familial \u2192 Institutional \u2192 Economic) across multiple civilizations and time periods. The core claim is invariant: 'Meaning precedes matter. Always.' The framework is stable and does not shift."
+    },
+    "gentleness": {
+      "score": 5,
+      "weight": 1.0,
+      "evidence": "The document's force is generally proportional to the problem it diagnoses, but it is not gentle. It uses strong language ('zombie structure', 'carcass decomposing'). The call to action is firm. It is more forceful than gentle, though it advocates for a gentle method (kindness propagating)."
+    },
+    "self_control": {
+      "score": 6,
+      "weight": 1.0,
+      "evidence": "The document demonstrates error correction through its 'Audit' section, which explicitly identifies where the author may have 'got carried away.' This is a form of feedback control. However, the main body is written with high conviction and little hedging, showing less self-control in tone."
+    }
+  },
+  "anti_fruits": {
+    "hatred": {
+      "score": 2,
+      "weight": -2.0,
+      "evidence": "The document does not exhibit hatred. It diagnoses decay but does not demonize individuals or groups. It presents the decay as a systemic, thermodynamic process, not a product of malice. The 'Adversarial' reading is presented as a possibility, not a certainty."
+    },
+    "despair": {
+      "score": 3,
+      "weight": -1.0,
+      "evidence": "The document is not off-resonance with hope. It explicitly argues that recovery is possible and provides historical examples. However, the diagnosis of civilizational decay is grim, and the tone carries a sense of urgency that borders on despair. The 'supercooled' state is a hopeful interpretation, but the data is alarming."
+    },
+    "anxiety": {
+      "score": 6,
+      "weight": -1.5,
+      "evidence": "The document is driven by a sense of unresolved forces. It identifies a massive synchronization problem and a predictable cascade of decay. The tone is urgent and diagnostic, reflecting anxiety about the state of civilization. The call to action is a response to this anxiety."
+    },
+    "impatience": {
+      "score": 4,
+      "weight": -1.0,
+      "evidence": "The document shows some impatience. It presents a clear, urgent timeline and a call for immediate action ('Tomorrow morning'). However, it also acknowledges that institutional trust takes generations to recover, showing a degree of patience. The 'Audit' section tempers the impatience of the main body."
+    },
+    "cruelty": {
+      "score": 1,
+      "weight": -1.0,
+      "evidence": "The document has a low activation energy for harm. It does not advocate for cruelty. Its goal is restoration and healing. The diagnosis is stark but not cruel."
+    },
+    "corruption": {
+      "score": 1,
+      "weight": -1.5,
+      "evidence": "The document's net output is positive. It provides a framework for understanding and a path to recovery. It is not a drain; it is an attempt to generate coherence."
+    },
+    "betrayal": {
+      "score": 1,
+      "weight": -1.5,
+      "evidence": "The document is consistent with its own framework. It does not change its character over time. The 'Audit' section is an act of faithfulness, not betrayal. It holds itself to the same standard it applies to civilizations."
+    },
+    "harshness": {
+      "score": 5,
+      "weight": -1.0,
+      "evidence": "The document uses disproportionate force in its language. Terms like 'zombie structure,' 'carcass decomposing,' and 'terminal decline' are harsh. While the diagnosis may be accurate, the tone is more severe than necessary for a gentle presentation."
+    },
+    "addiction": {
+      "score": 2,
+      "weight": -1.0,
+      "evidence": "The document does not exhibit a positive feedback loop without error correction. The 'Audit' section provides a corrective mechanism. The framework itself is a call to break addictive patterns of decay."
+    }
+  },
+  "composite_scores": {
+    "fruits_raw": 56,
+    "fruits_weighted": 82.5,
+    "anti_fruits_raw": 25,
+    "anti_fruits_weighted": 33.5,
+    "net_score": 49.0,
+    "fruit_ratio": 0.711,
+    "dominant_fruit": "love",
+    "dominant_anti_fruit": "anxiety",
+    "phase_state": "above_threshold"
+  },
+  "phase_form": {
+    "chi": 0.71,
+    "chi_c": 0.5,
+    "phi": 0.88,
+    "interpretation": "fruits active"
+  },
+  "diagnosis": "The document exhibits a strong, coherent framework (high faithfulness, love) and a positive, restorative intent (goodness, patience). Its primary weakness is a tone of anxiety and harshness that, while diagnostic, introduces unresolved tension and disproportionate force, preventing it from fully embodying peace and gentleness.",
+  "prescription": "To move toward higher fruit expression, the document should soften its diagnostic language to reduce harshness and anxiety. Emphasizing the joy and peace inherent in the recovery mechanism (e.g., the beauty of nucleation) would increase resonance. The 'Audit' section's self-control could be more integrated into the main body to temper the tone of certainty."
+}

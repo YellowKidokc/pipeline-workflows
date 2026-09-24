@@ -1,0 +1,79 @@
+{
+  "claims": [
+    {
+      "id": "KC-001",
+      "claim": "The mortality curve exposes a floor that behaves like an asymptote, not a coincidence.",
+      "plain_english": "The death rate doesn't just keep going down forever\u2014it hits a wall around age 93 that acts like a mathematical limit, not just random chance.",
+      "type": "empirical",
+      "strength": "strong",
+      "evidence_given": "The document asserts the curve is 'the clue that the floor is being held' and refers to a full canonical treatment with tables, proofs, and source structure.",
+      "what_would_break_it": "If mortality data showed the floor continuing to decline linearly or disappearing entirely with improved medicine, the claim would be false."
+    },
+    {
+      "id": "KC-002",
+      "claim": "The floor is being held\u2014it does not disappear naturally.",
+      "plain_english": "Something is keeping the death rate from dropping below a certain point; it's not just a temporary limit that will go away on its own.",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "The document repeats the phrase 'the curve is the clue that the floor is being held' and positions the floor as an asymptote rather than a coincidence.",
+      "what_would_break_it": "If future data showed the floor dropping significantly below 93 years, or if a natural biological mechanism explained the floor without any external cause, the claim would be undermined."
+    },
+    {
+      "id": "KC-003",
+      "claim": "The floor behaves like an asymptote, not a coincidence.",
+      "plain_english": "The limit on human lifespan acts like a mathematical curve that gets closer and closer to a line but never crosses it, rather than just being a random number.",
+      "type": "mathematical",
+      "strength": "moderate",
+      "evidence_given": "The document contrasts 'asymptote' with 'coincidence' and states the curve is the clue, but does not provide the mathematical derivation here.",
+      "what_would_break_it": "If the mortality curve were shown to be linear or to have no stable limit, the asymptote model would be wrong."
+    },
+    {
+      "id": "KC-004",
+      "claim": "The curve is the clue that the floor is being held.",
+      "plain_english": "The shape of the death-rate graph tells us that the limit on lifespan is not accidental\u2014it's being maintained by something.",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "This phrase is repeated as a pull quote and in the timeline, serving as the central thesis of the interlude.",
+      "what_would_break_it": "If the curve could be fully explained by known biological or statistical processes without any external 'holding,' the claim would be false."
+    },
+    {
+      "id": "KC-005",
+      "claim": "The full canonical treatment contains tables, proofs, and source structure that support the argument.",
+      "plain_english": "There is a longer, more detailed version of this argument that includes data tables, mathematical proofs, and a list of sources.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document explicitly states 'the full canonical treatment remains linked below for the complete argument, tables, proofs, and source structure.'",
+      "what_would_break_it": "If the linked canonical page did not exist or did not contain the claimed tables, proofs, and sources, this claim would be false."
+    },
+    {
+      "id": "KC-006",
+      "claim": "The interlude sends the reader to the canonical page instead of replacing it.",
+      "plain_english": "This short page is meant to point you to the main article, not to stand alone as the full argument.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document says 'the interlude sends the reader to the canonical page instead of replacing it' and provides a link to the canonical page.",
+      "what_would_break_it": "If the canonical page were missing or did not contain the full argument, the interlude's purpose would be undermined."
+    },
+    {
+      "id": "KC-007",
+      "claim": "The floor is at approximately 93 years.",
+      "plain_english": "The limit on human lifespan is around age 93.",
+      "type": "empirical",
+      "strength": "moderate",
+      "evidence_given": "The title 'The 93-Year Floor' and the repeated reference to 'the floor' imply this specific age, but no raw data or citation is provided in this interlude.",
+      "what_would_break_it": "If reliable demographic data showed the floor to be significantly higher or lower than 93, the claim would be false."
+    },
+    {
+      "id": "KC-008",
+      "claim": "The floor is not a coincidence\u2014it has a cause.",
+      "plain_english": "The limit on lifespan is not random; there is a reason for it.",
+      "type": "theological",
+      "strength": "speculative",
+      "evidence_given": "The document contrasts 'asymptote' with 'coincidence' and implies a cause ('being held'), but does not specify the cause in this interlude.",
+      "what_would_break_it": "If the floor could be fully explained by random biological variation or statistical noise, the claim would be false."
+    }
+  ],
+  "strongest_claim": "KC-001",
+  "weakest_claim": "KC-008",
+  "overall_argument_strength": "moderate"
+}

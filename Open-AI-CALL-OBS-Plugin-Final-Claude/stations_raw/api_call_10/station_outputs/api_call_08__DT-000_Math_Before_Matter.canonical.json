@@ -1,0 +1,523 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "mathematics",
+        "type": "mathematics",
+        "strength": 10
+      },
+      {
+        "name": "physics",
+        "type": "physics",
+        "strength": 8
+      },
+      {
+        "name": "philosophy",
+        "type": "philosophy",
+        "strength": 9
+      },
+      {
+        "name": "theology",
+        "type": "theology",
+        "strength": 3
+      },
+      {
+        "name": "information",
+        "type": "information",
+        "strength": 5
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "M",
+        "present": true,
+        "role": "Meaning/Mass: mathematical structure as foundational meaning prior to physical mass",
+        "strength": 8
+      },
+      {
+        "variable": "E",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "S",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "T",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Info/Logos: mathematical truth as Logos-like structure governing reality",
+        "strength": 9
+      },
+      {
+        "variable": "R",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "Q",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "F",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "C",
+        "present": false,
+        "role": "",
+        "strength": 0
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "Existence: mathematical truths exist necessarily, not contingently"
+      },
+      {
+        "id": "A1.2",
+        "invoked": true,
+        "how": "Distinction: math is categorically distinct from human invention"
+      },
+      {
+        "id": "A2.1",
+        "invoked": true,
+        "how": "Substrate: mathematical structure is the substrate from which physical reality is built"
+      },
+      {
+        "id": "A2.2",
+        "invoked": true,
+        "how": "Self-grounding: math is self-grounding, not dependent on physical reality"
+      },
+      {
+        "id": "A5.1",
+        "invoked": true,
+        "how": "Observation: the 13.8 billion year gap is an observational argument"
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC6",
+        "invoked": true,
+        "how": "Infinite Source: mathematical truth as eternal, necessary, immutable points to an infinite source"
+      },
+      {
+        "id": "A1.3",
+        "invoked": true,
+        "how": "Info Primacy: information/mathematical structure is primary, matter is derivative"
+      },
+      {
+        "id": "T3.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC7",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC8",
+        "invoked": false,
+        "how": ""
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": false,
+        "manifestations": []
+      },
+      "son": {
+        "present": false,
+        "manifestations": []
+      },
+      "spirit": {
+        "present": false,
+        "manifestations": []
+      },
+      "trinitarian_structure": "none"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-001",
+        "domain_a": "mathematics",
+        "domain_b": "theology",
+        "strength": 6,
+        "type": "analogical"
+      },
+      {
+        "id": "ISO-002",
+        "domain_a": "mathematics",
+        "domain_b": "philosophy",
+        "strength": 8,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "Logos",
+        "context": "mentioned as what the universe looks like it is structured by",
+        "weight": 4
+      },
+      {
+        "concept": "creation",
+        "context": "implied by ontological priority of math over matter",
+        "weight": 2
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "necessity",
+        "context": "mathematical truth is necessary, true in all possible worlds",
+        "weight": 9
+      },
+      {
+        "concept": "contingency",
+        "context": "human inventions are contingent, math is not",
+        "weight": 8
+      },
+      {
+        "concept": "contradiction",
+        "context": "nominalism leads to contradiction with empirical evidence",
+        "weight": 7
+      },
+      {
+        "concept": "implication",
+        "context": "the argument implies math is prior to matter",
+        "weight": 8
+      },
+      {
+        "concept": "parsimony",
+        "context": "used as a principle to evaluate competing explanations",
+        "weight": 6
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 5
+      },
+      {
+        "fruit": "truth",
+        "present": true,
+        "strength": 9
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "domain:mathematics",
+      "to": "domain:physics",
+      "relation": "grounds",
+      "weight": 9
+    },
+    {
+      "from": "domain:mathematics",
+      "to": "domain:philosophy",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "chi_variable:K",
+      "to": "domain:mathematics",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:M",
+      "to": "domain:mathematics",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "axiom:A1.1",
+      "to": "domain:mathematics",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "axiom:A1.2",
+      "to": "domain:mathematics",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "axiom:A2.1",
+      "to": "domain:mathematics",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "axiom:A2.2",
+      "to": "domain:mathematics",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "axiom:A1.3",
+      "to": "domain:mathematics",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "axiom:BC6",
+      "to": "domain:theology",
+      "relation": "maps_to",
+      "weight": 5
+    },
+    {
+      "from": "logical_concept:necessity",
+      "to": "domain:mathematics",
+      "relation": "defines",
+      "weight": 9
+    },
+    {
+      "from": "logical_concept:contingency",
+      "to": "domain:philosophy",
+      "relation": "defines",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:parsimony",
+      "to": "domain:philosophy",
+      "relation": "supports",
+      "weight": 6
+    },
+    {
+      "from": "ISO-001",
+      "to": "domain:mathematics",
+      "relation": "maps_to",
+      "weight": 6
+    },
+    {
+      "from": "ISO-001",
+      "to": "domain:theology",
+      "relation": "maps_to",
+      "weight": 6
+    },
+    {
+      "from": "ISO-002",
+      "to": "domain:mathematics",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "ISO-002",
+      "to": "domain:philosophy",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "theological_concept:Logos",
+      "to": "chi_variable:K",
+      "relation": "maps_to",
+      "weight": 6
+    },
+    {
+      "from": "axiom:A5.1",
+      "to": "domain:physics",
+      "relation": "supports",
+      "weight": 7
+    }
+  ],
+  "tags": {
+    "primary": [
+      "ontological priority of math",
+      "Wigner's unreasonable effectiveness",
+      "13.8 billion year gap",
+      "nominalism refutation",
+      "Platonism causal problem"
+    ],
+    "pillar": [
+      "pillar/philosophy",
+      "pillar/mathematics",
+      "pillar/physics"
+    ],
+    "series": "foundational",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [],
+    "academic": [
+      {
+        "ref": "Wigner, Eugene. 'The Unreasonable Effectiveness of Mathematics in the Natural Sciences.' 1960.",
+        "context": "Central to the argument; Wigner's question is answered by ontological priority"
+      },
+      {
+        "ref": "G\u00f6del, Kurt. 'On Formally Undecidable Propositions.' 1931.",
+        "context": "First of five limitation theorems showing closed systems cannot certify themselves"
+      },
+      {
+        "ref": "Tarski, Alfred. 'The Concept of Truth in Formalized Languages.' 1933.",
+        "context": "Second limitation theorem"
+      },
+      {
+        "ref": "Turing, Alan. 'On Computable Numbers.' 1936.",
+        "context": "Third limitation theorem"
+      },
+      {
+        "ref": "Landauer, Rolf. 'Irreversibility and Heat Generation in the Computing Process.' 1961.",
+        "context": "Fifth limitation theorem"
+      }
+    ],
+    "internal": [],
+    "total_count": 5
+  },
+  "word_anomalies": [
+    {
+      "word": "Biaxiosum",
+      "frequency": 2,
+      "significance": "Neologism; coined term for the rule of naming one's ground before critique"
+    },
+    {
+      "word": "ontologically prior",
+      "frequency": 5,
+      "significance": "Central thesis; math exists before matter in a foundational sense"
+    },
+    {
+      "word": "unforced convergence",
+      "frequency": 1,
+      "significance": "Key concept; five independent theorems converging on same structural conclusion"
+    },
+    {
+      "word": "categorical mismatch",
+      "frequency": 2,
+      "significance": "Core argument structure; properties of math vs human invention are opposites"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "Declared position: author believes in God and that math and divine truth are dual projections, but argues this paper stands on logic alone, not theology.",
+    "Q1_identity": "A foundational philosophical paper arguing for the ontological priority of mathematical structure over physical reality.",
+    "Q2_domain": "Primarily philosophy of mathematics and physics, with implications for theology.",
+    "Q3_claim": "Mathematical structure is ontologically prior to physical reality; math came first, matter came second.",
+    "Q4_support": "Seven-property comparison table, 13.8 billion year temporal gap, Wigner's unreasonable effectiveness, five limitation theorems (G\u00f6del, Tarski, Turing, Second Law, Landauer), and falsification criteria.",
+    "Q5_dependencies": "Assumes the validity of the five limitation theorems, the empirical fact of mathematical law in the early universe, and the standard definitions of necessity, eternity, immutability, and universality.",
+    "Q6_consequences": "If true, nominalism, Platonism, and fictionalism are all inadequate; physics is grounded in mathematics; the universe is fundamentally mathematical; and the question of what grounds mathematics itself becomes pressing.",
+    "Q7_kill": "Produce a contingent mathematical truth, a temporal mathematical truth, a local mathematical truth, explain causal efficacy of abstract objects without agency, or provide an alternative explanation for Wigner's effectiveness that does not presuppose ontological priority."
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "Wigner 1960",
+      "G\u00f6del 1931",
+      "Tarski 1933",
+      "Turing 1936",
+      "Landauer 1961"
+    ],
+    "required_by": [
+      "DT-001 Math Is Moral",
+      "subsequent foundational papers in the series"
+    ],
+    "parallel_to": []
+  },
+  "graph_summary": {
+    "total_nodes": 24,
+    "total_edges": 20,
+    "dominant_domain": "mathematics",
+    "dominant_chi": "K (Info/Logos)",
+    "connectivity_score": 8,
+    "one_sentence": "This paper establishes the foundational claim that mathematical structure is ontologically prior to physical reality, grounding the entire knowledge graph in a philosophical argument supported by logic, temporal evidence, and convergence of multiple theorems."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": false,
+      "how": ""
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": false,
+      "how": ""
+    },
+    "4_7_love_relationship": {
+      "active": false,
+      "how": ""
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Judgment (T) and Logos (K) are implicitly paired: the five limitation theorems act as judgment on closed systems, while Logos (mathematical structure) is the ground that survives judgment"
+    },
+    "pairs_active_count": 1
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": false,
+      "strength": 0
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 9
+    },
+    "love": {
+      "present": false,
+      "strength": 0
+    },
+    "judgment": {
+      "present": true,
+      "strength": 7
+    },
+    "logos": {
+      "present": true,
+      "strength": 9
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": false,
+      "strength": 0
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": false,
+      "strength": 0
+    },
+    "operators_present_count": 3
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [],
+    "read_after": [
+      "DT-001 Math Is Moral"
+    ]
+  }
+}

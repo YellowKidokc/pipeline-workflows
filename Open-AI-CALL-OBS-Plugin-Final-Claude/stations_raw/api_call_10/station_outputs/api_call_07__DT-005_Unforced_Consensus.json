@@ -1,0 +1,79 @@
+{
+  "claims": [
+    {
+      "id": "KC-001",
+      "claim": "Unforced convergence \u2014 agreement that emerges without being arranged \u2014 is a form of evidence that engineered consensus cannot provide.",
+      "plain_english": "If multiple AIs independently reach the same conclusion without talking to each other, that agreement is more trustworthy than if you forced them to agree through debate.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document describes a Constitutional Coherence Audit where four AIs from different providers, prompted separately, converged on similar scores (1.0, 2.6, 3.4) and identified the same most-eroded amendments.",
+      "what_would_break_it": "If the convergence could be fully explained by shared training data or prompt bias, or if a fifth independent system produced a score outside the 1.0\u20133.4 range on the same standard."
+    },
+    {
+      "id": "KC-002",
+      "claim": "The existing multi-agent AI literature focuses on making AIs agree through debate, voting, and iterative refinement, which introduces circular reasoning: if you engineer consensus, you cannot then cite that consensus as evidence.",
+      "plain_english": "Current AI research tries to get AIs to agree by having them argue with each other, but that's like rigging a test and then claiming the results prove something.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document cites Agent Forest, Multi-Agent Debate, CONSENSAGENT, and The Social Laboratory as examples of methods that engineer agreement.",
+      "what_would_break_it": "If engineered consensus methods could be shown to produce results that are equally reliable as unforced convergence in a controlled comparison."
+    },
+    {
+      "id": "KC-003",
+      "claim": "Three AI systems independently concluded that the load-bearing liberty provisions of the U.S. Constitution have been systematically counteracted while the procedural amendments remain largely intact.",
+      "plain_english": "Three different AIs all found that the parts of the Constitution that protect individual freedoms have been weakened over time, while the parts about how government works are still mostly followed.",
+      "type": "empirical",
+      "strength": "moderate",
+      "evidence_given": "The audit results show all three author-intent-scoring systems ranked the Fourth, Fifth, Ninth, and Tenth Amendments as most eroded and the Third Amendment as substantially honored.",
+      "what_would_break_it": "If a re-audit with different AI systems or different prompting found no consistent pattern, or if the specific amendments identified varied widely across systems."
+    },
+    {
+      "id": "KC-004",
+      "claim": "The outlier system (ChatGPT, scoring 6.6/10) was scoring against a different standard (legal doctrine) than the other three (author intent), and the identification of this difference produced the audit's most important finding.",
+      "plain_english": "The AI that gave a much higher score was actually answering a different question \u2014 it measured what courts allow, not what the Constitution's writers intended. That difference revealed something important.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document reports that ChatGPT scored against legal doctrine while the other three scored against original author intent, and the gap (6.6 vs. 2.6 average) is presented as a measurement of the distance between government practice and the original contract.",
+      "what_would_break_it": "If it could be shown that ChatGPT was actually scoring on the same standard but with different calibration, or if the scoring standard difference was an artifact of prompt wording rather than a genuine methodological difference."
+    },
+    {
+      "id": "KC-005",
+      "claim": "The BAES framework's Outlier Protocol \u2014 presenting divergent systems with group scores and asking them to explain and optionally adjust \u2014 preserves divergence as information rather than averaging it away.",
+      "plain_english": "When one AI disagrees with the others, instead of ignoring it or forcing it to change its answer, the system asks it to explain why it disagrees and lets it decide whether to change its mind.",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "The document describes the Outlier Protocol as a formal step in BAES, but provides no empirical test of its effectiveness.",
+      "what_would_break_it": "If the Outlier Protocol consistently caused divergent systems to conform to the majority without good reason, or if it failed to surface genuine errors in the majority view."
+    },
+    {
+      "id": "KC-006",
+      "claim": "The method's falsification criteria include: if convergence is entirely explained by shared training data, the method fails; test with models trained on fundamentally different corpora.",
+      "plain_english": "The method can be proven wrong if it turns out that AIs agree only because they were trained on the same data, not because they independently reached the same conclusion.",
+      "type": "predictive",
+      "strength": "strong",
+      "evidence_given": "The document lists this as the first falsification criterion and proposes testing with models trained on fundamentally different corpora.",
+      "what_would_break_it": "If a test using models with completely different training data (e.g., a model trained only on legal texts vs. one trained only on scientific papers) still produced convergence on the same evaluative question."
+    },
+    {
+      "id": "KC-007",
+      "claim": "The method does not work for preference questions; it is designed for evaluative questions with evidence-based answers.",
+      "plain_english": "This method only works for questions that have right or wrong answers based on evidence, not for questions about what people like or prefer.",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "The document states this as a limitation but provides no empirical demonstration of the boundary.",
+      "what_would_break_it": "If the method were successfully applied to a preference question (e.g., 'Which painting is more beautiful?') and produced meaningful convergence."
+    },
+    {
+      "id": "KC-008",
+      "claim": "The proof of concept uses one application (Constitutional analysis); additional domains are needed to establish generalizability.",
+      "plain_english": "The method has only been tested on one real-world example, so we don't yet know if it works for other types of questions.",
+      "type": "empirical",
+      "strength": "moderate",
+      "evidence_given": "The document acknowledges this as a limitation and invites researchers to test the method in other domains.",
+      "what_would_break_it": "If the method fails to produce meaningful convergence in multiple other domains (e.g., scientific literature review, historical analysis, legal interpretation)."
+    }
+  ],
+  "strongest_claim": "KC-001",
+  "weakest_claim": "KC-007",
+  "overall_argument_strength": "moderate"
+}

@@ -1,0 +1,145 @@
+{
+  "chi_variables": {
+    "G": {
+      "present": true,
+      "strength": 10,
+      "evidence": "Grace field strength (external input, always > 0) \u2014 explicitly mapped to sovereign grace, Calvinist variable. Appears in equation dC/dt = O\u00b7G(1\u2212C) \u2212 S\u00b7C."
+    },
+    "M": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No mention of mass, inertia, will, or motion."
+    },
+    "E": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No mention of energy or spirit as energetic substrate."
+    },
+    "S": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Strong Force / Love \u2014 binding, confinement. Mapped to sin/entropy as S (entropy/noise) in equation. Also appears as surrender coefficient s."
+    },
+    "T": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Thermodynamics / Judgment \u2014 entropy, cost. S is entropy/noise, sin/temptation/worldly entropy. Three regimes include autonomous decay (exponential collapse)."
+    },
+    "K": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No mention of knowledge, information, or Logos."
+    },
+    "R": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No mention of relativity, relationship, or frame structure."
+    },
+    "Q": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Quantum / Faith \u2014 measurement, selection, collapse. Openness O is observer coupling (0 to 1), maps to free will/human response. Coupling parameter s determines regime."
+    },
+    "F": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Weak Force / Sin-Conservation \u2014 moral decay, conserved deficit. S as entropy/noise, sin/temptation. Autonomous decay regime (s = -1) maps to Romans 1:24-28 'God gave them over'."
+    },
+    "C": {
+      "present": true,
+      "strength": 10,
+      "evidence": "Coherence / Christ \u2014 global integration operator. C is coherence (0 to 1), maps to spiritual maturity/sanctification. Equation dC/dt = O\u00b7G(1\u2212C) \u2212 S\u00b7C. Ceq = (O\u00b7G)/(O\u00b7G + S)."
+    },
+    "variables_present_count": 6,
+    "dominant_variables": [
+      "G",
+      "C",
+      "S"
+    ],
+    "absent_variables": [
+      "M",
+      "E",
+      "K",
+      "R"
+    ],
+    "chi_coverage_pct": "60%"
+  },
+  "physics_process_detection": {
+    "maps_to_physics": true,
+    "physics_domain": "information theory",
+    "specific_process": "logistic growth with stable equilibrium, phase transition between three regimes (autonomous decay, performance mode, full surrender)",
+    "equation_present": "dC/dt = O\u00b7G(1\u2212C) \u2212 S\u00b7C; Ceq = (O\u00b7G)/(O\u00b7G + S)",
+    "isomorphism_detected": true,
+    "isomorphism_type": "structural",
+    "isomorphism_quality": 10
+  },
+  "laws_invoked": {
+    "explicit": [
+      "Law 5: Thermodynamics / Judgment-Heat Death",
+      "Law 8: Quantum / Faith-Doubt",
+      "Law 9: Weak Force / Moral Conservation",
+      "Law 10: Coherence / Christ-Decoherence"
+    ],
+    "implicit": [
+      "Law 1: Gravitation / Sin-Grace",
+      "Law 4: Strong Force / Love-Captivity"
+    ],
+    "symmetry_pairs_active": [
+      "1-8",
+      "4-7",
+      "5-6"
+    ]
+  },
+  "theological_structure": {
+    "trinity_present": false,
+    "trinity_structure": "Not explicitly present; focuses on two-variable product O\u00b7G (Calvinist-Arminian resolution) and three regimes, but no Father-Son-Spirit structure.",
+    "father_aspect": {
+      "present": false,
+      "evidence": "No source/origin/ground language."
+    },
+    "son_aspect": {
+      "present": false,
+      "evidence": "No incarnation/image/word/mediator language."
+    },
+    "spirit_aspect": {
+      "present": false,
+      "evidence": "No power/presence/movement/energy language."
+    },
+    "cross_reference": false,
+    "grace_mechanism": true,
+    "sin_entropy": true,
+    "redemption_arc": true
+  },
+  "axiom_alignment": {
+    "axioms_touched": [
+      "A1.1",
+      "A1.2",
+      "A2.1",
+      "A2.2",
+      "A5.1",
+      "BC4",
+      "BC6",
+      "BC2",
+      "BC7",
+      "BC8"
+    ],
+    "axiom_count": 10,
+    "strongest_axiom_connection": "A5.1 \u2014 The isomorphism between a logistic ODE and sanctification dynamics, with bidirectional constraint and empirical validation."
+  },
+  "lean_connection": {
+    "formal_claim_present": true,
+    "could_be_formalized": true,
+    "relevant_lean_module": "IsomorphismTest",
+    "proof_status": "testable"
+  },
+  "framework_alignment_score": {
+    "total": 88,
+    "breakdown": {
+      "chi_coverage": 12,
+      "physics_mapping": 20,
+      "theological_depth": 18,
+      "axiom_grounding": 18,
+      "formal_rigor": 20
+    }
+  }
+}

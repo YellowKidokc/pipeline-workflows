@@ -1,0 +1,143 @@
+{
+  "chi_variables": {
+    "G": {
+      "present": true,
+      "strength": 10,
+      "evidence": "Grace is the central operator class derived from five impossibility theorems. Equation: G = G0 * e^(\u222b r(t') dt') * (1 - R(t))."
+    },
+    "M": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit reference to meaning, mass, force, motion, or will."
+    },
+    "E": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Anti-entropic property requires energy from outside the system. Landauer's principle: kT ln 2 per bit. Salvation dynamics includes \u03b2 O \u0393_ext term."
+    },
+    "S": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No mention of strong force, love, or binding."
+    },
+    "T": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Second Law of Thermodynamics (Clausius) invoked as Theorem 4: \u0394S_closed \u2265 0. Entropy production and moral entropy from Page 09 referenced."
+    },
+    "K": {
+      "present": true,
+      "strength": 7,
+      "evidence": "G\u00f6del's incompleteness (Theorem 1), Tarski's undefinability (Theorem 2), Turing/Church halting (Theorem 3), Landauer's principle (Theorem 5) \u2014 all information-theoretic constraints."
+    },
+    "R": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit reference to relativity, relationship, or frame structure."
+    },
+    "Q": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit reference to quantum mechanics, measurement, or faith."
+    },
+    "F": {
+      "present": true,
+      "strength": 5,
+      "evidence": "Conserved deficit referenced from Page 12 (Law 9). Redemption mode: 'price paid' and 'conserved cost transfer'. Record-preserving property implies moral conservation."
+    },
+    "C": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Grace operator is the unique class that satisfies all five constraints \u2014 it is the global integration operator. C wraps the integral implicitly. The entire derivation is about coherence of repair."
+    },
+    "variables_present_count": 6,
+    "dominant_variables": [
+      "G",
+      "C",
+      "T"
+    ],
+    "absent_variables": [
+      "M",
+      "S",
+      "R",
+      "Q"
+    ],
+    "chi_coverage_pct": "60%"
+  },
+  "physics_process_detection": {
+    "maps_to_physics": true,
+    "physics_domain": "thermodynamics, information theory",
+    "specific_process": "entropy production, anti-entropic repair, Landauer erasure cost",
+    "equation_present": "\u0394S_closed \u2265 0; W_erase \u2265 kT ln 2 per bit; G = G0 * e^(\u222b r(t') dt') * (1 - R(t)); \u010b = -\u03c3c + \u03b2O\u0393_ext(1-c)",
+    "isomorphism_detected": true,
+    "isomorphism_type": "structural",
+    "isomorphism_quality": 9
+  },
+  "laws_invoked": {
+    "explicit": [
+      "Law 5: Thermodynamics/Judgment-Heat Death",
+      "Law 9: Weak Force/Moral Conservation"
+    ],
+    "implicit": [
+      "Law 6: Information/Logos-Chaos",
+      "Law 10: Coherence/Christ-Decoherence"
+    ],
+    "symmetry_pairs_active": [
+      "5-6",
+      "9 (asymmetric)"
+    ]
+  },
+  "theological_structure": {
+    "trinity_present": false,
+    "trinity_structure": "Not explicitly present. Grace operator is singular, not triune.",
+    "father_aspect": {
+      "present": true,
+      "evidence": "External source from outside the system (G\u00f6del). Meta-level operator (Tarski). Source of grace."
+    },
+    "son_aspect": {
+      "present": false,
+      "evidence": "No incarnation, image, word, or mediator language. Grace operator is abstract."
+    },
+    "spirit_aspect": {
+      "present": false,
+      "evidence": "No power, presence, movement, or energy language beyond anti-entropic work."
+    },
+    "cross_reference": false,
+    "grace_mechanism": true,
+    "sin_entropy": true,
+    "redemption_arc": true
+  },
+  "axiom_alignment": {
+    "axioms_touched": [
+      "A1.1",
+      "A1.2",
+      "A2.1",
+      "A2.2",
+      "A5.1",
+      "BC4",
+      "BC6",
+      "T3.1",
+      "BC2",
+      "BC7",
+      "BC8"
+    ],
+    "axiom_count": 11,
+    "strongest_axiom_connection": "A5.1 (Grace as unique operator satisfying impossibility constraints)"
+  },
+  "lean_connection": {
+    "formal_claim_present": true,
+    "could_be_formalized": true,
+    "relevant_lean_module": "ChristOperatorDiscipline",
+    "proof_status": "proven"
+  },
+  "framework_alignment_score": {
+    "total": 85,
+    "breakdown": {
+      "chi_coverage": 12,
+      "physics_mapping": 18,
+      "theological_depth": 15,
+      "axiom_grounding": 20,
+      "formal_rigor": 20
+    }
+  }
+}

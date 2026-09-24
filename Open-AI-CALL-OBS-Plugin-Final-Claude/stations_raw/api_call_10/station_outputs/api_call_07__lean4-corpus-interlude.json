@@ -1,0 +1,79 @@
+{
+  "claims": [
+    {
+      "id": "KC-001",
+      "claim": "The formal evidence layer shows which claims have machine-checkable structure and which gaps remain.",
+      "plain_english": "The document uses a system called Lean to check which parts of its argument are proven and which parts are missing.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document itself is structured around this claim, presenting a scorecard of 16 Lean files and a filterable list of theorems.",
+      "what_would_break_it": "If Lean could not actually distinguish between proven and unproven claims, or if the document did not provide such a layer."
+    },
+    {
+      "id": "KC-002",
+      "claim": "Proof, limits, and gaps are all part of the evidence.",
+      "plain_english": "Knowing what is proven, what is not proven, and what cannot be proven are all useful pieces of information.",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "The document repeats this phrase multiple times and uses it as a guiding principle for its analysis.",
+      "what_would_break_it": "If a proof system could not meaningfully identify its own limits or gaps, or if such information was not considered evidence."
+    },
+    {
+      "id": "KC-003",
+      "claim": "The Lean 4 Corpus provides a machine-checkable structure for claims in theophysics.",
+      "plain_english": "The Lean 4 system can automatically verify the logical correctness of certain claims made in this field.",
+      "type": "empirical",
+      "strength": "speculative",
+      "evidence_given": "The document references a '16 Lean Files - Layer Scorecard' and 'All Theorems - Filterable' but does not present actual theorems or proofs.",
+      "what_would_break_it": "If Lean 4 could not actually verify the claims, or if the claims were not formalizable in Lean."
+    },
+    {
+      "id": "KC-004",
+      "claim": "The interlude sends the reader to the canonical page instead of replacing it.",
+      "plain_english": "This short summary page points to a longer, more complete page for the full argument.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document explicitly states this in multiple places, e.g., 'The full canonical treatment remains linked below' and 'Read the canonical page in The Lean 4 Corpus - Theophysics Research Initiative'.",
+      "what_would_break_it": "If the canonical page did not exist or did not contain the full argument."
+    },
+    {
+      "id": "KC-005",
+      "claim": "The Lean 4 Corpus has a 'False Positive Queue' that identifies claims that appear proven but are not.",
+      "plain_english": "There is a list of claims that look like they are proven but actually are not.",
+      "type": "structural",
+      "strength": "speculative",
+      "evidence_given": "The document mentions a 'False Positive Queue' in the timeline but provides no details or examples.",
+      "what_would_break_it": "If no such queue existed, or if it could not reliably distinguish false positives from true proofs."
+    },
+    {
+      "id": "KC-006",
+      "claim": "The Lean 4 Corpus is part of a larger project called 'Faith Through Physics'.",
+      "plain_english": "This work is part of a bigger effort to connect faith and physics.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document's header and footer repeatedly reference 'Faith Through Physics' as the overarching project.",
+      "what_would_break_it": "If the Lean 4 Corpus was not actually part of that project, or if the project did not exist."
+    },
+    {
+      "id": "KC-007",
+      "claim": "The Lean 4 Corpus can be used to audit claims in theophysics.",
+      "plain_english": "The system can check the logical correctness of claims in the field of theophysics.",
+      "type": "empirical",
+      "strength": "speculative",
+      "evidence_given": "The document mentions a 'bilateral audit' page as the next step, but does not present any audit results.",
+      "what_would_break_it": "If Lean 4 could not handle the complexity of theophysics claims, or if no audit was performed."
+    },
+    {
+      "id": "KC-008",
+      "claim": "The Lean 4 Corpus contains 16 Lean files that form a 'layer scorecard'.",
+      "plain_english": "There are 16 computer files that together provide a scorecard of what is proven.",
+      "type": "empirical",
+      "strength": "speculative",
+      "evidence_given": "The document mentions '16 Lean Files - Layer Scorecard' but does not list or describe the files.",
+      "what_would_break_it": "If there were not exactly 16 files, or if they did not form a coherent scorecard."
+    }
+  ],
+  "strongest_claim": "KC-001",
+  "weakest_claim": "KC-005",
+  "overall_argument_strength": "developing"
+}

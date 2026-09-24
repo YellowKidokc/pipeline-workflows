@@ -1,0 +1,265 @@
+{
+  "thesis": {
+    "one_sentence": "The Resurrection is the structural certificate that the payer capacity is infinite, providing the existence proof for the Cross configuration.",
+    "thesis_type": "interpretive",
+    "thesis_strength": 8,
+    "thesis_paragraph": "The Claim"
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "The Cross configuration requires a payer with capacity exceeding the total moral debt of the system.",
+      "type": "descriptive",
+      "evidence": "Derivation from Page 14: Cost_payer >= sum of all delta_i and nu_loss,i across all agents and time.",
+      "evidence_type": "argument",
+      "evidence_strength": 7,
+      "assumption": "The moral debt is conserved and summable across all agents and time.",
+      "overclaim_risk": 3,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C2",
+      "claim": "If the payer capacity is finite, there exists a threshold where the payer is exhausted.",
+      "type": "mathematical",
+      "evidence": "For any finite C_max, there exists t* such that delta_total(t*) > C_max.",
+      "evidence_type": "argument",
+      "evidence_strength": 9,
+      "assumption": "delta_total grows without bound over time.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C3",
+      "claim": "The Resurrection certifies that the payer capacity is infinite.",
+      "type": "interpretive",
+      "evidence": "The bearer absorbed delta_total and returned; a finite source minus a nonzero withdrawal is smaller than it started.",
+      "evidence_type": "argument",
+      "evidence_strength": 6,
+      "assumption": "The Resurrection event actually occurred as a historical event.",
+      "overclaim_risk": 7,
+      "overclaim_diagnosis": "The claim that the Resurrection proves infinite capacity assumes the event happened, but the document explicitly states this is a historical faith claim, not a theorem."
+    },
+    {
+      "id": "C4",
+      "claim": "Without the Resurrection, Page 14 is a uniqueness theorem with no existence proof.",
+      "type": "interpretive",
+      "evidence": "The Cross configuration requires a payer with unbounded capacity; only the Resurrection provides that certificate.",
+      "evidence_type": "argument",
+      "evidence_strength": 5,
+      "assumption": "No other event or mechanism could serve as the capacity certificate.",
+      "overclaim_risk": 6,
+      "overclaim_diagnosis": "The document does not consider alternative ways to certify infinite capacity (e.g., logical necessity, other historical claims)."
+    },
+    {
+      "id": "C5",
+      "claim": "The conditional 'IF the Resurrection occurred, THEN C_max = infinity' is a theorem.",
+      "type": "mathematical",
+      "evidence": "The Lean theorem resurrection_certifies_capacity is verified.",
+      "evidence_type": "proof",
+      "evidence_strength": 9,
+      "assumption": "The Lean formalization correctly captures the intended semantics.",
+      "overclaim_risk": 1,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C6",
+      "claim": "The Resurrection is the empirical event that certifies infinite capacity.",
+      "type": "historical",
+      "evidence": "The bearer absorbed delta_total and returned.",
+      "evidence_type": "citation",
+      "evidence_strength": 2,
+      "assumption": "The historical event of Jesus' resurrection is accurately reported.",
+      "overclaim_risk": 9,
+      "overclaim_diagnosis": "The document treats a faith-based historical claim as an empirical event, but provides no historical evidence for it."
+    },
+    {
+      "id": "C7",
+      "claim": "If the Resurrection did not happen, the entire repair mechanism fails.",
+      "type": "causal",
+      "evidence": "Without infinite capacity, the payer is eventually exhausted and entropy wins.",
+      "evidence_type": "argument",
+      "evidence_strength": 7,
+      "assumption": "No alternative repair mechanism exists.",
+      "overclaim_risk": 4,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C8",
+      "claim": "The framework proves that the structure must exist\u2014there must be a capacity certificate.",
+      "type": "interpretive",
+      "evidence": "The Cross configuration requires existence proof; the Resurrection is that proof.",
+      "evidence_type": "argument",
+      "evidence_strength": 5,
+      "assumption": "The framework's axioms are correct and complete.",
+      "overclaim_risk": 5,
+      "overclaim_diagnosis": "The document conflates 'the structure must exist' with 'the Resurrection is that structure' without considering other possible certificates."
+    },
+    {
+      "id": "C9",
+      "claim": "The Resurrection proves that no finite delta_total exhausts the source.",
+      "type": "mathematical",
+      "evidence": "C_max - delta_total >= 0 for all delta_total.",
+      "evidence_type": "proof",
+      "evidence_strength": 8,
+      "assumption": "The conditional theorem is sound.",
+      "overclaim_risk": 2,
+      "overclaim_diagnosis": null
+    },
+    {
+      "id": "C10",
+      "claim": "The chain derives the same conclusion as Paul: 'If Christ has not been raised, your faith is futile.'",
+      "type": "interpretive",
+      "evidence": "The framework shows that without the Resurrection, the repair mechanism fails.",
+      "evidence_type": "citation",
+      "evidence_strength": 4,
+      "assumption": "The theological and formal frameworks are analogous.",
+      "overclaim_risk": 5,
+      "overclaim_diagnosis": "The document claims equivalence between a formal derivation and a theological statement, but the formal derivation depends on unproven historical premises."
+    }
+  ],
+  "definitions": {
+    "explicit": [
+      {
+        "term": "Resurrection",
+        "definition": "Capacity certificate \u2014 proves unbounded source",
+        "location": "Spiritual Terms Introduced"
+      },
+      {
+        "term": "Infinite capacity",
+        "definition": "No finite delta_total exhausts the source",
+        "location": "Spiritual Terms Introduced"
+      },
+      {
+        "term": "Existence proof",
+        "definition": "The Resurrection proves the Cross configuration EXISTS, not just that it's unique",
+        "location": "Spiritual Terms Introduced"
+      }
+    ],
+    "implied": [
+      {
+        "term": "moral debt",
+        "usage_implies": "A conserved quantity that can be summed across agents and time"
+      },
+      {
+        "term": "payer capacity",
+        "usage_implies": "A resource that can be depleted by absorbing moral debt"
+      },
+      {
+        "term": "entropy wins",
+        "usage_implies": "The system returns to a closed, decaying state"
+      }
+    ],
+    "undefined_but_critical": [
+      "delta_total",
+      "nu_loss,i",
+      "C_max",
+      "moral debt",
+      "entropy"
+    ],
+    "terms_doing_hidden_work": [
+      "capacity",
+      "exhausted",
+      "certificate",
+      "source",
+      "repair mechanism"
+    ]
+  },
+  "assumptions": [
+    {
+      "assumption": "Moral debt is conserved and summable across all agents and time.",
+      "type": "conceptual",
+      "if_this_fails": "The entire framework collapses; the Cross configuration cannot be defined."
+    },
+    {
+      "assumption": "The Resurrection event actually occurred as a historical event.",
+      "type": "empirical",
+      "if_this_fails": "The conditional theorem is vacuously true, but the existence proof is unsupported; the repair mechanism is not certified."
+    },
+    {
+      "assumption": "No other event or mechanism can serve as the capacity certificate.",
+      "type": "methodological",
+      "if_this_fails": "The uniqueness of the Resurrection as the certificate is undermined; alternative explanations are possible."
+    },
+    {
+      "assumption": "The Lean formalization correctly captures the intended semantics.",
+      "type": "mathematical",
+      "if_this_fails": "The theorem may not correspond to the intended claim."
+    },
+    {
+      "assumption": "delta_total grows without bound over time.",
+      "type": "empirical",
+      "if_this_fails": "Finite capacity might suffice; the Resurrection is not necessary."
+    }
+  ],
+  "argument_structure": {
+    "premises": [
+      "P1: The Cross configuration requires a payer with capacity exceeding total moral debt.",
+      "P2: If payer capacity is finite, there exists a threshold where the payer is exhausted.",
+      "P3: The Resurrection is the event where the bearer absorbed delta_total and returned.",
+      "P4: A finite source minus a nonzero withdrawal is smaller than it started.",
+      "P5: The bearer returned."
+    ],
+    "intermediate_conclusions": [
+      "IC1: If the Resurrection occurred, then the payer capacity is infinite.",
+      "IC2: Without the Resurrection, the Cross configuration is a uniqueness theorem with no existence proof."
+    ],
+    "final_conclusion": "The Resurrection is the structural certificate that the payer capacity is infinite, providing the existence proof for the Cross configuration.",
+    "weakest_link": "The historical claim that the Resurrection actually occurred (P3 and P5) is unsupported by the framework.",
+    "unproven_jumps": [
+      "From 'the Resurrection is the capacity certificate' to 'the Resurrection of Jesus of Nazareth is that certificate' \u2014 the document acknowledges this is a faith claim, but the argument still relies on it.",
+      "From 'the structure must exist' to 'the Resurrection is that structure' \u2014 no alternative certificates are considered."
+    ]
+  },
+  "overclaim_detection": [
+    {
+      "pattern": "model-to-reality",
+      "location": "The Claim and The Resurrection as Capacity Certificate",
+      "diagnosis": "The paper claims the Resurrection proves infinite capacity, but the proof is conditional on the historical event; the framework does not establish the event occurred."
+    },
+    {
+      "pattern": "definition-to-discovery",
+      "location": "Spiritual Terms Introduced",
+      "diagnosis": "The term 'Infinite capacity' is defined as a consequence of the Resurrection, but the definition assumes what needs to be proven."
+    },
+    {
+      "pattern": "textual-possibility-to-actual-practice",
+      "location": "What the Certificate Proves",
+      "diagnosis": "The table contrasts 'Without Resurrection' and 'With Resurrection' as if the latter is established, but the document only proves the conditional."
+    }
+  ],
+  "counterarguments": {
+    "addressed": [
+      "The framework does not prove the Resurrection happened; it is a faith claim.",
+      "The conditional is a theorem; the antecedent is a historical claim."
+    ],
+    "missing": [
+      "Alternative mechanisms for certifying infinite capacity (e.g., logical necessity, other historical events).",
+      "The possibility that the moral debt is not conserved or summable.",
+      "The possibility that the payer capacity is infinite by definition, without requiring an event."
+    ],
+    "smartest_critic_would_say": "You have proven a conditional: IF the Resurrection happened, THEN infinite capacity. But you have not shown that the Resurrection happened, nor that no other event could serve as the certificate. Your 'existence proof' is merely a hypothetical."
+  },
+  "falsifiability": {
+    "kill_conditions_stated": [
+      "If the Resurrection did not occur, the conditional is vacuously true but the repair mechanism fails."
+    ],
+    "kill_conditions_missing": [
+      "If moral debt is not conserved, the entire framework fails.",
+      "If delta_total does not grow without bound, finite capacity might suffice.",
+      "If another event certifies infinite capacity, the Resurrection is not unique."
+    ],
+    "testability": "requires_external_evidence"
+  },
+  "novelty": {
+    "what_is_new": "Formalizing the Resurrection as a structural capacity certificate within a conservation-based framework, and proving the conditional theorem linking it to infinite payer capacity.",
+    "novelty_type": "new_application",
+    "closest_existing_work": "Theological arguments for the necessity of the Resurrection (e.g., 1 Cor 15:17) and mathematical existence proofs.",
+    "novelty_score": 6
+  },
+  "compression": {
+    "one_sentence": "The Resurrection is the structural certificate that the payer capacity is infinite, providing the existence proof for the Cross configuration.",
+    "three_sentences": "The Cross configuration requires a payer with capacity exceeding total moral debt; if the payer capacity is finite, it will eventually be exhausted. The Resurrection is the event where the bearer absorbed the total debt and returned, proving the capacity is infinite. Without the Resurrection, the Cross configuration is a uniqueness theorem with no existence proof.",
+    "strongest_defensible_version": "If the Resurrection occurred, then the payer capacity is infinite, and the Cross configuration has an existence proof.",
+    "weakest_version_still_true": "The conditional 'IF the Resurrection occurred, THEN C_max = infinity' is a theorem in the Lean formalization."
+  }
+}

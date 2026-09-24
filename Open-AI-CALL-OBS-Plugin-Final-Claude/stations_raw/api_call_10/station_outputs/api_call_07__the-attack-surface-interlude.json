@@ -1,0 +1,70 @@
+{
+  "claims": [
+    {
+      "id": "KC-001",
+      "claim": "The adversary attacks the same channels because transformation has a predictable surface.",
+      "plain_english": "The enemy always attacks in the same ways because change follows a predictable pattern.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document asserts this as a foundational principle, supported by the concept of a 'bundle property' and the need for complete armor.",
+      "what_would_break_it": "If transformation were random or unpredictable, the attack surface would not be consistent."
+    },
+    {
+      "id": "KC-002",
+      "claim": "The armor is coverage against a structured attack surface.",
+      "plain_english": "The armor protects against a specific, organized set of attacks.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "Repeated as a pull quote and verdict, linking the armor's completeness to the structure of the attack.",
+      "what_would_break_it": "If the attack surface were unstructured or if armor could be effective without covering all channels."
+    },
+    {
+      "id": "KC-003",
+      "claim": "The armor has to be complete instead of selective.",
+      "plain_english": "You need full protection, not just covering some parts.",
+      "type": "structural",
+      "strength": "strong",
+      "evidence_given": "The document frames this as the central question and implies the answer is 'complete' due to the structured attack surface.",
+      "what_would_break_it": "If selective armor could adequately defend against the structured attack surface."
+    },
+    {
+      "id": "KC-004",
+      "claim": "Transformation has a predictable surface.",
+      "plain_english": "Change happens in a way that can be anticipated.",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "The document states this as a premise without detailed proof, relying on the broader argument structure.",
+      "what_would_break_it": "If transformation were chaotic or unpredictable, the surface would not be predictable."
+    },
+    {
+      "id": "KC-005",
+      "claim": "The adversary attacks the same channels.",
+      "plain_english": "The enemy uses the same methods over and over.",
+      "type": "empirical",
+      "strength": "moderate",
+      "evidence_given": "The document asserts this as a given, likely drawing from theological or experiential reasoning not fully detailed here.",
+      "what_would_break_it": "If the adversary varied attack channels unpredictably or if no consistent pattern existed."
+    },
+    {
+      "id": "KC-006",
+      "claim": "The page names the load-bearing structure before asking the reader to follow the full derivation.",
+      "plain_english": "This page tells you the main idea first, then points to the detailed explanation.",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "The document describes its own structure as a 'short reader-facing interlude' that precedes the full canonical treatment.",
+      "what_would_break_it": "If the full derivation contradicted the summary or if the structure were not load-bearing."
+    },
+    {
+      "id": "KC-007",
+      "claim": "The interlude sends the reader to the canonical page instead of replacing it.",
+      "plain_english": "This summary points you to the main article rather than being a substitute.",
+      "type": "structural",
+      "strength": "moderate",
+      "evidence_given": "The document explicitly states this in the timeline and closing section.",
+      "what_would_break_it": "If the interlude were intended as a standalone replacement or if the canonical page did not exist."
+    }
+  ],
+  "strongest_claim": "KC-001",
+  "weakest_claim": "KC-006",
+  "overall_argument_strength": "moderate"
+}

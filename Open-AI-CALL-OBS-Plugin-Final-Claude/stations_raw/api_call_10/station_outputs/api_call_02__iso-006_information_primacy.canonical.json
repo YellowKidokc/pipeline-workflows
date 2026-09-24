@@ -1,0 +1,135 @@
+{
+  "chi_variables": {
+    "G": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No reference to grace or gravity as source-field curvature."
+    },
+    "M": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No reference to meaning or mass-force."
+    },
+    "E": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Energy is mentioned as derivative from information; Landauer's principle ties information to energy dissipation."
+    },
+    "S": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No reference to strong force or love."
+    },
+    "T": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Thermodynamics is invoked via Landauer's principle and entropy production; information erasure has thermodynamic cost."
+    },
+    "K": {
+      "present": true,
+      "strength": 10,
+      "evidence": "Information primacy is the central thesis; knowledge/logos as fundamental substrate; Shannon information, Wheeler's 'It from Bit'."
+    },
+    "R": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No reference to relativity or relationship."
+    },
+    "Q": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Quantum mechanics is central: Zeilinger's principle, quantum information theory, wavefunction as ontology, superposition."
+    },
+    "F": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No reference to weak force or sin-conservation."
+    },
+    "C": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Coherence/Christ is invoked via Logos as second person of Trinity; Christ as the Word through whom all things are made; Colossians 1:17 'in him all things hold together'."
+    },
+    "variables_present_count": 5,
+    "dominant_variables": [
+      "K",
+      "C",
+      "Q"
+    ],
+    "absent_variables": [
+      "G",
+      "M",
+      "S",
+      "R",
+      "F"
+    ],
+    "chi_coverage_pct": "50%"
+  },
+  "physics_process_detection": {
+    "maps_to_physics": true,
+    "physics_domain": "information theory",
+    "specific_process": "information as ontologically primitive; Landauer's principle; quantum information processing; black hole information paradox",
+    "equation_present": "Landauer's principle: erasing one bit dissipates at least kT ln(2) joules; Bekenstein bound (implied); R = f(I) and M = f(L) as formal expressions.",
+    "isomorphism_detected": true,
+    "isomorphism_type": "structural",
+    "isomorphism_quality": 7
+  },
+  "laws_invoked": {
+    "explicit": [
+      "Law 1 (Information/Logos as fundamental substrate)",
+      "Law 3 (Self-Reference \u2014 information about information)"
+    ],
+    "implicit": [
+      "Law 5 (Thermodynamics/Judgment \u2014 entropy production)",
+      "Law 8 (Quantum/Faith \u2014 measurement and collapse)"
+    ],
+    "symmetry_pairs_active": [
+      "5-6"
+    ]
+  },
+  "theological_structure": {
+    "trinity_present": true,
+    "trinity_structure": "Logos as second person of Trinity; referenced via John 1:1-3 and Colossians 1:17; Father and Spirit not explicitly discussed but Logos is identified with Christ.",
+    "father_aspect": {
+      "present": false,
+      "evidence": "No explicit reference to Father as source/origin."
+    },
+    "son_aspect": {
+      "present": true,
+      "evidence": "Logos identified with Jesus Christ; 'the Word was God'; 'all things were made through him'."
+    },
+    "spirit_aspect": {
+      "present": false,
+      "evidence": "No reference to the Holy Spirit."
+    },
+    "cross_reference": false,
+    "grace_mechanism": false,
+    "sin_entropy": false,
+    "redemption_arc": false
+  },
+  "axiom_alignment": {
+    "axioms_touched": [
+      "A1.3",
+      "D1.1",
+      "D1.2"
+    ],
+    "axiom_count": 3,
+    "strongest_axiom_connection": "A1.3 (Information Primacy)"
+  },
+  "lean_connection": {
+    "formal_claim_present": true,
+    "could_be_formalized": true,
+    "relevant_lean_module": "IsomorphismTest",
+    "proof_status": "testable"
+  },
+  "framework_alignment_score": {
+    "total": 72,
+    "breakdown": {
+      "chi_coverage": 10,
+      "physics_mapping": 18,
+      "theological_depth": 14,
+      "axiom_grounding": 16,
+      "formal_rigor": 14
+    }
+  }
+}

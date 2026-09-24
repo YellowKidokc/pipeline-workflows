@@ -1,0 +1,144 @@
+{
+  "chi_variables": {
+    "G": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit reference to grace or gravity as source-field curvature."
+    },
+    "M": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Money as certificate of work; fiat printing as injection without real work/mass; 'Money as unit of account' and 'Real productive output' as substrate."
+    },
+    "E": {
+      "present": true,
+      "strength": 9,
+      "evidence": "Energy conservation (\u0394E = 0) as central axiom; 'phantom energy injection'; 'waste heat'; 'system heating'; 'energy in = energy out'."
+    },
+    "S": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No reference to strong force or love as binding."
+    },
+    "T": {
+      "present": true,
+      "strength": 8,
+      "evidence": "Thermodynamics explicitly invoked: First Law, entropy increase, waste heat, heat death, 'system heating (entropy increase)', 'terminal state of sustained violation'."
+    },
+    "K": {
+      "present": true,
+      "strength": 5,
+      "evidence": "Knowledge/logos as information: 'signal carries no information (heat death / hyperinflation)'; 'money = noise, no signal'."
+    },
+    "R": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No explicit reference to relativity or relationship frame structure."
+    },
+    "Q": {
+      "present": false,
+      "strength": 0,
+      "evidence": "No reference to quantum mechanics or faith/measurement."
+    },
+    "F": {
+      "present": true,
+      "strength": 6,
+      "evidence": "Weak force / sin-conservation: 'moral degradation correlating with degree of violation'; 'fiat currency is fraud elevated to monetary policy'; 'structural violation of the conservation principle that reflects divine moral order'."
+    },
+    "C": {
+      "present": true,
+      "strength": 7,
+      "evidence": "Coherence/Christ as global integration: 'div(C) = 0 \u2014 coherence is conserved'; 'conservation laws reflect divine moral structure'; 'Coherence Conservation' in Laws Invoked."
+    },
+    "variables_present_count": 6,
+    "dominant_variables": [
+      "E",
+      "T",
+      "M"
+    ],
+    "absent_variables": [
+      "G",
+      "S",
+      "R",
+      "Q"
+    ],
+    "chi_coverage_pct": "60%"
+  },
+  "physics_process_detection": {
+    "maps_to_physics": true,
+    "physics_domain": "thermodynamics",
+    "specific_process": "energy conservation violation leading to entropy production and system heating",
+    "equation_present": "\u0394E = 0 (First Law of Thermodynamics); E = mc\u00b2",
+    "isomorphism_detected": true,
+    "isomorphism_type": "structural",
+    "isomorphism_quality": 7
+  },
+  "laws_invoked": {
+    "explicit": [
+      "Law 2 (Conservation)",
+      "Law 6 (Entropy/Degradation)",
+      "Law 10 (Moral Structure / Coherence Conservation)"
+    ],
+    "implicit": [
+      "Law 5 (Thermodynamics/Judgment)",
+      "Law 9 (Weak Force/Moral Conservation)"
+    ],
+    "symmetry_pairs_active": [
+      "5-6"
+    ]
+  },
+  "theological_structure": {
+    "trinity_present": false,
+    "trinity_structure": "No explicit trinitarian structure detected.",
+    "father_aspect": {
+      "present": false,
+      "evidence": "No reference to source/origin/ground."
+    },
+    "son_aspect": {
+      "present": false,
+      "evidence": "No reference to incarnation/image/word/mediator."
+    },
+    "spirit_aspect": {
+      "present": false,
+      "evidence": "No reference to power/presence/movement/energy."
+    },
+    "cross_reference": false,
+    "grace_mechanism": false,
+    "sin_entropy": true,
+    "redemption_arc": false
+  },
+  "axiom_alignment": {
+    "axioms_touched": [
+      "A1.1",
+      "A1.2",
+      "A2.1",
+      "A2.2",
+      "A5.1",
+      "BC4",
+      "BC6",
+      "A1.3",
+      "T3.1",
+      "BC2",
+      "BC7",
+      "BC8"
+    ],
+    "axiom_count": 12,
+    "strongest_axiom_connection": "A1.1 (Existence) \u2014 Conservation of Energy as foundational constraint"
+  },
+  "lean_connection": {
+    "formal_claim_present": true,
+    "could_be_formalized": true,
+    "relevant_lean_module": "BridgeMatrix",
+    "proof_status": "testable"
+  },
+  "framework_alignment_score": {
+    "total": 72,
+    "breakdown": {
+      "chi_coverage": 12,
+      "physics_mapping": 18,
+      "theological_depth": 10,
+      "axiom_grounding": 18,
+      "formal_rigor": 14
+    }
+  }
+}
