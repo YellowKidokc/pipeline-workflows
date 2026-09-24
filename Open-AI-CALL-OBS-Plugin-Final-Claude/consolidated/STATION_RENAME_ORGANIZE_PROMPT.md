@@ -1,20 +1,50 @@
-# Prompt for DeepSeek Codex — rename & organize the 23 API stations
+# Prompt for DeepSeek Codex — rename & organize the API stations
 
-Repo: `Open-AI-CALL-claude-multi-api-batch-processor` (on E:\Open-AI-CALL-claude-multi-api-batch-processor-d0fcwr, to be pushed to GitHub)
+Repo: **https://github.com/YellowKidokc/pipeline-workflows**, branch **V2**
+Path in repo: `Open-AI-CALL-OBS-Plugin-Final-Claude/stations_raw/`
+(originally from a local repo called `Open-AI-CALL-claude-multi-api-batch-processor`
+on a separate drive — that origin no longer matters, work only in this repo/branch)
+
+## IMPORTANT — this is a partial import, check before you start
+
+As of this prompt, only stations **01 through 10** have been pushed to
+`stations_raw/` (`api_call_01` .. `api_call_10`). Stations 11-23 were not
+copied over yet in this pass. Before doing anything:
+
+1. Run `ls Open-AI-CALL-OBS-Plugin-Final-Claude/stations_raw/` and confirm
+   which `api_call_NN*` folders actually exist in the repo right now.
+2. Only rename the ones that are actually present. Use the full mapping
+   table below as reference for correct target names, but skip any row
+   whose `current` folder isn't in the repo yet — do not invent or
+   create placeholder folders for missing stations.
+3. Note in your final report which station numbers (of 01-23) were
+   present vs. missing, so the next import pass knows what's left.
+
+Also check `Open-AI-CALL-OBS-Plugin-Final-Claude/consolidated/multi_api_batch_core/`
+in this same repo — that's the shared engine (`worker.py`, `providers.py`,
+`api_client.py`, `outputs.py`, `retriever.py`, `ledger.py`) that every
+station folder is meant to run against. It was copied in separately from
+`core/` in the original repo; treat it as the canonical engine location
+going forward unless the stations reference a different relative path
+internally (check `RUN.bat`/`RUN.sh` inside a station folder — they may
+still point at `..\core\worker.py`, which won't resolve inside
+`stations_raw/` anymore. Fix these paths as part of this task — see
+Task 3 below.)
 
 ## Context
 
-This repo is a folder-queue batch API processor. A shared engine at `core/`
+This is a folder-queue batch API processor. A shared engine
 (`worker.py`, `providers.py`, `api_client.py`, `outputs.py`, `retriever.py`,
 `ledger.py`) reads any `api_call_NN` folder and processes every file dropped
 in that folder's `inbox/`, using that folder's `config.txt` (provider/model/
 temperature/output format) and `prompt.txt` (what to do to each file).
 Results land in `outbox/`; failures land in `wait/` with an `.error.txt`.
 
-There are 23 station folders today, named only `api_call_01` .. `api_call_23_MTL`.
-Each one is fully configured and working — they just aren't named or
-documented consistently. Two of them (`api_call_22_CLASSIFY_AXIOMIZE_ORGANIZE`,
-`api_call_23_MTL`) already got partial descriptive names; the rest didn't.
+There are 23 station folders in total (only 01-10 imported so far — see
+above), named only `api_call_01` .. `api_call_23_MTL`. Each one is fully
+configured and working — they just aren't named or documented consistently.
+Two of them (`api_call_22_CLASSIFY_AXIOMIZE_ORGANIZE`, `api_call_23_MTL`)
+already got partial descriptive names; the rest didn't.
 
 ## Task
 
@@ -86,6 +116,20 @@ documented consistently. Two of them (`api_call_22_CLASSIFY_AXIOMIZE_ORGANIZE`,
    against a station with a test file in `inbox/` and confirm the engine
    still finds and processes it. Report any script you had to touch and
    why.
+
+7. **Preserve and confirm parallel execution.** These stations are meant to
+   run concurrently, not one at a time — we've already tested running
+   around 30 stations/jobs in parallel successfully. Whatever `RUN_ALL`/
+   `LOAD_ALL_STATIONS`/`worker.py` mechanism currently launches multiple
+   stations at once (check for a `--workers` flag or a `ThreadPoolExecutor`
+   in `worker.py`), make sure your renaming and any glob-pattern updates
+   (Task 3) do not accidentally serialize it or cap it below what it
+   already supported. If you find a hardcoded worker/thread limit lower
+   than what's been tested (~30), flag it in your report rather than
+   silently changing it — don't raise the limit yourself without saying so.
+   The goal is: as many stations as possible should be able to run at the
+   same time, limited only by provider rate limits/cost, not by folder
+   naming or path assumptions you introduce.
 
 ## Constraints
 
