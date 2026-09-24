@@ -47,3 +47,7 @@ source in
 This repo does not store model weights, vector indexes, private vault dumps, or
 runtime databases. It stores the contracts and entrypoints that let another AI
 partner or local runner operate the live systems.
+
+## Current launcher status
+
+The packet entrypoint is not connected to processing stations. It exits with code 2 and reports NOT CONFIGURED; it does not grade or process documents. The shared station implementations are separate from this packet.

@@ -1,0 +1,172 @@
+{
+  "evaluation": {
+    "claim": "Truth does not require falsehood, but falsehood requires truth.",
+    "claim_type": "mixed",
+    "compressed_claim": "Truth does not require falsehood, but falsehood requires truth.",
+    "channel_results": [
+      {
+        "channel": "G",
+        "name": "External input / dependency honesty",
+        "v_pos": 0.6,
+        "v_neg": 0.1,
+        "effective_score": 0.54,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "M",
+        "name": "Alignment / reference standard",
+        "v_pos": 0.75,
+        "v_neg": 0.15,
+        "effective_score": 0.6375,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "E",
+        "name": "Truth / signal fidelity",
+        "v_pos": 0.7,
+        "v_neg": 0.2,
+        "effective_score": 0.56,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "S_eff",
+        "name": "Entropy / disorder cost",
+        "v_pos": 0.8,
+        "v_neg": 0.05,
+        "effective_score": 0.76,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "T",
+        "name": "Temporal persistence",
+        "v_pos": 0.8,
+        "v_neg": 0.15,
+        "effective_score": 0.68,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "K",
+        "name": "Compression / wisdom density",
+        "v_pos": 0.85,
+        "v_neg": 0.1,
+        "effective_score": 0.765,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "R",
+        "name": "Phase transition / justified regime change",
+        "v_pos": 0.6,
+        "v_neg": 0.3,
+        "effective_score": 0.42,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "Q",
+        "name": "Free will / invitation vs coercion",
+        "v_pos": 0.9,
+        "v_neg": 0.05,
+        "effective_score": 0.855,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "F",
+        "name": "Cross-context binding",
+        "v_pos": 0.7,
+        "v_neg": 0.2,
+        "effective_score": 0.56,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "C",
+        "name": "Integration / whole-system coherence",
+        "v_pos": 0.75,
+        "v_neg": 0.15,
+        "effective_score": 0.6375,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      }
+    ],
+    "pressure_results": [],
+    "fruit_output": {
+      "dominant_fruits": [
+        "Peace",
+        "Goodness",
+        "Faithfulness"
+      ],
+      "dominant_antifruits": [],
+      "fruit_score": 0.933141,
+      "notes": ""
+    },
+    "final_report": "",
+    "static_chi": 0.00977079,
+    "gradient": "neutral",
+    "zero_channels": [],
+    "weakest_channels": [
+      "R",
+      "G",
+      "E"
+    ],
+    "strongest_channels": [
+      "Q",
+      "K",
+      "S_eff"
+    ],
+    "verdict": "partially coherent"
+  },
+  "usage": {
+    "prompt_tokens": 375,
+    "completion_tokens": 1398,
+    "elapsed_s": 11.78,
+    "model": "o3"
+  },
+  "model_label": "o3"
+}

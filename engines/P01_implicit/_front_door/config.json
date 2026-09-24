@@ -1,0 +1,15 @@
+{
+  "engine_id": "P01",
+  "engine_name": "implicit",
+  "library": "implicit",
+  "description": "Collaborative filtering from implicit feedback (co-occurrence patterns)",
+  "status": "scaffolded",
+  "port": 20101,
+  "learns_from": "Co-occurrence of file actions \u2014 'David always renames X then Y'",
+  "outputs": "Item-item similarity matrix, recommendation scores",
+  "depends_on": [
+    "P05_ppk"
+  ],
+  "created": "2026-06-14T14:02:37",
+  "version": "1.0"
+}

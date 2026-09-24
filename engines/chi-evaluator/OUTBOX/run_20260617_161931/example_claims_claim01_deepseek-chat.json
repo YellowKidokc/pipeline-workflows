@@ -1,0 +1,219 @@
+{
+  "evaluation": {
+    "claim": "",
+    "claim_type": "mixed",
+    "compressed_claim": "",
+    "channel_results": [
+      {
+        "channel": "G",
+        "name": "External input / dependency honesty",
+        "v_pos": 0.9,
+        "v_neg": 0.1,
+        "effective_score": 0.81,
+        "gradient_direction": 1,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "M",
+        "name": "Alignment / reference standard",
+        "v_pos": 0.8,
+        "v_neg": 0.2,
+        "effective_score": 0.64,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "E",
+        "name": "Truth / signal fidelity",
+        "v_pos": 0.9,
+        "v_neg": 0.1,
+        "effective_score": 0.81,
+        "gradient_direction": 1,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "S_eff",
+        "name": "Entropy / disorder cost",
+        "v_pos": 0.7,
+        "v_neg": 0.2,
+        "effective_score": 0.56,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "T",
+        "name": "Temporal persistence",
+        "v_pos": 0.8,
+        "v_neg": 0.1,
+        "effective_score": 0.72,
+        "gradient_direction": 1,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "K",
+        "name": "Compression / wisdom density",
+        "v_pos": 0.9,
+        "v_neg": 0.1,
+        "effective_score": 0.81,
+        "gradient_direction": 1,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "R",
+        "name": "Phase transition / justified regime change",
+        "v_pos": 0.7,
+        "v_neg": 0.2,
+        "effective_score": 0.56,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "Q",
+        "name": "Free will / invitation vs coercion",
+        "v_pos": 0.8,
+        "v_neg": 0.1,
+        "effective_score": 0.72,
+        "gradient_direction": 1,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "F",
+        "name": "Cross-context binding",
+        "v_pos": 0.8,
+        "v_neg": 0.2,
+        "effective_score": 0.64,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "C",
+        "name": "Integration / whole-system coherence",
+        "v_pos": 0.8,
+        "v_neg": 0.1,
+        "effective_score": 0.72,
+        "gradient_direction": 1,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      }
+    ],
+    "pressure_results": [
+      {
+        "pressure_state": "static",
+        "chi": 0.81,
+        "notes": ""
+      },
+      {
+        "pressure_state": "compression",
+        "chi": 0.85,
+        "notes": ""
+      },
+      {
+        "pressure_state": "strongest_objection",
+        "chi": 0.75,
+        "notes": ""
+      },
+      {
+        "pressure_state": "time",
+        "chi": 0.8,
+        "notes": ""
+      },
+      {
+        "pressure_state": "translation",
+        "chi": 0.78,
+        "notes": ""
+      },
+      {
+        "pressure_state": "evidence",
+        "chi": 0.82,
+        "notes": ""
+      },
+      {
+        "pressure_state": "implementation",
+        "chi": 0.79,
+        "notes": ""
+      },
+      {
+        "pressure_state": "fruit",
+        "chi": 0.83,
+        "notes": ""
+      },
+      {
+        "pressure_state": "falsification",
+        "chi": 0.76,
+        "notes": ""
+      },
+      {
+        "pressure_state": "hostile_misuse",
+        "chi": 0.7,
+        "notes": ""
+      }
+    ],
+    "fruit_output": {
+      "dominant_fruits": [],
+      "dominant_antifruits": [],
+      "fruit_score": 0.100095,
+      "notes": ""
+    },
+    "final_report": "",
+    "static_chi": 0.02547936,
+    "gradient": "neutral",
+    "zero_channels": [],
+    "weakest_channels": [
+      "S_eff",
+      "R",
+      "M"
+    ],
+    "strongest_channels": [
+      "K",
+      "E",
+      "G"
+    ],
+    "verdict": "fragile"
+  },
+  "usage": {
+    "prompt_tokens": 392,
+    "completion_tokens": 773,
+    "elapsed_s": 4.91,
+    "model": "deepseek-chat"
+  },
+  "model_label": "deepseek-chat"
+}

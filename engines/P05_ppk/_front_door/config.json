@@ -1,0 +1,15 @@
+{
+  "engine_id": "P05",
+  "engine_name": "ppk",
+  "library": "custom",
+  "description": "Portable Preference Kernel \u2014 compressed identity export from all engines",
+  "status": "has_content",
+  "port": 20105,
+  "learns_from": "Periodic exports from River and other engines",
+  "outputs": "naming_ppk.json \u2014 portable preference identity file",
+  "depends_on": [
+    "P06_river"
+  ],
+  "created": "2026-06-14T14:02:38",
+  "version": "1.0"
+}

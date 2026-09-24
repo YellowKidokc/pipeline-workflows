@@ -1,0 +1,223 @@
+{
+  "evaluation": {
+    "claim": "Truth does not require falsehood, but falsehood requires truth.",
+    "claim_type": "mixed",
+    "compressed_claim": "Truth does not require falsehood, but falsehood requires truth.",
+    "channel_results": [
+      {
+        "channel": "G",
+        "name": "External input / dependency honesty",
+        "v_pos": 0.9,
+        "v_neg": 0.1,
+        "effective_score": 0.81,
+        "gradient_direction": 1,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "M",
+        "name": "Alignment / reference standard",
+        "v_pos": 0.95,
+        "v_neg": 0.05,
+        "effective_score": 0.9025,
+        "gradient_direction": 1,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "E",
+        "name": "Truth / signal fidelity",
+        "v_pos": 0.9,
+        "v_neg": 0.1,
+        "effective_score": 0.81,
+        "gradient_direction": 1,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "S_eff",
+        "name": "Entropy / disorder cost",
+        "v_pos": 0.85,
+        "v_neg": 0.1,
+        "effective_score": 0.765,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "T",
+        "name": "Temporal persistence",
+        "v_pos": 0.9,
+        "v_neg": 0.1,
+        "effective_score": 0.81,
+        "gradient_direction": 1,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "K",
+        "name": "Compression / wisdom density",
+        "v_pos": 0.8,
+        "v_neg": 0.15,
+        "effective_score": 0.68,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "R",
+        "name": "Phase transition / justified regime change",
+        "v_pos": 0.85,
+        "v_neg": 0.1,
+        "effective_score": 0.765,
+        "gradient_direction": 1,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "Q",
+        "name": "Free will / invitation vs coercion",
+        "v_pos": 0.9,
+        "v_neg": 0.1,
+        "effective_score": 0.81,
+        "gradient_direction": 1,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "F",
+        "name": "Cross-context binding",
+        "v_pos": 0.85,
+        "v_neg": 0.1,
+        "effective_score": 0.765,
+        "gradient_direction": 1,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "C",
+        "name": "Integration / whole-system coherence",
+        "v_pos": 0.9,
+        "v_neg": 0.1,
+        "effective_score": 0.81,
+        "gradient_direction": 1,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      }
+    ],
+    "pressure_results": [
+      {
+        "pressure_state": "static",
+        "chi": 0.81,
+        "notes": ""
+      },
+      {
+        "pressure_state": "compression",
+        "chi": 0.78,
+        "notes": ""
+      },
+      {
+        "pressure_state": "strongest_objection",
+        "chi": 0.75,
+        "notes": ""
+      },
+      {
+        "pressure_state": "time",
+        "chi": 0.81,
+        "notes": ""
+      },
+      {
+        "pressure_state": "translation",
+        "chi": 0.79,
+        "notes": ""
+      },
+      {
+        "pressure_state": "evidence",
+        "chi": 0.82,
+        "notes": ""
+      },
+      {
+        "pressure_state": "implementation",
+        "chi": 0.8,
+        "notes": ""
+      },
+      {
+        "pressure_state": "fruit",
+        "chi": 0.83,
+        "notes": ""
+      },
+      {
+        "pressure_state": "falsification",
+        "chi": 0.77,
+        "notes": ""
+      },
+      {
+        "pressure_state": "hostile_misuse",
+        "chi": 0.76,
+        "notes": ""
+      }
+    ],
+    "fruit_output": {
+      "dominant_fruits": [
+        "Peace",
+        "Goodness",
+        "Faithfulness"
+      ],
+      "dominant_antifruits": [],
+      "fruit_score": 0.980686,
+      "notes": ""
+    },
+    "final_report": "The claim is highly coherent, with truth as the foundational concept. Under pressure, it remains stable or improves, though compression and falsification slightly reduce coherence. Fruit tendency is positive.",
+    "static_chi": 0.0958,
+    "gradient": "neutral",
+    "zero_channels": [],
+    "weakest_channels": [
+      "K",
+      "S_eff",
+      "R"
+    ],
+    "strongest_channels": [
+      "M",
+      "C",
+      "Q"
+    ],
+    "verdict": "coherent"
+  },
+  "usage": {
+    "prompt_tokens": 392,
+    "completion_tokens": 843,
+    "elapsed_s": 5.93,
+    "model": "deepseek-chat"
+  },
+  "model_label": "deepseek-chat"
+}

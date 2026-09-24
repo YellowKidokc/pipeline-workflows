@@ -54,3 +54,10 @@ Desktop.ini
 .DS_Store
 .vscode/
 .idea/
+
+# Nested git repos (not submodules) - exclude from this repo
+.claude/worktrees/
+Codex-Powershell_GUI/
+
+# Accidental archive/junk tree with unusable long paths
+workflows/New Folder/

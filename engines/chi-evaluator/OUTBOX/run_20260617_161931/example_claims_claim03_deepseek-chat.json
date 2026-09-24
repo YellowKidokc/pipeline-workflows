@@ -1,0 +1,168 @@
+{
+  "evaluation": {
+    "claim": "",
+    "claim_type": "mixed",
+    "compressed_claim": "",
+    "channel_results": [
+      {
+        "channel": "G",
+        "name": "External input / dependency honesty",
+        "v_pos": 0.8,
+        "v_neg": 0.2,
+        "effective_score": 0.64,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "Claim depends on external concept of free will and regime selection; plausible but not fully grounded.",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "M",
+        "name": "Alignment / reference standard",
+        "v_pos": 0.7,
+        "v_neg": 0.3,
+        "effective_score": 0.49,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "Aligns with some philosophical frameworks but lacks a clear reference standard.",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "E",
+        "name": "Truth / signal fidelity",
+        "v_pos": 0.6,
+        "v_neg": 0.4,
+        "effective_score": 0.36,
+        "gradient_direction": -1,
+        "confidence": 0.5,
+        "reasoning": "Signal fidelity is moderate; free will as regime selector is not empirically verifiable.",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "S_eff",
+        "name": "Entropy / disorder cost",
+        "v_pos": 0.5,
+        "v_neg": 0.5,
+        "effective_score": 0.25,
+        "gradient_direction": -1,
+        "confidence": 0.5,
+        "reasoning": "High entropy due to ambiguity in 'regime' and 'law'; disorder cost is significant.",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "T",
+        "name": "Temporal persistence",
+        "v_pos": 0.7,
+        "v_neg": 0.3,
+        "effective_score": 0.49,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "Temporal persistence is plausible if free will is considered a constant factor.",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "K",
+        "name": "Compression / wisdom density",
+        "v_pos": 0.6,
+        "v_neg": 0.4,
+        "effective_score": 0.36,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "Moderate compression; the idea is concise but not maximally wise or dense.",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "R",
+        "name": "Phase transition / justified regime change",
+        "v_pos": 0.5,
+        "v_neg": 0.5,
+        "effective_score": 0.25,
+        "gradient_direction": -1,
+        "confidence": 0.5,
+        "reasoning": "Phase transition claim is weak; free will as regime selector lacks justification for change.",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "Q",
+        "name": "Free will / invitation vs coercion",
+        "v_pos": 0.9,
+        "v_neg": 0.1,
+        "effective_score": 0.81,
+        "gradient_direction": 1,
+        "confidence": 0.5,
+        "reasoning": "Strongly invites free will as a choice mechanism; no coercion detected.",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "F",
+        "name": "Cross-context binding",
+        "v_pos": 0.6,
+        "v_neg": 0.4,
+        "effective_score": 0.36,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "Cross-context binding is moderate; applies to laws but not universally.",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "C",
+        "name": "Integration / whole-system coherence",
+        "v_pos": 0.5,
+        "v_neg": 0.5,
+        "effective_score": 0.25,
+        "gradient_direction": -1,
+        "confidence": 0.5,
+        "reasoning": "Integration is weak; the claim does not cohere well with other channels.",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      }
+    ],
+    "pressure_results": [],
+    "fruit_output": {
+      "dominant_fruits": [],
+      "dominant_antifruits": [],
+      "fruit_score": 0.083228,
+      "notes": ""
+    },
+    "final_report": "",
+    "static_chi": 9.074e-05,
+    "gradient": "negative",
+    "zero_channels": [],
+    "weakest_channels": [
+      "S_eff",
+      "R",
+      "C"
+    ],
+    "strongest_channels": [
+      "Q",
+      "G",
+      "T"
+    ],
+    "verdict": "collapsed"
+  },
+  "usage": {
+    "prompt_tokens": 393,
+    "completion_tokens": 832,
+    "elapsed_s": 7.35,
+    "model": "deepseek-chat"
+  },
+  "model_label": "deepseek-chat"
+}

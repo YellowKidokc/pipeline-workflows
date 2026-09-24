@@ -1,0 +1,39 @@
+{
+  "job_id": "JOB-FIS-CLASSIFY",
+  "name": "FIS Classification Pipeline",
+  "description": "Scan folder, classify all files, produce .fcard manifest + SQLite records",
+  "station": "ST-FIS-001",
+  "version": "1.0.0",
+  "workflow": [
+    {"step": 1, "name": "baseline_rename", "engine": "mechanical", "model": null, "required": true,
+     "description": "Convert filename to lowercase-hyphen form"},
+    {"step": 2, "name": "extract_text", "engine": "extractor", "model": null, "required": true,
+     "description": "Pull text content from file"},
+    {"step": 3, "name": "keyword_extraction", "engine": "yake", "model": null, "required": true,
+     "description": "Statistical keyword extraction (no model)"},
+    {"step": 4, "name": "entity_extraction", "engine": "spacy", "model": "en_core_web_sm", "required": true,
+     "description": "Named entity recognition"},
+    {"step": 5, "name": "domain_classification", "engine": "deberta_nli|rule_based", "model": "deberta_nli", "required": true,
+     "description": "Classify domain (zero-shot or rule-based fallback)"},
+    {"step": 6, "name": "file_type_classification", "engine": "deberta_nli|rule_based", "model": "deberta_nli", "required": true,
+     "description": "Classify file_type_meaning (zero-shot or rule-based fallback)"},
+    {"step": 7, "name": "summarization", "engine": "bart|extractive", "model": "M13_bart_summarizer", "required": true,
+     "description": "Generate 1-sentence summary (BART or extractive fallback)"},
+    {"step": 8, "name": "build_card", "engine": "card_builder", "model": null, "required": true,
+     "description": "Assemble classification card with slug, tags, rename presets, confidence"},
+    {"step": 9, "name": "write_manifest", "engine": "fcard_writer", "model": null, "required": true,
+     "description": "Write _manifest.fcard to scanned folder"},
+    {"step": 10, "name": "store_sqlite", "engine": "sqlite", "model": null, "required": false,
+     "description": "Persist card to SQLite for search and dashboard"}
+  ],
+  "outputs": {
+    "manifest": "_manifest.fcard (YAML, one per folder)",
+    "database": "fis.db (SQLite)"
+  },
+  "approval_rules": {
+    "auto_approve": "confidence.overall >= 85",
+    "suggest": "confidence.overall >= 50 and < 85",
+    "flag_review": "confidence.overall < 50",
+    "always_require_approval": ["domain", "final_rename", "move", "delete"]
+  }
+}

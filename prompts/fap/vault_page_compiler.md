@@ -72,7 +72,7 @@ After all pages compiled, create `_COMPILED\00_INDEX.md` with:
 **The Theophysics Framework:**
 - Master Equation: χ = ∭(G·M·E·S·T·K·R·Q·F·C) dx dy dt
 - 10 Laws with symmetry pairs (1↔8, 2↔9, 3↔10, 4↔7, 5↔6)
-- 22 public axioms, 188 technical axioms
+- One admitted root axiom: God Is; supporting nodes, definitions, and conditional derivations
 - 7Q Scientific Method (Q0 = posture before inquiry)
 - Experimental validation: PEAR-LAB 6.35σ, GCP 6σ, PROP-COSMOS 5.7σ
 - Feb 14, 2026 boundary proof: Trinity isomorphism, free will, God=math axioms. THE FLOOR. Do not push past.

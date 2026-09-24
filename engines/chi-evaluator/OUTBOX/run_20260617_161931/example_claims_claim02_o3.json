@@ -1,0 +1,168 @@
+{
+  "evaluation": {
+    "claim": "",
+    "claim_type": "mixed",
+    "compressed_claim": "",
+    "channel_results": [
+      {
+        "channel": "G",
+        "name": "External input / dependency honesty",
+        "v_pos": 0.3,
+        "v_neg": 0.4,
+        "effective_score": 0.18,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "M",
+        "name": "Alignment / reference standard",
+        "v_pos": 0.4,
+        "v_neg": 0.3,
+        "effective_score": 0.28,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "E",
+        "name": "Truth / signal fidelity",
+        "v_pos": 0.25,
+        "v_neg": 0.45,
+        "effective_score": 0.1375,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "S_eff",
+        "name": "Entropy / disorder cost",
+        "v_pos": 0.4,
+        "v_neg": 0.35,
+        "effective_score": 0.26,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "T",
+        "name": "Temporal persistence",
+        "v_pos": 0.35,
+        "v_neg": 0.3,
+        "effective_score": 0.245,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "K",
+        "name": "Compression / wisdom density",
+        "v_pos": 0.6,
+        "v_neg": 0.4,
+        "effective_score": 0.36,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "R",
+        "name": "Phase transition / justified regime change",
+        "v_pos": 0.35,
+        "v_neg": 0.5,
+        "effective_score": 0.175,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "Q",
+        "name": "Free will / invitation vs coercion",
+        "v_pos": 0.7,
+        "v_neg": 0.1,
+        "effective_score": 0.63,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "F",
+        "name": "Cross-context binding",
+        "v_pos": 0.45,
+        "v_neg": 0.35,
+        "effective_score": 0.2925,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      },
+      {
+        "channel": "C",
+        "name": "Integration / whole-system coherence",
+        "v_pos": 0.4,
+        "v_neg": 0.3,
+        "effective_score": 0.28,
+        "gradient_direction": 0,
+        "confidence": 0.5,
+        "reasoning": "",
+        "evidence": "",
+        "failure_mode": "",
+        "repair_path": ""
+      }
+    ],
+    "pressure_results": [],
+    "fruit_output": {
+      "dominant_fruits": [],
+      "dominant_antifruits": [],
+      "fruit_score": 0.083174,
+      "notes": ""
+    },
+    "final_report": "",
+    "static_chi": 1.43e-06,
+    "gradient": "neutral",
+    "zero_channels": [],
+    "weakest_channels": [
+      "E",
+      "R",
+      "G"
+    ],
+    "strongest_channels": [
+      "Q",
+      "K",
+      "F"
+    ],
+    "verdict": "repairable"
+  },
+  "usage": {
+    "prompt_tokens": 379,
+    "completion_tokens": 998,
+    "elapsed_s": 8.74,
+    "model": "o3"
+  },
+  "model_label": "o3"
+}

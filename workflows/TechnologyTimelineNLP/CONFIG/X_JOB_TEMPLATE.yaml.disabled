@@ -1,0 +1,22 @@
+# Rename to technology-timeline.yaml and place in X:\00_INBOX when inputs exist.
+name: technology-timeline-nlp
+stations:
+  - metadata-extractor
+  - claim-extraction
+  - timeline-verifier
+  - graph-linker
+inputs:
+  - technology-timelines\*
+prompt: |
+  Use the complete governing prompt at:
+  X:\03_WORKFLOWS\TechnologyTimelineNLP\PROMPTS\MASTER_TIMELINE_REFINERY.md
+
+  Extract atomic dated events first. Preserve source spans, conflicting dates,
+  development stages, contributor disputes, and candidate enablement edges. Do
+  not silently merge similar inventions. All outputs remain CANDIDATE and
+  unresolved fields remain UNKNOWN.
+vectorize: inspect
+run: stage
+timeout: 7200
+chain: true
+notes: "Stage first. Review outputs before final synthesis or routing."

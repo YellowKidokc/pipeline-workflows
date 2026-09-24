@@ -46,11 +46,11 @@ class WikiCompilerStation(StationBase):
         if state_file.exists():
             return json.loads(state_file.read_text(encoding="utf-8"))
         jobs = {
-            "layer1": self.hub.submit("wiki-compiler", str(file_path), "executive_summary", backend="claude_api", priority="batch", input_text=text[:5000]),
-            "layer2": self.hub.submit("wiki-compiler", str(file_path), "plain_language", backend="claude_api", priority="batch", input_text=text[:5000]),
-            "layer4": self.hub.submit("wiki-compiler", str(file_path), "grade_paper", backend="claude_api", priority="batch", input_text=text[:5000]),
-            "layer5": self.hub.submit("wiki-compiler", str(file_path), "vault_page_compiler", backend="claude_api", priority="batch", input_text=text[:5000]),
-            "layer7": self.hub.submit("wiki-compiler", str(file_path), "vault_page_compiler", backend="claude_api", priority="batch", input_text=text[:5000]),
+            "layer1": self.hub.submit("wiki-compiler", str(file_path), "executive_summary", backend="claude_api", priority="batch", input_text=text),
+            "layer2": self.hub.submit("wiki-compiler", str(file_path), "plain_language", backend="claude_api", priority="batch", input_text=text),
+            "layer4": self.hub.submit("wiki-compiler", str(file_path), "grade_paper", backend="claude_api", priority="batch", input_text=text),
+            "layer5": self.hub.submit("wiki-compiler", str(file_path), "vault_page_compiler", backend="claude_api", priority="batch", input_text=text),
+            "layer7": self.hub.submit("wiki-compiler", str(file_path), "vault_page_compiler", backend="claude_api", priority="batch", input_text=text),
         }
         state_file.write_text(json.dumps(jobs, indent=2), encoding="utf-8")
         return jobs

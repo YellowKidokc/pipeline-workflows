@@ -1,0 +1,15 @@
+{
+  "engine_id": "P07",
+  "engine_name": "markovify",
+  "library": "markovify",
+  "description": "Markov chain text prediction for slug/name generation",
+  "status": "active",
+  "port": 20107,
+  "learns_from": "Approved slug corpus from River",
+  "outputs": "Predicted file names/slugs based on learned patterns",
+  "depends_on": [
+    "P06_river"
+  ],
+  "created": "2026-06-14T14:02:38",
+  "version": "1.0"
+}

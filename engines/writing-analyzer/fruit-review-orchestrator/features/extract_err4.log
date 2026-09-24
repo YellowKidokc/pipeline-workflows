@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "X:\06_ENGINES\writing-analyzer\fruit-review-orchestrator\feature_extractor.py", line 585, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "X:\06_ENGINES\writing-analyzer\fruit-review-orchestrator\feature_extractor.py", line 571, in main
+    excel_path = write_excel_bundle(
+        packets=packets,
+        summary=summary,
+        out_dir=out_dir,
+    )
+  File "X:\06_ENGINES\writing-analyzer\fruit-review-orchestrator\feature_extractor.py", line 473, in write_excel_bundle
+    ws_summary.append([key, value])
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\lowes\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\openpyxl\worksheet\worksheet.py", line 673, in append
+    cell = Cell(self, row=row_idx, column=col_idx, value=content)
+  File "C:\Users\lowes\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\openpyxl\cell\cell.py", line 119, in __init__
+    self.value = value
+    ^^^^^^^^^^
+  File "C:\Users\lowes\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\openpyxl\cell\cell.py", line 218, in value
+    self._bind_value(value)
+    ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\lowes\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\openpyxl\cell\cell.py", line 187, in _bind_value
+    raise ValueError("Cannot convert {0!r} to Excel".format(value))
+ValueError: Cannot convert {'error': 56} to Excel

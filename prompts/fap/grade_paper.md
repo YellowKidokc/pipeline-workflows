@@ -29,11 +29,11 @@ Return ONLY valid JSON (no markdown, no backticks, no preamble).
 
 **Coherence** (0-1): Does the argument hold together? Are there logical gaps? Does each section follow from the previous? Is the conclusion earned by the argument?
 
-**Voice Authenticity** (0-1): Does this sound like David Lowe? Direct, conversational, not academic. Uses "I" and "you." Makes claims boldly. Shows the math then explains what it means. Never hedges with "perhaps" or "it could be argued."
+**Voice Authenticity** (0-1): Does this sound like David Lowe? Direct, conversational, accessible. Shows the math then explains what it means. Preserve warranted uncertainty, conditions, and limitations; never reward certainty beyond the evidence.
 
 **Cross-Domain Strength** (0-1): Does the physics↔theology bridge work structurally? Is it real isomorphism (shared logical architecture) or just analogy (metaphorical similarity)? Real isomorphism constrains predictions in both domains.
 
-**Axiom Coverage** (0-1): Which of the 22 public axioms does this paper support? Are the connections explicit? Any contradictions with existing axioms?
+**Axiom Coverage** (0-1): The framework has one admitted root axiom: God Is. Identify its role where relevant and distinguish supporting nodes, definitions, conditional derivations, and interpretations. Do not invent additional axioms or penalize a paper for not restating the root. Assess the accuracy of relevant connections, not their number. A formal proof establishes only consequences of its stated assumptions.
 
 **Publish Readiness** (0-1): Formatting, structure, completeness. Has intro, body, conclusion? Citations present? No STT artifacts? No placeholder text?
 
