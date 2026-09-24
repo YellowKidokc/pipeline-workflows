@@ -56,6 +56,10 @@ hold inbox lanes plus the shared lifecycle for the six-station Complete Grading
 Bundle. See [`API/API/README.md`](API/API/README.md) for scheduling, completion
 barrier, retry, state-history, and `PROCESSED` rules.
 
+The staged Codex build plan for inventory, shared contracts, six grading
+stations, the BGL-01 pilot, and gated batch processing is available in
+[`docs/complete-grading-bundle-prompts.md`](docs/complete-grading-bundle-prompts.md).
+
 ## Stages
 
 - Intake: classify, identify, detect format, deduplicate
