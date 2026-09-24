@@ -1,0 +1,675 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "physics",
+        "type": "physics",
+        "strength": 10
+      },
+      {
+        "name": "theology",
+        "type": "theology",
+        "strength": 10
+      },
+      {
+        "name": "philosophy",
+        "type": "philosophy",
+        "strength": 3
+      },
+      {
+        "name": "mathematics",
+        "type": "mathematics",
+        "strength": 5
+      },
+      {
+        "name": "information",
+        "type": "information",
+        "strength": 2
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": true,
+        "role": "Grace/Gravitation: spacetime curvature draws objects along geodesics, analog to God's drawing grace",
+        "strength": 9
+      },
+      {
+        "variable": "M",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Energy/Spirit: external energy injection (E=mc\u00b2) enables entropy reversal, analog to Holy Spirit's activation",
+        "strength": 9
+      },
+      {
+        "variable": "S",
+        "present": true,
+        "role": "Strong/Love: Cornell potential binds quarks, analog to love that binds believers",
+        "strength": 8
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Thermo/Judgment: free energy \u0394G<0 for spontaneous transition, analog to justice/mercy at the Cross",
+        "strength": 9
+      },
+      {
+        "variable": "K",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "R",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "Q",
+        "present": true,
+        "role": "Quantum/Faith: wavefunction collapse upon observation, analog to faith as choice that collapses possibilities",
+        "strength": 9
+      },
+      {
+        "variable": "F",
+        "present": true,
+        "role": "Weak/Sin: beta decay changes particle identity, analog to redemption/transmutation",
+        "strength": 8
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence/Christ: Kuramoto order parameter r\u21921, master equation maximum, analog to full coherence in Christ",
+        "strength": 10
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A1.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A5.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC6",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A1.3",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "T3.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "External Grace: Law 2 (Holy Spirit/E=mc\u00b2) explicitly requires external energy injection into a closed system, analog to grace from outside",
+        "strength": 9
+      },
+      {
+        "id": "BC7",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC8",
+        "invoked": false,
+        "how": ""
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "drawing grace (John 6:44)",
+          "source of external energy"
+        ]
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "mediator of the Cross (work term)",
+          "image of full coherence (Colossians 1:17)"
+        ]
+      },
+      "spirit": {
+        "present": true,
+        "manifestations": [
+          "activation energy",
+          "power that enables entropy reversal",
+          "transformer"
+        ]
+      },
+      "trinitarian_structure": "explicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-001",
+        "domain_a": "general relativity (spacetime curvature)",
+        "domain_b": "grace (divine drawing)",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-002",
+        "domain_a": "thermodynamics (open system, E=mc\u00b2)",
+        "domain_b": "Holy Spirit (external activation)",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-003",
+        "domain_a": "quantum mechanics (wavefunction collapse)",
+        "domain_b": "faith (choice, Hebrews 11:1)",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-004",
+        "domain_a": "thermodynamics (\u0394G<0, free energy)",
+        "domain_b": "justice/mercy (Cross as work term)",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-005",
+        "domain_a": "weak force (beta decay, flavor change)",
+        "domain_b": "redemption (transmutation, 2 Cor 5:17)",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-006",
+        "domain_a": "strong force (Cornell potential, confinement)",
+        "domain_b": "love (binding, Colossians 3:14)",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-007",
+        "domain_a": "Noether's theorem (conservation law)",
+        "domain_b": "righteousness (conserved identity, Romans 8:1)",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-008",
+        "domain_a": "Kuramoto model (order parameter r\u21921)",
+        "domain_b": "Christ (full coherence, Colossians 1:17)",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-009",
+        "domain_a": "electromagnetic wave propagation (coherent signal)",
+        "domain_b": "truth/revelation (John 1:5)",
+        "strength": 8,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-010",
+        "domain_a": "entropy (second law, system dying)",
+        "domain_b": "adversary/death (spiritual entropy)",
+        "strength": 7,
+        "type": "analogical"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "grace",
+        "context": "Law 1: gravitational drawing, John 6:44",
+        "weight": 9
+      },
+      {
+        "concept": "Holy Spirit",
+        "context": "Law 2: external energy injection, activation",
+        "weight": 9
+      },
+      {
+        "concept": "faith",
+        "context": "Law 5: quantum collapse, Hebrews 11:1",
+        "weight": 9
+      },
+      {
+        "concept": "justice/mercy",
+        "context": "Law 6: Cross as work term, \u0394G<0",
+        "weight": 9
+      },
+      {
+        "concept": "redemption",
+        "context": "Law 7: weak force transmutation, 2 Cor 5:17",
+        "weight": 9
+      },
+      {
+        "concept": "love",
+        "context": "Law 4: strong force binding, Colossians 3:14",
+        "weight": 8
+      },
+      {
+        "concept": "righteousness",
+        "context": "Law 8: Noether conservation, Romans 8:1",
+        "weight": 8
+      },
+      {
+        "concept": "Christ",
+        "context": "Law 10: full coherence, Colossians 1:17",
+        "weight": 10
+      },
+      {
+        "concept": "salvation",
+        "context": "overall narrative: one phase transition in 10 steps",
+        "weight": 10
+      },
+      {
+        "concept": "atonement",
+        "context": "Law 6: Cross as work term paying entropy debt",
+        "weight": 9
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "necessity",
+        "context": "order of laws is thermodynamically determined, cannot skip steps",
+        "weight": 9
+      },
+      {
+        "concept": "sufficiency",
+        "context": "all 10 laws together constitute one complete phase transition",
+        "weight": 8
+      },
+      {
+        "concept": "implication",
+        "context": "each law implies the next in sequence",
+        "weight": 7
+      },
+      {
+        "concept": "contradiction",
+        "context": "closed system vs open system (Law 2)",
+        "weight": 6
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "love",
+        "present": true,
+        "strength": 8
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "patience",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 7
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "self_control",
+        "present": false,
+        "strength": 0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "chi_variables:G",
+      "to": "chi_variables:E",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "chi_variables:E",
+      "to": "chi_variables:Q",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "chi_variables:Q",
+      "to": "chi_variables:T",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "chi_variables:T",
+      "to": "chi_variables:F",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "chi_variables:F",
+      "to": "chi_variables:S",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "chi_variables:S",
+      "to": "chi_variables:C",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "chi_variables:C",
+      "to": "chi_variables:G",
+      "relation": "produces",
+      "weight": 10
+    },
+    {
+      "from": "axioms:BC2",
+      "to": "chi_variables:E",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "theological_concepts:grace",
+      "to": "chi_variables:G",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "theological_concepts:Holy Spirit",
+      "to": "chi_variables:E",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "theological_concepts:faith",
+      "to": "chi_variables:Q",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "theological_concepts:justice/mercy",
+      "to": "chi_variables:T",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "theological_concepts:redemption",
+      "to": "chi_variables:F",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "theological_concepts:love",
+      "to": "chi_variables:S",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "theological_concepts:righteousness",
+      "to": "chi_variables:C",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "theological_concepts:Christ",
+      "to": "chi_variables:C",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "isomorphisms:ISO-001",
+      "to": "domains:physics",
+      "relation": "contains",
+      "weight": 9
+    },
+    {
+      "from": "isomorphisms:ISO-001",
+      "to": "domains:theology",
+      "relation": "contains",
+      "weight": 9
+    },
+    {
+      "from": "isomorphisms:ISO-008",
+      "to": "chi_variables:C",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "logical_concepts:necessity",
+      "to": "theological_concepts:salvation",
+      "relation": "supports",
+      "weight": 9
+    }
+  ],
+  "tags": {
+    "primary": [
+      "salvation",
+      "phase transition",
+      "10 laws",
+      "isomorphism",
+      "thermodynamics"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/theology"
+    ],
+    "series": "isomorphism",
+    "classification": "synthesis"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "John 1:5",
+        "context": "light shines in darkness, signal penetrates noise"
+      },
+      {
+        "ref": "John 6:44",
+        "context": "Father draws, gravitational grace"
+      },
+      {
+        "ref": "Hebrews 11:1",
+        "context": "faith as substance, quantum collapse"
+      },
+      {
+        "ref": "2 Corinthians 5:17",
+        "context": "new creation, transmutation"
+      },
+      {
+        "ref": "Colossians 3:14",
+        "context": "love binds in perfect unity"
+      },
+      {
+        "ref": "Romans 8:1",
+        "context": "no condemnation, conservation"
+      },
+      {
+        "ref": "Colossians 1:17",
+        "context": "in Christ all things hold together, coherence"
+      }
+    ],
+    "academic": [],
+    "internal": [],
+    "total_count": 7
+  },
+  "word_anomalies": [
+    {
+      "word": "transmutation",
+      "frequency": 2,
+      "significance": "used to describe redemption as identity change, not improvement"
+    },
+    {
+      "word": "work term",
+      "frequency": 1,
+      "significance": "the Cross described in thermodynamic terms"
+    },
+    {
+      "word": "entropy debt",
+      "frequency": 1,
+      "significance": "sin/death as thermodynamic debt paid by mercy"
+    },
+    {
+      "word": "Kuramoto order parameter",
+      "frequency": 1,
+      "significance": "technical term for synchronization, analog to Christ coherence"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "This document presents a structured isomorphism between physical laws and spiritual steps of salvation, assuming the reader accepts both domains as real and mappable.",
+    "Q1_identity": "A synthetic narrative that maps 10 physical laws to 10 steps of salvation, structured as a four-act phase transition.",
+    "Q2_domain": "Physics and theology, with strong structural isomorphism.",
+    "Q3_claim": "Salvation is a single phase transition from maximum entropy to maximum coherence, described by 10 sequential laws that cannot be skipped.",
+    "Q4_support": "Each law is supported by a specific equation (GR, QM, thermo, QFT) and a corresponding scripture, with the order justified by thermodynamic necessity.",
+    "Q5_dependencies": "Depends on the validity of the physical laws cited and the theological interpretation of salvation as a process.",
+    "Q6_consequences": "Forces a view of salvation as a deterministic, ordered sequence; implies that spiritual transformation follows physical principles.",
+    "Q7_kill": "If any physical law is shown not to map structurally to its spiritual counterpart, or if the order is thermodynamically impossible, the entire narrative collapses."
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "general relativity",
+      "thermodynamics",
+      "quantum mechanics",
+      "quantum field theory",
+      "Noether's theorem",
+      "Kuramoto model"
+    ],
+    "required_by": [],
+    "parallel_to": []
+  },
+  "graph_summary": {
+    "total_nodes": 42,
+    "total_edges": 20,
+    "dominant_domain": "physics",
+    "dominant_chi": "C",
+    "connectivity_score": 9,
+    "one_sentence": "This document maps the 10-step salvation narrative onto a sequence of physical phase transitions, showing that the order is thermodynamically determined and culminates in full coherence in Christ."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": false,
+      "how": ""
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Law 3 (Truth/Maxwell) and Law 10 (Christ/Coherence) form a pair: signal propagation leads to full synchronization"
+    },
+    "4_7_love_relationship": {
+      "active": false,
+      "how": ""
+    },
+    "5_6_judgment_logos": {
+      "active": false,
+      "how": ""
+    },
+    "pairs_active_count": 1
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 9
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 8
+    },
+    "love": {
+      "present": true,
+      "strength": 8
+    },
+    "judgment": {
+      "present": true,
+      "strength": 9
+    },
+    "logos": {
+      "present": false,
+      "strength": 0
+    },
+    "righteousness": {
+      "present": true,
+      "strength": 8
+    },
+    "faith": {
+      "present": true,
+      "strength": 9
+    },
+    "atonement": {
+      "present": true,
+      "strength": 9
+    },
+    "christ": {
+      "present": true,
+      "strength": 10
+    },
+    "operators_present_count": 8
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "master-equation-overview",
+      "axiom-layer-introduction"
+    ],
+    "read_after": [
+      "salvation-narrative-detailed-analysis",
+      "coherence-theology"
+    ]
+  }
+}

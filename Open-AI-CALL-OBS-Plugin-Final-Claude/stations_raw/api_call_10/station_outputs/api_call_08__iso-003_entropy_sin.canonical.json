@@ -1,0 +1,577 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "physics/thermodynamics",
+        "type": "physics",
+        "strength": 10
+      },
+      {
+        "name": "theology/hamartiology",
+        "type": "theology",
+        "strength": 10
+      },
+      {
+        "name": "mathematics/topology",
+        "type": "mathematics",
+        "strength": 6
+      },
+      {
+        "name": "information/entropy",
+        "type": "information",
+        "strength": 5
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "S",
+        "present": true,
+        "role": "primary domain A concept - thermodynamic entropy as moral disorder analog",
+        "strength": 10
+      },
+      {
+        "variable": "G",
+        "present": true,
+        "role": "external grace as reversal mechanism, analog to external energy input",
+        "strength": 9
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "coherence field conserved (div(C)=0) - God's moral reality that doesn't degrade",
+        "strength": 8
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "judgment as thermodynamic law constraint on soteriology",
+        "strength": 7
+      },
+      {
+        "variable": "F",
+        "present": true,
+        "role": "weak force/sin as degradation operator",
+        "strength": 6
+      },
+      {
+        "variable": "K",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "M",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "E",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "R",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "Q",
+        "present": false,
+        "role": "",
+        "strength": 0
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "existence axiom - both domains have real processes of degradation"
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "external grace required to reverse moral entropy, analog to external energy"
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "information conservation - div(C)=0, coherence field conserved"
+      },
+      {
+        "id": "BC8",
+        "invoked": true,
+        "how": "voluntary coupling - system must remain open to grace to avoid degradation"
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "source of external coherence",
+          "ground of moral reality"
+        ]
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "mediator who bears cost of reversal",
+          "Christ as external source bearing thermodynamic cost"
+        ]
+      },
+      "spirit": {
+        "present": false,
+        "manifestations": []
+      },
+      "trinitarian_structure": "implicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-003",
+        "domain_a": "physics/thermodynamics",
+        "domain_b": "theology/hamartiology",
+        "strength": 9,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "sin",
+        "context": "moral entropy - degradation of moral order in closed systems",
+        "weight": 10
+      },
+      {
+        "concept": "grace",
+        "context": "external input that reverses moral degradation, analog to energy input",
+        "weight": 9
+      },
+      {
+        "concept": "sanctification",
+        "context": "local entropy decrease via coupling to external source (Christ)",
+        "weight": 7
+      },
+      {
+        "concept": "total depravity",
+        "context": "heat death analog - endpoint of moral system with zero grace coupling",
+        "weight": 6
+      },
+      {
+        "concept": "Pelagianism",
+        "context": "self-salvation claim structurally equivalent to perpetual motion machine",
+        "weight": 5
+      },
+      {
+        "concept": "atonement",
+        "context": "cost borne by source (Christ) for local order restoration",
+        "weight": 6
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "isomorphism",
+        "context": "structural mapping between thermodynamics and hamartiology",
+        "weight": 10
+      },
+      {
+        "concept": "topology",
+        "context": "same shape of degradation across domains, not metric identity",
+        "weight": 8
+      },
+      {
+        "concept": "conservation",
+        "context": "div(C)=0 - coherence field conserved, analog to energy conservation",
+        "weight": 7
+      },
+      {
+        "concept": "irreversibility",
+        "context": "both processes unidirectional in closed systems without external input",
+        "weight": 8
+      },
+      {
+        "concept": "falsification",
+        "context": "specific conditions that would break the isomorphism",
+        "weight": 6
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 3
+      },
+      {
+        "fruit": "self_control",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "love",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "patience",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "physics/thermodynamics",
+      "to": "theology/hamartiology",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:S",
+      "to": "chi_variable:G",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "chi_variable:C",
+      "to": "axiom:BC7",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "theological_concept:sin",
+      "to": "chi_variable:S",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "theological_concept:grace",
+      "to": "chi_variable:G",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "theological_concept:sanctification",
+      "to": "physics/thermodynamics",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "theological_concept:total_depravity",
+      "to": "physics/thermodynamics",
+      "relation": "maps_to",
+      "weight": 6
+    },
+    {
+      "from": "theological_concept:Pelagianism",
+      "to": "logical_concept:contradiction",
+      "relation": "contradicts",
+      "weight": 5
+    },
+    {
+      "from": "axiom:A1.1",
+      "to": "isomorphism:ISO-003",
+      "relation": "supports",
+      "weight": 6
+    },
+    {
+      "from": "axiom:BC2",
+      "to": "theological_concept:grace",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "axiom:BC8",
+      "to": "theological_concept:sanctification",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "logical_concept:isomorphism",
+      "to": "isomorphism:ISO-003",
+      "relation": "contains",
+      "weight": 10
+    },
+    {
+      "from": "logical_concept:topology",
+      "to": "isomorphism:ISO-003",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:irreversibility",
+      "to": "chi_variable:S",
+      "relation": "derives_from",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:conservation",
+      "to": "chi_variable:C",
+      "relation": "derives_from",
+      "weight": 7
+    },
+    {
+      "from": "trinity:son",
+      "to": "theological_concept:atonement",
+      "relation": "produces",
+      "weight": 6
+    },
+    {
+      "from": "trinity:father",
+      "to": "chi_variable:C",
+      "relation": "supports",
+      "weight": 5
+    },
+    {
+      "from": "theological_concept:sin",
+      "to": "chi_variable:F",
+      "relation": "maps_to",
+      "weight": 6
+    },
+    {
+      "from": "chi_variable:T",
+      "to": "physics/thermodynamics",
+      "relation": "derives_from",
+      "weight": 7
+    }
+  ],
+  "tags": {
+    "primary": [
+      "entropy-sin isomorphism",
+      "second law of thermodynamics",
+      "hamartiology",
+      "grace as external input",
+      "structural isomorphism"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/theology"
+    ],
+    "series": "isomorphism",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "Romans 1:18-32",
+        "context": "moral degradation sequence in systems that suppress truth"
+      },
+      {
+        "ref": "Romans 3:10-12",
+        "context": "universal moral entropy - none righteous"
+      },
+      {
+        "ref": "Genesis 3-11",
+        "context": "progressive moral degradation from Fall to Flood to Babel"
+      }
+    ],
+    "academic": [
+      {
+        "ref": "Clausius (1850)",
+        "context": "Second Law formulation"
+      },
+      {
+        "ref": "Boltzmann (1877)",
+        "context": "entropy equation S = k_B ln(\u03a9)"
+      },
+      {
+        "ref": "Carnot (1824)",
+        "context": "heat engine efficiency theorem"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "ISO-001",
+        "context": "Trinity as source of external input"
+      },
+      {
+        "ref": "ISO-002",
+        "context": "grace as reversal mechanism"
+      },
+      {
+        "ref": "ISO-004",
+        "context": "quantum collapse/Fall as initial closure event"
+      },
+      {
+        "ref": "ISO-025",
+        "context": "immune entropy parallels moral entropy"
+      },
+      {
+        "ref": "ISO-026",
+        "context": "addiction/sin bondage entropy analog"
+      },
+      {
+        "ref": "ISO-027",
+        "context": "epidemiology/sin propagation entropy analog"
+      }
+    ],
+    "total_count": 12
+  },
+  "word_anomalies": [
+    {
+      "word": "hamartiology",
+      "frequency": 2,
+      "significance": "technical theological term for doctrine of sin"
+    },
+    {
+      "word": "topological isomorphism",
+      "frequency": 3,
+      "significance": "key methodological claim - same shape, not same substance"
+    },
+    {
+      "word": "coupling coefficient \u03b1(u)",
+      "frequency": 1,
+      "significance": "formal parameter for grace reception"
+    },
+    {
+      "word": "div(C) = 0",
+      "frequency": 2,
+      "significance": "conservation of coherence field - mathematical formulation"
+    },
+    {
+      "word": "Pelagianism",
+      "frequency": 1,
+      "significance": "heresy of self-salvation, structurally equivalent to perpetual motion"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "analytical and constructive - building a formal structural isomorphism between physics and theology",
+    "Q1_identity": "a structural isomorphism record (ISO-003) mapping the Second Law of Thermodynamics to the doctrine of sin",
+    "Q2_domain": "cross-domain: physics/thermodynamics and theology/hamartiology",
+    "Q3_claim": "sin operates as moral entropy in closed systems, requiring external grace to reverse, structurally isomorphic to thermodynamic entropy requiring external energy",
+    "Q4_support": "five shared structural features (directionality, closure problem, external reversal, total conservation, irreversibility), swap test results, falsification conditions, scriptural and scientific citations",
+    "Q5_dependencies": "ISO-001 (Trinity), ISO-002 (Grace), Second Law of Thermodynamics, doctrine of sin, conservation laws",
+    "Q6_consequences": "Pelagianism is structurally impossible (moral perpetual motion), sanctification requires external grace coupling, total depravity is heat death analog",
+    "Q7_kill": "show thermodynamic entropy spontaneously decreasing in isolated system, or a moral community maintaining order with zero external input, or break the topological match"
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "ISO-001",
+      "ISO-002",
+      "Second Law of Thermodynamics",
+      "Doctrine of Sin"
+    ],
+    "required_by": [
+      "ISO-004",
+      "ISO-025",
+      "ISO-026",
+      "ISO-027"
+    ],
+    "parallel_to": [
+      "ISO-001",
+      "ISO-002"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 28,
+    "total_edges": 20,
+    "dominant_domain": "physics/thermodynamics",
+    "dominant_chi": "S",
+    "connectivity_score": 8,
+    "one_sentence": "ISO-003 establishes a structural isomorphism between thermodynamic entropy and moral entropy (sin), showing both require external input to reverse degradation in closed systems."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": true,
+      "how": "grace (G) as external input reverses moral entropy, faith as coupling mechanism"
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "coherence field C conserved (div(C)=0) analog to truth conservation"
+    },
+    "4_7_love_relationship": {
+      "active": false,
+      "how": ""
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "judgment (T) as thermodynamic law constraint, logos (K) as information structure"
+    },
+    "pairs_active_count": 3
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 9
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 5
+    },
+    "love": {
+      "present": false,
+      "strength": 0
+    },
+    "judgment": {
+      "present": true,
+      "strength": 7
+    },
+    "logos": {
+      "present": false,
+      "strength": 0
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": false,
+      "strength": 0
+    },
+    "atonement": {
+      "present": true,
+      "strength": 6
+    },
+    "christ": {
+      "present": true,
+      "strength": 6
+    },
+    "operators_present_count": 5
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "ISO-001",
+      "ISO-002",
+      "Second Law of Thermodynamics overview"
+    ],
+    "read_after": [
+      "ISO-004",
+      "ISO-025",
+      "ISO-026",
+      "ISO-027"
+    ]
+  }
+}

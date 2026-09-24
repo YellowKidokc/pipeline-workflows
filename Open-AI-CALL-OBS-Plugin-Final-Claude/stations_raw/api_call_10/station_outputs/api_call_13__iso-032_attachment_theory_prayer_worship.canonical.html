@@ -1,0 +1,473 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>ISO-032 · Attachment Theory ⇄ Prayer & Worship · Theophysics Registry</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* ----- CSS variables (light / dark gold theme) ----- */
+    :root {
+      --bg: #0a0a0a;
+      --bg-card: #111111;
+      --bg-card-alt: #161616;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --gold-light: #e5c55f;
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border-gold: rgba(212, 175, 55, 0.25);
+      --border-subtle: #2a2a2a;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+      --radius: 12px;
+      --shadow-card: 0 8px 24px rgba(0,0,0,0.6);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    /* headings */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+      color: #f0f0f0;
+    }
+
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    h3 { font-size: 1.3rem; letter-spacing: 0.06em; }
+
+    /* section numbers */
+    .section-number {
+      font-family: var(--font-heading);
+      font-size: 3.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+      margin-right: 0.75rem;
+      user-select: none;
+    }
+
+    /* gradient separator */
+    .section-sep {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold) 0%, rgba(212,175,55,0.1) 80%, transparent 100%);
+      margin: 1.2rem 0 2rem 0;
+      width: 100%;
+    }
+
+    /* cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 1.8rem 1.8rem;
+      box-shadow: var(--shadow-card);
+      transition: border 0.2s;
+    }
+
+    .card-gold-border { border-top: 4px solid var(--gold); }
+    .card-blue-border { border-top: 4px solid var(--info); }
+    .card-red-border { border-top: 4px solid var(--danger); }
+    .card-green-border { border-top: 4px solid var(--success); }
+
+    /* grid helpers */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .grid-4col {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .grid-2col, .grid-4col { grid-template-columns: 1fr; gap: 1.5rem; }
+      h1 { font-size: 1.8rem; }
+      .hero-banner { padding: 1.2rem; }
+    }
+
+    /* hero banner */
+    .hero-banner {
+      background: linear-gradient(145deg, #1a1508 0%, #0f0e0a 100%);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius);
+      padding: 2rem 2rem;
+      box-shadow: 0 0 30px rgba(212,175,55,0.08);
+    }
+
+    .hero-left { display: flex; flex-direction: column; gap: 1rem; }
+    .law-badge {
+      display: inline-block;
+      background: rgba(212,175,55,0.12);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      width: fit-content;
+      text-transform: uppercase;
+    }
+    .pull-quote {
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+      color: #d8d0c0;
+      margin: 0.5rem 0;
+    }
+
+    .equation-card {
+      background: #0d0d0d;
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
+      padding: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #d0d0d0;
+    }
+    .equation-card .arrow-mapping {
+      color: var(--gold);
+      font-size: 1.6rem;
+      display: block;
+      text-align: center;
+      margin: 0.4rem 0;
+    }
+
+    /* mapping table */
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .mapping-table thead {
+      background: linear-gradient(90deg, #1f1a0a, #2a2412);
+      color: var(--gold);
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .mapping-table th, .mapping-table td {
+      border: 1px solid #2a2a2a;
+      padding: 0.9rem 1rem;
+      vertical-align: top;
+    }
+    .mapping-table tbody tr:nth-child(even) { background: #101010; }
+    .mapping-table tbody tr:hover { background: #1c1c1c; }
+
+    /* test cards */
+    .test-pass { color: var(--success); font-weight: 600; }
+    .test-fail { color: var(--danger); font-weight: 600; }
+
+    /* evidence chips */
+    .chip {
+      display: inline-block;
+      background: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 30px;
+      padding: 0.2rem 1rem;
+      font-size: 0.75rem;
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      margin: 0.2rem 0.2rem;
+    }
+    .chip-gold { border-color: var(--gold); color: var(--gold-light); background: rgba(212,175,55,0.06); }
+
+    /* falsification box */
+    .falsification-box {
+      background: #1c0a0a;
+      border: 1px solid #5a1a1a;
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      box-shadow: inset 0 0 20px rgba(239,68,68,0.05);
+    }
+
+    /* footer seal */
+    .footer-seal {
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.7;
+      font-size: 0.9rem;
+      border-top: 1px solid #2a2a2a;
+      padding-top: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    /* misc */
+    .mono { font-family: var(--font-mono); font-size: 0.85rem; }
+    .gold-text { color: var(--gold); }
+    .text-muted { color: var(--text-muted); }
+    .fw-600 { font-weight: 600; }
+    .mt-2 { margin-top: 1.2rem; }
+    .mb-1 { margin-bottom: 0.5rem; }
+    .gap-1 { gap: 0.8rem; }
+    .flex { display: flex; align-items: center; flex-wrap: wrap; }
+    .flex-center { display: flex; align-items: center; justify-content: center; }
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 1rem;
+      border-radius: 30px;
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .badge-green { background: rgba(34,197,94,0.15); color: var(--success); border: 1px solid var(--success); }
+    .badge-yellow { background: rgba(212,175,55,0.15); color: var(--gold); border: 1px solid var(--gold); }
+    .badge-red { background: rgba(239,68,68,0.15); color: var(--danger); border: 1px solid var(--danger); }
+    .badge-info { background: rgba(74,158,255,0.12); color: var(--info); border: 1px solid var(--info); }
+
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 1px solid #2a2a2a; margin: 1.2rem 0; }
+    .small-mono { font-family: var(--font-mono); font-size: 0.7rem; color: #6b7280; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== 1. REGISTRY HEADER ===== -->
+  <header style="margin-bottom: 2rem;">
+    <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+      <span style="font-size: 3.2rem; font-family: var(--font-heading); color: var(--gold); opacity: 0.7; line-height: 1;">Φ</span>
+      <div>
+        <h1 style="margin: 0; line-height: 1.1;">Theophysics Registry</h1>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.8rem 1.8rem; align-items: baseline; margin-top: 0.2rem;">
+          <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 0.9rem;">ISO-032</span>
+          <span style="color: var(--text-muted); font-size: 0.9rem;">Attachment Theory ⇄ Prayer &amp; Worship</span>
+          <span class="badge badge-green">Level 3 · Isomorphism</span>
+          <span class="badge badge-info">Confidence: High</span>
+          <span class="small-mono">v1.0 · 2026-03-10</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== 2. HERO BANNER ===== -->
+  <section class="hero-banner grid-2col" style="margin-bottom: 2.5rem;">
+    <!-- left -->
+    <div class="hero-left">
+      <span class="law-badge"><i class="fa-regular fa-scale-balanced" style="margin-right: 6px;"></i> Law I · VI · IX</span>
+      <h2 style="font-size: 2rem; line-height: 1.2; margin: 0.2rem 0;">Attachment Theory <span style="color: var(--gold);">⇄</span> Prayer &amp; Worship</h2>
+      <div style="color: var(--text-muted); font-size: 0.9rem;">Developmental Psychology — Christian Theology</div>
+      <div class="pull-quote">
+        “The divine-human relationship has the same relational topology as the caregiver-child attachment system — secure base, proximity seeking, separation protest, internal working models, earned security through corrective relational experience.”
+      </div>
+      <div class="small-mono" style="margin-top: 0.3rem;">Psalm 131 · Psalm 22:1 · James 4:8 · 1 John 4:19</div>
+    </div>
+    <!-- right: equation card -->
+    <div class="equation-card">
+      <div style="font-family: var(--font-heading); letter-spacing: 0.04em; color: var(--gold); font-size: 0.8rem; margin-bottom: 0.5rem;">CORE EQUATIONS</div>
+      <div><span class="gold-text">Domain A</span> <span style="color: #6b7280;">(Attachment)</span></div>
+      <div style="margin-bottom: 0.3rem;">Attachment style = f(Anxiety, Avoidance)</div>
+      <div style="font-size: 0.8rem; color: #aaa;">Secure: low A, low Av · Anxious: high A, low Av · Avoidant: low A, high Av · Disorganized: high A, high Av</div>
+      <div class="arrow-mapping">⟷</div>
+      <div><span class="gold-text">Domain B</span> <span style="color: #6b7280;">(Worship)</span></div>
+      <div style="margin-bottom: 0.3rem;">Worship style = f(Spiritual Anxiety, Spiritual Avoidance)</div>
+      <div style="font-size: 0.8rem; color: #aaa;">Secure trust · Anxious legalism · Avoidant deism · Disorganized trauma-theology</div>
+      <div style="margin-top: 0.8rem; border-top: 1px solid #2a2a2a; padding-top: 0.6rem; font-size: 0.8rem; color: #9ca3af;">
+        <span class="mono">α = 1</span> (secure coupling) · <span class="mono">α → 0</span> (avoidant decoupling) · <span class="mono">α</span> oscillating (anxious)
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. DOMAIN SPECIFICATIONS ===== -->
+  <section style="margin-bottom: 2.5rem;">
+    <div class="flex"><span class="section-number">01</span><h2>Domain Specifications</h2></div>
+    <div class="section-sep"></div>
+    <div class="grid-2col">
+      <!-- Domain A -->
+      <div class="card card-blue-border">
+        <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem;">
+          <i class="fa-solid fa-brain" style="color: var(--info); font-size: 1.6rem;"></i>
+          <h3 style="margin: 0;">Domain A · Physics</h3>
+        </div>
+        <p style="color: #b0b8c0;"><span class="fw-600">Developmental Psychology</span> — Attachment Theory (Bowlby, Ainsworth, Main, Bartholomew)</p>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">Early relational experience with a primary caregiver produces internal working models (IWMs) that shape all subsequent relational behavior. Four attachment styles (secure, anxious-preoccupied, dismissive-avoidant, fearful-avoidant/disorganized) map onto a 2D space of anxiety and avoidance. Earned security is possible through corrective relational experience.</p>
+        <div style="margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.8rem; background: #0d0d0d; padding: 0.6rem; border-radius: 6px; color: #b0b0b0;">
+          ECR-R · Strange Situation · AAI · 2D: Anxiety × Avoidance
+        </div>
+      </div>
+      <!-- Domain B -->
+      <div class="card card-gold-border">
+        <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem;">
+          <i class="fa-solid fa-pray" style="color: var(--gold); font-size: 1.6rem;"></i>
+          <h3 style="margin: 0;">Domain B · Theology</h3>
+        </div>
+        <p style="color: #b0b8c0;"><span class="fw-600">Christian Theology</span> — Prayer, Worship, and the Divine-Human Relationship</p>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">Biblical theology describes prayer and worship as the primary mode of divine-human relationship. The believer's image of God (theology proper) shapes all worship behavior. Four worship postures (secure trust, anxious legalism, avoidant deism, disorganized trauma-theology) map onto a 2D space of spiritual anxiety and spiritual avoidance. Sanctification is corrective relational experience.</p>
+        <div style="margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.8rem; background: #0d0d0d; padding: 0.6rem; border-radius: 6px; color: #b0b0b0;">
+          AGI (Attachment to God Inventory) · Psalm 131 · Psalm 22 · James 4:8
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. THE ISOMORPHIC MAPPING ===== -->
+  <section style="margin-bottom: 2.5rem;">
+    <div class="flex"><span class="section-number">02</span><h2>Isomorphic Mapping</h2></div>
+    <div class="section-sep"></div>
+    <div style="overflow-x: auto;">
+      <table class="mapping-table">
+        <thead>
+          <tr><th style="width: 28%;">Attachment (Domain A)</th><th style="width: 28%;">Worship / Theology (Domain B)</th><th style="width: 44%;">Structural Correspondence</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2D space: Anxiety × Avoidance</td><td>2D space: Spiritual Anxiety × Spiritual Avoidance</td><td>Identical topology — four quadrants map directly</td></tr>
+          <tr><td>Secure base (caregiver provides exploration base)</td><td>“God is our refuge and strength” (Psalm 46:1); “strong tower” (Prov 18:10)</td><td>Secure base function described in Scripture 2500 years before Bowlby</td></tr>
+          <tr><td>Proximity seeking under threat</td><td>Prayer — “Draw near to God” (James 4:8)</td><td>Behavioral signature of attachment activation in both domains</td></tr>
+          <tr><td>Separation protest (crying, searching, anger)</td><td>Lament psalms — “My God, why have you forsaken me?” (Psalm 22:1)</td><td>Protest directed at the attachment figure; distinguishes lament from despair</td></tr>
+          <tr><td>Internal working model (IWM) of caregiver</td><td>Theology proper (image of God)</td><td>Mental model of the relational figure determines relational behavior</td></tr>
+          <tr><td>Anxious-preoccupied attachment</td><td>Legalistic worship (works-based anxiety, reassurance-seeking)</td><td>Hypervigilant monitoring, compulsive reassurance, inability to rest</td></tr>
+          <tr><td>Dismissive-avoidant attachment</td><td>Deism / practical atheism (relational distance, self-sufficiency)</td><td>Suppression of relational need, distance-maintenance narrative</td></tr>
+          <tr><td>Disorganized / fearful-avoidant attachment</td><td>Trauma theology (God as both needed and terrifying)</td><td>Approach-avoidance conflict; spiritual abuse produces this pattern</td></tr>
+          <tr><td>Earned security (corrective relational experience)</td><td>Sanctification — “We love because he first loved us” (1 John 4:19)</td><td>Gradual revision of IWM through repeated disconfirmation</td></tr>
+          <tr><td>Attachment hierarchy (primary figure under stress)</td><td>First commandment — “No other gods before me” (Exodus 20:3)</td><td>Idolatry = misplaced primary attachment; “their god is their belly” (Phil 3:19)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top: 0.8rem; font-size: 0.8rem; color: var(--text-muted); text-align: right; font-family: var(--font-mono);">10 independent correspondences · threshold: 7</div>
+  </section>
+
+  <!-- ===== 5. SEPARATOR TESTS ===== -->
+  <section style="margin-bottom: 2.5rem;">
+    <div class="flex"><span class="section-number">03</span><h2>Separator Tests</h2></div>
+    <div class="section-sep"></div>
+    <div class="grid-4col">
+      <!-- Test A -->
+      <div class="card">
+        <h3 style="font-size: 1rem; margin-bottom: 0.3rem;"><i class="fa-regular fa-sitemap" style="color: var(--info); margin-right: 6px;"></i> Test A · Structural Preservation</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Do relations survive under mapping?</p>
+        <p style="font-size: 0.9rem;">Secure base, proximity seeking, separation protest, IWM, earned security, hierarchy — all map with preserved relational structure. The 2D anxiety/avoidance grid is identical.</p>
+        <div style="margin-top: 0.6rem;"><span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span></div>
+      </div>
+      <!-- Test B -->
+      <div class="card">
+        <h3 style="font-size: 1rem; margin-bottom: 0.3rem;"><i class="fa-regular fa-arrow-right-arrow-left" style="color: var(--gold); margin-right: 6px;"></i> Test B · Non-Arbitrariness</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Is the mapping forced or could you swap targets?</p>
+        <p style="font-size: 0.9rem;">Attachment behavior cannot be placed in the theology slot (Strange Situation not applicable to God). But AGI measures anxiety/avoidance in the God-relationship on the same 2D space. Topological mapping is forced; metric mapping is partially supported.</p>
+        <div style="margin-top: 0.6rem;"><span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS (topological) · PARTIAL (metric)</span></div>
+      </div>
+      <!-- Test C -->
+      <div class="card">
+        <h3 style="font-size: 1rem; margin-bottom: 0.3rem;"><i class="fa-regular fa-triangle-exclamation" style="color: var(--gold); margin-right: 6px;"></i> Test C · Constraint</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Does the mapping rule things out?</p>
+        <p style="font-size: 0.9rem;">Yes: worship models that ignore the attachment system (pure cognitive assent) are ruled out. Pastoral care must provide corrective relational experience. Different attachment styles require different pastoral approaches.</p>
+        <div style="margin-top: 0.6rem;"><span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span></div>
+      </div>
+      <!-- Test D -->
+      <div class="card">
+        <h3 style="font-size: 1rem; margin-bottom: 0.3rem;"><i class="fa-regular fa-arrows-rotate" style="color: var(--success); margin-right: 6px;"></i> Test D · Bidirectionality</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Does each side predict the other?</p>
+        <p style="font-size: 0.9rem;">Psychology → Theology: attachment constrains viable worship models. Theology → Psychology: Scripture predicts secure base, proximity seeking, separation protest, earned security — discovered 2500+ years later. Bidirectional.</p>
+        <div style="margin-top: 0.6rem;"><span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. CLASSIFICATION & EVIDENCE ===== -->
+  <section style="margin-bottom: 2.5rem;">
+    <div class="flex"><span class="section-number">04</span><h2>Classification &amp; Evidence</h2></div>
+    <div class="section-sep"></div>
+    <div class="card" style="border-top: 2px solid var(--gold);">
+      <div style="display: flex; flex-wrap: wrap; gap: 1.5rem 2.5rem; align-items: center;">
+        <div><span class="badge badge-green" style="font-size: 0.9rem; padding: 0.3rem 1.8rem;">Structural Isomorphism</span></div>
+        <div><span class="badge badge-info" style="font-size: 0.9rem; padding: 0.3rem 1.8rem;">Confidence: High</span></div>
+        <div><span class="badge badge-yellow" style="font-size: 0.9rem; padding: 0.3rem 1.8rem;">Reframe Level 2</span></div>
+      </div>
+      <hr>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
+        <span class="chip chip-gold"><i class="fa-regular fa-flask" style="margin-right: 4px;"></i> Strange Situation taxonomy</span>
+        <span class="chip chip-gold"><i class="fa-regular fa-chart-line"></i> ECR-R validation</span>
+        <span class="chip chip-gold"><i class="fa-regular fa-book-bible"></i> AGI (Beck &amp; McDonald 2004)</span>
+        <span class="chip chip-gold"><i class="fa-regular fa-scroll"></i> Psalm 22:1 · 13:1</span>
+        <span class="chip chip-gold"><i class="fa-regular fa-shield"></i> Psalm 46:1 · Prov 18:10</span>
+        <span class="chip chip-gold"><i class="fa-regular fa-child"></i> Psalm 131</span>
+        <span class="chip chip-gold"><i class="fa-regular fa-hand"></i> James 4:8</span>
+        <span class="chip chip-gold"><i class="fa-regular fa-heart"></i> 1 John 4:19</span>
+        <span class="chip chip-gold"><i class="fa-regular fa-tablets"></i> Exodus 20:3</span>
+      </div>
+      <hr>
+      <div style="font-size: 0.85rem; color: var(--text-muted);">
+        <span class="fw-600 gold-text">Laws Invoked:</span> Law I (Convergence) · Law VI (Entropy) · Law IX (Grace) &nbsp;|&nbsp; 
+        <span class="fw-600 gold-text">Axioms:</span> A1.1 · Relational ontology
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. FALSIFICATION CRITERIA ===== -->
+  <section style="margin-bottom: 2.5rem;">
+    <div class="flex"><span class="section-number">05</span><h2>Falsification Criteria</h2></div>
+    <div class="section-sep"></div>
+    <div class="falsification-box">
+      <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem;">
+        <li><i class="fa-regular fa-circle-xmark" style="color: var(--danger); margin-right: 10px;"></i> <strong>1.</strong> Demonstrate that the 2D anxiety/avoidance model does NOT capture the primary dimensions of variation in close relationships — breaking the 2D correspondence.</li>
+        <li><i class="fa-regular fa-circle-xmark" style="color: var(--danger); margin-right: 10px;"></i> <strong>2.</strong> Demonstrate that earned security occurs without corrective relational experience (purely cognitive or pharmacological) — breaking the sanctification parallel.</li>
+        <li><i class="fa-regular fa-circle-xmark" style="color: var(--danger); margin-right: 10px;"></i> <strong>3.</strong> Demonstrate that worship postures do NOT distribute across a 2D anxiety/avoidance space (AGI fails to replicate the structure).</li>
+        <li><i class="fa-regular fa-circle-xmark" style="color: var(--danger); margin-right: 10px;"></i> <strong>4.</strong> Demonstrate that attachment style does NOT predict theological orientation (zero correlation between ECR-R and theological orientation).</li>
+        <li><i class="fa-regular fa-circle-xmark" style="color: var(--danger); margin-right: 10px;"></i> <strong>5.</strong> Break the topology: show that a structural feature present in one domain is absent in the other (secure base, proximity seeking, separation protest, IWM, earned security, hierarchy).</li>
+      </ul>
+      <div style="margin-top: 1rem; font-size: 0.8rem; color: #7f4a4a; border-top: 1px solid #3a1a1a; padding-top: 0.8rem;">
+        <i class="fa-regular fa-skull"></i> If any one of these conditions is met, the isomorphism is falsified.
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 8. RELATED ISOMORPHISMS ===== -->
+  <section style="margin-bottom: 2.5rem;">
+    <div class="flex"><span class="section-number">06</span><h2>Related Isomorphisms</h2></div>
+    <div class="section-sep"></div>
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+      <a href="#" style="background: #111; border: 1px solid #2a2a2a; border-radius: 30px; padding: 0.3rem 1.2rem; font-size: 0.85rem;"><span class="mono">ISO-001</span> Trinity (relational nature of God)</a>
+      <a href="#" style="background: #111; border: 1px solid #2a2a2a; border-radius: 30px; padding: 0.3rem 1.2rem; font-size: 0.85rem;"><span class="mono">ISO-002</span> Grace (corrective input)</a>
+      <a href="#" style="background: #111; border: 1px solid #2a2a2a; border-radius: 30px; padding: 0.3rem 1.2rem; font-size: 0.85rem;"><span class="mono">ISO-003</span> Entropy / Sin (relational degradation)</a>
+      <a href="#" style="background: #111; border: 1px solid #2a2a2a; border-radius: 30px; padding: 0.3rem 1.2rem; font-size: 0.85rem;"><span class="mono">ISO-015</span> Moral Physics</a>
+    </div>
+  </section>
+
+  <!-- ===== 9. FOOTER ===== -->
+  <footer style="margin-top: 3rem; border-top: 1px solid #2a2a2a; padding-top: 1.5rem;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+      <div>
+        <div style="font-family: var(--font-heading); letter-spacing: 0.06em; color: var(--gold);">Theophysics Research Program</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted);">POF 2828 · ISO-032 · v1.0</div>
+      </div>
+      <div class="footer-seal" style="border: none; padding: 0; margin: 0; max-width: 300px; text-align: right;">
+        “The math points to God. The math does not contain God.”
+      </div>
+    </div>
+    <div style="margin-top: 1rem; font-size: 0.7rem; color: #4a4a4a; text-align: center; font-family: var(--font-mono);">
+      <i class="fa-regular fa-copyright"></i> faith

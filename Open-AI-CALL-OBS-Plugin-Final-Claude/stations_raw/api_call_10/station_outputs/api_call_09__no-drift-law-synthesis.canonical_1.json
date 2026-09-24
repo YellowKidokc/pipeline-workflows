@@ -1,0 +1,607 @@
+{
+  "definitions": [
+    {
+      "term": "Theophysics",
+      "category": "framework",
+      "definition": "A made-up field that mixes physics and theology to study spiritual laws using math.",
+      "example": "Like using gravity equations to talk about God's pull on people.",
+      "grade_level": "college",
+      "first_appearance": "Foundation"
+    },
+    {
+      "term": "Native Duality",
+      "category": "framework",
+      "definition": "The idea that one equation can produce both good and bad outcomes depending on the numbers you plug in.",
+      "example": "A knife can cut food or hurt someone—same tool, different use.",
+      "grade_level": "college",
+      "first_appearance": "Foundation"
+    },
+    {
+      "term": "Annihilator",
+      "category": "physics",
+      "definition": "The part of an equation that makes something disappear or break down when pushed too far.",
+      "example": "When you stretch a rubber band too much, it snaps—the snap is the annihilator.",
+      "grade_level": "college",
+      "first_appearance": "Foundation"
+    },
+    {
+      "term": "Free Will Variable (W)",
+      "category": "framework",
+      "definition": "A made-up number in the equations that represents a person's ability to choose or resist.",
+      "example": "If W=1, you fully resist; if W=0, you go along with the flow.",
+      "grade_level": "college",
+      "first_appearance": "Foundation"
+    },
+    {
+      "term": "Shannon Information Theory",
+      "category": "math",
+      "definition": "A math way to measure how much information can be sent through a noisy channel, like a phone line.",
+      "example": "It's like figuring out how many words you can text without errors when the signal is weak.",
+      "grade_level": "college",
+      "first_appearance": "Foundation"
+    },
+    {
+      "term": "Attractors",
+      "category": "physics",
+      "definition": "In math, states that a system tends to move toward over time, like a magnet pulling things.",
+      "example": "A ball rolling into a bowl always ends up at the bottom—that's an attractor.",
+      "grade_level": "college",
+      "first_appearance": "Foundation"
+    },
+    {
+      "term": "Moral Hierarchy",
+      "category": "philosophy",
+      "definition": "A ranking of beings based on how much moral responsibility they have for their actions.",
+      "example": "Animals don't go to court, but humans do because they can choose right from wrong.",
+      "grade_level": "college",
+      "first_appearance": "Framework"
+    },
+    {
+      "term": "Deterministically",
+      "category": "physics",
+      "definition": "When something happens exactly the same way every time, with no choices involved.",
+      "example": "A rock dropped from a cliff always falls straight down—no decisions.",
+      "grade_level": "college",
+      "first_appearance": "Framework"
+    },
+    {
+      "term": "Moral Weight",
+      "category": "philosophy",
+      "definition": "How much importance or consequence an action has in terms of right and wrong.",
+      "example": "Stealing a candy bar has less moral weight than stealing a car.",
+      "grade_level": "college",
+      "first_appearance": "Framework"
+    },
+    {
+      "term": "Sacrifice",
+      "category": "theology",
+      "definition": "Giving up something valuable for a greater purpose, often to help others.",
+      "example": "A firefighter running into a burning building to save someone is making a sacrifice.",
+      "grade_level": "10",
+      "first_appearance": "Framework"
+    },
+    {
+      "term": "Gravitation",
+      "category": "physics",
+      "definition": "The force that pulls objects with mass toward each other, like how Earth pulls you down.",
+      "example": "An apple falling from a tree is pulled by gravity.",
+      "grade_level": "10",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Grace",
+      "category": "theology",
+      "definition": "Unearned kindness or help from God, like a gift you didn't work for.",
+      "example": "Getting a second chance after messing up is like grace.",
+      "grade_level": "10",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Sin",
+      "category": "theology",
+      "definition": "An action or thought that goes against God's rules or moral law.",
+      "example": "Lying or stealing are considered sins.",
+      "grade_level": "10",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Mass-energy density",
+      "category": "physics",
+      "definition": "How much mass and energy is packed into a given space.",
+      "example": "A neutron star has extremely high mass-energy density because it's super heavy but tiny.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Geodesic",
+      "category": "physics",
+      "definition": "The shortest or most natural path between two points in curved space, like a straight line on a curved surface.",
+      "example": "A plane flying the shortest route over Earth follows a geodesic.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Coercion",
+      "category": "philosophy",
+      "definition": "Forcing someone to do something against their will.",
+      "example": "A bully making you give them your lunch money is coercion.",
+      "grade_level": "10",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Schwarzschild radius",
+      "category": "physics",
+      "definition": "The size a star must shrink to become a black hole, where gravity is so strong nothing escapes.",
+      "example": "If Earth were crushed to the size of a marble, it would have a Schwarzschild radius.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Singularity",
+      "category": "physics",
+      "definition": "A point where gravity becomes infinite and normal physics breaks down, like at the center of a black hole.",
+      "example": "Imagine dividing by zero—that's like a singularity.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Event horizon",
+      "category": "physics",
+      "definition": "The boundary around a black hole where nothing, not even light, can escape.",
+      "example": "It's like the point of no return for a waterfall—once you go over, you can't come back.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Critical threshold",
+      "category": "physics",
+      "definition": "A specific point where a small change causes a big effect, like a tipping point.",
+      "example": "When you add one more straw to a camel's back and it breaks—that's the critical threshold.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Shannon Channel Capacity",
+      "category": "math",
+      "definition": "The maximum amount of information that can be sent reliably through a communication channel.",
+      "example": "It's like the fastest speed you can download a video without glitches.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Signal-to-noise ratio (S/N)",
+      "category": "physics",
+      "definition": "A measure of how clear a signal is compared to background noise.",
+      "example": "A good radio station has a high signal-to-noise ratio—you hear music, not static.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Revelation",
+      "category": "theology",
+      "definition": "When God shows or tells people something about himself or his plan.",
+      "example": "The Bible is considered a revelation from God.",
+      "grade_level": "10",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Mass-Energy",
+      "category": "physics",
+      "definition": "The idea that mass and energy are two forms of the same thing, linked by E=mc².",
+      "example": "A tiny bit of mass can be turned into a huge amount of energy, like in a nuclear bomb.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Holy Spirit",
+      "category": "theology",
+      "definition": "In Christianity, the third person of God who is present and active in the world and in believers.",
+      "example": "Christians believe the Holy Spirit guides and comforts them.",
+      "grade_level": "10",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Transformer",
+      "category": "physics",
+      "definition": "A device that changes voltage in electricity, but here used as a metaphor for changing form.",
+      "example": "A phone charger transforms high voltage from the wall into low voltage for your phone.",
+      "grade_level": "10",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Substrate",
+      "category": "physics",
+      "definition": "The underlying material or substance that something is made of or happens on.",
+      "example": "Concrete is the substrate for a road—it's what the road is built on.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Conversion constant",
+      "category": "physics",
+      "definition": "A fixed number that tells you how to change one unit into another, like c² in E=mc².",
+      "example": "To change miles to kilometers, you multiply by 1.609—that's a conversion constant.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Coherence",
+      "category": "physics",
+      "definition": "When waves or states are in sync and can work together in a predictable way.",
+      "example": "A laser beam is coherent—all the light waves are perfectly aligned.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Quantum decoherence",
+      "category": "physics",
+      "definition": "When a quantum system loses its special quantum properties by interacting with the environment, becoming normal.",
+      "example": "It's like a spinning top that wobbles and then falls over when it touches the table.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Measurement frame",
+      "category": "physics",
+      "definition": "The perspective or context from which you observe and measure something.",
+      "example": "If you're in a moving car, the world looks different than if you're standing still—that's a different measurement frame.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Projections",
+      "category": "math",
+      "definition": "In math and physics, a way of representing something from a certain angle or viewpoint.",
+      "example": "A shadow is a 2D projection of a 3D object.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Fractured",
+      "category": "academic",
+      "definition": "Broken into pieces or split apart.",
+      "example": "A bone that cracks is fractured.",
+      "grade_level": "10",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Incarnation",
+      "category": "theology",
+      "definition": "The belief that God became a human being in the form of Jesus Christ.",
+      "example": "Christmas celebrates the incarnation—God becoming a baby.",
+      "grade_level": "10",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Resurrection",
+      "category": "theology",
+      "definition": "Coming back to life after being dead.",
+      "example": "Christians believe Jesus rose from the dead on Easter—that's the resurrection.",
+      "grade_level": "10",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Annihilation",
+      "category": "physics",
+      "definition": "When matter and antimatter meet and turn completely into energy.",
+      "example": "When a particle and its antiparticle collide, they annihilate in a flash of energy.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Electromagnetism",
+      "category": "physics",
+      "definition": "A force that acts between electric charges and creates electric and magnetic fields.",
+      "example": "Magnets sticking to a fridge and lightning are both due to electromagnetism.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Self-sustaining",
+      "category": "academic",
+      "definition": "Able to keep itself going without outside help.",
+      "example": "A plant is self-sustaining if it gets sunlight and water—it makes its own food.",
+      "grade_level": "10",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Propagates",
+      "category": "physics",
+      "definition": "Travels or spreads through a medium or space.",
+      "example": "Sound propagates through air, which is why you can hear someone talking.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Wave equation",
+      "category": "physics",
+      "definition": "A math formula that describes how waves, like light or sound, move through space and time.",
+      "example": "The wave equation can predict how ripples spread when you drop a stone in a pond.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Electric field",
+      "category": "physics",
+      "definition": "An invisible area around an electric charge that pushes or pulls other charges.",
+      "example": "When you rub a balloon on your hair, the electric field makes your hair stand up.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Magnetic field",
+      "category": "physics",
+      "definition": "An invisible area around a magnet or moving charge that pushes or pulls magnetic materials.",
+      "example": "A compass needle points north because of Earth's magnetic field.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Vacuum",
+      "category": "physics",
+      "definition": "A space with no matter in it, like empty space.",
+      "example": "Outer space is mostly a vacuum—there's no air.",
+      "grade_level": "10",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Coherent wave",
+      "category": "physics",
+      "definition": "A wave where all parts are in sync, like a laser beam.",
+      "example": "A laser pointer produces a coherent wave of light.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Destructive interference",
+      "category": "physics",
+      "definition": "When two waves meet and cancel each other out, making a smaller wave or nothing.",
+      "example": "Noise-canceling headphones use destructive interference to quiet sounds.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Phase-inverted",
+      "category": "physics",
+      "definition": "When a wave is flipped upside down so its peaks become valleys.",
+      "example": "If you flip a sine wave, it becomes phase-inverted—peaks become troughs.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Distortion",
+      "category": "physics",
+      "definition": "A change in a signal or wave that makes it unclear or different from the original.",
+      "example": "A fuzzy radio station has distortion—the sound is garbled.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Retransmission",
+      "category": "physics",
+      "definition": "Sending a signal again, often after receiving it.",
+      "example": "A Wi-Fi extender retransmits your router's signal to reach farther.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Testimony",
+      "category": "theology",
+      "definition": "A personal story about what God has done in your life.",
+      "example": "Someone sharing how they found faith is giving a testimony.",
+      "grade_level": "10",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Prophecy",
+      "category": "theology",
+      "definition": "A message from God about the future, often delivered by a prophet.",
+      "example": "In the Bible, Isaiah prophesied about the coming of Jesus.",
+      "grade_level": "10",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Strong Force",
+      "category": "physics",
+      "definition": "The force that holds protons and neutrons together inside an atom's nucleus.",
+      "example": "The strong force is what keeps the nucleus from flying apart despite protons repelling each other.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Yukawa/Cornell potential",
+      "category": "physics",
+      "definition": "A math formula describing the strong force, which gets stronger as particles get farther apart.",
+      "example": "It's like a rubber band that pulls harder the more you stretch it.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Asymptotic freedom",
+      "category": "physics",
+      "definition": "The property of the strong force where particles interact more weakly when they are very close.",
+      "example": "When two magnets are close, they stick; when far, they barely pull—asymptotic freedom is the opposite.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Covenant",
+      "category": "theology",
+      "definition": "A serious, binding promise between God and people, like a contract.",
+      "example": "The rainbow after Noah's flood is a sign of God's covenant with all living things.",
+      "grade_level": "10",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Restoring force",
+      "category": "physics",
+      "definition": "A force that tries to bring something back to its original position after it's moved.",
+      "example": "A spring has a restoring force—pull it, and it wants to snap back.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Confinement mechanism",
+      "category": "physics",
+      "definition": "The way the strong force keeps quarks trapped inside particles like protons.",
+      "example": "Quarks are like prisoners in a cell—they can't escape because the strong force holds them.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Pathologically",
+      "category": "academic",
+      "definition": "In a way that is harmful or unhealthy, like a disease.",
+      "example": "A computer virus acts pathologically, damaging files.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Overcoupling",
+      "category": "physics",
+      "definition": "When a force becomes too strong, causing problems instead of stability.",
+      "example": "If glue is too strong, you can't separate things without breaking them—that's overcoupling.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Captivity",
+      "category": "academic",
+      "definition": "Being trapped or held against your will.",
+      "example": "A bird in a cage is in captivity.",
+      "grade_level": "10",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Sacrificial cohesion",
+      "category": "framework",
+      "definition": "A bond so strong it overflows to connect others, even at a cost.",
+      "example": "A family that sticks together through hard times shows sacrificial cohesion.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Residual strong force",
+      "category": "physics",
+      "definition": "A leftover part of the strong force that holds protons and neutrons together in the nucleus.",
+      "example": "It's like the glue that holds larger objects together after the main glue dries.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Fragmentation",
+      "category": "academic",
+      "definition": "Breaking into smaller pieces or parts.",
+      "example": "A dropped glass shatters into fragments—that's fragmentation.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Quantum Mechanics",
+      "category": "physics",
+      "definition": "The branch of physics that deals with very small things like atoms and particles, where weird rules apply.",
+      "example": "In quantum mechanics, a particle can be in two places at once until you look at it.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Superposition",
+      "category": "physics",
+      "definition": "In quantum mechanics, when a particle exists in multiple states at the same time until measured.",
+      "example": "Schrödinger's cat is both alive and dead at the same time—that's superposition.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Collapse",
+      "category": "physics",
+      "definition": "In quantum mechanics, when a superposition becomes a single definite state after measurement.",
+      "example": "When you open the box, Schrödinger's cat becomes either alive or dead—the superposition collapses.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Irreversible",
+      "category": "academic",
+      "definition": "Cannot be undone or reversed.",
+      "example": "Breaking an egg is irreversible—you can't unbreak it.",
+      "grade_level": "10",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Measurement operator",
+      "category": "physics",
+      "definition": "In quantum mechanics, a math tool that represents the act of measuring something.",
+      "example": "It's like a camera that takes a snapshot of a particle's state.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Decoherence rate",
+      "category": "physics",
+      "definition": "How fast a quantum system loses its special properties and becomes normal.",
+      "example": "A spinning top slows down faster on a rough surface—that's a higher decoherence rate.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Environment",
+      "category": "physics",
+      "definition": "In quantum mechanics, everything outside the system being studied that can interact with it.",
+      "example": "For a particle in a box, the box walls are part of the environment.",
+      "grade_level": "10",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Classical branches",
+      "category": "physics",
+      "definition": "In quantum mechanics, the different possible outcomes that become real after decoherence.",
+      "example": "If you flip a coin, heads and tails are two classical branches.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Thermodynamics",
+      "category": "physics",
+      "definition": "The branch of physics that deals with heat, energy, and how they change.",
+      "example": "A steam engine uses thermodynamics to turn heat into motion.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Justice",
+      "category": "philosophy",
+      "definition": "Fairness, where actions have appropriate consequences.",
+      "example": "If you steal, justice means you have to make it right.",
+      "grade_level": "10",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Mercy",
+      "category": "theology",
+      "definition": "Showing kindness or forgiveness when punishment is deserved.",
+      "example": "A teacher giving a second chance on a late assignment is showing mercy.",
+      "grade_level": "10",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Duality",
+      "category": "philosophy",
+      "definition": "The state of having two opposite parts or aspects.",
+      "example": "Light and dark are a duality—they define each other.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Second Law (of Thermodynamics)",
+      "category": "physics",
+      "definition": "The law that says disorder (entropy) in a closed system always increases over time.",
+      "example": "Your room gets messier on its own—that's the Second Law in action.",
+      "grade_level": "college",
+      "first_appearance": "Core Framework"
+    },
+    {
+      "term": "Entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system.",
+      "example": "

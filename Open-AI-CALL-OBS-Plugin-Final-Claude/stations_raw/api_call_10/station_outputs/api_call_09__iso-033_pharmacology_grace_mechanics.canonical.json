@@ -1,0 +1,513 @@
+{
+  "definitions": [
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A mapping between two systems that shows they have the same structure or pattern, even if they look different on the surface.",
+      "example": "A map of a subway system is isomorphic to the actual subway lines because the connections between stations are the same, even though the map is not the real thing.",
+      "grade_level": "college",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "pharmacology",
+      "category": "physics",
+      "definition": "The study of how drugs work in the body, including how they are absorbed, distributed, and eliminated.",
+      "example": "When you take a painkiller, pharmacology explains how it travels from your stomach to your bloodstream to your brain to stop the pain.",
+      "grade_level": "college",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "dose-response dynamics",
+      "category": "physics",
+      "definition": "The relationship between the amount of a drug given and the effect it produces in the body.",
+      "example": "Taking one aspirin might reduce a headache a little, but taking two might reduce it more—that's a dose-response relationship.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "receptor binding kinetics",
+      "category": "physics",
+      "definition": "The study of how fast and how strongly a drug attaches to a receptor on a cell.",
+      "example": "Think of a key (the drug) fitting into a lock (the receptor); kinetics is about how quickly the key turns and how tightly it fits.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "pharmacokinetics",
+      "category": "physics",
+      "definition": "The study of how a drug moves through the body: absorption, distribution, metabolism, and excretion (ADME).",
+      "example": "When you swallow a pill, pharmacokinetics tracks it from your stomach to your blood to your liver and finally out in your urine.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "ADME",
+      "category": "physics",
+      "definition": "An acronym for Absorption, Distribution, Metabolism, and Excretion—the four steps a drug goes through in the body.",
+      "example": "ADME is like a drug's journey: it gets absorbed into the blood, distributed to organs, broken down by the liver, and then excreted.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "agonist",
+      "category": "physics",
+      "definition": "A drug that activates a receptor to produce a response.",
+      "example": "Morphine is an agonist that binds to pain receptors and turns them on to relieve pain.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "antagonist",
+      "category": "physics",
+      "definition": "A drug that blocks a receptor and prevents it from being activated.",
+      "example": "Naloxone is an antagonist that blocks opioid receptors and stops the effects of heroin or morphine.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "tolerance",
+      "category": "physics",
+      "definition": "A state where the body gets used to a drug, so higher doses are needed to get the same effect.",
+      "example": "If you drink coffee every day, you might need two cups to feel awake instead of one—that's tolerance.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "receptor regulation",
+      "category": "physics",
+      "definition": "The process by which cells increase or decrease the number of receptors on their surface in response to drug exposure.",
+      "example": "If you take a drug that activates a receptor too much, the cell might remove some receptors to protect itself (downregulation).",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "ligand",
+      "category": "physics",
+      "definition": "A molecule that binds to a receptor, like a key fitting into a lock.",
+      "example": "A hormone like insulin is a ligand that binds to insulin receptors on cells to let sugar in.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "affinity",
+      "category": "physics",
+      "definition": "How strongly a drug binds to its receptor.",
+      "example": "Super glue has high affinity for surfaces—it sticks very tightly. A weak magnet has low affinity.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "K_d",
+      "category": "physics",
+      "definition": "A number that tells how tightly a drug binds to a receptor; a smaller K_d means stronger binding.",
+      "example": "If K_d is 0.1, the drug binds tightly; if K_d is 10, it binds loosely.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "Hill equation",
+      "category": "physics",
+      "definition": "A mathematical formula that describes how the effect of a drug changes with its dose, often producing an S-shaped curve.",
+      "example": "The Hill equation can model how a small increase in caffeine can suddenly wake you up, but more caffeine after that has little extra effect.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "therapeutic window",
+      "category": "physics",
+      "definition": "The range of drug doses that are effective without being toxic.",
+      "example": "For a painkiller, the therapeutic window might be between 200 mg (too little to work) and 800 mg (too much and dangerous).",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "sensitization",
+      "category": "physics",
+      "definition": "A process where repeated exposure to a drug makes the body more sensitive to it, so smaller doses produce a bigger effect.",
+      "example": "Some people become more sensitive to caffeine over time, so even a small cup of coffee makes them jittery.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "upregulation",
+      "category": "physics",
+      "definition": "An increase in the number of receptors on a cell, often in response to low levels of a drug or hormone.",
+      "example": "If you stop drinking coffee, your brain may grow more caffeine receptors, making you more sensitive to caffeine later.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "downregulation",
+      "category": "physics",
+      "definition": "A decrease in the number of receptors on a cell, often in response to high levels of a drug or hormone.",
+      "example": "If you take a lot of painkillers, your cells might remove some pain receptors, so you need more medicine to feel relief.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "grace mechanics",
+      "category": "theology",
+      "definition": "The study of how God's grace works in a person's life, including how it is given and received.",
+      "example": "Grace mechanics asks questions like: How does God's help reach us? What blocks it? How do we cooperate with it?",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "prevenient grace",
+      "category": "theology",
+      "definition": "God's grace that works in a person before they decide to follow God, preparing them to respond.",
+      "example": "Prevenient grace is like a teacher who wakes up a sleepy student before class starts, so the student can pay attention.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "justifying grace",
+      "category": "theology",
+      "definition": "God's grace that forgives sins and makes a person right with God.",
+      "example": "When someone confesses and is forgiven, that's justifying grace—it's like having a debt wiped clean.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "sanctifying grace",
+      "category": "theology",
+      "definition": "God's grace that helps a person grow in holiness and become more like Christ over time.",
+      "example": "Sanctifying grace is like a coach who helps an athlete improve their skills day by day.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "means of grace",
+      "category": "theology",
+      "definition": "Practices or activities through which God gives grace to people, such as prayer, Bible reading, and communion.",
+      "example": "Going to church and taking communion are means of grace—they are ways God's help reaches you.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "sacramental theology",
+      "category": "theology",
+      "definition": "The study of sacraments (like baptism and communion) and how they convey God's grace.",
+      "example": "Sacramental theology asks: Does baptism actually give grace, or is it just a symbol?",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "sigmoidal",
+      "category": "math",
+      "definition": "Shaped like an S; a curve that starts flat, rises steeply in the middle, and then flattens out again.",
+      "example": "The growth of a population that starts slow, then explodes, then levels off is sigmoidal.",
+      "grade_level": "college",
+      "first_appearance": "Concept B"
+    },
+    {
+      "term": "threshold",
+      "category": "academic",
+      "definition": "A point or level at which something starts to happen or change.",
+      "example": "The temperature at which water boils is a threshold—below it, nothing happens; at it, bubbles form.",
+      "grade_level": "10",
+      "first_appearance": "Concept B"
+    },
+    {
+      "term": "competitive inhibition",
+      "category": "physics",
+      "definition": "A process where a blocker molecule competes with an activator for the same binding site on a receptor.",
+      "example": "Imagine a parking spot that can only hold one car. If a blocker car parks there, the activator car can't park until the blocker leaves.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "E_max",
+      "category": "physics",
+      "definition": "The maximum possible effect a drug can produce, even at very high doses.",
+      "example": "If a painkiller can only reduce pain by 80% no matter how much you take, that 80% is E_max.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "EC_50",
+      "category": "physics",
+      "definition": "The concentration of a drug that produces half of the maximum effect; a measure of potency.",
+      "example": "If Drug A has EC_50 = 5 mg and Drug B has EC_50 = 50 mg, Drug A is more potent because it works at a lower dose.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Hill coefficient",
+      "category": "physics",
+      "definition": "A number in the Hill equation that describes how steep the dose-response curve is; higher numbers mean a sharper, more switch-like response.",
+      "example": "A Hill coefficient of 1 gives a gradual curve; a coefficient of 4 gives a very sudden on/off response.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "cooperativity",
+      "category": "physics",
+      "definition": "A phenomenon where the binding of one molecule to a receptor makes it easier (or harder) for more molecules to bind.",
+      "example": "In hemoglobin, the binding of one oxygen molecule makes it easier for the next three to bind—that's positive cooperativity.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "K_i",
+      "category": "physics",
+      "definition": "A number that tells how strongly an inhibitor (blocker) binds to a receptor; a smaller K_i means stronger inhibition.",
+      "example": "If K_i is 0.01, the inhibitor binds very tightly and blocks the receptor effectively.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "coupling coefficient",
+      "category": "framework",
+      "definition": "A number that measures how well grace connects to a person's life; it ranges from 0 (no connection) to 1 (full connection).",
+      "example": "If someone is completely open to God, their coupling coefficient is close to 1; if they are closed off, it's near 0.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "autonomy parameter",
+      "category": "framework",
+      "definition": "A number that measures how much a person relies on themselves instead of God; higher autonomy means less openness to grace.",
+      "example": "If someone insists on doing everything their own way, their autonomy parameter is high, and their coupling coefficient is low.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "GT_50",
+      "category": "framework",
+      "definition": "The amount of grace needed to produce half of the maximum spiritual transformation; a measure of how hard it is for someone to change.",
+      "example": "A person with a high GT_50 needs a lot of grace exposure before they start to change significantly.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "K_sin",
+      "category": "framework",
+      "definition": "A number that measures how strongly sin blocks grace; a smaller K_sin means sin is a more powerful blocker.",
+      "example": "If K_sin is very small, even a little sin can block a lot of grace.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "sigmoidal threshold response",
+      "category": "physics",
+      "definition": "A response that follows an S-shaped curve: little effect at low doses, a sudden jump at a certain point, then leveling off.",
+      "example": "A light switch has a sigmoidal response: nothing happens until you push it past a point, then the light turns on fully.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "competitive binding",
+      "category": "physics",
+      "definition": "When two different molecules (like an activator and a blocker) compete for the same spot on a receptor.",
+      "example": "Two people trying to sit in the same chair is competitive binding—only one can sit at a time.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "receptor availability",
+      "category": "physics",
+      "definition": "The number of free receptors that a drug or grace can bind to at a given time.",
+      "example": "If most receptors are already blocked by sin, receptor availability is low, and grace has fewer places to attach.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "renal clearance",
+      "category": "physics",
+      "definition": "The process by which the kidneys remove drugs or waste from the blood and excrete them in urine.",
+      "example": "After you take medicine, your kidneys filter it out of your blood and send it to your bladder to be peed out.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "structural asymmetry",
+      "category": "academic",
+      "definition": "A difference in structure between two systems that are otherwise similar.",
+      "example": "In the grace model, there is no excretion step, while in pharmacology there is—that's a structural asymmetry.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "irreversibility of justification",
+      "category": "theology",
+      "definition": "The belief that once God declares a person forgiven and righteous, that decision cannot be undone.",
+      "example": "In Reformed theology, once you are saved, you are always saved—that's the irreversibility of justification.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "indelible character",
+      "category": "theology",
+      "definition": "A permanent spiritual mark or change that sacraments like baptism are believed to leave on the soul.",
+      "example": "In Catholic theology, baptism leaves an indelible character—it can never be erased, even if you later reject the faith.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "hyperbolic",
+      "category": "math",
+      "definition": "Shaped like a hyperbola; a curve that rises quickly at first and then levels off gradually.",
+      "example": "The graph of y = 1/x is hyperbolic—it drops steeply near zero and then flattens out.",
+      "grade_level": "college",
+      "first_appearance": "The Hill Coefficient as Faith-Receptor Density"
+    },
+    {
+      "term": "ultrasensitive",
+      "category": "physics",
+      "definition": "A system that responds very sharply to a small change in input, like a switch that flips from off to on suddenly.",
+      "example": "A smoke detector is ultrasensitive—a tiny amount of smoke can set off a loud alarm.",
+      "grade_level": "college",
+      "first_appearance": "The Hill Coefficient as Faith-Receptor Density"
+    },
+    {
+      "term": "bimodally",
+      "category": "math",
+      "definition": "Having two distinct peaks or clusters in a distribution of data.",
+      "example": "If test scores cluster around 60 and 90, with few in between, the scores are distributed bimodally.",
+      "grade_level": "college",
+      "first_appearance": "The Hill Coefficient as Faith-Receptor Density"
+    },
+    {
+      "term": "empirically testable",
+      "category": "academic",
+      "definition": "Able to be checked by observation or experiment in the real world.",
+      "example": "The claim that 'water boils at 100°C at sea level' is empirically testable—you can heat water and measure it.",
+      "grade_level": "college",
+      "first_appearance": "The Hill Coefficient as Faith-Receptor Density"
+    },
+    {
+      "term": "eigenvalues",
+      "category": "math",
+      "definition": "Special numbers associated with a mathematical operator that tell you the possible outcomes of a measurement or transformation.",
+      "example": "In quantum mechanics, the eigenvalues of an energy operator are the possible energy levels an atom can have.",
+      "grade_level": "college",
+      "first_appearance": "Connection to ISO-012 (Sign Operator)"
+    },
+    {
+      "term": "Heaviside step function",
+      "category": "math",
+      "definition": "A function that is 0 for inputs below a threshold and 1 for inputs above it; a perfect on/off switch.",
+      "example": "A light switch that is either completely off or completely on follows a Heaviside step function.",
+      "grade_level": "college",
+      "first_appearance": "Connection to ISO-012 (Sign Operator)"
+    },
+    {
+      "term": "binary spectrum",
+      "category": "math",
+      "definition": "A range of values that only has two possible states, like 0 and 1 or on and off.",
+      "example": "A computer bit has a binary spectrum: it can only be 0 or 1, nothing in between.",
+      "grade_level": "college",
+      "first_appearance": "Connection to ISO-012 (Sign Operator)"
+    },
+    {
+      "term": "continuous relaxation",
+      "category": "math",
+      "definition": "A way of turning a sharp, step-like change into a smooth, gradual one.",
+      "example": "Instead of a light switch that clicks on instantly, a dimmer switch is a continuous relaxation—it fades on smoothly.",
+      "grade_level": "college",
+      "first_appearance": "Connection to ISO-012 (Sign Operator)"
+    },
+    {
+      "term": "discrete sign flip",
+      "category": "math",
+      "definition": "An abrupt change from one state to another, like flipping a switch from +1 to -1 with no in-between.",
+      "example": "A coin toss is a discrete sign flip: it's either heads or tails, never half-and-half.",
+      "grade_level": "college",
+      "first_appearance": "Connection to ISO-012 (Sign Operator)"
+    },
+    {
+      "term": "coupling topology",
+      "category": "framework",
+      "definition": "The way two things are connected or linked together, describing the shape or pattern of their connection.",
+      "example": "In a phone network, the coupling topology describes which phones are directly connected to which others.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "antinomianism",
+      "category": "theology",
+      "definition": "The belief that Christians are not required to follow moral laws because they are saved by grace alone.",
+      "example": "Someone who says 'I can sin all I want because God will forgive me' is expressing antinomianism.",
+      "grade_level": "college",
+      "first_appearance": "Test 4 — Falsifiability Invitation"
+    },
+    {
+      "term": "Michaelis-Menten",
+      "category": "physics",
+      "definition": "A mathematical model that describes how fast an enzyme works on a substrate, producing a hyperbolic curve.",
+      "example": "Michaelis-Menten kinetics explains how quickly your body breaks down alcohol in the liver.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "saturation-curve analogy",
+      "category": "academic",
+      "definition": "A comparison that uses a curve that levels off at high inputs, like a sponge that can only hold so much water.",
+      "example": "Saying 'grace is like a sponge that gets full' is a saturation-curve analogy.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "receptor-mediated dynamics",
+      "category": "physics",
+      "definition": "A process that depends on receptors on cells to detect and respond to a signal.",
+      "example": "Your sense of smell uses receptor-mediated dynamics: odor molecules bind to receptors in your nose to send signals to your brain.",
+      "grade_level": "college",
+      "first_appearance": "Bidirectional"
+    },
+    {
+      "term": "soteriologies",
+      "category": "theology",
+      "definition": "Different theories or doctrines about how salvation works.",
+      "example": "Catholic and Protestant soteriologies differ on whether good deeds are necessary for salvation.",
+      "grade_level": "college",
+      "first_appearance": "Bidirectional"
+    },
+    {
+      "term": "receptor ablation",
+      "category": "physics",
+      "definition": "The complete destruction or removal of a receptor, so it can no longer function.",
+      "example": "In the grace model, the 'unforgivable sin' is like receptor ablation—the receptor for grace is permanently destroyed.",
+      "grade_level": "college",
+      "first_appearance": "Bidirectional"
+    },
+    {
+      "term": "structural isomorphism",
+      "category": "math",
+      "definition": "A mapping that shows two different systems have the same underlying structure or pattern.",
+      "example": "A road map and a subway map can be structurally isomorphic if the connections between stations match the connections between towns.",
+      "grade_level": "college",
+      "first_appearance": "Classification"
+    },
+    {
+      "term": "reframe level",
+      "category": "academic",
+      "definition": "A measure of how deep or fundamental a change in perspective is, from surface-level to foundational.",
+      "example": "Changing the color of a car is a low reframe level; redesigning the engine is a high reframe level.",
+      "grade_level": "college",
+      "first_appearance": "Classification"
+    },
+    {
+      "term": "phenomenology",
+      "category": "philosophy",
+      "definition": "The study of how things appear to us in our experience, rather than how they really are in themselves.",
+      "example": "Phenomenology of a sunset focuses on the colors and feelings you experience, not on the physics of light.",
+      "grade_level": "college",
+      "first_appearance": "Classification"
+    },
+    {
+      "term": "axiomatic foundations",
+      "category": "philosophy",
+      "definition": "The basic assumptions or starting points that a system of knowledge is built upon.",
+      "example": "In geometry, the idea that 'a straight line is the shortest distance between two points' is an axiomatic foundation.",
+      "grade_level": "college",
+      "first_appearance": "Classification"
+    },
+    {
+      "term": "Schild regression",
+      "category": "physics",
+      "definition": "A method used in pharmacology to measure how strongly an antagonist blocks a receptor.",
+      "example": "Scientists use Schild regression to figure out how much of a blocker drug is needed to stop a painkiller from working.",
+      "grade_level": "college",
+      "first_app

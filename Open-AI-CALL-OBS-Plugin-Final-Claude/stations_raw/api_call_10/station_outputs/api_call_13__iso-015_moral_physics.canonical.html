@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>ISO-015 · Moral Physics · Theophysics Registry</title>
+  <!-- Google Fonts CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:opsz,wght@14..32,300..700&family=JetBrains+Mono:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  <style>
+    /* ----- CSS reset & variables ----- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-dim: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border: #2a2a2a;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    /* headings */
+    h1, h2, h3, h4, .heading { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    h3 { font-size: 1.3rem; }
+    h4 { font-size: 1.1rem; }
+    /* utilities */
+    .mono { font-family: var(--font-mono); }
+    .quote { font-family: var(--font-quote); font-style: italic; }
+    .gold { color: var(--gold); }
+    .success { color: var(--success); }
+    .danger { color: var(--danger); }
+    .info { color: var(--info); }
+    .text-sm { font-size: 0.85rem; }
+    .text-xs { font-size: 0.75rem; }
+    .op-3 { opacity: 0.3; }
+    .mt-1 { margin-top: 1rem; }
+    .mb-1 { margin-bottom: 1rem; }
+    .flex { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    /* cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.6rem 1.8rem;
+      box-shadow: var(--shadow);
+      transition: border 0.2s;
+    }
+    .card-blue-top { border-top: 3px solid var(--info); }
+    .card-gold-top { border-top: 3px solid var(--gold); }
+    .card-red-box { border: 1px solid rgba(239,68,68,0.3); background: rgba(239,68,68,0.07); }
+    /* section numbers */
+    .section-num {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+      margin-bottom: -1.2rem;
+      pointer-events: none;
+    }
+    .sep-line {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 1.8rem 0 2rem 0;
+      width: 100%;
+    }
+    /* badge */
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-family: var(--font-heading);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      border: 1px solid;
+    }
+    .badge-green { background: rgba(34,197,94,0.15); color: var(--success); border-color: var(--success); }
+    .badge-yellow { background: rgba(212,175,55,0.15); color: var(--gold); border-color: var(--gold); }
+    .badge-red { background: rgba(239,68,68,0.15); color: var(--danger); border-color: var(--danger); }
+    /* hero banner */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 2rem;
+      background: linear-gradient(135deg, rgba(212,175,55,0.08), transparent 70%);
+      border: 1px solid rgba(212,175,55,0.2);
+      border-radius: var(--radius);
+      padding: 2rem 2.2rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .hero-left .law-badge {
+      display: inline-block;
+      background: rgba(212,175,55,0.12);
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      border: 1px solid rgba(212,175,55,0.3);
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .hero-left h2 { font-size: 2.2rem; line-height: 1.2; margin: 0.2rem 0 0.5rem; }
+    .hero-left .subtitle { color: var(--text-dim); font-size: 1rem; margin-bottom: 1rem; }
+    .pull-quote {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #e0d6b0;
+      margin-top: 1rem;
+    }
+    .equation-card {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(212,175,55,0.25);
+      border-radius: 10px;
+      padding: 1.2rem 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .equation-card .arrow { color: var(--gold); font-size: 1.4rem; display: block; text-align: center; margin: 0.4rem 0; }
+    /* mapping table */
+    .mapping-table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+    .mapping-table th {
+      background: rgba(212,175,55,0.15);
+      color: var(--gold);
+      font-family: var(--font-heading);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.8rem 1rem;
+      border: 1px solid rgba(212,175,55,0.2);
+      text-align: left;
+      font-size: 0.85rem;
+    }
+    .mapping-table td {
+      padding: 0.7rem 1rem;
+      border: 1px solid var(--border);
+      vertical-align: top;
+      background: rgba(255,255,255,0.02);
+    }
+    .mapping-table tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
+    /* test cards */
+    .test-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.5rem;
+    }
+    .test-card h4 { margin-bottom: 0.3rem; }
+    .test-card .verdict { font-weight: 600; font-size: 1.1rem; margin-top: 0.4rem; }
+    /* evidence chips */
+    .chip {
+      display: inline-block;
+      background: rgba(74,158,255,0.08);
+      border: 1px solid rgba(74,158,255,0.2);
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      color: var(--info);
+      margin: 0.2rem 0.2rem;
+    }
+    .chip-gold { background: rgba(212,175,55,0.08); border-color: rgba(212,175,55,0.2); color: var(--gold); }
+    /* footer */
+    .footer-seal {
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-dim);
+    }
+    .footer-seal .seal-quote {
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.7;
+      margin-top: 0.5rem;
+    }
+    /* responsive */
+    @media (max-width: 768px) {
+      body { padding: 1rem; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .grid-4 { grid-template-columns: 1fr; }
+      h1 { font-size: 1.8rem; }
+      .hero-left h2 { font-size: 1.6rem; }
+    }
+    a { color: var(--info); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .verse-ref { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-dim); }
+  </style>
+</head>
+<body>
+
+  <!-- 1. REGISTRY HEADER -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <span style="font-family: var(--font-heading); font-size: 3.2rem; color: var(--gold); opacity: 0.5; line-height: 1;">Φ</span>
+      <div>
+        <h1 style="margin: 0; line-height: 1.1;">THEOPHYSICS REGISTRY</h1>
+        <div style="font-size: 0.9rem; color: var(--text-dim); margin-top: 0.2rem;">
+          <span class="mono">ISO-015</span> · Moral Physics
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center;">
+      <span class="badge badge-green"><i class="fa-regular fa-diagram-project" style="margin-right: 0.3rem;"></i> Isomorphism · Level 3</span>
+      <span class="badge badge-yellow" style="background: rgba(212,175,55,0.08);">Correspondence · Level 2</span>
+      <span class="text-sm" style="color: var(--text-dim);"><i class="fa-regular fa-gauge-high"></i> Confidence: Medium-Low</span>
+      <span class="text-xs mono" style="color: var(--text-dim); border-left: 1px solid var(--border); padding-left: 0.8rem;">v1.0 · 2026-03-10</span>
+    </div>
+  </div>
+  <div class="sep-line"></div>
+
+  <!-- 2. HERO BANNER -->
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="law-badge"><i class="fa-regular fa-scale-balanced"></i> Law 4 · Coherence &amp; Law 6 · Entropy</div>
+      <h2>Coherence <span style="color: var(--gold);">⇄</span> Moral State</h2>
+      <div class="subtitle">Structural isomorphism between decoherence dynamics and sin/virtue topology</div>
+      <div class="pull-quote">
+        “The structural parallel between Second Law dynamics and moral degradation is robust. Both describe irreversible processes in closed systems that can only be reversed by external input.”
+      </div>
+      <div class="verse-ref" style="margin-top: 0.6rem;">— ISO-015 · Honest Assessment</div>
+    </div>
+    <div>
+      <div class="equation-card">
+        <span style="color: var(--gold); font-family: var(--font-heading); letter-spacing: 0.04em; font-size: 0.7rem; text-transform: uppercase;">Domain A · Physics</span>
+        <br>C[χ] = ∫ √(-g) [kinetic – V(χ) + L_int] d⁴x
+        <br>ΔC = C[χ_after] – C[χ_before]
+        <br>Γ_decoherence = –dC/dt = f(action, coupling, env)
+        <span class="arrow">⇅</span>
+        <span style="color: var(--gold); font-family: var(--font-heading); letter-spacing: 0.04em; font-size: 0.7rem; text-transform: uppercase;">Domain B · Theology</span>
+        <br>Virtue = coherence-building (ΔC > 0)
+        <br>Sin = decoherence-inducing (ΔC < 0)
+        <br>Natural law ⇔ coherence conservation
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. DOMAIN SPECIFICATIONS -->
+  <div class="section-num">01</div>
+  <h2>Domain Specifications</h2>
+  <div class="sep-line" style="margin-top: 0.2rem;"></div>
+  <div class="grid-2">
+    <div class="card card-blue-top">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+        <i class="fa-solid fa-atom" style="color: var(--info); font-size: 1.6rem;"></i>
+        <h3 style="margin: 0;">Domain A · Physics</h3>
+      </div>
+      <p><strong>Coherence Measures &amp; Decoherence Dynamics</strong></p>
+      <p style="font-size: 0.95rem; color: var(--text-dim);">Coherence C[χ] as measurable organized information density. Actions that increase C[χ] (coherence-building) vs. decoherence-inducing interactions. Decoherence produces entropy increase, correlation decay, spectral broadening.</p>
+      <div class="mono text-xs" style="margin-top: 0.6rem; color: var(--text-dim);">A11.2 · D11.1 · O2.2</div>
+    </div>
+    <div class="card card-gold-top">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+        <i class="fa-solid fa-church" style="color: var(--gold); font-size: 1.6rem;"></i>
+        <h3 style="margin: 0;">Domain B · Christian Theology</h3>
+      </div>
+      <p><strong>Natural Law, Moral Realism, Sin &amp; Virtue</strong></p>
+      <p style="font-size: 0.95rem; color: var(--text-dim);">Virtue as alignment with divine order (increases coherence). Sin as departure from divine order (decoherence signature). Morality reflects objective structure, not arbitrary convention.</p>
+      <div class="mono text-xs" style="margin-top: 0.6rem; color: var(--text-dim);">A11.1 · T11.1 · T11.2 · HM.1</div>
+    </div>
+  </div>
+
+  <!-- 4. THE ISOMORPHIC MAPPING -->
+  <div style="margin-top: 2.5rem;">
+    <div class="section-num">02</div>
+    <h2>The Isomorphic Mapping</h2>
+    <div class="sep-line" style="margin-top: 0.2rem;"></div>
+    <p class="text-sm" style="color: var(--text-dim); margin-bottom: 1rem;"><i class="fa-regular fa-arrow-right-arrow-left"></i> Structural isomorphism — not metaphor. Every relation in Domain A maps to a relation in Domain B.</p>
+    <div style="overflow-x: auto;">
+      <table class="mapping-table">
+        <thead>
+          <tr><th>Physics (Domain A)</th><th>Morphism</th><th>Theology (Domain B)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Coherence functional C[χ]</td><td>⟷</td><td>Moral coherence / state of grace</td></tr>
+          <tr><td>ΔC > 0 (coherence-building)</td><td>⟷</td><td>Virtue (justice, temperance, charity, truth)</td></tr>
+          <tr><td>ΔC < 0 (decoherence)</td><td>⟷</td><td>Sin (injustice, excess, hatred, deception)</td></tr>
+          <tr><td>Second Law: spontaneous decoherence</td><td>⟷</td><td>Moral entropy: sin degrades order</td></tr>
+          <tr><td>Coherence conservation (∇·χ = 0)</td><td>⟷</td><td>Natural law as structure-preserving condition</td></tr>
+          <tr><td>Free energy gradient detection</td><td>⟷</td><td>Conscience as local coherence gradient detector</td></tr>
+          <tr><td>External input required for ΔC > 0 (ISO-002)</td><td>⟷</td><td>Grace / divine input to reverse moral decay</td></tr>
+          <tr><td>Decoherence signature: entropy increase, correlation loss</td><td>⟷</td><td>Guilt, relational breakdown, social decay</td></tr>
+          <tr><td>Unitary process: ΔC = 0</td><td>⟷</td><td>Moral neutrality / stasis</td></tr>
+          <tr><td>Global, time-integrated coherence</td><td>⟷</td><td>Eschatological trajectory / final judgment</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="text-xs mono" style="margin-top: 0.8rem; color: var(--text-dim);">Element refs: A11.1, A11.2, D11.1, D11.2, P11.1, T11.1, T11.2</div>
+  </div>
+
+  <!-- 5. SEPARATOR TESTS -->
+  <div style="margin-top: 2.5rem;">
+    <div class="section-num">03</div>
+    <h2>Separator Tests</h2>
+    <div class="sep-line" style="margin-top: 0.2rem;"></div>
+    <div class="grid-4">
+      <div class="test-card">
+        <h4><i class="fa-regular fa-sitemap"></i> Test A · Structural Preservation</h4>
+        <p class="text-sm" style="color: var(--text-dim);">Do relations survive under mapping?</p>
+        <div class="verdict success"><i class="fa-regular fa-circle-check"></i> PASS</div>
+        <p class="text-xs" style="color: var(--text-dim); margin-top: 0.3rem;">Coherence change, conservation, and irreversibility map cleanly to virtue, sin, and natural law.</p>
+      </div>
+      <div class="test-card">
+        <h4><i class="fa-regular fa-shuffle"></i> Test B · Non-Arbitrariness</h4>
+        <p class="text-sm" style="color: var(--text-dim);">Could you swap sin and virtue?</p>
+        <div class="verdict" style="color: #eab308;"><i class="fa-regular fa-circle-exclamation"></i> PARTIAL</div>
+        <p class="text-xs" style="color: var(--text-dim); margin-top: 0.3rem;">Local swaps possible, but time-integrated global coherence forbids it. Second Law asymmetry holds.</p>
+      </div>
+      <div class="test-card">
+        <h4><i class="fa-regular fa-ban"></i> Test C · Constraint</h4>
+        <p class="text-sm" style="color: var(--text-dim);">Does the mapping rule things out?</p>
+        <div class="verdict success"><i class="fa-regular fa-circle-check"></i> PASS</div>
+        <p class="text-xs" style="color: var(--text-dim); margin-top: 0.3rem;">Rules out spontaneous moral improvement without external input; rules out moral anti-realism.</p>
+      </div>
+      <div class="test-card">
+        <h4><i class="fa-regular fa-arrows-left-right"></i> Test D · Bidirectionality</h4>
+        <p class="text-sm" style="color: var(--text-dim);">Does each side predict the other?</p>
+        <div class="verdict" style="color: #eab308;"><i class="fa-regular fa-circle-exclamation"></i> ASYMMETRIC</div>
+        <p class="text-xs" style="color: var(--text-dim); margin-top: 0.3rem;">Physics → theology provides formal language; theology → physics suggests correlation but no new physics predictions yet.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CLASSIFICATION & EVIDENCE -->
+  <div style="margin-top: 2.5rem;">
+    <div class="section-num">04</div>
+    <h2>Classification &amp; Evidence</h2>
+    <div class="sep-line" style="margin-top: 0.2rem;"></div>
+    <div class="card" style="border-left: 4px solid var(--gold);">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <div>
+          <span class="badge badge-green" style="font-size: 0.9rem;">Structural Isomorphism · Level 2</span>
+          <span class="badge badge-yellow" style="margin-left: 0.5rem;">Confidence: Medium-Low</span>
+        </div>
+        <div class="text-sm" style="color: var(--text-dim);"><i class="fa-regular fa-link"></i> High connection count: ISO-002, -003, -005, -013, -016</div>
+      </div>
+      <div style="margin-top: 1rem;">
+        <span class="chip"><i class="fa-regular fa-flask"></i> E3.1 Coherence Action Functional</span>
+        <span class="chip chip-gold"><i class="fa-regular fa-database"></i> World Values Survey trust data</span>
+        <span class="chip"><i class="fa-regular fa-book"></i> Putnam Bowling Alone</span>
+        <span class="chip chip-gold"><i class="fa-regular fa-chart-line"></i> Moral Decay metrics (post-1971)</span>
+        <span class="chip"><i class="fa-regular fa-atom"></i> Decoherence theory (Zurek, Joos &amp; Zeh)</span>
+      </div>
+      <div style="margin-top: 0.8rem; display: flex; flex-wrap: wrap; gap: 0.8rem;">
+        <span class="mono text-xs" style="background: rgba(212,175,55,0.05); padding: 0.2rem 0.8rem; border-radius: 20px;">Law 4 · Coherence</span>
+        <span class="mono text-xs" style="background: rgba(212,175,55,0.05); padding: 0.2rem 0.8rem; border-radius: 20px;">Law 6 · Entropy</span>
+        <span class="mono text-xs" style="background: rgba(212,175,55,0.05); padding: 0.2rem 0.8rem; border-radius: 20px;">Law 9 · Morality</span>
+        <span class="mono text-xs" style="background: rgba(212,175,55,0.05); padding: 0.2rem 0.8rem; border-radius: 20px;">Law 10 · Destiny/Coherence Conservation</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. FALSIFICATION CRITERIA -->
+  <div style="margin-top: 2.5rem;">
+    <div class="section-num">05</div>
+    <h2>Falsification Criteria</h2>
+    <div class="sep-line" style="margin-top: 0.2rem;"></div>
+    <div class="card card-red-box">
+      <p style="font-weight: 600; color: var(--danger);"><i class="fa-regular fa-skull"></i> Kill conditions — any of these would break the isomorphism:</p>
+      <ol style="margin-top: 0.8rem; padding-left: 1.5rem; color: var(--text);">
+        <li><strong>Show that societies with high measured “moral coherence” do NOT outperform morally disordered societies on any objective metric.</strong> This would break the coherence-virtue link. Historical evidence generally supports the link, but causal direction is debated.</li>
+        <li style="margin-top: 0.5rem;"><strong>Show that “decoherence signatures” from moral actions are indistinguishable from random noise.</strong> If moral actions produce no detectable signal at any scale, the measurability claim (P11.1) fails.</li>
+        <li style="margin-top: 0.5rem;"><strong>Show that morality is fully conventional with no objective structure.</strong> If moral anti-realism is correct, there is nothing for coherence to measure. (Philosophical debate, not physics experiment.)</li>
+        <li style="margin-top: 0.5rem;"><strong>Show that coherence can spontaneously increase in a closed moral system without external input.</strong> This would break the link to ISO-002 (Terminus Sui) and undermine the structural parallel.</li>
+      </ol>
+      <div class="verse-ref" style="margin-top: 0.8rem;">— ISO-015 · Falsification</div>
+    </div>
+  </div>
+
+  <!-- 8. RELATED ISOMORPHISMS -->
+  <div style="margin-top: 2.5rem;">
+    <div class="section-num">06</div>
+    <h2>Related Isomorphisms</h2>
+    <div class="sep-line" style="margin-top: 0.2rem;"></div>
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+      <a href="#" class="card" style="display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.6rem 1.2rem; border: 1px solid var(--border); border-radius: 40px; background: var(--surface); text-decoration: none;">
+        <span class="mono gold">ISO-002</span> Terminus Sui
+      </a>
+      <a href="#" class="card" style="display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.6rem 1.2rem; border: 1px solid var(--border); border-radius: 40px; background: var(--surface); text-decoration: none;">
+        <span class="mono gold">ISO-003</span> Entropy / Sin
+      </a>
+      <a href="#" class="card" style="display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.6rem 1.2rem; border: 1px solid var(--border); border-radius: 40px; background: var(--surface); text-decoration: none;">
+        <span class="mono gold">ISO-005</span> Fiat / Conservation Violation
+      </a>
+      <a href="#" class="card" style="display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.6rem 1.2rem; border: 1px solid var(--border); border-radius: 40px; background: var(--surface); text-decoration: none;">
+        <span class="mono gold">ISO-013</span> Grace Operator
+      </a>
+      <a href="#" class="card" style="display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.6rem 1.2rem; border: 1px solid var(--border); border-radius: 40px; background: var(--surface); text-decoration: none;">
+        <span class="mono gold">ISO-016</span> Eschatological Attractors
+      </a>
+    </div>
+  </div>
+
+  <!-- 9. FOOTER -->
+  <div class="footer-seal">
+    <div style="font-family: var(--font-heading); letter-spacing: 0.08em; font-size: 0.9rem;">THEOPHYSICS RESEARCH PROGRAM</div>
+    <div class="mono text-xs" style="color: var(--text-dim); margin-top: 0.3rem;">POF 2828 · ISO-015 v1.0</div>
+    <div class="seal-quote">“The math points to God. The math does not contain God.”</div>
+    <div style="margin-top: 1rem; font-size: 0.7rem; color: var(--text-dim);">
+      <i class="fa-regular fa-crown" style="color: var(--gold); opacity: 0.4;"></i> Structural isomorphism · not metaphor
+    </div>
+  </div>
+
+</body>
+</html>

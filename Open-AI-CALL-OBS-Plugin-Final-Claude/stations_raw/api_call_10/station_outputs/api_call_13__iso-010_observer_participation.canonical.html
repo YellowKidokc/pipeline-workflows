@@ -1,0 +1,586 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO-010 · Observer Participation · Theophysics Registry</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6.4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <style>
+        /* ----- RESET & BASE ----- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: #0a0a0a;
+            color: #c9d1d9;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        /* ----- CSS VARIABLES ----- */
+        :root {
+            --bg: #0a0a0a;
+            --text: #c9d1d9;
+            --gold: #d4af37;
+            --gold-dim: rgba(212, 175, 55, 0.3);
+            --success: #22c55e;
+            --danger: #ef4444;
+            --info: #4a9eff;
+            --card-bg: #111;
+            --border-subtle: #222;
+            --font-heading: 'Oswald', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-quote: 'Crimson Text', serif;
+        }
+        /* ----- TYPOGRAPHY ----- */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-weight: 600;
+            color: #f0f3f5;
+        }
+        h1 { font-size: 2.4rem; letter-spacing: 0.06em; }
+        h2 { font-size: 1.8rem; margin-top: 2rem; }
+        h3 { font-size: 1.3rem; letter-spacing: 0.02em; }
+        p { margin-bottom: 1rem; }
+        a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold); }
+        a:hover { color: #e6c84f; border-bottom-style: solid; }
+        .mono { font-family: var(--font-mono); font-size: 0.9rem; }
+        .verse { font-family: var(--font-mono); font-size: 0.75rem; color: #888; }
+        .gold { color: var(--gold); }
+        .success { color: var(--success); }
+        .danger { color: var(--danger); }
+        .info { color: var(--info); }
+        .faded-gold { color: var(--gold-dim); }
+        .section-number {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--gold-dim);
+            line-height: 1;
+            margin-right: 0.75rem;
+            opacity: 0.3;
+            user-select: none;
+        }
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 0.5rem;
+        }
+        .section-header h2 { margin-top: 0; }
+        .gradient-line {
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            margin: 2rem 0 1.5rem 0;
+            opacity: 0.4;
+        }
+        /* ----- CARDS & CONTAINERS ----- */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: border 0.2s;
+        }
+        .card-blue { border-top: 4px solid var(--info); }
+        .card-gold { border-top: 4px solid var(--gold); }
+        .card-red { border: 1px solid #4a1a1a; background: #1a0c0c; }
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .grid-4col {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        /* ----- HERO BANNER ----- */
+        .hero-banner {
+            background: linear-gradient(135deg, #0f0e0a 0%, #1a1508 100%);
+            border: 1px solid #2a2410;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.05);
+        }
+        .hero-banner .grid-2col { gap: 2rem; }
+        .law-badge {
+            display: inline-block;
+            background: #1e1a0e;
+            border: 1px solid var(--gold);
+            border-radius: 20px;
+            padding: 0.2rem 1rem;
+            font-family: var(--font-heading);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        .pull-quote {
+            font-family: var(--font-quote);
+            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            border-left: 4px solid var(--gold);
+            padding-left: 1.2rem;
+            margin: 1.2rem 0;
+            color: #d8d8d8;
+        }
+        .equation-card {
+            background: #0d0d0d;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.03);
+        }
+        .equation-card .arrow-mapping {
+            display: block;
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin: 0.5rem 0;
+        }
+        /* ----- MAPPING TABLE ----- */
+        .mapping-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .mapping-table thead {
+            background: #1a1508;
+            border-bottom: 2px solid var(--gold);
+        }
+        .mapping-table th {
+            font-family: var(--font-heading);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--gold);
+            padding: 0.9rem 1rem;
+            text-align: left;
+            font-weight: 500;
+        }
+        .mapping-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #1e1e1e;
+            vertical-align: top;
+        }
+        .mapping-table tbody tr:hover { background: #14140e; }
+        .mapping-table .col-a { color: var(--info); font-weight: 500; }
+        .mapping-table .col-b { color: var(--gold); font-weight: 500; }
+        /* ----- TEST CARDS ----- */
+        .test-card {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 1.3rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .test-card .test-label {
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            color: #888;
+            margin-bottom: 0.3rem;
+        }
+        .test-card .test-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .test-card .test-verdict {
+            margin-top: auto;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 0.05em;
+        }
+        .test-pass { color: var(--success); }
+        .test-fail { color: var(--danger); }
+        /* ----- CHIPS & BADGES ----- */
+        .chip {
+            display: inline-block;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 30px;
+            padding: 0.25rem 1rem;
+            font-size: 0.75rem;
+            font-family: var(--font-body);
+            color: #ccc;
+            margin: 0.2rem 0.3rem 0.2rem 0;
+        }
+        .chip-gold { border-color: var(--gold); color: var(--gold); background: #1e1a0e; }
+        .chip-info { border-color: var(--info); color: var(--info); background: #0e141e; }
+        .chip-success { border-color: var(--success); color: var(--success); background: #0e1e0e; }
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-family: var(--font-heading);
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .badge-green { background: #0e2e0e; color: var(--success); border: 1px solid var(--success); }
+        .badge-yellow { background: #2e2e0e; color: #e6c84f; border: 1px solid #e6c84f; }
+        /* ----- FOOTER ----- */
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #1e1e1e;
+            font-size: 0.8rem;
+            color: #777;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-seal {
+            font-family: var(--font-quote);
+            font-style: italic;
+            color: var(--gold);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.4rem; }
+            .grid-2col, .grid-4col { grid-template-columns: 1fr; }
+            .hero-banner .grid-2col { gap: 1rem; }
+            .section-number { font-size: 2.5rem; }
+            .mapping-table { font-size: 0.8rem; }
+            .mapping-table th, .mapping-table td { padding: 0.5rem 0.6rem; }
+        }
+        @media (max-width: 480px) {
+            .equation-card { font-size: 0.75rem; }
+            .pull-quote { font-size: 1rem; }
+        }
+        /* misc */
+        .mt-1 { margin-top: 1rem; }
+        .mb-1 { margin-bottom: 1rem; }
+        .flex { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+        .gap-1 { gap: 1rem; }
+        .text-center { text-align: center; }
+        .fw-600 { font-weight: 600; }
+        .op-7 { opacity: 0.7; }
+    </style>
+</head>
+<body>
+
+<!-- ===== 1. REGISTRY HEADER ===== -->
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+    <div style="display: flex; align-items: center; gap: 0.8rem;">
+        <span style="font-family: 'Crimson Text', serif; font-size: 3.2rem; color: var(--gold); line-height: 1;">Φ</span>
+        <div>
+            <h1 style="margin: 0; line-height: 1.1;">Theophysics Registry</h1>
+            <div style="font-size: 0.85rem; color: #aaa; font-family: var(--font-body);">
+                <span class="mono">ISO-010</span> · Observer Participation
+            </div>
+        </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center;">
+        <span class="badge badge-green">Level 3 · Isomorphism</span>
+        <span style="font-size: 0.8rem; color: #999;">Confidence: Medium</span>
+        <span class="mono" style="font-size: 0.7rem; color: #666;">v1.0</span>
+    </div>
+</div>
+<div style="font-size: 0.9rem; color: #999; margin-top: 0.2rem;">
+    <i class="fa-regular fa-file-lines" style="margin-right: 0.4rem;"></i>Structural Isomorphism · Physics (Quantum Measurement) ↔ Theology (Witness Theology)
+</div>
+<div class="gradient-line" style="margin-top: 0.8rem;"></div>
+
+<!-- ===== 2. HERO BANNER ===== -->
+<div class="hero-banner">
+    <div class="grid-2col">
+        <!-- left -->
+        <div>
+            <span class="law-badge"><i class="fa-regular fa-scale-balanced" style="margin-right: 0.4rem;"></i>Law 3 · Law 5 · Law 7</span>
+            <h2 style="font-size: 2rem; margin: 0.5rem 0 0.2rem 0; line-height: 1.2;">
+                Quantum Observer <span style="color: var(--gold);">⟷</span> Theological Witness
+            </h2>
+            <div style="font-size: 0.9rem; color: #aaa; margin-bottom: 0.8rem;">Participatory actualization across domains</div>
+            <div class="pull-quote">
+                “The observer's measurement is not passive recording — it is a constitutive act that determines the outcome. … Creation requires witnesses.”
+            </div>
+            <div style="font-size: 0.75rem; color: #777; margin-top: 0.5rem;">
+                <span class="verse">Wheeler 1983 · Aquinas ST I, Q.44, A.1 · Genesis 2:19-20</span>
+            </div>
+        </div>
+        <!-- right: equation card -->
+        <div class="equation-card">
+            <div style="font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 0.5rem;">CORE EQUATIONS</div>
+            <div><span style="color: var(--info);">Domain A (QM):</span> |ψ⟩ = Σᵢ cᵢ|aᵢ⟩ → |aₖ⟩  (collapse)</div>
+            <div style="font-size: 0.8rem; color: #999;">Wheeler: no phenomenon without observation</div>
+            <div style="font-size: 0.8rem; color: #999;">IIT: Φ = integrated information ≡ consciousness</div>
+            <div class="arrow-mapping">⟷</div>
+            <div><span style="color: var(--gold);">Domain B (Theology):</span> participatio — creatures participate in divine being</div>
+            <div style="font-size: 0.8rem; color: #999;">Witness: naming declares essence (Gen 2:19-20)</div>
+            <div style="font-size: 0.8rem; color: #999;">Creation's meaning actualized in the observer</div>
+            <div style="margin-top: 0.6rem; font-size: 0.7rem; color: #666; border-top: 1px solid #222; padding-top: 0.5rem;">
+                <span class="mono">|ψ⟩ = Σᵢ cᵢ|aᵢ⟩ → |aₖ⟩  ∷  creatura participat esse divinum</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== 3. DOMAIN SPECIFICATIONS ===== -->
+<div class="section-header">
+    <span class="section-number">03</span>
+    <h2>Domain Specifications</h2>
+</div>
+<div class="grid-2col">
+    <!-- Domain A -->
+    <div class="card card-blue">
+        <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+            <i class="fa-solid fa-atom" style="color: var(--info); font-size: 1.6rem;"></i>
+            <h3 style="margin: 0;">Domain A · Physics</h3>
+        </div>
+        <p><strong>Quantum Measurement Problem · Participatory Universe · Integrated Information</strong></p>
+        <p>The observer plays a constitutive role: measurement actualizes one outcome from superposition. Wheeler's thesis: no phenomenon until observed. IIT (Tononi): consciousness ≡ Φ, integrated information.</p>
+        <p class="mono" style="font-size: 0.8rem; color: #999;">|ψ⟩ = Σᵢ cᵢ|aᵢ⟩ → |aₖ⟩ · Φ = integrated information</p>
+        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: #777;">
+            <span class="verse">Wheeler 1983 · Zurek 2003 · Tononi 2004 · Jacques et al. 2007</span>
+        </div>
+    </div>
+    <!-- Domain B -->
+    <div class="card card-gold">
+        <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+            <i class="fa-solid fa-dove" style="color: var(--gold); font-size: 1.6rem;"></i>
+            <h3 style="margin: 0;">Domain B · Christian Theology</h3>
+        </div>
+        <p><strong>Witness Theology · Participatio (Aquinas) · Observers as Co-Creators</strong></p>
+        <p>Creation requires witnesses; creatures participate in divine being. Humans as <em>imago Dei</em> — called to name and tend creation. Naming is constitutive, not merely labeling.</p>
+        <p class="mono" style="font-size: 0.8rem; color: #999;">participatio · creatura participat esse divinum · imago Dei</p>
+        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: #777;">
+            <span class="verse">Genesis 2:15,19-20 · Psalm 19:1 · Revelation 4:11 · 1 Cor 13:12 · ST I, Q.44, A.1</span>
+        </div>
+    </div>
+</div>
+
+<!-- ===== 4. THE ISOMORPHIC MAPPING ===== -->
+<div class="section-header" style="margin-top: 2rem;">
+    <span class="section-number">04</span>
+    <h2>The Isomorphic Mapping</h2>
+</div>
+<div style="overflow-x: auto;">
+    <table class="mapping-table">
+        <thead>
+            <tr>
+                <th style="width: 28%;">Domain A · Physics</th>
+                <th style="width: 8%; text-align: center;">⟷</th>
+                <th style="width: 28%;">Domain B · Theology</th>
+                <th style="width: 36%;">Shared Structure</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="col-a">Measurement constitutes definite outcome from superposition</td>
+                <td style="text-align: center; color: var(--gold);">⟷</td>
+                <td class="col-b">Naming/witnessing constitutes meaning (Gen 2:19-20)</td>
+                <td>Observation as constitutive, not passive</td>
+            </tr>
+            <tr>
+                <td class="col-a">Observer entangled with observed system (correlation)</td>
+                <td style="text-align: center; color: var(--gold);">⟷</td>
+                <td class="col-b">Creature participates in divine being (not independent)</td>
+                <td>Participation, not independence</td>
+            </tr>
+            <tr>
+                <td class="col-a">Superposition (potential) → eigenstate (actual) via measurement</td>
+                <td style="text-align: center; color: var(--gold);">⟷</td>
+                <td class="col-b">Divine purpose (potential) → creaturely realization (actual) via participation</td>
+                <td>Potential → actual via participation</td>
+            </tr>
+            <tr>
+                <td class="col-a">Wheeler: universe requires observers to be fully real</td>
+                <td style="text-align: center; color: var(--gold);">⟷</td>
+                <td class="col-b">Creation requires witnesses for its meaning to be actualized (telos)</td>
+                <td>Observers as structurally necessary</td>
+            </tr>
+            <tr>
+                <td class="col-a">Delayed choice: observer's choice retroactively determines particle/wave</td>
+                <td style="text-align: center; color: var(--gold);">⟷</td>
+                <td class="col-b">“The heavens declare the glory of God” — to whom? (Ps 19:1)</td>
+                <td>Retroactive / teleological actualization through witness</td>
+            </tr>
+            <tr>
+                <td class="col-a">IIT: Φ = integrated information; consciousness is constitutive</td>
+                <td style="text-align: center; color: var(--gold);">⟷</td>
+                <td class="col-b">Aquinas: creatures participate in divine act of existence</td>
+                <td>Consciousness / participation as constitutive, not epiphenomenal</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div style="font-size: 0.75rem; color: #666; margin-top: 0.5rem;">
+    <span class="verse">Mapping is structural — not metaphor. Each arrow denotes a relation-preserving correspondence.</span>
+</div>
+
+<!-- ===== 5. SEPARATOR TESTS ===== -->
+<div class="section-header" style="margin-top: 2rem;">
+    <span class="section-number">05</span>
+    <h2>Separator Tests</h2>
+</div>
+<div class="grid-4col">
+    <!-- Test A -->
+    <div class="test-card">
+        <div class="test-label">Test A</div>
+        <div class="test-title">Structural Preservation</div>
+        <p style="font-size: 0.85rem; color: #bbb;">Do relations survive under mapping? Measurement actualization ↔ naming actualization; entanglement ↔ participation.</p>
+        <div class="test-verdict test-pass">PASS</div>
+        <div style="font-size: 0.7rem; color: #777; margin-top: 0.3rem;"><span class="verse">Relations preserved across all four shared structures.</span></div>
+    </div>
+    <!-- Test B -->
+    <div class="test-card">
+        <div class="test-label">Test B</div>
+        <div class="test-title">Non-Arbitrariness</div>
+        <p style="font-size: 0.85rem; color: #bbb;">Is the mapping forced? Observer/observed asymmetry holds in both domains (Wigner's friend; 1 Cor 13:12).</p>
+        <div class="test-verdict test-pass">PASS</div>
+        <div style="font-size: 0.7rem; color: #777; margin-top: 0.3rem;"><span class="verse">Symmetry breaking: observer ≠ observed in both domains.</span></div>
+    </div>
+    <!-- Test C -->
+    <div class="test-card">
+        <div class="test-label">Test C</div>
+        <div class="test-title">Constraint</div>
+        <p style="font-size: 0.85rem; color: #bbb;">Does the mapping rule things out? Yes: observer-independent actualization is ruled out in both domains.</p>
+        <div class="test-verdict test-pass">PASS</div>
+        <div style="font-size: 0.7rem; color: #777; margin-top: 0.3rem;"><span class="verse">Rules out spectator ontology; rules out creation without witness.</span></div>
+    </div>
+    <!-- Test D -->
+    <div class="test-card">
+        <div class="test-label">Test D</div>
+        <div class="test-title">Bidirectionality</div>
+        <p style="font-size: 0.85rem; color: #bbb;">Does each side predict the other? Moderate: fine-tuning & quantum computation ↔ existential degradation & co-creativity.</p>
+        <div class="test-verdict test-pass" style="color: #e6c84f;">MODERATE PASS</div>
+        <div style="font-size: 0.7rem; color: #777; margin-top: 0.3rem;"><span class="verse">Predictions exist but do not require the other domain.</span></div>
+    </div>
+</div>
+
+<!-- ===== 6. CLASSIFICATION & EVIDENCE ===== -->
+<div class="section-header" style="margin-top: 2rem;">
+    <span class="section-number">06</span>
+    <div>
+        <h2>Classification &amp; Evidence</h2>
+    </div>
+</div>
+<div class="card" style="border-left: 4px solid var(--gold);">
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start;">
+        <div style="min-width: 160px;">
+            <div style="font-size: 0.7rem; letter-spacing: 0.1em; color: #888; text-transform: uppercase;">Type</div>
+            <div style="font-weight: 600;">Structural Isomorphism</div>
+            <div style="font-size: 0.8rem; color: #aaa;">(fragile — see falsification)</div>
+            <div style="margin-top: 0.8rem;">
+                <div style="font-size: 0.7rem; letter-spacing: 0.1em; color: #888; text-transform: uppercase;">Confidence</div>
+                <div style="font-weight: 600;">Medium</div>
+                <div style="font-size: 0.8rem; color: #aaa;">physics foundation contested</div>
+            </div>
+            <div style="margin-top: 0.8rem;">
+                <div style="font-size: 0.7rem; letter-spacing: 0.1em; color: #888; text-transform: uppercase;">Reframe Level</div>
+                <div>Structural (Level 2)</div>
+            </div>
+        </div>
+        <div style="flex: 1;">
+            <div style="font-size: 0.7rem; letter-spacing: 0.1em; color: #888; text-transform: uppercase; margin-bottom: 0.5rem;">Evidence Bundles</div>
+            <div class="flex" style="gap: 0.4rem;">
+                <span class="chip chip-gold">Gen 2:15,19-20</span>
+                <span class="chip chip-gold">Ps 19:1</span>
+                <span class="chip chip-gold">1 Cor 13:12</span>
+                <span class="chip chip-gold">Rev 4:11</span>
+                <span class="chip chip-gold">Aquinas ST I, Q.44, A.1</span>
+                <span class="chip chip-info">Double-slit</span>
+                <span class="chip chip-info">Delayed-choice (2007)</span>
+                <span class="chip chip-info">Decoherence program</span>
+                <span class="chip chip-info">Quantum Darwinism</span>
+                <span class="chip chip-success">IIT (Tononi)</span>
+                <span class="chip chip-success">Wheeler 1983</span>
+            </div>
+            <div style="margin-top: 1rem;">
+                <div style="font-size: 0.7rem; letter-spacing: 0.1em; color: #888; text-transform: uppercase;">Laws Invoked</div>
+                <div class="flex" style="gap: 0.4rem; margin-top: 0.3rem;">
+                    <span class="chip">Law 3 · Self-Reference</span>
+                    <span class="chip">Law 5 · Participation</span>
+                    <span class="chip">Law 7 · Actualization</span>
+                </div>
+            </div>
+            <div style="margin-top: 0.8rem;">
+                <div style="font-size: 0.7rem; letter-spacing: 0.1em; color: #888; text-transform: uppercase;">Connected ISOs</div>
+                <div class="flex" style="gap: 0.3rem; margin-top: 0.2rem;">
+                    <span class="chip">ISO-001</span>
+                    <span class="chip">ISO-004</span>
+                    <span class="chip">ISO-006</span>
+                    <span class="chip">ISO-011</span>
+                    <span class="chip">ISO-012</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== 7. FALSIFICATION CRITERIA ===== -->
+<div class="section-header" style="margin-top: 2rem;">
+    <span class="section-number">07</span>
+    <h2>Falsification Criteria</h2>
+</div>
+<div class="card card-red">
+    <p style="font-weight: 600; color: var(--danger);"><i class="fa-solid fa-triangle-exclamation" style="margin-right: 0.5rem;"></i>Kill conditions — if any are met, this isomorphism is invalidated.</p>
+    <ul style="list-style: none; padding-left: 0; margin-top: 0.8rem;">
+        <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; text-indent: -1.5rem;">
+            <span style="color: var(--danger); margin-right: 0.5rem;">⨯</span>
+            <strong>1. Solve the measurement problem without any role for observers.</strong> If decoherence fully explains apparent collapse (as many physicists believe), the observer is epiphenomenal and Domain A loses its participatory structure.
+        </li>
+        <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; text-indent: -1.5rem;">
+            <span style="color: var(--danger); margin-right: 0.5rem;">⨯</span>
+            <strong>2. Show that IIT is wrong</strong> — that consciousness is not Φ but something unrelated to integrated information. If IIT fails, the consciousness-as-constitutive claim loses its best current formalization.
+        </li>
+        <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; text-indent: -1.5rem;">
+            <span style="color: var(--danger); margin-right: 0.5rem;">⨯</span>
+            <strong>3. Show that Wheeler's participatory universe is false</strong> — that the universe was fully actualized before any observers existed (as classical physics implies). If the universe is observer-independent, the structural parallel collapses.
+        </li>
+    </ul>
+    <div style="font-size: 0.75rem; color: #aa7777; margin-top: 0.5rem; border-top: 1px solid #3a1a1a; padding-top: 0.5rem;">
+        <span class="verse">Honest assessment: this ISO is FRAGILE. It depends on an unsolved problem in physics (measurement problem) and an unestablished theory of consciousness (IIT). If decoherence + Everett fully resolves measurement without observers, only analogy remains.</span>
+    </div>
+</div>
+
+<!-- ===== 8. RELATED ISOMORPHISMS ===== -->
+<div class="section-header" style="margin-top: 2rem;">
+    <span class="section-number">08</span>
+    <h2>Related Isomorphisms</h2>
+</div>
+<div class="grid-2col" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
+    <div class="card" style="text-align: center; padding: 1rem;">
+        <span class="mono" style="color: var(--gold);">ISO-001</span>
+        <div style="font-size: 0.8rem;">Trinity — Spirit as actualization operator</div>
+    </div>
+    <div class="card" style="text-align: center; padding: 1rem;">
+        <span class="mono" style="color: var(--gold);">ISO-004</span>
+        <div style="font-size: 0.8rem;">Fall — observation as irreversible collapse</div>
+    </div>
+    <div class="card" style="text-align: center; padding: 1rem;">
+        <span class="mono" style="color: var(--gold);">ISO-006</span>
+        <div style="font-size: 0.8rem;">Information — observation as extraction</div>
+    </div>
+    <div class="card" style="text-align: center; padding: 1rem;">
+        <span class="mono" style="color: var(--gold);">ISO-011</span>
+        <div style="font-size: 0.8rem;">Superposition/Collapse — observer-dependent</div>
+    </div>
+    <div class="card" style="text-align: center; padding:

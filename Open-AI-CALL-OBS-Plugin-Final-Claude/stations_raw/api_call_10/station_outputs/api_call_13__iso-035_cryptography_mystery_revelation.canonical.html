@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISO-035 · Cryptography / Mystery & Revelation · Theophysics Registry</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --gold-glow: rgba(212, 175, 55, 0.08);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border: #2a2a2a;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 500;
+      color: #f0f0f0;
+    }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .mono { font-family: var(--font-mono); }
+    .quote { font-family: var(--font-quote); font-style: italic; }
+    .verse { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.02em; }
+    .section-number {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+      margin-right: 0.75rem;
+    }
+    .gradient-line {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 1.5rem 0 2rem 0;
+      opacity: 0.5;
+    }
+    .gold-border-left {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.25rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.9rem;
+      border-radius: 999px;
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .badge-green { background: rgba(34, 197, 94, 0.15); color: var(--success); border-color: var(--success); }
+    .badge-yellow { background: rgba(212, 175, 55, 0.15); color: var(--gold); border-color: var(--gold); }
+    .badge-red { background: rgba(239, 68, 68, 0.15); color: var(--danger); border-color: var(--danger); }
+    .badge-blue { background: rgba(74, 158, 255, 0.15); color: var(--info); border-color: var(--info); }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: #3a3a3a; }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .grid-2, .grid-4 { grid-template-columns: 1fr; }
+      body { padding: 1rem; }
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.06), transparent 70%);
+      border-radius: var(--radius);
+      padding: 2rem;
+      border: 1px solid rgba(212, 175, 55, 0.15);
+    }
+    @media (max-width: 768px) { .hero-grid { grid-template-columns: 1fr; } }
+    .eq-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+    .eq-card .arrow { color: var(--gold); font-size: 1.4rem; margin: 0.5rem 0; display: block; }
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .mapping-table th {
+      background: rgba(212, 175, 55, 0.12);
+      color: var(--gold);
+      font-family: var(--font-heading);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.9rem 1rem;
+      border-bottom: 2px solid var(--gold);
+      text-align: left;
+    }
+    .mapping-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .mapping-table tr:last-child td { border-bottom: none; }
+    .mapping-table tr:hover td { background: rgba(212, 175, 55, 0.03); }
+    .test-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .test-card .test-label {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+    }
+    .test-card .test-title {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    .pass { color: var(--success); }
+    .fail { color: var(--danger); }
+    .chip {
+      display: inline-block;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.2rem 1rem;
+      font-size: 0.75rem;
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      margin: 0.2rem 0.3rem 0.2rem 0;
+    }
+    .chip-gold { border-color: var(--gold); color: var(--gold); background: rgba(212, 175, 55, 0.06); }
+    .falsify-box {
+      background: rgba(239, 68, 68, 0.06);
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .falsify-box li { margin-bottom: 0.6rem; }
+    .footer-seal {
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.7;
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .iso-link {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.6rem 1rem;
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--info);
+    }
+    .iso-link i { margin-right: 0.4rem; }
+  </style>
+</head>
+<body>
+
+  <!-- 1. REGISTRY HEADER -->
+  <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+    <span style="font-size: 2.8rem; font-family: var(--font-heading); color: var(--gold); font-weight: 300; line-height: 1;">Φ</span>
+    <div>
+      <h1 style="font-size: 1.8rem; letter-spacing: 0.08em; margin: 0;">Theophysics Registry</h1>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.2rem; margin-top: 0.2rem;">
+        <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">ISO-035</span>
+        <span style="color: var(--text-muted);">·</span>
+        <span style="font-size: 0.9rem; color: var(--text);">Cryptography / Mystery &amp; Revelation</span>
+        <span style="color: var(--text-muted);">·</span>
+        <span class="badge badge-green"><i class="fas fa-link" style="margin-right: 0.3rem;"></i>Isomorphism · Level 3</span>
+        <span class="badge badge-yellow"><i class="fas fa-layer-group" style="margin-right: 0.3rem;"></i>Correspondence · Level 2</span>
+        <span class="badge badge-blue"><i class="fas fa-check-circle"></i> Confidence: High</span>
+        <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">v1.0 · 2026-03-10</span>
+      </div>
+    </div>
+  </div>
+  <div class="gradient-line" style="margin-top: 0.8rem;"></div>
+
+  <!-- 2. HERO BANNER -->
+  <div class="hero-grid" style="margin-bottom: 2.5rem;">
+    <div>
+      <span class="badge" style="margin-bottom: 0.6rem; border-color: var(--gold); color: var(--gold);"><i class="fas fa-gavel"></i> Law Badge · Information &amp; Revelation</span>
+      <h2 style="font-size: 2rem; font-weight: 600; margin: 0.5rem 0 0.3rem 0; line-height: 1.2;">
+        Cryptography <span style="color: var(--gold);">⟷</span> Mystery &amp; Revelation
+      </h2>
+      <p style="font-size: 1rem; color: var(--text-muted); margin-bottom: 1rem;">Structural isomorphism between encryption/decryption and divine hiddenness/illumination</p>
+      <div class="quote gold-border-left" style="font-size: 1.1rem; line-height: 1.5; color: #d0d0d0;">
+        “Spiritual blindness is not stupidity or lack of evidence. It is the information-theoretic condition of possessing ciphertext without the decryption key.”
+      </div>
+      <div class="verse" style="margin-top: 0.5rem;">— 1 Cor 2:14 · Rom 1:20 · Matt 11:27</div>
+    </div>
+    <div>
+      <div class="eq-card">
+        <div><span style="color: var(--gold);">Domain A</span> <span style="color: var(--text-muted);">(Cryptography)</span></div>
+        <div style="margin-top: 0.3rem;">H(M|C) = H(M) &nbsp;&nbsp; <span style="color: var(--text-muted);">// perfect secrecy</span></div>
+        <div>H(M|C,K) = 0 &nbsp;&nbsp; <span style="color: var(--text-muted);">// decryption</span></div>
+        <div style="margin-top: 0.6rem; border-top: 1px solid var(--border); padding-top: 0.6rem;">
+          <span style="color: var(--gold);">Domain B</span> <span style="color: var(--text-muted);">(Theology)</span>
+        </div>
+        <div>H(Truth | Creation+Scripture) = H(Truth) &nbsp;&nbsp; <span style="color: var(--text-muted);">// without Spirit</span></div>
+        <div>H(Truth | Creation+Scripture, Spirit) = 0 &nbsp;&nbsp; <span style="color: var(--text-muted);">// with Spirit</span></div>
+        <div class="arrow" style="text-align: center; margin: 0.6rem 0;">⟷</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); text-align: center;">|K| ≥ |M| &nbsp;⟹&nbsp; infinite Spirit for infinite God</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. DOMAIN SPECIFICATIONS -->
+  <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem;">
+    <span class="section-number">01</span>
+    <h2 style="font-size: 1.4rem;">Domain Specifications</h2>
+  </div>
+  <div class="grid-2" style="margin-bottom: 2rem;">
+    <div class="card" style="border-top: 4px solid var(--info);">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+        <i class="fas fa-shield-halved" style="color: var(--info); font-size: 1.4rem;"></i>
+        <h3 style="font-size: 1.1rem; margin: 0;">Domain A · Physics</h3>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.6rem;"><strong style="color: var(--text);">Cryptography</strong> — encryption/decryption, public/private key infrastructure, information-theoretic security, zero-knowledge proofs, steganography, hash functions, key exchange protocols.</p>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">Shannon perfect secrecy: H(M|C) = H(M). Public-key: K_pub encrypts, K_priv decrypts. ZKP: prover convinces without revealing secret. Hash: one-way, collision-resistant.</p>
+    </div>
+    <div class="card" style="border-top: 4px solid var(--gold);">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+        <i class="fas fa-dove" style="color: var(--gold); font-size: 1.4rem;"></i>
+        <h3 style="font-size: 1.1rem; margin: 0;">Domain B · Theology</h3>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.6rem;"><strong style="color: var(--text);">Mystery &amp; Revelation</strong> — divine hiddenness, progressive revelation, parables, prophecy, Holy Spirit illumination, general vs. special revelation.</p>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">1 Cor 2:14: natural person cannot accept things of the Spirit. Matt 11:27: no one knows the Father except the Son and those to whom the Son chooses to reveal him. Heb 11:1: faith as evidence of things not seen.</p>
+    </div>
+  </div>
+
+  <!-- 4. THE ISOMORPHIC MAPPING -->
+  <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem;">
+    <span class="section-number">02</span>
+    <h2 style="font-size: 1.4rem;">The Isomorphic Mapping</h2>
+  </div>
+  <div class="card" style="padding: 0; overflow-x: auto; margin-bottom: 2rem;">
+    <table class="mapping-table">
+      <thead>
+        <tr><th style="width: 28%;">Cryptographic Concept</th><th style="width: 28%;">Theological Concept</th><th>Structural Identity</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Encryption</td><td>Divine mystery</td><td>Message exists but is unreadable without the key</td></tr>
+        <tr><td>Decryption key</td><td>Holy Spirit illumination</td><td>Transforms ciphertext into plaintext; nothing else does</td></tr>
+        <tr><td>Public key</td><td>General revelation</td><td>Available to all; sufficient for encryption (Rom 1:20) but not decryption</td></tr>
+        <tr><td>Private key</td><td>Special revelation</td><td>Held by God, shared selectively (Matt 11:27)</td></tr>
+        <tr><td>Steganography</td><td>Parables</td><td>Message hidden within innocuous carrier text (Mark 4:11-12)</td></tr>
+        <tr><td>Zero-knowledge proof</td><td>Faith as evidence</td><td>Demonstrates possession of knowledge without revealing it (Heb 11:1)</td></tr>
+        <tr><td>Brute force attack</td><td>Rationalist theology</td><td>Attempting to derive the message without the key; computationally infeasible (1 Cor 1:21)</td></tr>
+        <tr><td>Key exchange problem</td><td>Incarnation</td><td>How does the private key enter the public channel? Diffie-Hellman / Word became flesh (John 1:14)</td></tr>
+        <tr><td>Forward secrecy</td><td>Progressive revelation</td><td>Past session keys don't compromise future sessions; OT doesn't fully decode NT (1 Pet 1:10-12)</td></tr>
+        <tr><td>Hash function</td><td>Prophecy</td><td>One-way: easy to verify after fulfillment, impossible to reverse-engineer before</td></tr>
+        <tr><td>Digital signature</td><td>Miracles</td><td>Authenticates the sender; verifiable by anyone with public key, producible only by private key holder (John 10:37-38)</td></tr>
+        <tr><td>Cipher suite negotiation</td><td>Hermeneutical framework</td><td>Agreement on how to encrypt/decrypt before communication begins</td></tr>
+        <tr><td>Key revocation</td><td>Covenant transition</td><td>Old keys revoked when new ones issued; old covenant superseded (Heb 8:13)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5. SEPARATOR TESTS -->
+  <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem;">
+    <span class="section-number">03</span>
+    <h2 style="font-size: 1.4rem;">Separator Tests</h2>
+  </div>
+  <div class="grid-4" style="margin-bottom: 2rem;">
+    <div class="test-card">
+      <div class="test-label"><i class="fas fa-flask"></i> Test A</div>
+      <div class="test-title">Structural Preservation</div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.6rem;">Do relations survive under mapping? Shannon secrecy ↔ 1 Cor 2:14; key exchange ↔ incarnation; forward secrecy ↔ progressive revelation.</p>
+      <span class="badge badge-green" style="font-size: 0.8rem;"><i class="fas fa-check-circle"></i> PASS</span>
+      <span class="verse" style="display: block; margin-top: 0.4rem;">13/13 correspondences hold</span>
+    </div>
+    <div class="test-card">
+      <div class="test-label"><i class="fas fa-random"></i> Test B</div>
+      <div class="test-title">Non-Arbitrariness</div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.6rem;">Could you swap targets? Coding theory lacks key; only cryptography has the intentional hiddenness + key agent structure.</p>
+      <span class="badge badge-green" style="font-size: 0.8rem;"><i class="fas fa-check-circle"></i> PASS</span>
+      <span class="verse" style="display: block; margin-top: 0.4rem;">Key element irreplaceable</span>
+    </div>
+    <div class="test-card">
+      <div class="test-label"><i class="fas fa-ban"></i> Test C</div>
+      <div class="test-title">Constraint</div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.6rem;">Does the mapping rule things out? Rules out pure rationalism, full disclosure faith, reversible prophecy, trivial key exchange.</p>
+      <span class="badge badge-green" style="font-size: 0.8rem;"><i class="fas fa-check-circle"></i> PASS</span>
+      <span class="verse" style="display: block; margin-top: 0.4rem;">6 falsification conditions</span>
+    </div>
+    <div class="test-card">
+      <div class="test-label"><i class="fas fa-arrows-left-right"></i> Test D</div>
+      <div class="test-title">Bidirectionality</div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.6rem;">Does each side predict the other? Crypto → theology: key necessity, infinite key for infinite message. Theology → crypto: incarnation as archetype for key exchange.</p>
+      <span class="badge badge-green" style="font-size: 0.8rem;"><i class="fas fa-check-circle"></i> PASS</span>
+      <span class="verse" style="display: block; margin-top: 0.4rem;">Bidirectional predictions</span>
+    </div>
+  </div>
+
+  <!-- 6. CLASSIFICATION & EVIDENCE -->
+  <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem;">
+    <span class="section-number">04</span>
+    <h2 style="font-size: 1.4rem;">Classification &amp; Evidence</h2>
+  </div>
+  <div class="card" style="margin-bottom: 2rem;">
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start;">
+      <div>
+        <span class="badge badge-green" style="font-size: 0.8rem; margin-right: 0.5rem;">Structural Isomorphism</span>
+        <span class="badge badge-blue" style="font-size: 0.8rem;">Confidence: High</span>
+        <span class="badge badge-yellow" style="font-size: 0.8rem;">Reframe Level 2</span>
+      </div>
+      <div style="flex: 1;">
+        <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+          <span class="chip chip-gold"><i class="fas fa-check"></i> Shannon perfect secrecy (1949)</span>
+          <span class="chip chip-gold"><i class="fas fa-check"></i> ZKP existence (1985)</span>
+          <span class="chip chip-gold"><i class="fas fa-check"></i> One-way functions (P≠NP)</span>
+          <span class="chip chip-gold"><i class="fas fa-check"></i> Diffie-Hellman (1976)</span>
+          <span class="chip chip-gold"><i class="fas fa-check"></i> Conversion narratives (phase-transition)</span>
+          <span class="chip chip-gold"><i class="fas fa-check"></i> Progressive revelation (canon structure)</span>
+          <span class="chip chip-gold"><i class="fas fa-check"></i> Prophecy verification asymmetry (DSS)</span>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 1rem; border-top: 1px solid var(--border); padding-top: 1rem;">
+      <span class="badge" style="border-color: var(--info); color: var(--info);"><i class="fas fa-scale-balanced"></i> Laws Invoked</span>
+      <span class="chip">Law 4 (Incompleteness)</span>
+      <span class="chip">Law 5 (Information)</span>
+      <span class="chip">Law 9 (Grace)</span>
+      <span class="chip">Law 10 (Revelation)</span>
+      <span class="verse" style="margin-left: 0.5rem;">|K| ≥ |M| theorem</span>
+    </div>
+  </div>
+
+  <!-- 7. FALSIFICATION CRITERIA -->
+  <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem;">
+    <span class="section-number">05</span>
+    <h2 style="font-size: 1.4rem;">Falsification Criteria</h2>
+  </div>
+  <div class="falsify-box" style="margin-bottom: 2rem;">
+    <p style="font-size: 0.9rem; color: var(--danger); margin-bottom: 0.8rem;"><i class="fas fa-skull"></i> The mapping is destroyed if ANY of the following are demonstrated:</p>
+    <ol style="padding-left: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">
+      <li><strong style="color: var(--text);">Divine truth fully accessible without illumination</strong> — unaided reason fully comprehends God's nature (pure rationalism succeeds). Even Aquinas distinguished truths of reason from truths of faith.</li>
+      <li><strong style="color: var(--text);">General revelation sufficient for salvation</strong> — public key enables full decryption. Romans 1:20 limits general revelation to inexcusability, not decryption.</li>
+      <li><strong style="color: var(--text);">Prophecy predictable before fulfillment</strong> — hash function reversible. Dead Sea Scrolls show pre-resurrection readings of Isaiah 53 differed from post-resurrection.</li>
+      <li><strong style="color: var(--text);">Faith reveals its full content</strong> — ZKP structure fails. Hebrews 11:1: “evidence of things NOT SEEN.”</li>
+      <li><strong style="color: var(--text);">Key exchange problem doesn't exist theologically</strong> — God trivially communicates saving truth without intermediaries or incarnation. Incarnation becomes superfluous.</li>
+      <li><strong style="color: var(--text);">Shannon's theorem is wrong</strong> — perfect secrecy does not require |K| ≥ |M|. A finite key could decrypt an infinite message. Theorem has held since 1949.</li>
+    </ol>
+  </div>
+
+  <!-- 8. RELATED ISOMORPHISMS -->
+  <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem;">
+    <span class="section-number">06</span>
+    <h2 style="font-size: 1.4rem;">Related Isomorphisms</h2>
+  </div>
+  <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem;">
+    <a href="#" class="iso-link"><i class="fas fa-diagram-project"></i> ISO-001 · Trinity</a>
+    <a href="#" class="iso-link"><i class="fas fa-diagram-project"></i> ISO-002 · Terminus Sui / Grace</a>
+    <a href="#" class="iso-link"><i class="fas fa-diagram-project"></i> ISO-006 · Information Primacy</a>
+    <a href="#" class="iso-link"><i class="fas fa-diagram-project"></i> ISO-012 · Sign Operator</a>
+    <a href="#" class="iso-link"><i class="fas fa-diagram-project"></i> ISO-022 · Ten Laws</a>
+    <a href="#" class="iso-link"><i class="fas fa-diagram-project"></i> ISO-033 · Pharmacology</a>
+    <a href="#" class="iso-link"><i class="fas fa-diagram-project"></i> ISO-034 · Control Theory</a>
+  </div>
+
+  <!-- 9. FOOTER -->
+  <footer style="margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+      <div>
+        <span style="font-family: var(--font-heading); font-size: 0.9rem; letter-spacing: 0.06em; color: var(--text-muted);">Theophysics Research Program</span>
+        <span style="color: var(--text-muted); margin: 0 0.6rem;">·</span>
+        <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">POF 2828</span>
+        <span style="color: var(--text-muted); margin: 0 0.6rem;">·</span>
+        <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">v1.0 · ISO-035</span>
+      </div>
+      <div class="footer-seal">
+        <i class="fas fa-phi" style="margin-right: 0.4rem;"></i> The math points to God. The math does not contain God.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

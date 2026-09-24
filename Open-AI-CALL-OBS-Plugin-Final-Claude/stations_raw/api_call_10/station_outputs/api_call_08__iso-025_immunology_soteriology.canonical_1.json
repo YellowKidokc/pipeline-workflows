@@ -1,0 +1,693 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "biology",
+        "type": "biology",
+        "strength": 10
+      },
+      {
+        "name": "theology",
+        "type": "theology",
+        "strength": 10
+      },
+      {
+        "name": "mathematics",
+        "type": "mathematics",
+        "strength": 8
+      },
+      {
+        "name": "information",
+        "type": "information",
+        "strength": 6
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": true,
+        "role": "External grace required for immune education and moral formation; immune system cannot fully protect itself from novel threats without external information",
+        "strength": 8
+      },
+      {
+        "variable": "M",
+        "present": true,
+        "role": "Meaning/mass as the substance of holiness boundaries and moral discernment",
+        "strength": 6
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Energy/spirit as the active force in sanctification and immune response",
+        "strength": 5
+      },
+      {
+        "variable": "S",
+        "present": true,
+        "role": "Strong/love as the relational dimension of church discipline and community response",
+        "strength": 7
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Thermo/judgment as the cost function and tradeoff between false positives and false negatives",
+        "strength": 8
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Info/logos as the Word (Hebrews 4:12) that discerns thoughts and intentions; immune memory as information storage",
+        "strength": 9
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "Relativity/relationship as the self/non-self discrimination problem and community dynamics",
+        "strength": 7
+      },
+      {
+        "variable": "Q",
+        "present": true,
+        "role": "Quantum/faith as the uncertainty inherent in binary classification under imperfect information",
+        "strength": 6
+      },
+      {
+        "variable": "F",
+        "present": true,
+        "role": "Weak/sin as the false negatives (antinomianism) and false positives (legalism) in moral discernment",
+        "strength": 8
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence/christ as the goal of optimal sanctification (AUC \u2192 1.0) and the unity of the body",
+        "strength": 7
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "Existence of the classification problem and the domains being mapped"
+      },
+      {
+        "id": "A1.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A5.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC6",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A1.3",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "T3.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "External grace required for immune education and moral formation; no finite system achieves perfect classification from internal resources alone"
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "Conservation of the holiness standard; the standard does not degrade even as detection capacity changes"
+      },
+      {
+        "id": "BC8",
+        "invoked": false,
+        "how": ""
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": false,
+        "manifestations": []
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "Word as discerner (Hebrews 4:12)",
+          "Christ as the goal of sanctification"
+        ]
+      },
+      "spirit": {
+        "present": true,
+        "manifestations": [
+          "Spirit as the agent of sanctification",
+          "renewal of mind (Romans 12:2)"
+        ]
+      },
+      "trinitarian_structure": "implicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-025",
+        "domain_a": "biology",
+        "domain_b": "theology",
+        "strength": 9,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "sanctification",
+        "context": "The process of moral discernment and holiness formation, mapped to immune system function",
+        "weight": 10
+      },
+      {
+        "concept": "legalism",
+        "context": "False positive error in moral classification - condemning what God has declared clean",
+        "weight": 8
+      },
+      {
+        "concept": "antinomianism",
+        "context": "False negative error in moral classification - failing to detect genuine sin",
+        "weight": 8
+      },
+      {
+        "concept": "conviction",
+        "context": "The alarm signal of sin, analogous to inflammation in immune response",
+        "weight": 7
+      },
+      {
+        "concept": "church discipline",
+        "context": "Systemic response to serious sin, analogous to fever as whole-body immune response",
+        "weight": 6
+      },
+      {
+        "concept": "grace",
+        "context": "External input required for moral formation, paralleling immune education",
+        "weight": 7
+      },
+      {
+        "concept": "holiness",
+        "context": "The standard being classified; what is set apart as belonging to God",
+        "weight": 6
+      },
+      {
+        "concept": "discernment",
+        "context": "The ability to distinguish holy from unholy, analogous to immune self/non-self discrimination",
+        "weight": 8
+      },
+      {
+        "concept": "atonement",
+        "context": "Not directly addressed but implied in the need for external grace",
+        "weight": 3
+      },
+      {
+        "concept": "redemption",
+        "context": "Not directly addressed",
+        "weight": 2
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "binary classification",
+        "context": "The shared optimization problem of distinguishing two categories under uncertainty",
+        "weight": 10
+      },
+      {
+        "concept": "optimization",
+        "context": "Minimizing cost function L = \u03bb\u2081\u00b7FN + \u03bb\u2082\u00b7FP subject to constraints",
+        "weight": 9
+      },
+      {
+        "concept": "tradeoff",
+        "context": "The inherent inverse relationship between false positives and false negatives",
+        "weight": 8
+      },
+      {
+        "concept": "necessity",
+        "context": "Structural necessity of exposure for education, memory for long-term function",
+        "weight": 7
+      },
+      {
+        "concept": "sufficiency",
+        "context": "No finite system achieves perfect classification (AUC = 1.0)",
+        "weight": 6
+      },
+      {
+        "concept": "contradiction",
+        "context": "The dual-pathology architecture where opposite errors are symmetric failure modes",
+        "weight": 7
+      },
+      {
+        "concept": "implication",
+        "context": "Bidirectional predictions between immunology and theology",
+        "weight": 8
+      },
+      {
+        "concept": "equivalence",
+        "context": "Structural isomorphism between immune function and sanctification",
+        "weight": 9
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "love",
+        "present": true,
+        "strength": 7
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "patience",
+        "present": true,
+        "strength": 5
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": true,
+        "strength": 6
+      },
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 7
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "self_control",
+        "present": true,
+        "strength": 6
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "domain:biology",
+      "to": "domain:theology",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:K",
+      "to": "chi_variable:T",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "chi_variable:G",
+      "to": "chi_variable:F",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "axiom:BC2",
+      "to": "chi_variable:G",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "axiom:BC7",
+      "to": "chi_variable:T",
+      "relation": "supports",
+      "weight": 6
+    },
+    {
+      "from": "theological_concept:sanctification",
+      "to": "theological_concept:discernment",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "theological_concept:legalism",
+      "to": "theological_concept:antinomianism",
+      "relation": "contradicts",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:binary_classification",
+      "to": "logical_concept:optimization",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "logical_concept:tradeoff",
+      "to": "logical_concept:necessity",
+      "relation": "implies",
+      "weight": 7
+    },
+    {
+      "from": "isomorphism:ISO-025",
+      "to": "domain:biology",
+      "relation": "derives_from",
+      "weight": 9
+    },
+    {
+      "from": "isomorphism:ISO-025",
+      "to": "domain:theology",
+      "relation": "derives_from",
+      "weight": 9
+    },
+    {
+      "from": "theological_concept:conviction",
+      "to": "theological_concept:sanctification",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "theological_concept:church_discipline",
+      "to": "theological_concept:sanctification",
+      "relation": "supports",
+      "weight": 6
+    },
+    {
+      "from": "chi_variable:C",
+      "to": "theological_concept:sanctification",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "chi_variable:F",
+      "to": "theological_concept:legalism",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "chi_variable:F",
+      "to": "theological_concept:antinomianism",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "chi_variable:K",
+      "to": "theological_concept:discernment",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "chi_variable:S",
+      "to": "theological_concept:church_discipline",
+      "relation": "requires",
+      "weight": 6
+    },
+    {
+      "from": "logical_concept:equivalence",
+      "to": "isomorphism:ISO-025",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:G",
+      "to": "theological_concept:grace",
+      "relation": "maps_to",
+      "weight": 8
+    }
+  ],
+  "tags": {
+    "primary": [
+      "immunology",
+      "soteriology",
+      "sanctification",
+      "binary classification",
+      "ROC curve"
+    ],
+    "pillar": [
+      "pillar/biology",
+      "pillar/theology"
+    ],
+    "series": "isomorphism",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "Acts 10:15",
+        "context": "Do not call anything impure that God has made clean - supports specificity in moral classification"
+      },
+      {
+        "ref": "Romans 12:2",
+        "context": "Renewal of mind as the mechanism of sanctification memory"
+      },
+      {
+        "ref": "James 1:2-4",
+        "context": "Trials produce steadfastness - controlled exposure builds moral resilience"
+      },
+      {
+        "ref": "Romans 5:3-4",
+        "context": "Suffering produces endurance - structural necessity of adversity for formation"
+      },
+      {
+        "ref": "Hebrews 4:12",
+        "context": "Word as discerner of thoughts and intentions - source of all spiritual discernment"
+      },
+      {
+        "ref": "1 John 1:8",
+        "context": "If we say we have no sin, we deceive ourselves - no believer achieves perfect discernment"
+      },
+      {
+        "ref": "1 Corinthians 5",
+        "context": "Church discipline as systemic response to serious sin"
+      },
+      {
+        "ref": "1 Timothy 4:2",
+        "context": "Seared conscience as pathological desensitization"
+      },
+      {
+        "ref": "Galatians 5:15",
+        "context": "If you bite and devour one another - community pathology"
+      }
+    ],
+    "academic": [
+      {
+        "ref": "Green & Swets (1966) Signal Detection Theory",
+        "context": "Formal framework for ROC analysis"
+      },
+      {
+        "ref": "Janeway's Immunobiology",
+        "context": "Standard reference for self/non-self discrimination"
+      },
+      {
+        "ref": "Strachan, D.P. (1989) Hay fever, hygiene, and household size",
+        "context": "Hygiene hypothesis"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "ISO-002",
+        "context": "Terminus Sui/Grace - immune system needs external information"
+      },
+      {
+        "ref": "ISO-003",
+        "context": "Entropy/Sin - immunodeficiency as entropy in immune system"
+      },
+      {
+        "ref": "ISO-026",
+        "context": "Addiction/Sin Bondage - tolerance/desensitization parallels immune anergy"
+      },
+      {
+        "ref": "ISO-027",
+        "context": "Epidemiology/Sin Propagation - immune system as defense against contagion"
+      }
+    ],
+    "total_count": 17
+  },
+  "word_anomalies": [
+    {
+      "word": "ROC curve",
+      "frequency": 8,
+      "significance": "Central mathematical framework connecting immunology and theology"
+    },
+    {
+      "word": "AUC",
+      "frequency": 5,
+      "significance": "Area Under Curve as measure of optimal classification performance"
+    },
+    {
+      "word": "anergy",
+      "frequency": 2,
+      "significance": "Immune tolerance as pathological desensitization, paralleling seared conscience"
+    },
+    {
+      "word": "thymic involution",
+      "frequency": 2,
+      "significance": "Age-related atrophy of thymus as structural parallel to spiritual maturity plateau"
+    },
+    {
+      "word": "hygiene hypothesis",
+      "frequency": 1,
+      "significance": "Reduced microbial exposure correlates with increased autoimmune disease"
+    },
+    {
+      "word": "old friends hypothesis",
+      "frequency": 1,
+      "significance": "Updated term for hygiene hypothesis"
+    },
+    {
+      "word": "antinomianism",
+      "frequency": 5,
+      "significance": "Theological term for false negative error in moral classification"
+    },
+    {
+      "word": "legalism",
+      "frequency": 5,
+      "significance": "Theological term for false positive error in moral classification"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "Analytical and comparative; seeks to establish structural isomorphism between two domains",
+    "Q1_identity": "An isomorphism record (ISO-025) mapping immunology to soteriology and sanctification",
+    "Q2_domain": "Biology (immunology) and Christian theology (soteriology & sanctification)",
+    "Q3_claim": "The immune system's self/non-self discrimination and the sanctification process's holy/unholy discrimination solve the same binary classification optimization problem under uncertainty, with symmetric failure modes",
+    "Q4_support": "10 independent correspondences, ROC curve analysis, bidirectional predictions, swap test, falsification criteria, and scriptural evidence",
+    "Q5_dependencies": "Signal Detection Theory, Janeway's Immunobiology, scriptural passages on sanctification and discernment, other ISOs (002, 003, 026, 027)",
+    "Q6_consequences": "Any sanctification model claiming to eliminate both legalism and antinomianism simultaneously (AUC=1.0) is structurally impossible for finite systems; moral classification always involves tradeoffs",
+    "Q7_kill": "Show moral discernment is not a classification problem; break the dual-pathology structure; demonstrate self-teaching without exposure; show memory is unnecessary; break more than 3 of 10 correspondences"
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "ISO-002",
+      "ISO-003",
+      "ISO-026",
+      "ISO-027",
+      "Signal Detection Theory",
+      "Janeway's Immunobiology"
+    ],
+    "required_by": [
+      "Sanctification models",
+      "Church discipline frameworks",
+      "Moral formation theories"
+    ],
+    "parallel_to": [
+      "ISO-002",
+      "ISO-003",
+      "ISO-026",
+      "ISO-027"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 42,
+    "total_edges": 20,
+    "dominant_domain": "biology",
+    "dominant_chi": "K",
+    "connectivity_score": 9,
+    "one_sentence": "ISO-025 establishes a structural isomorphism between immunology and soteriology, showing that both systems solve the same binary classification optimization problem under uncertainty with symmetric failure modes."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": true,
+      "how": "Grace (external input) required for immune education and moral formation; faith as the response to grace"
+    },
+    "2_9_will_conservation": {
+      "active": true,
+      "how": "Conservation of holiness standard; will as the capacity to respond to moral classification"
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Truth as accurate classification; coherence as the goal of optimal sanctification (AUC \u2192 1.0)"
+    },
+    "4_7_love_relationship": {
+      "active": true,
+      "how": "Love as the relational context of church discipline; relationship as the self/non-self boundary"
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Judgment as the cost function tradeoff; Logos as the Word that discerns (Hebrews 4:12)"
+    },
+    "pairs_active_count": 5
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 8
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 9
+    },
+    "love": {
+      "present": true,
+      "strength": 7
+    },
+    "judgment": {
+      "present": true,
+      "strength": 8
+    },
+    "logos": {
+      "present": true,
+      "strength": 9
+    },
+    "righteousness": {
+      "present": true,
+      "strength": 6
+    },
+    "faith": {
+      "present": true,
+      "strength": 6
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": true,
+      "strength": 7
+    },
+    "operators_present_count": 8
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "ISO-002",
+      "ISO-003",
+      "ISO-026",
+      "ISO-027",
+      "Six Theorems That Accidentally Proved Grace"
+    ],
+    "read_after": [
+      "Sanctification models",
+      "Church discipline frameworks",
+      "Moral formation theories"
+    ]
+  }
+}

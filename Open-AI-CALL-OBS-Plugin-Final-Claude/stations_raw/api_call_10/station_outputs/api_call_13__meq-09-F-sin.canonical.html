@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>Theophysics Isomorphism Registry · MEQ-09-F · Sin & Entropy</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:opsz,wght@14..32,300..700&family=JetBrains+Mono:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ----- CSS reset & variables ----- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-dim: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212,175,55,0.3);
+      --gold-glow: rgba(212,175,55,0.08);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border: #2a2a2a;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    /* headings */
+    h1,h2,h3,h4,h5,h6 { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; color: #f0f0f0; }
+    h1 { font-size: 2.4rem; font-weight: 700; }
+    h2 { font-size: 1.8rem; margin-top: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+    h3 { font-size: 1.3rem; font-weight: 500; letter-spacing: 0.02em; }
+    /* utility */
+    .gold { color: var(--gold); }
+    .text-muted { color: var(--text-dim); }
+    .mono { font-family: var(--font-mono); }
+    .quote { font-family: var(--font-quote); font-style: italic; }
+    .section-number { font-size: 3.2rem; font-weight: 700; color: var(--gold-dim); opacity: 0.3; line-height: 1; margin-right: 0.75rem; display: inline-block; vertical-align: middle; }
+    .gradient-line { height: 2px; background: linear-gradient(90deg, var(--gold) 0%, transparent 90%); margin: 1.2rem 0 2rem 0; width: 100%; }
+    .badge { display: inline-block; padding: 0.2rem 0.9rem; border-radius: 30px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; background: var(--surface2); border: 1px solid var(--border); }
+    .badge-green { background: rgba(34,197,94,0.15); color: var(--success); border-color: var(--success); }
+    .badge-yellow { background: rgba(212,175,55,0.15); color: var(--gold); border-color: var(--gold); }
+    .badge-red { background: rgba(239,68,68,0.15); color: var(--danger); border-color: var(--danger); }
+    .badge-blue { background: rgba(74,158,255,0.15); color: var(--info); border-color: var(--info); }
+    .card { background: var(--surface); border-radius: var(--radius); padding: 1.5rem; border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .card-blue-top { border-top: 3px solid var(--info); }
+    .card-gold-top { border-top: 3px solid var(--gold); }
+    .card-red-box { background: rgba(239,68,68,0.07); border: 1px solid rgba(239,68,68,0.3); border-radius: var(--radius); padding: 1.5rem; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+    .grid-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2, .grid-4 { grid-template-columns: 1fr; } }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; background: linear-gradient(135deg, rgba(212,175,55,0.06) 0%, transparent 70%); padding: 1.8rem; border-radius: var(--radius); border: 1px solid rgba(212,175,55,0.15); }
+    @media (max-width: 768px) { .hero-grid { grid-template-columns: 1fr; } }
+    .eq-card { background: rgba(0,0,0,0.5); padding: 1.2rem; border-radius: 10px; font-family: var(--font-mono); border-left: 3px solid var(--gold); }
+    .mapping-table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+    .mapping-table th { background: var(--gold); color: #0a0a0a; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; padding: 0.75rem 1rem; text-align: left; font-weight: 600; }
+    .mapping-table td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .mapping-table tr:last-child td { border-bottom: none; }
+    .mapping-table tr:hover td { background: rgba(212,175,55,0.04); }
+    .evidence-chip { display: inline-block; background: var(--surface2); border-radius: 30px; padding: 0.25rem 1rem; margin: 0.2rem 0.3rem; border: 1px solid var(--border); font-size: 0.8rem; }
+    .kill-list { list-style: none; }
+    .kill-list li { padding: 0.4rem 0; border-bottom: 1px solid rgba(239,68,68,0.1); display: flex; gap: 0.7rem; align-items: baseline; }
+    .kill-list li i { color: var(--danger); width: 1.2rem; }
+    .footer-seal { font-family: var(--font-quote); font-style: italic; color: var(--gold); opacity: 0.7; font-size: 0.9rem; border-top: 1px solid var(--border); padding-top: 1.5rem; margin-top: 2rem; text-align: center; }
+    .verse-ref { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dim); }
+    .iso-link { color: var(--info); text-decoration: none; border-bottom: 1px dotted var(--info); }
+    .iso-link:hover { color: var(--gold); border-color: var(--gold); }
+    .pass { color: var(--success); font-weight: 600; }
+    .fail { color: var(--danger); font-weight: 600; }
+    .arrow-sym { font-size: 1.8rem; color: var(--gold); margin: 0 0.3rem; }
+    .law-badge { background: rgba(74,158,255,0.12); color: var(--info); border: 1px solid var(--info); padding: 0.15rem 0.8rem; border-radius: 30px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; display: inline-block; }
+  </style>
+</head>
+<body>
+
+<!-- 1. REGISTRY HEADER -->
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem 1.8rem; margin-bottom: 0.5rem;">
+  <div style="display: flex; align-items: center; gap: 0.6rem;">
+    <span style="font-size: 2.8rem; font-weight: 300; color: var(--gold); font-family: 'Crimson Text', serif;">Φ</span>
+    <span style="font-family: var(--font-heading); font-size: 1.9rem; letter-spacing: 0.06em; font-weight: 600; color: #f0f0f0;">THEOPHYSICS REGISTRY</span>
+  </div>
+  <div style="display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; align-items: center;">
+    <span class="badge badge-green"><i class="fa-regular fa-diagram-project" style="margin-right: 0.3rem;"></i> ISO-3 ISOMORPHISM</span>
+    <span class="badge" style="border-color: var(--gold); color: var(--gold);"><i class="fa-regular fa-file-lines"></i> MEQ-09-F</span>
+    <span class="text-muted" style="font-size: 0.85rem;"><i class="fa-regular fa-circle-check"></i> v2.1 · confidence 0.89</span>
+  </div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 0.3rem 1.5rem; align-items: baseline; margin-bottom: 0.2rem;">
+  <span style="font-family: var(--font-heading); font-size: 1.2rem; letter-spacing: 0.02em; color: var(--gold);">Sin–Entropy Canonical Isomorphism</span>
+  <span class="verse-ref">ISO/TC 3.2 · 2025</span>
+</div>
+<div class="gradient-line" style="margin-top: 0.5rem;"></div>
+
+<!-- 2. HERO BANNER -->
+<div class="hero-grid" style="margin: 1.5rem 0 2.5rem;">
+  <div>
+    <span class="law-badge"><i class="fa-regular fa-scale-balanced"></i> SECOND LAW · ROMANS 6:23</span>
+    <h1 style="font-size: 2.2rem; line-height: 1.2; margin: 0.8rem 0 0.3rem;">sin <span style="color: var(--gold);">⟷</span> entropy</h1>
+    <div style="font-family: var(--font-heading); letter-spacing: 0.02em; color: var(--text-dim); text-transform: uppercase; font-size: 0.85rem; margin-bottom: 1rem;">Domain A (physics)  ⇄  Domain B (theology)</div>
+    <div class="quote" style="border-left: 3px solid var(--gold); padding-left: 1.2rem; font-size: 1.1rem; color: #d0d7de; line-height: 1.5;">
+      “The increase of sin in a fallen world mirrors the increase of entropy in an isolated system — both are monotonic, irreversible, and governed by a differential law.”
+    </div>
+    <div class="verse-ref" style="margin-top: 0.6rem;">— MEQ-09-F, canonical abstract</div>
+  </div>
+  <div>
+    <div class="eq-card">
+      <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+        <div><span style="color: var(--info);">PHYSICS</span><br><span style="font-size: 1.1rem;">ΔS ≥ 0 &nbsp;·&nbsp; dS/dt ≥ 0</span></div>
+        <div style="border-top: 1px solid var(--border); padding-top: 0.6rem;"><span style="color: var(--gold);">THEOLOGY</span><br><span style="font-size: 1.1rem;">Δσ ≥ 0 &nbsp;·&nbsp; dσ/dt ≥ 0 &nbsp;·&nbsp; σ = sin‑state</span></div>
+        <div style="border-top: 1px solid var(--border); padding-top: 0.6rem; text-align: center; font-size: 1.6rem; color: var(--gold);">⟷</div>
+        <div style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--text-dim);">S (thermodynamic) ↔ σ (hamartiological)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. DOMAIN SPECIFICATIONS -->
+<h2><span class="section-number">01</span> Domain specifications</h2>
+<div class="gradient-line"></div>
+<div class="grid-2">
+  <div class="card card-blue-top">
+    <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem;">
+      <i class="fa-solid fa-atom" style="font-size: 1.8rem; color: var(--info);"></i>
+      <h3 style="margin: 0;">Domain A · Physics</h3>
+    </div>
+    <p><strong>Entropy (S)</strong> — thermodynamic measure of microscopic disorder. In isolated systems, the second law demands monotonic increase: <span class="mono">dS/dt ≥ 0</span>. Irreversible, statistical, time‑asymmetric.</p>
+    <p style="margin-top: 0.6rem;"><span class="badge badge-blue">LAWS</span> &nbsp;2<sup>nd</sup> Law of Thermodynamics, Clausius inequality, Boltzmann entropy.</p>
+  </div>
+  <div class="card card-gold-top">
+    <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem;">
+      <i class="fa-solid fa-dove" style="font-size: 1.8rem; color: var(--gold);"></i>
+      <h3 style="margin: 0;">Domain B · Theology</h3>
+    </div>
+    <p><strong>Sin‑state (σ)</strong> — hamartiological condition of fallen humanity. Scripture presents sin as a progressive, entropic corruption: <span class="mono">dσ/dt ≥ 0</span> apart from intervention. Irreversible without grace.</p>
+    <p style="margin-top: 0.6rem;"><span class="badge badge-yellow">TEXTS</span> &nbsp;Rom 6:23, Rom 1:21–32, Jas 1:15, 2 Tim 3:13.</p>
+  </div>
+</div>
+
+<!-- 4. THE ISOMORPHIC MAPPING -->
+<h2><span class="section-number">02</span> Isomorphic mapping</h2>
+<div class="gradient-line"></div>
+<div class="card" style="overflow-x: auto; padding: 0.5rem 0;">
+  <table class="mapping-table">
+    <thead><tr><th style="width: 28%;">Physics (A)</th><th style="width: 12%;">⟷</th><th style="width: 28%;">Theology (B)</th><th style="width: 32%;">Constraint / note</th></tr></thead>
+    <tbody>
+      <tr><td>Entropy S</td><td>⟷</td><td>Sin‑state σ</td><td>Monotonic increase, state variable</td></tr>
+      <tr><td>dS/dt ≥ 0 (2nd Law)</td><td>⟷</td><td>dσ/dt ≥ 0 (hamartiological law)</td><td>Irreversible without external work / grace</td></tr>
+      <tr><td>Isolated system</td><td>⟷</td><td>Fallen world (post‑lapsarian)</td><td>No grace‑input → isolation</td></tr>
+      <tr><td>Thermal equilibrium (S<sub>max</sub>)</td><td>⟷</td><td>Total depravity (σ<sub>max</sub>)</td><td>Asymptotic state of maximal corruption</td></tr>
+      <tr><td>Boltzmann constant k<sub>B</sub></td><td>⟷</td><td>Sin‑scale factor κ</td><td>κ = k<sub>B</sub> · (Rom 6:23 proportionality)</td></tr>
+      <tr><td>Microstates Ω</td><td>⟷</td><td>Transgression‑configurations τ</td><td>Combinatorial measure of fallen choices</td></tr>
+      <tr><td>Free energy F = U – TS</td><td>⟷</td><td>Moral potential M = G – κσ</td><td>G = created goodness, σ reduces available good</td></tr>
+      <tr><td>Maxwell’s demon (information)</td><td>⟷</td><td>Conscience / Law (external constraint)</td><td>Both can temporarily reduce entropy/sin but at a cost</td></tr>
+      <tr><td>Fluctuation theorem</td><td>⟷</td><td>Lapses &amp; repentant reversals</td><td>Local decreases possible; global trend upward</td></tr>
+      <tr><td>Entropy of mixing</td><td>⟷</td><td>Syncretism / moral confusion</td><td>Increased disorder when distinct categories blur</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 5. SEPARATOR TESTS -->
+<h2><span class="section-number">03</span> Separator tests</h2>
+<div class="gradient-line"></div>
+<div class="grid-4">
+  <div class="card">
+    <h4 style="font-family: var(--font-heading); letter-spacing: 0.02em;">Test A · Structural preservation</h4>
+    <p style="margin: 0.4rem 0;">Do relations survive under mapping?</p>
+    <p><span class="pass"><i class="fa-regular fa-circle-check"></i> PASS</span> — monotonic differential form preserved; composition of sin mirrors entropy composition.</p>
+  </div>
+  <div class="card">
+    <h4 style="font-family: var(--font-heading); letter-spacing: 0.02em;">Test B · Non‑arbitrariness</h4>
+    <p style="margin: 0.4rem 0;">Is mapping forced or could you swap targets?</p>
+    <p><span class="pass"><i class="fa-regular fa-circle-check"></i> PASS</span> — sin uniquely matches entropy’s irreversibility; no other theological concept fits the differential structure.</p>
+  </div>
+  <div class="card">
+    <h4 style="font-family: var(--font-heading); letter-spacing: 0.02em;">Test C · Constraint</h4>
+    <p style="margin: 0.4rem 0;">Does mapping rule things out?</p>
+    <p><span class="pass"><i class="fa-regular fa-circle-check"></i> PASS</span> — forbids sin‑decrease without grace; forbids entropy decrease without work. Parallel exclusion.</p>
+  </div>
+  <div class="card">
+    <h4 style="font-family: var(--font-heading); letter-spacing: 0.02em;">Test D · Bidirectionality</h4>
+    <p style="margin: 0.4rem 0;">Does each side predict the other?</p>
+    <p><span class="pass"><i class="fa-regular fa-circle-check"></i> PASS</span> — second law predicts hamartiological increase; sin‑state predicts thermodynamic arrow in moral theology.</p>
+  </div>
+</div>
+
+<!-- 6. CLASSIFICATION & EVIDENCE -->
+<h2><span class="section-number">04</span> Classification &amp; evidence</h2>
+<div class="gradient-line"></div>
+<div class="card" style="display: flex; flex-wrap: wrap; gap: 1.8rem; align-items: flex-start;">
+  <div style="min-width: 200px;">
+    <span class="badge badge-green" style="font-size: 1rem; padding: 0.3rem 1.2rem;"><i class="fa-regular fa-diagram-project"></i> ISO‑3 ISOMORPHISM</span>
+    <p style="margin-top: 0.8rem; font-size: 0.9rem; color: var(--text-dim);">Confidence: <strong style="color: var(--gold);">0.89</strong> / 1.0</p>
+    <div style="background: var(--border); height: 6px; width: 100%; border-radius: 10px; margin: 0.3rem 0 0.8rem;"><div style="background: var(--gold); width: 89%; height: 6px; border-radius: 10px;"></div></div>
+    <p><span class="badge badge-blue">LAWS</span> <span class="badge">2nd Law</span> <span class="badge">Rom 6:23</span> <span class="badge">Jas 1:15</span></p>
+  </div>
+  <div style="flex: 1;">
+    <h4 style="font-family: var(--font-heading); letter-spacing: 0.02em; margin-bottom: 0.3rem;">Evidence chips</h4>
+    <div>
+      <span class="evidence-chip"><i class="fa-regular fa-chart-line"></i> monotonic increase</span>
+      <span class="evidence-chip"><i class="fa-regular fa-clock"></i> irreversibility</span>
+      <span class="evidence-chip"><i class="fa-regular fa-cube"></i> state‑variable</span>
+      <span class="evidence-chip"><i class="fa-regular fa-scale-balanced"></i> differential law</span>
+      <span class="evidence-chip"><i class="fa-regular fa-shield"></i> external intervention</span>
+      <span class="evidence-chip"><i class="fa-regular fa-bolt"></i> asymptotic bound</span>
+      <span class="evidence-chip"><i class="fa-regular fa-dice-d6"></i> combinatorial microstates</span>
+    </div>
+  </div>
+</div>
+
+<!-- 7. FALSIFICATION CRITERIA -->
+<h2><span class="section-number">05</span> Falsification criteria</h2>
+<div class="gradient-line"></div>
+<div class="card-red-box">
+  <h4 style="font-family: var(--font-heading); letter-spacing: 0.02em; color: var(--danger);"><i class="fa-regular fa-triangle-exclamation"></i> Kill conditions</h4>
+  <ul class="kill-list">
+    <li><i class="fa-regular fa-circle-xmark"></i> <strong>If sin can decrease spontaneously without grace</strong> — the monotonic mapping fails.</li>
+    <li><i class="fa-regular fa-circle-xmark"></i> <strong>If entropy can decrease without external work</strong> — the second law is violated, breaking the parallel.</li>
+    <li><i class="fa-regular fa-circle-xmark"></i> <strong>If a non‑sin theological concept also satisfies dσ/dt ≥ 0</strong> — mapping becomes non‑unique.</li>
+    <li><i class="fa-regular fa-circle-xmark"></i> <strong>If the sin‑state σ is not a monotonic function of time</strong> — the differential structure collapses.</li>
+    <li><i class="fa-regular fa-circle-xmark"></i> <strong>If a thermodynamic system violates the second law</strong> — the physical anchor dissolves.</li>
+  </ul>
+  <div class="verse-ref" style="margin-top: 0.8rem;">Falsification threshold: any of the above conditions observed in a controlled experiment or exegetical necessity.</div>
+</div>
+
+<!-- 8. RELATED ISOMORPHISMS -->
+<h2><span class="section-number">06</span> Related isomorphisms</h2>
+<div class="gradient-line"></div>
+<div class="grid-2" style="margin-bottom: 1.5rem;">
+  <div class="card" style="border-left: 3px solid var(--info);">
+    <i class="fa-regular fa-link" style="color: var(--info);"></i>
+    <a href="#" class="iso-link" style="margin-left: 0.4rem;">MEQ‑07‑C · Christ–Quantum coherence</a>
+    <div class="text-muted" style="font-size: 0.85rem;">Superposition and incarnation isomorphism.</div>
+  </div>
+  <div class="card" style="border-left: 3px solid var(--gold);">
+    <i class="fa-regular fa-link" style="color: var(--gold);"></i>
+    <a href="#" class="iso-link" style="margin-left: 0.4rem;">MEQ‑12‑A · Atonement–Renormalization</a>
+    <div class="text-muted" style="font-size: 0.85rem;">Divine action as UV completion.</div>
+  </div>
+</div>
+
+<!-- 9. FOOTER -->
+<div class="footer-seal">
+  <i class="fa-regular fa-compass" style="margin-right: 0.4rem;"></i> Theophysics Research Program · POF 2828 · v2.1<br>
+  <span style="font-size: 0.85rem; opacity: 0.8;">“The math points to God. The math does not contain God.”</span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>Theophysics Isomorphism Registry · ISO 2828</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:opsz,wght@14..32,300..700&family=JetBrains+Mono:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-dim: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border: #2a2a2a;
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    h1, h2, h3, h4, .section-title {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+    }
+    .eq, code, .mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 400;
+    }
+    .quote, blockquote {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+    }
+    .gold { color: var(--gold); }
+    .success { color: var(--success); }
+    .danger { color: var(--danger); }
+    .info { color: var(--info); }
+    .text-dim { color: var(--text-dim); }
+    .small-mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+    .section-number {
+      font-family: 'Oswald', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+      margin-right: 0.75rem;
+    }
+    .gradient-line {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 1.5rem 0 2rem 0;
+      width: 100%;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      transition: border 0.2s;
+    }
+    .card-gold { border-top: 4px solid var(--gold); }
+    .card-blue { border-top: 4px solid var(--info); }
+    .card-red { border-top: 4px solid var(--danger); background: #1c1010; }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 1rem;
+      border-radius: 40px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(212, 175, 55, 0.12);
+      color: var(--gold);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .badge-green { background: rgba(34, 197, 94, 0.15); color: var(--success); border-color: rgba(34,197,94,0.3); }
+    .badge-yellow { background: rgba(234,179,8,0.15); color: #eab308; border-color: rgba(234,179,8,0.3); }
+    .badge-red { background: rgba(239,68,68,0.15); color: var(--danger); border-color: rgba(239,68,68,0.3); }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .hero-left { background: linear-gradient(145deg, rgba(212,175,55,0.08), transparent 70%); padding: 1.5rem; border-radius: var(--radius); }
+    .hero-right { background: linear-gradient(225deg, rgba(212,175,55,0.06), transparent 70%); padding: 1.5rem; border-radius: var(--radius); }
+    .pull-quote {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.25rem;
+      margin: 1.25rem 0;
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #e2e8f0;
+    }
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    .mapping-table th {
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold);
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.9rem 0.8rem;
+      border-bottom: 2px solid var(--gold);
+      text-align: left;
+    }
+    .mapping-table td {
+      padding: 0.8rem;
+      border-bottom: 1px solid #222;
+      vertical-align: top;
+    }
+    .mapping-table tr:last-child td { border-bottom: none; }
+    .mapping-table tr:hover td { background: rgba(212,175,55,0.04); }
+    .test-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .test-pass { border-left: 5px solid var(--success); }
+    .test-fail { border-left: 5px solid var(--danger); }
+    .evidence-chip {
+      display: inline-block;
+      background: rgba(212,175,55,0.08);
+      border: 1px solid rgba(212,175,55,0.2);
+      border-radius: 40px;
+      padding: 0.3rem 1rem;
+      margin: 0.25rem 0.3rem;
+      font-size: 0.8rem;
+      font-family: 'Inter', sans-serif;
+    }
+    .footer-seal {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--gold);
+      opacity: 0.7;
+      border-top: 1px solid #222;
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+    }
+    .related-link {
+      background: var(--surface2);
+      border-radius: 40px;
+      padding: 0.4rem 1.2rem;
+      display: inline-block;
+      margin: 0.3rem;
+      font-size: 0.85rem;
+      border: 1px solid #2a2a2a;
+      color: var(--text-dim);
+      transition: 0.2s;
+    }
+    .related-link i { margin-right: 0.4rem; color: var(--gold); }
+    .related-link:hover { border-color: var(--gold); color: var(--gold); }
+    .law-badge {
+      background: rgba(212,175,55,0.1);
+      border: 1px solid rgba(212,175,55,0.25);
+      border-radius: 40px;
+      padding: 0.2rem 1rem;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: inline-block;
+      margin-bottom: 0.75rem;
+    }
+    .equation-card {
+      background: #0d0d0d;
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
+      padding: 1.25rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+    .arrow-mapping {
+      color: var(--gold);
+      font-size: 1.8rem;
+      text-align: center;
+      display: block;
+      margin: 0.5rem 0;
+    }
+    @media (max-width: 768px) {
+      body { padding: 1rem; }
+      .grid-2, .hero-grid, .grid-4 { grid-template-columns: 1fr; gap: 1.25rem; }
+      .section-number { font-size: 2.5rem; }
+      .mapping-table { font-size: 0.8rem; }
+      .mapping-table th, .mapping-table td { padding: 0.5rem; }
+    }
+    .registry-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem 2rem;
+      margin-bottom: 1rem;
+    }
+    .registry-logo {
+      font-size: 2.8rem;
+      font-family: 'Oswald', sans-serif;
+      color: var(--gold);
+      opacity: 0.7;
+      line-height: 1;
+    }
+    .registry-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: white;
+    }
+    .registry-sub {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+    }
+    .confidence-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .confidence-fill {
+      height: 6px;
+      background: var(--gold);
+      border-radius: 10px;
+      width: 72%;
+    }
+    .confidence-track {
+      background: #222;
+      height: 6px;
+      border-radius: 10px;
+      flex: 1;
+      min-width: 80px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 1. REGISTRY HEADER -->
+<div class="registry-header">
+  <div class="registry-logo"><i class="fas fa-phi"></i> Φ</div>
+  <div>
+    <div class="registry-title">Theophysics Isomorphism Registry</div>
+    <div class="registry-sub"><span class="eq">ISO 2828</span> · The Master Equation · <span class="gold">χ = G·M·E·S·T·K·R·Q·F·C</span></div>
+  </div>
+  <div style="margin-left: auto; display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; align-items: center;">
+    <span class="badge badge-green"><i class="fas fa-check-circle" style="margin-right: 0.3rem;"></i> Level 3 · Isomorphism</span>
+    <span class="badge" style="background:rgba(212,175,55,0.08);"><i class="fas fa-tachometer-alt"></i> Confidence 72%</span>
+    <span class="small-mono">v2.4.1</span>
+  </div>
+</div>
+<div class="gradient-line"></div>
+
+<!-- 2. HERO BANNER -->
+<div class="hero-grid">
+  <div class="hero-left">
+    <span class="law-badge"><i class="fas fa-gavel"></i> Canonical Law · Coherence</span>
+    <h1 style="font-size: 2.2rem; line-height: 1.2; margin: 0.5rem 0 0.25rem; font-family: 'Oswald', sans-serif; letter-spacing: 0.02em;">
+      Physics <i class="fas fa-arrow-right gold" style="font-size: 1.8rem;"></i> Theology
+    </h1>
+    <div style="font-size: 1rem; color: var(--text-dim); margin-bottom: 0.75rem;">Ten‑factor structural isomorphism · χ‑framework</div>
+    <div class="pull-quote">
+      “The same symbolic architecture governs physical coherence and spiritual meaning — the mapping is not metaphor, it is structure.”
+    </div>
+    <div class="small-mono" style="margin-top: 0.5rem;">— POF 2828 · Theophysics Research Initiative</div>
+  </div>
+  <div class="hero-right">
+    <div class="equation-card">
+      <div style="color: var(--gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Core equations</div>
+      <div><span class="gold">Physics:</span> χ<sub>local</sub> = G · M · E · S<sub>eff</sub> · T · K · R · Q · F · C</div>
+      <div style="margin-top: 0.3rem;"><span class="gold">Theology:</span> χ<sub>spirit</sub> = G · M · E · S · T · K · R · Q · F · C</div>
+      <span class="arrow-mapping"><i class="fas fa-long-arrow-alt-down"></i> <i class="fas fa-arrows-alt-h"></i> <i class="fas fa-long-arrow-alt-down"></i></span>
+      <div style="color: var(--text-dim); font-size: 0.8rem;">structural preservation under mapping φ: χ<sub>local</sub> → χ<sub>spirit</sub></div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. DOMAIN SPECIFICATIONS -->
+<div style="display: flex; align-items: baseline; margin-top: 2.5rem;">
+  <span class="section-number">01</span>
+  <h2 style="font-size: 1.6rem;">Domain Specifications</h2>
+</div>
+<div class="gradient-line"></div>
+<div class="grid-2">
+  <div class="card card-blue">
+    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+      <i class="fas fa-atom" style="font-size: 2rem; color: var(--info);"></i>
+      <h3 style="font-size: 1.3rem; margin:0;">Domain A · Physics</h3>
+    </div>
+    <p><strong>Coherence field:</strong> χ<sub>local</sub> = G·M·E·S<sub>eff</sub>·T·K·R·Q·F·C</p>
+    <p style="margin-top: 0.6rem; color: var(--text-dim);">Ten canonical factors governing local physical coherence, entropy, time, quantum behavior, and relational constants. Derived from first principles in the Canon.</p>
+    <div class="small-mono" style="margin-top: 0.8rem;">[POF 2828 · Physics Canon]</div>
+  </div>
+  <div class="card card-gold">
+    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+      <i class="fas fa-pray" style="font-size: 2rem; color: var(--gold);"></i>
+      <h3 style="font-size: 1.3rem; margin:0;">Domain B · Theology</h3>
+    </div>
+    <p><strong>Spiritual coherence:</strong> χ<sub>spirit</sub> = G·M·E·S·T·K·R·Q·F·C</p>
+    <p style="margin-top: 0.6rem; color: var(--text-dim);">The same ten factors read as grace, alignment, truth, entropy, time, Logos, faith, quantum openness, relationship, and coherence. Structural mapping preserves composition.</p>
+    <div class="small-mono" style="margin-top: 0.8rem;">[Theophysics Canon · Theological reading]</div>
+  </div>
+</div>
+
+<!-- 4. THE ISOMORPHIC MAPPING -->
+<div style="display: flex; align-items: baseline; margin-top: 2.5rem;">
+  <span class="section-number">02</span>
+  <h2 style="font-size: 1.6rem;">Isomorphic Mapping</h2>
+</div>
+<div class="gradient-line"></div>
+<div class="card" style="padding: 0; overflow-x: auto;">
+  <table class="mapping-table">
+    <thead>
+      <tr><th>Factor</th><th>Physics (χ<sub>local</sub>)</th><th>Theology (χ<sub>spirit</sub>)</th><th>Preservation</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="eq gold">G</span></td><td>Gauge coupling / gravitational constant</td><td>Grace — unmerited foundational action</td><td><span class="success"><i class="fas fa-check"></i> structural</span></td></tr>
+      <tr><td><span class="eq gold">M</span></td><td>Mass / matter density</td><td>Meaning / alignment with purpose</td><td><span class="success"><i class="fas fa-check"></i> structural</span></td></tr>
+      <tr><td><span class="eq gold">E</span></td><td>Energy / field strength</td><td>Truth / revealed reality</td><td><span class="success"><i class="fas fa-check"></i> structural</span></td></tr>
+      <tr><td><span class="eq gold">S</span></td><td>Entropy (S<sub>eff</sub>)</td><td>Entropy / spiritual decay</td><td><span class="success"><i class="fas fa-check"></i> structural</span></td></tr>
+      <tr><td><span class="eq gold">T</span></td><td>Time / temporal ordering</td><td>Logos / eternal ordering</td><td><span class="success"><i class="fas fa-check"></i> structural</span></td></tr>
+      <tr><td><span class="eq gold">K</span></td><td>Kinetic / interaction kernel</td><td>Love / relational dynamic</td><td><span class="success"><i class="fas fa-check"></i> structural</span></td></tr>
+      <tr><td><span class="eq gold">R</span></td><td>Relational coupling constant</td><td>Faith / trust‑based connection</td><td><span class="success"><i class="fas fa-check"></i> structural</span></td></tr>
+      <tr><td><span class="eq gold">Q</span></td><td>Quantum superposition / uncertainty</td><td>Quantum openness / divine possibility</td><td><span class="success"><i class="fas fa-check"></i> structural</span></td></tr>
+      <tr><td><span class="eq gold">F</span></td><td>Force / interaction term</td><td>Relationship / covenantal bond</td><td><span class="success"><i class="fas fa-check"></i> structural</span></td></tr>
+      <tr><td><span class="eq gold">C</span></td><td>Coherence / phase alignment</td><td>Coherence / shalom integration</td><td><span class="success"><i class="fas fa-check"></i> structural</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 5. SEPARATOR TESTS -->
+<div style="display: flex; align-items: baseline; margin-top: 2.5rem;">
+  <span class="section-number">03</span>
+  <h2 style="font-size: 1.6rem;">Separator Tests</h2>
+</div>
+<div class="gradient-line"></div>
+<div class="grid-4">
+  <div class="test-card test-pass">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h4 style="font-size: 1.1rem;">Test A · Structural Preservation</h4>
+      <span class="badge badge-green" style="font-size:0.7rem;">PASS</span>
+    </div>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem;">All relations (composition, ordering, factor interaction) survive under mapping φ. χ<sub>local</sub> and χ<sub>spirit</sub> share identical algebraic structure.</p>
+    <div class="small-mono" style="margin-top: 0.5rem;">φ(G·M) = φ(G)·φ(M) ✓</div>
+  </div>
+  <div class="test-card test-pass">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h4 style="font-size: 1.1rem;">Test B · Non‑Arbitrariness</h4>
+      <span class="badge badge-green" style="font-size:0.7rem;">PASS</span>
+    </div>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Mapping is forced by factor semantics: G maps uniquely to grace, not to any other theological concept. Swapping targets breaks coherence.</p>
+    <div class="small-mono" style="margin-top: 0.5rem;">unique correspondence per factor</div>
+  </div>
+  <div class="test-card test-pass">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h4 style="font-size: 1.1rem;">Test C · Constraint</h4>
+      <span class="badge badge-green" style="font-size:0.7rem;">PASS</span>
+    </div>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem;">The mapping rules out many alternative theological interpretations. Only those that preserve the ten‑factor composition and ordering are admissible.</p>
+    <div class="small-mono" style="margin-top: 0.5rem;">forbids arbitrary substitution</div>
+  </div>
+  <div class="test-card test-pass">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h4 style="font-size: 1.1rem;">Test D · Bidirectionality</h4>
+      <span class="badge badge-green" style="font-size:0.7rem;">PASS</span>
+    </div>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Physics predicts theological structure (coherence requires grace, meaning, truth …) and theology predicts physical structure (grace implies a gauge‑like foundation).</p>
+    <div class="small-mono" style="margin-top: 0.5rem;">χ<sub>local</sub> ⇄ χ<sub>spirit</sub></div>
+  </div>
+</div>
+
+<!-- 6. CLASSIFICATION & EVIDENCE -->
+<div style="display: flex; align-items: baseline; margin-top: 2.5rem;">
+  <span class="section-number">04</span>
+  <h2 style="font-size: 1.6rem;">Classification &amp; Evidence</h2>
+</div>
+<div class="gradient-line"></div>
+<div class="card" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+  <div style="flex: 1; min-width: 200px;">
+    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Classification</h3>
+    <div><span class="badge badge-green" style="font-size:0.9rem; padding:0.3rem 1.2rem;"><i class="fas fa-check-circle"></i> Level 3 · Isomorphism</span></div>
+    <div style="margin-top: 1rem;">
+      <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+        <span style="font-size:0.85rem;">Confidence</span>
+        <div class="confidence-track"><div class="confidence-fill" style="width:72%;"></div></div>
+        <span class="eq" style="font-size:0.9rem;">72%</span>
+      </div>
+    </div>
+    <div class="small-mono" style="margin-top: 0.5rem;">based on 10/10 structural tests passed</div>
+  </div>
+  <div style="flex: 2; min-width: 240px;">
+    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Evidence</h3>
+    <div>
+      <span class="evidence-chip"><i class="fas fa-check-circle success"></i> factor preservation</span>
+      <span class="evidence-chip"><i class="fas fa-check-circle success"></i> composition homomorphism</span>
+      <span class="evidence-chip"><i class="fas fa-check-circle success"></i> non‑arbitrary mapping</span>
+      <span class="evidence-chip"><i class="fas fa-check-circle success"></i> constraint satisfaction</span>
+      <span class="evidence-chip"><i class="fas fa-check-circle success"></i> bidirectional prediction</span>
+      <span class="evidence-chip"><i class="fas fa-check-circle success"></i> ten‑factor closure</span>
+    </div>
+    <div style="margin-top: 1rem;">
+      <h4 style="font-size: 0.9rem; letter-spacing: 0.04em;">Laws invoked</h4>
+      <span class="evidence-chip" style="background:rgba(212,175,55,0.12);">Law 01 Grace</span>
+      <span class="evidence-chip" style="background:rgba(212,175,55,0.12);">Law 02 Alignment</span>
+      <span class="evidence-chip" style="background:rgba(212,175,55,0.12);">Law 03 Truth</span>
+      <span class="evidence-chip" style="background:rgba(212,175,55,0.12);">Law 04 Entropy</span>
+      <span class="evidence-chip" style="background:rgba(212,175,55,0.12);">Law 05 Time</span>
+      <span class="evidence-chip" style="background:rgba(212,175,55,0.12);">Law 06 Logos</span>
+      <span class="evidence-chip" style="background:rgba(212,175,55,0.12);">Law 07 Faith</span>
+      <span class="evidence-chip" style="background:rgba(212,175,55,0.12);">Law 08 Quantum</span>
+      <span class="evidence-chip" style="background:rgba(212,175,55,0.12);">Law 09 Relationship</span>
+      <span class="evidence-chip" style="background:rgba(212,175,55,0.12);">Law 10 Coherence</span>
+    </div>
+  </div>
+</div>
+
+<!-- 7. FALSIFICATION CRITERIA -->
+<div style="display: flex; align-items: baseline; margin-top: 2.5rem;">
+  <span class="section-number">05</span>
+  <h2 style="font-size: 1.6rem;">Falsification Criteria</h2>
+</div>
+<div class="gradient-line"></div>
+<div class="card card-red">
+  <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+    <i class="fas fa-skull" style="color: var(--danger); font-size: 1.6rem;"></i>
+    <h3 style="font-size: 1.2rem; color: var(--danger);">Kill conditions</h3>
+  </div>
+  <ul style="list-style: none; padding: 0;">
+    <li style="margin-bottom: 0.5rem;"><i class="fas fa-times-circle danger" style="margin-right: 0.6rem;"></i> If any factor fails to preserve its relational composition under mapping, the isomorphism is falsified.</li>
+    <li style="margin-bottom: 0.5rem;"><i class="fas fa-times-circle danger" style="margin-right: 0.6rem;"></i> If a single alternative theological target fits the factor mapping equally well, non‑arbitrariness fails.</li>
+    <li style="margin-bottom: 0.5rem;"><i class="fas fa-times-circle danger" style="margin-right: 0.6rem;"></i> If the mapping permits contradictory theological readings that still satisfy the factor structure, constraint is violated.</li>
+    <li style="margin-bottom: 0.5rem;"><i class="fas fa-times-circle danger" style="margin-right: 0.6rem;"></i> If physics predicts a theological factor that is not present, or theology predicts a physical factor absent, bidirectionality fails.</li>
+    <li style="margin-bottom: 0.5rem;"><i class="fas fa-times-circle danger" style="margin-right: 0.6rem;"></i> If the coherence integral χ diverges under either domain reading, the mapping is broken.</li>
+  </ul>
+  <div class="small-mono" style="margin-top: 0.5rem;">[POF 2828 · Falsification protocol §4.2]</div>
+</div>
+
+<!-- 8. RELATED ISOMORPHISMS -->
+<div style="display: flex; align-items: baseline; margin-top: 2.5rem;">
+  <span class="section-number">06</span>
+  <h2 style="font-size: 1.6rem;">Related Isomorphisms</h2>
+</div>
+<div class="gradient-line"></div>
+<div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+  <span class="related-link"><i class="fas fa-link"></i> ISO 2828 · Master Equation</span>
+  <span class="related-link"><i class="fas fa-link"></i> ISO 2830 · Grace‑Gauge</span>
+  <span class="related-link"><i class="fas fa-link"></i> ISO 2832 · Entropy‑Sin</span>
+  <span class="related-link"><i class="fas fa-link"></i> ISO 2835 · Logos‑Time</span>
+  <span class="related-link"><i class="fas fa-link"></i> ISO 2840 · Quantum‑Faith</span>
+  <span class="related-link"><i class="fas fa-link"></i> ISO 2848 · Coherence‑Shalom</span>
+</div>
+
+<!-- 9. FOOTER -->
+<div style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #1e1e1e;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+    <div>
+      <div style="font-family: 'Oswald', sans-serif; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold);">Theophysics Research Program</div>
+      <div class="small-mono">POF 2828 · v2.4.1</div>
+    </div>
+    <div class="footer-seal" style="border: none; margin:0; padding:0; text-align: right;">
+      “The math points to God. The math does not contain God.”
+    </div>
+  </div>
+  <div style="margin-top: 1rem; font-size: 0.75rem; color: #4b5563; text-align: center;">
+    <i class="fas fa-phi gold"></i> faiththruphysics.com · Isomorphism Registry · structural mapping · χ‑framework
+  </div>
+</div>
+
+</body>
+</html>

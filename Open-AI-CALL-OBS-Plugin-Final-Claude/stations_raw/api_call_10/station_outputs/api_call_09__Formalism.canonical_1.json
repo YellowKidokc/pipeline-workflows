@@ -1,0 +1,547 @@
+{
+  "definitions": [
+    {
+      "term": "\u03c7-field",
+      "category": "framework",
+      "definition": "A mathematical field that measures how aligned or coherent a system is, like a thermometer measures temperature.",
+      "example": "Think of it as a 'coherence meter' for anything from atoms to communities.",
+      "grade_level": "college",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "formalism",
+      "category": "academic",
+      "definition": "A strict mathematical or logical system used to describe something precisely.",
+      "example": "Like using equations instead of words to describe how a ball falls.",
+      "grade_level": "college",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "coherence",
+      "category": "physics",
+      "definition": "When parts of a system are aligned or in sync with each other.",
+      "example": "Waves in a pond that line up perfectly, or a choir singing in harmony.",
+      "grade_level": "college",
+      "first_appearance": "The Problem: Two Languages, One Reality"
+    },
+    {
+      "term": "spacetime",
+      "category": "physics",
+      "definition": "The four-dimensional fabric of the universe that combines space and time into one thing.",
+      "example": "Like a stretchy sheet where everything happens, and gravity bends it.",
+      "grade_level": "college",
+      "first_appearance": "Physics"
+    },
+    {
+      "term": "Einstein equations",
+      "category": "physics",
+      "definition": "The core equations of general relativity that describe how matter and energy curve spacetime.",
+      "example": "They tell you how a heavy star warps the space around it.",
+      "grade_level": "college",
+      "first_appearance": "Physics"
+    },
+    {
+      "term": "singularity",
+      "category": "physics",
+      "definition": "A point where a physical quantity becomes infinite, like at the center of a black hole.",
+      "example": "A place where the usual rules of physics break down, like dividing by zero.",
+      "grade_level": "college",
+      "first_appearance": "Theology"
+    },
+    {
+      "term": "SU(3) symmetry",
+      "category": "physics",
+      "definition": "A special mathematical group used in particle physics to describe how quarks interact via the strong force.",
+      "example": "It's like a set of rules for how three different colors of paint can mix.",
+      "grade_level": "graduate",
+      "first_appearance": "Theology"
+    },
+    {
+      "term": "Shannon entropy",
+      "category": "physics",
+      "definition": "A measure of how much uncertainty or randomness is in a set of information.",
+      "example": "A coin flip has high entropy because you don't know the outcome; a rock has low entropy.",
+      "grade_level": "college",
+      "first_appearance": "Information"
+    },
+    {
+      "term": "mutual information",
+      "category": "physics",
+      "definition": "A measure of how much knowing one thing tells you about another thing.",
+      "example": "If you know it's raining, you can guess the ground is wet\u2014that's mutual information.",
+      "grade_level": "college",
+      "first_appearance": "Information"
+    },
+    {
+      "term": "ecclesiology",
+      "category": "theology",
+      "definition": "The study of the church, its nature, and its role.",
+      "example": "Like learning about how a team or club is organized and what it does.",
+      "grade_level": "college",
+      "first_appearance": "Information"
+    },
+    {
+      "term": "partial differential equations",
+      "category": "math",
+      "definition": "Equations that describe how a quantity changes in multiple directions, like space and time.",
+      "example": "Used to model how heat spreads across a pan or how sound travels through air.",
+      "grade_level": "college",
+      "first_appearance": "The Breakthrough: The \u03c7-Field"
+    },
+    {
+      "term": "couples",
+      "category": "physics",
+      "definition": "When two things interact or affect each other.",
+      "example": "A magnet and a piece of metal are coupled because they pull on each other.",
+      "grade_level": "college",
+      "first_appearance": "The Breakthrough: The \u03c7-Field"
+    },
+    {
+      "term": "reference frame",
+      "category": "physics",
+      "definition": "A point of view from which you measure things like position and speed.",
+      "example": "Looking at a car from the sidewalk vs. from another moving car gives different views.",
+      "grade_level": "college",
+      "first_appearance": "The Breakthrough: The \u03c7-Field"
+    },
+    {
+      "term": "field equations",
+      "category": "physics",
+      "definition": "Mathematical equations that describe how a field (like gravity or magnetism) behaves and changes.",
+      "example": "Like the rules that tell you how the wind blows across the whole planet.",
+      "grade_level": "college",
+      "first_appearance": "The Ten Variables: A Prism"
+    },
+    {
+      "term": "Lagrangian",
+      "category": "physics",
+      "definition": "A function that sums up all the energy in a system to predict how it will move.",
+      "example": "Like a scorecard that adds up kinetic and potential energy to find the path a ball takes.",
+      "grade_level": "college",
+      "first_appearance": "The Ten Variables: A Prism"
+    },
+    {
+      "term": "structural isomorphism",
+      "category": "math",
+      "definition": "When two different things have the same underlying structure or pattern.",
+      "example": "A map of a subway and the actual subway have the same connections, even though they look different.",
+      "grade_level": "college",
+      "first_appearance": "The Claim: Structural Isomorphism"
+    },
+    {
+      "term": "Noether's theorem",
+      "category": "physics",
+      "definition": "A principle that says every symmetry in nature leads to a conserved quantity, like energy or momentum.",
+      "example": "If a system looks the same after a shift in time, then energy is conserved.",
+      "grade_level": "college",
+      "first_appearance": "The Claim: Structural Isomorphism"
+    },
+    {
+      "term": "falsifiable",
+      "category": "academic",
+      "definition": "Able to be proven wrong by an experiment or observation.",
+      "example": "The claim 'all swans are white' is falsifiable because finding one black swan disproves it.",
+      "grade_level": "college",
+      "first_appearance": "The Test: Kill Conditions"
+    },
+    {
+      "term": "quantum coherence",
+      "category": "physics",
+      "definition": "When quantum particles are in sync and act as a single wave, not separate particles.",
+      "example": "Like two dancers moving perfectly together, but at the atomic level.",
+      "grade_level": "college",
+      "first_appearance": "Kill Condition Example"
+    },
+    {
+      "term": "decoherence",
+      "category": "physics",
+      "definition": "The process where quantum particles lose their sync and start acting like normal, separate objects.",
+      "example": "Like a choir that starts singing out of tune, losing the perfect harmony.",
+      "grade_level": "college",
+      "first_appearance": "Kill Condition Example"
+    },
+    {
+      "term": "Lagrangian density",
+      "category": "physics",
+      "definition": "A version of the Lagrangian that describes energy per unit of space and time.",
+      "example": "Like measuring how much energy is in every tiny cube of a field.",
+      "grade_level": "graduate",
+      "first_appearance": "The Master Lagrangian"
+    },
+    {
+      "term": "d'Alembertian",
+      "category": "math",
+      "definition": "A mathematical operator that measures how a field changes in both space and time, like a wave equation.",
+      "example": "It's the tool that tells you how ripples spread on a pond.",
+      "grade_level": "graduate",
+      "first_appearance": "The \u03c7-Field Equation of Motion"
+    },
+    {
+      "term": "variational principle",
+      "category": "physics",
+      "definition": "A method that finds the path or state that minimizes or maximizes a certain quantity, like action.",
+      "example": "Like finding the shortest route between two points by trying all paths and picking the best.",
+      "grade_level": "college",
+      "first_appearance": "Start with Variational Principle"
+    },
+    {
+      "term": "Euler-Lagrange",
+      "category": "math",
+      "definition": "Equations derived from the variational principle that give the rules of motion for a system.",
+      "example": "They are the recipe that turns the Lagrangian into the actual path an object takes.",
+      "grade_level": "college",
+      "first_appearance": "Euler-Lagrange for \u03c7"
+    },
+    {
+      "term": "coupling constant",
+      "category": "physics",
+      "definition": "A number that tells how strongly two things interact with each other.",
+      "example": "Like a volume knob: a high coupling constant means a strong interaction, a low one means weak.",
+      "grade_level": "college",
+      "first_appearance": "Expand with Domain Sources"
+    },
+    {
+      "term": "Yukawa-type force",
+      "category": "physics",
+      "definition": "A force that gets weaker exponentially with distance, like the strong nuclear force between protons.",
+      "example": "Like a magnet that only works within a few inches, then suddenly stops.",
+      "grade_level": "college",
+      "first_appearance": "Grace Field (G) \u2014 Yukawa-Type Force"
+    },
+    {
+      "term": "propagates",
+      "category": "physics",
+      "definition": "Moves or spreads through space.",
+      "example": "Sound propagates through air; light propagates through vacuum.",
+      "grade_level": "college",
+      "first_appearance": "Grace Field (G) \u2014 Yukawa-Type Force"
+    },
+    {
+      "term": "finite range",
+      "category": "physics",
+      "definition": "A force that only works up to a certain distance, then becomes zero.",
+      "example": "A sticky note only sticks within a few inches; beyond that, no effect.",
+      "grade_level": "college",
+      "first_appearance": "Grace Field (G) \u2014 Yukawa-Type Force"
+    },
+    {
+      "term": "sacrament",
+      "category": "theology",
+      "definition": "A religious ceremony or ritual believed to convey divine grace, like baptism or communion.",
+      "example": "A special act in church that is thought to bring you closer to God.",
+      "grade_level": "college",
+      "first_appearance": "Grace Field (G) \u2014 Yukawa-Type Force"
+    },
+    {
+      "term": "divine initiative",
+      "category": "theology",
+      "definition": "The idea that God takes the first step in reaching out to humans, not the other way around.",
+      "example": "Like a friend calling you first, instead of you having to call them.",
+      "grade_level": "college",
+      "first_appearance": "Grace Field (G) \u2014 Yukawa-Type Force"
+    },
+    {
+      "term": "analogous",
+      "category": "academic",
+      "definition": "Similar in some way, allowing a comparison.",
+      "example": "A heart is analogous to a pump because both move fluid.",
+      "grade_level": "college",
+      "first_appearance": "Grace Field (G) \u2014 Yukawa-Type Force"
+    },
+    {
+      "term": "meson theory",
+      "category": "physics",
+      "definition": "A theory that explains the strong nuclear force using particles called mesons that are exchanged between protons and neutrons.",
+      "example": "Like two people throwing a ball back and forth to stay connected.",
+      "grade_level": "graduate",
+      "first_appearance": "Grace Field (G) \u2014 Yukawa-Type Force"
+    },
+    {
+      "term": "entropy density",
+      "category": "physics",
+      "definition": "A measure of how much disorder or randomness there is in a given volume.",
+      "example": "A messy room has high entropy density; a tidy one has low.",
+      "grade_level": "college",
+      "first_appearance": "Sin Field (S) \u2014 Entropy Density"
+    },
+    {
+      "term": "equilibrium",
+      "category": "physics",
+      "definition": "A state where a system is balanced and not changing, like a ball at the bottom of a bowl.",
+      "example": "When hot and cold water mix, they reach a warm equilibrium.",
+      "grade_level": "college",
+      "first_appearance": "Sin Field (S) \u2014 Entropy Density"
+    },
+    {
+      "term": "anti-correlation",
+      "category": "physics",
+      "definition": "When two things move in opposite directions: as one goes up, the other goes down.",
+      "example": "The more you study, the less you forget\u2014that's anti-correlation.",
+      "grade_level": "college",
+      "first_appearance": "Sin Field (S) \u2014 Entropy Density"
+    },
+    {
+      "term": "eigenvalues",
+      "category": "math",
+      "definition": "Special numbers that tell you how a transformation stretches or shrinks something without changing its direction.",
+      "example": "If you pull a rubber band, the eigenvalues tell you how much it stretches in each direction.",
+      "grade_level": "college",
+      "first_appearance": "Sign Operator (\u03c3) \u2014 Binary Distinction"
+    },
+    {
+      "term": "continuous spectrum",
+      "category": "math",
+      "definition": "A range of values that can be any number, not just separate steps.",
+      "example": "The height of a plant can be any value (continuous), but the number of leaves is a whole number (discrete).",
+      "grade_level": "college",
+      "first_appearance": "Sign Operator (\u03c3) \u2014 Binary Distinction"
+    },
+    {
+      "term": "binary",
+      "category": "math",
+      "definition": "Having only two possible values, like 0 and 1, or yes and no.",
+      "example": "A light switch is binary: on or off.",
+      "grade_level": "college",
+      "first_appearance": "Sign Operator (\u03c3) \u2014 Binary Distinction"
+    },
+    {
+      "term": "immutable",
+      "category": "academic",
+      "definition": "Cannot be changed.",
+      "example": "The past is immutable; you can't change what happened yesterday.",
+      "grade_level": "college",
+      "first_appearance": "Sign Operator (\u03c3) \u2014 Binary Distinction"
+    },
+    {
+      "term": "unitary evolution",
+      "category": "physics",
+      "definition": "A smooth, reversible change in a quantum system that preserves total probability.",
+      "example": "Like a spinning top that keeps its shape and energy as it turns.",
+      "grade_level": "college",
+      "first_appearance": "Sign Operator (\u03c3) \u2014 Binary Distinction"
+    },
+    {
+      "term": "commute",
+      "category": "math",
+      "definition": "When two operations can be done in any order and give the same result.",
+      "example": "Addition commutes: 2+3 = 3+2. Subtraction does not: 2-3 \u2260 3-2.",
+      "grade_level": "college",
+      "first_appearance": "Sign Operator (\u03c3) \u2014 Binary Distinction"
+    },
+    {
+      "term": "gauge structure",
+      "category": "physics",
+      "definition": "A mathematical framework that describes how forces like electromagnetism work through symmetries.",
+      "example": "Like the rules that ensure a game stays fair no matter how you look at it.",
+      "grade_level": "graduate",
+      "first_appearance": "Trinity Symmetry \u2014 SU(3) Gauge Structure"
+    },
+    {
+      "term": "Gell-Mann matrices",
+      "category": "physics",
+      "definition": "A set of eight special matrices used to describe the strong force and quarks.",
+      "example": "Like a set of building blocks that represent the different ways quarks can interact.",
+      "grade_level": "graduate",
+      "first_appearance": "Trinity Symmetry \u2014 SU(3) Gauge Structure"
+    },
+    {
+      "term": "structure constants",
+      "category": "math",
+      "definition": "Numbers that define how a mathematical group's elements combine with each other.",
+      "example": "Like a multiplication table for a special set of numbers.",
+      "grade_level": "college",
+      "first_appearance": "Trinity Symmetry \u2014 SU(3) Gauge Structure"
+    },
+    {
+      "term": "spontaneous symmetry breaking",
+      "category": "physics",
+      "definition": "When a system that could be symmetric ends up in a state that is not symmetric, like a pencil falling to one side.",
+      "example": "A perfectly round ball on a hill will roll down one side, breaking the symmetry.",
+      "grade_level": "college",
+      "first_appearance": "Trinity Symmetry \u2014 SU(3) Gauge Structure"
+    },
+    {
+      "term": "gauge bosons",
+      "category": "physics",
+      "definition": "Particles that carry forces, like photons for electromagnetism or gluons for the strong force.",
+      "example": "Like messengers that deliver the force from one particle to another.",
+      "grade_level": "college",
+      "first_appearance": "Trinity Symmetry \u2014 SU(3) Gauge Structure"
+    },
+    {
+      "term": "vacuum expectation value",
+      "category": "physics",
+      "definition": "The average value of a field in empty space, even when no particles are present.",
+      "example": "Like the background hum of a room even when it's silent.",
+      "grade_level": "college",
+      "first_appearance": "Trinity Symmetry \u2014 SU(3) Gauge Structure"
+    },
+    {
+      "term": "numerical integration",
+      "category": "math",
+      "definition": "A way to approximate the solution of an equation using computer calculations step by step.",
+      "example": "Like measuring a curved shape by adding up many tiny straight pieces.",
+      "grade_level": "college",
+      "first_appearance": "Code & Computational Verification"
+    },
+    {
+      "term": "symbolic derivation",
+      "category": "math",
+      "definition": "Using algebra and rules to find an exact formula, not just a number.",
+      "example": "Like solving for x in an equation, rather than guessing and checking.",
+      "grade_level": "college",
+      "first_appearance": "Code & Computational Verification"
+    },
+    {
+      "term": "parameter sweeps",
+      "category": "academic",
+      "definition": "Systematically changing one or more inputs to see how the output changes.",
+      "example": "Like turning the dials on a radio to find the best station.",
+      "grade_level": "college",
+      "first_appearance": "Code & Computational Verification"
+    },
+    {
+      "term": "stress testing",
+      "category": "academic",
+      "definition": "Testing a system under extreme conditions to see if it breaks.",
+      "example": "Like pushing a bridge with heavy trucks to see if it can handle the load.",
+      "grade_level": "college",
+      "first_appearance": "Code & Computational Verification"
+    },
+    {
+      "term": "positive definite",
+      "category": "math",
+      "definition": "A property of a matrix where all its eigenvalues are greater than zero, meaning it's stable.",
+      "example": "Like a bowl that always pushes a ball back to the bottom, never away.",
+      "grade_level": "college",
+      "first_appearance": "Automated Test Suite"
+    },
+    {
+      "term": "phase space",
+      "category": "physics",
+      "definition": "A space where every possible state of a system is represented by a point, including position and momentum.",
+      "example": "Like a map that shows not just where a car is, but how fast it's going.",
+      "grade_level": "college",
+      "first_appearance": "Phase Space Trajectory"
+    },
+    {
+      "term": "projection",
+      "category": "math",
+      "definition": "A way to reduce a high-dimensional space to a lower one, like a shadow of a 3D object on a wall.",
+      "example": "A 3D cube's shadow on the floor is a 2D projection.",
+      "grade_level": "college",
+      "first_appearance": "Phase Space Trajectory"
+    },
+    {
+      "term": "falsification",
+      "category": "academic",
+      "definition": "The act of proving a theory wrong by finding evidence that contradicts it.",
+      "example": "If you claim all crows are black, finding a white crow falsifies your claim.",
+      "grade_level": "college",
+      "first_appearance": "Kill Conditions & Falsification"
+    },
+    {
+      "term": "rigor",
+      "category": "academic",
+      "definition": "Thoroughness and precision, especially in logic or mathematics.",
+      "example": "Checking every step of a math problem to make sure there are no mistakes.",
+      "grade_level": "college",
+      "first_appearance": "Rigor & Audit"
+    },
+    {
+      "term": "non-unitary transition",
+      "category": "physics",
+      "definition": "A change in a quantum system that is not reversible and does not preserve probability, like a measurement.",
+      "example": "Like breaking an egg: you can't unbreak it.",
+      "grade_level": "college",
+      "first_appearance": "Weakest Element"
+    },
+    {
+      "term": "vacuum decay",
+      "category": "physics",
+      "definition": "A hypothetical event where empty space suddenly changes to a lower energy state, releasing huge energy.",
+      "example": "Like a bubble forming in a perfectly smooth liquid, but on a cosmic scale.",
+      "grade_level": "graduate",
+      "first_appearance": "Weakest Element"
+    },
+    {
+      "term": "phase transition",
+      "category": "physics",
+      "definition": "A change from one state of matter to another, like ice melting into water.",
+      "example": "Water turning to steam when boiled is a phase transition.",
+      "grade_level": "college",
+      "first_appearance": "Weakest Element"
+    },
+    {
+      "term": "anomalous",
+      "category": "academic",
+      "definition": "Something that deviates from what is normal or expected.",
+      "example": "A snowstorm in July is anomalous.",
+      "grade_level": "college",
+      "first_appearance": "KC-002: Grace Field Non-Detection"
+    },
+    {
+      "term": "gravitational signatures",
+      "category": "physics",
+      "definition": "Patterns or signals in gravity that indicate something is present or happening.",
+      "example": "Like the way a heavy object warps a trampoline surface.",
+      "grade_level": "college",
+      "first_appearance": "KC-002: Grace Field Non-Detection"
+    },
+    {
+      "term": "double-slit experiments",
+      "category": "physics",
+      "definition": "An experiment where particles are shot through two slits, showing wave-like interference patterns.",
+      "example": "Like throwing marbles at two holes and seeing a striped pattern on the wall behind.",
+      "grade_level": "college",
+      "first_appearance": "KC-003: Consciousness-Collapse Decoupling"
+    },
+    {
+      "term": "interference pattern",
+      "category": "physics",
+      "definition": "A pattern of bright and dark bands created when waves overlap and combine.",
+      "example": "Ripples from two stones dropped in a pond create a crisscross pattern.",
+      "grade_level": "college",
+      "first_appearance": "KC-003: Consciousness-Collapse Decoupling"
+    },
+    {
+      "term": "resonances",
+      "category": "physics",
+      "definition": "When a system vibrates strongly at a specific frequency, like a swing pushed at the right time.",
+      "example": "An opera singer shattering a glass by singing the right note.",
+      "grade_level": "college",
+      "first_appearance": "KC-004: Trinity Symmetry Violation"
+    },
+    {
+      "term": "luminosity",
+      "category": "physics",
+      "definition": "A measure of how many particle collisions happen in an accelerator over time.",
+      "example": "Like the brightness of a flashlight, but for particle beams.",
+      "grade_level": "college",
+      "first_appearance": "KC-004: Trinity Symmetry Violation"
+    },
+    {
+      "term": "overreach",
+      "category": "academic",
+      "definition": "Claiming more than what is justified by evidence or logic.",
+      "example": "Saying your team will win every game after just one victory is overreach.",
+      "grade_level": "college",
+      "first_appearance": "The Audit Principle"
+    }
+  ],
+  "stats": {
+    "total_terms_found": 56,
+    "by_category": {
+      "physics": 28,
+      "theology": 4,
+      "math": 9,
+      "philosophy": 0,
+      "framework": 2,
+      "academic": 10,
+      "language": 0
+    },
+    "highest_grade_level": "graduate",
+    "average_grade_level": "college",
+    "accessibility_score": 15
+  }
+}

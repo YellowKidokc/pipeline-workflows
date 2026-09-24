@@ -1,0 +1,302 @@
+{
+  "spec_version": "1.0",
+  "page_id": "con-free-will-evil",
+  "page_title": "Consciousness, Free Will, and Evil",
+  "page_slug": "con-free-will-evil",
+  "source_file": "con-free-will-evil.md",
+  "generated_by": "adversarial_audit_v1",
+  "generated_date": "2025-04-14",
+  "adversarial_audit": {
+    "fatal_issue": "The paper makes a categorical claim that 'evil is decoherence' and 'sin is information entropy' without providing any mathematical derivation, experimental protocol, or falsifiable prediction that distinguishes this from metaphor. The central equation \u0398 = Q + U is non-operational: 'U' is defined as 'the unquantifiable domain,' which by definition cannot be measured, making the entire framework immune to empirical disconfirmation. This is a fatal epistemic flaw.",
+    "major_issue": "The paper asserts a one-to-one mapping between quantum decoherence and moral evil, but never specifies the physical system, the Hamiltonian, or the decoherence mechanism. Without a concrete model, the claim is an analogy, not an isomorphism. The 'Broken Observer' hypothesis is presented as a solution to psychology's replication crisis, yet no controlled study is cited that tests whether 'moral entropy' correlates with replicability of experimental results.",
+    "sharpening_issue": "The paper uses 'entropy' in multiple inconsistent senses: thermodynamic entropy, information entropy, and moral/spiritual entropy. These are not equivalent, and the paper does not define the conversion between them. The 'Quantum Zeno Effect' is invoked to explain the Peace Cycle, but no mechanism is given for how repeated self-statements cause quantum measurement-like freezing of a neural state.",
+    "smart_hostile_physicist_check": {
+      "primary_confusion": "analogy",
+      "diagnosis": "The paper claims evil is decoherence from the divine, but decoherence in physics is a well-defined process: loss of quantum coherence due to entanglement with an environment. The paper provides no equation for the divine Hamiltonian, no interaction term, and no decoherence rate. Without these, the claim is a poetic analogy, not a physical theory.",
+      "sentence_to_rewrite": "Evil represents decoherence---separation from divine resonance.",
+      "required_fix": "Provide the explicit quantum mechanical model: define the divine state vector, the interaction Hamiltonian, and the decoherence rate. Show that the resulting dynamics produce something recognizable as moral evil, and specify a testable prediction (e.g., a measurable difference in decoherence rates between 'moral' and 'immoral' quantum systems)."
+    },
+    "physics_process_check": {
+      "does_mirror_physics_process": false,
+      "physics_process_named": "quantum decoherence",
+      "one_to_one_verdict": "broken",
+      "where_mapping_holds": "The analogy that separation from a coherent state leads to disorder is conceptually similar to decoherence, but no formal mapping is provided.",
+      "where_mapping_breaks": "Decoherence in physics is unitary, reversible in principle, and does not involve agency or moral choice. The paper's 'decoherence' is non-unitary, irreversible without divine intervention, and caused by free will. These are fundamentally different processes.",
+      "sentence_to_rewrite": "Evil represents decoherence---separation from divine resonance.",
+      "required_fix": "Either provide a rigorous mathematical mapping showing that the dynamics of moral choice are isomorphic to a known decoherence process, or rename the concept to avoid misleading physical terminology (e.g., 'moral disalignment')."
+    },
+    "strongest_non_framework_alternative": "The replication crisis in psychology can be explained by well-understood methodological factors: low statistical power, publication bias, p-hacking, and lack of preregistration. The 'Broken Observer' hypothesis adds no predictive power beyond these known issues and is not needed to explain the crisis.",
+    "what_would_force_public_narrowing": "A specific, testable prediction that distinguishes the 'Broken Observer' model from standard methodological critiques. For example: 'If the replication crisis is due to moral entropy, then studies conducted in cultures with higher self-reported moral coherence will have higher replication rates, controlling for sample size and effect size.' Without such a prediction, the paper remains unfalsifiable.",
+    "rewrite_priority": "fatal"
+  },
+  "structure_audit": {
+    "opening_hook_strength": 6,
+    "logical_flow_strength": 4,
+    "transition_quality": 5,
+    "does_opening_promise_match_ending": false,
+    "sequence_verdict": "repairable",
+    "best_order_step_by_step": [
+      "Define the problem: replication crisis in psychology",
+      "Present the Receiver Model with evidence (hydrocephalus, terminal lucidity)",
+      "Define moral = physical with neurobiological evidence",
+      "Introduce the quantum antenna (Orch-OR)",
+      "Present the restoration algorithm",
+      "Synthesize and propose testable predictions"
+    ],
+    "flow_breaks": [
+      {
+        "from_section": "The Unquantifiable Component",
+        "to_section": "Free Will and Divine Foreknowledge",
+        "problem": "The unquantifiable component (U) is introduced but never used in the rest of the paper. It is a dangling concept.",
+        "fix": "Either integrate U into the later arguments (e.g., show how U affects the decoherence model) or remove it as unnecessary."
+      },
+      {
+        "from_section": "The Problem of Evil",
+        "to_section": "The Purpose of Miracles",
+        "problem": "The transition from evil as decoherence to miracles as entropy-reducing signals is abrupt. The connection between the two is asserted but not explained.",
+        "fix": "Add a bridging paragraph explaining how miracles counteract the decoherence of evil."
+      }
+    ],
+    "sentence_that_carries_too_much_weight": "Evil represents decoherence---separation from divine resonance.",
+    "why_it_carries_too_much_weight": "This single sentence is the core claim of the entire theodicy section, yet it is unsupported by any formal model, equation, or empirical evidence. It must carry the weight of the argument but is merely an assertion."
+  },
+  "framework_presence": {
+    "master_equation": [
+      {
+        "present": true,
+        "quote": "\u0398 = Q + U",
+        "function": "Defines total reality as sum of quantifiable and unquantifiable. Non-operational because U is unmeasurable."
+      }
+    ],
+    "axioms": [
+      {
+        "id": "T8",
+        "present": true,
+        "quote": "The brain is a receiver, not a generator.",
+        "function": "Core axiom for the Broken Observer hypothesis."
+      },
+      {
+        "id": "T6",
+        "present": true,
+        "quote": "Moral states are concrete physical states characterized by thermodynamics and information coherence.",
+        "function": "Core axiom for the moral = physical claim."
+      }
+    ],
+    "lean4": [],
+    "claims_layer": [
+      {
+        "present": true,
+        "quote": "Evil is not a positive force created by God, but rather the natural consequence of separation from divine coherence.",
+        "function": "Central theodicy claim."
+      },
+      {
+        "present": true,
+        "quote": "The replication crisis in psychology is not a failure of statistics; it is a failure of ontology.",
+        "function": "Central claim for the Broken Observer hypothesis."
+      }
+    ],
+    "proof_layer": [],
+    "tests_layer": [],
+    "laws_layer": []
+  },
+  "paper_changing_questions": [
+    {
+      "question": "What exact, currently testable prediction does the 'evil as decoherence' model make that differs from standard theodicy or from a purely physical account of suffering?",
+      "why_it_matters": "Without a testable prediction, the model is unfalsifiable and indistinguishable from metaphor.",
+      "if_unanswered_then": "The paper cannot claim to be a scientific framework; it is a theological analogy.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Which named physics process is being mirrored by 'evil as decoherence,' and where is the one-to-one transition map between the physical decoherence parameters (e.g., decoherence rate, environment coupling) and the moral parameters (e.g., sin severity, divine distance)?",
+      "why_it_matters": "The paper claims an isomorphism but provides no mapping. Without it, the claim is an analogy, not a scientific theory.",
+      "if_unanswered_then": "The central claim of the paper is unsupported and must be rewritten as a metaphor.",
+      "severity": "fatal"
+    },
+    {
+      "question": "What is the strongest falsifying data point against the core thesis that the brain is a receiver rather than a generator?",
+      "why_it_matters": "A scientific hypothesis must specify what evidence would disprove it. The paper does not do this.",
+      "if_unanswered_then": "The hypothesis is not scientific.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Which assumption in the paper is least justified, and what minimum condition would weaken it to the point of collapse?",
+      "why_it_matters": "Identifies the weakest link in the argument chain.",
+      "if_unanswered_then": "The paper's logical structure is opaque and cannot be evaluated.",
+      "severity": "major"
+    },
+    {
+      "question": "Are the core claims about hydrocephalus and terminal lucidity supported by primary sources (e.g., the specific Lancet case study) or only by summary mentions?",
+      "why_it_matters": "The paper's empirical foundation depends on the accuracy and interpretation of these cases.",
+      "if_unanswered_then": "The evidence base is unverifiable.",
+      "severity": "major"
+    },
+    {
+      "question": "Which term is used in multiple, inconsistent meanings in the same argument? (e.g., 'entropy' as thermodynamic, information-theoretic, and moral)",
+      "why_it_matters": "Equivocation undermines logical validity.",
+      "if_unanswered_then": "The argument is vulnerable to the fallacy of equivocation.",
+      "severity": "major"
+    },
+    {
+      "question": "What single sentence should be rewritten to remove non-falsifiable certainty?",
+      "why_it_matters": "Identifies the most problematic claim.",
+      "if_unanswered_then": "The paper retains a core unfalsifiable assertion.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "Which claim is confessional (based on personal belief) vs. evidentiary (based on empirical data), and how is that distinction made in the copy?",
+      "why_it_matters": "The paper mixes theology and science without clear demarcation.",
+      "if_unanswered_then": "Readers cannot evaluate the epistemic status of each claim.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "What minimal counterexample would break the central analogy between quantum decoherence and moral evil?",
+      "why_it_matters": "Tests the robustness of the analogy.",
+      "if_unanswered_then": "The analogy is not critically examined.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "Can the claims about 'moral entropy' be safely ingested into downstream metadata fields (claim_id, axiom_id, test_id) without ambiguity?",
+      "why_it_matters": "If the terms are ambiguous, the framework cannot be implemented computationally.",
+      "if_unanswered_then": "The framework is not operationalizable.",
+      "severity": "sharpening"
+    }
+  ],
+  "sentence_annotations": [
+    {
+      "anchor_quote": "Evil represents decoherence---separation from divine resonance.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Central claim of the theodicy, but unsupported by any formal model. Fatal if not rewritten with a mathematical mapping.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "evil_as_decoherence"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The replication crisis in psychology is not a failure of statistics; it is a failure of ontology.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Strong claim that dismisses well-established methodological explanations without evidence. Requires justification.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "replication_crisis_ontology"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "\u0398 = Q + U",
+      "annotation_type": "math",
+      "ui_color": "gold",
+      "why_flagged": "Non-operational equation. U is defined as unquantifiable, so the equation cannot be tested or used.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "master_equation"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "sin is information entropy",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Equates two concepts without defining the mapping. Requires a formal definition of 'sin' in information-theoretic terms.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "sin_as_entropy"
+        ],
+        "axiom_ids": [
+          "T6"
+        ],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The Four Steps of the Peace Cycle as Quantum Measurement",
+      "annotation_type": "claim",
+      "ui_color": "blue",
+      "why_flagged": "Invokes Quantum Zeno Effect without mechanism. Requires explanation of how self-statements cause quantum measurement-like effects.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "peace_cycle_quantum"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Terminal lucidity is not a medical miracle; it is physical proof of the Receiver Model.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Overstates the evidence. Terminal lucidity is consistent with the Receiver Model but does not prove it. Alternative explanations exist (e.g., temporary metabolic changes).",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "terminal_lucidity_proof"
+        ],
+        "axiom_ids": [
+          "T8"
+        ],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The brain is not the source of the intellect; it is the constraint upon it.",
+      "annotation_type": "claim",
+      "ui_color": "blue",
+      "why_flagged": "Core axiom of the Receiver Model. Requires justification beyond the hydrocephalus case.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "brain_as_constraint"
+        ],
+        "axiom_ids": [
+          "T8"
+        ],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Forgiveness is the ultimate negentropic act---it stops the cycle of destruction.",
+      "annotation_type": "claim",
+      "ui_color": "gold",
+      "why_flagged": "Uses 'negentropic' in a non-standard way. Requires definition and evidence that forgiveness reduces thermodynamic entropy in a measurable system.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "forgiveness_negentropic"
+        ],
+        "axiom_ids": [
+          "T6"
+        ],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    }
+  ]
+}

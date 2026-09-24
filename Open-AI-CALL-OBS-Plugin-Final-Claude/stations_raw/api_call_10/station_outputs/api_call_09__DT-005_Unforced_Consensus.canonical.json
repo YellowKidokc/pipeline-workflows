@@ -1,0 +1,589 @@
+{
+  "definitions": [
+    {
+      "term": "Biaxiosum",
+      "category": "framework",
+      "definition": "A made-up word for the idea that you know your own perspective, so you exist in truth.",
+      "example": "Like saying 'I see things my way, so I'm real.'",
+      "grade_level": "college",
+      "first_appearance": "Page Zero: The Biaxiosum"
+    },
+    {
+      "term": "ergo sum",
+      "category": "language",
+      "definition": "Latin for 'therefore I am' — a famous phrase from philosopher Descartes.",
+      "example": "Like 'I think, therefore I exist.'",
+      "grade_level": "college",
+      "first_appearance": "Page Zero: The Biaxiosum"
+    },
+    {
+      "term": "lens",
+      "category": "philosophy",
+      "definition": "Your personal way of seeing or understanding things.",
+      "example": "Like wearing glasses that make everything look blue — your lens is how you view the world.",
+      "grade_level": "10",
+      "first_appearance": "Page Zero: The Biaxiosum"
+    },
+    {
+      "term": "methodology",
+      "category": "academic",
+      "definition": "The system of methods used to do research or solve a problem.",
+      "example": "Like a recipe for baking a cake — the steps you follow to get a result.",
+      "grade_level": "11",
+      "first_appearance": "Name Your Ground"
+    },
+    {
+      "term": "formalized",
+      "category": "academic",
+      "definition": "Turned into a clear, official set of rules or steps.",
+      "example": "Like writing down the rules of a game so everyone knows how to play.",
+      "grade_level": "11",
+      "first_appearance": "Name Your Ground"
+    },
+    {
+      "term": "articulated",
+      "category": "academic",
+      "definition": "Expressed clearly in words.",
+      "example": "Like explaining your idea so your friend gets it perfectly.",
+      "grade_level": "11",
+      "first_appearance": "Name Your Ground"
+    },
+    {
+      "term": "constitutional audit",
+      "category": "framework",
+      "definition": "A check to see how well a document (like the U.S. Constitution) is being followed.",
+      "example": "Like a teacher checking if students are following the class rules.",
+      "grade_level": "college",
+      "first_appearance": "Name Your Ground"
+    },
+    {
+      "term": "proof of concept",
+      "category": "academic",
+      "definition": "A small test to show that an idea can work in real life.",
+      "example": "Like building a tiny model of a bridge to see if it holds weight before building the real one.",
+      "grade_level": "college",
+      "first_appearance": "Name Your Ground"
+    },
+    {
+      "term": "convergence",
+      "category": "framework",
+      "definition": "When different things come to the same conclusion or result.",
+      "example": "Like two friends who each guess the same number without talking.",
+      "grade_level": "11",
+      "first_appearance": "Name Your Ground"
+    },
+    {
+      "term": "engineered",
+      "category": "academic",
+      "definition": "Designed or built on purpose to achieve a specific result.",
+      "example": "Like building a machine that always makes the same toy — it's engineered to do that.",
+      "grade_level": "10",
+      "first_appearance": "Name Your Ground"
+    },
+    {
+      "term": "independent analytical capabilities",
+      "category": "framework",
+      "definition": "The ability of an AI to think and figure things out on its own, without help.",
+      "example": "Like a student solving a math problem without looking at anyone else's paper.",
+      "grade_level": "college",
+      "first_appearance": "Declared Position"
+    },
+    {
+      "term": "undervaluing",
+      "category": "academic",
+      "definition": "Not recognizing the true worth or importance of something.",
+      "example": "Like thinking a $100 bill is only worth $10.",
+      "grade_level": "10",
+      "first_appearance": "Declared Position"
+    },
+    {
+      "term": "debate architectures",
+      "category": "framework",
+      "definition": "Systems or setups where AIs argue with each other to reach agreement.",
+      "example": "Like a debate club where people argue to find the best answer.",
+      "grade_level": "college",
+      "first_appearance": "Declared Position"
+    },
+    {
+      "term": "biases",
+      "category": "academic",
+      "definition": "Unfair preferences or slants that affect judgment.",
+      "example": "Like always picking your favorite team to win, even if they're not the best.",
+      "grade_level": "10",
+      "first_appearance": "Declared Position"
+    },
+    {
+      "term": "unforced convergence",
+      "category": "framework",
+      "definition": "Agreement that happens naturally, without being forced or arranged.",
+      "example": "Like two friends both deciding to wear blue shirts without planning it.",
+      "grade_level": "college",
+      "first_appearance": "Declared Position"
+    },
+    {
+      "term": "engineered consensus",
+      "category": "framework",
+      "definition": "Agreement that is created on purpose by design or pressure.",
+      "example": "Like a teacher making all students agree on an answer by giving hints.",
+      "grade_level": "college",
+      "first_appearance": "Declared Position"
+    },
+    {
+      "term": "Biaxiosum Rule",
+      "category": "framework",
+      "definition": "A rule that says if you believe one method is better, you must use it consistently.",
+      "example": "Like if you think studying alone is best, you shouldn't then study in groups.",
+      "grade_level": "college",
+      "first_appearance": "The Biaxiosum Rule"
+    },
+    {
+      "term": "corpora",
+      "category": "academic",
+      "definition": "Plural of corpus — large collections of text used to train AI.",
+      "example": "Like a library of millions of books that an AI reads to learn.",
+      "grade_level": "college",
+      "first_appearance": "The Biaxiosum Rule"
+    },
+    {
+      "term": "abstract",
+      "category": "academic",
+      "definition": "A short summary at the start of a research paper.",
+      "example": "Like the blurb on the back of a book that tells you what it's about.",
+      "grade_level": "10",
+      "first_appearance": "Abstract"
+    },
+    {
+      "term": "qualitatively different",
+      "category": "academic",
+      "definition": "Different in kind or type, not just in amount.",
+      "example": "Like the difference between an apple and a car — not just more or less, but completely different.",
+      "grade_level": "11",
+      "first_appearance": "Abstract"
+    },
+    {
+      "term": "multi-agent",
+      "category": "framework",
+      "definition": "Involving multiple AI systems working together.",
+      "example": "Like a team of robots each doing a different job to build a house.",
+      "grade_level": "college",
+      "first_appearance": "Abstract"
+    },
+    {
+      "term": "iterative refinement",
+      "category": "academic",
+      "definition": "Repeating a process to make something better each time.",
+      "example": "Like editing an essay over and over to fix mistakes.",
+      "grade_level": "college",
+      "first_appearance": "Abstract"
+    },
+    {
+      "term": "Constitutional Coherence Audit",
+      "category": "framework",
+      "definition": "A test to see if different AIs agree on how well the Constitution is being followed.",
+      "example": "Like asking several judges separately if a law is fair, then comparing answers.",
+      "grade_level": "college",
+      "first_appearance": "Abstract"
+    },
+    {
+      "term": "aggregate scores",
+      "category": "math",
+      "definition": "Total or average scores from combining multiple results.",
+      "example": "Like adding up all your test scores and dividing by the number of tests.",
+      "grade_level": "10",
+      "first_appearance": "Abstract"
+    },
+    {
+      "term": "author-intent standard",
+      "category": "framework",
+      "definition": "A way of judging based on what the original writer meant, not what people think now.",
+      "example": "Like reading a letter and asking 'What did the writer want to say?'",
+      "grade_level": "college",
+      "first_appearance": "Abstract"
+    },
+    {
+      "term": "outlier system",
+      "category": "math",
+      "definition": "A result that is very different from all the others.",
+      "example": "Like one student scoring 100% when everyone else scored 50%.",
+      "grade_level": "11",
+      "first_appearance": "Abstract"
+    },
+    {
+      "term": "falsification criteria",
+      "category": "academic",
+      "definition": "Conditions that would prove a theory wrong.",
+      "example": "Like saying 'If I see a black swan, then my theory that all swans are white is false.'",
+      "grade_level": "college",
+      "first_appearance": "Abstract"
+    },
+    {
+      "term": "BAES",
+      "category": "framework",
+      "definition": "Short for Biaxiosum AI Evaluation System — a method for testing AI agreement.",
+      "example": "Like a recipe for checking if AIs think the same way.",
+      "grade_level": "college",
+      "first_appearance": "Abstract"
+    },
+    {
+      "term": "body of research",
+      "category": "academic",
+      "definition": "All the studies and papers on a particular topic.",
+      "example": "Like all the books and articles about dinosaurs.",
+      "grade_level": "10",
+      "first_appearance": "Section 1: The Problem with Making Things Agree"
+    },
+    {
+      "term": "Agent Forest",
+      "category": "framework",
+      "definition": "A system that runs many copies of the same AI and picks the most common answer.",
+      "example": "Like asking 100 people the same question and going with the most popular answer.",
+      "grade_level": "college",
+      "first_appearance": "Section 1: The Problem with Making Things Agree"
+    },
+    {
+      "term": "Multi-Agent Debate",
+      "category": "framework",
+      "definition": "A system where AIs argue back and forth to reach agreement.",
+      "example": "Like a debate where two people argue until they agree on a topic.",
+      "grade_level": "college",
+      "first_appearance": "Section 1: The Problem with Making Things Agree"
+    },
+    {
+      "term": "CONSENSAGENT",
+      "category": "framework",
+      "definition": "A system designed to stop AIs from copying each other's answers.",
+      "example": "Like a test where students can't peek at each other's papers.",
+      "grade_level": "college",
+      "first_appearance": "Section 1: The Problem with Making Things Agree"
+    },
+    {
+      "term": "The Social Laboratory",
+      "category": "framework",
+      "definition": "A study that found AIs agree a lot after debating several times.",
+      "example": "Like a science experiment that shows people agree more after talking.",
+      "grade_level": "college",
+      "first_appearance": "Section 1: The Problem with Making Things Agree"
+    },
+    {
+      "term": "convergence scores",
+      "category": "math",
+      "definition": "Numbers that show how much different results agree.",
+      "example": "Like a score of 0.9 means 90% agreement.",
+      "grade_level": "11",
+      "first_appearance": "Section 1: The Problem with Making Things Agree"
+    },
+    {
+      "term": "circular",
+      "category": "philosophy",
+      "definition": "A type of flawed reasoning where the conclusion is used as evidence for itself.",
+      "example": "Like saying 'I'm right because I'm right.'",
+      "grade_level": "11",
+      "first_appearance": "Section 1: The Problem with Making Things Agree"
+    },
+    {
+      "term": "presupposes",
+      "category": "philosophy",
+      "definition": "Assumes something is true before having proof.",
+      "example": "Like assuming someone is guilty before the trial starts.",
+      "grade_level": "11",
+      "first_appearance": "Section 1: The Problem with Making Things Agree"
+    },
+    {
+      "term": "peer pressure",
+      "category": "academic",
+      "definition": "Influence from others to think or act a certain way.",
+      "example": "Like your friends convincing you to like a song you don't really like.",
+      "grade_level": "9",
+      "first_appearance": "Section 1: The Problem with Making Things Agree"
+    },
+    {
+      "term": "architectures",
+      "category": "physics",
+      "definition": "The design or structure of a system, like how an AI is built.",
+      "example": "Like the blueprint of a house showing how rooms are arranged.",
+      "grade_level": "11",
+      "first_appearance": "Section 2: The Method — Don't Let Them Talk"
+    },
+    {
+      "term": "training data",
+      "category": "academic",
+      "definition": "The information used to teach an AI how to think.",
+      "example": "Like textbooks and examples a student studies to learn a subject.",
+      "grade_level": "college",
+      "first_appearance": "Section 2: The Method — Don't Let Them Talk"
+    },
+    {
+      "term": "prompted",
+      "category": "framework",
+      "definition": "Given instructions or questions to start a task.",
+      "example": "Like a teacher saying 'Write an essay about your summer.'",
+      "grade_level": "10",
+      "first_appearance": "Section 2: The Method — Don't Let Them Talk"
+    },
+    {
+      "term": "signal",
+      "category": "academic",
+      "definition": "A meaningful piece of information in data.",
+      "example": "Like a flashing light that tells you there's a message.",
+      "grade_level": "10",
+      "first_appearance": "Section 2: The Method — Don't Let Them Talk"
+    },
+    {
+      "term": "divergence",
+      "category": "framework",
+      "definition": "When things go in different directions or disagree.",
+      "example": "Like two friends who choose different movies to watch.",
+      "grade_level": "11",
+      "first_appearance": "Section 2: The Method — Don't Let Them Talk"
+    },
+    {
+      "term": "engineering a result",
+      "category": "academic",
+      "definition": "Designing a process to get a specific outcome on purpose.",
+      "example": "Like building a machine that always makes a perfect circle.",
+      "grade_level": "college",
+      "first_appearance": "Section 2: The Method — Don't Let Them Talk"
+    },
+    {
+      "term": "discovering one",
+      "category": "academic",
+      "definition": "Finding a result that happens naturally, without forcing it.",
+      "example": "Like finding a fossil in the ground — you didn't make it, you found it.",
+      "grade_level": "10",
+      "first_appearance": "Section 2: The Method — Don't Let Them Talk"
+    },
+    {
+      "term": "load-bearing liberty provisions",
+      "category": "framework",
+      "definition": "The most important parts of the Constitution that protect freedom.",
+      "example": "Like the main pillars holding up a building — if they break, the building falls.",
+      "grade_level": "college",
+      "first_appearance": "Section 3: Proof of Concept — Four AIs, One Constitution"
+    },
+    {
+      "term": "systematically counteracted",
+      "category": "academic",
+      "definition": "Weakened or opposed in a planned, organized way over time.",
+      "example": "Like someone slowly removing bricks from a wall until it collapses.",
+      "grade_level": "college",
+      "first_appearance": "Section 3: Proof of Concept — Four AIs, One Constitution"
+    },
+    {
+      "term": "procedural amendments",
+      "category": "academic",
+      "definition": "Changes to the Constitution that set up how government works, not rights.",
+      "example": "Like rules for how to count votes in an election.",
+      "grade_level": "college",
+      "first_appearance": "Section 3: Proof of Concept — Four AIs, One Constitution"
+    },
+    {
+      "term": "intact",
+      "category": "academic",
+      "definition": "Still whole and not broken or changed.",
+      "example": "Like a toy that hasn't been damaged.",
+      "grade_level": "10",
+      "first_appearance": "Section 3: Proof of Concept — Four AIs, One Constitution"
+    },
+    {
+      "term": "pre-specified conclusion",
+      "category": "academic",
+      "definition": "A result that was decided on before the experiment started.",
+      "example": "Like a teacher saying 'The answer is 5' before you solve the problem.",
+      "grade_level": "college",
+      "first_appearance": "Section 3: Proof of Concept — Four AIs, One Constitution"
+    },
+    {
+      "term": "eroded",
+      "category": "academic",
+      "definition": "Worn away or weakened over time.",
+      "example": "Like a rock slowly worn down by water.",
+      "grade_level": "10",
+      "first_appearance": "Section 3: Proof of Concept — Four AIs, One Constitution"
+    },
+    {
+      "term": "provision-level rankings",
+      "category": "framework",
+      "definition": "A list of how much each part of the Constitution is honored, from most to least.",
+      "example": "Like a report card for each rule in the Constitution.",
+      "grade_level": "college",
+      "first_appearance": "Section 3: Proof of Concept — Four AIs, One Constitution"
+    },
+    {
+      "term": "Fourth, Fifth, Ninth, and Tenth Amendments",
+      "category": "theology",
+      "definition": "Parts of the U.S. Constitution that protect rights like privacy, fair trials, and states' powers.",
+      "example": "Like rules that say police can't search your room without a good reason.",
+      "grade_level": "10",
+      "first_appearance": "Section 3: Proof of Concept — Four AIs, One Constitution"
+    },
+    {
+      "term": "Third Amendment",
+      "category": "theology",
+      "definition": "A part of the Constitution that says soldiers can't live in your house without permission.",
+      "example": "Like a rule that strangers can't stay in your home unless you say yes.",
+      "grade_level": "10",
+      "first_appearance": "Section 3: Proof of Concept — Four AIs, One Constitution"
+    },
+    {
+      "term": "substantially honored",
+      "category": "academic",
+      "definition": "Followed and respected for the most part.",
+      "example": "Like a rule that everyone usually obeys.",
+      "grade_level": "11",
+      "first_appearance": "Section 3: Proof of Concept — Four AIs, One Constitution"
+    },
+    {
+      "term": "legal doctrine",
+      "category": "academic",
+      "definition": "The set of rules and principles that courts use to make decisions.",
+      "example": "Like a judge's rulebook for deciding cases.",
+      "grade_level": "college",
+      "first_appearance": "Section 3: Proof of Concept — Four AIs, One Constitution"
+    },
+    {
+      "term": "Supreme Court",
+      "category": "theology",
+      "definition": "The highest court in the United States that makes final decisions on laws.",
+      "example": "Like the head judge who has the last word.",
+      "grade_level": "9",
+      "first_appearance": "Section 3: Proof of Concept — Four AIs, One Constitution"
+    },
+    {
+      "term": "upheld",
+      "category": "academic",
+      "definition": "Supported or agreed that something is valid.",
+      "example": "Like a judge saying a law is okay and can stay.",
+      "grade_level": "10",
+      "first_appearance": "Section 3: Proof of Concept — Four AIs, One Constitution"
+    },
+    {
+      "term": "noise",
+      "category": "academic",
+      "definition": "Random or meaningless data that can hide the real signal.",
+      "example": "Like static on a radio that makes it hard to hear the music.",
+      "grade_level": "10",
+      "first_appearance": "Section 3: Proof of Concept — Four AIs, One Constitution"
+    },
+    {
+      "term": "measurement",
+      "category": "academic",
+      "definition": "The act of finding the size, amount, or degree of something.",
+      "example": "Like using a ruler to find the length of a table.",
+      "grade_level": "9",
+      "first_appearance": "Section 3: Proof of Concept — Four AIs, One Constitution"
+    },
+    {
+      "term": "contract",
+      "category": "academic",
+      "definition": "A formal agreement between two or more parties.",
+      "example": "Like a written promise to do something, like mow a lawn for $20.",
+      "grade_level": "9",
+      "first_appearance": "Section 3: Proof of Concept — Four AIs, One Constitution"
+    },
+    {
+      "term": "averaged away",
+      "category": "math",
+      "definition": "Lost or hidden because it was combined with other numbers.",
+      "example": "Like one very high score being hidden when you average it with many low scores.",
+      "grade_level": "11",
+      "first_appearance": "Section 3: Proof of Concept — Four AIs, One Constitution"
+    },
+    {
+      "term": "sycophancy",
+      "category": "academic",
+      "definition": "Agreeing with others just to fit in, not because you believe it.",
+      "example": "Like saying you like a movie because your friends do, even if you don't.",
+      "grade_level": "college",
+      "first_appearance": "Section 4: How This Differs from Existing Methods"
+    },
+    {
+      "term": "standardized rubric",
+      "category": "academic",
+      "definition": "A fixed set of rules for scoring or grading.",
+      "example": "Like a checklist a teacher uses to grade essays the same way every time.",
+      "grade_level": "college",
+      "first_appearance": "Section 5: The Formal Method"
+    },
+    {
+      "term": "cross-contamination",
+      "category": "academic",
+      "definition": "When information from one source accidentally affects another.",
+      "example": "Like a student seeing someone else's answers and changing their own.",
+      "grade_level": "college",
+      "first_appearance": "Section 5: The Formal Method"
+    },
+    {
+      "term": "Green/Yellow/Red flags",
+      "category": "framework",
+      "definition": "A simple system to show if something is good (green), uncertain (yellow), or bad (red).",
+      "example": "Like a traffic light for ideas — green means go, red means stop.",
+      "grade_level": "9",
+      "first_appearance": "Section 5: The Formal Method"
+    },
+    {
+      "term": "BAES Framework",
+      "category": "framework",
+      "definition": "The full system for testing AI agreement, including a manager and rules for outliers.",
+      "example": "Like a complete set of rules for a game.",
+      "grade_level": "college",
+      "first_appearance": "Section 6: The BAES Framework"
+    },
+    {
+      "term": "Manager Role",
+      "category": "framework",
+      "definition": "An AI that looks at all results, checks for agreement, and makes a final decision.",
+      "example": "Like a referee who watches the game and makes the final call.",
+      "grade_level": "college",
+      "first_appearance": "Section 6: The BAES Framework"
+    },
+    {
+      "term": "sealed",
+      "category": "academic",
+      "definition": "Kept secret or closed until a certain time.",
+      "example": "Like a sealed envelope that can't be opened until the right moment.",
+      "grade_level": "10",
+      "first_appearance": "Section 6: The BAES Framework"
+    },
+    {
+      "term": "convergence analysis",
+      "category": "framework",
+      "definition": "The process of checking how much different results agree.",
+      "example": "Like comparing answers from several students to see if they match.",
+      "grade_level": "college",
+      "first_appearance": "Section 6: The BAES Framework"
+    },
+    {
+      "term": "Outlier Protocol",
+      "category": "framework",
+      "definition": "A set of steps for handling results that are very different from others.",
+      "example": "Like a special procedure for a student who gets a very different score.",
+      "grade_level": "college",
+      "first_appearance": "Section 6: The BAES Framework"
+    },
+    {
+      "term": "Divergent systems",
+      "category": "framework",
+      "definition": "AI systems that give results different from the majority.",
+      "example": "Like a student who answers differently from everyone else.",
+      "grade_level": "college",
+      "first_appearance": "Section 6: The BAES Framework"
+    },
+    {
+      "term": "Training Data Dominance",
+      "category": "framework",
+      "definition": "When agreement is caused by AIs learning from the same information.",
+      "example": "Like two students giving the same wrong answer because they used the same bad textbook.",
+      "grade_level": "college",
+      "first_appearance": "Section 7: Falsification Criteria"
+    },
+    {
+      "term": "Prompt Contamination",
+      "category": "framework",
+      "definition": "When the instructions given to an AI accidentally suggest the answer.",
+      "example": "Like a teacher asking 'Why is the sky blue?' instead of 'What color is the sky?'",
+      "grade_level": "college",
+      "first_appearance": "Section 7: Falsification Criteria"
+    },
+    {
+      "term": "neutral prompting",
+      "category":

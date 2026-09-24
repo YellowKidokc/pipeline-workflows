@@ -1,0 +1,580 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "Optics",
+        "type": "physics",
+        "strength": 10
+      },
+      {
+        "name": "Economics",
+        "type": "other",
+        "strength": 9
+      },
+      {
+        "name": "Theology",
+        "type": "theology",
+        "strength": 7
+      },
+      {
+        "name": "Mathematics",
+        "type": "mathematics",
+        "strength": 8
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "M",
+        "present": true,
+        "role": "Purchasing power as economic meaning/mass",
+        "strength": 7
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Absorbed energy as extracted value",
+        "strength": 6
+      },
+      {
+        "variable": "S",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Judgment on economic extraction systems",
+        "strength": 5
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Information structure of transaction fees",
+        "strength": 6
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "Economic relationships as signal transmission",
+        "strength": 7
+      },
+      {
+        "variable": "Q",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "F",
+        "present": true,
+        "role": "Weak force analog in economic extraction",
+        "strength": 5
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence degradation through absorptive media",
+        "strength": 8
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "Existence of Beer-Lambert law as fundamental physics structure"
+      },
+      {
+        "id": "A1.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A5.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC6",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A1.3",
+        "invoked": true,
+        "how": "Information primacy of mathematical structure mapping"
+      },
+      {
+        "id": "T3.1",
+        "invoked": true,
+        "how": "Coherence cannot self-increase - economic extraction degrades coherence"
+      },
+      {
+        "id": "BC2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "Information conservation in economic signal transmission"
+      },
+      {
+        "id": "BC8",
+        "invoked": false,
+        "how": ""
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": false,
+        "manifestations": []
+      },
+      "son": {
+        "present": false,
+        "manifestations": []
+      },
+      "spirit": {
+        "present": false,
+        "manifestations": []
+      },
+      "trinitarian_structure": "none"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-037",
+        "domain_a": "Optics",
+        "domain_b": "Economics/Theology",
+        "strength": 9,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "false balance",
+        "context": "Proverbs 11:1 - transaction fees as invisible weight on exchange",
+        "weight": 7
+      },
+      {
+        "concept": "judgment",
+        "context": "Economic extraction systems as moral degradation",
+        "weight": 5
+      },
+      {
+        "concept": "coherence",
+        "context": "Signal integrity degradation through absorptive media",
+        "weight": 8
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "isomorphism",
+        "context": "Structural mapping between physics and economics",
+        "weight": 10
+      },
+      {
+        "concept": "exponential decay",
+        "context": "Mathematical form shared by both domains",
+        "weight": 9
+      },
+      {
+        "concept": "causal structure",
+        "context": "Medium determines absorption rate independent of signal",
+        "weight": 8
+      },
+      {
+        "concept": "falsification",
+        "context": "Testable predictions for economic extraction",
+        "weight": 7
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "love",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "patience",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "faithfulness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "self_control",
+        "present": false,
+        "strength": 0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "domain:Optics",
+      "to": "domain:Economics",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "domain:Optics",
+      "to": "domain:Theology",
+      "relation": "maps_to",
+      "weight": 6
+    },
+    {
+      "from": "chi_variable:C",
+      "to": "chi_variable:M",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "chi_variable:C",
+      "to": "chi_variable:E",
+      "relation": "produces",
+      "weight": 6
+    },
+    {
+      "from": "chi_variable:T",
+      "to": "chi_variable:F",
+      "relation": "supports",
+      "weight": 5
+    },
+    {
+      "from": "chi_variable:K",
+      "to": "chi_variable:R",
+      "relation": "requires",
+      "weight": 6
+    },
+    {
+      "from": "axiom:A1.1",
+      "to": "domain:Optics",
+      "relation": "supports",
+      "weight": 10
+    },
+    {
+      "from": "axiom:A1.3",
+      "to": "isomorphism:ISO-037",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "axiom:BC7",
+      "to": "chi_variable:C",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "axiom:T3.1",
+      "to": "chi_variable:C",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "theological_concept:false balance",
+      "to": "chi_variable:T",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "theological_concept:coherence",
+      "to": "chi_variable:C",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "logical_concept:exponential decay",
+      "to": "domain:Mathematics",
+      "relation": "contains",
+      "weight": 9
+    },
+    {
+      "from": "logical_concept:isomorphism",
+      "to": "isomorphism:ISO-037",
+      "relation": "contains",
+      "weight": 10
+    },
+    {
+      "from": "logical_concept:falsification",
+      "to": "domain:Economics",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "domain:Economics",
+      "to": "chi_variable:M",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "domain:Economics",
+      "to": "chi_variable:R",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "domain:Optics",
+      "to": "chi_variable:E",
+      "relation": "maps_to",
+      "weight": 6
+    },
+    {
+      "from": "domain:Optics",
+      "to": "chi_variable:C",
+      "relation": "maps_to",
+      "weight": 8
+    }
+  ],
+  "tags": {
+    "primary": [
+      "isomorphism",
+      "economic extraction",
+      "Beer-Lambert law",
+      "coherence degradation",
+      "transaction fees"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/theology",
+      "pillar/mathematics"
+    ],
+    "series": "isomorphism",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "Proverbs 11:1",
+        "context": "False balance as abomination - transaction fees as invisible weight"
+      }
+    ],
+    "academic": [
+      {
+        "ref": "Beer-Lambert Law (Bouguer 1729, Lambert 1760, Beer 1852)",
+        "context": "Fundamental physics law of absorption"
+      },
+      {
+        "ref": "Cantillon Effect (1755)",
+        "context": "Those closest to extraction point benefit most"
+      },
+      {
+        "ref": "Federal Reserve Payments Study",
+        "context": "US interchange fee data"
+      },
+      {
+        "ref": "Nilson Report",
+        "context": "Payment card industry data"
+      },
+      {
+        "ref": "BIS, World Bank",
+        "context": "Digital payment penetration rates"
+      },
+      {
+        "ref": "BLS Consumer Expenditure Survey",
+        "context": "Consumer expenditure by income quintile"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "ISO-005",
+        "context": "Fiat/Phantom Energy - companion economic mechanism"
+      },
+      {
+        "ref": "ISO-003",
+        "context": "Entropy/Sin - degradation from extraction"
+      },
+      {
+        "ref": "ISO-002",
+        "context": "Grace/Terminus Sui - conservation structure"
+      },
+      {
+        "ref": "ISO-008",
+        "context": "Coherence/Order - signal integrity"
+      }
+    ],
+    "total_count": 10
+  },
+  "word_anomalies": [
+    {
+      "word": "absorptive medium",
+      "frequency": 8,
+      "significance": "Central concept mapping physics to economics"
+    },
+    {
+      "word": "intermediary layer",
+      "frequency": 5,
+      "significance": "Economic analog of absorptive medium"
+    },
+    {
+      "word": "Cantillon Effect",
+      "frequency": 1,
+      "significance": "Economic concept mapping to medium heating"
+    },
+    {
+      "word": "ontological asymmetry",
+      "frequency": 2,
+      "significance": "Key distinction from ISO-005 weakness"
+    },
+    {
+      "word": "swap test",
+      "frequency": 3,
+      "significance": "Methodology for testing isomorphism strength"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "Analytical and structural - seeks to establish a rigorous mathematical isomorphism between physics and economics",
+    "Q1_identity": "An isomorphism record documenting the structural mapping between Beer-Lambert absorption and transaction fee extraction",
+    "Q2_domain": "Physics, Economics, Theology, Mathematics",
+    "Q3_claim": "Transaction fee extraction follows the exact mathematical form of Beer-Lambert absorption, making it a structural isomorphism rather than mere analogy",
+    "Q4_support": "Mathematical derivation showing (1-f)^n = e^(n\u00b7ln(1-f)) \u2248 e^(-fn), element-by-element mapping, swap test passing, falsification criteria, and quantitative examples",
+    "Q5_dependencies": "Beer-Lambert law, transaction fee economics, exponential decay mathematics, conservation axioms",
+    "Q6_consequences": "Predicts exponential purchasing power decay with mandatory digital payment, intermediary enrichment, disproportionate impact on poor, and testable cross-country comparisons",
+    "Q7_kill": "Showing transaction fee extraction does NOT follow exponential decay, or that economies with mandatory digital payment do NOT show higher intermediary extraction"
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "ISO-005 (Fiat/Phantom Energy)",
+      "ISO-003 (Entropy/Sin)",
+      "ISO-002 (Grace)",
+      "ISO-008 (Coherence/Order)"
+    ],
+    "required_by": [],
+    "parallel_to": [
+      "ISO-005"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 28,
+    "total_edges": 20,
+    "dominant_domain": "Optics",
+    "dominant_chi": "C (Coherence)",
+    "connectivity_score": 8,
+    "one_sentence": "This document establishes a structural isomorphism between Beer-Lambert absorption in optics and transaction fee extraction in economics, showing both follow identical exponential decay mathematics with the medium determining absorption rate independent of signal."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": false,
+      "how": ""
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Coherence conservation (div(C)=0) invoked as axiom dependency"
+    },
+    "4_7_love_relationship": {
+      "active": true,
+      "how": "Economic relationships as signal transmission through absorptive media"
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Judgment on economic extraction systems, information structure of fees"
+    },
+    "pairs_active_count": 3
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": false,
+      "strength": 0
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 8
+    },
+    "love": {
+      "present": false,
+      "strength": 0
+    },
+    "judgment": {
+      "present": true,
+      "strength": 5
+    },
+    "logos": {
+      "present": true,
+      "strength": 6
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": false,
+      "strength": 0
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": false,
+      "strength": 0
+    },
+    "operators_present_count": 3
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "ISO-005 (Fiat/Phantom Energy)",
+      "ISO-003 (Entropy/Sin)",
+      "ISO-002 (Grace)"
+    ],
+    "read_after": [
+      "ISO-008 (Coherence/Order)",
+      "The Breaking of Money Phantom Energy"
+    ]
+  }
+}

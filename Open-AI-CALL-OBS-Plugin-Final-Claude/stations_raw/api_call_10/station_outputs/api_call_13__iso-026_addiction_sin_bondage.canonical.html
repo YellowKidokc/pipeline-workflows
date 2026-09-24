@@ -1,0 +1,460 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISO-026 · Addiction / Sin Bondage · Theophysics Registry</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:opsz,wght@14..32,300..700&family=JetBrains+Mono:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --gold-glow: rgba(212, 175, 55, 0.08);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border: #2a2a2a;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
+    .section-number {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+      margin-bottom: -1.2rem;
+      pointer-events: none;
+      user-select: none;
+    }
+    .gradient-sep {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 2.5rem 0 2rem 0;
+      opacity: 0.5;
+    }
+    .verse-ref {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: #6b7280;
+      letter-spacing: 0.02em;
+    }
+    /* cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      transition: border-color 0.2s;
+    }
+    .card-gold { border-top: 3px solid var(--gold); }
+    .card-blue { border-top: 3px solid var(--info); }
+    .card-red { border: 1px solid rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05); }
+    /* grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .grid-2, .grid-4 { grid-template-columns: 1fr; }
+      body { padding: 1.25rem; }
+    }
+    /* badges */
+    .badge {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.9rem;
+      border-radius: 30px;
+      text-transform: uppercase;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .badge-green { background: rgba(34, 197, 94, 0.15); color: var(--success); border-color: var(--success); }
+    .badge-yellow { background: rgba(234, 179, 8, 0.15); color: #eab308; border-color: #eab308; }
+    .badge-gold { background: rgba(212, 175, 55, 0.15); color: var(--gold); border-color: var(--gold); }
+    .badge-info { background: rgba(74, 158, 255, 0.12); color: var(--info); border-color: var(--info); }
+    /* hero */
+    .hero {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(10, 10, 10, 0.9) 80%);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 20px;
+      padding: 2rem 2rem 2.5rem 2rem;
+      margin: 1.5rem 0 2.5rem 0;
+    }
+    .hero .grid-2 { align-items: center; }
+    .law-badge {
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.12);
+      color: var(--gold);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      margin-bottom: 0.75rem;
+    }
+    .pull-quote {
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.25rem;
+      margin: 1.25rem 0 0.5rem 0;
+      color: #d1d5db;
+    }
+    .equation-card {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(212,175,55,0.25);
+      border-radius: 14px;
+      padding: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+    .equation-card .arrow { color: var(--gold); font-size: 1.6rem; display: block; text-align: center; margin: 0.5rem 0; }
+    /* mapping table */
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .mapping-table th {
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold);
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+      padding: 0.9rem 1rem;
+      border-bottom: 2px solid var(--gold);
+      text-align: left;
+    }
+    .mapping-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .mapping-table tr:last-child td { border-bottom: none; }
+    .mapping-table tr:hover td { background: rgba(212, 175, 55, 0.03); }
+    /* test cards */
+    .test-pass { color: var(--success); font-weight: 700; font-family: var(--font-heading); letter-spacing: 0.04em; }
+    .test-fail { color: var(--danger); font-weight: 700; font-family: var(--font-heading); letter-spacing: 0.04em; }
+    /* chips */
+    .chip {
+      display: inline-block;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 0.3rem 1rem;
+      font-size: 0.75rem;
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      margin: 0.2rem 0.3rem;
+    }
+    .chip-gold { border-color: var(--gold); color: var(--gold); background: rgba(212,175,55,0.08); }
+    /* footer */
+    .footer-seal {
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.7;
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+    }
+    a { color: var(--info); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .mono { font-family: var(--font-mono); font-size: 0.85rem; }
+    .gold-text { color: var(--gold); }
+    .text-small { font-size: 0.8rem; color: var(--text-muted); }
+    .mt-1 { margin-top: 1rem; }
+    .mb-1 { margin-bottom: 1rem; }
+    .inline-icon { margin-right: 0.4rem; }
+  </style>
+</head>
+<body>
+
+<!-- 1. REGISTRY HEADER -->
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-bottom: 0.5rem;">
+  <div style="display: flex; align-items: center; gap: 0.75rem;">
+    <span style="font-family: var(--font-heading); font-size: 2.4rem; font-weight: 700; color: var(--gold); letter-spacing: 0;">Φ</span>
+    <div>
+      <h1 style="font-size: 1.5rem; margin: 0; line-height: 1.2;">THEOPHYSICS REGISTRY</h1>
+      <span style="font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.04em; text-transform: uppercase;">Faiththruphysics.com</span>
+    </div>
+  </div>
+  <div style="display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; align-items: center;">
+    <span class="badge badge-gold" style="font-size:0.75rem;"><i class="fa-regular fa-file-lines" style="margin-right:0.4rem;"></i>ISO-026</span>
+    <span class="badge badge-green"><i class="fa-regular fa-circle-check" style="margin-right:0.3rem;"></i>Level 3 · Isomorphism</span>
+    <span class="badge badge-info"><i class="fa-regular fa-chart-line" style="margin-right:0.3rem;"></i>Confidence: High</span>
+    <span class="badge" style="border-color: #6b7280;">v1.0 · 2026-03-10</span>
+  </div>
+</div>
+<div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.25rem;">
+  <i class="fa-regular fa-bookmark" style="margin-right:0.4rem; color: var(--gold);"></i>Addiction / Sin Bondage — Neuroscience ↔ Hamartiology of Habit
+</div>
+
+<!-- 2. HERO BANNER -->
+<div class="hero">
+  <div class="grid-2">
+    <div>
+      <span class="law-badge"><i class="fa-regular fa-gavel" style="margin-right:0.3rem;"></i>LAW 4 · INCOMPLETENESS</span>
+      <h2 style="font-size: 2rem; line-height: 1.2; margin: 0.5rem 0 0.25rem 0;">
+        Addiction <span style="color: var(--gold);">⇄</span> Sin Bondage
+      </h2>
+      <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+        <i class="fa-regular fa-microchip" style="margin-right:0.3rem;"></i>Neuroscience · <i class="fa-regular fa-cross" style="margin-right:0.3rem;"></i>Theology
+      </div>
+      <div class="pull-quote">
+        “The addict's decision-making apparatus is precisely the system that addiction compromises. The sinner's moral will is precisely the faculty that sin corrupts. Both exhibit the Terminus Sui structure: the system that must choose rescue is the system that needs rescue.”
+      </div>
+      <div class="verse-ref" style="margin-top:0.5rem;">— Romans 7:18 · AA Step 1 · ISO-002</div>
+    </div>
+    <div>
+      <div class="equation-card">
+        <div><span style="color: var(--gold);">Domain A</span> <span style="color: #6b7280;">Neuroscience</span></div>
+        <div style="margin-top:0.3rem;">dR/dt &lt; 0 &nbsp;·&nbsp; A(t) = ∫₀ᵗ [stress(τ) − recovery(τ)] dτ</div>
+        <div class="arrow">⟷</div>
+        <div><span style="color: var(--gold);">Domain B</span> <span style="color: #6b7280;">Theology</span></div>
+        <div style="margin-top:0.3rem;">dM/dt &lt; 0 &nbsp;·&nbsp; A<sub>m</sub>(t) = ∫₀ᵗ [sin(τ) − grace(τ)] dτ</div>
+        <div style="margin-top:0.8rem; font-size:0.7rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top:0.6rem;">
+          <i class="fa-regular fa-circle-check" style="color:var(--success);"></i> Topological isomorphism · dR/dt ↔ dM/dt
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. DOMAIN SPECIFICATIONS -->
+<div>
+  <div class="section-number">01</div>
+  <h2 style="font-size: 1.3rem; margin-bottom: 1rem;">Domain Specifications</h2>
+  <div class="grid-2">
+    <div class="card card-blue">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem;">
+        <i class="fa-solid fa-brain" style="color: var(--info); font-size: 1.4rem;"></i>
+        <h3 style="font-size: 1rem; margin:0;">Domain A · Neuroscience</h3>
+      </div>
+      <p style="font-size:0.9rem; color: var(--text-muted);">Addiction — tolerance, sensitization, allostatic load, withdrawal, relapse, dopamine dysregulation, neuroplasticity.</p>
+      <p style="font-size:0.85rem; margin-top:0.5rem;">Progressive neuroadaptive process: reward system recalibrates around addictive stimulus. Tolerance (diminishing returns), allostatic load (cumulative damage), withdrawal (suffering upon removal). Recovery requires external support — the hijacked system cannot self-rescue.</p>
+      <div class="verse-ref" style="margin-top:0.6rem;"><i class="fa-regular fa-flask"></i> Koob & Le Moal 2001 · Volkow 2016</div>
+    </div>
+    <div class="card card-gold">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem;">
+        <i class="fa-regular fa-cross" style="color: var(--gold); font-size: 1.4rem;"></i>
+        <h3 style="font-size: 1rem; margin:0;">Domain B · Hamartiology of Habit</h3>
+      </div>
+      <p style="font-size:0.9rem; color: var(--text-muted);">Sin bondage — progressive enslavement, Romans 7 conflict, liberation, sanctification as rewiring.</p>
+      <p style="font-size:0.85rem; margin-top:0.5rem;">Progressive moral process: moral agent recalibrates around sinful pattern. Desensitization (diminishing moral response), cumulative moral damage (hardening), repentance pain (withdrawal). Liberation requires external grace — the enslaved will cannot free itself.</p>
+      <div class="verse-ref" style="margin-top:0.6rem;"><i class="fa-regular fa-book-open"></i> Romans 7:15 · John 8:34 · Galatians 5:1</div>
+    </div>
+  </div>
+</div>
+
+<div class="gradient-sep"></div>
+
+<!-- 4. THE ISOMORPHIC MAPPING -->
+<div>
+  <div class="section-number">02</div>
+  <h2 style="font-size: 1.3rem; margin-bottom: 1rem;">The Isomorphic Mapping</h2>
+  <p style="font-size:0.85rem; color: var(--text-muted); margin-bottom:1.2rem;">Structural isomorphism — 10 independent correspondences. Relations survive mapping; non-arbitrary; bidirectional constraint.</p>
+  <div style="overflow-x: auto;">
+    <table class="mapping-table">
+      <thead>
+        <tr><th style="width:28%;">Domain A · Neuroscience</th><th style="width:28%;">Domain B · Theology</th><th style="width:44%;">Shared Structure / Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Tolerance — dR/dt &lt; 0</td><td>Moral desensitization — dM/dt &lt; 0</td><td>Same dose produces diminishing effect; escalation required. Romans 1:24-28 maps onto tolerance-escalation curve.</td></tr>
+        <tr><td>Allostatic load — A(t) = ∫₀ᵗ [stress−recovery] dτ</td><td>Moral allostatic load — A<sub>m</sub>(t) = ∫₀ᵗ [sin−grace] dτ</td><td>System adapts to dysfunction as new baseline; cumulative damage from sustained dysregulation.</td></tr>
+        <tr><td>Withdrawal — suffering upon removal</td><td>Repentance pain — grief, disorientation</td><td>Removal causes suffering because system recalibrated to expect the stimulus. Pain is cost of recalibration, not punishment.</td></tr>
+        <tr><td>Neural pathway entrenchment (LTP, dendritic growth)</td><td>Habit formation — “sin binds” (John 8:34)</td><td>Repeated behavior physically rewires neural pathways; neuroplasticity encodes behavioral patterns into brain structure.</td></tr>
+        <tr><td>Self-rescue impossibility — prefrontal cortex compromise</td><td>Terminus Sui — will corrupted by sin (Rom 7:18)</td><td>The system that must choose rescue is the system that needs rescue. AA Step 1 = Terminus Sui in clinical language.</td></tr>
+        <tr><td>External intervention required — AA Step 2</td><td>Grace coupling — α(u→0) from ISO-002</td><td>External input required to reverse internal degradation. Second Law reversal structure (ISO-003).</td></tr>
+        <tr><td>Relapse — predictable triggers (cues, stress, isolation)</td><td>Backsliding — re-engagement with external support needed</td><td>Old pathways persist alongside new ones; vulnerability remains. Relapse does not invalidate recovery.</td></tr>
+        <tr><td>Cross-tolerance — alcohol ↑ nicotine/gambling risk</td><td>Sin clusters — “besetting sin” (Heb 12:1)</td><td>Addiction to one substance increases vulnerability to others; sin in one area weakens resistance in others. Systemic degradation.</td></tr>
+        <tr><td>Dopamine hijacking — reward system redirected to non-survival objects</td><td>Idolatry — worship redirected to created things (Rom 1:25)</td><td>Legitimate system misdirected toward illegitimate object; system not destroyed but misdirected.</td></tr>
+        <tr><td>Recovery community — AA, NA, social support</td><td>Ecclesiology — mutual upbuilding (Eph 4:16, Heb 10:24-25)</td><td>Social support is load-bearing, not optional. Strongest predictor of sustained recovery in both domains.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="margin-top:1rem; font-size:0.8rem; color: var(--text-muted);">
+    <i class="fa-regular fa-circle-exclamation" style="color:var(--gold);"></i> NOT claimed: sin = addiction, or addiction = sin. The isomorphism is topological, not metric. Time constants differ.
+  </div>
+</div>
+
+<div class="gradient-sep"></div>
+
+<!-- 5. SEPARATOR TESTS -->
+<div>
+  <div class="section-number">03</div>
+  <h2 style="font-size: 1.3rem; margin-bottom: 1rem;">Separator Tests</h2>
+  <div class="grid-4">
+    <div class="card">
+      <h4 style="font-size:0.85rem; letter-spacing:0.06em; margin-bottom:0.3rem;"><i class="fa-regular fa-sitemap" style="color:var(--info);"></i> Test A · Structural Preservation</h4>
+      <p style="font-size:0.8rem; color:var(--text-muted);">Do relations survive under mapping? Tolerance, allostatic load, withdrawal, self-rescue impossibility — all map to parallel structures in theology.</p>
+      <div style="margin-top:0.6rem;"><span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span> <span class="verse-ref">— 10/10 relations preserved</span></div>
+    </div>
+    <div class="card">
+      <h4 style="font-size:0.85rem; letter-spacing:0.06em; margin-bottom:0.3rem;"><i class="fa-regular fa-shuffle" style="color:var(--gold);"></i> Test B · Non-Arbitrariness</h4>
+      <p style="font-size:0.8rem; color:var(--text-muted);">Swap addiction neuroscience with learning/memory or stress neuroscience. Learning lacks hijacking + self-rescue impossibility; stress lacks hijacking/idolatry. Mapping is specific.</p>
+      <div style="margin-top:0.6rem;"><span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span> <span class="verse-ref">— swap test passed</span></div>
+    </div>
+    <div class="card">
+      <h4 style="font-size:0.85rem; letter-spacing:0.06em; margin-bottom:0.3rem;"><i class="fa-regular fa-ban" style="color:var(--danger);"></i> Test C · Constraint</h4>
+      <p style="font-size:0.8rem; color:var(--text-muted);">Does the mapping rule things out? Yes: models claiming instantaneous, complete transformation with zero residual vulnerability are ruled out. Solitary sanctification predicted to fail.</p>
+      <div style="margin-top:0.6rem;"><span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span> <span class="verse-ref">— constrains both domains</span></div>
+    </div>
+    <div class="card">
+      <h4 style="font-size:0.85rem; letter-spacing:0.06em; margin-bottom:0.3rem;"><i class="fa-regular fa-arrow-right-arrow-left" style="color:var(--success);"></i> Test D · Bidirectionality</h4>
+      <p style="font-size:0.8rem; color:var(--text-muted);">Addiction science constrains theology (no self-rescue, residual vulnerability). Theology predicts addiction treatment requires community and addresses redirected-desire (idolatry).</p>
+      <div style="margin-top:0.6rem;"><span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span> <span class="verse-ref">— bidirectional predictions confirmed</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="gradient-sep"></div>
+
+<!-- 6. CLASSIFICATION & EVIDENCE -->
+<div>
+  <div class="section-number">04</div>
+  <h2 style="font-size: 1.3rem; margin-bottom: 1rem;">Classification &amp; Evidence</h2>
+  <div class="grid-2" style="margin-bottom:1.5rem;">
+    <div class="card">
+      <h3 style="font-size:0.9rem; color:var(--gold); margin-bottom:0.5rem;"><i class="fa-regular fa-diagram-project"></i> Classification</h3>
+      <div style="display:flex; flex-wrap:wrap; gap:0.4rem 0.8rem; margin-bottom:0.8rem;">
+        <span class="badge badge-green">Structural Isomorphism</span>
+        <span class="badge badge-gold">Level 2 · Reframe</span>
+        <span class="badge badge-info">Confidence: High</span>
+      </div>
+      <p style="font-size:0.85rem; color:var(--text-muted);">10 independent correspondences. Direct structural connections to ISO-002 (Terminus Sui) and ISO-003 (Entropy/Sin). AA Steps 1-2 independently discovered the same structure.</p>
+      <div style="margin-top:0.6rem; font-size:0.75rem; color:var(--text-muted);">
+        <i class="fa-regular fa-link"></i> Laws invoked: Law 2 (Conservation), Law 4 (Incompleteness), Law 6 (Entropy), Law 9 (Grace)
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="font-size:0.9rem; color:var(--gold); margin-bottom:0.5rem;"><i class="fa-regular fa-microscope"></i> Evidence Bundles</h3>
+      <div style="display:flex; flex-wrap:wrap; gap:0.3rem;">
+        <span class="chip chip-gold">DSM-5 SUD criteria</span>
+        <span class="chip chip-gold">PFC hypofunction (Goldstein & Volkow 2011)</span>
+        <span class="chip chip-gold">LTP reward pathways (Kauer & Malenka 2007)</span>
+        <span class="chip chip-gold">Romans 7:15-25</span>
+        <span class="chip chip-gold">Romans 1:24-28</span>
+        <span class="chip chip-gold">John 8:34</span>
+        <span class="chip chip-gold">Galatians 5:1</span>
+        <span class="chip chip-gold">James 1:14-15</span>
+        <span class="chip chip-gold">AA Twelve Steps (1-3)</span>
+        <span class="chip chip-gold">Hebrews 10:24-25</span>
+        <span class="chip chip-gold">Cochrane Review AA (Kelly 2020)</span>
+      </div>
+    </div>
+  </div>
+  <div style="font-size:0.8rem; color:var(--text-muted); border-left: 2px solid var(--gold); padding-left:1rem;">
+    <i class="fa-regular fa-arrow-right" style="color:var(--gold);"></i> <strong style="color:var(--text);">Axiom dependencies:</strong> A1.1 (Existence), Incompleteness of Closed Systems, Conservation (∇·χ = 0), Second Law — dR/dt &lt; 0 and dM/dt &lt; 0 are entropy-form degradation.
+  </div>
+</div>
+
+<div class="gradient-sep"></div>
+
+<!-- 7. FALSIFICATION CRITERIA -->
+<div>
+  <div class="section-number">05</div>
+  <h2 style="font-size: 1.3rem; margin-bottom: 1rem;">Falsification Criteria</h2>
+  <div class="card card-red">
+    <p style="font-size:0.85rem; margin-bottom:0.8rem; color: #fca5a5;"><i class="fa-regular fa-triangle-exclamation"></i> The isomorphism stands unless one of these kill conditions is met:</p>
+    <ol style="padding-left:1.5rem; font-size:0.85rem; color: var(--text-muted); line-height:1.8;">
+      <li><strong style="color:var(--text);">Break Terminus Sui in addiction:</strong> Show that addicts can reliably self-rescue through pure willpower without any external support. If spontaneous, unsupported recovery is the norm, the self-rescue impossibility parallel fails.</li>
+      <li><strong style="color:var(--text);">Break tolerance monotonicity:</strong> Show that continued use of an addictive substance, without intervention, leads to spontaneous re-sensitization (dR/dt &gt; 0 in a closed system). If tolerance reverses on its own while stimulus continues, the entropy parallel fails.</li>
+      <li><strong style="color:var(--text);">Break the community necessity:</strong> Show that solitary recovery (no sponsor, no group, no therapist, no community) produces outcomes as good as community-supported recovery. If isolation is not a risk factor, the ecclesiology mapping fails.</li>
+      <li><strong style="color:var(--text);">Break cross-tolerance:</strong> Show that addiction to one substance has zero effect on vulnerability to others — complete independence of reward pathways. If addiction is perfectly local with no systemic spread, the sin-cluster mapping fails.</li>
+      <li><strong style="color:var(--text);">Break the hijacking structure:</strong> Show that dopamine systems in addiction are not repurposed survival-motivation systems but entirely novel pathways with no prior adaptive function. If addiction does not involve misdirection of an existing system, the idolatry parallel fails.</li>
+    </ol>
+    <div class="verse-ref" style="margin-top:0.6rem;">Each condition is empirically testable. None have been met.</div>
+  </div>
+</div>
+
+<div class="gradient-sep"></div>
+
+<!-- 8. RELATED ISOMORPHISMS -->
+<div>
+  <div class="section-number">06</div>
+  <h2 style="font-size: 1.3rem; margin-bottom: 1rem;">Related Isomorphisms</h2>
+  <div class="grid-2">
+    <div class="card" style="border-left: 2px solid var(--info);">
+      <div style="display:flex; align-items:center; gap:0.5rem;">
+        <i class="fa-regular fa-circle-nodes" style="color:var(--info);"></i>
+        <h4 style="font-size:0.85rem; margin:0;">ISO-002 · Terminus Sui / Grace</h4>
+      </div>
+      <p style="font-size:0.8rem; color:var(--text-muted);">AA Steps 1-2 ARE Terminus Sui, independently discovered. The system that must choose rescue is the system that needs rescue.</p>
+    </div>
+    <div class="card" style="border-left: 2px solid var(--success);">
+      <div style="display:flex; align-items:center; gap:0.5rem;">
+        <i class="fa-regular fa-arrow-trend-down" style="color:var(--success);"></i>
+        <h4 style="font-size:0.85rem; margin:0;">ISO-003 · Entropy / Sin</h4>
+      </div>
+      <p style="font-size:0.8rem; color:var(--text-muted);">Addiction IS entropy in the reward system; dR/dt &lt; 0 has the same form as dS/dt ≥ 0. Monotonic degradation in closed systems.</p>
+    </div>
+    <div class="card" style="border-left: 2px solid var(--gold);">
+      <div style="display:flex; align-items:center; gap:0.5rem;">
+        <i class="fa-regular fa-shield" style="color:var(--gold);"></i>
+        <h4 style="font-size:0.85rem; margin:0;">ISO-025 · Immunology / Soteriology</h4>
+      </div>
+      <p style="font-size:0.8rem; color:var(--text-muted);">Tolerance/desensitization parallels immune anergy; cross-tolerance parallels immune compromise.</p>
+    </div>
+    <div class="card" style="border-left: 2px solid #a855f7;">
+      <div style="display:flex; align-items:center; gap:0.5rem;">
+        <i class="fa-regular fa-biohazard" style="color:#a855f7;"></i>
+        <h4 style="font-size:0.85rem; margin:0;">ISO-027 · Epidemiology / Sin Propagation</h4>
+      </div>
+      <p style="font-size:0.8rem; color:var(--text-muted);">Addiction spreads through social networks with measurable R₀. Parallel to sin contagion structures.</p>
+    </div>
+  </div>
+  <div style="margin-top:1rem; font-size:0.8rem; color:var(--text-muted);">
+    <i class="fa-regular fa-file-lines"></i> See also: <a href="#">Six Theorems That Accidentally Proved Grace</a>
+  </div>
+</div>
+
+<div class="gradient-sep"></div>
+
+<!-- 9. FOOTER -->
+<footer style="margin-top:2rem;">
+  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem;">
+    <div>
+      <h4 style="font-size:0.9rem; color:var(--gold); letter-spacing:0.08em; margin:0;">THEOPHYSICS RESEARCH PROGRAM</h4>
+      <div style="font-size:0

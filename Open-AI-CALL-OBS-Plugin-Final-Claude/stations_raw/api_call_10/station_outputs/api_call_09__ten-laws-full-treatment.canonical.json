@@ -1,0 +1,598 @@
+{
+  "definitions": [
+    {
+      "term": "entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system.",
+      "example": "A messy room has high entropy; a tidy room has low entropy.",
+      "grade_level": "12",
+      "first_appearance": "The Core Architecture"
+    },
+    {
+      "term": "decoherence",
+      "category": "physics",
+      "definition": "The process by which a quantum system loses its quantum properties and behaves classically.",
+      "example": "When you measure a particle, it stops being in multiple states at once and picks one.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text, but related to Law 08"
+    },
+    {
+      "term": "Lagrangian",
+      "category": "physics",
+      "definition": "A function that summarizes the dynamics of a system, used to derive equations of motion.",
+      "example": "It's like a recipe that tells you how a ball will move when you throw it.",
+      "grade_level": "college",
+      "first_appearance": "The Offer of Depth"
+    },
+    {
+      "term": "eigenmode",
+      "category": "physics",
+      "definition": "A natural vibration pattern of a system where all parts move at the same frequency.",
+      "example": "A guitar string vibrating at its fundamental frequency is in an eigenmode.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text, but related to framework"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation, how people are saved from sin and its consequences.",
+      "example": "Different religions have different soteriology, like how they believe someone goes to heaven.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "hamartiology",
+      "category": "theology",
+      "definition": "The study of sin, its origin, nature, and effects.",
+      "example": "Hamartiology asks questions like 'What is sin?' and 'How does it affect people?'",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "sanctification",
+      "category": "theology",
+      "definition": "The process of becoming more holy or morally pure, often through divine help.",
+      "example": "A person trying to be more kind and patient is undergoing sanctification.",
+      "grade_level": "12",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "atonement",
+      "category": "theology",
+      "definition": "The act of making amends for a wrong or sin, often through a sacrifice.",
+      "example": "In some religions, an animal sacrifice was used as atonement for sins.",
+      "grade_level": "12",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A mapping between two structures that shows they are essentially the same in form.",
+      "example": "A map of a subway system is isomorphic to the actual subway lines if it shows the same connections.",
+      "grade_level": "college",
+      "first_appearance": "The Offer of Depth"
+    },
+    {
+      "term": "bijection",
+      "category": "math",
+      "definition": "A one-to-one pairing between two sets where every element in one set matches exactly one in the other.",
+      "example": "If you have 5 apples and 5 oranges, you can make a bijection by pairing each apple with one orange.",
+      "grade_level": "12",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "Noether",
+      "category": "math",
+      "definition": "Refers to Emmy Noether's theorem, which links symmetries in physics to conservation laws.",
+      "example": "Because the laws of physics are the same everywhere, energy is conserved.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "tensor",
+      "category": "math",
+      "definition": "A mathematical object that describes relationships between vectors and scalars, often used in physics.",
+      "example": "Stress in a material is described by a tensor because it has different values in different directions.",
+      "grade_level": "college",
+      "first_appearance": "Law 01"
+    },
+    {
+      "term": "ontology",
+      "category": "philosophy",
+      "definition": "The study of what exists, the nature of being and reality.",
+      "example": "Ontology asks questions like 'Does God exist?' or 'Are numbers real?'",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "epistemology",
+      "category": "philosophy",
+      "definition": "The study of knowledge, how we know what we know.",
+      "example": "Epistemology asks 'How can we be sure of something?' or 'What is evidence?'",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "contingent",
+      "category": "philosophy",
+      "definition": "Something that could be different or not exist; dependent on something else.",
+      "example": "Your existence is contingent on your parents meeting.",
+      "grade_level": "12",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "necessary",
+      "category": "philosophy",
+      "definition": "Something that must exist and cannot be otherwise.",
+      "example": "A square must have four sides; that is a necessary truth.",
+      "grade_level": "12",
+      "first_appearance": "The Core Architecture"
+    },
+    {
+      "term": "chi-field",
+      "category": "framework",
+      "definition": "A field representing the maximum coherence state where all nine laws are fully integrated.",
+      "example": "Think of it as the ultimate harmony of the universe, like a perfectly tuned orchestra.",
+      "grade_level": "specialist",
+      "first_appearance": "The Offer of Depth"
+    },
+    {
+      "term": "coherence functional",
+      "category": "framework",
+      "definition": "A mathematical function that measures how well all parts of a system work together.",
+      "example": "It's like a score for how synchronized a team is.",
+      "grade_level": "specialist",
+      "first_appearance": "Not explicitly in text, but related to Law 10"
+    },
+    {
+      "term": "moral curvature",
+      "category": "framework",
+      "definition": "A concept describing how moral choices bend or shape the spiritual landscape.",
+      "example": "A lie might create a 'curve' that makes future lies easier.",
+      "grade_level": "specialist",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "empirical",
+      "category": "academic",
+      "definition": "Based on observation or experience, not just theory.",
+      "example": "A scientist does empirical research by running experiments.",
+      "grade_level": "12",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "falsifiable",
+      "category": "academic",
+      "definition": "Able to be proven wrong by evidence or experiment.",
+      "example": "The claim 'all swans are white' is falsifiable because finding one black swan disproves it.",
+      "grade_level": "12",
+      "first_appearance": "Law 10"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A statement that is accepted as true without proof, used as a starting point.",
+      "example": "In geometry, 'a straight line is the shortest distance between two points' is an axiom.",
+      "grade_level": "12",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "theorem",
+      "category": "academic",
+      "definition": "A statement that can be proven true using logic and axioms.",
+      "example": "The Pythagorean theorem is a proven relationship in geometry.",
+      "grade_level": "12",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "Logos",
+      "category": "language",
+      "definition": "A Greek word meaning 'word', 'reason', or 'principle', often used in theology to refer to Christ as the divine order.",
+      "example": "In the Bible, 'In the beginning was the Word (Logos)' means Christ was the source of all creation.",
+      "grade_level": "college",
+      "first_appearance": "Variable Reference"
+    },
+    {
+      "term": "chi",
+      "category": "language",
+      "definition": "The Greek letter χ, used here to represent the maximum coherence state.",
+      "example": "Chi is like the ultimate score of harmony in the universe.",
+      "grade_level": "college",
+      "first_appearance": "Law 10"
+    },
+    {
+      "term": "psi",
+      "category": "language",
+      "definition": "The Greek letter ψ, used here to represent a soul or spiritual state.",
+      "example": "Psi is like a variable for the condition of a person's soul.",
+      "grade_level": "college",
+      "first_appearance": "Law 01"
+    },
+    {
+      "term": "mu",
+      "category": "language",
+      "definition": "The Greek letter μ, used in physics for coefficients like friction.",
+      "example": "Not used in this text, but common in physics.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "nu",
+      "category": "language",
+      "definition": "The Greek letter ν, used here to represent a loss term in sin-decay.",
+      "example": "Nu is like the 'waste' produced when something breaks down.",
+      "grade_level": "college",
+      "first_appearance": "Law 09"
+    },
+    {
+      "term": "tau",
+      "category": "language",
+      "definition": "The Greek letter τ, used here to represent relational time or intimacy.",
+      "example": "Tau measures the depth of a relationship, like how close two people feel.",
+      "grade_level": "college",
+      "first_appearance": "Law 07"
+    },
+    {
+      "term": "kappa",
+      "category": "language",
+      "definition": "The Greek letter κ, used here to represent covenant tension.",
+      "example": "Kappa is like the strength of a rubber band that pulls you back when you drift away.",
+      "grade_level": "college",
+      "first_appearance": "Law 04"
+    },
+    {
+      "term": "lambda",
+      "category": "language",
+      "definition": "The Greek letter λ, used here as the Logos constant, the speed of truth propagation.",
+      "example": "Lambda is like the speed limit for how fast truth can spread.",
+      "grade_level": "college",
+      "first_appearance": "Variable Reference"
+    },
+    {
+      "term": "sigma",
+      "category": "language",
+      "definition": "The Greek letter σ, used here to represent entropy production or a sum.",
+      "example": "Sigma is like the rate at which messiness is created.",
+      "grade_level": "college",
+      "first_appearance": "Law 05"
+    },
+    {
+      "term": "omega",
+      "category": "language",
+      "definition": "The Greek letter ω, used in physics for angular frequency.",
+      "example": "Not used in this text, but common in physics.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "alpha",
+      "category": "language",
+      "definition": "The Greek letter α, used here to represent coupling constants like love or strong force.",
+      "example": "Alpha is like the strength of a magnet pulling things together.",
+      "grade_level": "college",
+      "first_appearance": "Law 04"
+    },
+    {
+      "term": "beta",
+      "category": "language",
+      "definition": "The Greek letter β, used in physics for beta decay or speed relative to light.",
+      "example": "Not used in this text, but common in physics.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "gamma",
+      "category": "language",
+      "definition": "The Greek letter Γ, used here to represent the Spirit or a decay rate.",
+      "example": "Gamma is like the rate at which something falls apart.",
+      "grade_level": "college",
+      "first_appearance": "Law 01"
+    },
+    {
+      "term": "delta",
+      "category": "language",
+      "definition": "The Greek letter δ, used here to represent a moral byproduct or change.",
+      "example": "Delta is like the harmful side effects of a bad action.",
+      "grade_level": "college",
+      "first_appearance": "Law 09"
+    },
+    {
+      "term": "epsilon",
+      "category": "language",
+      "definition": "The Greek letter ε, used in physics for permittivity or a small number.",
+      "example": "Not used in this text, but common in physics.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "zeta",
+      "category": "language",
+      "definition": "The Greek letter ζ, used in mathematics for the Riemann zeta function.",
+      "example": "Not used in this text, but common in math.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "eta",
+      "category": "language",
+      "definition": "The Greek letter η, used in physics for efficiency or viscosity.",
+      "example": "Not used in this text, but common in physics.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "theta",
+      "category": "language",
+      "definition": "The Greek letter θ, used here to represent a collapse threshold.",
+      "example": "Theta is like the minimum amount of faith needed for a change to happen.",
+      "grade_level": "college",
+      "first_appearance": "Law 08"
+    },
+    {
+      "term": "iota",
+      "category": "language",
+      "definition": "The Greek letter ι, used in mathematics for the imaginary unit.",
+      "example": "Not used in this text, but common in math.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "omicron",
+      "category": "language",
+      "definition": "The Greek letter ο, used in mathematics for big O notation.",
+      "example": "Not used in this text, but common in math.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "rho",
+      "category": "language",
+      "definition": "The Greek letter ρ, used here to represent charge density or Logos density.",
+      "example": "Rho is like the amount of 'stuff' that creates a field.",
+      "grade_level": "college",
+      "first_appearance": "Law 03"
+    },
+    {
+      "term": "upsilon",
+      "category": "language",
+      "definition": "The Greek letter υ, used in physics for the upsilon meson.",
+      "example": "Not used in this text, but common in physics.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "phi",
+      "category": "language",
+      "definition": "The Greek letter φ, used here to represent a spiritual state or wavefunction.",
+      "example": "Phi is like the full description of a person's spiritual condition.",
+      "grade_level": "college",
+      "first_appearance": "Law 08"
+    },
+    {
+      "term": "chi",
+      "category": "language",
+      "definition": "The Greek letter χ, used here to represent the maximum coherence state.",
+      "example": "Chi is like the ultimate score of harmony in the universe.",
+      "grade_level": "college",
+      "first_appearance": "Law 10"
+    },
+    {
+      "term": "psi",
+      "category": "language",
+      "definition": "The Greek letter ψ, used here to represent a soul or spiritual state.",
+      "example": "Psi is like a variable for the condition of a person's soul.",
+      "grade_level": "college",
+      "first_appearance": "Law 01"
+    },
+    {
+      "term": "omega",
+      "category": "language",
+      "definition": "The Greek letter ω, used in physics for angular frequency.",
+      "example": "Not used in this text, but common in physics.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "Hessian matrix",
+      "category": "math",
+      "definition": "A matrix of second derivatives that shows how a function curves, used to find minima or maxima.",
+      "example": "It's like a tool to see if a hill is steep or flat in different directions.",
+      "grade_level": "college",
+      "first_appearance": "Law 04"
+    },
+    {
+      "term": "Kolmogorov complexity",
+      "category": "math",
+      "definition": "A measure of how complex a piece of data is, based on the shortest computer program that can produce it.",
+      "example": "A simple pattern like 'ABABAB' has low Kolmogorov complexity; random letters have high complexity.",
+      "grade_level": "college",
+      "first_appearance": "Law 06"
+    },
+    {
+      "term": "Landauer principle",
+      "category": "physics",
+      "definition": "The principle that erasing one bit of information in a computer releases a tiny amount of heat.",
+      "example": "When you delete a file, a tiny bit of energy is lost as heat, according to this principle.",
+      "grade_level": "college",
+      "first_appearance": "Law 05"
+    },
+    {
+      "term": "negentropy",
+      "category": "physics",
+      "definition": "Negative entropy, or the amount of order in a system; the opposite of entropy.",
+      "example": "A living organism has negentropy because it maintains order, unlike a dead one that decays.",
+      "grade_level": "college",
+      "first_appearance": "Law 05"
+    },
+    {
+      "term": "wavefunction",
+      "category": "physics",
+      "definition": "A mathematical description of a quantum system that contains all possible states it could be in.",
+      "example": "Before you look, a spinning coin is in a wavefunction of both heads and tails.",
+      "grade_level": "college",
+      "first_appearance": "Law 08"
+    },
+    {
+      "term": "superposition",
+      "category": "physics",
+      "definition": "The ability of a quantum system to be in multiple states at the same time until measured.",
+      "example": "A particle can be in two places at once until you check where it is.",
+      "grade_level": "college",
+      "first_appearance": "Law 08"
+    },
+    {
+      "term": "Born Rule",
+      "category": "physics",
+      "definition": "A rule in quantum mechanics that gives the probability of finding a particle in a particular state when measured.",
+      "example": "It's like the odds of rolling a 6 on a die, but for quantum particles.",
+      "grade_level": "college",
+      "first_appearance": "Law 08"
+    },
+    {
+      "term": "Hamiltonian",
+      "category": "physics",
+      "definition": "An operator that represents the total energy of a system, used in quantum mechanics.",
+      "example": "It's like a recipe that tells you how a quantum system will change over time.",
+      "grade_level": "college",
+      "first_appearance": "Law 08"
+    },
+    {
+      "term": "Planck constant",
+      "category": "physics",
+      "definition": "A fundamental constant that sets the scale of quantum effects, very small.",
+      "example": "It's the smallest possible action in the universe, like the 'pixel' of reality.",
+      "grade_level": "college",
+      "first_appearance": "Law 08"
+    },
+    {
+      "term": "Fermi coupling constant",
+      "category": "physics",
+      "definition": "A constant that determines the strength of the weak nuclear force, which causes radioactive decay.",
+      "example": "It's like the 'strength' setting for how fast atoms fall apart.",
+      "grade_level": "college",
+      "first_appearance": "Law 09"
+    },
+    {
+      "term": "QCD",
+      "category": "physics",
+      "definition": "Quantum Chromodynamics, the theory of the strong nuclear force that binds quarks together.",
+      "example": "QCD explains why protons and neutrons stick together in the nucleus.",
+      "grade_level": "college",
+      "first_appearance": "Law 04"
+    },
+    {
+      "term": "Lorentz transformation",
+      "category": "physics",
+      "definition": "A set of equations that relate measurements of space and time between two moving observers.",
+      "example": "It's how you calculate that time slows down for someone moving very fast.",
+      "grade_level": "college",
+      "first_appearance": "Law 07"
+    },
+    {
+      "term": "spacetime interval",
+      "category": "physics",
+      "definition": "A quantity that combines space and time and is the same for all observers, regardless of motion.",
+      "example": "Even if two people disagree on time and distance, they'll agree on the spacetime interval between two events.",
+      "grade_level": "college",
+      "first_appearance": "Law 07"
+    },
+    {
+      "term": "cosmological constant",
+      "category": "physics",
+      "definition": "A constant in Einstein's equations that represents the energy of empty space, causing the universe to expand.",
+      "example": "It's like a 'dark energy' that pushes galaxies apart.",
+      "grade_level": "college",
+      "first_appearance": "Law 01"
+    },
+    {
+      "term": "stress-energy tensor",
+      "category": "physics",
+      "definition": "A mathematical object that describes the density and flow of energy and momentum in spacetime.",
+      "example": "It's like a map of how much mass and energy is in each part of space.",
+      "grade_level": "college",
+      "first_appearance": "Law 01"
+    },
+    {
+      "term": "Einstein tensor",
+      "category": "physics",
+      "definition": "A mathematical object that describes the curvature of spacetime in Einstein's theory of general relativity.",
+      "example": "It's like a measure of how much space is bent by gravity.",
+      "grade_level": "college",
+      "first_appearance": "Law 01"
+    },
+    {
+      "term": "Shannon entropy",
+      "category": "math",
+      "definition": "A measure of the average amount of information or surprise in a set of possible events.",
+      "example": "A coin flip has 1 bit of Shannon entropy; a sure thing has 0.",
+      "grade_level": "college",
+      "first_appearance": "Law 03"
+    },
+    {
+      "term": "channel capacity",
+      "category": "math",
+      "definition": "The maximum rate at which information can be sent through a communication channel without errors.",
+      "example": "Your internet connection has a channel capacity that limits how fast you can download a movie.",
+      "grade_level": "college",
+      "first_appearance": "Law 03"
+    },
+    {
+      "term": "string tension",
+      "category": "physics",
+      "definition": "A force that increases with distance, like a rubber band, used in the strong force to confine quarks.",
+      "example": "It's like a rubber band that gets harder to stretch the further you pull it.",
+      "grade_level": "college",
+      "first_appearance": "Law 04"
+    },
+    {
+      "term": "coupling constant",
+      "category": "physics",
+      "definition": "A number that determines the strength of a force between particles.",
+      "example": "A larger coupling constant means a stronger force, like a stronger magnet.",
+      "grade_level": "college",
+      "first_appearance": "Law 04"
+    },
+    {
+      "term": "configuration space",
+      "category": "math",
+      "definition": "A space where every point represents a possible state or arrangement of a system.",
+      "example": "For a chess board, configuration space includes all possible positions of all pieces.",
+      "grade_level": "college",
+      "first_appearance": "Law 10"
+    },
+    {
+      "term": "integral",
+      "category": "math",
+      "definition": "A mathematical operation that adds up infinitely many tiny pieces to find a total.",
+      "example": "It's like adding up all the slices of a pizza to find the whole area.",
+      "grade_level": "12",
+      "first_appearance": "Law 10"
+    },
+    {
+      "term": "derivative",
+      "category": "math",
+      "definition": "A measure of how a quantity changes as something else changes, like slope.",
+      "example": "The derivative of distance with respect to time is speed.",
+      "grade_level": "12",
+      "first_appearance": "Law 05"
+    },
+    {
+      "term": "operator",
+      "category": "math",
+      "definition": "A symbol or function that performs an operation on a mathematical object, like differentiation.",
+      "example": "The 'plus' sign is an operator that adds numbers.",
+      "grade_level": "12",
+      "first_appearance": "Law 01"
+    },
+    {
+      "term": "invariant",
+      "category": "math",
+      "definition": "A quantity that does not change under a set of transformations.",
+      "example": "The speed of light is invariant; it's the same for all observers.",
+      "grade_level": "12",
+      "first_appearance": "Law 07"
+    },
+    {
+      "term": "deterministic",
+      "category": "academic",
+      "definition": "A system where the future is completely determined by the present, with no randomness.",

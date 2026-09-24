@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theophysics Isomorphism Registry · Priority of Goodness</title>
+    <!-- Google Fonts: Oswald, Inter, JetBrains Mono, Crimson Text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6.4 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --bg: #0a0a0a;
+            --text: #c9d1d9;
+            --gold: #d4af37;
+            --gold-dim: rgba(212, 175, 55, 0.3);
+            --success: #22c55e;
+            --danger: #ef4444;
+            --info: #4a9eff;
+            --card-bg: #111;
+            --border-subtle: #222;
+            --font-heading: 'Oswald', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-quote: 'Crimson Text', serif;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        /* headings */
+        h1, h2, h3, h4, h5, .heading-font {
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-weight: 600;
+        }
+        h1 { font-size: 2.4rem; }
+        h2 { font-size: 1.8rem; }
+        h3 { font-size: 1.4rem; }
+        /* utilities */
+        .gold { color: var(--gold); }
+        .text-mono { font-family: var(--font-mono); }
+        .text-quote { font-family: var(--font-quote); font-style: italic; }
+        .small-mono { font-family: var(--font-mono); font-size: 0.75rem; color: #888; }
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            background: #222;
+            color: var(--text);
+            border: 1px solid #333;
+        }
+        .badge-green { background: #0f3b1a; color: var(--success); border-color: var(--success); }
+        .badge-yellow { background: #3b2f0f; color: #facc15; border-color: #facc15; }
+        .badge-gold { background: #2a2208; color: var(--gold); border-color: var(--gold); }
+        .badge-info { background: #0a1f3b; color: var(--info); border-color: var(--info); }
+        .badge-danger { background: #3b0f0f; color: var(--danger); border-color: var(--danger); }
+        .section-number {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--gold);
+            opacity: 0.2;
+            line-height: 1;
+            margin-right: 1rem;
+        }
+        .gradient-line {
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            margin: 1.2rem 0 2rem 0;
+            width: 100%;
+        }
+        .gold-left-border {
+            border-left: 4px solid var(--gold);
+            padding-left: 1.2rem;
+        }
+        /* cards */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: border 0.2s;
+        }
+        .card-blue-top { border-top: 4px solid var(--info); }
+        .card-gold-top { border-top: 4px solid var(--gold); }
+        .card-red-box {
+            background: #1a0c0c;
+            border: 1px solid #5a1a1a;
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        /* grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+        }
+        .grid-4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .grid-2, .grid-4 { grid-template-columns: 1fr; }
+            h1 { font-size: 1.8rem; }
+            .section-number { font-size: 2.8rem; }
+        }
+        .hero-banner {
+            background: linear-gradient(135deg, #0f0d06 0%, #1a1508 100%);
+            border: 1px solid #2a2208;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .hero-left { display: flex; flex-direction: column; gap: 1rem; }
+        .equation-card {
+            background: #0d0d0d;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+        }
+        .mapping-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .mapping-table th {
+            background: #1a1408;
+            color: var(--gold);
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 0.8rem 0.6rem;
+            border-bottom: 2px solid var(--gold);
+            text-align: left;
+        }
+        .mapping-table td {
+            padding: 0.7rem 0.6rem;
+            border-bottom: 1px solid #1e1e1e;
+            vertical-align: top;
+        }
+        .mapping-table tr:last-child td { border-bottom: none; }
+        .mapping-table td:first-child { font-family: var(--font-mono); color: var(--info); }
+        .mapping-table td:last-child { font-family: var(--font-mono); color: var(--gold); }
+        .evidence-chip {
+            display: inline-block;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 30px;
+            padding: 0.3rem 1rem;
+            margin: 0.2rem 0.3rem;
+            font-size: 0.75rem;
+            font-family: var(--font-mono);
+        }
+        .kill-item {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            align-items: flex-start;
+        }
+        .kill-item i { color: var(--danger); margin-top: 0.2rem; }
+        .footer-seal {
+            font-family: var(--font-quote);
+            font-style: italic;
+            color: #777;
+            border-top: 1px solid #222;
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .related-link {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 40px;
+            padding: 0.4rem 1.2rem;
+            display: inline-block;
+            font-size: 0.8rem;
+            color: var(--info);
+            text-decoration: none;
+        }
+        .related-link:hover { border-color: var(--gold); color: var(--gold); }
+        .pass { color: var(--success); font-weight: 700; }
+        .fail { color: var(--danger); font-weight: 700; }
+        .test-card { background: #111; border: 1px solid #222; border-radius: 16px; padding: 1.2rem; }
+        .test-card h4 { font-size: 1rem; margin-bottom: 0.3rem; }
+        .test-card .verdict { font-size: 1.2rem; margin-top: 0.5rem; }
+        .icon-lg { font-size: 1.8rem; margin-right: 0.5rem; }
+    </style>
+</head>
+<body>
+
+<!-- 1. REGISTRY HEADER -->
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-bottom: 0.5rem;">
+    <div style="display: flex; align-items: center; gap: 0.8rem;">
+        <span style="font-size: 2.8rem; font-family: var(--font-heading); color: var(--gold);">Φ</span>
+        <div>
+            <h1 style="margin: 0; line-height: 1.2;">Theophysics Registry</h1>
+            <div style="font-size: 0.85rem; color: #aaa; font-family: var(--font-body);">
+                ISO/TR 2025–06 · <span class="gold">Priority of Goodness</span>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center;">
+        <span class="badge badge-green"><i class="fa-regular fa-circle-check" style="margin-right: 0.3rem;"></i> Level 3 · Isomorphism</span>
+        <span class="badge badge-gold"><i class="fa-regular fa-star"></i> Confidence: 94%</span>
+        <span class="badge badge-info"><i class="fa-regular fa-file-lines"></i> v2.1</span>
+    </div>
+</div>
+<div class="gradient-line"></div>
+
+<!-- 2. HERO BANNER -->
+<div class="hero-banner">
+    <div class="grid-2" style="align-items: stretch;">
+        <!-- left -->
+        <div class="hero-left">
+            <div>
+                <span class="badge badge-gold" style="margin-bottom: 0.8rem;"><i class="fa-regular fa-gavel"></i> Law: privatio boni</span>
+                <h2 style="font-size: 2rem; line-height: 1.2; margin: 0.3rem 0 0.2rem 0;">
+                    Evil <span style="color: var(--gold);">⇢</span> Good<br>
+                    <span style="font-size: 1.2rem; color: #aaa; letter-spacing: 0.02rem; text-transform: none; font-family: var(--font-body);">parasitic dependence → logical priority</span>
+                </h2>
+            </div>
+            <div class="text-quote gold-left-border" style="font-size: 1.1rem; color: #d4c9a8;">
+                “Evil has no vocabulary of its own. It borrows every word from good and inverts it.”
+            </div>
+            <div class="small-mono" style="margin-top: 0.3rem;">— Augustine, Aquinas, Shannon, Byzantine Generals</div>
+        </div>
+        <!-- right: equation card -->
+        <div class="equation-card" style="display: flex; flex-direction: column; justify-content: center;">
+            <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                <div><span style="color: var(--info);">Physics / Info domain</span><br>
+                    <span class="text-mono">S(noise) &gt; S(signal) → channel collapse</span><br>
+                    <span class="text-mono">Byzantine: f_traitors &gt; ⅓ → no consensus</span>
+                </div>
+                <div style="text-align: center; font-size: 1.6rem; color: var(--gold);">⟷</div>
+                <div><span style="color: var(--gold);">Theology / Moral domain</span><br>
+                    <span class="text-mono">privatio boni: evil = defectus boni debiti</span><br>
+                    <span class="text-mono">Evil-God Challenge: asymmetry (oxytocin, E=mc²)</span>
+                </div>
+            </div>
+            <div style="margin-top: 1rem; border-top: 1px solid #2a2a2a; padding-top: 0.8rem; font-size: 0.7rem; color: #777; text-align: center;">
+                <i class="fa-regular fa-arrow-right-arrow-left"></i> structural isomorphism: dependence order preserved
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 3. DOMAIN SPECIFICATIONS -->
+<div style="margin: 2.5rem 0 1.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+    <span class="section-number">03</span>
+    <h2>Domain Specifications</h2>
+</div>
+<div class="gradient-line"></div>
+<div class="grid-2">
+    <!-- Domain A: Physics -->
+    <div class="card card-blue-top">
+        <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+            <i class="fa-solid fa-atom icon-lg" style="color: var(--info);"></i>
+            <h3 style="margin: 0;">Domain A · Physics / Information</h3>
+        </div>
+        <p style="font-size: 0.9rem; color: #bbb;">Shannon information theory, Byzantine Generals Problem, fine‑tuning constants, entropy, signal/noise. The ground state of reality is treated as a communication channel: if the foundation were deceptive, entropy would be maximal and structure impossible. The observed low‑entropy, lawful universe implies a truthful substrate.</p>
+        <div style="margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.8rem; color: #888;">
+            <i class="fa-regular fa-circle-check" style="color: var(--success);"></i> Key: S(signal) ≫ S(noise) · honest majority &gt; ⅔
+        </div>
+    </div>
+    <!-- Domain B: Theology -->
+    <div class="card card-gold-top">
+        <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+            <i class="fa-solid fa-cross icon-lg" style="color: var(--gold);"></i>
+            <h3 style="margin: 0;">Domain B · Theology / Moral</h3>
+        </div>
+        <p style="font-size: 0.9rem; color: #bbb;">Augustine’s <em>privatio boni</em>, Aquinas (defectus boni debiti), Stephen Law’s Evil‑God Challenge. Evil is parasitic on prior good; it has no independent being. The Evil‑God symmetry fails because an evil creator would be dependent, subordinate to a standard of good, and unable to produce genuine goods (oxytocin, beauty, self‑sacrifice).</p>
+        <div style="margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.8rem; color: #888;">
+            <i class="fa-regular fa-circle-check" style="color: var(--success);"></i> Key: evil = privation · good is logically prior
+        </div>
+    </div>
+</div>
+
+<!-- 4. THE ISOMORPHIC MAPPING -->
+<div style="margin: 2.5rem 0 1.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+    <span class="section-number">04</span>
+    <h2>Isomorphic Mapping</h2>
+</div>
+<div class="gradient-line"></div>
+<div style="overflow-x: auto;">
+    <table class="mapping-table">
+        <thead>
+            <tr><th>Physics / Information</th><th>Morphism</th><th>Theology / Moral</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Signal (truthful ground)</td><td>⟷</td><td>Good (ontologically prior)</td></tr>
+            <tr><td>Noise / entropy</td><td>⟷</td><td>Evil (privation, defect)</td></tr>
+            <tr><td>Channel capacity C = B log₂(1 + S/N)</td><td>⟷</td><td>Moral capacity: good can be corrupted only if good exists</td></tr>
+            <tr><td>Byzantine traitors &gt; ⅓ → no consensus</td><td>⟷</td><td>Evil‑first → no creation, no coordination</td></tr>
+            <tr><td>Low‑entropy universe (stable laws, fine‑tuning)</td><td>⟷</td><td>Creation as gift: oxytocin, music, E=mc², self‑sacrifice</td></tr>
+            <tr><td>Deceptive ground → maximal noise</td><td>⟷</td><td>Evil God → dependent, subordinate, cannot explain good</td></tr>
+            <tr><td>Shannon: signal must be distinguishable from noise</td><td>⟷</td><td>Augustine: evil is recognized only as absence of due good</td></tr>
+            <tr><td>Byzantine: honest majority required for coordination</td><td>⟷</td><td>Aquinas: evil is a failure of proper function (trembling hand)</td></tr>
+            <tr><td>Physical constants coordinate with precision &gt; 10⁻¹⁰</td><td>⟷</td><td>Moral law coordinates: love fulfills the law (Rom 13:10)</td></tr>
+            <tr><td>Information theory: noise is parasitic on signal</td><td>⟷</td><td>Privatio boni: evil is parasitic on good</td></tr>
+        </tbody>
+    </table>
+</div>
+<div class="small-mono" style="margin-top: 0.5rem; text-align: right;"><i class="fa-regular fa-arrow-right-arrow-left"></i> structural isomorphism: relations preserved under mapping</div>
+
+<!-- 5. SEPARATOR TESTS -->
+<div style="margin: 2.5rem 0 1.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+    <span class="section-number">05</span>
+    <h2>Separator Tests</h2>
+</div>
+<div class="gradient-line"></div>
+<div class="grid-4">
+    <!-- Test A -->
+    <div class="test-card">
+        <h4><i class="fa-regular fa-sitemap" style="color: var(--info);"></i> Test A: Structural Preservation</h4>
+        <p style="font-size: 0.85rem; color: #aaa;">Do relations survive under mapping? If evil is parasitic on good, then noise is parasitic on signal. The dependence relation is preserved.</p>
+        <div class="verdict pass"><i class="fa-regular fa-circle-check"></i> PASS</div>
+    </div>
+    <!-- Test B -->
+    <div class="test-card">
+        <h4><i class="fa-regular fa-shuffle" style="color: var(--info);"></i> Test B: Non‑Arbitrariness</h4>
+        <p style="font-size: 0.85rem; color: #aaa;">Could you swap targets? Evil‑God symmetry fails: an evil creator cannot be foundational. Mapping is forced, not arbitrary.</p>
+        <div class="verdict pass"><i class="fa-regular fa-circle-check"></i> PASS</div>
+    </div>
+    <!-- Test C -->
+    <div class="test-card">
+        <h4><i class="fa-regular fa-ban" style="color: var(--info);"></i> Test C: Constraint</h4>
+        <p style="font-size: 0.85rem; color: #aaa;">Does the mapping rule things out? It rules out evil‑first ontologies, deceptive ground states, and the symmetry of the Evil‑God Challenge.</p>
+        <div class="verdict pass"><i class="fa-regular fa-circle-check"></i> PASS</div>
+    </div>
+    <!-- Test D -->
+    <div class="test-card">
+        <h4><i class="fa-regular fa-arrow-right-arrow-left" style="color: var(--info);"></i> Test D: Bidirectionality</h4>
+        <p style="font-size: 0.85rem; color: #aaa;">Does each side predict the other? Information theory predicts that a truthful ground yields low entropy; theology predicts that good is prior. Both point to the same structure.</p>
+        <div class="verdict pass"><i class="fa-regular fa-circle-check"></i> PASS</div>
+    </div>
+</div>
+
+<!-- 6. CLASSIFICATION & EVIDENCE -->
+<div style="margin: 2.5rem 0 1.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+    <span class="section-number">06</span>
+    <h2>Classification &amp; Evidence</h2>
+</div>
+<div class="gradient-line"></div>
+<div class="card" style="border-color: #2a2208;">
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; justify-content: space-between;">
+        <div>
+            <span class="badge badge-green" style="font-size: 0.9rem; padding: 0.4rem 1.2rem;"><i class="fa-regular fa-circle-check"></i> Level 3 · Isomorphism</span>
+            <span class="badge badge-gold" style="margin-left: 0.6rem;">Confidence 94%</span>
+        </div>
+        <div style="font-size: 0.8rem; color: #aaa;"><i class="fa-regular fa-flask"></i> Laws invoked: privatio boni, Shannon capacity, Byzantine consensus, Evil‑God asymmetry</div>
+    </div>
+    <div style="margin-top: 1.2rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+        <span class="evidence-chip"><i class="fa-regular fa-file-lines"></i> Augustine, <em>Confessions</em> VII.12</span>
+        <span class="evidence-chip"><i class="fa-regular fa-file-lines"></i> Aquinas, <em>Summa Theologiae</em> I.48.1</span>
+        <span class="evidence-chip"><i class="fa-regular fa-file-lines"></i> Shannon, <em>Bell System Tech. J.</em> 1948</span>
+        <span class="evidence-chip"><i class="fa-regular fa-file-lines"></i> Byzantine Generals (Lamport, 1982)</span>
+        <span class="evidence-chip"><i class="fa-regular fa-file-lines"></i> Stephen Law, <em>Evil‑God Challenge</em> (2010)</span>
+        <span class="evidence-chip"><i class="fa-regular fa-star"></i> Fine‑tuning constants (Barrow, Tipler)</span>
+    </div>
+</div>
+
+<!-- 7. FALSIFICATION CRITERIA -->
+<div style="margin: 2.5rem 0 1.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+    <span class="section-number">07</span>
+    <h2>Falsification Criteria</h2>
+</div>
+<div class="gradient-line"></div>
+<div class="card-red-box">
+    <div style="display: flex; gap: 0.6rem; align-items: center; margin-bottom: 1rem;">
+        <i class="fa-regular fa-triangle-exclamation" style="color: var(--danger); font-size: 1.4rem;"></i>
+        <h3 style="color: var(--danger); margin: 0;">Kill conditions — if any hold, isomorphism is refuted</h3>
+    </div>
+    <div class="kill-item">
+        <i class="fa-regular fa-circle-xmark"></i>
+        <div><strong>Evil with independent vocabulary</strong> — if any evil act can be described without reference to a violated good, the mapping fails.</div>
+    </div>
+    <div class="kill-item">
+        <i class="fa-regular fa-circle-xmark"></i>
+        <div><strong>Stable universe from deceptive ground</strong> — if a universe with stable laws, mathematics, and fine‑tuning could arise from a lying foundation, the information‑theoretic argument collapses.</div>
+    </div>
+    <div class="kill-item">
+        <i class="fa-regular fa-circle-xmark"></i>
+        <div><strong>Evil‑God symmetry restored</strong> — if the maltheist can explain oxytocin, self‑sacrifice, music, and E=mc² as means to greater evil, the asymmetry breaks.</div>
+    </div>
+    <div class="kill-item">
+        <i class="fa-regular fa-circle-xmark"></i>
+        <div><strong>Byzantine coordination with &gt;⅓ traitors</strong> — if a physical system can achieve consensus with a majority of deceptive signals, the analogy fails.</div>
+    </div>
+    <div class="kill-item">
+        <i class="fa-regular fa-circle-xmark"></i>
+        <div><strong>Good defined as absence of evil</strong> — if good can be shown to be parasitic on evil (reverse privation), the priority order is inverted.</div>
+    </div>
+    <div class="small-mono" style="margin-top: 0.8rem; color: #aa5555;"><i class="fa-regular fa-skull"></i> None of these conditions have been observed. The isomorphism stands.</div>
+</div>
+
+<!-- 8. RELATED ISOMORPHISMS -->
+<div style="margin: 2.5rem 0 1.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+    <span class="section-number">08</span>
+    <h2>Related Isomorphisms</h2>
+</div>
+<div class="gradient-line"></div>
+<div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+    <a href="#" class="related-link"><i class="fa-regular fa-arrow-right"></i> CNS‑05: The Adversary (parasitic force)</a>
+    <a href="#" class="related-link"><i class="fa-regular fa-arrow-right"></i> CNS‑07: The Grace (negentropic restoration)</a>
+    <a href="#" class="related-link"><i class="fa-regular fa-arrow-right"></i> DRS‑01: Fine‑tuning & moral law</a>
+    <a href="#" class="related-link"><i class="fa-regular fa-arrow-right"></i> DRS‑04: Information‑theoretic theology</a>
+</div>
+
+<!-- 9. FOOTER -->
+<div class="footer-seal">
+    <div style="font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.1em; color: #888; font-size: 0.8rem;">Theophysics Research Program</div>
+    <div style="font-size: 0.75rem; color: #666; margin: 0.3rem 0;">POF 2828 · Registry v2.1</div>
+    <div style="font-size: 1rem; color: #b8a87a; margin-top: 0.6rem;">“The math points to God. The math does not contain God.”</div>
+    <div style="margin-top: 0.8rem;"><i class="fa-regular fa-phi" style="color: var(--gold);"></i> Φ</div>
+</div>
+
+</body>
+</html>

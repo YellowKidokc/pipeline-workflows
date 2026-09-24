@@ -1,0 +1,574 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "physics",
+        "type": "physics",
+        "strength": 9
+      },
+      {
+        "name": "theology",
+        "type": "theology",
+        "strength": 9
+      },
+      {
+        "name": "philosophy",
+        "type": "philosophy",
+        "strength": 7
+      },
+      {
+        "name": "information",
+        "type": "information",
+        "strength": 10
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Information/Logos as ontologically primitive substrate from which reality derives",
+        "strength": 10
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence/Christ as the Logos incarnate, sustaining all things",
+        "strength": 8
+      },
+      {
+        "variable": "M",
+        "present": true,
+        "role": "Meaning/Mass as derivative from information substrate",
+        "strength": 5
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Energy/Spirit as derivative from information, Landauer's principle",
+        "strength": 5
+      },
+      {
+        "variable": "G",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "S",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "T",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "R",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "Q",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "F",
+        "present": false,
+        "role": "",
+        "strength": 0
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.3",
+        "invoked": true,
+        "how": "Information Primacy axiom directly engaged as the core of the isomorphism"
+      },
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "Existence axiom: information as the ground of existence"
+      },
+      {
+        "id": "A1.2",
+        "invoked": true,
+        "how": "Distinction axiom: bits as yes/no distinctions"
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "Information Conservation: unitarity, black hole information paradox"
+      },
+      {
+        "id": "BC6",
+        "invoked": true,
+        "how": "Infinite Source: Logos as uncreated, ontologically prior"
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "External Grace: information as given, not self-generated"
+      },
+      {
+        "id": "A2.1",
+        "invoked": true,
+        "how": "Substrate: information as the fundamental substrate"
+      },
+      {
+        "id": "A2.2",
+        "invoked": true,
+        "how": "Self-grounding: information cannot be reduced further"
+      },
+      {
+        "id": "A5.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "T3.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC8",
+        "invoked": false,
+        "how": ""
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "source",
+          "ground",
+          "origin"
+        ]
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "image",
+          "word",
+          "mediator",
+          "incarnation",
+          "logos"
+        ]
+      },
+      "spirit": {
+        "present": false,
+        "manifestations": []
+      },
+      "trinitarian_structure": "implicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-006",
+        "domain_a": "physics/information theory",
+        "domain_b": "theology/Johannine Prologue",
+        "strength": 8,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "Logos",
+        "context": "John 1:1-3, ontologically prior generative principle",
+        "weight": 10
+      },
+      {
+        "concept": "creation by word",
+        "context": "Genesis 1, Hebrews 11:3",
+        "weight": 9
+      },
+      {
+        "concept": "incarnation",
+        "context": "Logos becomes flesh in Jesus Christ",
+        "weight": 6
+      },
+      {
+        "concept": "sustaining creation",
+        "context": "Colossians 1:17",
+        "weight": 7
+      },
+      {
+        "concept": "Arian heresy",
+        "context": "Logos as created vs uncreated",
+        "weight": 3
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "ontological priority",
+        "context": "information/logos before matter",
+        "weight": 10
+      },
+      {
+        "concept": "irreducibility",
+        "context": "information substrate cannot be reduced further",
+        "weight": 8
+      },
+      {
+        "concept": "generative function",
+        "context": "information generates reality, not just describes it",
+        "weight": 9
+      },
+      {
+        "concept": "structural isomorphism",
+        "context": "shared structural role despite semantic differences",
+        "weight": 7
+      },
+      {
+        "concept": "falsifiability",
+        "context": "Test 4: what would break the mapping",
+        "weight": 6
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 3
+      },
+      {
+        "fruit": "truth",
+        "present": true,
+        "strength": 8
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "domain:physics",
+      "to": "domain:theology",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "chi_variable:K",
+      "to": "chi_variable:C",
+      "relation": "contains",
+      "weight": 7
+    },
+    {
+      "from": "axiom:A1.3",
+      "to": "isomorphism:ISO-006",
+      "relation": "supports",
+      "weight": 10
+    },
+    {
+      "from": "theological_concept:Logos",
+      "to": "chi_variable:K",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "theological_concept:creation by word",
+      "to": "theological_concept:Logos",
+      "relation": "derives_from",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:ontological priority",
+      "to": "isomorphism:ISO-006",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "logical_concept:irreducibility",
+      "to": "axiom:A2.2",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:generative function",
+      "to": "theological_concept:creation by word",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "axiom:BC7",
+      "to": "logical_concept:ontological priority",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "axiom:BC6",
+      "to": "theological_concept:Logos",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "axiom:A1.1",
+      "to": "axiom:A1.3",
+      "relation": "requires",
+      "weight": 6
+    },
+    {
+      "from": "axiom:A1.2",
+      "to": "axiom:A1.3",
+      "relation": "requires",
+      "weight": 6
+    },
+    {
+      "from": "domain:information",
+      "to": "chi_variable:K",
+      "relation": "contains",
+      "weight": 10
+    },
+    {
+      "from": "domain:philosophy",
+      "to": "isomorphism:ISO-006",
+      "relation": "supports",
+      "weight": 5
+    },
+    {
+      "from": "trinity:son",
+      "to": "theological_concept:Logos",
+      "relation": "is",
+      "weight": 10
+    },
+    {
+      "from": "trinity:father",
+      "to": "theological_concept:Logos",
+      "relation": "generates",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:structural isomorphism",
+      "to": "isomorphism:ISO-006",
+      "relation": "defines",
+      "weight": 9
+    },
+    {
+      "from": "logical_concept:falsifiability",
+      "to": "isomorphism:ISO-006",
+      "relation": "tests",
+      "weight": 6
+    }
+  ],
+  "tags": {
+    "primary": [
+      "information primacy",
+      "logos",
+      "it-from-bit",
+      "ontological priority",
+      "structural isomorphism"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/theology",
+      "pillar/philosophy",
+      "pillar/information"
+    ],
+    "series": "isomorphism",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "John 1:1-3",
+        "context": "Logos as ontologically prior, generative of all creation"
+      },
+      {
+        "ref": "Genesis 1",
+        "context": "creation by speech act"
+      },
+      {
+        "ref": "Hebrews 11:3",
+        "context": "visible from invisible"
+      },
+      {
+        "ref": "Colossians 1:17",
+        "context": "in him all things hold together"
+      }
+    ],
+    "academic": [
+      {
+        "ref": "Wheeler, J.A. (1990), 'Information, Physics, Quantum: The Search for Links'",
+        "context": "It from Bit thesis"
+      },
+      {
+        "ref": "Shannon, C.E. (1948), 'A Mathematical Theory of Communication'",
+        "context": "information theory"
+      },
+      {
+        "ref": "Zeilinger, A. (1999), 'A Foundational Principle for Quantum Mechanics'",
+        "context": "information content of quantum systems"
+      },
+      {
+        "ref": "Landauer, R. (1961), 'Irreversibility and Heat Generation in the Computing Process'",
+        "context": "Landauer's principle"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "ISO-001",
+        "context": "Trinity/Logos as second person"
+      },
+      {
+        "ref": "ISO-003",
+        "context": "Entropy/information degradation"
+      },
+      {
+        "ref": "ISO-011",
+        "context": "Superposition/information state"
+      },
+      {
+        "ref": "ISO-012",
+        "context": "Sign/information content"
+      }
+    ],
+    "total_count": 12
+  },
+  "word_anomalies": [
+    {
+      "word": "Logos",
+      "frequency": 15,
+      "significance": "central theological term with rich philosophical history, mapped to information"
+    },
+    {
+      "word": "It from Bit",
+      "frequency": 3,
+      "significance": "Wheeler's neologism for information primacy"
+    },
+    {
+      "word": "ontologically primitive",
+      "frequency": 4,
+      "significance": "technical philosophical term for fundamental substrate"
+    },
+    {
+      "word": "unitarity",
+      "frequency": 2,
+      "significance": "quantum mechanics principle of information conservation"
+    },
+    {
+      "word": "superdeterminism",
+      "frequency": 1,
+      "significance": "potential falsifier of information primacy"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "Analytical and comparative, seeking structural parallels between physics and theology",
+    "Q1_identity": "An isomorphism record documenting the structural mapping between information primacy in physics and the Logos doctrine in Christian theology",
+    "Q2_domain": "Intersection of physics/information theory and Christian theology/philosophy",
+    "Q3_claim": "Information (in physics) and Logos (in theology) occupy the same structural role: ontologically prior, generative substrate from which physical reality derives",
+    "Q4_support": "Wheeler's It from Bit, Landauer's principle, Zeilinger's principle, John 1:1-3, Genesis 1, Hebrews 11:3, Colossians 1:17, black hole information paradox resolution",
+    "Q5_dependencies": "Axiom A1.3 (Information Primacy), Axiom BC7 (Information Conservation), Axiom BC6 (Infinite Source), ISO-001 (Trinity)",
+    "Q6_consequences": "Reality is information-first, not matter-first; information has real physical consequences; the Logos is the sustaining principle of creation",
+    "Q7_kill": "Proof that information is emergent from a sub-informational substrate, or that John's Logos is purely personal with no cosmological generative claim"
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "ISO-001",
+      "A1.3",
+      "BC7",
+      "BC6"
+    ],
+    "required_by": [
+      "ISO-003",
+      "ISO-011",
+      "ISO-012"
+    ],
+    "parallel_to": [
+      "ISO-001",
+      "ISO-003"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 30,
+    "total_edges": 19,
+    "dominant_domain": "information",
+    "dominant_chi": "K",
+    "connectivity_score": 8,
+    "one_sentence": "This document establishes the structural isomorphism between information primacy in physics (It from Bit) and the Logos doctrine in Christian theology (John 1:1-3), showing both as ontologically prior generative substrates."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": false,
+      "how": ""
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Truth (Logos as rational principle) maps to Coherence (Christ as sustaining Logos)"
+    },
+    "4_7_love_relationship": {
+      "active": false,
+      "how": ""
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Logos as the principle of judgment and order"
+    },
+    "pairs_active_count": 2
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": false,
+      "strength": 0
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 9
+    },
+    "love": {
+      "present": false,
+      "strength": 0
+    },
+    "judgment": {
+      "present": false,
+      "strength": 0
+    },
+    "logos": {
+      "present": true,
+      "strength": 10
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": false,
+      "strength": 0
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": true,
+      "strength": 8
+    },
+    "operators_present_count": 3
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "ISO-001",
+      "A1.3"
+    ],
+    "read_after": [
+      "ISO-003",
+      "ISO-011",
+      "ISO-012"
+    ]
+  }
+}

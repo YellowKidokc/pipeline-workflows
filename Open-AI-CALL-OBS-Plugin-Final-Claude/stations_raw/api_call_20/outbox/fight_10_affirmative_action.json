@@ -1,0 +1,115 @@
+{
+  "spec_version": "1.0-trilemma-resolver",
+  "status": "OK",
+  "fight": {
+    "id": "affirmative_action",
+    "familiar_name": "Affirmative action",
+    "years_running": 60,
+    "poles": [
+      "Repair historic injustice / level the playing field",
+      "Fighting discrimination with discrimination / judge by merit"
+    ]
+  },
+  "reader_anchor": {
+    "opening_prose": "You are seven years old. You and your brother are building a tower from wooden blocks. Your brother knocks over your tower\u2014not on purpose, but it falls. He says sorry. You look at the blocks on the floor. Sorry does not stack them again. Someone has to bend down and pick them up. You both stand there, waiting. That waiting\u2014that moment when the damage is real and nobody wants to be the one who fixes it\u2014you remember that. You remember because you felt the weight of the broken thing and the weight of who would have to carry it. Nobody ever told you that this moment is the shape of every public fight you would ever have. They trained you to argue about who should pick up the blocks. They never trained you to ask: who can pick them up without being destroyed? That is what we are here to give back\u2014the question you were never allowed to ask.",
+    "universal_experience": "A child's tower knocked over by a sibling, with the blocks on the floor and nobody wanting to be the one to rebuild.",
+    "checkable_detail": "You stood there, waiting, feeling the weight of the broken thing and the weight of who would have to carry it\u2014not just the blocks, but the responsibility.",
+    "quiet_theft": "You were trained to argue about who should fix the damage, not to ask who can fix it without being destroyed.",
+    "embodiment_note": "The fight over affirmative action is exactly this: the damage is real, someone has to carry the cost, and the argument is about who should carry it, not about the existence of the damage or the possibility of a voluntary carrier."
+  },
+  "poles": [
+    {
+      "label": "Repair pole: transfer resources to historically disadvantaged group to compensate for past discrimination.",
+      "steelman": "For centuries, systemic racism excluded Black Americans and other groups from education, wealth, and opportunity. That damage is real and measurable: gaps in income, wealth, education, health, incarceration. The only way to close those gaps is to actively include those who were excluded. Merit as measured by test scores and grades is not neutral\u2014it reflects generations of unequal access. Affirmative action is not discrimination; it is repair. It says: we will consider race as one factor among many to ensure that the people who were locked out get a chance to walk in. The alternative is to pretend the playing field is level when it is not, which is just perpetuating the original injustice.",
+      "accusation_against_others": "The merit pole is perpetuating historic injustice by pretending the playing field is level. Their plan makes the original victims continue to bear the cost of discrimination.",
+      "accusation_is_true_because": "The merit pole's plan (no race-conscious repair) leaves the damage of past discrimination on the victim class\u2014they continue to suffer lower access, lower wealth, lower opportunity. The cost of the original damage is never transferred; it stays on the victims.",
+      "axiom_autopsy": {
+        "load_bearing_premise": "Repairing historic injustice requires transferring cost to those who did not create the damage, because the original perpetrators are mostly dead or unidentifiable.",
+        "self_application": "The repair pole requires that the cost of repair be borne by someone who did not create the damage (current non-minority applicants). But the pole's own premise\u2014that bearing cost for damage you did not create is unjust\u2014applies to those current non-minority applicants. They did not create the original discrimination. So the repair pole's own principle condemns its own mechanism.",
+        "one_question_test": "Would you accept a policy that makes your child bear a cost for damage your great-grandparent caused, if your family immigrated after the damage was done?",
+        "checkable_in_under_a_minute": true
+      }
+    },
+    {
+      "label": "Merit pole: judge individuals by qualifications, not group identity; no race-based preferences.",
+      "steelman": "Discrimination is wrong whether it is against a minority or a majority. Two wrongs do not make a right. The way to end racism is to stop using race in decisions, period. Affirmative action is discrimination by another name\u2014it tells a qualified Asian or white applicant that their race counts against them. That is the same logic as the old Jim Crow laws, just with different targets. Merit is the only fair basis: judge each person as an individual, not as a representative of a group. The damage of past discrimination is real, but the solution is not to create new victims. Invest in early education, in communities, in opportunity for all\u2014but do not pick winners and losers by race at the admissions gate.",
+      "accusation_against_others": "The repair pole is fighting discrimination with discrimination. Their plan makes innocent individuals (current non-minority applicants) bear the cost of damage they did not create.",
+      "accusation_is_true_because": "The repair pole's plan explicitly considers race as a factor, which means some applicants are admitted over others because of their race. Those rejected applicants (who did not create historic discrimination) bear the cost of repair\u2014they lose a spot they would have otherwise had.",
+      "axiom_autopsy": {
+        "load_bearing_premise": "Merit as measured by test scores and grades is a fair and neutral basis for selection, and race-conscious repair is unjust discrimination.",
+        "self_application": "The merit pole requires that current selection criteria (test scores, grades) are neutral and fair. But those criteria themselves reflect historic privilege: access to test prep, better schools, stable homes. The merit pole's own premise\u2014that selection should be fair\u2014applied to the current system reveals that the system is not fair; it is biased by the same historic damage the repair pole points to. So the merit pole's own standard condemns the status quo it defends.",
+        "one_question_test": "If two students have the same test score, but one had access to test prep and the other did not, is the test score a fair measure of merit?",
+        "checkable_in_under_a_minute": true
+      }
+    }
+  ],
+  "ledger": {
+    "D_definition": "The measurable deficit in educational and economic opportunity between historically disadvantaged groups (Black, Hispanic, Native American) and historically advantaged groups (white, Asian) in the United States, as of 2023. Measured by gaps in college enrollment rates, graduation rates, median income, wealth, and representation in selective institutions.",
+    "D_is_real_evidence": "Federal data: Black household median income is ~60% of white; Black wealth is ~15% of white; Black college enrollment rates lag by 10-15 percentage points; representation at selective universities is 5-10% for Black students vs. 60-70% white. These gaps are not random; they correlate with centuries of legal discrimination.",
+    "victim_class": "Historically disadvantaged racial groups (Black, Hispanic, Native American) who currently suffer lower educational and economic outcomes due to cumulative historic discrimination.",
+    "causal_class": "Diffuse. The original perpetrators (slaveholders, segregationists, discriminatory institutions) are mostly dead or no longer operating. Current advantage is inherited through wealth, networks, and institutional legacy, not direct individual action. Causation is structural, not personal.",
+    "per_pole_transfers": [
+      {
+        "pole": "Repair pole (race-conscious admissions)",
+        "T_A": "Increased admission rates for disadvantaged groups, estimated at 10-20% boost in representation at selective schools.",
+        "T_B": "Reduced admission rates for non-disadvantaged applicants (white, Asian) who would have been admitted under race-blind criteria. Estimated 10-20% reduction in their admission chances.",
+        "J": 0.5,
+        "M": 0.5,
+        "W_note": "Neither victim nor offender class volunteers for the transfer. Victims want repair but do not choose the mechanism; offenders (current applicants) do not choose to bear the cost.",
+        "who_eats_deficit": "Current non-disadvantaged applicants (white, Asian) who are rejected or have lower chances due to race-conscious policy. They bear the cost of repair for damage they did not create."
+      },
+      {
+        "pole": "Merit pole (race-blind admissions)",
+        "T_A": "No transfer to disadvantaged groups via admissions; damage remains on them.",
+        "T_B": "No cost imposed on non-disadvantaged applicants via admissions policy.",
+        "J": 0.0,
+        "M": 1.0,
+        "W_note": "Victims do not volunteer to bear the damage; they are forced to continue bearing it. Offenders (non-disadvantaged applicants) are relieved of cost but did not volunteer for that relief.",
+        "who_eats_deficit": "Historically disadvantaged groups continue to bear the damage of lower opportunity and representation. No transfer occurs."
+      }
+    ]
+  },
+  "clear_win": {
+    "type": "structural_invariant",
+    "statement": "The affirmative action fight is a seating argument on the J + M = 1 line. Both accusations are true: each pole makes someone who did not create the damage eat the cost. The repair pole makes current non-minority applicants pay for historic wrongs they did not commit. The merit pole makes current minority applicants continue to bear the damage of historic wrongs they did not commit. No position on the line closes the ledger because the causal class (original perpetrators) is gone, and the damage remains. The only exit is a voluntary external cost-bearer who absorbs the deficit without transferring it to anyone on either side.",
+    "derivation_steps": [
+      "1. Define D = the measurable deficit in educational/economic opportunity between historically disadvantaged and advantaged groups (gaps in income, wealth, enrollment).",
+      "2. Under the repair pole: T_A = increased opportunity for disadvantaged groups (J > 0); T_B = reduced opportunity for non-disadvantaged applicants (M < 1). The cost is borne by current non-disadvantaged applicants who did not create the original damage.",
+      "3. Under the merit pole: T_A = 0 (no transfer to disadvantaged groups, J = 0); T_B = 0 (no cost on non-disadvantaged applicants, M = 1). The damage remains on the victim class.",
+      "4. Both poles satisfy J + M = 1 exactly: repair pole (J=0.5, M=0.5), merit pole (J=0, M=1).",
+      "5. The causal class (original perpetrators) is diffuse and mostly gone. No pole can make the causal class bear the cost because they are not available.",
+      "6. Therefore, every position on the line forces someone who did not create the damage to bear the cost. Both accusations are true simultaneously.",
+      "7. The only way to retire the deficit is a voluntary external cost-bearer who absorbs D without transferring it to either class."
+    ],
+    "dinner_table_sentence": "Both sides are right: your plan makes innocent people pay for damage they didn't cause\u2014and so does yours.",
+    "why_undeniable": "The derivation is purely structural: D is real, the causal class is gone, and every transfer must land on someone who did not create the damage. Both accusations reduce to the same charge, and both are true. A hostile reader must concede that the line exists because the accusations each side has traded for decades are all true simultaneously."
+  },
+  "off_the_line": {
+    "proximate": {
+      "structures": [
+        "Voluntary sponsorship programs where individuals from advantaged backgrounds personally fund and mentor students from disadvantaged backgrounds, absorbing the cost of repair voluntarily.",
+        "Community-based mutual aid funds for education that are race-conscious but entirely voluntary on both sides.",
+        "Private scholarships that target disadvantaged groups, funded by voluntary donations from those who wish to repair historic damage."
+      ],
+      "honest_limit": "These structures relocate the cost to willing bearers, but they do not retire the deficit because they depend on continued voluntary participation and do not address the structural gap at scale. The altruism lemma holds: the deficit is still on the line, just seated more nobly."
+    },
+    "ultimate": {
+      "configuration": "A voluntary external cost-bearer who (1) is neither victim nor offender nor conscripted bystander, (2) acts voluntarily, (3) absorbs the full deficit D, (4) has capacity to absorb without being destroyed, (5) preserves truth (damage acknowledged, not denied). For this fight, the external cost-bearer would absorb the educational/economic deficit by providing resources to the victim class without imposing cost on the offender class, and without requiring the victim class to bear the deficit.",
+      "candidate": "The framework identifies the historical candidate as the figure who voluntarily absorbs the cost of human brokenness without transferring it: in Christian theology, Jesus Christ, who takes the debt of sin upon himself voluntarily, is neither victim nor offender, absorbs the full cost, and preserves truth (sin is real, not denied). The door opens from the reader's side only: no coercion, only invitation.",
+      "door_note": "The door opens from the reader's side only. No one is forced to accept this candidate. The structural resolution is complete without naming the candidate; the candidate is offered as the one historical figure who fits the five requirements, but the reader must choose to walk through."
+    }
+  },
+  "anti_gaming_audit": {
+    "blind_label": "pass: the analysis uses 'victim class' and 'offender class' without naming parties; if the groups were reversed (e.g., if the disadvantaged group were white), the same structure applies.",
+    "symmetry": "pass: the win applies regardless of which pole proposed the mechanism; both poles are on the line.",
+    "counterfactual": "pass: D is real and measurable absent any affirmative action policy; the gaps exist independently of the policy debate.",
+    "radius_consistency": "pass: benefits and costs are measured at the same social level (educational/economic opportunity at the individual and group level).",
+    "cost_visibility": "pass: the costs are visible to those paying them (rejected applicants know they were rejected; disadvantaged groups know they are underrepresented).",
+    "no_person_score": "pass: actions and positions are scored, not souls; no pole is called evil or malicious.",
+    "unknowns_tracked": "pass: the diffuse causal class is honestly labeled as diffuse; no claim is made about exact proportions of J and M beyond estimates."
+  },
+  "falsification": {
+    "kill_condition_specific": "If a historical case is found where a race-conscious policy achieved J=1 (full repair) and M=1 (no cost on non-offenders) with W=1 (voluntary participation by both) inside a closed system with no external cost-bearer, this resolution is falsified. Alternatively, if a moral ledger is found where the deficit D is closed with no invisible remainder (i.e., no one bears an uncompensated cost), the conservation principle is falsified.",
+    "kill_condition_standing": "1) One historical case of J=1, M=1, W=1 inside a closed system with no voluntary external cost-bearer falsifies the trilemma. 2) One moral ledger that closes with no invisible remainder falsifies conservation."
+  }
+}

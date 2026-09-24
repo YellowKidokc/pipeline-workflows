@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISO-036 · Fluid Dynamics → Pneumatology · Theophysics Registry</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=JetBrains+Mono&family=Oswald:wght@400;500;600;700&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --text: #c9d1d9;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --card-bg: #111;
+      --border: #222;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .container { width: 100%; }
+
+    /* headings */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+    }
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.8rem; margin-top: 2.5rem; }
+    h3 { font-size: 1.3rem; margin-top: 1.5rem; }
+
+    /* section numbers */
+    .section-number {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+      margin-right: 0.75rem;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    /* gradient separator */
+    .separator {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 2rem 0 1.5rem 0;
+      width: 100%;
+    }
+
+    /* cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .card-blue { border-top: 4px solid var(--info); }
+    .card-gold { border-top: 4px solid var(--gold); }
+    .card-red { border-top: 4px solid var(--danger); background: #1a0a0a; }
+
+    /* grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    /* badge */
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .badge-green { background: rgba(34,197,94,0.15); color: var(--success); border: 1px solid var(--success); }
+    .badge-yellow { background: rgba(212,175,55,0.15); color: var(--gold); border: 1px solid var(--gold); }
+    .badge-gold { background: rgba(212,175,55,0.2); color: var(--gold); border: 1px solid var(--gold); }
+
+    /* table */
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+    .mapping-table th {
+      background: rgba(212,175,55,0.15);
+      color: var(--gold);
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.9rem 0.8rem;
+      border-bottom: 2px solid var(--gold);
+      text-align: left;
+    }
+    .mapping-table td {
+      padding: 0.8rem;
+      border-bottom: 1px solid #1e1e1e;
+      vertical-align: top;
+    }
+    .mapping-table tr:last-child td { border-bottom: none; }
+    .mapping-table td:first-child { font-family: var(--font-mono); font-size: 0.85rem; color: var(--info); }
+    .mapping-table td:nth-child(2) { color: var(--gold); }
+    .mapping-table td:last-child { font-style: italic; color: #a0aab4; }
+
+    /* equation card */
+    .equation-card {
+      background: #0d0d0d;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: #e0e0e0;
+    }
+    .equation-card .arrow {
+      color: var(--gold);
+      font-size: 1.8rem;
+      display: block;
+      text-align: center;
+      margin: 0.8rem 0;
+    }
+
+    /* quote */
+    .pull-quote {
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: 1.1rem;
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+      margin: 1rem 0;
+      color: #d0d5dd;
+    }
+
+    /* test cards */
+    .test-pass { color: var(--success); font-weight: 700; }
+    .test-fail { color: var(--danger); font-weight: 700; }
+
+    /* evidence chips */
+    .chip {
+      display: inline-block;
+      background: rgba(212,175,55,0.08);
+      border: 1px solid rgba(212,175,55,0.25);
+      border-radius: 30px;
+      padding: 0.2rem 1rem;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      color: var(--gold);
+      margin: 0.2rem 0.3rem;
+    }
+
+    /* verse ref */
+    .verse-ref {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+
+    /* footer */
+    .footer {
+      border-top: 1px solid #1e1e1e;
+      padding-top: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+    .footer .seal {
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: var(--gold);
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      .grid-2, .grid-4 { grid-template-columns: 1fr; }
+      h1 { font-size: 1.8rem; }
+      .section-number { font-size: 2.8rem; }
+    }
+
+    /* misc */
+    .text-gold { color: var(--gold); }
+    .text-mono { font-family: var(--font-mono); }
+    .mt-1 { margin-top: 1rem; }
+    .mb-1 { margin-bottom: 1rem; }
+    .fw-700 { font-weight: 700; }
+    .small { font-size: 0.8rem; }
+    .op-6 { opacity: 0.6; }
+    .inline-icon { margin-right: 0.4rem; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ===== 1. REGISTRY HEADER ===== -->
+  <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+    <span style="font-size: 3rem; font-family: var(--font-heading); color: var(--gold); font-weight: 700;">Φ</span>
+    <div>
+      <h1 style="margin: 0; line-height: 1.2;">Theophysics Registry</h1>
+      <div style="font-size: 0.9rem; color: #9ca3af; margin-top: 0.2rem;">
+        <span class="text-mono">ISO-036</span> · Fluid Dynamics → Pneumatology
+      </div>
+    </div>
+    <div style="margin-left: auto; display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center;">
+      <span class="badge badge-green">Level 3 · Isomorphism</span>
+      <span class="badge badge-gold">Confidence: High</span>
+      <span class="text-mono small" style="color: #6b7280;">v1.0</span>
+    </div>
+  </div>
+  <div class="separator"></div>
+
+  <!-- ===== 2. HERO BANNER ===== -->
+  <div class="grid-2" style="background: linear-gradient(135deg, rgba(212,175,55,0.06) 0%, transparent 70%); border-radius: 16px; padding: 1.5rem; border: 1px solid #1e1e1e;">
+    <!-- left -->
+    <div>
+      <span class="badge badge-gold" style="margin-bottom: 0.8rem; display: inline-block;"><i class="fas fa-gavel inline-icon"></i>Law · Structural Isomorphism</span>
+      <h2 style="font-size: 2rem; margin: 0.5rem 0 0.2rem 0; line-height: 1.2;">
+        Fluid Dynamics <span style="color: var(--gold);">⟷</span> Pneumatology
+      </h2>
+      <div style="color: #9ca3af; font-size: 0.95rem; margin-bottom: 1rem;">
+        <i class="fas fa-wind inline-icon"></i> ruach / pneuma — the language itself is the isomorphism
+      </div>
+      <div class="pull-quote">
+        “The biblical authors did not construct a metaphor. They used ONE WORD because they perceived ONE STRUCTURE operating at different scales.”
+      </div>
+      <div class="verse-ref" style="margin-top: 0.5rem;">Genesis 1:2 · John 3:8 · Acts 2:2</div>
+    </div>
+    <!-- right: equation card -->
+    <div class="equation-card">
+      <div><span style="color: var(--info);">Navier-Stokes (incompressible):</span></div>
+      <div>ρ (∂𝐯/∂t + 𝐯·∇𝐯) = −∇p + μ∇²𝐯 + 𝐟</div>
+      <div style="margin-top: 0.6rem;"><span style="color: var(--gold);">Reynolds number:</span> Re = ρ v L / μ</div>
+      <div class="arrow">⟷</div>
+      <div><span style="color: var(--gold);">Spirit dynamics:</span></div>
+      <div>ρ_glory (∂𝐯_s/∂t + 𝐯_s·∇𝐯_s) = −∇p_div + μ_res ∇²𝐯_s + 𝐟_sovereign</div>
+      <div style="margin-top: 0.6rem;"><span style="color: var(--gold);">Spiritual Re:</span> Re_s = ρ_glory · v_s · L_scope / μ_res</div>
+    </div>
+  </div>
+
+  <!-- ===== 3. DOMAIN SPECIFICATIONS ===== -->
+  <h2><span class="section-number">01</span> Domain Specifications</h2>
+  <div class="separator"></div>
+  <div class="grid-2">
+    <!-- Domain A -->
+    <div class="card card-blue">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+        <i class="fas fa-water" style="color: var(--info); font-size: 1.6rem;"></i>
+        <h3 style="margin: 0;">Domain A · Fluid Dynamics</h3>
+      </div>
+      <p style="font-size: 0.9rem; color: #b0b8c0;">Laminar &amp; turbulent flow, Reynolds number, Navier-Stokes, pressure gradients, Bernoulli, viscosity, boundary layers, vortex shedding, conservation of mass.</p>
+      <div style="margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.8rem; color: #8b949e;">
+        Re = ρvL/μ · ∇·𝐯 = 0 · p + ½ρv² + ρgh = const
+      </div>
+    </div>
+    <!-- Domain B -->
+    <div class="card card-gold">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+        <i class="fas fa-dove" style="color: var(--gold); font-size: 1.6rem;"></i>
+        <h3 style="margin: 0;">Domain B · Christian Theology (Pneumatology)</h3>
+      </div>
+      <p style="font-size: 0.9rem; color: #b0b8c0;">Doctrine of the Holy Spirit: ruach/pneuma = wind/breath/spirit. Operations, gifts, fruit, sovereignty, order &amp; power, human-divine interface.</p>
+      <div style="margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.8rem; color: #8b949e;">
+        Gal 5:22 · Acts 2:2 · 1 Cor 14 · John 3:8 · Mark 1:12
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 4. THE ISOMORPHIC MAPPING ===== -->
+  <h2><span class="section-number">02</span> The Isomorphic Mapping</h2>
+  <div class="separator"></div>
+  <p style="margin-bottom: 1rem;"><span class="badge badge-green" style="margin-right: 0.5rem;">STRUCTURAL</span> Twelve correspondences — the mapping is a <strong>structural identity</strong>, not a metaphor.</p>
+  <div style="overflow-x: auto;">
+    <table class="mapping-table">
+      <thead>
+        <tr><th>Fluid Dynamic Concept</th><th>Pneumatological Concept</th><th>Structural Identity</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Laminar flow</td><td>Order / peace / fruit of the Spirit</td><td>Smooth, predictable, layered, each element undisturbed</td></tr>
+        <tr><td>Turbulent flow</td><td>Charismatic / prophetic power</td><td>High-energy, unpredictable, mixing, boundary-crossing</td></tr>
+        <tr><td>Reynolds number</td><td>Spiritual intensity parameter</td><td>Dimensionless ratio determining orderly or dramatic mode</td></tr>
+        <tr><td>Pressure gradient</td><td>The Spirit's driving force</td><td>Flow moves high→low pressure; Spirit “drives” (Mark 1:12)</td></tr>
+        <tr><td>Bernoulli's principle</td><td>Paradox of spiritual power</td><td>v↑ ⇒ p↓ — “when I am weak, then I am strong” (2 Cor 12:10)</td></tr>
+        <tr><td>Navier-Stokes (unsolved)</td><td>The Spirit's irreducible mystery</td><td>Cannot be fully solved/predicted (John 3:8)</td></tr>
+        <tr><td>Viscosity</td><td>Resistance to the Spirit</td><td>Internal friction; “quenching” (1 Thess 5:19), “grieving” (Eph 4:30)</td></tr>
+        <tr><td>Boundary layer</td><td>Human-divine interface</td><td>Thin region where infinite flow meets finite surface; thinned by prayer/worship</td></tr>
+        <tr><td>Vortex shedding</td><td>Cyclical spiritual movements</td><td>Periodic revival patterns shed from the church into culture</td></tr>
+        <tr><td>Conservation of mass (continuity)</td><td>Spirit not diminished by distribution</td><td>Numbers 11:25 — sharing does not deplete the source</td></tr>
+        <tr><td>Stagnation point</td><td>Spiritual stagnation</td><td>v=0, max pressure, zero dynamic action — 2 Tim 3:5</td></tr>
+        <tr><td>Turbulent mixing</td><td>Cross-cultural Spirit movement</td><td>Pentecost: languages, cultures, social strata mixed (Acts 2:5-11)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="pull-quote" style="margin-top: 0.5rem;">
+    “Bernoulli's principle is not a metaphor for 2 Corinthians 12:10 — it is the same structural relationship.”
+  </div>
+
+  <!-- ===== 5. SEPARATOR TESTS ===== -->
+  <h2><span class="section-number">03</span> Separator Tests</h2>
+  <div class="separator"></div>
+  <div class="grid-4">
+    <!-- Test A -->
+    <div class="card">
+      <h4 style="color: var(--gold);"><i class="fas fa-sitemap inline-icon"></i>Test A · Structural Preservation</h4>
+      <p style="font-size: 0.85rem; margin: 0.5rem 0;">Do relations survive under mapping? Viscosity suppresses turbulence ↔ resistance suppresses charismata. Bernoulli holds ↔ weakness-power holds. Continuity ↔ Spirit not depleted.</p>
+      <span class="test-pass"><i class="fas fa-check-circle"></i> PASS</span>
+      <div class="verse-ref" style="margin-top: 0.3rem;">12/12 correspondences intact</div>
+    </div>
+    <!-- Test B -->
+    <div class="card">
+      <h4 style="color: var(--gold);"><i class="fas fa-random inline-icon"></i>Test B · Non-Arbitrariness (Swap)</h4>
+      <p style="font-size: 0.85rem; margin: 0.5rem 0;">Can fluid dynamics be swapped with another domain? Electromagnetism lacks laminar/turbulent transition, viscosity, Bernoulli. Linguistic identity (ruach/pneuma = wind) anchors uniquely to fluid dynamics.</p>
+      <span class="test-pass"><i class="fas fa-check-circle"></i> PASS</span>
+      <div class="verse-ref" style="margin-top: 0.3rem;">Swap fails — mapping is forced</div>
+    </div>
+    <!-- Test C -->
+    <div class="card">
+      <h4 style="color: var(--gold);"><i class="fas fa-ban inline-icon"></i>Test C · Constraint</h4>
+      <p style="font-size: 0.85rem; margin: 0.5rem 0;">Does the mapping rule things out? Yes: if viscosity does not suppress turbulence, mapping breaks. If weakness does not correlate with power, mapping breaks. Six specific falsification conditions.</p>
+      <span class="test-pass"><i class="fas fa-check-circle"></i> PASS</span>
+      <div class="verse-ref" style="margin-top: 0.3rem;">6 kill conditions defined</div>
+    </div>
+    <!-- Test D -->
+    <div class="card">
+      <h4 style="color: var(--gold);"><i class="fas fa-arrows-alt-h inline-icon"></i>Test D · Bidirectionality</h4>
+      <p style="font-size: 0.85rem; margin: 0.5rem 0;">Does each side predict the other? Fluid dynamics → theology: two regimes, transition parameter, resistance opposes flow. Theology → fluid dynamics: laminar-turbulent transition as universal pattern; N-S unsolvability as Gödelian incompleteness.</p>
+      <span class="test-pass"><i class="fas fa-check-circle"></i> PASS</span>
+      <div class="verse-ref" style="margin-top: 0.3rem;">Bidirectional predictions confirmed</div>
+    </div>
+  </div>
+
+  <!-- ===== 6. CLASSIFICATION & EVIDENCE ===== -->
+  <h2><span class="section-number">04</span> Classification &amp; Evidence</h2>
+  <div class="separator"></div>
+  <div class="card" style="border-left: 4px solid var(--gold);">
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start;">
+      <div>
+        <span class="badge badge-green" style="font-size: 0.9rem; padding: 0.3rem 1.2rem;">Structural Isomorphism</span>
+        <span class="badge badge-gold" style="font-size: 0.9rem; padding: 0.3rem 1.2rem;">Confidence: High</span>
+        <span class="badge badge-gold" style="font-size: 0.9rem; padding: 0.3rem 1.2rem;">Level 3 · Axiomatic</span>
+      </div>
+      <div style="flex:1;">
+        <div style="font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; color: var(--gold); margin-bottom: 0.4rem;">Evidence Bundles</div>
+        <div>
+          <span class="chip">Ruach/pneuma unified semantic field</span>
+          <span class="chip">Reynolds number empirical validation</span>
+          <span class="chip">Bernoulli's principle (1738)</span>
+          <span class="chip">Conservation of mass</span>
+          <span class="chip">Navier-Stokes Millennium Problem (unsolved)</span>
+          <span class="chip">Historical revival periodicity (50-80 yr cycles)</span>
+          <span class="chip">Viscosity-charisma inverse correlation</span>
+          <span class="chip">Persecution-growth correlation</span>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 1rem; font-size: 0.85rem; color: #9ca3af;">
+      <span class="fw-700 text-gold">Laws Invoked:</span> Law 2 (Conservation), Law 3 (Feedback/Recursion), Law 4 (Incompleteness), Law 9 (Grace)
+    </div>
+  </div>
+
+  <!-- ===== 7. FALSIFICATION CRITERIA ===== -->
+  <h2><span class="section-number">05</span> Falsification Criteria</h2>
+  <div class="separator"></div>
+  <div class="card card-red">
+    <h4 style="color: var(--danger);"><i class="fas fa-skull inline-icon"></i> Kill Conditions — the mapping is destroyed if ANY of the following are demonstrated:</h4>
+    <ol style="margin: 1rem 0 0 1.5rem; color: #e0d0d0; font-size: 0.9rem; line-height: 1.8;">
+      <li><strong>Ruach/pneuma linguistic identity is accidental</strong> — homonyms with no semantic connection (like “bank” = riverbank vs. financial institution). Semitic linguistics shows the opposite.</li>
+      <li><strong>The Spirit operates independently of resistance</strong> — human opposition has no effect on the Spirit's manifestation. Empirical observation across traditions contradicts this.</li>
+      <li><strong>Weakness does not correlate with spiritual power</strong> — 2 Cor 12:10 is mere rhetoric; spiritual power correlates positively with human strength. Historical pattern of persecuted, marginal communities contradicts this.</li>
+      <li><strong>The Spirit IS depleted by distribution</strong> — zero-sum spiritual economy. Numbers 11:25 and Trinitarian theology explicitly deny this.</li>
+      <li><strong>Charismatic manifestation bears no relationship to institutional flexibility</strong> — rigid and flexible communities show identical rates of charismata. Strong inverse correlation observed.</li>
+      <li><strong>Navier-Stokes is solved completely</strong> — general smooth solutions always exist (no singularities). Mapping weakens; if blow-up is proven possible, mapping strengthens.</li>
+    </ol>
+    <div class="verse-ref" style="margin-top: 0.8rem;">Six specific, testable conditions</div>
+  </div>
+
+  <!-- ===== 8. RELATED ISOMORPHISMS ===== -->
+  <h2><span class="section-number">06</span> Related Isomorphisms</h2>
+  <div class="separator"></div>
+  <div class="grid-2" style="margin-bottom: 1rem;">
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <div style="display: flex; gap: 0.6rem; align-items: center;">
+        <i class="fas fa-link" style="color: var(--info);"></i>
+        <span class="text-mono" style="color: var(--gold);">ISO-001</span>
+        <span>Trinity — Spirit as third person</span>
+      </div>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <div style="display: flex; gap: 0.6rem; align-items: center;">
+        <i class="fas fa-link" style="color: var(--info);"></i>
+        <span class="text-mono" style="color: var(--gold);">ISO-002</span>
+        <span>Terminus Sui — Spirit as external input</span>
+      </div>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <div style="display: flex; gap: 0.6rem; align-items: center;">
+        <i class="fas fa-link" style="color: var(--info);"></i>
+        <span class="text-mono" style="color: var(--gold);">ISO-003</span>
+        <span>Entropy/Sin — Spirit as entropy-reversing agent</span>
+      </div>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <div style="display: flex; gap: 0.6rem; align-items: center;">
+        <i class="fas fa-link" style="color: var(--info);"></i>
+        <span class="text-mono" style="color: var(--gold);">ISO-013</span>
+        <span>Grace Operator — Spirit as agent of grace</span>
+      </div>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <div style="display: flex; gap: 0.6rem; align-items: center;">
+        <i class="fas fa-link" style="color: var(--info);"></i>
+        <span class="text-mono" style="color: var(--gold);">ISO-033</span>
+        <span>Pharmacology — Spirit as active ligand</span>
+      </div>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <div style="display: flex; gap: 0.6rem; align-items: center;">
+        <i class="fas fa-link" style="color: var(--info);"></i>
+        <span class="text-mono" style="color: var(--gold);">ISO-034</span>
+        <span>Control Theory — Spirit as controller output</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 9. FOOTER ===== -->
+  <div class="footer">
+    <div style="font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold);">Theophysics Research Program</div>
+    <div style="margin-top: 0.3rem;">POF 2828 · ISO-036 v1.0</div>
+    <div class="seal">“The math points to God. The math does not contain God.”</div>
+    <div style="margin-top: 1rem; font-size: 0.7rem; opacity: 0.4;">
+      <i class="fas fa-omega"></i> faiththruphysics.com
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

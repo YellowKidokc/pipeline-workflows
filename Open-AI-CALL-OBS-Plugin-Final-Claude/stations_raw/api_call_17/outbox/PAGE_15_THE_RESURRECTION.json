@@ -1,0 +1,247 @@
+{
+  "spec_version": "1.0",
+  "page_id": "PAGE_15",
+  "page_title": "THE RESURRECTION",
+  "page_slug": "page-15-the-resurrection",
+  "source_file": "PAGE_15_THE_RESURRECTION.md",
+  "generated_by": "adversarial_auditor_v1",
+  "generated_date": "2026-07-15",
+  "adversarial_audit": {
+    "fatal_issue": "The central claim that the Resurrection proves infinite capacity ($C_{\\text{max}} = \\infty$) relies on an unstated assumption that the bearer's capacity is a scalar quantity that can be depleted by absorbing a finite total cost. No physical or mathematical definition of 'capacity' is given, nor is it shown that absorption of moral debt is subtractive in the way required. The argument is a bare analogy to thermodynamic or economic depletion, not a derivation from the framework's axioms.",
+    "major_issue": "The page conflates a conditional theorem ('IF Resurrection THEN infinite capacity') with an existence proof for the Cross configuration. The existence proof for the Cross requires showing that a payer with sufficient capacity exists in reality, not just that if one existed and resurrected, it would be infinite. The conditional does not establish existence; it only characterizes a hypothetical.",
+    "sharpening_issue": "The term 'capacity certificate' is introduced without formal definition or connection to the master equation or any axiom. It functions as a metaphor, not a theorem. The page should either define it in terms of the framework's conserved quantities or acknowledge it as a placeholder.",
+    "smart_hostile_physicist_check": {
+      "primary_confusion": "analogy",
+      "diagnosis": "The argument treats moral debt as a conserved quantity that can be 'absorbed' and 'exhaust' a finite reservoir, mirroring thermodynamic entropy or financial debt. But no physical process is named or shown to be isomorphic. The mapping is purely metaphorical: there is no conservation law for 'moral cost' in the framework, no definition of 'capacity' as a measurable quantity, and no demonstration that absorption reduces capacity in a one-to-one way.",
+      "sentence_to_rewrite": "The Resurrection is the structural certificate that the capacity is unbounded. The bearer absorbed \u03b4_total \u2014 the full conserved moral cost of the system \u2014 and returned.",
+      "required_fix": "Either define 'conserved moral cost' as a formal quantity with a conservation law derived from the axioms, or replace the claim with a conditional that does not assert physical conservation. If the analogy is retained, it must be explicitly labeled as a metaphor and the mapping must be shown to be one-to-one at each step."
+    },
+    "physics_process_check": {
+      "does_mirror_physics_process": true,
+      "physics_process_named": "Thermodynamic capacity/exhaustion (e.g., heat capacity, battery discharge)",
+      "one_to_one_verdict": "broken",
+      "where_mapping_holds": "The idea that a finite reservoir can be depleted by absorbing a finite quantity is a valid physical intuition (e.g., a battery discharging).",
+      "where_mapping_breaks": "There is no definition of 'moral cost' as a physical quantity with units, no conservation law, no mechanism for absorption, and no way to measure 'capacity' or 'exhaustion'. The mapping breaks at every formal step: the framework does not provide a state space, a dynamics, or a measurable observable corresponding to these terms.",
+      "sentence_to_rewrite": "The bearer absorbed \u03b4_total \u2014 the full conserved moral cost of the system \u2014 and returned.",
+      "required_fix": "Either provide a formal definition of 'conserved moral cost' within the framework (including a conservation law and a state space), or remove the claim that the process mirrors a physical one. If the mapping is intended as an analogy, state that explicitly and do not use it as a premise in a derivation."
+    },
+    "strongest_non_framework_alternative": "The Resurrection could be explained by a non-infinite capacity: the bearer's capacity might be finite but never fully exhausted because the total moral debt is finite (e.g., if the system is closed or if debt is forgiven by fiat). Alternatively, the Resurrection could be a separate miracle unrelated to capacity, or a non-event (legend). The framework does not rule out these alternatives.",
+    "what_would_force_public_narrowing": "A clear, testable prediction that distinguishes infinite capacity from finite-but-sufficient capacity. For example: if capacity is infinite, then no future moral debt can ever exceed it; if finite, there is a threshold. The framework must specify how to measure or bound total moral debt and capacity, or the claim remains unfalsifiable.",
+    "rewrite_priority": "fatal"
+  },
+  "structure_audit": {
+    "opening_hook_strength": 7,
+    "logical_flow_strength": 4,
+    "transition_quality": 5,
+    "does_opening_promise_match_ending": false,
+    "sequence_verdict": "broken",
+    "best_order_step_by_step": [
+      "State the capacity problem clearly: the Cross configuration requires a payer with capacity >= total moral debt.",
+      "Define 'capacity' and 'moral debt' formally within the framework (or acknowledge they are undefined).",
+      "Show that if capacity is finite, there exists a time when debt exceeds capacity (requires a model of debt accumulation).",
+      "Introduce the Resurrection as a historical claim that the bearer returned after absorbing debt.",
+      "Derive the conditional: IF Resurrection, THEN capacity is not finite (requires a model of absorption and return).",
+      "Acknowledge that the conditional does not prove existence of the Cross; it only characterizes a hypothetical payer.",
+      "Separate structural claims from historical claims explicitly, as the page attempts but does not fully achieve."
+    ],
+    "flow_breaks": [
+      {
+        "from_section": "The Claim",
+        "to_section": "The Derivation",
+        "problem": "The Claim asserts that the Resurrection is the existence proof for the Cross, but the Derivation only proves a conditional (IF Resurrection THEN infinite capacity). The existence proof is not provided; the conditional does not establish that a payer with infinite capacity exists.",
+        "fix": "Rewrite the Claim to state: 'The Resurrection, if it occurred, would certify that the payer's capacity is infinite. This is a necessary condition for the Cross configuration to be real, but not a sufficient existence proof.'"
+      },
+      {
+        "from_section": "The Derivation",
+        "to_section": "The Floor",
+        "problem": "The Floor section correctly distinguishes structural from historical claims, but the earlier sections treat the Resurrection as a structural certificate, not a historical claim. The transition is abrupt and does not resolve the conflation.",
+        "fix": "Restructure so that the conditional derivation is clearly labeled as a structural theorem, and the historical claim is introduced separately as a faith claim that is not derived."
+      }
+    ],
+    "sentence_that_carries_too_much_weight": "The Resurrection is the structural certificate that the capacity is unbounded.",
+    "why_it_carries_too_much_weight": "This single sentence asserts that the Resurrection is a 'structural certificate' (a term not defined) and that it proves unbounded capacity. It conflates a historical event with a mathematical theorem, and it assumes a model of capacity that is not provided. The entire page's argument hinges on this sentence, but it is not supported by any prior definition or derivation."
+  },
+  "framework_presence": {
+    "master_equation": [],
+    "axioms": [],
+    "lean4": [
+      {
+        "present": true,
+        "quote": "resurrection_certifies_capacity (conditional form)",
+        "function": "The Lean theorem is claimed to prove the conditional 'IF Resurrection THEN infinite capacity'. However, the page does not provide the theorem statement, its assumptions, or its proof. The function is asserted but not demonstrated."
+      }
+    ],
+    "claims_layer": [
+      {
+        "present": true,
+        "quote": "The Resurrection is the structural certificate that the capacity is unbounded.",
+        "function": "This is the central claim of the page. It is presented as a theorem but is actually a conditional claim that depends on undefined terms and unproven assumptions."
+      }
+    ],
+    "proof_layer": [
+      {
+        "present": true,
+        "quote": "The argument: 1. The bearer absorbed \u03b4_total... 6. Therefore C_max is not finite",
+        "function": "This is presented as a proof, but it is a sequence of informal steps that rely on the unstated assumption that absorption reduces capacity in a subtractive way. No formal proof is given."
+      }
+    ],
+    "tests_layer": [],
+    "laws_layer": []
+  },
+  "paper_changing_questions": [
+    {
+      "question": "What exact, currently testable prediction does this page make? For example, does it predict that no future event can ever exhaust the payer's capacity? If so, how would one measure or falsify that?",
+      "why_it_matters": "Without a testable prediction, the claim is unfalsifiable and not scientific. The page claims a structural certificate, but does not specify what empirical evidence would confirm or disconfirm it.",
+      "if_unanswered_then": "The page remains a theological assertion dressed in mathematical language, not a scientific or mathematical result.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Which named physics process is being mirrored in the capacity argument, and where is the one-to-one transition map that shows the isomorphism?",
+      "why_it_matters": "The page uses terms like 'conserved moral cost', 'capacity', and 'exhaustion' that strongly suggest a thermodynamic or economic analogy. Without a formal mapping, the argument is metaphorical, not mathematical.",
+      "if_unanswered_then": "The derivation is not a proof; it is an analogy. The page should be rewritten to either provide the mapping or explicitly label the argument as analogical.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Is the claim that 'the Resurrection proves infinite capacity' a logical consequence of the framework's axioms, or is it an additional assumption? If it is a consequence, provide the Lean proof. If it is an assumption, state it as such.",
+      "why_it_matters": "The page presents the claim as a theorem, but the derivation is informal and relies on undefined terms. The framework's integrity depends on clear separation of axioms, theorems, and assumptions.",
+      "if_unanswered_then": "The page undermines the framework's claim to rigorous derivation and risks being seen as smuggling a faith claim as a theorem.",
+      "severity": "fatal"
+    },
+    {
+      "question": "What is the strongest falsifying data point against the core thesis of this page? For example, if a historical analysis showed that the Resurrection did not occur, does the framework collapse? If so, the framework is vulnerable to historical criticism, not just mathematical or physical scrutiny.",
+      "why_it_matters": "The page claims the Resurrection is a 'historical claim' and a 'faith claim', but also calls it a 'structural certificate'. If the framework depends on a specific historical event, it is not a purely mathematical or physical theory.",
+      "if_unanswered_then": "The framework's claim to be a scientific or mathematical theory is weakened; it is better described as a theological model.",
+      "severity": "major"
+    },
+    {
+      "question": "Which assumption in the capacity argument is least justified, and what minimum condition would weaken it? For example, the assumption that moral debt is conserved and additive across all agents and all time.",
+      "why_it_matters": "The entire derivation hinges on this assumption. If it is not justified, the argument is unsupported.",
+      "if_unanswered_then": "The page should either provide a justification for the conservation of moral debt or acknowledge that it is an unproven axiom.",
+      "severity": "major"
+    },
+    {
+      "question": "Are the core claims of this page supported by primary sources (e.g., the Lean theorem file, the axiom list), or only by summary mentions in the page itself?",
+      "why_it_matters": "The page references a Lean theorem but does not provide its statement or proof. Without access to the primary source, the claim is unverifiable.",
+      "if_unanswered_then": "The page is not self-contained and cannot be audited. It should either include the theorem or provide a reference to a verifiable source.",
+      "severity": "major"
+    },
+    {
+      "question": "Which term is used in multiple meanings in the same argument? For example, 'capacity' might mean 'ability to absorb moral debt' in one sentence and 'infinite resource' in another, without clarification.",
+      "why_it_matters": "Ambiguity in key terms can hide logical gaps. The page uses 'capacity' without definition, and it may shift meaning between 'finite reservoir' and 'infinite source'.",
+      "if_unanswered_then": "The argument is vulnerable to equivocation and should be rewritten with clear, consistent definitions.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "What minimal counterexample would break the central analogy? For example, a finite reservoir that is continuously replenished (like a rechargeable battery) could absorb infinite total debt without being infinite.",
+      "why_it_matters": "The page assumes that finite capacity implies eventual exhaustion, but this is not true if the reservoir is replenished. The analogy to a finite source is not the only possibility.",
+      "if_unanswered_then": "The argument is incomplete; it does not rule out alternative models of capacity.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "Can the claim 'C_max = \u221e' be safely ingested into downstream metadata fields (e.g., claim_id, axiom_id, test_id) without ambiguity? For example, is it a theorem, an axiom, or a historical claim?",
+      "why_it_matters": "The framework's metadata system requires clear categorization. If the claim is ambiguous, downstream processing will be inconsistent.",
+      "if_unanswered_then": "The page should explicitly label the claim as a theorem (conditional on the Resurrection) or as an axiom, and provide the corresponding IDs.",
+      "severity": "sharpening"
+    }
+  ],
+  "sentence_annotations": [
+    {
+      "anchor_quote": "The Resurrection is the structural certificate that the capacity is unbounded.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This sentence makes the central claim of the page but uses undefined terms ('structural certificate', 'capacity') and conflates a historical event with a mathematical theorem. It is the load-bearing sentence of the entire argument.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The bearer absorbed \u03b4_total \u2014 the full conserved moral cost of the system \u2014 and returned.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Assumes that moral cost is conserved and that absorption is subtractive. No definition or justification is provided. This is the key premise of the capacity argument.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "If C_max were finite, absorption of \u03b4_total would reduce remaining capacity to C_max - \u03b4_total",
+      "annotation_type": "math",
+      "ui_color": "gold",
+      "why_flagged": "This is a mathematical statement that assumes a specific model of capacity (subtractive depletion). No justification is given for why capacity behaves this way. It is not derived from any axiom.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The Resurrection is the empirical event that certifies: C_max = \u221e",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Presents the Resurrection as an 'empirical event' that certifies a mathematical equality. This conflates empirical and formal domains. The certification is not defined.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The conditional is a theorem. The antecedent is a historical claim. The chain is honest about which is which.",
+      "annotation_type": "clarification",
+      "ui_color": "violet",
+      "why_flagged": "This sentence attempts to clarify the distinction between structural and historical claims, but it is contradicted by earlier sentences that treat the Resurrection as a structural certificate. The page is not consistent.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The framework proves that the STRUCTURE must exist \u2014 there must be a capacity certificate, or the Cross configuration is a theorem without an existence proof.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Claims that the framework proves the structure must exist, but the page only proves a conditional. The existence of a capacity certificate is not proven; it is assumed or derived from a historical event.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Without Page 15, Page 14 is a uniqueness theorem with no existence proof. The Resurrection IS the existence proof.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is the strongest claim of the page, but it is not supported. The Resurrection is presented as an existence proof, but the page only shows that IF it occurred, then capacity is infinite. That does not prove that a payer with infinite capacity exists; it only characterizes a hypothetical payer.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    }
+  ]
+}

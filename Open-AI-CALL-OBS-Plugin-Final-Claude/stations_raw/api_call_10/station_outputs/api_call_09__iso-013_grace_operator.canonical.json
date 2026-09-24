@@ -1,0 +1,574 @@
+{
+  "definitions": [
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A mapping between two systems that shows they have the same structure or pattern.",
+      "example": "Like a map of a subway system that shows the same connections as the real tracks.",
+      "grade_level": "college",
+      "first_appearance": "ISO-013_Grace_Operator"
+    },
+    {
+      "term": "non-unitary operator",
+      "category": "physics",
+      "definition": "A mathematical operation that does not preserve the total size or length of a quantum state vector.",
+      "example": "Like a filter that removes some colors from light, changing the total amount of light.",
+      "grade_level": "college",
+      "first_appearance": "DOMAINS"
+    },
+    {
+      "term": "idempotent",
+      "category": "math",
+      "definition": "A property where applying an operation twice gives the same result as applying it once.",
+      "example": "Like pressing a button that turns on a light; pressing it again does nothing new.",
+      "grade_level": "college",
+      "first_appearance": "DOMAINS"
+    },
+    {
+      "term": "operator algebra",
+      "category": "math",
+      "definition": "A branch of math that studies operations on mathematical objects, like matrices or functions.",
+      "example": "Like learning rules for adding and multiplying numbers, but for more complex objects.",
+      "grade_level": "college",
+      "first_appearance": "DOMAINS"
+    },
+    {
+      "term": "prevenient grace",
+      "category": "theology",
+      "definition": "The idea that God's help comes before any human action, preparing a person to respond to God.",
+      "example": "Like a teacher giving you a hint before you even start a test.",
+      "grade_level": "college",
+      "first_appearance": "DOMAINS"
+    },
+    {
+      "term": "divine intervention",
+      "category": "theology",
+      "definition": "God directly stepping into the natural world to change events.",
+      "example": "Like a parent stepping in to stop a fight between siblings.",
+      "grade_level": "college",
+      "first_appearance": "DOMAINS"
+    },
+    {
+      "term": "moral sign",
+      "category": "framework",
+      "definition": "A way of labeling a person's moral state as either good (+1) or bad (-1) in the Theophysics model.",
+      "example": "Like a scoreboard showing whether a team is winning or losing.",
+      "grade_level": "college",
+      "first_appearance": "DOMAINS"
+    },
+    {
+      "term": "Hilbert space",
+      "category": "physics",
+      "definition": "A mathematical space used in quantum mechanics to describe all possible states of a system.",
+      "example": "Like a giant library where every possible book (state) has its own shelf.",
+      "grade_level": "college",
+      "first_appearance": "The Grace Operator G acts on a two-state Hilbert space"
+    },
+    {
+      "term": "projection",
+      "category": "math",
+      "definition": "An operation that maps a set of points onto a smaller subset, often by dropping some information.",
+      "example": "Like a shadow that shows only the outline of a 3D object on a flat wall.",
+      "grade_level": "college",
+      "first_appearance": "Projectivity"
+    },
+    {
+      "term": "Hamiltonian",
+      "category": "physics",
+      "definition": "A mathematical operator that represents the total energy of a physical system.",
+      "example": "Like a recipe that tells you how a system will change over time based on its energy.",
+      "grade_level": "college",
+      "first_appearance": "External origin"
+    },
+    {
+      "term": "unitary time evolution",
+      "category": "physics",
+      "definition": "The way a closed quantum system changes over time in a reversible, energy-preserving way.",
+      "example": "Like a pendulum swinging back and forth without losing energy.",
+      "grade_level": "college",
+      "first_appearance": "External origin"
+    },
+    {
+      "term": "rank deficiency",
+      "category": "math",
+      "definition": "A matrix that does not have full rank, meaning it loses information and cannot be reversed.",
+      "example": "Like a blurry photo that cannot be made sharp again because details are lost.",
+      "grade_level": "college",
+      "first_appearance": "Rank deficiency"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation, how people are saved from sin and its consequences.",
+      "example": "Like studying different ways to be rescued from a dangerous situation.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "Pelagianism",
+      "category": "theology",
+      "definition": "The belief that humans can save themselves through their own efforts without God's special help.",
+      "example": "Like thinking you can climb a mountain without any ropes or gear.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "sanctification",
+      "category": "theology",
+      "definition": "The process of becoming more holy or morally pure over time after being saved.",
+      "example": "Like slowly cleaning a dirty room until it is spotless.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B (Theology)"
+    },
+    {
+      "term": "justification",
+      "category": "theology",
+      "definition": "The act of being declared righteous or forgiven by God, often seen as a one-time event.",
+      "example": "Like a judge declaring you innocent of a crime you were accused of.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B (Theology)"
+    },
+    {
+      "term": "sola gratia",
+      "category": "theology",
+      "definition": "A Latin phrase meaning 'grace alone,' the belief that salvation is only by God's grace, not human effort.",
+      "example": "Like receiving a gift you did nothing to earn.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B (Theology)"
+    },
+    {
+      "term": "epistemic status",
+      "category": "philosophy",
+      "definition": "How much confidence we can have that a claim is true or justified.",
+      "example": "Like rating a rumor as 'likely true' or 'probably false' based on the evidence.",
+      "grade_level": "college",
+      "first_appearance": "HONEST ASSESSMENT: THE CIRCULARITY PROBLEM"
+    },
+    {
+      "term": "structural isomorphism",
+      "category": "math",
+      "definition": "A mapping that shows two different systems have the same underlying structure.",
+      "example": "Like a chessboard and a checkerboard having the same grid pattern even though the games are different.",
+      "grade_level": "college",
+      "first_appearance": "CLASSIFICATION"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A basic statement that is assumed to be true without proof, used as a starting point for reasoning.",
+      "example": "Like 'all right angles are equal' in geometry.",
+      "grade_level": "college",
+      "first_appearance": "Axiom Dependencies"
+    },
+    {
+      "term": "falsification",
+      "category": "academic",
+      "definition": "The idea that a scientific claim must be testable and could be proven wrong by evidence.",
+      "example": "Like saying 'all swans are white' can be proven false by finding one black swan.",
+      "grade_level": "college",
+      "first_appearance": "Falsification"
+    },
+    {
+      "term": "coherence",
+      "category": "physics",
+      "definition": "In quantum mechanics, the property of a system where different states are linked in a predictable way.",
+      "example": "Like two dancers moving in perfect sync.",
+      "grade_level": "college",
+      "first_appearance": "Element References"
+    },
+    {
+      "term": "decoherence",
+      "category": "physics",
+      "definition": "The process where a quantum system loses its coherence due to interaction with its environment.",
+      "example": "Like a synchronized dance falling apart when dancers get distracted by noise.",
+      "grade_level": "college",
+      "first_appearance": "NOT claiming non-unitarity is rare or surprising"
+    },
+    {
+      "term": "entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system.",
+      "example": "Like a messy room having higher entropy than a tidy one.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "singular (matrix)",
+      "category": "math",
+      "definition": "A matrix that has no inverse, meaning you cannot reverse its operation.",
+      "example": "Like a one-way door that cannot be opened from the other side.",
+      "grade_level": "college",
+      "first_appearance": "Irreversibility"
+    },
+    {
+      "term": "adjoint",
+      "category": "math",
+      "definition": "A mathematical operation that is like a reverse or transpose of an operator, often used in quantum mechanics.",
+      "example": "Like the reverse gear in a car that lets you go backward.",
+      "grade_level": "college",
+      "first_appearance": "Non-unitarity"
+    },
+    {
+      "term": "norm-preserving",
+      "category": "physics",
+      "definition": "A property of an operator that keeps the total size or length of a vector unchanged.",
+      "example": "Like rotating a stick without changing its length.",
+      "grade_level": "college",
+      "first_appearance": "Non-unitarity"
+    },
+    {
+      "term": "superposition",
+      "category": "physics",
+      "definition": "In quantum mechanics, the ability of a system to be in multiple states at once until measured.",
+      "example": "Like a spinning coin that is both heads and tails until it lands.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A (Physics)"
+    },
+    {
+      "term": "Gödel/Tarski/Turing/Clausius/Landauer/Leibniz",
+      "category": "academic",
+      "definition": "A set of six famous theorems or principles from logic, physics, and information theory that show limits of systems.",
+      "example": "Like six different rules that all say 'you cannot do everything from inside the box.'",
+      "grade_level": "graduate",
+      "first_appearance": "HONEST ASSESSMENT: THE CIRCULARITY PROBLEM"
+    },
+    {
+      "term": "chi-field",
+      "category": "framework",
+      "definition": "A hypothetical field in Theophysics that carries moral or spiritual information.",
+      "example": "Like a magnetic field, but for moral states instead of magnetic poles.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in this document, but implied by framework"
+    },
+    {
+      "term": "moral curvature",
+      "category": "framework",
+      "definition": "A concept in Theophysics describing how moral states bend or warp the chi-field.",
+      "example": "Like a heavy ball on a rubber sheet creating a dip that affects other objects.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in this document, but implied by framework"
+    },
+    {
+      "term": "coherence functional",
+      "category": "framework",
+      "definition": "A mathematical function that measures how coherent or ordered a system's moral state is.",
+      "example": "Like a score that tells you how synchronized a team is working together.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in this document, but implied by framework"
+    },
+    {
+      "term": "ontology",
+      "category": "philosophy",
+      "definition": "The study of what exists and the nature of reality.",
+      "example": "Like asking 'is a thought real in the same way a rock is real?'",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in this document, but implied by framework"
+    },
+    {
+      "term": "epistemology",
+      "category": "philosophy",
+      "definition": "The study of knowledge: how we know things and what counts as evidence.",
+      "example": "Like asking 'how do you know it's raining outside?'",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in this document, but implied by framework"
+    },
+    {
+      "term": "contingent",
+      "category": "philosophy",
+      "definition": "Something that could be different or might not exist at all.",
+      "example": "Like the color of your shirt, which could be blue or red.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in this document, but implied by framework"
+    },
+    {
+      "term": "necessary",
+      "category": "philosophy",
+      "definition": "Something that must be true and cannot be otherwise.",
+      "example": "Like 2+2=4, which is always true.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in this document, but implied by framework"
+    },
+    {
+      "term": "empirical",
+      "category": "academic",
+      "definition": "Based on observation or experiment, not just theory.",
+      "example": "Like testing a medicine on patients to see if it works.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in this document, but implied by framework"
+    },
+    {
+      "term": "falsifiable",
+      "category": "academic",
+      "definition": "A claim that can be proven wrong by evidence or experiment.",
+      "example": "Like 'all metals expand when heated' can be tested and possibly proven false.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in this document, but implied by framework"
+    },
+    {
+      "term": "theorem",
+      "category": "academic",
+      "definition": "A statement that has been proven to be true using logic and reasoning.",
+      "example": "Like the Pythagorean theorem in geometry.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in this document, but implied by framework"
+    },
+    {
+      "term": "hamartiology",
+      "category": "theology",
+      "definition": "The study of sin, its origin, and its effects.",
+      "example": "Like studying what causes a disease and how it spreads.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in this document, but implied by framework"
+    },
+    {
+      "term": "atonement",
+      "category": "theology",
+      "definition": "The act of making amends for a wrong or sin, often through a sacrifice.",
+      "example": "Like paying for a broken window to make things right.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in this document, but implied by framework"
+    },
+    {
+      "term": "eigenmode",
+      "category": "physics",
+      "definition": "A special pattern of vibration or state that a system naturally settles into.",
+      "example": "Like the way a guitar string vibrates in a specific shape when plucked.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in this document, but implied by framework"
+    },
+    {
+      "term": "Lagrangian",
+      "category": "physics",
+      "definition": "A mathematical function that describes the dynamics of a physical system using energy differences.",
+      "example": "Like a recipe that tells you how a ball will roll down a hill.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in this document, but implied by framework"
+    },
+    {
+      "term": "tensor",
+      "category": "math",
+      "definition": "A mathematical object that can describe relationships between vectors, like stress or curvature.",
+      "example": "Like a spreadsheet that holds numbers for different directions and dimensions.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in this document, but implied by framework"
+    },
+    {
+      "term": "bijection",
+      "category": "math",
+      "definition": "A one-to-one matching between two sets where every element in one set pairs with exactly one in the other.",
+      "example": "Like assigning each student a unique locker number.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in this document, but implied by framework"
+    },
+    {
+      "term": "Noether",
+      "category": "physics",
+      "definition": "Refers to Emmy Noether's theorem, which links symmetries in physics to conservation laws.",
+      "example": "Like the fact that if a system looks the same at all times, energy is conserved.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in this document, but implied by framework"
+    },
+    {
+      "term": "irrevocable",
+      "category": "theology",
+      "definition": "Something that cannot be taken back or undone.",
+      "example": "Like a permanent tattoo that cannot be removed.",
+      "grade_level": "college",
+      "first_appearance": "Irreversibility"
+    },
+    {
+      "term": "semi-Pelagian",
+      "category": "theology",
+      "definition": "A view that both God's grace and human effort work together for salvation.",
+      "example": "Like a team project where the teacher helps but you still do most of the work.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B (Theology)"
+    },
+    {
+      "term": "boundary condition",
+      "category": "physics",
+      "definition": "A rule that describes what happens at the edges of a system, like at a wall or at the start of time.",
+      "example": "Like the rule that a ball bounces back when it hits a wall.",
+      "grade_level": "college",
+      "first_appearance": "Voluntary reception required"
+    },
+    {
+      "term": "coupling coefficient",
+      "category": "physics",
+      "definition": "A number that measures how strongly two systems interact with each other.",
+      "example": "Like the volume knob on a radio that controls how loud the music comes through.",
+      "grade_level": "college",
+      "first_appearance": "Voluntary reception required"
+    },
+    {
+      "term": "substrate",
+      "category": "academic",
+      "definition": "The underlying material or substance that something acts upon or is made of.",
+      "example": "Like the canvas that a painter works on.",
+      "grade_level": "college",
+      "first_appearance": "Other ISOs Connected"
+    },
+    {
+      "term": "formalization",
+      "category": "academic",
+      "definition": "The process of expressing an idea in precise mathematical or logical terms.",
+      "example": "Like writing a recipe in exact measurements instead of 'a pinch of salt.'",
+      "grade_level": "college",
+      "first_appearance": "Honest status"
+    },
+    {
+      "term": "reverse-engineering",
+      "category": "academic",
+      "definition": "Taking something apart to see how it works, or designing something to match a desired outcome.",
+      "example": "Like taking apart a toy to see how its gears work, then building a similar one.",
+      "grade_level": "college",
+      "first_appearance": "HONEST ASSESSMENT: THE CIRCULARITY PROBLEM"
+    },
+    {
+      "term": "denominational variance",
+      "category": "theology",
+      "definition": "Differences in beliefs or practices between different Christian groups or denominations.",
+      "example": "Like how some churches baptize babies and others only baptize adults.",
+      "grade_level": "college",
+      "first_appearance": "Swap test result"
+    },
+    {
+      "term": "self-consistent",
+      "category": "academic",
+      "definition": "A set of ideas that do not contradict each other.",
+      "example": "Like a story where the timeline makes sense and characters don't act out of character.",
+      "grade_level": "college",
+      "first_appearance": "Bidirectional"
+    },
+    {
+      "term": "inverse",
+      "category": "math",
+      "definition": "An operation that undoes another operation, like subtraction undoes addition.",
+      "example": "Like the 'undo' button on a computer that reverses your last action.",
+      "grade_level": "college",
+      "first_appearance": "Irreversibility"
+    },
+    {
+      "term": "determinant (det)",
+      "category": "math",
+      "definition": "A number calculated from a matrix that tells you if the matrix can be inverted (if det=0, it cannot).",
+      "example": "Like a check that tells you if a lock can be picked or is permanently locked.",
+      "grade_level": "college",
+      "first_appearance": "Irreversibility"
+    },
+    {
+      "term": "state space",
+      "category": "physics",
+      "definition": "The set of all possible states a system can be in.",
+      "example": "Like all the possible positions and speeds a car can have on a road.",
+      "grade_level": "college",
+      "first_appearance": "Non-unitarity"
+    },
+    {
+      "term": "closed system",
+      "category": "physics",
+      "definition": "A system that does not exchange energy or information with its surroundings.",
+      "example": "Like a sealed thermos that keeps heat inside.",
+      "grade_level": "college",
+      "first_appearance": "External origin"
+    },
+    {
+      "term": "open system",
+      "category": "physics",
+      "definition": "A system that can exchange energy, matter, or information with its environment.",
+      "example": "Like a pot of water on a stove that can gain heat from the burner.",
+      "grade_level": "college",
+      "first_appearance": "Voluntary reception required"
+    },
+    {
+      "term": "Second Law of Thermodynamics",
+      "category": "physics",
+      "definition": "A law stating that the total disorder (entropy) of an isolated system always increases over time.",
+      "example": "Like a sandcastle that naturally falls apart but never builds itself up.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "quantum measurement",
+      "category": "physics",
+      "definition": "The process of observing a quantum system, which forces it to pick one definite state from many possibilities.",
+      "example": "Like opening a box to see if a cat is alive or dead, which decides its fate.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A (Physics)"
+    },
+    {
+      "term": "projection operator",
+      "category": "math",
+      "definition": "A mathematical operator that maps a vector onto a smaller subspace, often used in quantum mechanics.",
+      "example": "Like a flashlight that only lights up a specific area of a dark room.",
+      "grade_level": "college",
+      "first_appearance": "Projectivity"
+    },
+    {
+      "term": "von Neumann",
+      "category": "physics",
+      "definition": "John von Neumann, a mathematician who developed the mathematical foundations of quantum mechanics.",
+      "example": "Like the person who wrote the rulebook for how quantum systems behave.",
+      "grade_level": "college",
+      "first_appearance": "Evidence Bundles"
+    },
+    {
+      "term": "Ephesians 2:8-9",
+      "category": "theology",
+      "definition": "A Bible verse that says salvation is a gift from God, not earned by human effort.",
+      "example": "Like a note that says 'you didn't earn this, it's a present.'",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "Hebrews 10:14",
+      "category": "theology",
+      "definition": "A Bible verse that says Jesus' sacrifice made believers perfect forever, even as they are being made holy over time.",
+      "example": "Like being declared 'fully paid' for a debt, even while you still learn to manage money better.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "Romans 11:29",
+      "category": "theology",
+      "definition": "A Bible verse that says God's gifts and calling cannot be taken back.",
+      "example": "Like a promise that is never broken.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation, how people are saved from sin and its consequences.",
+      "example": "Like studying different ways to be rescued from a dangerous situation.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "Pelagianism",
+      "category": "theology",
+      "definition": "The belief that humans can save themselves through their own efforts without God's special help.",
+      "example": "Like thinking you can climb a mountain without any ropes or gear.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "sanctification",
+      "category": "theology",
+      "definition": "The process of becoming more holy or morally pure over time after being saved.",
+      "example": "Like slowly cleaning a dirty room until it is spotless.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B (Theology)"
+    },
+    {
+      "term": "justification",
+      "category": "theology",
+      "definition": "The act of being declared righteous or forgiven by God, often seen as a one-time event.",
+      "example": "Like a judge declaring you innocent of a crime you were accused of.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B (Theology)"
+    },
+    {
+      "term": "sola gratia",
+      "category": "theology",
+      "definition": "A Latin phrase meaning 'grace alone,' the belief that salvation is

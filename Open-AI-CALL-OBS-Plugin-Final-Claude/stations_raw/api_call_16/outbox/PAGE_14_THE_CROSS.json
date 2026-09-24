@@ -1,0 +1,119 @@
+{
+  "spec_version": "1.0",
+  "page_id": "PAGE_14",
+  "page_title": "THE CROSS",
+  "page_slug": "the-cross",
+  "source_file": "PAGE_14_THE_CROSS.md",
+  "generated_by": "proof-map-ai",
+  "generated_date": "2025-04-14",
+  "equations": [
+    {
+      "equation_id": "PAGE_14-E1",
+      "equation_name": "Resolution Operator",
+      "equation_text": "R(offense, alpha) where alpha in [0,1]",
+      "law_or_domain": "moral cost conservation",
+      "source_ref": "Page 14, The Resolution Operator",
+      "status": "active"
+    },
+    {
+      "equation_id": "PAGE_14-E2",
+      "equation_name": "Payer Existence Condition",
+      "equation_text": "exists payer not in System such that sum_i delta_i + nu_loss,i = Cost_payer",
+      "law_or_domain": "conservation and impossibility",
+      "source_ref": "Page 14, The Mathematical Structure",
+      "status": "active"
+    },
+    {
+      "equation_id": "PAGE_14-E3",
+      "equation_name": "Unique Solution",
+      "equation_text": "R(offense, 0)|_{judge=payer} = unique solution",
+      "law_or_domain": "constrained optimization",
+      "source_ref": "Page 14, The Mathematical Structure",
+      "status": "active"
+    }
+  ],
+  "mappings": [
+    {
+      "map_id": "PAGE_14-M1",
+      "axiom_id": "",
+      "theorem_id": "",
+      "equation_id": "PAGE_14-E1",
+      "law_id": "LAW_9",
+      "claim_id": "",
+      "test_id": "",
+      "status": "active",
+      "notes": "Resolution operator parametrizes cost-sharing; depends on Page 12 conservation law."
+    },
+    {
+      "map_id": "PAGE_14-M2",
+      "axiom_id": "",
+      "theorem_id": "",
+      "equation_id": "PAGE_14-E2",
+      "law_id": "LAW_9",
+      "claim_id": "",
+      "test_id": "",
+      "status": "active",
+      "notes": "Existence condition derived from conservation (Page 12) and impossibility theorems (Page 13)."
+    },
+    {
+      "map_id": "PAGE_14-M3",
+      "axiom_id": "",
+      "theorem_id": "",
+      "equation_id": "PAGE_14-E3",
+      "law_id": "",
+      "claim_id": "",
+      "test_id": "",
+      "status": "active",
+      "notes": "Unique solution at alpha=0 with judge as payer; eliminates five rival configurations."
+    },
+    {
+      "map_id": "PAGE_14-M4",
+      "axiom_id": "",
+      "theorem_id": "",
+      "equation_id": "",
+      "law_id": "",
+      "claim_id": "cross_is_unique_solution",
+      "test_id": "",
+      "status": "active",
+      "notes": "Lean theorem verified; cross is the unique exploit of conservation law."
+    },
+    {
+      "map_id": "PAGE_14-M5",
+      "axiom_id": "",
+      "theorem_id": "",
+      "equation_id": "",
+      "law_id": "",
+      "claim_id": "",
+      "test_id": "",
+      "status": "active",
+      "notes": "Depends on Page 05 (conserved ledger) and Page 12 (irreversibility + conservation)."
+    },
+    {
+      "map_id": "PAGE_14-M6",
+      "axiom_id": "",
+      "theorem_id": "",
+      "equation_id": "",
+      "law_id": "",
+      "claim_id": "",
+      "test_id": "",
+      "status": "active",
+      "notes": "Depends on Page 13 (five impossibility theorems, grace operator)."
+    }
+  ],
+  "page_record": {
+    "premium_tier": "free",
+    "published_status": "draft",
+    "claim_ids": [
+      "cross_is_unique_solution"
+    ],
+    "axiom_ids": [],
+    "theorem_ids": [],
+    "equation_ids": [
+      "PAGE_14-E1",
+      "PAGE_14-E2",
+      "PAGE_14-E3"
+    ],
+    "test_ids": [],
+    "notes": "Page 14 is LOCKED; five rival configurations eliminated; cross is unique solution."
+  }
+}

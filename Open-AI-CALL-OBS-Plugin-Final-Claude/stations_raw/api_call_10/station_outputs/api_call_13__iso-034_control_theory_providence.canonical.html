@@ -1,0 +1,465 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>ISO-034 · Control Theory / Providence · Theophysics Registry</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --text: #c9d1d9;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --gold-light: #f0d060;
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --card-bg: #111;
+      --card-border: #222;
+      --border-gold: #d4af37;
+      --border-blue: #4a9eff;
+      --gradient-gold: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(212,175,55,0.02) 100%);
+      --section-gap: 3rem;
+      --radius: 12px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      padding: 1.5rem 1rem;
+      min-height: 100vh;
+    }
+    .container { max-width: 1280px; margin: 0 auto; }
+    /* headings */
+    h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 500; color: #fff; }
+    h1 { font-size: 2.6rem; line-height: 1.1; }
+    h2 { font-size: 2rem; letter-spacing: 0.06em; margin-bottom: 1rem; }
+    h3 { font-size: 1.4rem; letter-spacing: 0.04em; }
+    h4 { font-size: 1.1rem; letter-spacing: 0.03em; }
+    /* utilities */
+    .gold { color: var(--gold); }
+    .text-mono { font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; }
+    .text-quote { font-family: 'Crimson Text', serif; font-style: italic; }
+    .text-small { font-size: 0.8rem; opacity: 0.7; }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .badge-green { background: rgba(34,197,94,0.15); border-color: var(--success); color: var(--success); }
+    .badge-yellow { background: rgba(234,179,8,0.15); border-color: #eab308; color: #eab308; }
+    .badge-gold { background: rgba(212,175,55,0.15); border-color: var(--gold); color: var(--gold); }
+    .badge-blue { background: rgba(74,158,255,0.12); border-color: var(--info); color: var(--info); }
+    .badge-danger { background: rgba(239,68,68,0.15); border-color: var(--danger); color: var(--danger); }
+    .badge-sm { font-size: 0.65rem; padding: 0.15rem 0.6rem; }
+    /* cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 1.8rem 1.5rem;
+      transition: border 0.2s;
+    }
+    .card-blue { border-top: 3px solid var(--border-blue); }
+    .card-gold { border-top: 3px solid var(--border-gold); }
+    .card-danger { border: 1px solid rgba(239,68,68,0.3); background: rgba(239,68,68,0.04); }
+    /* grid */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+    .grid-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) {
+      .grid-2, .grid-4 { grid-template-columns: 1fr; }
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.6rem; }
+    }
+    /* section header */
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+    .section-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 600;
+      color: var(--gold);
+      opacity: 0.25;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .section-line {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold) 0%, rgba(212,175,55,0.1) 100%);
+      margin: 1.8rem 0 2rem 0;
+      width: 100%;
+    }
+    /* hero */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      background: var(--gradient-gold);
+      border-radius: var(--radius);
+      padding: 2rem 2rem 2.5rem 2rem;
+      border: 1px solid rgba(212,175,55,0.15);
+      margin-bottom: 2.5rem;
+    }
+    @media (max-width: 768px) { .hero-grid { grid-template-columns: 1fr; } }
+    .hero-left { display: flex; flex-direction: column; gap: 1rem; }
+    .hero-right { display: flex; align-items: center; justify-content: center; }
+    .equation-card {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(212,175,55,0.25);
+      border-radius: 10px;
+      padding: 1.5rem 1.2rem;
+      width: 100%;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      line-height: 1.7;
+      color: #e0e0e0;
+    }
+    .equation-card .eq-gold { color: var(--gold-light); }
+    .equation-card .eq-blue { color: var(--info); }
+    .equation-card .eq-arrow { color: var(--gold); font-size: 1.2rem; }
+    .pull-quote {
+      border-left: 3px solid var(--gold);
+      padding-left: 1.2rem;
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #ddd;
+      margin: 0.5rem 0;
+    }
+    /* mapping table */
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .mapping-table th {
+      background: rgba(212,175,55,0.12);
+      color: var(--gold);
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      padding: 0.8rem 1rem;
+      text-align: left;
+      border-bottom: 2px solid var(--gold);
+    }
+    .mapping-table td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top;
+    }
+    .mapping-table tr:last-child td { border-bottom: none; }
+    .mapping-table td:first-child { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--info); width: 30%; }
+    .mapping-table td:nth-child(2) { width: 35%; }
+    .mapping-table td:nth-child(3) { width: 35%; }
+    .mapping-table tr:hover td { background: rgba(255,255,255,0.02); }
+    /* test cards */
+    .test-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .test-card h4 { margin-bottom: 0.5rem; }
+    .test-result {
+      display: inline-block;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      padding: 0.2rem 1rem;
+      border-radius: 20px;
+      margin-top: 0.6rem;
+    }
+    .test-pass { background: rgba(34,197,94,0.15); color: var(--success); border: 1px solid var(--success); }
+    .test-fail { background: rgba(239,68,68,0.15); color: var(--danger); border: 1px solid var(--danger); }
+    /* evidence chips */
+    .chip {
+      display: inline-block;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 30px;
+      padding: 0.3rem 1rem;
+      font-size: 0.75rem;
+      margin: 0.2rem 0.3rem;
+    }
+    .chip-gold { border-color: rgba(212,175,55,0.3); color: var(--gold); }
+    /* footer */
+    .footer-seal {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--gold);
+      opacity: 0.7;
+      border-top: 1px solid rgba(212,175,55,0.15);
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+    }
+    /* misc */
+    .verse-ref { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #888; }
+    .law-tag { background: rgba(212,175,55,0.08); border-radius: 4px; padding: 0.1rem 0.5rem; font-size: 0.7rem; color: var(--gold); }
+    .flex-wrap { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+    .mt-1 { margin-top: 0.8rem; }
+    .mb-1 { margin-bottom: 0.8rem; }
+    .gap-1 { gap: 0.8rem; }
+    .op-6 { opacity: 0.6; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 1. REGISTRY HEADER -->
+  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-bottom: 0.5rem;">
+    <div style="display: flex; align-items: center; gap: 0.8rem;">
+      <span style="font-family: 'Oswald', sans-serif; font-size: 2.8rem; color: var(--gold); font-weight: 300; line-height: 1;">Φ</span>
+      <div>
+        <h1 style="font-size: 1.8rem; margin: 0; line-height: 1.2;">Theophysics Registry</h1>
+        <div style="font-size: 0.85rem; color: #aaa; font-family: 'Inter', sans-serif;">ISO-034 · Control Theory / Providence</div>
+      </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; align-items: center;">
+      <span class="badge badge-green"><i class="fas fa-check-circle" style="margin-right: 0.3rem;"></i>Isomorphism (Level 3)</span>
+      <span class="badge badge-gold"><i class="fas fa-arrow-right-arrow-left" style="margin-right: 0.3rem;"></i>Correspondence (Level 2)</span>
+      <span class="badge badge-blue"><i class="fas fa-chart-line" style="margin-right: 0.3rem;"></i>Confidence: High</span>
+      <span class="badge" style="border-color: #555;">v1.0 · 2026-03-10</span>
+    </div>
+  </div>
+  <div style="font-size: 0.8rem; color: #888; margin-bottom: 1.2rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;">
+    <span><i class="fas fa-flask" style="color: var(--gold); margin-right: 0.3rem;"></i>Status: Testing</span>
+    <span><i class="fas fa-link" style="color: var(--gold); margin-right: 0.3rem;"></i>Structural Isomorphism · PID ↔ Providence</span>
+  </div>
+  <div class="section-line" style="margin-top: 0.2rem; margin-bottom: 2rem;"></div>
+
+  <!-- 2. HERO BANNER -->
+  <div class="hero-grid">
+    <div class="hero-left">
+      <span class="badge badge-gold badge-sm" style="width: fit-content;"><i class="fas fa-gavel"></i> Law 3 · Feedback/Recursion</span>
+      <h1 style="font-size: 2.2rem; line-height: 1.15; margin: 0.2rem 0;">Control Theory <span style="color: var(--gold);">⟷</span> Providence</h1>
+      <div style="font-size: 0.95rem; color: #bbb;">Closed-loop governance · PID correction · divine sovereignty &amp; human agency</div>
+      <div class="pull-quote">
+        “The PID decomposition into proportional/integral/derivative maps uniquely to the three temporal aspects of providence — no other framework provides this decomposition.”
+      </div>
+      <div class="verse-ref" style="margin-top: 0.3rem;">Romans 8:28-29 · Hebrews 12:6 · Galatians 6:7 · Ezekiel 3:17</div>
+    </div>
+    <div class="hero-right">
+      <div class="equation-card">
+        <div style="margin-bottom: 0.8rem; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold);">Core Equations</div>
+        <div><span class="eq-blue">Y(s)</span> = [G(s)C(s) / (1 + G(s)C(s)H(s))] · R(s) + [G(s) / (1 + G(s)C(s)H(s))] · D(s)</div>
+        <div style="margin: 0.6rem 0; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 0.4rem 0; text-align: center; font-size: 1.2rem; color: var(--gold);">⟷</div>
+        <div><span class="eq-gold">Y(s)</span> = [G<sub>human</sub>(s) · C<sub>prov</sub>(s) / (1 + G<sub>human</sub>(s) · C<sub>prov</sub>(s) · H<sub>cons</sub>(s))] · R<sub>telos</sub>(s) + [G<sub>human</sub>(s) / (1 + G<sub>human</sub>(s) · C<sub>prov</sub>(s) · H<sub>cons</sub>(s))] · D<sub>evil</sub>(s)</div>
+        <div style="margin-top: 0.6rem; font-size: 0.7rem; color: #999;">PID: C(s) = K<sub>p</sub> + K<sub>i</sub>/s + K<sub>d</sub>·s</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. DOMAIN SPECIFICATIONS -->
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2>Domain Specifications</h2>
+  </div>
+  <div class="grid-2" style="margin-bottom: 2rem;">
+    <div class="card card-blue">
+      <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem;">
+        <i class="fas fa-microchip" style="color: var(--info); font-size: 1.6rem;"></i>
+        <h3 style="margin: 0;">Domain A · Physics</h3>
+      </div>
+      <p style="font-size: 0.9rem;"><strong>Control Theory</strong> — Feedback control systems, PID controllers, stability analysis, transfer functions, setpoints, disturbance rejection, controllability, observability.</p>
+      <p style="font-size: 0.85rem; margin-top: 0.6rem; color: #aaa;">A closed-loop control system drives plant output Y(s) toward setpoint R(s) by measuring error E(s)=R(s)-Y(s) and applying corrective input through controller C(s). PID uses three modes: proportional (present error), integral (accumulated error), derivative (rate of change).</p>
+      <div class="flex-wrap" style="margin-top: 0.8rem;">
+        <span class="law-tag">Nyquist stability</span>
+        <span class="law-tag">Kalman controllability</span>
+        <span class="law-tag">Bode gain/phase</span>
+      </div>
+    </div>
+    <div class="card card-gold">
+      <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem;">
+        <i class="fas fa-dove" style="color: var(--gold); font-size: 1.6rem;"></i>
+        <h3 style="margin: 0;">Domain B · Theology</h3>
+      </div>
+      <p style="font-size: 0.9rem;"><strong>Providence &amp; Divine Sovereignty</strong> — Predestination, free will, sustaining governance, discipline, prophetic warning, judgment, sanctification.</p>
+      <p style="font-size: 0.85rem; margin-top: 0.6rem; color: #aaa;">Divine providence drives the human agent toward God's intended purpose (telos/setpoint) by measuring deviation (sin/error) and applying corrective input: conscience/consequences (proportional), progressive sanctification (integral), prophetic warning (derivative). Disturbances (temptation/evil) are attenuated while human agency is preserved.</p>
+      <div class="flex-wrap" style="margin-top: 0.8rem;">
+        <span class="law-tag">Romans 8:28-29</span>
+        <span class="law-tag">Hebrews 12:6</span>
+        <span class="law-tag">Ezekiel 3:17</span>
+        <span class="law-tag">1 John 4:4</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. THE ISOMORPHIC MAPPING -->
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2>Isomorphic Mapping</h2>
+  </div>
+  <div style="overflow-x: auto; margin-bottom: 2rem;">
+    <table class="mapping-table">
+      <thead>
+        <tr><th>#</th><th>Control Theory (A)</th><th>Providence (B)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Setpoint R(s) — desired system state</td><td>Divine purpose / telos (Romans 8:28-29)</td></tr>
+        <tr><td>2</td><td>Error signal E(s) = R(s) − Y(s)</td><td>Sin / deviation from God's purpose</td></tr>
+        <tr><td>3</td><td>Proportional mode K<sub>p</sub> — correction ∝ current error</td><td>Conscience &amp; natural consequences (Galatians 6:7)</td></tr>
+        <tr><td>4</td><td>Integral mode K<sub>i</sub>/s — correction ∝ accumulated error</td><td>Sanctification over history (Romans 8:28)</td></tr>
+        <tr><td>5</td><td>Derivative mode K<sub>d</sub>·s — correction ∝ rate of change</td><td>Prophetic warning / prevenient grace (Ezekiel 3:17)</td></tr>
+        <tr><td>6</td><td>Negative feedback — stabilizes system</td><td>Discipline as stabilization (Hebrews 12:6)</td></tr>
+        <tr><td>7</td><td>Positive feedback — destabilizes, runaway</td><td>“Giving over” / hardening (Romans 1:24-28)</td></tr>
+        <tr><td>8</td><td>Disturbance D(s) — external perturbation</td><td>Temptation, suffering, evil</td></tr>
+        <tr><td>9</td><td>Open-loop (no feedback) vs. closed-loop</td><td>Deism vs. theism (active governance)</td></tr>
+        <tr><td>10</td><td>Plant dynamics G(s) — system being governed</td><td>Human nature, personality, capacities</td></tr>
+        <tr><td>11</td><td>Controllability — can drive to any state</td><td>Divine capability respecting human structure (Luke 1:37)</td></tr>
+        <tr><td>12</td><td>Stability criterion (Nyquist) — conditions for stability</td><td>Perseverance vs. apostasy conditions</td></tr>
+        <tr><td>13</td><td>Loop gain GCH — disturbance attenuation factor</td><td>“Greater is He who is in you” (1 John 4:4)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5. SEPARATOR TESTS -->
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2>Separator Tests</h2>
+  </div>
+  <div class="grid-4" style="margin-bottom: 2rem;">
+    <div class="test-card">
+      <h4><i class="fas fa-sitemap" style="color: var(--info); margin-right: 0.4rem;"></i> Test A · Structural Preservation</h4>
+      <p style="font-size: 0.85rem; opacity: 0.8;">Do relations survive under mapping? The PID three-mode structure, feedback topology, and stability conditions map directly to providence's temporal modes, discipline, and apostasy conditions.</p>
+      <div class="test-result test-pass"><i class="fas fa-check-circle"></i> PASS</div>
+      <div class="verse-ref" style="margin-top: 0.4rem;">13 independent correspondences</div>
+    </div>
+    <div class="test-card">
+      <h4><i class="fas fa-random" style="color: var(--gold); margin-right: 0.4rem;"></i> Test B · Non-Arbitrariness</h4>
+      <p style="font-size: 0.85rem; opacity: 0.8;">Can you replace control theory with another framework? No — PID decomposition into proportional/integral/derivative is unique. No other mathematical framework provides this exact three-mode temporal decomposition.</p>
+      <div class="test-result test-pass"><i class="fas fa-check-circle"></i> PASS</div>
+      <div class="verse-ref" style="margin-top: 0.4rem;">Swap test: unique mapping</div>
+    </div>
+    <div class="test-card">
+      <h4><i class="fas fa-ban" style="color: var(--danger); margin-right: 0.4rem;"></i> Test C · Constraint</h4>
+      <p style="font-size: 0.85rem; opacity: 0.8;">Does the mapping rule things out? Yes — deism is the open-loop special case (no feedback). Theologies emphasizing only one temporal mode are structurally incomplete. Free will paradox is resolved as a standard controlled-system feature.</p>
+      <div class="test-result test-pass"><i class="fas fa-check-circle"></i> PASS</div>
+      <div class="verse-ref" style="margin-top: 0.4rem;">Rules out open-loop deism, single-mode theologies</div>
+    </div>
+    <div class="test-card">
+      <h4><i class="fas fa-arrows-left-right" style="color: var(--success); margin-right: 0.4rem;"></i> Test D · Bidirectionality</h4>
+      <p style="font-size: 0.85rem; opacity: 0.8;">Does each side predict the other? Control theory predicts providence must have three temporal modes; theology suggests PID decomposition is a discovered universal structure of temporal governance. Both directions yield nontrivial predictions.</p>
+      <div class="test-result test-pass"><i class="fas fa-check-circle"></i> PASS</div>
+      <div class="verse-ref" style="margin-top: 0.4rem;">Bidirectional predictions confirmed</div>
+    </div>
+  </div>
+
+  <!-- 6. CLASSIFICATION & EVIDENCE -->
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2>Classification &amp; Evidence</h2>
+  </div>
+  <div class="card" style="margin-bottom: 2rem;">
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem 3rem; align-items: flex-start;">
+      <div>
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #888;">Type</div>
+        <div style="font-weight: 500; color: #fff;">Structural Isomorphism</div>
+        <div class="badge badge-green" style="margin-top: 0.3rem;">Level 3 · Isomorphism</div>
+      </div>
+      <div>
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #888;">Confidence</div>
+        <div style="font-weight: 500; color: #fff;">High</div>
+        <div style="font-size: 0.8rem; color: #aaa;">13 independent correspondences (p &lt; 10<sup>-17</sup>)</div>
+      </div>
+      <div>
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #888;">Reframe Level</div>
+        <div style="font-weight: 500; color: #fff;">Structural (Level 2)</div>
+        <div style="font-size: 0.8rem; color: #aaa;">Governance dynamics, not surface</div>
+      </div>
+    </div>
+    <div style="margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.2rem;">
+      <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-bottom: 0.6rem;">Evidence Bundles</div>
+      <div class="flex-wrap">
+        <span class="chip chip-gold"><i class="fas fa-industry"></i> PID control (100+ yr validation)</span>
+        <span class="chip chip-gold"><i class="fas fa-wave-square"></i> Nyquist/Bode stability theory</span>
+        <span class="chip chip-gold"><i class="fas fa-eye"></i> Controllability/observability (Kalman)</span>
+        <span class="chip chip-gold"><i class="fas fa-book-open"></i> Judges oscillation pattern</span>
+        <span class="chip chip-gold"><i class="fas fa-scroll"></i> Prophetic derivative correction</span>
+      </div>
+    </div>
+    <div style="margin-top: 1rem;">
+      <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-bottom: 0.4rem;">Laws Invoked</div>
+      <div class="flex-wrap">
+        <span class="law-tag">Law 3 · Feedback/Recursion</span>
+        <span class="law-tag">Law 4 · Incompleteness</span>
+        <span class="law-tag">Law 6 · Entropy</span>
+        <span class="law-tag">Law 9 · Grace</span>
+      </div>
+    </div>
+    <div style="margin-top: 1rem;">
+      <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-bottom: 0.4rem;">Connected ISOs</div>
+      <div class="flex-wrap">
+        <span class="chip">ISO-002 (gain)</span>
+        <span class="chip">ISO-003 (error signal)</span>
+        <span class="chip">ISO-012 (setpoint eigenstate)</span>
+        <span class="chip">ISO-013 (controller output)</span>
+        <span class="chip">ISO-016 (attractors)</span>
+        <span class="chip">ISO-033 (reception dynamics)</span>
+        <span class="chip">ISO-022 (Ten Laws)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. FALSIFICATION CRITERIA -->
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2>Falsification Criteria</h2>
+  </div>
+  <div class="card card-danger" style="margin-bottom: 2rem;">
+    <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+      <i class="fas fa-skull" style="color: var(--danger); font-size: 1.2rem;"></i>
+      <h3 style="color: var(--danger); margin: 0;">Kill Conditions</h3>
+    </div>
+    <p style="font-size: 0.9rem; margin-bottom: 0.8rem;">The mapping is destroyed if <strong>any</strong> of the following are demonstrated:</p>
+    <ol style="padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.7rem; font-size: 0.9rem;">
+      <li><strong>Providence has no corrective structure</strong> — divine governance is purely random (no correlation between deviation and correction). If true, control theory would also need to be wrong.</li>
+      <li><strong>Sin has no temporal structure</strong> — all correction is identical regardless of timing (proportional, cumulative, anticipatory dimensions absent). Both Scripture and experience contradict this.</li>
+      <li><strong>Negative feedback does not stabilize</strong> — divine discipline consistently <em>increases</em> deviation. Hebrews 12:11 claims the opposite.</li>
+      <li><strong>Disturbance rejection is zero</strong> — suffering fully determines outcomes regardless of providence (deistic position). The mapping predicts attenuation, not elimination.</li>
+      <li><strong>The free will paradox is genuinely contradictory</strong> — sovereignty and free will are logically incompatible. But every PID-controlled system demonstrates a controller driving output without replacing plant dynamics.</li>
+    </ol>
+    <div class="verse-ref" style="margin-top: 0.8rem;">Hebrews 12:11 · Romans 1:24-28 · Galatians 6:7 · 1 Corinthians 10:13</div>
+  </div>
+
+  <!-- 8. RELATED ISOMORPHISMS -->
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <h2>Related Isomorphisms</h2>
+  </div>
+  <div class="grid-2" style="margin-bottom: 2rem;">
+    <div class="card" style="border-left: 2px solid var(--gold);">
+      <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <i class="fas fa-link" style="color: var(--gold);"></i>
+        <h4 style="margin: 0;">ISO-002 · Terminus Sui / Grace</h4>
+      </div>
+      <p style="font-size: 0.85rem; opacity: 0.8;">Coupling coefficient alpha as loop gain — the strength of providential interaction.</p>
+    </div>
+    <div class="card" style="border-left: 2px solid var(--gold);">
+      <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <i class="fas fa-link" style="color: var(--gold);"></i>
+        <h4 style="margin: 0;">ISO-003 · Entropy / Sin</h4>
+      </div>
+      <p style="font-size: 0.85rem; opacity:

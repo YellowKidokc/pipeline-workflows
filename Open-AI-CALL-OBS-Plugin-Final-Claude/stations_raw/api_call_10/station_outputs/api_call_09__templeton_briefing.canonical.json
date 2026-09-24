@@ -1,0 +1,551 @@
+{
+  "definitions": [
+    {
+      "term": "coherence",
+      "category": "physics",
+      "definition": "When things fit together in an orderly, connected way, like a well-organized team working smoothly.",
+      "example": "A perfectly tuned guitar string produces a coherent sound wave.",
+      "grade_level": "10",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "cosmic intelligence",
+      "category": "framework",
+      "definition": "The idea that the universe itself might have a built-in pattern or purpose, like a mind behind everything.",
+      "example": "Some people think the laws of physics are so precise that they look like they were designed by a cosmic intelligence.",
+      "grade_level": "12",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "mathematical framework",
+      "category": "math",
+      "definition": "A set of equations and rules used to describe how something works, like a recipe for reality.",
+      "example": "Newton's laws of motion are a mathematical framework for predicting how a ball will roll.",
+      "grade_level": "11",
+      "first_appearance": "Subtitle"
+    },
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A perfect match in structure between two different things, like two puzzles that fit together the same way even though the pictures are different.",
+      "example": "A map of a subway system is isomorphic to the actual subway lines because the connections match.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "theorem",
+      "category": "academic",
+      "definition": "A statement that has been proven true using logic and math, like a fact that can't be argued.",
+      "example": "The Pythagorean theorem says that in a right triangle, a² + b² = c².",
+      "grade_level": "10",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "proof assistant",
+      "category": "academic",
+      "definition": "A computer program that checks if a mathematical proof is correct, like a spell-checker for logic.",
+      "example": "Lean 4 is a proof assistant that makes sure every step of a proof follows the rules.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "non-commutative",
+      "category": "math",
+      "definition": "When the order of operations matters, like putting on socks then shoes vs. shoes then socks.",
+      "example": "In math, subtraction is non-commutative because 5 - 3 is not the same as 3 - 5.",
+      "grade_level": "11",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "triadic structure",
+      "category": "framework",
+      "definition": "A pattern made of three parts that work together, like a three-legged stool.",
+      "example": "The Christian Trinity (Father, Son, Holy Spirit) is a triadic structure.",
+      "grade_level": "11",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "grace",
+      "category": "theology",
+      "definition": "A free gift of love or help that you don't have to earn, like a surprise birthday present.",
+      "example": "In Christianity, grace is God's unearned kindness toward people.",
+      "grade_level": "10",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "contradiction",
+      "category": "academic",
+      "definition": "When two statements cannot both be true at the same time, like saying 'it is raining' and 'it is not raining' at once.",
+      "example": "If you say 'I am asleep' while talking, that's a contradiction.",
+      "grade_level": "10",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "zero_ne_one",
+      "category": "math",
+      "definition": "A basic math fact that zero does not equal one, used as a foundation for proofs.",
+      "example": "In arithmetic, 0 ≠ 1 is a simple truth that helps prove other things.",
+      "grade_level": "10",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "algebraic closure",
+      "category": "math",
+      "definition": "A bigger number system where every equation has a solution, like adding imaginary numbers so that x² = -1 has an answer.",
+      "example": "The complex numbers are the algebraic closure of the real numbers.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "decoherence",
+      "category": "physics",
+      "definition": "When order breaks down and things become random or disconnected, like a crowd turning into chaos.",
+      "example": "In quantum physics, decoherence is when a particle's wave-like behavior disappears because it interacts with its environment.",
+      "grade_level": "12",
+      "first_appearance": "Section: Tier 2 — Observed"
+    },
+    {
+      "term": "polarity",
+      "category": "physics",
+      "definition": "A pair of opposite forces or directions, like the north and south ends of a magnet.",
+      "example": "A battery has a positive and negative polarity.",
+      "grade_level": "10",
+      "first_appearance": "Section: Tier 2 — Observed"
+    },
+    {
+      "term": "structural homology",
+      "category": "academic",
+      "definition": "When two different things share the same underlying pattern, like a bird's wing and a fish's fin both being used for movement.",
+      "example": "The bones in a human arm and a bat wing are structurally homologous.",
+      "grade_level": "12",
+      "first_appearance": "Section: Tier 2 — Observed"
+    },
+    {
+      "term": "generating function",
+      "category": "math",
+      "definition": "A mathematical formula that creates a whole series of numbers or patterns, like a seed that grows into a tree.",
+      "example": "The Fibonacci sequence can be generated by a simple formula.",
+      "grade_level": "12",
+      "first_appearance": "Section: Tier 3 — Hypothesis"
+    },
+    {
+      "term": "non-factorable",
+      "category": "math",
+      "definition": "Cannot be split into separate, independent parts, like a cake that can't be separated into flour and eggs after baking.",
+      "example": "A non-factorable function means the whole is more than the sum of its parts.",
+      "grade_level": "12",
+      "first_appearance": "Section: Tier 3 — Hypothesis"
+    },
+    {
+      "term": "falsifiable",
+      "category": "academic",
+      "definition": "Able to be proven wrong by an experiment or observation, like a claim that can be tested.",
+      "example": "The statement 'all swans are white' is falsifiable because finding one black swan disproves it.",
+      "grade_level": "11",
+      "first_appearance": "Section: Tier 3 — Hypothesis"
+    },
+    {
+      "term": "empirical",
+      "category": "academic",
+      "definition": "Based on real-world observation or experiment, not just theory.",
+      "example": "A doctor's diagnosis is empirical when it's based on test results, not guesses.",
+      "grade_level": "11",
+      "first_appearance": "Section: Tier 3 — Hypothesis"
+    },
+    {
+      "term": "attractor states",
+      "category": "physics",
+      "definition": "A pattern that a system tends to settle into over time, like a marble rolling to the bottom of a bowl.",
+      "example": "A pendulum eventually stops at its lowest point, which is an attractor state.",
+      "grade_level": "12",
+      "first_appearance": "Section: Tier 3 — Hypothesis"
+    },
+    {
+      "term": "dynamical simulations",
+      "category": "physics",
+      "definition": "Computer models that show how a system changes over time, like a video game that simulates weather.",
+      "example": "Scientists use dynamical simulations to predict how a hurricane will move.",
+      "grade_level": "12",
+      "first_appearance": "Section: Tier 3 — Hypothesis"
+    },
+    {
+      "term": "master equation",
+      "category": "framework",
+      "definition": "A main formula that describes how a whole system behaves, like the boss of all equations.",
+      "example": "The master equation in this framework combines many variables into one big formula.",
+      "grade_level": "11",
+      "first_appearance": "Section: The Formalism"
+    },
+    {
+      "term": "coherence function",
+      "category": "framework",
+      "definition": "A mathematical way to measure how ordered or connected a system is, like a score for harmony.",
+      "example": "A coherence function might give a high score to a well-organized team and a low score to a chaotic one.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Formalism"
+    },
+    {
+      "term": "covenant",
+      "category": "theology",
+      "definition": "A serious promise or agreement that binds people together, like a marriage vow.",
+      "example": "In the Bible, God made a covenant with Noah to never flood the earth again.",
+      "grade_level": "10",
+      "first_appearance": "Section: The Formalism"
+    },
+    {
+      "term": "wavefunction collapse",
+      "category": "physics",
+      "definition": "When a quantum particle's many possible states suddenly become one definite state after being measured, like a spinning coin landing on heads or tails.",
+      "example": "Before you look, a particle might be in many places at once; wavefunction collapse makes it pick one.",
+      "grade_level": "12",
+      "first_appearance": "Section: Research Program"
+    },
+    {
+      "term": "hard problem of consciousness",
+      "category": "philosophy",
+      "definition": "The mystery of why and how we have subjective experiences, like feelings and awareness, not just brain activity.",
+      "example": "Why does seeing red feel like something? That's the hard problem of consciousness.",
+      "grade_level": "12",
+      "first_appearance": "Section: Research Program"
+    },
+    {
+      "term": "cosmological constant discrepancy",
+      "category": "physics",
+      "definition": "A big mismatch between the predicted and observed amount of dark energy in the universe, like a budget that's off by a trillion dollars.",
+      "example": "The cosmological constant discrepancy is why scientists are puzzled about the universe's expansion rate.",
+      "grade_level": "12",
+      "first_appearance": "Section: Research Program"
+    },
+    {
+      "term": "cybernetics",
+      "category": "physics",
+      "definition": "The study of how systems control themselves and communicate, like a thermostat that keeps a room at the right temperature.",
+      "example": "Cybernetics looks at how feedback loops work in machines, animals, and societies.",
+      "grade_level": "12",
+      "first_appearance": "Section: 49 Domains"
+    },
+    {
+      "term": "ontology",
+      "category": "philosophy",
+      "definition": "The study of what exists and what it means to be real, like asking 'is love as real as a rock?'",
+      "example": "Ontology asks questions like 'do numbers exist?'",
+      "grade_level": "12",
+      "first_appearance": "Section: The Strategic Gap"
+    },
+    {
+      "term": "epistemology",
+      "category": "philosophy",
+      "definition": "The study of how we know things and what counts as knowledge, like asking 'how do you know that's true?'",
+      "example": "Epistemology explores whether we can trust our senses or need proof.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Strategic Gap"
+    },
+    {
+      "term": "contingent",
+      "category": "philosophy",
+      "definition": "Something that could be different or might not exist at all, like the weather today.",
+      "example": "Your choice of breakfast is contingent on what's in the fridge.",
+      "grade_level": "11",
+      "first_appearance": "Section: The Strategic Gap"
+    },
+    {
+      "term": "necessary",
+      "category": "philosophy",
+      "definition": "Something that must be true and cannot be otherwise, like 2+2=4.",
+      "example": "A necessary truth is one that holds in every possible world.",
+      "grade_level": "10",
+      "first_appearance": "Section: The Strategic Gap"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A basic assumption that is accepted without proof, like a starting rule in a game.",
+      "example": "In geometry, 'a straight line is the shortest distance between two points' is an axiom.",
+      "grade_level": "10",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation or being saved from sin and its consequences.",
+      "example": "Soteriology asks how people can be rescued from wrongdoing and find eternal life.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Formalism"
+    },
+    {
+      "term": "hamartiology",
+      "category": "theology",
+      "definition": "The study of sin, wrongdoing, and moral failure.",
+      "example": "Hamartiology explores what sin is and how it affects people.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Formalism"
+    },
+    {
+      "term": "sanctification",
+      "category": "theology",
+      "definition": "The process of becoming more holy or morally pure over time.",
+      "example": "Sanctification is like slowly becoming a better person through practice and help from God.",
+      "grade_level": "11",
+      "first_appearance": "Section: The Formalism"
+    },
+    {
+      "term": "atonement",
+      "category": "theology",
+      "definition": "Making up for a wrong or repairing a broken relationship, often through a sacrifice.",
+      "example": "In Christianity, Jesus' death is seen as an atonement for humanity's sins.",
+      "grade_level": "10",
+      "first_appearance": "Section: The Formalism"
+    },
+    {
+      "term": "chi-field",
+      "category": "framework",
+      "definition": "A theoretical field that represents the overall coherence or order in a system, like a force field for harmony.",
+      "example": "The chi-field might be thought of as the 'glue' that holds things together in a meaningful way.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Formalism"
+    },
+    {
+      "term": "moral curvature",
+      "category": "framework",
+      "definition": "The idea that moral values are built into the structure of reality, like a curved space that bends paths.",
+      "example": "Moral curvature suggests that some actions naturally lead to better outcomes, like a slope that guides a ball downhill.",
+      "grade_level": "12",
+      "first_appearance": "Section: Tier 2 — Observed"
+    },
+    {
+      "term": "Lean 4",
+      "category": "academic",
+      "definition": "A computer program that checks mathematical proofs for correctness, like a super-strict math teacher.",
+      "example": "Lean 4 is used by mathematicians to make sure their proofs have no mistakes.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "PEAR",
+      "category": "academic",
+      "definition": "Princeton Engineering Anomalies Research, a project that studied whether people's minds can affect random events.",
+      "example": "PEAR experiments tested if focused attention could make a random number generator produce more ones than zeros.",
+      "grade_level": "12",
+      "first_appearance": "Section: Research Program"
+    },
+    {
+      "term": "Seshat",
+      "category": "academic",
+      "definition": "A large database of historical societies used to test theories about how civilizations evolve.",
+      "example": "Seshat contains data on hundreds of ancient societies, like their size, government, and religion.",
+      "grade_level": "12",
+      "first_appearance": "Section: Research Program"
+    },
+    {
+      "term": "impostor",
+      "category": "academic",
+      "definition": "A fake or false version of something that pretends to be the real thing.",
+      "example": "In the proof, five impostor structures were tested and rejected because they didn't match the real pattern.",
+      "grade_level": "10",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "QED",
+      "category": "academic",
+      "definition": "Latin for 'what was to be shown,' used at the end of a proof to say 'done and proven.'",
+      "example": "After solving a math problem, you might write QED to show it's finished.",
+      "grade_level": "11",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "non-commutativity",
+      "category": "math",
+      "definition": "The property that order matters in an operation, like putting on socks then shoes vs. shoes then socks.",
+      "example": "Matrix multiplication is non-commutative because A×B is not always equal to B×A.",
+      "grade_level": "11",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "triadic",
+      "category": "framework",
+      "definition": "Having three parts or elements that form a pattern.",
+      "example": "A triangle is a triadic shape because it has three sides.",
+      "grade_level": "11",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "algebraic structure",
+      "category": "math",
+      "definition": "A set of elements with operations that follow specific rules, like numbers with addition and multiplication.",
+      "example": "The integers with addition form an algebraic structure called a group.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "impostor rejection lemma",
+      "category": "framework",
+      "definition": "A proven step in a proof that eliminates fake or incorrect alternatives.",
+      "example": "The impostor rejection lemma shows that five other possible structures don't work, leaving only the real one.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "grace_reversal_implies_zero_eq_one",
+      "category": "framework",
+      "definition": "A specific logical step showing that if grace could be undone, then a basic math contradiction would happen.",
+      "example": "This step proves that grace is irreversible because reversing it would break math itself.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "coherence_product",
+      "category": "framework",
+      "definition": "A specific mathematical operation that combines two things to measure their joint order or harmony.",
+      "example": "The coherence product might be like multiplying two signals to see how well they sync up.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "Theophysics.Ω",
+      "category": "framework",
+      "definition": "A special mathematical object used in the Theophysics framework, like a container for all the variables.",
+      "example": "Ω might represent the whole universe of possible states in the model.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "non-commutativity proof",
+      "category": "framework",
+      "definition": "A proof that shows order matters in the framework's operations.",
+      "example": "The non-commutativity proof shows that doing A then B gives a different result than B then A.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "triadic structure proof",
+      "category": "framework",
+      "definition": "A proof that shows the framework has a three-part pattern.",
+      "example": "The triadic structure proof demonstrates that the system naturally forms a trio of related parts.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "five_impostors_rejected",
+      "category": "framework",
+      "definition": "A proof that five alternative patterns are not valid.",
+      "example": "This proof shows that five other possible structures don't fit the data, leaving only the correct one.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "grace_irreversible",
+      "category": "framework",
+      "definition": "A theorem stating that grace cannot be undone or reversed.",
+      "example": "The grace_irreversible theorem says that once grace is given, it can't be taken back.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "zero_ne_one",
+      "category": "math",
+      "definition": "The basic fact that zero does not equal one, used as a foundation in proofs.",
+      "example": "In arithmetic, 0 ≠ 1 is a simple truth that helps prove other things.",
+      "grade_level": "10",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "grace_reversal_implies_zero_eq_one",
+      "category": "framework",
+      "definition": "A specific logical step showing that if grace could be undone, then a basic math contradiction would happen.",
+      "example": "This step proves that grace is irreversible because reversing it would break math itself.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "coherence_product",
+      "category": "framework",
+      "definition": "A specific mathematical operation that combines two things to measure their joint order or harmony.",
+      "example": "The coherence product might be like multiplying two signals to see how well they sync up.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "Theophysics.Ω",
+      "category": "framework",
+      "definition": "A special mathematical object used in the Theophysics framework, like a container for all the variables.",
+      "example": "Ω might represent the whole universe of possible states in the model.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "non-commutativity proof",
+      "category": "framework",
+      "definition": "A proof that shows order matters in the framework's operations.",
+      "example": "The non-commutativity proof shows that doing A then B gives a different result than B then A.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "triadic structure proof",
+      "category": "framework",
+      "definition": "A proof that shows the framework has a three-part pattern.",
+      "example": "The triadic structure proof demonstrates that the system naturally forms a trio of related parts.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "five_impostors_rejected",
+      "category": "framework",
+      "definition": "A proof that five alternative patterns are not valid.",
+      "example": "This proof shows that five other possible structures don't fit the data, leaving only the correct one.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "grace_irreversible",
+      "category": "framework",
+      "definition": "A theorem stating that grace cannot be undone or reversed.",
+      "example": "The grace_irreversible theorem says that once grace is given, it can't be taken back.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "zero_ne_one",
+      "category": "math",
+      "definition": "The basic fact that zero does not equal one, used as a foundation in proofs.",
+      "example": "In arithmetic, 0 ≠ 1 is a simple truth that helps prove other things.",
+      "grade_level": "10",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "grace_reversal_implies_zero_eq_one",
+      "category": "framework",
+      "definition": "A specific logical step showing that if grace could be undone, then a basic math contradiction would happen.",
+      "example": "This step proves that grace is irreversible because reversing it would break math itself.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "coherence_product",
+      "category": "framework",
+      "definition": "A specific mathematical operation that combines two things to measure their joint order or harmony.",
+      "example": "The coherence product might be like multiplying two signals to see how well they sync up.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "Theophysics.Ω",
+      "category": "framework",
+      "definition": "A special mathematical object used in the Theophysics framework, like a container for all the variables.",
+      "example": "Ω might represent the whole universe of possible states in the model.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "non-commutativity proof",
+      "category": "framework",
+      "definition": "A proof that shows order matters in the framework's operations.",
+      "example": "The non-commutativity proof shows that doing A then B gives a different result than B then A.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Differentiator"
+    },
+    {
+      "term": "triadic structure proof",
+      "category": "framework",
+      "definition": "A proof that shows the framework has a three-part pattern.",
+      "example": "The triadic structure proof demonstrates that the system naturally forms a

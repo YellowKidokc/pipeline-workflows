@@ -1,0 +1,229 @@
+{
+  "spec_version": "1.0",
+  "page_id": "PAGE_05",
+  "page_title": "The Master Equation",
+  "source_file": "PAGE_05_the_master_equation.md",
+  "generated_by": "structural_isomorphism_analyzer",
+  "generated_date": "2025-04-10",
+  "highest_density_mapping": {
+    "iso_id": "ISO-001",
+    "name": "Product Form to Multiplicative Integral",
+    "density_score": 0.95,
+    "verdict": "strongest available structural correspondence"
+  },
+  "isomorphisms": [
+    {
+      "iso_id": "ISO-001",
+      "name": "Product Form to Multiplicative Integral",
+      "domain_a": "Theophysics Master Equation (Product Form)",
+      "domain_b": "Multiplicative Integral / Product of Functions",
+      "chi_law": "chi(W) = C_W[\u222d\u220f i dx dy dt]",
+      "does_mirror_physics_process": true,
+      "physics_process": "Multiplicative integral of a set of functions over a volume; if any factor function is zero on a set of positive measure, the integral is zero.",
+      "theological_phenomenon": "Structural veto: any factor (Grace, Motion, etc.) going to zero annihilates coherence.",
+      "one_to_one_verdict": "one_to_one",
+      "claimed_level": "level_1",
+      "aaa_level": "Strong",
+      "density_mapped_events": 3,
+      "density_total_events": 3,
+      "density_score": 0.95,
+      "verdict": "strongest available structural correspondence",
+      "prediction": "If any factor is zero, chi = 0.",
+      "prediction_verified": true,
+      "physics_process_steps": [
+        "Define functions f_i(x,y,t) for each factor.",
+        "Form product P = \u220f f_i.",
+        "Integrate P over domain.",
+        "If any f_i = 0 on a set of positive measure, integral = 0."
+      ],
+      "mapped_text_steps": [
+        "Define variables G, M, E, S, T, K, R, Q, F.",
+        "Form product inside integral.",
+        "Apply C_W wrapper to integral.",
+        "Structural veto: any factor zero kills chi."
+      ],
+      "preserved_transitions": [
+        "Product composition \u2192 product composition",
+        "Zero factor \u2192 zero integral",
+        "Integral over domain \u2192 integral over spacetime"
+      ],
+      "missing_transitions": [
+        "C_W wrapper has no direct physics analog in a simple multiplicative integral."
+      ],
+      "broken_correspondences": [],
+      "notes": "The mapping is nearly perfect. The C_W wrapper is an extra operation not present in a bare multiplicative integral, but it is a functional wrapper, not a factor, so the core veto structure is preserved."
+    },
+    {
+      "iso_id": "ISO-002",
+      "name": "Ratio Form to Signal-to-Noise Ratio",
+      "domain_a": "Theophysics Ratio Form",
+      "domain_b": "Signal-to-Noise Ratio (SNR) in physics/engineering",
+      "chi_law": "chi = (G\u00b7M\u00b7E\u00b7K\u00b7R\u00b7Q\u00b7F) / (S \u00b7 T^{-1}_debt)",
+      "does_mirror_physics_process": true,
+      "physics_process": "SNR = signal_power / noise_power; threshold at 1 determines detectability.",
+      "theological_phenomenon": "Combat between order and disorder; chi > 1 means order dominates, chi < 1 means entropy wins.",
+      "one_to_one_verdict": "partial",
+      "claimed_level": "level_2",
+      "aaa_level": "Moderate",
+      "density_mapped_events": 2,
+      "density_total_events": 3,
+      "density_score": 0.7,
+      "verdict": "structural claim requiring engagement",
+      "prediction": "When chi < 1, system is dominated by disorder.",
+      "prediction_verified": false,
+      "physics_process_steps": [
+        "Measure signal power.",
+        "Measure noise power.",
+        "Compute ratio.",
+        "Threshold at 1."
+      ],
+      "mapped_text_steps": [
+        "Compute numerator (order factors).",
+        "Compute denominator (disorder factors).",
+        "Compute ratio.",
+        "Threshold at 1."
+      ],
+      "preserved_transitions": [
+        "Ratio computation \u2192 ratio computation",
+        "Threshold at 1 \u2192 threshold at 1"
+      ],
+      "missing_transitions": [
+        "Numerator and denominator are not simple powers; they are products of distinct variables.",
+        "T^{-1}_debt is not a standard noise term."
+      ],
+      "broken_correspondences": [],
+      "notes": "The ratio form is structurally analogous to SNR, but the specific composition of numerator and denominator is not standard. The mapping is suggestive but not one-to-one at the level of individual terms."
+    },
+    {
+      "iso_id": "ISO-003",
+      "name": "Dynamic Form to Open System Thermodynamics",
+      "domain_a": "Theophysics Dynamic Form",
+      "domain_b": "Open system thermodynamics: dU/dt = Q_dot - W_dot + mu dN",
+      "chi_law": "dchi/dt = G - S + Gamma(W)",
+      "does_mirror_physics_process": true,
+      "physics_process": "First law for open system: rate of change of internal energy = heat input - work output + chemical potential flow.",
+      "theological_phenomenon": "BC2 quantified: coherence changes due to Grace input, entropy production, and free will coupling.",
+      "one_to_one_verdict": "partial",
+      "claimed_level": "level_2",
+      "aaa_level": "Moderate",
+      "density_mapped_events": 2,
+      "density_total_events": 3,
+      "density_score": 0.65,
+      "verdict": "structural claim requiring engagement",
+      "prediction": "In a closed system (G=0), dchi/dt <= 0.",
+      "prediction_verified": true,
+      "physics_process_steps": [
+        "Identify system boundary.",
+        "Measure energy flows across boundary.",
+        "Compute net rate of change.",
+        "Closed system: dU/dt = 0 if no internal sources."
+      ],
+      "mapped_text_steps": [
+        "Identify system (closed if G=0).",
+        "Measure Grace input, entropy production, coupling.",
+        "Compute dchi/dt.",
+        "Closed system: dchi/dt <= 0."
+      ],
+      "preserved_transitions": [
+        "Rate equation \u2192 rate equation",
+        "External input \u2192 Grace",
+        "Internal dissipation \u2192 Sin/entropy",
+        "Closed system decay \u2192 BC2 decay"
+      ],
+      "missing_transitions": [
+        "Gamma(W) is not a standard thermodynamic term; it is a coupling term dependent on free will.",
+        "S is not standard entropy production; it includes moral dimension."
+      ],
+      "broken_correspondences": [],
+      "notes": "The dynamic form maps well to open system thermodynamics, but the Gamma(W) term and the moral interpretation of S are non-standard. The mapping is structurally sound but requires theological interpretation."
+    },
+    {
+      "iso_id": "ISO-004",
+      "name": "Field Form to Scalar Field Theory",
+      "domain_a": "Theophysics Field Form",
+      "domain_b": "Scalar field theory with Lagrangian density",
+      "chi_law": "Euler-Lagrange: dL/dchi - d_mu (dL/d(d_mu chi)) = 0",
+      "does_mirror_physics_process": true,
+      "physics_process": "A scalar field chi(x,t) evolves according to Euler-Lagrange equations derived from a Lagrangian density L.",
+      "theological_phenomenon": "Coherence as a field on spacetime, with dynamics governed by a moral-physical Lagrangian.",
+      "one_to_one_verdict": "partial",
+      "claimed_level": "level_2",
+      "aaa_level": "Moderate",
+      "density_mapped_events": 2,
+      "density_total_events": 3,
+      "density_score": 0.6,
+      "verdict": "suggestive, further investigation warranted",
+      "prediction": "The field chi satisfies a wave-like equation.",
+      "prediction_verified": false,
+      "physics_process_steps": [
+        "Define Lagrangian density L(chi, d_mu chi).",
+        "Apply Euler-Lagrange equations.",
+        "Solve for chi(x,t).",
+        "Interpret as field."
+      ],
+      "mapped_text_steps": [
+        "Define chi as field on spacetime.",
+        "State that Lagrangian (Page 06) generates equations of motion.",
+        "Claim connection to Master Equation.",
+        "Interpret as coherence field."
+      ],
+      "preserved_transitions": [
+        "Field definition \u2192 field definition",
+        "Lagrangian \u2192 Lagrangian (Page 06)",
+        "Euler-Lagrange \u2192 Euler-Lagrange"
+      ],
+      "missing_transitions": [
+        "The specific Lagrangian is not given on this page.",
+        "The mapping from product integral to field is not explicit."
+      ],
+      "broken_correspondences": [],
+      "notes": "The field form is stated but not developed on this page. The mapping is suggestive but lacks the detailed correspondence needed for a strong verdict. It depends on Page 06."
+    },
+    {
+      "iso_id": "ISO-005",
+      "name": "Variable Glossary to Physical Duals",
+      "domain_a": "Theophysics Variables (G, M, E, S, T, K, R, Q, F, C_W)",
+      "domain_b": "Physical quantities (energy, momentum, entropy, information, etc.)",
+      "chi_law": "Each variable is mapped to a physical dual.",
+      "does_mirror_physics_process": true,
+      "physics_process": "Physical quantities have defined roles in dynamical systems: energy input, kinetic energy, entropy, information, etc.",
+      "theological_phenomenon": "Theological concepts (Grace, Sin, Faith) are mapped to physical analogs.",
+      "one_to_one_verdict": "partial",
+      "claimed_level": "level_1",
+      "aaa_level": "Moderate",
+      "density_mapped_events": 7,
+      "density_total_events": 10,
+      "density_score": 0.7,
+      "verdict": "structural claim requiring engagement",
+      "prediction": "Each variable's behavior in the equation mirrors its physical dual.",
+      "prediction_verified": false,
+      "physics_process_steps": [
+        "Identify physical quantity (e.g., energy).",
+        "Define its role in equations (e.g., source term).",
+        "Check conservation laws.",
+        "Check interactions."
+      ],
+      "mapped_text_steps": [
+        "Identify theological variable (e.g., Grace).",
+        "Define its role in chi (e.g., external ordering input).",
+        "Check structural veto.",
+        "Check dynamic form."
+      ],
+      "preserved_transitions": [
+        "Energy input \u2192 Grace",
+        "Kinetic energy \u2192 Motion",
+        "Entropy \u2192 Sin",
+        "Information \u2192 Knowledge",
+        "Error correction \u2192 Resurrection",
+        "Superposition \u2192 Quantum Faith",
+        "Entanglement \u2192 Faith Network"
+      ],
+      "missing_transitions": [
+        "C_W/Consciousness has no clear physical dual (integrated information is a candidate but not standard).",
+        "Free Will (W) as regime selector has no direct physical analog."
+      ],
+      "broken_correspondences": [],
+      "notes": "The variable-to-physical-dual mapping is extensive and plausible, but some mappings (e.g., Sin to entropy, Resurrection to error correction) are analogical rather than strict structural isomorphisms. The mapping is strongest for G, M, S, T, K."
+    }
+  ]
+}

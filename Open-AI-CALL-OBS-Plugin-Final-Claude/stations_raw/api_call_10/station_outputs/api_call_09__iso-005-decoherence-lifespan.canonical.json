@@ -1,0 +1,411 @@
+{
+  "definitions": [
+    {
+      "term": "Decoherence",
+      "category": "physics",
+      "definition": "When a quantum system loses its special quantum properties because it interacts with its surroundings.",
+      "example": "Like a spinning top that slowly wobbles and stops because of air resistance.",
+      "grade_level": "college",
+      "first_appearance": "01"
+    },
+    {
+      "term": "Quantum decoherence",
+      "category": "physics",
+      "definition": "The process where a quantum system's wave-like behavior disappears as it gets tangled with its environment.",
+      "example": "Imagine a perfectly synchronized dance that falls apart when dancers bump into the audience.",
+      "grade_level": "college",
+      "first_appearance": "01"
+    },
+    {
+      "term": "Coherence",
+      "category": "physics",
+      "definition": "When parts of a quantum system stay in perfect step with each other, like waves that line up.",
+      "example": "Like a choir singing the same note at the exact same time.",
+      "grade_level": "college",
+      "first_appearance": "01"
+    },
+    {
+      "term": "Density matrix",
+      "category": "physics",
+      "definition": "A mathematical table that describes all possible states of a quantum system and how likely each is.",
+      "example": "Like a scorecard that tracks every possible move in a game and their chances.",
+      "grade_level": "graduate",
+      "first_appearance": "01"
+    },
+    {
+      "term": "Off-diagonal elements",
+      "category": "physics",
+      "definition": "Numbers in a density matrix that show how much different quantum states are connected or interfering with each other.",
+      "example": "Like the cross-bridges between two lanes of traffic that let cars switch sides.",
+      "grade_level": "graduate",
+      "first_appearance": "01"
+    },
+    {
+      "term": "Exponential decay",
+      "category": "math",
+      "definition": "A pattern where something decreases by a fixed percentage over equal time steps, getting slower and slower.",
+      "example": "Like a bouncing ball that loses half its height each bounce.",
+      "grade_level": "college",
+      "first_appearance": "01"
+    },
+    {
+      "term": "Asymptotic floor",
+      "category": "math",
+      "definition": "A lower limit that a decreasing value approaches but never quite reaches, like a bottom boundary.",
+      "example": "Like a car slowing down that never goes below 10 mph because of a governor.",
+      "grade_level": "college",
+      "first_appearance": "01"
+    },
+    {
+      "term": "Decoherence timescale",
+      "category": "physics",
+      "definition": "The characteristic time it takes for a quantum system to lose its coherence, often denoted by \u03c4d.",
+      "example": "Like the half-life of a radioactive element, but for quantum order.",
+      "grade_level": "college",
+      "first_appearance": "01"
+    },
+    {
+      "term": "Genealogies",
+      "category": "theology",
+      "definition": "Lists of ancestors or descendants, often found in religious texts like the Bible.",
+      "example": "Like a family tree showing who was born to whom.",
+      "grade_level": "10",
+      "first_appearance": "01"
+    },
+    {
+      "term": "Patriarchal lifespans",
+      "category": "theology",
+      "definition": "The ages at which the early male leaders in the Bible (like Adam, Noah, Abraham) died.",
+      "example": "Like the recorded ages of kings in a history book.",
+      "grade_level": "college",
+      "first_appearance": "01"
+    },
+    {
+      "term": "Regime change",
+      "category": "academic",
+      "definition": "A sudden shift from one pattern or system to a completely different one.",
+      "example": "Like switching from summer weather to winter overnight.",
+      "grade_level": "college",
+      "first_appearance": "01"
+    },
+    {
+      "term": "Isomorphic mapping",
+      "category": "math",
+      "definition": "A one-to-one correspondence between two different systems that preserves their structure.",
+      "example": "Like a map of a subway system that shows the same connections as the real tracks.",
+      "grade_level": "college",
+      "first_appearance": "02"
+    },
+    {
+      "term": "AIC",
+      "category": "math",
+      "definition": "Akaike Information Criterion: a way to compare different models and pick the best one, balancing fit and simplicity.",
+      "example": "Like a judge scoring contestants on both talent and how simple their act is.",
+      "grade_level": "graduate",
+      "first_appearance": "02"
+    },
+    {
+      "term": "\u0394AIC",
+      "category": "math",
+      "definition": "The difference in AIC scores between two models; a larger difference means one model is clearly better.",
+      "example": "Like a 5-point lead in a game that shows one team is definitely stronger.",
+      "grade_level": "graduate",
+      "first_appearance": "02"
+    },
+    {
+      "term": "Power law",
+      "category": "math",
+      "definition": "A relationship where one quantity changes as a fixed power of another, like y = a * x^b.",
+      "example": "Like the area of a square growing as the side length squared.",
+      "grade_level": "college",
+      "first_appearance": "02"
+    },
+    {
+      "term": "Step function",
+      "category": "math",
+      "definition": "A function that stays constant for a while, then jumps suddenly to another constant value.",
+      "example": "Like a light switch that is either off or on, with nothing in between.",
+      "grade_level": "college",
+      "first_appearance": "02"
+    },
+    {
+      "term": "Logistic",
+      "category": "math",
+      "definition": "An S-shaped curve that starts slow, speeds up, then slows down again as it approaches a limit.",
+      "example": "Like the spread of a rumor that starts slowly, then goes viral, then fades.",
+      "grade_level": "college",
+      "first_appearance": "02"
+    },
+    {
+      "term": "CV",
+      "category": "math",
+      "definition": "Coefficient of Variation: a measure of how spread out numbers are relative to their average.",
+      "example": "Like comparing the consistency of two basketball players' scores.",
+      "grade_level": "college",
+      "first_appearance": "03"
+    },
+    {
+      "term": "p",
+      "category": "math",
+      "definition": "p-value: a number that tells you how likely it is that a pattern happened by random chance.",
+      "example": "Like a 1 in a million chance of flipping heads 20 times in a row.",
+      "grade_level": "college",
+      "first_appearance": "03"
+    },
+    {
+      "term": "z-score",
+      "category": "math",
+      "definition": "A measure of how far a data point is from the average, in units of standard deviation.",
+      "example": "Like how many inches taller than average a person is.",
+      "grade_level": "college",
+      "first_appearance": "03"
+    },
+    {
+      "term": "\u03c3",
+      "category": "math",
+      "definition": "Sigma: the symbol for standard deviation, a measure of how spread out numbers are.",
+      "example": "Like the typical range of heights in a class.",
+      "grade_level": "college",
+      "first_appearance": "03"
+    },
+    {
+      "term": "Covenant grace signal",
+      "category": "framework",
+      "definition": "A special event or data point that suggests God's promise of grace is actively influencing the pattern.",
+      "example": "Like a sudden extra boost in a car's speed that hints at a hidden engine.",
+      "grade_level": "specialist",
+      "first_appearance": "03"
+    },
+    {
+      "term": "Actuarial science",
+      "category": "academic",
+      "definition": "The math of insurance and risk, used to calculate life expectancies and premiums.",
+      "example": "Like the calculations that determine your car insurance rate based on age and accidents.",
+      "grade_level": "college",
+      "first_appearance": "04"
+    },
+    {
+      "term": "Correspondence",
+      "category": "framework",
+      "definition": "A weaker form of mapping where two things are similar but not structurally identical.",
+      "example": "Like a rough sketch that looks like a person but isn't an exact copy.",
+      "grade_level": "college",
+      "first_appearance": "05"
+    },
+    {
+      "term": "Isomorphism",
+      "category": "math",
+      "definition": "A strong, structure-preserving mapping between two systems where every part matches up.",
+      "example": "Like a perfect translation that keeps all the jokes and puns.",
+      "grade_level": "college",
+      "first_appearance": "05"
+    },
+    {
+      "term": "Bidirectionality",
+      "category": "academic",
+      "definition": "When a relationship works both ways: A predicts B and B predicts A.",
+      "example": "Like a two-way street where traffic flows in both directions.",
+      "grade_level": "college",
+      "first_appearance": "05"
+    },
+    {
+      "term": "Falsification criteria",
+      "category": "academic",
+      "definition": "Specific conditions that, if met, would prove a theory wrong.",
+      "example": "Like a list of things that would make you stop believing in a magic trick.",
+      "grade_level": "college",
+      "first_appearance": "06"
+    },
+    {
+      "term": "Kill conditions",
+      "category": "framework",
+      "definition": "Same as falsification criteria: conditions that would destroy or downgrade the isomorphism claim.",
+      "example": "Like a list of things that would make a detective drop a suspect.",
+      "grade_level": "specialist",
+      "first_appearance": "06"
+    },
+    {
+      "term": "Empirical evidence",
+      "category": "academic",
+      "definition": "Information that comes from observation or experiment, not just theory.",
+      "example": "Like measuring the temperature outside instead of guessing.",
+      "grade_level": "college",
+      "first_appearance": "06"
+    },
+    {
+      "term": "Anomaly",
+      "category": "academic",
+      "definition": "Something that doesn't fit the expected pattern, like an outlier.",
+      "example": "Like a 90\u00b0F day in the middle of winter.",
+      "grade_level": "college",
+      "first_appearance": "06"
+    },
+    {
+      "term": "R\u00b2",
+      "category": "math",
+      "definition": "R-squared: a number from 0 to 1 that shows how well a model fits the data; 1 is perfect.",
+      "example": "Like a score of 0.9 meaning the model explains 90% of the variation.",
+      "grade_level": "college",
+      "first_appearance": "06"
+    },
+    {
+      "term": "Grace",
+      "category": "theology",
+      "definition": "Unearned favor or kindness from God, often seen as a sustaining force.",
+      "example": "Like a parent's love that doesn't depend on the child being perfect.",
+      "grade_level": "10",
+      "first_appearance": "01"
+    },
+    {
+      "term": "Equilibrium",
+      "category": "physics",
+      "definition": "A state where opposing forces are balanced and nothing changes over time.",
+      "example": "Like a seesaw perfectly balanced with equal weights on both sides.",
+      "grade_level": "college",
+      "first_appearance": "01"
+    },
+    {
+      "term": "\u03c4d",
+      "category": "physics",
+      "definition": "Tau-d: the symbol for the decoherence timescale, the time it takes for coherence to drop significantly.",
+      "example": "Like the 'half-life' of a quantum system's order.",
+      "grade_level": "college",
+      "first_appearance": "01"
+    },
+    {
+      "term": "Lfloor",
+      "category": "framework",
+      "definition": "The asymptotic floor value in the decoherence equation, representing the minimum lifespan or coherence level.",
+      "example": "Like the lowest possible score you can get in a game, no matter how badly you play.",
+      "grade_level": "specialist",
+      "first_appearance": "01"
+    },
+    {
+      "term": "A",
+      "category": "math",
+      "definition": "The initial value or amplitude in an exponential decay equation, representing starting coherence.",
+      "example": "Like the full height of a bouncing ball before its first bounce.",
+      "grade_level": "college",
+      "first_appearance": "01"
+    },
+    {
+      "term": "e",
+      "category": "math",
+      "definition": "Euler's number, approximately 2.718, the base of natural logarithms, used in exponential functions.",
+      "example": "Like the number pi (3.14) but for growth and decay.",
+      "grade_level": "college",
+      "first_appearance": "01"
+    },
+    {
+      "term": "t",
+      "category": "math",
+      "definition": "Time variable, often measured in years in this document.",
+      "example": "Like the x-axis on a graph showing time passing.",
+      "grade_level": "10",
+      "first_appearance": "01"
+    },
+    {
+      "term": "Pre-Flood",
+      "category": "theology",
+      "definition": "The time period before the great flood described in the Bible (Noah's flood).",
+      "example": "Like 'before the big storm' in a story.",
+      "grade_level": "10",
+      "first_appearance": "01"
+    },
+    {
+      "term": "Post-Flood",
+      "category": "theology",
+      "definition": "The time period after the great flood described in the Bible.",
+      "example": "Like 'after the big storm' in a story.",
+      "grade_level": "10",
+      "first_appearance": "01"
+    },
+    {
+      "term": "Design ceiling",
+      "category": "framework",
+      "definition": "A maximum limit set by design, like a hard upper bound that cannot be exceeded.",
+      "example": "Like the top speed of a car set by its engine design.",
+      "grade_level": "college",
+      "first_appearance": "04"
+    },
+    {
+      "term": "Structural preservation",
+      "category": "academic",
+      "definition": "When the key features of one system are kept intact when mapping to another system.",
+      "example": "Like a building's blueprint keeping the same layout even if the materials change.",
+      "grade_level": "college",
+      "first_appearance": "05"
+    },
+    {
+      "term": "Non-arbitrariness",
+      "category": "academic",
+      "definition": "The property that a mapping is forced by the data, not chosen randomly by the researcher.",
+      "example": "Like a puzzle piece that only fits in one spot, not just any spot.",
+      "grade_level": "college",
+      "first_appearance": "05"
+    },
+    {
+      "term": "Constraint",
+      "category": "academic",
+      "definition": "A rule or condition that limits what is possible in a model or system.",
+      "example": "Like a speed limit that tells you how fast you can drive.",
+      "grade_level": "college",
+      "first_appearance": "05"
+    },
+    {
+      "term": "Bidirectional consequence",
+      "category": "academic",
+      "definition": "When a relationship works both ways, so each side predicts something about the other.",
+      "example": "Like a two-way mirror where you can see both sides.",
+      "grade_level": "college",
+      "first_appearance": "05"
+    },
+    {
+      "term": "Level 3",
+      "category": "framework",
+      "definition": "The highest classification in the Theophysics framework, meaning a structural isomorphism is confirmed.",
+      "example": "Like a gold medal in a competition.",
+      "grade_level": "specialist",
+      "first_appearance": "05"
+    },
+    {
+      "term": "Structural isomorphism",
+      "category": "framework",
+      "definition": "A strong mapping where the internal structure of two systems is identical, not just superficially similar.",
+      "example": "Like two different computer programs that have the same underlying logic.",
+      "grade_level": "specialist",
+      "first_appearance": "06"
+    },
+    {
+      "term": "Grace-coherence mapping",
+      "category": "framework",
+      "definition": "The idea that God's grace in theology corresponds to coherence in physics, both preventing total collapse.",
+      "example": "Like a safety net that catches you no matter what.",
+      "grade_level": "specialist",
+      "first_appearance": "06"
+    },
+    {
+      "term": "Substrate",
+      "category": "physics",
+      "definition": "The underlying layer or foundation on which something else exists or operates.",
+      "example": "Like the soil that plants grow in.",
+      "grade_level": "college",
+      "first_appearance": "07"
+    }
+  ],
+  "stats": {
+    "total_terms_found": 44,
+    "by_category": {
+      "physics": 10,
+      "theology": 6,
+      "math": 14,
+      "philosophy": 0,
+      "framework": 8,
+      "academic": 6,
+      "language": 0
+    },
+    "highest_grade_level": "specialist",
+    "average_grade_level": "college",
+    "accessibility_score": 25
+  }
+}

@@ -1,0 +1,546 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "Physics",
+        "type": "physics",
+        "strength": 9
+      },
+      {
+        "name": "Economics",
+        "type": "other",
+        "strength": 8
+      },
+      {
+        "name": "Theology",
+        "type": "theology",
+        "strength": 7
+      },
+      {
+        "name": "History",
+        "type": "other",
+        "strength": 5
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": true,
+        "role": "Conservation as divine moral structure; grace as external constraint",
+        "strength": 7
+      },
+      {
+        "variable": "M",
+        "present": true,
+        "role": "Mass as real productive output backing money; meaning in economic exchange",
+        "strength": 8
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Energy as the conserved quantity; phantom energy injection as fiat creation",
+        "strength": 9
+      },
+      {
+        "variable": "S",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Thermodynamic waste heat as inflation; system heating from conservation violation",
+        "strength": 8
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Information carried by money; signal vs. noise in currency",
+        "strength": 6
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "Relationship between money and work; exchange as relational structure",
+        "strength": 5
+      },
+      {
+        "variable": "Q",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "F",
+        "present": true,
+        "role": "Weakness of fiat systems; sin as structural violation of conservation",
+        "strength": 6
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence conservation (div(C)=0) as moral structure; coherence violated by fiat",
+        "strength": 7
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "Existence of conservation laws as foundational"
+      },
+      {
+        "id": "A1.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A5.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC6",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A1.3",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "T3.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "Grace as external conservation constraint; gold standard as external backing"
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "Information conservation in monetary system; money as information carrier"
+      },
+      {
+        "id": "BC8",
+        "invoked": false,
+        "how": ""
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "source of moral order",
+          "ground of conservation laws",
+          "origin of divine structure"
+        ]
+      },
+      "son": {
+        "present": false,
+        "manifestations": []
+      },
+      "spirit": {
+        "present": false,
+        "manifestations": []
+      },
+      "trinitarian_structure": "none"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-005",
+        "domain_a": "Physics",
+        "domain_b": "Economics/Theology",
+        "strength": 7,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "grace",
+        "context": "External conservation constraint; gold standard as structural grace",
+        "weight": 7
+      },
+      {
+        "concept": "sin",
+        "context": "Structural violation of conservation; fiat creation as economic sin",
+        "weight": 6
+      },
+      {
+        "concept": "judgment",
+        "context": "Thermodynamic consequences of conservation violation; inflation as judgment",
+        "weight": 5
+      },
+      {
+        "concept": "fraud",
+        "context": "Fiat currency as systematic fraud; false balance",
+        "weight": 8
+      },
+      {
+        "concept": "moral order",
+        "context": "Conservation laws reflecting divine moral structure",
+        "weight": 7
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "conservation",
+        "context": "Foundational constraint in both physics and economics",
+        "weight": 10
+      },
+      {
+        "concept": "violation",
+        "context": "Systematic breaking of conservation principle",
+        "weight": 9
+      },
+      {
+        "concept": "isomorphism",
+        "context": "Structural mapping between domains",
+        "weight": 8
+      },
+      {
+        "concept": "asymmetry",
+        "context": "Ontological difference between fundamental and institutional constraints",
+        "weight": 6
+      },
+      {
+        "concept": "falsification",
+        "context": "Testability conditions for the isomorphism",
+        "weight": 7
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 5
+      },
+      {
+        "fruit": "goodness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "self_control",
+        "present": false,
+        "strength": 0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "domain:Physics",
+      "to": "domain:Economics",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "domain:Physics",
+      "to": "domain:Theology",
+      "relation": "maps_to",
+      "weight": 6
+    },
+    {
+      "from": "chi_variable:E",
+      "to": "chi_variable:M",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:G",
+      "to": "chi_variable:C",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "chi_variable:T",
+      "to": "chi_variable:F",
+      "relation": "produces",
+      "weight": 8
+    },
+    {
+      "from": "axiom:A1.1",
+      "to": "chi_variable:E",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "axiom:BC2",
+      "to": "chi_variable:G",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "axiom:BC7",
+      "to": "chi_variable:K",
+      "relation": "supports",
+      "weight": 6
+    },
+    {
+      "from": "isomorphism:ISO-005",
+      "to": "domain:Physics",
+      "relation": "maps_from",
+      "weight": 9
+    },
+    {
+      "from": "isomorphism:ISO-005",
+      "to": "domain:Economics",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "theological_concept:grace",
+      "to": "chi_variable:G",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "theological_concept:sin",
+      "to": "chi_variable:F",
+      "relation": "maps_to",
+      "weight": 6
+    },
+    {
+      "from": "theological_concept:judgment",
+      "to": "chi_variable:T",
+      "relation": "maps_to",
+      "weight": 5
+    },
+    {
+      "from": "logical_concept:conservation",
+      "to": "chi_variable:E",
+      "relation": "requires",
+      "weight": 10
+    },
+    {
+      "from": "logical_concept:violation",
+      "to": "chi_variable:F",
+      "relation": "produces",
+      "weight": 9
+    },
+    {
+      "from": "logical_concept:isomorphism",
+      "to": "isomorphism:ISO-005",
+      "relation": "defines",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:falsification",
+      "to": "isomorphism:ISO-005",
+      "relation": "tests",
+      "weight": 7
+    },
+    {
+      "from": "chi_variable:M",
+      "to": "chi_variable:K",
+      "relation": "supports",
+      "weight": 5
+    },
+    {
+      "from": "chi_variable:R",
+      "to": "chi_variable:C",
+      "relation": "supports",
+      "weight": 5
+    }
+  ],
+  "tags": {
+    "primary": [
+      "isomorphism",
+      "conservation",
+      "fiat currency",
+      "thermodynamics",
+      "economic theology"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/theology",
+      "pillar/philosophy"
+    ],
+    "series": "isomorphism",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "Exodus 20:15",
+        "context": "Fiat printing as theft from holders"
+      },
+      {
+        "ref": "Proverbs 11:1",
+        "context": "Fiat as false balance"
+      },
+      {
+        "ref": "1 Timothy 6:10",
+        "context": "Love of money as root of evil"
+      }
+    ],
+    "academic": [
+      {
+        "ref": "Joule/Helmholtz (1840s-1850s)",
+        "context": "First Law of Thermodynamics"
+      },
+      {
+        "ref": "Richard Cantillon (1755)",
+        "context": "Cantillon Effect"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "ISO-002",
+        "context": "Grace as conservation necessity"
+      },
+      {
+        "ref": "ISO-003",
+        "context": "Entropy/Sin degradation trajectory"
+      }
+    ],
+    "total_count": 6
+  },
+  "word_anomalies": [
+    {
+      "word": "phantom energy",
+      "frequency": 5,
+      "significance": "Central metaphor for fiat creation without backing"
+    },
+    {
+      "word": "conservation violation",
+      "frequency": 8,
+      "significance": "Core structural concept linking physics and economics"
+    },
+    {
+      "word": "Nixon Shock",
+      "frequency": 3,
+      "significance": "Historical phase transition point in 1971"
+    },
+    {
+      "word": "Cantillon Effect",
+      "frequency": 2,
+      "significance": "Economic consequence of fiat creation"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "Analytical and critical; seeks to establish a structural isomorphism between physical and economic systems",
+    "Q1_identity": "An isomorphism record (ISO-005) establishing a structural mapping between conservation of energy in physics and monetary conservation in economics/theology",
+    "Q2_domain": "Interdisciplinary: physics, economics, theology, history",
+    "Q3_claim": "Fiat currency is structurally analogous to a perpetual motion machine; both violate conservation principles and produce systemic degradation (inflation/waste heat)",
+    "Q4_support": "First Law of Thermodynamics, historical fiat currency failures (Roman denarius, Continental Dollar, Assignat, Reichsmark, Zimbabwe dollar), post-1971 economic data, biblical prohibitions on false measures",
+    "Q5_dependencies": "Conservation of Energy axiom, historical evidence of fiat failures, theological framework of moral order",
+    "Q6_consequences": "Predicts inevitable degradation of fiat systems; suggests restoration of conservation constraints (sound money) as necessary for stability; implies moral dimension to monetary policy",
+    "Q7_kill": "A stable fiat currency lasting over 100 years without productivity growth matching monetary expansion; or demonstration that the mapping is too loose and applies to any input-output system"
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "ISO-002",
+      "ISO-003",
+      "First Law of Thermodynamics",
+      "Bretton Woods history"
+    ],
+    "required_by": [],
+    "parallel_to": [
+      "ISO-002",
+      "ISO-003"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 28,
+    "total_edges": 20,
+    "dominant_domain": "Physics",
+    "dominant_chi": "E",
+    "connectivity_score": 8,
+    "one_sentence": "ISO-005 establishes a structural isomorphism between conservation of energy in physics and monetary conservation in economics, arguing that fiat currency functions as a thermodynamic fraud by injecting phantom energy without corresponding mass."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": true,
+      "how": "Grace as external conservation constraint; faith in institutional trust as buffer"
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Truth of conservation laws; coherence violated by fiat creation"
+    },
+    "4_7_love_relationship": {
+      "active": false,
+      "how": ""
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Judgment as thermodynamic consequence; logos as informational structure of money"
+    },
+    "pairs_active_count": 3
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 7
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 8
+    },
+    "love": {
+      "present": false,
+      "strength": 0
+    },
+    "judgment": {
+      "present": true,
+      "strength": 6
+    },
+    "logos": {
+      "present": true,
+      "strength": 6
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": false,
+      "strength": 0
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": false,
+      "strength": 0
+    },
+    "operators_present_count": 4
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "ISO-002",
+      "ISO-003",
+      "The Convergence"
+    ],
+    "read_after": []
+  }
+}

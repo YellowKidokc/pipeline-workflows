@@ -1,0 +1,535 @@
+{
+  "definitions": [
+    {
+      "term": "Theophysics",
+      "category": "framework",
+      "definition": "The study of God using the methods and ideas of physics.",
+      "example": "Like using math to describe how gravity works, but applied to questions about God.",
+      "grade_level": "college",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "Lean 4",
+      "category": "academic",
+      "definition": "A computer program that checks if mathematical proofs are correct, step by step.",
+      "example": "Like a spell-checker for math proofs.",
+      "grade_level": "college",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "Formal Verification",
+      "category": "academic",
+      "definition": "Using a computer to prove that a system or argument has no mistakes.",
+      "example": "Like having a robot double-check every step of your homework to make sure it's right.",
+      "grade_level": "college",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "Corpus",
+      "category": "academic",
+      "definition": "A collection of written works or data used for study.",
+      "example": "A library of all the proofs in this project.",
+      "grade_level": "college",
+      "first_appearance": "The Lean 4 Corpus"
+    },
+    {
+      "term": "Theorem",
+      "category": "math",
+      "definition": "A statement that has been proven to be true using logic.",
+      "example": "The Pythagorean theorem says a² + b² = c² for right triangles, and it's been proven.",
+      "grade_level": "10",
+      "first_appearance": "287 machine-verified theorems"
+    },
+    {
+      "term": "Axiom",
+      "category": "math",
+      "definition": "A basic assumption that is accepted as true without proof, used as a starting point.",
+      "example": "In geometry, 'a straight line is the shortest distance between two points' is an axiom.",
+      "grade_level": "10",
+      "first_appearance": "0 Axioms"
+    },
+    {
+      "term": "Structural Isomorphism",
+      "category": "math",
+      "definition": "A perfect match between the structures of two different things, so they work the same way.",
+      "example": "A map of a subway system and the actual subway lines have the same structure, even though the map is paper and the subway is metal.",
+      "grade_level": "college",
+      "first_appearance": "3 Structural Isomorphisms"
+    },
+    {
+      "term": "Uniqueness Result",
+      "category": "math",
+      "definition": "A proof that only one thing can satisfy a set of conditions.",
+      "example": "Proving that there is only one number that, when added to 5, gives 10 (the answer is 5).",
+      "grade_level": "college",
+      "first_appearance": "1 Uniqueness Result"
+    },
+    {
+      "term": "Bridge Hit Rate",
+      "category": "framework",
+      "definition": "The percentage of successful connections made between physics and theology concepts in the model.",
+      "example": "If you try to connect 10 physics ideas to 10 theology ideas and 8 match up, your hit rate is 80%.",
+      "grade_level": "college",
+      "first_appearance": "80% Bridge Hit Rate"
+    },
+    {
+      "term": "Interactive Theorem Prover",
+      "category": "academic",
+      "definition": "A computer program that helps a person write and check mathematical proofs.",
+      "example": "Like a calculator that not only gives you the answer but also shows you every step and checks if you made a mistake.",
+      "grade_level": "college",
+      "first_appearance": "Lean 4 is an interactive theorem prover."
+    },
+    {
+      "term": "Compiles",
+      "category": "academic",
+      "definition": "When a computer program successfully translates human-readable code into machine instructions without errors.",
+      "example": "Like a chef following a recipe without any missing ingredients or confusing steps.",
+      "grade_level": "college",
+      "first_appearance": "When a theorem compiles with zero `sorry` or `admit` placeholders"
+    },
+    {
+      "term": "Sorry",
+      "category": "academic",
+      "definition": "A placeholder in a Lean proof that means 'I haven't proven this part yet, but I'm assuming it's true.'",
+      "example": "Like writing 'I'll finish this later' on a homework problem.",
+      "grade_level": "college",
+      "first_appearance": "zero `sorry` or `admit` placeholders"
+    },
+    {
+      "term": "Admit",
+      "category": "academic",
+      "definition": "A placeholder in a Lean proof that means 'I'm accepting this statement as true without proof.'",
+      "example": "Like a teacher saying 'just trust me on this one' before moving on.",
+      "grade_level": "college",
+      "first_appearance": "zero `sorry` or `admit` placeholders"
+    },
+    {
+      "term": "Internal Structural Consistency",
+      "category": "academic",
+      "definition": "The property that all parts of a system fit together without contradictions.",
+      "example": "A puzzle where every piece connects perfectly and no piece contradicts another.",
+      "grade_level": "college",
+      "first_appearance": "internal structural consistency"
+    },
+    {
+      "term": "Gate Conditions",
+      "category": "framework",
+      "definition": "Rules that must be satisfied for something to pass or be valid in the model.",
+      "example": "Like a bouncer at a club checking your ID before letting you in.",
+      "grade_level": "college",
+      "first_appearance": "gate conditions"
+    },
+    {
+      "term": "Sign Disciplines",
+      "category": "framework",
+      "definition": "Rules about how positive and negative values (like good and evil) behave in the model.",
+      "example": "A rule that says 'two wrongs don't make a right' is a sign discipline.",
+      "grade_level": "college",
+      "first_appearance": "sign disciplines"
+    },
+    {
+      "term": "Domain Judgment Question",
+      "category": "philosophy",
+      "definition": "A question that cannot be answered by math or logic alone, but requires knowledge from a specific field like history or physics.",
+      "example": "Whether a mathematical model of a bridge accurately reflects a real bridge is a domain judgment question for engineers.",
+      "grade_level": "college",
+      "first_appearance": "domain judgment question"
+    },
+    {
+      "term": "Empirical Evidence",
+      "category": "academic",
+      "definition": "Information that is gained through observation or experiment, not just logic.",
+      "example": "Testing a new medicine on patients to see if it works is gathering empirical evidence.",
+      "grade_level": "10",
+      "first_appearance": "empirical evidence"
+    },
+    {
+      "term": "Adversarial Review",
+      "category": "academic",
+      "definition": "A process where someone tries to find flaws or counterexamples to test a claim.",
+      "example": "Like a lawyer trying to poke holes in a witness's story to see if it holds up.",
+      "grade_level": "college",
+      "first_appearance": "adversarial review"
+    },
+    {
+      "term": "Kill Conditions",
+      "category": "framework",
+      "definition": "Specific conditions that, if met, would prove the framework is wrong.",
+      "example": "Like a 'self-destruct' button that activates if a certain error is found.",
+      "grade_level": "college",
+      "first_appearance": "named kill conditions"
+    },
+    {
+      "term": "Overclaim Guard",
+      "category": "framework",
+      "definition": "A rule that prevents the framework from claiming something it hasn't actually proven.",
+      "example": "Like a safety switch that stops you from saying you won a race before you cross the finish line.",
+      "grade_level": "college",
+      "first_appearance": "The overclaim guard runs on every theorem."
+    },
+    {
+      "term": "Coherence",
+      "category": "philosophy",
+      "definition": "The quality of being logical, consistent, and making sense as a whole.",
+      "example": "A story where all the details fit together without contradictions has coherence.",
+      "grade_level": "10",
+      "first_appearance": "The Coherence Lane"
+    },
+    {
+      "term": "Coherence Functional",
+      "category": "framework",
+      "definition": "A mathematical formula that measures how coherent or consistent something is.",
+      "example": "Like a score from 0 to 1 that tells you how well a story holds together.",
+      "grade_level": "college",
+      "first_appearance": "Coherence functional defined"
+    },
+    {
+      "term": "Zero-Factor Collapse",
+      "category": "framework",
+      "definition": "If any one essential part of the coherence formula is zero, the whole thing becomes zero.",
+      "example": "Like a chain: if one link breaks, the whole chain fails.",
+      "grade_level": "college",
+      "first_appearance": "zero-factor collapse proved"
+    },
+    {
+      "term": "Prerequisite",
+      "category": "academic",
+      "definition": "Something that must exist or happen before something else can exist or happen.",
+      "example": "You need to learn addition before you can learn multiplication; addition is a prerequisite.",
+      "grade_level": "10",
+      "first_appearance": "Coherence is prerequisite to any truth claim"
+    },
+    {
+      "term": "Presuppose",
+      "category": "philosophy",
+      "definition": "To assume something is true without proof, as a necessary starting point.",
+      "example": "When you argue, you presuppose that logic works and that people can understand each other.",
+      "grade_level": "college",
+      "first_appearance": "Coherence is universally presupposed"
+    },
+    {
+      "term": "Abductive",
+      "category": "philosophy",
+      "definition": "A type of reasoning that concludes the most likely explanation for a set of observations.",
+      "example": "If the grass is wet, you abductively reason that it probably rained, even though you didn't see it.",
+      "grade_level": "college",
+      "first_appearance": "Abductive"
+    },
+    {
+      "term": "Factor Signatures",
+      "category": "framework",
+      "definition": "A unique pattern or 'fingerprint' for each factor in the coherence formula.",
+      "example": "Like a barcode that identifies what each factor is and how it should behave.",
+      "grade_level": "college",
+      "first_appearance": "Factor signatures typed"
+    },
+    {
+      "term": "Canonical Rows",
+      "category": "framework",
+      "definition": "The standard, correct set of connections between physics and theology factors.",
+      "example": "Like the official answer key for a matching test.",
+      "grade_level": "college",
+      "first_appearance": "canonical rows valid"
+    },
+    {
+      "term": "Self-Redeem",
+      "category": "theology",
+      "definition": "To fix or save oneself from a bad state using only one's own resources.",
+      "example": "Trying to pull yourself out of quicksand by your own hair.",
+      "grade_level": "college",
+      "first_appearance": "Destructive signs cannot self-redeem"
+    },
+    {
+      "term": "Polarity",
+      "category": "physics",
+      "definition": "The property of having two opposite states, like positive and negative, or good and evil.",
+      "example": "A magnet has polarity: a north pole and a south pole.",
+      "grade_level": "10",
+      "first_appearance": "PolarityDiscipline.lean"
+    },
+    {
+      "term": "Self-Grounding",
+      "category": "philosophy",
+      "definition": "Something that does not depend on anything else for its existence; it is its own foundation.",
+      "example": "A building that holds itself up without needing a foundation.",
+      "grade_level": "college",
+      "first_appearance": "Self-grounding substrate defined"
+    },
+    {
+      "term": "Substrate",
+      "category": "physics",
+      "definition": "The underlying substance or foundation that something else is built on or carried by.",
+      "example": "The paper is the substrate for the ink; the ink needs the paper to exist on.",
+      "grade_level": "college",
+      "first_appearance": "Substrate states formally defined"
+    },
+    {
+      "term": "Moral Anti-Realist",
+      "category": "philosophy",
+      "definition": "Someone who believes that moral statements (like 'murder is wrong') are not objectively true or false, but are just opinions or feelings.",
+      "example": "Someone who says 'there's no such thing as good or evil, it's all just what people think.'",
+      "grade_level": "college",
+      "first_appearance": "A moral anti-realist can reject this step"
+    },
+    {
+      "term": "Parasitic",
+      "category": "philosophy",
+      "definition": "Depending on something else for its existence, often in a harmful way.",
+      "example": "A tick is parasitic on a dog; it needs the dog to live, but it harms the dog.",
+      "grade_level": "10",
+      "first_appearance": "Evil is parasitic on prior good"
+    },
+    {
+      "term": "Ontologically Prior",
+      "category": "philosophy",
+      "definition": "More fundamental in terms of existence; something that must exist first for other things to exist.",
+      "example": "In a video game, the game engine is ontologically prior to the characters; the characters can't exist without the engine.",
+      "grade_level": "college",
+      "first_appearance": "Good is ontologically prior"
+    },
+    {
+      "term": "Logos",
+      "category": "theology",
+      "definition": "A Greek word meaning 'word,' 'reason,' or 'principle'; in Christian theology, it refers to Jesus Christ as the divine reason and order of the universe.",
+      "example": "Think of it as the 'logic' or 'blueprint' that the universe is built on.",
+      "grade_level": "college",
+      "first_appearance": "Self-grounding Logos"
+    },
+    {
+      "term": "Contingent",
+      "category": "philosophy",
+      "definition": "Something that could have been different or might not have existed at all; dependent on something else.",
+      "example": "A tree is contingent because it depends on soil, water, and sunlight to exist.",
+      "grade_level": "college",
+      "first_appearance": "Can a contingent ground explain itself without regress?"
+    },
+    {
+      "term": "Regress",
+      "category": "philosophy",
+      "definition": "An infinite chain of causes where each thing is explained by something before it, with no end.",
+      "example": "If you say 'everything needs a cause,' then you need a cause for the cause, and a cause for that cause, forever.",
+      "grade_level": "college",
+      "first_appearance": "Regress must terminate"
+    },
+    {
+      "term": "Brute Fact",
+      "category": "philosophy",
+      "definition": "Something that is accepted as true without any further explanation or cause.",
+      "example": "Saying 'the universe just exists, and that's it' is accepting it as a brute fact.",
+      "grade_level": "college",
+      "first_appearance": "Self-grounding is a framework choice over brute fact"
+    },
+    {
+      "term": "Supra-Personal",
+      "category": "theology",
+      "definition": "Beyond or above what we normally think of as a person, but still having personal qualities like will and love.",
+      "example": "Like a being that is more than a human person, but can still relate to you personally.",
+      "grade_level": "college",
+      "first_appearance": "Personal or supra-personal God"
+    },
+    {
+      "term": "Imago Dei",
+      "category": "theology",
+      "definition": "A Latin phrase meaning 'image of God'; the idea that humans are made in God's likeness.",
+      "example": "Like a child who looks like their parent; humans reflect something of God's nature.",
+      "grade_level": "college",
+      "first_appearance": "Maps to Imago Dei"
+    },
+    {
+      "term": "Voluntary Coupling",
+      "category": "framework",
+      "definition": "A connection between two things that is chosen freely, not forced.",
+      "example": "Choosing to be friends with someone is a voluntary coupling; being chained to them is not.",
+      "grade_level": "college",
+      "first_appearance": "BC8 (Voluntary Coupling) enters here"
+    },
+    {
+      "term": "Fall",
+      "category": "theology",
+      "definition": "In Christian theology, the event when the first humans (Adam and Eve) disobeyed God, bringing sin and disorder into the world.",
+      "example": "Like the 'origin story' of how things went wrong in the world.",
+      "grade_level": "college",
+      "first_appearance": "The reader discovers the Fall"
+    },
+    {
+      "term": "Sign Conservation",
+      "category": "framework",
+      "definition": "A rule that the positive or negative 'charge' of something cannot be changed by its own actions.",
+      "example": "A negative person cannot make themselves positive just by thinking positive thoughts; they need outside help.",
+      "grade_level": "college",
+      "first_appearance": "Sign conservation: self-operations cannot flip sign"
+    },
+    {
+      "term": "Incarnation",
+      "category": "theology",
+      "definition": "The Christian belief that God became a human being in the person of Jesus Christ.",
+      "example": "Like a king becoming a peasant to live among his people.",
+      "grade_level": "college",
+      "first_appearance": "The operator does what it claims in the model. It is not a proof of the Incarnation."
+    },
+    {
+      "term": "Christ Operator",
+      "category": "framework",
+      "definition": "A mathematical operation in the model that represents the work of Christ: it converts negative (sinful) states to positive (restored) ones.",
+      "example": "Like a 'repair button' that fixes broken things without erasing the history of how they broke.",
+      "grade_level": "college",
+      "first_appearance": "ChristOperatorDiscipline.lean"
+    },
+    {
+      "term": "External Integration",
+      "category": "framework",
+      "definition": "A repair that comes from outside the broken system, not from within it.",
+      "example": "If your car breaks down, you need a mechanic from outside the car to fix it; the car can't fix itself.",
+      "grade_level": "college",
+      "first_appearance": "C_op is external integration, not scalar multiplication"
+    },
+    {
+      "term": "Scalar Multiplication",
+      "category": "math",
+      "definition": "Multiplying a number by a single value (a scalar), which just makes it bigger or smaller.",
+      "example": "If you have 5 apples and multiply by 2, you get 10 apples. It's just scaling.",
+      "grade_level": "10",
+      "first_appearance": "C_op is external integration, not scalar multiplication"
+    },
+    {
+      "term": "Substrate Identity",
+      "category": "framework",
+      "definition": "The core 'whatness' of something that stays the same even when it changes form.",
+      "example": "An actor remains the same person even when they play different characters; their substrate identity is unchanged.",
+      "grade_level": "college",
+      "first_appearance": "Substrate identity preserved across incarnation, death, resurrection"
+    },
+    {
+      "term": "Entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system; things tend to become more disordered over time.",
+      "example": "Your room naturally gets messier over time unless you clean it; that's entropy increasing.",
+      "grade_level": "10",
+      "first_appearance": "entropy contact does not corrupt identity"
+    },
+    {
+      "term": "Cross Convergence",
+      "category": "framework",
+      "definition": "The idea that the Cross of Jesus Christ is the only solution that satisfies all the requirements for perfect justice and mercy.",
+      "example": "Like a key that is the only one that fits a very specific lock.",
+      "grade_level": "college",
+      "first_appearance": "THE LOCK: Cross convergence is the unique configuration"
+    },
+    {
+      "term": "Cost-Bearing Judge",
+      "category": "theology",
+      "definition": "A judge who pays the penalty for the crime themselves, rather than making the criminal pay.",
+      "example": "A judge who fines you for speeding, but then pays the fine out of their own pocket.",
+      "grade_level": "college",
+      "first_appearance": "Perfect justice + perfect mercy + freedom require cost-bearing judge"
+    },
+    {
+      "term": "Structural Isomorphism Conditions",
+      "category": "math",
+      "definition": "The specific rules that must be met for two structures to be considered perfectly matched.",
+      "example": "The rules for saying 'this map of the subway is exactly the same as the real subway lines.'",
+      "grade_level": "college",
+      "first_appearance": "Structural isomorphism conditions compile"
+    },
+    {
+      "term": "Primitives",
+      "category": "framework",
+      "definition": "The most basic, fundamental building blocks of the framework that cannot be broken down further.",
+      "example": "In a video game, the primitives might be 'health,' 'mana,' 'strength,' and 'speed.'",
+      "grade_level": "college",
+      "first_appearance": "Four Primitives"
+    },
+    {
+      "term": "Reconciliation",
+      "category": "theology",
+      "definition": "The restoration of a broken relationship; making peace between two parties who were enemies.",
+      "example": "Two friends who had a fight making up and becoming friends again.",
+      "grade_level": "10",
+      "first_appearance": "Cross makes reconciliation possible"
+    },
+    {
+      "term": "Superposition",
+      "category": "physics",
+      "definition": "In quantum mechanics, the idea that a particle can be in multiple states at the same time until it is measured.",
+      "example": "Like a spinning coin that is both heads and tails until it lands.",
+      "grade_level": "college",
+      "first_appearance": "Superposition preserved until voluntary collapse (faith decision)"
+    },
+    {
+      "term": "Collapse",
+      "category": "physics",
+      "definition": "In quantum mechanics, when a particle in superposition 'chooses' one definite state upon measurement.",
+      "example": "When the spinning coin lands and becomes either heads or tails, it has 'collapsed.'",
+      "grade_level": "college",
+      "first_appearance": "Superposition preserved until voluntary collapse (faith decision)"
+    },
+    {
+      "term": "Moral Relativism",
+      "category": "philosophy",
+      "definition": "The belief that moral truths are not absolute but depend on culture, society, or individual opinion.",
+      "example": "Saying 'what's right for you might not be right for me' is a form of moral relativism.",
+      "grade_level": "college",
+      "first_appearance": "Moral relativism"
+    },
+    {
+      "term": "Cheap Grace",
+      "category": "theology",
+      "definition": "The idea of being forgiven without having to change or face any consequences; forgiveness without cost.",
+      "example": "A teacher erasing a failing grade without the student doing any extra work or learning from their mistakes.",
+      "grade_level": "college",
+      "first_appearance": "cheap grace"
+    },
+    {
+      "term": "Deism",
+      "category": "theology",
+      "definition": "The belief that God created the universe but does not intervene in it or interact with it.",
+      "example": "Like a clockmaker who builds a clock, winds it up, and then leaves it to run on its own.",
+      "grade_level": "college",
+      "first_appearance": "Deism"
+    },
+    {
+      "term": "Pantheism",
+      "category": "theology",
+      "definition": "The belief that God is everything and everything is God; the universe and God are identical.",
+      "example": "Saying 'the tree is God, the rock is God, I am God' is a pantheistic view.",
+      "grade_level": "college",
+      "first_appearance": "Pantheism"
+    },
+    {
+      "term": "Secular Humanism",
+      "category": "philosophy",
+      "definition": "A worldview that values human reason, ethics, and justice without relying on belief in God or religion.",
+      "example": "Believing that people can be good and create a just society without needing a divine being.",
+      "grade_level": "college",
+      "first_appearance": "Secular humanism"
+    },
+    {
+      "term": "Epistemology",
+      "category": "philosophy",
+      "definition": "The branch of philosophy that studies what knowledge is and how we can know things.",
+      "example": "Asking 'how do you know that you know something?' is an epistemological question.",
+      "grade_level": "college",
+      "first_appearance": "Standard epistemology"
+    },
+    {
+      "term": "Cross-Domain Convergence",
+      "category": "framework",
+      "definition": "When multiple different fields of study (like physics, theology, and logic) all point to the same conclusion.",
+      "example": "If a detective, a forensic scientist, and a witness all independently say the same person is guilty, that's cross-domain convergence.",
+      "grade_level": "college",
+      "first_appearance": "Cross-domain convergence is evidence"
+    },
+    {
+      "term": "Triadic Invariants",
+      "category": "framework",
+      "definition": "Properties of a three-part system that remain the same even when the system changes.",
+      "example": "In a triangle, the sum of the angles is always 180 degrees, no matter how you stretch it; that's an invariant.",
+      "grade_level": "college",
+      "first_appearance": "Triadic invariants pass for intended candidates"
+    },
+    {
+      "term": "Burden of Proof",
+      "category": "philosophy",
+      "definition": "The obligation to provide evidence for a claim; the person making the claim has the burden.",
+      "example": "If you say 'aliens exist,' you have the burden of

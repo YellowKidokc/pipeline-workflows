@@ -1,0 +1,567 @@
+{
+  "definitions": [
+    {
+      "term": "Lean 4",
+      "category": "academic",
+      "definition": "A computer program that checks if mathematical proofs are correct, like a spell-checker for logic.",
+      "example": "Like a calculator that checks your arithmetic, but for complex proofs.",
+      "grade_level": "college",
+      "first_appearance": "Context"
+    },
+    {
+      "term": "theorem prover",
+      "category": "academic",
+      "definition": "A software tool that helps mathematicians write and verify proofs step by step.",
+      "example": "Like a puzzle game where the computer tells you if each piece fits correctly.",
+      "grade_level": "college",
+      "first_appearance": "Context"
+    },
+    {
+      "term": "sorry",
+      "category": "academic",
+      "definition": "A placeholder in Lean that means 'I haven't proved this part yet' — like a blank to fill in later.",
+      "example": "Like writing 'TBD' in a homework assignment.",
+      "grade_level": "college",
+      "first_appearance": "Context"
+    },
+    {
+      "term": "admit",
+      "category": "academic",
+      "definition": "A command in Lean that tells the computer to accept a statement without proof, like a shortcut.",
+      "example": "Like saying 'trust me' in a math proof.",
+      "grade_level": "college",
+      "first_appearance": "Context"
+    },
+    {
+      "term": "formally complete",
+      "category": "academic",
+      "definition": "When every step of a proof has been checked by a computer and no gaps remain.",
+      "example": "Like a jigsaw puzzle with all pieces in place and verified by a robot.",
+      "grade_level": "college",
+      "first_appearance": "Context"
+    },
+    {
+      "term": "structural",
+      "category": "academic",
+      "definition": "Relating to the arrangement or framework of parts, not the specific content.",
+      "example": "Like the blueprint of a house, not the furniture inside.",
+      "grade_level": "college",
+      "first_appearance": "Context"
+    },
+    {
+      "term": "empirical evidence",
+      "category": "academic",
+      "definition": "Information gained through observation or experiment, not just theory.",
+      "example": "Like measuring the temperature outside instead of guessing.",
+      "grade_level": "college",
+      "first_appearance": "Context"
+    },
+    {
+      "term": "bilateral audit",
+      "category": "framework",
+      "definition": "A two-sided check that examines both physics and theology claims together.",
+      "example": "Like a referee checking both teams' plays in a game.",
+      "grade_level": "college",
+      "first_appearance": "Context"
+    },
+    {
+      "term": "machine-checkable",
+      "category": "academic",
+      "definition": "A statement that a computer can verify as true or false automatically.",
+      "example": "Like a computer checking if your password is correct.",
+      "grade_level": "college",
+      "first_appearance": "Context"
+    },
+    {
+      "term": "adversarially testable",
+      "category": "academic",
+      "definition": "Able to be tested by trying to find flaws or counterexamples, like a hacker testing security.",
+      "example": "Like a lock that is tested by a professional lockpicker.",
+      "grade_level": "college",
+      "first_appearance": "Context"
+    },
+    {
+      "term": "kill conditions",
+      "category": "framework",
+      "definition": "Specific criteria that, if met, would prove the theory wrong — like a self-destruct button.",
+      "example": "Like a science experiment that says 'if this happens, my hypothesis is false.'",
+      "grade_level": "college",
+      "first_appearance": "Context"
+    },
+    {
+      "term": "rigor monopoly",
+      "category": "academic",
+      "definition": "The idea that only one field (like science) is allowed to be strict and precise.",
+      "example": "Like saying only math can be exact, not art.",
+      "grade_level": "college",
+      "first_appearance": "Context"
+    },
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A perfect matching between two structures where every part lines up and works the same way.",
+      "example": "Like two different puzzles that have the same shape when you connect the pieces.",
+      "grade_level": "college",
+      "first_appearance": "Flagship Result · Layer 8"
+    },
+    {
+      "term": "quaternion",
+      "category": "physics",
+      "definition": "A type of number with four parts (like 3D plus time) used in physics and 3D graphics.",
+      "example": "Like coordinates that include x, y, z, and a rotation.",
+      "grade_level": "college",
+      "first_appearance": "Flagship Result · Layer 8"
+    },
+    {
+      "term": "electromagnetic field",
+      "category": "physics",
+      "definition": "An invisible force field around electric charges and magnets that can push or pull other charges.",
+      "example": "Like the magnetic field from a fridge magnet.",
+      "grade_level": "college",
+      "first_appearance": "Flagship Result · Layer 8"
+    },
+    {
+      "term": "Nicene Trinitarian",
+      "category": "theology",
+      "definition": "The Christian belief that God is three persons (Father, Son, Holy Spirit) in one being, as defined by the Nicene Creed.",
+      "example": "Like a triangle with three corners but one shape.",
+      "grade_level": "college",
+      "first_appearance": "Flagship Result · Layer 8"
+    },
+    {
+      "term": "false positives",
+      "category": "academic",
+      "definition": "Results that look correct but are actually wrong — like a fire alarm that goes off when there's no fire.",
+      "example": "Like a spam filter that marks a real email as junk.",
+      "grade_level": "college",
+      "first_appearance": "Flagship Result · Layer 8"
+    },
+    {
+      "term": "load-bearing",
+      "category": "academic",
+      "definition": "A part that is essential for the whole structure to stand — remove it and everything collapses.",
+      "example": "Like a pillar holding up a roof.",
+      "grade_level": "college",
+      "first_appearance": "Flagship Result · Layer 8"
+    },
+    {
+      "term": "coupling invariant",
+      "category": "physics",
+      "definition": "A property that stays the same when two things are connected, even if they change individually.",
+      "example": "Like the total amount of money in two bank accounts stays the same when you transfer between them.",
+      "grade_level": "college",
+      "first_appearance": "Flagship Result · Layer 8"
+    },
+    {
+      "term": "scalar-vector coupling",
+      "category": "physics",
+      "definition": "A connection between a simple number (scalar) and a quantity with direction (vector).",
+      "example": "Like linking temperature (just a number) to wind speed and direction.",
+      "grade_level": "college",
+      "first_appearance": "Flagship Result · Layer 8"
+    },
+    {
+      "term": "Heaviside vector-only EM",
+      "category": "physics",
+      "definition": "A simplified version of electromagnetism that uses only vectors (direction quantities), not quaternions.",
+      "example": "Like using only arrows instead of arrows plus numbers.",
+      "grade_level": "college",
+      "first_appearance": "Flagship Result · Layer 8"
+    },
+    {
+      "term": "Modalism",
+      "category": "theology",
+      "definition": "A belief that God is one person who appears in different modes (like an actor playing different roles), not three distinct persons.",
+      "example": "Like one person wearing different masks.",
+      "grade_level": "college",
+      "first_appearance": "Flagship Result · Layer 8"
+    },
+    {
+      "term": "relational distinctness",
+      "category": "theology",
+      "definition": "The idea that each person in the Trinity is a separate 'who' with their own relationships, not just a different role.",
+      "example": "Like three friends who are different people, not one person with three nicknames.",
+      "grade_level": "college",
+      "first_appearance": "Flagship Result · Layer 8"
+    },
+    {
+      "term": "triadic structure",
+      "category": "framework",
+      "definition": "A pattern involving three parts that are connected in a specific way.",
+      "example": "Like a three-legged stool where each leg is important.",
+      "grade_level": "college",
+      "first_appearance": "Flagship Result · Layer 8"
+    },
+    {
+      "term": "exhaustive case elimination",
+      "category": "math",
+      "definition": "A proof method that checks every possible option and shows only one works.",
+      "example": "Like trying every key on a key ring to find the one that opens a lock.",
+      "grade_level": "college",
+      "first_appearance": "Uniqueness Result · Layer 9"
+    },
+    {
+      "term": "Justice/Mercy operator",
+      "category": "framework",
+      "definition": "A formal rule that combines fairness (justice) and forgiveness (mercy) in a specific way.",
+      "example": "Like a judge who both punishes crime and offers a way to make things right.",
+      "grade_level": "college",
+      "first_appearance": "Uniqueness Result · Layer 9"
+    },
+    {
+      "term": "proportional justice",
+      "category": "philosophy",
+      "definition": "The idea that punishment or repair should match the harm done — not too harsh, not too lenient.",
+      "example": "Like a fine that matches the damage you caused.",
+      "grade_level": "college",
+      "first_appearance": "Uniqueness Result · Layer 9"
+    },
+    {
+      "term": "impartiality",
+      "category": "philosophy",
+      "definition": "Treating everyone the same without favoritism or bias.",
+      "example": "Like a referee who calls fouls on both teams equally.",
+      "grade_level": "college",
+      "first_appearance": "Uniqueness Result · Layer 9"
+    },
+    {
+      "term": "victim restoration",
+      "category": "philosophy",
+      "definition": "Making things right for the person who was harmed, not just punishing the wrongdoer.",
+      "example": "Like returning stolen items and apologizing, not just sending the thief to jail.",
+      "grade_level": "college",
+      "first_appearance": "Uniqueness Result · Layer 9"
+    },
+    {
+      "term": "voluntary cost-bearing",
+      "category": "philosophy",
+      "definition": "Choosing to pay a price or suffer a loss willingly, not being forced.",
+      "example": "Like volunteering to pay for a friend's broken window.",
+      "grade_level": "college",
+      "first_appearance": "Uniqueness Result · Layer 9"
+    },
+    {
+      "term": "convergence conditions",
+      "category": "framework",
+      "definition": "A set of requirements that all must be met for a solution to work — like a checklist.",
+      "example": "Like needing a key to have the right shape, size, and material to open a lock.",
+      "grade_level": "college",
+      "first_appearance": "Uniqueness Result · Layer 9"
+    },
+    {
+      "term": "universality",
+      "category": "philosophy",
+      "definition": "Applying to everyone, everywhere, not just a specific group.",
+      "example": "Like a law that applies to all citizens, not just some.",
+      "grade_level": "college",
+      "first_appearance": "Uniqueness Result · Layer 9"
+    },
+    {
+      "term": "cheap grace",
+      "category": "theology",
+      "definition": "Forgiveness that costs nothing and requires no change — seen as shallow or fake.",
+      "example": "Like saying 'sorry' without meaning it or fixing the problem.",
+      "grade_level": "college",
+      "first_appearance": "Uniqueness Result · Layer 9"
+    },
+    {
+      "term": "substrate",
+      "category": "framework",
+      "definition": "The basic underlying layer or foundation that everything else is built on.",
+      "example": "Like the ground under a building, or the canvas under a painting.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation · Core.lean + BridgeMatrix"
+    },
+    {
+      "term": "coherence",
+      "category": "framework",
+      "definition": "A measure of how well things fit together and work as a whole — like harmony or consistency.",
+      "example": "Like a team where everyone passes the ball well and scores together.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation · Core.lean + BridgeMatrix"
+    },
+    {
+      "term": "multiplicative architecture",
+      "category": "framework",
+      "definition": "A system where all parts multiply together, so if one part is zero, the whole result is zero.",
+      "example": "Like a chain where if one link breaks, the whole chain fails.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation · Core.lean + BridgeMatrix"
+    },
+    {
+      "term": "additive scoring frameworks",
+      "category": "academic",
+      "definition": "Systems that add up scores from different parts, so a weakness in one area can be balanced by strength in another.",
+      "example": "Like a test where you can get a low score on one question but still pass if you do well on others.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation · Core.lean + BridgeMatrix"
+    },
+    {
+      "term": "canonical variable map",
+      "category": "framework",
+      "definition": "A standard way to match variables from one domain (like physics) to another (like theology).",
+      "example": "Like a translation dictionary that maps English words to Spanish words.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation · Core.lean + BridgeMatrix"
+    },
+    {
+      "term": "domain-neutral",
+      "category": "framework",
+      "definition": "Something that works the same way in different fields, not favoring one over another.",
+      "example": "Like the number 2, which works in math, physics, and cooking.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation · Core.lean + BridgeMatrix"
+    },
+    {
+      "term": "boundary conditions",
+      "category": "physics",
+      "definition": "The limits or edges of a system that affect how it behaves — like the walls of a container.",
+      "example": "Like the temperature outside affecting how fast your soup cools down.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation · Core.lean + BridgeMatrix"
+    },
+    {
+      "term": "signature layer",
+      "category": "framework",
+      "definition": "A second level of checking that looks at the type or meaning of values, not just their numbers.",
+      "example": "Like checking not just that you paid $10, but that you paid with the right currency.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation · Core.lean + BridgeMatrix"
+    },
+    {
+      "term": "semantic swaps",
+      "category": "academic",
+      "definition": "Swapping two things that have different meanings but look similar on the surface.",
+      "example": "Like swapping 'salt' and 'sugar' in a recipe — they look alike but change the taste.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation · Core.lean + BridgeMatrix"
+    },
+    {
+      "term": "moral burden",
+      "category": "framework",
+      "definition": "The weight or cost of wrongdoing that needs to be addressed or paid.",
+      "example": "Like a debt you owe because you broke something.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation · Core.lean + BridgeMatrix"
+    },
+    {
+      "term": "Christic conversion",
+      "category": "theology",
+      "definition": "The Christian idea that Jesus Christ changes a person's moral state from guilty to forgiven.",
+      "example": "Like someone else paying your debt so you are free.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation · Core.lean + BridgeMatrix"
+    },
+    {
+      "term": "ontologically prior",
+      "category": "philosophy",
+      "definition": "Existing first or more fundamentally — something that is the basis for other things.",
+      "example": "Like a seed is ontologically prior to the tree that grows from it.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation · Core.lean + BridgeMatrix"
+    },
+    {
+      "term": "parasitic",
+      "category": "philosophy",
+      "definition": "Something that depends on another thing for its existence and cannot stand alone.",
+      "example": "Like a virus that needs a host cell to survive.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation · Core.lean + BridgeMatrix"
+    },
+    {
+      "term": "contingently prior",
+      "category": "philosophy",
+      "definition": "Existing first only by accident or circumstance, not by necessity.",
+      "example": "Like being first in line because you arrived early, not because you are the leader.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation · Core.lean + BridgeMatrix"
+    },
+    {
+      "term": "structural isomorphism",
+      "category": "math",
+      "definition": "A perfect match between two systems where all parts and their connections line up.",
+      "example": "Like two different board games that have the same rules but different themes.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation · Core.lean + BridgeMatrix"
+    },
+    {
+      "term": "RichLawIso",
+      "category": "framework",
+      "definition": "A strong type of isomorphism that also preserves how roles and transitions work, not just basic structure.",
+      "example": "Like matching not just the pieces of two puzzles, but also how they connect.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation · Core.lean + BridgeMatrix"
+    },
+    {
+      "term": "entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system — things tend to get messier over time.",
+      "example": "Like a room that gets messier if you don't clean it.",
+      "grade_level": "college",
+      "first_appearance": "Layer 13 · MissionReturnOperator.lean"
+    },
+    {
+      "term": "incarnation",
+      "category": "theology",
+      "definition": "The Christian belief that God became human in the person of Jesus Christ.",
+      "example": "Like a king becoming a commoner to live among the people.",
+      "grade_level": "college",
+      "first_appearance": "Layer 13 · MissionReturnOperator.lean"
+    },
+    {
+      "term": "resurrection",
+      "category": "theology",
+      "definition": "The Christian belief that Jesus rose from the dead after being crucified.",
+      "example": "Like coming back to life after dying.",
+      "grade_level": "college",
+      "first_appearance": "Layer 13 · MissionReturnOperator.lean"
+    },
+    {
+      "term": "substrate identity",
+      "category": "framework",
+      "definition": "The core 'what' of something that stays the same even when it changes form.",
+      "example": "Like the same person before and after a haircut — the hair changes, but the person is the same.",
+      "grade_level": "college",
+      "first_appearance": "Layer 13 · MissionReturnOperator.lean"
+    },
+    {
+      "term": "pre-incarnate state",
+      "category": "theology",
+      "definition": "The state of Jesus before becoming human, in Christian belief.",
+      "example": "Like a person before they put on a costume.",
+      "grade_level": "college",
+      "first_appearance": "Layer 13 · MissionReturnOperator.lean"
+    },
+    {
+      "term": "post-resurrection state",
+      "category": "theology",
+      "definition": "The state of Jesus after rising from the dead, in Christian belief.",
+      "example": "Like a person after they have been through a difficult journey and come out stronger.",
+      "grade_level": "college",
+      "first_appearance": "Layer 13 · MissionReturnOperator.lean"
+    },
+    {
+      "term": "dual-substrate foundation",
+      "category": "framework",
+      "definition": "The idea that reality has two basic layers (like physical and spiritual) that interact.",
+      "example": "Like a computer with both hardware and software working together.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "coupling states",
+      "category": "physics",
+      "definition": "How two systems are connected and affect each other.",
+      "example": "Like two gears that are linked so turning one turns the other.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "irreversibility gate",
+      "category": "framework",
+      "definition": "A rule that says some changes cannot be undone — like a one-way door.",
+      "example": "Like cracking an egg — you can't uncrack it.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "chi product",
+      "category": "framework",
+      "definition": "A mathematical product (multiplication) of all factors that determines total coherence.",
+      "example": "Like multiplying all your test scores together to get a final grade.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "zero-collapse architecture",
+      "category": "framework",
+      "definition": "A system where if any one part is zero, the whole thing fails completely.",
+      "example": "Like a chain where one broken link makes the whole chain useless.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "canonical map",
+      "category": "math",
+      "definition": "A standard, natural way to match elements from one set to another.",
+      "example": "Like matching each student to their student ID number.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "domain invariance",
+      "category": "framework",
+      "definition": "A property that stays the same even when you change the context or field.",
+      "example": "Like the number 5 being the same whether you're counting apples or oranges.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "collapse proofs",
+      "category": "framework",
+      "definition": "Proofs that show if a certain condition is met, the whole system fails (collapses).",
+      "example": "Like showing that if you remove one card, the whole house of cards falls.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "adversarial false-positive testing",
+      "category": "academic",
+      "definition": "Testing a system by trying to trick it into accepting wrong answers, like a hacker trying to break in.",
+      "example": "Like a security system tested by a professional burglar.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "dependency lattice",
+      "category": "framework",
+      "definition": "A diagram showing what depends on what — like a family tree of ideas.",
+      "example": "Like a flowchart showing which steps must come before others.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "closed denominator",
+      "category": "statistics",
+      "definition": "A way of counting that includes all attempts, not just successful ones — no hiding failures.",
+      "example": "Like counting all shots in basketball, not just the ones that went in.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "cherry-picking",
+      "category": "academic",
+      "definition": "Choosing only the evidence that supports your argument and ignoring the rest.",
+      "example": "Like a student who only shows the test scores where they did well.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "category-theoretic",
+      "category": "math",
+      "definition": "Relating to category theory, a branch of math that studies abstract structures and their relationships.",
+      "example": "Like studying how different types of maps are related, not just the maps themselves.",
+      "grade_level": "graduate",
+      "first_appearance": "Named Gaps — Nothing Hidden"
+    },
+    {
+      "term": "functor",
+      "category": "math",
+      "definition": "A mapping between categories that preserves the structure of relationships.",
+      "example": "Like a translator who not only translates words but also keeps the grammar correct.",
+      "grade_level": "graduate",
+      "first_appearance": "Named Gaps — Nothing Hidden"
+    },
+    {
+      "term": "faithful abstraction",
+      "category": "academic",
+      "definition": "A simplified model that accurately represents the important features of the real thing.",
+      "example": "Like a map that shows the correct roads and distances, even if it's not to scale.",
+      "grade_level": "college",
+      "first_appearance": "Named Gaps — Nothing Hidden"
+    },
+    {
+      "term": "sigma",
+      "category": "statistics",
+      "definition": "A Greek letter (σ) used in statistics to measure how far a result is from average — higher sigma means more significant.",
+      "example": "Like a score of 5.7 sigma means the result is very unlikely to be by chance.",

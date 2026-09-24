@@ -1,0 +1,574 @@
+{
+  "definitions": [
+    {
+      "term": "methodology",
+      "category": "academic",
+      "definition": "The system of methods used in a particular area of study or activity.",
+      "example": "Like following a recipe to bake a cake, methodology is the step-by-step plan for doing research.",
+      "grade_level": "10",
+      "first_appearance": "Part I, paragraph 1"
+    },
+    {
+      "term": "empirical",
+      "category": "academic",
+      "definition": "Based on observation or experience, not just theory.",
+      "example": "If you drop a ball and it falls, that's empirical evidence of gravity.",
+      "grade_level": "10",
+      "first_appearance": "Part I, paragraph 1"
+    },
+    {
+      "term": "replication crisis",
+      "category": "academic",
+      "definition": "A situation where many scientific studies cannot be repeated to get the same results, calling their reliability into question.",
+      "example": "Imagine a recipe that only works once and fails every other time you try it.",
+      "grade_level": "11",
+      "first_appearance": "Part II, heading"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A statement that is accepted as true without proof, used as a starting point for reasoning.",
+      "example": "In math, 'a whole is greater than its part' is an axiom.",
+      "grade_level": "10",
+      "first_appearance": "Part III, paragraph 1"
+    },
+    {
+      "term": "falsifiable",
+      "category": "academic",
+      "definition": "Able to be proven false by evidence or experiment.",
+      "example": "The claim 'all swans are white' is falsifiable because finding one black swan proves it wrong.",
+      "grade_level": "11",
+      "first_appearance": "Part III, paragraph 1"
+    },
+    {
+      "term": "cross-domain synthesis",
+      "category": "framework",
+      "definition": "Combining ideas from different fields (like physics and theology) to create a unified understanding.",
+      "example": "Like using both math and art to design a building that is both strong and beautiful.",
+      "grade_level": "12",
+      "first_appearance": "Part III, paragraph 1"
+    },
+    {
+      "term": "meta-pattern",
+      "category": "framework",
+      "definition": "A pattern that appears across many different areas, showing a deeper connection.",
+      "example": "The spiral shape appears in galaxies, shells, and whirlpools — that's a meta-pattern.",
+      "grade_level": "12",
+      "first_appearance": "Part III, Axiom 1"
+    },
+    {
+      "term": "Shannon entropy",
+      "category": "physics",
+      "definition": "A measure of uncertainty or information content in a message or system.",
+      "example": "A coin flip has high Shannon entropy because you can't predict the outcome.",
+      "grade_level": "12",
+      "first_appearance": "Part III, Axiom 2"
+    },
+    {
+      "term": "Boltzmann entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a physical system, like a gas.",
+      "example": "A messy room has higher Boltzmann entropy than a tidy one.",
+      "grade_level": "12",
+      "first_appearance": "Part III, Axiom 2"
+    },
+    {
+      "term": "paradigm capture",
+      "category": "framework",
+      "definition": "When old ways of thinking trap new ideas, preventing fresh understanding.",
+      "example": "If everyone thinks the Earth is flat, it's hard to accept it's round.",
+      "grade_level": "12",
+      "first_appearance": "Part III, Axiom 3"
+    },
+    {
+      "term": "causal mechanism",
+      "category": "academic",
+      "definition": "The process that explains why something happens, not just that it happens.",
+      "example": "Saying 'the glass broke because it fell' gives a causal mechanism, not just 'it broke'.",
+      "grade_level": "11",
+      "first_appearance": "Part III, Axiom 4"
+    },
+    {
+      "term": "statistical correlation",
+      "category": "academic",
+      "definition": "A relationship between two things where they change together, but not necessarily because one causes the other.",
+      "example": "Ice cream sales and drowning both increase in summer, but one doesn't cause the other.",
+      "grade_level": "10",
+      "first_appearance": "Part III, Axiom 4"
+    },
+    {
+      "term": "Occam's Veto",
+      "category": "framework",
+      "definition": "A rule that says simpler explanations are better, and overly complex ones should be rejected.",
+      "example": "If you hear hoofbeats, think horses, not zebras.",
+      "grade_level": "11",
+      "first_appearance": "Part III, Axiom 5"
+    },
+    {
+      "term": "ontological accounting fraud",
+      "category": "framework",
+      "definition": "Claiming something exists (like extra dimensions) just to make a theory work, without evidence.",
+      "example": "Saying 'invisible unicorns exist' to explain a missing cookie is an accounting fraud.",
+      "grade_level": "12",
+      "first_appearance": "Part III, Axiom 5"
+    },
+    {
+      "term": "wave function collapse",
+      "category": "physics",
+      "definition": "In quantum mechanics, when a particle's many possible states suddenly become one definite state after measurement.",
+      "example": "Like a spinning coin that is both heads and tails until you catch it.",
+      "grade_level": "12",
+      "first_appearance": "Part III, paragraph after axioms"
+    },
+    {
+      "term": "Trinity Actualization",
+      "category": "framework",
+      "definition": "A theophysical concept that the collapse of the wave function is related to the Christian Trinity.",
+      "example": "It's a specific idea linking quantum physics to theology.",
+      "grade_level": "specialist",
+      "first_appearance": "Part III, paragraph after axioms"
+    },
+    {
+      "term": "Hubble Tension",
+      "category": "physics",
+      "definition": "A disagreement between different measurements of how fast the universe is expanding.",
+      "example": "Like two clocks showing different times for the same event.",
+      "grade_level": "12",
+      "first_appearance": "Part III, paragraph after axioms"
+    },
+    {
+      "term": "Grace Function",
+      "category": "framework",
+      "definition": "A theophysical concept that explains the varying expansion rate of the universe as a form of divine grace.",
+      "example": "It's a mathematical way to describe how God's grace affects the cosmos.",
+      "grade_level": "specialist",
+      "first_appearance": "Part III, paragraph after axioms"
+    },
+    {
+      "term": "narrative coherence",
+      "category": "academic",
+      "definition": "The quality of a story making sense and holding together logically.",
+      "example": "A movie where everything connects at the end has high narrative coherence.",
+      "grade_level": "11",
+      "first_appearance": "Part III, paragraph after axioms"
+    },
+    {
+      "term": "Logos Pattern",
+      "category": "framework",
+      "definition": "A theophysical concept that prophecy follows a logical structure, validated at very high statistical significance.",
+      "example": "It's like finding a hidden code in ancient texts that predicts future events.",
+      "grade_level": "specialist",
+      "first_appearance": "Part III, paragraph after axioms"
+    },
+    {
+      "term": "6σ+",
+      "category": "academic",
+      "definition": "A statistical measure meaning the result is extremely unlikely to be due to chance (6 standard deviations above average).",
+      "example": "If you flip a coin and get heads 100 times in a row, that's way beyond 6σ.",
+      "grade_level": "12",
+      "first_appearance": "Part III, paragraph after axioms"
+    },
+    {
+      "term": "systemic crash",
+      "category": "framework",
+      "definition": "A complete breakdown of a system (like a society or organization) due to missing key elements.",
+      "example": "A car engine seizing up because there's no oil.",
+      "grade_level": "11",
+      "first_appearance": "Part IV, paragraph 1"
+    },
+    {
+      "term": "transaction costs",
+      "category": "academic",
+      "definition": "The costs (time, money, effort) involved in making an exchange or agreement.",
+      "example": "Lawyer fees when buying a house are transaction costs.",
+      "grade_level": "11",
+      "first_appearance": "Part IV, paragraph after 'The Diagnostic Stance'"
+    },
+    {
+      "term": "litigation",
+      "category": "academic",
+      "definition": "The process of taking legal action or going to court.",
+      "example": "Suing someone is part of litigation.",
+      "grade_level": "10",
+      "first_appearance": "Part IV, paragraph after 'The Diagnostic Stance'"
+    },
+    {
+      "term": "social capital",
+      "category": "academic",
+      "definition": "The value of trust, relationships, and networks in a community.",
+      "example": "A neighborhood where everyone helps each other has high social capital.",
+      "grade_level": "11",
+      "first_appearance": "Part IV, paragraph after 'The Diagnostic Stance'"
+    },
+    {
+      "term": "institutional fragility",
+      "category": "academic",
+      "definition": "How easily an organization or system can break down under stress.",
+      "example": "A bank that fails when too many people withdraw money shows institutional fragility.",
+      "grade_level": "12",
+      "first_appearance": "Part IV, paragraph after 'The Diagnostic Stance'"
+    },
+    {
+      "term": "Social Entropy",
+      "category": "framework",
+      "definition": "A measure of disorder and breakdown in a society, similar to physical entropy.",
+      "example": "A society with high crime and low trust has high social entropy.",
+      "grade_level": "12",
+      "first_appearance": "Part IV, paragraph after 'The Diagnostic Stance'"
+    },
+    {
+      "term": "Asymmetry Principle",
+      "category": "framework",
+      "definition": "The idea that you can't measure something directly, but you can measure its absence or effects.",
+      "example": "You can't see the wind, but you can see leaves blowing.",
+      "grade_level": "11",
+      "first_appearance": "Part IV, heading"
+    },
+    {
+      "term": "category error",
+      "category": "philosophy",
+      "definition": "Mistaking something as belonging to one type when it actually belongs to another.",
+      "example": "Saying 'the number 7 is blue' is a category error because numbers aren't colors.",
+      "grade_level": "12",
+      "first_appearance": "Part IV, heading"
+    },
+    {
+      "term": "ad-hoc hypotheses",
+      "category": "academic",
+      "definition": "Explanations added just to save a theory from being proven wrong, without independent support.",
+      "example": "Saying 'the experiment failed because of invisible gremlins' is an ad-hoc hypothesis.",
+      "grade_level": "12",
+      "first_appearance": "Part V, UTDGS section"
+    },
+    {
+      "term": "structural coherence invariants",
+      "category": "framework",
+      "definition": "Properties that any stable system must have to avoid falling apart.",
+      "example": "Like a building needing strong foundations, a theory needs these invariants.",
+      "grade_level": "12",
+      "first_appearance": "Part V, heading"
+    },
+    {
+      "term": "entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system; things tend to become more disordered over time.",
+      "example": "A sandcastle naturally falls apart, not builds itself up.",
+      "grade_level": "10",
+      "first_appearance": "Part V, table"
+    },
+    {
+      "term": "Grace (as invariant)",
+      "category": "framework",
+      "definition": "The ability of a system to absorb errors and repair itself without breaking.",
+      "example": "A computer program that doesn't crash when you make a typo has grace.",
+      "grade_level": "11",
+      "first_appearance": "Part V, table"
+    },
+    {
+      "term": "iterative convergence",
+      "category": "academic",
+      "definition": "Repeating a process to get closer and closer to a correct answer or stable state.",
+      "example": "Guessing a number and getting hints until you find it is iterative convergence.",
+      "grade_level": "12",
+      "first_appearance": "Part V, table"
+    },
+    {
+      "term": "signal fidelity",
+      "category": "academic",
+      "definition": "How accurately a signal (like a message) is preserved over time or distance.",
+      "example": "A clear phone call has high signal fidelity; a static-filled one has low.",
+      "grade_level": "11",
+      "first_appearance": "Part V, table"
+    },
+    {
+      "term": "positive-sum orientation",
+      "category": "academic",
+      "definition": "A situation where everyone involved can benefit, not just one side.",
+      "example": "Trade between two countries can be positive-sum if both gain.",
+      "grade_level": "12",
+      "first_appearance": "Part V, table"
+    },
+    {
+      "term": "zero-sum collapse",
+      "category": "academic",
+      "definition": "A situation where one person's gain is another's loss, leading to breakdown.",
+      "example": "If two people fight over one cookie, one wins and the other loses — that's zero-sum.",
+      "grade_level": "12",
+      "first_appearance": "Part V, table"
+    },
+    {
+      "term": "dogmatic calcification",
+      "category": "framework",
+      "definition": "When a system becomes rigid and unable to change or accept new information.",
+      "example": "An old company that refuses to use computers is suffering from dogmatic calcification.",
+      "grade_level": "12",
+      "first_appearance": "Part V, table"
+    },
+    {
+      "term": "generative surplus",
+      "category": "framework",
+      "definition": "Producing more good things than needed, creating abundance.",
+      "example": "A tree that grows more fruit than it needs creates a generative surplus for animals.",
+      "grade_level": "12",
+      "first_appearance": "Part V, table"
+    },
+    {
+      "term": "informational persistence",
+      "category": "framework",
+      "definition": "The ability of information to survive over time without being lost or corrupted.",
+      "example": "A book printed on acid-free paper has high informational persistence.",
+      "grade_level": "12",
+      "first_appearance": "Part V, final paragraph"
+    },
+    {
+      "term": "falsifiable claim",
+      "category": "academic",
+      "definition": "A statement that can be proven false by evidence or experiment.",
+      "example": "'All planets orbit the sun' is falsifiable because you could find one that doesn't.",
+      "grade_level": "11",
+      "first_appearance": "Part VI, paragraph 1"
+    },
+    {
+      "term": "priority gap",
+      "category": "academic",
+      "definition": "The time difference between when a claim was made and when it was scientifically confirmed.",
+      "example": "If someone said 'the Earth is round' in 500 BC and it was proven in 1500 AD, the priority gap is 2000 years.",
+      "grade_level": "11",
+      "first_appearance": "Part VI, table"
+    },
+    {
+      "term": "hydrological cycle",
+      "category": "physics",
+      "definition": "The continuous movement of water on Earth, including evaporation, condensation, and precipitation.",
+      "example": "Rain falling, water evaporating, and clouds forming is the hydrological cycle.",
+      "grade_level": "10",
+      "first_appearance": "Part VI, table"
+    },
+    {
+      "term": "quarantine protocols",
+      "category": "academic",
+      "definition": "Rules for isolating sick people to prevent the spread of disease.",
+      "example": "Keeping someone with a cold in their room is a quarantine protocol.",
+      "grade_level": "10",
+      "first_appearance": "Part VI, table"
+    },
+    {
+      "term": "fine-tuning",
+      "category": "physics",
+      "definition": "The observation that the universe's physical constants are set to very precise values that allow life to exist.",
+      "example": "If gravity were slightly stronger, stars would burn out too fast for life.",
+      "grade_level": "11",
+      "first_appearance": "Part VII, table"
+    },
+    {
+      "term": "Gödel's incompleteness",
+      "category": "math",
+      "definition": "A theorem showing that any consistent mathematical system has true statements that cannot be proven within that system.",
+      "example": "It's like a rulebook that can't explain all its own rules.",
+      "grade_level": "12",
+      "first_appearance": "Part VII, table"
+    },
+    {
+      "term": "Hard problem of consciousness",
+      "category": "philosophy",
+      "definition": "The question of why and how physical brain processes create subjective experiences (like feeling pain or seeing red).",
+      "example": "We know what happens in the brain when you see red, but not why it feels like anything.",
+      "grade_level": "12",
+      "first_appearance": "Part VII, table"
+    },
+    {
+      "term": "neural correlates",
+      "category": "academic",
+      "definition": "The specific brain activities that are associated with a particular mental state.",
+      "example": "Certain brain scans light up when you feel happy — those are neural correlates of happiness.",
+      "grade_level": "12",
+      "first_appearance": "Part VII, table"
+    },
+    {
+      "term": "eliminativism",
+      "category": "philosophy",
+      "definition": "The view that certain common-sense concepts (like consciousness) don't really exist and should be eliminated from science.",
+      "example": "Saying 'love is just a chemical reaction' is a form of eliminativism.",
+      "grade_level": "12",
+      "first_appearance": "Part VII, table"
+    },
+    {
+      "term": "IIT (Integrated Information Theory)",
+      "category": "physics",
+      "definition": "A theory that consciousness is a property of systems that integrate information in a certain way.",
+      "example": "It tries to measure consciousness by how much information a system processes as a whole.",
+      "grade_level": "12",
+      "first_appearance": "Part VII, table"
+    },
+    {
+      "term": "anthropic selection",
+      "category": "philosophy",
+      "definition": "The idea that we observe the universe's properties because they must be compatible with our existence.",
+      "example": "We live on a planet with water because if we didn't, we wouldn't be here to observe it.",
+      "grade_level": "12",
+      "first_appearance": "Part VII, table"
+    },
+    {
+      "term": "low-entropy initial conditions",
+      "category": "physics",
+      "definition": "The universe started in a highly ordered state, which is extremely unlikely by chance.",
+      "example": "Like a deck of cards perfectly sorted by suit and number at the start of a game.",
+      "grade_level": "12",
+      "first_appearance": "Part VII, table"
+    },
+    {
+      "term": "Penrose",
+      "category": "physics",
+      "definition": "Roger Penrose, a physicist who calculated the extremely low probability of the universe's initial low entropy.",
+      "example": "He showed the odds are like 1 in 10 to the power of 10 to the power of 123.",
+      "grade_level": "12",
+      "first_appearance": "Part VII, table"
+    },
+    {
+      "term": "emergence",
+      "category": "academic",
+      "definition": "When complex properties arise from simpler parts, but can't be predicted from them alone.",
+      "example": "Wetness emerges from water molecules, but no single molecule is wet.",
+      "grade_level": "11",
+      "first_appearance": "Part VII, table"
+    },
+    {
+      "term": "regress problem",
+      "category": "philosophy",
+      "definition": "An infinite chain of explanations where each step requires another explanation.",
+      "example": "If everything needs a cause, what caused the first cause? That's a regress problem.",
+      "grade_level": "12",
+      "first_appearance": "Part VII, table"
+    },
+    {
+      "term": "base pairs",
+      "category": "academic",
+      "definition": "The pairs of molecules that form the rungs of the DNA ladder, carrying genetic information.",
+      "example": "A, T, C, and G are the four letters of the DNA alphabet, and they pair up.",
+      "grade_level": "10",
+      "first_appearance": "Part VII, table"
+    },
+    {
+      "term": "error correction (DNA)",
+      "category": "academic",
+      "definition": "The process by which cells fix mistakes in DNA copying.",
+      "example": "Like a spell-checker for your genetic code.",
+      "grade_level": "11",
+      "first_appearance": "Part VII, table"
+    },
+    {
+      "term": "Master Equation",
+      "category": "math",
+      "definition": "A mathematical equation that describes how probabilities change over time in a system.",
+      "example": "It's used to predict how likely different states of a system are.",
+      "grade_level": "12",
+      "first_appearance": "Part VII, table"
+    },
+    {
+      "term": "coupling",
+      "category": "physics",
+      "definition": "How strongly two systems or variables affect each other.",
+      "example": "Two pendulums connected by a spring have coupling.",
+      "grade_level": "11",
+      "first_appearance": "Part VII, table"
+    },
+    {
+      "term": "full rank",
+      "category": "math",
+      "definition": "A matrix (a rectangular array of numbers) where all rows or columns are independent, meaning no redundancy.",
+      "example": "A full-rank matrix has no wasted information.",
+      "grade_level": "12",
+      "first_appearance": "Part VII, table"
+    },
+    {
+      "term": "reductionism",
+      "category": "philosophy",
+      "definition": "The idea that complex things can be understood by breaking them down into their simplest parts.",
+      "example": "Explaining a car by only looking at its atoms is reductionism.",
+      "grade_level": "11",
+      "first_appearance": "Part VII, table"
+    },
+    {
+      "term": "convergent coherence frameworks",
+      "category": "framework",
+      "definition": "Different systems of thought that independently arrive at the same logical structure.",
+      "example": "Like two people solving the same puzzle and getting the same answer without talking.",
+      "grade_level": "12",
+      "first_appearance": "Part VII, table"
+    },
+    {
+      "term": "GCP (Global Consciousness Project)",
+      "category": "academic",
+      "definition": "A research project that tests if human consciousness can affect random number generators.",
+      "example": "They look for patterns in random numbers during major world events.",
+      "grade_level": "12",
+      "first_appearance": "Part VII, table"
+    },
+    {
+      "term": "methodological bias",
+      "category": "academic",
+      "definition": "A flaw in how a study is designed that leads to incorrect results.",
+      "example": "Only asking happy people about happiness is a methodological bias.",
+      "grade_level": "11",
+      "first_appearance": "Part VII, table"
+    },
+    {
+      "term": "explanatory completeness",
+      "category": "academic",
+      "definition": "How fully a theory explains a phenomenon, including the reasons behind it.",
+      "example": "A theory that explains both how and why rain falls has high explanatory completeness.",
+      "grade_level": "12",
+      "first_appearance": "Part VIII, paragraph 1"
+    },
+    {
+      "term": "causal mechanism",
+      "category": "academic",
+      "definition": "The process that explains why something happens, not just that it happens.",
+      "example": "Saying 'the glass broke because it fell' gives a causal mechanism, not just 'it broke'.",
+      "grade_level": "11",
+      "first_appearance": "Part VIII, paragraph 1"
+    },
+    {
+      "term": "isomorphic mapping",
+      "category": "math",
+      "definition": "A one-to-one correspondence between two structures that preserves their relationships.",
+      "example": "A map of a subway system is isomorphic to the actual tracks if every station connects the same way.",
+      "grade_level": "12",
+      "first_appearance": "Part VIII, paragraph 1"
+    },
+    {
+      "term": "p < 10-100",
+      "category": "academic",
+      "definition": "A probability so small it's essentially zero, meaning the result is almost certainly not due to chance.",
+      "example": "Winning the lottery 100 times in a row is less likely than this.",
+      "grade_level": "12",
+      "first_appearance": "Part VIII, paragraph 1"
+    },
+    {
+      "term": "cosmological fine-tuning",
+      "category": "physics",
+      "definition": "The precise setting of the universe's fundamental constants that allows life to exist.",
+      "example": "If gravity were slightly different, stars and planets wouldn't form.",
+      "grade_level": "11",
+      "first_appearance": "Part VIII, table"
+    },
+    {
+      "term": "brute facts",
+      "category": "philosophy",
+      "definition": "Facts that have no explanation; they just are.",
+      "example": "Saying 'the universe exists because it does' treats it as a brute fact.",
+      "grade_level": "12",
+      "first_appearance": "Part VIII, table"
+    },
+    {
+      "term": "multiverse",
+      "category": "physics",
+      "definition": "The hypothetical idea that our universe is one of many, each with different properties.",
+      "example": "Like an infinite number of parallel worlds.",
+      "grade_level": "10",
+      "first_appearance": "Part VIII, table"
+    },
+    {
+      "term": "ex nihilo",
+      "category": "language",
+      "definition": "Latin for 'out of nothing'; creation without using pre-existing materials.",

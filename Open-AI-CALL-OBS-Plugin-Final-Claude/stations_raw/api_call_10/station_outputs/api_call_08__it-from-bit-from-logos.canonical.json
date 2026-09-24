@@ -1,0 +1,621 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "physics",
+        "type": "physics",
+        "strength": 9
+      },
+      {
+        "name": "theology",
+        "type": "theology",
+        "strength": 9
+      },
+      {
+        "name": "philosophy",
+        "type": "philosophy",
+        "strength": 7
+      },
+      {
+        "name": "information",
+        "type": "information",
+        "strength": 10
+      },
+      {
+        "name": "mathematics",
+        "type": "mathematics",
+        "strength": 6
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "M",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "E",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "S",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Thermodynamic entropy and negentropy as the mechanism that distinguishes truth from falsehood; invariance vs. decay",
+        "strength": 9
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Logos as the invariant ground of information; the Word that holds across all transformations",
+        "strength": 10
+      },
+      {
+        "variable": "R",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "Q",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "F",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence as alignment with the Logos; negentropic structure that survives entropy",
+        "strength": 8
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "Existence of invariant truth grounded in the Logos"
+      },
+      {
+        "id": "A1.2",
+        "invoked": true,
+        "how": "Distinction between true and false bits; sign of the bit"
+      },
+      {
+        "id": "A2.1",
+        "invoked": true,
+        "how": "Information as substrate; it from bit from Logos"
+      },
+      {
+        "id": "A2.2",
+        "invoked": true,
+        "how": "Logos as self-grounding invariant"
+      },
+      {
+        "id": "A5.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC6",
+        "invoked": true,
+        "how": "Infinite source of truth and invariance in the Logos"
+      },
+      {
+        "id": "A1.3",
+        "invoked": true,
+        "how": "Primacy of information; it from bit"
+      },
+      {
+        "id": "T3.1",
+        "invoked": true,
+        "how": "Coherence cannot self-increase; truth is sustained by the Logos, not by the system"
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "External grace as the Logos providing invariance that the system cannot generate"
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "Information conservation: true bits are invariant and survive; false bits degrade"
+      },
+      {
+        "id": "BC8",
+        "invoked": false,
+        "how": ""
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "source",
+          "ground",
+          "origin"
+        ]
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "Word",
+          "Logos",
+          "mediator",
+          "invariant ground"
+        ]
+      },
+      "spirit": {
+        "present": false,
+        "manifestations": []
+      },
+      "trinitarian_structure": "implicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-001",
+        "domain_a": "information theory",
+        "domain_b": "theology",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-002",
+        "domain_a": "thermodynamics",
+        "domain_b": "moral truth",
+        "strength": 8,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-003",
+        "domain_a": "Noether's theorem",
+        "domain_b": "invariance of truth",
+        "strength": 7,
+        "type": "analogical"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "Logos",
+        "context": "Invariant ground of all information; the Word; that which holds across all transformations",
+        "weight": 10
+      },
+      {
+        "concept": "truth",
+        "context": "Alignment with the Logos; invariant; survives entropy",
+        "weight": 10
+      },
+      {
+        "concept": "falsehood",
+        "context": "Opposition to the Logos; thermodynamically unstable; requires work to sustain",
+        "weight": 9
+      },
+      {
+        "concept": "entropy",
+        "context": "Thermodynamic pressure that destroys falsehood; the mechanism of judgment",
+        "weight": 8
+      },
+      {
+        "concept": "eternal life",
+        "context": "What is aligned with the Logos survives; truth lives forever",
+        "weight": 7
+      },
+      {
+        "concept": "adversary",
+        "context": "Information operator; introduces noise; cannot create invariant structure",
+        "weight": 8
+      },
+      {
+        "concept": "Lamb's Book of Life",
+        "context": "Holographic boundary encoding of alignment data",
+        "weight": 6
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "invariance",
+        "context": "Property of truth; what the Logos holds constant across all transformations",
+        "weight": 10
+      },
+      {
+        "concept": "necessity",
+        "context": "Truth is necessary; cannot be otherwise",
+        "weight": 7
+      },
+      {
+        "concept": "contradiction",
+        "context": "False bit contradicts the invariant; cannot be sustained",
+        "weight": 6
+      },
+      {
+        "concept": "implication",
+        "context": "Alignment with Logos implies survival; opposition implies decay",
+        "weight": 7
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "truth",
+        "present": true,
+        "strength": 10
+      },
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 6
+      },
+      {
+        "fruit": "love",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "patience",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "self_control",
+        "present": false,
+        "strength": 0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "chi_variables:K",
+      "to": "chi_variables:T",
+      "relation": "produces",
+      "weight": 9
+    },
+    {
+      "from": "chi_variables:K",
+      "to": "chi_variables:C",
+      "relation": "produces",
+      "weight": 8
+    },
+    {
+      "from": "theological_concepts:Logos",
+      "to": "theological_concepts:truth",
+      "relation": "grounds",
+      "weight": 10
+    },
+    {
+      "from": "theological_concepts:truth",
+      "to": "theological_concepts:eternal life",
+      "relation": "implies",
+      "weight": 9
+    },
+    {
+      "from": "theological_concepts:falsehood",
+      "to": "theological_concepts:entropy",
+      "relation": "subject_to",
+      "weight": 9
+    },
+    {
+      "from": "theological_concepts:adversary",
+      "to": "theological_concepts:falsehood",
+      "relation": "produces",
+      "weight": 8
+    },
+    {
+      "from": "axioms:A1.1",
+      "to": "theological_concepts:Logos",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "axioms:A1.2",
+      "to": "theological_concepts:truth",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "axioms:A2.1",
+      "to": "domains:information",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "axioms:BC7",
+      "to": "theological_concepts:truth",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "axioms:T3.1",
+      "to": "theological_concepts:truth",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "axioms:BC2",
+      "to": "theological_concepts:Logos",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "isomorphisms:ISO-001",
+      "to": "domains:information",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "isomorphisms:ISO-001",
+      "to": "domains:theology",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "isomorphisms:ISO-002",
+      "to": "domains:physics",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "isomorphisms:ISO-002",
+      "to": "domains:theology",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "trinity:son",
+      "to": "theological_concepts:Logos",
+      "relation": "is",
+      "weight": 10
+    },
+    {
+      "from": "trinity:father",
+      "to": "theological_concepts:Logos",
+      "relation": "grounds",
+      "weight": 8
+    },
+    {
+      "from": "logical_concepts:invariance",
+      "to": "theological_concepts:truth",
+      "relation": "defines",
+      "weight": 10
+    }
+  ],
+  "tags": {
+    "primary": [
+      "it-from-bit",
+      "Logos",
+      "truth",
+      "entropy",
+      "invariance"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/theology",
+      "pillar/information"
+    ],
+    "series": "convergence",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "John 1:1",
+        "context": "In the beginning was the Word; Logos as foundational"
+      },
+      {
+        "ref": "Matthew 24:35",
+        "context": "Heaven and earth will pass away but my words will not; invariance of truth"
+      },
+      {
+        "ref": "Proverbs 23:23",
+        "context": "Buy the truth and do not sell it"
+      },
+      {
+        "ref": "Genesis 3:1",
+        "context": "Did God really say?; introduction of false bit"
+      }
+    ],
+    "academic": [
+      {
+        "ref": "Wheeler, John Archibald",
+        "context": "It from bit; information as foundation of physics"
+      },
+      {
+        "ref": "Noether, Emmy",
+        "context": "Noether's theorem; invariance and conservation laws"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "Math Is Moral",
+        "context": "24 properties shared by mathematical and moral truth"
+      },
+      {
+        "ref": "Sacred Gap",
+        "context": "Technological saturation and channel noise"
+      }
+    ],
+    "total_count": 7
+  },
+  "word_anomalies": [
+    {
+      "word": "negentropy",
+      "frequency": 1,
+      "significance": "Technical term for negative entropy; used to describe alignment with Logos"
+    },
+    {
+      "word": "invariant",
+      "frequency": 12,
+      "significance": "Core concept; property of truth that survives all transformations"
+    },
+    {
+      "word": "sign of the bit",
+      "frequency": 4,
+      "significance": "Neologism; orientation of information toward or away from Logos"
+    },
+    {
+      "word": "adversarial noise",
+      "frequency": 1,
+      "significance": "Technical term; noise introduced by the adversary to degrade signal"
+    },
+    {
+      "word": "holographic boundary encoding",
+      "frequency": 1,
+      "significance": "Metaphor for Lamb's Book of Life; information-theoretic framing"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "Corrective and foundational; argues that Wheeler's it-from-bit is incomplete without the Logos",
+    "Q1_identity": "A convergence paper extending it-from-bit to it-from-bit-from-Logos, establishing the sign of the bit",
+    "Q2_domain": "Intersection of physics (thermodynamics, information theory), theology (Logos, truth), and philosophy (invariance)",
+    "Q3_claim": "Information has a sign (true/false) derived from alignment with the Logos; only true (Logos-aligned) information survives entropy",
+    "Q4_support": "Noether's theorem, 24 properties from Math Is Moral, thermodynamic reasoning, scriptural citations",
+    "Q5_dependencies": "Wheeler's it-from-bit, Math Is Moral paper, Sacred Gap paper, concept of invariance",
+    "Q6_consequences": "Truth is invariant and eternal; falsehood is thermodynamically unstable; adversary's strategy is noise; channel saturation is dangerous",
+    "Q7_kill": "If invariance is not a property of truth, or if entropy does not discriminate between true and false information"
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "Math Is Moral",
+      "Sacred Gap",
+      "Wheeler's it-from-bit"
+    ],
+    "required_by": [
+      "24 anti-properties paper",
+      "further convergence papers"
+    ],
+    "parallel_to": [
+      "Math Is Moral"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 30,
+    "total_edges": 20,
+    "dominant_domain": "information",
+    "dominant_chi": "K",
+    "connectivity_score": 9,
+    "one_sentence": "Extends Wheeler's it-from-bit to it-from-bit-from-Logos, establishing that information has a sign (true/false) and only Logos-aligned truth survives entropy."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": false,
+      "how": ""
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Truth (invariant) and coherence (alignment with Logos) are directly linked; truth is coherence with the Logos"
+    },
+    "4_7_love_relationship": {
+      "active": false,
+      "how": ""
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Judgment (entropy acting on falsehood) and Logos (invariant ground) are paired; judgment is the thermodynamic consequence of opposition to Logos"
+    },
+    "pairs_active_count": 2
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 6
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 10
+    },
+    "love": {
+      "present": false,
+      "strength": 0
+    },
+    "judgment": {
+      "present": true,
+      "strength": 8
+    },
+    "logos": {
+      "present": true,
+      "strength": 10
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": false,
+      "strength": 0
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": true,
+      "strength": 7
+    },
+    "operators_present_count": 4
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "Math Is Moral",
+      "Sacred Gap"
+    ],
+    "read_after": [
+      "24 anti-properties paper"
+    ]
+  }
+}

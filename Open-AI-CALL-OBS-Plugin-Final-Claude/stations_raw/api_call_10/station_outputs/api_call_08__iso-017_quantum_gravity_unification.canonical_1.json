@@ -1,0 +1,635 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "physics",
+        "type": "physics",
+        "strength": 9
+      },
+      {
+        "name": "theology",
+        "type": "theology",
+        "strength": 8
+      },
+      {
+        "name": "philosophy",
+        "type": "philosophy",
+        "strength": 5
+      },
+      {
+        "name": "mathematics",
+        "type": "mathematics",
+        "strength": 6
+      },
+      {
+        "name": "information",
+        "type": "information",
+        "strength": 4
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": true,
+        "role": "Gravity as the base domain; modified Einstein equations include chi-field contribution",
+        "strength": 8
+      },
+      {
+        "variable": "M",
+        "present": false,
+        "role": "Not directly invoked",
+        "strength": 0
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Energy as part of stress-energy tensor T_mu_nu; chi-field has its own stress-energy",
+        "strength": 6
+      },
+      {
+        "variable": "S",
+        "present": false,
+        "role": "Not directly invoked",
+        "strength": 0
+      },
+      {
+        "variable": "T",
+        "present": false,
+        "role": "Not directly invoked",
+        "strength": 0
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Logos as informational substrate; chi-field carries semantic content",
+        "strength": 9
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "Relativity as the framework; modified Einstein equations are relativistic",
+        "strength": 7
+      },
+      {
+        "variable": "Q",
+        "present": true,
+        "role": "Quantum gravity context; singularity resolution; Planck-scale physics",
+        "strength": 6
+      },
+      {
+        "variable": "F",
+        "present": false,
+        "role": "Not directly invoked",
+        "strength": 0
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence as the derivation principle for chi-field properties",
+        "strength": 7
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "Existence of chi-field as a real entity pervading spacetime"
+      },
+      {
+        "id": "A1.2",
+        "invoked": true,
+        "how": "Distinction between chi-field and standard matter/energy fields"
+      },
+      {
+        "id": "A2.1",
+        "invoked": true,
+        "how": "Spacetime as substrate for chi-field dynamics"
+      },
+      {
+        "id": "A2.2",
+        "invoked": true,
+        "how": "Chi-field is self-grounding via self-referential chi \u21bb chi property"
+      },
+      {
+        "id": "A5.1",
+        "invoked": false,
+        "how": "Not directly invoked"
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": "Not directly invoked"
+      },
+      {
+        "id": "BC6",
+        "invoked": true,
+        "how": "Infinite source implied by Logos as creative mediator"
+      },
+      {
+        "id": "A1.3",
+        "invoked": true,
+        "how": "Information primacy: chi-field carries semantic content"
+      },
+      {
+        "id": "T3.1",
+        "invoked": true,
+        "how": "Coherence cannot self-increase; chi-field derived from coherence minimization"
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "External grace: chi-field is a correction/completion, not intrinsic to GR"
+      },
+      {
+        "id": "BC7",
+        "invoked": false,
+        "how": "Not directly invoked"
+      },
+      {
+        "id": "BC8",
+        "invoked": false,
+        "how": "Not directly invoked"
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "source",
+          "ground",
+          "origin"
+        ]
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "image",
+          "word",
+          "mediator",
+          "incarnation"
+        ]
+      },
+      "spirit": {
+        "present": false,
+        "manifestations": []
+      },
+      "trinitarian_structure": "explicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-017",
+        "domain_a": "physics",
+        "domain_b": "theology",
+        "strength": 7,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "Logos",
+        "context": "Christ as Logos; mediator of creation; chi-field as mathematical representation",
+        "weight": 10
+      },
+      {
+        "concept": "creation",
+        "context": "All things made through Logos; chi-field pervades all spacetime",
+        "weight": 8
+      },
+      {
+        "concept": "mediation",
+        "context": "Christological mediation; chi-field as correction not replacement",
+        "weight": 9
+      },
+      {
+        "concept": "fulfillment",
+        "context": "Not to abolish but to fulfill; GR completed by chi-field",
+        "weight": 7
+      },
+      {
+        "concept": "faith",
+        "context": "Evidence for Logos is subtle; requires disciplined attention",
+        "weight": 6
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "completeness",
+        "context": "Chi-field completes GR; GR is correct but incomplete",
+        "weight": 8
+      },
+      {
+        "concept": "consistency",
+        "context": "GR recovery limit ensures consistency with established physics",
+        "weight": 9
+      },
+      {
+        "concept": "distinguishability",
+        "context": "Swap test shows chi-field not distinguished from other scalar-tensor theories",
+        "weight": 7
+      },
+      {
+        "concept": "falsification",
+        "context": "Specific conditions under which the isomorphism would be falsified",
+        "weight": 8
+      },
+      {
+        "concept": "circularity",
+        "context": "Special properties of chi are assigned to make theological mapping work",
+        "weight": 6
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 6
+      },
+      {
+        "fruit": "love",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "patience",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "self_control",
+        "present": false,
+        "strength": 0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "physics:modified_einstein_equation",
+      "to": "theology:logos",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "chi_variable:K",
+      "to": "theology:logos",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "axiom:A1.3",
+      "to": "chi_variable:K",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "axiom:BC2",
+      "to": "physics:modified_einstein_equation",
+      "relation": "requires",
+      "weight": 6
+    },
+    {
+      "from": "axiom:T3.1",
+      "to": "chi_variable:C",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "theological_concept:mediation",
+      "to": "physics:chi_field",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "physics:chi_field",
+      "to": "physics:general_relativity",
+      "relation": "completes",
+      "weight": 9
+    },
+    {
+      "from": "physics:general_relativity",
+      "to": "physics:chi_field",
+      "relation": "requires",
+      "weight": 5
+    },
+    {
+      "from": "logical_concept:distinguishability",
+      "to": "isomorphism:ISO-017",
+      "relation": "contradicts",
+      "weight": 6
+    },
+    {
+      "from": "logical_concept:falsification",
+      "to": "physics:chi_field",
+      "relation": "constrains",
+      "weight": 8
+    },
+    {
+      "from": "theological_concept:faith",
+      "to": "physics:kappa_coupling",
+      "relation": "maps_to",
+      "weight": 6
+    },
+    {
+      "from": "physics:kappa_coupling",
+      "to": "theology:logos",
+      "relation": "represents",
+      "weight": 7
+    },
+    {
+      "from": "chi_variable:G",
+      "to": "physics:general_relativity",
+      "relation": "contains",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:Q",
+      "to": "physics:singularity_resolution",
+      "relation": "produces",
+      "weight": 7
+    },
+    {
+      "from": "chi_variable:C",
+      "to": "physics:chi_field",
+      "relation": "derives",
+      "weight": 7
+    },
+    {
+      "from": "trinity:son",
+      "to": "theology:logos",
+      "relation": "is",
+      "weight": 10
+    },
+    {
+      "from": "trinity:father",
+      "to": "theology:logos",
+      "relation": "sends",
+      "weight": 8
+    },
+    {
+      "from": "axiom:BC6",
+      "to": "trinity:father",
+      "relation": "supports",
+      "weight": 6
+    },
+    {
+      "from": "physics:chi_field",
+      "to": "physics:dark_energy",
+      "relation": "contributes_to",
+      "weight": 6
+    }
+  ],
+  "tags": {
+    "primary": [
+      "isomorphism",
+      "quantum-gravity",
+      "logos",
+      "modified-gravity",
+      "christology"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/theology"
+    ],
+    "series": "isomorphism",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "John 1:3",
+        "context": "Through Him all things were made; Logos as creative mediator"
+      },
+      {
+        "ref": "Colossians 1:17",
+        "context": "In Him all things hold together"
+      },
+      {
+        "ref": "1 Corinthians 13:12",
+        "context": "Seen through a glass darkly; subtle evidence for Logos"
+      }
+    ],
+    "academic": [
+      {
+        "ref": "Einstein field equations (1915)",
+        "context": "Base theory being modified"
+      },
+      {
+        "ref": "Brans-Dicke theory (1961)",
+        "context": "Comparison scalar-tensor gravity theory"
+      },
+      {
+        "ref": "Horndeski gravity (1974)",
+        "context": "Most general scalar-tensor theory"
+      },
+      {
+        "ref": "Planck 2018 constraints on modified gravity",
+        "context": "Observational constraints on kappa"
+      },
+      {
+        "ref": "LIGO constraints on scalar-tensor theories",
+        "context": "Gravitational wave constraints"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "ISO-001",
+        "context": "Trinity as source of chi"
+      },
+      {
+        "ref": "ISO-014",
+        "context": "Soul Field obeys chi-coupled dynamics"
+      },
+      {
+        "ref": "ISO-015",
+        "context": "Moral Physics via chi coherence"
+      },
+      {
+        "ref": "ISO-018",
+        "context": "Cosmological Grace via modified Friedmann"
+      },
+      {
+        "ref": "Paper 05: Physics of Principalities",
+        "context": "Related paper"
+      }
+    ],
+    "total_count": 12
+  },
+  "word_anomalies": [
+    {
+      "word": "chi-field",
+      "frequency": 25,
+      "significance": "Central construct; neologism for Logos field"
+    },
+    {
+      "word": "kappa",
+      "frequency": 12,
+      "significance": "Logos-gravity coupling constant; extremely small value 10^-69"
+    },
+    {
+      "word": "chi_mu_nu",
+      "frequency": 10,
+      "significance": "Stress-energy tensor of chi-field; mathematical representation"
+    },
+    {
+      "word": "Logos",
+      "frequency": 15,
+      "significance": "Theological term for Christ as mediator; used as physical field"
+    },
+    {
+      "word": "self-referential",
+      "frequency": 3,
+      "significance": "chi \u21bb chi property; distinguishes from generic scalar fields"
+    },
+    {
+      "word": "coherence minimization",
+      "frequency": 3,
+      "significance": "Derivation principle for chi-field properties"
+    },
+    {
+      "word": "swap test",
+      "frequency": 4,
+      "significance": "Methodology for testing isomorphism uniqueness"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "Critical and self-aware; the document openly questions its own validity",
+    "Q1_identity": "An isomorphism record analyzing the mapping between modified Einstein equations and Christological mediation",
+    "Q2_domain": "Physics (modified gravity) and Theology (Christology) with meta-level philosophy of science",
+    "Q3_claim": "The chi-field in modified Einstein equations maps structurally to the Logos in Christian theology, but the mapping is not experimentally distinguishable from other scalar-tensor gravity theories",
+    "Q4_support": "Mathematical formulation of modified Einstein equation; theological references (John 1:3, Colossians 1:17); comparison with existing modified gravity theories",
+    "Q5_dependencies": "General relativity; scalar-tensor gravity theory; Logos theology; Theophysics framework (ISO-001, ISO-014, ISO-015, ISO-018)",
+    "Q6_consequences": "If valid, the Logos is physically real but nearly invisible; GR is completed not contradicted; consciousness-gravity coupling becomes testable",
+    "Q7_kill": "Experimental exclusion of kappa > 10^-69; demonstration that singularity resolution does not require new field; proof that dark energy is exactly constant; failure of consciousness coupling predictions"
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "ISO-001",
+      "ISO-014",
+      "ISO-015",
+      "ISO-018",
+      "Paper 05: Physics of Principalities",
+      "General Relativity",
+      "Scalar-tensor gravity theory"
+    ],
+    "required_by": [
+      "Consciousness-gravity coupling experiments",
+      "Full Theophysics framework"
+    ],
+    "parallel_to": [
+      "ISO-014",
+      "ISO-015",
+      "ISO-018"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 35,
+    "total_edges": 20,
+    "dominant_domain": "physics",
+    "dominant_chi": "K",
+    "connectivity_score": 8,
+    "one_sentence": "ISO-017 maps a modified Einstein equation with a chi-field to Christological mediation, but honestly assesses that the mapping is not experimentally distinguishable from other scalar-tensor gravity theories."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": false,
+      "how": "Not directly manifested"
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": "Not directly manifested"
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Chi-field derived from coherence minimization; Logos as truth substrate"
+    },
+    "4_7_love_relationship": {
+      "active": false,
+      "how": "Not directly manifested"
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Logos as informational substrate; judgment implicit in singularity resolution"
+    },
+    "pairs_active_count": 2
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 6
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 8
+    },
+    "love": {
+      "present": false,
+      "strength": 0
+    },
+    "judgment": {
+      "present": true,
+      "strength": 5
+    },
+    "logos": {
+      "present": true,
+      "strength": 10
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": true,
+      "strength": 6
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": true,
+      "strength": 9
+    },
+    "operators_present_count": 5
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "ISO-001",
+      "ISO-014",
+      "ISO-015",
+      "Paper 05: Physics of Principalities"
+    ],
+    "read_after": [
+      "ISO-018",
+      "Consciousness-gravity coupling experiments"
+    ]
+  }
+}

@@ -1,0 +1,443 @@
+{
+  "definitions": [
+    {
+      "term": "Isomorphism",
+      "category": "math",
+      "definition": "A mapping between two things that shows they have the same structure or pattern, even if they look different on the surface.",
+      "example": "A map of a subway system is isomorphic to the actual subway lines because the connections between stations are the same, even though the map is not a perfect picture of the tracks.",
+      "grade_level": "college",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "Ontologically primitive",
+      "category": "philosophy",
+      "definition": "Something that is the most basic building block of reality, not made of anything else.",
+      "example": "In a video game, the code is ontologically primitive compared to the graphics and sounds, because the code creates everything else.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Information-theoretic",
+      "category": "physics",
+      "definition": "Related to the mathematical study of information, like how it is measured, stored, or sent.",
+      "example": "When you compress a photo to make it smaller, you are using information-theoretic ideas to remove unnecessary data.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Derivative",
+      "category": "philosophy",
+      "definition": "Something that comes from or depends on something else for its existence.",
+      "example": "A shadow is derivative of the object that blocks the light; it doesn't exist on its own.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Distinguishability",
+      "category": "physics",
+      "definition": "The property of being able to tell two things apart; the fact that they are different.",
+      "example": "Two identical-looking coins are distinguishable if you mark one with a pen; the mark creates distinguishability.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Logos",
+      "category": "language",
+      "definition": "A Greek word (\u03bb\u03cc\u03b3\u03bf\u03c2) meaning 'word,' 'reason,' 'order,' or 'principle' that structures the universe.",
+      "example": "In ancient philosophy, the logos is like the 'operating system' of the cosmos that makes everything run in an orderly way.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Johannine Prologue",
+      "category": "theology",
+      "definition": "The opening verses of the Gospel of John (John 1:1-18) that describe Jesus as the divine Word (Logos) who created everything.",
+      "example": "The Johannine Prologue is like the 'origin story' of the universe in Christian theology, explaining that God's Word was there before anything else.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Epiphenomenal",
+      "category": "philosophy",
+      "definition": "Something that exists as a side effect of something else but does not cause anything itself.",
+      "example": "The heat from a light bulb is epiphenomenal to the light; it's a byproduct, not the main purpose.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Thermodynamic weight",
+      "category": "physics",
+      "definition": "The physical cost or effect something has in terms of heat and energy.",
+      "example": "Deleting a file on a computer has thermodynamic weight because it requires a tiny amount of energy to erase the information.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Qubit",
+      "category": "physics",
+      "definition": "The basic unit of quantum information, like a 'quantum bit' that can be 0, 1, or both at the same time.",
+      "example": "A qubit is like a coin that can be heads, tails, or spinning in the air, representing multiple possibilities at once.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Quantum state",
+      "category": "physics",
+      "definition": "A mathematical description of a quantum system that tells you everything possible to know about it.",
+      "example": "The quantum state of an electron is like its 'identity card' that lists all its properties, like spin and energy.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Wavefunction",
+      "category": "physics",
+      "definition": "A mathematical function that describes the probability of finding a quantum particle in a certain state or location.",
+      "example": "The wavefunction of an electron is like a 'cloud of chances' showing where the electron might be found.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Ontology",
+      "category": "philosophy",
+      "definition": "The study of what exists; the set of things that are real.",
+      "example": "If you believe only physical matter is real, your ontology does not include ghosts or souls.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Everett/information-theoretic reading",
+      "category": "physics",
+      "definition": "An interpretation of quantum mechanics where the wavefunction is the only real thing and information is fundamental.",
+      "example": "In this view, the universe is like a giant quantum computer where everything is made of information.",
+      "grade_level": "graduate",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Substrate",
+      "category": "academic",
+      "definition": "The underlying layer or foundation that supports something else.",
+      "example": "Soil is the substrate for a plant; it provides the base for growth.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Formal parallel",
+      "category": "academic",
+      "definition": "A similarity in the structure or pattern of two different things, not in their details.",
+      "example": "A bicycle and a tricycle have a formal parallel: both have wheels, a frame, and handlebars, even though one has three wheels.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "Ontological priority",
+      "category": "philosophy",
+      "definition": "The state of being more fundamental or existing before something else in reality.",
+      "example": "In a recipe, the ingredients have ontological priority over the cake because the cake comes from them.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Generative function",
+      "category": "framework",
+      "definition": "A process or principle that creates or produces something new.",
+      "example": "A 3D printer has a generative function: it takes a design and creates a physical object.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Irreducibility",
+      "category": "philosophy",
+      "definition": "The property of not being able to be broken down into simpler parts.",
+      "example": "The color red is irreducible in the sense that you cannot explain it using only other colors; it is a basic experience.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Shannon entropy",
+      "category": "physics",
+      "definition": "A measure of uncertainty or randomness in a set of possible messages, used in information theory.",
+      "example": "If you flip a fair coin, the Shannon entropy is high because you are very uncertain about the outcome.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Probability distribution",
+      "category": "math",
+      "definition": "A mathematical description of how likely different outcomes are in a random event.",
+      "example": "The probability distribution for rolling a fair die is that each number 1-6 has a 1/6 chance.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Hellenistic philosophy",
+      "category": "philosophy",
+      "definition": "A system of thought from ancient Greece and the Mediterranean world (roughly 300 BCE to 300 CE) that focused on reason, ethics, and the nature of reality.",
+      "example": "Stoicism, which teaches that you should focus on what you can control, is a type of Hellenistic philosophy.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Stoic logos",
+      "category": "philosophy",
+      "definition": "In Stoic philosophy, the rational principle that organizes and governs the entire universe.",
+      "example": "The Stoic logos is like a universal 'law of nature' that everything follows.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Mediating Logos",
+      "category": "philosophy",
+      "definition": "A concept from Philo of Alexandria where the Logos is a bridge between a perfect God and the imperfect material world.",
+      "example": "Think of the mediating Logos as a translator between two people who speak different languages.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Structural parallel",
+      "category": "academic",
+      "definition": "A similarity in the way two things are organized or built, even if they are different in content.",
+      "example": "A tree and a river have a structural parallel: both have a main trunk or channel that branches into smaller parts.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Strain Analysis",
+      "category": "framework",
+      "definition": "An honest evaluation of where a comparison or mapping between two things is weak or breaks down.",
+      "example": "In a movie review, a strain analysis would point out where the plot doesn't make sense or the acting is bad.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Unitarity",
+      "category": "physics",
+      "definition": "A principle in quantum mechanics that says the total probability of all possible outcomes must always add up to 1, meaning information is never lost.",
+      "example": "Unitarity is like a budget that always balances: you cannot lose money (information) from the system.",
+      "grade_level": "college",
+      "first_appearance": "Test 1"
+    },
+    {
+      "term": "Black Hole Information Paradox",
+      "category": "physics",
+      "definition": "A puzzle about whether information that falls into a black hole is destroyed or can be recovered, which challenges unitarity.",
+      "example": "It's like throwing a letter into a fire: is the information in the letter completely gone, or could you somehow reconstruct it from the ashes?",
+      "grade_level": "college",
+      "first_appearance": "Test 1"
+    },
+    {
+      "term": "Page curve",
+      "category": "physics",
+      "definition": "A mathematical prediction of how much information a black hole emits as it evaporates, which helps solve the information paradox.",
+      "example": "The Page curve is like a graph showing how a black hole 'remembers' what fell into it as it slowly shrinks.",
+      "grade_level": "graduate",
+      "first_appearance": "Test 1"
+    },
+    {
+      "term": "Replica wormholes",
+      "category": "physics",
+      "definition": "A mathematical tool in quantum gravity that helps calculate how information escapes from black holes.",
+      "example": "Replica wormholes are like imaginary tunnels that connect different copies of a black hole to help solve a complex math problem.",
+      "grade_level": "graduate",
+      "first_appearance": "Test 1"
+    },
+    {
+      "term": "Landauer bound",
+      "category": "physics",
+      "definition": "The minimum amount of energy required to erase one bit of information, based on Landauer's principle.",
+      "example": "The Landauer bound is like the 'energy cost' of deleting a single character from a computer's memory.",
+      "grade_level": "college",
+      "first_appearance": "Test 1"
+    },
+    {
+      "term": "Symmetry breaking",
+      "category": "physics",
+      "definition": "A situation where a system that could be in multiple states ends up in one specific state, breaking the symmetry of possibilities.",
+      "example": "A spinning coin that eventually lands on heads is an example of symmetry breaking: it could have been tails, but it chose heads.",
+      "grade_level": "college",
+      "first_appearance": "Test 2"
+    },
+    {
+      "term": "Arian heresy",
+      "category": "theology",
+      "definition": "An early Christian belief that Jesus (the Logos) was created by God and not eternal, which was rejected by mainstream Christianity.",
+      "example": "The Arian heresy is like saying the main character in a story was written by the author, not that the author and the character are the same person.",
+      "grade_level": "college",
+      "first_appearance": "Test 2"
+    },
+    {
+      "term": "Connection Density",
+      "category": "framework",
+      "definition": "A measure of how many other ideas or concepts a particular idea is linked to.",
+      "example": "In a social network, connection density is how many friends a person has; high density means many connections.",
+      "grade_level": "college",
+      "first_appearance": "Test 3"
+    },
+    {
+      "term": "Falsifiability",
+      "category": "academic",
+      "definition": "The ability of a theory to be proven wrong by evidence or experiment.",
+      "example": "The claim 'all swans are white' is falsifiable because finding one black swan would prove it wrong.",
+      "grade_level": "college",
+      "first_appearance": "Test 4"
+    },
+    {
+      "term": "Hidden variables",
+      "category": "physics",
+      "definition": "A hypothetical set of unknown properties that would make quantum mechanics predictable, like a 'secret code' behind randomness.",
+      "example": "Hidden variables would be like having a list of all the outcomes of a coin flip before you flip it, making it not random.",
+      "grade_level": "college",
+      "first_appearance": "Test 4"
+    },
+    {
+      "term": "Superdeterminism",
+      "category": "physics",
+      "definition": "A theory that everything, including the choices of scientists in experiments, is predetermined, making it impossible to test certain ideas.",
+      "example": "Superdeterminism is like saying a movie is already filmed, and the characters have no free will to change the plot.",
+      "grade_level": "college",
+      "first_appearance": "Test 4"
+    },
+    {
+      "term": "Existentialist reading",
+      "category": "philosophy",
+      "definition": "An interpretation that focuses on individual existence, freedom, and personal meaning rather than on universal truths or cosmology.",
+      "example": "An existentialist reading of a story might ask 'what does this mean for me personally?' instead of 'what does this say about the universe?'",
+      "grade_level": "college",
+      "first_appearance": "Test 4"
+    },
+    {
+      "term": "Hellenistic",
+      "category": "academic",
+      "definition": "Relating to the Greek culture and language that spread after the conquests of Alexander the Great (roughly 300 BCE to 300 CE).",
+      "example": "Hellenistic art often shows realistic human emotions, unlike the more rigid styles of earlier Greek art.",
+      "grade_level": "college",
+      "first_appearance": "Strain Analysis"
+    },
+    {
+      "term": "Near-contemporary",
+      "category": "academic",
+      "definition": "A person who lived around the same time as another person, but not necessarily at the exact same time.",
+      "example": "Albert Einstein and Marie Curie were near-contemporaries; they were both alive in the early 1900s.",
+      "grade_level": "college",
+      "first_appearance": "Strain Analysis"
+    },
+    {
+      "term": "Transcendent",
+      "category": "philosophy",
+      "definition": "Existing beyond the limits of ordinary experience or the physical world.",
+      "example": "In many religions, God is transcendent, meaning God is not limited by space or time.",
+      "grade_level": "college",
+      "first_appearance": "Strain Analysis"
+    },
+    {
+      "term": "Impersonal",
+      "category": "academic",
+      "definition": "Not having a personality, feelings, or consciousness; like a machine or a force of nature.",
+      "example": "Gravity is impersonal; it doesn't care if you fall, it just acts according to its rules.",
+      "grade_level": "10",
+      "first_appearance": "Strain Analysis"
+    },
+    {
+      "term": "Unintentional",
+      "category": "academic",
+      "definition": "Not done on purpose; without a goal or plan.",
+      "example": "A sneeze is unintentional; you don't decide to do it.",
+      "grade_level": "10",
+      "first_appearance": "Strain Analysis"
+    },
+    {
+      "term": "Semantic",
+      "category": "academic",
+      "definition": "Relating to the meaning of words or symbols.",
+      "example": "The semantic difference between 'house' and 'home' is that 'home' has emotional meaning, while 'house' is just a building.",
+      "grade_level": "college",
+      "first_appearance": "Strain Analysis"
+    },
+    {
+      "term": "Integrated information",
+      "category": "physics",
+      "definition": "A measure of how much a system's parts work together to create a unified whole, often linked to consciousness.",
+      "example": "A human brain has high integrated information because its parts are highly interconnected, unlike a pile of sand.",
+      "grade_level": "college",
+      "first_appearance": "Strain Analysis"
+    },
+    {
+      "term": "IIT",
+      "category": "physics",
+      "definition": "Integrated Information Theory, a scientific theory that measures consciousness by how much information a system integrates.",
+      "example": "IIT would say a sleeping person has less integrated information than a wide-awake person, because their brain is less active.",
+      "grade_level": "college",
+      "first_appearance": "Strain Analysis"
+    },
+    {
+      "term": "Phi",
+      "category": "physics",
+      "definition": "A symbol (\u03a6) used in Integrated Information Theory to represent the amount of consciousness in a system.",
+      "example": "A high phi means a system is more conscious, like a human; a low phi means less conscious, like a simple computer program.",
+      "grade_level": "college",
+      "first_appearance": "Strain Analysis"
+    },
+    {
+      "term": "Speculative",
+      "category": "academic",
+      "definition": "Based on guesswork or theory rather than solid evidence; not yet proven.",
+      "example": "The idea that aliens exist is speculative because we have no proof.",
+      "grade_level": "college",
+      "first_appearance": "Strain Analysis"
+    },
+    {
+      "term": "Structural Isomorphism",
+      "category": "framework",
+      "definition": "A mapping between two things that shows they have the same underlying structure, even if they are different in content.",
+      "example": "A chess game and a computer simulation of chess have a structural isomorphism: the rules and moves are the same.",
+      "grade_level": "college",
+      "first_appearance": "Classification"
+    },
+    {
+      "term": "Axiomatic",
+      "category": "academic",
+      "definition": "Based on a set of basic assumptions (axioms) that are taken as true without proof.",
+      "example": "In geometry, the statement 'a straight line is the shortest distance between two points' is axiomatic.",
+      "grade_level": "college",
+      "first_appearance": "Classification"
+    },
+    {
+      "term": "Reframe Level",
+      "category": "framework",
+      "definition": "A measure of how deeply an idea changes the way we think about a topic, from surface-level to foundational.",
+      "example": "Changing the rules of a game is a higher reframe level than just changing the players.",
+      "grade_level": "college",
+      "first_appearance": "Classification"
+    },
+    {
+      "term": "Bekenstein bound",
+      "category": "physics",
+      "definition": "A theoretical limit on how much information can be stored in a given volume of space.",
+      "example": "The Bekenstein bound says a shoebox-sized space can only hold a certain maximum amount of information, no matter how you pack it.",
+      "grade_level": "college",
+      "first_appearance": "Evidence Bundles"
+    },
+    {
+      "term": "Axiom Dependencies",
+      "category": "framework",
+      "definition": "A list of basic assumptions that a particular idea relies on.",
+      "example": "A recipe for cake has axiom dependencies like 'you need flour' and 'you need an oven.'",
+      "grade_level": "college",
+      "first_appearance": "Axiom Dependencies"
+    }
+  ],
+  "stats": {
+    "total_terms_found": 52,
+    "by_category": {
+      "physics": 18,
+      "theology": 3,
+      "math": 2,
+      "philosophy": 9,
+      "framework": 7,
+      "academic": 11,
+      "language": 2
+    },
+    "highest_grade_level": "graduate",
+    "average_grade_level": "college",
+    "accessibility_score": 25
+  }
+}

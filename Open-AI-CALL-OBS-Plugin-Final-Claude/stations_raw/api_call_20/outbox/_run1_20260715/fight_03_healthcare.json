@@ -1,0 +1,123 @@
+{
+  "spec_version": "1.0-trilemma-resolver",
+  "status": "OK",
+  "fight": {
+    "id": "healthcare_rationing_vs_rights",
+    "familiar_name": "Healthcare: Right vs. Rationing",
+    "years_running": 75,
+    "poles": [
+      "Healthcare is a human right / Medicare for all",
+      "Government medicine means rationing and you lose your doctor",
+      "Get government out entirely"
+    ]
+  },
+  "reader_anchor": {
+    "opening_prose": "You are six years old. You scrape your knee on the sidewalk. The skin is gone, the gravel is in there, and the blood is a bright red line you did not expect. You run inside. Your mother does not ask if you can pay. She does not ask if you deserve it. She does not check a form. She gets the peroxide, the tweezers, the bandage. The cost is not computed. The care happens. You do not know it yet, but you have just lived a world where the deficit is absorbed by someone who did not create it, and you never thought to ask who. That is the memory you carry. Here is the detail you never noticed: you never once looked at her hands. You looked at your knee. You assumed the hands would be there. They were. And you never asked what she set down to pick up the tweezers. That is the quiet theft: you were trained to believe that care appears when needed, and the ledger is someone else's problem. We are here to give back the question you were never allowed to ask: who pays, and why is that question invisible when the blood is real?",
+    "universal_experience": "A child scrapes a knee and receives care without asking about cost.",
+    "checkable_detail": "You never looked at the hands that helped you; you looked only at the wound.",
+    "quiet_theft": "You were trained to believe care appears without a ledger, and the question of who pays is rude or irrelevant.",
+    "embodiment_note": "The child's assumption that care is unconditional mirrors the 'healthcare is a right' pole; the hidden cost borne by the mother mirrors the 'someone pays' pole; the absence of a third-party payer mirrors the 'get government out' pole. The fight is already in your body."
+  },
+  "poles": [
+    {
+      "label": "Universal Access Pole",
+      "steelman": "Healthcare is a human right. No one should die or go bankrupt because they cannot pay for treatment. A single-payer system eliminates administrative waste, covers everyone, and removes the profit motive from decisions about life and death. The current system rations by wealth: the rich get care, the poor get debt or death. That is immoral. We must pool risk across the entire population and fund it through progressive taxation. The cost is worth it because health is foundational to all other freedoms.",
+      "accusation_against_others": "You let people die or suffer catastrophic debt because you prioritize tax rates over human lives. Your system rations by ability to pay, which is the cruelest rationing of all.",
+      "accusation_is_true_because": "Under the current system, a person who cannot pay for insulin or an ER visit either goes without care (suffers damage D) or receives care and is billed (the cost is transferred to them as debt). The other pole's plan (market-based or limited government) does not eliminate this transfer; it merely relocates it to the sick individual or their family, who did not create the illness."
+    },
+    {
+      "label": "Limited Government / Market Pole",
+      "steelman": "Government-run healthcare means waiting lists, rationed care, and loss of choice. You lose your doctor, your insurance plan, and your ability to decide what is best for your family. The government will decide what treatments are 'cost-effective' and deny the rest. Taxpayers will be forced to fund procedures they oppose. The current system has problems, but the solution is not to hand the entire sector to bureaucrats. Competition and choice drive quality down in price and up in quality. Let people buy what they want, and let charity cover the rest.",
+      "accusation_against_others": "You will force healthy people to pay for the sick, and you will let the government decide who lives and who dies through rationing. You destroy freedom in the name of compassion.",
+      "accusation_is_true_because": "Under a single-payer system, the cost of care for the sick (T_A) is transferred to taxpayers (T_B), who did not create the illness. They are conscripted payers. The government then decides which treatments are funded, which is a form of rationing imposed on patients who did not choose that system."
+    },
+    {
+      "label": "Libertarian / No Government Pole",
+      "steelman": "The government has no legitimate role in healthcare. It is a service like food or housing. Let people buy what they can afford, let providers compete, and let voluntary charity and mutual aid cover the rest. The current system is already distorted by tax breaks, licensing, and FDA delays. Remove all subsidies and regulations, and prices will fall. No one is forced to pay for anyone else's care. Freedom is the only consistent principle.",
+      "accusation_against_others": "Both of you want to force someone to pay for someone else's care. You are both authoritarians who cannot trust adults to make their own decisions.",
+      "accusation_is_true_because": "Both other poles involve a transfer from one group (taxpayers or insured patients) to another (the sick), where the payers did not cause the illness. The libertarian pole avoids conscription but leaves the sick to bear the full cost of their own illness (T_A = 0, T_B = 0, D remains on the victim), which is also a transfer: the cost stays on the person who did not choose to be sick."
+    }
+  ],
+  "ledger": {
+    "D_definition": "Untreated illness, medical bankruptcy, and avoidable death due to inability to pay for care. Also: degraded quality of care due to rationing or cost constraints.",
+    "D_is_real_evidence": "CDC reports 26.5 million uninsured in 2023; medical debt is the leading cause of bankruptcy; studies show uninsured patients have higher mortality rates for treatable conditions. On the other side, studies of single-payer systems show waiting lists for elective procedures and denial of some expensive treatments.",
+    "victim_class": "People with untreated illness or medical debt (the uninsured and underinsured). Also, patients whose care is rationed or denied under a government system.",
+    "causal_class": "Diffuse: illness is not caused by a single class. However, the structure of the fight is about who bears the cost of care, not who causes illness. The causal class in the transfer sense is the group that is forced to pay: taxpayers under single-payer, or the sick themselves under market systems.",
+    "per_pole_transfers": [
+      {
+        "pole": "Universal Access",
+        "T_A": "Full cost of care for all (est. $4.5T/year in US, per CMS estimates)",
+        "T_B": "Taxes on all households and businesses (same amount)",
+        "J": 1.0,
+        "M": 0.0,
+        "W_note": "Victim is relieved (J=1), but taxpayers are forced to pay (M=0, no mercy). No voluntary participation by payers.",
+        "who_eats_deficit": "Taxpayers (all households and businesses) are conscripted to pay the full cost."
+      },
+      {
+        "pole": "Limited Government / Market",
+        "T_A": "Partial: insurance subsidies, tax credits, charity care (est. $1.2T/year in government spending plus private charity)",
+        "T_B": "Taxpayers and insured patients via premiums and cost-sharing",
+        "J": 0.3,
+        "M": 0.7,
+        "W_note": "Some relief for victims (J=0.3), but taxpayers and insured patients bear most cost (M=0.7). The uninsured still bear residual D.",
+        "who_eats_deficit": "Taxpayers, insured patients, and the uninsured themselves (the latter eat the residual untreated illness)."
+      },
+      {
+        "pole": "No Government",
+        "T_A": "0 (no government transfer)",
+        "T_B": "0 (no government cost)",
+        "J": 0.0,
+        "M": 1.0,
+        "W_note": "No one is forced to pay, but the sick bear the full cost of their own care (D remains on victim). Mercy for payers is complete; justice for victims is zero.",
+        "who_eats_deficit": "The sick themselves (they pay or go untreated)."
+      }
+    ]
+  },
+  "clear_win": {
+    "type": "structural_invariant",
+    "statement": "The healthcare fight is a seating argument on the J + M = 1 line. Every pole selects a point on the line, but no point closes the ledger: either the sick bear the cost (J low) or the healthy are forced to pay (M low). The accusations each side has traded for decades are all true simultaneously because every plan conscripts someone who did not create the damage to eat the cost. The line itself is the villain.",
+    "derivation_steps": [
+      "1. Define D = untreated illness + medical bankruptcy + degraded care. D > 0 is real.",
+      "2. Define T_A = transfer to the sick (care provided or debt relieved).",
+      "3. Define T_B = cost imposed on payers (taxpayers, insured, or the sick themselves).",
+      "4. Closed system: T_A = T_B (every dollar of care comes from someone).",
+      "5. J = T_A / D. M = 1 - T_B / D. Substitution yields J + M = 1.",
+      "6. Universal Access: J=1, M=0. Taxpayers eat the full cost. Accusation: 'you force healthy people to pay for the sick' is true.",
+      "7. Limited Government: J\u22480.3, M\u22480.7. Taxpayers and insured eat most cost; uninsured eat residual. Accusation: 'you let people die' is true for the uninsured.",
+      "8. No Government: J=0, M=1. The sick eat the full cost. Accusation: 'you let people suffer' is true.",
+      "9. No position on the line achieves J=1, M=1 simultaneously. Free will W requires voluntary participation by both victim and payer, which is impossible on the line.",
+      "10. The only exit is a voluntary external cost-bearer who absorbs D without conscription and without denying the damage."
+    ],
+    "dinner_table_sentence": "Every healthcare plan forces someone who didn't cause the illness to pay; the only exit is a volunteer outside the system.",
+    "why_undeniable": "The derivation uses only the definitions of D, T_A, T_B and the budget constraint. A hostile reader must concede that every dollar of care comes from someone, and that no plan makes the sick and the payers both volunteer. The accusations are checkable: under each pole, a real class of people bears cost they did not cause."
+  },
+  "off_the_line": {
+    "proximate": {
+      "structures": [
+        "Mutual aid health sharing ministries (e.g., Samaritan Ministries, Medi-Share) where members voluntarily pay each other's bills",
+        "Community health clinics funded by donations and volunteer labor",
+        "Direct primary care subscription models where patients pay a flat monthly fee for basic care",
+        "Crowdfunding for specific medical expenses (GoFundMe)"
+      ],
+      "honest_limit": "These structures relocate the cost voluntarily and visibly, but they do not retire the deficit: someone still pays, and the sick still bear residual risk. The altruism lemma holds: internal love relocates, it does not retire."
+    },
+    "ultimate": {
+      "configuration": "A voluntary external cost-bearer who (1) is neither victim nor offender nor conscripted bystander, (2) acts voluntarily, (3) absorbs the full cost of all healthcare for all people, (4) has capacity to absorb without being destroyed, (5) preserves truth (illness is real, not denied).",
+      "candidate": "The framework identifies Jesus Christ as the historical candidate: he voluntarily absorbed the full cost of human brokenness (including physical illness and death) on the cross, without conscription, without denying the reality of suffering, and with infinite capacity. The resurrection is the claim that the absorption was effective and the ledger is closed.",
+      "door_note": "The door opens from the reader's side only: no one is forced to accept this candidate. The framework only points to the structural match; the reader must choose to walk through."
+    }
+  },
+  "anti_gaming_audit": {
+    "blind_label": "pass: no party or politician names appear; poles are defined by mechanism (who pays, who decides).",
+    "symmetry": "pass: the win applies regardless of which pole proposed the mechanism; the line is invariant.",
+    "counterfactual": "pass: D (untreated illness and medical bankruptcy) is real and exists absent any policy.",
+    "radius_consistency": "pass: benefits (care received) and costs (taxes, premiums, or untreated illness) are measured at the same level: the individual patient and payer.",
+    "cost_visibility": "pass: under each pole, the costs are visible to those paying them (taxes, premiums, out-of-pocket costs, or untreated illness).",
+    "no_person_score": "pass: actions and positions are scored, not souls. No pole is called evil; the line is the villain.",
+    "unknowns_tracked": "pass: estimates are labeled as estimates; the invariant J+M=1 is exact."
+  },
+  "falsification": {
+    "kill_condition_specific": "A historical case where all healthcare costs are voluntarily borne by a non-conscripted external party with no residual deficit, and the sick receive full care without anyone being forced to pay, would break this resolution. No such case exists in any nation's history.",
+    "kill_condition_standing": "(1) One historical case of J=1, M=1, W=1 inside a closed system with no voluntary external cost-bearer falsifies the trilemma. (2) One moral ledger that closes with no invisible remainder falsifies conservation."
+  }
+}

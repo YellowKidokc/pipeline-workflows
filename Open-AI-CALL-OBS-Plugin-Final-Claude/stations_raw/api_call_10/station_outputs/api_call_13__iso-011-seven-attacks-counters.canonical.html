@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theophysics Registry · ISO-011 Seven Attacks ↔ Seven Counters</title>
+  <!-- Google Fonts: Oswald, Inter, JetBrains Mono, Crimson Text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* ----- CSS reset & variables ----- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --gold-glow: rgba(212, 175, 55, 0.08);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border: #2a2a2a;
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    /* headings */
+    h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; color: #f0f3f5; }
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    h3 { font-size: 1.3rem; margin-bottom: 0.3rem; }
+    /* mono for equations */
+    .eq, code, .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; }
+    /* quotes */
+    .quote { font-family: 'Crimson Text', serif; font-style: italic; }
+    /* links */
+    a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.2s; }
+    a:hover { border-bottom-color: var(--gold); }
+    /* utility */
+    .gold { color: var(--gold); }
+    .text-muted { color: var(--text-muted); }
+    .success { color: var(--success); }
+    .danger { color: var(--danger); }
+    .info { color: var(--info); }
+    .small { font-size: 0.75rem; letter-spacing: 0.03em; }
+    .mono-sm { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #6b7280; }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+    }
+    .badge-green { background: rgba(34,197,94,0.15); color: var(--success); border-color: var(--success); }
+    .badge-yellow { background: rgba(212,175,55,0.15); color: var(--gold); border-color: var(--gold); }
+    .badge-red { background: rgba(239,68,68,0.15); color: var(--danger); border-color: var(--danger); }
+    .badge-blue { background: rgba(74,158,255,0.12); color: var(--info); border-color: var(--info); }
+    /* cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: border 0.2s;
+    }
+    .card-border-blue { border-top: 3px solid var(--info); }
+    .card-border-gold { border-top: 3px solid var(--gold); }
+    .card-border-red { border-top: 3px solid var(--danger); }
+    /* grid */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+    @media (max-width: 768px) {
+      .grid-2, .grid-4 { grid-template-columns: 1fr; }
+      body { padding: 1rem; }
+      h1 { font-size: 1.8rem; }
+    }
+    /* section header with number */
+    .section-number {
+      font-family: 'Oswald', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: rgba(212,175,55,0.2);
+      line-height: 1;
+      margin-right: 0.75rem;
+    }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 1.2rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+    }
+    .section-header h2 { margin-bottom: 0; }
+    /* gradient line separator */
+    .gradient-line {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 2rem 0 1.5rem 0;
+      opacity: 0.5;
+    }
+    /* hero banner */
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(10,10,10,1) 80%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin: 1.5rem 0;
+    }
+    .hero-left { display: flex; flex-direction: column; gap: 0.8rem; }
+    .hero-left .law-badge {
+      background: rgba(212,175,55,0.12);
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      display: inline-block;
+      width: fit-content;
+    }
+    .hero-title { font-size: 2rem; font-weight: 700; line-height: 1.2; }
+    .hero-subtitle { color: var(--text-muted); font-size: 0.95rem; }
+    .pull-quote {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: #d8dde3;
+      margin: 0.5rem 0;
+    }
+    .equation-card {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      line-height: 1.7;
+    }
+    .equation-card .arrow { color: var(--gold); font-size: 1.2rem; margin: 0 0.3rem; }
+    /* mapping table */
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+    .mapping-table th {
+      background: rgba(212,175,55,0.15);
+      color: var(--gold);
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.8rem 0.6rem;
+      border: 1px solid var(--border);
+      text-align: left;
+      font-weight: 500;
+    }
+    .mapping-table td {
+      padding: 0.7rem 0.6rem;
+      border: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .mapping-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+    .mapping-table .level-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--gold);
+      background: rgba(212,175,55,0.08);
+      padding: 0.1rem 0.5rem;
+      border-radius: 12px;
+      white-space: nowrap;
+    }
+    /* test cards */
+    .test-card { padding: 1.2rem; }
+    .test-card h4 { font-size: 1rem; margin-bottom: 0.3rem; }
+    .test-card .verdict { font-weight: 700; font-size: 1rem; margin-top: 0.4rem; }
+    /* evidence chips */
+    .chip {
+      display: inline-block;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 0.2rem 1rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+      margin: 0.2rem 0.1rem;
+    }
+    .chip-gold { border-color: var(--gold); color: var(--gold); background: rgba(212,175,55,0.06); }
+    /* falsification box */
+    .falsify-box {
+      background: rgba(239,68,68,0.06);
+      border: 1px solid rgba(239,68,68,0.3);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .falsify-box ul { list-style: none; padding-left: 0; }
+    .falsify-box li { margin-bottom: 0.6rem; padding-left: 1.2rem; position: relative; }
+    .falsify-box li::before { content: "›"; position: absolute; left: 0; color: var(--danger); font-weight: 700; }
+    /* footer */
+    .footer-seal {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      color: var(--gold);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.2rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    /* related grid */
+    .related-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .related-grid a {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 0.4rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      transition: 0.2s;
+    }
+    .related-grid a:hover { border-color: var(--gold); background: rgba(212,175,55,0.05); }
+    /* misc */
+    .verse-ref { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: #6b7280; }
+    .icon-lg { font-size: 1.8rem; margin-right: 0.5rem; }
+    .flex-row { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .mt-1 { margin-top: 0.5rem; }
+    .mt-2 { margin-top: 1rem; }
+    .mb-1 { margin-bottom: 0.5rem; }
+    .gap-1 { gap: 0.5rem; }
+  </style>
+</head>
+<body>
+
+  <!-- 1. REGISTRY HEADER -->
+  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem 1.5rem; margin-bottom: 0.5rem;">
+    <div style="display: flex; align-items: center; gap: 0.6rem;">
+      <span style="font-family: 'Oswald', sans-serif; font-size: 2.2rem; color: var(--gold); font-weight: 700;">Φ</span>
+      <span style="font-family: 'Oswald', sans-serif; font-size: 1.5rem; letter-spacing: 0.06em; text-transform: uppercase; color: #f0f3f5;">Theophysics Registry</span>
+    </div>
+    <span class="badge badge-green" style="font-size:0.7rem;"><i class="fas fa-link" style="margin-right:0.3rem;"></i>Isomorphism · Level 3</span>
+    <span class="badge badge-blue" style="font-size:0.7rem;"><i class="far fa-clock"></i> Confidence: HIGH</span>
+    <span class="mono-sm" style="margin-left:auto;">v. 1.0 · ISO-011</span>
+  </div>
+  <div style="display: flex; flex-wrap: wrap; gap: 0.3rem 1.2rem; align-items: baseline; border-bottom: 1px solid var(--border); padding-bottom: 0.6rem; margin-bottom: 0.8rem;">
+    <span style="font-family: 'Oswald', sans-serif; font-size: 0.9rem; letter-spacing: 0.04em; color: var(--gold);">ISO-011</span>
+    <span style="color: var(--text-muted); font-size: 0.9rem;">Seven Attacks ↔ Seven Counters</span>
+    <span class="mono-sm">capstone · GTQ series</span>
+  </div>
+
+  <!-- 2. HERO BANNER -->
+  <div class="hero-banner grid-2" style="align-items: start;">
+    <div class="hero-left">
+      <span class="law-badge"><i class="fas fa-gavel" style="margin-right:0.4rem;"></i>Symmetric Repair Requirement</span>
+      <div class="hero-title">Genesis 3 Attack <span style="color:var(--gold);">↔</span> Cross Counter-Move</div>
+      <div class="hero-subtitle">Seven adversary moves · Seven exact structural counter-moves · Same level</div>
+      <div class="pull-quote">
+        “The repair must be symmetric to the damage. A spiritual-only atonement cannot repair physical death. A legal declaration cannot repair an informational corruption. The Cross operates simultaneously across ALL SEVEN dimensions because the Fall damaged all seven.”
+      </div>
+      <div class="verse-ref" style="margin-top:0.3rem;">— GTQ-10 · Symmetry requirement</div>
+    </div>
+    <div>
+      <div class="equation-card">
+        <div style="color:var(--gold); font-weight:600; margin-bottom:0.4rem; font-family:'Oswald',sans-serif; letter-spacing:0.04em;">CORE EQUATION</div>
+        <div>∀ i ∈ {1..7}:</div>
+        <div style="margin:0.3rem 0 0.3rem 1rem;">Counter(i) ∘ Attack(i) = Repair(i)</div>
+        <div style="color:var(--text-muted); font-size:0.75rem;">symmetric at each level</div>
+        <div style="border-top:1px solid var(--border); margin:0.8rem 0 0.5rem; padding-top:0.6rem; display:flex; flex-wrap:wrap; gap:0.2rem 0.8rem;">
+          <span><span style="color:var(--gold);">Attack</span><sub>i</sub> (Gen 3)</span>
+          <span style="color:var(--gold);">↔</span>
+          <span><span style="color:var(--gold);">Counter</span><sub>i</sub> (Cross)</span>
+          <span class="mono-sm" style="width:100%; margin-top:0.2rem;">7/7 level-matched pairs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. DOMAIN SPECIFICATIONS -->
+  <div class="section-header">
+    <span class="section-number">03</span>
+    <h2>Domain Specifications</h2>
+  </div>
+  <div class="grid-2" style="margin-bottom:1.5rem;">
+    <div class="card card-border-blue">
+      <div class="flex-row"><i class="fas fa-atom icon-lg info"></i><h3 style="margin:0;">Domain A — The Attack</h3></div>
+      <div style="font-family:'Oswald',sans-serif; letter-spacing:0.04em; color:var(--info); font-size:0.8rem; text-transform:uppercase; margin-bottom:0.3rem;">Genesis 3</div>
+      <p style="font-size:0.9rem;"><strong>Seven dimensions of damage.</strong> The serpent’s strategy in Genesis 3 is not a single-vector attack. It operates across information (distorting God’s word), boundary conditions (violating the one rule), volition (autonomous self-exaltation), epistemics (illicit knowledge acquisition), the physical substrate (death entering matter), relational structure (separation from God), and access (exile from the garden). Each layer of damage is distinct. Each requires its own repair.</p>
+      <div class="verse-ref" style="margin-top:0.5rem;">Gen 3:1, 3:5, 3:7, 3:8, 3:24</div>
+    </div>
+    <div class="card card-border-gold">
+      <div class="flex-row"><i class="fas fa-cross icon-lg gold"></i><h3 style="margin:0;">Domain B — The Counter</h3></div>
+      <div style="font-family:'Oswald',sans-serif; letter-spacing:0.04em; color:var(--gold); font-size:0.8rem; text-transform:uppercase; margin-bottom:0.3rem;">The Cross</div>
+      <p style="font-size:0.9rem;"><strong>Seven dimensions of repair.</strong> The Cross is not a single mechanism. It is the simultaneous operation of seven structurally distinct counter-moves: incarnation (information repair), boundary submission (law fulfillment), kenosis (volitional reversal), voluntary ignorance (epistemic surrender), physical death and resurrection (substrate reversal), experienced Godforsakenness (relational repair from inside), and veil-tearing (access restoration). Each counter matches its attack at the same structural level.</p>
+      <div class="verse-ref" style="margin-top:0.5rem;">John 1:14, Phil 2:6-8, Mark 13:32, Matt 27:46, Matt 27:51</div>
+    </div>
+  </div>
+
+  <!-- 4. THE ISOMORPHIC MAPPING (full table) -->
+  <div class="section-header">
+    <span class="section-number">02</span>
+    <h2>The Isomorphic Mapping</h2>
+  </div>
+  <div style="overflow-x:auto; margin-bottom:1.5rem;">
+    <table class="mapping-table">
+      <thead>
+        <tr><th>#</th><th>Genesis 3 Attack</th><th style="text-align:center;">↔</th><th>Cross Counter-Move</th><th>Structural Level</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><strong>Information Distortion</strong><br><span class="verse-ref">Gen 3:1</span> — “Did God really say?”</td><td style="text-align:center; color:var(--gold); font-size:1.2rem;">↔</td><td><strong>Truth Incarnation</strong><br><span class="verse-ref">John 1:14</span> — The Word becomes flesh</td><td><span class="level-tag">INFORMATIONAL</span></td></tr>
+        <tr><td>2</td><td><strong>Boundary Violation</strong><br><span class="verse-ref">Gen 2:17</span> — Forbidden tree eaten</td><td style="text-align:center; color:var(--gold); font-size:1.2rem;">↔</td><td><strong>Voluntary Boundary Submission</strong><br><span class="verse-ref">Phil 2:8</span> — Obedient to death</td><td><span class="level-tag">BOUNDARY-CONDITION</span></td></tr>
+        <tr><td>3</td><td><strong>Autonomous Self-Exaltation</strong><br><span class="verse-ref">Gen 3:5</span> — “You will be like God”</td><td style="text-align:center; color:var(--gold); font-size:1.2rem;">↔</td><td><strong>Self-Emptying (Kenosis)</strong><br><span class="verse-ref">Phil 2:6</span> — Did not grasp equality</td><td><span class="level-tag">VOLITIONAL / STATUS</span></td></tr>
+        <tr><td>4</td><td><strong>Knowledge Gained, Innocence Lost</strong><br><span class="verse-ref">Gen 3:7</span> — Eyes opened</td><td style="text-align:center; color:var(--gold); font-size:1.2rem;">↔</td><td><strong>Innocence Voluntarily Laid Down</strong><br><span class="verse-ref">Mark 13:32, Matt 27:46</span> — Surrenders knowing</td><td><span class="level-tag">EPISTEMIC</span></td></tr>
+        <tr><td>5</td><td><strong>Physical Death Enters</strong><br><span class="verse-ref">Gen 2:17</span> — “You shall surely die”</td><td style="text-align:center; color:var(--gold); font-size:1.2rem;">↔</td><td><strong>Physical Death Absorbed &amp; Reversed</strong><br>Physical crucifixion, physical resurrection</td><td><span class="level-tag">PHYSICAL SUBSTRATE</span></td></tr>
+        <tr><td>6</td><td><strong>Separation from God</strong><br><span class="verse-ref">Gen 3:8</span> — Adam hides</td><td style="text-align:center; color:var(--gold); font-size:1.2rem;">↔</td><td><strong>God Experiences Separation</strong><br><span class="verse-ref">Matt 27:46</span> — “Why have you forsaken me?”</td><td><span class="level-tag">RELATIONAL</span></td></tr>
+        <tr><td>7</td><td><strong>Exile from Eden</strong><br><span class="verse-ref">Gen 3:24</span> — Cherubim block the way</td><td style="text-align:center; color:var(--gold); font-size:1.2rem;">↔</td><td><strong>Return Path Opened</strong><br><span class="verse-ref">Matt 27:51</span> — Veil torn (cherubim on veil)</td><td><span class="level-tag">ACCESS / SPATIAL</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5. SEPARATOR TESTS (2x2 grid) -->
+  <div class="section-header">
+    <span class="section-number">04</span>
+    <h2>Separator Tests</h2>
+  </div>
+  <div class="grid-2" style="margin-bottom:1.5rem;">
+    <!-- Test A -->
+    <div class="card test-card">
+      <h4><i class="fas fa-sitemap gold" style="margin-right:0.4rem;"></i>Test A: Structural Preservation</h4>
+      <p style="font-size:0.85rem; color:var(--text-muted);">Do relations survive under mapping? Are the attack-counter pairs structurally level-matched?</p>
+      <div class="verdict success"><i class="fas fa-check-circle"></i> PASS</div>
+      <div class="verse-ref">7/7 pairs operate at same structural level</div>
+    </div>
+    <!-- Test B -->
+    <div class="card test-card">
+      <h4><i class="fas fa-random gold" style="margin-right:0.4rem;"></i>Test B: Non-Arbitrariness</h4>
+      <p style="font-size:0.85rem; color:var(--text-muted);">Is the mapping forced, or could you swap targets? The specific counter-moves are structurally required by the attack type.</p>
+      <div class="verdict success"><i class="fas fa-check-circle"></i> PASS</div>
+      <div class="verse-ref">Each counter is the unique inverse of the attack at that level</div>
+    </div>
+    <!-- Test C -->
+    <div class="card test-card">
+      <h4><i class="fas fa-ban gold" style="margin-right:0.4rem;"></i>Test C: Constraint</h4>
+      <p style="font-size:0.85rem; color:var(--text-muted);">Does the mapping rule things out? Yes — any atonement model that fails to address all seven dimensions is ruled out.</p>
+      <div class="verdict success"><i class="fas fa-check-circle"></i> PASS</div>
+      <div class="verse-ref">Eliminates purely spiritual, legal, or moral-influence theories</div>
+    </div>
+    <!-- Test D -->
+    <div class="card test-card">
+      <h4><i class="fas fa-exchange-alt gold" style="margin-right:0.4rem;"></i>Test D: Bidirectionality</h4>
+      <p style="font-size:0.85rem; color:var(--text-muted);">Does each side predict the other? The Fall’s seven dimensions predict the Cross’s seven counter-moves; the Cross’s structure confirms the Fall’s damage pattern.</p>
+      <div class="verdict success"><i class="fas fa-check-circle"></i> PASS</div>
+      <div class="verse-ref">Symmetric repair requirement: ∀i Counter(i) ∘ Attack(i) = Repair(i)</div>
+    </div>
+  </div>
+
+  <!-- 6. CLASSIFICATION & EVIDENCE -->
+  <div class="section-header">
+    <span class="section-number">05</span>
+    <h2>Classification &amp; Evidence</h2>
+  </div>
+  <div class="card" style="margin-bottom:1.5rem;">
+    <div style="display:flex; flex-wrap:wrap; gap:1rem 2rem; align-items:center; margin-bottom:1rem;">
+      <div><span class="badge badge-green" style="font-size:0.8rem; padding:0.3rem 1.2rem;">Level 3 — Structural Isomorphism</span></div>
+      <div><span class="badge badge-blue" style="font-size:0.8rem;">Confidence: HIGH</span></div>
+      <div><span class="mono-sm">Seven-property bijective map</span></div>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;">
+      <span class="chip chip-gold"><i class="fas fa-check-circle" style="margin-right:0.3rem;"></i>7/7 level-matched pairs</span>
+      <span class="chip chip-gold"><i class="fas fa-cross"></i> Cherubim on veil = cherubim at Eden</span>
+      <span class="chip chip-gold"><i class="fas fa-arrow-down"></i> Phil 2:6 exact vector reversal of Gen 3:5</span>
+      <span class="chip chip-gold"><i class="fas fa-dna"></i> Physical resurrection = substrate-level counter</span>
+    </div>
+    <div style="font-size:0.85rem; color:var(--text-muted);">
+      <span class="badge badge-red" style="margin-right:0.5rem;">5 ACTIVE KILL CONDITIONS</span> See falsification criteria below.
+    </div>
+  </div>
+
+  <!-- 7. FALSIFICATION CRITERIA -->
+  <div class="section-header">
+    <span class="section-number">06</span>
+    <h2>Falsification Criteria</h2>
+  </div>
+  <div class="falsify-box" style="margin-bottom:1.5rem;">
+    <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+      <i class="fas fa-skull" style="color:var(--danger); font-size:1.2rem;"></i>
+      <span style="font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:0.04em; color:var(--danger);">Kill Conditions — 5 active</span>
+    </div>
+    <p style="font-size:0.85rem; margin-bottom:0.8rem; color:var(--text-muted);">If any of the following are demonstrated, the isomorphism is demoted or destroyed:</p>
+    <ul>
+      <li><strong>KC-1: Asymmetric repair.</strong> If any of the seven pairs does NOT operate at the same structural level, the symmetric repair requirement fails and the framework collapses.</li>
+      <li><strong>KC-2: Incomplete mapping.</strong> If the Cross can be shown to address fewer than seven dimensions, the mapping is incomplete and the seven-fold structure is forced.</li>
+      <li><strong>KC-3: Non-uniqueness.</strong> If a non-crucifixion event addresses all seven dimensions at the same structural levels, the Cross is not unique and the isomorphism loses its force.</li>
+      <li><strong>KC-4: Non-physical resurrection.</strong> If the Resurrection is shown to be non-physical, the physical substrate counter (pair 5) fails. <em>This is the strongest kill condition.</em> A spiritual-only resurrection leaves physical death unrepaired.</li>
+      <li><strong>KC-5: Forced veil correspondence.</strong> If the veil-tearing is shown to NOT correspond to Eden-exile (i.e., the cherubim-on-the-veil connection is historically unfounded), then pair 7 is forced and the mapping drops to 6/7.</li>
+    </ul>
+  </div>
+
+  <!-- 8. RELATED ISOMORPHISMS -->
+  <div class="section-header">
+    <span class="section-number">07</span>
+    <h2>Related Isomorphisms</h2>
+  </div>
+  <div class="related-grid" style="margin-bottom:1.5rem;">
+    <a href="../gtq-10-the-counter-move.html"><i class="fas fa-file-alt" style="margin-right:0.3rem;"></i> GTQ-10 · Seven Attacks ↔ Seven Counters</a>
+    <a href="#"><span class="mono-sm">ISO-011a</span> Cross as Reset Measurement <span class="badge badge-yellow" style="font-size:0.6rem;">Pending</span></a>
+    <a href="#"><span class="mono-sm">ISO-011b</span> Physical Resurrection as Entropy Reversal <span class="badge badge-yellow" style="font-size:0.6rem;">Pending</span></a>
+    <a href="#"><span class="mono-sm">ISO-011c</span> Atonement Theories as Projections <span class="badge badge-yellow" style="font-size:0.6rem;">Pending</span></a>
+    <a href="iso-008-eraser-atonement.html"><i class="fas fa-link"></i> ISO-008 · Quantum Eraser ↔ Atonement <span class="badge badge-green" style="font-size:0.6rem;">Level 3</span></a>
+    <a href="iso-002-superposition-eden.html"><i class="fas fa-link"></i> ISO-002 · Superposition ↔ Eden <span class="badge badge-green" style="font-size:0.6rem;">Level 3</span></a>
+    <a href="iso-003-collapse-fall.html"><i class="fas fa-link"></i> ISO-003 · Wavefunction Collapse ↔ The Fall <span class="badge badge-green" style="font-size:0.6rem;">Level 3</span></a>
+  </div>
+
+  <!-- 9. FOOTER -->
+  <div class="footer-seal">
+    <div style="font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:0.06em; font-size:0.8rem; color:var(--text-muted);">Theophysics Research Program</div>
+    <div style="font-size:0.7rem; color:var(--text-muted); margin:0.2rem 0;">POF 2828 · v. 1.0 · ISO-011</div>
+    <div style="margin-top:0.6rem; font-size:0.95rem;">“The math points to God. The math does not contain God.”</div>
+    <div style="margin-top:0.4rem;"><i class="fas fa-gem gold" style="font-size:1rem;"></i></div>
+  </div>
+
+  <!-- gradient line final -->
+  <div class="gradient-line" style="margin-top:0.5rem;"></div>
+</body>
+</html>

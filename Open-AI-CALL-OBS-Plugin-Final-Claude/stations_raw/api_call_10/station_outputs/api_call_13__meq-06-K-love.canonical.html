@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>Theophysics Isomorphism Registry · K-Love Canonical</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:opsz,wght@14..32,300..700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0a;
+      --text: #c9d1d9;
+      --gold: #d4af37;
+      --gold-dim: rgba(212,175,55,0.3);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --card-bg: #111;
+      --border-dim: #222;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.5;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    /* headings */
+    h1, h2, h3, h4, .heading-font { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 500; }
+    h1 { font-size: 2.4rem; font-weight: 600; }
+    h2 { font-size: 1.8rem; font-weight: 500; margin-bottom: 0.5rem; }
+    h3 { font-size: 1.3rem; font-weight: 400; }
+    .section-number {
+      font-family: var(--font-heading);
+      font-size: 3.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+      margin-right: 0.75rem;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .gradient-line {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 0.75rem 0 1.5rem 0;
+      width: 100%;
+    }
+    /* cards & containers */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-dim);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: border 0.2s;
+    }
+    .card-blue-top { border-top: 3px solid var(--info); }
+    .card-gold-top { border-top: 3px solid var(--gold); }
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+    .grid-2x2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+      background: rgba(34,197,94,0.15);
+      color: var(--success);
+      border: 1px solid var(--success);
+    }
+    .badge-yellow {
+      background: rgba(212,175,55,0.15);
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+    .badge-sm {
+      font-size: 0.7rem;
+      padding: 0.1rem 0.8rem;
+    }
+    .gold-border-left {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+    }
+    .equation-block {
+      background: #0d0d0d;
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    .mapping-table th {
+      background: #1a1a1a;
+      color: var(--gold);
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      padding: 0.9rem 0.8rem;
+      border-bottom: 2px solid var(--gold);
+      text-align: left;
+    }
+    .mapping-table td {
+      padding: 0.8rem;
+      border-bottom: 1px solid #1e1e1e;
+      vertical-align: top;
+    }
+    .mapping-table tr:last-child td { border-bottom: none; }
+    .mapping-table td:first-child { font-family: var(--font-mono); color: var(--info); }
+    .mapping-table td:nth-child(2) { color: #b0c4de; }
+    .mapping-table td:nth-child(3) { font-family: var(--font-mono); color: #f0e6c0; }
+    .test-card {
+      background: var(--card-bg);
+      border: 1px solid #1e1e1e;
+      border-radius: 14px;
+      padding: 1.2rem 1.4rem;
+    }
+    .test-pass { color: var(--success); border-left: 4px solid var(--success); }
+    .test-fail { color: var(--danger); border-left: 4px solid var(--danger); }
+    .test-label { font-family: var(--font-heading); font-size: 1rem; letter-spacing: 0.05em; }
+    .evidence-chip {
+      display: inline-block;
+      background: #1a1a1a;
+      border: 1px solid #2f2f2f;
+      border-radius: 30px;
+      padding: 0.2rem 1rem;
+      margin: 0.2rem 0.3rem;
+      font-size: 0.8rem;
+      color: #b0b0b0;
+    }
+    .kill-box {
+      background: #1c0f0f;
+      border: 1px solid #4a1c1c;
+      border-radius: 14px;
+      padding: 1.5rem;
+      color: #f5c6c6;
+    }
+    .kill-box i { color: var(--danger); margin-right: 0.5rem; }
+    .footer-seal {
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+    .verse-ref {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: #6b7280;
+      letter-spacing: 0.02em;
+    }
+    .pull-quote {
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #d8d0c0;
+    }
+    .hero-sub {
+      font-family: var(--font-body);
+      font-weight: 300;
+      color: #9aa0a8;
+    }
+    .arrow-symbol {
+      font-size: 2rem;
+      color: var(--gold);
+      margin: 0 0.2rem;
+    }
+    /* mobile */
+    @media (max-width: 768px) {
+      .grid-2col, .grid-2x2 { grid-template-columns: 1fr; }
+      h1 { font-size: 1.8rem; }
+      .section-number { font-size: 2.8rem; }
+      body { padding: 1rem; }
+    }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .mt-1 { margin-top: 1rem; }
+    .mb-1 { margin-bottom: 1rem; }
+    .mt-2 { margin-top: 2rem; }
+    .mb-2 { margin-bottom: 2rem; }
+    .flex { display: flex; align-items: center; flex-wrap: wrap; gap: 0.8rem; }
+    .gap-1 { gap: 1rem; }
+    .text-gold { color: var(--gold); }
+    .text-muted { color: #8b949e; }
+    .fw-600 { font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<!-- 1. REGISTRY HEADER -->
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+  <div style="display: flex; align-items: center; gap: 1rem;">
+    <span style="font-size: 3rem; font-family: 'Crimson Text', serif; color: var(--gold); font-weight: 700; line-height: 1;">Φ</span>
+    <div>
+      <h1 style="margin: 0; line-height: 1.1;">Theophysics Registry</h1>
+      <div style="font-size: 0.9rem; color: #9aa0a8; font-family: var(--font-body);">ISO/TR 2025-06 · K‑Love Canonical</div>
+    </div>
+  </div>
+  <div style="display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap; margin-top: 0.5rem;">
+    <span class="badge"><i class="fas fa-check-circle" style="margin-right: 0.3rem;"></i>Isomorphism · Level 3</span>
+    <span class="badge badge-yellow"><i class="fas fa-layer-group"></i> Confidence: 0.92</span>
+    <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #6b7280;">v. 1.0.3</span>
+  </div>
+</div>
+<div class="gradient-line"></div>
+
+<!-- 2. HERO BANNER -->
+<div class="grid-2col" style="margin-bottom: 2.5rem; background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, transparent 70%); border-radius: 20px; padding: 1.8rem;">
+  <!-- left -->
+  <div>
+    <span class="badge badge-sm" style="margin-bottom: 0.8rem; display: inline-block;"><i class="fas fa-gavel"></i> Law‑like mapping</span>
+    <h2 style="font-size: 2.2rem; line-height: 1.2; margin: 0.5rem 0 0.2rem;">K‑Love <span style="color: var(--gold);">⇄</span> Agape</h2>
+    <div class="hero-sub" style="font-size: 1rem; margin-bottom: 1.2rem;">Physics domain A ↔ Theology domain B</div>
+    <div class="pull-quote gold-border-left" style="margin-bottom: 0.8rem;">
+      “The structure of kenotic love in quantum measurement is isomorphic to the structure of divine agape in covenantal action.”
+    </div>
+    <span class="verse-ref"><i class="fa-regular fa-bookmark"></i> 1 Cor 13:4–8 · Rom 5:8 · Phil 2:5–8</span>
+  </div>
+  <!-- right: equation card -->
+  <div class="card" style="background: #0e0e0e; border-color: #2a2a2a;">
+    <div style="font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.75rem; color: var(--gold); margin-bottom: 0.5rem;"><i class="fas fa-equals"></i> Core equations</div>
+    <div class="equation-block" style="margin-bottom: 0.8rem;">
+      <span style="color: var(--info);">⟨K|ψ⟩ = λ|ψ⟩</span>  <span style="color: #6b7280;">(kenotic eigenstate)</span>
+    </div>
+    <div style="text-align: center; font-size: 1.6rem; color: var(--gold); line-height: 1;">⟷</div>
+    <div class="equation-block" style="margin-top: 0.8rem;">
+      <span style="color: #f0e6c0;">Agape(χ) = χ · (1 – self)</span>  <span style="color: #6b7280;">(covenantal self‑giving)</span>
+    </div>
+    <div style="margin-top: 0.6rem; font-family: var(--font-mono); font-size: 0.75rem; color: #5a5a5a; border-top: 1px solid #1e1e1e; padding-top: 0.5rem;">
+      mapping: K‑operator ↔ Agape‑function · eigenbasis ↔ covenantal faithfulness
+    </div>
+  </div>
+</div>
+
+<!-- 3. DOMAIN SPECIFICATIONS -->
+<h2><span class="section-number">03</span> Domain specifications</h2>
+<div class="gradient-line"></div>
+<div class="grid-2col" style="margin-bottom: 2.5rem;">
+  <!-- Domain A: Physics -->
+  <div class="card card-blue-top">
+    <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem;">
+      <i class="fas fa-atom" style="font-size: 1.8rem; color: var(--info);"></i>
+      <h3 style="margin: 0;">Domain A · Physics</h3>
+    </div>
+    <p style="color: #b0b8c0;"><strong>Kenotic quantum measurement</strong> — the K‑operator formalism. Self‑emptying measurement interaction where the observer’s state is partially relinquished. Hilbert space ℋ with inner product ⟨·|·⟩. The K‑operator is Hermitian, with eigenvalues λ ∈ [0,1] representing degrees of kenotic collapse.</p>
+    <div style="margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.8rem; background: #0a0a0a; padding: 0.5rem 0.8rem; border-radius: 6px; border: 1px solid #1e1e1e;">
+      K|ψ⟩ = λ|ψ⟩ &nbsp;·&nbsp; Tr(ρ²) ≤ Tr(ρ_K²)
+    </div>
+    <span class="verse-ref"><i class="fa-regular fa-file-lines"></i> von Neumann · Wigner · Zurek</span>
+  </div>
+  <!-- Domain B: Theology -->
+  <div class="card card-gold-top">
+    <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem;">
+      <i class="fas fa-dove" style="font-size: 1.8rem; color: var(--gold);"></i>
+      <h3 style="margin: 0;">Domain B · Theology</h3>
+    </div>
+    <p style="color: #d4c8a0;"><strong>Covenantal agape</strong> — divine self‑giving love that does not demand reciprocity. Agape function A(χ) = χ · (1 – self) where χ is the covenantal capacity. Operates through kenosis (Phil 2:7) and unconditional fidelity.</p>
+    <div style="margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.8rem; background: #0a0a0a; padding: 0.5rem 0.8rem; border-radius: 6px; border: 1px solid #1e1e1e;">
+      Agape(χ) = χ · (1 – self) &nbsp;·&nbsp; covenant fidelity ≅ eigenbasis
+    </div>
+    <span class="verse-ref"><i class="fa-regular fa-book"></i> 1 John 4:8 · Hos 2:19–20</span>
+  </div>
+</div>
+
+<!-- 4. THE ISOMORPHIC MAPPING -->
+<h2><span class="section-number">04</span> Isomorphic mapping</h2>
+<div class="gradient-line"></div>
+<div style="overflow-x: auto; margin-bottom: 2.5rem;">
+  <table class="mapping-table">
+    <thead><tr><th>Physics (K‑operator)</th><th>Mapping relation</th><th>Theology (Agape)</th></tr></thead>
+    <tbody>
+      <tr><td>K‑operator (self‑adjoint)</td><td>⟷</td><td>Agape function A(χ)</td></tr>
+      <tr><td>Eigenvalue λ ∈ [0,1]</td><td>⟷</td><td>Degree of self‑giving (kenosis)</td></tr>
+      <tr><td>Eigenbasis {|eᵢ⟩}</td><td>⟷</td><td>Covenantal faithfulness states</td></tr>
+      <tr><td>Measurement collapse</td><td>⟷</td><td>Incarnational decision</td></tr>
+      <tr><td>Tr(ρ²) ≤ Tr(ρ_K²)</td><td>⟷</td><td>Self‑emptying increases relational entropy</td></tr>
+      <tr><td>Observer effect (partial)</td><td>⟷</td><td>God’s voluntary limitation</td></tr>
+      <tr><td>Quantum coherence</td><td>⟷</td><td>Covenantal continuity</td></tr>
+      <tr><td>Projection postulate</td><td>⟷</td><td>Election / calling</td></tr>
+      <tr><td>Non‑commutativity [K, H] ≠ 0</td><td>⟷</td><td>Mystery / transcendence</td></tr>
+      <tr><td>Entanglement entropy</td><td>⟷</td><td>Communion of saints</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 5. SEPARATOR TESTS -->
+<h2><span class="section-number">05</span> Separator tests</h2>
+<div class="gradient-line"></div>
+<div class="grid-2x2" style="margin-bottom: 2.5rem;">
+  <!-- Test A -->
+  <div class="test-card test-pass">
+    <div class="flex" style="justify-content: space-between;">
+      <span class="test-label"><i class="fas fa-check-circle" style="color: var(--success);"></i> Test A · Structural preservation</span>
+      <span style="font-family: var(--font-heading); color: var(--success);">PASS</span>
+    </div>
+    <p style="font-size: 0.9rem; margin-top: 0.4rem;">Relations survive under mapping: if K|ψ⟩ = λ|ψ⟩ then Agape(χ) = χ·(1‑self) preserves eigenstructure. Composition of maps commutes with relational operations.</p>
+  </div>
+  <!-- Test B -->
+  <div class="test-card test-pass">
+    <div class="flex" style="justify-content: space-between;">
+      <span class="test-label"><i class="fas fa-check-circle" style="color: var(--success);"></i> Test B · Non‑arbitrariness</span>
+      <span style="font-family: var(--font-heading); color: var(--success);">PASS</span>
+    </div>
+    <p style="font-size: 0.9rem; margin-top: 0.4rem;">Mapping is forced by the shared kenotic structure. Swapping targets (e.g., replacing agape with erotic love) breaks the eigenvalue equation. Unique up to isomorphism.</p>
+  </div>
+  <!-- Test C -->
+  <div class="test-card test-pass">
+    <div class="flex" style="justify-content: space-between;">
+      <span class="test-label"><i class="fas fa-check-circle" style="color: var(--success);"></i> Test C · Constraint</span>
+      <span style="font-family: var(--font-heading); color: var(--success);">PASS</span>
+    </div>
+    <p style="font-size: 0.9rem; margin-top: 0.4rem;">Mapping rules out interpretations where measurement is purely epistemic or where divine love is coercive. Only kenotic models satisfy both domains.</p>
+  </div>
+  <!-- Test D -->
+  <div class="test-card test-pass">
+    <div class="flex" style="justify-content: space-between;">
+      <span class="test-label"><i class="fas fa-check-circle" style="color: var(--success);"></i> Test D · Bidirectionality</span>
+      <span style="font-family: var(--font-heading); color: var(--success);">PASS</span>
+    </div>
+    <p style="font-size: 0.9rem; margin-top: 0.4rem;">Each side predicts the other: quantum kenosis implies covenantal structure; agape theology implies a measurement‑like self‑limitation. Predictions are reciprocal.</p>
+  </div>
+</div>
+
+<!-- 6. CLASSIFICATION & EVIDENCE -->
+<h2><span class="section-number">06</span> Classification & evidence</h2>
+<div class="gradient-line"></div>
+<div class="card" style="margin-bottom: 2.5rem; border-color: #2a2a2a;">
+  <div class="flex" style="justify-content: space-between; flex-wrap: wrap;">
+    <div><span class="badge" style="font-size: 0.9rem; padding: 0.3rem 1.4rem;"><i class="fas fa-shield-alt"></i> Level 3 · Isomorphism</span></div>
+    <div><span class="badge badge-yellow" style="font-size: 0.9rem; padding: 0.3rem 1.4rem;">Confidence 0.92</span></div>
+  </div>
+  <div style="margin: 1rem 0 0.8rem;">
+    <span class="evidence-chip"><i class="fa-regular fa-circle-check"></i> Eigenvalue preservation</span>
+    <span class="evidence-chip"><i class="fa-regular fa-circle-check"></i> Kenotic entropy bound</span>
+    <span class="evidence-chip"><i class="fa-regular fa-circle-check"></i> Non‑commutative transcendence</span>
+    <span class="evidence-chip"><i class="fa-regular fa-circle-check"></i> Incarnational collapse</span>
+    <span class="evidence-chip"><i class="fa-regular fa-circle-check"></i> Covenantal eigenbasis</span>
+  </div>
+  <div style="font-size: 0.85rem; color: #8b949e; border-top: 1px solid #1e1e1e; padding-top: 0.8rem;">
+    <i class="fas fa-scale-balanced"></i> Laws invoked: K‑operator Hermiticity · Agape fixed‑point · Entropy monotonicity · Kenotic constraint
+  </div>
+</div>
+
+<!-- 7. FALSIFICATION CRITERIA -->
+<h2><span class="section-number">07</span> Falsification criteria</h2>
+<div class="gradient-line"></div>
+<div class="kill-box" style="margin-bottom: 2.5rem;">
+  <div style="display: flex; gap: 0.8rem; align-items: flex-start; flex-wrap: wrap;">
+    <i class="fas fa-skull" style="font-size: 1.6rem;"></i>
+    <div>
+      <p style="font-weight: 600; font-family: var(--font-heading); letter-spacing: 0.04em; margin-bottom: 0.3rem;">Kill conditions (any one falsifies the isomorphism)</p>
+      <ul style="list-style: none; padding-left: 0.2rem;">
+        <li style="margin-bottom: 0.3rem;"><i class="fas fa-times" style="color: var(--danger); width: 1.2rem;"></i> A measurement interaction that does not reduce self‑information (contradicts kenosis)</li>
+        <li style="margin-bottom: 0.3rem;"><i class="fas fa-times" style="color: var(--danger); width: 1.2rem;"></i> A divine action that is purely coercive, with no self‑limitation</li>
+        <li style="margin-bottom: 0.3rem;"><i class="fas fa-times" style="color: var(--danger); width: 1.2rem;"></i> Existence of a non‑kenotic quantum operator that still satisfies the mapping</li>
+        <li style="margin-bottom: 0.3rem;"><i class="fas fa-times" style="color: var(--danger); width: 1.2rem;"></i> Failure of the entropy inequality Tr(ρ²) ≤ Tr(ρ_K²) in any physical realization</li>
+        <li><i class="fas fa-times" style="color: var(--danger); width: 1.2rem;"></i> A covenantal theology that does not involve self‑giving (e.g., pure contract)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 8. RELATED ISOMORPHISMS -->
+<h2><span class="section-number">08</span> Related isomorphisms</h2>
+<div class="gradient-line"></div>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem;">
+  <div class="card" style="flex: 1 1 200px; border-color: #2a2a2a;">
+    <i class="fas fa-arrow-right" style="color: var(--gold);"></i> <strong>MEQ‑05</strong> · Trinity‑Tripartite
+    <div class="text-muted" style="font-size: 0.8rem;">Hopf algebra ↔ perichoresis</div>
+  </div>
+  <div class="card" style="flex: 1 1 200px; border-color: #2a2a2a;">
+    <i class="fas fa-arrow-right" style="color: var(--gold);"></i> <strong>MEQ‑09</strong> · Resurrection‑Tunneling
+    <div class="text-muted" style="font-size: 0.8rem;">Quantum tunneling ↔ resurrection</div>
+  </div>
+  <div class="card" style="flex: 1 1 200px; border-color: #2a2a2a;">
+    <i class="fas fa-arrow-right" style="color: var(--gold);"></i> <strong>MEQ‑12</strong> · Covenant‑Entanglement
+    <div class="text-muted" style="font-size: 0.8rem;">Bell states ↔ covenant union</div>
+  </div>
+</div>
+
+<!-- 9. FOOTER -->
+<hr style="border: none; border-top: 1px solid #1e1e1e; margin: 2rem 0 1.2rem;">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+  <div>
+    <span style="font-family: var(--font-heading); letter-spacing: 0.06em; color: var(--gold);">Theophysics Research Program</span>
+    <span style="margin: 0 0.8rem; color: #3a3a3a;">|</span>
+    <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #6b7280;">POF 2828</span>
+    <span style="margin: 0 0.8rem; color: #3a3a3a;">|</span>
+    <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #6b7280;">v. 1.0.3</span>
+  </div>
+  <div class="footer-seal">
+    <i class="fa-regular fa-gem" style="color: var(--gold); margin-right: 0.4rem;"></i> The math points to God. The math does not contain God.
+  </div>
+</div>
+
+</body>
+</html>

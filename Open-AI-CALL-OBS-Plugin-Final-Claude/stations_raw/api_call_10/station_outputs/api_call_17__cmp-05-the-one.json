@@ -1,0 +1,319 @@
+{
+  "spec_version": "1.0",
+  "page_id": "cmp-05-the-one",
+  "page_title": "From Axiom to Coherence",
+  "page_slug": "cmp-05-the-one",
+  "source_file": "cmp-05-the-one.md",
+  "generated_by": "adversarial_auditor_v1",
+  "generated_date": "2026-06-15",
+  "adversarial_audit": {
+    "fatal_issue": "The paper claims the Master Equation product form is a coherence requirement, but provides no proof that the ten variables are exhaustive or that the product form is not an arbitrary choice. The claim that '982 axioms across 43 documented worldviews' use the same ten variables is presented as empirical support, but no data, methodology, or falsifiability condition is given. This is a fatal weakness because the entire framework collapses if the product form is not structurally necessary.",
+    "major_issue": "The Reverse Audit (Section II) identifies six 'leak points' where naturalism fails, but each leak is asserted without rigorous argument. For example, 'Consciousness' is dismissed as a decoherence point without engaging with leading physicalist theories (e.g., integrated information theory, global workspace theory). The paper does not show that these theories are structurally impossible, only that they are incomplete. This makes the audit a series of assertions rather than a proof.",
+    "sharpening_issue": "The paper uses the term 'coherence' in multiple senses (logical consistency, thermodynamic order, moral integrity, theological grace) without clearly distinguishing them. This conflation allows the argument to slide between domains, but a hostile physicist would demand precise definitions and mappings between these uses.",
+    "smart_hostile_physicist_check": {
+      "primary_confusion": "analogy",
+      "diagnosis": "The paper claims that the Coherence Equation dC/dt = O\u00b7G(1-C) - S\u00b7C is derived independently from thermodynamics, population dynamics, and information theory, but the derivation is not shown. The equation is presented as a universal law, but no evidence is given that the variables O, G, S, C map to well-defined physical quantities in each domain. The claim that 'three independent derivations' converge is an assertion, not a demonstration.",
+      "sentence_to_rewrite": "The equation was not derived once from one domain. It was derived independently from three: thermodynamics, population dynamics, information theory.",
+      "required_fix": "Provide the explicit derivation for at least one domain, showing how the equation emerges from known physical laws (e.g., from the Second Law of Thermodynamics or the logistic equation). Show the mapping of variables to physical quantities and demonstrate that the equation is not a post-hoc fit."
+    },
+    "physics_process_check": {
+      "does_mirror_physics_process": true,
+      "physics_process_named": "Wilsonian renormalization / effective field theory construction",
+      "one_to_one_verdict": "partial",
+      "where_mapping_holds": "The nine-section structure (Premises, Reverse Audit, Substrate, Method, Equation, Verification, Demonstration, Convergence, Self-Audit) mirrors the stages of Wilsonian RG: boundary conditions, anomaly detection, field content, coarse-graining, flow equation, consistency checks, application to a critical system, universality, and regime of validity.",
+      "where_mapping_breaks": "The mapping breaks at the Reverse Audit stage. In Wilsonian RG, anomalies are detected mathematically (e.g., divergences in perturbation theory). In this paper, the Reverse Audit is a philosophical critique of naturalism, not a mathematical breakdown. The paper does not show that naturalism fails by its own formal criteria; it asserts failure based on intuitive 'leaks.' This is a metaphor, not an isomorphism.",
+      "sentence_to_rewrite": "The Reverse Audit runs the other half. Hold science accountable to the same standards science applies to everything else.",
+      "required_fix": "Specify the exact formal criteria (e.g., consistency, completeness, predictive power) by which naturalism is being judged, and show that it fails those criteria in a way analogous to a mathematical divergence in a physical theory. Without this, the mapping is not one-to-one."
+    },
+    "strongest_non_framework_alternative": "The paper's claims can be explained by a combination of cognitive bias (pattern-seeking, confirmation bias) and the natural human tendency to find meaning in random data. The convergence across domains may reflect the fact that the author selected domains that fit the pattern, while ignoring counterexamples. The 'kill conditions' are stated but not tested; the paper does not show that it has attempted to falsify its own claims.",
+    "what_would_force_public_narrowing": "A demonstration that the Coherence Equation makes a novel, testable prediction that is confirmed by independent data, and that this prediction is not already accounted for by existing theories. For example, the paper could predict the exact form of a moral decay curve in a specific historical society and then test it against archaeological data. Without such a test, the framework remains a philosophical interpretation, not a scientific theory.",
+    "rewrite_priority": "fatal"
+  },
+  "structure_audit": {
+    "opening_hook_strength": 7,
+    "logical_flow_strength": 5,
+    "transition_quality": 6,
+    "does_opening_promise_match_ending": true,
+    "sequence_verdict": "repairable",
+    "best_order_step_by_step": [
+      "Premises (Section I)",
+      "Reverse Audit (Section II)",
+      "Substrate (Section III)",
+      "Method (Section IV)",
+      "Equation (Section V)",
+      "Verification (Section VI)",
+      "Demonstration (Section VII)",
+      "Convergence (Section VIII)",
+      "Self-Audit (Section IX)"
+    ],
+    "flow_breaks": [
+      {
+        "from_section": "II. The Reverse Audit",
+        "to_section": "III. The Substrate",
+        "problem": "The transition from 'naturalism fails at six points' to 'the substrate is a ten-variable product' is abrupt. The paper does not explain why the substrate is the answer to the six leaks, or how the ten variables are derived from the leaks.",
+        "fix": "Add a bridging paragraph that explicitly connects each leak point to a missing variable in the substrate. For example, 'Consciousness' maps to variable C, 'Mathematical effectiveness' maps to K, etc."
+      },
+      {
+        "from_section": "V. The Equation",
+        "to_section": "VI. The Formal Verification",
+        "problem": "The paper presents the Coherence Equation as a differential equation, then jumps to Lean 4 verification without showing how the equation is formalized in Lean. The reader is left wondering how a continuous ODE is encoded in a theorem prover.",
+        "fix": "Include a brief explanation of how the ODE is discretized or represented in Lean, and what theorems are proved about it (e.g., existence of solutions, stability)."
+      }
+    ],
+    "sentence_that_carries_too_much_weight": "The same equation kept appearing.",
+    "why_it_carries_too_much_weight": "This sentence is the linchpin of the entire argument. It claims that the Coherence Equation is not a human invention but a discovered structure. However, the paper provides no evidence that the equation 'kept appearing' independently; it only asserts that it was derived from three domains. The sentence is presented as a fact, but it is actually a claim that requires substantial justification."
+  },
+  "framework_presence": {
+    "master_equation": [
+      {
+        "present": true,
+        "quote": "\u03c7 = \u222d (G \u00b7 M \u00b7 E \u00b7 S \u00b7 T \u00b7 K \u00b7 R \u00b7 Q \u00b7 F \u00b7 C) dx dy dt",
+        "function": "Defines the ten-variable product form that is claimed to be the universal substrate of coherence."
+      }
+    ],
+    "axioms": [
+      {
+        "id": "AxiomChain.lean",
+        "present": true,
+        "quote": "distinction, substrate, existence, information primacy, substrate requirement, self-grounding, and observation requirement all compile with zero sorry.",
+        "function": "Provides the foundational axioms for the framework, verified in Lean 4."
+      }
+    ],
+    "lean4": [
+      {
+        "present": true,
+        "quote": "287 named theorems. Zero sorry. Zero admit. 16 Lean files. 24 source modules.",
+        "function": "Claims formal verification of the framework's logical structure."
+      }
+    ],
+    "claims_layer": [
+      {
+        "present": true,
+        "quote": "The framework does not begin by asserting coherence. It begins with a disciplined method for cross-domain inquiry.",
+        "function": "States the overarching claim that the method is prior to the conclusions."
+      }
+    ],
+    "proof_layer": [
+      {
+        "present": true,
+        "quote": "The Cross Uniqueness Result... proves by exhaustive case elimination that the Cross is the only configuration that does.",
+        "function": "Provides a formal proof of the uniqueness of the Cross configuration for moral repair."
+      }
+    ],
+    "tests_layer": [
+      {
+        "present": true,
+        "quote": "The adversarial discriminator... encodes the alternatives... and proves they fail the same gate.",
+        "function": "Describes a test that eliminates alternative worldviews based on formal criteria."
+      }
+    ],
+    "laws_layer": [
+      {
+        "id": "Law9Asymmetry.lean",
+        "present": true,
+        "quote": "no_self_rescue proves the asymmetry is structural.",
+        "function": "Formalizes the asymmetry between coherence and decoherence."
+      }
+    ]
+  },
+  "paper_changing_questions": [
+    {
+      "question": "What is the exact mathematical definition of 'coherence' (\u03c7) in the Master Equation? Is it a scalar field, a probability, a measure, or something else? How is it measured or computed in a given domain?",
+      "why_it_matters": "Without a precise definition, the Master Equation is a metaphor, not a scientific model. A physicist would demand an operational definition.",
+      "if_unanswered_then": "The framework remains a philosophical interpretation, not a testable theory.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Is the mapping between the Coherence Equation and the Second Law of Thermodynamics one-to-one? Specifically, does the term S\u00b7C correspond exactly to entropy production, and does O\u00b7G(1-C) correspond to a known thermodynamic driving force?",
+      "why_it_matters": "The paper claims the equation is derived from thermodynamics, but does not show the derivation. A physicist would need to see the explicit mapping to accept the claim.",
+      "if_unanswered_then": "The claim of independent derivation is unsupported, and the equation is likely a post-hoc fit.",
+      "severity": "fatal"
+    },
+    {
+      "question": "How does the Lean 4 formalization handle the continuous nature of the Coherence Equation? Is the ODE discretized, or is there a theorem about its solutions?",
+      "why_it_matters": "Lean 4 is a theorem prover for discrete mathematics. The paper claims 287 theorems, but does not explain how a continuous ODE is encoded.",
+      "if_unanswered_then": "The formal verification may be irrelevant to the core claims of the paper.",
+      "severity": "major"
+    },
+    {
+      "question": "What is the falsifiability condition for the claim that the ten variables are exhaustive? Can a worldview with an eleventh variable be constructed, and if so, how would the framework respond?",
+      "why_it_matters": "The paper claims empirical support from 43 worldviews, but does not provide a methodology for identifying variables. Without a falsifiability condition, the claim is unfalsifiable.",
+      "if_unanswered_then": "The claim of exhaustiveness is a tautology, not an empirical finding.",
+      "severity": "fatal"
+    },
+    {
+      "question": "In the Reverse Audit, how does the paper rule out the possibility that the six 'leaks' are simply open scientific problems that will be solved by future research?",
+      "why_it_matters": "The paper treats the leaks as structural failures, but a physicist would see them as research frontiers. The paper needs to show why they are in principle unsolvable within naturalism.",
+      "if_unanswered_then": "The Reverse Audit is a 'God of the gaps' argument, not a structural critique.",
+      "severity": "major"
+    },
+    {
+      "question": "Is the product form of the Master Equation (\u03c7 = \u220f variables) derived from any physical principle, or is it an arbitrary choice? Could an additive form (\u03c7 = \u03a3 variables) also fit the data?",
+      "why_it_matters": "The entire framework hinges on the product form. If it is arbitrary, the framework is arbitrary.",
+      "if_unanswered_then": "The framework is a mathematical artifact, not a discovery.",
+      "severity": "fatal"
+    },
+    {
+      "question": "The paper claims that the Genesis lifespan fit (R\u00b2 = 0.888) supports the Coherence Equation. How was the fit performed? Were the parameters (amplitude, tau, floor) chosen to maximize R\u00b2, or were they predicted independently?",
+      "why_it_matters": "A post-hoc fit with three parameters can fit almost any decaying function. The paper needs to show that the fit is not overfitted.",
+      "if_unanswered_then": "The fit is not evidence for the equation; it is curve-fitting.",
+      "severity": "major"
+    },
+    {
+      "question": "How does the paper distinguish between a genuine isomorphism and a forced analogy? What are the formal criteria for a mapping to be considered one-to-one?",
+      "why_it_matters": "The paper claims isomorphisms between physics and theology, but does not provide a rigorous definition of isomorphism.",
+      "if_unanswered_then": "The isomorphisms are metaphors, not structural correspondences.",
+      "severity": "major"
+    },
+    {
+      "question": "The paper states that the Cross Uniqueness Result is proved by 'exhaustive case elimination.' What are the cases? How many are there, and how are they generated?",
+      "why_it_matters": "Without seeing the case structure, the claim of uniqueness is unverifiable.",
+      "if_unanswered_then": "The proof may be incomplete or circular.",
+      "severity": "major"
+    },
+    {
+      "question": "What is the physical interpretation of the variable 'G' (gravity/grace) in the Master Equation? How does gravity, a fundamental force, map to grace, a theological concept?",
+      "why_it_matters": "The paper conflates physical and theological terms without justification. A physicist would demand a clear mapping.",
+      "if_unanswered_then": "The Master Equation is a wordplay, not a scientific model.",
+      "severity": "sharpening"
+    }
+  ],
+  "sentence_annotations": [
+    {
+      "anchor_quote": "The ten presuppositions are not just assumptions. They are the minimum coherence requirements for rational investigation.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is a strong claim that the ten presuppositions are necessary and sufficient for coherence. The paper does not justify why these ten are the minimum, or why they are coherence requirements rather than pragmatic assumptions.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The same equation kept appearing.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This sentence is the linchpin of the argument, but it is an assertion without evidence. The paper does not show the derivations from thermodynamics, population dynamics, and information theory.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "dC/dt = O\u00b7G(1-C) - S\u00b7C"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The framework mapped 982 axioms across 43 documented worldviews... Every single one uses the same ten structural variables.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is an empirical claim that is not supported by any data or methodology. How were the axioms identified? How were the variables extracted? The paper provides no details.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The product form is the architecture. Not a sum. A product. If any single factor equals zero, \u03c7 collapses to zero.",
+      "annotation_type": "math",
+      "ui_color": "gold",
+      "why_flagged": "The product form is asserted without justification. Why is it a product and not a sum? The paper needs to derive this from a deeper principle.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "\u03c7 = \u222d (G \u00b7 M \u00b7 E \u00b7 S \u00b7 T \u00b7 K \u00b7 R \u00b7 Q \u00b7 F \u00b7 C) dx dy dt"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The equation was not derived once from one domain. It was derived independently from three: thermodynamics, population dynamics, information theory.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is a central claim, but no derivations are shown. The paper must provide at least one derivation to support this.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "dC/dt = O\u00b7G(1-C) - S\u00b7C"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The Cross Uniqueness Result... proves by exhaustive case elimination that the Cross is the only configuration that does.",
+      "annotation_type": "proof",
+      "ui_color": "blue",
+      "why_flagged": "The paper claims a formal proof, but does not describe the case structure. A reader cannot verify the claim without seeing the cases.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [
+          "cross_unique"
+        ],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The adversarial discriminator... encodes the alternatives... and proves they fail the same gate.",
+      "annotation_type": "proof",
+      "ui_color": "blue",
+      "why_flagged": "The paper claims that alternative worldviews are tested and fail, but does not describe the gate or the encoding. Without this, the claim is unverifiable.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The Genesis lifespan fit... R\u00b2 = 0.888... requires an external source term.",
+      "annotation_type": "math",
+      "ui_color": "gold",
+      "why_flagged": "The fit is presented as evidence, but the paper does not discuss overfitting, parameter selection, or alternative models. A simple exponential decay with a floor can fit many datasets.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "C(t) = 337e^(-t/214) + 93"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The framework does not prove God by calling everything coherence. It follows coherence to its necessary source and finds that Christianity gives the fullest account.",
+      "annotation_type": "clarification",
+      "ui_color": "violet",
+      "why_flagged": "This sentence attempts to preempt a criticism, but it does not resolve the core issue: the paper has not shown that coherence has a 'necessary source' or that Christianity is the 'fullest account.' It is a rhetorical move, not an argument.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    }
+  ]
+}

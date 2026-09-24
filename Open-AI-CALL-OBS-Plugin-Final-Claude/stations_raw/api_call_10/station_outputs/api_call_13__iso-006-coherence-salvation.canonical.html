@@ -1,0 +1,627 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO-006 — Coherence Equation ↔ Salvation · Theophysics Registry</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6.4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --bg-card: #111;
+            --bg-card-alt: #141414;
+            --text: #c9d1d9;
+            --text-muted: #8b949e;
+            --gold: #d4af37;
+            --gold-dim: rgba(212, 175, 55, 0.3);
+            --gold-glow: rgba(212, 175, 55, 0.08);
+            --success: #22c55e;
+            --danger: #ef4444;
+            --info: #4a9eff;
+            --border: #222;
+            --border-light: #2a2a2a;
+            --font-heading: 'Oswald', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-quote: 'Crimson Text', serif;
+            --radius: 12px;
+            --radius-sm: 8px;
+            --shadow: 0 8px 32px rgba(0,0,0,0.6);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-weight: 300;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-weight: 500;
+            color: #f0f0f0;
+        }
+        a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; transition: border 0.2s; }
+        a:hover { border-bottom-color: var(--gold); }
+        .mono { font-family: var(--font-mono); font-size: 0.9rem; }
+        .quote { font-family: var(--font-quote); font-style: italic; }
+        .section-number {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--gold);
+            opacity: 0.2;
+            line-height: 1;
+            margin-right: 1rem;
+            user-select: none;
+        }
+        .gradient-line {
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            margin: 2rem 0 1.5rem 0;
+            opacity: 0.5;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+        }
+        .badge.iso { background: rgba(212,175,55,0.12); border-color: var(--gold); color: var(--gold); }
+        .badge.level3 { background: rgba(34,197,94,0.15); border-color: var(--success); color: var(--success); }
+        .badge.level2 { background: rgba(234,179,8,0.15); border-color: #eab308; color: #eab308; }
+        .badge.confidence { background: rgba(74,158,255,0.12); border-color: var(--info); color: var(--info); }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.8rem;
+            box-shadow: var(--shadow);
+        }
+        .card-blue { border-top: 3px solid var(--info); }
+        .card-gold { border-top: 3px solid var(--gold); }
+        .card-red { border: 1px solid rgba(239,68,68,0.3); background: rgba(239,68,68,0.05); }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .grid-4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .grid-related {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 2rem;
+            align-items: stretch;
+        }
+        .mapping-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        .mapping-table th {
+            background: rgba(212,175,55,0.15);
+            color: var(--gold);
+            font-family: var(--font-heading);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 0.9rem 1rem;
+            border-bottom: 2px solid var(--gold);
+            text-align: left;
+        }
+        .mapping-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid var(--border-light);
+            vertical-align: top;
+        }
+        .mapping-table tr:last-child td { border-bottom: none; }
+        .mapping-table .arrow-cell {
+            text-align: center;
+            font-size: 1.4rem;
+            color: var(--gold);
+            font-weight: 300;
+        }
+        .test-card {
+            background: var(--bg-card-alt);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 1.5rem;
+        }
+        .test-card .test-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+        .test-card .test-label {
+            font-family: var(--font-heading);
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: #ddd;
+        }
+        .test-card .test-verdict {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.2rem 1rem;
+            border-radius: 20px;
+            background: rgba(34,197,94,0.12);
+            border: 1px solid var(--success);
+            color: var(--success);
+        }
+        .test-card .test-verdict.fail {
+            background: rgba(239,68,68,0.12);
+            border-color: var(--danger);
+            color: var(--danger);
+        }
+        .evidence-chip {
+            display: inline-block;
+            background: rgba(212,175,55,0.08);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 30px;
+            padding: 0.3rem 1rem;
+            font-size: 0.8rem;
+            margin: 0.2rem 0.3rem;
+            color: var(--gold);
+        }
+        .kill-list {
+            list-style: none;
+            padding: 0;
+        }
+        .kill-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(239,68,68,0.1);
+            font-size: 0.9rem;
+            display: flex;
+            gap: 0.6rem;
+        }
+        .kill-list li:last-child { border-bottom: none; }
+        .kill-list li::before {
+            content: "›";
+            color: var(--danger);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .footer-seal {
+            font-family: var(--font-quote);
+            font-style: italic;
+            color: var(--gold);
+            opacity: 0.7;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .verse-ref {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        .equation-card {
+            background: rgba(212,175,55,0.04);
+            border: 1px solid rgba(212,175,55,0.15);
+            border-radius: var(--radius-sm);
+            padding: 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        .equation-card .arrow-mapping {
+            display: block;
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin: 0.6rem 0;
+        }
+        .pull-quote {
+            border-left: 4px solid var(--gold);
+            padding-left: 1.2rem;
+            font-family: var(--font-quote);
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #ddd;
+            margin: 1rem 0;
+        }
+        .hero-title {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 2.2rem;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            color: #fff;
+        }
+        .hero-subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
+        .law-badge {
+            display: inline-block;
+            background: rgba(212,175,55,0.1);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 0.2rem 1rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .section-header h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin: 0;
+        }
+        .section-header .section-number {
+            font-size: 3.2rem;
+        }
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            .hero-grid, .grid-2 { grid-template-columns: 1fr; gap: 1.5rem; }
+            .grid-4 { grid-template-columns: 1fr; }
+            .hero-title { font-size: 1.6rem; }
+            .section-header h2 { font-size: 1.2rem; }
+            .section-header .section-number { font-size: 2.4rem; }
+            .mapping-table { font-size: 0.8rem; }
+            .mapping-table th, .mapping-table td { padding: 0.5rem 0.6rem; }
+        }
+        .logo-glyph {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+            opacity: 0.8;
+            margin-right: 0.5rem;
+        }
+        .registry-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.8rem 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .registry-header h1 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            color: #fff;
+            margin: 0;
+        }
+        .registry-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.2rem;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .hero-right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(212,175,55,0.06) 0%, rgba(10,10,10,0.9) 100%);
+            border: 1px solid rgba(212,175,55,0.1);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+        .domain-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .domain-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+        .domain-card .domain-sub {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        .regime-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .regime-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem;
+        }
+        .regime-card h4 {
+            font-size: 0.9rem;
+            color: var(--gold);
+            margin-bottom: 0.4rem;
+        }
+        .regime-card .regime-eq {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .regime-grid { grid-template-columns: 1fr; }
+        }
+        .resolution-box {
+            background: rgba(212,175,55,0.05);
+            border: 1px solid rgba(212,175,55,0.15);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem 2rem;
+        }
+        .resolution-box .factor {
+            font-family: var(--font-heading);
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.04em;
+        }
+        .resolution-box .factor span {
+            color: var(--gold);
+        }
+        .resolution-box .op {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== REGISTRY HEADER ===== -->
+<div class="registry-header">
+    <span class="logo-glyph">Φ</span>
+    <h1>Theophysics Registry</h1>
+    <span class="badge iso">ISO-006</span>
+</div>
+<div class="registry-meta">
+    <span><i class="fa-regular fa-file-lines" style="margin-right:0.3rem;"></i>Logistic Growth ↔ Salvation</span>
+    <span class="badge level3"><i class="fa-regular fa-circle-check" style="margin-right:0.3rem;"></i>Level 3 — Isomorphism</span>
+    <span class="badge confidence"><i class="fa-regular fa-gem" style="margin-right:0.3rem;"></i>Confidence: HIGH</span>
+    <span class="mono" style="color:var(--text-muted);"><i class="fa-regular fa-clock"></i> v1.0 · April 2026</span>
+</div>
+
+<!-- ===== HERO BANNER ===== -->
+<div class="hero-banner">
+    <div class="hero-grid">
+        <div class="hero-left">
+            <span class="law-badge"><i class="fa-regular fa-scale-balanced"></i> Lowe Coherence Equation</span>
+            <div class="hero-title">Logistic Growth <span style="color:var(--gold);">⟷</span> Salvation</div>
+            <div class="hero-subtitle">The Lowe Coherence Equation maps exactly onto salvation and sanctification dynamics</div>
+            <div class="pull-quote" style="margin-top:1.2rem;">
+                “Work out your salvation with fear and trembling, for it is God who works in you.” — the comma in that verse IS the equation.
+                <div class="verse-ref" style="margin-top:0.3rem;">Philippians 2:12–13</div>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="equation-card" style="width:100%;">
+                <div style="font-family:var(--font-heading);font-size:0.8rem;letter-spacing:0.08em;color:var(--gold);margin-bottom:0.6rem;text-transform:uppercase;">Core Equations</div>
+                <div><strong>Physics:</strong> dC/dt = O·G(1−C) − S·C</div>
+                <div style="margin-top:0.3rem;"><strong>Theology:</strong> dC/dt = O·G(1−C) − S·C</div>
+                <div class="arrow-mapping">⟷</div>
+                <div style="font-size:0.85rem;color:var(--text-muted);">C<sub>eq</sub> = (O·G) / (O·G + S)</div>
+                <div style="margin-top:0.6rem;font-size:0.75rem;color:var(--text-muted);border-top:1px solid rgba(212,175,55,0.1);padding-top:0.5rem;">
+                    <span class="mono">O·G</span> = coupling product · <span class="mono">(1−C)</span> = capacity · <span class="mono">S·C</span> = entropy opposition
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== 01 DOMAIN SPECIFICATIONS ===== -->
+<div class="section-header">
+    <span class="section-number">01</span>
+    <h2>Domain Specifications</h2>
+</div>
+<div class="grid-2">
+    <!-- Domain A: Physics -->
+    <div class="card card-blue domain-card">
+        <span class="domain-icon">⚛</span>
+        <h3>Domain A — Physics</h3>
+        <div class="domain-sub">Lowe Coherence Equation</div>
+        <p style="margin-bottom:0.8rem;"><span class="mono">dC/dt = O·G(1−C) − S·C</span> — a logistic-type ODE governing the time evolution of coherence.</p>
+        <ul style="list-style:none;padding:0;font-size:0.9rem;color:var(--text-muted);">
+            <li><span class="mono">C</span> = coherence (0 to 1)</li>
+            <li><span class="mono">O</span> = openness / observer coupling (0 to 1)</li>
+            <li><span class="mono">G</span> = grace field strength (external input, always &gt; 0)</li>
+            <li><span class="mono">S</span> = entropy / noise (always &gt; 0)</li>
+            <li><span class="mono">(1−C)</span> = capacity term (growth slows as coherence increases)</li>
+        </ul>
+        <p style="margin-top:0.8rem;font-size:0.9rem;">Stable equilibrium at <span class="mono">C<sub>eq</sub> = (O·G) / (O·G + S)</span>. Three phase regimes determined by coupling parameter <span class="mono">s</span>.</p>
+    </div>
+    <!-- Domain B: Theology -->
+    <div class="card card-gold domain-card">
+        <span class="domain-icon">✝</span>
+        <h3>Domain B — Theology</h3>
+        <div class="domain-sub">Salvation &amp; Sanctification</div>
+        <p style="margin-bottom:0.8rem;">Salvation and sanctification dynamics as described across the New Testament epistles. The process by which a human being moves from spiritual death toward spiritual coherence with God.</p>
+        <p style="font-size:0.9rem;color:var(--text-muted);">The theological tradition has split into two camps — <strong>Calvinism</strong> (grace is sovereign, not earned) and <strong>Arminianism</strong> (free will matters, you can resist). The Lowe Coherence Equation dissolves this debate: Calvinism identified <span class="mono">G</span>. Arminianism identified <span class="mono">O</span>. Both are real variables in a two-variable product <span class="mono">O·G</span>. Neither camp is wrong — they are each holding one factor of a product.</p>
+    </div>
+</div>
+
+<!-- Three Phase Regimes (embedded in section 02 style) -->
+<div style="margin-top:2rem;">
+    <div class="section-header">
+        <span class="section-number">02</span>
+        <h2>Three Phase Regimes</h2>
+    </div>
+    <p style="margin-bottom:1rem;font-size:0.95rem;color:var(--text-muted);">The coupling parameter <span class="mono">s</span> determines which regime the system occupies. Each regime maps to a distinct spiritual state.</p>
+    <div class="regime-grid">
+        <div class="regime-card">
+            <h4>Regime 1 · Autonomous Decay</h4>
+            <div class="regime-eq">s = −1 &nbsp;|&nbsp; dC/dt = −S·C</div>
+            <p style="font-size:0.85rem;">Pure exponential collapse. No coupling to external grace. The system decays to zero with no floor.</p>
+            <p style="font-size:0.8rem;color:var(--text-muted);"><span class="verse-ref">Romans 1:24–28</span> — “God gave them over.” Pure decay with no floor.</p>
+        </div>
+        <div class="regime-card">
+            <h4>Regime 2 · Performance Mode</h4>
+            <div class="regime-eq">s ≈ 0 &nbsp;|&nbsp; C<sub>eq</sub> ≈ 1/3</div>
+            <p style="font-size:0.85rem;">Partial coupling. Effort without surrender. The equilibrium is low and the trajectory is exhausting.</p>
+            <p style="font-size:0.8rem;color:var(--text-muted);"><strong>Works-based religion</strong> — effort without surrender. Burnout trajectory.</p>
+        </div>
+        <div class="regime-card">
+            <h4>Regime 3 · Full Surrender</h4>
+            <div class="regime-eq">s = +1 &nbsp;|&nbsp; dC/dt = G(1−C) − S·C</div>
+            <p style="font-size:0.85rem;">Growth toward high equilibrium. Full coupling to the grace field. The capacity term (1−C) provides natural saturation.</p>
+            <p style="font-size:0.8rem;color:var(--text-muted);"><span class="verse-ref">Philippians 2:12–13</span> — “Work out your salvation … for it is God who works in you.”</p>
+        </div>
+    </div>
+    <!-- Calvinist-Arminian resolution box -->
+    <div class="resolution-box">
+        <span class="factor">Calvinism <span>G</span> (Grace is sovereign)</span>
+        <span class="op">×</span>
+        <span class="factor">Arminianism <span>O</span> (Free will matters)</span>
+        <span class="op">=</span>
+        <span class="factor" style="color:var(--gold);">Product <span>O·G</span> (Both required)</span>
+    </div>
+</div>
+
+<!-- ===== 03 THE ISOMORPHIC MAPPING ===== -->
+<div class="gradient-line"></div>
+<div class="section-header">
+    <span class="section-number">03</span>
+    <h2>The Isomorphic Mapping</h2>
+</div>
+<p style="margin-bottom:1.2rem;font-size:0.95rem;color:var(--text-muted);">The Calvinist-Arminian resolution: Both sides are correct because both sides are holding one factor of a two-variable product. The equation does not compromise between them — it <strong>contains</strong> both as necessary terms.</p>
+
+<table class="mapping-table">
+    <thead>
+        <tr>
+            <th>Physics Variable</th>
+            <th style="text-align:center;width:40px;">↔</th>
+            <th>Theology Variable</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><span class="mono">C</span> — coherence (0 to 1)</td><td class="arrow-cell">↔</td><td><strong>Spiritual maturity / sanctification</strong></td></tr>
+        <tr><td><span class="mono">O</span> — openness / observer coupling</td><td class="arrow-cell">↔</td><td><strong>Free will / human response</strong> (Arminian variable)</td></tr>
+        <tr><td><span class="mono">G</span> — grace field strength</td><td class="arrow-cell">↔</td><td><strong>Sovereign grace</strong> (Calvinist variable)</td></tr>
+        <tr><td><span class="mono">S</span> — entropy / noise</td><td class="arrow-cell">↔</td><td><strong>Sin / temptation / worldly entropy</strong></td></tr>
+        <tr><td><span class="mono">(1−C)</span> — capacity term</td><td class="arrow-cell">↔</td><td><strong>Room to grow</strong> (growth slows near maturity)</td></tr>
+        <tr><td><span class="mono">s</span> — coupling parameter</td><td class="arrow-cell">↔</td><td><strong>Surrender coefficient</strong> (posture toward God)</td></tr>
+        <tr><td><span class="mono">C<sub>eq</sub></span> — stable equilibrium</td><td class="arrow-cell">↔</td><td><strong>Spiritual steady state</strong> (where you plateau)</td></tr>
+    </tbody>
+</table>
+
+<!-- ===== 04 EMPIRICAL SUPPORT (compact) ===== -->
+<div class="gradient-line"></div>
+<div class="section-header">
+    <span class="section-number">04</span>
+    <h2>Empirical Support</h2>
+</div>
+<div class="grid-2" style="margin-bottom:1rem;">
+    <div class="card" style="border-left:3px solid var(--info);">
+        <div style="font-weight:600;font-size:0.9rem;">📊 Cochrane Review 2020</div>
+        <div style="font-size:0.85rem;color:var(--text-muted);">N = 10,565. AA ≥ CBT for addiction recovery. AA changes <span class="mono">s</span> (surrender coefficient). CBT optimizes <span class="mono">O</span> at fixed <span class="mono">s</span>. Changing <span class="mono">s</span> is categorically more powerful.</div>
+        <div style="font-size:0.8rem;color:var(--gold);margin-top:0.3rem;">AA ≥ CBT (surrender &gt; optimization)</div>
+    </div>
+    <div class="card" style="border-left:3px solid var(--info);">
+        <div style="font-weight:600;font-size:0.9rem;">🧠 PET Scan Data</div>
+        <div style="font-size:0.85rem;color:var(--text-muted);">D2 receptor downregulation in addiction maps exactly to autonomous decay regime (<span class="mono">s = −1</span>). Dopaminergic system shows exponential collapse when decoupled from external coherence sources.</div>
+        <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.3rem;">D2 downregulation ↔ <span class="mono">s = −1</span> regime</div>
+    </div>
+    <div class="card" style="border-left:3px solid var(--info);">
+        <div style="font-weight:600;font-size:0.9rem;">🧠 fMRI: ACC Hyperactivity</div>
+        <div style="font-size:0.85rem;color:var(--text-muted);">Anterior cingulate cortex hyperactivity in performance religion maps to <span class="mono">s ≈ 0</span> regime. Brain signature of “trying harder” without surrender.</div>
+        <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.3rem;">ACC hyperactivity ↔ <span class="mono">s ≈ 0</span> regime</div>
+    </div>
+    <div class="card" style="border-left:3px solid var(--info);">
+        <div style="font-weight:600;font-size:0.9rem;">🧠 Newberg Imaging</div>
+        <div style="font-size:0.85rem;color:var(--text-muted);">vmPFC activation in contemplative prayer maps to <span class="mono">s = +1</span> regime. Ventromedial prefrontal cortex activation during deep prayer and meditation.</div>
+        <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.3rem;">vmPFC activation ↔ <span class="mono">s = +1</span> regime</div>
+    </div>
+</div>
+
+<!-- ===== 05 SEPARATOR TESTS ===== -->
+<div class="gradient-line"></div>
+<div class="section-header">
+    <span class="section-number">05</span>
+    <h2>Separator Tests</h2>
+</div>
+<p style="margin-bottom:1rem;font-size:0.9rem;color:var(--text-muted);">These four tests are the gatekeepers between Correspondence and Isomorphism. <strong>ALL FOUR must pass</strong> for Level 3 classification.</p>
+<div class="grid-4">
+    <div class="test-card">
+        <div class="test-header">
+            <span class="test-label">Test A — Structural Preservation</span>
+            <span class="test-verdict">PASS</span>
+        </div>
+        <p style="font-size:0.85rem;color:var(--text-muted);">The logistic-type ODE with two-variable coupling product maps directly from coherence physics to sanctification dynamics. Key structural features — coupling product <span class="mono">O·G</span>, capacity term <span class="mono">(1−C)</span>, entropy opposition <span class="mono">S·C</span>, stable equilibrium — all preserved.</p>
+    </div>
+    <div class="test-card">
+        <div class="test-header">
+            <span class="test-label">Test B — Non-Arbitrariness</span>
+            <span class="test-verdict">PASS</span>
+        </div>
+        <p style="font-size:0.85rem;color:var(--text-muted);">Three-regime prediction is forced by the equation’s own mathematics. Calvinist-Arminian resolution emerges from product structure <span class="mono">O·G</span> — not from theological compromise. Cochrane data independently confirms <span class="mono">s</span>-change mechanism over <span class="mono">O</span>-optimization.</p>
+    </div>
+    <div class="test-card">
+        <div class="test-header">
+            <span class="test-label">Test C — Constraint</span>
+            <span class="test-verdict">PASS</span>
+        </div>
+        <p style="font-size:0.85rem;color:var(--text-muted);">The mapping rules things out: if <span class="mono">O</span> and <span class="mono">G</span> were the same variable, the resolution fails. If CBT consistently beat AA, the <span class="mono">s</span>-change model fails. If <span class="mono">C = 0</span> were reachable with <span class="mono">G &gt; 0</span>, the grace floor claim fails.</p>
+    </div>
+    <div class="test-card">
+        <div class="test-header">
+            <span class="test-label">Test D — Bidirectionality</span>
+            <span class="test-verdict">PASS</span>
+        </div>
+        <p style="font-size:0.85rem;color:var(--text-muted);">Physics predicts theology: equation requires three regimes, Scripture independently describes exactly three spiritual states. Theology predicts physics: Philippians 2:12–13 encodes a two-variable product that the equation independently derives. Neuroimaging confirms all three predicted brain signatures.</p>
+    </div>
+</div>
+
+<!-- ===== 06 CLASSIFICATION & EVIDENCE ===== -->
+<div class="gradient-line"></div>
+<div class="section-header">
+    <span class="section-number">06</span>
+    <h2>Classification &amp; Evidence</h2>
+</div>
+<div class="grid-2">
+    <div class="card">
+        <div

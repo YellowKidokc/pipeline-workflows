@@ -1,0 +1,282 @@
+{
+  "spec_version": "1.0",
+  "page_id": "PAGE_04",
+  "page_title": "Why Physics: One Blueprint, Printed Twice",
+  "page_slug": "why_physics",
+  "source_file": "PAGE_04_why_physics.md",
+  "generated_by": "adversarial_audit_v1",
+  "generated_date": "2026-07-15",
+  "adversarial_audit": {
+    "fatal_issue": "The central claim of structural isomorphism between physical and moral equations is asserted without providing a single concrete, fully specified pair of equations. The Second Law / BC2 example is presented as a mapping table but BC2 is never defined as an equation, making the claimed isomorphism untestable and unfalsifiable.",
+    "major_issue": "The Monte Carlo scrambling test result (8\u03c3, p < 10^{-9}) is presented as a verification artifact, but no details of the scoring function, term sets, or actual code are provided. This is a black-box claim that cannot be independently verified or reproduced.",
+    "sharpening_issue": "The 'Character of God Read From Physics' section makes broad interpretive leaps (e.g., conservation laws \u2192 faithfulness) without demonstrating that these mappings satisfy the same isomorphism criteria applied to equations. This conflates analogy with isomorphism.",
+    "smart_hostile_physicist_check": {
+      "primary_confusion": "analogy",
+      "diagnosis": "The page claims structural identity but the only concrete example (Second Law / BC2) fails to define BC2 as an equation. Without BC2's explicit mathematical form, the mapping is an analogy, not an isomorphism. A physicist would demand the actual equations side by side.",
+      "sentence_to_rewrite": "The Second Law *is* BC2 on a different substrate. The math is identical. The predictions constrain both domains.",
+      "required_fix": "Provide the explicit mathematical form of BC2 and show the term-by-term bijection with the Second Law. If BC2 cannot be written as an equation, the claim must be downgraded to analogy."
+    },
+    "physics_process_check": {
+      "does_mirror_physics_process": true,
+      "physics_process_named": "Second Law of Thermodynamics (entropy increase in closed systems)",
+      "one_to_one_verdict": "broken",
+      "where_mapping_holds": "The mapping table lists plausible correspondences (closed system \u2194 system without Grace, external energy input \u2194 Grace).",
+      "where_mapping_breaks": "The mapping breaks because BC2 is not defined as an equation. The term 'moral entropy' (S_moral) is not defined, and the derivative dS_moral/dt has no operational meaning. The mapping from 'refrigerator' to 'sanctification' is metaphorical, not mathematical.",
+      "sentence_to_rewrite": "The Second Law *is* BC2 on a different substrate. The math is identical. The predictions constrain both domains.",
+      "required_fix": "Define BC2 as a differential equation with explicit variables. Show that dS_moral/dt \u2265 0 is mathematically equivalent to dS/dt \u2265 0 under a bijection. Without this, the mapping is broken."
+    },
+    "strongest_non_framework_alternative": "The observed structural correspondences are a result of human pattern-matching bias (apophenia) applied to abstract concepts, not evidence of a real isomorphism. The Monte Carlo result is unverifiable and likely cherry-picked.",
+    "what_would_force_public_narrowing": "A public challenge from a physicist or mathematician demanding the explicit BC2 equation and the full Monte Carlo code, with a request for independent replication. If the equation cannot be provided, the claim must be narrowed to analogy.",
+    "rewrite_priority": "fatal"
+  },
+  "structure_audit": {
+    "opening_hook_strength": 7,
+    "logical_flow_strength": 4,
+    "transition_quality": 5,
+    "does_opening_promise_match_ending": false,
+    "sequence_verdict": "repairable",
+    "best_order_step_by_step": [
+      "Define BC2 as an explicit equation",
+      "Present the isomorphism framework with a concrete example",
+      "Show the mapping table with both equations side by side",
+      "Provide the Monte Carlo test details",
+      "Discuss implications and character of God"
+    ],
+    "flow_breaks": [
+      {
+        "from_section": "The Isomorphism Framework",
+        "to_section": "Example: The Second Law / BC2 Isomorphism",
+        "problem": "The example is introduced without first defining BC2. The reader cannot evaluate the isomorphism.",
+        "fix": "Define BC2 as an equation before the mapping table. Move the example after the framework."
+      },
+      {
+        "from_section": "Monte Carlo Scrambling Test",
+        "to_section": "Character of God Read From Physics",
+        "problem": "The Monte Carlo result is presented as verification, but the character section makes unsupported interpretive leaps that are not tested by the scrambling test.",
+        "fix": "Either show that the character mappings also satisfy the isomorphism criteria, or mark them as speculative."
+      }
+    ],
+    "sentence_that_carries_too_much_weight": "The Second Law *is* BC2 on a different substrate. The math is identical. The predictions constrain both domains.",
+    "why_it_carries_too_much_weight": "This sentence is the central claim of the page, but it is unsupported because BC2 is never defined as an equation. The entire argument collapses if this sentence is false."
+  },
+  "framework_presence": {
+    "master_equation": [
+      {
+        "present": true,
+        "quote": "\u03c6: {p_1, p_2, ..., p_n} \u2192 {m_1, m_2, ..., m_n}",
+        "function": "Defines the isomorphism mapping between physical and moral terms."
+      }
+    ],
+    "axioms": [
+      {
+        "id": "ISO1",
+        "present": true,
+        "quote": "Bijection on terms: Every variable in P maps to exactly one variable in M, and vice versa",
+        "function": "Axiom of term correspondence."
+      },
+      {
+        "id": "ISO2",
+        "present": true,
+        "quote": "Structure preservation: The algebraic relationships between variables are identical",
+        "function": "Axiom of algebraic structure."
+      },
+      {
+        "id": "ISO3",
+        "present": true,
+        "quote": "Operational correspondence: The predictions of P under \u03c6 match the predictions of M",
+        "function": "Axiom of predictive equivalence."
+      }
+    ],
+    "lean4": [],
+    "claims_layer": [
+      {
+        "present": true,
+        "quote": "the equations governing physical law and the equations governing moral law share structural identity, not metaphorical similarity",
+        "function": "Central claim of the page."
+      },
+      {
+        "present": true,
+        "quote": "The Second Law *is* BC2 on a different substrate",
+        "function": "Specific instantiation of the central claim."
+      }
+    ],
+    "proof_layer": [
+      {
+        "present": true,
+        "quote": "Monte Carlo scrambling test \u2014 8\u03c3, p < 10^{-9}",
+        "function": "Statistical evidence for non-coincidence."
+      }
+    ],
+    "tests_layer": [
+      {
+        "present": true,
+        "quote": "Three-layer presentation system (equation / translation / proof)",
+        "function": "Verification protocol for each claimed mapping."
+      }
+    ],
+    "laws_layer": [
+      {
+        "id": "BC2",
+        "present": false,
+        "quote": "",
+        "function": "BC2 is referenced but never defined as an equation."
+      }
+    ]
+  },
+  "paper_changing_questions": [
+    {
+      "question": "What is the explicit mathematical form of BC2? Provide the differential equation and define all variables.",
+      "why_it_matters": "Without BC2 as an equation, the claimed isomorphism with the Second Law is untestable. The entire page hinges on this.",
+      "if_unanswered_then": "The central claim is unfalsifiable and must be rewritten as analogy.",
+      "severity": "fatal"
+    },
+    {
+      "question": "What is the operational definition of 'moral entropy' (S_moral)? How is it measured or computed?",
+      "why_it_matters": "The mapping requires dS_moral/dt to be a meaningful quantity. Without a definition, the isomorphism is vacuous.",
+      "if_unanswered_then": "The Second Law / BC2 mapping is broken and must be removed or downgraded.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Provide the full Monte Carlo code and the exact set of terms used. How is 'structural preservation' scored?",
+      "why_it_matters": "The 8\u03c3 result is presented as verification but cannot be independently checked. This is a black-box claim.",
+      "if_unanswered_then": "The Monte Carlo evidence is inadmissible and must be removed or made reproducible.",
+      "severity": "major"
+    },
+    {
+      "question": "Which named physics process is being mirrored in the 'Character of God' section? Is the mapping one-to-one for conservation laws \u2192 faithfulness?",
+      "why_it_matters": "The character claims are presented as consequences of isomorphism but are not tested by the scrambling test. They may be analogies.",
+      "if_unanswered_then": "The character section must be explicitly marked as speculative, not derived.",
+      "severity": "major"
+    },
+    {
+      "question": "What is the strongest falsifying data point against the core thesis? For example, if a physical law is found that has no moral correspondent, does that falsify the claim?",
+      "why_it_matters": "The page claims falsifiability but does not specify what would count as a counterexample.",
+      "if_unanswered_then": "The claim is not genuinely falsifiable and must be narrowed.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Is the term 'isomorphism' used in the mathematical sense (bijective homomorphism) or in a looser sense? The page defines it as 'shared logical architecture' \u2014 is that sufficient for the claims made?",
+      "why_it_matters": "If the definition is looser than mathematical isomorphism, the 'same vs. similar' criterion is misleading.",
+      "if_unanswered_then": "The term must be clarified to avoid equivocation.",
+      "severity": "major"
+    },
+    {
+      "question": "What is the minimum condition that would weaken the least justified assumption? (e.g., if BC2 is not an equation, does the entire framework collapse?)",
+      "why_it_matters": "Identifies the weakest link in the argument chain.",
+      "if_unanswered_then": "The framework's robustness is unknown.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "Are the core claims (e.g., Second Law = BC2) supported by primary sources (e.g., a published paper defining BC2), or only by summary mentions in this page?",
+      "why_it_matters": "Without primary sources, the claims are unsupported assertions.",
+      "if_unanswered_then": "The page must cite or provide the primary source for BC2.",
+      "severity": "major"
+    },
+    {
+      "question": "Which term is used in multiple meanings in the same argument? (e.g., 'isomorphism' used for both equation mapping and character mapping?)",
+      "why_it_matters": "Equivocation weakens the logical force.",
+      "if_unanswered_then": "The argument may be invalid due to equivocation.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "What minimal counterexample would break the central analogy? (e.g., a physical law with no plausible moral correspondent?)",
+      "why_it_matters": "Tests the robustness of the isomorphism claim.",
+      "if_unanswered_then": "The claim is not rigorously bounded.",
+      "severity": "sharpening"
+    }
+  ],
+  "sentence_annotations": [
+    {
+      "anchor_quote": "The Second Law *is* BC2 on a different substrate. The math is identical. The predictions constrain both domains.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Central claim unsupported because BC2 is not defined as an equation. Fatal if not fixed.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "CLAIM-04-001"
+        ],
+        "axiom_ids": [
+          "ISO1",
+          "ISO2",
+          "ISO3"
+        ],
+        "theorem_ids": [],
+        "equation_ids": [
+          "EQ-SECOND-LAW"
+        ],
+        "test_ids": [
+          "TEST-MC"
+        ]
+      }
+    },
+    {
+      "anchor_quote": "The probability that this degree of structural correspondence is coincidence is less than one in a billion.",
+      "annotation_type": "proof",
+      "ui_color": "gold",
+      "why_flagged": "Monte Carlo result presented without code or scoring function. Cannot be verified.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "CLAIM-04-001"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": [
+          "TEST-MC"
+        ]
+      }
+    },
+    {
+      "anchor_quote": "Conservation laws \u2192 faithfulness (what is given is not withdrawn)",
+      "annotation_type": "claim",
+      "ui_color": "violet",
+      "why_flagged": "Interpretive leap not supported by isomorphism criteria. Conflates analogy with isomorphism.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "CLAIM-04-002"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "If any mapping requires a 'well, sort of' at any step, it fails. 'Sort of' is not isomorphism.",
+      "annotation_type": "clarification",
+      "ui_color": "blue",
+      "why_flagged": "Sets a high standard but the page itself violates it by not defining BC2.",
+      "rewrite_needed": false,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [
+          "ISO1",
+          "ISO2",
+          "ISO3"
+        ],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The character of the Lawgiver is readable from the law",
+      "annotation_type": "claim",
+      "ui_color": "violet",
+      "why_flagged": "Broad claim that is not derived from the isomorphism framework; appears to be theological assertion.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "CLAIM-04-003"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    }
+  ]
+}

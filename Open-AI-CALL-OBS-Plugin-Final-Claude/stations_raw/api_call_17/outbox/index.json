@@ -1,0 +1,210 @@
+{
+  "spec_version": "1.0",
+  "page_id": "consciousness-index",
+  "page_title": "Consciousness",
+  "page_slug": "consciousness",
+  "source_file": "index.md",
+  "generated_by": "adversarial-audit-v1",
+  "generated_date": "2025-04-14",
+  "adversarial_audit": {
+    "fatal_issue": "The page claims a 'minimal field theory that bridges quantum mechanics and first-person experience through the \u03c7-field' but provides no derivation, no mapping from \u03c7 to any observable of consciousness, and no equation linking \u03c7 to first-person experience. The central claim is asserted without any supporting argument or evidence.",
+    "major_issue": "The page lists 'PEAR 6.35\u03c3, GCP 7\u03c3, DESI 4.2\u03c3' as converging evidence for the \u03c7-field, but these are independent anomalies from different experiments with no established connection to each other or to the \u03c7-field. The page does not explain how these datasets specifically support the \u03c7-field hypothesis over any other interpretation.",
+    "sharpening_issue": "The phrase 'ghost-free, DESI-consistent, and empirically testable' is used as a tagline but the page does not define what 'ghost-free' means in this context, how the field is DESI-consistent (DESI is a dark energy survey, not a consciousness experiment), or what specific testable predictions are made.",
+    "smart_hostile_physicist_check": {
+      "primary_confusion": "analogy",
+      "diagnosis": "The page treats the \u03c7-field as a physical field analogous to known fields (scalar, ghost-free) but provides no mechanism by which it couples to consciousness. The analogy is not supported by any physical process.",
+      "sentence_to_rewrite": "A minimal field theory that bridges quantum mechanics and first-person experience through the \u03c7-field",
+      "required_fix": "Replace with a precise statement of how \u03c7 couples to first-person experience, including the specific interaction term and the observable consequences."
+    },
+    "physics_process_check": {
+      "does_mirror_physics_process": false,
+      "physics_process_named": "None",
+      "one_to_one_verdict": "broken",
+      "where_mapping_holds": "Nowhere",
+      "where_mapping_breaks": "The entire claim that a scalar field can bridge quantum mechanics and consciousness is asserted without any mapping.",
+      "sentence_to_rewrite": "A minimal field theory that bridges quantum mechanics and first-person experience through the \u03c7-field",
+      "required_fix": "Provide a one-to-one mapping between \u03c7-field dynamics and specific aspects of first-person experience, or remove the claim."
+    },
+    "strongest_non_framework_alternative": "The anomalies cited (PEAR, GCP, DESI) are more parsimoniously explained by statistical flukes, undiscovered systematic errors, or known physics (e.g., DESI results are consistent with dynamical dark energy, not a consciousness field).",
+    "what_would_force_public_narrowing": "A clear, testable prediction that distinguishes the \u03c7-field from all known physics, with a specified experimental protocol and a quantitative threshold for confirmation.",
+    "rewrite_priority": "fatal"
+  },
+  "structure_audit": {
+    "opening_hook_strength": 3,
+    "logical_flow_strength": 2,
+    "transition_quality": 2,
+    "does_opening_promise_match_ending": false,
+    "sequence_verdict": "broken",
+    "best_order_step_by_step": [
+      "Define the hard problem of consciousness",
+      "State the failure of physicalist theories",
+      "Introduce the \u03c7-field as a minimal extension",
+      "Derive the Lagrangian",
+      "Show how \u03c7 couples to consciousness",
+      "Provide testable predictions",
+      "Cite evidence",
+      "Discuss implications"
+    ],
+    "flow_breaks": [
+      {
+        "from_section": "Hero tagline",
+        "to_section": "Articles list",
+        "problem": "The hero section makes a grand claim about bridging quantum mechanics and first-person experience, but the articles list jumps to a constraint argument without any bridge.",
+        "fix": "Add a transition paragraph that explains how the constraint argument leads to the need for a \u03c7-field."
+      }
+    ],
+    "sentence_that_carries_too_much_weight": "A minimal field theory that bridges quantum mechanics and first-person experience through the \u03c7-field",
+    "why_it_carries_too_much_weight": "This single sentence is the entire justification for the \u03c7-field, but it provides no mechanism, no evidence, and no derivation. It is a claim that requires an entire paper to support."
+  },
+  "framework_presence": {
+    "master_equation": [
+      {
+        "present": true,
+        "quote": "S~\u03c7~ = \u222b d^4^x \u221a|g|  [\u00bd(\u2207\u03c7)\u00b2 \u2212 V(\u03c7) + \u03bb \u03c7 T]",
+        "function": "This is the proposed Lagrangian for the \u03c7-field, but it is not derived or explained in this page."
+      }
+    ],
+    "axioms": [],
+    "lean4": [],
+    "claims_layer": [
+      {
+        "present": true,
+        "quote": "357 theories, all hit the same wall.",
+        "function": "This is a claim about the failure of physicalist theories, but no evidence is provided."
+      }
+    ],
+    "proof_layer": [],
+    "tests_layer": [],
+    "laws_layer": []
+  },
+  "paper_changing_questions": [
+    {
+      "question": "What exact, currently testable prediction does the \u03c7-field make that distinguishes it from all known physics?",
+      "why_it_matters": "Without a testable prediction, the \u03c7-field is not falsifiable and therefore not scientific.",
+      "if_unanswered_then": "The entire framework is unfalsifiable and should be rewritten to include a specific, quantitative prediction.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Which named physics process is being mirrored by the \u03c7-field, and where is the one-to-one transition map between \u03c7-field dynamics and first-person experience?",
+      "why_it_matters": "The page claims a bridge but provides no mapping, making the claim vacuous.",
+      "if_unanswered_then": "The central claim of the page is unsupported and must be removed or replaced with a precise mapping.",
+      "severity": "fatal"
+    },
+    {
+      "question": "How do the PEAR, GCP, and DESI anomalies specifically support the \u03c7-field hypothesis over alternative explanations (e.g., statistical flukes, systematic errors, dynamical dark energy)?",
+      "why_it_matters": "The page cites these as evidence, but correlation does not imply causation, and the anomalies may have mundane explanations.",
+      "if_unanswered_then": "The evidence is insufficient and the page must either provide a causal link or remove the citations.",
+      "severity": "major"
+    },
+    {
+      "question": "What is the minimum condition that would weaken the assumption that a scalar field can bridge quantum mechanics and consciousness?",
+      "why_it_matters": "The assumption is central but unjustified; identifying its weakest point allows for targeted criticism.",
+      "if_unanswered_then": "The assumption remains unexamined and the framework is vulnerable to a single counterexample.",
+      "severity": "major"
+    },
+    {
+      "question": "Is the term 'ghost-free' used in the same sense as in quantum field theory (no negative norm states), and if so, how is this property proven for the \u03c7-field?",
+      "why_it_matters": "Ghost-free is a technical term; misuse would indicate a lack of rigor.",
+      "if_unanswered_then": "The technical claim is unsubstantiated and the page should either provide the proof or remove the term.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "What is the strongest falsifying data point against the core thesis that consciousness is mediated by a \u03c7-field?",
+      "why_it_matters": "Identifying a potential falsifier is essential for scientific credibility.",
+      "if_unanswered_then": "The thesis is not falsifiable and should be rewritten to include a clear falsification criterion.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Which claim in this page is confessional (based on personal belief) versus evidentiary (based on empirical data), and how is that distinction made clear in the copy?",
+      "why_it_matters": "Confusing the two undermines scientific credibility.",
+      "if_unanswered_then": "The page should be rewritten to clearly label each claim as either confessional or evidentiary.",
+      "severity": "major"
+    },
+    {
+      "question": "What minimal counterexample would break the central analogy between the \u03c7-field and known physical fields?",
+      "why_it_matters": "Analogies are not proofs; a counterexample would show the analogy is invalid.",
+      "if_unanswered_then": "The analogy is unsupported and the page should either defend it or remove it.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "Can the claims on this page be safely ingested into downstream metadata fields (claim_id, axiom_id, test_id) without ambiguity?",
+      "why_it_matters": "Ambiguous claims cannot be tested or verified.",
+      "if_unanswered_then": "The page must be rewritten to make each claim precise and unambiguous.",
+      "severity": "major"
+    }
+  ],
+  "sentence_annotations": [
+    {
+      "anchor_quote": "A minimal field theory that bridges quantum mechanics and first-person experience through the \u03c7-field",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is the central claim of the page, but it is asserted without any justification, derivation, or evidence.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "S~\u03c7~ = \u222b d^4^x \u221a|g|  [\u00bd(\u2207\u03c7)\u00b2 \u2212 V(\u03c7) + \u03bb \u03c7 T]"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "357 theories, all hit the same wall.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is a sweeping claim that requires evidence (e.g., a list of theories and the specific wall they hit). No evidence is provided.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "PEAR 6.35\u03c3, GCP 7\u03c3, DESI 4.2\u03c3",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "These are cited as evidence for the \u03c7-field, but no causal link is established. The page does not explain how these anomalies specifically support the \u03c7-field over alternative explanations.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "ghost-free, DESI-consistent, and empirically testable",
+      "annotation_type": "clarification",
+      "ui_color": "gold",
+      "why_flagged": "These terms are used without definition or proof. 'Ghost-free' is a technical term; 'DESI-consistent' is vague; 'empirically testable' is not supported by any specific prediction.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "S~\u03c7~ = \u222b d^4^x \u221a|g|  [\u00bd(\u2207\u03c7)\u00b2 \u2212 V(\u03c7) + \u03bb \u03c7 T]",
+      "annotation_type": "math",
+      "ui_color": "blue",
+      "why_flagged": "The Lagrangian is presented without derivation or explanation of the terms. The coupling \u03bb \u03c7 T is not defined, and it is not clear how this relates to consciousness.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    }
+  ]
+}

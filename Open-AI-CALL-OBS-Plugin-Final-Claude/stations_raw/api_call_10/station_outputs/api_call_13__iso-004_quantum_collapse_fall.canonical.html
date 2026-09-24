@@ -1,0 +1,468 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>ISO-004 · Quantum Collapse &amp; Fall · Theophysics Registry</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  <style>
+    /* ----- CSS reset & variables ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --gold-light: #f0d060;
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border: #2a2a2a;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    /* headings */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 500;
+      color: #fff;
+    }
+    h1 { font-size: 2.4rem; font-weight: 600; letter-spacing: 0.06em; }
+    h2 { font-size: 1.8rem; margin-top: 2rem; }
+    h3 { font-size: 1.3rem; font-weight: 400; }
+    /* mono */
+    code, pre, .eq {
+      font-family: var(--font-mono);
+      background: rgba(255,255,255,0.04);
+      padding: 0.1em 0.3em;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    .eq-block {
+      font-family: var(--font-mono);
+      background: var(--surface);
+      padding: 1rem 1.2rem;
+      border-radius: var(--radius);
+      border-left: 3px solid var(--gold);
+      margin: 0.8rem 0;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    /* quote */
+    .pull-quote {
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: 1.2rem;
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+      color: #e0d6c0;
+      margin: 1.2rem 0;
+    }
+    /* cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem 1.5rem;
+      box-shadow: var(--shadow);
+      transition: border 0.2s;
+    }
+    .card-blue { border-top: 4px solid var(--info); }
+    .card-gold { border-top: 4px solid var(--gold); }
+    .card-danger { border: 1px solid rgba(239,68,68,0.3); background: #1c0f0f; }
+    /* grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .grid-2, .grid-4 { grid-template-columns: 1fr; }
+      h1 { font-size: 1.8rem; }
+      body { padding: 1rem; }
+    }
+    /* badges */
+    .badge {
+      display: inline-block;
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      font-weight: 500;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .badge-green { background: rgba(34,197,94,0.15); color: var(--success); border-color: var(--success); }
+    .badge-yellow { background: rgba(212,175,55,0.15); color: var(--gold); border-color: var(--gold); }
+    .badge-gold { background: rgba(212,175,55,0.12); color: var(--gold); border-color: var(--gold); }
+    /* section number */
+    .section-num {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: 600;
+      color: rgba(212,175,55,0.2);
+      line-height: 1;
+      margin-bottom: -1.2rem;
+      letter-spacing: 0.02em;
+    }
+    .gradient-line {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 0.5rem 0 1.5rem 0;
+      opacity: 0.5;
+    }
+    /* table */
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+    .mapping-table th {
+      background: #1a1a1a;
+      color: var(--gold);
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 400;
+      padding: 0.8rem 1rem;
+      border-bottom: 2px solid var(--gold);
+      text-align: left;
+    }
+    .mapping-table td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid #222;
+      vertical-align: top;
+    }
+    .mapping-table tr:last-child td { border-bottom: none; }
+    .mapping-table tr:hover td { background: rgba(212,175,55,0.03); }
+    /* hero banner */
+    .hero-banner {
+      background: linear-gradient(135deg, #0f0d08 0%, #1a150e 100%);
+      border: 1px solid rgba(212,175,55,0.2);
+      border-radius: var(--radius);
+      padding: 2rem 2rem;
+      box-shadow: var(--shadow);
+    }
+    .hero-banner .grid-2 { align-items: center; }
+    .law-badge {
+      display: inline-block;
+      background: rgba(212,175,55,0.1);
+      color: var(--gold);
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      border: 1px solid rgba(212,175,55,0.3);
+      text-transform: uppercase;
+    }
+    .arrow-large {
+      font-size: 2rem;
+      color: var(--gold);
+      margin: 0 0.3rem;
+    }
+    /* test card */
+    .test-pass { color: var(--success); font-weight: 600; }
+    .test-fail { color: var(--danger); font-weight: 600; }
+    .test-partial { color: #facc15; font-weight: 600; }
+    /* evidence chip */
+    .chip {
+      display: inline-block;
+      background: rgba(74,158,255,0.08);
+      border: 1px solid rgba(74,158,255,0.2);
+      color: var(--info);
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      margin: 0.2rem 0.2rem;
+    }
+    .chip-gold {
+      background: rgba(212,175,55,0.08);
+      border-color: rgba(212,175,55,0.2);
+      color: var(--gold);
+    }
+    /* footer */
+    .footer-seal {
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.7;
+      font-size: 0.9rem;
+      border-top: 1px solid #222;
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+    }
+    /* misc */
+    .text-gold { color: var(--gold); }
+    .text-mono { font-family: var(--font-mono); }
+    .mt-2 { margin-top: 1.5rem; }
+    .mb-1 { margin-bottom: 0.8rem; }
+    .op-7 { opacity: 0.7; }
+    .fw-400 { font-weight: 400; }
+    .small { font-size: 0.8rem; }
+    .inline-icon { margin-right: 0.4rem; }
+    a { color: var(--info); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .iso-link { display: block; padding: 0.4rem 0; border-bottom: 1px solid #1e1e1e; }
+    .iso-link:last-child { border-bottom: none; }
+  </style>
+</head>
+<body>
+
+  <!-- 1. REGISTRY HEADER -->
+  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem 1.5rem; margin-bottom: 0.2rem;">
+    <span style="font-family: var(--font-heading); font-size: 2.8rem; color: var(--gold); font-weight: 300; line-height: 1;">Φ</span>
+    <span style="font-family: var(--font-heading); font-size: 1.6rem; letter-spacing: 0.08em; color: #fff; text-transform: uppercase;">Theophysics Registry</span>
+    <span class="badge badge-gold" style="margin-left: auto;"><i class="fas fa-fingerprint" style="margin-right: 0.4rem;"></i>ISO-004</span>
+  </div>
+  <div style="display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; align-items: center; margin-top: 0.2rem;">
+    <span style="font-family: var(--font-heading); letter-spacing: 0.04em; color: var(--text-muted); font-size: 0.9rem;">Quantum Collapse ↔ The Fall</span>
+    <span class="badge badge-green"><i class="fas fa-check-circle" style="margin-right: 0.3rem;"></i>Level 3 · Isomorphism</span>
+    <span class="badge badge-yellow"><i class="fas fa-exclamation-triangle" style="margin-right: 0.3rem;"></i>Open problem</span>
+    <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">confidence: medium</span>
+    <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">v1.0 · 2026-03-10</span>
+  </div>
+  <div class="gradient-line" style="margin-top: 1.2rem;"></div>
+
+  <!-- 2. HERO BANNER -->
+  <div class="hero-banner" style="margin-top: 1.8rem;">
+    <div class="grid-2">
+      <!-- left -->
+      <div>
+        <span class="law-badge"><i class="fas fa-gavel" style="margin-right: 0.3rem;"></i>Law 3 · 5 · 6 · 8</span>
+        <h1 style="margin-top: 0.8rem; font-size: 2.2rem; line-height: 1.2;">Quantum Collapse <span class="arrow-large">⟷</span> The Fall</h1>
+        <div style="font-family: var(--font-heading); letter-spacing: 0.04em; color: var(--text-muted); text-transform: uppercase; font-size: 0.85rem; margin-top: 0.2rem;">Domain A · Physics ⟷ Domain B · Theology</div>
+        <div class="pull-quote" style="margin-top: 1.2rem;">“The Fall as collapse, not as moral failure alone — the irreversibility is structural, not punitive.”</div>
+      </div>
+      <!-- right: equation card -->
+      <div class="card" style="background: #0f0e0c; border: 1px solid rgba(212,175,55,0.2);">
+        <div style="font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.6rem;"><i class="fas fa-equals" style="margin-right: 0.4rem;"></i>Core equations</div>
+        <div class="eq-block" style="background: #0a0a0a; border-left-color: var(--info);">|ψ⟩ = α|0⟩ + β|1⟩ → (measurement) → |0⟩ or |1⟩</div>
+        <div style="text-align: center; font-size: 1.4rem; color: var(--gold); margin: 0.2rem 0;">⟷</div>
+        <div class="eq-block" style="background: #0a0a0a; border-left-color: var(--gold);">|Moral⟩ = α|Good⟩ + β|Evil⟩ → (Tree) → |Fallen⟩</div>
+        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); margin-top: 0.5rem;">non-local collapse: “in Adam all die” · 1 Cor 15:22</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. DOMAIN SPECIFICATIONS -->
+  <div style="margin-top: 2.8rem;">
+    <div class="section-num">01</div>
+    <h2>Domain specifications</h2>
+    <div class="gradient-line"></div>
+    <div class="grid-2">
+      <!-- Domain A -->
+      <div class="card card-blue">
+        <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+          <i class="fas fa-atom" style="color: var(--info); font-size: 1.6rem;"></i>
+          <span style="font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.06em; color: var(--info);">Domain A · Physics</span>
+        </div>
+        <h3 style="font-family: var(--font-body); text-transform: none; letter-spacing: normal; font-weight: 500; color: #fff;">Quantum wavefunction collapse</h3>
+        <p style="margin-top: 0.6rem; font-size: 0.9rem;">A quantum system in superposition collapses to a definite eigenstate upon measurement. The collapse is irreversible, observer-dependent, and non-local for entangled systems.</p>
+        <div class="eq-block" style="margin-top: 0.8rem; font-size: 0.85rem;">|ψ⟩ = α|0⟩ + β|1⟩ → (measurement) → |0⟩ or |1⟩</div>
+        <p style="margin-top: 0.6rem; font-size: 0.8rem; color: var(--text-muted);"><i class="fa-regular fa-circle-check" style="color: var(--info);"></i> von Neumann measurement · Bell non-locality · decoherence</p>
+      </div>
+      <!-- Domain B -->
+      <div class="card card-gold">
+        <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+          <i class="fas fa-dove" style="color: var(--gold); font-size: 1.6rem;"></i>
+          <span style="font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold);">Domain B · Theology</span>
+        </div>
+        <h3 style="font-family: var(--font-body); text-transform: none; letter-spacing: normal; font-weight: 500; color: #fff;">The Fall (Genesis 3)</h3>
+        <p style="margin-top: 0.6rem; font-size: 0.9rem;">Moral superposition (|Good⟩ + |Evil⟩) collapses upon Adam's measurement (eating from the Tree of Knowledge). Irreversible, observer-dependent (federal headship), non-local for all entangled humans.</p>
+        <div class="eq-block" style="margin-top: 0.8rem; font-size: 0.85rem;">|Moral⟩ = α|Good⟩ + β|Evil⟩ → (Tree) → |Fallen⟩</div>
+        <p style="margin-top: 0.6rem; font-size: 0.8rem; color: var(--text-muted);"><i class="fa-regular fa-circle-check" style="color: var(--gold);"></i> Gen 2:17 · Gen 3:1-7 · 1 Cor 15:22 · federal headship</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. THE ISOMORPHIC MAPPING -->
+  <div style="margin-top: 2.8rem;">
+    <div class="section-num">02</div>
+    <h2>Isomorphic mapping</h2>
+    <div class="gradient-line"></div>
+    <p style="margin-bottom: 0.8rem; font-size: 0.9rem;">Element-by-element structural correspondence — <strong>not metaphor</strong>, but operational topology.</p>
+    <div style="overflow-x: auto;">
+      <table class="mapping-table">
+        <thead>
+          <tr><th>Quantum Mechanics</th><th>Genesis 3</th><th>Structural Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Superposition state |ψ⟩</td><td>Pre-Fall innocence (no knowledge of good/evil)</td><td>Undetermined state before measurement axis</td></tr>
+          <tr><td>Measurement apparatus</td><td>Tree of Knowledge of Good and Evil</td><td>Instrument that forces collapse</td></tr>
+          <tr><td>Decoherence / environmental noise</td><td>The serpent</td><td>Agent coupling system to apparatus, making measurement likely</td></tr>
+          <tr><td>Observer (triggers collapse)</td><td>Adam (federal head)</td><td>Authoritative measurement</td></tr>
+          <tr><td>Non-authoritative observer</td><td>Eve</td><td>Interacts but does not trigger system-wide collapse</td></tr>
+          <tr><td>Wavefunction collapse</td><td>“The eyes of both were opened” (Gen 3:7)</td><td>Irreversible transition from superposition to eigenstate</td></tr>
+          <tr><td>Non-local collapse of entangled particles</td><td>“In Adam all die” (1 Cor 15:22)</td><td>Measurement on one collapses all entangled subsystems</td></tr>
+          <tr><td>Post-measurement definite state</td><td>Fallen humanity — knowledge, mortality, exile</td><td>System in eigenstate, no return to superposition</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top: 1rem; background: var(--surface2); padding: 1rem 1.2rem; border-radius: var(--radius); border-left: 3px solid var(--gold);">
+      <p style="font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.3rem;"><i class="fas fa-comment"></i> The Eve–Adam asymmetry</p>
+      <p style="font-size: 0.85rem;">Eve eats first (Gen 3:6) — no collapse. Adam eats second — THEN “the eyes of both were opened” (Gen 3:7). Maps to observer hierarchy: not all measurements are equivalent. <span style="color: var(--gold);">Open problem</span> — standard QM has no federal observer.</p>
+    </div>
+  </div>
+
+  <!-- 5. SEPARATOR TESTS (2x2 grid) -->
+  <div style="margin-top: 2.8rem;">
+    <div class="section-num">03</div>
+    <h2>Separator tests</h2>
+    <div class="gradient-line"></div>
+    <div class="grid-4">
+      <!-- Test A -->
+      <div class="card">
+        <h3 style="font-size: 1rem; letter-spacing: 0.04em;"><i class="fa-regular fa-sitemap" style="color: var(--gold); margin-right: 0.4rem;"></i>Test A · Structural Preservation</h3>
+        <p style="font-size: 0.85rem; margin: 0.5rem 0;">Do relations survive under mapping?</p>
+        <p style="font-size: 0.85rem;">Seven operational steps map cleanly: superposition → innocence, apparatus → Tree, decoherence → serpent, observer → Adam, collapse → eyes opened, non-local → “in Adam all die”, definite state → fallen humanity.</p>
+        <p style="margin-top: 0.6rem;"><span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span> <span style="font-size: 0.75rem; color: var(--text-muted);">(6/7 structural points, observer hierarchy open)</span></p>
+      </div>
+      <!-- Test B -->
+      <div class="card">
+        <h3 style="font-size: 1rem; letter-spacing: 0.04em;"><i class="fa-regular fa-shuffle" style="color: var(--gold); margin-right: 0.4rem;"></i>Test B · Non-Arbitrariness</h3>
+        <p style="font-size: 0.85rem; margin: 0.5rem 0;">Is the mapping forced, or could you swap targets?</p>
+        <p style="font-size: 0.85rem;">Swap test: Fall in physics slot? Six of seven elements map. The observer hierarchy (Eve/Adam asymmetry) has no standard QM counterpart — the mapping is honest about the gap.</p>
+        <p style="margin-top: 0.6rem;"><span class="test-partial"><i class="fa-regular fa-circle-exclamation"></i> PARTIAL</span> <span style="font-size: 0.75rem; color: var(--text-muted);">(asymmetric bidirectionality)</span></p>
+      </div>
+      <!-- Test C -->
+      <div class="card">
+        <h3 style="font-size: 1rem; letter-spacing: 0.04em;"><i class="fa-regular fa-ban" style="color: var(--gold); margin-right: 0.4rem;"></i>Test C · Constraint</h3>
+        <p style="font-size: 0.85rem; margin: 0.5rem 0;">Does the mapping rule things out?</p>
+        <p style="font-size: 0.85rem;">Yes: the mapping forbids a reversible Fall (collapse is irreversible). It forbids a non-entangled Fall (non-locality is structural). It forbids a Fall without a measurement apparatus (Tree is necessary).</p>
+        <p style="margin-top: 0.6rem;"><span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span> <span style="font-size: 0.75rem; color: var(--text-muted);">(three structural constraints)</span></p>
+      </div>
+      <!-- Test D -->
+      <div class="card">
+        <h3 style="font-size: 1rem; letter-spacing: 0.04em;"><i class="fa-regular fa-arrow-right-arrow-left" style="color: var(--gold); margin-right: 0.4rem;"></i>Test D · Bidirectionality</h3>
+        <p style="font-size: 0.85rem; margin: 0.5rem 0;">Does each side predict the other?</p>
+        <p style="font-size: 0.85rem;">QM → Theology: structural vocabulary for irreversibility, non-locality, apparatus. Theology → QM: suggests observer hierarchy as missing concept. Strong in one direction, suggestive in the other.</p>
+        <p style="margin-top: 0.6rem;"><span class="test-partial"><i class="fa-regular fa-circle-exclamation"></i> PARTIAL</span> <span style="font-size: 0.75rem; color: var(--text-muted);">(asymmetric but generative)</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CLASSIFICATION & EVIDENCE -->
+  <div style="margin-top: 2.8rem;">
+    <div class="section-num">04</div>
+    <h2>Classification &amp; evidence</h2>
+    <div class="gradient-line"></div>
+    <div class="grid-2">
+      <div class="card">
+        <h3 style="font-size: 1rem; letter-spacing: 0.04em;"><i class="fa-regular fa-diagram-project" style="color: var(--gold);"></i> Classification</h3>
+        <ul style="list-style: none; margin-top: 0.8rem; font-size: 0.9rem;">
+          <li><span style="color: var(--gold);">Type:</span> Structural Isomorphism (6/7 points)</li>
+          <li><span style="color: var(--gold);">Open problem:</span> Observer hierarchy mechanism</li>
+          <li><span style="color: var(--gold);">Confidence:</span> Medium — observation confirmed, mechanism unsolved</li>
+          <li><span style="color: var(--gold);">Reframe level:</span> Structural (Level 2)</li>
+          <li><span style="color: var(--gold);">Connection count:</span> Moderate (ISO-001, ISO-002, ISO-003)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="font-size: 1rem; letter-spacing: 0.04em;"><i class="fa-regular fa-flask" style="color: var(--gold);"></i> Evidence &amp; laws</h3>
+        <div style="margin: 0.8rem 0;">
+          <span class="chip">Gen 2:17</span>
+          <span class="chip">Gen 3:1-7</span>
+          <span class="chip">1 Cor 15:22</span>
+          <span class="chip">1 Cor 15:45</span>
+          <span class="chip">von Neumann (1932)</span>
+          <span class="chip">Bell (1964)</span>
+          <span class="chip">decoherence (Zurek, Zeh)</span>
+          <span class="chip chip-gold">Law 3 · Self-Reference</span>
+          <span class="chip chip-gold">Law 5 · Irreversibility</span>
+          <span class="chip chip-gold">Law 6 · Entropy</span>
+          <span class="chip chip-gold">Law 8 · Non-locality</span>
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-regular fa-bookmark"></i> Axiom dependencies: A1.1, measurement as irreversible transition, entanglement, federal headship</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. FALSIFICATION CRITERIA -->
+  <div style="margin-top: 2.8rem;">
+    <div class="section-num">05</div>
+    <h2>Falsification criteria</h2>
+    <div class="gradient-line"></div>
+    <div class="card card-danger">
+      <p style="font-family: var(--font-heading); letter-spacing: 0.04em; color: var(--danger); text-transform: uppercase; font-size: 0.8rem;"><i class="fa-regular fa-skull" style="margin-right: 0.4rem;"></i>Kill conditions</p>
+      <ul style="margin-top: 0.8rem; list-style: none; font-size: 0.9rem;">
+        <li style="margin-bottom: 0.6rem;"><span style="color: var(--danger);">1. Text-based:</span> Show that Genesis 3:6-7 does NOT record an asymmetry between Eve's eating and Adam's eating. If both collapses happen independently, the observer hierarchy mapping fails. (The text is explicit: Eve ate, gave to Adam, he ate, THEN “the eyes of both were opened.”)</li>
+        <li style="margin-bottom: 0.6rem;"><span style="color: var(--danger);">2. Physics-based:</span> Show that NO physical system exhibits measurement asymmetry based on observer properties. If measurement is always observer-independent (standard QM), the observer hierarchy is purely theological and the isomorphism has a structural gap.</li>
+        <li><span style="color: var(--danger);">3. Structural:</span> Show that the seven-point mapping is arbitrary — that you could map the Fall equally well to any physical process with sequential steps. If so, the mapping is too loose to count as structural isomorphism (narrative pattern-matching only).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 8. RELATED ISOMORPHISMS -->
+  <div style="margin-top: 2.8rem;">
+    <div class="section-num">06</div>
+    <h2>Related isomorphisms</h2>
+    <div class="gradient-line"></div>
+    <div class="grid-2" style="grid-template-columns: 1fr 1fr;">
+      <div class="card" style="padding: 1rem 1.2rem;">
+        <span class="iso-link"><i class="fa-regular fa-link" style="color: var(--gold); margin-right: 0.5rem;"></i><a href="#">ISO-001 · Trinity</a> <span style="font-size: 0.75rem; color: var(--text-muted);">— ground state of superposition</span></span>
+        <span class="iso-link"><i class="fa-regular fa-link" style="color: var(--gold); margin-right: 0.5rem;"></i><a href="#">ISO-002 · Grace</a> <span style="font-size: 0.75rem; color: var(--text-muted);">— reversal mechanism post-collapse</span></span>
+        <span class="iso-link"><i class="fa-regular fa-link" style="color: var(--gold); margin-right: 0.5rem;"></i><a href="#">ISO-003 · Entropy/Sin</a> <span style="font-size: 0.75rem; color: var(--text-muted);">— degradation trajectory after collapse</span></span>
+      </div>
+      <div class="card" style="padding: 1rem 1.2rem;">
+        <span class="iso-link"><i class="fa-regular fa-file-lines" style="color: var(--info); margin-right: 0.5rem;"></i><a href="#">Trinity Full Paper</a></span>
+        <span class="iso-link"><i class="fa-regular fa-file-lines" style="color: var(--info); margin-right: 0.5rem;"></i><a href="#">Six Theorems That Accidentally Proved Grace</a></span>
+        <span style="display: block; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.4rem;"><i class="fa-regular fa-cube"></i> Cross-reference: measurement problem, entanglement, federal theology</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. FOOTER -->
+  <div style="margin-top: 3rem; border-top: 1px solid #1e1e1e; padding-top: 1.5rem;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.8rem;">
+      <div>
+        <span style="font-family: var(--font-heading); letter-spacing: 0.06em; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">Theophysics Research Program</span>
+        <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); margin-left: 1rem;">POF 2828</span>
+        <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); margin-left: 0.8rem;">v1.0</span>
+      </div>
+      <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">
+        <i class="fa-regular fa-phi" style="color: var(--gold);"></i> ISO-004 · 2026
+      </

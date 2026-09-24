@@ -1,0 +1,678 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "physics",
+        "type": "physics",
+        "strength": 10
+      },
+      {
+        "name": "theology",
+        "type": "theology",
+        "strength": 10
+      },
+      {
+        "name": "mathematics",
+        "type": "mathematics",
+        "strength": 8
+      },
+      {
+        "name": "philosophy",
+        "type": "philosophy",
+        "strength": 6
+      },
+      {
+        "name": "information",
+        "type": "information",
+        "strength": 7
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": true,
+        "role": "Grace/Gravity: the pull between souls or masses, with added resistance term (1-R)",
+        "strength": 10
+      },
+      {
+        "variable": "M",
+        "present": true,
+        "role": "Meaning/Mass: moral mass with interpretation function I",
+        "strength": 10
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Energy/Spirit: mapped to Truth field in Maxwell analog",
+        "strength": 9
+      },
+      {
+        "variable": "S",
+        "present": true,
+        "role": "Strong/Love: love potential with betrayal term (1-B)",
+        "strength": 9
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Thermo/Judgment: moral entropy with grace work term",
+        "strength": 9
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Info/Logos: Shannon entropy identical, Logos has source term",
+        "strength": 9
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "Relativity/Relationship: relational invariant with mutual consent",
+        "strength": 9
+      },
+      {
+        "variable": "Q",
+        "present": true,
+        "role": "Quantum/Faith: spiritual state collapse via threshold \u0398c",
+        "strength": 9
+      },
+      {
+        "variable": "F",
+        "present": true,
+        "role": "Weak/Sin: sin-decay rate with will factor Pwill",
+        "strength": 9
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence/Christ: identity between physical and spiritual coherence at full integration",
+        "strength": 10
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": false,
+        "how": "not directly invoked"
+      },
+      {
+        "id": "A1.2",
+        "invoked": false,
+        "how": "not directly invoked"
+      },
+      {
+        "id": "A2.1",
+        "invoked": false,
+        "how": "not directly invoked"
+      },
+      {
+        "id": "A2.2",
+        "invoked": false,
+        "how": "not directly invoked"
+      },
+      {
+        "id": "A5.1",
+        "invoked": false,
+        "how": "not directly invoked"
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": "not directly invoked"
+      },
+      {
+        "id": "BC6",
+        "invoked": false,
+        "how": "not directly invoked"
+      },
+      {
+        "id": "A1.3",
+        "invoked": false,
+        "how": "not directly invoked"
+      },
+      {
+        "id": "T3.1",
+        "invoked": false,
+        "how": "not directly invoked"
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "External Grace: grace is external work from an inexhaustible source, reversing moral entropy"
+      },
+      {
+        "id": "BC7",
+        "invoked": false,
+        "how": "not directly invoked"
+      },
+      {
+        "id": "BC8",
+        "invoked": false,
+        "how": "not directly invoked"
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "source",
+          "ground",
+          "G\u2080 in ratio form"
+        ]
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "Logos",
+          "Word",
+          "mediator",
+          "RJ in ratio form",
+          "Cchrist"
+        ]
+      },
+      "spirit": {
+        "present": true,
+        "manifestations": [
+          "power",
+          "presence",
+          "\u0393 in ratio form"
+        ]
+      },
+      "trinitarian_structure": "explicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-001",
+        "domain_a": "gravity",
+        "domain_b": "grace",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-002",
+        "domain_a": "mass-energy equivalence",
+        "domain_b": "meaning-consequence",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-003",
+        "domain_a": "electromagnetism",
+        "domain_b": "truth",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-004",
+        "domain_a": "strong force",
+        "domain_b": "love-covenant",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-005",
+        "domain_a": "thermodynamics",
+        "domain_b": "moral entropy",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-006",
+        "domain_a": "information theory",
+        "domain_b": "Logos",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-007",
+        "domain_a": "relativity",
+        "domain_b": "relationship",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-008",
+        "domain_a": "quantum mechanics",
+        "domain_b": "faith",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-009",
+        "domain_a": "weak force",
+        "domain_b": "sin-decay",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-010",
+        "domain_a": "coherence",
+        "domain_b": "Christ",
+        "strength": 10,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "grace",
+        "context": "gravity analog with resistance; external work term in thermodynamics",
+        "weight": 10
+      },
+      {
+        "concept": "sin",
+        "context": "decay analog with will factor; moral entropy",
+        "weight": 10
+      },
+      {
+        "concept": "Logos",
+        "context": "information analog with generative source term; Christ as Word",
+        "weight": 10
+      },
+      {
+        "concept": "covenant",
+        "context": "strong force analog with betrayal term",
+        "weight": 9
+      },
+      {
+        "concept": "faith",
+        "context": "quantum collapse analog with threshold",
+        "weight": 9
+      },
+      {
+        "concept": "redemption",
+        "context": "grace reversing moral entropy; atonement implied",
+        "weight": 8
+      },
+      {
+        "concept": "judgment",
+        "context": "thermodynamic analog; moral entropy increase",
+        "weight": 7
+      },
+      {
+        "concept": "incarnation",
+        "context": "Christ as coherence; Logos made flesh",
+        "weight": 8
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "isomorphism",
+        "context": "structural mapping between physical and spiritual laws",
+        "weight": 10
+      },
+      {
+        "concept": "asymmetry",
+        "context": "free will term added to each physical law",
+        "weight": 10
+      },
+      {
+        "concept": "identity",
+        "context": "\u03c7 = \ud835\udc9e at full integration",
+        "weight": 9
+      },
+      {
+        "concept": "necessity",
+        "context": "physical laws are necessary; spiritual laws add contingent choice",
+        "weight": 8
+      },
+      {
+        "concept": "sufficiency",
+        "context": "the Master Equation is sufficient to describe both domains",
+        "weight": 7
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "love",
+        "present": true,
+        "strength": 10
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "patience",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 8
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "self_control",
+        "present": false,
+        "strength": 0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "physics:gravity",
+      "to": "theology:grace",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "physics:mass-energy",
+      "to": "theology:meaning-consequence",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "physics:electromagnetism",
+      "to": "theology:truth",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "physics:strong_force",
+      "to": "theology:love-covenant",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "physics:thermodynamics",
+      "to": "theology:moral_entropy",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "physics:information_theory",
+      "to": "theology:Logos",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "physics:relativity",
+      "to": "theology:relationship",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "physics:quantum_mechanics",
+      "to": "theology:faith",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "physics:weak_force",
+      "to": "theology:sin-decay",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "physics:coherence",
+      "to": "theology:Christ",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "theology:grace",
+      "to": "theology:free_will",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "theology:sin",
+      "to": "theology:free_will",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "theology:faith",
+      "to": "theology:free_will",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "theology:Logos",
+      "to": "theology:Christ",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "theology:Christ",
+      "to": "theology:coherence",
+      "relation": "is",
+      "weight": 10
+    },
+    {
+      "from": "theology:Trinity",
+      "to": "theology:grace",
+      "relation": "produces",
+      "weight": 9
+    },
+    {
+      "from": "theology:Trinity",
+      "to": "theology:Logos",
+      "relation": "produces",
+      "weight": 9
+    },
+    {
+      "from": "theology:Trinity",
+      "to": "theology:love",
+      "relation": "produces",
+      "weight": 9
+    },
+    {
+      "from": "mathematics:192\u03c0\u00b3",
+      "to": "physics:weak_force",
+      "relation": "derives_from",
+      "weight": 10
+    },
+    {
+      "from": "mathematics:192\u03c0\u00b3",
+      "to": "theology:sin-decay",
+      "relation": "derives_from",
+      "weight": 10
+    }
+  ],
+  "tags": {
+    "primary": [
+      "master-equation",
+      "isomorphism",
+      "asymmetry",
+      "free-will",
+      "coherence"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/theology",
+      "pillar/mathematics"
+    ],
+    "series": "master-equation",
+    "classification": "foundational"
+  },
+  "citations": {
+    "scripture": [],
+    "academic": [
+      {
+        "ref": "Fermi's theory of beta decay",
+        "context": "source of 192\u03c0\u00b3 denominator in Law 9"
+      },
+      {
+        "ref": "Shannon entropy",
+        "context": "H = -\u2211p\u1d62 log p\u1d62 used identically in Law 6"
+      },
+      {
+        "ref": "Kolmogorov complexity",
+        "context": "K(x) = min |p| : U(p) = x used in Law 6"
+      },
+      {
+        "ref": "Landauer's principle",
+        "context": "erasing disorder costs real energy, cited in Law 5"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "FP-005",
+        "context": "likely reference to formal proof of Master Equation"
+      },
+      {
+        "ref": "ISO-025",
+        "context": "likely reference to isomorphism series"
+      }
+    ],
+    "total_count": 4
+  },
+  "word_anomalies": [
+    {
+      "word": "192\u03c0\u00b3",
+      "frequency": 4,
+      "significance": "specific denominator from Fermi decay, unchanged in spiritual equation"
+    },
+    {
+      "word": "Pwill",
+      "frequency": 2,
+      "significance": "neologism for will factor in sin-decay"
+    },
+    {
+      "word": "\u0398c",
+      "frequency": 2,
+      "significance": "neologism for faith collapse threshold"
+    },
+    {
+      "word": "Cmutual",
+      "frequency": 2,
+      "significance": "neologism for mutual consent in relationship"
+    },
+    {
+      "word": "ghost term",
+      "frequency": 1,
+      "significance": "\u0393 as non-conserved free will term"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "assertive and demonstrative; presents a formal claim with mathematical verification",
+    "Q1_identity": "a canonical article presenting the Master Equation and its ten law-by-law isomorphisms between physics and theology",
+    "Q2_domain": "physics, theology, mathematics",
+    "Q3_claim": "the ten fundamental physical laws are structurally identical to ten spiritual laws, with the only difference being a free-will asymmetry term in each spiritual version",
+    "Q4_support": "term-by-term substitution maps, Wolfram verification, JAX verification, specific mathematical constants (192\u03c0\u00b3) unchanged",
+    "Q5_dependencies": "standard physics (Newton, Maxwell, Fermi, Shannon, etc.), Christian theology (Trinity, Logos, grace, sin)",
+    "Q6_consequences": "the physical and spiritual domains are isomorphic; free will is the only asymmetry; coherence (Christ) is the identity at full integration",
+    "Q7_kill": "if any physical law cannot be mapped with the same structure and a single asymmetry term, or if the 192\u03c0\u00b3 denominator is shown to be coincidental"
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "standard physics",
+      "Christian theology",
+      "information theory"
+    ],
+    "required_by": [
+      "formal proofs of Master Equation",
+      "applied isomorphisms"
+    ],
+    "parallel_to": [
+      "other canonical articles in the Master Equation series"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 45,
+    "total_edges": 20,
+    "dominant_domain": "physics",
+    "dominant_chi": "C",
+    "connectivity_score": 9,
+    "one_sentence": "This document establishes the ten structural isomorphisms between physical laws and spiritual laws, with free will as the single asymmetry term, culminating in the identity of coherence and Christ."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": true,
+      "how": "Grace (Law 1) and Faith (Law 8) both involve resistance/choice; grace is the pull, faith is the response"
+    },
+    "2_9_will_conservation": {
+      "active": true,
+      "how": "Meaning (Law 2) and Sin-decay (Law 9) both involve will; meaning requires interpretation, sin requires will"
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Truth (Law 3) and Coherence (Law 10) are both about alignment; truth is the field, coherence is the integration"
+    },
+    "4_7_love_relationship": {
+      "active": true,
+      "how": "Love (Law 4) and Relationship (Law 7) both involve covenant and mutual consent"
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Judgment (Law 5) and Logos (Law 6) both involve order; entropy vs. information"
+    },
+    "pairs_active_count": 5
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 10
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 10
+    },
+    "love": {
+      "present": true,
+      "strength": 10
+    },
+    "judgment": {
+      "present": true,
+      "strength": 9
+    },
+    "logos": {
+      "present": true,
+      "strength": 10
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": true,
+      "strength": 9
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": true,
+      "strength": 10
+    },
+    "operators_present_count": 7
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "introduction to Master Equation",
+      "basic physics and theology"
+    ],
+    "read_after": [
+      "formal proofs",
+      "applied isomorphisms"
+    ]
+  }
+}

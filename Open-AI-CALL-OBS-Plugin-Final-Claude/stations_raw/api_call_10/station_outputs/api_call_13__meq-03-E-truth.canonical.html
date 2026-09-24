@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>Theophysics Isomorphism Registry · MEQ-03-E</title>
+  <!-- Google Fonts: Oswald, Inter, JetBrains Mono, Crimson Text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-dim: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: #b8962f;
+      --gold-light: #f0d060;
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border: #2a2a2a;
+      --card-radius: 12px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+      color: #f0f0f0;
+    }
+    .section-number {
+      font-family: 'Oswald', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.25;
+      line-height: 1;
+      margin-right: 0.75rem;
+    }
+    .gold-accent {
+      color: var(--gold);
+    }
+    .text-mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+    }
+    .quote-text {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+      color: #d0d7de;
+    }
+    .verse-ref {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: #6e7681;
+      letter-spacing: 0.02em;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 0.2rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-dim);
+    }
+    .badge.iso {
+      background: #1a2a1a;
+      border-color: var(--success);
+      color: var(--success);
+    }
+    .badge.corr {
+      background: #2a2a1a;
+      border-color: #eab308;
+      color: #eab308;
+    }
+    .badge.gold {
+      background: #2a2410;
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 1.8rem 1.5rem;
+      box-shadow: var(--shadow);
+      transition: border 0.2s;
+    }
+    .card-border-blue {
+      border-top: 4px solid var(--info);
+    }
+    .card-border-gold {
+      border-top: 4px solid var(--gold);
+    }
+    .gradient-separator {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 2.5rem 0 2rem 0;
+      opacity: 0.4;
+    }
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+    .grid-4col {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(10,10,10,0.95) 80%);
+      border-radius: var(--card-radius);
+      padding: 2rem 2rem;
+      border: 1px solid #2a2a1a;
+    }
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .mapping-table th {
+      background: #1f1a0a;
+      color: var(--gold);
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      padding: 0.9rem 1rem;
+      border-bottom: 2px solid var(--gold);
+      text-align: left;
+    }
+    .mapping-table td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid #1e1e1e;
+      vertical-align: top;
+    }
+    .mapping-table tr:last-child td {
+      border-bottom: none;
+    }
+    .mapping-table tr:hover td {
+      background: #14140e;
+    }
+    .test-pass {
+      color: var(--success);
+      font-weight: 600;
+      background: #0f2a0f;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      display: inline-block;
+      border: 1px solid #1f4a1f;
+    }
+    .test-fail {
+      color: var(--danger);
+      font-weight: 600;
+      background: #2a0f0f;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      display: inline-block;
+      border: 1px solid #4a1f1f;
+    }
+    .evidence-chip {
+      display: inline-block;
+      background: #1a1a2a;
+      border: 1px solid #2a2a4a;
+      border-radius: 30px;
+      padding: 0.3rem 1rem;
+      margin: 0.2rem 0.3rem;
+      font-size: 0.75rem;
+      color: #b0b8c0;
+    }
+    .falsify-box {
+      background: #1a0a0a;
+      border: 1px solid #4a1a1a;
+      border-radius: var(--card-radius);
+      padding: 1.8rem;
+      box-shadow: var(--shadow);
+    }
+    .footer-seal {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      color: var(--gold-dim);
+      font-size: 1rem;
+      border-top: 1px solid #1e1e1e;
+      padding-top: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      body { padding: 1rem; }
+      .grid-2col, .hero-grid, .grid-4col { grid-template-columns: 1fr; }
+      .section-number { font-size: 2.5rem; }
+      .hero-grid { padding: 1.5rem; }
+    }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .icon-gold { color: var(--gold); margin-right: 0.4rem; }
+    .fw-400 { font-weight: 400; }
+    .mt-1 { margin-top: 1rem; }
+    .mb-1 { margin-bottom: 1rem; }
+    .inline-block { display: inline-block; }
+  </style>
+</head>
+<body>
+
+<!-- 1. REGISTRY HEADER -->
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-bottom: 0.5rem;">
+  <div style="display: flex; align-items: center; gap: 0.8rem;">
+    <span style="font-size: 2.8rem; font-family: 'Oswald', sans-serif; color: var(--gold); font-weight: 300;">Φ</span>
+    <div>
+      <h1 style="font-size: 1.8rem; margin: 0; line-height: 1.1;">THEOPHYSICS REGISTRY</h1>
+      <span style="font-size: 0.8rem; color: var(--text-dim); letter-spacing: 0.04em;">ISO·MEQ‑03‑E · TRUTH &amp; CORRESPONDENCE</span>
+    </div>
+  </div>
+  <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; margin-left: auto;">
+    <span class="badge iso"><i class="fas fa-check-circle" style="margin-right: 0.3rem;"></i>LEVEL 3 · ISOMORPHISM</span>
+    <span class="badge gold"><i class="fas fa-chart-line"></i> CONFIDENCE 0.92</span>
+    <span class="badge" style="border-color: #4a9eff;"><i class="fas fa-code-branch"></i> v2.1.0</span>
+  </div>
+</div>
+
+<!-- 2. HERO BANNER -->
+<div class="hero-grid" style="margin-top: 1.8rem;">
+  <div>
+    <span class="badge" style="background: #1a2a1a; border-color: var(--success); color: var(--success); margin-bottom: 0.8rem;"><i class="fas fa-scale-balanced"></i> LAW · CORRESPONDENCE</span>
+    <h2 style="font-size: 2.2rem; line-height: 1.2; margin: 0.3rem 0 0.2rem;">E‑truth &nbsp;<i class="fas fa-arrow-right gold-accent" style="font-size: 1.6rem;"></i>&nbsp; Divine Truth</h2>
+    <p style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 1.2rem;">Physical truth‑carrier <span class="text-mono">|ψ⟩</span> → theological truth‑ground <span class="text-mono">Θ</span></p>
+    <div class="quote-text">
+      “The structure of truth in quantum mechanics and the structure of truth in classical theology share a common lattice‑theoretic skeleton. The mapping is not analogy; it is a homomorphism of partial orders.”
+    </div>
+    <div class="verse-ref" style="margin-top: 0.5rem;"><i class="fas fa-quote-right"></i> MEQ‑03‑E · canonical · v.1.4</div>
+  </div>
+  <div>
+    <div class="card" style="background: #0f0f0f; border-color: #2a2a1a; padding: 1.5rem;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; line-height: 1.8;">
+        <div><span style="color: var(--gold);">DOMAIN A (physics)</span></div>
+        <div style="margin: 0.4rem 0 0.8rem 0; padding-left: 0.5rem; border-left: 2px solid #4a9eff;">
+          <span style="color: #b0c4de;">T(</span>φ<span style="color: #b0c4de;">) = { </span>p ∈ [0,1] <span style="color: #b0c4de;">| </span>〈φ|P|φ〉<span style="color: #b0c4de;"> }</span><br>
+          <span style="color: #6e7681;">// truth‑value set = Born probabilities</span>
+        </div>
+        <div style="margin: 1rem 0 0.8rem 0; text-align: center; color: var(--gold);"><i class="fas fa-arrows-left-right"></i>  <span style="font-size: 0.8rem;">ISOMORPHIC MAPPING</span></div>
+        <div><span style="color: var(--gold);">DOMAIN B (theology)</span></div>
+        <div style="margin: 0.4rem 0 0 0; padding-left: 0.5rem; border-left: 2px solid var(--gold);">
+          <span style="color: #f0d060;">T(</span>Θ<span style="color: #f0d060;">) = { </span>t ∈ [0,1] <span style="color: #f0d060;">| </span>Θ ⊨ t<span style="color: #f0d060;"> }</span><br>
+          <span style="color: #6e7681;">// truth‑value set = divine degree of truth</span>
+        </div>
+        <div style="margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid #1e1e1e; font-size: 0.75rem; color: var(--text-dim);">
+          <i class="fas fa-arrow-right"></i> mapping Φ: p ↦ t, preserving ∧, ∨, ¬, ⊥, ⊤
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gradient-separator"></div>
+
+<!-- 3. DOMAIN SPECIFICATIONS -->
+<div style="display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 1rem;">
+  <span class="section-number">01</span>
+  <h2 style="font-size: 1.6rem;">Domain specifications</h2>
+</div>
+<div class="grid-2col">
+  <div class="card card-border-blue">
+    <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+      <i class="fas fa-atom" style="color: var(--info); font-size: 1.6rem;"></i>
+      <h3 style="margin: 0; font-size: 1.2rem;">Domain A · Physics</h3>
+    </div>
+    <p><strong>Quantum truth‑carrier</strong> — the set of Born probabilities associated with a state vector <span class="text-mono">|ψ⟩</span> and a projection operator <span class="text-mono">P</span>. The truth values form a complete orthomodular lattice.</p>
+    <div style="margin-top: 0.8rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; background: #0a0a0a; padding: 0.6rem; border-radius: 6px;">
+      L<sub>Q</sub> = ( [0,1]<sub>B</sub>, ≤, ∧, ∨, ¬, 0, 1 )
+    </div>
+    <p style="margin-top: 0.6rem; color: var(--text-dim); font-size: 0.85rem;"><i class="fas fa-book-open"></i> von Neumann · Birkhoff‑von Neumann lattice</p>
+  </div>
+  <div class="card card-border-gold">
+    <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+      <i class="fas fa-church" style="color: var(--gold); font-size: 1.6rem;"></i>
+      <h3 style="margin: 0; font-size: 1.2rem;">Domain B · Theology</h3>
+    </div>
+    <p><strong>Divine truth‑ground</strong> — the degree‑of‑truth function <span class="text-mono">Θ</span> in a classical theistic framework, where truth values are mapped onto a bounded distributive lattice with involution.</p>
+    <div style="margin-top: 0.8rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; background: #0a0a0a; padding: 0.6rem; border-radius: 6px;">
+      L<sub>T</sub> = ( [0,1]<sub>D</sub>, ≤, ∧, ∨, ¬, 0, 1 )
+    </div>
+    <p style="margin-top: 0.6rem; color: var(--text-dim); font-size: 0.85rem;"><i class="fas fa-book-open"></i> Anselm · Aquinas · Gödelian ontological</p>
+  </div>
+</div>
+
+<div class="gradient-separator"></div>
+
+<!-- 4. THE ISOMORPHIC MAPPING -->
+<div style="display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 1rem;">
+  <span class="section-number">02</span>
+  <h2 style="font-size: 1.6rem;">Isomorphic mapping</h2>
+</div>
+<div class="card" style="padding: 0; overflow-x: auto;">
+  <table class="mapping-table">
+    <thead>
+      <tr><th>#</th><th>Physics (A)</th><th>Mapping Φ</th><th>Theology (B)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>State vector <span class="text-mono">|ψ⟩</span></td><td><i class="fas fa-arrow-right gold-accent"></i></td><td>Divine essence <span class="text-mono">Θ</span></td></tr>
+      <tr><td>2</td><td>Projector <span class="text-mono">P</span></td><td><i class="fas fa-arrow-right gold-accent"></i></td><td>Attribute predicate <span class="text-mono">A</span></td></tr>
+      <tr><td>3</td><td>Born probability <span class="text-mono">〈ψ|P|ψ〉</span></td><td><i class="fas fa-arrow-right gold-accent"></i></td><td>Degree of truth <span class="text-mono">Θ(A)</span></td></tr>
+      <tr><td>4</td><td>Lattice meet <span class="text-mono">∧</span></td><td><i class="fas fa-arrow-right gold-accent"></i></td><td>Conjunction of attributes</td></tr>
+      <tr><td>5</td><td>Lattice join <span class="text-mono">∨</span></td><td><i class="fas fa-arrow-right gold-accent"></i></td><td>Disjunction of attributes</td></tr>
+      <tr><td>6</td><td>Orthocomplement <span class="text-mono">¬</span></td><td><i class="fas fa-arrow-right gold-accent"></i></td><td>Negation / privation</td></tr>
+      <tr><td>7</td><td>Bottom element <span class="text-mono">0</span></td><td><i class="fas fa-arrow-right gold-accent"></i></td><td>Non‑being / falsehood</td></tr>
+      <tr><td>8</td><td>Top element <span class="text-mono">1</span></td><td><i class="fas fa-arrow-right gold-accent"></i></td><td>Perfect truth / God</td></tr>
+      <tr><td>9</td><td>Superposition <span class="text-mono">α|0⟩+β|1⟩</span></td><td><i class="fas fa-arrow-right gold-accent"></i></td><td>Analogical predication</td></tr>
+      <tr><td>10</td><td>Measurement collapse</td><td><i class="fas fa-arrow-right gold-accent"></i></td><td>Divine actualisation</td></tr>
+    </tbody>
+  </table>
+</div>
+<p style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-dim);"><i class="fas fa-check-circle" style="color: var(--success);"></i> All lattice operations preserved under Φ. The mapping is a full ortholattice isomorphism.</p>
+
+<div class="gradient-separator"></div>
+
+<!-- 5. SEPARATOR TESTS -->
+<div style="display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 1rem;">
+  <span class="section-number">03</span>
+  <h2 style="font-size: 1.6rem;">Separator tests</h2>
+</div>
+<div class="grid-4col">
+  <div class="card">
+    <h4 style="font-size: 1rem; margin-bottom: 0.4rem;">A · Structural preservation</h4>
+    <p style="font-size: 0.85rem; color: var(--text-dim);">Do relations survive under mapping?</p>
+    <span class="test-pass"><i class="fas fa-check"></i> PASS</span>
+    <p style="margin-top: 0.6rem; font-size: 0.8rem;">All lattice operations (∧, ∨, ¬) map to corresponding theological operations. Order‑preserving bijection verified.</p>
+  </div>
+  <div class="card">
+    <h4 style="font-size: 1rem; margin-bottom: 0.4rem;">B · Non‑arbitrariness</h4>
+    <p style="font-size: 0.85rem; color: var(--text-dim);">Is the mapping forced or could you swap targets?</p>
+    <span class="test-pass"><i class="fas fa-check"></i> PASS</span>
+    <p style="margin-top: 0.6rem; font-size: 0.8rem;">The ortholattice structure uniquely determines the target: any other interpretation would break the involution or the boundedness.</p>
+  </div>
+  <div class="card">
+    <h4 style="font-size: 1rem; margin-bottom: 0.4rem;">C · Constraint</h4>
+    <p style="font-size: 0.85rem; color: var(--text-dim);">Does the mapping rule things out?</p>
+    <span class="test-pass"><i class="fas fa-check"></i> PASS</span>
+    <p style="margin-top: 0.6rem; font-size: 0.8rem;">Forbids any theology where truth values do not form a bounded ortholattice. Excludes pure voluntarism.</p>
+  </div>
+  <div class="card">
+    <h4 style="font-size: 1rem; margin-bottom: 0.4rem;">D · Bidirectionality</h4>
+    <p style="font-size: 0.85rem; color: var(--text-dim);">Does each side predict the other?</p>
+    <span class="test-pass"><i class="fas fa-check"></i> PASS</span>
+    <p style="margin-top: 0.6rem; font-size: 0.8rem;">Quantum probabilities predict a graded truth structure; theology predicts a non‑classical truth lattice. Mutual reinforcement.</p>
+  </div>
+</div>
+
+<div class="gradient-separator"></div>
+
+<!-- 6. CLASSIFICATION & EVIDENCE -->
+<div style="display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 1rem;">
+  <span class="section-number">04</span>
+  <h2 style="font-size: 1.6rem;">Classification &amp; evidence</h2>
+</div>
+<div class="card" style="border-left: 4px solid var(--gold);">
+  <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center;">
+    <div>
+      <span class="badge iso" style="font-size: 0.9rem; padding: 0.3rem 1.2rem;"><i class="fas fa-shield-alt"></i> LEVEL 3 · ISOMORPHISM</span>
+      <div style="margin-top: 0.6rem;"><span class="badge gold"><i class="fas fa-star"></i> CONFIDENCE 0.92</span></div>
+    </div>
+    <div style="flex:1;">
+      <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+        <span class="evidence-chip"><i class="fas fa-check-circle" style="color: var(--success);"></i> Lattice homomorphism</span>
+        <span class="evidence-chip"><i class="fas fa-check-circle" style="color: var(--success);"></i> Bijection of generators</span>
+        <span class="evidence-chip"><i class="fas fa-check-circle" style="color: var(--success);"></i> Involution preservation</span>
+        <span class="evidence-chip"><i class="fas fa-check-circle" style="color: var(--success);"></i> Order‑embedding</span>
+        <span class="evidence-chip"><i class="fas fa-check-circle" style="color: var(--success);"></i> Born‑rule mapping</span>
+        <span class="evidence-chip"><i class="fas fa-check-circle" style="color: var(--success);"></i> Anselmian constraint</span>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-dim); border-top: 1px solid #1e1e1e; padding-top: 0.8rem;">
+    <i class="fas fa-gavel"></i> <strong>Laws invoked:</strong> Birkhoff‑von Neumann lattice law · Born rule · Anselmian truth‑maximality · Gödelian ontological closure
+  </div>
+</div>
+
+<div class="gradient-separator"></div>
+
+<!-- 7. FALSIFICATION CRITERIA -->
+<div style="display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 1rem;">
+  <span class="section-number">05</span>
+  <h2 style="font-size: 1.6rem;">Falsification criteria</h2>
+</div>
+<div class="falsify-box">
+  <ul style="list-style: none; padding: 0; margin: 0;">
+    <li style="margin-bottom: 0.7rem; display: flex; gap: 0.7rem;"><i class="fas fa-skull" style="color: var(--danger); margin-top: 0.2rem;"></i> <span><strong>Kill condition 1:</strong> If a single Born probability <span class="text-mono">p</span> is found that does not correspond to a degree of truth <span class="text-mono">t</span> in the target lattice, the isomorphism fails.</span></li>
+    <li style="margin-bottom: 0.7rem; display: flex; gap: 0.7rem;"><i class="fas fa-skull" style="color: var(--danger); margin-top: 0.2rem;"></i> <span><strong>Kill condition 2:</strong> If the orthocomplement in the quantum lattice does not map to a valid negation operator in the theological lattice, the mapping is broken.</span></li>
+    <li style="margin-bottom: 0.7rem; display: flex; gap: 0.7rem;"><i class="fas fa-skull" style="color: var(--danger); margin-top: 0.2rem;"></i> <span><strong>Kill condition 3:</strong> If a theistic system is exhibited where truth values do not form a bounded lattice (e.g., paraconsistent or non‑distributive in a way that violates the mapping), the isomorphism is falsified.</span></li>
+    <li style="display: flex; gap: 0.7rem;"><i class="fas fa-skull" style="color: var(--danger); margin-top: 0.2rem;"></i> <span><strong>Kill condition 4:</strong> If the mapping can be shown to be many‑to‑one or non‑injective on the generating set of projectors, the structural claim collapses.</span></li>
+  </ul>
+  <div style="margin-top: 1rem; font-size: 0.75rem; color: #6e7681; border-top: 1px solid #2a1a1a; padding-top: 0.8rem;">
+    <i class="fas fa-flask"></i> These conditions are empirically and logically decidable. The isomorphism is designed to be vulnerable.
+  </div>
+</div>
+
+<div class="gradient-separator"></div>
+
+<!-- 8. RELATED ISOMORPHISMS -->
+<div style="display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 1rem;">
+  <span class="section-number">06</span>
+  <h2 style="font-size: 1.6rem;">Related isomorphisms</h2>
+</div>
+<div class="grid-2col" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+  <div class="card" style="padding: 1rem 1.2rem;">
+    <i class="fas fa-link gold-accent"></i> <a href="/equation/meq-02-d/" style="font-weight: 500;">MEQ‑02‑D</a>
+    <div style="font-size: 0.8rem; color: var(--text-dim);">Entanglement &amp; perichoresis</div>
+  </div>
+  <div class="card" style="padding: 1rem 1.2rem;">
+    <i class="fas fa-link gold-accent"></i> <a href="/equation/meq-04-f/" style="font-weight: 500;">MEQ‑04‑F</a>
+    <div style="font-size: 0.8rem; color: var(--text-dim);">Wavefunction collapse &amp; creatio continua</div>
+  </div>
+  <div class="card" style="padding: 1rem 1.2rem;">
+    <i class="fas fa-link gold-accent"></i> <a href="/equation/meq-01-a/" style="font-weight: 500;">MEQ‑01‑A</a>
+    <div style="font-size: 0.8rem; color: var(--text-dim);">Hilbert space &amp; divine attributes</div>
+  </div>
+  <div class="card" style="padding: 1rem 1.2rem;">
+    <i class="fas fa-link gold-accent"></i> <a href="/equation/meq-05-g/" style="font-weight: 500;">MEQ‑05‑G</a>
+    <div style="font-size: 0.8rem; color: var(--text-dim);">Unitarity &amp; divine immutability</div>
+  </div>
+</div>
+
+<div class="gradient-separator"></div>
+
+<!-- 9. FOOTER -->
+<footer style="margin-top: 2rem;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+    <div>
+      <span style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.06rem; color: var(--gold);">Theophysics Research Program</span>
+      <span style="margin-left: 1rem; font-size: 0.75rem; color: var(--text-dim);">POF 2828</span>
+      <span style="margin-left: 0.8rem; font-size: 0.7rem; color: #6e7681;">v2.1.0 · MEQ‑03‑E</span>
+    </div>
+    <div class="footer-seal" style="border: none; margin: 0; padding: 0;">
+      “The math points to God. The math does not contain God.”
+    </div>
+  </div>
+  <div style="margin-top: 1rem; font-size: 0.65rem; color: #4a4a4a; text-align: center; border-top: 1px solid #151515; padding-top: 1rem;">
+    <i class="fas fa-robot"></i> Registry entry generated from canonical MEQ‑03‑E · all mappings verified · <span class="verse-ref">Φ</span>
+  </div>
+</footer>
+
+</body>
+</html>

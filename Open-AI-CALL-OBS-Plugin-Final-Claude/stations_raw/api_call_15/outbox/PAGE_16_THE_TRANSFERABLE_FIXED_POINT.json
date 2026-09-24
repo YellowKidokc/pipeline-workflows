@@ -1,0 +1,217 @@
+{
+  "spec_version": "1.0",
+  "page_id": "PAGE_16",
+  "page_title": "THE TRANSFERABLE FIXED POINT",
+  "source_file": "PAGE_16_THE_TRANSFERABLE_FIXED_POINT.md",
+  "generated_by": "structural_isomorphism_analyzer",
+  "generated_date": "2025-04-09",
+  "highest_density_mapping": {
+    "iso_id": "ISO-001",
+    "name": "Mustard Seed Theorem as Basin of Attraction in Nonlinear Dynamics",
+    "density_score": 0.95,
+    "verdict": "strongest available structural correspondence"
+  },
+  "isomorphisms": [
+    {
+      "iso_id": "ISO-001",
+      "name": "Mustard Seed Theorem as Basin of Attraction in Nonlinear Dynamics",
+      "domain_a": "Nonlinear dynamical systems theory",
+      "domain_b": "Theophysics salvation dynamics",
+      "chi_law": "The openness parameter O maps to the initial condition in a basin of attraction; the fixed point C=1 maps to the attractor; the condition O>0 maps to the entire basin except the measure-zero separatrix.",
+      "does_mirror_physics_process": true,
+      "physics_process": "Basin of attraction in a nonlinear dynamical system: a set of initial conditions that all converge to the same attractor. The boundary (separatrix) is a set of measure zero; any perturbation into the basin leads to convergence.",
+      "theological_phenomenon": "The mustard seed theorem: any nonzero openness O>0 leads to convergence to C=1; O=0 is the only point that leads to decay.",
+      "one_to_one_verdict": "one_to_one",
+      "claimed_level": "level_3",
+      "aaa_level": "Strong",
+      "density_mapped_events": 5,
+      "density_total_events": 5,
+      "density_score": 0.95,
+      "verdict": "strongest available structural correspondence",
+      "prediction": "If the dynamics are perturbed by a small noise term, the basin boundary may become fractal; the theological claim would then require that O>0 still guarantees convergence with probability 1, not certainty.",
+      "prediction_verified": false,
+      "physics_process_steps": [
+        "Define a nonlinear ODE with a stable fixed point at x=1 and an unstable fixed point at x=0.",
+        "Identify the basin of attraction for x=1 as all initial conditions x0 > 0.",
+        "Show that the separatrix at x=0 is a set of measure zero.",
+        "Prove that any epsilon > 0 leads to convergence to x=1.",
+        "Note that the convergence rate depends on the distance from the separatrix and the damping."
+      ],
+      "mapped_text_steps": [
+        "Define the salvation ODE: c_dot = -sigma c + beta O Gamma_ext (1-c).",
+        "Identify the fixed point C=1 as the attractor for O>0.",
+        "Show that O=0 is the only point leading to decay (Theorem 4).",
+        "Prove that any epsilon > 0 leads to C->1 (mustard seed theorem).",
+        "Note that the rate depends on O and sigma (openness accelerates, damage resists)."
+      ],
+      "preserved_transitions": [
+        "O=0 -> decay (unstable fixed point) maps to separatrix -> decay.",
+        "O>0 -> convergence to C=1 maps to basin interior -> convergence to attractor.",
+        "Magnitude of O affects rate but not limit maps to distance from separatrix affects rate but not limit."
+      ],
+      "missing_transitions": [
+        "The theological claim includes a divine grace operator G; the physics model has no analog for a separate external source that is always 'on'."
+      ],
+      "broken_correspondences": [],
+      "notes": "The mapping is exceptionally tight. The only missing element is the explicit modeling of the grace operator as a separate entity; in the physics model, the attractor is intrinsic to the dynamics, whereas in theology the attractor is sustained by an external source. However, the text explicitly models this via Gamma_ext, which is a parameter, not a separate dynamical variable. This is a minor structural difference."
+    },
+    {
+      "iso_id": "ISO-002",
+      "name": "Physician Theorem as Negative Feedback Control",
+      "domain_a": "Control theory / negative feedback",
+      "domain_b": "Theophysics physician theorem",
+      "chi_law": "The (1-c) term maps to a negative feedback gain that is proportional to the error signal; the error is the distance from the target state C=1.",
+      "does_mirror_physics_process": true,
+      "physics_process": "In a control system with setpoint 1, the error signal is e = 1 - c. A proportional controller applies corrective action proportional to e. When c is far from 1, the correction is large; when c is near 1, the correction is small.",
+      "theological_phenomenon": "The physician theorem: the sicker you are (c close to 0), the faster the repair works (repair term = beta O Gamma_ext (1-c) is maximal at c=0).",
+      "one_to_one_verdict": "one_to_one",
+      "claimed_level": "level_2",
+      "aaa_level": "Strong",
+      "density_mapped_events": 4,
+      "density_total_events": 4,
+      "density_score": 0.9,
+      "verdict": "strongest available structural correspondence",
+      "prediction": "If the system has a delay in the feedback loop, the repair could overshoot or oscillate; the theological model would need to account for possible 'relapse' dynamics.",
+      "prediction_verified": false,
+      "physics_process_steps": [
+        "Define setpoint r = 1.",
+        "Define error e = r - c = 1 - c.",
+        "Define control input u = K * e, where K is the gain.",
+        "Observe that when c=0, e=1, u is maximal; when c=0.99, e=0.01, u is minimal."
+      ],
+      "mapped_text_steps": [
+        "Define target coherence C=1.",
+        "Define repair term = beta O Gamma_ext (1-c).",
+        "Note that at c=0, repair term = beta O Gamma_ext (maximum).",
+        "Note that at c=0.99, repair term = beta O Gamma_ext * 0.01 (minimal)."
+      ],
+      "preserved_transitions": [
+        "c=0 -> maximal repair maps to e=1 -> maximal control.",
+        "c=0.5 -> half repair maps to e=0.5 -> half control.",
+        "c=0.99 -> minimal repair maps to e=0.01 -> minimal control."
+      ],
+      "missing_transitions": [],
+      "broken_correspondences": [],
+      "notes": "The mapping is direct and explicit. The text even uses the phrase 'the sicker you are, the faster the repair works', which is exactly the behavior of a proportional controller. No broken correspondences."
+    },
+    {
+      "iso_id": "ISO-003",
+      "name": "Finite Source Ceiling as Saturation in a Bounded Resource Model",
+      "domain_a": "Resource-limited growth / Michaelis-Menten kinetics",
+      "domain_b": "Theophysics finite grace ceiling",
+      "chi_law": "The steady-state coherence C* = Lambda/(Lambda+S) maps to the Michaelis-Menten equation v = Vmax * [S]/(Km + [S]), where Lambda is the substrate concentration and S is the half-saturation constant.",
+      "does_mirror_physics_process": true,
+      "physics_process": "In enzyme kinetics, the reaction rate v saturates as substrate concentration [S] increases: v = Vmax * [S]/(Km + [S]). The maximum rate Vmax is approached asymptotically but never reached for finite [S].",
+      "theological_phenomenon": "Finite sources (therapy, community, law) raise the coherence floor but cap below unity: C* = Lambda/(Lambda+S) < 1.",
+      "one_to_one_verdict": "one_to_one",
+      "claimed_level": "level_2",
+      "aaa_level": "Strong",
+      "density_mapped_events": 3,
+      "density_total_events": 3,
+      "density_score": 0.85,
+      "verdict": "strongest available structural correspondence",
+      "prediction": "If the source is not constant but time-varying, the steady state may not be reached; the theological model would need to account for transient dynamics.",
+      "prediction_verified": false,
+      "physics_process_steps": [
+        "Define reaction rate v = Vmax * [S]/(Km + [S]).",
+        "Note that as [S] -> infinity, v -> Vmax (asymptotic ceiling).",
+        "Note that for any finite [S], v < Vmax."
+      ],
+      "mapped_text_steps": [
+        "Define steady-state coherence C* = Lambda/(Lambda+S).",
+        "Note that as Lambda -> infinity, C* -> 1 (asymptotic ceiling).",
+        "Note that for any finite Lambda, C* < 1."
+      ],
+      "preserved_transitions": [
+        "Increasing [S] increases v but never reaches Vmax maps to increasing Lambda increases C* but never reaches 1.",
+        "Vmax is the unattainable ceiling maps to C=1 is the unattainable ceiling for finite sources."
+      ],
+      "missing_transitions": [],
+      "broken_correspondences": [],
+      "notes": "The mapping is structurally exact. The equation form is identical. The only difference is the interpretation: in enzyme kinetics, the ceiling is a physical limit; in theology, it is a statement about the insufficiency of finite grace. The form is preserved."
+    },
+    {
+      "iso_id": "ISO-004",
+      "name": "Incarnation as Impedance Matching in Wave Propagation",
+      "domain_a": "Electrical engineering / wave impedance matching",
+      "domain_b": "Theophysics Incarnation as coupling interface",
+      "chi_law": "The Incarnation maps to an impedance transformer that allows maximum power transfer from an infinite-impedance source to a finite-impedance load.",
+      "does_mirror_physics_process": true,
+      "physics_process": "In transmission line theory, maximum power transfer occurs when the load impedance equals the complex conjugate of the source impedance. An impedance matching network (transformer) is used when the source and load impedances are mismatched.",
+      "theological_phenomenon": "The Incarnation is the coupling interface that allows the infinite source (God) to enter the finite system (humanity). Without it, Gamma_ext has no channel into the moral-state dynamics.",
+      "one_to_one_verdict": "partial",
+      "claimed_level": "level_2",
+      "aaa_level": "Moderate",
+      "density_mapped_events": 3,
+      "density_total_events": 4,
+      "density_score": 0.7,
+      "verdict": "structural claim requiring engagement",
+      "prediction": "If the impedance match is imperfect, there will be reflections (loss); the theological model would need to account for 'inefficiencies' in the Incarnation (e.g., why not everyone is saved).",
+      "prediction_verified": false,
+      "physics_process_steps": [
+        "Identify source impedance Z_s (infinite for an ideal voltage source).",
+        "Identify load impedance Z_l (finite, e.g., 50 ohms).",
+        "Insert an impedance matching network (transformer) to transform Z_l to Z_s*.",
+        "Maximum power transfer is achieved; no reflections."
+      ],
+      "mapped_text_steps": [
+        "Identify infinite source (God) with no inherent channel to finite system.",
+        "Identify finite system (humanity) with finite capacity.",
+        "Incarnation is the coupling interface (impedance matching layer).",
+        "Without it, no power transfer (Gamma_ext has no channel)."
+      ],
+      "preserved_transitions": [
+        "No matching network -> no power transfer maps to no Incarnation -> no channel for grace.",
+        "Matching network -> maximum power transfer maps to Incarnation -> grace enters the system."
+      ],
+      "missing_transitions": [
+        "In impedance matching, the transformer is a passive component; in theology, the Incarnation is an active event with personal agency.",
+        "The physics model does not account for the 'openness' parameter O; the load is assumed to be always receptive."
+      ],
+      "broken_correspondences": [],
+      "notes": "The mapping is suggestive but not one-to-one. The impedance matching analogy captures the structural role of the Incarnation as an interface, but the physics model lacks the agency and the requirement of openness. The mapping is moderate."
+    },
+    {
+      "iso_id": "ISO-005",
+      "name": "Pentecost as Phase Transition from Local to Global Coupling",
+      "domain_a": "Statistical physics / percolation theory",
+      "domain_b": "Theophysics Pentecost as distribution mechanism",
+      "chi_law": "The transition from local to global availability of grace maps to a percolation transition where the coupling constant crosses a critical threshold, making the source available to all sites in the lattice.",
+      "does_mirror_physics_process": true,
+      "physics_process": "In percolation theory, when the occupation probability p exceeds a critical threshold p_c, a giant connected component appears that spans the entire lattice. Below p_c, only finite clusters exist.",
+      "theological_phenomenon": "Before Pentecost, the grace source was localized (delta function); after Pentecost, it is globally available (constant). The coupling goes from local to global.",
+      "one_to_one_verdict": "partial",
+      "claimed_level": "level_2",
+      "aaa_level": "Moderate",
+      "density_mapped_events": 2,
+      "density_total_events": 3,
+      "density_score": 0.6,
+      "verdict": "suggestive, further investigation warranted",
+      "prediction": "If the percolation threshold is not crossed, the source remains local; the theological model would need to explain why Pentecost is a one-time event rather than a gradual process.",
+      "prediction_verified": false,
+      "physics_process_steps": [
+        "Define a lattice of sites (agents).",
+        "Define a coupling probability p between sites and a central source.",
+        "Below p_c, only finite clusters are connected to the source.",
+        "Above p_c, a giant component connects all sites to the source."
+      ],
+      "mapped_text_steps": [
+        "Define agents with openness O.",
+        "Before Pentecost: only those physically proximate to the Incarnation have access (local coupling).",
+        "After Pentecost: all agents with O>0 have access (global coupling).",
+        "The transition is discrete: from delta function to constant."
+      ],
+      "preserved_transitions": [
+        "Below threshold -> local access maps to before Pentecost -> local access.",
+        "Above threshold -> global access maps to after Pentecost -> global access."
+      ],
+      "missing_transitions": [
+        "In percolation, the transition is continuous (second-order); in theology, Pentecost is a discrete event.",
+        "The physics model does not account for the 'openness' parameter; all sites are equally likely to be connected above threshold.",
+        "The percolation model assumes a static lattice; theology involves dynamic agency."
+      ],
+      "broken_correspondences": [],
+      "notes": "The mapping captures the structural idea of a transition from local to global availability, but the details differ significantly. The percolation model is a useful analogy but not a strict isomorphism. The mapping is suggestive."
+    }
+  ]
+}

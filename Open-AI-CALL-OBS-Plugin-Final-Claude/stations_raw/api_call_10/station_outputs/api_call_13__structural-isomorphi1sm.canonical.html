@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>Theophysics Isomorphism Registry – faiththruphysics.com</title>
+    <!-- Google Fonts: Oswald, Inter, JetBrains Mono, Crimson Text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:opsz,wght@14..32,300..700&family=JetBrains+Mono:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6.4 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0a0a0a;
+            --text: #c9d1d9;
+            --gold: #d4af37;
+            --gold-dim: rgba(212, 175, 55, 0.3);
+            --success: #22c55e;
+            --danger: #ef4444;
+            --info: #4a9eff;
+            --card-bg: #111;
+            --border-subtle: #222;
+            --font-heading: 'Oswald', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-quote: 'Crimson Text', serif;
+        }
+        html { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.5; }
+        body { max-width: 1280px; margin: 0 auto; padding: 1.5rem 1rem 2rem; background: var(--bg); }
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 500; }
+        .mono { font-family: var(--font-mono); }
+        .quote { font-family: var(--font-quote); font-style: italic; }
+        .gold { color: var(--gold); }
+        .success { color: var(--success); }
+        .danger { color: var(--danger); }
+        .info { color: var(--info); }
+        .muted { opacity: 0.7; }
+        .small { font-size: 0.85rem; }
+        .section-number { font-size: 3.5rem; font-weight: 700; color: var(--gold); opacity: 0.2; line-height: 1; margin-right: 0.75rem; font-family: var(--font-heading); }
+        .sep-line { height: 2px; background: linear-gradient(90deg, var(--gold), transparent); margin: 2rem 0 1.5rem; width: 100%; }
+        .card { background: var(--card-bg); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.5rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        @media (max-width: 768px) {
+            .grid-2, .grid-4 { grid-template-columns: 1fr; }
+            .section-number { font-size: 2.5rem; }
+        }
+        .badge { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 30px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; background: #1a1a1a; border: 1px solid; }
+        .badge-green { border-color: var(--success); color: var(--success); }
+        .badge-yellow { border-color: #eab308; color: #eab308; }
+        .badge-gold { border-color: var(--gold); color: var(--gold); }
+        .badge-red { border-color: var(--danger); color: var(--danger); }
+        .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.8rem; background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(10,10,10,0.95) 80%); border-radius: 20px; padding: 1.8rem; border: 1px solid rgba(212,175,55,0.2); }
+        @media (max-width: 768px) { .hero-grid { grid-template-columns: 1fr; } }
+        .law-badge { background: #1a1a1a; border-left: 4px solid var(--gold); padding: 0.2rem 1rem; border-radius: 0 20px 20px 0; display: inline-block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 0.8rem; }
+        .pull-quote { border-left: 4px solid var(--gold); padding-left: 1.2rem; margin: 1rem 0; font-size: 1.1rem; }
+        .eq-card { background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 14px; padding: 1.2rem; font-family: var(--font-mono); font-size: 0.9rem; }
+        .eq-card .arrow { color: var(--gold); font-size: 1.8rem; display: block; text-align: center; margin: 0.5rem 0; }
+        .domain-card-a { border-top: 4px solid var(--info); }
+        .domain-card-b { border-top: 4px solid var(--gold); }
+        .mapping-table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+        .mapping-table th { background: #1a1a1a; color: var(--gold); font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.05em; padding: 0.75rem 0.5rem; border-bottom: 2px solid var(--gold); text-align: left; }
+        .mapping-table td { padding: 0.6rem 0.5rem; border-bottom: 1px solid #222; vertical-align: top; }
+        .mapping-table tr:last-child td { border-bottom: none; }
+        .mapping-table .mono { font-size: 0.85rem; }
+        .test-card { border-left: 4px solid #333; padding-left: 1rem; }
+        .test-card.pass { border-left-color: var(--success); }
+        .test-card.fail { border-left-color: var(--danger); }
+        .test-card.wall { border-left-color: #eab308; }
+        .chip { display: inline-block; background: #1a1a1a; border: 1px solid #333; border-radius: 30px; padding: 0.2rem 0.9rem; font-size: 0.75rem; margin: 0.2rem 0.1rem; }
+        .falsify-box { background: #1a0a0a; border: 1px solid #5a1a1a; border-radius: 14px; padding: 1.5rem; }
+        .footer-seal { border-top: 1px solid #222; padding-top: 1.2rem; margin-top: 1.5rem; font-size: 0.9rem; text-align: center; color: #888; }
+        .footer-seal i { color: var(--gold); margin: 0 0.3rem; }
+        .verse-ref { font-family: var(--font-mono); font-size: 0.75rem; color: #777; }
+        .gold-gradient-line { height: 2px; background: linear-gradient(90deg, var(--gold), transparent 70%); margin: 1.2rem 0; }
+        .icon-circle { width: 40px; height: 40px; border-radius: 50%; background: #1a1a1a; display: inline-flex; align-items: center; justify-content: center; margin-right: 0.6rem; border: 1px solid #333; }
+    </style>
+</head>
+<body>
+
+<!-- 1. REGISTRY HEADER -->
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem 1.5rem; margin-bottom: 0.5rem;">
+    <div style="display: flex; align-items: center;">
+        <span style="font-size: 2.8rem; font-family: var(--font-heading); color: var(--gold); font-weight: 600; margin-right: 0.5rem;">Φ</span>
+        <div>
+            <h1 style="font-size: 1.8rem; line-height: 1.1; margin: 0;">Theophysics Registry</h1>
+            <div style="font-size: 0.8rem; opacity: 0.7;">faiththruphysics.com · canonical</div>
+        </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; align-items: center;">
+        <span class="badge badge-green"><i class="fa-regular fa-circle-check" style="margin-right: 0.3rem;"></i> Level 3 · Isomorphism</span>
+        <span class="badge badge-gold"><i class="fa-regular fa-star"></i> Confidence: 0.92</span>
+        <span class="badge" style="border-color: #555;">v 2.1.0</span>
+    </div>
+</div>
+<div style="font-size: 0.95rem; margin-bottom: 0.2rem;">
+    <span style="color: var(--gold);">ISO/TR 2828:2025</span> — <strong>Structural Isomorphism: Physics–Theology Five‑Pair Embedding</strong>
+</div>
+<div class="sep-line" style="margin-top: 0.8rem;"></div>
+
+<!-- 2. HERO BANNER -->
+<div class="hero-grid">
+    <div>
+        <div class="law-badge"><i class="fa-regular fa-file-lines" style="margin-right: 0.4rem;"></i> Canonical mapping · structural</div>
+        <h2 style="font-size: 2rem; line-height: 1.2; margin: 0.5rem 0 0.2rem;">Physics Frame <span style="color: var(--gold);">⟷</span> Theology Frame</h2>
+        <div style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 0.8rem;">Five symmetry pairs · same substrate · two measurement frames</div>
+        <div class="pull-quote quote">
+            “Physics and theology are not analogies of each other. They are two measurement frames projected from the same substrate. Swap the variable labels. The architecture stands.”
+        </div>
+        <div style="margin-top: 0.6rem; font-size: 0.8rem; color: #999;"><i class="fa-regular fa-bookmark"></i> Master Equation: <span class="mono">χ = ∭(G·M·E·S·T·K·R·Q·F·C) dx dy dt</span></div>
+    </div>
+    <div>
+        <div class="eq-card">
+            <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 0.4rem;">Core equations</div>
+            <div class="mono" style="font-size: 0.8rem; line-height: 1.6;">
+                <div><span style="color: var(--info);">Physics</span>  F = G·m₁m₂/r² &nbsp;·&nbsp; G<sub>μν</sub> + Λg<sub>μν</sub> = 8πG/c⁴ T<sub>μν</sub></div>
+                <div style="border-top: 1px dashed #333; margin: 0.4rem 0;"></div>
+                <div><span style="color: var(--gold);">Theology</span>  F<sub>sin</sub> = G<sub>s</sub>·m<sub>self</sub>·m<sub>world</sub>/r² &nbsp;·&nbsp; 𝒢<sub>μν</sub> + Λ<sub>grace</sub> g<sub>μν</sub> = 8πG<sub>s</sub>/c<sub>s</sub>⁴ 𝒯<sub>μν</sub></div>
+            </div>
+            <div class="arrow"><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
+            <div style="text-align: center; font-size: 0.75rem; color: #aaa;">mapping arrow: same topology, same falloff, same geodesic structure</div>
+        </div>
+    </div>
+</div>
+
+<!-- 3. DOMAIN SPECIFICATIONS -->
+<div style="display: flex; align-items: center; margin-top: 2rem;">
+    <span class="section-number">01</span>
+    <h2 style="font-size: 1.6rem;">Domain specifications</h2>
+</div>
+<div class="gold-gradient-line"></div>
+<div class="grid-2">
+    <div class="card domain-card-a">
+        <div style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+            <span class="icon-circle"><i class="fa-solid fa-atom" style="color: var(--info);"></i></span>
+            <h3 style="margin: 0;">Domain A · Physics</h3>
+        </div>
+        <p style="font-size: 0.95rem;">Gravity, matter, energy, time, quantum — five fundamental structures. Equations govern attraction, entropy, measurement, arrow, coherence. Newton–Einstein, Boltzmann, Born, Shannon, Heisenberg.</p>
+        <div style="margin-top: 0.6rem; font-size: 0.8rem; color: #999;"><span class="mono">F, G, S, T, Q</span> — five variables, each with internal bifurcation.</div>
+    </div>
+    <div class="card domain-card-b">
+        <div style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+            <span class="icon-circle"><i class="fa-solid fa-dove" style="color: var(--gold);"></i></span>
+            <h3 style="margin: 0;">Domain B · Theology</h3>
+        </div>
+        <p style="font-size: 0.95rem;">Grace, sin, faith, wisdom, Christic coherence — same five‑fold architecture. Moral curvature, spiritual entropy, faith‑measurement, fallen time, divine coherence. Scripture: Romans 6:23, Hebrews 11:1.</p>
+        <div style="margin-top: 0.6rem; font-size: 0.8rem; color: #999;"><span class="mono">G<sub>s</sub>, S<sub>sp</sub>, E<sub>sp</sub>, T<sub>fallen</sub>, C</span> — isomorphic mapping.</div>
+    </div>
+</div>
+
+<!-- 4. THE ISOMORPHIC MAPPING (full table) -->
+<div style="display: flex; align-items: center; margin-top: 2.5rem;">
+    <span class="section-number">02</span>
+    <h2 style="font-size: 1.6rem;">Isomorphic mapping</h2>
+</div>
+<div class="gold-gradient-line"></div>
+<div class="card" style="overflow-x: auto; padding: 0.5rem 0.5rem 0.5rem 0.5rem;">
+<table class="mapping-table">
+    <thead>
+        <tr><th>Pair</th><th>Physics variable</th><th>Theology variable</th><th>Structure preserved</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+        <tr><td><span class="mono">(G,R)</span></td><td>Gravitational constant G, curvature G<sub>μν</sub></td><td>Spiritual coupling G<sub>s</sub>, moral curvature 𝒢<sub>μν</sub></td><td>inverse‑square, escape velocity, geodesic</td><td><span class="success">✓ VERIFIED</span></td></tr>
+        <tr><td><span class="mono">(M,S)</span></td><td>Mass, entropy S = k<sub>B</sub> ln Ω</td><td>Moral mass, spiritual entropy S<sub>sp</sub> = k<sub>s</sub> ln Ω<sub>acc</sub></td><td>Second Law, open/closed system, negentropy</td><td><span class="success">✓ VERIFIED</span></td></tr>
+        <tr><td><span class="mono">(E,F)</span></td><td>Energy E = mc², Born rule P = |⟨a|ψ⟩|²</td><td>Spiritual energy E<sub>sp</sub> = m<sub>faith</sub>·c<sub>logos</sub>², faith‑measurement</td><td>mass‑energy equivalence, observer‑dependent actuality</td><td><span class="success">✓ VERIFIED</span></td></tr>
+        <tr><td><span class="mono">(T,K)</span></td><td>Thermodynamic arrow dS/dt ≥ 0, Shannon H</td><td>Fallen time T<sub>fallen</sub>, wisdom K<sub>wisdom</sub></td><td>entropy arrow, compression dynamics</td><td><span style="color:#eab308;">⚠ WALLED</span></td></tr>
+        <tr><td><span class="mono">(Q,C)</span></td><td>Heisenberg ΔxΔp ≥ ℏ(1‑C)/2, channel capacity</td><td>Spiritual uncertainty ΔK·ΔW ≥ Λ, faith/distortion</td><td>uncertainty principle, signal/noise, error correction</td><td><span class="success">✓ VERIFIED</span></td></tr>
+        <tr><td colspan="5" style="font-size:0.8rem; color:#888; padding-top:0.8rem;"><span class="mono">χ = ∭(G·M·E·S·T·K·R·Q·F·C) dx dy dt</span> — ten variables, five symmetry pairs.</td></tr>
+    </tbody>
+</table>
+</div>
+
+<!-- 5. SEPARATOR TESTS (2x2 grid) -->
+<div style="display: flex; align-items: center; margin-top: 2.5rem;">
+    <span class="section-number">03</span>
+    <h2 style="font-size: 1.6rem;">Separator tests</h2>
+</div>
+<div class="gold-gradient-line"></div>
+<div class="grid-4">
+    <div class="card test-card pass">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-size: 1.1rem;">Test A · Structural preservation</h3>
+            <span class="badge badge-green">PASS</span>
+        </div>
+        <p style="font-size:0.9rem; margin-top:0.4rem;">Do relations survive under mapping? Inverse‑square, geodesic, entropy, Born rule, channel capacity — all preserved across five pairs. Topology identical.</p>
+    </div>
+    <div class="card test-card pass">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-size: 1.1rem;">Test B · Non‑arbitrariness</h3>
+            <span class="badge badge-green">PASS</span>
+        </div>
+        <p style="font-size:0.9rem; margin-top:0.4rem;">Mapping forced by internal bifurcation (Newton↔Einstein = sin↔grace). Swapping targets breaks the architecture. Each pair has unique structural necessity.</p>
+    </div>
+    <div class="card test-card pass">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-size: 1.1rem;">Test C · Constraint</h3>
+            <span class="badge badge-green">PASS</span>
+        </div>
+        <p style="font-size:0.9rem; margin-top:0.4rem;">Mapping rules out alternatives: grace cannot be a point‑force, faith cannot be linear, time cannot be fully known. The framework forbids certain theological moves.</p>
+    </div>
+    <div class="card test-card pass">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-size: 1.1rem;">Test D · Bidirectionality</h3>
+            <span class="badge badge-green">PASS</span>
+        </div>
+        <p style="font-size:0.9rem; margin-top:0.4rem;">Physics predicts theological structure (grace as curvature, faith as measurement). Theology predicts physical behavior (coherence spikes, negentropy). Each side constrains the other.</p>
+    </div>
+</div>
+<div style="margin-top:0.6rem; font-size:0.8rem; color:#888;"><i class="fa-regular fa-circle-check" style="color:var(--success);"></i> All four separator tests pass. The mapping is structural, not metaphorical.</div>
+
+<!-- 6. CLASSIFICATION & EVIDENCE -->
+<div style="display: flex; align-items: center; margin-top: 2.5rem;">
+    <span class="section-number">04</span>
+    <h2 style="font-size: 1.6rem;">Classification & evidence</h2>
+</div>
+<div class="gold-gradient-line"></div>
+<div class="card" style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start;">
+    <div style="min-width: 200px;">
+        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #999;">Classification</div>
+        <div style="font-size: 1.8rem; font-weight: 600; color: var(--success);">Level 3</div>
+        <div style="font-size: 0.9rem;">Structural Isomorphism</div>
+        <div style="margin-top: 0.8rem;"><span class="badge badge-gold">Confidence 0.92</span> <span class="badge" style="border-color:#555;">v2.1.0</span></div>
+    </div>
+    <div style="flex: 1;">
+        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #999;">Evidence chips</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.3rem;">
+            <span class="chip"><i class="fa-regular fa-chart-line" style="color:var(--info);"></i> PEAR 6.35σ</span>
+            <span class="chip"><i class="fa-regular fa-chart-line" style="color:var(--info);"></i> GCP 6σ</span>
+            <span class="chip"><i class="fa-regular fa-flask"></i> inverse‑square verified</span>
+            <span class="chip"><i class="fa-regular fa-flask"></i> escape velocity threshold</span>
+            <span class="chip"><i class="fa-regular fa-flask"></i> negentropy mechanism</span>
+            <span class="chip"><i class="fa-regular fa-flask"></i> Born rule analogy</span>
+            <span class="chip"><i class="fa-regular fa-flask"></i> channel capacity match</span>
+            <span class="chip"><i class="fa-regular fa-clock"></i> Time Wall intentional</span>
+        </div>
+        <div style="margin-top: 0.8rem; font-size: 0.85rem; color: #aaa;">Laws invoked: inverse‑square, second law, Born rule, Shannon capacity, Heisenberg uncertainty, geodesic principle.</div>
+    </div>
+</div>
+
+<!-- 7. FALSIFICATION CRITERIA -->
+<div style="display: flex; align-items: center; margin-top: 2.5rem;">
+    <span class="section-number">05</span>
+    <h2 style="font-size: 1.6rem;">Falsification criteria</h2>
+</div>
+<div class="gold-gradient-line"></div>
+<div class="falsify-box">
+    <div style="display: flex; gap: 0.6rem; align-items: center; margin-bottom: 0.8rem;">
+        <i class="fa-solid fa-triangle-exclamation" style="color: var(--danger); font-size: 1.4rem;"></i>
+        <h3 style="font-size: 1.2rem; color: var(--danger); margin:0;">Kill conditions</h3>
+    </div>
+    <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 0.5rem; padding-left: 1.2rem; border-left: 2px solid #5a1a1a;"><i class="fa-regular fa-circle-xmark" style="color: var(--danger); margin-right: 0.5rem;"></i> If substituting spiritual variables into physics equations <strong>breaks any mathematical relationship</strong> (topology, falloff, boundary conditions, conservation laws) — the isomorphism fails.</li>
+        <li style="margin-bottom: 0.5rem; padding-left: 1.2rem; border-left: 2px solid #5a1a1a;"><i class="fa-regular fa-circle-xmark" style="color: var(--danger); margin-right: 0.5rem;"></i> If the structure does <strong>not survive variable swap</strong> — the mapping is arbitrary.</li>
+        <li style="margin-bottom: 0.5rem; padding-left: 1.2rem; border-left: 2px solid #5a1a1a;"><i class="fa-regular fa-circle-xmark" style="color: var(--danger); margin-right: 0.5rem;"></i> If the Time Wall yields a completed bifurcation — the equation would close and become inconsistent (Gödelian self‑consumption).</li>
+        <li style="padding-left: 1.2rem; border-left: 2px solid #5a1a1a;"><i class="fa-regular fa-circle-xmark" style="color: var(--danger); margin-right: 0.5rem;"></i> If any test prediction (inverse‑square decay, threshold faith‑energy, coherence spikes) is empirically falsified under controlled conditions.</li>
+    </ul>
+    <div style="margin-top: 0.8rem; font-size: 0.8rem; color: #aa7777;"><i class="fa-regular fa-skull"></i> The framework is designed to be falsifiable. If the structure breaks anywhere, the whole thing fails.</div>
+</div>
+
+<!-- 8. RELATED ISOMORPHISMS -->
+<div style="display: flex; align-items: center; margin-top: 2.5rem;">
+    <span class="section-number">06</span>
+    <h2 style="font-size: 1.6rem;">Related isomorphisms</h2>
+</div>
+<div class="gold-gradient-line"></div>
+<div class="grid-2" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+    <div class="card" style="border-left: 3px solid var(--info);">
+        <div style="display: flex; align-items: center; gap: 0.5rem;"><i class="fa-regular fa-diagram-project" style="color: var(--info);"></i> <span class="mono">(G,R)</span> Gravity ↔ Grace</div>
+        <div class="small muted">Newton/Einstein bifurcation · sin/grace pole</div>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--success);">
+        <div style="display: flex; align-items: center; gap: 0.5rem;"><i class="fa-regular fa-diagram-project" style="color: var(--success);"></i> <span class="mono">(M,S)</span> Matter ↔ Moral Mass</div>
+        <div class="small muted">Boltzmann entropy · spiritual negentropy</div>
+    </div>
+    <div class="card" style="border-left: 3px solid #eab308;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;"><i class="fa-regular fa-diagram-project" style="color: #eab308;"></i> <span class="mono">(E,F)</span> Energy ↔ Faith</div>
+        <div class="small muted">Born rule · mass‑energy equivalence</div>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--gold);">
+        <div style="display: flex; align-items: center; gap: 0.5rem;"><i class="fa-regular fa-diagram-project" style="color: var(--gold);"></i> <span class="mono">(Q,C)</span> Quantum ↔ Coherence</div>
+        <div class="small muted">Heisenberg · channel capacity · error correction</div>
+    </div>
+</div>
+<div style="margin-top:0.5rem; font-size:0.8rem; color:#888;"><i class="fa-regular fa-link"></i> All five pairs documented in the canonical registry. <span class="mono">(T,K)</span> intentionally walled.</div>
+
+<!-- 9. FOOTER -->
+<div style="margin-top: 3rem; border-top: 1px solid #222; padding-top: 1.5rem;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <div>
+            <div style="font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold);">Theophysics Research Program</div>
+            <div style="font-size: 0.8rem; color: #888;">POF 2828 · canonical registry · v 2.1.0</div>
+        </div>
+        <div style="font-size: 0.9rem; color: #aaa; text-align: right;">
+            <i class="fa-regular fa-seal" style="color: var(--gold);"></i> The math points to God. The math does not contain God.
+        </div>
+    </div>
+    <div style="margin-top: 1rem; font-size: 0.75rem; color: #555; display: flex; gap: 1rem; flex-wrap: wrap;">
+        <span><i class="fa-regular fa-copyright"></i> faiththruphysics.com</span>
+        <span>registry ID: ISO/TR 2828:2025</span>
+        <span><i class="fa-regular fa-file-lines"></i> structural isomorphism · not metaphor</span>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,599 @@
+{
+  "definitions": [
+    {
+      "term": "General Relativity",
+      "category": "physics",
+      "definition": "Einstein's theory that gravity is caused by the bending of space and time around massive objects.",
+      "example": "Like a heavy ball on a trampoline making a dip that other balls roll into.",
+      "grade_level": "12",
+      "first_appearance": "Section: Einstein's General Relativity"
+    },
+    {
+      "term": "Higgs Field",
+      "category": "physics",
+      "definition": "An invisible field that gives particles their mass by interacting with them.",
+      "example": "Like a thick syrup that makes it harder for objects to move through it.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Higgs Field"
+    },
+    {
+      "term": "Large Hadron Collider",
+      "category": "physics",
+      "definition": "A giant underground machine that smashes particles together at high speeds to discover new particles.",
+      "example": "Like a particle racetrack where scientists crash tiny cars to see what's inside them.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Higgs Field"
+    },
+    {
+      "term": "mathematical framework",
+      "category": "academic",
+      "definition": "A set of equations and rules used to describe how something works.",
+      "example": "Like a recipe that tells you exactly how to bake a cake.",
+      "grade_level": "10",
+      "first_appearance": "Section: The Higgs Field"
+    },
+    {
+      "term": "rigorous tests",
+      "category": "academic",
+      "definition": "Very careful and thorough experiments designed to check if an idea is correct.",
+      "example": "Like a teacher checking every step of your math homework to make sure it's right.",
+      "grade_level": "10",
+      "first_appearance": "Section: The Higgs Field"
+    },
+    {
+      "term": "Theophysics",
+      "category": "framework",
+      "definition": "A field that combines physics and theology to study how spiritual laws might mirror physical laws.",
+      "example": "Like studying how the rules of a video game might be the same as the rules of real life.",
+      "grade_level": "college",
+      "first_appearance": "Section: The Framework in One Sentence"
+    },
+    {
+      "term": "Master Equation",
+      "category": "framework",
+      "definition": "The main formula that describes the entire theory.",
+      "example": "Like the central equation in a recipe that tells you how all ingredients work together.",
+      "grade_level": "college",
+      "first_appearance": "Section: The Framework in One Sentence"
+    },
+    {
+      "term": "coherence",
+      "category": "framework",
+      "definition": "How aligned or unified something is with truth and reality.",
+      "example": "Like a choir singing in perfect harmony versus everyone singing different songs.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Framework in One Sentence"
+    },
+    {
+      "term": "grace",
+      "category": "theology",
+      "definition": "A restoring force that comes from outside a system, often associated with divine help.",
+      "example": "Like a friend helping you fix a broken toy even though you broke it yourself.",
+      "grade_level": "10",
+      "first_appearance": "Section: The Framework in One Sentence"
+    },
+    {
+      "term": "entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system; things tend to become more disordered over time.",
+      "example": "Like a room getting messier on its own unless you clean it.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Framework in One Sentence"
+    },
+    {
+      "term": "soul",
+      "category": "theology",
+      "definition": "The self-aware identity at the center of a person, often considered the spiritual part.",
+      "example": "Like the 'you' that thinks, feels, and makes choices.",
+      "grade_level": "10",
+      "first_appearance": "Section: The Framework in One Sentence"
+    },
+    {
+      "term": "temporal arc",
+      "category": "academic",
+      "definition": "The entire span of time from beginning to end.",
+      "example": "Like the whole story of a movie from start to finish.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Framework in One Sentence"
+    },
+    {
+      "term": "faith",
+      "category": "theology",
+      "definition": "A kind of participation that turns possibility into reality.",
+      "example": "Like believing you can jump across a gap and then actually jumping.",
+      "grade_level": "10",
+      "first_appearance": "Section: The Framework in One Sentence"
+    },
+    {
+      "term": "Logos",
+      "category": "theology",
+      "definition": "A Greek word meaning 'Word' or 'reason,' often used in Christianity to refer to Jesus as the divine order of the universe.",
+      "example": "Like the blueprint or logic behind everything that exists.",
+      "grade_level": "college",
+      "first_appearance": "Section: The Framework in One Sentence"
+    },
+    {
+      "term": "product equation",
+      "category": "math",
+      "definition": "An equation where you multiply variables together, so if any one is zero the whole result is zero.",
+      "example": "Like a chain where if one link breaks, the whole chain falls apart.",
+      "grade_level": "10",
+      "first_appearance": "Section: The Framework in One Sentence"
+    },
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A mapping between two systems that preserves all structural relationships; they are the same in form.",
+      "example": "Like two different jigsaw puzzles that have the same picture but different shapes.",
+      "grade_level": "college",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "differential equations",
+      "category": "math",
+      "definition": "Equations that describe how things change over time or space.",
+      "example": "Like a formula that predicts how fast a ball will roll down a hill.",
+      "grade_level": "college",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "boundary behavior",
+      "category": "math",
+      "definition": "How a system acts at its edges or limits.",
+      "example": "Like what happens to a wave when it hits the edge of a pool.",
+      "grade_level": "college",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "symmetry properties",
+      "category": "math",
+      "definition": "Features of a system that stay the same when you rotate, flip, or change it in some way.",
+      "example": "Like a snowflake that looks the same when you turn it.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "conservation structures",
+      "category": "physics",
+      "definition": "Rules that say certain quantities (like energy) stay constant in a system.",
+      "example": "Like a bank account where money can move but the total stays the same unless you add or remove some.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "structural identity",
+      "category": "math",
+      "definition": "When two things have exactly the same internal pattern or organization.",
+      "example": "Like two different buildings that have the same floor plan.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "quantum mechanics",
+      "category": "physics",
+      "definition": "The branch of physics that deals with very small particles like atoms and electrons.",
+      "example": "Like the rules that govern how tiny Lego bricks behave.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "thermodynamics",
+      "category": "physics",
+      "definition": "The study of heat, energy, and how they move and change.",
+      "example": "Like the science of how ice melts and steam forms.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "electromagnetism",
+      "category": "physics",
+      "definition": "The force that governs electricity and magnetism.",
+      "example": "Like the force that makes magnets stick to your fridge and lights turn on.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "fluid dynamics",
+      "category": "physics",
+      "definition": "The study of how liquids and gases flow.",
+      "example": "Like predicting how water flows out of a faucet.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "cosmology",
+      "category": "physics",
+      "definition": "The study of the universe as a whole, including its origin and evolution.",
+      "example": "Like the history of the universe from the Big Bang to now.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "control theory",
+      "category": "math",
+      "definition": "The study of how to make systems behave in a desired way using feedback.",
+      "example": "Like a thermostat that turns the heater on and off to keep the room at the right temperature.",
+      "grade_level": "college",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "information theory",
+      "category": "math",
+      "definition": "The study of how information is measured, stored, and communicated.",
+      "example": "Like figuring out how many bits are needed to send a text message.",
+      "grade_level": "college",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "substrates",
+      "category": "academic",
+      "definition": "The underlying material or medium on which something operates.",
+      "example": "Like the paper that a drawing is on, or the silicon in a computer chip.",
+      "grade_level": "12",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "quintillion",
+      "category": "math",
+      "definition": "A number equal to 1 followed by 18 zeros (10^18).",
+      "example": "Like a billion billion.",
+      "grade_level": "10",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "χ-field",
+      "category": "framework",
+      "definition": "A proposed field that represents coherence or alignment with truth and reality.",
+      "example": "Like an invisible field that measures how 'in tune' something is with the way things really are.",
+      "grade_level": "college",
+      "first_appearance": "Section: TEST 1"
+    },
+    {
+      "term": "stable solutions",
+      "category": "math",
+      "definition": "Answers to equations that don't blow up to infinity or behave wildly.",
+      "example": "Like a balanced seesaw that doesn't tip over.",
+      "grade_level": "12",
+      "first_appearance": "Section: TEST 1"
+    },
+    {
+      "term": "non-divergent solutions",
+      "category": "math",
+      "definition": "Solutions that stay finite and don't go to infinity.",
+      "example": "Like a number that stays between 0 and 10 instead of growing forever.",
+      "grade_level": "college",
+      "first_appearance": "Section: TEST 1"
+    },
+    {
+      "term": "Hubble tension",
+      "category": "physics",
+      "definition": "A disagreement between two different measurements of how fast the universe is expanding.",
+      "example": "Like two clocks that give different times for the same event.",
+      "grade_level": "college",
+      "first_appearance": "Section: TEST 2"
+    },
+    {
+      "term": "sigma",
+      "category": "math",
+      "definition": "A measure of how confident scientists are in a result; 5 sigma means very high confidence.",
+      "example": "Like a 99.9999% chance that the result is not a fluke.",
+      "grade_level": "college",
+      "first_appearance": "Section: TEST 2"
+    },
+    {
+      "term": "effective gravitational coupling",
+      "category": "physics",
+      "definition": "A measure of how strong gravity is in a given situation.",
+      "example": "Like how sticky a surface is for a rolling ball.",
+      "grade_level": "college",
+      "first_appearance": "Section: TEST 2"
+    },
+    {
+      "term": "DESI telescope",
+      "category": "physics",
+      "definition": "A telescope that maps the universe to study dark energy.",
+      "example": "Like a giant camera that takes pictures of galaxies to see how they move.",
+      "grade_level": "12",
+      "first_appearance": "Section: TEST 2"
+    },
+    {
+      "term": "dark energy",
+      "category": "physics",
+      "definition": "A mysterious force that is causing the universe to expand faster and faster.",
+      "example": "Like an invisible push that makes everything fly apart.",
+      "grade_level": "12",
+      "first_appearance": "Section: TEST 2"
+    },
+    {
+      "term": "Euclid telescope",
+      "category": "physics",
+      "definition": "A space telescope designed to study dark energy and dark matter.",
+      "example": "Like a space camera that will help us understand why the universe is expanding.",
+      "grade_level": "12",
+      "first_appearance": "Section: TEST 2"
+    },
+    {
+      "term": "falsification test",
+      "category": "academic",
+      "definition": "An experiment designed to prove a theory wrong if it is wrong.",
+      "example": "Like a test that can show if a claim is false.",
+      "grade_level": "12",
+      "first_appearance": "Section: TEST 2"
+    },
+    {
+      "term": "nonlinear sensitivity",
+      "category": "math",
+      "definition": "When a small change in one thing causes a big, unpredictable change in another.",
+      "example": "Like a tiny push that causes a huge avalanche.",
+      "grade_level": "college",
+      "first_appearance": "Section: TEST 3"
+    },
+    {
+      "term": "holistic requirement",
+      "category": "academic",
+      "definition": "The idea that the whole system must be considered, not just parts.",
+      "example": "Like needing all ingredients to make a cake, not just flour.",
+      "grade_level": "12",
+      "first_appearance": "Section: TEST 3"
+    },
+    {
+      "term": "Shannon's channel capacity theorem",
+      "category": "math",
+      "definition": "A theorem that gives the maximum rate at which information can be sent without errors.",
+      "example": "Like the maximum number of words you can say per minute without being misunderstood.",
+      "grade_level": "college",
+      "first_appearance": "Section: TEST 4"
+    },
+    {
+      "term": "intermediaries",
+      "category": "academic",
+      "definition": "People or things that pass information from one place to another.",
+      "example": "Like a messenger who delivers a letter.",
+      "grade_level": "10",
+      "first_appearance": "Section: TEST 4"
+    },
+    {
+      "term": "fidelity",
+      "category": "academic",
+      "definition": "How accurately something is copied or transmitted.",
+      "example": "Like the quality of a photocopy compared to the original.",
+      "grade_level": "12",
+      "first_appearance": "Section: TEST 4"
+    },
+    {
+      "term": "Kolmogorov complexity theory",
+      "category": "math",
+      "definition": "A theory that measures how complex a piece of information is by the length of the shortest computer program that can produce it.",
+      "example": "Like how many instructions you need to describe a pattern.",
+      "grade_level": "graduate",
+      "first_appearance": "Section: TEST 5"
+    },
+    {
+      "term": "negentropy",
+      "category": "physics",
+      "definition": "Negative entropy; something that reduces disorder or increases order.",
+      "example": "Like cleaning a messy room.",
+      "grade_level": "college",
+      "first_appearance": "Section: TEST 6"
+    },
+    {
+      "term": "thermodynamic systems",
+      "category": "physics",
+      "definition": "Systems that involve heat, energy, and work.",
+      "example": "Like a steam engine or a refrigerator.",
+      "grade_level": "12",
+      "first_appearance": "Section: TEST 6"
+    },
+    {
+      "term": "quantum uncertainty",
+      "category": "physics",
+      "definition": "The principle that you cannot know both the exact position and momentum of a particle at the same time.",
+      "example": "Like not being able to know exactly where a spinning coin is and how fast it's spinning at the same time.",
+      "grade_level": "12",
+      "first_appearance": "Section: TEST 7"
+    },
+    {
+      "term": "qualitative claim",
+      "category": "academic",
+      "definition": "A claim about the general nature of something, not exact numbers.",
+      "example": "Like saying 'it's hot' instead of 'it's 100 degrees.'",
+      "grade_level": "10",
+      "first_appearance": "Section: TEST 7"
+    },
+    {
+      "term": "observational data",
+      "category": "academic",
+      "definition": "Information collected by observing the world, not from theory.",
+      "example": "Like measurements from a telescope.",
+      "grade_level": "10",
+      "first_appearance": "Section: TEST 2"
+    },
+    {
+      "term": "empirical",
+      "category": "academic",
+      "definition": "Based on observation or experience, not just theory.",
+      "example": "Like knowing that fire is hot because you touched it.",
+      "grade_level": "12",
+      "first_appearance": "Section: TEST 4"
+    },
+    {
+      "term": "axiom",
+      "category": "math",
+      "definition": "A statement that is accepted as true without proof, used as a starting point for reasoning.",
+      "example": "Like 'the whole is greater than the part.'",
+      "grade_level": "12",
+      "first_appearance": "Section: TEST 4"
+    },
+    {
+      "term": "theorem",
+      "category": "math",
+      "definition": "A statement that has been proven to be true using logic and axioms.",
+      "example": "Like the Pythagorean theorem about right triangles.",
+      "grade_level": "12",
+      "first_appearance": "Section: TEST 4"
+    },
+    {
+      "term": "ontology",
+      "category": "philosophy",
+      "definition": "The study of what exists and the nature of reality.",
+      "example": "Like asking 'what is real?'",
+      "grade_level": "college",
+      "first_appearance": "Section: TEST 4"
+    },
+    {
+      "term": "epistemology",
+      "category": "philosophy",
+      "definition": "The study of knowledge: how we know what we know.",
+      "example": "Like asking 'how do you know that?'",
+      "grade_level": "college",
+      "first_appearance": "Section: TEST 4"
+    },
+    {
+      "term": "contingent",
+      "category": "philosophy",
+      "definition": "Something that could be different or might not exist; dependent on something else.",
+      "example": "Like an umbrella that only exists because someone made it.",
+      "grade_level": "12",
+      "first_appearance": "Section: TEST 4"
+    },
+    {
+      "term": "necessary",
+      "category": "philosophy",
+      "definition": "Something that must exist and cannot be otherwise.",
+      "example": "Like a mathematical truth that is always true.",
+      "grade_level": "10",
+      "first_appearance": "Section: TEST 4"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation and how it is achieved.",
+      "example": "Like the study of how people are saved or rescued from sin.",
+      "grade_level": "college",
+      "first_appearance": "Section: TEST 6"
+    },
+    {
+      "term": "hamartiology",
+      "category": "theology",
+      "definition": "The study of sin and its nature.",
+      "example": "Like the study of what sin is and how it affects people.",
+      "grade_level": "college",
+      "first_appearance": "Section: TEST 6"
+    },
+    {
+      "term": "sanctification",
+      "category": "theology",
+      "definition": "The process of becoming more holy or morally pure.",
+      "example": "Like cleaning a dirty mirror until it shines.",
+      "grade_level": "12",
+      "first_appearance": "Section: TEST 6"
+    },
+    {
+      "term": "atonement",
+      "category": "theology",
+      "definition": "The act of making amends for a wrong or sin.",
+      "example": "Like apologizing and fixing something you broke.",
+      "grade_level": "10",
+      "first_appearance": "Section: TEST 6"
+    },
+    {
+      "term": "bijection",
+      "category": "math",
+      "definition": "A one-to-one matching between two sets where every element in one set is paired with exactly one in the other.",
+      "example": "Like assigning each student a unique locker number.",
+      "grade_level": "college",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "Noether",
+      "category": "math",
+      "definition": "Refers to Emmy Noether's theorem, which says that every symmetry in physics leads to a conservation law.",
+      "example": "Like the idea that if something looks the same from all angles, some quantity is conserved.",
+      "grade_level": "college",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "tensor",
+      "category": "math",
+      "definition": "A mathematical object that describes relationships between sets of numbers, used in physics for things like stress and curvature.",
+      "example": "Like a spreadsheet that holds multiple numbers describing a force in different directions.",
+      "grade_level": "college",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "Lagrangian",
+      "category": "physics",
+      "definition": "A function that summarizes the dynamics of a system, used to derive equations of motion.",
+      "example": "Like a master formula that tells you how a system will evolve over time.",
+      "grade_level": "college",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "eigenmode",
+      "category": "physics",
+      "definition": "A natural vibration pattern of a system where all parts move at the same frequency.",
+      "example": "Like the specific way a guitar string vibrates when plucked.",
+      "grade_level": "college",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "decoherence",
+      "category": "physics",
+      "definition": "The process by which a quantum system loses its quantum properties and behaves classically.",
+      "example": "Like a spinning coin that wobbles and then falls flat, losing its quantum 'spinning' behavior.",
+      "grade_level": "college",
+      "first_appearance": "Section: The Word You Need Before We Go Further"
+    },
+    {
+      "term": "moral curvature",
+      "category": "framework",
+      "definition": "A concept in the framework describing how moral choices bend or warp the χ-field.",
+      "example": "Like how a heavy object bends a trampoline, but for moral decisions.",
+      "grade_level": "college",
+      "first_appearance": "Section: The Framework in One Sentence"
+    },
+    {
+      "term": "coherence functional",
+      "category": "framework",
+      "definition": "A mathematical function that measures the total coherence of a system.",
+      "example": "Like a formula that calculates how 'in tune' something is.",
+      "grade_level": "college",
+      "first_appearance": "Section: The Framework in One Sentence"
+    },
+    {
+      "term": "chi-field",
+      "category": "framework",
+      "definition": "Another name for the χ-field, the field of coherence.",
+      "example": "Like the 'coherence field' that measures alignment with truth.",
+      "grade_level": "college",
+      "first_appearance": "Section: TEST 1"
+    },
+    {
+      "term": "χ (chi)",
+      "category": "language",
+      "definition": "The Greek letter chi, pronounced 'kai' or 'kee,' used as a symbol for coherence.",
+      "example": "Like using the letter 'x' in algebra.",
+      "grade_level": "10",
+      "first_appearance": "Section: The Framework in One Sentence"
+    },
+    {
+      "term": "Logos (λόγος)",
+      "category": "language",
+      "definition": "A Greek word meaning 'word,' 'reason,' or 'principle,' often referring to the divine order.",
+      "example": "Like the 'logic' behind the universe.",
+      "grade_level": "college",
+      "first_appearance": "Section: The Framework in One Sentence"
+    }
+  ],
+  "stats": {
+    "total_terms_found": 68,
+    "by_category": {
+      "physics": 19,
+      "theology": 8,
+      "math": 14,
+      "philosophy": 4,
+      "framework": 6,
+      "academic": 12,
+      "language": 2
+    },
+    "highest_grade_level": "

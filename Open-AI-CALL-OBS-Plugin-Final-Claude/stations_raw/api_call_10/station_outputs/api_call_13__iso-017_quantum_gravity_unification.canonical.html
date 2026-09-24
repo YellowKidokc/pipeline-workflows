@@ -1,0 +1,301 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>ISO-017 · Quantum Gravity Unification · Theophysics Registry</title>
+  <!-- Google Fonts: Oswald, Inter, JetBrains Mono, Crimson Text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --gold-light: #e3c45a;
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border: #2a2a2a;
+      --card-bg: #0f0f0f;
+      --gradient-gold: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0.02) 100%);
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+    }
+    html { background: var(--bg); color: var(--text); font-family: var(--font-body); font-weight: 300; line-height: 1.6; }
+    body { max-width: 1280px; margin: 0 auto; padding: 2rem 1.5rem 3rem; background: var(--bg); }
+    /* headings */
+    h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 500; color: #f0f0f0; }
+    h1 { font-size: 2.4rem; letter-spacing: 0.08em; }
+    h2 { font-size: 1.8rem; letter-spacing: 0.06em; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; margin-bottom: 1.5rem; }
+    h3 { font-size: 1.3rem; letter-spacing: 0.04em; }
+    /* utility */
+    .gold { color: var(--gold); }
+    .text-muted { color: var(--text-muted); }
+    .mono { font-family: var(--font-mono); font-size: 0.9rem; }
+    .quote { font-family: var(--font-quote); font-style: italic; }
+    .section-number { font-size: 3.5rem; font-weight: 600; color: rgba(212, 175, 55, 0.2); font-family: var(--font-heading); line-height: 1; margin-right: 0.75rem; }
+    .gradient-sep { height: 2px; background: linear-gradient(90deg, var(--gold-dim), transparent); margin: 2.5rem 0 2rem; width: 100%; }
+    .badge { display: inline-block; padding: 0.2rem 0.9rem; border-radius: 30px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; background: var(--surface2); color: var(--text-muted); border: 1px solid var(--border); }
+    .badge-success { background: rgba(34, 197, 94, 0.15); color: var(--success); border-color: rgba(34, 197, 94, 0.3); }
+    .badge-warning { background: rgba(234, 179, 8, 0.15); color: #eab308; border-color: rgba(234, 179, 8, 0.3); }
+    .badge-danger { background: rgba(239, 68, 68, 0.15); color: var(--danger); border-color: rgba(239, 68, 68, 0.3); }
+    .badge-info { background: rgba(74, 158, 255, 0.12); color: var(--info); border-color: rgba(74, 158, 255, 0.25); }
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; transition: border 0.2s; }
+    .card:hover { border-color: #333; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .grid-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    /* header */
+    .registry-header { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-bottom: 0.5rem; }
+    .registry-logo { font-size: 2.8rem; font-family: var(--font-heading); color: var(--gold); background: rgba(212, 175, 55, 0.08); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(212, 175, 55, 0.25); }
+    .registry-title { font-size: 1.6rem; font-weight: 500; letter-spacing: 0.1em; }
+    .registry-sub { font-size: 0.85rem; color: var(--text-muted); }
+    .registry-meta { display: flex; flex-wrap: wrap; gap: 0.8rem 1.5rem; align-items: center; margin-top: 0.3rem; }
+    /* hero */
+    .hero { background: var(--gradient-gold), var(--surface); border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 24px; padding: 2rem; margin: 1.5rem 0 2.5rem; }
+    .hero .grid-2 { align-items: center; }
+    .hero-left .law-badge { display: inline-block; background: rgba(212, 175, 55, 0.1); color: var(--gold); padding: 0.2rem 1rem; border-radius: 30px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; border: 1px solid rgba(212, 175, 55, 0.2); margin-bottom: 0.8rem; }
+    .hero-left h2 { font-size: 2rem; border: none; padding: 0; margin: 0.2rem 0 0.5rem; line-height: 1.2; }
+    .hero-left .subtitle { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem; }
+    .hero-left .pull-quote { border-left: 3px solid var(--gold); padding-left: 1.2rem; margin: 1.2rem 0; font-family: var(--font-quote); font-style: italic; font-size: 1.1rem; color: #d0d7de; }
+    .hero-right .equation-card { background: rgba(0,0,0,0.4); border-radius: 16px; padding: 1.5rem; border: 1px solid #2a2a2a; font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.8; }
+    .equation-card .arrow { color: var(--gold); font-size: 1.4rem; text-align: center; display: block; margin: 0.5rem 0; }
+    /* domain cards */
+    .domain-card { border-radius: 16px; padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--border); border-top: 4px solid var(--info); }
+    .domain-card.theology { border-top-color: var(--gold); }
+    .domain-card .domain-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .domain-card h3 { margin-bottom: 0.5rem; }
+    /* mapping table */
+    .mapping-table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+    .mapping-table th { background: rgba(212, 175, 55, 0.12); color: var(--gold); font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; padding: 0.9rem 1rem; border: 1px solid #2a2a2a; text-align: left; font-size: 0.85rem; }
+    .mapping-table td { padding: 0.8rem 1rem; border: 1px solid #1e1e1e; vertical-align: top; background: rgba(255,255,255,0.02); }
+    .mapping-table tr:nth-child(even) td { background: rgba(255,255,255,0.04); }
+    .mapping-table td:first-child { font-weight: 500; color: #e0e0e0; width: 28%; }
+    .mapping-table td:nth-child(2) { font-family: var(--font-mono); font-size: 0.85rem; }
+    .mapping-table td:nth-child(3) { font-size: 0.9rem; }
+    /* test cards */
+    .test-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 1.2rem 1.5rem; }
+    .test-card .test-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+    .test-card .test-label { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.9rem; }
+    .test-card .test-result { font-weight: 600; font-size: 0.85rem; padding: 0.2rem 0.9rem; border-radius: 30px; }
+    .test-pass { background: rgba(34, 197, 94, 0.15); color: var(--success); border: 1px solid rgba(34, 197, 94, 0.2); }
+    .test-fail { background: rgba(239, 68, 68, 0.15); color: var(--danger); border: 1px solid rgba(239, 68, 68, 0.2); }
+    .test-card .test-desc { font-size: 0.9rem; color: var(--text-muted); }
+    /* classification panel */
+    .class-panel { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 1.8rem; }
+    .evidence-chips { display: flex; flex-wrap: wrap; gap: 0.5rem 0.8rem; margin: 1rem 0; }
+    .chip { background: rgba(212, 175, 55, 0.08); border: 1px solid rgba(212, 175, 55, 0.15); padding: 0.2rem 1rem; border-radius: 30px; font-size: 0.75rem; color: var(--gold); }
+    .chip-info { background: rgba(74, 158, 255, 0.08); border-color: rgba(74, 158, 255, 0.2); color: var(--info); }
+    /* falsification */
+    .fals-box { background: rgba(239, 68, 68, 0.06); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 16px; padding: 1.5rem; }
+    .fals-box ul { list-style: none; padding: 0; }
+    .fals-box li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; }
+    .fals-box li::before { content: "✗"; color: var(--danger); position: absolute; left: 0; font-weight: 600; }
+    /* related */
+    .related-grid { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+    .related-item { background: var(--surface2); border: 1px solid var(--border); border-radius: 30px; padding: 0.3rem 1.2rem; font-size: 0.85rem; color: var(--text-muted); }
+    .related-item i { margin-right: 0.4rem; color: var(--gold); }
+    /* footer */
+    .footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #1e1e1e; text-align: center; font-size: 0.8rem; color: var(--text-muted); }
+    .footer-seal { font-family: var(--font-quote); font-style: italic; color: var(--gold); font-size: 0.9rem; margin-top: 0.5rem; }
+    /* responsive */
+    @media (max-width: 768px) {
+      body { padding: 1.2rem 1rem; }
+      h1 { font-size: 1.8rem; }
+      .grid-2, .grid-4 { grid-template-columns: 1fr; }
+      .hero-left h2 { font-size: 1.6rem; }
+      .registry-header { gap: 0.6rem; }
+      .section-number { font-size: 2.5rem; }
+      .mapping-table td, .mapping-table th { padding: 0.6rem; }
+    }
+    @media (max-width: 480px) {
+      .hero { padding: 1.2rem; }
+      .equation-card { font-size: 0.75rem; }
+    }
+    /* misc */
+    .inline-icon { margin-right: 0.4rem; color: var(--gold); }
+    .flex-row { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .mt-1 { margin-top: 1rem; }
+    .mb-1 { margin-bottom: 1rem; }
+    .gap-1 { gap: 1rem; }
+  </style>
+</head>
+<body>
+
+  <!-- 1. REGISTRY HEADER -->
+  <div class="registry-header">
+    <div class="registry-logo"><i class="fas fa-phi"></i></div>
+    <div>
+      <div class="registry-title">Theophysics Registry</div>
+      <div class="registry-sub"><span class="mono">ISO-017</span> · Quantum Gravity Unification · <span class="gold">Logos-Mediated Gravity</span></div>
+    </div>
+    <div style="margin-left: auto; display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; align-items: center;">
+      <span class="badge badge-warning"><i class="fas fa-layer-group" style="margin-right: 0.3rem;"></i>Level 2 · Correspondence</span>
+      <span class="badge badge-info"><i class="fas fa-chart-line"></i> Confidence: Low–Medium</span>
+      <span class="badge" style="border-color: #333;"><i class="far fa-calendar-alt"></i> v1.0 · 2026-03-10</span>
+    </div>
+  </div>
+
+  <!-- 2. HERO BANNER -->
+  <div class="hero">
+    <div class="grid-2">
+      <div class="hero-left">
+        <span class="law-badge"><i class="fas fa-gavel"></i> Law 1 · Existence/Gravity · Law 3 · Trinity/Creation · Law 4 · Coherence</span>
+        <h2>Modified Einstein Field Equations <span style="color: var(--gold);">⇄</span> Christological Mediation</h2>
+        <div class="subtitle">Domain A: Extended General Relativity &nbsp;·&nbsp; Domain B: Logos Theology (John 1:3, Col 1:17)</div>
+        <div class="pull-quote">“The Logos field is a completion, not a contradiction. It adds something that GR alone lacks — singularity resolution, dark energy explanation, coherence preservation — without contradicting GR where GR works.”</div>
+      </div>
+      <div class="hero-right">
+        <div class="equation-card">
+          <div><span style="color: var(--gold);">E13.1</span> <span style="color: #aaa;">Modified Einstein equation</span></div>
+          <div style="margin: 0.6rem 0;">G<sub>μν</sub> + Λ g<sub>μν</sub> = (8πG/c⁴) T<sub>μν</sub> + κ χ<sub>μν</sub></div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">κ ∼ 10⁻⁶⁹ · Logos–gravity coupling</div>
+          <div class="arrow">⇕</div>
+          <div><span style="color: var(--gold);">E13.2</span> <span style="color: #aaa;">χ-field stress–energy</span></div>
+          <div style="margin: 0.6rem 0;">χ<sub>μν</sub> = (ħc/2)(∂<sub>μ</sub>χ ∂<sub>ν</sub>χ − ½ g<sub>μν</sub>(∂χ)²) + V(χ) g<sub>μν</sub></div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">John 1:3 · “through Him all things were made”</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. DOMAIN SPECIFICATIONS -->
+  <div class="flex-row" style="margin-bottom: 0.5rem;"><span class="section-number">01</span><h2 style="border: none; padding: 0; margin: 0;">Domain Specifications</h2></div>
+  <div class="grid-2" style="margin-bottom: 1.5rem;">
+    <div class="domain-card">
+      <div class="domain-icon"><i class="fas fa-atom" style="color: var(--info);"></i></div>
+      <h3>Domain A · Physics <span style="font-weight: 300; color: var(--text-muted);">(Extended General Relativity)</span></h3>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">Modified Einstein field equations with Logos field stress–energy contribution. The standard equation is extended by κ χ<sub>μν</sub>, where χ<sub>μν</sub> is the stress–energy tensor of the χ-field (Logos field). The GR limit is recovered when χ → 0 or κ → 0. The χ-field obeys a Klein–Gordon-type equation and satisfies the contracted Bianchi identity.</p>
+      <div style="margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.8rem; background: rgba(0,0,0,0.3); padding: 0.6rem; border-radius: 8px;">G<sub>μν</sub> + Λ g<sub>μν</sub> = (8πG/c⁴) T<sub>μν</sub> + κ χ<sub>μν</sub></div>
+    </div>
+    <div class="domain-card theology">
+      <div class="domain-icon"><i class="fas fa-cross" style="color: var(--gold);"></i></div>
+      <h3>Domain B · Theology <span style="font-weight: 300; color: var(--text-muted);">(Christological Mediation)</span></h3>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">Christ (the Logos) as mediator between God and creation. “All things were made through Him” (John 1:3). The Logos is not a replacement for physical law but the underlying substrate through which physical law operates. The Logos contribution is subtle (κ ∼ 10⁻⁶⁹), so pure GR works as an excellent approximation.</p>
+      <div style="margin-top: 0.8rem; font-family: var(--font-quote); font-style: italic; font-size: 0.9rem; background: rgba(0,0,0,0.3); padding: 0.6rem; border-radius: 8px; color: #d0d7de;">“In Him all things hold together” — Colossians 1:17</div>
+    </div>
+  </div>
+
+  <!-- 4. THE ISOMORPHIC MAPPING -->
+  <div class="flex-row" style="margin-bottom: 0.5rem;"><span class="section-number">02</span><h2 style="border: none; padding: 0; margin: 0;">The Isomorphic Mapping</h2></div>
+  <div style="overflow-x: auto; margin-bottom: 2rem;">
+    <table class="mapping-table">
+      <thead>
+        <tr><th>Element</th><th>Physics (Domain A)</th><th>Theology (Domain B)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A13.1 / E13.1</td><td>G<sub>μν</sub> + Λ g<sub>μν</sub> = (8πG/c⁴) T<sub>μν</sub> + κ χ<sub>μν</sub></td><td>Logos completes the geometry; “through Him all things were made”</td></tr>
+        <tr><td>A13.2 / E13.2</td><td>χ<sub>μν</sub> = (ħc/2)(∂<sub>μ</sub>χ ∂<sub>ν</sub>χ − ½ g<sub>μν</sub>(∂χ)²) + V(χ) g<sub>μν</sub></td><td>χ-field carries semantic/informational content; self-referential (χ ↻ χ)</td></tr>
+        <tr><td>D13.1</td><td>GR recovery: lim<sub>χ→0</sub> recovers pure Einstein equations</td><td>Logos is not a gap filler; world without Logos still has gravity, matter, geometry</td></tr>
+        <tr><td>D13.2</td><td>κ ∼ 10⁻⁶⁹ (Logos–gravity coupling constant)</td><td>Logos is almost invisible at ordinary scales; “seen through a glass darkly”</td></tr>
+        <tr><td>P13.1</td><td>lim<sub>χ→0</sub> recovers pure GR — no conflict with established physics</td><td>Christ came not to abolish but to fulfill (Matthew 5:17)</td></tr>
+        <tr><td>P13.2</td><td>χ-field resolves GR singularities (Big Bang, black holes)</td><td>Logos resolves the problem of evil, origin problem, ultimate coherence</td></tr>
+        <tr><td>T13.1</td><td>χ-field contributes to dark energy density</td><td>Logos sustains the expansion and order of creation</td></tr>
+        <tr><td>T13.2</td><td>χ-field modifies Planck-scale physics</td><td>Logos is the ground of being at the most fundamental level</td></tr>
+        <tr><td>Shared 1</td><td>Underlying substrate pervades all of spacetime (χ-field)</td><td>Logos pervades all creation (John 1:3, Col 1:17)</td></tr>
+        <tr><td>Shared 2</td><td>Nearly invisible at ordinary scales (κ ∼ 10⁻⁶⁹)</td><td>“Now we see through a glass darkly” (1 Cor 13:12)</td></tr>
+        <tr><td>Shared 3</td><td>Completes rather than contradicts (GR recovery)</td><td>“Not to abolish but to fulfill” (Matthew 5:17)</td></tr>
+        <tr><td>Shared 4</td><td>Resolves pathologies in the known structure (singularities)</td><td>Logos resolves the problem of evil, origin, and ultimate coherence</td></tr>
+        <tr><td>Shared 5</td><td>Universal in scope (“all of spacetime”)</td><td>“All things were made through Him” (John 1:3)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5. SEPARATOR TESTS -->
+  <div class="flex-row" style="margin-bottom: 0.5rem;"><span class="section-number">03</span><h2 style="border: none; padding: 0; margin: 0;">Separator Tests</h2></div>
+  <div class="grid-4" style="margin-bottom: 2rem;">
+    <div class="test-card">
+      <div class="test-header">
+        <span class="test-label"><i class="fas fa-sitemap" style="color: var(--gold);"></i> Test A · Structural Preservation</span>
+        <span class="test-result test-pass">PASS</span>
+      </div>
+      <div class="test-desc">Do relations survive under mapping? The χ-field stress–energy tensor maps to Logos mediation; the GR recovery maps to “not to abolish but to fulfill.” Relations (Bianchi identity, Klein–Gordon) have theological correlates (coherence, self-consistency).</div>
+    </div>
+    <div class="test-card">
+      <div class="test-header">
+        <span class="test-label"><i class="fas fa-random" style="color: var(--gold);"></i> Test B · Non-Arbitrariness</span>
+        <span class="test-result test-fail">FAIL</span>
+      </div>
+      <div class="test-desc">Swap test: the χ-field is not distinguished from other scalar–tensor theories (Brans–Dicke, quintessence, Horndeski) by gravitational dynamics alone. The mapping is not forced; the theological overlay is an interpretive choice.</div>
+    </div>
+    <div class="test-card">
+      <div class="test-header">
+        <span class="test-label"><i class="fas fa-ban" style="color: var(--gold);"></i> Test C · Constraint</span>
+        <span class="test-result test-pass">PASS</span>
+      </div>
+      <div class="test-desc">Does the mapping rule things out? Yes: κ must be ∼10⁻⁶⁹; χ must obey Klein–Gordon; GR must be recovered. The Logos cannot be a “gap filler” — it must be a subtle completion. Many theological claims (e.g., direct intervention) are constrained.</div>
+    </div>
+    <div class="test-card">
+      <div class="test-header">
+        <span class="test-label"><i class="fas fa-exchange-alt" style="color: var(--gold);"></i> Test D · Bidirectionality</span>
+        <span class="test-result test-fail">FAIL</span>
+      </div>
+      <div class="test-desc">Weak: physics provides notation for “Logos pervades creation” but does not derive theological content independently. Theology does not generate testable physics beyond generic scalar–tensor gravity. Bidirectional prediction is not demonstrated.</div>
+    </div>
+  </div>
+
+  <!-- 6. CLASSIFICATION & EVIDENCE -->
+  <div class="flex-row" style="margin-bottom: 0.5rem;"><span class="section-number">04</span><h2 style="border: none; padding: 0; margin: 0;">Classification &amp; Evidence</h2></div>
+  <div class="class-panel" style="margin-bottom: 2rem;">
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem 2.5rem; align-items: center;">
+      <div><span class="badge badge-warning" style="font-size: 0.9rem; padding: 0.3rem 1.2rem;"><i class="fas fa-tag"></i> Level 2 · Correspondence</span></div>
+      <div><span class="badge badge-info" style="font-size: 0.9rem; padding: 0.3rem 1.2rem;"><i class="fas fa-chart-simple"></i> Confidence: Low–Medium</span></div>
+      <div><span class="badge" style="font-size: 0.9rem; padding: 0.3rem 1.2rem;"><i class="fas fa-link"></i> Connections: ISO-001, ISO-014, ISO-015, ISO-018, Master Eq.</span></div>
+    </div>
+    <div class="evidence-chips">
+      <span class="chip"><i class="fas fa-file-alt"></i> E13.1 · Modified Einstein eq.</span>
+      <span class="chip"><i class="fas fa-file-alt"></i> E13.2 · χ stress–energy</span>
+      <span class="chip chip-info"><i class="fas fa-globe"></i> Planck 2018 constraints</span>
+      <span class="chip chip-info"><i class="fas fa-wave-square"></i> LIGO scalar–tensor bounds</span>
+      <span class="chip"><i class="fas fa-book"></i> John 1:1-3</span>
+      <span class="chip"><i class="fas fa-book"></i> Colossians 1:17</span>
+      <span class="chip"><i class="fas fa-calculator"></i> Brans–Dicke (1961)</span>
+      <span class="chip"><i class="fas fa-calculator"></i> Horndeski (1974)</span>
+    </div>
+    <div style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">
+      <i class="fas fa-scale-balanced" style="color: var(--gold);"></i> Laws invoked: <strong>Law 1</strong> (Existence/Gravity), <strong>Law 3</strong> (Trinity/Creation), <strong>Law 4</strong> (Coherence)
+    </div>
+  </div>
+
+  <!-- 7. FALSIFICATION CRITERIA -->
+  <div class="flex-row" style="margin-bottom: 0.5rem;"><span class="section-number">05</span><h2 style="border: none; padding: 0; margin: 0;">Falsification Criteria</h2></div>
+  <div class="fals-box" style="margin-bottom: 2rem;">
+    <ul>
+      <li><strong>Kill condition 1:</strong> Show that the χ-field stress–energy tensor χ<sub>μν</sub> is inconsistent with observational data (Cassini, LIGO, Planck). If κ &gt; 10⁻⁶⁹ is ruled out, the model must be revised.</li>
+      <li><strong>Kill condition 2:</strong> Show that singularity resolution does not require a new field — if pure quantum gravity (loop quantum gravity, string theory) resolves singularities without any scalar field, the χ-field loses its singularity-resolution motivation.</li>
+      <li><strong>Kill condition 3:</strong> Show that dark energy is exactly constant (Λ). If Δw<sub>DE</sub> &lt; 10⁻³, dynamical χ-field dark energy is disfavored.</li>
+      <li><strong>Kill condition 4:</strong> Show that a consciousness–gravity coupling produces experimentally distinguishable predictions. If it does, test them. If it doesn’t, the consciousness interpretation is empirically vacuous.</li>
+    </ul>
+  </div>
+
+  <!-- 8. RELATED ISOMORPHISMS -->
+  <div class="flex-row" style="margin-bottom: 0.5rem;"><span class="section-number">06</span><h2 style="border: none; padding: 0; margin: 0;">Related Isomorphisms</h2></div>
+  <div class="related-grid" style="margin-bottom: 2rem;">
+    <span class="related-item"><i class="fas fa-link"></i> ISO-001 · Trinity as source of χ</span>
+    <span class="related-item"><i class="fas fa-link"></i> ISO-014 · Soul Field (χ-coupled dynamics)</span>
+    <span class="related-item"><i class="fas fa-link"></i> ISO-015 · Moral Physics (χ coherence)</span>
+    <span class="related-item"><i class="fas fa-link"></i> ISO-018 · Cosmological Grace (modified Friedmann)</span>
+    <span class="related-item"><i class="fas fa-link"></i> Master Equation · Theophysics core</span>
+    <span class="related-item"><i class="fas fa-file-alt"></i> Paper 05: Physics of Principalities</span>
+  </div>
+
+  <!-- 9. FOOTER -->
+  <div class="footer">
+    <div style="font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.9rem; color: var(--text-muted);">Theophysics Research Program</div>
+    <div style="margin-top: 0.3rem;">POF 2828 · ISO-017 v1.0 · 2026-03-10</div>
+    <div class="footer-seal">“The math points to God. The math does not contain God.”</div>
+  </div>
+
+  <!-- subtle gradient line after last section -->
+  <div class="

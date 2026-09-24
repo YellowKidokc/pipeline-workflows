@@ -1,0 +1,621 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "thermodynamics",
+        "type": "physics",
+        "strength": 10
+      },
+      {
+        "name": "information_theory",
+        "type": "physics",
+        "strength": 7
+      },
+      {
+        "name": "soteriology",
+        "type": "theology",
+        "strength": 9
+      },
+      {
+        "name": "grace",
+        "type": "theology",
+        "strength": 10
+      },
+      {
+        "name": "atonement",
+        "type": "theology",
+        "strength": 8
+      },
+      {
+        "name": "anthropology",
+        "type": "theology",
+        "strength": 6
+      },
+      {
+        "name": "calvinism_arminianism",
+        "type": "theology",
+        "strength": 5
+      },
+      {
+        "name": "mathematical_modeling",
+        "type": "mathematics",
+        "strength": 8
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": true,
+        "role": "Grace as negentropy injection from outside the system; the external source term in the coherence equation",
+        "strength": 10
+      },
+      {
+        "variable": "M",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "E",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "S",
+        "present": true,
+        "role": "Entropy as the decay pressure; the Second Law as the universal decay term",
+        "strength": 9
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Thermodynamics as the foundational physics; the Second Law as the core constraint",
+        "strength": 10
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Information theory via Landauer's principle; the cost of erasing disorder",
+        "strength": 7
+      },
+      {
+        "variable": "R",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "Q",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "F",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence as alignment with the Logos; the variable being restored by grace",
+        "strength": 9
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "Existence of the system and the external source is assumed"
+      },
+      {
+        "id": "A1.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A5.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC6",
+        "invoked": true,
+        "how": "Infinite Source: the G term is nonzero; the negentropy source is active and inexhaustible"
+      },
+      {
+        "id": "A1.3",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "T3.1",
+        "invoked": true,
+        "how": "Coherence Cannot Self-Increase: a closed system cannot reduce its own entropy; the decay term always wins alone"
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "External Grace: grace must come from outside the system; it is negentropy injection from the external source"
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "Info Conservation: Landauer's principle states erasing information has a thermodynamic cost that cannot be avoided"
+      },
+      {
+        "id": "BC8",
+        "invoked": true,
+        "how": "Voluntary Coupling: the O variable represents human openness; the channel must be open for grace to flow, though initiation may be external"
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "source",
+          "ground",
+          "origin of grace"
+        ]
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "mediator",
+          "the Cross as the event where the Landauer cost is paid",
+          "incarnation"
+        ]
+      },
+      "spirit": {
+        "present": false,
+        "manifestations": []
+      },
+      "trinitarian_structure": "implicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-001",
+        "domain_a": "thermodynamics",
+        "domain_b": "soteriology",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-002",
+        "domain_a": "information_theory",
+        "domain_b": "atonement",
+        "strength": 8,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-003",
+        "domain_a": "mathematical_modeling",
+        "domain_b": "spiritual_growth",
+        "strength": 9,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "grace",
+        "context": "negentropy injection from outside the system; cannot be earned; the external input that reverses the entropy gradient",
+        "weight": 10
+      },
+      {
+        "concept": "atonement",
+        "context": "the Cross as the event where the Landauer cost of restoring moral order is paid",
+        "weight": 8
+      },
+      {
+        "concept": "sin",
+        "context": "the process of a system decoupling from its external negentropy source",
+        "weight": 7
+      },
+      {
+        "concept": "salvation",
+        "context": "the restoration of coherence through external grace; thermodynamically impossible from within",
+        "weight": 9
+      },
+      {
+        "concept": "irresistible_grace",
+        "context": "the Dirac delta function term that initiates openness; a single event, not an ongoing state",
+        "weight": 6
+      },
+      {
+        "concept": "weakness",
+        "context": "the admission of weakness is the opening of the channel; 'when I am weak, then I am strong'",
+        "weight": 7
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "necessity",
+        "context": "grace is structurally necessary, not merely helpful; the Second Law makes it a formal necessity",
+        "weight": 10
+      },
+      {
+        "concept": "impossibility",
+        "context": "self-salvation is thermodynamically impossible; a closed system cannot reduce its own entropy",
+        "weight": 9
+      },
+      {
+        "concept": "sufficiency",
+        "context": "grace alone is sufficient; the G term is the only thing that can invert the decay",
+        "weight": 8
+      },
+      {
+        "concept": "contradiction",
+        "context": "the Calvinism/Arminianism debate is resolved by the equation; both are partially right",
+        "weight": 5
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "love",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "patience",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "faithfulness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "self_control",
+        "present": false,
+        "strength": 0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "domain:thermodynamics",
+      "to": "domain:soteriology",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "chi_variable:G",
+      "to": "chi_variable:C",
+      "relation": "produces",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:S",
+      "to": "chi_variable:C",
+      "relation": "reduces",
+      "weight": 9
+    },
+    {
+      "from": "axiom:T3.1",
+      "to": "chi_variable:S",
+      "relation": "supports",
+      "weight": 10
+    },
+    {
+      "from": "axiom:BC2",
+      "to": "chi_variable:G",
+      "relation": "defines",
+      "weight": 10
+    },
+    {
+      "from": "axiom:BC7",
+      "to": "theological_concept:atonement",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "axiom:BC8",
+      "to": "chi_variable:C",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "theological_concept:grace",
+      "to": "chi_variable:G",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "theological_concept:atonement",
+      "to": "theological_concept:grace",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "theological_concept:sin",
+      "to": "chi_variable:S",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "logical_concept:necessity",
+      "to": "theological_concept:grace",
+      "relation": "supports",
+      "weight": 10
+    },
+    {
+      "from": "logical_concept:impossibility",
+      "to": "theological_concept:salvation",
+      "relation": "contradicts",
+      "weight": 9
+    },
+    {
+      "from": "isomorphism:ISO-001",
+      "to": "domain:thermodynamics",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "isomorphism:ISO-001",
+      "to": "domain:soteriology",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "isomorphism:ISO-002",
+      "to": "domain:information_theory",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "isomorphism:ISO-002",
+      "to": "theological_concept:atonement",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "isomorphism:ISO-003",
+      "to": "domain:mathematical_modeling",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "isomorphism:ISO-003",
+      "to": "theological_concept:salvation",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "trinity:son",
+      "to": "theological_concept:atonement",
+      "relation": "produces",
+      "weight": 9
+    }
+  ],
+  "tags": {
+    "primary": [
+      "grace",
+      "second_law",
+      "thermodynamics",
+      "atonement",
+      "coherence_equation"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/theology"
+    ],
+    "series": "convergence",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "John 15:5",
+        "context": "Formal statement that G=0 produces -S*C; 'without me you can do nothing'"
+      },
+      {
+        "ref": "Philippians 2:12-13",
+        "context": "Both clauses of the equation: work out your salvation (O) for it is God who works in you (G)"
+      },
+      {
+        "ref": "John 19:30",
+        "context": "'It is finished' as the Landauer cost paid in full"
+      },
+      {
+        "ref": "2 Corinthians 12:10",
+        "context": "Thermodynamically exact: 'when I am weak, then I am strong'"
+      },
+      {
+        "ref": "2 Corinthians 12:9",
+        "context": "'My grace is sufficient for you'"
+      },
+      {
+        "ref": "Romans 5:20",
+        "context": "'Where sin abounded, grace did much more abound'"
+      }
+    ],
+    "academic": [
+      {
+        "ref": "Landauer, R. (1961)",
+        "context": "Landauer's principle: erasing one bit of information requires kT*ln(2) energy expenditure"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "Three Pathways paper",
+        "context": "Shows three neurochemical states; this paper explains the thermodynamics of why only one works"
+      }
+    ],
+    "total_count": 8
+  },
+  "word_anomalies": [
+    {
+      "word": "negentropy",
+      "frequency": 5,
+      "significance": "Central concept: grace as negentropy injection; technical term from thermodynamics used as a theological metaphor"
+    },
+    {
+      "word": "Landauer_cost",
+      "frequency": 3,
+      "significance": "Key to the atonement argument: the Cross pays the thermodynamic cost of restoration"
+    },
+    {
+      "word": "Dirac_delta_function",
+      "frequency": 2,
+      "significance": "Used to model irresistible grace as a single initiation event; technical mathematical term applied to theology"
+    },
+    {
+      "word": "decoherence",
+      "frequency": 1,
+      "significance": "State of full closure; the human will at full decoherence cannot open itself"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "This document takes a rigorous, apologetic stance: it seeks to prove the necessity of grace from physics, not from theology.",
+    "Q1_identity": "A formal argument that grace must come from outside the system, grounded in the Second Law of Thermodynamics and the Coherence Equation.",
+    "Q2_domain": "Lives at the intersection of thermodynamics, information theory, and soteriology.",
+    "Q3_claim": "Self-salvation is thermodynamically impossible; grace is structurally necessary as external negentropy injection; the Cross pays the Landauer cost of restoration.",
+    "Q4_support": "The Second Law, the Coherence Equation, Landauer's principle, and scriptural citations (John 15:5, Philippians 2:12-13, etc.).",
+    "Q5_dependencies": "Depends on the Coherence Equation, the Second Law, Landauer's principle, and the Three Pathways framework.",
+    "Q6_consequences": "Forces the conclusion that grace is not optional but necessary; the Calvinism/Arminianism debate is resolved by the equation; the cultural crisis is a thermodynamic trajectory.",
+    "Q7_kill": "A violation of the Second Law (a closed system reducing its own entropy) would destroy the argument; or a demonstration that the Coherence Equation is not a valid model."
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "Three Pathways paper",
+      "Coherence Equation derivation",
+      "Second Law of Thermodynamics",
+      "Landauer's principle"
+    ],
+    "required_by": [
+      "Applications of the Coherence Equation",
+      "Further work on the atonement as thermodynamic necessity"
+    ],
+    "parallel_to": [
+      "Other Convergence Series papers on thermodynamics and theology"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 28,
+    "total_edges": 20,
+    "dominant_domain": "thermodynamics",
+    "dominant_chi": "G",
+    "connectivity_score": 9,
+    "one_sentence": "This document provides a formal thermodynamic proof that grace must come from outside the system, grounding the necessity of the Cross in the Second Law and Landauer's principle."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": true,
+      "how": "Grace (G) is the external input; faith (openness, O) is the channel; the pair is central to the equation"
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Truth (Logos) is the standard; coherence (C) is alignment with it; the equation governs C"
+    },
+    "4_7_love_relationship": {
+      "active": false,
+      "how": ""
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Judgment (T) is the decay term; Logos (K) is the information structure; the Cross pays the cost of restoring the Logos order"
+    },
+    "pairs_active_count": 3
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 10
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 7
+    },
+    "love": {
+      "present": false,
+      "strength": 0
+    },
+    "judgment": {
+      "present": true,
+      "strength": 8
+    },
+    "logos": {
+      "present": true,
+      "strength": 8
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": true,
+      "strength": 7
+    },
+    "atonement": {
+      "present": true,
+      "strength": 9
+    },
+    "christ": {
+      "present": true,
+      "strength": 9
+    },
+    "operators_present_count": 7
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "Three Pathways paper",
+      "Coherence Equation derivation"
+    ],
+    "read_after": [
+      "Applications of the Coherence Equation",
+      "Further work on atonement theory"
+    ]
+  }
+}

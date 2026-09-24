@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO-005 · Fiat Phantom Energy · Theophysics Registry</title>
+    <!-- Google Fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6.4 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* ----- CSS variables (light/dark gold theme) ----- */
+        :root {
+            --bg: #0a0a0a;
+            --bg-card: #111111;
+            --bg-card-hover: #1a1a1a;
+            --text: #c9d1d9;
+            --text-muted: #8b949e;
+            --gold: #d4af37;
+            --gold-dim: #a8872b;
+            --gold-light: #f0d060;
+            --success: #22c55e;
+            --danger: #ef4444;
+            --info: #4a9eff;
+            --border: #2a2a2a;
+            --border-light: #3a3a3a;
+            --font-heading: 'Oswald', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-quote: 'Crimson Text', serif;
+            --radius: 12px;
+            --radius-sm: 6px;
+            --shadow: 0 8px 24px rgba(0,0,0,0.6);
+            --transition: 0.2s ease;
+        }
+
+        /* ----- reset & base ----- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-weight: 300;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        a { color: var(--gold); text-decoration: none; transition: var(--transition); }
+        a:hover { color: var(--gold-light); }
+
+        /* ----- typography ----- */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-weight: 600;
+            color: #fff;
+        }
+        h1 { font-size: 2.6rem; letter-spacing: 0.06em; }
+        h2 { font-size: 2rem; margin-bottom: 1rem; }
+        h3 { font-size: 1.4rem; margin-bottom: 0.6rem; }
+        h4 { font-size: 1.1rem; }
+        p { margin-bottom: 1rem; }
+        .mono { font-family: var(--font-mono); font-size: 0.9rem; }
+        .quote {
+            font-family: var(--font-quote);
+            font-style: italic;
+            font-size: 1.15rem;
+            line-height: 1.5;
+            color: #e0d6c8;
+        }
+        .verse-ref {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
+        }
+        .section-number {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--gold);
+            opacity: 0.2;
+            line-height: 1;
+            margin-right: 0.75rem;
+            user-select: none;
+        }
+
+        /* ----- cards, containers ----- */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+        .card:hover { border-color: var(--border-light); }
+        .gradient-line {
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            margin: 2rem 0 1.5rem 0;
+            opacity: 0.5;
+        }
+        .gold-border-left {
+            border-left: 4px solid var(--gold);
+            padding-left: 1.2rem;
+        }
+        .badge {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            background: rgba(212,175,55,0.15);
+            color: var(--gold);
+            border: 1px solid rgba(212,175,55,0.3);
+            font-weight: 400;
+        }
+        .badge-success { background: rgba(34,197,94,0.15); color: var(--success); border-color: rgba(34,197,94,0.3); }
+        .badge-danger { background: rgba(239,68,68,0.15); color: var(--danger); border-color: rgba(239,68,68,0.3); }
+        .badge-info { background: rgba(74,158,255,0.15); color: var(--info); border-color: rgba(74,158,255,0.3); }
+        .badge-warning { background: rgba(212,175,55,0.15); color: var(--gold); border-color: rgba(212,175,55,0.3); }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.2rem;
+        }
+
+        /* ----- registry header ----- */
+        .registry-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        .registry-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .registry-logo .phi {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+        }
+        .registry-title {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            letter-spacing: 0.08em;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        .registry-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+        .registry-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            align-items: center;
+            margin-top: 0.3rem;
+        }
+
+        /* ----- hero banner ----- */
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(10,10,10,0.95) 80%);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+        .hero-left .law-badge {
+            font-family: var(--font-heading);
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            background: rgba(212,175,55,0.2);
+            color: var(--gold);
+            padding: 0.2rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 0.8rem;
+            border: 1px solid rgba(212,175,55,0.25);
+        }
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+        .hero-subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .equation-card {
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(212,175,55,0.25);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            line-height: 2;
+            backdrop-filter: blur(4px);
+        }
+        .equation-card .arrow {
+            color: var(--gold);
+            font-size: 1.6rem;
+            margin: 0.2rem 0;
+            display: block;
+        }
+        .equation-card .label {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+        }
+
+        /* ----- domain cards ----- */
+        .domain-card-a { border-top: 4px solid var(--info); }
+        .domain-card-b { border-top: 4px solid var(--gold); }
+        .domain-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+
+        /* ----- mapping table ----- */
+        .mapping-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .mapping-table thead {
+            background: rgba(212,175,55,0.15);
+            color: var(--gold);
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 400;
+        }
+        .mapping-table th, .mapping-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+            vertical-align: top;
+        }
+        .mapping-table tbody tr:hover { background: rgba(212,175,55,0.04); }
+        .mapping-table td:first-child { font-family: var(--font-mono); font-size: 0.85rem; }
+        .mapping-table td:nth-child(2) { font-family: var(--font-mono); font-size: 0.85rem; }
+
+        /* ----- test cards ----- */
+        .test-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.2rem;
+        }
+        .test-card h4 { font-size: 1rem; margin-bottom: 0.3rem; }
+        .test-card .test-label { font-family: var(--font-heading); font-size: 0.8rem; letter-spacing: 0.08em; color: var(--text-muted); }
+        .test-card .verdict { font-weight: 600; font-size: 1.1rem; margin-top: 0.5rem; }
+
+        /* ----- classification chips ----- */
+        .chip {
+            display: inline-block;
+            background: rgba(212,175,55,0.1);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 20px;
+            padding: 0.2rem 1rem;
+            font-size: 0.75rem;
+            font-family: var(--font-body);
+            color: var(--gold);
+            margin: 0.2rem 0.2rem;
+        }
+        .chip-info { background: rgba(74,158,255,0.1); border-color: rgba(74,158,255,0.2); color: var(--info); }
+        .chip-success { background: rgba(34,197,94,0.1); border-color: rgba(34,197,94,0.2); color: var(--success); }
+
+        /* ----- falsification box ----- */
+        .falsification-box {
+            background: rgba(239,68,68,0.06);
+            border: 1px solid rgba(239,68,68,0.25);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+        }
+        .falsification-box ul { list-style: none; padding-left: 0; }
+        .falsification-box li {
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(239,68,68,0.08);
+            display: flex;
+            gap: 0.6rem;
+            align-items: baseline;
+        }
+        .falsification-box li:last-child { border-bottom: none; }
+        .falsification-box li i { color: var(--danger); width: 1.2rem; text-align: center; }
+
+        /* ----- footer ----- */
+        .footer-seal {
+            font-family: var(--font-quote);
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            padding-top: 1.2rem;
+            margin-top: 1.2rem;
+            text-align: center;
+        }
+
+        /* ----- responsive ----- */
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.8rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .grid-4 { grid-template-columns: 1fr 1fr; }
+            .registry-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+            .hero-title { font-size: 1.6rem; }
+            .mapping-table { font-size: 0.75rem; }
+            .mapping-table th, .mapping-table td { padding: 0.5rem 0.6rem; }
+            .equation-card { font-size: 0.9rem; }
+        }
+        @media (max-width: 480px) {
+            .grid-4 { grid-template-columns: 1fr; }
+            .section-number { font-size: 2.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== 1. REGISTRY HEADER ===== -->
+    <header class="registry-header">
+        <div class="registry-logo">
+            <span class="phi">Φ</span>
+            <div>
+                <div class="registry-title">Theophysics Registry</div>
+                <div class="registry-subtitle">ISO-005 · Fiat Phantom Energy</div>
+            </div>
+        </div>
+        <div class="registry-meta">
+            <span class="badge badge-warning"><i class="fa-regular fa-diagram-project" style="margin-right:0.3rem;"></i>Level 2 · Correspondence</span>
+            <span class="badge badge-info"><i class="fa-regular fa-circle-check"></i> Confidence: Medium</span>
+            <span class="badge" style="background:rgba(212,175,55,0.08);"><i class="fa-regular fa-file-lines"></i> v1.0</span>
+        </div>
+    </header>
+
+    <!-- ===== 2. HERO BANNER ===== -->
+    <div class="hero-banner grid-2">
+        <div class="hero-left">
+            <div class="law-badge"><i class="fa-regular fa-scale-balanced" style="margin-right:0.3rem;"></i> Law 2 · Conservation</div>
+            <div class="hero-title">Physics <i class="fa-regular fa-arrow-right-arrow-left" style="color:var(--gold);font-size:1.8rem;margin:0 0.3rem;"></i> Economics / Theology</div>
+            <div class="hero-subtitle">Conservation of Energy → Sound Money · Fiat as Phantom Injection</div>
+            <div class="quote gold-border-left" style="margin-top:1rem;">
+                “Fiat currency printing = injecting phantom energy without corresponding real work/mass. Inflation = thermodynamic waste heat from conservation violation.”
+            </div>
+        </div>
+        <div>
+            <div class="equation-card">
+                <div class="label">Domain A · Physics</div>
+                <div>ΔE = 0 &nbsp; (First Law)</div>
+                <div>E = mc²</div>
+                <div class="arrow"><i class="fa-regular fa-arrow-down"></i> mapping <i class="fa-regular fa-arrow-down"></i></div>
+                <div class="label" style="margin-top:0.5rem;">Domain B · Economics / Theology</div>
+                <div>ΔM ≈ 0 (gold standard)</div>
+                <div>ΔM ≫ 0 (fiat regime)</div>
+                <div style="margin-top:0.5rem;font-size:0.75rem;color:var(--text-muted);">1971 phase transition: Nixon Shock</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 3. DOMAIN SPECIFICATIONS ===== -->
+    <div style="display:flex;align-items:center;gap:0.5rem;margin-top:2rem;">
+        <span class="section-number">01</span>
+        <h2>Domain Specifications</h2>
+    </div>
+    <div class="gradient-line"></div>
+    <div class="grid-2">
+        <!-- Domain A -->
+        <div class="card domain-card-a">
+            <div class="domain-icon"><i class="fa-regular fa-atom" style="color:var(--info);"></i></div>
+            <h3 style="color:var(--info);">Domain A · Physics</h3>
+            <p><strong>Conservation of Energy / Thermodynamics</strong></p>
+            <p>Energy cannot be created or destroyed, only transformed. Work produces real output. Violations produce waste heat and system degradation.</p>
+            <p class="mono">ΔE = 0 (closed system) · E = mc²</p>
+        </div>
+        <!-- Domain B -->
+        <div class="card domain-card-b">
+            <div class="domain-icon"><i class="fa-regular fa-coins" style="color:var(--gold);"></i></div>
+            <h3 style="color:var(--gold);">Domain B · Economics / Theology</h3>
+            <p><strong>Fiat Currency as Thermodynamic Fraud</strong></p>
+            <p>Money as certificate of work. Fiat printing = phantom energy injection. Inflation = waste heat. Gold standard enforced conservation; its removal opened the system.</p>
+            <p class="mono">ΔM ≈ 0 (pre‑1971) → ΔM ≫ 0 (post‑1971)</p>
+        </div>
+    </div>
+
+    <!-- ===== 4. THE ISOMORPHIC MAPPING ===== -->
+    <div style="display:flex;align-items:center;gap:0.5rem;margin-top:2.5rem;">
+        <span class="section-number">02</span>
+        <h2>The Isomorphic Mapping</h2>
+    </div>
+    <div class="gradient-line"></div>
+    <div class="card" style="overflow-x:auto;padding:0.5rem 0;">
+        <table class="mapping-table">
+            <thead>
+                <tr><th>Physics</th><th>Economics / Theology</th><th>Structural Role</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Energy conservation (ΔE = 0)</td><td>Sound money / gold standard (ΔM ≈ 0)</td><td>Conservation law enforced</td></tr>
+                <tr><td>Energy</td><td>Money (as unit of account)</td><td>The signal/medium of exchange</td></tr>
+                <tr><td>Mass (E = mc²)</td><td>Real productive output (goods, services, labor)</td><td>The substrate that backs the signal</td></tr>
+                <tr><td>Perpetual motion (creating energy from nothing)</td><td>Fiat printing (creating money from nothing)</td><td>Conservation violation</td></tr>
+                <tr><td>Waste heat from inefficiency</td><td>Inflation (purchasing power degradation)</td><td>Thermodynamic cost of violation</td></tr>
+                <tr><td>System heating (entropy increase)</td><td>Asset bubbles, malinvestment, inequality</td><td>Systemic disorder from phantom energy</td></tr>
+                <tr><td>Heat death (max entropy, no free energy)</td><td>Hyperinflation / currency collapse (money = noise)</td><td>Terminal state of sustained violation</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ===== 5. SEPARATOR TESTS ===== -->
+    <div style="display:flex;align-items:center;gap:0.5rem;margin-top:2.5rem;">
+        <span class="section-number">03</span>
+        <h2>Separator Tests</h2>
+    </div>
+    <div class="gradient-line"></div>
+    <div class="grid-2">
+        <!-- Test A -->
+        <div class="test-card">
+            <div class="test-label">Test A · Structural Preservation</div>
+            <h4>Do relations survive under mapping?</h4>
+            <p style="font-size:0.85rem;color:var(--text-muted);">Conservation violation → system heating maps in both domains. Monotonic degradation, terminal state, reversal require restoration.</p>
+            <div class="verdict" style="color:var(--success);"><i class="fa-regular fa-circle-check"></i> PASS</div>
+        </div>
+        <!-- Test B -->
+        <div class="test-card">
+            <div class="test-label">Test B · Non‑Arbitrariness</div>
+            <h4>Is the mapping forced or could you swap targets?</h4>
+            <p style="font-size:0.85rem;color:var(--text-muted);">Topology maps cleanly but ontological status differs: physics law vs. institutional choice. Partially forced.</p>
+            <div class="verdict" style="color:var(--gold);"><i class="fa-regular fa-circle-exclamation"></i> PARTIAL</div>
+        </div>
+        <!-- Test C -->
+        <div class="test-card">
+            <div class="test-label">Test C · Constraint</div>
+            <h4>Does the mapping rule things out?</h4>
+            <p style="font-size:0.85rem;color:var(--text-muted);">Predicts fiat systems degrade; rules out indefinite stable fiat without productivity growth. Strong constraint.</p>
+            <div class="verdict" style="color:var(--success);"><i class="fa-regular fa-circle-check"></i> PASS</div>
+        </div>
+        <!-- Test D -->
+        <div class="test-card">
+            <div class="test-label">Test D · Bidirectionality</div>
+            <h4>Does each side predict the other?</h4>
+            <p style="font-size:0.85rem;color:var(--text-muted);">Physics → Economics strong; Theology → Economics moderate; Economics → Physics weak. Asymmetric.</p>
+            <div class="verdict" style="color:var(--gold);"><i class="fa-regular fa-circle-exclamation"></i> PARTIAL</div>
+        </div>
+    </div>
+
+    <!-- ===== 6. CLASSIFICATION & EVIDENCE ===== -->
+    <div style="display:flex;align-items:center;gap:0.5rem;margin-top:2.5rem;">
+        <span class="section-number">04</span>
+        <h2>Classification &amp; Evidence</h2>
+    </div>
+    <div class="gradient-line"></div>
+    <div class="card">
+        <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-bottom:1rem;">
+            <span class="badge badge-warning" style="font-size:0.9rem;padding:0.3rem 1.2rem;">Level 2 · Correspondence</span>
+            <span class="badge badge-info" style="font-size:0.9rem;padding:0.3rem 1.2rem;">Confidence: Medium</span>
+        </div>
+        <p><strong>Type:</strong> Undetermined — may be strong, well‑structured analogy rather than structural isomorphism. Topology maps cleanly but ontological asymmetry (fundamental law vs. institutional choice) is significant.</p>
+        <div style="margin:1rem 0;">
+            <span class="chip"><i class="fa-regular fa-flask"></i> First Law of Thermodynamics</span>
+            <span class="chip chip-info"><i class="fa-regular fa-clock"></i> Nixon Shock 1971</span>
+            <span class="chip chip-success"><i class="fa-regular fa-chart-line"></i> Historical fiat failures</span>
+            <span class="chip"><i class="fa-regular fa-book"></i> Proverbs 11:1</span>
+            <span class="chip chip-info"><i class="fa-regular fa-scale-balanced"></i> Cantillon Effect</span>
+            <span class="chip"><i class="fa-regular fa-scroll"></i> Exodus 20:15</span>
+            <span class="chip chip-success"><i class="fa-regular fa-arrow-trend-up"></i> Post‑1971 CPI / Gini / debt‑to‑GDP</span>
+        </div>
+        <p><strong>Laws Invoked:</strong> Law 2 (Conservation), Law 6 (Entropy/Degradation), Law 10 (Moral Structure / Coherence Conservation)</p>
+        <p><strong>Connected ISOs:</strong> ISO‑002 (Grace — conservation as structural necessity), ISO‑003 (Entropy/Sin — degradation trajectory)</p>
+    </div>
+
+    <!-- ===== 7. FALSIFICATION CRITERIA ===== -->
+    <div style="display:flex;align-items:center;gap:0.5rem;margin-top:2.5rem;">
+        <span class="section-number">05</span>
+        <h2>Falsification Criteria</h2>
+    </div>
+    <div class="gradient-line"></div>
+    <div class="falsification-box">
+        <ul>
+            <li><i class="fa-regular fa-circle-xmark"></i> <strong>Economics:</strong> Show a fiat currency system that maintains stable purchasing power indefinitely (&gt;100 years) without productivity growth matching monetary expansion.</li>
+            <li><i class="fa-regular fa-circle-xmark"></i> <strong>Physics:</strong> Show a sustained energy conservation violation that does NOT produce waste heat or system degradation.</li>
+            <li><i class="fa-regular fa-circle-xmark"></i> <strong>Historical:</strong> Show that the 1971 Nixon Shock did NOT produce a measurable, sustained increase in inflation, inequality, or debt‑to‑GDP ratios.</li>
+            <li><i class="fa-regular fa-circle-xmark"></i> <strong>Structural:</strong> Show that the mapping is too loose — that any two systems involving “input and output” would map equally well.</li>
+        </ul>
+    </div>
+
+    <!-- ===== 8. RELATED ISOMORPHISMS ===== -->
+    <div style="display:flex;align-items:center;gap:0.5rem;margin-top:2.5rem;">
+        <span class="section-number">06</span>
+        <h2>Related Isomorphisms</h2>
+    </div>
+    <div class="gradient-line"></div>
+    <div class="grid-2" style="margin-bottom:1rem;">
+        <div class="card" style="display:flex;align-items:center;gap:0.8rem;">
+            <i class="fa-regular fa-link" style="color:var(--gold);font-size:1.4rem;"></i>
+            <div>
+                <h4 style="margin-bottom:0.2rem;">ISO‑002 · Grace / Terminus Sui</h4>
+                <p style="font-size:0.85rem;color:var(--text-muted);">Conservation as moral structure — the foundational constraint being violated.</p>
+            </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;gap:0.8rem;">
+            <i class="fa-regular fa-link" style="color:var(--gold);font-size:1.4rem;"></i>
+            <div>
+                <h4 style="margin-bottom:0.2rem;">ISO‑003 · Entropy / Sin</h4>
+                <p style="font-size:0.85rem;color:var(--text-muted);">Degradation trajectory from conservation violation.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 9. FOOTER ===== -->
+    <footer style="margin-top:3rem;border-top:1px solid var(--border);padding-top:1.5rem;">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0.8rem;">
+            <div>
+                <span style="font-family:var(--font-heading);letter-spacing:0.06em;color:#fff;">Theophysics Research Program</span>
+                <span style="color:var(--text-muted);margin-left:1rem;">POF 2828</span>
+                <span style="color:var(--text-muted);margin-left:1rem;">v1.0</span>
+            </div>
+            <div style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);letter-spacing:0.04em;">
+                <i class="fa-regular fa-phi" style="color:var(--gold);"></i> ISO‑005
+            </div>
+        </div>
+        <div class="footer-seal">
+            “The math points to God. The math does not contain God.”
+        </div>
+    </footer>
+
+</body>
+</html>

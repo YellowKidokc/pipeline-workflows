@@ -1,0 +1,518 @@
+{
+  "definitions": [
+    {
+      "term": "Isomorphism",
+      "category": "math",
+      "definition": "A structural similarity between two different systems, showing they work the same way even though they are made of different things.",
+      "example": "A map of a subway system and the actual subway tracks are isomorphic because the connections between stations match, even though the map is paper and the tracks are metal.",
+      "grade_level": "college",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "Molecular Biology",
+      "category": "physics",
+      "definition": "The study of life at the level of molecules like DNA and proteins.",
+      "example": "Molecular biology explains how your body uses DNA to make the proteins that build your cells.",
+      "grade_level": "12",
+      "first_appearance": "Domains"
+    },
+    {
+      "term": "Genetics",
+      "category": "physics",
+      "definition": "The study of genes, heredity, and how traits are passed from parents to offspring.",
+      "example": "Genetics explains why you might have your mother's eyes or your father's hair color.",
+      "grade_level": "10",
+      "first_appearance": "Domains"
+    },
+    {
+      "term": "DNA",
+      "category": "physics",
+      "definition": "The molecule that carries the genetic instructions for all living things, shaped like a twisted ladder.",
+      "example": "DNA is like a blueprint for building and running your body, stored in almost every cell.",
+      "grade_level": "10",
+      "first_appearance": "Domains"
+    },
+    {
+      "term": "Transcription",
+      "category": "physics",
+      "definition": "The process of copying a gene's DNA sequence into a messenger RNA molecule.",
+      "example": "Transcription is like making a photocopy of a single recipe from a cookbook so you can take it to the kitchen.",
+      "grade_level": "12",
+      "first_appearance": "Domains"
+    },
+    {
+      "term": "Translation",
+      "category": "physics",
+      "definition": "The process where a cell reads the RNA instructions to build a protein.",
+      "example": "Translation is like following a recipe to actually bake a cake.",
+      "grade_level": "12",
+      "first_appearance": "Domains"
+    },
+    {
+      "term": "Mutation",
+      "category": "physics",
+      "definition": "A change in the DNA sequence, which can be harmless, harmful, or sometimes beneficial.",
+      "example": "A mutation is like a typo when copying a sentence; it might not change the meaning, or it could make the sentence nonsense.",
+      "grade_level": "10",
+      "first_appearance": "Domains"
+    },
+    {
+      "term": "Epigenetics",
+      "category": "physics",
+      "definition": "The study of how cells control gene activity without changing the DNA sequence itself, like adding chemical tags that turn genes on or off.",
+      "example": "Epigenetics explains why identical twins can look different as they age, because their genes are turned on or off by their experiences.",
+      "grade_level": "college",
+      "first_appearance": "Domains"
+    },
+    {
+      "term": "Bibliology",
+      "category": "theology",
+      "definition": "The study of the Bible, including its origin, nature, and authority.",
+      "example": "Bibliology asks questions like 'Who wrote the Bible?' and 'Is the Bible trustworthy?'",
+      "grade_level": "college",
+      "first_appearance": "Domains"
+    },
+    {
+      "term": "Inspiration",
+      "category": "theology",
+      "definition": "The belief that God guided the human authors of the Bible so that what they wrote is God's message.",
+      "example": "Christians believe the Bible is inspired, meaning it's not just human ideas but God's words through people.",
+      "grade_level": "11",
+      "first_appearance": "Domains"
+    },
+    {
+      "term": "Textual Criticism",
+      "category": "academic",
+      "definition": "The scholarly practice of comparing different copies of ancient manuscripts to figure out the original wording of a text.",
+      "example": "Textual criticism is like comparing several handwritten copies of a letter to find the original words when the copies have small differences.",
+      "grade_level": "college",
+      "first_appearance": "Domains"
+    },
+    {
+      "term": "Canon Formation",
+      "category": "theology",
+      "definition": "The historical process by which certain books were recognized as authoritative Scripture and included in the Bible.",
+      "example": "Canon formation is how early church leaders decided which books belonged in the New Testament.",
+      "grade_level": "college",
+      "first_appearance": "Domains"
+    },
+    {
+      "term": "Codons",
+      "category": "physics",
+      "definition": "A sequence of three DNA or RNA letters that codes for a specific amino acid or a stop signal during protein building.",
+      "example": "The codon 'AUG' is like a three-letter code word that tells the cell to start building a protein with the amino acid methionine.",
+      "grade_level": "12",
+      "first_appearance": "Domains"
+    },
+    {
+      "term": "Amino Acids",
+      "category": "physics",
+      "definition": "Small molecules that are the building blocks of proteins; there are 20 common types.",
+      "example": "Amino acids are like different Lego bricks that snap together to make a protein structure.",
+      "grade_level": "10",
+      "first_appearance": "Domains"
+    },
+    {
+      "term": "Redundancy",
+      "category": "academic",
+      "definition": "Having extra copies or backup systems to protect against errors or failure.",
+      "example": "Having a spare tire in your car is a form of redundancy in case you get a flat.",
+      "grade_level": "10",
+      "first_appearance": "Domains"
+    },
+    {
+      "term": "Central Dogma",
+      "category": "physics",
+      "definition": "The principle that genetic information flows from DNA to RNA to protein, and never backwards from protein to DNA.",
+      "example": "The central dogma is like a one-way street: you can go from the blueprint (DNA) to the copy (RNA) to the product (protein), but you can't go from the product back to change the blueprint.",
+      "grade_level": "college",
+      "first_appearance": "Domains"
+    },
+    {
+      "term": "Sola Scriptura",
+      "category": "theology",
+      "definition": "The Protestant belief that the Bible alone is the highest authority for Christian faith and practice, not church tradition or leaders.",
+      "example": "Sola scriptura means that if a church leader says something that contradicts the Bible, the Bible is the final say.",
+      "grade_level": "college",
+      "first_appearance": "Domains"
+    },
+    {
+      "term": "Shannon Entropy",
+      "category": "math",
+      "definition": "A measure of how much information or surprise is in a message; more randomness means higher entropy.",
+      "example": "A coin flip has high entropy because you can't predict heads or tails, but a message that says 'the sun will rise tomorrow' has low entropy because it's expected.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Base Pair",
+      "category": "physics",
+      "definition": "Two DNA letters (nucleotides) that pair together, like A with T and C with G, forming the rungs of the DNA ladder.",
+      "example": "In DNA, the base pair A-T is like two puzzle pieces that always fit together.",
+      "grade_level": "10",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "DNA Polymerase Proofreading",
+      "category": "physics",
+      "definition": "A built-in error-checking function of the DNA copying machine that catches and fixes most mistakes during replication.",
+      "example": "DNA polymerase proofreading is like a spell-checker that catches typos as you type.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Mismatch Repair",
+      "category": "physics",
+      "definition": "A cellular system that finds and fixes mismatched DNA letters after replication, correcting errors the proofreader missed.",
+      "example": "Mismatch repair is like a second proofreader who goes through the whole document after the first one to catch any remaining typos.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Excision Repair",
+      "category": "physics",
+      "definition": "A DNA repair process that cuts out a damaged section of DNA and replaces it with the correct letters.",
+      "example": "Excision repair is like cutting a bad patch out of a sweater and knitting in a new piece of yarn.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Orders of Magnitude",
+      "category": "math",
+      "definition": "A way to compare sizes using powers of ten; each order of magnitude is ten times larger or smaller.",
+      "example": "If one number is 10 and another is 100, they differ by one order of magnitude (10 times).",
+      "grade_level": "11",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Degeneracy",
+      "category": "physics",
+      "definition": "In genetics, the property that multiple different codons can code for the same amino acid, providing error tolerance.",
+      "example": "Degeneracy is like having several different words that all mean the same thing, so if you misspell one, the meaning is still clear.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Wobble",
+      "category": "physics",
+      "definition": "The flexibility in the third letter of a codon that allows some mismatches without changing the amino acid.",
+      "example": "Wobble is like being able to read sloppy handwriting on the last letter of a word and still know what it says.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Point Mutations",
+      "category": "physics",
+      "definition": "A change in a single DNA letter (nucleotide) in the genetic code.",
+      "example": "A point mutation is like changing one letter in a word, such as 'cat' to 'bat'.",
+      "grade_level": "12",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Silent Mutations",
+      "category": "physics",
+      "definition": "A DNA change that does not alter the amino acid sequence of the protein, so it has no effect on function.",
+      "example": "A silent mutation is like changing 'color' to 'colour' — the meaning is the same even though the spelling is different.",
+      "grade_level": "12",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Orthographic",
+      "category": "academic",
+      "definition": "Relating to spelling or writing conventions.",
+      "example": "An orthographic variant in a manuscript is like a difference in spelling, such as 'honor' vs. 'honour'.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "Stemmatic Analysis",
+      "category": "academic",
+      "definition": "A method of textual criticism that builds a family tree of manuscripts to trace how errors were copied and to find the original text.",
+      "example": "Stemmatic analysis is like drawing a family tree of copies to see which ones are descended from which, helping to spot where mistakes were introduced.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "Autograph",
+      "category": "theology",
+      "definition": "The original handwritten manuscript of a biblical book, as first written by its author.",
+      "example": "The autograph of Paul's letter to the Romans is the very first copy he wrote, which no longer exists.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Hermeneutical Selection",
+      "category": "theology",
+      "definition": "The process of choosing which parts of Scripture to emphasize or interpret in a given context.",
+      "example": "Hermeneutical selection is like a pastor deciding to preach on a passage about hope during a difficult time, rather than on a passage about judgment.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Missense Mutations",
+      "category": "physics",
+      "definition": "A DNA change that results in a different amino acid being used in the protein, which can alter its function.",
+      "example": "A missense mutation is like changing 'cat' to 'car' — the word changes meaning, and the result might be broken or different.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Nonsense Mutations",
+      "category": "physics",
+      "definition": "A DNA change that creates a premature stop signal, cutting the protein short and usually making it nonfunctional.",
+      "example": "A nonsense mutation is like putting a period in the middle of a sentence, stopping it too early and making it incomplete.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Heretical Alterations",
+      "category": "theology",
+      "definition": "Changes to a biblical text that introduce false teachings or contradict core Christian doctrine.",
+      "example": "A heretical alteration would be like a scribe changing 'Jesus is Lord' to 'Jesus is a prophet' to push a different belief.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Nucleotide Excision Repair",
+      "category": "physics",
+      "definition": "A DNA repair process that removes a short stretch of damaged DNA including the error, and replaces it with new DNA.",
+      "example": "Nucleotide excision repair is like cutting out a damaged section of a zipper and replacing it with new teeth.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Fidelity",
+      "category": "academic",
+      "definition": "The degree of accuracy or faithfulness with which something is copied or transmitted.",
+      "example": "High fidelity in copying a document means there are very few errors compared to the original.",
+      "grade_level": "11",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Retroviruses",
+      "category": "physics",
+      "definition": "A type of virus that stores its genetic information as RNA and uses an enzyme to convert it into DNA, which it then inserts into the host's genome.",
+      "example": "HIV is a retrovirus; it's like a hacker that rewrites the computer's operating system by inserting its own code.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Reverse Transcriptase",
+      "category": "physics",
+      "definition": "An enzyme used by retroviruses to make DNA from an RNA template, going against the usual flow of genetic information.",
+      "example": "Reverse transcriptase is like a machine that can turn a photocopy back into a master blueprint, which is normally not allowed.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Liberal Revisionism",
+      "category": "theology",
+      "definition": "A theological approach that reinterprets or changes traditional biblical teachings to fit modern cultural values.",
+      "example": "Liberal revisionism might reinterpret a clear biblical command as outdated, rather than letting the Bible shape modern practice.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Orthodox Theology",
+      "category": "theology",
+      "definition": "The set of beliefs that have been accepted as correct and standard by mainstream Christianity throughout history.",
+      "example": "Orthodox theology includes beliefs like the Trinity and the resurrection of Jesus, which most Christians have agreed on for centuries.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Eschatology",
+      "category": "theology",
+      "definition": "The study of the end times, including topics like the return of Christ, judgment, and the final destiny of humanity.",
+      "example": "Eschatology deals with questions about what will happen when the world ends.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Justification",
+      "category": "theology",
+      "definition": "The act by which God declares a sinner to be righteous through faith in Jesus Christ.",
+      "example": "Justification is like a judge declaring a guilty person 'not guilty' because someone else has paid their fine.",
+      "grade_level": "11",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Horizontal Gene Transfer",
+      "category": "physics",
+      "definition": "The movement of genetic material between organisms that are not parent and offspring, such as between different bacteria.",
+      "example": "Horizontal gene transfer is like two friends sharing notes in class, rather than only getting notes from your parents.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Conjugation",
+      "category": "physics",
+      "definition": "A process where bacteria transfer DNA to each other through direct cell-to-cell contact.",
+      "example": "Conjugation is like two bacteria holding hands and passing a genetic note between them.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Transformation",
+      "category": "physics",
+      "definition": "The process by which a bacterium takes up free DNA from its environment and incorporates it into its own genome.",
+      "example": "Transformation is like a bacterium picking up a discarded instruction manual from the ground and using it.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Transduction",
+      "category": "physics",
+      "definition": "The transfer of DNA from one bacterium to another by a virus (bacteriophage).",
+      "example": "Transduction is like a virus acting as a mail carrier, picking up DNA from one bacterium and delivering it to another.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Ecumenical Dialogue",
+      "category": "theology",
+      "definition": "Conversations and cooperation between different Christian denominations to promote unity and understanding.",
+      "example": "Ecumenical dialogue is like Catholics and Protestants talking together to find common ground instead of arguing.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Vertical Transmission",
+      "category": "physics",
+      "definition": "The passing of genetic information from parent to offspring through reproduction.",
+      "example": "Vertical transmission is how you get your DNA from your mother and father.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Inscripturated",
+      "category": "theology",
+      "definition": "The act of God's revelation being written down in the words of Scripture.",
+      "example": "The Bible is inscripturated revelation, meaning God's message has been put into written form.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Deoxyribonucleic Acid",
+      "category": "physics",
+      "definition": "The full chemical name for DNA, the molecule that stores genetic information.",
+      "example": "Deoxyribonucleic acid is the scientific name for the molecule that makes up your genes.",
+      "grade_level": "12",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Isomorphism",
+      "category": "math",
+      "definition": "A structural similarity between two different systems, showing they work the same way even though they are made of different things.",
+      "example": "A map of a subway system and the actual subway tracks are isomorphic because the connections between stations match, even though the map is paper and the tracks are metal.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Topology",
+      "category": "math",
+      "definition": "The study of how parts of a system are connected and arranged, ignoring the specific materials or sizes.",
+      "example": "Topology is like studying a subway map: you care about which stations connect to which, not the exact distance between them.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Material Substrate",
+      "category": "philosophy",
+      "definition": "The physical stuff that something is made of, as opposed to its form or structure.",
+      "example": "The material substrate of a book is paper and ink, while the information is the story written on it.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Thermodynamic Noise",
+      "category": "physics",
+      "definition": "Random fluctuations in energy at the molecular level that can cause errors in copying processes.",
+      "example": "Thermodynamic noise is like tiny, random jiggling of molecules that can cause a typo when DNA is being copied.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Comma Johanneum",
+      "category": "theology",
+      "definition": "A controversial passage in some Latin manuscripts of 1 John 5:7-8 that explicitly mentions the Trinity, but is absent from most early Greek manuscripts.",
+      "example": "The Comma Johanneum is a famous example of a later addition to the Bible that most scholars think was not in the original text.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Pericope Adulterae",
+      "category": "theology",
+      "definition": "The story of Jesus and the woman caught in adultery (John 7:53-8:11), which is absent from the earliest manuscripts.",
+      "example": "The Pericope Adulterae is a well-known passage that may have been added later, but it is still considered true by many Christians.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Mass Spectrometry",
+      "category": "physics",
+      "definition": "A technique that measures the mass of molecules to identify what they are made of.",
+      "example": "Mass spectrometry is like a super-precise scale that can weigh individual molecules to figure out what they are.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "PCR Reaction",
+      "category": "physics",
+      "definition": "A lab technique (polymerase chain reaction) that makes millions of copies of a specific DNA sequence.",
+      "example": "PCR is like a DNA photocopier that can make billions of copies of a single gene from a tiny sample.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "Epistle to the Romans",
+      "category": "theology",
+      "definition": "A letter written by the Apostle Paul to the Christians in Rome, which is a book in the New Testament.",
+      "example": "The Epistle to the Romans is a famous letter in the Bible that explains key Christian teachings about salvation.",
+      "grade_level": "10",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "Heterodox Movements",
+      "category": "theology",
+      "definition": "Religious groups that hold beliefs that differ from the officially accepted or orthodox teachings.",
+      "example": "Heterodox movements in early Christianity included groups like the Gnostics, who had different ideas about Jesus.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B (Theology)"
+    },
+    {
+      "term": "Gnostic Gospels",
+      "category": "theology",
+      "definition": "A collection of ancient writings from Gnostic Christian groups that were not included in the New Testament canon.",
+      "example": "The Gnostic gospels, like the Gospel of Thomas, contain different teachings about Jesus that were rejected by mainstream Christianity.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B (Theology)"
+    },
+    {
+      "term": "Canonical NT",
+      "category": "theology",
+      "definition": "The 27 books of the New Testament that are accepted as authoritative Scripture by mainstream Christianity.",
+      "example": "The canonical NT includes the four Gospels, Acts, the Epistles, and Revelation.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B (Theology)"
+    },
+    {
+      "term": "Synonymous Mutations",
+      "category": "physics",
+      "definition": "A DNA change that does not alter the amino acid sequence, also called a silent mutation.",
+      "example": "A synonymous mutation is like changing 'gray' to 'grey' — the spelling is different but the meaning is the same.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B (Theology)"
+    },
+    {
+      "term": "Nonsynonymous Mutations",
+      "category": "physics",
+      "definition": "A DNA change that alters the amino acid sequence, potentially affecting protein function.",
+      "example": "A nonsynonymous mutation is like changing 'cat' to 'bat' — the word changes and so does its meaning.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B (Theology)"
+    },
+    {
+      "term": "Information Theory",
+      "category": "math",
+      "definition": "A mathematical field that studies how information

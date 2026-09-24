@@ -1,0 +1,551 @@
+{
+  "definitions": [
+    {
+      "term": "wavefunction collapse",
+      "category": "physics",
+      "definition": "When a quantum system's many possibilities suddenly become one definite outcome, like a spinning coin landing on heads.",
+      "example": "A particle that could be anywhere is suddenly found in one spot when you measure it.",
+      "grade_level": "college",
+      "first_appearance": "Section 0: Axiom Declaration"
+    },
+    {
+      "term": "von Neumann measurement chain",
+      "category": "physics",
+      "definition": "An endless series of observers needed to measure a quantum system, where each observer must be measured by another, never stopping.",
+      "example": "Like a line of people each looking at the person in front, but no one ever sees the first person.",
+      "grade_level": "graduate",
+      "first_appearance": "Section 0: Axiom Declaration"
+    },
+    {
+      "term": "operator algebra",
+      "category": "math",
+      "definition": "Rules for combining mathematical symbols that represent actions or measurements in quantum mechanics.",
+      "example": "Like learning how to add and multiply numbers, but with special symbols that represent things like position or energy.",
+      "grade_level": "college",
+      "first_appearance": "Section 0: Axiom Declaration"
+    },
+    {
+      "term": "Hilbert space",
+      "category": "math",
+      "definition": "A complete mathematical space where quantum states live, like an infinite-dimensional coordinate system.",
+      "example": "Imagine a graph that goes on forever in every direction, where each point is a possible state of a quantum system.",
+      "grade_level": "graduate",
+      "first_appearance": "Section 0: Axiom Declaration"
+    },
+    {
+      "term": "unitary quantum evolution",
+      "category": "physics",
+      "definition": "The smooth, predictable change of a quantum system over time, without any sudden jumps.",
+      "example": "Like a ball rolling smoothly down a hill, not teleporting from top to bottom.",
+      "grade_level": "college",
+      "first_appearance": "F — FIND: The Anomaly"
+    },
+    {
+      "term": "infinite regress",
+      "category": "philosophy",
+      "definition": "An endless chain where each step depends on the previous one, never reaching a starting point.",
+      "example": "Like saying 'I know because my teacher said so, and their teacher said so, and so on forever.'",
+      "grade_level": "college",
+      "first_appearance": "F — FIND: The Anomaly"
+    },
+    {
+      "term": "measurement problem",
+      "category": "physics",
+      "definition": "The puzzle of how a quantum system goes from many possibilities to one definite outcome when measured.",
+      "example": "Like a coin that is both heads and tails until you look at it, then it's just one.",
+      "grade_level": "college",
+      "first_appearance": "F — FIND: The Anomaly"
+    },
+    {
+      "term": "Copenhagen interpretation",
+      "category": "physics",
+      "definition": "The idea that quantum systems just collapse when measured, without explaining how or why.",
+      "example": "Like saying 'the coin lands on heads because it does,' without explaining the physics.",
+      "grade_level": "college",
+      "first_appearance": "F — FIND: The Anomaly"
+    },
+    {
+      "term": "Many-Worlds interpretation",
+      "category": "physics",
+      "definition": "The idea that every quantum possibility actually happens, but in separate parallel universes.",
+      "example": "Like every time you flip a coin, one universe gets heads and another gets tails.",
+      "grade_level": "college",
+      "first_appearance": "F — FIND: The Anomaly"
+    },
+    {
+      "term": "decoherence theory",
+      "category": "physics",
+      "definition": "The idea that quantum possibilities seem to disappear because they get mixed up with the environment, not because they actually collapse.",
+      "example": "Like ripples in a pond that spread out and become invisible, but are still there.",
+      "grade_level": "college",
+      "first_appearance": "F — FIND: The Anomaly"
+    },
+    {
+      "term": "interference",
+      "category": "physics",
+      "definition": "When waves combine to make bigger or smaller waves, or cancel each other out.",
+      "example": "Like two ripples in a pond meeting and making a bigger ripple or flattening out.",
+      "grade_level": "high school",
+      "first_appearance": "F — FIND: The Anomaly"
+    },
+    {
+      "term": "operator-algebraically",
+      "category": "math",
+      "definition": "Using the rules of operator algebra to analyze a problem.",
+      "example": "Like solving a puzzle by only using the specific rules of a game.",
+      "grade_level": "graduate",
+      "first_appearance": "F — FIND: The Anomaly"
+    },
+    {
+      "term": "ontology",
+      "category": "philosophy",
+      "definition": "The study of what exists and what it means for something to be real.",
+      "example": "Asking whether numbers are real things or just ideas in our heads.",
+      "grade_level": "college",
+      "first_appearance": "A — ADMIT: The Bias"
+    },
+    {
+      "term": "epistemology",
+      "category": "philosophy",
+      "definition": "The study of how we know things and what counts as knowledge.",
+      "example": "Asking whether you can trust your senses or if you need proof.",
+      "grade_level": "college",
+      "first_appearance": "A — ADMIT: The Bias"
+    },
+    {
+      "term": "Logos",
+      "category": "theology",
+      "definition": "A Greek word meaning 'word' or 'reason,' used in the Bible to describe Jesus as the principle of order in the universe.",
+      "example": "Like the blueprint or logic that makes the universe work.",
+      "grade_level": "college",
+      "first_appearance": "A — ADMIT: The Bias"
+    },
+    {
+      "term": "Master Equation χ",
+      "category": "framework",
+      "definition": "A central equation in the Theophysics framework that describes how reality works, involving many variables.",
+      "example": "Like a super-complicated recipe that explains everything from atoms to galaxies.",
+      "grade_level": "graduate",
+      "first_appearance": "A — ADMIT: The Bias"
+    },
+    {
+      "term": "consciousness-fundamental",
+      "category": "philosophy",
+      "definition": "The belief that consciousness is a basic part of reality, not something that comes from physical processes.",
+      "example": "Like saying the mind is more basic than the brain, not the other way around.",
+      "grade_level": "college",
+      "first_appearance": "A — ADMIT: The Bias"
+    },
+    {
+      "term": "informational ontology",
+      "category": "philosophy",
+      "definition": "The belief that the most basic stuff of reality is information, not matter or energy.",
+      "example": "Like saying the universe is made of bits and bytes, not atoms.",
+      "grade_level": "college",
+      "first_appearance": "A — ADMIT: The Bias"
+    },
+    {
+      "term": "non-commutative",
+      "category": "math",
+      "definition": "When the order of operations matters, so A then B gives a different result than B then A.",
+      "example": "Like putting on socks then shoes vs. shoes then socks — different results.",
+      "grade_level": "college",
+      "first_appearance": "C — CLAIM: The Thesis"
+    },
+    {
+      "term": "commutator",
+      "category": "math",
+      "definition": "A mathematical way to measure how much two operations depend on order, written as [A,B] = AB - BA.",
+      "example": "Like checking if putting on socks then shoes is the same as shoes then socks.",
+      "grade_level": "college",
+      "first_appearance": "C — CLAIM: The Thesis"
+    },
+    {
+      "term": "Council of Nicaea",
+      "category": "theology",
+      "definition": "A meeting of Christian leaders in 325 AD that defined the core beliefs about Jesus and God.",
+      "example": "Like a big conference where they wrote down the rules of the faith.",
+      "grade_level": "high school",
+      "first_appearance": "C — CLAIM: The Thesis"
+    },
+    {
+      "term": "Landauer's principle",
+      "category": "physics",
+      "definition": "The rule that erasing one bit of information always produces a tiny amount of heat, at least kT ln 2.",
+      "example": "Like how your computer gets warm when it deletes files.",
+      "grade_level": "college",
+      "first_appearance": "C — CLAIM: The Thesis"
+    },
+    {
+      "term": "divergence",
+      "category": "math",
+      "definition": "A measure of how much a field spreads out from a point, like how much water flows out of a pipe.",
+      "example": "Like measuring how much air comes out of a fan at different spots.",
+      "grade_level": "college",
+      "first_appearance": "C — CLAIM: The Thesis"
+    },
+    {
+      "term": "sinlessness",
+      "category": "theology",
+      "definition": "The state of being without sin or moral flaw.",
+      "example": "Like being perfectly good, never doing anything wrong.",
+      "grade_level": "high school",
+      "first_appearance": "C — CLAIM: The Thesis"
+    },
+    {
+      "term": "triadic",
+      "category": "academic",
+      "definition": "Having three parts or elements that work together.",
+      "example": "Like a three-legged stool, where each leg is needed for stability.",
+      "grade_level": "college",
+      "first_appearance": "C — CLAIM: The Thesis"
+    },
+    {
+      "term": "convergent discovery",
+      "category": "academic",
+      "definition": "When different fields of study independently arrive at the same conclusion.",
+      "example": "Like a biologist and a chemist both figuring out the same thing about DNA without talking to each other.",
+      "grade_level": "college",
+      "first_appearance": "C — CLAIM: The Thesis"
+    },
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A perfect one-to-one correspondence between two structures, showing they are essentially the same.",
+      "example": "Like a map of a city that perfectly matches the actual streets, so you can use one to understand the other.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "Nicene Trinitarian theology",
+      "category": "theology",
+      "definition": "The Christian belief about God as three persons (Father, Son, Holy Spirit) as defined by the Council of Nicaea.",
+      "example": "Like the idea that God is one being but three distinct persons, like a family that is one unit.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "Cappadocian Fathers",
+      "category": "theology",
+      "definition": "Three important Christian leaders from the 4th century who helped explain the Trinity.",
+      "example": "Like famous teachers who wrote the textbook on how to understand God as three persons.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "Filioque controversy",
+      "category": "theology",
+      "definition": "A historical debate about whether the Holy Spirit comes from the Father alone or from both the Father and the Son.",
+      "example": "Like arguing over whether a gift comes from one parent or both parents together.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "superposition",
+      "category": "physics",
+      "definition": "When a quantum system is in multiple states at the same time until measured.",
+      "example": "Like a coin spinning in the air that is both heads and tails until it lands.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "self-referential",
+      "category": "philosophy",
+      "definition": "When something refers to itself, like a sentence that talks about itself.",
+      "example": "Like the sentence 'This sentence is false,' which creates a paradox.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "logically irreversible",
+      "category": "academic",
+      "definition": "An operation that cannot be undone because information is lost.",
+      "example": "Like erasing a whiteboard — you can't get the original writing back.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "actualization",
+      "category": "philosophy",
+      "definition": "The process of making something real or actual from a potential state.",
+      "example": "Like turning a blueprint into a real building.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "Homoousios",
+      "category": "language",
+      "definition": "A Greek word meaning 'same substance,' used in the Nicene Creed to say Jesus is fully God.",
+      "example": "Like saying two coins are both made of the same metal, so they are the same kind of thing.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "Modalism",
+      "category": "theology",
+      "definition": "An ancient Christian heresy that says God is one person who appears in three different forms or modes.",
+      "example": "Like an actor playing three different roles, but being only one person.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "tensor product",
+      "category": "math",
+      "definition": "A way to combine two mathematical spaces into a larger one, like multiplying dimensions.",
+      "example": "Like combining a line and a square to make a cube.",
+      "grade_level": "graduate",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "Filioque",
+      "category": "language",
+      "definition": "A Latin word meaning 'and the Son,' added to the Nicene Creed to say the Holy Spirit comes from both the Father and the Son.",
+      "example": "Like adding 'and from the child' to a statement about where a gift comes from.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "hamartia",
+      "category": "language",
+      "definition": "A Greek word meaning 'sin,' literally 'missing the mark' or 'deviation.'",
+      "example": "Like an archer shooting an arrow that misses the target.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "ontological",
+      "category": "philosophy",
+      "definition": "Relating to the nature of being or existence.",
+      "example": "Like asking whether a chair is really real or just an idea.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "perichoresis",
+      "category": "theology",
+      "definition": "A Greek term meaning 'mutual indwelling,' describing how each person of the Trinity lives in the others.",
+      "example": "Like three dancers moving together so perfectly that each is fully present in the others' movements.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "fixed-point theorem",
+      "category": "math",
+      "definition": "A mathematical result that guarantees a certain point stays the same after a transformation.",
+      "example": "Like a point on a map that doesn't move when you rotate the map.",
+      "grade_level": "graduate",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "manifold",
+      "category": "math",
+      "definition": "A mathematical space that looks like flat Euclidean space when you zoom in close.",
+      "example": "Like the surface of the Earth, which looks flat when you're on it but is actually curved.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "Born Rule",
+      "category": "physics",
+      "definition": "A rule in quantum mechanics that gives the probability of finding a particle in a particular state.",
+      "example": "Like a formula that tells you how likely it is to get heads when you flip a quantum coin.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "Gleason's theorem",
+      "category": "math",
+      "definition": "A mathematical proof that the Born Rule is the only way to assign probabilities in quantum mechanics.",
+      "example": "Like proving there's only one fair way to bet on a quantum coin flip.",
+      "grade_level": "graduate",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "modulus",
+      "category": "math",
+      "definition": "The absolute value or magnitude of a number, ignoring its sign.",
+      "example": "Like the distance from zero, so both 5 and -5 have a modulus of 5.",
+      "grade_level": "high school",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "phenotype",
+      "category": "biology",
+      "definition": "The observable physical characteristics of an organism, like its appearance and behavior.",
+      "example": "Like your eye color or height, which come from your genes and environment.",
+      "grade_level": "high school",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "morphogenetic field",
+      "category": "biology",
+      "definition": "A theoretical field that guides the development of an organism's shape and structure.",
+      "example": "Like an invisible blueprint that tells cells how to form a hand or a foot.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "semiotics",
+      "category": "philosophy",
+      "definition": "The study of signs and symbols and how they create meaning.",
+      "example": "Like studying how a red light means 'stop' and a smile means 'happy.'",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "qualia",
+      "category": "philosophy",
+      "definition": "The subjective, felt qualities of experiences, like the redness of red or the pain of a headache.",
+      "example": "Like the difference between knowing what a strawberry tastes like and actually tasting it.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "sanctification",
+      "category": "theology",
+      "definition": "The process of becoming holy or more like God, often associated with the Holy Spirit.",
+      "example": "Like a gradual cleaning and improvement of a person's character.",
+      "grade_level": "high school",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "atonement",
+      "category": "theology",
+      "definition": "The Christian belief that Jesus's death repaired the broken relationship between humans and God.",
+      "example": "Like saying sorry and making up for a mistake to restore a friendship.",
+      "grade_level": "high school",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "exponential decoherence propagation",
+      "category": "physics",
+      "definition": "When quantum effects spread and get lost very quickly, like a chain reaction that grows exponentially.",
+      "example": "Like a rumor that spreads and gets distorted faster and faster until no one knows the truth.",
+      "grade_level": "graduate",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "Planck scale",
+      "category": "physics",
+      "definition": "The smallest possible scale of length, time, and energy where quantum gravity becomes important.",
+      "example": "Like the ultimate zoom level where our usual ideas of space and time break down.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "falsified",
+      "category": "academic",
+      "definition": "Proven to be false by evidence or logical argument.",
+      "example": "Like a theory that is shown to be wrong by an experiment.",
+      "grade_level": "college",
+      "first_appearance": "S — SNAP: Kill Conditions"
+    },
+    {
+      "term": "self-adjoint",
+      "category": "math",
+      "definition": "A type of operator in math that is equal to its own transpose, important in quantum mechanics for representing measurable quantities.",
+      "example": "Like a mirror that reflects an image perfectly back to itself.",
+      "grade_level": "graduate",
+      "first_appearance": "S — SNAP: Kill Conditions"
+    },
+    {
+      "term": "separable Hilbert space",
+      "category": "math",
+      "definition": "A Hilbert space that has a countable basis, meaning it can be described by a list of basic states.",
+      "example": "Like a library with a list of all the books, even if there are infinitely many.",
+      "grade_level": "graduate",
+      "first_appearance": "S — SNAP: Kill Conditions"
+    },
+    {
+      "term": "chi-field",
+      "category": "framework",
+      "definition": "A fundamental field in the Theophysics framework that represents the coherence or order of reality.",
+      "example": "Like a field of order that keeps the universe from falling into chaos.",
+      "grade_level": "graduate",
+      "first_appearance": "S — SNAP: Kill Conditions"
+    },
+    {
+      "term": "coherence",
+      "category": "physics",
+      "definition": "When waves or systems are in sync, maintaining a consistent relationship.",
+      "example": "Like a choir singing in perfect harmony, not off-key.",
+      "grade_level": "college",
+      "first_appearance": "S — SNAP: Kill Conditions"
+    },
+    {
+      "term": "moral curvature",
+      "category": "framework",
+      "definition": "A concept in the Theophysics framework relating moral choices to the geometry of reality.",
+      "example": "Like how a wrong choice might 'bend' the fabric of reality in a negative way.",
+      "grade_level": "graduate",
+      "first_appearance": "S — SNAP: Kill Conditions"
+    },
+    {
+      "term": "empirical",
+      "category": "academic",
+      "definition": "Based on observation or experience, not just theory.",
+      "example": "Like a scientist doing an experiment and recording what happens.",
+      "grade_level": "high school",
+      "first_appearance": "A — ADMIT: The Bias"
+    },
+    {
+      "term": "falsifiable",
+      "category": "academic",
+      "definition": "Able to be proven false by evidence, a key feature of scientific theories.",
+      "example": "Like the claim 'all swans are white' can be proven false by finding one black swan.",
+      "grade_level": "college",
+      "first_appearance": "A — ADMIT: The Bias"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A basic statement that is assumed to be true without proof, used as a starting point for reasoning.",
+      "example": "Like 'all right angles are equal' in geometry, which is accepted without proof.",
+      "grade_level": "high school",
+      "first_appearance": "A — ADMIT: The Bias"
+    },
+    {
+      "term": "theorem",
+      "category": "academic",
+      "definition": "A statement that has been proven to be true using logic and axioms.",
+      "example": "Like the Pythagorean theorem, which is proven from basic geometry rules.",
+      "grade_level": "high school",
+      "first_appearance": "A — ADMIT: The Bias"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation, how humans are saved from sin and its consequences.",
+      "example": "Like studying how a person can be rescued from a dangerous situation.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "hamartiology",
+      "category": "theology",
+      "definition": "The study of sin, its origin, and its effects.",
+      "example": "Like studying what 'missing the mark' means and how it affects people.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "eigenmode",
+      "category": "physics",
+      "definition": "A natural vibration pattern of a system, where all parts move together at a specific frequency.",
+      "example": "Like the way a guitar string vibrates in a specific pattern when plucked.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "Lagrangian",
+      "category": "physics",
+      "definition": "A function that summarizes the dynamics of a system, used to derive equations of motion.",
+      "example": "Like a recipe that tells you how a ball will move when thrown.",
+      "grade_level": "college",
+      "first_appearance": "T — TEST: The Proof"
+    },
+    {
+      "term": "bijection",
+      "category": "math",
+      "definition": "A one-to-one matching between two sets where every element in one set is paired with exactly one in the other, and vice versa.",
+      "example": "

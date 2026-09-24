@@ -1,0 +1,138 @@
+{
+  "spec_version": "1.0-trilemma-resolver",
+  "status": "OK",
+  "fight": {
+    "id": "healthcare_trilemma",
+    "familiar_name": "Healthcare",
+    "years_running": 75,
+    "poles": [
+      "Healthcare is a human right / Medicare for all",
+      "Government medicine means rationing and you lose your doctor",
+      "Get government out entirely"
+    ]
+  },
+  "reader_anchor": {
+    "opening_prose": "You are seven years old. You fall off your bike and scrape your knee. The skin is torn, gravel is stuck in the wound, and blood is beading up. You run inside crying. Your mother does not ask you to prove you are worthy of a bandage. She does not check your insurance card. She does not tell you that the bandage costs $14 and you will have to pay it back. She cleans the wound, puts on the bandage, and holds you. In that moment, you learned something you have never unlearned: when someone is hurt, the right response is to help them. You did not calculate whether she could afford the bandage. You did not wonder if someone else would have to go without. You just knew: hurt gets helped. That knowledge is still in your body. But somewhere between that scrape and adulthood, you were trained to forget it. You were taught to ask: who pays? Who deserves? Who decides? The bandage became a ledger. The wound became a debate. We are here to give back what was stolen: the simple truth that when someone is bleeding, the first question is not 'who pays' but 'who will help.' The math of this fight is the story of how that bandage got priced, and who gets left bleeding.",
+    "universal_experience": "a child scraping a knee and being helped without question",
+    "checkable_detail": "you did not ask if the helper could afford the bandage; you just expected help",
+    "quiet_theft": "you were trained to replace the instinct to help with the question of who pays",
+    "embodiment_note": "the core distinction of healthcare is between the immediate need for care (the wound) and the cost-bearing mechanism (the bandage's price); the child's experience embodies the need without the cost question"
+  },
+  "poles": [
+    {
+      "label": "universal coverage via single payer",
+      "steelman": "Healthcare is a human right. No one should die or go bankrupt because they got sick. The current system ties coverage to employment, excludes millions, and leaves families with crushing debt. A single-payer system funded by progressive taxation ensures everyone gets care when they need it, without billing or insurance barriers. The wealthy and corporations pay more; the sick and poor are protected. This is what every other developed nation does, and they spend less per capita with better outcomes. The moral case is simple: in a wealthy society, letting people suffer and die from treatable conditions because they cannot pay is barbaric.",
+      "accusation_against_others": "You are willing to let people die or go bankrupt to protect insurance company profits and tax cuts for the rich.",
+      "accusation_is_true_because": "Under the market-based or libertarian systems, someone who did not create the damage (the sick person's illness) eats the cost: either the sick person themselves pays with their health or money, or a taxpayer who never caused the illness pays via uncompensated care or higher premiums. The accusation reduces to: your plan makes someone who did not cause the illness bear its cost.",
+      "axiom_autopsy": {
+        "load_bearing_premise": "Healthcare is a human right, meaning society has an obligation to provide it regardless of cost.",
+        "self_application": "If healthcare is a human right, then the right is unlimited in scope\u2014every possible treatment, for every condition, for every person, at any cost. But no society can provide unlimited care with finite resources. The premise, applied consistently, requires infinite resources, which is impossible. Therefore the right cannot be absolute; it must be rationed. The pole's own logic forces the rationing it accuses the other side of.",
+        "one_question_test": "If a treatment costs $10 million and extends life by one month, does the human right require society to provide it?",
+        "checkable_in_under_a_minute": true
+      }
+    },
+    {
+      "label": "market-based private insurance with employer mandate",
+      "steelman": "The current system is flawed but the solution is not government takeover. Government-run systems mean waiting lists, rationing, and loss of choice. You lose your doctor, you wait months for surgery, and the government decides what care you get. The US system, despite its problems, produces the best medical innovation in the world. The answer is to fix the market: mandate coverage, subsidize premiums for the poor, regulate pre-existing conditions, but keep private insurance and employer-based coverage. People should keep what they have and fix what is broken, not throw it all away for a government monopoly.",
+      "accusation_against_others": "You want to force everyone into a one-size-fits-all government system that will ration care and destroy the doctor-patient relationship.",
+      "accusation_is_true_because": "Under single-payer, someone who did not create the damage (the taxpayer who is healthy and never caused anyone's illness) eats the cost of everyone's care. The accusation reduces to: your plan makes someone who did not cause the illness bear its cost via taxation.",
+      "axiom_autopsy": {
+        "load_bearing_premise": "People should keep their existing insurance and doctor if they are satisfied.",
+        "self_application": "The premise requires that the current system is stable and fair for those who are satisfied. But the current system is unstable: people lose coverage when they lose jobs, insurers drop people when they get sick, and premiums rise faster than wages. The premise 'keep what you have' is impossible because what you have can be taken away at any time. The premise, applied consistently, demands a guarantee that no current system provides. Therefore the pole's own defense of the status quo is self-defeating.",
+        "one_question_test": "If you lose your job next month, do you keep your insurance and doctor?",
+        "checkable_in_under_a_minute": true
+      }
+    },
+    {
+      "label": "free market / no government involvement",
+      "steelman": "The government has no business in healthcare. Every intervention\u2014Medicare, Medicaid, employer tax breaks, FDA approval\u2014distorts the market and drives up costs. True free market healthcare would have transparent prices, competition, and innovation. People would buy catastrophic insurance and pay out-of-pocket for routine care. Charity and voluntary mutual aid would cover the poor. The government's involvement is the problem, not the solution. Let people choose, let prices fall, and let the market work.",
+      "accusation_against_others": "You want to use force to take money from some people to pay for others' healthcare, which is theft.",
+      "accusation_is_true_because": "Under single-payer or employer mandate, someone who did not create the damage (the taxpayer or employer who did not cause the illness) eats the cost. The accusation reduces to: your plan makes someone who did not cause the illness bear its cost via coercion.",
+      "axiom_autopsy": {
+        "load_bearing_premise": "No one should be forced to pay for another person's healthcare.",
+        "self_application": "The premise requires a world where no one is forced to pay. But in a free market, when someone collapses on the street from a heart attack, they are taken to an ER and treated. The cost is then shifted to everyone else via higher prices and premiums. The premise, applied consistently, would require letting people die in the street to avoid cost shifting. No free market advocate accepts that. Therefore the premise is self-defeating: the refusal to force payment forces payment anyway, but invisibly.",
+        "one_question_test": "If a man collapses on your doorstep with a heart attack and has no money, do you let him die?",
+        "checkable_in_under_a_minute": true
+      }
+    }
+  ],
+  "ledger": {
+    "D_definition": "The damage is untreated illness and medical bankruptcy (for the uninsured and underinsured) AND the cost of care for the insured (paid via premiums, taxes, and cost-sharing). D is the total healthcare spending gap between what is needed and what is paid by those who need it.",
+    "D_is_real_evidence": "In 2022, 26 million Americans were uninsured; medical debt is the leading cause of bankruptcy; the US spends $4.5 trillion annually on healthcare, yet outcomes are worse than peer nations.",
+    "victim_class": "The sick and injured who cannot afford care, and those who go bankrupt from medical bills.",
+    "causal_class": "Diffuse. Illness and injury are not caused by a single class; causation is biological and accidental. However, the cost-bearing structure is created by policy choices.",
+    "per_pole_transfers": [
+      {
+        "pole": "universal coverage via single payer",
+        "T_A": "full coverage for all necessary care, funded by progressive taxation",
+        "T_B": "taxes on all citizens, especially the wealthy and corporations",
+        "J": 1.0,
+        "M": 0.0,
+        "W_note": "Victims get full restoration (J=1), but offenders (taxpayers) bear full cost (M=0). Taxpayers did not cause the illness, so they are not offenders; they are conscripted bystanders. W fails because taxpayers are forced.",
+        "who_eats_deficit": "Taxpayers who did not cause the illness"
+      },
+      {
+        "pole": "market-based private insurance with employer mandate",
+        "T_A": "subsidized insurance for some, employer coverage for others, out-of-pocket for the rest",
+        "T_B": "premiums, deductibles, and taxes on employers and individuals",
+        "J": 0.6,
+        "M": 0.4,
+        "W_note": "Partial restoration (J=0.6) because many remain underinsured or uninsured. Partial mercy (M=0.4) because some costs are shifted to taxpayers and employers. W fails because both victims and payers are partially forced.",
+        "who_eats_deficit": "The uninsured and underinsured (victims who are not fully restored) AND taxpayers who did not cause the illness"
+      },
+      {
+        "pole": "free market / no government involvement",
+        "T_A": "charity and voluntary mutual aid for some; out-of-pocket for most",
+        "T_B": "direct payments by patients; cost-shifting to those who pay via higher prices",
+        "J": 0.2,
+        "M": 0.8,
+        "W_note": "Low restoration (J=0.2) because many cannot afford care. High mercy (M=0.8) because those who pay are mostly the patients themselves (not forced bystanders). But cost-shifting means some bystanders pay invisibly. W fails for victims who die untreated.",
+        "who_eats_deficit": "The sick who cannot afford care (victims) AND those who pay inflated prices due to cost-shifting"
+      }
+    ]
+  },
+  "clear_win": {
+    "type": "structural_invariant",
+    "statement": "The healthcare fight is a seating argument on the J + M = 1 line. Every pole forces someone who did not create the damage to eat the cost. The accusations each side has traded for decades are all true simultaneously: single-payer forces taxpayers to pay for others' care; the market system forces the sick to pay with their health or money; the free market forces the uninsured to die or the insured to pay inflated prices. The line is the proof: no position closes the ledger without a conscripted cost-bearer.",
+    "derivation_steps": [
+      "1. Define D as the total healthcare deficit: the gap between the cost of necessary care and what the sick can pay. D > 0 because illness is unpredictable and expensive.",
+      "2. Under single-payer, T_A = full care for all (J=1), T_B = taxes on all (M=0). The deficit is paid by taxpayers who did not cause the illness.",
+      "3. Under the market system, T_A = partial coverage (J\u22480.6), T_B = premiums and deductibles (M\u22480.4). The deficit is paid by the uninsured (who suffer untreated illness) and by taxpayers via cost-shifting.",
+      "4. Under the free market, T_A = charity care (J\u22480.2), T_B = out-of-pocket payments (M\u22480.8). The deficit is paid by the sick who cannot afford care and by those who pay inflated prices due to cost-shifting.",
+      "5. In every case, someone who did not create the damage (the illness) bears the cost. The victim class (the sick) never caused their own illness; the payer class (taxpayers, employers, or other patients) never caused the illness either.",
+      "6. Therefore, the invariant J + M = 1 holds, and every pole leaves a conscripted cost-bearer. The fight is a seating argument on the line.",
+      "7. The accusations are all true: each pole correctly identifies that the other pole forces a non-causal party to pay. The truth of the accusations is the proof of the line."
+    ],
+    "dinner_table_sentence": "Every healthcare plan forces someone who didn't cause the illness to pay; the fight is just over who sits on the bill.",
+    "why_undeniable": "The derivation uses only the structure of the fight: D is real (untreated illness and bankruptcy), and every pole's T_A and T_B are paid by someone who did not cause the illness. A hostile reader must concede that no pole makes the sick pay the full cost themselves (that would be J=0, M=1, but the sick did not cause their illness either), so someone else always pays. The line is inescapable."
+  },
+  "off_the_line": {
+    "proximate": {
+      "structures": [
+        "Health sharing ministries where members voluntarily pay each other's medical bills",
+        "Direct primary care cooperatives where patients pay a flat monthly fee for primary care",
+        "Community health centers funded by voluntary donations and sliding-scale fees",
+        "Mutual aid networks that pool resources for catastrophic medical events"
+      ],
+      "honest_limit": "These structures relocate the cost to voluntary participants, but they do not retire the deficit: someone still pays, and the sick who cannot join are left out. The altruism lemma holds: the cost is moved, not eliminated."
+    },
+    "ultimate": {
+      "configuration": "A voluntary external cost-bearer who (1) is neither victim nor offender nor conscripted bystander, (2) acts voluntarily, (3) absorbs the full cost of all necessary care, (4) has capacity to do so without being destroyed, (5) preserves truth (illness is real, care is needed).",
+      "candidate": "The framework identifies the historical candidate as the figure of Christ, who in Christian theology voluntarily bears the cost of human brokenness (including physical suffering) without coercion, absorbing it fully, and offering restoration freely. This is not a policy proposal but a structural identification: the only configuration that closes the ledger without conscripting anyone.",
+      "door_note": "The door opens from the reader's side only. No one can be forced to accept this candidate. The resolution is offered, not imposed."
+    }
+  },
+  "anti_gaming_audit": {
+    "blind_label": "pass: the analysis uses 'victim class' (sick) and 'payer class' (taxpayers/employers/patients), no party names",
+    "symmetry": "pass: the win applies regardless of which pole proposed the mechanism; the line is the same",
+    "counterfactual": "pass: D (untreated illness and bankruptcy) exists absent any policy; it is the baseline human condition of illness",
+    "radius_consistency": "pass: benefits (care) and costs (payments) are measured at the same level: the individual patient and the individual payer",
+    "cost_visibility": "pass: costs are visible to those paying them under single-payer (taxes) and market (premiums), but partially invisible under free market (cost-shifting); this is noted",
+    "no_person_score": "pass: actions and positions are scored, not souls; no pole is called evil",
+    "unknowns_tracked": "pass: D is estimated from real data; the exact J and M values are structural, not precise numbers; unknowns are labeled"
+  },
+  "falsification": {
+    "kill_condition_specific": "A healthcare system where the sick pay the full cost of their own care without any cost-shifting, charity, or insurance, and no one goes untreated or bankrupt, would break this resolution. Such a system does not exist and is impossible because illness is unpredictable and expensive.",
+    "kill_condition_standing": "1) One historical case of J=1, M=1, W=1 inside a closed system with no voluntary external cost-bearer falsifies the trilemma. 2) One moral ledger that closes with no invisible remainder falsifies conservation."
+  }
+}

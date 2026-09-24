@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theophysics Isomorphism Registry · CNS-03</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:opsz,wght@14..32,300..700&family=JetBrains+Mono:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6.4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #111;
+            --card-bg: #141414;
+            --text: #c9d1d9;
+            --gold: #d4af37;
+            --gold-dim: rgba(212, 175, 55, 0.3);
+            --success: #22c55e;
+            --danger: #ef4444;
+            --info: #4a9eff;
+            --border-dim: #2a2a2a;
+            --font-heading: 'Oswald', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-quote: 'Crimson Text', serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-weight: 300;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        h1, h2, h3, h4, .section-number {
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-weight: 500;
+        }
+        .mono { font-family: var(--font-mono); }
+        .quote { font-family: var(--font-quote); font-style: italic; }
+        .gold { color: var(--gold); }
+        .success { color: var(--success); }
+        .danger { color: var(--danger); }
+        .info { color: var(--info); }
+        .text-muted { color: #6b7280; }
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-dim);
+        }
+        .badge-green { background: rgba(34,197,94,0.15); color: var(--success); border-color: var(--success); }
+        .badge-yellow { background: rgba(234,179,8,0.15); color: #eab308; border-color: #eab308; }
+        .badge-gold { background: rgba(212,175,55,0.15); color: var(--gold); border-color: var(--gold); }
+        .badge-red { background: rgba(239,68,68,0.15); color: var(--danger); border-color: var(--danger); }
+        .badge-blue { background: rgba(74,158,255,0.15); color: var(--info); border-color: var(--info); }
+        .section-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: rgba(212,175,55,0.2);
+            line-height: 1;
+            margin-bottom: -1.2rem;
+            pointer-events: none;
+        }
+        .gradient-line {
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            margin: 1.5rem 0 2rem 0;
+            opacity: 0.4;
+        }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-dim);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: border 0.2s;
+        }
+        .card-blue-top { border-top: 3px solid var(--info); }
+        .card-gold-top { border-top: 3px solid var(--gold); }
+        .card-red-box {
+            background: rgba(239,68,68,0.06);
+            border: 1px solid rgba(239,68,68,0.25);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+        }
+        .grid-4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        .mapping-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .mapping-table th {
+            background: rgba(212,175,55,0.12);
+            color: var(--gold);
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 500;
+            padding: 0.8rem 1rem;
+            text-align: left;
+            border-bottom: 2px solid var(--gold);
+        }
+        .mapping-table td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid #1f1f1f;
+            vertical-align: top;
+        }
+        .mapping-table tr:last-child td { border-bottom: none; }
+        .mapping-table td:first-child { font-family: var(--font-mono); font-size: 0.85rem; color: var(--info); }
+        .mapping-table td:nth-child(2) { color: #e0e0e0; }
+        .mapping-table td:nth-child(3) { color: #b0b0b0; }
+        .evidence-chip {
+            display: inline-block;
+            background: rgba(212,175,55,0.08);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 30px;
+            padding: 0.3rem 1rem;
+            margin: 0.25rem 0.3rem;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--gold);
+        }
+        .verse-ref {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: #6b7280;
+            letter-spacing: 0.02em;
+        }
+        .footer-seal {
+            border-top: 1px solid #1f1f1f;
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #5a5a5a;
+        }
+        .pull-quote {
+            border-left: 4px solid var(--gold);
+            padding-left: 1.2rem;
+            margin: 1rem 0;
+            font-family: var(--font-quote);
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #d0d0d0;
+        }
+        .equation-card {
+            background: #0d0d0d;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 1.2rem;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
+        .arrow-mapping {
+            display: inline-block;
+            margin: 0 0.5rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            .hero-grid, .grid-2, .grid-4 { grid-template-columns: 1fr; }
+            .section-number { font-size: 2.8rem; }
+        }
+        .badge-lg { font-size: 0.85rem; padding: 0.3rem 1.2rem; }
+        .mt-2 { margin-top: 1.5rem; }
+        .mb-1 { margin-bottom: 0.8rem; }
+        .inline-icon { margin-right: 0.4rem; }
+        .flex { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; }
+    </style>
+</head>
+<body>
+
+<!-- 1. REGISTRY HEADER -->
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.5rem;">
+    <div style="display: flex; align-items: center; gap: 1rem;">
+        <div style="font-size: 2.8rem; font-weight: 300; color: var(--gold); font-family: serif; line-height: 1;">Φ</div>
+        <div>
+            <h1 style="font-size: 1.6rem; font-weight: 600; letter-spacing: 0.08em; color: var(--gold); margin: 0;">THEOPHYSICS REGISTRY</h1>
+            <div style="font-size: 0.85rem; color: #9ca3af; margin-top: 0.1rem;">
+                <span class="mono">ISO·TIR 2025-03</span> &nbsp;·&nbsp; <span style="font-weight: 400;">Why Mathematics Works</span>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center;">
+        <span class="badge badge-green badge-lg"><i class="fas fa-check-circle" style="margin-right: 0.3rem;"></i>Level 3 · Isomorphism</span>
+        <span class="badge badge-gold badge-lg"><i class="fas fa-chart-line"></i> Confidence 92%</span>
+        <span class="badge" style="border-color: #555;"><i class="far fa-file-alt"></i> v1.2</span>
+    </div>
+</div>
+<div class="gradient-line" style="margin-top: 0.5rem;"></div>
+
+<!-- 2. HERO BANNER -->
+<div class="hero-grid" style="background: linear-gradient(135deg, rgba(212,175,55,0.06), transparent 70%); padding: 1.8rem 1.5rem; border-radius: 18px; border: 1px solid rgba(212,175,55,0.15); margin: 1.5rem 0;">
+    <div>
+        <span class="badge badge-blue" style="margin-bottom: 0.8rem; display: inline-block;"><i class="fas fa-gavel"></i> Law · CNS-03</span>
+        <h2 style="font-size: 2rem; font-weight: 600; line-height: 1.2; margin: 0.3rem 0 0.2rem 0;">
+            <span style="color: var(--info);">Mathematical Universe</span> 
+            <span style="color: var(--gold); margin: 0 0.3rem;">⟷</span> 
+            <span style="color: var(--gold);">Divine Rationality</span>
+        </h2>
+        <div style="color: #9ca3af; font-size: 0.9rem; margin-bottom: 0.8rem;">Abstract mathematical structures ↔ Creator’s logic &amp; order</div>
+        <div class="pull-quote">
+            “The reason within and the reason without are linked by their common origin in the Rationality of the Creator.”
+            <div style="font-size: 0.7rem; margin-top: 0.2rem; color: #6b7280; font-style: normal;">— John Polkinghorne</div>
+        </div>
+    </div>
+    <div>
+        <div class="equation-card">
+            <div style="color: var(--info); font-weight: 600; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem;">Domain A (Physics)</div>
+            <div>∇·<b>E</b> = ρ/ε₀ &nbsp;·&nbsp; ∇×<b>E</b> = –∂<b>B</b>/∂t</div>
+            <div style="color: #aaa; font-size: 0.75rem;">Maxwell · Dirac · Riemann curvature</div>
+            <div style="border-top: 1px solid #2a2a2a; margin: 0.8rem 0; padding-top: 0.8rem; color: var(--gold); text-align: center; font-size: 1.2rem;">⟷</div>
+            <div style="color: var(--gold); font-weight: 600; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.3rem;">Domain B (Theology)</div>
+            <div>Logos · Sapientia Dei · <span style="font-style: italic;">ordo rerum</span></div>
+            <div style="color: #aaa; font-size: 0.75rem;">“all things were made through Him” · John 1:3</div>
+        </div>
+    </div>
+</div>
+
+<!-- 3. DOMAIN SPECIFICATIONS -->
+<div class="section-number">01</div>
+<h2 style="font-size: 1.4rem; font-weight: 500; margin-bottom: 0.2rem;">Domain Specifications</h2>
+<div class="gradient-line" style="margin-top: 0.2rem;"></div>
+<div class="grid-2">
+    <div class="card card-blue-top">
+        <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+            <i class="fas fa-atom" style="color: var(--info); font-size: 1.6rem;"></i>
+            <h3 style="font-size: 1.2rem; font-weight: 500; margin: 0;">Domain A · Physics</h3>
+        </div>
+        <p style="font-size: 0.9rem; color: #b0b0b0;">The structure of mathematical physics: abstract equations, symmetries, and predictive models that describe the physical universe with extreme precision. Includes conic sections, non-Euclidean geometry, Dirac equation, group theory, complex numbers.</p>
+        <div style="margin-top: 0.8rem; font-size: 0.8rem; color: #6b7280;"><span class="mono">key objects:</span> Maxwell’s equations, Riemann tensor, SU(3)×SU(2)×U(1)</div>
+    </div>
+    <div class="card card-gold-top">
+        <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+            <i class="fas fa-dove" style="color: var(--gold); font-size: 1.6rem;"></i>
+            <h3 style="font-size: 1.2rem; font-weight: 500; margin: 0;">Domain B · Theology</h3>
+        </div>
+        <p style="font-size: 0.9rem; color: #b0b0b0;">The doctrine of the Logos: the rational, creative mind of God who establishes order, logic, and beauty in creation. The same intelligence that grounds mathematics also grounds physical reality — a pre‑established harmony.</p>
+        <div style="margin-top: 0.8rem; font-size: 0.8rem; color: #6b7280;"><span class="mono">key sources:</span> John 1:1–3, Colossians 1:16–17, Hebrews 1:3</div>
+    </div>
+</div>
+
+<!-- 4. THE ISOMORPHIC MAPPING -->
+<div class="section-number" style="margin-top: 2.5rem;">02</div>
+<h2 style="font-size: 1.4rem; font-weight: 500; margin-bottom: 0.2rem;">The Isomorphic Mapping</h2>
+<div class="gradient-line" style="margin-top: 0.2rem;"></div>
+<div class="card" style="padding: 0; overflow-x: auto;">
+    <table class="mapping-table">
+        <thead>
+            <tr><th style="width: 22%;">Physics (Domain A)</th><th style="width: 22%;">Theology (Domain B)</th><th>Structural correspondence</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Conic sections (Apollonius)</td><td>Providential ordering of orbits</td><td>Ellipse as path of planets — geometry created before use</td></tr>
+            <tr><td>Non‑Euclidean geometry (Riemann)</td><td>Curved spacetime as created order</td><td>Riemann’s abstract curvature → Einstein’s gravity</td></tr>
+            <tr><td>Dirac equation (1928)</td><td>Antimatter as “holes” in creation</td><td>Negative energy states → positron prediction</td></tr>
+            <tr><td>Group theory (Galois)</td><td>Symmetry families of particles</td><td>SU(3) classification → Omega‑minus prediction</td></tr>
+            <tr><td>Complex numbers (Cardano)</td><td>Quantum amplitude structure</td><td>Imaginary unit as foundation of QM state space</td></tr>
+            <tr><td>Predictive mathematical excess</td><td>Common authorship (mind of God)</td><td>Math predicts unobserved reality because same designer</td></tr>
+            <tr><td>Wigner’s “unreasonable effectiveness”</td><td>Pre‑established harmony (Leibniz/Polkinghorne)</td><td>Rationality within matches rationality without</td></tr>
+            <tr><td>Maxwell’s equations → radio waves</td><td>“Let there be light” — commanded order</td><td>23‑year predictive gap before detection</td></tr>
+            <tr><td>Mathematical beauty / elegance</td><td>Divine wisdom (Sapientia Dei)</td><td>Beauty as guide to truth — shared aesthetic</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- 5. SEPARATOR TESTS -->
+<div class="section-number" style="margin-top: 2.5rem;">03</div>
+<h2 style="font-size: 1.4rem; font-weight: 500; margin-bottom: 0.2rem;">Separator Tests</h2>
+<div class="gradient-line" style="margin-top: 0.2rem;"></div>
+<div class="grid-4">
+    <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h4 style="font-size: 1rem; font-weight: 500;">Test A · Structural Preservation</h4>
+            <span class="badge badge-green"><i class="fas fa-check"></i> PASS</span>
+        </div>
+        <p style="font-size: 0.85rem; color: #aaa; margin-top: 0.5rem;">Relations survive under mapping: predictive excess, symmetry, and beauty are preserved in both domains. The logical structure of mathematics maps onto the logical structure of creation.</p>
+    </div>
+    <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h4 style="font-size: 1rem; font-weight: 500;">Test B · Non‑Arbitrariness</h4>
+            <span class="badge badge-green"><i class="fas fa-check"></i> PASS</span>
+        </div>
+        <p style="font-size: 0.85rem; color: #aaa; margin-top: 0.5rem;">The mapping is forced: you cannot swap the target domain with, e.g., “randomness” or “chaos.” The specific rational order of mathematics uniquely corresponds to a rational Creator.</p>
+    </div>
+    <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h4 style="font-size: 1rem; font-weight: 500;">Test C · Constraint</h4>
+            <span class="badge badge-green"><i class="fas fa-check"></i> PASS</span>
+        </div>
+        <p style="font-size: 0.85rem; color: #aaa; margin-top: 0.5rem;">The mapping rules out: (i) mathematical anti‑realism, (ii) brute‑fact universe, (iii) multiverse that explains fine‑tuning. Only common origin explains all data.</p>
+    </div>
+    <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h4 style="font-size: 1rem; font-weight: 500;">Test D · Bidirectionality</h4>
+            <span class="badge badge-green"><i class="fas fa-check"></i> PASS</span>
+        </div>
+        <p style="font-size: 0.85rem; color: #aaa; margin-top: 0.5rem;">Physics predicts theological rationality (order implies mind) and theology predicts mathematical effectiveness (Logos implies coherence). Each side constrains the other.</p>
+    </div>
+</div>
+
+<!-- 6. CLASSIFICATION & EVIDENCE -->
+<div class="section-number" style="margin-top: 2.5rem;">04</div>
+<h2 style="font-size: 1.4rem; font-weight: 500; margin-bottom: 0.2rem;">Classification &amp; Evidence</h2>
+<div class="gradient-line" style="margin-top: 0.2rem;"></div>
+<div class="card" style="border-left: 4px solid var(--gold);">
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+        <div>
+            <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7280;">Classification</div>
+            <div style="font-size: 1.3rem; font-weight: 600; color: var(--success); margin: 0.2rem 0 0.3rem 0;">Structural Isomorphism</div>
+            <div class="flex" style="gap: 0.4rem;">
+                <span class="badge badge-green">Level 3</span>
+                <span class="badge badge-gold">Confidence 92%</span>
+                <span class="badge badge-blue">Law CNS-03</span>
+            </div>
+        </div>
+        <div style="flex: 1;">
+            <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7280; margin-bottom: 0.4rem;">Evidence chips</div>
+            <div>
+                <span class="evidence-chip"><i class="fas fa-check-circle" style="color: var(--success);"></i> Conic sections → Kepler</span>
+                <span class="evidence-chip"><i class="fas fa-check-circle" style="color: var(--success);"></i> Riemann → Einstein</span>
+                <span class="evidence-chip"><i class="fas fa-check-circle" style="color: var(--success);"></i> Dirac → positron</span>
+                <span class="evidence-chip"><i class="fas fa-check-circle" style="color: var(--success);"></i> Group theory → Ω⁻</span>
+                <span class="evidence-chip"><i class="fas fa-check-circle" style="color: var(--success);"></i> Complex numbers → QM</span>
+                <span class="evidence-chip"><i class="fas fa-check-circle" style="color: var(--success);"></i> Maxwell → radio waves</span>
+                <span class="evidence-chip"><i class="fas fa-check-circle" style="color: var(--success);"></i> Wigner’s “unreasonable”</span>
+                <span class="evidence-chip"><i class="fas fa-check-circle" style="color: var(--success);"></i> Founders’ testimonies</span>
+            </div>
+            <div style="margin-top: 0.8rem; font-size: 0.8rem; color: #6b7280;">Laws invoked: Predictive Excess · Common Origin · Pre‑established Harmony</div>
+        </div>
+    </div>
+</div>
+
+<!-- 7. FALSIFICATION CRITERIA -->
+<div class="section-number" style="margin-top: 2.5rem;">05</div>
+<h2 style="font-size: 1.4rem; font-weight: 500; margin-bottom: 0.2rem;">Falsification Criteria</h2>
+<div class="gradient-line" style="margin-top: 0.2rem;"></div>
+<div class="card-red-box">
+    <div style="display: flex; gap: 0.8rem; align-items: flex-start;">
+        <i class="fas fa-skull" style="color: var(--danger); font-size: 1.6rem;"></i>
+        <div>
+            <p style="font-weight: 600; color: var(--danger); margin-bottom: 0.3rem;">Kill conditions — any one of these falsifies the isomorphism</p>
+            <ul style="list-style: none; padding-left: 0; font-size: 0.9rem; color: #d0d0d0;">
+                <li style="margin-bottom: 0.4rem;"><i class="fas fa-times-circle" style="color: var(--danger); width: 1.4rem;"></i> A mathematical structure developed for pure aesthetics fails to describe any physical system.</li>
+                <li style="margin-bottom: 0.4rem;"><i class="fas fa-times-circle" style="color: var(--danger); width: 1.4rem;"></i> Predictive excess is shown to be a selection bias (survivorship) with no genuine novel prediction.</li>
+                <li style="margin-bottom: 0.4rem;"><i class="fas fa-times-circle" style="color: var(--danger); width: 1.4rem;"></i> A naturalistic mechanism (e.g., multiverse + anthropic) fully accounts for mathematical effectiveness without remainder.</li>
+                <li style="margin-bottom: 0.4rem;"><i class="fas fa-times-circle" style="color: var(--danger); width: 1.4rem;"></i> The founders of modern physics (Newton, Planck, Faraday, Maxwell, Polkinghorne) are shown to have been misinterpreted or their statements are retracted.</li>
+                <li><i class="fas fa-times-circle" style="color: var(--danger); width: 1.4rem;"></i> Mathematics is proven to be purely invented and still predicts novel phenomena — breaking the explanatory link.</li>
+            </ul>
+            <div class="verse-ref" style="margin-top: 0.8rem;">kill criteria v1.2 · CNS-03 falsification protocol</div>
+        </div>
+    </div>
+</div>
+
+<!-- 8. RELATED ISOMORPHISMS -->
+<div class="section-number" style="margin-top: 2.5rem;">06</div>
+<h2 style="font-size: 1.4rem; font-weight: 500; margin-bottom: 0.2rem;">Related Isomorphisms</h2>
+<div class="gradient-line" style="margin-top: 0.2rem;"></div>
+<div class="grid-2" style="grid-template-columns: 1fr 1fr;">
+    <div class="card" style="border-left: 3px solid var(--info);">
+        <div style="display: flex; align-items: center; gap: 0.6rem;">
+            <i class="fas fa-infinity" style="color: var(--info);"></i>
+            <div><span style="font-weight: 500;">ISO·TIR 2025-01</span><br><span style="font-size: 0.8rem; color: #aaa;">Fine‑tuning → Divine design</span></div>
+        </div>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--gold);">
+        <div style="display: flex; align-items: center; gap: 0.6rem;">
+            <i class="fas fa-brain" style="color: var(--gold);"></i>
+            <div><span style="font-weight: 500;">ISO·TIR 2025-02</span><br><span style="font-size: 0.8rem; color: #aaa;">Consciousness → Imago Dei</span></div>
+        </div>
+    </div>
+</div>
+
+<!-- 9. FOOTER -->
+<div class="footer-seal">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <div>
+            <span style="font-weight: 500; color: var(--gold);">Theophysics Research Program</span><br>
+            <span style="font-size: 0.75rem; color: #6b7280;">POF 2828 · Registry ISO·TIR 2025-03 · v1.2</span>
+        </div>
+        <div style="text-align: right; font-size: 0.85rem; font-style: italic; color: #5a5a5a; max-width: 300px;">
+            “The math points to God. The math does not contain God.”
+        </div>
+    </div>
+    <div style="margin-top: 1rem; font-size: 0.65rem; color: #3a3a3a; border-top: 1px solid #1a1a1a; padding-top: 0.8rem; text-align: center;">
+        <i class="fas fa-omega"></i>  faiththruphysics.com · canonical document CNS-03
+    </div>
+</div>
+
+</body>
+</html>

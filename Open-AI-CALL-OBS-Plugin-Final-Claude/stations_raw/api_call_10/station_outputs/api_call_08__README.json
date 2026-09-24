@@ -1,0 +1,324 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "information_organization",
+        "type": "information",
+        "strength": 8
+      },
+      {
+        "name": "narrative_structure",
+        "type": "philosophy",
+        "strength": 6
+      },
+      {
+        "name": "thematic_classification",
+        "type": "theology",
+        "strength": 5
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "K",
+        "present": true,
+        "role": "organizing principle for document classification and retrieval",
+        "strength": 7
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "coherence of thematic lanes and narrative integration",
+        "strength": 6
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "relationships between documents and thematic lanes",
+        "strength": 5
+      },
+      {
+        "variable": "M",
+        "present": true,
+        "role": "meaning derived from narrative structure and thematic grouping",
+        "strength": 4
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.3",
+        "invoked": true,
+        "how": "information primacy in organizing documents into lanes"
+      },
+      {
+        "id": "A5.1",
+        "invoked": true,
+        "how": "observation of document themes to determine lane placement"
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": false,
+        "manifestations": []
+      },
+      "son": {
+        "present": false,
+        "manifestations": []
+      },
+      "spirit": {
+        "present": false,
+        "manifestations": []
+      },
+      "trinitarian_structure": "none"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-001",
+        "domain_a": "information_organization",
+        "domain_b": "narrative_structure",
+        "strength": 7,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "grace",
+        "context": "implied in repair-and-order lane",
+        "weight": 3
+      },
+      {
+        "concept": "judgment",
+        "context": "implied in measure-and-judgment lane",
+        "weight": 3
+      },
+      {
+        "concept": "restoration",
+        "context": "explicit in repair-and-order lane",
+        "weight": 4
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "classification",
+        "context": "documents grouped by thematic lanes",
+        "weight": 8
+      },
+      {
+        "concept": "ordering",
+        "context": "sequential reading pathway defined",
+        "weight": 6
+      },
+      {
+        "concept": "distinction",
+        "context": "lanes separated by thematic content",
+        "weight": 5
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "peace",
+        "present": true,
+        "strength": 3
+      },
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 2
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "domain:information_organization",
+      "to": "domain:narrative_structure",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "chi_variable:K",
+      "to": "domain:information_organization",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "chi_variable:C",
+      "to": "domain:narrative_structure",
+      "relation": "supports",
+      "weight": 6
+    },
+    {
+      "from": "axiom:A1.3",
+      "to": "chi_variable:K",
+      "relation": "derives_from",
+      "weight": 7
+    },
+    {
+      "from": "axiom:A5.1",
+      "to": "domain:information_organization",
+      "relation": "requires",
+      "weight": 5
+    },
+    {
+      "from": "logical_concept:classification",
+      "to": "domain:information_organization",
+      "relation": "produces",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:ordering",
+      "to": "domain:narrative_structure",
+      "relation": "produces",
+      "weight": 6
+    },
+    {
+      "from": "theological_concept:restoration",
+      "to": "domain:narrative_structure",
+      "relation": "contains",
+      "weight": 4
+    },
+    {
+      "from": "isomorphism:ISO-001",
+      "to": "domain:information_organization",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "isomorphism:ISO-001",
+      "to": "domain:narrative_structure",
+      "relation": "maps_to",
+      "weight": 7
+    }
+  ],
+  "tags": {
+    "primary": [
+      "document_organization",
+      "thematic_lanes",
+      "narrative_structure"
+    ],
+    "pillar": [
+      "pillar/information",
+      "pillar/philosophy"
+    ],
+    "series": "one-page-stories",
+    "classification": "index"
+  },
+  "citations": {
+    "scripture": [],
+    "academic": [],
+    "internal": [],
+    "total_count": 0
+  },
+  "word_anomalies": [
+    {
+      "word": "lane",
+      "frequency": 6,
+      "significance": "metaphor for thematic grouping of documents"
+    },
+    {
+      "word": "pushback",
+      "frequency": 1,
+      "significance": "indicates resistance or opposition in narrative"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "organizational and descriptive, providing a framework for document classification",
+    "Q1_identity": "a README file defining the structure of a one-page stories collection",
+    "Q2_domain": "information organization and narrative classification",
+    "Q3_claim": "documents are organized into thematic lanes for easier navigation and editing",
+    "Q4_support": "lane definitions and notes on structure",
+    "Q5_dependencies": "existence of documents to classify",
+    "Q6_consequences": "enables systematic reading and editing of the collection",
+    "Q7_kill": "if documents are removed or lanes become irrelevant"
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "one-page stories documents"
+    ],
+    "required_by": [
+      "HTML rendering of the collection"
+    ],
+    "parallel_to": [
+      "index.html"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 14,
+    "total_edges": 10,
+    "dominant_domain": "information_organization",
+    "dominant_chi": "K",
+    "connectivity_score": 6,
+    "one_sentence": "This README defines the thematic lane structure for organizing one-page stories, enabling coherent navigation and classification."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": false,
+      "how": ""
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": false,
+      "how": ""
+    },
+    "4_7_love_relationship": {
+      "active": false,
+      "how": ""
+    },
+    "5_6_judgment_logos": {
+      "active": false,
+      "how": ""
+    },
+    "pairs_active_count": 0
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": false,
+      "strength": 0
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": false,
+      "strength": 0
+    },
+    "love": {
+      "present": false,
+      "strength": 0
+    },
+    "judgment": {
+      "present": false,
+      "strength": 0
+    },
+    "logos": {
+      "present": false,
+      "strength": 0
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": false,
+      "strength": 0
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": false,
+      "strength": 0
+    },
+    "operators_present_count": 0
+  },
+  "audience": "general_public",
+  "reading_pathway": {
+    "read_before": [],
+    "read_after": [
+      "one-page stories in each lane"
+    ]
+  }
+}

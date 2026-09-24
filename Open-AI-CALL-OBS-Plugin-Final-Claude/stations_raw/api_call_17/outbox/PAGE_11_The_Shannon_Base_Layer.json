@@ -1,0 +1,331 @@
+{
+  "spec_version": "1.0",
+  "page_id": "PAGE_11",
+  "page_title": "THE SHANNON BASE LAYER",
+  "page_slug": "the-shannon-base-layer",
+  "source_file": "PAGE_11_The_Shannon_Base_Layer.md",
+  "generated_by": "adversarial_auditor",
+  "generated_date": "2025-04-10",
+  "adversarial_audit": {
+    "fatal_issue": "The central claim that every spiritual variable is an information variable governed by a channel equation is asserted without any mapping from spiritual variables to the terms A, T, D, C. The equation is borrowed from Shannon's communication theory, but no justification is given that the same mathematical structure applies to spiritual reception. This is a category error: information theory describes physical communication channels; applying it to 'soul bandwidth' and 'sin noise' is a metaphor, not a derivation. The paper does not provide a one-to-one mapping of the physics process (Shannon's channel capacity theorem) to the spiritual domain, and the mapping breaks at every point where the terms are redefined.",
+    "major_issue": "The 'derivation' section does not derive anything. It merely defines symbols and states properties. There is no mathematical derivation from first principles or from the Shannon theorem. The Lean 4 verifications are claimed but no code or proof is shown; the artifacts are merely named. The paper relies on the authority of Shannon (1948) without showing how the theorem is applied.",
+    "sharpening_issue": "The paper uses terms like 'soul bandwidth' and 'drift' without operational definitions. How would one measure A or D? Without measurement, the claims are unfalsifiable. The 'no-drift condition' (D\u21920 \u21d2 C\u2192\u221e) is mathematically correct for the Shannon formula, but the paper does not justify that D can approach zero in the spiritual context, nor what 'infinite capacity' means.",
+    "smart_hostile_physicist_check": {
+      "primary_confusion": "metaphor",
+      "diagnosis": "The paper treats Shannon's channel capacity theorem as an isomorphism when it is only an analogy. The terms A, T, D are redefined with spiritual meanings, but the equation's derivation assumes physical quantities (bandwidth, signal power, noise power spectral density). There is no justification that the same logarithmic relationship holds for 'truth' and 'sin'. The paper does not address that Shannon's theorem is about reliable communication over a noisy channel with coding, not about reception of truth by a soul.",
+      "sentence_to_rewrite": "Every spiritual variable in every law-sector is, at bottom, an information variable governed by a channel equation.",
+      "required_fix": "Replace with a statement that explicitly acknowledges the analogical nature and provides a rigorous mapping or derivation showing why the Shannon equation applies. Alternatively, state that this is a metaphorical model and not a literal application of information theory."
+    },
+    "physics_process_check": {
+      "does_mirror_physics_process": true,
+      "physics_process_named": "Shannon-Hartley theorem for channel capacity",
+      "one_to_one_verdict": "broken",
+      "where_mapping_holds": "The equation form C = A log2(1 + T/D) is identical to Shannon's C = B log2(1 + S/N). The paper maps A to bandwidth B, T to signal power S, D to noise power N.",
+      "where_mapping_breaks": "In Shannon's theorem, B is the physical bandwidth of the channel in Hz, S and N are average powers in watts. The paper redefines A as 'soul bandwidth' (unmeasurable), T as 'truth' (unmeasurable), D as 'drift/sin' (unmeasurable). The theorem's derivation assumes additive white Gaussian noise and a power constraint; no such assumptions are justified for spiritual variables. The paper also introduces 'free will coupling' W that is not in the original equation and is not defined. The mapping is broken because the physical quantities are replaced with metaphysical ones without any operational link.",
+      "sentence_to_rewrite": "This is Shannon's channel capacity theorem (1948), applied per law-sector i.",
+      "required_fix": "Either provide a rigorous justification that the same mathematics applies, or explicitly state that this is an analogy and not a direct application. The current wording implies a literal application, which is false."
+    },
+    "strongest_non_framework_alternative": "The observation that two people respond differently to the same truth can be explained by psychological, social, and neurological factors without invoking a Shannon channel. Cognitive dissonance theory, selective attention, and prior beliefs are well-established mechanisms. The paper's claim that 'the receiver is always the bottleneck' is a restatement of the truism that individuals differ in receptivity, not a novel insight requiring information theory.",
+    "what_would_force_public_narrowing": "If a critic demonstrates that the Shannon equation does not apply because the terms are not measurable or because the assumptions (e.g., additive noise, power constraint) are not met, the paper would have to narrow its claim to a metaphor or provide a new derivation. Also, if the Lean 4 verifications are shown to be vacuous (e.g., they only prove trivial algebraic identities without connecting to spiritual variables), the paper would need to retract or clarify.",
+    "rewrite_priority": "fatal"
+  },
+  "structure_audit": {
+    "opening_hook_strength": 7,
+    "logical_flow_strength": 4,
+    "transition_quality": 5,
+    "does_opening_promise_match_ending": false,
+    "sequence_verdict": "repairable",
+    "best_order_step_by_step": [
+      "State the claim that spiritual variables are information variables.",
+      "Define the Shannon channel capacity theorem and its assumptions.",
+      "Show the mapping from physical terms to spiritual terms, with justification.",
+      "Derive the properties (monotonicity, no-drift condition) from the equation.",
+      "Apply to each law-sector with explicit mapping.",
+      "Discuss implications (sanctification, theodicy).",
+      "Provide verification artifacts (Lean code, references)."
+    ],
+    "flow_breaks": [
+      {
+        "from_section": "The Claim",
+        "to_section": "The Derivation",
+        "problem": "The claim asserts that every spiritual variable is an information variable, but the derivation section does not derive this; it only defines symbols and states properties. There is no logical connection between the claim and the subsequent equation.",
+        "fix": "Add a section that shows how spiritual variables (e.g., grace, sin) are mapped to T, D, A, and why the Shannon equation applies. Alternatively, restructure so that the derivation follows from the mapping."
+      },
+      {
+        "from_section": "The Derivation",
+        "to_section": "Spiritual Terms Introduced",
+        "problem": "The spiritual terms are defined after the derivation, but they are used in the derivation. This creates a forward reference that confuses the reader.",
+        "fix": "Define the terms before or within the derivation, or move the table to the beginning of the derivation."
+      }
+    ],
+    "sentence_that_carries_too_much_weight": "Every spiritual variable in every law-sector is, at bottom, an information variable governed by a channel equation.",
+    "why_it_carries_too_much_weight": "This sentence is the central thesis of the page. It makes a universal claim that is not supported by any evidence or derivation. If this sentence is false, the entire page collapses. It is a load-bearing claim that requires rigorous justification, which is absent."
+  },
+  "framework_presence": {
+    "master_equation": [
+      {
+        "present": true,
+        "quote": "C_i = A_i * log2(1 + T_i/D_i)",
+        "function": "The central equation of the page, claimed to govern all spiritual information transfer."
+      }
+    ],
+    "axioms": [
+      {
+        "id": "no_drift_condition",
+        "present": true,
+        "quote": "D \u2192 0 \u21d2 C_i \u2192 \u221e",
+        "function": "Asserts that perfect reception is possible only when noise is zero."
+      },
+      {
+        "id": "monotonicity",
+        "present": true,
+        "quote": "\u2202C_i/\u2202T_i > 0 for all T_i > 0, D_i > 0",
+        "function": "Asserts that more truth always increases capacity."
+      },
+      {
+        "id": "soul_capacity",
+        "present": true,
+        "quote": "C_i > 0 \u21d4 A_i > 0 and T_i > 0",
+        "function": "Defines condition for positive capacity."
+      }
+    ],
+    "lean4": [
+      {
+        "present": true,
+        "quote": "soulCapacity",
+        "function": "Claimed Lean verification of the soul capacity theorem."
+      },
+      {
+        "present": true,
+        "quote": "capacity_mono_in_truth",
+        "function": "Claimed Lean verification of monotonicity."
+      },
+      {
+        "present": true,
+        "quote": "sanctification_is_channel_healing",
+        "function": "Claimed Lean verification of sanctification as channel healing."
+      }
+    ],
+    "claims_layer": [
+      {
+        "present": true,
+        "quote": "Every spiritual variable in every law-sector is, at bottom, an information variable governed by a channel equation.",
+        "function": "Central claim of the page."
+      }
+    ],
+    "proof_layer": [
+      {
+        "present": false,
+        "quote": "",
+        "function": "No proofs are provided; only statements and references to Lean verifications without code."
+      }
+    ],
+    "tests_layer": [
+      {
+        "present": false,
+        "quote": "",
+        "function": "No tests are provided."
+      }
+    ],
+    "laws_layer": [
+      {
+        "id": "law_6",
+        "present": true,
+        "quote": "Law 6 (Shannon/Logos) is self-referential: it IS the channel equation applied to itself.",
+        "function": "Identifies the Shannon layer as the meta-law."
+      }
+    ]
+  },
+  "paper_changing_questions": [
+    {
+      "question": "What exact prediction does this page make that is currently testable? For example, can you predict a measurable difference in 'channel capacity' between two individuals based on their 'soul bandwidth' or 'drift'?",
+      "why_it_matters": "Without a testable prediction, the claims are unfalsifiable and not scientific.",
+      "if_unanswered_then": "The page must be rewritten to either provide a testable prediction or explicitly state that it is a metaphysical model, not a scientific theory.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Which named physics process is being mirrored, and where is the one-to-one transition map from the physical Shannon theorem to the spiritual domain? Specifically, how are bandwidth (Hz), signal power (W), and noise power spectral density (W/Hz) mapped to soul bandwidth, truth, and drift?",
+      "why_it_matters": "The page claims to apply Shannon's theorem, but the mapping is not provided. Without a one-to-one mapping, the application is invalid.",
+      "if_unanswered_then": "The page must either provide the mapping or admit that it is an analogy, not a direct application.",
+      "severity": "fatal"
+    },
+    {
+      "question": "What is the strongest falsifying data point against the core thesis that 'the receiver is always the bottleneck'? For example, if two people with identical A and D (if measurable) receive the same T but respond differently, does that falsify the model?",
+      "why_it_matters": "The thesis makes a strong claim about causality. Identifying a potential falsifier is essential for scientific rigor.",
+      "if_unanswered_then": "The page must address potential counterexamples or weaken the claim.",
+      "severity": "major"
+    },
+    {
+      "question": "Which assumption is least justified, and what minimum condition would weaken it? For example, the assumption that 'truth' can be treated as a signal power that adds to noise in a logarithmic fashion is not justified.",
+      "why_it_matters": "Identifying weak assumptions helps prioritize where the argument needs strengthening.",
+      "if_unanswered_then": "The page must either justify the assumption or remove it.",
+      "severity": "major"
+    },
+    {
+      "question": "Are the core claims (e.g., that every spiritual variable is an information variable) supported by primary sources (e.g., Shannon's original paper, theological texts) or only by summary mentions?",
+      "why_it_matters": "The page cites Shannon (1948) but does not show how the theorem is applied. Without primary source support, the claims are unsupported.",
+      "if_unanswered_then": "The page must provide explicit citations and show the derivation from primary sources.",
+      "severity": "major"
+    },
+    {
+      "question": "Which term is used in multiple meanings in the same argument? For example, 'channel' is used both as a physical communication channel and as a spiritual reception capacity. Is this equivocation?",
+      "why_it_matters": "Equivocation can hide logical gaps. Clarifying terms is necessary for sound reasoning.",
+      "if_unanswered_then": "The page must define each term unambiguously and ensure consistent usage.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "Which statement is most likely to be attacked by a physicist, and why? For example, the claim that 'God's broadcast is not bandwidth-limited' is a theological assertion that cannot be tested.",
+      "why_it_matters": "Identifying attack points helps the author preempt criticism.",
+      "if_unanswered_then": "The page should address potential criticisms or rephrase to avoid untestable claims.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "What single sentence should be rewritten to remove non-falsifiable certainty? For example, 'Every spiritual variable in every law-sector is, at bottom, an information variable governed by a channel equation.'",
+      "why_it_matters": "Certainty without evidence undermines credibility. Rewriting to a conditional or probabilistic statement would be more honest.",
+      "if_unanswered_then": "The page must rewrite the sentence to reflect the level of evidence.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Which claim is confessional vs evidentiary, and how is that distinguished in the copy? For example, 'God's broadcast is not bandwidth-limited' is a confessional claim, while 'C_i = A_i log2(1 + T_i/D_i)' is presented as mathematical fact.",
+      "why_it_matters": "Confusing confessional and evidentiary claims can mislead readers about what is being argued.",
+      "if_unanswered_then": "The page must clearly label which claims are based on faith and which on evidence.",
+      "severity": "major"
+    },
+    {
+      "question": "What minimal counterexample would break the central analogy? For example, if a person with high 'soul bandwidth' and low 'drift' still fails to receive truth, does that break the model?",
+      "why_it_matters": "Identifying a counterexample helps test the robustness of the analogy.",
+      "if_unanswered_then": "The page must either show that such a counterexample is impossible or adjust the model.",
+      "severity": "major"
+    },
+    {
+      "question": "Can this page be safely ingested into downstream metadata fields (claim_id, axiom_id, test_id) without ambiguity? For example, the claim 'Every spiritual variable is an information variable' is too vague to be assigned a unique claim_id.",
+      "why_it_matters": "Ambiguous claims cannot be reliably tracked or tested.",
+      "if_unanswered_then": "The page must be rewritten to make claims precise and unambiguous.",
+      "severity": "sharpening"
+    }
+  ],
+  "sentence_annotations": [
+    {
+      "anchor_quote": "Every spiritual variable in every law-sector is, at bottom, an information variable governed by a channel equation.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is the central claim of the page, but it is unsupported and likely false as a literal statement. It is a load-bearing sentence that requires rigorous justification.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "C_i = A_i * log2(1 + T_i/D_i)"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "This is Shannon's channel capacity theorem (1948), applied per law-sector i.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "The application is not justified. The paper does not show how the theorem applies to spiritual variables. This is a category error.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "C_i = A_i * log2(1 + T_i/D_i)"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The source was never the bottleneck. God's broadcast is not bandwidth-limited. The receiver is.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is a theological assertion presented as a conclusion from the equation, but the equation does not imply that the source is unlimited. It only says that capacity depends on A, T, D. The claim about God's broadcast is not derived.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Sanctification is not a single event. It is the sustained increase in channel capacity over time.",
+      "annotation_type": "claim",
+      "ui_color": "gold",
+      "why_flagged": "This redefines a theological term (sanctification) in terms of the model. It is a strong claim that requires justification that the model captures the essence of sanctification.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [
+          "sanctification_is_channel_healing"
+        ],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Lean-verified: `sanctification_is_channel_healing`.",
+      "annotation_type": "proof",
+      "ui_color": "blue",
+      "why_flagged": "The Lean verification is claimed but no code or proof is shown. Without the actual Lean code, this is an appeal to authority.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [
+          "sanctification_is_channel_healing"
+        ],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Channel capacity is strictly monotonically increasing in truth. More truth always means more capacity, never less. The math forbids it.",
+      "annotation_type": "claim",
+      "ui_color": "gold",
+      "why_flagged": "The monotonicity is mathematically true for the given equation, but the paper assumes that T and D are independent. If increasing truth also increases noise (e.g., through cognitive dissonance), monotonicity could break. The paper does not consider this.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [
+          "monotonicity"
+        ],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Law 6 (Shannon/Logos) is self-referential: it IS the channel equation applied to itself. The Logos is the signal about signals. This is not a paradox \u2014 it is the fixed point of the information hierarchy.",
+      "annotation_type": "clarification",
+      "ui_color": "violet",
+      "why_flagged": "This is a confusing claim. How can a law be applied to itself? The paper does not explain what 'fixed point' means or how it resolves the self-reference.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The per-law application: Each of the ten laws has its own channel...",
+      "annotation_type": "claim",
+      "ui_color": "gold",
+      "why_flagged": "The table assigns T and D to each law, but the assignments are arbitrary. For example, why is 'Grace geometry' the signal for law 1? No justification is given.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    }
+  ]
+}

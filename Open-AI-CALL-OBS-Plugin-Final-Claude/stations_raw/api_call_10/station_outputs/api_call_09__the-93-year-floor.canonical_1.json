@@ -1,0 +1,623 @@
+{
+  "definitions": [
+    {
+      "term": "exponential decay model",
+      "category": "math",
+      "definition": "A mathematical way to describe something that decreases quickly at first, then slows down as it gets closer to a bottom limit.",
+      "example": "Like a bouncing ball that loses height fast at first, then barely bounces near the floor.",
+      "grade_level": "11",
+      "first_appearance": "Section II"
+    },
+    {
+      "term": "asymptotic floor",
+      "category": "math",
+      "definition": "The lowest value a decreasing number can reach, which it gets closer and closer to but never goes below.",
+      "example": "Like a car slowing down that can't go below zero miles per hour.",
+      "grade_level": "12",
+      "first_appearance": "Section II"
+    },
+    {
+      "term": "entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system; things tend to get more messy over time.",
+      "example": "A sandcastle slowly crumbling into a pile of sand is entropy increasing.",
+      "grade_level": "11",
+      "first_appearance": "Section II"
+    },
+    {
+      "term": "compounding entropy",
+      "category": "physics",
+      "definition": "Disorder that builds up over time, each generation adding more mess on top of what was already there.",
+      "example": "Like a messy room that gets messier each day because you never clean it.",
+      "grade_level": "12",
+      "first_appearance": "Section III"
+    },
+    {
+      "term": "decoherence",
+      "category": "physics",
+      "definition": "The loss of order or alignment in a system, making it behave more randomly.",
+      "example": "Like a choir that starts singing in harmony but slowly gets out of sync.",
+      "grade_level": "college",
+      "first_appearance": "Section III"
+    },
+    {
+      "term": "Logos",
+      "category": "theology",
+      "definition": "In Christian theology, the divine reason or order that God used to create and sustain the universe; often refers to Jesus as the Word of God.",
+      "example": "Like the blueprint or design plan for how everything should work.",
+      "grade_level": "college",
+      "first_appearance": "Section III"
+    },
+    {
+      "term": "χ field",
+      "category": "framework",
+      "definition": "A proposed field in theophysics that represents God's sustaining presence, like a spiritual background energy that keeps things from falling apart completely.",
+      "example": "Like an invisible force field that holds everything together at a basic level.",
+      "grade_level": "specialist",
+      "first_appearance": "Section IV"
+    },
+    {
+      "term": "vacuum expectation value",
+      "category": "physics",
+      "definition": "The average amount of energy that exists even in empty space, according to quantum physics.",
+      "example": "Like the lowest possible hum that never goes away, even in a completely silent room.",
+      "grade_level": "college",
+      "first_appearance": "Section IV"
+    },
+    {
+      "term": "common grace",
+      "category": "theology",
+      "definition": "God's kindness that he gives to all people, whether they believe in him or not, like sunshine and rain.",
+      "example": "Like the sun shining on everyone, not just good people.",
+      "grade_level": "12",
+      "first_appearance": "Section IV"
+    },
+    {
+      "term": "thermodynamic time",
+      "category": "physics",
+      "definition": "The direction of time that we experience, linked to the increase of disorder (entropy).",
+      "example": "Like how an egg can break but can't unbreak itself.",
+      "grade_level": "college",
+      "first_appearance": "Section V"
+    },
+    {
+      "term": "informational fidelity",
+      "category": "framework",
+      "definition": "How accurately information is passed from one generation to the next without getting corrupted.",
+      "example": "Like a copy of a copy of a photo that gets blurrier each time.",
+      "grade_level": "college",
+      "first_appearance": "Section V"
+    },
+    {
+      "term": "signal degradation",
+      "category": "physics",
+      "definition": "The loss of quality or clarity in a signal as it travels or is passed along.",
+      "example": "Like a radio station that gets staticky the farther you drive from the tower.",
+      "grade_level": "11",
+      "first_appearance": "Section V"
+    },
+    {
+      "term": "heritable",
+      "category": "academic",
+      "definition": "Something that can be passed from parent to child through genetics or inheritance.",
+      "example": "Like eye color or height running in a family.",
+      "grade_level": "10",
+      "first_appearance": "Section V"
+    },
+    {
+      "term": "R² statistics",
+      "category": "math",
+      "definition": "A number that shows how well a mathematical model fits the actual data; closer to 1 means a better fit.",
+      "example": "Like a score from 0 to 1 that tells you if your guess matches reality.",
+      "grade_level": "12",
+      "first_appearance": "Section VI"
+    },
+    {
+      "term": "asymptote",
+      "category": "math",
+      "definition": "A line that a curve gets closer and closer to but never actually touches.",
+      "example": "Like a race car that approaches the finish line but never quite crosses it.",
+      "grade_level": "12",
+      "first_appearance": "Section VI"
+    },
+    {
+      "term": "threescore years and ten",
+      "category": "language",
+      "definition": "An old-fashioned way of saying 70 years; 'score' means 20, so three score is 60, plus ten is 70.",
+      "example": "Like saying 'four score and seven' for 87 years.",
+      "grade_level": "10",
+      "first_appearance": "Section II"
+    },
+    {
+      "term": "fourscore years",
+      "category": "language",
+      "definition": "An old-fashioned way of saying 80 years; four times 20 equals 80.",
+      "example": "Like saying 'three score' for 60.",
+      "grade_level": "10",
+      "first_appearance": "Section II"
+    },
+    {
+      "term": "epidemiological",
+      "category": "academic",
+      "definition": "Relating to the study of how diseases and health patterns spread in populations.",
+      "example": "Like tracking how many people get the flu each year.",
+      "grade_level": "12",
+      "first_appearance": "Section II"
+    },
+    {
+      "term": "linear decay",
+      "category": "math",
+      "definition": "A steady decrease at a constant rate over time, like a straight line going down.",
+      "example": "Like losing 1 dollar every day until your money runs out.",
+      "grade_level": "10",
+      "first_appearance": "Section III"
+    },
+    {
+      "term": "exponential decay",
+      "category": "math",
+      "definition": "A decrease that starts fast and then slows down, following a curved path.",
+      "example": "Like a hot cup of coffee cooling down quickly at first, then slowly.",
+      "grade_level": "11",
+      "first_appearance": "Section II"
+    },
+    {
+      "term": "baseline",
+      "category": "academic",
+      "definition": "A starting point or reference level used for comparison.",
+      "example": "Like measuring your height at age 10 and comparing it later.",
+      "grade_level": "10",
+      "first_appearance": "Section II"
+    },
+    {
+      "term": "plateau",
+      "category": "academic",
+      "definition": "A period where something stays at a steady level without increasing or decreasing.",
+      "example": "Like your weight staying the same for a month even if you exercise.",
+      "grade_level": "10",
+      "first_appearance": "Section III"
+    },
+    {
+      "term": "ground state",
+      "category": "physics",
+      "definition": "The lowest possible energy level that a physical system can have.",
+      "example": "Like a ball resting at the bottom of a valley with no extra energy.",
+      "grade_level": "college",
+      "first_appearance": "Section IV"
+    },
+    {
+      "term": "irreducible",
+      "category": "academic",
+      "definition": "Something that cannot be made smaller or simpler; the minimum possible.",
+      "example": "Like the smallest Lego piece you can't break into smaller parts.",
+      "grade_level": "11",
+      "first_appearance": "Section IV"
+    },
+    {
+      "term": "zero-point energy",
+      "category": "physics",
+      "definition": "The tiny amount of energy that exists even in empty space at absolute zero temperature.",
+      "example": "Like the faintest whisper that never goes away in a completely silent room.",
+      "grade_level": "college",
+      "first_appearance": "Section IV"
+    },
+    {
+      "term": "evacuated",
+      "category": "academic",
+      "definition": "Removed or emptied out completely.",
+      "example": "Like sucking all the air out of a bottle.",
+      "grade_level": "11",
+      "first_appearance": "Section IV"
+    },
+    {
+      "term": "coupling",
+      "category": "physics",
+      "definition": "A connection or interaction between two systems that affects each other.",
+      "example": "Like two gears that are linked so turning one turns the other.",
+      "grade_level": "12",
+      "first_appearance": "Section IV"
+    },
+    {
+      "term": "generational entropy",
+      "category": "framework",
+      "definition": "The buildup of disorder that passes from parents to children, making each generation slightly more chaotic.",
+      "example": "Like a family heirloom that gets more scratched and worn with each owner.",
+      "grade_level": "specialist",
+      "first_appearance": "Section III"
+    },
+    {
+      "term": "grace floor",
+      "category": "framework",
+      "definition": "The lowest level of God's kindness that keeps things from falling apart completely.",
+      "example": "Like a safety net that catches you before you hit rock bottom.",
+      "grade_level": "specialist",
+      "first_appearance": "Section IV"
+    },
+    {
+      "term": "χ vacuum floor",
+      "category": "framework",
+      "definition": "The minimum spiritual energy level that prevents total collapse, based on the χ field.",
+      "example": "Like the lowest possible battery level that still keeps a device running.",
+      "grade_level": "specialist",
+      "first_appearance": "Section IV"
+    },
+    {
+      "term": "Logos-coupling",
+      "category": "framework",
+      "definition": "The connection between a person and God's divine order that keeps them functioning properly.",
+      "example": "Like a phone staying connected to Wi-Fi to work correctly.",
+      "grade_level": "specialist",
+      "first_appearance": "Section V"
+    },
+    {
+      "term": "pre-Fall state",
+      "category": "theology",
+      "definition": "The condition of the world before Adam and Eve sinned, when everything was perfect.",
+      "example": "Like a brand-new video game before any glitches appear.",
+      "grade_level": "10",
+      "first_appearance": "Section VI"
+    },
+    {
+      "term": "thermodynamic arrow",
+      "category": "physics",
+      "definition": "The one-way direction of time where disorder increases, like from order to chaos.",
+      "example": "Like a movie playing forward where a glass breaks, not backward where it fixes itself.",
+      "grade_level": "college",
+      "first_appearance": "Section VI"
+    },
+    {
+      "term": "eternal frame",
+      "category": "theology",
+      "definition": "The perspective of God, who exists outside of time and sees everything at once.",
+      "example": "Like watching a whole movie at once instead of minute by minute.",
+      "grade_level": "12",
+      "first_appearance": "Section VI"
+    },
+    {
+      "term": "post-Fall",
+      "category": "theology",
+      "definition": "The time period after Adam and Eve sinned, when the world became imperfect.",
+      "example": "Like after a software update that introduces bugs.",
+      "grade_level": "10",
+      "first_appearance": "Section III"
+    },
+    {
+      "term": "pre-Flood",
+      "category": "theology",
+      "definition": "The time period before the great flood described in the Bible.",
+      "example": "Like the era before a major reset in history.",
+      "grade_level": "10",
+      "first_appearance": "Section I"
+    },
+    {
+      "term": "post-Flood",
+      "category": "theology",
+      "definition": "The time period after the great flood described in the Bible.",
+      "example": "Like the era after a major reset in history.",
+      "grade_level": "10",
+      "first_appearance": "Section I"
+    },
+    {
+      "term": "patriarch",
+      "category": "theology",
+      "definition": "A male leader or ancestor in the Bible, like Abraham or Noah.",
+      "example": "Like the founding father of a family line.",
+      "grade_level": "10",
+      "first_appearance": "Section I"
+    },
+    {
+      "term": "generation",
+      "category": "academic",
+      "definition": "All the people born and living at about the same time, or the average time between a parent's birth and their child's birth.",
+      "example": "Like your parents are one generation, you are the next, and your kids are the next.",
+      "grade_level": "9",
+      "first_appearance": "Section I"
+    },
+    {
+      "term": "lifespan",
+      "category": "academic",
+      "definition": "The length of time a person or living thing lives.",
+      "example": "Like how long a dog typically lives, around 10 to 13 years.",
+      "grade_level": "9",
+      "first_appearance": "Section I"
+    },
+    {
+      "term": "dataset",
+      "category": "academic",
+      "definition": "A collection of data or information, often in a table, used for analysis.",
+      "example": "Like a list of everyone's height in your class.",
+      "grade_level": "10",
+      "first_appearance": "Section I"
+    },
+    {
+      "term": "exponential curve",
+      "category": "math",
+      "definition": "A curved line on a graph that shows something increasing or decreasing very quickly at first, then leveling off.",
+      "example": "Like the shape of a slide that is steep at the top and flatter at the bottom.",
+      "grade_level": "11",
+      "first_appearance": "Section II"
+    },
+    {
+      "term": "linear decline",
+      "category": "math",
+      "definition": "A steady decrease that forms a straight line when graphed.",
+      "example": "Like losing 2 pounds every week on a diet.",
+      "grade_level": "10",
+      "first_appearance": "Section II"
+    },
+    {
+      "term": "parameter",
+      "category": "math",
+      "definition": "A variable or constant that helps define a system or model.",
+      "example": "Like the speed setting in a video game that changes how fast things move.",
+      "grade_level": "11",
+      "first_appearance": "Section II"
+    },
+    {
+      "term": "order of magnitude",
+      "category": "math",
+      "definition": "A way to compare sizes by powers of ten; numbers within the same order of magnitude are roughly similar in scale.",
+      "example": "Like 10 and 30 are the same order of magnitude, but 10 and 100 are not.",
+      "grade_level": "12",
+      "first_appearance": "Section II"
+    },
+    {
+      "term": "coincidence",
+      "category": "academic",
+      "definition": "When two or more things happen at the same time by chance, without a clear connection.",
+      "example": "Like running into a friend at the mall when you didn't plan it.",
+      "grade_level": "9",
+      "first_appearance": "Section II"
+    },
+    {
+      "term": "historicity",
+      "category": "academic",
+      "definition": "The quality of being historically true or accurate.",
+      "example": "Like whether a story about a king really happened or is just a legend.",
+      "grade_level": "12",
+      "first_appearance": "Section II"
+    },
+    {
+      "term": "statistical pattern",
+      "category": "math",
+      "definition": "A regular or predictable trend found in data using statistics.",
+      "example": "Like noticing that taller people tend to have bigger shoe sizes.",
+      "grade_level": "11",
+      "first_appearance": "Section II"
+    },
+    {
+      "term": "proportional",
+      "category": "math",
+      "definition": "When two quantities change at the same rate; if one doubles, the other doubles.",
+      "example": "Like the more hours you work, the more money you earn.",
+      "grade_level": "10",
+      "first_appearance": "Section III"
+    },
+    {
+      "term": "signature",
+      "category": "academic",
+      "definition": "A distinctive mark or characteristic that identifies something.",
+      "example": "Like a unique pattern that shows who painted a picture.",
+      "grade_level": "10",
+      "first_appearance": "Section III"
+    },
+    {
+      "term": "mechanism",
+      "category": "academic",
+      "definition": "A process or system that causes something to happen.",
+      "example": "Like the gears in a clock that make the hands move.",
+      "grade_level": "10",
+      "first_appearance": "Section III"
+    },
+    {
+      "term": "accumulation",
+      "category": "academic",
+      "definition": "The gradual gathering or increase of something over time.",
+      "example": "Like snow piling up during a storm.",
+      "grade_level": "10",
+      "first_appearance": "Section III"
+    },
+    {
+      "term": "misalignment",
+      "category": "academic",
+      "definition": "When things are not properly lined up or in agreement.",
+      "example": "Like a picture frame hanging crooked on the wall.",
+      "grade_level": "10",
+      "first_appearance": "Section III"
+    },
+    {
+      "term": "inheriting",
+      "category": "academic",
+      "definition": "Receiving something from a parent or ancestor, like a trait or property.",
+      "example": "Like getting your mom's blue eyes.",
+      "grade_level": "9",
+      "first_appearance": "Section III"
+    },
+    {
+      "term": "reset",
+      "category": "academic",
+      "definition": "To set something back to its original state or starting point.",
+      "example": "Like restarting a video game from the beginning.",
+      "grade_level": "9",
+      "first_appearance": "Section III"
+    },
+    {
+      "term": "functional form",
+      "category": "math",
+      "definition": "A specific mathematical equation that describes a relationship between variables.",
+      "example": "Like y = 2x + 1 is a functional form for a straight line.",
+      "grade_level": "12",
+      "first_appearance": "Section III"
+    },
+    {
+      "term": "thermodynamics",
+      "category": "physics",
+      "definition": "The branch of physics that deals with heat, energy, and how they move and change.",
+      "example": "Like how a refrigerator keeps food cold by moving heat out.",
+      "grade_level": "12",
+      "first_appearance": "Section IV"
+    },
+    {
+      "term": "biological system",
+      "category": "academic",
+      "definition": "A living thing or group of living things that work together, like a body or an ecosystem.",
+      "example": "Like your digestive system that breaks down food.",
+      "grade_level": "10",
+      "first_appearance": "Section IV"
+    },
+    {
+      "term": "degrade",
+      "category": "academic",
+      "definition": "To break down or become worse over time.",
+      "example": "Like an old rubber band that gets brittle and snaps.",
+      "grade_level": "10",
+      "first_appearance": "Section IV"
+    },
+    {
+      "term": "millennia",
+      "category": "academic",
+      "definition": "Plural of millennium; periods of one thousand years.",
+      "example": "Like the time from the year 1000 to 2000 is one millennium.",
+      "grade_level": "10",
+      "first_appearance": "Section IV"
+    },
+    {
+      "term": "baseline",
+      "category": "academic",
+      "definition": "A starting point or reference level used for comparison.",
+      "example": "Like measuring your height at age 10 and comparing it later.",
+      "grade_level": "10",
+      "first_appearance": "Section II"
+    },
+    {
+      "term": "information channel",
+      "category": "physics",
+      "definition": "A pathway through which data or signals travel from one place to another.",
+      "example": "Like a wire that carries internet signals to your computer.",
+      "grade_level": "11",
+      "first_appearance": "Section V"
+    },
+    {
+      "term": "noise injection",
+      "category": "physics",
+      "definition": "Adding random or unwanted signals into a system, causing errors or confusion.",
+      "example": "Like static on a radio that makes the music hard to hear.",
+      "grade_level": "12",
+      "first_appearance": "Section V"
+    },
+    {
+      "term": "heritable degradation",
+      "category": "framework",
+      "definition": "The worsening of a quality that gets passed from parent to child.",
+      "example": "Like a family recipe that gets less tasty each time it's passed down.",
+      "grade_level": "specialist",
+      "first_appearance": "Section V"
+    },
+    {
+      "term": "ground state",
+      "category": "physics",
+      "definition": "The lowest possible energy level that a physical system can have.",
+      "example": "Like a ball resting at the bottom of a valley with no extra energy.",
+      "grade_level": "college",
+      "first_appearance": "Section IV"
+    },
+    {
+      "term": "Logos-alignment",
+      "category": "framework",
+      "definition": "Being in harmony with God's divine order or design.",
+      "example": "Like a guitar string tuned to the correct note.",
+      "grade_level": "specialist",
+      "first_appearance": "Section V"
+    },
+    {
+      "term": "coupling",
+      "category": "physics",
+      "definition": "A connection or interaction between two systems that affects each other.",
+      "example": "Like two gears that are linked so turning one turns the other.",
+      "grade_level": "12",
+      "first_appearance": "Section IV"
+    },
+    {
+      "term": "sustain",
+      "category": "academic",
+      "definition": "To keep something going or support it over time.",
+      "example": "Like food and water sustain your body.",
+      "grade_level": "9",
+      "first_appearance": "Section V"
+    },
+    {
+      "term": "arbitrary",
+      "category": "academic",
+      "definition": "Based on random choice or personal whim, not on reason or system.",
+      "example": "Like picking a number by closing your eyes and pointing.",
+      "grade_level": "10",
+      "first_appearance": "Section V"
+    },
+    {
+      "term": "eternal frame",
+      "category": "theology",
+      "definition": "The perspective of God, who exists outside of time and sees everything at once.",
+      "example": "Like watching a whole movie at once instead of minute by minute.",
+      "grade_level": "12",
+      "first_appearance": "Section VI"
+    },
+    {
+      "term": "supersedes",
+      "category": "academic",
+      "definition": "To replace or take the place of something older or less important.",
+      "example": "Like a new law that overrules an old one.",
+      "grade_level": "11",
+      "first_appearance": "Section VI"
+    },
+    {
+      "term": "thermodynamic arrow",
+      "category": "physics",
+      "definition": "The one-way direction of time where disorder increases, like from order to chaos.",
+      "example": "Like a movie playing forward where a glass breaks, not backward where it fixes itself.",
+      "grade_level": "college",
+      "first_appearance": "Section VI"
+    },
+    {
+      "term": "subject to",
+      "category": "academic",
+      "definition": "Affected by or under the influence of something.",
+      "example": "Like being subject to the weather if you go outside.",
+      "grade_level": "9",
+      "first_appearance": "Section VI"
+    },
+    {
+      "term": "asymptote",
+      "category": "math",
+      "definition": "A line that a curve gets closer and closer to but never actually touches.",
+      "example": "Like a race car that approaches the finish line but never quite crosses it.",
+      "grade_level": "12",
+      "first_appearance": "Section VI"
+    },
+    {
+      "term": "decoherence equations",
+      "category": "physics",
+      "definition": "Mathematical formulas that describe how order is lost in a system over time.",
+      "example": "Like equations that predict how a spinning top slows down and wobbles.",
+      "grade_level": "college",
+      "first_appearance": "Section VI"
+    },
+    {
+      "term": "R² statistics",
+      "category": "math",
+      "definition": "A number that shows how well a mathematical model fits the actual data; closer to 1 means a better fit.",
+      "example": "Like a score from 0 to 1 that tells you if your guess matches reality.",
+      "grade_level": "12",
+      "first_appearance": "Section VI"
+    },
+    {
+      "term": "arc",
+      "category": "academic",
+      "definition": "A curved path or a continuous progression over time.",
+      "example": "Like the story arc of a hero in a movie from beginning to end.",
+      "grade_level": "10",
+      "first_appearance": "Section VI"
+    },
+    {
+      "term": "converging",
+      "category": "academic",
+      "definition": "Coming together from different directions to meet at a point.",
+      "example": "Like two roads that merge into one.",

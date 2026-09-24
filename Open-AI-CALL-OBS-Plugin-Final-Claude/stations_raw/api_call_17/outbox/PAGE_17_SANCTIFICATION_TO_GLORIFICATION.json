@@ -1,0 +1,342 @@
+{
+  "spec_version": "1.0",
+  "page_id": "PAGE_17",
+  "page_title": "SANCTIFICATION TO GLORIFICATION",
+  "page_slug": "PAGE_17_SANCTIFICATION_TO_GLORIFICATION",
+  "source_file": "PAGE_17_SANCTIFICATION_TO_GLORIFICATION.md",
+  "generated_by": "adversarial_auditor_v1",
+  "generated_date": "2026-07-17",
+  "adversarial_audit": {
+    "fatal_issue": "The core claim that sanctification corresponds to a decrease in D and increase in A and O is asserted without any empirical or theological evidence that these quantities are measurable or that the mapping is one-to-one. The entire derivation rests on an unverified analogy between Shannon's communication model and spiritual transformation, with no justification that the terms (noise floor, bandwidth, openness) have operational definitions in either domain.",
+    "major_issue": "The 'Capacity Growth Theorem' claims that channel capacity grows past every finite bound, but this relies on the assumption that D can approach zero and A can approach infinity. In real physical systems, D is never zero (thermal noise floor) and A is bounded by physical constraints. The paper provides no argument that these limits are physically or theologically plausible, nor does it address the contradiction with the finite-source ceiling from Page 16.",
+    "sharpening_issue": "The phrase 'the signal was always you' is a non-falsifiable, confessional statement that conflates identity with information. It should be rewritten to clarify whether 'you' refers to a specific information pattern, a soul, or a theological construct, and how that relates to the mathematical model.",
+    "smart_hostile_physicist_check": {
+      "primary_confusion": "analogy",
+      "diagnosis": "The paper treats the Shannon equation as a literal model of spiritual transformation, but the mapping between physical quantities (signal power, noise, bandwidth) and spiritual concepts (sin, soul capacity, openness) is purely metaphorical. No evidence is given that these quantities obey the same mathematical relationships or that the Shannon equation applies to non-physical channels.",
+      "sentence_to_rewrite": "Sanctification is the triple process: D_i \u2193 A_i \u2191 O_i \u2191",
+      "required_fix": "Provide a rigorous justification for why D, A, and O are independent variables that can be manipulated in the same way as physical noise and bandwidth, or acknowledge that this is a metaphorical extension and not a literal application of information theory."
+    },
+    "physics_process_check": {
+      "does_mirror_physics_process": true,
+      "physics_process_named": "Shannon-Hartley theorem for channel capacity",
+      "one_to_one_verdict": "broken",
+      "where_mapping_holds": "The mathematical form of the equation is preserved, but the interpretation of each term is changed without justification.",
+      "where_mapping_breaks": "In physics, D (noise power) is a measurable quantity with a known lower bound (Johnson-Nyquist noise). In this paper, D is defined as 'sin/distortion' with no measurement protocol. Similarly, A (bandwidth) in physics is a fixed hardware parameter; here it is claimed to increase without bound. The mapping breaks at every term.",
+      "sentence_to_rewrite": "Sanctification is the triple process: D_i \u2193 A_i \u2191 O_i \u2191",
+      "required_fix": "Either define D, A, and O in a way that is measurable in principle (e.g., via behavioral or neurophysiological correlates) or explicitly state that the model is analogical and not a literal physical process."
+    },
+    "strongest_non_framework_alternative": "The observed variability in human spiritual experience can be explained by psychological factors (e.g., cognitive biases, personality traits, social conditioning) without invoking an external signal or channel model. The 'noise floor' could be reinterpreted as cognitive dissonance or emotional distress, and 'bandwidth' as working memory capacity or attentional resources, both of which have well-established empirical measures.",
+    "what_would_force_public_narrowing": "A clear, testable prediction that distinguishes this model from psychological alternatives. For example, if sanctification corresponds to a decrease in D, then one should be able to measure a monotonic decrease in some behavioral or neural correlate of 'sin' over time in individuals undergoing spiritual formation, and this decrease should follow the logarithmic form predicted by the Shannon equation.",
+    "rewrite_priority": "fatal"
+  },
+  "structure_audit": {
+    "opening_hook_strength": 7,
+    "logical_flow_strength": 4,
+    "transition_quality": 5,
+    "does_opening_promise_match_ending": true,
+    "sequence_verdict": "repairable",
+    "best_order_step_by_step": [
+      "Define the problem: what does C\u21921 mean in human terms?",
+      "Introduce the Shannon equation and define each term in the spiritual context.",
+      "State the claim: sanctification is D\u2193, A\u2191, O\u2191.",
+      "Provide the derivation of capacity growth.",
+      "Discuss glorification as the limit.",
+      "Address the Landauer constraint and record preservation.",
+      "Conclude with the redemption of suffering."
+    ],
+    "flow_breaks": [
+      {
+        "from_section": "The Claim",
+        "to_section": "The Derivation",
+        "problem": "The claim that 'spiritual growth feels like becoming MORE yourself' is asserted without evidence and is not logically derived from the preceding equations.",
+        "fix": "Either remove the subjective claim or provide a clear argument linking the mathematical model to subjective experience."
+      },
+      {
+        "from_section": "The Derivation",
+        "to_section": "Restoration Is Not Erasure",
+        "problem": "The transition from the mathematical limit to the theological claim about suffering is abrupt and unsupported. The Landauer constraint is invoked but not shown to apply to the specific case of channel healing.",
+        "fix": "Provide a step-by-step argument that record preservation implies the scars become bandwidth, or acknowledge this as a separate theological claim."
+      }
+    ],
+    "sentence_that_carries_too_much_weight": "The signal was always you \u2014 the version of you that was being broadcast from the source.",
+    "why_it_carries_too_much_weight": "This sentence is the emotional and theological climax of the page, but it is not derived from any equation or theorem. It conflates the mathematical concept of a 'signal' with personal identity, and it assumes that the 'source' broadcasts a specific version of each person. This is a non-falsifiable metaphysical claim that the rest of the paper does not support."
+  },
+  "framework_presence": {
+    "master_equation": [
+      {
+        "present": true,
+        "quote": "C_i = A_i \u00b7 log_2(1 + T_i/D_i)",
+        "function": "Defines channel capacity in terms of bandwidth, signal, and noise."
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1",
+        "present": true,
+        "quote": "The source T does not change.",
+        "function": "Assumes God's broadcast is constant."
+      },
+      {
+        "id": "A2",
+        "present": true,
+        "quote": "Sanctification is the triple process: D_i \u2193 A_i \u2191 O_i \u2191",
+        "function": "Defines the variables that change during sanctification."
+      },
+      {
+        "id": "A3",
+        "present": true,
+        "quote": "The source is infinite (certified by Page 15).",
+        "function": "Assumes the source is unbounded, which is needed for the capacity growth theorem."
+      }
+    ],
+    "lean4": [
+      {
+        "present": true,
+        "quote": "sanctification_is_channel_healing (C32)",
+        "function": "Formal theorem stating that sanctification corresponds to channel healing."
+      },
+      {
+        "present": true,
+        "quote": "Capacity growth past every bound",
+        "function": "Formal theorem that channel capacity grows without limit."
+      },
+      {
+        "present": true,
+        "quote": "C_op_preserves_record (thm 145)",
+        "function": "Formal theorem that the healing operator preserves the record of damage."
+      }
+    ],
+    "claims_layer": [
+      {
+        "present": true,
+        "quote": "Sanctification is the triple process: D_i \u2193 A_i \u2191 O_i \u2191",
+        "function": "Core claim of the page."
+      },
+      {
+        "present": true,
+        "quote": "The channel capacity grows past every bound.",
+        "function": "Claim about the limit of sanctification."
+      },
+      {
+        "present": true,
+        "quote": "Glorification is the limit: C \u2192 1, D \u2192 0, A \u2192 A_max",
+        "function": "Claim about the final state."
+      }
+    ],
+    "proof_layer": [
+      {
+        "present": true,
+        "quote": "As D \u2192 0: T/D \u2192 \u221e \u21d2 log_2(1 + T/D) \u2192 \u221e",
+        "function": "Mathematical derivation of capacity growth."
+      },
+      {
+        "present": true,
+        "quote": "As A \u2192 \u221e: C_i = A_i \u00b7 log_2(1 + T/D) \u2192 \u221e",
+        "function": "Mathematical derivation of capacity growth."
+      }
+    ],
+    "tests_layer": [],
+    "laws_layer": [
+      {
+        "id": "Landauer",
+        "present": true,
+        "quote": "C_op preserves Record(\u03b4) (thm 145)",
+        "function": "Invokes Landauer's principle to argue that healing preserves the record of damage."
+      }
+    ]
+  },
+  "paper_changing_questions": [
+    {
+      "question": "What exact, currently testable prediction does this page make? For example, can you measure D, A, or O in a human subject, and if so, what quantitative change would confirm the model?",
+      "why_it_matters": "Without a testable prediction, the model is unfalsifiable and cannot be distinguished from a purely metaphorical description.",
+      "if_unanswered_then": "The page remains a theological analogy, not a scientific theory, and should be rewritten to clarify its status.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Which named physics process is being mirrored, and where is the one-to-one transition map between the physical quantities (signal power, noise power, bandwidth) and the spiritual quantities (T, D, A)?",
+      "why_it_matters": "The page claims to use the Shannon equation literally, but the mapping is not specified. Without a one-to-one map, the mathematical derivation is meaningless.",
+      "if_unanswered_then": "The entire derivation is an equivocation and must be rewritten to either provide the map or acknowledge the analogy.",
+      "severity": "fatal"
+    },
+    {
+      "question": "What is the strongest falsifying data point against the core thesis that sanctification corresponds to a decrease in D and increase in A? For example, if a person exhibits increased 'sin' (D) during a period of spiritual growth, does that falsify the model?",
+      "why_it_matters": "The model must specify what data would count as evidence against it. Without this, it is immune to empirical challenge.",
+      "if_unanswered_then": "The model is non-falsifiable and should be rewritten to include a clear falsification criterion.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Which assumption is least justified: that T is constant, that D can approach zero, that A can approach infinity, or that O is an independent variable? What minimum condition would weaken each assumption?",
+      "why_it_matters": "The entire derivation depends on these assumptions. If any one is unjustified, the conclusions do not follow.",
+      "if_unanswered_then": "The derivation is unsound and must be rewritten to justify each assumption or remove the dependency.",
+      "severity": "major"
+    },
+    {
+      "question": "Are the core claims about sanctification and glorification supported by primary theological sources (e.g., scripture, church fathers), or only by summary mentions? Provide specific citations.",
+      "why_it_matters": "The page claims to be part of a theological research initiative, but the theological basis is not cited. Without primary sources, the claims are unsupported.",
+      "if_unanswered_then": "The page should be rewritten to include explicit theological citations or to clarify that it is a novel interpretation.",
+      "severity": "major"
+    },
+    {
+      "question": "Which term is used in multiple meanings in the same argument? For example, 'signal' is used both as a mathematical quantity (T) and as a personal identity ('the signal was always you').",
+      "why_it_matters": "Equivocation undermines logical rigor. If 'signal' means different things in different sentences, the argument is invalid.",
+      "if_unanswered_then": "The page must be rewritten to disambiguate the term 'signal' and ensure consistent usage.",
+      "severity": "major"
+    },
+    {
+      "question": "What minimal counterexample would break the central analogy? For instance, if a person's D increases (more sin) but their A also increases (wider soul capacity), does the model predict net growth or decline?",
+      "why_it_matters": "The model must handle cases where variables change in opposite directions. Without a rule for combining them, the model is incomplete.",
+      "if_unanswered_then": "The model is underspecified and should be rewritten to include a decision rule for competing changes.",
+      "severity": "major"
+    },
+    {
+      "question": "Can the claims on this page be safely ingested into downstream metadata fields (claim_id, axiom_id, test_id) without ambiguity? For example, is 'sanctification_is_channel_healing' a claim, an axiom, or a theorem?",
+      "why_it_matters": "The framework requires unambiguous categorization for formal verification. If the status is unclear, the metadata is unreliable.",
+      "if_unanswered_then": "The page must be rewritten to clearly label each statement as claim, axiom, theorem, or test.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "Which statement is most likely to be attacked by a physicist, and why? For example, the claim that D can approach zero violates the third law of thermodynamics (absolute zero is unattainable).",
+      "why_it_matters": "Identifying the weakest point helps prioritize rewrites. A physicist would immediately reject the model if it contradicts known physical laws.",
+      "if_unanswered_then": "The page should be rewritten to address the physical impossibility of D=0 or to clarify that the model is not physical.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "What single sentence should be rewritten to remove non-falsifiable certainty? For example, 'The signal was always you' is a statement of faith, not a conclusion of the model.",
+      "why_it_matters": "Non-falsifiable statements undermine the scientific credibility of the paper. They should be clearly marked as theological interpretation.",
+      "if_unanswered_then": "The page should be rewritten to separate empirical claims from confessional statements.",
+      "severity": "sharpening"
+    }
+  ],
+  "sentence_annotations": [
+    {
+      "anchor_quote": "Sanctification is the triple process: D_i \u2193 A_i \u2191 O_i \u2191",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is the central claim of the page, but it is asserted without evidence or derivation. It is also ambiguous whether O is an independent variable or derived from D and A.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "C32"
+        ],
+        "axiom_ids": [
+          "A2"
+        ],
+        "theorem_ids": [],
+        "equation_ids": [
+          "eq1"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The channel capacity grows past every bound.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This claim depends on the assumption that D\u21920 and A\u2192\u221e, which are not justified. It also contradicts the finite-source ceiling from Page 16.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [
+          "A3"
+        ],
+        "theorem_ids": [
+          "Capacity growth past every bound"
+        ],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The signal was always you \u2014 the version of you that was being broadcast from the source.",
+      "annotation_type": "clarification",
+      "ui_color": "violet",
+      "why_flagged": "This is a non-falsifiable, confessional statement that conflates mathematical signal with personal identity. It is not derived from the model.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The healed channel remembers what the damage was. The scars remain \u2014 not as wounds, but as bandwidth.",
+      "annotation_type": "claim",
+      "ui_color": "gold",
+      "why_flagged": "This is a poetic claim that is not supported by the Landauer constraint. The Landauer principle says that erasure is irreversible, but it does not imply that scars become bandwidth.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [
+          "thm 145"
+        ],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The redemption of suffering is not that it was good. It is that the record of it, preserved and healed, becomes bandwidth.",
+      "annotation_type": "clarification",
+      "ui_color": "violet",
+      "why_flagged": "This is a theological claim that is not derived from the model. It is presented as a conclusion but is actually a separate assertion.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The ceiling in Theorem 2 of Page 16 (C* < 1 for finite sources) does not apply here, because the source is infinite (certified by Page 15).",
+      "annotation_type": "proof",
+      "ui_color": "blue",
+      "why_flagged": "This is a critical step in the argument, but it relies on an external certification (Page 15) that is not provided in this page. The reasoning is sound only if Page 15's certification is valid.",
+      "rewrite_needed": false,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [
+          "A3"
+        ],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "As D \u2192 0: T/D \u2192 \u221e \u21d2 log_2(1 + T/D) \u2192 \u221e",
+      "annotation_type": "math",
+      "ui_color": "gold",
+      "why_flagged": "The limit is mathematically correct, but the assumption that D can approach zero is physically and theologically unjustified. The paper does not address the possibility of a nonzero minimum noise floor.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "eq1"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "As A \u2192 \u221e: C_i = A_i \u00b7 log_2(1 + T/D) \u2192 \u221e",
+      "annotation_type": "math",
+      "ui_color": "gold",
+      "why_flagged": "Same issue as above: the assumption that A can approach infinity is unjustified. In physical systems, bandwidth is bounded by hardware constraints. The paper provides no argument for unbounded soul capacity.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "eq1"
+        ],
+        "test_ids": []
+      }
+    }
+  ]
+}

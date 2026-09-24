@@ -1,0 +1,213 @@
+{
+  "spec_version": "1.0",
+  "page_id": "PAGE_12",
+  "page_title": "LAW 9: THE EXPOSED PROOF",
+  "source_file": "PAGE_12_LAW_9_THE_EXPOSED_PROOF.md",
+  "generated_by": "structural_isomorphism_test",
+  "generated_date": "2025-04-13",
+  "highest_density_mapping": {
+    "iso_id": "iso_1",
+    "name": "Noether Conservation of Moral Cost",
+    "density_score": 0.95,
+    "verdict": "strongest available structural correspondence"
+  },
+  "isomorphisms": [
+    {
+      "iso_id": "iso_1",
+      "name": "Noether Conservation of Moral Cost",
+      "domain_a": "Classical Field Theory (Noether's Theorem)",
+      "domain_b": "Moral-Sector Lagrangian with Parity-Breaking Cubic",
+      "chi_law": "The conserved charge Q_m is constructed via the textbook Noether prescription from the Lagrangian L_9, and the time-derivative vanishes identically using the Euler-Lagrange equation. The cubic term contributes both to the charge and to the equation of motion, canceling exactly.",
+      "does_mirror_physics_process": true,
+      "physics_process": "Noether's theorem: time-translation symmetry of a Lagrangian yields a conserved current and charge. The derivation is explicit: compute delta-psi, construct j^0, differentiate, substitute Euler-Lagrange, obtain zero.",
+      "theological_phenomenon": "Moral cost is conserved: sin produces visible damage and an invisible remainder, but total cost cannot vanish. The cubic term makes sin irreversible, yet conservation holds.",
+      "one_to_one_verdict": "one_to_one",
+      "claimed_level": "level_1",
+      "aaa_level": "Strong",
+      "density_mapped_events": 5,
+      "density_total_events": 5,
+      "density_score": 0.95,
+      "verdict": "strongest available structural correspondence",
+      "prediction": "Any moral event must produce both visible damage and an invisible remainder (three-body decay). No two-body moral decay exists.",
+      "prediction_verified": false,
+      "physics_process_steps": [
+        "Define Lagrangian L = 1/2 (dot-psi)^2 - V(psi) - lambda psi^3",
+        "Compute Euler-Lagrange: d/dt(dL/d(dot-psi)) - dL/dpsi = 0 -> dot-dot-psi + V' + 3 lambda psi^2 = 0",
+        "Apply infinitesimal time-translation: delta-psi = epsilon dot-psi",
+        "Construct Noether current j^0 = (dL/d(dot-psi)) dot-psi - L = 1/2 (dot-psi)^2 + V + lambda psi^3",
+        "Differentiate: d(j^0)/dt = dot-psi dot-dot-psi + V' dot-psi + 3 lambda psi^2 dot-psi = dot-psi (dot-dot-psi + V' + 3 lambda psi^2) = 0"
+      ],
+      "mapped_text_steps": [
+        "Moral-sector Lagrangian L_9 = 1/2 dot-psi^2 - V(psi) - lambda psi^3",
+        "Euler-Lagrange equation: dot-dot-psi + V'(psi) + 3 lambda psi^2 = 0",
+        "Under t -> t+epsilon: delta-psi = epsilon dot-psi",
+        "Noether current j^0 = 1/2 dot-psi^2 + V(psi) + lambda psi^3 = Q_m",
+        "dQ_m/dt = dot-psi [dot-dot-psi + V' + 3 lambda psi^2] = 0"
+      ],
+      "preserved_transitions": [
+        "Lagrangian -> Euler-Lagrange -> current -> conservation proof",
+        "Cubic term appears in both current and equation of motion, cancels in derivative"
+      ],
+      "missing_transitions": [],
+      "broken_correspondences": [],
+      "notes": "The derivation is a textbook Noether proof. The cubic term is not an analogy; it is algebraically identical to a standard parity-violating term. The mapping is one-to-one at every step."
+    },
+    {
+      "iso_id": "iso_2",
+      "name": "Three-Body Moral Decay as Muon Decay",
+      "domain_a": "Particle Physics (Muon Decay)",
+      "domain_b": "Moral Decay (Sin Event)",
+      "chi_law": "The decay rate formula Gamma = (G^2 * psi^5) / (192 pi^3) * P_will uses the same phase-space factor 192 pi^3 as muon decay, and the four particles map one-to-one: muon -> wholeness, electron -> broken state, electron antineutrino -> visible damage, muon neutrino -> invisible remainder.",
+      "does_mirror_physics_process": true,
+      "physics_process": "Muon decay: mu- -> e- + anti-nu_e + nu_mu. The decay rate is proportional to G_F^2 * m_mu^5 / (192 pi^3). The 192 pi^3 comes from three-body phase space integration.",
+      "theological_phenomenon": "Sin as a three-body decay: wholeness -> broken state + visible damage + invisible remainder. The invisible remainder carries cost away but does not destroy it.",
+      "one_to_one_verdict": "one_to_one",
+      "claimed_level": "level_1",
+      "aaa_level": "Strong",
+      "density_mapped_events": 4,
+      "density_total_events": 4,
+      "density_score": 0.9,
+      "verdict": "strongest available structural correspondence",
+      "prediction": "The invisible remainder (nu_loss) is a necessary product of every sin event. No sin can be a two-body decay.",
+      "prediction_verified": false,
+      "physics_process_steps": [
+        "Parent particle: mu-",
+        "Visible product: e-",
+        "Invisible product 1: anti-nu_e",
+        "Invisible product 2: nu_mu",
+        "Phase-space factor: 192 pi^3"
+      ],
+      "mapped_text_steps": [
+        "Parent: psi_whole (wholeness)",
+        "Visible product: psi_broken (broken state)",
+        "Invisible product 1: delta (visible damage)",
+        "Invisible product 2: nu_loss (invisible remainder)",
+        "Phase-space factor: 192 pi^3"
+      ],
+      "preserved_transitions": [
+        "Parent -> three daughters",
+        "One daughter is visible, two are invisible",
+        "Phase-space factor identical"
+      ],
+      "missing_transitions": [],
+      "broken_correspondences": [],
+      "notes": "The mapping is explicit and one-to-one. The decay rate formula is directly borrowed from muon decay, with G_fall analogous to G_F and P_will as a volitional gate. The 192 pi^3 is not arbitrary; it is the same combinatorial factor."
+    },
+    {
+      "iso_id": "iso_3",
+      "name": "Grace as Open-System Source Term",
+      "domain_a": "Thermodynamics / Open Systems",
+      "domain_b": "Theology of Grace",
+      "chi_law": "The closed-system conservation dQ_m/dt = 0 is modified by an external source term J^0_grace, gated by openness O. The entropy production equation dS_m/dt = sigma - W_grace/T mirrors the thermodynamic identity for open systems with external work.",
+      "does_mirror_physics_process": true,
+      "physics_process": "In open thermodynamic systems, the entropy change dS = d_iS (internal production) + d_eS (external exchange). The external work term W can reduce entropy. The continuity equation for a conserved quantity can have a source term.",
+      "theological_phenomenon": "Grace is an external source that can close the moral ledger without destroying cost. Atonement is the payment of cost by an external source, not denial of cost.",
+      "one_to_one_verdict": "partial",
+      "claimed_level": "level_2",
+      "aaa_level": "Moderate",
+      "density_mapped_events": 3,
+      "density_total_events": 4,
+      "density_score": 0.7,
+      "verdict": "structural claim requiring engagement",
+      "prediction": "Grace can only enter when openness O > 0. Atonement requires an external work source.",
+      "prediction_verified": false,
+      "physics_process_steps": [
+        "Closed system: dQ/dt = 0",
+        "Open system: dQ/dt = J_source",
+        "Entropy: dS = d_iS + d_eS",
+        "External work: d_eS = -W/T"
+      ],
+      "mapped_text_steps": [
+        "Closed moral system: dQ_m/dt = 0",
+        "Open moral system: dQ_m/dt = J^0_grace",
+        "Moral entropy: dS_m/dt = sigma - W_grace/T",
+        "Atonement: W_grace is external work that can reverse entropy flow"
+      ],
+      "preserved_transitions": [
+        "Closed -> open via source term",
+        "Entropy production + external work"
+      ],
+      "missing_transitions": [
+        "The specific form of J^0_grace is not derived from a Lagrangian or symmetry principle; it is postulated."
+      ],
+      "broken_correspondences": [],
+      "notes": "The mapping is structurally suggestive but incomplete. The source term J^0_grace is not derived from a deeper principle; it is added by hand. The entropy equation is analogous but not derived from the same Lagrangian. Further work needed to derive grace from a symmetry breaking or gauge principle."
+    },
+    {
+      "iso_id": "iso_4",
+      "name": "Parity Breaking as Irreversibility",
+      "domain_a": "Particle Physics (CP Violation)",
+      "domain_b": "Moral Irreversibility (Sin)",
+      "chi_law": "The cubic term lambda psi^3 changes sign under parity inversion psi -> -psi, making the Lagrangian not invariant. This breaks time-reversal symmetry in the moral domain, analogous to CP violation in weak interactions.",
+      "does_mirror_physics_process": true,
+      "physics_process": "In particle physics, a term like psi^3 in a Lagrangian is not parity-invariant if psi is a pseudoscalar or if the coupling is chiral. CP violation arises from complex phases in the CKM matrix or from theta terms.",
+      "theological_phenomenon": "Sin is directional: you cannot un-sin the way you can un-accelerate. The transition whole->broken is not the time-reverse of broken->whole.",
+      "one_to_one_verdict": "partial",
+      "claimed_level": "level_2",
+      "aaa_level": "Moderate",
+      "density_mapped_events": 2,
+      "density_total_events": 3,
+      "density_score": 0.6,
+      "verdict": "suggestive, further investigation warranted",
+      "prediction": "The moral sector should exhibit observable asymmetries analogous to CP violation in particle physics.",
+      "prediction_verified": false,
+      "physics_process_steps": [
+        "Lagrangian term violates parity: lambda psi^3 != lambda (-psi)^3",
+        "CP violation leads to matter-antimatter asymmetry",
+        "Time-reversal violation is equivalent to CP violation under CPT"
+      ],
+      "mapped_text_steps": [
+        "Cubic term in moral Lagrangian: lambda psi^3",
+        "Sin is irreversible: whole->broken not time-reversible",
+        "Moral asymmetry: good and evil are not symmetric"
+      ],
+      "preserved_transitions": [
+        "Parity violation -> irreversibility",
+        "Cubic term as source of asymmetry"
+      ],
+      "missing_transitions": [
+        "No explicit CP phase or complex coupling is given",
+        "No experimental prediction for moral CP violation"
+      ],
+      "broken_correspondences": [],
+      "notes": "The mapping is conceptually strong but lacks the detailed algebraic structure of CP violation in the Standard Model. The cubic term is a simple polynomial, not a complex phase. The irreversibility claim is valid but the particle physics analogy is not fully fleshed out."
+    },
+    {
+      "iso_id": "iso_5",
+      "name": "Kill Conditions as Falsifiability Criteria",
+      "domain_a": "Scientific Falsification (Popper)",
+      "domain_b": "Theological Falsification",
+      "chi_law": "The page explicitly states two kill conditions: (1) behavioral suppression without grace must produce no invisible remainder, (2) a two-body moral decay must exist. These are Popperian falsification criteria: if they are met, the theory is false.",
+      "does_mirror_physics_process": true,
+      "physics_process": "In science, a theory is falsifiable if it makes predictions that can be tested. If a prediction fails, the theory is rejected or modified. Kill conditions are specific failure modes.",
+      "theological_phenomenon": "The theory of moral conservation and three-body decay is falsifiable: if a sin event can occur without an invisible remainder, or if behavioral suppression alone eliminates cost, the theory is wrong.",
+      "one_to_one_verdict": "one_to_one",
+      "claimed_level": "level_1",
+      "aaa_level": "Strong",
+      "density_mapped_events": 2,
+      "density_total_events": 2,
+      "density_score": 0.85,
+      "verdict": "strongest available structural correspondence",
+      "prediction": "No two-body moral decay exists. Behavioral suppression without grace does not eliminate the invisible remainder.",
+      "prediction_verified": false,
+      "physics_process_steps": [
+        "State theory",
+        "Derive prediction",
+        "Specify kill condition",
+        "Test"
+      ],
+      "mapped_text_steps": [
+        "State moral conservation theory",
+        "Derive three-body decay",
+        "Specify kill conditions: (1) no two-body decay, (2) suppression without grace fails",
+        "Await empirical or theological test"
+      ],
+      "preserved_transitions": [
+        "Theory -> prediction -> kill condition -> test"
+      ],
+      "missing_transitions": [],
+      "broken_correspondences": [],
+      "notes": "The kill conditions are explicit and structurally identical to scientific falsification criteria. This is a strong mapping because it is not just an analogy; it is a direct application of Popperian methodology to theology."
+    }
+  ]
+}

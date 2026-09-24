@@ -1,0 +1,94 @@
+{
+  "spec_version": "1.0-classify-axiomize-organize",
+  "mirror_of": "ST_004 claim-classification",
+  "document_type_guess": "notes",
+  "claim_count": 4,
+  "classified_claims": [
+    {
+      "id": "c1",
+      "text": "The chi field is defined as the product of ten coherence variables.",
+      "location": "Sentence 1",
+      "maturity_label": "Formal Model",
+      "domain": "physics",
+      "axiom_role": "definition",
+      "load_bearing": true,
+      "depends_on": []
+    },
+    {
+      "id": "c2",
+      "text": "From this it follows that total coherence collapses if any single variable reaches zero.",
+      "location": "Sentence 2",
+      "maturity_label": "Structural Correspondence",
+      "domain": "physics",
+      "axiom_role": "derivation",
+      "load_bearing": true,
+      "depends_on": [
+        "c1"
+      ]
+    },
+    {
+      "id": "c3",
+      "text": "The MDA dataset shows a 5.7-sigma deviation, which we take as empirical support.",
+      "location": "Sentence 3",
+      "maturity_label": "Empirical Support",
+      "domain": "empirical_data",
+      "axiom_role": "empirical_claim",
+      "load_bearing": true,
+      "depends_on": []
+    },
+    {
+      "id": "c4",
+      "text": "Grace acts like an external source term restoring coherence, much as a heat bath restores thermal equilibrium.",
+      "location": "Sentence 4",
+      "maturity_label": "Analogy",
+      "domain": "physics",
+      "axiom_role": "interpretation",
+      "load_bearing": false,
+      "depends_on": [
+        "c1",
+        "c2"
+      ]
+    }
+  ],
+  "maturity_distribution": {
+    "Formal Model": 1,
+    "Structural Correspondence": 1,
+    "Public Proof Claim": 0,
+    "Empirical Support": 1,
+    "Analogy": 1,
+    "Metaphor": 0,
+    "Assertion": 0
+  },
+  "domain_distribution": {
+    "physics": 3,
+    "theology": 0,
+    "mathematics": 0,
+    "consciousness": 0,
+    "information_theory": 0,
+    "ethics": 0,
+    "empirical_data": 1,
+    "historical": 0
+  },
+  "axiom_role_distribution": {
+    "axiom": 0,
+    "postulate": 0,
+    "definition": 1,
+    "lemma": 0,
+    "theorem": 0,
+    "corollary": 0,
+    "derivation": 1,
+    "conjecture": 0,
+    "empirical_claim": 1,
+    "interpretation": 1
+  },
+  "foundations": [
+    "c1"
+  ],
+  "load_bearing_claims": [
+    "c1",
+    "c2",
+    "c3"
+  ],
+  "contradictions": [],
+  "organization_notes": "Document starts with a formal definition of the chi field, from which a collapse condition is derived. An empirical claim from the MDA dataset is presented as support. The document concludes with an analogy comparing grace to a heat bath restoring thermal equilibrium, which explains the restoration of coherence."
+}

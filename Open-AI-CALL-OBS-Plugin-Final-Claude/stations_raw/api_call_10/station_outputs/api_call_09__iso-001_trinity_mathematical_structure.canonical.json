@@ -1,0 +1,585 @@
+{
+  "definitions": [
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A mapping between two systems that shows they have the same structure, even if they look different on the surface.",
+      "example": "A map of a subway system is isomorphic to the actual subway lines because the connections between stations match up.",
+      "grade_level": "college",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A basic starting assumption that is accepted as true without proof, used to build a system of ideas.",
+      "example": "In geometry, 'a straight line is the shortest distance between two points' is an axiom.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "theorem",
+      "category": "academic",
+      "definition": "A statement that can be proven true using axioms and logic.",
+      "example": "The Pythagorean theorem is a proven rule about right triangles.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "self-reference",
+      "category": "math",
+      "definition": "When a system or statement refers to itself, which can create logical puzzles or limits.",
+      "example": "The sentence 'This sentence is false' is self-referential and creates a paradox.",
+      "grade_level": "12",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "completeness",
+      "category": "math",
+      "definition": "The property of a system where every true statement can be proven within that system.",
+      "example": "A complete puzzle has all the pieces needed to solve it without needing outside help.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "incompleteness",
+      "category": "math",
+      "definition": "The property of a system where some true statements cannot be proven within that system.",
+      "example": "Gödel showed that in any sufficiently powerful math system, there will always be true statements that can't be proved.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "actualization",
+      "category": "physics",
+      "definition": "The process of turning a possibility into a real, concrete event or thing.",
+      "example": "When you decide to flip a coin and it lands on heads, that's the actualization of one possibility out of many.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Logos",
+      "category": "theology",
+      "definition": "A Greek word meaning 'Word' or 'Reason,' used in Christian theology to describe Jesus as the divine logic and structure through which everything was created.",
+      "example": "In the Bible, 'In the beginning was the Word (Logos), and the Word was with God.'",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "generative",
+      "category": "academic",
+      "definition": "Having the ability to produce or create something new.",
+      "example": "A seed is generative because it can grow into a plant.",
+      "grade_level": "11",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "substrate",
+      "category": "physics",
+      "definition": "The underlying substance or material that something is made of or happens on.",
+      "example": "Soil is the substrate for a garden; it's what the plants grow in.",
+      "grade_level": "12",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "ontological",
+      "category": "philosophy",
+      "definition": "Related to the nature of being or existence itself.",
+      "example": "Asking 'Does God exist?' is an ontological question about what is real.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "modalism",
+      "category": "theology",
+      "definition": "A heresy that says the Father, Son, and Holy Spirit are just different roles or modes of one God, not distinct persons.",
+      "example": "Modalism is like saying one actor plays three different characters in a play, but they're still just one person.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B"
+    },
+    {
+      "term": "Arianism",
+      "category": "theology",
+      "definition": "A heresy that says Jesus (the Son) was created by God the Father and is not eternal or equal to God.",
+      "example": "Arianism is like saying the Son is a lesser being, like a super-angel, not truly God.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B"
+    },
+    {
+      "term": "co-eternal",
+      "category": "theology",
+      "definition": "Existing forever alongside something else, with no beginning or end for either.",
+      "example": "If two things are co-eternal, neither one was created first; they've both always existed.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B"
+    },
+    {
+      "term": "Filioque",
+      "category": "theology",
+      "definition": "A Latin word meaning 'and the Son,' referring to a disagreement about whether the Holy Spirit comes from the Father alone or from both the Father and the Son.",
+      "example": "The Filioque controversy is like arguing whether a river flows from one spring or from two springs joined together.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B"
+    },
+    {
+      "term": "falsification",
+      "category": "academic",
+      "definition": "The ability to prove an idea wrong by finding evidence against it.",
+      "example": "The claim 'all swans are white' can be falsified by finding one black swan.",
+      "grade_level": "12",
+      "first_appearance": "Falsification"
+    },
+    {
+      "term": "contingent",
+      "category": "philosophy",
+      "definition": "Something that could be different or might not exist at all; not necessary.",
+      "example": "The color of your shirt is contingent; you could have chosen a different one.",
+      "grade_level": "college",
+      "first_appearance": "Falsification"
+    },
+    {
+      "term": "decoherence",
+      "category": "physics",
+      "definition": "The process by which a quantum system loses its wave-like behavior and becomes classical, often due to interaction with the environment.",
+      "example": "Decoherence is like a ripple in a pond smoothing out when the water is disturbed by wind.",
+      "grade_level": "college",
+      "first_appearance": "Falsification"
+    },
+    {
+      "term": "observer",
+      "category": "physics",
+      "definition": "In quantum mechanics, anything that interacts with a system and causes it to take on a definite state, not necessarily a conscious person.",
+      "example": "A measuring device can be an observer when it detects a particle's position.",
+      "grade_level": "12",
+      "first_appearance": "Falsification"
+    },
+    {
+      "term": "chi-field",
+      "category": "framework",
+      "definition": "A theoretical field in Theophysics that is pure information and potential, from which all reality emerges.",
+      "example": "Think of the chi-field as a blank canvas that contains every possible painting before any paint is applied.",
+      "grade_level": "specialist",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "divergence",
+      "category": "physics",
+      "definition": "A measure of how much a field spreads out from a point; zero divergence means nothing is lost or created.",
+      "example": "Water flowing through a pipe with no leaks has zero divergence.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Born Rule",
+      "category": "physics",
+      "definition": "A rule in quantum mechanics that tells you the probability of getting a particular result when you measure a quantum system.",
+      "example": "The Born Rule is like saying if you roll a fair die, each number has a 1/6 chance of appearing.",
+      "grade_level": "college",
+      "first_appearance": "Evidence Bundles"
+    },
+    {
+      "term": "Gödel Incompleteness Theorems",
+      "category": "math",
+      "definition": "Two famous theorems by Kurt Gödel showing that in any sufficiently powerful mathematical system, there are true statements that cannot be proved, and the system cannot prove its own consistency.",
+      "example": "These theorems are like saying no rulebook can contain all the rules needed to explain itself completely.",
+      "grade_level": "college",
+      "first_appearance": "Evidence Bundles"
+    },
+    {
+      "term": "wavefunction collapse",
+      "category": "physics",
+      "definition": "The process in quantum mechanics where a particle's many possible states suddenly become one definite state when measured.",
+      "example": "It's like a spinning coin that is both heads and tails until you slap it on the table, and it becomes one or the other.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "measurement problem",
+      "category": "physics",
+      "definition": "The puzzle in quantum mechanics about how and why a system goes from many possibilities to one actual result when measured.",
+      "example": "It's like asking: when you open a box with a cat that might be alive or dead, what actually makes it one or the other?",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "self-consistent",
+      "category": "academic",
+      "definition": "A system or argument that does not contradict itself; all parts fit together logically.",
+      "example": "A story where a character travels back in time and meets their younger self is not self-consistent if it creates a paradox.",
+      "grade_level": "12",
+      "first_appearance": "Prediction in Domain B"
+    },
+    {
+      "term": "trivial",
+      "category": "academic",
+      "definition": "Too simple or obvious to be interesting or meaningful.",
+      "example": "Saying 'all bachelors are unmarried' is trivial because it's true by definition.",
+      "grade_level": "11",
+      "first_appearance": "Prediction in Domain B"
+    },
+    {
+      "term": "pathology",
+      "category": "academic",
+      "definition": "In mathematics, an unusual or problematic feature that breaks normal rules.",
+      "example": "A function that is nowhere continuous is a pathology because it behaves weirdly everywhere.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B"
+    },
+    {
+      "term": "formal system",
+      "category": "math",
+      "definition": "A system of symbols and rules for manipulating them, used to represent logical or mathematical ideas.",
+      "example": "Chess is a formal system with pieces, moves, and rules that define the game.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B"
+    },
+    {
+      "term": "bidirectional",
+      "category": "academic",
+      "definition": "Working or flowing in two directions.",
+      "example": "A two-way street is bidirectional because traffic can go both ways.",
+      "grade_level": "11",
+      "first_appearance": "Bidirectional"
+    },
+    {
+      "term": "informational",
+      "category": "physics",
+      "definition": "Related to information as a fundamental building block of reality, not just data.",
+      "example": "In some theories, the universe is made of information, like a cosmic computer.",
+      "grade_level": "12",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "potential",
+      "category": "physics",
+      "definition": "A state of being possible but not yet actual; a range of possibilities waiting to happen.",
+      "example": "An acorn has the potential to become an oak tree, but it isn't one yet.",
+      "grade_level": "10",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "self-referential",
+      "category": "math",
+      "definition": "Referring to itself; a system that includes itself in its own definition.",
+      "example": "A drawing of a hand drawing itself is self-referential.",
+      "grade_level": "12",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "conserved",
+      "category": "physics",
+      "definition": "A quantity that stays the same over time, even as things change.",
+      "example": "Energy is conserved; it can change form but never disappears.",
+      "grade_level": "11",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "transformation",
+      "category": "math",
+      "definition": "A change in the form or appearance of something, often following rules.",
+      "example": "Rotating a square 90 degrees is a transformation.",
+      "grade_level": "10",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "unbounded",
+      "category": "math",
+      "definition": "Without limits or boundaries; infinite in extent.",
+      "example": "The set of all whole numbers is unbounded because it goes on forever.",
+      "grade_level": "12",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "generative source",
+      "category": "academic",
+      "definition": "The origin or starting point that produces everything else.",
+      "example": "The sun is the generative source of energy for most life on Earth.",
+      "grade_level": "11",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "self-expression",
+      "category": "academic",
+      "definition": "The act of showing or communicating one's own nature or identity.",
+      "example": "A painting is a form of self-expression for an artist.",
+      "grade_level": "10",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "three-fold",
+      "category": "academic",
+      "definition": "Having three parts or aspects.",
+      "example": "A three-fold strategy has three main components.",
+      "grade_level": "10",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "distinguishable",
+      "category": "academic",
+      "definition": "Able to be told apart or recognized as different.",
+      "example": "Twins are distinguishable by their different personalities.",
+      "grade_level": "10",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "separable",
+      "category": "academic",
+      "definition": "Able to be separated or divided into parts.",
+      "example": "The yolk and white of an egg are separable.",
+      "grade_level": "10",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "unmanifest",
+      "category": "philosophy",
+      "definition": "Not yet shown or made real; existing only as a possibility.",
+      "example": "An idea in your head is unmanifest until you write it down.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "reducible",
+      "category": "academic",
+      "definition": "Able to be simplified or broken down into smaller parts.",
+      "example": "A complex number is reducible to a real part and an imaginary part.",
+      "grade_level": "12",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "formal logic",
+      "category": "math",
+      "definition": "A system of reasoning using symbols and strict rules to avoid ambiguity.",
+      "example": "If all humans are mortal and Socrates is human, then Socrates is mortal is formal logic.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "structural correspondence",
+      "category": "academic",
+      "definition": "A match between the patterns or relationships in two different systems.",
+      "example": "The layout of a computer keyboard has structural correspondence to the order of letters in the alphabet.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "exhaust",
+      "category": "academic",
+      "definition": "To cover or include every possible aspect of something.",
+      "example": "A complete list of all countries would exhaust the topic of nations.",
+      "grade_level": "11",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "swap test",
+      "category": "academic",
+      "definition": "A test that checks if two things can be exchanged without breaking the system.",
+      "example": "If you swap the roles of a key and a lock, does the door still work?",
+      "grade_level": "11",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "theologically",
+      "category": "theology",
+      "definition": "In a way that relates to the study of God or religious beliefs.",
+      "example": "Theologically, the idea that God is three persons in one is a central Christian belief.",
+      "grade_level": "12",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "directionality",
+      "category": "academic",
+      "definition": "The property of having a specific direction or order that cannot be reversed.",
+      "example": "Time has directionality; you can't go backward.",
+      "grade_level": "11",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "arbitrary",
+      "category": "academic",
+      "definition": "Based on random choice or personal whim, not on reason or system.",
+      "example": "Choosing a color by closing your eyes and pointing is arbitrary.",
+      "grade_level": "10",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "labeling",
+      "category": "academic",
+      "definition": "Assigning names or categories to things.",
+      "example": "Labeling animals as 'mammals' or 'reptiles' helps organize them.",
+      "grade_level": "10",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "modes",
+      "category": "academic",
+      "definition": "Different ways or forms of operating or existing.",
+      "example": "Water has three modes: solid, liquid, and gas.",
+      "grade_level": "10",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "testable",
+      "category": "academic",
+      "definition": "Able to be checked or verified through experiments or observations.",
+      "example": "The claim 'water boils at 100°C' is testable by heating water.",
+      "grade_level": "10",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "GR",
+      "category": "physics",
+      "definition": "Abbreviation for General Relativity, Einstein's theory of gravity as the curvature of spacetime.",
+      "example": "GR explains why planets orbit the sun and why light bends around stars.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "QM",
+      "category": "physics",
+      "definition": "Abbreviation for Quantum Mechanics, the physics of very small particles like atoms and electrons.",
+      "example": "QM explains why electrons can be in two places at once until measured.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "heresy",
+      "category": "theology",
+      "definition": "A belief or opinion that goes against the official teachings of a religion.",
+      "example": "Saying Jesus was just a good teacher but not God is considered heresy in Christianity.",
+      "grade_level": "12",
+      "first_appearance": "Prediction in Domain B"
+    },
+    {
+      "term": "co-fundamental",
+      "category": "academic",
+      "definition": "Equally basic or foundational; neither one depends on the other.",
+      "example": "In a partnership, both members are co-fundamental to the business.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B"
+    },
+    {
+      "term": "analog",
+      "category": "academic",
+      "definition": "Something that is similar or comparable to something else in some way.",
+      "example": "The heart is often used as an analog for a pump.",
+      "grade_level": "11",
+      "first_appearance": "Prediction in Domain B"
+    },
+    {
+      "term": "unification",
+      "category": "physics",
+      "definition": "The act of combining different theories or forces into a single, consistent framework.",
+      "example": "Unifying electricity and magnetism gave us the theory of electromagnetism.",
+      "grade_level": "college",
+      "first_appearance": "Falsification"
+    },
+    {
+      "term": "optional",
+      "category": "academic",
+      "definition": "Not required; able to be left out.",
+      "example": "Dessert is optional; you don't have to eat it.",
+      "grade_level": "9",
+      "first_appearance": "Falsification"
+    },
+    {
+      "term": "classification",
+      "category": "academic",
+      "definition": "The act of putting things into groups based on shared characteristics.",
+      "example": "Classifying animals into mammals, birds, and reptiles.",
+      "grade_level": "9",
+      "first_appearance": "Classification"
+    },
+    {
+      "term": "confidence",
+      "category": "academic",
+      "definition": "A measure of how certain or sure something is.",
+      "example": "I have high confidence that the sun will rise tomorrow.",
+      "grade_level": "9",
+      "first_appearance": "Classification"
+    },
+    {
+      "term": "reframe level",
+      "category": "framework",
+      "definition": "A measure of how deeply a question or concept is re-examined, from surface level to fundamental assumptions.",
+      "example": "Reframing a problem from 'How do I get more money?' to 'What does money mean to me?' is a deeper reframe level.",
+      "grade_level": "college",
+      "first_appearance": "Classification"
+    },
+    {
+      "term": "axiomatic",
+      "category": "academic",
+      "definition": "Related to axioms; something taken as a basic truth without proof.",
+      "example": "The statement 'all humans are mortal' is axiomatic in many arguments.",
+      "grade_level": "college",
+      "first_appearance": "Classification"
+    },
+    {
+      "term": "cross-reference",
+      "category": "academic",
+      "definition": "A note that directs the reader to another part of a document or related material.",
+      "example": "In a textbook, a cross-reference might say 'see Chapter 5 for more details.'",
+      "grade_level": "10",
+      "first_appearance": "Cross-Reference"
+    },
+    {
+      "term": "evidence bundle",
+      "category": "framework",
+      "definition": "A collection of related pieces of evidence that support a particular claim or theory.",
+      "example": "A detective's evidence bundle might include fingerprints, a witness statement, and a motive.",
+      "grade_level": "college",
+      "first_appearance": "Evidence Bundles"
+    },
+    {
+      "term": "axiom dependencies",
+      "category": "framework",
+      "definition": "The list of basic assumptions that a particular idea or proof relies on.",
+      "example": "A mathematical proof might depend on the axiom that two points determine a line.",
+      "grade_level": "college",
+      "first_appearance": "Axiom Dependencies"
+    },
+    {
+      "term": "substrate",
+      "category": "physics",
+      "definition": "The underlying substance or material that something is made of or happens on.",
+      "example": "Soil is the substrate for a garden; it's what the plants grow in.",
+      "grade_level": "12",
+      "first_appearance": "Axiom Dependencies"
+    },
+    {
+      "term": "Logos Principle",
+      "category": "framework",
+      "definition": "A principle in Theophysics that reality is structured like a logical, self-referential system, analogous to the Christian concept of the Logos (Word).",
+      "example": "The Logos Principle suggests that the universe has an underlying rational order, like a cosmic grammar.",
+      "grade_level": "specialist",
+      "first_appearance": "Cross-Reference"
+    },
+    {
+      "term": "Master Equation",
+      "category": "framework",
+      "definition": "A central equation in Theophysics that describes how the chi-field evolves and generates reality.",
+      "example": "The Master Equation is like a recipe that tells the universe how to cook up reality from information.",
+      "grade_level": "specialist",
+      "first_appearance": "Cross-Reference"
+    },
+    {
+      "term": "10 Laws",
+      "category": "framework",
+      "definition": "A set of ten fundamental principles in Theophysics that govern the behavior of the chi-field and reality.",
+      "example": "The 10 Laws are like the constitution of the universe in Theophysics.",
+      "grade_level": "specialist",
+      "first_appearance": "Cross-Reference"
+    },
+    {
+      "term": "February boundary proof",
+      "category": "framework",
+      "definition": "A specific mathematical proof from February 2026 that established the isomorphism between the Trinity and mathematical structure.",
+      "example": "The February boundary proof is a key result that connects theology and math in Theophysics.",
+      "grade_level": "specialist",
+      "first_appearance": "Cross-Reference"
+    }
+  ],
+  "stats": {
+    "total_terms_found": 62,
+    "by_category": {
+      "physics": 12,
+      "theology": 8,
+      "math": 8,

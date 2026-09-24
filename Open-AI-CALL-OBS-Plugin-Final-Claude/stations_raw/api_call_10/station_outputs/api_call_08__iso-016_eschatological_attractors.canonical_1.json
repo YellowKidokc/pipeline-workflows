@@ -1,0 +1,626 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "Dynamical Systems Theory",
+        "type": "mathematics",
+        "strength": 9
+      },
+      {
+        "name": "Eschatology",
+        "type": "theology",
+        "strength": 9
+      },
+      {
+        "name": "Moral Philosophy",
+        "type": "philosophy",
+        "strength": 7
+      },
+      {
+        "name": "Population Dynamics",
+        "type": "biology",
+        "strength": 3
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Primary tracked quantity (Phi) representing coherence state",
+        "strength": 9
+      },
+      {
+        "variable": "G",
+        "present": true,
+        "role": "Grace as basin-crossing force (external forcing)",
+        "strength": 8
+      },
+      {
+        "variable": "S",
+        "present": true,
+        "role": "Moral sensitivity sigma as responsiveness parameter",
+        "strength": 7
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Judgment as final attractor assignment (heaven/hell)",
+        "strength": 6
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Logos as structural order underlying attractor dynamics",
+        "strength": 5
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "Relationship as trajectory through phase space",
+        "strength": 4
+      },
+      {
+        "variable": "Q",
+        "present": true,
+        "role": "Faith as perturbation near saddle point",
+        "strength": 4
+      },
+      {
+        "variable": "F",
+        "present": true,
+        "role": "Weakness/Sin as initial condition Phi < 0.5",
+        "strength": 5
+      },
+      {
+        "variable": "M",
+        "present": true,
+        "role": "Meaning as moral trajectory direction",
+        "strength": 3
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Energy/Spirit as driving force in evolution equation",
+        "strength": 3
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "Existence of moral state as dynamical variable Phi"
+      },
+      {
+        "id": "A1.2",
+        "invoked": true,
+        "how": "Distinction between two attractor basins (heaven/hell)"
+      },
+      {
+        "id": "A2.1",
+        "invoked": true,
+        "how": "Substrate of soul field (ISO-014) for moral state evolution"
+      },
+      {
+        "id": "A2.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A5.1",
+        "invoked": true,
+        "how": "Observation of bimodal distributions as empirical test"
+      },
+      {
+        "id": "BC4",
+        "invoked": true,
+        "how": "Three observers: mathematical, theological, empirical"
+      },
+      {
+        "id": "BC6",
+        "invoked": true,
+        "how": "Infinite source of grace as external forcing"
+      },
+      {
+        "id": "A1.3",
+        "invoked": true,
+        "how": "Information primacy in coherence state definition"
+      },
+      {
+        "id": "T3.1",
+        "invoked": true,
+        "how": "Coherence cannot self-increase without external grace"
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "External grace required to cross basin boundary"
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "Information conservation in trajectory determinism"
+      },
+      {
+        "id": "BC8",
+        "invoked": true,
+        "how": "Voluntary coupling in moral sensitivity parameter"
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "source of grace",
+          "ground of moral order",
+          "origin of attractor structure"
+        ]
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "mediator of grace",
+          "image of coherence",
+          "word of judgment"
+        ]
+      },
+      "spirit": {
+        "present": true,
+        "manifestations": [
+          "power of transformation",
+          "presence in moral evolution",
+          "breath of life in trajectory"
+        ]
+      },
+      "trinitarian_structure": "implicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-016",
+        "domain_a": "Dynamical Systems Theory",
+        "domain_b": "Eschatology",
+        "strength": 8,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "heaven",
+        "context": "Stable attractor at Phi=1, maximal coherence",
+        "weight": 9
+      },
+      {
+        "concept": "hell",
+        "context": "Stable attractor at Phi=0, minimal coherence",
+        "weight": 9
+      },
+      {
+        "concept": "grace",
+        "context": "External forcing that shifts basin of attraction",
+        "weight": 8
+      },
+      {
+        "concept": "judgment",
+        "context": "Final assignment to attractor based on trajectory",
+        "weight": 7
+      },
+      {
+        "concept": "narrow gate",
+        "context": "Unstable saddle point at Phi=0.5",
+        "weight": 6
+      },
+      {
+        "concept": "conversion",
+        "context": "Trajectory crossing from one basin to another",
+        "weight": 5
+      },
+      {
+        "concept": "purgatory",
+        "context": "Metastable state near Phi=1 (not in current model)",
+        "weight": 3
+      },
+      {
+        "concept": "universalism",
+        "context": "Single attractor model (rejected by this ISO)",
+        "weight": 2
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "bimodality",
+        "context": "Two and only two stable final states",
+        "weight": 9
+      },
+      {
+        "concept": "structural stability",
+        "context": "Robustness of attractor structure to perturbations",
+        "weight": 7
+      },
+      {
+        "concept": "critical slowing down",
+        "context": "Slow evolution near saddle point",
+        "weight": 6
+      },
+      {
+        "concept": "hysteresis",
+        "context": "Difficulty of reversing trajectory deep in basin",
+        "weight": 5
+      },
+      {
+        "concept": "falsification",
+        "context": "Empirical tests that could refute the model",
+        "weight": 8
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "love",
+        "present": true,
+        "strength": 6
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "patience",
+        "present": true,
+        "strength": 4
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": true,
+        "strength": 5
+      },
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 7
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "self_control",
+        "present": true,
+        "strength": 3
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "domain:Dynamical Systems Theory",
+      "to": "domain:Eschatology",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "chi_variable:C",
+      "to": "theological_concept:heaven",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:C",
+      "to": "theological_concept:hell",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:G",
+      "to": "theological_concept:grace",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "axiom:BC2",
+      "to": "chi_variable:G",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "axiom:A12.1",
+      "to": "axiom:A12.2",
+      "relation": "derives_from",
+      "weight": 8
+    },
+    {
+      "from": "axiom:A12.2",
+      "to": "claim:C1",
+      "relation": "derives_from",
+      "weight": 9
+    },
+    {
+      "from": "axiom:A12.2",
+      "to": "claim:C2",
+      "relation": "derives_from",
+      "weight": 8
+    },
+    {
+      "from": "evidence:E12.1",
+      "to": "axiom:A12.1",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "claim:C1",
+      "to": "theological_concept:judgment",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "claim:C2",
+      "to": "theological_concept:narrow gate",
+      "relation": "maps_to",
+      "weight": 6
+    },
+    {
+      "from": "isomorphism:ISO-016",
+      "to": "domain:Dynamical Systems Theory",
+      "relation": "contains",
+      "weight": 9
+    },
+    {
+      "from": "isomorphism:ISO-016",
+      "to": "domain:Eschatology",
+      "relation": "contains",
+      "weight": 9
+    },
+    {
+      "from": "theological_concept:grace",
+      "to": "theological_concept:conversion",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "logical_concept:bimodality",
+      "to": "claim:C1",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "logical_concept:falsification",
+      "to": "isomorphism:ISO-016",
+      "relation": "contradicts",
+      "weight": 5
+    },
+    {
+      "from": "fruit:faithfulness",
+      "to": "theological_concept:conversion",
+      "relation": "supports",
+      "weight": 4
+    }
+  ],
+  "tags": {
+    "primary": [
+      "eschatological attractors",
+      "bimodal destiny",
+      "grace operator",
+      "moral dynamics",
+      "phase space analysis"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/theology",
+      "pillar/mathematics"
+    ],
+    "series": "isomorphism",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "Matthew 25:31-46",
+        "context": "Sheep and goats as bimodal final judgment"
+      },
+      {
+        "ref": "Matthew 7:13-14",
+        "context": "Narrow gate as unstable saddle point"
+      },
+      {
+        "ref": "Matthew 13:43",
+        "context": "Righteous shine like sun in kingdom"
+      },
+      {
+        "ref": "Matthew 25:41",
+        "context": "Depart from me as zero coherence state"
+      },
+      {
+        "ref": "Luke 16:26",
+        "context": "Great chasm fixed as asymptotic stability"
+      }
+    ],
+    "academic": [
+      {
+        "ref": "Verhulst, 1838",
+        "context": "Logistic equation as population dynamics model"
+      },
+      {
+        "ref": "Strogatz, Nonlinear Dynamics and Chaos",
+        "context": "Standard reference for bifurcation theory"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "ISO-013",
+        "context": "Grace Operator as basin-crossing mechanism"
+      },
+      {
+        "ref": "ISO-014",
+        "context": "Soul Field as substrate of moral state"
+      },
+      {
+        "ref": "ISO-015",
+        "context": "Moral Physics as coherence tracking"
+      },
+      {
+        "ref": "ISO-019",
+        "context": "Boundary Conditions for initial conditions"
+      },
+      {
+        "ref": "ISO-002",
+        "context": "Terminus Sui for self-rescue impossibility"
+      }
+    ],
+    "total_count": 11
+  },
+  "word_anomalies": [
+    {
+      "word": "attractor",
+      "frequency": 12,
+      "significance": "Central concept from dynamical systems applied to eschatology"
+    },
+    {
+      "word": "bimodal",
+      "frequency": 8,
+      "significance": "Key prediction of two-peak distribution"
+    },
+    {
+      "word": "saddle point",
+      "frequency": 6,
+      "significance": "Unstable fixed point separating basins"
+    },
+    {
+      "word": "basin of attraction",
+      "frequency": 5,
+      "significance": "Region of phase space leading to specific attractor"
+    },
+    {
+      "word": "critical slowing down",
+      "frequency": 3,
+      "significance": "Prediction of prolonged indecision near decision boundary"
+    },
+    {
+      "word": "hysteresis",
+      "frequency": 2,
+      "significance": "Difficulty of reversing trajectory deep in basin"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "Analytical and exploratory, testing a structural isomorphism between dynamical systems and eschatology",
+    "Q1_identity": "An isomorphism record (ISO-016) establishing a mapping between dynamical systems theory and Christian eschatology",
+    "Q2_domain": "Mathematics (dynamical systems) and Theology (eschatology)",
+    "Q3_claim": "Moral destiny follows a bimodal attractor structure with two stable endpoints (heaven/hell) and one unstable saddle (narrow gate), described by a logistic evolution equation",
+    "Q4_support": "Mathematical derivation from logistic equation, scriptural references (Matthew 25, 7), and connection to other ISOs (Grace Operator, Soul Field)",
+    "Q5_dependencies": "Axioms A12.1 and A12.2, binary sign variable HM.2, logistic equation from population dynamics, theological acceptance of bimodal eschatology",
+    "Q6_consequences": "Predicts bimodal population distributions, critical slowing near decision boundaries, and impossibility of neutral final state; challenges universalism and requires modification for Catholic purgatory",
+    "Q7_kill": "Demonstration of unimodal moral state distributions, theological proof of universalism, or discovery of a stable third attractor"
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "ISO-013",
+      "ISO-014",
+      "ISO-015",
+      "ISO-019",
+      "HM.2",
+      "HM.5"
+    ],
+    "required_by": [
+      "ISO-002",
+      "future eschatology papers"
+    ],
+    "parallel_to": [
+      "ISO-013",
+      "ISO-015"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 28,
+    "total_edges": 20,
+    "dominant_domain": "mathematics",
+    "dominant_chi": "C",
+    "connectivity_score": 8,
+    "one_sentence": "This document establishes a structural isomorphism between dynamical systems theory and eschatology, modeling heaven and hell as stable attractors in a logistic moral evolution equation."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": true,
+      "how": "Grace (G) as external forcing and Faith (Q) as perturbation near saddle"
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Truth (K) as structural order and Coherence (C) as tracked quantity"
+    },
+    "4_7_love_relationship": {
+      "active": true,
+      "how": "Love (S) as moral sensitivity and Relationship (R) as trajectory"
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Judgment (T) as final attractor assignment and Logos (K) as underlying order"
+    },
+    "pairs_active_count": 4
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 9
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 6
+    },
+    "love": {
+      "present": true,
+      "strength": 5
+    },
+    "judgment": {
+      "present": true,
+      "strength": 8
+    },
+    "logos": {
+      "present": true,
+      "strength": 7
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": true,
+      "strength": 6
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": true,
+      "strength": 4
+    },
+    "operators_present_count": 7
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "ISO-013",
+      "ISO-014",
+      "ISO-015",
+      "ISO-019"
+    ],
+    "read_after": [
+      "ISO-002",
+      "Paper 10: Decalogue Cosmos"
+    ]
+  }
+}

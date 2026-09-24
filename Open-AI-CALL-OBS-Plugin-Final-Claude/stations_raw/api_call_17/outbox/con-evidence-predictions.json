@@ -1,0 +1,268 @@
+{
+  "spec_version": "1.0",
+  "page_id": "con-evidence-predictions",
+  "page_title": "Evidence and Predictions",
+  "page_slug": "con-evidence-predictions",
+  "source_file": "con-evidence-predictions.md",
+  "generated_by": "adversarial-audit-v1",
+  "generated_date": "2025-04-08",
+  "adversarial_audit": {
+    "fatal_issue": "The core equation U(t) = U0 * 2^((t-t0)/7) is presented without derivation, empirical basis, or error bounds. It is a bare assertion that drives all subsequent predictions, yet no justification is given for the doubling period of 7 years or the baseline reference point. This is not a prediction but an unfalsifiable numerology unless the equation is derived from a physical model or data.",
+    "major_issue": "The framework claims falsifiability but lists disconfirmation conditions that are either vague ('no measurable prayer effects') or already known to be false from existing literature (e.g., PEAR and GCP results are contested and not replicated to accepted standards). The falsification criteria are not sharp enough to distinguish the framework from null hypotheses.",
+    "sharpening_issue": "The term 'quantum uncertainty' is used loosely throughout. In standard quantum mechanics, uncertainty is a property of measurement pairs (Heisenberg), not a scalar quantity that can vary systematically with location or consciousness. The paper does not define what 'quantum uncertainty' means operationally, making the predictions untestable.",
+    "smart_hostile_physicist_check": {
+      "primary_confusion": "analogy",
+      "diagnosis": "The paper treats 'quantum uncertainty' as if it were a classical field that can be modulated by consciousness, analogous to a magnetic field. This is a category error: quantum uncertainty is not a field but a statistical property of measurement outcomes. The analogy to classical fields is misleading and unsupported.",
+      "sentence_to_rewrite": "The framework predicts that quantum uncertainty measurements should show systematic variation correlating with: Temporal Factors, Spatial Factors, Consciousness Factors.",
+      "required_fix": "Define 'quantum uncertainty' precisely in operational terms (e.g., variance of a specific observable, or entropy of a quantum state). Specify which measurement protocol is used and how systematic variation is distinguished from statistical noise."
+    },
+    "physics_process_check": {
+      "does_mirror_physics_process": true,
+      "physics_process_named": "Quantum decoherence / measurement collapse",
+      "one_to_one_verdict": "broken",
+      "where_mapping_holds": "The idea that consciousness might affect quantum outcomes is loosely inspired by the observer effect in quantum mechanics, but the mapping is not one-to-one.",
+      "where_mapping_breaks": "In standard quantum mechanics, the observer effect is about measurement, not intention or prayer. The paper conflates 'measurement' with 'consciousness' and 'intention' without justification. The exponential acceleration equation has no analogue in quantum physics.",
+      "sentence_to_rewrite": "The framework predicts that focused prayer produces measurable effects on systems governed by quantum probability.",
+      "required_fix": "Specify the exact quantum process being invoked (e.g., collapse postulate, decoherence, or a new mechanism). Provide a mathematical model that connects prayer to a change in the quantum state or measurement statistics, not just a verbal analogy."
+    },
+    "strongest_non_framework_alternative": "The observed correlations (if any) could be explained by confirmation bias, experimenter expectancy effects, or mundane statistical fluctuations. The PEAR and GCP results are not widely accepted because of methodological issues (e.g., publication bias, multiple comparisons, lack of pre-registration). A simpler alternative is that the data are consistent with chance.",
+    "what_would_force_public_narrowing": "A pre-registered, multi-laboratory replication of the prayer effect on quantum RNG with a clear primary outcome, Bayesian analysis, and a stopping rule. If the result is null, the framework must be revised or abandoned. If positive, the effect size must be large enough to rule out mundane explanations.",
+    "rewrite_priority": "fatal"
+  },
+  "structure_audit": {
+    "opening_hook_strength": 7,
+    "logical_flow_strength": 4,
+    "transition_quality": 5,
+    "does_opening_promise_match_ending": false,
+    "sequence_verdict": "repairable",
+    "best_order_step_by_step": [
+      "Define 'quantum uncertainty' operationally",
+      "State the acceleration equation with derivation or empirical basis",
+      "List falsifiable predictions with sharp thresholds",
+      "Describe experimental protocols with pre-registration details",
+      "Acknowledge alternative explanations and how they are ruled out",
+      "Conclude with what would constitute disconfirmation"
+    ],
+    "flow_breaks": [
+      {
+        "from_section": "Quantum Uncertainty Pattern Predictions",
+        "to_section": "Prophetic Acceleration and Quantum Uncertainty",
+        "problem": "The acceleration equation is introduced without connection to the earlier predictions. It appears as a separate, unsupported claim.",
+        "fix": "Show how the acceleration equation follows from the framework's axioms or from data. Provide a derivation or at least a citation."
+      },
+      {
+        "from_section": "Prayer Impact on Physical Systems",
+        "to_section": "Critical Hypotheses for Testing",
+        "problem": "The hypotheses repeat the predictions without adding new information or addressing how they will be tested rigorously.",
+        "fix": "Replace with specific, pre-registered study designs, including sample size calculations and analysis plans."
+      }
+    ],
+    "sentence_that_carries_too_much_weight": "Our analysis suggests a correlation between prophetic fulfillment rates and quantum uncertainty. We propose this acceleration model: U(t) = U0 * 2^((t-t0)/7).",
+    "why_it_carries_too_much_weight": "This single sentence introduces the central quantitative prediction of the entire framework. It is unsupported by any data, derivation, or citation. If this equation is wrong, the entire predictive structure collapses."
+  },
+  "framework_presence": {
+    "master_equation": [
+      {
+        "present": true,
+        "quote": "U(t) = U0 * 2^((t-t0)/7)",
+        "function": "Central predictive equation for quantum uncertainty over time."
+      }
+    ],
+    "axioms": [],
+    "lean4": [],
+    "claims_layer": [
+      {
+        "present": true,
+        "quote": "The framework predicts that quantum uncertainty measurements should show systematic variation correlating with: Temporal Factors, Spatial Factors, Consciousness Factors.",
+        "function": "Core claim of the framework."
+      }
+    ],
+    "proof_layer": [],
+    "tests_layer": [
+      {
+        "present": true,
+        "quote": "Testing Protocol for Quantum Uncertainty",
+        "function": "Describes experimental protocol, but lacks pre-registration details and statistical power analysis."
+      }
+    ],
+    "laws_layer": []
+  },
+  "paper_changing_questions": [
+    {
+      "question": "What exact, pre-registered measurement protocol defines 'quantum uncertainty' operationally, and how is it distinguished from statistical noise?",
+      "why_it_matters": "Without an operational definition, the predictions are not testable. A hostile physicist would demand this before considering any evidence.",
+      "if_unanswered_then": "The framework remains unfalsifiable and should be rewritten to include a clear operational definition.",
+      "severity": "fatal"
+    },
+    {
+      "question": "What is the derivation or empirical basis for the 7-year doubling period in the acceleration equation?",
+      "why_it_matters": "The equation is the backbone of all temporal predictions. If it is arbitrary, the predictions are numerology.",
+      "if_unanswered_then": "The acceleration model must be removed or replaced with a justified alternative.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Which named physics process is being mirrored when prayer is said to affect quantum probability, and is the mapping one-to-one?",
+      "why_it_matters": "The paper invokes quantum mechanics but does not specify which process (e.g., collapse, decoherence) is involved. Without a one-to-one mapping, the analogy is misleading.",
+      "if_unanswered_then": "The claim of a physics basis is unsupported and should be removed or clarified.",
+      "severity": "fatal"
+    },
+    {
+      "question": "What is the strongest falsifying data point against the core thesis, and how would it be recognized?",
+      "why_it_matters": "The paper lists falsification conditions, but they are vague. A sharp falsification condition is needed for scientific credibility.",
+      "if_unanswered_then": "The framework is not genuinely falsifiable and should be revised to include a specific, measurable disconfirmation criterion.",
+      "severity": "major"
+    },
+    {
+      "question": "Are the PEAR and GCP results cited as primary sources, and have they been independently replicated to accepted standards?",
+      "why_it_matters": "The paper relies on these as evidence, but they are controversial and not widely accepted. If they are not robust, the framework's empirical basis is weak.",
+      "if_unanswered_then": "The evidence section must be rewritten to acknowledge the controversy and provide stronger evidence or alternative support.",
+      "severity": "major"
+    },
+    {
+      "question": "Which term is used in multiple meanings in the same argument? (e.g., 'quantum uncertainty', 'coherence', 'consciousness')",
+      "why_it_matters": "Ambiguous terms allow equivocation and make the argument slippery. A hostile reader will exploit this.",
+      "if_unanswered_then": "The paper must define each term consistently and note any shifts in meaning.",
+      "severity": "major"
+    },
+    {
+      "question": "What minimal counterexample would break the central analogy between quantum uncertainty and prophetic acceleration?",
+      "why_it_matters": "Analogies are not evidence. A counterexample (e.g., a period of no prophetic activity but high uncertainty) would show the analogy is not predictive.",
+      "if_unanswered_then": "The analogy should be downgraded to a heuristic, not presented as a prediction.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "Can the claims in this paper be safely ingested into downstream metadata fields (claim_id, axiom_id, test_id) without ambiguity?",
+      "why_it_matters": "If the claims are not precise, they cannot be tracked or tested systematically. This is a framework integrity issue.",
+      "if_unanswered_then": "The paper must be rewritten to make each claim atomic and testable.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "What is the expected effect size for the prayer-on-quantum-RNG experiment, and is the proposed sample size sufficient to detect it?",
+      "why_it_matters": "Without a power analysis, the experiment may be underpowered and produce inconclusive results.",
+      "if_unanswered_then": "The experimental protocol is incomplete and should include a power analysis.",
+      "severity": "major"
+    },
+    {
+      "question": "How does the framework distinguish between correlation and causation in the GCP data?",
+      "why_it_matters": "The GCP data show correlations, but correlation does not imply causation. The framework assumes a causal link without ruling out confounds.",
+      "if_unanswered_then": "The causal claim is unsupported and should be weakened to a correlation claim.",
+      "severity": "major"
+    }
+  ],
+  "sentence_annotations": [
+    {
+      "anchor_quote": "Our analysis suggests a correlation between prophetic fulfillment rates and quantum uncertainty. We propose this acceleration model: U(t) = U0 * 2^((t-t0)/7).",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Unsupported central equation; no derivation or data provided.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "eq1"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The framework predicts that quantum uncertainty measurements should show systematic variation correlating with: Temporal Factors, Spatial Factors, Consciousness Factors.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Uses undefined term 'quantum uncertainty'; no operational definition.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The framework predicts that focused prayer produces measurable effects on systems governed by quantum probability.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Invokes quantum probability without specifying the physical process; mapping is broken.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Historical precedent supports this prediction. The Princeton Engineering Anomalies Research (PEAR) laboratory conducted decades of research showing...",
+      "annotation_type": "clarification",
+      "ui_color": "violet",
+      "why_flagged": "PEAR results are contested and not replicated; citing them as 'historical precedent' is misleading without acknowledging controversy.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The framework is genuinely falsifiable. It would be disproven by: No measurable prayer effects...",
+      "annotation_type": "claim",
+      "ui_color": "gold",
+      "why_flagged": "Falsification condition is vague; 'no measurable prayer effects' is not a sharp threshold. What effect size counts as 'measurable'?",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Expected: 10\u201330% reduction in uncertainty during coherent consciousness states",
+      "annotation_type": "math",
+      "ui_color": "blue",
+      "why_flagged": "No justification for the 10-30% range; appears arbitrary.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Expected: 5\u201350% increase in target outcome probability, scaling with alignment quality",
+      "annotation_type": "math",
+      "ui_color": "blue",
+      "why_flagged": "Wide range (5-50%) makes the prediction weak; no model for how alignment quality scales.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Expected: Clear exponential pattern confirming doubling rate \u00b120%",
+      "annotation_type": "math",
+      "ui_color": "blue",
+      "why_flagged": "No statistical test specified for 'clear exponential pattern'; \u00b120% tolerance is arbitrary.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    }
+  ]
+}

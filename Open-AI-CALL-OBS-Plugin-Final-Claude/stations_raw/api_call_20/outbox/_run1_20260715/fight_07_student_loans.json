@@ -1,0 +1,104 @@
+{
+  "spec_version": "1.0-trilemma-resolver",
+  "status": "OK",
+  "fight": {
+    "id": "student_loan_forgiveness",
+    "familiar_name": "Student loan forgiveness",
+    "years_running": 25,
+    "poles": [
+      "Cancel the debt / predatory system",
+      "You took the loan, you pay it / why should the plumber pay for your degree"
+    ]
+  },
+  "reader_anchor": {
+    "opening_prose": "You are six years old. You borrow your older sibling's favorite toy\u2014a red plastic dinosaur with a chipped tail. You promise to return it. You play with it in the yard, and you lose it. You search everywhere. It is gone. Your sibling cries. You feel the weight of the promise you broke. You want to fix it, but you have nothing to give. You say 'I'm sorry' a hundred times. Your sibling says 'Sorry doesn't bring it back.' And they are right. Someone still has to replace that dinosaur. Your parents buy a new one. You did not pay for it. Your sibling did not pay for it. The cost moved to someone who never broke the promise and never lost the toy. You felt the ledger open, and you felt it close somewhere else. You never forgot that feeling. You just stopped naming it. Now you are an adult, and the fight is the same: who holds the cost when a promise breaks? The answer was already in your hands at age six.",
+    "universal_experience": "Losing a borrowed toy as a child and realizing 'sorry' does not replace it.",
+    "checkable_detail": "You physically searched for it\u2014under the bed, behind the couch, in the yard\u2014and felt the exact moment you knew it was gone.",
+    "quiet_theft": "You were trained to believe that a broken promise is repaired by apology alone, and that the cost someone else pays is invisible or irrelevant.",
+    "embodiment_note": "The borrowed toy is the loan. The broken promise is the default. The parent who buys the replacement is the taxpayer. The child who lost it is the borrower. The sibling is the lender. The fight is about who holds the cost, and the child already knows the answer: someone who did not break the promise."
+  },
+  "poles": [
+    {
+      "label": "Debt cancellation pole",
+      "steelman": "The student loan system is predatory. Lenders and universities knew the degrees would not yield jobs that could repay the debt, but they issued loans anyway. Borrowers were 18-year-olds with no financial literacy, signing contracts they could not understand. The damage is real: millions of people are trapped in decades of payments, unable to buy homes, start families, or save for retirement. The system extracted wealth from the most vulnerable. The only just remedy is to cancel the debt\u2014restore the victims to the position they would have been in without the predatory loans. The cost should be borne by the institutions that profited: lenders, universities, and the government that guaranteed the loans. If they cannot pay, society must absorb it as a collective cost of fixing a broken system.",
+      "accusation_against_others": "You force the most vulnerable to bear the entire cost of a system rigged against them, while the institutions that profited walk away unscathed.",
+      "accusation_is_true_because": "Under the 'you took the loan, you pay it' pole, the borrower pays the full T_B (debt plus interest) while the lender and university pay nothing. The borrower did not create the systemic damage\u2014the predatory lending structure did\u2014but the borrower eats the entire cost."
+    },
+    {
+      "label": "Contract enforcement pole",
+      "steelman": "You signed a contract. You received a benefit\u2014a degree, a credential, a shot at a better life. You are an adult. You are responsible for your promises. Canceling debt does not erase the cost; it transfers it to people who never borrowed, never attended college, and never agreed to pay for your education. The plumber, the electrician, the small business owner\u2014they now pay for your degree through higher taxes or inflation. That is theft. The damage is not the debt itself; the damage is the broken promise. The only just remedy is to enforce the contract: the borrower pays what they agreed to pay. If they cannot, they should enter bankruptcy like any other debtor. No special treatment. No bailout for the educated at the expense of the working class.",
+      "accusation_against_others": "You force the plumber\u2014who never borrowed, never attended college, never signed a contract\u2014to pay for your degree, while you walk away from your promise.",
+      "accusation_is_true_because": "Under the debt cancellation pole, the taxpayer (including the plumber) pays T_A (the canceled debt) while the borrower pays nothing. The plumber did not create the damage\u2014the borrower's default did\u2014but the plumber eats the entire cost."
+    }
+  ],
+  "ledger": {
+    "D_definition": "The total unpaid student loan debt in the United States, approximately $1.7 trillion as of 2023, representing the deficit between what borrowers owe and what they can pay given current income and employment.",
+    "D_is_real_evidence": "The Federal Reserve reports $1.7 trillion in outstanding student loan debt. Default rates exceed 10% for recent cohorts. Borrowers report delayed homeownership, reduced retirement savings, and mental health impacts. The damage is measurable in dollars and in human outcomes.",
+    "victim_class": "Borrowers who cannot repay loans due to systemic factors (predatory lending, low-value degrees, labor market failures).",
+    "causal_class": "Diffuse but identifiable: lenders who issued loans without due diligence, universities that raised tuition knowing loans were available, and a government that guaranteed the loans without oversight. The borrower also has agency in signing the contract, but the systemic damage is larger than individual choice.",
+    "per_pole_transfers": [
+      {
+        "pole": "Debt cancellation",
+        "T_A": "$1.7 trillion transferred to borrowers (debt canceled)",
+        "T_B": "$1.7 trillion imposed on taxpayers (via government spending or inflation)",
+        "J": 1.0,
+        "M": 0.0,
+        "W_note": "Borrowers are restored fully (J=1), but taxpayers bear full cost (M=0). Borrowers would voluntarily participate; taxpayers would not. No free will on both sides.",
+        "who_eats_deficit": "Taxpayers, including the plumber who never borrowed or attended college."
+      },
+      {
+        "pole": "Contract enforcement",
+        "T_A": "$0 transferred to borrowers (debt not canceled)",
+        "T_B": "$1.7 trillion imposed on borrowers (they pay the full debt plus interest)",
+        "J": 0.0,
+        "M": 1.0,
+        "W_note": "Borrowers are not restored (J=0), but they bear no cost beyond what they owe (M=1). Taxpayers are relieved. Borrowers would not voluntarily participate; taxpayers would. No free will on both sides.",
+        "who_eats_deficit": "Borrowers, including those who were 18 and financially illiterate when they signed."
+      }
+    ]
+  },
+  "clear_win": {
+    "type": "structural_invariant",
+    "statement": "The student loan fight is a pure seating argument on the J + M = 1 line. Both poles are correct in their accusations: each forces someone who did not create the damage to eat the cost. The debt cancellation pole forces the plumber to pay for the borrower's degree. The contract enforcement pole forces the borrower to pay for the lender's and university's predatory practices. Both accusations are true simultaneously, and that is the proof that the line exists. No position on the line closes the ledger because the deficit is real and someone must hold it. The only exit is a voluntary external cost-bearer who absorbs the full $1.7 trillion without coercion.",
+    "derivation_steps": [
+      "1. Define D = $1.7 trillion in unpaid student loan debt (the real deficit).",
+      "2. Under debt cancellation: T_A = $1.7T (borrowers relieved), T_B = $1.7T (taxpayers pay). J = 1.0, M = 0.0. The plumber eats the deficit.",
+      "3. Under contract enforcement: T_A = $0 (borrowers not relieved), T_B = $1.7T (borrowers pay). J = 0.0, M = 1.0. The borrower eats the deficit.",
+      "4. Both poles produce J + M = 1 exactly. The line is invariant.",
+      "5. Each pole's accusation reduces to: 'Your plan makes someone who did not create the damage eat the cost.' This is true for both poles.",
+      "6. No position on the line satisfies both J=1 and M=1 simultaneously. Free will requires both victim and offender to voluntarily participate, which is impossible on the line.",
+      "7. The only exit is a voluntary external cost-bearer who absorbs the full $1.7T, satisfying J=1, M=1, and W=1."
+    ],
+    "dinner_table_sentence": "Both sides are right: the plumber shouldn't pay for your degree, and you shouldn't pay for a rigged system\u2014the line proves it.",
+    "why_undeniable": "The math is exact: D = $1.7 trillion. Under each pole, the cost moves to a different class. Both accusations are empirically true. A hostile reader must concede that the plumber pays under cancellation and the borrower pays under enforcement, and that neither class created the full damage. The invariant J + M = 1 is a mathematical identity, not a rhetorical claim."
+  },
+  "off_the_line": {
+    "proximate": {
+      "structures": [
+        "Income-driven repayment plans that cap payments at a percentage of income and forgive remaining debt after 20-25 years (voluntary enrollment, relocates cost to future taxpayers).",
+        "Employer-sponsored tuition reimbursement programs (voluntary, relocates cost to employers).",
+        "Community-based mutual aid funds that pay off individual loans (voluntary, relocates cost to donors).",
+        "University-funded loan forgiveness for graduates in low-income public service careers (voluntary, relocates cost to institutions)."
+      ],
+      "honest_limit": "All proximate structures relocate the cost voluntarily and visibly, but they do not retire the deficit. The cost still lands on someone\u2014future taxpayers, employers, donors, or institutions. The altruism lemma holds: internal love relocates the deficit; it does not retire it."
+    },
+    "ultimate": {
+      "configuration": "A voluntary external cost-bearer who (1) is neither borrower nor lender nor taxpayer nor university, (2) acts voluntarily with no coercion, (3) absorbs the full $1.7 trillion cost, (4) has capacity to absorb without being destroyed, (5) preserves truth that the damage is real and acknowledged.",
+      "candidate": "The framework identifies the historical candidate as the voluntary self-sacrifice of Christ, who absorbs the full moral and material deficit of human brokenness without coercion, satisfying justice (J=1) and mercy (M=1) simultaneously, and opening the door for voluntary participation by both victim and offender.",
+      "door_note": "The door opens from the reader's side only. No one is coerced to accept this candidate. The framework merely identifies the structural match; the reader must choose to walk through."
+    }
+  },
+  "anti_gaming_audit": {
+    "blind_label": "pass: The analysis uses 'borrower' and 'taxpayer' and 'lender'\u2014no party names. Actor reversal (swap borrower and taxpayer roles) does not change the line.",
+    "symmetry": "pass: The win applies regardless of which pole proposed the mechanism. Both poles produce the same invariant.",
+    "counterfactual": "pass: D = $1.7 trillion is real and measurable, independent of any policy. The deficit exists whether or not forgiveness is enacted.",
+    "radius_consistency": "pass: Benefits and costs are measured at the same social level\u2014the national economy. Both T_A and T_B are $1.7 trillion.",
+    "cost_visibility": "pass: Under debt cancellation, costs are visible to taxpayers via government budgets. Under contract enforcement, costs are visible to borrowers via monthly payments. Both are transparent.",
+    "no_person_score": "pass: Actions and positions are scored (borrowing, lending, defaulting), not souls. No person is called evil or good.",
+    "unknowns_tracked": "pass: The exact distribution of D across borrowers is unknown and reported as such. The $1.7 trillion figure is an estimate from the Federal Reserve, labeled as such."
+  },
+  "falsification": {
+    "kill_condition_specific": "A historical case where student loan debt is fully canceled with no cost to any party (no taxpayer, no lender, no third party) would break this resolution. Alternatively, a case where borrowers fully repay all debt with no systemic damage to their lives would break the claim that D > 0 is real.",
+    "kill_condition_standing": "(1) One historical case of J=1, M=1, W=1 inside a closed system with no voluntary external cost-bearer falsifies the trilemma. (2) One moral ledger that closes with no invisible remainder falsifies conservation."
+  }
+}

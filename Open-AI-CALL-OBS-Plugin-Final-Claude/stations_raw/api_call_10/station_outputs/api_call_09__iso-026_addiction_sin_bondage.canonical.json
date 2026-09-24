@@ -1,0 +1,590 @@
+{
+  "definitions": [
+    {
+      "term": "Isomorphism",
+      "category": "math",
+      "definition": "A structural similarity between two different things, showing they work the same way even though they look different.",
+      "example": "A map of a subway system is isomorphic to the actual subway lines — the structure is the same even though the map is smaller.",
+      "grade_level": "college",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "Neuroscience",
+      "category": "physics",
+      "definition": "The study of the brain and nervous system, how they work and affect behavior.",
+      "example": "Neuroscience helps us understand why we feel pain or learn new skills.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Addiction",
+      "category": "physics",
+      "definition": "A condition where a person cannot stop using a substance or doing an activity, even when it causes harm.",
+      "example": "Someone addicted to video games might skip homework and sleep to keep playing.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Tolerance",
+      "category": "physics",
+      "definition": "When the body gets used to a drug or behavior, so you need more of it to get the same effect.",
+      "example": "If you drink coffee every day, you might need two cups to feel awake instead of one.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Sensitization",
+      "category": "physics",
+      "definition": "When the body becomes more sensitive to a substance over time, so even a small amount causes a big reaction.",
+      "example": "After being stung by a bee, you might become sensitized and have a stronger allergic reaction next time.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Allostatic load",
+      "category": "physics",
+      "definition": "The wear and tear on the body from long-term stress, like damage from never fully recovering.",
+      "example": "If you're stressed about tests for months, allostatic load can make you sick or exhausted.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Withdrawal",
+      "category": "physics",
+      "definition": "Unpleasant physical or mental symptoms when you stop using a substance you're addicted to.",
+      "example": "When someone stops drinking coffee, they might get headaches and feel tired — that's withdrawal.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Relapse",
+      "category": "physics",
+      "definition": "When someone starts using a substance again after trying to quit.",
+      "example": "A person trying to quit smoking might relapse after a stressful day and have a cigarette.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Dopamine dysregulation",
+      "category": "physics",
+      "definition": "When the brain's dopamine system, which controls pleasure and reward, gets out of balance.",
+      "example": "In addiction, the brain releases too much dopamine from the drug, so normal things like food don't feel rewarding anymore.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Neuroplasticity",
+      "category": "physics",
+      "definition": "The brain's ability to change and rewire itself based on experience.",
+      "example": "When you learn to play guitar, your brain creates new connections — that's neuroplasticity.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Hamartiology",
+      "category": "theology",
+      "definition": "The study of sin in Christian theology.",
+      "example": "Hamartiology asks questions like 'What is sin?' and 'How does sin affect people?'",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Sin bondage",
+      "category": "theology",
+      "definition": "The idea that sin can trap a person, making it very hard to stop sinning without help.",
+      "example": "A person who lies a lot might feel they can't stop, like they're in bondage to lying.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Progressive enslavement",
+      "category": "theology",
+      "definition": "The process where sin slowly takes more control over a person over time.",
+      "example": "Starting with a small lie, then bigger lies, until lying becomes a habit you can't break.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Romans 7 conflict",
+      "category": "theology",
+      "definition": "A passage in the Bible where Paul describes struggling to do what's right even when he wants to.",
+      "example": "It's like when you know you should study but end up watching TV instead, and feel frustrated.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Liberation",
+      "category": "theology",
+      "definition": "Being set free from something that holds you captive, like sin or addiction.",
+      "example": "A prisoner being released from jail is a form of liberation.",
+      "grade_level": "10",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Sanctification",
+      "category": "theology",
+      "definition": "The process of becoming more holy or morally good over time, often with God's help.",
+      "example": "A person trying to be more patient and kind is going through sanctification.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Neuroadaptive process",
+      "category": "physics",
+      "definition": "The brain's way of adjusting to repeated drug use or behavior, often leading to tolerance.",
+      "example": "If you take painkillers for a long time, your brain adapts so they don't work as well.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "Reward system",
+      "category": "physics",
+      "definition": "A part of the brain that makes you feel good when you do things necessary for survival, like eating or socializing.",
+      "example": "Eating chocolate feels good because your reward system releases dopamine.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "Recalibrates",
+      "category": "physics",
+      "definition": "When a system adjusts to a new normal, often in a harmful way.",
+      "example": "If you always eat very salty food, your taste buds recalibrate so normal food tastes bland.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "Diminishing returns",
+      "category": "academic",
+      "definition": "When you get less benefit from something the more you do it.",
+      "example": "Studying for 10 hours might help a lot, but studying for 20 hours gives only a little extra benefit — that's diminishing returns.",
+      "grade_level": "10",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "Cumulative damage",
+      "category": "physics",
+      "definition": "Harm that builds up over time from repeated stress or injury.",
+      "example": "Running every day without rest can cause cumulative damage to your knees.",
+      "grade_level": "10",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "Dysregulation",
+      "category": "physics",
+      "definition": "When a system in the body is not working properly or is out of balance.",
+      "example": "Dysregulation of sleep can make it hard to fall asleep or stay asleep.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "Hijacked",
+      "category": "physics",
+      "definition": "When something is taken over and used for a different purpose than intended.",
+      "example": "A drug can hijack the brain's reward system, making you crave the drug instead of food.",
+      "grade_level": "10",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "Moral agent",
+      "category": "philosophy",
+      "definition": "A person who can make choices between right and wrong and is responsible for them.",
+      "example": "A human is a moral agent; a rock is not, because it can't choose.",
+      "grade_level": "college",
+      "first_appearance": "Concept B"
+    },
+    {
+      "term": "Desensitization",
+      "category": "physics",
+      "definition": "When you become less sensitive to something over time, so it bothers you less.",
+      "example": "After watching many scary movies, you might become desensitized and not get scared anymore.",
+      "grade_level": "college",
+      "first_appearance": "Concept B"
+    },
+    {
+      "term": "Hardening",
+      "category": "theology",
+      "definition": "When a person's heart or conscience becomes less sensitive to sin or moral wrongs.",
+      "example": "A person who lies often might eventually feel no guilt — that's hardening.",
+      "grade_level": "college",
+      "first_appearance": "Concept B"
+    },
+    {
+      "term": "Repentance",
+      "category": "theology",
+      "definition": "Feeling sorry for wrongdoing and deciding to change your behavior.",
+      "example": "If you cheat on a test and then feel bad and promise not to do it again, that's repentance.",
+      "grade_level": "10",
+      "first_appearance": "Concept B"
+    },
+    {
+      "term": "External grace",
+      "category": "theology",
+      "definition": "Help or forgiveness that comes from outside yourself, especially from God.",
+      "example": "A person who can't stop sinning might receive external grace through prayer or community support.",
+      "grade_level": "college",
+      "first_appearance": "Concept B"
+    },
+    {
+      "term": "Receptor sensitivity",
+      "category": "physics",
+      "definition": "How strongly a receptor in the brain responds to a chemical signal.",
+      "example": "If you take a lot of caffeine, your receptors become less sensitive, so you need more coffee.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Closed system",
+      "category": "physics",
+      "definition": "A system that doesn't exchange anything (like energy or information) with the outside world.",
+      "example": "A sealed jar with no air coming in or out is a closed system.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Downregulates",
+      "category": "physics",
+      "definition": "When the body reduces the number or sensitivity of receptors in response to too much stimulation.",
+      "example": "If you take a lot of painkillers, your brain downregulates pain receptors, so you need more medicine.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Hedonic set point",
+      "category": "physics",
+      "definition": "The level of happiness or pleasure your brain considers normal.",
+      "example": "If you win the lottery, your hedonic set point might rise, but then you get used to it and feel normal again.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Upregulate",
+      "category": "physics",
+      "definition": "When the body increases the number or sensitivity of receptors.",
+      "example": "In a dark room, your eyes upregulate light receptors to see better.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Conscience responsiveness",
+      "category": "theology",
+      "definition": "How strongly your conscience reacts to right and wrong.",
+      "example": "A person with high conscience responsiveness feels guilty after a small lie.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "Moral allostatic load",
+      "category": "framework",
+      "definition": "The cumulative damage to a person's character from repeated sin without enough grace.",
+      "example": "Lying over and over without asking for forgiveness builds up moral allostatic load, making it harder to be honest.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "Character deformation",
+      "category": "theology",
+      "definition": "When a person's moral character becomes twisted or damaged by sin.",
+      "example": "A greedy person might become selfish and unable to share — that's character deformation.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "Spiritual pathology",
+      "category": "theology",
+      "definition": "A condition where a person's spiritual life is unhealthy or damaged.",
+      "example": "Feeling cut off from God or lacking purpose could be a sign of spiritual pathology.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "Homeostasis",
+      "category": "physics",
+      "definition": "The body's ability to keep internal conditions stable, like temperature or blood sugar.",
+      "example": "When you're hot, you sweat to cool down — that's homeostasis.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Perturbation",
+      "category": "physics",
+      "definition": "A disturbance or change that disrupts a system's normal state.",
+      "example": "A loud noise during a quiet exam is a perturbation.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Pathological",
+      "category": "academic",
+      "definition": "Related to disease or abnormal, harmful conditions.",
+      "example": "A pathological liar lies even when there's no reason to.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Neural pathway entrenchment",
+      "category": "physics",
+      "definition": "When repeated behavior strengthens brain connections, making the behavior automatic.",
+      "example": "Practicing piano every day entrenches neural pathways, so you can play without thinking.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Long-term potentiation",
+      "category": "physics",
+      "definition": "A long-lasting strengthening of connections between brain cells, important for learning and memory.",
+      "example": "When you memorize a phone number, long-term potentiation helps you remember it.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Dendritic growth",
+      "category": "physics",
+      "definition": "The growth of branch-like parts of brain cells that receive signals, helping learning.",
+      "example": "Learning a new language can cause dendritic growth in language areas of the brain.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Metaphorical",
+      "category": "academic",
+      "definition": "Not literally true, but used as a comparison to explain something.",
+      "example": "Saying 'time is a thief' is metaphorical — time doesn't actually steal.",
+      "grade_level": "10",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Compulsive neural loops",
+      "category": "physics",
+      "definition": "Brain circuits that make you repeat a behavior automatically, even if you want to stop.",
+      "example": "Checking your phone over and over can become a compulsive neural loop.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Prefrontal cortex",
+      "category": "physics",
+      "definition": "The front part of the brain that controls decision-making, planning, and self-control.",
+      "example": "When you decide to study instead of play games, your prefrontal cortex is working.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Terminus Sui",
+      "category": "framework",
+      "definition": "A Latin phrase meaning 'end of itself' — a situation where the system that needs to fix itself is the same system that is broken.",
+      "example": "A car with a broken engine can't fix itself because the engine is what needs fixing — that's Terminus Sui.",
+      "grade_level": "specialist",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Grace coupling",
+      "category": "framework",
+      "definition": "The idea that external help (grace) is needed to reverse a downward spiral in a closed system.",
+      "example": "A person stuck in addiction needs help from others (grace coupling) because they can't quit alone.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Second Law",
+      "category": "physics",
+      "definition": "A physics law saying that in a closed system, disorder (entropy) always increases over time.",
+      "example": "A messy room gets messier on its own — that's the Second Law of Thermodynamics.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Backsliding",
+      "category": "theology",
+      "definition": "When a person who was making moral progress falls back into old sinful habits.",
+      "example": "A person who quit smoking for a month but then starts again is backsliding.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Neural pruning",
+      "category": "physics",
+      "definition": "The brain's process of removing unused connections to become more efficient.",
+      "example": "If you stop playing piano, your brain prunes the connections for that skill.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Progressive",
+      "category": "academic",
+      "definition": "Happening gradually over time, step by step.",
+      "example": "A progressive disease gets worse slowly over years.",
+      "grade_level": "10",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Cross-tolerance",
+      "category": "physics",
+      "definition": "When tolerance to one substance makes you tolerant to another similar substance.",
+      "example": "If you're addicted to alcohol, you might also need more sedatives to feel the same effect.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Sin clusters",
+      "category": "theology",
+      "definition": "Groups of sins that often occur together, like lying and stealing.",
+      "example": "Gossip and slander often form a sin cluster.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Systemic",
+      "category": "academic",
+      "definition": "Affecting the whole system, not just one part.",
+      "example": "A systemic disease affects the entire body, not just one organ.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Dopamine hijacking",
+      "category": "physics",
+      "definition": "When a substance or behavior takes over the brain's dopamine system, making you crave it.",
+      "example": "Drugs like cocaine hijack dopamine, making you want the drug more than food or friends.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Idolatry",
+      "category": "theology",
+      "definition": "Worshiping or giving too much importance to something other than God.",
+      "example": "Loving money more than God is a form of idolatry.",
+      "grade_level": "10",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Ecclesiology",
+      "category": "theology",
+      "definition": "The study of the church, its nature, and its role in Christian life.",
+      "example": "Ecclesiology asks questions like 'What is the church supposed to do?'",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Mutual upbuilding",
+      "category": "theology",
+      "definition": "Helping each other grow stronger in faith and character.",
+      "example": "Friends encouraging each other to be kind is mutual upbuilding.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Load-bearing",
+      "category": "academic",
+      "definition": "Essential for supporting a structure; if removed, the structure collapses.",
+      "example": "A pillar in a building is load-bearing — without it, the roof falls.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Neurochemical mechanisms",
+      "category": "physics",
+      "definition": "Chemical processes in the brain that affect mood, behavior, and thought.",
+      "example": "Dopamine and serotonin are part of neurochemical mechanisms that affect happiness.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Moral agency",
+      "category": "philosophy",
+      "definition": "The ability to make moral choices and be responsible for them.",
+      "example": "A human has moral agency; a computer does not.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Divine relationship",
+      "category": "theology",
+      "definition": "The connection between a person and God.",
+      "example": "Prayer is part of a divine relationship.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Volitional choices",
+      "category": "philosophy",
+      "definition": "Choices made by free will, not forced by anything.",
+      "example": "Choosing what to eat for dinner is a volitional choice.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Genetic",
+      "category": "academic",
+      "definition": "Related to genes, the instructions passed from parents to children.",
+      "example": "Eye color is genetic.",
+      "grade_level": "10",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Epigenetic",
+      "category": "physics",
+      "definition": "Changes in how genes work that are not caused by changes in DNA itself, often from environment or behavior.",
+      "example": "Stress can cause epigenetic changes that affect how your body handles anxiety.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Reducible",
+      "category": "academic",
+      "definition": "Able to be explained by simpler parts or causes.",
+      "example": "A car is reducible to its engine, wheels, and other parts.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Convergence",
+      "category": "academic",
+      "definition": "When different things come together or become similar.",
+      "example": "Two roads that meet at a point show convergence.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Evidentially significant",
+      "category": "academic",
+      "definition": "Important as evidence for a claim or theory.",
+      "example": "Finding a fossil is evidentially significant for evolution.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Topological",
+      "category": "math",
+      "definition": "Related to the properties of shapes and spaces that stay the same when stretched or bent.",
+      "example": "A donut and a coffee cup are topologically similar because both have one hole.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Metric",
+      "category": "math",
+      "definition": "Related to measurement, like distance or quantity.",
+      "example": "The metric system uses meters and liters.",
+      "grade_level": "10",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Time constants",
+      "category": "physics",
+      "definition": "A measure of how fast a system changes over time.",
+      "example": "A hot cup of coffee cools with a certain time constant — how long it takes to reach room temperature.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Swap Test",
+      "category": "framework",
+      "definition": "A test to see if a mapping is specific by trying to replace one domain with another.",
+      "example": "To test if addiction is like sin, try swapping addiction with learning — if it doesn't fit, the mapping is specific.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "HPA axis dysregulation",
+      "category": "physics",
+      "definition":

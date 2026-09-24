@@ -1,0 +1,520 @@
+{
+  "definitions": [
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A structural similarity between two different systems that shows they work in the same way, even if they are made of different things.",
+      "example": "A map of a subway system is isomorphic to the actual subway tracks because the connections between stations are the same, even though the map is paper and the tracks are metal.",
+      "grade_level": "college",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "immunology",
+      "category": "physics",
+      "definition": "The study of the immune system, which is the body's defense against germs and other invaders.",
+      "example": "Immunology explains how vaccines train your body to fight off diseases like the flu.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation, or how people are saved from sin and its consequences according to Christian belief.",
+      "example": "Soteriology asks questions like 'How does Jesus's death save people?'",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "sanctification",
+      "category": "theology",
+      "definition": "The process of becoming more holy or morally pure, often seen as a gradual change in a believer's life.",
+      "example": "Sanctification is like training to become a better person over time, not just deciding to be good once.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "binary classification",
+      "category": "math",
+      "definition": "A problem where you have to sort things into one of two groups, like 'yes' or 'no'.",
+      "example": "A spam filter does binary classification: it decides if an email is spam or not spam.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "false positives",
+      "category": "academic",
+      "definition": "When a test or system says something is present when it actually isn't.",
+      "example": "A fire alarm that goes off when there's no smoke is a false positive.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "false negatives",
+      "category": "academic",
+      "definition": "When a test or system says something is absent when it actually is present.",
+      "example": "A pregnancy test that says 'not pregnant' when the person is pregnant is a false negative.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "autoimmunity",
+      "category": "physics",
+      "definition": "A condition where the immune system mistakenly attacks the body's own healthy cells.",
+      "example": "In type 1 diabetes, autoimmunity causes the immune system to attack the pancreas.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "immunodeficiency",
+      "category": "physics",
+      "definition": "A condition where the immune system is too weak to fight off infections properly.",
+      "example": "HIV causes immunodeficiency, making it hard for the body to fight even a common cold.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "legalism",
+      "category": "theology",
+      "definition": "An overly strict focus on following rules, often leading to judging others harshly for minor things.",
+      "example": "Legalism is like saying you can't be a good person unless you follow every single rule perfectly, even small ones.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "antinomianism",
+      "category": "theology",
+      "definition": "The belief that moral laws don't apply to believers, so they can do whatever they want without consequences.",
+      "example": "Antinomianism is like thinking that because you're on a sports team, you don't have to follow any rules of the game.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Receiver Operating Characteristic (ROC) curve",
+      "category": "math",
+      "definition": "A graph that shows how well a classification system balances catching true threats (sensitivity) and avoiding false alarms (specificity).",
+      "example": "A ROC curve can show if a medical test is good at finding cancer without too many false alarms.",
+      "grade_level": "graduate",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "sensitivity",
+      "category": "academic",
+      "definition": "In testing, the ability to correctly identify true positives, or how good a system is at catching what it's looking for.",
+      "example": "A sensitive smoke detector catches even tiny amounts of smoke.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "specificity",
+      "category": "academic",
+      "definition": "In testing, the ability to correctly identify true negatives, or how good a system is at avoiding false alarms.",
+      "example": "A specific smoke detector doesn't go off when you're just cooking toast.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "area under the ROC curve (AUC)",
+      "category": "math",
+      "definition": "A single number that measures the overall performance of a classification system, where 1.0 is perfect and 0.5 is random guessing.",
+      "example": "An AUC of 0.9 means the system is very good at telling the two groups apart.",
+      "grade_level": "graduate",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "cost function",
+      "category": "math",
+      "definition": "A mathematical formula that calculates the total penalty for making mistakes, used to find the best balance between different types of errors.",
+      "example": "A cost function for a factory might add up the cost of making too many products (waste) and the cost of making too few (lost sales).",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "conviction",
+      "category": "theology",
+      "definition": "A strong feeling of guilt or certainty that something is wrong, often seen as a sign from God to change behavior.",
+      "example": "Feeling bad after lying and deciding to tell the truth is an example of conviction.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "discernment",
+      "category": "theology",
+      "definition": "The ability to judge well, especially to tell the difference between right and wrong or good and evil.",
+      "example": "Discernment is like having a good internal compass that helps you make wise choices.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "finitude",
+      "category": "philosophy",
+      "definition": "The state of being limited or having boundaries, especially in knowledge, power, or time.",
+      "example": "Humans have finitude because we can't know everything or live forever.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "optimization",
+      "category": "math",
+      "definition": "The process of making something as effective or perfect as possible, often by finding the best balance between competing factors.",
+      "example": "Optimizing your study time means finding the right mix of subjects so you learn the most without getting exhausted.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "dual-pathology architecture",
+      "category": "framework",
+      "definition": "A system that can fail in two opposite ways, like being too aggressive or too passive, and health is the balance between them.",
+      "example": "A thermostat has a dual-pathology: it can be too hot (overheating) or too cold (freezing), and the goal is to keep the temperature just right.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "thymus",
+      "category": "physics",
+      "definition": "A small organ in the chest where T-cells (a type of immune cell) learn to tell the difference between the body's own cells and invaders.",
+      "example": "The thymus is like a training school for immune cells, teaching them who is friend and who is foe.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "discipleship",
+      "category": "theology",
+      "definition": "The process of learning from a teacher or mentor to become a better follower of a faith, especially in Christianity.",
+      "example": "Discipleship is like an apprenticeship where you learn how to live your faith from someone more experienced.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "immune memory",
+      "category": "physics",
+      "definition": "The ability of the immune system to remember past infections and respond faster and stronger the next time.",
+      "example": "Getting a vaccine gives you immune memory, so if you encounter the real virus, your body fights it off quickly.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "pattern recognition",
+      "category": "academic",
+      "definition": "The ability to notice and identify regularities or repeated structures in data or experiences.",
+      "example": "Recognizing that a certain cloud shape means rain is coming is a form of pattern recognition.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "attenuated",
+      "category": "physics",
+      "definition": "Weakened or made less harmful, often used to describe a virus in a vaccine that is too weak to cause disease but still triggers an immune response.",
+      "example": "An attenuated virus in a vaccine is like a practice opponent in sports that is strong enough to train you but not strong enough to hurt you.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "inactivated",
+      "category": "physics",
+      "definition": "Killed or made completely inactive, so it cannot cause infection, but still used to train the immune system.",
+      "example": "An inactivated virus in a vaccine is like a photo of a dangerous animal: it shows you what to look for but can't attack you.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "steadfastness",
+      "category": "theology",
+      "definition": "The quality of being firm and unwavering in your beliefs or actions, especially during difficult times.",
+      "example": "Steadfastness is like a tree that stays standing even in a strong storm.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "systemic escalation",
+      "category": "framework",
+      "definition": "When a problem gets so big that the whole system has to respond in a major way, not just a local part.",
+      "example": "Systemic escalation is like when a small fire in one room spreads, and the entire building's fire sprinklers turn on.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "metabolic",
+      "category": "physics",
+      "definition": "Relating to metabolism, the chemical processes in the body that keep you alive, like breaking down food for energy.",
+      "example": "Running increases your metabolic rate, meaning your body burns more energy.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "inhospitable",
+      "category": "academic",
+      "definition": "Not welcoming or suitable for life or growth; harsh or unfavorable.",
+      "example": "A desert is inhospitable because it's too hot and dry for most plants and animals.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "hematopoietic stem cells",
+      "category": "physics",
+      "definition": "Special cells in bone marrow that can develop into all types of blood cells, including immune cells.",
+      "example": "Hematopoietic stem cells are like the master builders that can become any kind of blood cell the body needs.",
+      "grade_level": "graduate",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "bone marrow",
+      "category": "physics",
+      "definition": "The soft, spongy tissue inside bones where blood cells are made.",
+      "example": "Bone marrow is like a factory inside your bones that produces red and white blood cells.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "tolerance",
+      "category": "physics",
+      "definition": "In immunology, a state where the immune system does not attack something it normally would, either because it's harmless or because it's been trained not to.",
+      "example": "The immune system has tolerance to food, so it doesn't attack the food you eat as if it were a germ.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "anergy",
+      "category": "physics",
+      "definition": "A state where immune cells become unresponsive to a specific invader, essentially going silent instead of fighting.",
+      "example": "Anergy is like a guard who stops checking IDs because he's tired, letting anyone through.",
+      "grade_level": "graduate",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "antigens",
+      "category": "physics",
+      "definition": "Molecules on the surface of germs or other substances that trigger an immune response.",
+      "example": "Antigens are like name tags on germs that tell your immune system, 'I'm an invader, attack me!'",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "seared conscience",
+      "category": "theology",
+      "definition": "A conscience that has been damaged or numbed by repeated sin, so it no longer feels guilt or recognizes wrongdoing.",
+      "example": "A seared conscience is like a burn scar that has no feeling, so you can't tell when something is hurting you.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "inflammation",
+      "category": "physics",
+      "definition": "The body's response to injury or infection, causing redness, swelling, heat, and pain, which helps healing but can be uncomfortable.",
+      "example": "When you sprain your ankle, inflammation causes it to swell and feel warm as the body works to repair it.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "thymic involution",
+      "category": "physics",
+      "definition": "The natural shrinking and loss of function of the thymus as a person ages, reducing the production of new immune cells.",
+      "example": "Thymic involution is like a school that gradually closes down as fewer new students enroll, relying more on older graduates.",
+      "grade_level": "graduate",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "atrophies",
+      "category": "physics",
+      "definition": "Wastes away or shrinks due to lack of use or aging.",
+      "example": "A muscle that you never use atrophies and becomes smaller and weaker.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "naive T-cells",
+      "category": "physics",
+      "definition": "Immature T-cells that have not yet encountered an invader and are ready to be trained to recognize specific threats.",
+      "example": "Naive T-cells are like new recruits in an army who haven't seen combat yet but are ready to learn.",
+      "grade_level": "graduate",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "structural parallel",
+      "category": "framework",
+      "definition": "A similarity in the way two different systems are organized or work, even if the systems themselves are different.",
+      "example": "A tree's branching pattern has a structural parallel to a river's network of streams, even though one is wood and the other is water.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A structural similarity between two different systems that shows they work in the same way, even if they are made of different things.",
+      "example": "A map of a subway system is isomorphic to the actual subway tracks because the connections between stations are the same, even though the map is paper and the tracks are metal.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "sacrament",
+      "category": "theology",
+      "definition": "A religious ceremony or ritual that is believed to be a sign of God's grace, like baptism or communion.",
+      "example": "In Christianity, baptism is a sacrament that symbolizes being cleansed from sin.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "efficacy",
+      "category": "academic",
+      "definition": "The ability to produce a desired result; effectiveness.",
+      "example": "The efficacy of a medicine is how well it actually cures the disease.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "information theory",
+      "category": "math",
+      "definition": "A branch of mathematics that studies how information is measured, stored, and communicated, especially in the presence of noise.",
+      "example": "Information theory explains how your phone can send a text message without errors, even if the signal is weak.",
+      "grade_level": "graduate",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "signal detection theory",
+      "category": "math",
+      "definition": "A framework for making decisions under uncertainty, especially when you have to tell a real signal apart from background noise.",
+      "example": "Signal detection theory is used in radar to decide if a blip is an enemy plane or just a flock of birds.",
+      "grade_level": "graduate",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "endocrine system",
+      "category": "physics",
+      "definition": "The system of glands that produce hormones, which regulate things like growth, mood, and metabolism.",
+      "example": "The endocrine system includes the thyroid gland, which controls how fast your body uses energy.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "feedback loops",
+      "category": "physics",
+      "definition": "A process where the output of a system influences its own input, either amplifying (positive feedback) or balancing (negative feedback) the effect.",
+      "example": "A thermostat uses a feedback loop: when the room gets cold, it turns on the heat, and when it's warm enough, it turns off.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "continuous variables",
+      "category": "math",
+      "definition": "Quantities that can take any value within a range, not just whole numbers, like height or temperature.",
+      "example": "Your height is a continuous variable because it can be 150.2 cm, not just 150 or 151 cm.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "hygiene hypothesis",
+      "category": "physics",
+      "definition": "The idea that a lack of exposure to germs in early childhood can lead to a higher risk of allergies and autoimmune diseases.",
+      "example": "The hygiene hypothesis suggests that kids who grow up on farms, with lots of exposure to animals and dirt, have fewer allergies.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "old friends hypothesis",
+      "category": "physics",
+      "definition": "An updated version of the hygiene hypothesis, suggesting that exposure to certain harmless microbes (old friends) trains the immune system to not overreact.",
+      "example": "The old friends hypothesis says that playing with pets early in life introduces friendly bacteria that help your immune system stay calm.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "correlates",
+      "category": "academic",
+      "definition": "Shows a relationship or connection between two things, where changes in one are associated with changes in the other.",
+      "example": "Studying more correlates with getting better grades, but it doesn't necessarily mean studying causes better grades.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "inversely correlated",
+      "category": "academic",
+      "definition": "When one thing increases, the other decreases, and vice versa.",
+      "example": "The amount of time you spend watching TV and the amount of time you spend exercising are often inversely correlated.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "immunosuppression",
+      "category": "physics",
+      "definition": "The act of weakening the immune system, either intentionally (with drugs) or due to disease.",
+      "example": "Immunosuppression is used after an organ transplant to stop the immune system from attacking the new organ.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "immunosuppressants",
+      "category": "physics",
+      "definition": "Drugs that reduce the strength of the immune system, often used to treat autoimmune diseases or prevent transplant rejection.",
+      "example": "Immunosuppressants are like turning down the volume on your immune system so it doesn't overreact.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "tradeoff",
+      "category": "academic",
+      "definition": "A situation where you have to give up one thing to get another, because you can't have both at the same time.",
+      "example": "There's a tradeoff between speed and accuracy: you can finish a test quickly but make more mistakes, or go slowly and get more answers right.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "inherent",
+      "category": "academic",
+      "definition": "Existing as a natural and permanent part of something, not added from outside.",
+      "example": "The risk of falling is inherent in riding a bike; it's part of the activity itself.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "artifact",
+      "category": "academic",
+      "definition": "Something that appears in data or results due to the method of measurement or analysis, not because it's real.",
+      "example": "A smudge on a microscope slide is an artifact that might look like a cell but isn't really there.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "durable",
+      "category": "academic",
+      "definition": "Lasting for a long time without weakening or breaking down.",
+      "example": "A durable friendship lasts for years, even through arguments and distance.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "oscillation",
+      "category": "physics",
+      "definition": "A repeated back-and-forth movement or change between two states or positions.",
+      "example": "A pendulum swinging back and forth is an oscillation.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B"
+    },
+    {
+      "term": "structural necessity",
+      "category": "framework",
+      "definition": "Something that must happen because of the way a system is built, not by chance or choice.",
+      "example": "In a car, the wheels must turn for it to move; that's a structural necessity.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B"
+    },
+    {
+      "term": "de novo",
+      "category": "academic",
+      "definition": "From the beginning or from scratch; starting anew each time.",
+      "example": "If you write an essay de novo, you don't use any previous drafts; you start from a blank page.",
+      "grade_level": "college",
+      "first_appearance": "Falsification"
+    },
+    {
+      "term": "connection density",
+      "category": "framework",
+      "definition": "The number of meaningful links or similarities between two systems, used to judge how likely the similarity is due to chance.",
+      "example": "If two puzzles have many pieces that fit together perfectly, the connection density is high, meaning they probably go together on purpose.",
+      "grade_level": "college",
+      "first_appearance": "Falsification"
+    },
+    {
+      "term": "structural isomorphism",
+      "category": "framework",
+      "definition": "A strong, detailed similarity in the way two different systems are organized, showing they share the same underlying pattern.",
+      "example": "A computer's file system and a library's book catalog have a structural isomorphism: both organize items into folders/categories and allow you to search for them.",
+      "grade_level":

@@ -1,0 +1,690 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "Control Theory",
+        "type": "mathematics",
+        "strength": 10
+      },
+      {
+        "name": "Christian Theology",
+        "type": "theology",
+        "strength": 10
+      },
+      {
+        "name": "Cybernetics",
+        "type": "other",
+        "strength": 5
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": true,
+        "role": "Grace as the controller output (C_providence) that drives the system toward the setpoint",
+        "strength": 9
+      },
+      {
+        "variable": "M",
+        "present": true,
+        "role": "Meaning as the setpoint (R_telos) - divine purpose",
+        "strength": 8
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Energy/Spirit as the power enabling the feedback loop",
+        "strength": 6
+      },
+      {
+        "variable": "S",
+        "present": true,
+        "role": "Love as the stabilizing force in negative feedback (discipline as love)",
+        "strength": 7
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Judgment as positive feedback destabilization (Romans 1:24-28)",
+        "strength": 8
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Logos/Information as the error signal (sin as deviation from divine purpose)",
+        "strength": 7
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "Relationship as the feedback loop structure (H_conscience as sensor)",
+        "strength": 8
+      },
+      {
+        "variable": "Q",
+        "present": true,
+        "role": "Faith as the trust that enables the closed-loop system to function",
+        "strength": 6
+      },
+      {
+        "variable": "F",
+        "present": true,
+        "role": "Weak/Sin as the error signal E(s) = R(s) - Y(s)",
+        "strength": 8
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence/Christ as the ultimate setpoint (conformity to Christ)",
+        "strength": 9
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "Existence of the system (plant, controller, setpoint) is assumed"
+      },
+      {
+        "id": "A1.2",
+        "invoked": true,
+        "how": "Distinction between controller and plant (sovereignty vs. free will)"
+      },
+      {
+        "id": "A2.1",
+        "invoked": true,
+        "how": "Substrate of the feedback loop (the system dynamics)"
+      },
+      {
+        "id": "A2.2",
+        "invoked": true,
+        "how": "Self-grounding of the controller (God as uncaused cause)"
+      },
+      {
+        "id": "A5.1",
+        "invoked": true,
+        "how": "Observation through conscience (H_conscience as sensor)"
+      },
+      {
+        "id": "BC4",
+        "invoked": true,
+        "how": "Three observers: God (controller), human (plant), conscience (sensor)"
+      },
+      {
+        "id": "BC6",
+        "invoked": true,
+        "how": "Infinite source of corrective power (unbounded loop gain)"
+      },
+      {
+        "id": "A1.3",
+        "invoked": true,
+        "how": "Information primacy: error signal as information driving correction"
+      },
+      {
+        "id": "T3.1",
+        "invoked": true,
+        "how": "Coherence cannot self-increase: open-loop system cannot self-correct"
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "External grace: controller output is external to the plant"
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "Information conservation: error signal is preserved in the feedback loop"
+      },
+      {
+        "id": "BC8",
+        "invoked": true,
+        "how": "Voluntary coupling: human agency preserved (plant dynamics not replaced)"
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "source of the setpoint",
+          "ground of the controller",
+          "origin of the telos"
+        ]
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "image of the setpoint (conformity to Christ)",
+          "mediator of the feedback loop",
+          "incarnation of the controller"
+        ]
+      },
+      "spirit": {
+        "present": true,
+        "manifestations": [
+          "power enabling the feedback",
+          "presence in the loop",
+          "movement toward the setpoint"
+        ]
+      },
+      "trinitarian_structure": "explicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-034",
+        "domain_a": "Control Theory",
+        "domain_b": "Christian Theology",
+        "strength": 10,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "providence",
+        "context": "divine governance as a closed-loop control system",
+        "weight": 10
+      },
+      {
+        "concept": "predestination",
+        "context": "setpoint (R_telos) as fixed destination",
+        "weight": 8
+      },
+      {
+        "concept": "free will",
+        "context": "plant dynamics (G_human) preserved",
+        "weight": 9
+      },
+      {
+        "concept": "sanctification",
+        "context": "integral mode of correction over accumulated history",
+        "weight": 8
+      },
+      {
+        "concept": "discipline",
+        "context": "negative feedback as stabilization (Hebrews 12:6)",
+        "weight": 9
+      },
+      {
+        "concept": "judgment",
+        "context": "positive feedback destabilization (Romans 1:24-28)",
+        "weight": 8
+      },
+      {
+        "concept": "grace",
+        "context": "controller output (C_providence)",
+        "weight": 9
+      },
+      {
+        "concept": "sin",
+        "context": "error signal (deviation from setpoint)",
+        "weight": 8
+      },
+      {
+        "concept": "apostasy",
+        "context": "instability (Nyquist criterion violation)",
+        "weight": 7
+      },
+      {
+        "concept": "perseverance",
+        "context": "stability (sufficient phase margin)",
+        "weight": 7
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "necessity",
+        "context": "integral term necessary to eliminate steady-state error",
+        "weight": 8
+      },
+      {
+        "concept": "sufficiency",
+        "context": "three modes together sufficient for stable convergence",
+        "weight": 7
+      },
+      {
+        "concept": "contradiction",
+        "context": "free will paradox resolved as standard control feature",
+        "weight": 9
+      },
+      {
+        "concept": "implication",
+        "context": "open-loop implies deism, closed-loop implies theism",
+        "weight": 8
+      },
+      {
+        "concept": "equivalence",
+        "context": "Nyquist criterion equivalent to stability conditions",
+        "weight": 7
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "love",
+        "present": true,
+        "strength": 8
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": true,
+        "strength": 6
+      },
+      {
+        "fruit": "patience",
+        "present": true,
+        "strength": 7
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": true,
+        "strength": 5
+      },
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 7
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "self_control",
+        "present": true,
+        "strength": 6
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "Control Theory",
+      "to": "Christian Theology",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "PID Controller",
+      "to": "Providence",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "Setpoint R(s)",
+      "to": "Telos (God's Purpose)",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "Error Signal E(s)",
+      "to": "Sin",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "Proportional Mode",
+      "to": "Conscience/Immediate Consequences",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "Integral Mode",
+      "to": "Sanctification",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "Derivative Mode",
+      "to": "Prophetic Warning",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "Negative Feedback",
+      "to": "Discipline (Hebrews 12:6)",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "Positive Feedback",
+      "to": "Judgment (Romans 1:24-28)",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "Disturbance D(s)",
+      "to": "Temptation/Evil",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "Open-Loop System",
+      "to": "Deism",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "Closed-Loop System",
+      "to": "Theism",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "Plant Dynamics G(s)",
+      "to": "Human Nature/Free Will",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "Controllability",
+      "to": "Divine Sovereignty",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "Observability",
+      "to": "Divine Omniscience",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "Nyquist Stability Criterion",
+      "to": "Perseverance vs. Apostasy",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "Loop Gain",
+      "to": "Greater is He (1 John 4:4)",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "Integral Term",
+      "to": "Romans 8:28 (All Things)",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "Derivative Term",
+      "to": "Prevenient Grace",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "Feedback Sensor H(s)",
+      "to": "Conscience",
+      "relation": "maps_to",
+      "weight": 8
+    }
+  ],
+  "tags": {
+    "primary": [
+      "control theory",
+      "providence",
+      "feedback",
+      "PID controller",
+      "sovereignty-free will"
+    ],
+    "pillar": [
+      "pillar/mathematics",
+      "pillar/theology"
+    ],
+    "series": "isomorphism",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "Romans 8:28-29",
+        "context": "setpoint (predestined to be conformed to image of Son)"
+      },
+      {
+        "ref": "Hebrews 12:6",
+        "context": "negative feedback as discipline (the Lord disciplines those he loves)"
+      },
+      {
+        "ref": "Romans 1:24-28",
+        "context": "positive feedback (God gave them over)"
+      },
+      {
+        "ref": "Galatians 6:7",
+        "context": "proportional mode (whatever one sows, that will he also reap)"
+      },
+      {
+        "ref": "Ezekiel 3:17",
+        "context": "derivative mode (watchman giving warning)"
+      },
+      {
+        "ref": "1 John 4:4",
+        "context": "loop gain (greater is he who is in you)"
+      },
+      {
+        "ref": "1 Corinthians 10:13",
+        "context": "gain margin (not tempted beyond what you can bear)"
+      },
+      {
+        "ref": "Luke 1:37",
+        "context": "controllability (nothing is impossible with God)"
+      },
+      {
+        "ref": "Psalm 139:2",
+        "context": "observability (you discern my thoughts from afar)"
+      },
+      {
+        "ref": "Judges 2:11-19",
+        "context": "oscillatory pattern without derivative term"
+      }
+    ],
+    "academic": [
+      {
+        "ref": "Astrom, K.J. and Murray, R.M. (2008). Feedback Systems",
+        "context": "control theory foundation"
+      },
+      {
+        "ref": "Ogata, K. (2010). Modern Control Engineering",
+        "context": "PID control theory"
+      },
+      {
+        "ref": "Nyquist, H. (1932). Regeneration Theory",
+        "context": "Nyquist stability criterion"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "ISO-002",
+        "context": "coupling coefficient alpha as loop gain"
+      },
+      {
+        "ref": "ISO-003",
+        "context": "entropy/sin as error signal"
+      },
+      {
+        "ref": "ISO-012",
+        "context": "sign operator (setpoint as +1 eigenstate)"
+      },
+      {
+        "ref": "ISO-013",
+        "context": "grace operator (controller output)"
+      },
+      {
+        "ref": "ISO-016",
+        "context": "eschatological attractors (setpoint as attractor)"
+      },
+      {
+        "ref": "ISO-033",
+        "context": "pharmacology (feedback dynamics of reception)"
+      },
+      {
+        "ref": "ISO-022",
+        "context": "Ten Laws integration"
+      }
+    ],
+    "total_count": 17
+  },
+  "word_anomalies": [
+    {
+      "word": "Nyquist criterion",
+      "frequency": 5,
+      "significance": "technical control theory concept applied to theology"
+    },
+    {
+      "word": "PID controller",
+      "frequency": 8,
+      "significance": "central isomorphism concept"
+    },
+    {
+      "word": "steady-state error",
+      "frequency": 4,
+      "significance": "theological implication of proportional-only correction"
+    },
+    {
+      "word": "phase margin",
+      "frequency": 2,
+      "significance": "condition for stability/perseverance"
+    },
+    {
+      "word": "controllability",
+      "frequency": 3,
+      "significance": "divine sovereignty formalized"
+    },
+    {
+      "word": "observability",
+      "frequency": 2,
+      "significance": "divine omniscience formalized"
+    },
+    {
+      "word": "loop gain",
+      "frequency": 5,
+      "significance": "measure of providential engagement"
+    },
+    {
+      "word": "disturbance rejection",
+      "frequency": 3,
+      "significance": "attenuation of suffering's effects"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "Analytical and constructive; assumes both control theory and theology are coherent domains that can be formally mapped",
+    "Q1_identity": "A structural isomorphism record mapping control theory (PID feedback systems) to Christian theology (divine providence)",
+    "Q2_domain": "Mathematics (control theory) and Theology (providence, sovereignty, free will)",
+    "Q3_claim": "Divine providence operates as a closed-loop control system with three temporal modes (proportional, integral, derivative) that correspond to conscience, sanctification, and prophetic warning",
+    "Q4_support": "13 independent correspondences, four-test protocol (prediction, symmetric breaking, connection density, falsifiability), mathematical formalization of the PID controller",
+    "Q5_dependencies": "Control theory (PID, Nyquist, feedback), Christian theology (providence, sin, grace, sanctification), axioms A1.1, A1.2, A2.1, A2.2, A5.1, BC4, BC6, A1.3, T3.1, BC2, BC7, BC8",
+    "Q6_consequences": "Resolves the sovereignty-free will paradox as a standard control feature; predicts that theologies emphasizing only one temporal mode are structurally incomplete; formalizes the Calvinist-Arminian debate as a question of loop gain bounds",
+    "Q7_kill": "Five falsification conditions: (1) providence has no corrective structure, (2) sin has no temporal structure, (3) negative feedback does not stabilize, (4) disturbance rejection is zero, (5) free will paradox is genuinely contradictory"
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "ISO-002",
+      "ISO-003",
+      "ISO-012",
+      "ISO-013",
+      "ISO-016",
+      "ISO-033",
+      "ISO-022"
+    ],
+    "required_by": [
+      "ISO-036"
+    ],
+    "parallel_to": [
+      "ISO-033"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 48,
+    "total_edges": 20,
+    "dominant_domain": "Control Theory",
+    "dominant_chi": "G (Grace/Gravity)",
+    "connectivity_score": 9,
+    "one_sentence": "This document establishes a structural isomorphism between PID control theory and divine providence, showing that the three temporal modes of correction (proportional, integral, derivative) map to conscience, sanctification, and prophetic warning, resolving the sovereignty-free will paradox as a standard feature of closed-loop systems."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": true,
+      "how": "Grace (controller output) and Faith (trust enabling the loop) as complementary aspects of the feedback system"
+    },
+    "2_9_will_conservation": {
+      "active": true,
+      "how": "Free will preserved (plant dynamics) while sovereignty (controller) drives toward setpoint"
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Truth (error signal) and Coherence (setpoint) as the informational structure of the loop"
+    },
+    "4_7_love_relationship": {
+      "active": true,
+      "how": "Love (negative feedback as discipline) and Relationship (feedback loop structure) as stabilizing forces"
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Judgment (positive feedback) and Logos (information) as the destabilizing/corrective pair"
+    },
+    "pairs_active_count": 5
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 10
+    },
+    "repentance": {
+      "present": true,
+      "strength": 7
+    },
+    "truth": {
+      "present": true,
+      "strength": 8
+    },
+    "love": {
+      "present": true,
+      "strength": 8
+    },
+    "judgment": {
+      "present": true,
+      "strength": 8
+    },
+    "logos": {
+      "present": true,
+      "strength": 7
+    },
+    "righteousness": {
+      "present": true,
+      "strength": 6
+    },
+    "faith": {
+      "present": true,
+      "strength": 7
+    },
+    "atonement": {
+      "present": true,
+      "strength": 5
+    },
+    "christ": {
+      "present": true,
+      "strength": 9
+    },
+    "operators_present_count": 10
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "ISO-002 (Terminus Sui / Grace)",
+      "ISO-003 (Entropy / Sin)",
+      "ISO-012 (Sign Operator)",
+      "ISO-013 (Grace Operator)",
+      "ISO-016 (Eschatological Attractors)",
+      "ISO-033 (Pharmacology)"
+    ],
+    "read_after": [
+      "ISO-036 (Fluid Dynamics)"
+    ]
+  }
+}

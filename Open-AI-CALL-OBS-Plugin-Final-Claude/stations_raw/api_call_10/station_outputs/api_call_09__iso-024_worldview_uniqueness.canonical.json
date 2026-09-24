@@ -1,0 +1,604 @@
+{
+  "definitions": [
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A mapping between two systems that shows they have the same structure or pattern.",
+      "example": "Like how a map of a subway system and the actual subway lines have the same connections, even though the map is not the real thing.",
+      "grade_level": "college",
+      "first_appearance": "ID: ISO-024"
+    },
+    {
+      "term": "boundary conditions",
+      "category": "physics",
+      "definition": "Rules or limits that a solution must follow at the edges of a problem.",
+      "example": "Like saying a race car must stay on the track and not go over the wall.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "simultaneous equations",
+      "category": "math",
+      "definition": "A set of equations that must all be true at the same time, and you solve them together.",
+      "example": "Like figuring out how many apples and oranges you have if you know the total fruit and the total cost.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "generic",
+      "category": "academic",
+      "definition": "In a general or typical case, not a special one.",
+      "example": "Usually, if you have two clues, you can find two missing numbers.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "unique solution",
+      "category": "math",
+      "definition": "Only one answer that works for all the conditions.",
+      "example": "Like a combination lock that opens with exactly one number sequence.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "constrain",
+      "category": "academic",
+      "definition": "To limit or restrict the possibilities.",
+      "example": "Like a fence that keeps a dog in the yard.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "solution space",
+      "category": "math",
+      "definition": "The set of all possible answers that could work.",
+      "example": "All the different routes you could take to get from home to school.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "exclusivity",
+      "category": "theology",
+      "definition": "The claim that only one religion or belief is completely true.",
+      "example": "Saying only one key opens a certain door.",
+      "grade_level": "10",
+      "first_appearance": "Concept B"
+    },
+    {
+      "term": "ultimate reality",
+      "category": "philosophy",
+      "definition": "The most basic, final truth about what exists.",
+      "example": "Like asking what everything is made of at the deepest level.",
+      "grade_level": "college",
+      "first_appearance": "Concept B"
+    },
+    {
+      "term": "structural requirements",
+      "category": "framework",
+      "definition": "Necessary features or conditions that a system must have to work.",
+      "example": "A car needs wheels and an engine to be a car.",
+      "grade_level": "college",
+      "first_appearance": "Concept B"
+    },
+    {
+      "term": "viable",
+      "category": "academic",
+      "definition": "Able to work or succeed.",
+      "example": "A plant is viable if it can grow in the soil.",
+      "grade_level": "10",
+      "first_appearance": "Structure"
+    },
+    {
+      "term": "revelation",
+      "category": "theology",
+      "definition": "When God shows truth to people.",
+      "example": "Like a teacher giving you the answer to a test.",
+      "grade_level": "10",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "derive",
+      "category": "academic",
+      "definition": "To get or figure out from something else.",
+      "example": "Like figuring out the recipe from tasting the cake.",
+      "grade_level": "10",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "ex nihilo",
+      "category": "theology",
+      "definition": "Latin for 'out of nothing' — creating something from nothing.",
+      "example": "Like a magician pulling a rabbit from an empty hat.",
+      "grade_level": "college",
+      "first_appearance": "What Are the 8 Boundary Conditions?"
+    },
+    {
+      "term": "emanationist systems",
+      "category": "theology",
+      "definition": "Beliefs that the universe flows out from God like light from a lamp, not made from nothing.",
+      "example": "Like how heat comes from a fire without the fire being used up.",
+      "grade_level": "college",
+      "first_appearance": "What Are the 8 Boundary Conditions?"
+    },
+    {
+      "term": "transcendence",
+      "category": "theology",
+      "definition": "God being beyond and above the universe, not limited by it.",
+      "example": "Like an author being outside the story they wrote.",
+      "grade_level": "college",
+      "first_appearance": "What Are the 8 Boundary Conditions?"
+    },
+    {
+      "term": "immanence",
+      "category": "theology",
+      "definition": "God being present and active within the universe.",
+      "example": "Like the author being a character inside the story.",
+      "grade_level": "college",
+      "first_appearance": "What Are the 8 Boundary Conditions?"
+    },
+    {
+      "term": "deism",
+      "category": "theology",
+      "definition": "Belief that God created the universe but does not interact with it.",
+      "example": "Like a clockmaker who winds the clock and leaves it alone.",
+      "grade_level": "10",
+      "first_appearance": "What Are the 8 Boundary Conditions?"
+    },
+    {
+      "term": "pantheism",
+      "category": "theology",
+      "definition": "Belief that God is everything and everything is God.",
+      "example": "Like saying the ocean is the same as every wave in it.",
+      "grade_level": "10",
+      "first_appearance": "What Are the 8 Boundary Conditions?"
+    },
+    {
+      "term": "moral realism",
+      "category": "philosophy",
+      "definition": "The idea that right and wrong are real facts, not just opinions.",
+      "example": "Like saying 'murder is wrong' is as true as 'water is wet'.",
+      "grade_level": "college",
+      "first_appearance": "What Are the 8 Boundary Conditions?"
+    },
+    {
+      "term": "moral relativism",
+      "category": "philosophy",
+      "definition": "The idea that right and wrong depend on culture or personal opinion.",
+      "example": "Like saying 'murder is wrong for you but maybe not for someone else'.",
+      "grade_level": "college",
+      "first_appearance": "What Are the 8 Boundary Conditions?"
+    },
+    {
+      "term": "free will",
+      "category": "philosophy",
+      "definition": "The ability to make choices that are not forced by anything else.",
+      "example": "Like choosing chocolate or vanilla ice cream without anyone making you.",
+      "grade_level": "10",
+      "first_appearance": "What Are the 8 Boundary Conditions?"
+    },
+    {
+      "term": "hard determinism",
+      "category": "philosophy",
+      "definition": "The belief that every event, including your choices, is completely caused by prior events, so free will is an illusion.",
+      "example": "Like a domino that has to fall because the one before it pushed it.",
+      "grade_level": "college",
+      "first_appearance": "What Are the 8 Boundary Conditions?"
+    },
+    {
+      "term": "grace",
+      "category": "theology",
+      "definition": "Unearned help or favor from God.",
+      "example": "Like a teacher giving you a passing grade even though you failed the test.",
+      "grade_level": "10",
+      "first_appearance": "What Are the 8 Boundary Conditions?"
+    },
+    {
+      "term": "closed systems",
+      "category": "physics",
+      "definition": "A system that does not exchange anything (like energy or matter) with the outside.",
+      "example": "Like a sealed jar with no holes.",
+      "grade_level": "college",
+      "first_appearance": "What Are the 8 Boundary Conditions?"
+    },
+    {
+      "term": "Trinitarian structure",
+      "category": "theology",
+      "definition": "The Christian belief that God is three persons (Father, Son, Holy Spirit) in one being.",
+      "example": "Like water being ice, liquid, and steam but still H2O.",
+      "grade_level": "10",
+      "first_appearance": "What Are the 8 Boundary Conditions?"
+    },
+    {
+      "term": "unitarianism",
+      "category": "theology",
+      "definition": "Belief that God is one person, not three.",
+      "example": "Like saying God is just one person, like a single king.",
+      "grade_level": "10",
+      "first_appearance": "What Are the 8 Boundary Conditions?"
+    },
+    {
+      "term": "incarnation",
+      "category": "theology",
+      "definition": "God becoming a human being, as Christians believe Jesus was God in human form.",
+      "example": "Like an author writing themselves into their own story as a character.",
+      "grade_level": "10",
+      "first_appearance": "What Are the 8 Boundary Conditions?"
+    },
+    {
+      "term": "monotheisms",
+      "category": "theology",
+      "definition": "Religions that believe in only one God.",
+      "example": "Christianity, Islam, and Judaism are monotheisms.",
+      "grade_level": "10",
+      "first_appearance": "What Are the 8 Boundary Conditions?"
+    },
+    {
+      "term": "constraint set",
+      "category": "math",
+      "definition": "The collection of all rules or limits that must be followed.",
+      "example": "Like all the rules of a board game.",
+      "grade_level": "college",
+      "first_appearance": "Element-by-Element Mapping"
+    },
+    {
+      "term": "disqualification criteria",
+      "category": "academic",
+      "definition": "Rules that tell you when something is not allowed or fails.",
+      "example": "Like a rule that says you must be over 5 feet tall to ride a roller coaster.",
+      "grade_level": "10",
+      "first_appearance": "Element-by-Element Mapping"
+    },
+    {
+      "term": "non-circularity requirement",
+      "category": "academic",
+      "definition": "The need for evidence or reasoning that does not assume the conclusion.",
+      "example": "Like not saying 'the Bible is true because the Bible says it is true'.",
+      "grade_level": "college",
+      "first_appearance": "Element-by-Element Mapping"
+    },
+    {
+      "term": "objectivity requirement",
+      "category": "academic",
+      "definition": "The need for facts or criteria that are not influenced by personal feelings or biases.",
+      "example": "Like using a ruler to measure length instead of guessing.",
+      "grade_level": "college",
+      "first_appearance": "Element-by-Element Mapping"
+    },
+    {
+      "term": "over-determination",
+      "category": "math",
+      "definition": "Having more rules than needed to find a single answer, which can make the answer unique.",
+      "example": "Like having three clues that all point to the same suspect.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "constraint-satisfaction argument",
+      "category": "framework",
+      "definition": "An argument that shows something is true because it meets all the required conditions.",
+      "example": "Like proving a key fits a lock because it turns all the tumblers.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "rational warrant",
+      "category": "philosophy",
+      "definition": "Good reasons that make a belief reasonable to hold.",
+      "example": "Like having evidence that it will rain before you take an umbrella.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "epistemically irrational",
+      "category": "philosophy",
+      "definition": "Believing something without good reasons or against the evidence.",
+      "example": "Like believing the earth is flat despite all the photos from space.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "swap test",
+      "category": "framework",
+      "definition": "A test that checks if you can replace one thing with another and still get the same result.",
+      "example": "Like trying a different key in a lock to see if it also opens.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "substitutable",
+      "category": "academic",
+      "definition": "Able to be replaced by something else.",
+      "example": "Like using margarine instead of butter in a recipe.",
+      "grade_level": "10",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "audited",
+      "category": "academic",
+      "definition": "Checked carefully for correctness or bias.",
+      "example": "Like having a second person check your math homework.",
+      "grade_level": "10",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "perturbations",
+      "category": "physics",
+      "definition": "Small changes or disturbances to a system.",
+      "example": "Like nudging a spinning top to see if it wobbles.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A (Mathematics)"
+    },
+    {
+      "term": "falsifiable",
+      "category": "academic",
+      "definition": "Able to be proven wrong by evidence or experiment.",
+      "example": "Like the claim 'all swans are white' can be proven false by finding one black swan.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B (Theology)"
+    },
+    {
+      "term": "strawman versions",
+      "category": "academic",
+      "definition": "A weak or incorrect version of someone's argument that is easy to attack.",
+      "example": "Like saying 'people who exercise are just trying to show off' instead of addressing their real reasons.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B (Theology)"
+    },
+    {
+      "term": "bidirectional",
+      "category": "academic",
+      "definition": "Going in both directions.",
+      "example": "Like a two-way street where traffic flows both ways.",
+      "grade_level": "10",
+      "first_appearance": "Bidirectional"
+    },
+    {
+      "term": "correspondence",
+      "category": "academic",
+      "definition": "A matching or relationship between two things.",
+      "example": "Like how a key matches a lock.",
+      "grade_level": "10",
+      "first_appearance": "Bidirectional"
+    },
+    {
+      "term": "contaminated",
+      "category": "academic",
+      "definition": "Made impure or biased by something unwanted.",
+      "example": "Like water with dirt in it.",
+      "grade_level": "10",
+      "first_appearance": "Falsification"
+    },
+    {
+      "term": "tautologically true",
+      "category": "philosophy",
+      "definition": "A statement that is true by definition, but gives no new information.",
+      "example": "Like saying 'all bachelors are unmarried' — it's true but tells you nothing new.",
+      "grade_level": "college",
+      "first_appearance": "Falsification"
+    },
+    {
+      "term": "circular",
+      "category": "academic",
+      "definition": "An argument that assumes what it is trying to prove.",
+      "example": "Like saying 'the book is true because it was written by God, and we know it was written by God because the book says so'.",
+      "grade_level": "10",
+      "first_appearance": "Falsification"
+    },
+    {
+      "term": "confirmation bias",
+      "category": "academic",
+      "definition": "The tendency to look for or interpret evidence in a way that supports what you already believe.",
+      "example": "Like only reading news that agrees with your political views.",
+      "grade_level": "college",
+      "first_appearance": "Honest Assessment"
+    },
+    {
+      "term": "burden of proof",
+      "category": "academic",
+      "definition": "The responsibility to provide evidence for a claim.",
+      "example": "Like in court, the prosecutor has to prove the defendant is guilty.",
+      "grade_level": "10",
+      "first_appearance": "Honest Assessment"
+    },
+    {
+      "term": "salvage",
+      "category": "academic",
+      "definition": "To save or rescue something from failure.",
+      "example": "Like fixing a broken toy so it works again.",
+      "grade_level": "10",
+      "first_appearance": "Honest Assessment"
+    },
+    {
+      "term": "hostile reviewers",
+      "category": "academic",
+      "definition": "People who are critical or opposed to the idea, who will look for flaws.",
+      "example": "Like having a rival team check your game strategy.",
+      "grade_level": "college",
+      "first_appearance": "Honest Assessment"
+    },
+    {
+      "term": "Theravada",
+      "category": "language",
+      "definition": "A major branch of Buddhism, common in Southeast Asia, that focuses on individual enlightenment.",
+      "example": "Like a school that emphasizes studying hard on your own.",
+      "grade_level": "college",
+      "first_appearance": "Buddhism"
+    },
+    {
+      "term": "Mahayana",
+      "category": "language",
+      "definition": "A major branch of Buddhism, common in East Asia, that emphasizes helping all beings achieve enlightenment.",
+      "example": "Like a school that encourages group projects and helping others.",
+      "grade_level": "college",
+      "first_appearance": "Buddhism"
+    },
+    {
+      "term": "bodhisattva",
+      "category": "language",
+      "definition": "In Mahayana Buddhism, a person who delays their own enlightenment to help others.",
+      "example": "Like a lifeguard who stays in the water to save swimmers instead of going to the beach themselves.",
+      "grade_level": "college",
+      "first_appearance": "Buddhism"
+    },
+    {
+      "term": "Buddha-nature",
+      "category": "theology",
+      "definition": "The potential for enlightenment that exists in all beings.",
+      "example": "Like an acorn having the potential to become an oak tree.",
+      "grade_level": "college",
+      "first_appearance": "Buddhism"
+    },
+    {
+      "term": "Pure Land",
+      "category": "language",
+      "definition": "A school of Mahayana Buddhism that focuses on faith in Amida Buddha to be reborn in a pure paradise.",
+      "example": "Like believing that saying a special name will get you into a perfect world after death.",
+      "grade_level": "college",
+      "first_appearance": "Buddhism"
+    },
+    {
+      "term": "Amida Buddha",
+      "category": "language",
+      "definition": "A celestial Buddha in Pure Land Buddhism who made vows to save all who call on him.",
+      "example": "Like a superhero who promises to rescue anyone who says his name.",
+      "grade_level": "college",
+      "first_appearance": "Buddhism"
+    },
+    {
+      "term": "salvific vow",
+      "category": "theology",
+      "definition": "A promise made by a divine being to save others.",
+      "example": "Like a lifeguard promising to save anyone who falls in the water.",
+      "grade_level": "college",
+      "first_appearance": "Buddhism"
+    },
+    {
+      "term": "structurally isomorphic",
+      "category": "math",
+      "definition": "Having the same structure or pattern, even if the details are different.",
+      "example": "Like a chessboard and a checkerboard having the same grid pattern.",
+      "grade_level": "college",
+      "first_appearance": "Buddhism"
+    },
+    {
+      "term": "Sunni Ash'arism",
+      "category": "language",
+      "definition": "A school of Islamic theology that emphasizes God's absolute power and control over everything.",
+      "example": "Like believing that every event, even a leaf falling, is directly caused by God.",
+      "grade_level": "college",
+      "first_appearance": "Islam"
+    },
+    {
+      "term": "occasionalism",
+      "category": "philosophy",
+      "definition": "The belief that God is the only real cause of every event, and physical things are just occasions for God to act.",
+      "example": "Like a puppet master directly moving every string, not just setting up a machine.",
+      "grade_level": "college",
+      "first_appearance": "Islam"
+    },
+    {
+      "term": "Sufism",
+      "category": "language",
+      "definition": "A mystical branch of Islam that seeks a direct, personal experience of God.",
+      "example": "Like a Christian who prays to feel close to God, not just follow rules.",
+      "grade_level": "college",
+      "first_appearance": "Islam"
+    },
+    {
+      "term": "mystical union",
+      "category": "theology",
+      "definition": "A direct, personal experience of being one with God or ultimate reality.",
+      "example": "Like a drop of water merging with the ocean.",
+      "grade_level": "college",
+      "first_appearance": "Islam"
+    },
+    {
+      "term": "fana/baqa",
+      "category": "language",
+      "definition": "Sufi terms: fana means 'annihilation' of the self in God; baqa means 'subsistence' or living on in God.",
+      "example": "Like a candle flame being absorbed into a larger fire (fana) and then burning as part of it (baqa).",
+      "grade_level": "college",
+      "first_appearance": "Islam"
+    },
+    {
+      "term": "Advaita Vedanta",
+      "category": "language",
+      "definition": "A school of Hindu philosophy that teaches that only Brahman (ultimate reality) is real, and the world is an illusion.",
+      "example": "Like saying the only real thing is the ocean, and waves are just temporary shapes.",
+      "grade_level": "college",
+      "first_appearance": "Hinduism"
+    },
+    {
+      "term": "Brahman",
+      "category": "language",
+      "definition": "In Hinduism, the ultimate, unchanging reality behind everything.",
+      "example": "Like the screen that a movie is projected on — the movie changes, but the screen stays the same.",
+      "grade_level": "college",
+      "first_appearance": "Hinduism"
+    },
+    {
+      "term": "Vishishtadvaita",
+      "category": "language",
+      "definition": "A school of Hindu philosophy that says Brahman is personal, and souls and matter are real parts of Brahman.",
+      "example": "Like saying the ocean is one thing, but the waves and fish are real parts of it.",
+      "grade_level": "college",
+      "first_appearance": "Hinduism"
+    },
+    {
+      "term": "Ramanuja",
+      "category": "language",
+      "definition": "An 11th-century Hindu philosopher who taught Vishishtadvaita.",
+      "example": "Like a famous teacher who started a new school of thought.",
+      "grade_level": "college",
+      "first_appearance": "Hinduism"
+    },
+    {
+      "term": "Dvaita",
+      "category": "language",
+      "definition": "A school of Hindu philosophy that says God, souls, and matter are eternally separate and real.",
+      "example": "Like saying the king, the citizens, and the castle are all real and distinct.",
+      "grade_level": "college",
+      "first_appearance": "Hinduism"
+    },
+    {
+      "term": "Madhva",
+      "category": "language",
+      "definition": "A 13th-century Hindu philosopher who taught Dvaita.",
+      "example": "Like another famous teacher with a different view from Ramanuja.",
+      "grade_level": "college",
+      "first_appearance": "Hinduism"
+    },
+    {
+      "term": "dualistic theism",
+      "category": "theology",
+      "definition": "Belief that God and the world are two separate realities, not the same thing.",
+      "example": "Like a potter and the clay pot being different things.",
+      "grade_level": "college",
+      "first_appearance": "Hinduism"
+    },
+    {
+      "term": "category distinction",
+      "category": "academic",
+      "definition": "A difference in kind or type, not just degree.",
+      "example": "Like the difference between a fruit and a vegetable, not just between an apple and an orange.",
+      "grade_level": "college",
+      "first_appearance": "Problem 3"
+    },
+    {
+      "term": "theological priors",
+      "category": "theology",
+      "definition": "Beliefs about God that someone already holds before looking at new evidence.",
+      "example": "Like a scientist who already believes in God before doing an experiment.",
+      "grade_level": "college",
+      "first_appearance": "Problem 4"
+    },
+    {
+      "term": "smuggled into the premises",
+      "category": "academic",
+      "definition": "When a conclusion is hidden in the starting assumptions of an argument.",
+      "example": "Like saying 'this drug works because it heals people' when you already assumed it heals people.",
+      "grade_level": "college",
+      "first_appearance": "Problem 4"
+    },
+    {
+      "term": "

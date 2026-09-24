@@ -1,0 +1,339 @@
+{
+  "spec_version": "1.0",
+  "page_id": "cmp-07-the-fundable-paper",
+  "page_title": "FROM AXIOM TO COHERENCE",
+  "page_slug": "cmp-07-the-fundable-paper",
+  "source_file": "cmp-07-the-fundable-paper.md",
+  "generated_by": "adversarial_auditor_v1",
+  "generated_date": "2025-04-08",
+  "adversarial_audit": {
+    "fatal_issue": "The paper claims a structural correspondence between the Weak Nuclear Force and Moral Conservation with six mapped events, but does not provide the formal mapping or show that the mapping is one-to-one rather than analogical. This is the central claim of the method, and without explicit formalization, the paper fails to distinguish itself from metaphor.",
+    "major_issue": "The Master Equation dC/dt = O\u00b7G(1\u2212C) \u2212 S\u00b7C is presented as derived independently from three domains, but the derivations are not shown, and the equation's application to social coherence data is not derived from first principles\u2014it is fitted post hoc. The paper does not demonstrate that the equation is structurally necessary, only that it fits.",
+    "sharpening_issue": "The paper uses '5.7\u03c3 significance' for the social coherence break but does not specify the statistical test, the null hypothesis, or the correction for multiple comparisons. This is a critical detail for reproducibility.",
+    "smart_hostile_physicist_check": {
+      "primary_confusion": "analogy",
+      "diagnosis": "The mapping of Weak Nuclear Force to Moral Conservation is presented as structural, but the paper does not show that the mathematical structures (e.g., gauge groups, conservation laws) are isomorphic. The physicist will demand to see the formal mapping, not just a list of analogies.",
+      "sentence_to_rewrite": "When this method was applied to the Weak Nuclear Force and Moral Conservation, six independent structural events mapped without contradiction.",
+      "required_fix": "Provide the explicit formal mapping, including the mathematical structures (e.g., SU(2) gauge group, Noether currents) and show that the mapping is one-to-one, not merely suggestive."
+    },
+    "physics_process_check": {
+      "does_mirror_physics_process": true,
+      "physics_process_named": "Weak Nuclear Force (parity violation, conservation laws, spontaneous decay, Noether's theorem)",
+      "one_to_one_verdict": "broken",
+      "where_mapping_holds": "The paper claims six events map, but does not show the mapping for any of them.",
+      "where_mapping_breaks": "The mapping is not formalized; the paper only lists terms (parity violation -> moral rupture, etc.) without showing that the underlying mathematical structures correspond.",
+      "sentence_to_rewrite": "Parity violation maps to irreversible moral rupture. Conservation laws map to moral debt preservation. The hidden particle maps to invisible moral remainder. Spontaneous decay maps to sin nature. Noether's theorem guarantees conservation via time-translation symmetry.",
+      "required_fix": "For each mapped event, provide the formal mathematical structure from physics (e.g., the parity operator, the conserved current) and show the corresponding structure in the moral domain, with a proof of isomorphism or at least a rigorous mapping."
+    },
+    "strongest_non_framework_alternative": "The social coherence data (1968-1973 break) could be explained by well-documented sociological factors (e.g., cultural shifts, economic changes, policy changes) without invoking any theological framework. The Amish control group is suggestive but not definitive, as the Amish are a small, isolated community that may not be representative.",
+    "what_would_force_public_narrowing": "A formal proof that the Master Equation is the unique equation governing coherence dynamics in all domains, or a demonstration that the mapping between Weak Nuclear Force and Moral Conservation is one-to-one and not just analogical.",
+    "rewrite_priority": "fatal"
+  },
+  "structure_audit": {
+    "opening_hook_strength": 8,
+    "logical_flow_strength": 6,
+    "transition_quality": 7,
+    "does_opening_promise_match_ending": true,
+    "sequence_verdict": "repairable",
+    "best_order_step_by_step": [
+      "Opening hook",
+      "Credential problem and answer",
+      "The gap",
+      "The method",
+      "The equation",
+      "The evidence",
+      "The formal layer",
+      "The self-audit",
+      "The ask"
+    ],
+    "flow_breaks": [
+      {
+        "from_section": "The method",
+        "to_section": "The equation",
+        "problem": "The method section introduces structural correspondence testing but does not explain how the Master Equation arises from it. The equation seems to come from a different method (curve-fitting).",
+        "fix": "Explicitly connect the structural correspondence method to the derivation of the Master Equation, showing that the equation is a consequence of the method, not an independent discovery."
+      }
+    ],
+    "sentence_that_carries_too_much_weight": "When this method was applied to the Weak Nuclear Force and Moral Conservation, six independent structural events mapped without contradiction.",
+    "why_it_carries_too_much_weight": "This sentence is the primary evidence for the method's success, but it is not supported by any formal mapping or proof. The entire credibility of the framework rests on this claim, yet it is presented as a bare assertion."
+  },
+  "framework_presence": {
+    "master_equation": [
+      {
+        "present": true,
+        "quote": "dC/dt = O \u00b7 G(1 \u2212 C) \u2212 S \u00b7 C",
+        "function": "Central equation claimed to govern coherence dynamics across domains."
+      }
+    ],
+    "axioms": [
+      {
+        "id": "ten_presuppositions",
+        "present": false,
+        "quote": "",
+        "function": "Mentioned as load-bearing but not listed or formalized."
+      }
+    ],
+    "lean4": [
+      {
+        "present": true,
+        "quote": "287 named theorems. Zero sorry. Zero admit. 16 Lean files. 24 source modules.",
+        "function": "Provides formal verification of theorems."
+      }
+    ],
+    "claims_layer": [
+      {
+        "present": true,
+        "quote": "The Cross Uniqueness Result formalizes five conditions for perfect moral repair...",
+        "function": "Claims a unique solution to moral repair."
+      },
+      {
+        "present": true,
+        "quote": "The Adversarial Discriminator encodes rival structural hypotheses... and proves they fail the same formal gate.",
+        "function": "Claims to eliminate rival hypotheses."
+      },
+      {
+        "present": true,
+        "quote": "The Maxwell/Trinity Isomorphism proves that Maxwell's original quaternion electromagnetic field structure and the Nicene Trinitarian relational model satisfy the same five formal conditions.",
+        "function": "Claims an isomorphism between physics and theology."
+      }
+    ],
+    "proof_layer": [
+      {
+        "present": false,
+        "quote": "",
+        "function": "No proofs are provided in the paper; only claims of proofs."
+      }
+    ],
+    "tests_layer": [
+      {
+        "present": false,
+        "quote": "",
+        "function": "No tests are described; only results are claimed."
+      }
+    ],
+    "laws_layer": [
+      {
+        "id": "Laws 1,2,3,6,8,10",
+        "present": false,
+        "quote": "",
+        "function": "Mentioned as needing completion but not defined."
+      }
+    ]
+  },
+  "paper_changing_questions": [
+    {
+      "question": "What is the explicit formal mapping between the Weak Nuclear Force and Moral Conservation? Provide the mathematical structures (e.g., gauge group, Lagrangian, Noether current) and show that the mapping is one-to-one.",
+      "why_it_matters": "This is the central claim of the method. Without a formal mapping, the paper is just analogy.",
+      "if_unanswered_then": "The paper cannot claim structural correspondence; it remains metaphorical.",
+      "severity": "fatal"
+    },
+    {
+      "question": "How was the Master Equation derived from thermodynamics, population dynamics, and information theory? Show the derivations step by step.",
+      "why_it_matters": "The equation is presented as a convergence, but without derivations, it is just curve-fitting.",
+      "if_unanswered_then": "The equation is not justified as a universal law.",
+      "severity": "fatal"
+    },
+    {
+      "question": "What is the statistical test used to obtain the 5.7\u03c3 significance for the social coherence break? Specify the null hypothesis, the test statistic, and whether multiple comparisons were corrected.",
+      "why_it_matters": "5.7\u03c3 is an extraordinary claim that requires extraordinary evidence. Without details, it is not reproducible.",
+      "if_unanswered_then": "The claim is not credible.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Is the mapping between the Weak Nuclear Force and Moral Conservation one-to-one? If so, show that every element of the physics model has a unique counterpart in the moral model and vice versa.",
+      "why_it_matters": "One-to-one mapping is required for structural correspondence, not just analogy.",
+      "if_unanswered_then": "The mapping is broken.",
+      "severity": "major"
+    },
+    {
+      "question": "Does the Master Equation actually mirror a known physics process (e.g., driven-dissipative systems)? If so, name the process and show that the mapping is one-to-one.",
+      "why_it_matters": "The paper claims the equation is derived from physics, but does not show that the physics process is mirrored.",
+      "if_unanswered_then": "The equation is not grounded in physics.",
+      "severity": "major"
+    },
+    {
+      "question": "What are the ten presuppositions? List them and justify why they are necessary and sufficient.",
+      "why_it_matters": "The paper claims they are load-bearing but does not state them.",
+      "if_unanswered_then": "The framework's foundations are opaque.",
+      "severity": "major"
+    },
+    {
+      "question": "How does the Adversarial Discriminator encode rival hypotheses? Provide the formal encoding for pantheism, deism, and simulation, and show the proof that they fail.",
+      "why_it_matters": "This is a key claim of the framework's robustness.",
+      "if_unanswered_then": "The claim is unsubstantiated.",
+      "severity": "major"
+    },
+    {
+      "question": "What are the six leak points? List them and explain why they are not fatal.",
+      "why_it_matters": "The paper mentions them as load-bearing but does not address them.",
+      "if_unanswered_then": "The self-audit is incomplete.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "How was the Genesis lifespan data fitted? Provide the fitting method, error bars, and justification for the exponential model.",
+      "why_it_matters": "The R\u00b2 = 0.888 is impressive but could be overfitting.",
+      "if_unanswered_then": "The fit is not validated.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "What is the formal definition of 'coherence' in the social context? How is it measured?",
+      "why_it_matters": "Without a definition, the diagnostic is not reproducible.",
+      "if_unanswered_then": "The social coherence results are not interpretable.",
+      "severity": "sharpening"
+    }
+  ],
+  "sentence_annotations": [
+    {
+      "anchor_quote": "When this method was applied to the Weak Nuclear Force and Moral Conservation, six independent structural events mapped without contradiction.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Central claim without formal support.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "weak_force_mapping"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "dC/dt = O \u00b7 G(1 \u2212 C) \u2212 S \u00b7 C",
+      "annotation_type": "math",
+      "ui_color": "gold",
+      "why_flagged": "Equation presented without derivation or justification.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "master_equation"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "eq1"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The diagnostic identified a massive, synchronized structural break across all nine domains simultaneously between 1968 and 1973, at 5.7\u03c3 significance.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Extraordinary claim without statistical details.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "social_break"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The Cross Uniqueness Result formalizes five conditions for perfect moral repair...",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Claim of uniqueness without showing the formal proof.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "cross_uniqueness"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [
+          "cross_uniqueness_theorem"
+        ],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The Adversarial Discriminator encodes rival structural hypotheses... and proves they fail the same formal gate that the theistic structure passes.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Claim of eliminating rivals without showing the encoding or proof.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "adversarial_discriminator"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [
+          "adversarial_theorem"
+        ],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The Maxwell/Trinity Isomorphism proves that Maxwell's original quaternion electromagnetic field structure and the Nicene Trinitarian relational model satisfy the same five formal conditions simultaneously.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Claim of isomorphism without showing the formal mapping.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "maxwell_trinity"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [
+          "maxwell_trinity_theorem"
+        ],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Post-Flood patriarchal lifespans in Genesis follow C(t) = 337e^(\u2212t/214) + 93. Exponential decay with an asymptotic floor. R\u00b2 = 0.888.",
+      "annotation_type": "math",
+      "ui_color": "gold",
+      "why_flagged": "Fit presented without error analysis or model comparison.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "genesis_fit"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "eq2"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The Flood itself registers as a structural changepoint. F-statistic = 163.34. p = 2.26 \u00d7 10\u207b\u00b9\u00b9.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Changepoint analysis without specifying the method or assumptions.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "flood_changepoint"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "287 named theorems. Zero sorry. Zero admit. 16 Lean files. 24 source modules.",
+      "annotation_type": "clarification",
+      "ui_color": "violet",
+      "why_flagged": "Impressive but does not verify that the theorems correspond to the claims in the paper.",
+      "rewrite_needed": false,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    }
+  ]
+}

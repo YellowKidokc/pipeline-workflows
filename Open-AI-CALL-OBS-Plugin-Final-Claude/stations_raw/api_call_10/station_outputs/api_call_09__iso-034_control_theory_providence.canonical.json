@@ -1,0 +1,411 @@
+{
+  "definitions": [
+    {
+      "term": "Isomorphism",
+      "category": "math",
+      "definition": "A mapping between two systems that shows they have the same structure or pattern, even if they look different on the surface.",
+      "example": "A map of a subway system is isomorphic to the actual subway lines because the connections between stations are the same, even though the map is not the real thing.",
+      "grade_level": "college",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "Control Theory",
+      "category": "physics",
+      "definition": "A branch of engineering that studies how to make systems behave in a desired way by using feedback to correct errors.",
+      "example": "A thermostat uses control theory to keep your room at the temperature you set by turning the heater on and off.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "PID controller",
+      "category": "physics",
+      "definition": "A type of controller that uses three methods to correct errors: Proportional (based on current error), Integral (based on past errors), and Derivative (based on how fast the error is changing).",
+      "example": "A self-driving car uses a PID controller to stay in its lane: it corrects based on how far off it is now (P), how long it has been off (I), and how quickly it is drifting (D).",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Transfer function",
+      "category": "physics",
+      "definition": "A mathematical formula that describes how a system responds to inputs, like a recipe that tells you what output you get for a given input.",
+      "example": "If you press the gas pedal in a car (input), the transfer function describes how fast the car will go (output).",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Setpoint",
+      "category": "physics",
+      "definition": "The desired target value that a control system tries to reach and maintain.",
+      "example": "The temperature you set on your thermostat, like 72\u00b0F, is the setpoint.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Disturbance rejection",
+      "category": "physics",
+      "definition": "The ability of a control system to ignore or reduce the effect of unwanted outside influences.",
+      "example": "A noise-canceling headphone rejects the disturbance of background noise so you can hear your music clearly.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Controllability",
+      "category": "physics",
+      "definition": "Whether a system can be moved from any starting state to any desired state using the right inputs.",
+      "example": "A car is controllable because you can steer it to any parking spot in a lot, as long as you have enough space.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Observability",
+      "category": "physics",
+      "definition": "Whether you can figure out what is happening inside a system just by looking at its outputs.",
+      "example": "You can tell if a person is sick (internal state) by their symptoms (outputs) like a fever or cough.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Providence",
+      "category": "theology",
+      "definition": "The idea that God guides and takes care of everything in the universe, like a parent watching over a child.",
+      "example": "Believing that things happen for a reason and that God has a plan is trusting in providence.",
+      "grade_level": "10",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Sovereignty",
+      "category": "theology",
+      "definition": "The concept that God has ultimate authority and control over everything.",
+      "example": "A king has sovereignty over his kingdom, meaning he makes the final decisions.",
+      "grade_level": "10",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Predestination",
+      "category": "theology",
+      "definition": "The belief that God has already decided the final outcome or destiny of every person before they are born.",
+      "example": "Some people believe that God has predestined who will go to heaven.",
+      "grade_level": "10",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Free will",
+      "category": "philosophy",
+      "definition": "The ability of a person to make their own choices without being forced by outside forces.",
+      "example": "Choosing what to eat for breakfast is an exercise of free will.",
+      "grade_level": "9",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Sanctification",
+      "category": "theology",
+      "definition": "The process of becoming more holy or morally good over time, often with God's help.",
+      "example": "A person trying to be more patient and kind is going through sanctification.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Telos",
+      "category": "philosophy",
+      "definition": "The ultimate purpose or goal of something.",
+      "example": "The telos of a seed is to become a fully grown tree.",
+      "grade_level": "college",
+      "first_appearance": "Concept B"
+    },
+    {
+      "term": "Laplace domain",
+      "category": "math",
+      "definition": "A mathematical way of analyzing systems that change over time, using a special transformation to make calculations easier.",
+      "example": "It is like translating a sentence into a code that is easier to solve, then translating the answer back.",
+      "grade_level": "graduate",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Plant",
+      "category": "physics",
+      "definition": "In control theory, the system or process that is being controlled.",
+      "example": "In a cruise control system, the car is the plant that the controller tries to keep at a constant speed.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Proportional gain",
+      "category": "physics",
+      "definition": "A factor that determines how strongly a controller responds to the current error.",
+      "example": "If you are driving and you are slightly off-center, proportional gain is how much you turn the wheel to correct it right now.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Integral gain",
+      "category": "physics",
+      "definition": "A factor that determines how strongly a controller responds to errors that have built up over time.",
+      "example": "If you have been drifting off course for a while, integral gain increases the correction to finally get back on track.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Derivative gain",
+      "category": "physics",
+      "definition": "A factor that determines how strongly a controller responds to how fast the error is changing.",
+      "example": "If you are drifting off course quickly, derivative gain makes a bigger correction to prevent overshooting.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Nyquist stability criterion",
+      "category": "physics",
+      "definition": "A rule that tells whether a feedback system will stay stable or start oscillating out of control.",
+      "example": "It is like checking if a microphone and speaker setup will cause a screeching feedback loop.",
+      "grade_level": "graduate",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Open-loop transfer function",
+      "category": "physics",
+      "definition": "A mathematical description of a system without feedback, so it does not correct itself based on the output.",
+      "example": "A toaster that just heats for a set time, regardless of whether the toast is done, is an open-loop system.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Right-half-plane poles",
+      "category": "math",
+      "definition": "Mathematical points in a system's description that indicate it is unstable and will grow uncontrollably.",
+      "example": "Like a snowball rolling downhill that gets bigger and faster on its own.",
+      "grade_level": "graduate",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Steady-state error",
+      "category": "physics",
+      "definition": "The difference between the desired value and the actual value after the system has settled down.",
+      "example": "If your thermostat keeps the room at 70\u00b0F but you set it to 72\u00b0F, the steady-state error is 2\u00b0F.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "Prevenient grace",
+      "category": "theology",
+      "definition": "God's help that comes before a person makes a choice, preparing them to do good.",
+      "example": "It is like a coach giving you advice before you even start the race.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "Damping",
+      "category": "physics",
+      "definition": "A force that reduces oscillations or vibrations in a system, making it settle down smoothly.",
+      "example": "Shock absorbers on a car provide damping so the car does not keep bouncing after hitting a bump.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "Overshoot",
+      "category": "physics",
+      "definition": "When a system goes past its target before settling down.",
+      "example": "If you turn the shower knob too far and the water gets too hot before you adjust it, that is overshoot.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "Negative feedback",
+      "category": "physics",
+      "definition": "A process where the output of a system is used to reduce the difference between the actual and desired state, keeping things stable.",
+      "example": "A thermostat turns off the heater when the room reaches the set temperature, preventing it from getting too hot.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Positive feedback",
+      "category": "physics",
+      "definition": "A process where the output of a system amplifies the difference, causing it to grow and become unstable.",
+      "example": "A microphone held too close to a speaker creates a loud screech because the sound keeps getting amplified.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Topology",
+      "category": "math",
+      "definition": "The study of how parts of a system are connected or arranged, especially in terms of loops and pathways.",
+      "example": "The layout of a city's subway map shows the topology of the train lines.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Attenuate",
+      "category": "academic",
+      "definition": "To reduce the strength or effect of something.",
+      "example": "Sunglasses attenuate the brightness of the sun so you can see better.",
+      "grade_level": "10",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Loop gain",
+      "category": "physics",
+      "definition": "A measure of how much a signal is amplified as it goes around a feedback loop.",
+      "example": "If you speak into a microphone and the sound comes out louder, the loop gain is greater than 1.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Deism",
+      "category": "theology",
+      "definition": "The belief that God created the universe but does not actively interfere with it, like a clockmaker who winds a clock and lets it run.",
+      "example": "A deist believes God set the world in motion but does not answer prayers or perform miracles.",
+      "grade_level": "10",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Theism",
+      "category": "theology",
+      "definition": "The belief that God is actively involved in the world and interacts with people.",
+      "example": "A theist believes God answers prayers and guides events.",
+      "grade_level": "10",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "Paradox",
+      "category": "philosophy",
+      "definition": "A statement or situation that seems to contradict itself but might still be true.",
+      "example": "The saying 'less is more' is a paradox because it seems to say the opposite of what is expected.",
+      "grade_level": "10",
+      "first_appearance": "The Free Will Paradox Resolved"
+    },
+    {
+      "term": "Unforgivable sin",
+      "category": "theology",
+      "definition": "A sin that, according to some Christian beliefs, cannot be forgiven because it represents a complete and final rejection of God.",
+      "example": "In the Bible, Jesus talks about blasphemy against the Holy Spirit as an unforgivable sin.",
+      "grade_level": "10",
+      "first_appearance": "The Free Will Paradox Resolved"
+    },
+    {
+      "term": "Apostasy",
+      "category": "theology",
+      "definition": "The act of abandoning or renouncing one's religious faith.",
+      "example": "If someone who was a Christian decides they no longer believe in God, that is apostasy.",
+      "grade_level": "college",
+      "first_appearance": "The Stability Question (Apostasy)"
+    },
+    {
+      "term": "Phase margin",
+      "category": "physics",
+      "definition": "A measure of how much delay or phase shift a feedback system can handle before it becomes unstable.",
+      "example": "It is like how much extra slack a rope has before it breaks.",
+      "grade_level": "graduate",
+      "first_appearance": "The Stability Question (Apostasy)"
+    },
+    {
+      "term": "Gain margin",
+      "category": "physics",
+      "definition": "A measure of how much the amplification in a feedback system can increase before it becomes unstable.",
+      "example": "It is like how much louder you can turn up a microphone before it starts screeching.",
+      "grade_level": "graduate",
+      "first_appearance": "The Stability Question (Apostasy)"
+    },
+    {
+      "term": "Calvinist",
+      "category": "theology",
+      "definition": "A follower of John Calvin's teachings, which emphasize God's complete control over salvation and that some people are predestined to be saved.",
+      "example": "Calvinists believe that once a person is truly saved, they cannot lose their salvation.",
+      "grade_level": "10",
+      "first_appearance": "The Stability Question (Apostasy)"
+    },
+    {
+      "term": "Arminian",
+      "category": "theology",
+      "definition": "A follower of Jacobus Arminius's teachings, which emphasize human free will and the possibility of losing salvation.",
+      "example": "Arminians believe that a person can choose to turn away from God after being saved.",
+      "grade_level": "college",
+      "first_appearance": "The Stability Question (Apostasy)"
+    },
+    {
+      "term": "Eternal security",
+      "category": "theology",
+      "definition": "The belief that once a person is truly saved, they can never lose their salvation.",
+      "example": "The phrase 'once saved, always saved' describes eternal security.",
+      "grade_level": "10",
+      "first_appearance": "The Stability Question (Apostasy)"
+    },
+    {
+      "term": "Formalize",
+      "category": "academic",
+      "definition": "To express something in a precise, structured, often mathematical way.",
+      "example": "A recipe formalizes the steps to bake a cake so anyone can follow them exactly.",
+      "grade_level": "10",
+      "first_appearance": "The Stability Question (Apostasy)"
+    },
+    {
+      "term": "Empirical",
+      "category": "academic",
+      "definition": "Based on observation or experience, not just theory.",
+      "example": "A doctor uses empirical evidence from tests to diagnose a disease.",
+      "grade_level": "10",
+      "first_appearance": "Test 1 \u2014 Prediction Constraint"
+    },
+    {
+      "term": "Falsifiability",
+      "category": "academic",
+      "definition": "The ability of a theory to be proven wrong by evidence or experiment.",
+      "example": "The statement 'all swans are white' is falsifiable because finding one black swan proves it false.",
+      "grade_level": "college",
+      "first_appearance": "Test 4 \u2014 Falsifiability Invitation"
+    },
+    {
+      "term": "Cybernetics",
+      "category": "physics",
+      "definition": "The study of how systems control themselves and communicate, especially through feedback loops.",
+      "example": "Cybernetics looks at how a thermostat, a robot, or even a living organism regulates itself.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "Phenomenology",
+      "category": "philosophy",
+      "definition": "The study of how things appear to our consciousness or experience, rather than what they are in reality.",
+      "example": "Phenomenology of a sunset is about the feeling of awe and beauty, not the physics of light.",
+      "grade_level": "college",
+      "first_appearance": "Classification"
+    },
+    {
+      "term": "Eschatological",
+      "category": "theology",
+      "definition": "Relating to the end of the world or the final destiny of humanity.",
+      "example": "Discussions about heaven, hell, and the apocalypse are eschatological.",
+      "grade_level": "college",
+      "first_appearance": "Classification"
+    },
+    {
+      "term": "Attractor",
+      "category": "math",
+      "definition": "A state or set of states that a system tends to move toward over time.",
+      "example": "A marble in a bowl will always roll to the bottom, which is the attractor.",
+      "grade_level": "college",
+      "first_appearance": "Classification"
+    },
+    {
+      "term": "Axiom",
+      "category": "academic",
+      "definition": "A basic statement or rule that is accepted as true without proof, used as a starting point for further reasoning.",
+      "example": "In geometry, 'a straight line is the shortest distance between two points' is an axiom.",
+      "grade_level": "10",
+      "first_appearance": "Axiom Dependencies"
+    }
+  ],
+  "stats": {
+    "total_terms_found": 47,
+    "by_category": {
+      "physics": 22,
+      "theology": 12,
+      "math": 4,
+      "philosophy": 3,
+      "framework": 0,
+      "academic": 5,
+      "language": 0
+    },
+    "highest_grade_level": "graduate",
+    "average_grade_level": "college",
+    "accessibility_score": 15
+  }
+}

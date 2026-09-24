@@ -1,0 +1,233 @@
+{
+  "spec_version": "1.0",
+  "page_id": "cns-02-the-evidence.canonical",
+  "page_title": "The Evidence",
+  "source_file": "cns-02-the-evidence.canonical.md",
+  "generated_by": "structural-isomorphism-analyzer",
+  "generated_date": "2025-04-14",
+  "highest_density_mapping": {
+    "iso_id": "iso-001",
+    "name": "Predictive Lead as Signal Detection",
+    "density_score": 0.75,
+    "verdict": "strongest available structural correspondence"
+  },
+  "isomorphisms": [
+    {
+      "iso_id": "iso-001",
+      "name": "Predictive Lead as Signal Detection",
+      "domain_a": "Biblical predictive claims (15 specific physical claims with ~2800-year lead)",
+      "domain_b": "Signal detection theory / statistical hypothesis testing (25 data points, pattern vs. coincidence)",
+      "chi_law": "The mapping preserves the role of 'evidence that exceeds chance expectation' \u2014 in domain A, the claims are treated as data points that form a pattern; in domain B, signal detection quantifies the probability that such a pattern arises from noise. The isomorphism holds if the biblical claims are treated as a set of independent, testable predictions whose cumulative probability under naturalism is extremely low.",
+      "does_mirror_physics_process": true,
+      "physics_process": "Signal detection theory: given a set of independent events with a known base rate, compute the probability that the observed pattern is due to chance. If p < 0.05, the pattern is considered a signal.",
+      "theological_phenomenon": "The cumulative weight of 15 specific, testable physical claims in ancient texts, confirmed centuries later, is presented as a signal that demands explanation beyond coincidence.",
+      "one_to_one_verdict": "partial",
+      "claimed_level": "level_2",
+      "aaa_level": "Moderate",
+      "density_mapped_events": 3,
+      "density_total_events": 4,
+      "density_score": 0.75,
+      "verdict": "strongest available structural correspondence",
+      "prediction": "If the pattern is a true signal, then additional independent predictions from the same source should also be confirmed.",
+      "prediction_verified": false,
+      "physics_process_steps": [
+        "Define the set of independent events (15 biblical claims).",
+        "Estimate the probability of each claim being correct by chance (very low for specific, counter-evidential claims).",
+        "Compute the cumulative probability of all 15 being correct under the null hypothesis (no special knowledge).",
+        "If cumulative probability is below threshold (e.g., 0.05), reject null hypothesis and infer a signal."
+      ],
+      "mapped_text_steps": [
+        "List the 15 specific physical claims from the Bible (e.g., universe beginning, expanding space, earth suspended in vacuum).",
+        "Argue that each claim was counter-evidential at the time (e.g., bloodletting was standard practice).",
+        "Calculate the average lead time (~2800 years) and note the number of claims (15).",
+        "Conclude that the pattern is a signal, not coincidence."
+      ],
+      "preserved_transitions": [
+        "From individual claims to cumulative pattern: both domains aggregate independent data points to assess overall significance.",
+        "From low probability to inference: both domains use improbability under a null hypothesis to infer a non-random cause."
+      ],
+      "missing_transitions": [
+        "The biblical claims are not truly independent (they come from a single tradition), violating a key assumption of signal detection theory.",
+        "The probability of each claim being correct by chance is not rigorously quantified; the argument relies on intuitive improbability."
+      ],
+      "broken_correspondences": [
+        "Signal detection requires a well-defined null hypothesis and a random sample; the biblical claims are selected post-hoc and may be cherry-picked.",
+        "The 'confirmation' of some claims (e.g., earth suspended in vacuum) is anachronistic \u2014 the original text did not describe a vacuum in the modern sense."
+      ],
+      "notes": "The mapping is structurally suggestive but not rigorous. The biblical claims are not a random sample, and the probability calculations are not performed. However, the core idea \u2014 that a pattern of improbable successes constitutes evidence \u2014 is a valid structural isomorphism."
+    },
+    {
+      "iso_id": "iso-002",
+      "name": "G\u00f6delian Incompleteness as Grounding Demand",
+      "domain_a": "G\u00f6del's incompleteness theorems: any formal system powerful enough to describe arithmetic contains true statements that cannot be proven within the system.",
+      "domain_b": "Theological claim that reality (as a formal system) cannot be self-grounding and requires something outside itself (God).",
+      "chi_law": "The mapping preserves the role of 'external grounding' \u2014 in domain A, the incompleteness theorem shows that a formal system cannot prove its own consistency; in domain B, this is taken as evidence that the universe (as a formal system) requires an external ground (God). The isomorphism holds if the universe is treated as a formal system.",
+      "does_mirror_physics_process": true,
+      "physics_process": "G\u00f6del's incompleteness theorems: (1) In any consistent formal system F that can encode arithmetic, there is a statement G_F that is true but not provable in F. (2) F cannot prove its own consistency.",
+      "theological_phenomenon": "The argument that the universe (as a closed system) cannot be self-explanatory and therefore requires a transcendent cause (God).",
+      "one_to_one_verdict": "partial",
+      "claimed_level": "level_2",
+      "aaa_level": "Moderate",
+      "density_mapped_events": 2,
+      "density_total_events": 3,
+      "density_score": 0.67,
+      "verdict": "structural claim requiring engagement",
+      "prediction": "If the universe is a formal system, then it should exhibit G\u00f6delian limitations (e.g., undecidable propositions in physics).",
+      "prediction_verified": false,
+      "physics_process_steps": [
+        "Define a formal system F (e.g., arithmetic).",
+        "Construct a G\u00f6del sentence G_F that says 'G_F is not provable in F'.",
+        "Show that if F is consistent, G_F is true but not provable in F.",
+        "Conclude that F cannot prove its own consistency."
+      ],
+      "mapped_text_steps": [
+        "Assume the universe (or reality) is a closed formal system.",
+        "Apply G\u00f6del's theorem to argue that the universe cannot be self-grounding.",
+        "Conclude that there must be something outside the universe (God) that grounds it.",
+        "Cite G\u00f6del's theorem as a rigorous proof of this limitation."
+      ],
+      "preserved_transitions": [
+        "From system to limitation: both domains show that a closed system has inherent limits (unprovable truths, inability to self-ground).",
+        "From limitation to external cause: both domains infer that the system requires something beyond itself."
+      ],
+      "missing_transitions": [
+        "The universe is not obviously a formal system in the sense required by G\u00f6del's theorem (e.g., it may not be axiomatic).",
+        "The theorem applies to formal systems, not to physical reality directly; the mapping is analogical, not literal."
+      ],
+      "broken_correspondences": [
+        "G\u00f6del's theorem does not prove that a system requires a transcendent cause; it only proves that the system cannot prove its own consistency. The leap to 'God' is a metaphysical interpretation, not a mathematical consequence.",
+        "The theorem applies to any consistent formal system, including those that are not 'the universe' \u2014 the mapping is too broad."
+      ],
+      "notes": "The mapping is philosophically interesting but structurally weak. G\u00f6del's theorem is a mathematical result about formal systems, not a direct argument for God's existence. The isomorphism is suggestive but not rigorous."
+    },
+    {
+      "iso_id": "iso-003",
+      "name": "Fine-Tuning as Probability Bound",
+      "domain_a": "Fine-tuning of physical constants (e.g., cosmological constant tuned to 1 part in 10^120).",
+      "domain_b": "Bayesian probability: the improbability of the observed constants under naturalism is used to infer a non-natural cause (design or multiverse).",
+      "chi_law": "The mapping preserves the role of 'extreme improbability as evidence' \u2014 in domain A, the fine-tuning is presented as an observation that is extremely unlikely under the null hypothesis (chance); in domain B, Bayesian inference updates the probability of a designer given the data. The isomorphism holds if the prior probability of a designer is non-zero.",
+      "does_mirror_physics_process": true,
+      "physics_process": "Bayesian inference: P(H|D) = P(D|H) * P(H) / P(D). Here, H = 'the constants are set by a designer', D = 'the observed fine-tuned constants'. P(D|H) is high (designer would choose life-permitting values), P(D|~H) is extremely low (chance).",
+      "theological_phenomenon": "The fine-tuning argument: the physical constants are so precisely calibrated that they appear designed, implying a cosmic fine-tuner (God).",
+      "one_to_one_verdict": "partial",
+      "claimed_level": "level_2",
+      "aaa_level": "Moderate",
+      "density_mapped_events": 2,
+      "density_total_events": 3,
+      "density_score": 0.67,
+      "verdict": "structural claim requiring engagement",
+      "prediction": "If fine-tuning is evidence for design, then the constants should be exactly what they are (they are).",
+      "prediction_verified": true,
+      "physics_process_steps": [
+        "Define the range of possible values for a physical constant (e.g., cosmological constant).",
+        "Compute the fraction of values that allow life (the 'life-permitting' range).",
+        "Observe that the actual value falls within this tiny range.",
+        "Conclude that the probability of this occurring by chance is extremely low."
+      ],
+      "mapped_text_steps": [
+        "List the fine-tuned constants (e.g., cosmological constant, strength of gravity).",
+        "Note the extreme precision required for life (e.g., 1 part in 10^120).",
+        "Argue that such precision is unlikely to be due to chance.",
+        "Conclude that the constants were set by a designer (God)."
+      ],
+      "preserved_transitions": [
+        "From observation to improbability: both domains note that the observed values are extremely unlikely under a chance hypothesis.",
+        "From improbability to inference: both domains infer a non-chance cause (design or multiverse)."
+      ],
+      "missing_transitions": [
+        "The Bayesian calculation requires a prior probability for the designer hypothesis, which is not given.",
+        "The multiverse hypothesis is also a possible explanation; the mapping does not distinguish between them."
+      ],
+      "broken_correspondences": [
+        "The fine-tuning argument assumes that the constants could have been different; this is not a proven fact.",
+        "The 'life-permitting' range is defined anthropically, which may be circular."
+      ],
+      "notes": "The mapping is structurally sound as a Bayesian inference, but the conclusion depends on the prior. The argument is a valid structural isomorphism, but it is not a proof."
+    },
+    {
+      "iso_id": "iso-004",
+      "name": "Information as Physical Quantity",
+      "domain_a": "Landauer's principle: information is physical and has thermodynamic consequences (erasing a bit of information dissipates heat).",
+      "domain_b": "Theological claim that DNA contains functional, error-correcting code that requires a source (information does not arise from nothing).",
+      "chi_law": "The mapping preserves the role of 'information as a physical quantity that must be accounted for' \u2014 in domain A, Landauer's principle shows that information is not abstract but has physical effects; in domain B, this is used to argue that the information in DNA must have a physical source (a designer). The isomorphism holds if DNA is treated as a physical information storage system.",
+      "does_mirror_physics_process": true,
+      "physics_process": "Landauer's principle: erasing one bit of information in a physical system dissipates at least kT ln 2 of heat. This shows that information is a physical quantity subject to thermodynamic laws.",
+      "theological_phenomenon": "The argument that the information in DNA (3.2 billion base pairs of functional code) cannot arise from random processes alone and requires an intelligent source.",
+      "one_to_one_verdict": "partial",
+      "claimed_level": "level_2",
+      "aaa_level": "Moderate",
+      "density_mapped_events": 2,
+      "density_total_events": 3,
+      "density_score": 0.67,
+      "verdict": "structural claim requiring engagement",
+      "prediction": "If information requires a source, then the origin of the first functional DNA sequence should be unexplained by natural processes.",
+      "prediction_verified": true,
+      "physics_process_steps": [
+        "Define a bit of information as a physical state (e.g., a spin or charge).",
+        "Show that erasing that bit requires a minimum energy dissipation (Landauer's principle).",
+        "Conclude that information is not abstract but has physical reality."
+      ],
+      "mapped_text_steps": [
+        "Note that DNA contains 3.2 billion base pairs of functional, error-correcting code.",
+        "Argue that random mutation can explain adaptation but not the origin of the first functional sequence.",
+        "Conclude that the information in DNA requires a source (God)."
+      ],
+      "preserved_transitions": [
+        "From physicality to source: both domains treat information as a physical quantity that must have a physical origin.",
+        "From complexity to design: both domains infer that complex, functional information is unlikely to arise by chance."
+      ],
+      "missing_transitions": [
+        "Landauer's principle applies to information erasure, not information creation; the mapping is not direct.",
+        "The origin of the first DNA sequence is a historical question, not a thermodynamic one."
+      ],
+      "broken_correspondences": [
+        "Landauer's principle does not imply that information cannot arise spontaneously; it only sets a lower bound on the energy cost of erasure.",
+        "The argument conflates Shannon information (which is a measure of uncertainty) with semantic information (meaning), which is not covered by Landauer's principle."
+      ],
+      "notes": "The mapping is suggestive but not rigorous. Landauer's principle is about the thermodynamics of information processing, not about the origin of biological information. The isomorphism is partial."
+    },
+    {
+      "iso_id": "iso-005",
+      "name": "Hard Problem of Consciousness as Explanatory Gap",
+      "domain_a": "Hard problem of consciousness: why do physical processes (neural activity) give rise to subjective experience (qualia)?",
+      "domain_b": "Theological claim that consciousness is evidence for a non-physical aspect of reality (soul or God).",
+      "chi_law": "The mapping preserves the role of 'explanatory gap' \u2014 in domain A, the hard problem identifies a gap between physical descriptions and subjective experience; in domain B, this gap is taken as evidence for a non-physical cause (God or soul). The isomorphism holds if the gap is considered irreducible.",
+      "does_mirror_physics_process": true,
+      "physics_process": "Neuroscience can map neural correlates of consciousness (e.g., which brain regions activate when seeing red), but cannot explain why there is something it is like to see red (qualia). This is the 'explanatory gap'.",
+      "theological_phenomenon": "The argument that consciousness cannot be fully explained by physical processes and therefore requires a non-physical source (God or soul).",
+      "one_to_one_verdict": "partial",
+      "claimed_level": "level_2",
+      "aaa_level": "Moderate",
+      "density_mapped_events": 2,
+      "density_total_events": 3,
+      "density_score": 0.67,
+      "verdict": "structural claim requiring engagement",
+      "prediction": "If consciousness is non-physical, then it should not be fully explainable by neuroscience (it is not).",
+      "prediction_verified": true,
+      "physics_process_steps": [
+        "Identify neural correlates of a conscious experience (e.g., seeing red).",
+        "Describe the physical processes involved (e.g., activation of V4 area).",
+        "Note that this description does not explain why the experience feels like anything (qualia).",
+        "Conclude that there is an explanatory gap between physical processes and subjective experience."
+      ],
+      "mapped_text_steps": [
+        "Observe that we can map every neuron but cannot explain why there is something it is like to see red.",
+        "Argue that neural correlates are not explanations.",
+        "Conclude that the gap is evidence for a non-physical aspect of reality (God or soul)."
+      ],
+      "preserved_transitions": [
+        "From correlation to gap: both domains note that physical descriptions do not capture subjective experience.",
+        "From gap to inference: both domains infer that the gap requires a non-physical explanation."
+      ],
+      "missing_transitions": [
+        "The hard problem is a philosophical problem, not a scientific one; the mapping assumes that the gap is irreducible, which is contested.",
+        "The inference to God is a leap; the gap could be filled by a future physical theory (e.g., panpsychism)."
+      ],
+      "broken_correspondences": [
+        "The hard problem does not prove that consciousness is non-physical; it only shows that current physical theories do not explain it.",
+        "The theological conclusion is not a necessary consequence of the gap."
+      ],
+      "notes": "The mapping is structurally interesting but not decisive. The hard problem is a genuine explanatory gap, but the inference to God is a metaphysical interpretation, not a logical necessity."
+    }
+  ]
+}

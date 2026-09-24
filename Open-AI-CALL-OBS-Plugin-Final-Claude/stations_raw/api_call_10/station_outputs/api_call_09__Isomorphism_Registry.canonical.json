@@ -1,0 +1,479 @@
+{
+  "definitions": [
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A structural mapping between two different systems that preserves their relationships, showing they have the same shape or pattern.",
+      "example": "A map of a subway system is isomorphic to the actual tracks: the connections between stations are the same, even though the map looks different.",
+      "grade_level": "college",
+      "first_appearance": "ISO-001 title"
+    },
+    {
+      "term": "Trinitarian theology",
+      "category": "theology",
+      "definition": "The Christian doctrine that God exists as three persons (Father, Son, Holy Spirit) who are one being.",
+      "example": "Like water can be liquid, ice, and steam but is still H2O, the Trinity is three persons in one God.",
+      "grade_level": "college",
+      "first_appearance": "ISO-001"
+    },
+    {
+      "term": "commutator",
+      "category": "math",
+      "definition": "A mathematical operation that measures how much two other operations fail to commute (i.e., how much the order of doing them matters).",
+      "example": "Putting on socks then shoes gives a different result than shoes then socks; the commutator measures that difference.",
+      "grade_level": "college",
+      "first_appearance": "ISO-001"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A statement or principle that is accepted as true without proof, serving as a starting point for further reasoning.",
+      "example": "In geometry, 'a straight line is the shortest distance between two points' is an axiom.",
+      "grade_level": "10",
+      "first_appearance": "ISO-001"
+    },
+    {
+      "term": "self-referential",
+      "category": "academic",
+      "definition": "Referring to itself; a statement or system that talks about or includes itself.",
+      "example": "The sentence 'This sentence is false' is self-referential because it refers to itself.",
+      "grade_level": "11",
+      "first_appearance": "ISO-001"
+    },
+    {
+      "term": "Gödel",
+      "category": "math",
+      "definition": "Kurt Gödel, a mathematician who proved that in any sufficiently powerful logical system, there are true statements that cannot be proven within that system.",
+      "example": "Gödel showed that math can't prove everything about itself, like a computer that can't check its own programming for errors.",
+      "grade_level": "college",
+      "first_appearance": "ISO-001"
+    },
+    {
+      "term": "actualization",
+      "category": "framework",
+      "definition": "The process of making something real or bringing it into existence from a potential state.",
+      "example": "A blueprint is a potential house; actualization is the construction that makes it a real house.",
+      "grade_level": "11",
+      "first_appearance": "ISO-001"
+    },
+    {
+      "term": "Logos",
+      "category": "language",
+      "definition": "A Greek word meaning 'word,' 'reason,' or 'principle'; in Christian theology, it refers to Jesus Christ as the divine reason and order behind the universe.",
+      "example": "In the Bible, John 1:1 says 'In the beginning was the Word (Logos),' meaning Jesus was the rational plan for creation.",
+      "grade_level": "college",
+      "first_appearance": "ISO-001"
+    },
+    {
+      "term": "substrate",
+      "category": "academic",
+      "definition": "The underlying substance or foundation that supports something else.",
+      "example": "Soil is the substrate for a plant; it's what the plant grows in and depends on.",
+      "grade_level": "11",
+      "first_appearance": "ISO-001"
+    },
+    {
+      "term": "operator algebraic",
+      "category": "math",
+      "definition": "Relating to operator algebra, a branch of mathematics that studies algebraic structures of operators on vector spaces, often used in quantum mechanics.",
+      "example": "It's like studying the rules for how different mathematical 'machines' (operators) combine and interact.",
+      "grade_level": "graduate",
+      "first_appearance": "ISO-001"
+    },
+    {
+      "term": "modal",
+      "category": "theology",
+      "definition": "A heresy (Modalism) that says the Father, Son, and Holy Spirit are just different modes or roles of one person, not distinct persons.",
+      "example": "Modalism is like an actor playing three roles on stage, but the actor is still just one person.",
+      "grade_level": "college",
+      "first_appearance": "ISO-001"
+    },
+    {
+      "term": "Arianism",
+      "category": "theology",
+      "definition": "A heresy that says Jesus Christ is a created being and not fully divine, unlike the orthodox Christian belief that he is God.",
+      "example": "Arianism is like saying the sun's rays are not really part of the sun, but something separate and lesser.",
+      "grade_level": "college",
+      "first_appearance": "ISO-001"
+    },
+    {
+      "term": "Filioque",
+      "category": "theology",
+      "definition": "A Latin term meaning 'and the Son,' referring to the Christian doctrine that the Holy Spirit proceeds from both the Father and the Son (a point of disagreement between Eastern and Western churches).",
+      "example": "The Filioque debate is about whether the Holy Spirit comes from the Father alone, or from both the Father and the Son.",
+      "grade_level": "college",
+      "first_appearance": "ISO-001"
+    },
+    {
+      "term": "falsification",
+      "category": "academic",
+      "definition": "The act of proving a statement or theory false by showing evidence that contradicts it.",
+      "example": "If you claim 'all swans are white,' finding one black swan is a falsification of that claim.",
+      "grade_level": "11",
+      "first_appearance": "ISO-001"
+    },
+    {
+      "term": "Terminus Sui",
+      "category": "framework",
+      "definition": "A Latin phrase meaning 'self-termination' or 'self-rescue'; the idea that a system cannot save itself from its own problems.",
+      "example": "A car with a dead battery cannot jump-start itself; it needs help from another car. That's Terminus Sui.",
+      "grade_level": "graduate",
+      "first_appearance": "ISO-002"
+    },
+    {
+      "term": "impossibility theorems",
+      "category": "academic",
+      "definition": "Mathematical or logical proofs that certain things cannot be done, no matter how hard you try.",
+      "example": "The 'no free lunch' theorem in optimization is an impossibility theorem: no single algorithm is best for every problem.",
+      "grade_level": "college",
+      "first_appearance": "ISO-002"
+    },
+    {
+      "term": "one-to-one",
+      "category": "math",
+      "definition": "A mapping where each element in one set is paired with exactly one element in another set, and vice versa.",
+      "example": "If you have a class of students and a set of desks, a one-to-one mapping means each student gets their own desk and no desk is empty.",
+      "grade_level": "10",
+      "first_appearance": "ISO-002"
+    },
+    {
+      "term": "Pauline grace",
+      "category": "theology",
+      "definition": "The concept of grace as taught by the Apostle Paul in the Bible: unearned favor from God that saves people, not based on their good works.",
+      "example": "Pauline grace is like a gift you receive for your birthday, not something you earned by doing chores.",
+      "grade_level": "college",
+      "first_appearance": "ISO-002"
+    },
+    {
+      "term": "Gödel",
+      "category": "math",
+      "definition": "Kurt Gödel, a mathematician who proved that in any sufficiently powerful logical system, there are true statements that cannot be proven within that system.",
+      "example": "Gödel showed that math can't prove everything about itself, like a computer that can't check its own programming for errors.",
+      "grade_level": "college",
+      "first_appearance": "ISO-002"
+    },
+    {
+      "term": "Tarski",
+      "category": "math",
+      "definition": "Alfred Tarski, a logician who proved that a formal language cannot define its own truth predicate without leading to paradoxes.",
+      "example": "Tarski showed that a language can't talk about its own truth without getting into contradictions, like a person trying to lift themselves by their own bootstraps.",
+      "grade_level": "college",
+      "first_appearance": "ISO-002"
+    },
+    {
+      "term": "Turing",
+      "category": "math",
+      "definition": "Alan Turing, a mathematician and computer scientist who proved that there is no general algorithm to determine whether a computer program will ever stop running (the Halting Problem).",
+      "example": "Turing showed you can't write a program that can always tell if another program will get stuck in an infinite loop.",
+      "grade_level": "college",
+      "first_appearance": "ISO-002"
+    },
+    {
+      "term": "Clausius",
+      "category": "physics",
+      "definition": "Rudolf Clausius, a physicist who formulated the Second Law of Thermodynamics, stating that entropy in an isolated system always increases.",
+      "example": "Clausius's law explains why a hot cup of coffee cools down and never spontaneously heats up again.",
+      "grade_level": "college",
+      "first_appearance": "ISO-002"
+    },
+    {
+      "term": "Landauer",
+      "category": "physics",
+      "definition": "Rolf Landauer, a physicist who showed that erasing one bit of information in a computer always produces a minimum amount of heat.",
+      "example": "Landauer's principle means that computing always creates some waste heat, like a car engine always produces some exhaust.",
+      "grade_level": "college",
+      "first_appearance": "ISO-002"
+    },
+    {
+      "term": "Leibniz",
+      "category": "philosophy",
+      "definition": "Gottfried Wilhelm Leibniz, a philosopher and mathematician who argued that everything that exists must have a reason for its existence (the Principle of Sufficient Reason).",
+      "example": "Leibniz's principle says that there is a reason why the universe exists rather than nothing, and that reason cannot be found within the universe itself.",
+      "grade_level": "college",
+      "first_appearance": "ISO-002"
+    },
+    {
+      "term": "entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system; in thermodynamics, it always increases in an isolated system.",
+      "example": "A messy room has higher entropy than a tidy one, and without cleaning, it will only get messier over time.",
+      "grade_level": "11",
+      "first_appearance": "ISO-002"
+    },
+    {
+      "term": "contingent",
+      "category": "philosophy",
+      "definition": "Something that depends on something else for its existence; not necessary or self-sufficient.",
+      "example": "A plant is contingent because it needs sunlight, water, and soil to exist; it doesn't exist by its own power.",
+      "grade_level": "11",
+      "first_appearance": "ISO-002"
+    },
+    {
+      "term": "Pelagianism",
+      "category": "theology",
+      "definition": "A heresy that says humans can save themselves by their own efforts without needing God's grace.",
+      "example": "Pelagianism is like saying you can pull yourself out of quicksand by your own hair, without any outside help.",
+      "grade_level": "college",
+      "first_appearance": "ISO-002"
+    },
+    {
+      "term": "Semi-Pelagianism",
+      "category": "theology",
+      "definition": "A heresy that says humans can take the first step toward salvation on their own, and then God's grace helps complete it.",
+      "example": "Semi-Pelagianism is like saying you can start climbing out of a pit, and then God gives you a rope to finish the climb.",
+      "grade_level": "college",
+      "first_appearance": "ISO-002"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation, especially how humans are saved from sin and reconciled to God.",
+      "example": "Soteriology asks questions like 'How are people saved?' and 'What is the role of faith and works in salvation?'",
+      "grade_level": "college",
+      "first_appearance": "ISO-002"
+    },
+    {
+      "term": "Second Law of Thermodynamics",
+      "category": "physics",
+      "definition": "A physical law stating that the total entropy (disorder) of an isolated system always increases over time, never decreases.",
+      "example": "The Second Law explains why an egg can break but cannot unbreak itself, and why heat flows from hot to cold, not the other way.",
+      "grade_level": "11",
+      "first_appearance": "ISO-003"
+    },
+    {
+      "term": "topology",
+      "category": "math",
+      "definition": "The study of shapes and spaces that focuses on properties that are preserved under continuous stretching, twisting, or bending, but not tearing.",
+      "example": "A donut and a coffee cup have the same topology because they both have one hole; a sphere has a different topology because it has no holes.",
+      "grade_level": "college",
+      "first_appearance": "ISO-003"
+    },
+    {
+      "term": "hamartiology",
+      "category": "theology",
+      "definition": "The study of sin, its origin, nature, and consequences.",
+      "example": "Hamartiology asks questions like 'What is sin?' and 'How does sin affect human nature and our relationship with God?'",
+      "grade_level": "college",
+      "first_appearance": "ISO-003"
+    },
+    {
+      "term": "sanctification",
+      "category": "theology",
+      "definition": "The process of being made holy or set apart for God's purposes; growing in moral and spiritual purity.",
+      "example": "Sanctification is like the process of refining gold: removing impurities to make it more pure and valuable.",
+      "grade_level": "college",
+      "first_appearance": "ISO-003"
+    },
+    {
+      "term": "heat death",
+      "category": "physics",
+      "definition": "A theoretical end state of the universe where everything has reached the same temperature, no work can be done, and all matter and energy are uniformly distributed.",
+      "example": "Heat death is like a cup of coffee that has cooled to room temperature: it's still there, but it can't heat anything anymore.",
+      "grade_level": "college",
+      "first_appearance": "ISO-003"
+    },
+    {
+      "term": "quantum collapse",
+      "category": "physics",
+      "definition": "The process in quantum mechanics where a particle in multiple possible states (superposition) suddenly becomes a single definite state when measured.",
+      "example": "Quantum collapse is like a spinning coin that is both heads and tails until you slap it on the table, then it's definitely one or the other.",
+      "grade_level": "college",
+      "first_appearance": "ISO-004"
+    },
+    {
+      "term": "superposition",
+      "category": "physics",
+      "definition": "In quantum mechanics, the ability of a particle to exist in multiple states or locations at the same time until it is measured.",
+      "example": "Superposition is like a coin spinning in the air: it's both heads and tails at the same time, not just one or the other.",
+      "grade_level": "11",
+      "first_appearance": "ISO-004"
+    },
+    {
+      "term": "eigenstate",
+      "category": "physics",
+      "definition": "A definite, measurable state of a quantum system, such as a particle having a specific position or energy.",
+      "example": "If superposition is a spinning coin, an eigenstate is the coin landing on heads: a definite, single outcome.",
+      "grade_level": "college",
+      "first_appearance": "ISO-004"
+    },
+    {
+      "term": "entangled",
+      "category": "physics",
+      "definition": "A quantum connection between two particles where measuring one instantly affects the other, no matter how far apart they are.",
+      "example": "Entanglement is like having two magic coins: if one lands on heads, the other instantly lands on tails, even if they are on opposite sides of the world.",
+      "grade_level": "11",
+      "first_appearance": "ISO-004"
+    },
+    {
+      "term": "decoherence",
+      "category": "physics",
+      "definition": "The process by which a quantum system loses its quantum properties (like superposition and entanglement) due to interaction with its environment.",
+      "example": "Decoherence is like a spinning coin gradually slowing down and wobbling until it finally lands flat on the table, losing its 'both heads and tails' state.",
+      "grade_level": "college",
+      "first_appearance": "ISO-004"
+    },
+    {
+      "term": "Wigner's Friend",
+      "category": "physics",
+      "definition": "A thought experiment in quantum mechanics where two observers have different knowledge of a quantum system, raising questions about the role of the observer in collapse.",
+      "example": "Wigner's Friend is like one person seeing a coin land on heads, while another person outside the room doesn't know the result yet; they have different 'realities.'",
+      "grade_level": "college",
+      "first_appearance": "ISO-004"
+    },
+    {
+      "term": "federal headship",
+      "category": "theology",
+      "definition": "The doctrine that Adam, as the representative of all humanity, acted on behalf of everyone, so his sin affected all people.",
+      "example": "Federal headship is like a team captain making a decision that affects the whole team; Adam's choice affected all humans.",
+      "grade_level": "college",
+      "first_appearance": "ISO-004"
+    },
+    {
+      "term": "phantom energy",
+      "category": "physics",
+      "definition": "A hypothetical form of dark energy with negative pressure that could cause the universe to expand at an ever-increasing rate, potentially leading to a 'Big Rip.'",
+      "example": "Phantom energy is like a balloon that not only inflates but starts inflating faster and faster until it pops.",
+      "grade_level": "college",
+      "first_appearance": "ISO-005"
+    },
+    {
+      "term": "conservation of energy",
+      "category": "physics",
+      "definition": "A physical law stating that energy cannot be created or destroyed, only transformed from one form to another.",
+      "example": "Conservation of energy means the energy in a battery doesn't disappear; it turns into light and heat in a flashlight.",
+      "grade_level": "10",
+      "first_appearance": "ISO-005"
+    },
+    {
+      "term": "ontological",
+      "category": "philosophy",
+      "definition": "Relating to the nature of being, existence, or reality itself.",
+      "example": "An ontological question is 'Does God exist?' not 'What do people believe about God?'",
+      "grade_level": "college",
+      "first_appearance": "ISO-005"
+    },
+    {
+      "term": "information primacy",
+      "category": "framework",
+      "definition": "The idea that information is the most fundamental building block of reality, more basic than matter or energy.",
+      "example": "Information primacy says that at the deepest level, the universe is made of bits of information, not tiny particles.",
+      "grade_level": "college",
+      "first_appearance": "ISO-006"
+    },
+    {
+      "term": "Wheeler's 'It from Bit'",
+      "category": "physics",
+      "definition": "Physicist John Wheeler's idea that every physical thing (it) comes from information (bit); reality is fundamentally informational.",
+      "example": "Wheeler's idea is like saying a computer program (information) creates the images on your screen (physical reality).",
+      "grade_level": "college",
+      "first_appearance": "ISO-006"
+    },
+    {
+      "term": "Johannine Prologue",
+      "category": "theology",
+      "definition": "The opening verses of the Gospel of John (John 1:1-18), which describe Jesus as the divine Word (Logos) who was with God and was God, and through whom all things were made.",
+      "example": "The Johannine Prologue is like the preface to a book that summarizes the main theme: Jesus is the eternal Word of God.",
+      "grade_level": "college",
+      "first_appearance": "ISO-006"
+    },
+    {
+      "term": "ontological priority",
+      "category": "philosophy",
+      "definition": "The state of being more fundamental or primary in terms of existence; something that comes first in reality.",
+      "example": "In a building, the foundation has ontological priority over the walls because the walls depend on the foundation to exist.",
+      "grade_level": "college",
+      "first_appearance": "ISO-006"
+    },
+    {
+      "term": "Shannon entropy",
+      "category": "math",
+      "definition": "A measure of the amount of uncertainty or information in a message, developed by Claude Shannon.",
+      "example": "Shannon entropy is like the surprise factor: a coin flip has high entropy (very uncertain), while a message like 'the sun will rise tomorrow' has low entropy (very predictable).",
+      "grade_level": "college",
+      "first_appearance": "ISO-006"
+    },
+    {
+      "term": "unitarity",
+      "category": "physics",
+      "definition": "A principle in quantum mechanics that the total probability of all possible outcomes of a system must always add up to 1, meaning information is never lost.",
+      "example": "Unitarity is like a magic trick where the magician can always reverse the trick and put everything back the way it was; nothing is truly destroyed.",
+      "grade_level": "college",
+      "first_appearance": "ISO-006"
+    },
+    {
+      "term": "vacuum ground state",
+      "category": "physics",
+      "definition": "The lowest possible energy state of a quantum field, often called the 'vacuum,' which is not empty but full of fluctuating energy.",
+      "example": "The vacuum ground state is like the calm surface of a lake, but underneath there are tiny ripples and vibrations (quantum fluctuations).",
+      "grade_level": "college",
+      "first_appearance": "ISO-007"
+    },
+    {
+      "term": "divine aseity",
+      "category": "theology",
+      "definition": "The attribute of God that he is self-existent and does not depend on anything else for his existence.",
+      "example": "Divine aseity means God is like a fire that burns without needing any fuel; he just is.",
+      "grade_level": "college",
+      "first_appearance": "ISO-007"
+    },
+    {
+      "term": "Lorentz invariant",
+      "category": "physics",
+      "definition": "A property of a physical quantity that remains the same for all observers, regardless of their relative motion, as required by Einstein's theory of relativity.",
+      "example": "The speed of light is Lorentz invariant: it's the same whether you are standing still or moving at half the speed of light.",
+      "grade_level": "college",
+      "first_appearance": "ISO-007"
+    },
+    {
+      "term": "vacuum fluctuations",
+      "category": "physics",
+      "definition": "Temporary changes in the amount of energy in a point in space, as allowed by the Heisenberg uncertainty principle, even in a perfect vacuum.",
+      "example": "Vacuum fluctuations are like tiny, temporary bubbles that appear and disappear in a glass of water, even when the water is perfectly still.",
+      "grade_level": "college",
+      "first_appearance": "ISO-007"
+    },
+    {
+      "term": "Casimir effect",
+      "category": "physics",
+      "definition": "A physical force that pulls two uncharged metal plates together in a vacuum, caused by vacuum fluctuations.",
+      "example": "The Casimir effect is like two boats in a wavy sea being pushed together because the waves between them are different from the waves outside.",
+      "grade_level": "college",
+      "first_appearance": "ISO-007"
+    },
+    {
+      "term": "Lamb shift",
+      "category": "physics",
+      "definition": "A small difference in energy between two energy levels of a hydrogen atom, caused by vacuum fluctuations.",
+      "example": "The Lamb shift is like a tiny wobble in a spinning top that you can only see with very precise instruments.",
+      "grade_level": "college",
+      "first_appearance": "ISO-007"
+    },
+    {
+      "term": "divine simplicity",
+      "category": "theology",
+      "definition": "The doctrine that God is not made up of parts; his essence and attributes are identical, and he is not composed of anything more basic.",
+      "example": "Divine simplicity means God is like a single, pure color, not a mixture of different colors.",
+      "grade_level": "college",
+      "first_appearance": "ISO-009"
+    },
+    {
+      "term": "Kolmogorov complexity",
+      "category": "math",
+      "definition": "A measure of how complex a piece of data is, based on the length of the shortest computer program that can produce it.",
+      "example": "A simple pattern like '01010101...' has low Kolmogorov complexity because a short program can generate it; random noise has high complexity.",
+      "grade_level": "college",
+      "first_appearance": "ISO-009"
+    },
+    {
+      "term": "action principle",
+      "category": "physics",
+      "definition": "A principle in physics that says the path a physical system takes between two points is the one that minimizes a quantity called 'action.'",
+      "example": "The action principle is like a ball rolling down a hill: it takes the path that gets it to the bottom the fastest, not the shortest distance.",
+      "grade_level": "college",
+      "first_appearance": "ISO-009"
+    },
+    {
+      "term": "Occam's Razor",
+      "category": "academic",
+      "definition": "A problem-solving principle that says the simplest explanation with the fewest assumptions is usually the best one.",
+      "example": "If you hear hoofbeats, Occam's Razor says to think of horses, not zeb

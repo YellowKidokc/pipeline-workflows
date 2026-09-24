@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Theophysics Isomorphism Registry · Three-Way 43.6 Bits</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --card-bg: #151515;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --gold-light: #f0d060;
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border: #2a2a2a;
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+      color: #f0f0f0;
+    }
+    .gold-text { color: var(--gold); }
+    .text-muted { color: var(--text-muted); }
+    .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; }
+    .serif-italic { font-family: 'Crimson Text', serif; font-style: italic; }
+    .section-number {
+      font-family: 'Oswald', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.25;
+      line-height: 1;
+      margin-right: 0.75rem;
+      user-select: none;
+    }
+    .gradient-sep {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 1.8rem 0 2.2rem 0;
+      opacity: 0.5;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .badge.iso { background: rgba(212,175,55,0.15); border-color: var(--gold); color: var(--gold); }
+    .badge.level3 { background: rgba(34,197,94,0.15); border-color: var(--success); color: var(--success); }
+    .badge.level2 { background: rgba(234,179,8,0.15); border-color: #eab308; color: #eab308; }
+    .badge.confidence { background: rgba(74,158,255,0.12); border-color: var(--info); color: var(--info); }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      box-shadow: var(--shadow);
+      transition: border 0.2s;
+    }
+    .card-blue { border-top: 4px solid var(--info); }
+    .card-gold { border-top: 4px solid var(--gold); }
+    .card-red { border: 1px solid rgba(239,68,68,0.3); background: rgba(239,68,68,0.05); }
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+    .grid-2x2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .pull-quote {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #d0d7de;
+      margin: 1.2rem 0;
+    }
+    .equation-card {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .mapping-table th {
+      background: rgba(212,175,55,0.15);
+      color: var(--gold);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.9rem 1rem;
+      border-bottom: 2px solid var(--gold);
+      text-align: left;
+    }
+    .mapping-table td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid #1e1e1e;
+      vertical-align: top;
+    }
+    .mapping-table tr:hover td { background: rgba(212,175,55,0.03); }
+    .test-pass { color: var(--success); font-weight: 600; }
+    .test-fail { color: var(--danger); font-weight: 600; }
+    .evidence-chip {
+      display: inline-block;
+      background: rgba(212,175,55,0.08);
+      border: 1px solid rgba(212,175,55,0.2);
+      border-radius: 30px;
+      padding: 0.3rem 1rem;
+      margin: 0.2rem 0.3rem;
+      font-size: 0.8rem;
+      color: var(--gold-light);
+    }
+    .footer-seal {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.7;
+      font-size: 0.95rem;
+      border-top: 1px solid #1e1e1e;
+      padding-top: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .verse-ref {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: #6b7280;
+      letter-spacing: 0.02em;
+    }
+    .arrow-symbol {
+      color: var(--gold);
+      font-size: 1.6rem;
+      margin: 0 0.3rem;
+    }
+    @media (max-width: 768px) {
+      body { padding: 1rem; }
+      .hero-grid, .grid-2col, .grid-2x2 { grid-template-columns: 1fr; gap: 1.2rem; }
+      .section-number { font-size: 2.4rem; }
+      .card { padding: 1.2rem; }
+    }
+    a { color: var(--info); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .fw-400 { font-weight: 400; }
+    .fw-600 { font-weight: 600; }
+    .mt-1 { margin-top: 1rem; }
+    .mb-1 { margin-bottom: 1rem; }
+    .inline-icon { margin-right: 0.4rem; }
+  </style>
+</head>
+<body>
+
+  <!-- 1. REGISTRY HEADER -->
+  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-bottom: 0.5rem;">
+    <div style="display: flex; align-items: center; gap: 0.8rem;">
+      <span style="font-size: 2.8rem; font-family: 'Oswald', sans-serif; color: var(--gold); font-weight: 300; line-height: 1;">Φ</span>
+      <div>
+        <h1 style="font-size: 1.8rem; margin: 0; line-height: 1.2;">THEOPHYSICS REGISTRY</h1>
+        <div style="font-size: 0.85rem; color: var(--text-muted);">ISO/TR 2025-10-21 · Three-Way Isomorphism (43.6 Bits)</div>
+      </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: center;">
+      <span class="badge level3"><i class="fas fa-link" style="margin-right: 0.3rem;"></i>Level 3 · Isomorphism</span>
+      <span class="badge confidence"><i class="fas fa-chart-line"></i> Confidence: 0.999999999</span>
+      <span class="badge iso"><i class="fas fa-code-branch"></i> v1.0.0</span>
+    </div>
+  </div>
+  <div class="gradient-sep" style="margin-top: 0.8rem;"></div>
+
+  <!-- 2. HERO BANNER -->
+  <div class="hero-grid" style="background: linear-gradient(135deg, rgba(212,175,55,0.06) 0%, transparent 70%); border-radius: var(--radius); padding: 1.8rem 1.5rem; margin-bottom: 2.5rem; border: 1px solid rgba(212,175,55,0.1);">
+    <!-- left -->
+    <div>
+      <span class="badge" style="background: rgba(212,175,55,0.1); border-color: var(--gold); color: var(--gold); margin-bottom: 0.8rem; display: inline-block;"><i class="fas fa-scale-balanced"></i> Law · Moral · Physics · Salvation</span>
+      <h2 style="font-size: 2rem; line-height: 1.2; margin: 0.5rem 0 0.2rem 0;">
+        Ten Commandments <span class="arrow-symbol">⟷</span> Physics Laws <span class="arrow-symbol">⟷</span> Salvation Narrative
+      </h2>
+      <div style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Three domains · ten elements each · structural isomorphism · 43.6 bits of coherence</div>
+      <div class="pull-quote">
+        “The relationships between elements in one domain preserve their relationships in the other two. Not poetically — structurally.”
+      </div>
+      <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">
+        <span class="verse-ref">Exodus 20:1-17 · Romans 8:18-25 · Shannon 1948</span>
+      </div>
+    </div>
+    <!-- right: equation card -->
+    <div class="equation-card">
+      <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+        <div><span style="color: var(--gold);">Domain A (Physics)</span><br>Gravity · Weak Force · Speed of Light · Strong Force · Relativity · Entropy · Entanglement · Sovereignty · Information · Uncertainty</div>
+        <div style="border-top: 1px solid #2a2a2a; border-bottom: 1px solid #2a2a2a; padding: 0.4rem 0; text-align: center; color: var(--gold); font-size: 1.4rem;">⟷</div>
+        <div><span style="color: var(--gold);">Domain B (Theology)</span><br>Grace · Transformation · Truth · Covenant · Honor Parents · Death · Fidelity · Theft · False Witness · Coveting</div>
+        <div style="border-top: 1px solid #2a2a2a; border-bottom: 1px solid #2a2a2a; padding: 0.4rem 0; text-align: center; color: var(--gold); font-size: 1.4rem;">⟷</div>
+        <div><span style="color: var(--gold);">Domain C (Salvation)</span><br>Rescue · Metamorphosis · Revelation · Faithfulness · Generational · Burial · Union · Surrender · Testimony · Contentment</div>
+      </div>
+      <div style="margin-top: 1rem; font-size: 0.7rem; color: #6b7280; border-top: 1px solid #1e1e1e; padding-top: 0.6rem;">
+        <span class="mono">P(designed | structure) ≈ 0.999999999</span> · <span class="mono">I = 43.6 bits</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. DOMAIN SPECIFICATIONS -->
+  <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.8rem;">
+    <span class="section-number">01</span>
+    <h2 style="font-size: 1.5rem;">Domain Specifications</h2>
+  </div>
+  <div class="grid-2col" style="margin-bottom: 2.5rem;">
+    <!-- Domain A Physics -->
+    <div class="card card-blue">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+        <i class="fas fa-atom" style="color: var(--info); font-size: 1.6rem;"></i>
+        <h3 style="font-size: 1.2rem; margin: 0;">Domain A · Physics</h3>
+      </div>
+      <p style="font-size: 0.95rem;">Ten fundamental laws discovered over 400 years of empirical science. Gravity, weak force, speed of light, strong force, relativity, entropy, entanglement, sovereignty (causality), information, uncertainty. Each law describes a constraint or relation in the physical world.</p>
+      <div style="margin-top: 0.8rem; font-size: 0.8rem; color: var(--text-muted);"><span class="mono">Newton · Maxwell · Einstein · Shannon · Heisenberg</span></div>
+    </div>
+    <!-- Domain B Theology -->
+    <div class="card card-gold">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+        <i class="fas fa-scroll" style="color: var(--gold); font-size: 1.6rem;"></i>
+        <h3 style="font-size: 1.2rem; margin: 0;">Domain B · Theology</h3>
+      </div>
+      <p style="font-size: 0.95rem;">Ten Commandments (moral law, ~1400 BCE) plus the ten-step salvation narrative spanning Old and New Testaments. Grace, transformation, truth, covenant, honor, death, fidelity, theft, false witness, coveting. Each element describes a moral or relational constraint.</p>
+      <div style="margin-top: 0.8rem; font-size: 0.8rem; color: var(--text-muted);"><span class="mono">Moses · Paul · Gospel of John · Hebrews</span></div>
+    </div>
+  </div>
+
+  <!-- 4. THE ISOMORPHIC MAPPING -->
+  <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.8rem;">
+    <span class="section-number">02</span>
+    <h2 style="font-size: 1.5rem;">The Isomorphic Mapping</h2>
+  </div>
+  <div style="overflow-x: auto; margin-bottom: 2.5rem;">
+    <table class="mapping-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Physics Law</th>
+          <th>⟷</th>
+          <th>Theology (Command)</th>
+          <th>⟷</th>
+          <th>Salvation Narrative</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Gravity</td><td>⟷</td><td>Grace</td><td>⟷</td><td>Rescue</td><td><span class="test-pass">4.5</span></td></tr>
+        <tr><td>2</td><td>Weak Force</td><td>⟷</td><td>Transformation</td><td>⟷</td><td>Metamorphosis</td><td>3.0</td></tr>
+        <tr><td>3</td><td>Speed of Light</td><td>⟷</td><td>Truth</td><td>⟷</td><td>Revelation</td><td><span class="test-fail">1.5</span></td></tr>
+        <tr><td>4</td><td>Strong Force</td><td>⟷</td><td>Covenant</td><td>⟷</td><td>Faithfulness</td><td><span class="test-pass">4.0</span></td></tr>
+        <tr><td>5</td><td>Relativity</td><td>⟷</td><td>Honor Parents</td><td>⟷</td><td>Generational</td><td>2.0</td></tr>
+        <tr><td>6</td><td>Entropy</td><td>⟷</td><td>Death</td><td>⟷</td><td>Burial</td><td><span class="test-pass">3.5</span></td></tr>
+        <tr><td>7</td><td>Entanglement</td><td>⟷</td><td>Fidelity</td><td>⟷</td><td>Union</td><td><span class="test-pass">4.0</span></td></tr>
+        <tr><td>8</td><td>Sovereignty</td><td>⟷</td><td>Theft</td><td>⟷</td><td>Surrender</td><td><span class="test-fail">1.5</span></td></tr>
+        <tr><td>9</td><td>Information</td><td>⟷</td><td>False Witness</td><td>⟷</td><td>Testimony</td><td><span class="test-pass">3.5</span></td></tr>
+        <tr><td>10</td><td>Uncertainty</td><td>⟷</td><td>Coveting</td><td>⟷</td><td>Contentment</td><td>2.5</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5. SEPARATOR TESTS -->
+  <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.8rem;">
+    <span class="section-number">03</span>
+    <h2 style="font-size: 1.5rem;">Separator Tests</h2>
+  </div>
+  <div class="grid-2x2" style="margin-bottom: 2.5rem;">
+    <!-- Test A -->
+    <div class="card">
+      <h3 style="font-size: 1.1rem; margin-bottom: 0.3rem;"><i class="fas fa-sitemap" style="color: var(--gold); margin-right: 0.4rem;"></i>Test A: Structural Preservation</h3>
+      <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.6rem;">Do relations survive under mapping?</div>
+      <p style="font-size: 0.9rem;">Gravity/grace, strong force/covenant, entanglement/fidelity, information/false witness all preserve internal relational structure (attraction, binding, correlation, signal integrity).</p>
+      <div style="margin-top: 0.6rem;"><span class="test-pass"><i class="fas fa-check-circle"></i> PASS</span> <span class="verse-ref">(4 of 10 strong, avg 3.0)</span></div>
+    </div>
+    <!-- Test B -->
+    <div class="card">
+      <h3 style="font-size: 1.1rem; margin-bottom: 0.3rem;"><i class="fas fa-random" style="color: var(--gold); margin-right: 0.4rem;"></i>Test B: Non-Arbitrariness</h3>
+      <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.6rem;">Is the mapping forced or could you swap targets?</div>
+      <p style="font-size: 0.9rem;">43.6 bits of Shannon information — probability 1 in 13.2 trillion. Swapping any single mapping reduces coherence. GPT adversarial scoring confirms non-arbitrary structure.</p>
+      <div style="margin-top: 0.6rem;"><span class="test-pass"><i class="fas fa-check-circle"></i> PASS</span> <span class="verse-ref">(Bayesian P ≈ 0.999999999)</span></div>
+    </div>
+    <!-- Test C -->
+    <div class="card">
+      <h3 style="font-size: 1.1rem; margin-bottom: 0.3rem;"><i class="fas fa-ban" style="color: var(--gold); margin-right: 0.4rem;"></i>Test C: Constraint</h3>
+      <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.6rem;">Does the mapping rule things out?</div>
+      <p style="font-size: 0.9rem;">Yes. The mapping forbids arbitrary reassignments: e.g., gravity cannot map to theft, entropy cannot map to grace. The structure constrains which elements pair.</p>
+      <div style="margin-top: 0.6rem;"><span class="test-pass"><i class="fas fa-check-circle"></i> PASS</span> <span class="verse-ref">(10!² ≈ 13.2T possibilities, 1 valid)</span></div>
+    </div>
+    <!-- Test D -->
+    <div class="card">
+      <h3 style="font-size: 1.1rem; margin-bottom: 0.3rem;"><i class="fas fa-arrows-left-right" style="color: var(--gold); margin-right: 0.4rem;"></i>Test D: Bidirectionality</h3>
+      <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.6rem;">Does each side predict the other?</div>
+      <p style="font-size: 0.9rem;">Physics predicts moral constraints (information → false witness as channel corruption). Theology predicts physical laws (grace as external rescue). Salvation narrative mirrors both.</p>
+      <div style="margin-top: 0.6rem;"><span class="test-pass"><i class="fas fa-check-circle"></i> PASS</span> <span class="verse-ref">(Shannon upgrade recommended by GPT)</span></div>
+    </div>
+  </div>
+
+  <!-- 6. CLASSIFICATION & EVIDENCE -->
+  <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.8rem;">
+    <span class="section-number">04</span>
+    <h2 style="font-size: 1.5rem;">Classification &amp; Evidence</h2>
+  </div>
+  <div class="card" style="margin-bottom: 2.5rem;">
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem 2.5rem; align-items: center;">
+      <div>
+        <span class="badge level3" style="font-size: 1rem; padding: 0.4rem 1.4rem;"><i class="fas fa-shield-alt"></i> Level 3 · Structural Isomorphism</span>
+        <div style="margin-top: 0.6rem; font-size: 0.9rem;">Confidence: <span class="gold-text fw-600">0.999999999</span> (Bayesian posterior)</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted);">Shannon information content: <span class="mono">43.6 bits</span></div>
+      </div>
+      <div style="flex: 1;">
+        <div style="font-family: 'Oswald', sans-serif; letter-spacing: 0.04em; font-size: 0.85rem; color: var(--gold); margin-bottom: 0.4rem;">EVIDENCE CHIPS</div>
+        <div>
+          <span class="evidence-chip"><i class="fas fa-calculator"></i> 10!² = 13.2T</span>
+          <span class="evidence-chip"><i class="fas fa-dice"></i> 43.6 bits</span>
+          <span class="evidence-chip"><i class="fas fa-robot"></i> GPT-4o adversarial score 3.0/5</span>
+          <span class="evidence-chip"><i class="fas fa-scale-balanced"></i> Gravity ↔ Grace (4.5)</span>
+          <span class="evidence-chip"><i class="fas fa-link"></i> Strong Force ↔ Covenant (4.0)</span>
+          <span class="evidence-chip"><i class="fas fa-code-branch"></i> Entanglement ↔ Fidelity (4.0)</span>
+          <span class="evidence-chip"><i class="fas fa-signal"></i> Information ↔ False Witness (3.5)</span>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 1.2rem; border-top: 1px solid #1e1e1e; padding-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">
+      <span class="fw-400" style="color: var(--gold);">Laws invoked:</span> Shannon's information theory, Bayes' theorem, Kolmogorov complexity, structural preservation criterion, GPT adversarial scoring protocol.
+    </div>
+  </div>
+
+  <!-- 7. FALSIFICATION CRITERIA -->
+  <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.8rem;">
+    <span class="section-number">05</span>
+    <h2 style="font-size: 1.5rem;">Falsification Criteria</h2>
+  </div>
+  <div class="card card-red" style="margin-bottom: 2.5rem;">
+    <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem;">
+      <i class="fas fa-skull" style="color: var(--danger); font-size: 1.4rem;"></i>
+      <h3 style="font-size: 1.1rem; margin: 0; color: var(--danger);">Kill Conditions</h3>
+    </div>
+    <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.8;">
+      <li><i class="fas fa-times-circle" style="color: var(--danger); margin-right: 0.5rem;"></i>If any mapping pair scores below 1.0 under adversarial evaluation, the isomorphism is invalidated.</li>
+      <li><i class="fas fa-times-circle" style="color: var(--danger); margin-right: 0.5rem;"></i>If a single alternative mapping with equal or higher coherence is found within 10!² trials, the claim of uniqueness fails.</li>
+      <li><i class="fas fa-times-circle" style="color: var(--danger); margin-right: 0.5rem;"></i>If the Shannon information content drops below 20 bits (i.e., probability > 1 in 1 million), the structure is dismissed as weak correspondence.</li>
+      <li><i class="fas fa-times-circle" style="color: var(--danger); margin-right: 0.5rem;"></i>If any domain element can be arbitrarily reassigned without breaking the relational structure, the mapping is not forced.</li>
+    </ul>
+    <div style="margin-top: 0.6rem; font-size: 0.75rem; color: #6b7280;"><span class="verse-ref">All conditions current as of October 2025 adversarial session.</span></div>
+  </div>
+
+  <!-- 8. RELATED ISOMORPHISMS -->
+  <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.8rem;">
+    <span class="section-number">06</span>
+    <h2 style="font-size: 1.5rem;">Related Isomorphisms</h2>
+  </div>
+  <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem;">
+    <div class="card" style="flex: 1; min-width: 180px; padding: 1rem 1.2rem;">
+      <i class="fas fa-arrow-right" style="color: var(--gold); margin-right: 0.3rem;"></i> <span class="fw-400">Ten Commandments ↔ Signal Integrity Protocol</span>
+      <div style="font-size: 0.75rem; color: var(--text-muted);">Shannon channel capacity · error correction</div>
+    </div>
+    <div class="card" style="flex: 1; min-width: 180px; padding: 1rem 1.2rem;">
+      <i class="fas fa-arrow-right" style="color: var(--gold); margin-right: 0.3rem;"></i> <span class="fw-400">Gravity ↔ Grace (4.5)</span>
+      <div style="font-size: 0.75rem; color: var(--text-muted);">External rescue logic · trapped-in-a-well</div>
+    </div>
+    <div class="card" style="flex: 1; min-width: 180px; padding: 1rem 1.2rem;">
+      <i class="fas fa-arrow-right" style="color: var(--gold); margin-right: 0.3rem;"></i> <span class="fw-400">Entanglement ↔ Fidelity (4.0)</span>
+      <div style="font-size: 0.75rem; color: var(--text-muted);">Two become one · correlated state · decoherence as betrayal</div>
+    </div>
+  </div>
+
+  <!-- 9. FOOTER -->
+  <footer style="margin-top: 2rem; border-top: 1px solid #1e1e1e; padding-top: 1.8rem;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+      <div>
+        <div style="font-family: 'Oswald', sans-serif; letter-spacing: 0.06em; color: var(--gold); font-size: 0.9rem;">THEOPHYSICS RESEARCH PROGRAM</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted);">POF 2828 · v1.0.0 · 2025-10-21</div>
+      </div>
+      <div class="footer-seal" style="border: none; padding: 0; margin: 0; text-align: right;">
+        “The math points to God. The math does not contain God.”
+      </div>
+    </div>
+    <div style="margin-top: 1rem; font-size: 0.7rem; color: #4b5563; text-align: center; border-top: 1px solid #141414; padding-top: 1rem;">
+      <i class="fas fa-database"></i> Registry entry: three-way-isomorphism-43.6bits · <span class="verse-ref">Exodus 20 · Romans 8 · Shannon 1948</span>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,523 @@
+{
+  "definitions": [
+    {
+      "term": "entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system; things naturally tend to become more messy over time.",
+      "example": "Your bedroom gets messier on its own, but it takes work to clean it up.",
+      "grade_level": "college",
+      "first_appearance": "01"
+    },
+    {
+      "term": "decoherence",
+      "category": "physics",
+      "definition": "The process where a quantum system loses its ability to be in multiple states at once because it interacts with its environment.",
+      "example": "Imagine a coin spinning in the air\u2014it's both heads and tails until it lands and interacts with the table, becoming just one side.",
+      "grade_level": "college",
+      "first_appearance": "02"
+    },
+    {
+      "term": "closed system",
+      "category": "physics",
+      "definition": "A system that does not exchange energy or matter with anything outside it.",
+      "example": "A sealed thermos with a lid on is a closed system\u2014nothing gets in or out.",
+      "grade_level": "10",
+      "first_appearance": "01"
+    },
+    {
+      "term": "Second Law of Thermodynamics",
+      "category": "physics",
+      "definition": "A law of physics that says in a closed system, disorder (entropy) always increases over time.",
+      "example": "If you leave a sandcastle alone, wind and waves will eventually break it down, not build it up.",
+      "grade_level": "11",
+      "first_appearance": "01"
+    },
+    {
+      "term": "arrow of time",
+      "category": "physics",
+      "definition": "The idea that time only moves forward, from past to future, because entropy always increases.",
+      "example": "You can't un-break an egg\u2014that's the arrow of time in action.",
+      "grade_level": "college",
+      "first_appearance": "01"
+    },
+    {
+      "term": "superposition",
+      "category": "physics",
+      "definition": "A quantum state where a particle can be in multiple possibilities at the same time until it is measured.",
+      "example": "A spinning coin is in superposition\u2014it's both heads and tails until you catch it.",
+      "grade_level": "college",
+      "first_appearance": "02"
+    },
+    {
+      "term": "wavefunction",
+      "category": "physics",
+      "definition": "A mathematical description of all the possible states a quantum system can be in.",
+      "example": "Think of a wavefunction as a map of all the places an electron might be, like a blurry cloud of possibilities.",
+      "grade_level": "college",
+      "first_appearance": "02"
+    },
+    {
+      "term": "beta decay",
+      "category": "physics",
+      "definition": "A type of radioactive decay where a neutron turns into a proton, an electron, and a neutrino.",
+      "example": "It's like a Lego brick changing into different pieces on its own.",
+      "grade_level": "college",
+      "first_appearance": "03"
+    },
+    {
+      "term": "weak force",
+      "category": "physics",
+      "definition": "One of the four fundamental forces; it's responsible for certain types of radioactive decay and works only at very short distances.",
+      "example": "The weak force is like a tiny glue that only works when particles are extremely close together.",
+      "grade_level": "college",
+      "first_appearance": "03"
+    },
+    {
+      "term": "strong force",
+      "category": "physics",
+      "definition": "The strongest fundamental force; it holds the nucleus of an atom together and gets stronger as particles get farther apart.",
+      "example": "Imagine a rubber band that pulls harder the more you stretch it\u2014that's like the strong force.",
+      "grade_level": "college",
+      "first_appearance": "03"
+    },
+    {
+      "term": "Kolmogorov complexity",
+      "category": "math",
+      "definition": "A measure of how simple or complex a piece of information is, based on the shortest possible description.",
+      "example": "The number 111111 has low complexity because you can describe it as 'six ones,' but a random string like 482917 has higher complexity.",
+      "grade_level": "graduate",
+      "first_appearance": "04"
+    },
+    {
+      "term": "Shannon entropy",
+      "category": "math",
+      "definition": "A measure of how much information is in a message or how uncertain it is.",
+      "example": "A coin flip has high Shannon entropy because you can't predict heads or tails; a boring message like 'yes yes yes' has low entropy.",
+      "grade_level": "college",
+      "first_appearance": "04"
+    },
+    {
+      "term": "Landauer's principle",
+      "category": "physics",
+      "definition": "A principle that says erasing information always requires energy and produces heat.",
+      "example": "When you delete a file on a computer, it takes a tiny bit of energy to erase that information.",
+      "grade_level": "graduate",
+      "first_appearance": "04"
+    },
+    {
+      "term": "inverse-square law",
+      "category": "physics",
+      "definition": "A law that says the strength of a force (like gravity) decreases with the square of the distance from its source.",
+      "example": "If you double your distance from a light bulb, the light is only one-fourth as bright.",
+      "grade_level": "11",
+      "first_appearance": "05"
+    },
+    {
+      "term": "confinement",
+      "category": "physics",
+      "definition": "The property of the strong force that keeps quarks stuck together inside particles like protons; the force gets stronger as they try to separate.",
+      "example": "It's like trying to pull apart two magnets that are stuck together\u2014the harder you pull, the harder they resist.",
+      "grade_level": "college",
+      "first_appearance": "05"
+    },
+    {
+      "term": "product decomposition",
+      "category": "math",
+      "definition": "Breaking down a complex system into a product of simpler parts or variables.",
+      "example": "Like breaking a big number into factors: 12 = 3 \u00d7 4.",
+      "grade_level": "college",
+      "first_appearance": "06"
+    },
+    {
+      "term": "cascade failure",
+      "category": "academic",
+      "definition": "A failure in one part of a system that causes failures in other parts, spreading like a chain reaction.",
+      "example": "A power outage in one substation can cause a cascade failure, blacking out a whole city.",
+      "grade_level": "11",
+      "first_appearance": "06"
+    },
+    {
+      "term": "open system",
+      "category": "physics",
+      "definition": "A system that can exchange energy or matter with its surroundings.",
+      "example": "A pot of boiling water on a stove is an open system because it gets heat from the burner and releases steam.",
+      "grade_level": "10",
+      "first_appearance": "07"
+    },
+    {
+      "term": "local entropy decrease",
+      "category": "physics",
+      "definition": "When disorder goes down in one small area because energy comes in from outside.",
+      "example": "A refrigerator makes the inside colder (less disorder) by using electricity and dumping heat outside.",
+      "grade_level": "college",
+      "first_appearance": "07"
+    },
+    {
+      "term": "chi-field",
+      "category": "framework",
+      "definition": "A framework-specific term for a combined field or product of variables that represents overall coherence or wholeness.",
+      "example": "Think of it like a team score that depends on every player doing their part.",
+      "grade_level": "specialist",
+      "first_appearance": "06"
+    },
+    {
+      "term": "coherence",
+      "category": "framework",
+      "definition": "The state of being logically consistent, unified, and whole; in this framework, it's the opposite of fragmentation.",
+      "example": "A well-told story has coherence\u2014all the parts fit together smoothly.",
+      "grade_level": "college",
+      "first_appearance": "06"
+    },
+    {
+      "term": "moral curvature",
+      "category": "framework",
+      "definition": "A term for how moral or spiritual paths bend toward or away from goodness, like gravity bending space.",
+      "example": "Like a ball rolling downhill toward a goal\u2014moral curvature describes the pull toward what is right.",
+      "grade_level": "specialist",
+      "first_appearance": "07"
+    },
+    {
+      "term": "Logos",
+      "category": "theology",
+      "definition": "A Greek word meaning 'Word' or 'Reason'; in Christian theology, it refers to Jesus Christ as the divine expression of God.",
+      "example": "Like the ultimate message or blueprint that explains everything.",
+      "grade_level": "college",
+      "first_appearance": "04"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation\u2014how people are saved or rescued from sin and its consequences.",
+      "example": "It's like the instruction manual for how a rescue mission works.",
+      "grade_level": "college",
+      "first_appearance": "not in text"
+    },
+    {
+      "term": "hamartiology",
+      "category": "theology",
+      "definition": "The study of sin\u2014what it is, where it comes from, and how it affects people.",
+      "example": "Like a doctor studying a disease to understand how it spreads.",
+      "grade_level": "college",
+      "first_appearance": "not in text"
+    },
+    {
+      "term": "sanctification",
+      "category": "theology",
+      "definition": "The process of becoming more holy or morally pure, often seen as a gradual change.",
+      "example": "Like slowly cleaning a dirty window until it's spotless.",
+      "grade_level": "college",
+      "first_appearance": "not in text"
+    },
+    {
+      "term": "atonement",
+      "category": "theology",
+      "definition": "The act of making up for a wrong or sin, often through a sacrifice or payment.",
+      "example": "Like paying back money you stole to make things right.",
+      "grade_level": "10",
+      "first_appearance": "not in text"
+    },
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A mapping between two structures that shows they are essentially the same in form or function.",
+      "example": "Like a map of a subway system that matches the real tracks exactly\u2014same connections, different drawing.",
+      "grade_level": "college",
+      "first_appearance": "not in text"
+    },
+    {
+      "term": "bijection",
+      "category": "math",
+      "definition": "A one-to-one matching between two sets where every element in one set pairs with exactly one in the other, and vice versa.",
+      "example": "Like assigning each student a unique locker number\u2014no two students share a locker, and no locker is empty.",
+      "grade_level": "college",
+      "first_appearance": "not in text"
+    },
+    {
+      "term": "Noether's theorem",
+      "category": "math",
+      "definition": "A theorem that says every symmetry in nature leads to a conservation law (like energy conservation).",
+      "example": "If a system looks the same no matter when you check it, that means energy is conserved.",
+      "grade_level": "graduate",
+      "first_appearance": "not in text"
+    },
+    {
+      "term": "tensor",
+      "category": "math",
+      "definition": "A mathematical object that describes relationships between numbers, vectors, and other tensors, often used in physics for forces and fields.",
+      "example": "Think of it like a spreadsheet that can handle multiple directions at once, not just one number.",
+      "grade_level": "college",
+      "first_appearance": "not in text"
+    },
+    {
+      "term": "ontology",
+      "category": "philosophy",
+      "definition": "The branch of philosophy that studies what exists and what it means to be real.",
+      "example": "Asking 'Is a number real?' is an ontology question.",
+      "grade_level": "college",
+      "first_appearance": "not in text"
+    },
+    {
+      "term": "epistemology",
+      "category": "philosophy",
+      "definition": "The branch of philosophy that studies knowledge\u2014how we know what we know.",
+      "example": "Asking 'How do you know the sun will rise tomorrow?' is an epistemology question.",
+      "grade_level": "college",
+      "first_appearance": "not in text"
+    },
+    {
+      "term": "contingent",
+      "category": "philosophy",
+      "definition": "Something that could be different or might not exist at all; not necessary.",
+      "example": "Your phone is contingent\u2014it could have been a different model or not exist.",
+      "grade_level": "college",
+      "first_appearance": "not in text"
+    },
+    {
+      "term": "necessary",
+      "category": "philosophy",
+      "definition": "Something that must exist and cannot be otherwise; the opposite of contingent.",
+      "example": "A square must have four sides\u2014that's a necessary truth.",
+      "grade_level": "10",
+      "first_appearance": "not in text"
+    },
+    {
+      "term": "empirical",
+      "category": "academic",
+      "definition": "Based on observation or experiment, not just theory.",
+      "example": "Checking if a plant grows faster with more sunlight is an empirical test.",
+      "grade_level": "10",
+      "first_appearance": "not in text"
+    },
+    {
+      "term": "falsifiable",
+      "category": "academic",
+      "definition": "Able to be proven wrong by evidence; a key feature of scientific theories.",
+      "example": "The claim 'all swans are white' is falsifiable because finding one black swan disproves it.",
+      "grade_level": "11",
+      "first_appearance": "not in text"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A basic statement that is accepted as true without proof, used as a starting point for reasoning.",
+      "example": "In geometry, 'a straight line is the shortest distance between two points' is an axiom.",
+      "grade_level": "10",
+      "first_appearance": "not in text"
+    },
+    {
+      "term": "theorem",
+      "category": "academic",
+      "definition": "A statement that has been proven to be true using logic and axioms.",
+      "example": "The Pythagorean theorem is a proven rule about right triangles.",
+      "grade_level": "10",
+      "first_appearance": "not in text"
+    },
+    {
+      "term": "\u0393 (gamma)",
+      "category": "framework",
+      "definition": "A symbol used in the framework for the 'grace source term'\u2014an external input that can reverse entropy in a system.",
+      "example": "Like a rescue team that breaks through a wall to bring supplies to a trapped person.",
+      "grade_level": "specialist",
+      "first_appearance": "07"
+    },
+    {
+      "term": "\u03c7 (chi)",
+      "category": "framework",
+      "definition": "A symbol for the overall coherence or wholeness of a system, often a product of multiple variables.",
+      "example": "Like a health score that depends on diet, exercise, and sleep all working together.",
+      "grade_level": "specialist",
+      "first_appearance": "06"
+    },
+    {
+      "term": "\u03c1 (rho)",
+      "category": "math",
+      "definition": "A Greek letter often used in physics to represent density or a quantum state matrix.",
+      "example": "In the document, it's used in the decoherence equation to show how a quantum state changes.",
+      "grade_level": "college",
+      "first_appearance": "02"
+    },
+    {
+      "term": "dS/dt \u2265 0",
+      "category": "math",
+      "definition": "A mathematical expression saying that entropy (S) never decreases over time (t) in a closed system.",
+      "example": "It's like a rule that says 'messiness always stays the same or gets worse.'",
+      "grade_level": "college",
+      "first_appearance": "01"
+    },
+    {
+      "term": "H = \u2212K \u2211 p_i log p_i",
+      "category": "math",
+      "definition": "Shannon's formula for information entropy, where H is the amount of uncertainty in a message.",
+      "example": "It's a way to calculate how surprising or unpredictable a message is.",
+      "grade_level": "graduate",
+      "first_appearance": "04"
+    },
+    {
+      "term": "t\u00bd = 611s",
+      "category": "physics",
+      "definition": "The half-life of a free neutron\u2014about 611 seconds (just over 10 minutes)\u2014meaning half of a group will decay in that time.",
+      "example": "If you have 100 free neutrons, after 611 seconds about 50 will have turned into something else.",
+      "grade_level": "college",
+      "first_appearance": "03"
+    },
+    {
+      "term": "F \u221d 1/r\u00b2",
+      "category": "physics",
+      "definition": "A shorthand for 'force is proportional to one over the distance squared,' meaning force weakens quickly with distance.",
+      "example": "If you move twice as far away, the force becomes one-fourth as strong.",
+      "grade_level": "11",
+      "first_appearance": "05"
+    },
+    {
+      "term": "10\u207b\u00b9\u2078 meters",
+      "category": "physics",
+      "definition": "A very tiny distance\u2014one quintillionth of a meter, about the size of a proton.",
+      "example": "That's like comparing a grain of sand to the entire Earth\u2014it's unimaginably small.",
+      "grade_level": "10",
+      "first_appearance": "05"
+    },
+    {
+      "term": "ground state",
+      "category": "physics",
+      "definition": "The lowest energy state a physical system can have; it's the most stable and natural state.",
+      "example": "A ball at the bottom of a hill is in its ground state\u2014it can't go any lower without help.",
+      "grade_level": "college",
+      "first_appearance": "04"
+    },
+    {
+      "term": "channel efficiency",
+      "category": "physics",
+      "definition": "How well a communication channel transmits information without loss or noise.",
+      "example": "A clear phone call has high channel efficiency; a static-filled one has low efficiency.",
+      "grade_level": "college",
+      "first_appearance": "07"
+    },
+    {
+      "term": "asymmetry term",
+      "category": "math",
+      "definition": "A part of an equation that is not symmetric\u2014it treats one direction or side differently from another.",
+      "example": "Like a rule that says 'you can go left but not right'\u2014that's an asymmetry.",
+      "grade_level": "college",
+      "first_appearance": "07"
+    },
+    {
+      "term": "thermodynamically impossible",
+      "category": "physics",
+      "definition": "Something that cannot happen because it would violate the laws of thermodynamics (like energy conservation or entropy increase).",
+      "example": "It's thermodynamically impossible for a cold cup to heat up a room without any energy input.",
+      "grade_level": "college",
+      "first_appearance": "04"
+    },
+    {
+      "term": "probabilistic",
+      "category": "academic",
+      "definition": "Based on probability or chance, not certain or deterministic.",
+      "example": "Rolling a die is probabilistic\u2014you can't predict exactly which number will come up.",
+      "grade_level": "10",
+      "first_appearance": "03"
+    },
+    {
+      "term": "exponentially",
+      "category": "math",
+      "definition": "Growing or shrinking at a rate that becomes faster and faster, like multiplying repeatedly.",
+      "example": "If you double a penny every day, after 30 days you'd have over 5 million dollars\u2014that's exponential growth.",
+      "grade_level": "10",
+      "first_appearance": "04"
+    },
+    {
+      "term": "geodetic",
+      "category": "academic",
+      "definition": "Related to the shape and size of the Earth, especially its curved surface.",
+      "example": "A geodetic measurement accounts for the Earth being round, not flat.",
+      "grade_level": "college",
+      "first_appearance": "04"
+    },
+    {
+      "term": "oblate spheroid",
+      "category": "academic",
+      "definition": "A slightly squashed sphere, like the shape of the Earth (wider at the equator).",
+      "example": "Think of a ball that's been gently pressed down from the top.",
+      "grade_level": "college",
+      "first_appearance": "04"
+    },
+    {
+      "term": "covenant",
+      "category": "theology",
+      "definition": "A sacred agreement or promise between God and people, often with mutual commitments.",
+      "example": "Like a marriage vow, but between God and a community.",
+      "grade_level": "10",
+      "first_appearance": "03"
+    },
+    {
+      "term": "Spirit (\u0393)",
+      "category": "theology",
+      "definition": "In this framework, the Holy Spirit is represented as an external source of grace that can enter closed systems.",
+      "example": "Like a breeze that can blow through a sealed room if there's a crack.",
+      "grade_level": "10",
+      "first_appearance": "07"
+    },
+    {
+      "term": "grace",
+      "category": "theology",
+      "definition": "Unearned favor or help from God, often seen as a force that reaches everywhere.",
+      "example": "Like sunlight that shines on everyone, whether they deserve it or not.",
+      "grade_level": "10",
+      "first_appearance": "05"
+    },
+    {
+      "term": "truth (E)",
+      "category": "framework",
+      "definition": "In this framework, truth is treated as a propagating field or signal that never degrades.",
+      "example": "Like a radio signal that stays clear no matter how far it travels.",
+      "grade_level": "10",
+      "first_appearance": "05"
+    },
+    {
+      "term": "faith (Q)",
+      "category": "framework",
+      "definition": "In this framework, faith is a measurement operator controlled by a person, affecting their quantum-like state.",
+      "example": "Like choosing which channel to watch on TV\u2014your choice determines what you see.",
+      "grade_level": "10",
+      "first_appearance": "02"
+    },
+    {
+      "term": "K (covenant)",
+      "category": "framework",
+      "definition": "A variable representing the strength of covenant bonds or community ties that hold a person stable.",
+      "example": "Like the glue that keeps a team together even under pressure.",
+      "grade_level": "specialist",
+      "first_appearance": "06"
+    },
+    {
+      "term": "R",
+      "category": "framework",
+      "definition": "A variable representing how closed or isolated a system is; R=1 means fully closed.",
+      "example": "Like a door that's completely shut and locked\u2014nothing gets in or out.",
+      "grade_level": "specialist",
+      "first_appearance": "07"
+    },
+    {
+      "term": "J_ext",
+      "category": "framework",
+      "definition": "A symbol for external input (like energy or grace) coming into a system from outside.",
+      "example": "Like a charger plugging into a phone to give it power.",
+      "grade_level": "specialist",
+      "first_appearance": "07"
+    }
+  ],
+  "stats": {
+    "total_terms_found": 53,
+    "by_category": {
+      "physics": 17,
+      "theology": 7,
+      "math": 9,
+      "philosophy": 4,
+      "framework": 10,
+      "academic": 5,
+      "language": 1
+    },
+    "highest_grade_level": "specialist",
+    "average_grade_level": "college",
+    "accessibility_score": 25
+  }
+}

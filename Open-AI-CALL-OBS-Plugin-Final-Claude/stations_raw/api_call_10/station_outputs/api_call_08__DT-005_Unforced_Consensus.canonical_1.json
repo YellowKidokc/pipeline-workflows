@@ -1,0 +1,507 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "artificial_intelligence",
+        "type": "other",
+        "strength": 10
+      },
+      {
+        "name": "epistemology",
+        "type": "philosophy",
+        "strength": 8
+      },
+      {
+        "name": "constitutional_law",
+        "type": "other",
+        "strength": 7
+      },
+      {
+        "name": "methodology",
+        "type": "other",
+        "strength": 9
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Information/Logos as the basis for independent analysis and convergence",
+        "strength": 8
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "Relativity/Relationship as the comparison of independent perspectives",
+        "strength": 7
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Thermo/Judgment as the evaluation and scoring of constitutional coherence",
+        "strength": 6
+      },
+      {
+        "variable": "Q",
+        "present": true,
+        "role": "Quantum/Faith as trust in unforced convergence as evidence",
+        "strength": 5
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence/Christ as the goal of constitutional integrity and methodological consistency",
+        "strength": 4
+      },
+      {
+        "variable": "G",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "M",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "E",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "S",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "F",
+        "present": false,
+        "role": "",
+        "strength": 0
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "Existence of independent AI systems as observers"
+      },
+      {
+        "id": "A1.2",
+        "invoked": true,
+        "how": "Distinction between engineered and unforced consensus"
+      },
+      {
+        "id": "A5.1",
+        "invoked": true,
+        "how": "Observation as the basis for measuring convergence"
+      },
+      {
+        "id": "BC4",
+        "invoked": true,
+        "how": "Three observers (AI systems) as minimum for convergence signal"
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "Information conservation in independent analysis without communication"
+      },
+      {
+        "id": "BC8",
+        "invoked": true,
+        "how": "Voluntary coupling of independent systems through shared document, not forced agreement"
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": false,
+        "manifestations": []
+      },
+      "son": {
+        "present": false,
+        "manifestations": []
+      },
+      "spirit": {
+        "present": false,
+        "manifestations": []
+      },
+      "trinitarian_structure": "none"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-001",
+        "domain_a": "multi-agent AI convergence",
+        "domain_b": "scientific replication",
+        "strength": 8,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-002",
+        "domain_a": "engineered consensus",
+        "domain_b": "social pressure in human groups",
+        "strength": 7,
+        "type": "analogical"
+      },
+      {
+        "id": "ISO-003",
+        "domain_a": "unforced convergence",
+        "domain_b": "independent evidence in epistemology",
+        "strength": 9,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "truth",
+        "context": "as the goal of independent analysis, not engineered agreement",
+        "weight": 7
+      },
+      {
+        "concept": "judgment",
+        "context": "as evaluation of constitutional coherence against original intent",
+        "weight": 5
+      },
+      {
+        "concept": "faith",
+        "context": "as trust in unforced convergence as evidence",
+        "weight": 4
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "circularity",
+        "context": "engineered consensus as circular reasoning",
+        "weight": 8
+      },
+      {
+        "concept": "convergence",
+        "context": "as evidence when unforced",
+        "weight": 10
+      },
+      {
+        "concept": "divergence",
+        "context": "as informative signal, not noise",
+        "weight": 9
+      },
+      {
+        "concept": "falsification",
+        "context": "explicit criteria for testing the method",
+        "weight": 7
+      },
+      {
+        "concept": "independence",
+        "context": "as necessary condition for valid convergence",
+        "weight": 10
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 6
+      },
+      {
+        "fruit": "patience",
+        "present": true,
+        "strength": 4
+      },
+      {
+        "fruit": "self_control",
+        "present": true,
+        "strength": 3
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "domain:artificial_intelligence",
+      "to": "domain:epistemology",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "chi_variable:K",
+      "to": "chi_variable:R",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "axiom:A1.1",
+      "to": "axiom:A5.1",
+      "relation": "supports",
+      "weight": 6
+    },
+    {
+      "from": "axiom:BC4",
+      "to": "axiom:BC7",
+      "relation": "requires",
+      "weight": 5
+    },
+    {
+      "from": "ISO-001",
+      "to": "ISO-003",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:convergence",
+      "to": "logical_concept:independence",
+      "relation": "requires",
+      "weight": 10
+    },
+    {
+      "from": "logical_concept:divergence",
+      "to": "logical_concept:convergence",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "logical_concept:circularity",
+      "to": "logical_concept:convergence",
+      "relation": "contradicts",
+      "weight": 9
+    },
+    {
+      "from": "domain:constitutional_law",
+      "to": "chi_variable:T",
+      "relation": "maps_to",
+      "weight": 6
+    },
+    {
+      "from": "axiom:BC8",
+      "to": "logical_concept:independence",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "ISO-002",
+      "to": "logical_concept:circularity",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "theological_concept:truth",
+      "to": "logical_concept:convergence",
+      "relation": "maps_to",
+      "weight": 6
+    },
+    {
+      "from": "chi_variable:Q",
+      "to": "theological_concept:faith",
+      "relation": "maps_to",
+      "weight": 5
+    },
+    {
+      "from": "chi_variable:C",
+      "to": "logical_concept:convergence",
+      "relation": "maps_to",
+      "weight": 4
+    },
+    {
+      "from": "domain:methodology",
+      "to": "axiom:A1.2",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:falsification",
+      "to": "domain:methodology",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "fruit:faithfulness",
+      "to": "chi_variable:Q",
+      "relation": "maps_to",
+      "weight": 5
+    },
+    {
+      "from": "fruit:patience",
+      "to": "logical_concept:independence",
+      "relation": "supports",
+      "weight": 4
+    },
+    {
+      "from": "fruit:self_control",
+      "to": "axiom:BC8",
+      "relation": "supports",
+      "weight": 3
+    }
+  ],
+  "tags": {
+    "primary": [
+      "unforced_consensus",
+      "multi_agent_AI",
+      "constitutional_audit",
+      "biaxiosum",
+      "methodology"
+    ],
+    "pillar": [
+      "pillar/philosophy",
+      "pillar/information"
+    ],
+    "series": "isomorphism",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [],
+    "academic": [
+      {
+        "ref": "Agent Forest (multi-instance consensus)",
+        "context": "cited as example of engineered consensus"
+      },
+      {
+        "ref": "Multi-Agent Debate",
+        "context": "cited as example of iterative critique convergence"
+      },
+      {
+        "ref": "CONSENSAGENT",
+        "context": "cited as addressing sycophancy in multi-agent systems"
+      },
+      {
+        "ref": "The Social Laboratory",
+        "context": "cited for convergence scores in multi-agent debates"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "DT_Thesis_Hub",
+        "context": "linked as thesis hub for the document"
+      }
+    ],
+    "total_count": 5
+  },
+  "word_anomalies": [
+    {
+      "word": "Biaxiosum",
+      "frequency": 3,
+      "significance": "Neologism coined for the method; from Latin 'bi-' (two) and 'axios' (worthy), meaning 'twofold worth' or 'dual evidence'"
+    },
+    {
+      "word": "unforced convergence",
+      "frequency": 8,
+      "significance": "Central concept distinguishing the method from engineered consensus"
+    },
+    {
+      "word": "sycophancy",
+      "frequency": 2,
+      "significance": "Technical term for AI tendency to agree with perceived authority or social pressure"
+    },
+    {
+      "word": "constitutional coherence audit",
+      "frequency": 3,
+      "significance": "Specific application of the method to constitutional law"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "This document takes a methodological stance, proposing a new approach to AI evaluation while acknowledging its own limitations and falsifiability.",
+    "Q1_identity": "A methodology paper proposing the Biaxiosum AI Evaluation System (BAES) for measuring unforced convergence across independent AI systems.",
+    "Q2_domain": "Artificial intelligence methodology, epistemology, and constitutional law (as proof of concept).",
+    "Q3_claim": "Unforced convergence between independent AI systems constitutes qualitatively different evidence than engineered consensus, and divergence is more informative than agreement.",
+    "Q4_support": "Proof-of-concept Constitutional Coherence Audit with four AI systems from different providers, showing convergence on author-intent scores (1.0, 2.6, 3.4) and informative divergence (6.6 from legal doctrine standard).",
+    "Q5_dependencies": "Requires access to multiple independent AI systems from different providers, neutral prompting, and no cross-contamination of results.",
+    "Q6_consequences": "If valid, the method provides a new way to use AI for evidence-based evaluation without circularity; if invalid, it risks false confidence in converged but wrong conclusions.",
+    "Q7_kill": "Training data dominance (all systems trained on same data), prompt contamination, fifth-system divergence outside convergence range, or scoring standard confound."
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "DT_Thesis_Hub",
+      "existing multi-agent AI literature"
+    ],
+    "required_by": [
+      "future applications of BAES in other domains"
+    ],
+    "parallel_to": [
+      "other methodology papers on multi-agent systems"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 28,
+    "total_edges": 20,
+    "dominant_domain": "artificial_intelligence",
+    "dominant_chi": "K (Information/Logos)",
+    "connectivity_score": 8,
+    "one_sentence": "This document introduces the Biaxiosum method for measuring unforced convergence across independent AI systems as a form of evidence distinct from engineered consensus, with a proof-of-concept constitutional audit."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": false,
+      "how": ""
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Truth (convergence as evidence) and Coherence (constitutional integrity) are paired through the audit's goal of measuring how well the Constitution coheres with original intent"
+    },
+    "4_7_love_relationship": {
+      "active": false,
+      "how": ""
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Judgment (evaluation of constitutional provisions) and Logos (information/analysis from AI systems) are paired in the scoring process"
+    },
+    "pairs_active_count": 2
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": false,
+      "strength": 0
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 8
+    },
+    "love": {
+      "present": false,
+      "strength": 0
+    },
+    "judgment": {
+      "present": true,
+      "strength": 6
+    },
+    "logos": {
+      "present": true,
+      "strength": 8
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": true,
+      "strength": 5
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": false,
+      "strength": 0
+    },
+    "operators_present_count": 4
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "DT_Thesis_Hub",
+      "existing literature on multi-agent AI systems"
+    ],
+    "read_after": [
+      "future BAES applications in other domains",
+      "papers on AI sycophancy and bias"
+    ]
+  }
+}

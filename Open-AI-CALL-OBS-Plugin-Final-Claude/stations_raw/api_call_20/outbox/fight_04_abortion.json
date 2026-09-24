@@ -1,0 +1,116 @@
+{
+  "spec_version": "1.0-trilemma-resolver",
+  "status": "OK",
+  "fight": {
+    "id": "abortion",
+    "familiar_name": "Abortion",
+    "years_running": 50,
+    "poles": [
+      "My body my choice",
+      "Abortion is murder"
+    ]
+  },
+  "reader_anchor": {
+    "opening_prose": "You are four years old. You are sitting on the kitchen floor, and you have just pulled the cat's tail. The cat yowled, your mother turned around, and you saw her face change. You knew, before she said a word, that you had done something wrong. You did not know why it was wrong. You only knew that someone else had felt it. You had not felt it yourself. That gap - between what you did and what someone else felt - is the first thing you ever learned about right and wrong. You learned it in your body, not in your head. You learned that there is a difference between your experience and another's, and that the second one can be real even when you cannot see it. Nobody ever told you that. You just knew. Later, someone told you that the cat does not count. Or that the cat counts more than you. Or that the cat is not a person. You did not know what a person was. You only knew that the yowl was real. That is the question nobody ever let you finish: what makes a yowl count?",
+    "universal_experience": "pulling a pet's tail as a young child and seeing the other creature react",
+    "checkable_detail": "you did not feel the pain yourself, but you knew it was real because of the sound and the face",
+    "quiet_theft": "you were trained to stop asking 'does it feel?' and start asking 'does it count?' - the first question is empirical, the second is a rule you did not make",
+    "embodiment_note": "the gap between your action and another's experience is the exact gap at the center of the abortion fight: who is in the ledger is a question about whose experience counts, and you already knew that question in your hands at age four"
+  },
+  "poles": [
+    {
+      "label": "bodily autonomy pole",
+      "steelman": "A pregnant person has full dominion over their own body. No person has the right to use another person's body without ongoing consent, even to sustain their own life. Forcing someone to carry a pregnancy to term is a physical invasion of their body, organs, blood, and time - a level of bodily imposition we do not require of anyone else, even to save a dying child. The state cannot compel organ donation, blood donation, or bone marrow donation from a corpse, yet it would compel nine months of gestation from a living person. That is a violation of bodily integrity so profound that it cannot be justified by any claim about the fetus's status, because no claim about another's status overrides the right not to have your body used against your will. The core accusation: the other side treats a pregnant person as an incubator - a vessel with no rights of their own.",
+      "accusation_against_others": "you treat pregnant people as incubators, not as persons with bodily rights",
+      "accusation_is_true_because": "the anti-abortion position requires the pregnant person to carry the pregnancy to term regardless of their consent, which means their body is being used as a life-support system for another - exactly the function of an incubator, which has no say",
+      "axiom_autopsy": {
+        "load_bearing_premise": "bodily autonomy is absolute and overrides any claim another entity has to use your body",
+        "self_application": "If bodily autonomy is absolute, then a pregnant person cannot be required to sustain the fetus. But if the fetus is a person with equal rights, then the fetus's right to life includes the right not to be killed. The absolute autonomy premise, applied to the fetus, would give the fetus the right to remain in the womb if that is necessary for its survival - but that contradicts the pregnant person's absolute autonomy. The premise cannot be absolute for both simultaneously; it must be limited, which means it was never absolute.",
+        "one_question_test": "If a fetus is a person, does that person have any rights that limit the pregnant person's bodily autonomy?",
+        "checkable_in_under_a_minute": true
+      }
+    },
+    {
+      "label": "fetal personhood pole",
+      "steelman": "Abortion ends a human life. From conception, the fetus is a genetically distinct, living human organism. It is not a potential life; it is a life with potential. If it is a person, then abortion is the intentional killing of an innocent person, and no right to bodily autonomy includes the right to kill another person. We do not allow a parent to kill their born child even if the child is causing them extreme physical hardship. The fetus is not a part of the pregnant person's body; it is a separate body that happens to be inside them. The core accusation: the other side treats the fetus as a clump of cells with no moral weight - a thing, not a someone.",
+      "accusation_against_others": "you treat the fetus as a disposable clump of cells, not as a human life",
+      "accusation_is_true_because": "the pro-choice position permits ending the fetus's life at the pregnant person's discretion, which treats the fetus as having no moral status that constrains that decision - exactly the status of a clump of cells, which can be removed without moral consideration",
+      "axiom_autopsy": {
+        "load_bearing_premise": "a fetus is a person from conception with full right to life",
+        "self_application": "If a fetus is a person from conception, then it has the same rights as any born person. But no born person has the right to use another's body without consent, even to stay alive. A one-year-old does not have the right to your kidney. The fetal personhood premise, applied consistently, would grant the fetus a right (to use the pregnant person's body) that no born person has. That means either the premise is wrong about the fetus's status, or the premise grants the fetus a right that contradicts our actual legal and moral framework for born persons.",
+        "one_question_test": "Does a born person have the right to use another person's body without consent to stay alive?",
+        "checkable_in_under_a_minute": true
+      }
+    }
+  ],
+  "ledger": {
+    "D_definition": "the termination of a pregnancy, which ends the fetus's life and imposes physical, emotional, and medical costs on the pregnant person",
+    "D_is_real_evidence": "both sides agree that a pregnancy ends and a fetus dies; both sides agree that pregnancy imposes real physical burdens; the disagreement is about whether the fetus's death counts as damage to a person",
+    "victim_class": "disputed: the pregnant person (who bears physical imposition) or the fetus (whose life ends) or both",
+    "causal_class": "diffuse: the pregnancy is not caused by any single agent; the decision to terminate is made by the pregnant person; the causal chain involves conception, which is typically consensual but not always",
+    "per_pole_transfers": [
+      {
+        "pole": "bodily autonomy",
+        "T_A": "restoration to pregnant person: removal of unwanted pregnancy, restoration of bodily control",
+        "T_B": "cost imposed on fetus: death",
+        "J": 1.0,
+        "M": 0.0,
+        "W_note": "pregnant person volunteers (wants the abortion); fetus does not volunteer to die",
+        "who_eats_deficit": "the fetus eats the full cost (death)"
+      },
+      {
+        "pole": "fetal personhood",
+        "T_A": "restoration to fetus: continued life",
+        "T_B": "cost imposed on pregnant person: forced gestation and birth",
+        "J": 1.0,
+        "M": 0.0,
+        "W_note": "fetus cannot volunteer; pregnant person does not volunteer to carry",
+        "who_eats_deficit": "the pregnant person eats the full cost (forced bodily use)"
+      }
+    ]
+  },
+  "clear_win": {
+    "type": "structural_invariant",
+    "statement": "The abortion fight is a seating argument on the J + M = 1 line. Both poles assign full restoration to their chosen victim (J=1) and full cost to the other (M=0). Neither pole can achieve voluntary participation from both parties because the fetus cannot consent and the pregnant person will not consent to forced gestation. The ledger cannot close because the deficit is always eaten by the party each pole excludes from the victim class. Both accusations are true: the pro-choice pole treats the fetus as a clump of cells (M=0 for the fetus), and the pro-life pole treats the pregnant person as an incubator (M=0 for the pregnant person). The fight is not about whether abortion is right or wrong; it is about who is in the ledger. The line proves that no position on the line can include both parties as full persons with equal moral weight, because the physical reality of pregnancy means one body is inside another, and that asymmetry cannot be resolved by assigning equal rights.",
+    "derivation_steps": [
+      "1. Both poles agree that D > 0: a pregnancy exists and its termination ends a life (disputed as person or not) and imposes physical cost.",
+      "2. Pole A (bodily autonomy) sets T_A = removal of pregnancy (restoration to pregnant person), T_B = death of fetus (cost to fetus). J = 1, M = 0.",
+      "3. Pole B (fetal personhood) sets T_A = continued life (restoration to fetus), T_B = forced gestation (cost to pregnant person). J = 1, M = 0.",
+      "4. In both cases, one party bears the full cost without consent: the fetus cannot consent to death; the pregnant person does not consent to forced gestation.",
+      "5. The invariant J + M = 1 holds exactly for both poles, but W (free will) fails because one party is coerced in each configuration.",
+      "6. The accusations are structurally identical: each pole charges the other with treating a being as having zero moral weight (M=0 for that being). Both accusations are true.",
+      "7. No position on the line can achieve J=1, M=1, W=1 because the physical asymmetry of pregnancy means one body is inside another - equal rights cannot be assigned to two beings when one is literally inside the other's body."
+    ],
+    "dinner_table_sentence": "Both sides are right: one treats the fetus as disposable, the other treats the woman as an incubator - the line proves it.",
+    "why_undeniable": "A hostile reader from either pole must concede that their own position assigns full cost to the other party (M=0 for that party) and that the other pole's accusation is structurally accurate. The derivation is two steps: define D, show T_A and T_B, compute J and M. The reader can verify in under a minute that their own pole gives J=1 and M=0, and that the other pole's accusation matches that math."
+  },
+  "off_the_line": {
+    "proximate": {
+      "structures": [
+        "voluntary pregnancy support networks that provide material, medical, and emotional support to pregnant people and children without coercion",
+        "adoption as a voluntary transfer of parental rights, where a third party absorbs the cost of raising the child",
+        "mutual aid abortion funds that cover the cost of the procedure for those who choose it",
+        "hospice-style care for termin ill fetuses where the pregnancy is carried to term with full support and the child is held as it dies"
+      ],
+      "honest_limit": "These structures relocate the cost voluntarily and visibly, but they do not retire the deficit: someone still bears the physical reality of pregnancy or the loss of the fetus. The altruism lemma holds."
+    },
+    "ultimate": {
+      "configuration": "A voluntary external cost-bearer who (1) is neither the pregnant person nor the fetus, (2) acts voluntarily, (3) absorbs the full physical and moral cost of the pregnancy decision, (4) has capacity to absorb without being destroyed, (5) preserves truth (the damage is acknowledged, not denied). This configuration would require a being who can take on the physical experience of pregnancy or the loss of life without being the one who gestates or dies.",
+      "candidate": "The framework identifies no historical candidate who can absorb the physical asymmetry of pregnancy externally. The door remains open only if the reader can conceive of a being who can bear the cost of another's bodily experience - which no human can. The resolution is not available in human terms. The fight remains on the line.",
+      "door_note": "The door opens from the reader's side only: if you can name a voluntary external cost-bearer who meets the five requirements, the trilemma is resolved. Until then, the fight is structurally irresolvable on the line."
+    }
+  },
+  "anti_gaming_audit": {
+    "blind_label": "pass: the analysis uses 'pregnant person' and 'fetus' without party names; the mechanism is the same if roles were reversed (though biologically impossible)",
+    "symmetry": "pass: the win applies regardless of which pole proposed the mechanism; both poles are symmetric in the ledger",
+    "counterfactual": "pass: D (pregnancy and its termination) is real and exists absent any policy",
+    "radius_consistency": "pass: benefits and costs are measured at the same level - the individual bodies involved",
+    "cost_visibility": "pass: the costs to both parties are visible and acknowledged by both sides",
+    "no_person_score": "pass: actions and positions are scored, not souls; no person is called evil",
+    "unknowns_tracked": "pass: the moral status of the fetus is reported as unknown (disputed), not coerced to zero or one"
+  },
+  "falsification": {
+    "kill_condition_specific": "A demonstration that the fetus can voluntarily consent to death (impossible by definition) or that the pregnant person can voluntarily consent to forced gestation (contradiction in terms) would break this resolution. Alternatively, a demonstration that J=1, M=1, W=1 is possible inside the closed system - e.g., a pregnancy where both parties fully consent to the outcome - would falsify the trilemma for this case.",
+    "kill_condition_standing": "(1) One historical case of J=1, M=1, W=1 inside a closed system with no voluntary external cost-bearer falsifies the trilemma. (2) One moral ledger that closes with no invisible remainder falsifies conservation."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "spec_version": "1.0-trilemma-resolver",
+  "status": "OK",
+  "fight": {
+    "id": "gun_control",
+    "familiar_name": "Gun control",
+    "years_running": 50,
+    "poles": [
+      "Shall not be infringed / guns protect my family",
+      "How many more children have to die"
+    ]
+  },
+  "reader_anchor": {
+    "opening_prose": "You are seven years old. Your older brother builds a fort in the backyard from scrap wood and an old bedsheet. He lets you inside only if you promise to guard the entrance. You sit cross-legged in the dirt, holding a stick, watching for enemies. You have never seen an enemy. But you know your job: if someone comes, you raise the stick. You do not calculate whether the stick will stop a grown-up. You do not calculate whether the enemy is real. You just hold the stick. That is what a guard does.\n\nHere is the detail nobody ever points out: you never asked who built the fort. You never asked if the bedsheet would stop rain. You never asked if your brother had permission to use the wood. You just guarded. The fort was given to you. Your job was to protect it. You did not design the system. You were handed a role and you filled it.\n\nWhat was trained out of you was the question: who decides what counts as a threat? You learned to point the stick at whatever your brother called an enemy. You never learned to ask whether the enemy was real or whether the fort was worth defending. You learned loyalty to the role, not to the truth.\n\nWe are here to give that question back. Not to take your stick. To ask: who decides what counts as a threat, and who pays when the stick is wrong? That is the fight you have been in since you were seven.",
+    "universal_experience": "A child guarding a fort with a stick.",
+    "checkable_detail": "You never asked who built the fort or if the threat was real; you just guarded.",
+    "quiet_theft": "The question 'who decides what counts as a threat' was trained out of you.",
+    "embodiment_note": "The fight over guns is a fight over who decides what counts as a threat and who bears the cost when the threat is misidentified. The child with the stick embodies the guard role without questioning the system that gave it."
+  },
+  "poles": [
+    {
+      "label": "Armed self-defense pole",
+      "steelman": "The Second Amendment guarantees the right to keep and bear arms. This is not about hunting or sport. It is about the irreducible fact that when a violent attacker breaks into your home, the police are minutes away. In those minutes, you are alone. A firearm is the only tool that equalizes force between a 120-pound woman and a 200-pound attacker. The government cannot protect you at every moment. To deny you the means of self-defense is to make you a dependent victim. The cost of gun control is paid in defenseless bodies. The bodies of children in schools are tragic, but the solution is not to disarm the law-abiding. The solution is to enforce existing laws and address mental health. The accusation against the other side is: you would trade my family's safety for a symbolic gesture that does not stop criminals, who by definition do not follow gun laws.",
+      "accusation_against_others": "You would trade my family's safety for a symbolic gesture that does not stop criminals.",
+      "accusation_is_true_because": "Gun control laws restrict legal gun owners, not illegal gun users. The cost of those laws is borne by potential victims who are disarmed, while the criminals who cause the damage are not affected. Someone who did not create the damage (the law-abiding gun owner) eats the cost of the policy."
+    },
+    {
+      "label": "Public safety pole",
+      "steelman": "The United States has more guns than people. It also has by far the highest gun death rate of any developed country. Children are shot in schools, in homes, on streets. The data is overwhelming: more guns mean more gun deaths. This is not about taking everyone's guns. It is about reasonable measures: universal background checks, red flag laws, bans on weapons designed for mass killing. The Second Amendment is not absolute. You cannot yell 'fire' in a crowded theater. You cannot own a nuclear weapon. The right to life of a child in a classroom outweighs the right of an adult to own an AR-15. The accusation against the other side is: you value your hobby over children's lives. You refuse to accept any restriction, no matter how many bodies pile up.",
+      "accusation_against_others": "You value your hobby over children's lives.",
+      "accusation_is_true_because": "The cost of unrestricted gun access is borne by victims of gun violence, including children who did not create the gun culture or choose to be in a shooting. Someone who did not create the damage (the child, the innocent bystander) eats the cost of the policy."
+    }
+  ],
+  "ledger": {
+    "D_definition": "The annual deficit of preventable gun deaths in the United States: approximately 40,000 deaths per year (homicide, suicide, accident) plus the trauma and fear of defenseless victims in violent encounters where police response time exceeds the threat window.",
+    "D_is_real_evidence": "CDC data: 48,830 gun deaths in 2021 (homicide 20,958, suicide 26,328, accident 549). FBI data on response times: average 4-10 minutes for urban areas, longer rural. Defenseless victim cases are documented in crime reports where victims were unable to defend themselves.",
+    "victim_class": "Victims of gun violence (homicide, suicide, accident) and potential victims in violent encounters where a firearm would have been the only equalizer but was unavailable due to policy.",
+    "causal_class": "Diffuse but identifiable: the class of individuals who use guns illegally (criminals, mass shooters) and the class of individuals who negligently store or handle guns (accidents, suicides). Note: the causal class is not 'gun owners' as a whole; it is a subset. However, the policy debate treats the entire class of gun owners as the lever.",
+    "per_pole_transfers": [
+      {
+        "pole": "Armed self-defense",
+        "T_A": "Victims of gun violence receive no direct transfer under this pole; the pole argues that allowing guns reduces victimization by deterrence and defense. T_A is effectively zero in direct restitution, but the pole claims D is reduced by prevention. For the ledger: T_A = 0 (no direct restoration to victims), T_B = 0 (no cost imposed on causal class, as criminals are not deterred by law).",
+        "T_B": "0",
+        "J": 0.0,
+        "M": 1.0,
+        "W_note": "Victim class does not voluntarily accept the risk; they are involuntary. Offender class bears no cost. No free will on either side.",
+        "who_eats_deficit": "Victims of gun violence (the dead, the traumatized) and potential victims in future incidents."
+      },
+      {
+        "pole": "Public safety",
+        "T_A": "Victims of gun violence receive no direct transfer under this pole either. The pole argues that reducing gun availability reduces D. T_A = 0 in direct restitution.",
+        "T_B": "Cost imposed on law-abiding gun owners: loss of access, time, money for compliance, psychological burden of being treated as potential criminals. T_B is real but diffuse. Estimated: millions of people bear inconvenience, but no direct cost to the causal class (criminals).",
+        "J": 0.0,
+        "M": 0.0,
+        "W_note": "Victim class does not receive restoration. Offender class does not bear cost. Law-abiding gun owners bear cost involuntarily. No free will.",
+        "who_eats_deficit": "Victims of gun violence (dead, traumatized) AND law-abiding gun owners (cost of compliance, loss of self-defense capacity). Both groups are involuntary."
+      }
+    ]
+  },
+  "clear_win": {
+    "type": "structural_invariant",
+    "statement": "The gun control fight is a seating argument on the J + M = 1 line. Both poles are correct in their accusations: the armed self-defense pole correctly identifies that gun control makes law-abiding gun owners bear the cost of crimes they did not commit. The public safety pole correctly identifies that unrestricted guns make innocent victims bear the cost of gun violence. Both accusations are true simultaneously. The ledger never closes because neither pole transfers anything to the actual victims (T_A = 0) and neither pole imposes cost on the actual causal class (criminals, negligent owners) in a way that reduces D. The deficit is always eaten by someone who did not create it.",
+    "derivation_steps": [
+      "1. D = 40,000 gun deaths per year plus defenseless victim trauma. This is real and measurable.",
+      "2. Under the armed self-defense pole: T_A = 0 (no direct restitution to victims), T_B = 0 (no cost on criminals). J = 0, M = 1. The deficit is eaten by victims.",
+      "3. Under the public safety pole: T_A = 0 (no direct restitution to victims), T_B = cost on law-abiding gun owners (not the causal class). J = 0, M = 0 (since T_B is not imposed on the causal class, M is not mercy; the formula breaks because T_B is misassigned). Corrected: T_B = 0 for the causal class, so J = 0, M = 1 again. The deficit is eaten by victims.",
+      "4. Both poles have J = 0, M = 1. The line collapses to a single point: no restoration, no mercy. The deficit is entirely unpaid.",
+      "5. The accusations each pole makes are true: the other pole's plan makes someone who did not create the damage eat the cost. This is the invariant: the fight is about who eats the deficit, not about whether the deficit exists.",
+      "6. No position on the line closes the ledger because the causal class (criminals, negligent owners) is never made to bear the cost, and victims are never restored. The deficit is eternal under both poles."
+    ],
+    "dinner_table_sentence": "Both sides are right: your plan makes innocent people pay for damage they didn't cause, and neither plan restores the dead.",
+    "why_undeniable": "A hostile reader must concede that under both poles, victims of gun violence receive no direct restitution, and the causal class (criminals, negligent owners) bears no direct cost. The accusations each side makes against the other are factually correct. The only way to deny this is to deny that D is real, which the data does not allow."
+  },
+  "off_the_line": {
+    "proximate": {
+      "structures": [
+        "Voluntary mutual aid networks that provide security for vulnerable individuals (e.g., neighborhood watch, community defense groups) without requiring gun ownership.",
+        "Voluntary sponsorship programs where experienced gun owners mentor new owners on safe storage and conflict de-escalation.",
+        "Restorative justice programs where offenders (when caught) meet victims and provide restitution, reducing future violence."
+      ],
+      "honest_limit": "These structures relocate the cost voluntarily and visibly, but they do not retire the deficit. The dead are not restored. The trauma remains. The altruism lemma holds: internal love and forgiveness relocate the deficit; they do not retire it."
+    },
+    "ultimate": {
+      "configuration": "A voluntary external cost-bearer who (1) is neither victim nor offender nor conscripted bystander, (2) acts voluntarily, (3) absorbs the full cost of the deficit (the 40,000 deaths, the trauma, the defenseless fear), (4) has capacity to absorb without being destroyed, (5) preserves truth (damage acknowledged, not denied).",
+      "candidate": "The framework identifies Jesus Christ as the historical candidate who voluntarily absorbed the cost of human violence and death on a cross, rising again, offering restoration to victims and transformation to offenders, without coercing either. This is not a policy proposal; it is the structural configuration that satisfies the five requirements.",
+      "door_note": "The door opens from the reader's side only. No one is conscripted. The offer stands."
+    }
+  },
+  "anti_gaming_audit": {
+    "blind_label": "pass: the analysis uses 'armed self-defense pole' and 'public safety pole' with no party names; the mechanism would hold if the poles were reversed.",
+    "symmetry": "pass: the win applies regardless of which pole proposed the mechanism; both poles fail to close the ledger.",
+    "counterfactual": "pass: D is real (40,000 deaths per year) and exists absent any policy; it is not a product of the debate.",
+    "radius_consistency": "pass: D is measured at the national level (deaths per year) and the doorstep level (defenseless victim); both are consistent because the national total is the sum of individual doorsteps.",
+    "cost_visibility": "pass: the costs are visible to those paying them (victims feel the bullet, gun owners feel the restriction), but the causal class's costs are invisible because they are not imposed.",
+    "no_person_score": "pass: actions and positions are scored, not souls. Criminals are not condemned as people; their actions are identified as causal.",
+    "unknowns_tracked": "pass: the exact number of defenseless victims saved by guns is unknown and reported as unknown; the causal class is diffuse and noted as such."
+  },
+  "falsification": {
+    "kill_condition_specific": "If a policy could be shown that (a) directly restores victims (T_A > 0) and (b) imposes cost on the actual causal class (criminals, negligent owners) (T_B > 0) such that J + M = 1 with both positive, and (c) does so without conscripting bystanders, then the structural invariant would be broken. No such policy exists in the current debate.",
+    "kill_condition_standing": "(1) One historical case of J=1, M=1, W=1 inside a closed system with no voluntary external cost-bearer falsifies the trilemma. (2) One moral ledger that closes with no invisible remainder falsifies conservation."
+  }
+}

@@ -1,0 +1,321 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO-013 · Grace Operator · Theophysics Registry</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6.4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --bg: #0a0a0a;
+            --surface: #111111;
+            --surface2: #1a1a1a;
+            --text: #c9d1d9;
+            --text-muted: #8b949e;
+            --gold: #d4af37;
+            --gold-dim: rgba(212, 175, 55, 0.3);
+            --gold-glow: rgba(212, 175, 55, 0.08);
+            --success: #22c55e;
+            --danger: #ef4444;
+            --info: #4a9eff;
+            --border: #2a2a2a;
+            --font-heading: 'Oswald', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-quote: 'Crimson Text', serif;
+            --radius: 12px;
+            --shadow: 0 8px 32px rgba(0,0,0,0.6);
+        }
+        html { background: var(--bg); color: var(--text); font-family: var(--font-body); font-weight: 300; line-height: 1.6; }
+        body { max-width: 1280px; margin: 0 auto; padding: 2rem 1.5rem 3rem; background: var(--bg); }
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; color: #f0f0f0; }
+        .gold { color: var(--gold); }
+        .text-mono { font-family: var(--font-mono); }
+        .text-quote { font-family: var(--font-quote); font-style: italic; }
+        .section-number { font-size: 4rem; font-weight: 700; color: var(--gold); opacity: 0.2; line-height: 1; margin-right: 0.75rem; }
+        .gradient-line { height: 2px; background: linear-gradient(90deg, var(--gold), transparent); margin: 2rem 0 1.5rem; width: 100%; }
+        .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+        .badge { display: inline-block; padding: 0.2rem 0.9rem; border-radius: 40px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); }
+        .badge-green { background: rgba(34,197,94,0.15); color: var(--success); border-color: rgba(34,197,94,0.3); }
+        .badge-yellow { background: rgba(212,175,55,0.15); color: var(--gold); border-color: rgba(212,175,55,0.3); }
+        .badge-red { background: rgba(239,68,68,0.15); color: var(--danger); border-color: rgba(239,68,68,0.3); }
+        .badge-blue { background: rgba(74,158,255,0.15); color: var(--info); border-color: rgba(74,158,255,0.3); }
+        .chip { display: inline-block; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 30px; padding: 0.2rem 1rem; font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-muted); }
+        .chip-gold { border-color: var(--gold); color: var(--gold); background: rgba(212,175,55,0.06); }
+        .equation { font-family: var(--font-mono); background: rgba(255,255,255,0.03); padding: 0.1rem 0.3rem; border-radius: 4px; font-size: 0.9rem; }
+        .pull-quote { border-left: 4px solid var(--gold); padding-left: 1.25rem; font-family: var(--font-quote); font-style: italic; font-size: 1.1rem; color: #d0d7de; margin: 1rem 0; }
+        .hero-banner { background: linear-gradient(135deg, rgba(212,175,55,0.07) 0%, rgba(10,10,10,0.95) 70%); border: 1px solid rgba(212,175,55,0.15); border-radius: var(--radius); padding: 2rem; }
+        .mapping-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        .mapping-table th { background: rgba(212,175,55,0.12); color: var(--gold); font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; padding: 0.9rem 1rem; text-align: left; border-bottom: 2px solid var(--gold); }
+        .mapping-table td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+        .mapping-table tr:last-child td { border-bottom: none; }
+        .mapping-table tr:hover td { background: rgba(212,175,55,0.03); }
+        .test-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+        .test-pass { color: var(--success); background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2); }
+        .test-fail { color: var(--danger); background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2); }
+        .falsify-box { background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.2); border-radius: var(--radius); padding: 1.75rem; }
+        .footer-seal { font-family: var(--font-quote); font-style: italic; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 1.5rem; margin-top: 2rem; text-align: center; }
+        .verse-ref { font-family: var(--font-mono); font-size: 0.7rem; color: #6e7681; }
+        .law-tag { font-family: var(--font-mono); font-size: 0.7rem; background: rgba(212,175,55,0.08); padding: 0.1rem 0.5rem; border-radius: 12px; color: var(--gold); }
+        @media (max-width: 768px) {
+            .grid-2, .grid-4 { grid-template-columns: 1fr; gap: 1.25rem; }
+            .hero-banner .grid-2 { grid-template-columns: 1fr; }
+            body { padding: 1rem 0.75rem 2rem; }
+            .section-number { font-size: 2.8rem; }
+        }
+        a { color: var(--gold); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .logo-glyph { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; color: var(--gold); letter-spacing: 0; }
+        .iso-subtitle { font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-mono); }
+        .border-top-blue { border-top: 3px solid var(--info); }
+        .border-top-gold { border-top: 3px solid var(--gold); }
+        .arrow-sym { font-size: 1.8rem; color: var(--gold); opacity: 0.6; margin: 0 0.3rem; }
+        .eq-card { background: rgba(0,0,0,0.4); border: 1px solid rgba(212,175,55,0.15); border-radius: 8px; padding: 1.25rem; font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.8; }
+        .confidence-bar { display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0; }
+        .confidence-fill { height: 6px; border-radius: 6px; background: var(--gold); width: 60%; }
+        .confidence-bg { height: 6px; border-radius: 6px; background: rgba(255,255,255,0.06); flex: 1; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. REGISTRY HEADER -->
+    <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span class="logo-glyph">Φ</span>
+            <div>
+                <h1 style="font-size: 1.6rem; margin: 0; line-height: 1.2;">Theophysics Registry</h1>
+                <div class="iso-subtitle">ISO-013 · Grace Operator · 2026-03-10</div>
+            </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; align-items: center; margin-left: auto;">
+            <span class="badge badge-green"><i class="fa-regular fa-circle-check" style="margin-right: 0.3rem;"></i>Level 3 · Isomorphism</span>
+            <span class="badge badge-yellow"><i class="fa-regular fa-clipboard"></i> Level 2 · Correspondence</span>
+            <span class="chip chip-gold"><i class="fa-regular fa-gem"></i> Confidence: Medium</span>
+            <span class="chip">v1.0</span>
+        </div>
+    </header>
+
+    <!-- 2. HERO BANNER -->
+    <div class="hero-banner" style="margin-bottom: 2.5rem;">
+        <div class="grid-2" style="align-items: start;">
+            <div>
+                <span class="badge badge-blue" style="margin-bottom: 0.75rem; display: inline-block;"><i class="fa-regular fa-file-lines"></i> Law 6 · Grace/External Input</span>
+                <h2 style="font-size: 2rem; line-height: 1.2; margin: 0.5rem 0 0.25rem;">Non-Unitary Operator Algebra <span class="arrow-sym">⟷</span> Doctrine of Grace</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Domain A · Physics &nbsp;⟷&nbsp; Domain B · Christian Theology</p>
+                <div class="pull-quote">
+                    “The operator G acts on a two-state Hilbert space, mapping both |+1⟩ and |-1⟩ to |+1⟩ — a projection onto the positive subspace regardless of input.”
+                </div>
+                <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">
+                    <span class="verse-ref">Ephesians 2:8-9</span> · <span class="verse-ref">Hebrews 10:14</span> · <span class="verse-ref">Romans 11:29</span>
+                </div>
+            </div>
+            <div>
+                <div class="eq-card">
+                    <div style="color: var(--gold); font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.1em; margin-bottom: 0.5rem;">CORE EQUATIONS</div>
+                    <div><span style="color: var(--info);">Domain A</span> &nbsp; G = |+1⟩⟨+1| + |+1⟩⟨-1| = [[1,0],[1,0]]</div>
+                    <div style="color: var(--text-muted); font-size: 0.75rem;">&nbsp;&nbsp;&nbsp;G² = G &nbsp;·&nbsp; G†G ≠ I &nbsp;·&nbsp; rank(G)=1 &nbsp;·&nbsp; det(G)=0</div>
+                    <div style="margin: 0.6rem 0; border-top: 1px solid var(--border);"></div>
+                    <div><span style="color: var(--gold);">Domain B</span> &nbsp; Prevenient grace: σ = -1 → σ = +1</div>
+                    <div style="color: var(--text-muted); font-size: 0.75rem;">&nbsp;&nbsp;&nbsp;idempotent · non-unitary · external · voluntary coupling</div>
+                    <div style="margin-top: 0.6rem; text-align: center; font-size: 1.4rem; color: var(--gold); opacity: 0.5;">⟷</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. DOMAIN SPECIFICATIONS -->
+    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+        <span class="section-number">01</span>
+        <h2 style="font-size: 1.3rem;">Domain Specifications</h2>
+    </div>
+    <div class="grid-2" style="margin-bottom: 2rem;">
+        <div class="card border-top-blue">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                <i class="fa-solid fa-atom" style="color: var(--info); font-size: 1.6rem;"></i>
+                <h3 style="margin: 0; font-size: 1.1rem;">Domain A · Physics</h3>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Non-Unitary Operator Algebra</p>
+            <p style="margin-top: 0.5rem;">A non-unitary, idempotent operator G acting on a two-state Hilbert space {|+1⟩, |-1⟩}. G = [[1,0],[1,0]] satisfies G² = G (idempotent) and G†G ≠ I (non-unitary). It is a rank-1 projection that collapses both basis states to |+1⟩. The operator cannot be generated by any internal Hamiltonian; it originates externally.</p>
+            <div style="margin-top: 0.75rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">G = |+1⟩⟨+1| + |+1⟩⟨-1| &nbsp;·&nbsp; G² = G &nbsp;·&nbsp; G†G ≠ I</div>
+        </div>
+        <div class="card border-top-gold">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                <i class="fa-solid fa-cross" style="color: var(--gold); font-size: 1.6rem;"></i>
+                <h3 style="margin: 0; font-size: 1.1rem;">Domain B · Christian Theology</h3>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Doctrine of Grace</p>
+            <p style="margin-top: 0.5rem;">Prevenient grace as external divine intervention that flips the moral sign of a fallen agent from σ = -1 to σ = +1. It is complete in a single application (idempotent), irreversible (non-unitary), and requires voluntary reception (boundary condition BC8). The operation originates outside the system — God acts first.</p>
+            <div style="margin-top: 0.75rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">σ = -1 → σ = +1 &nbsp;·&nbsp; “once for all” &nbsp;·&nbsp; irrevocable</div>
+        </div>
+    </div>
+
+    <!-- 4. THE ISOMORPHIC MAPPING -->
+    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+        <span class="section-number">02</span>
+        <h2 style="font-size: 1.3rem;">The Isomorphic Mapping</h2>
+    </div>
+    <div class="card" style="padding: 0; overflow-x: auto; margin-bottom: 2rem;">
+        <table class="mapping-table">
+            <thead>
+                <tr><th style="width: 30%;">Domain A · Physics</th><th style="width: 10%; text-align: center;">⟷</th><th style="width: 30%;">Domain B · Theology</th><th style="width: 30%;">Notes / References</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>G = |+1⟩⟨+1| + |+1⟩⟨-1| = [[1,0],[1,0]]</td><td style="text-align: center; color: var(--gold);">⟷</td><td>Prevenient grace: God acts first, before human response</td><td><span class="verse-ref">Eph 2:8-9</span>; A9.1, A9.2</td></tr>
+                <tr><td>Idempotency: G² = G</td><td style="text-align: center; color: var(--gold);">⟷</td><td>“Once applied is complete” — you do not need to be saved twice</td><td><span class="verse-ref">Heb 10:14</span>; D9.2</td></tr>
+                <tr><td>Non-unitarity: G†G ≠ I</td><td style="text-align: center; color: var(--gold);">⟷</td><td>Irreversibility — the gifts and calling of God are irrevocable</td><td><span class="verse-ref">Rom 11:29</span>; det(G)=0</td></tr>
+                <tr><td>Projectivity: G maps both |+1⟩ and |-1⟩ to |+1⟩</td><td style="text-align: center; color: var(--gold);">⟷</td><td>Universality of offer — all who receive are mapped to redeemed state</td><td>σ = -1 → σ = +1</td></tr>
+                <tr><td>External origin: not generated by internal Hamiltonian</td><td style="text-align: center; color: var(--gold);">⟷</td><td>Grace is external divine intervention, not self-generated</td><td>HM.3, HM.4; Pelagianism ruled out</td></tr>
+                <tr><td>Rank deficiency: rank(G) = 1</td><td style="text-align: center; color: var(--gold);">⟷</td><td>One dimension of state space destroyed — no return to previous state</td><td>singular operator</td></tr>
+                <tr><td>Voluntary coupling: α(u) boundary condition</td><td style="text-align: center; color: var(--gold);">⟷</td><td>Free will reception required — grace is not coercive</td><td>BC8; ISO-019; P9.2</td></tr>
+                <tr><td>G(t) = G₀e^{-λt} + G_inf(1 - e^{-λt})</td><td style="text-align: center; color: var(--gold);">⟷</td><td>Grace function temporal evolution (ongoing sanctification?)</td><td>E9.1</td></tr>
+                <tr><td>E_grace = ∫ G(t) ρ(x,t) d³x</td><td style="text-align: center; color: var(--gold);">⟷</td><td>Grace-coupled energy</td><td>E9.1</td></tr>
+                <tr><td>Closed system cannot increase coherence without external input</td><td style="text-align: center; color: var(--gold);">⟷</td><td>Self-salvation is structurally incoherent (Pelagianism)</td><td>P9.1; ISO-002</td></tr>
+                <tr><td>G′ = αG + (1-α)U (non-idempotent unless α=1)</td><td style="text-align: center; color: var(--gold);">⟷</td><td>Semi-Pelagian models fail idempotency — sola gratia required</td><td>mathematical version of sola gratia</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 5. SEPARATOR TESTS -->
+    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+        <span class="section-number">03</span>
+        <h2 style="font-size: 1.3rem;">Separator Tests</h2>
+    </div>
+    <div class="grid-2" style="margin-bottom: 2rem;">
+        <div class="test-card test-pass">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h4 style="margin: 0; font-size: 0.9rem;">Test A · Structural Preservation</h4>
+                <span class="badge badge-green">PASS</span>
+            </div>
+            <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-muted);">Do relations survive under mapping?</p>
+            <p style="font-size: 0.85rem;">Yes. Idempotency, non-unitarity, rank-1, and external origin all map directly to theological properties. The operator algebra structure is preserved in the grace doctrine.</p>
+        </div>
+        <div class="test-card test-pass">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h4 style="margin: 0; font-size: 0.9rem;">Test B · Non-Arbitrariness</h4>
+                <span class="badge badge-green">PASS</span>
+            </div>
+            <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-muted);">Is the mapping forced or could you swap targets?</p>
+            <p style="font-size: 0.85rem;">Largely passed. Properties 1,3,4,5 are non-swappable. Idempotency (property 2) has denominational variance — Catholic sacramental grace may be non-idempotent. Overall mapping is strongly constrained.</p>
+        </div>
+        <div class="test-card test-pass">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h4 style="margin: 0; font-size: 0.9rem;">Test C · Constraint</h4>
+                <span class="badge badge-green">PASS</span>
+            </div>
+            <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-muted);">Does the mapping rule things out?</p>
+            <p style="font-size: 0.85rem;">Yes. Pelagianism (self-generated grace) is ruled out by externality. Semi-Pelagianism is ruled out by idempotency unless α=1. Reversible grace is ruled out by non-unitarity.</p>
+        </div>
+        <div class="test-card" style="border-color: rgba(212,175,55,0.2); background: rgba(212,175,55,0.04);">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h4 style="margin: 0; font-size: 0.9rem;">Test D · Bidirectionality</h4>
+                <span class="badge badge-yellow">PARTIAL</span>
+            </div>
+            <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-muted);">Does each side predict the other?</p>
+            <p style="font-size: 0.85rem;">Physics → Theology: operator algebra constrains grace models (rules out Pelagianism). Theology → Physics: less clear — “once for all” selects idempotent projection but does not generate new physics. Partially bidirectional.</p>
+        </div>
+    </div>
+
+    <!-- 6. CLASSIFICATION & EVIDENCE -->
+    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+        <span class="section-number">04</span>
+        <h2 style="font-size: 1.3rem;">Classification &amp; Evidence</h2>
+    </div>
+    <div class="card" style="margin-bottom: 2rem;">
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+            <div style="flex: 2; min-width: 220px;">
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+                    <span class="badge badge-green">Structural Isomorphism</span>
+                    <span class="badge badge-yellow">Reverse-engineering caveat</span>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Confidence: <strong style="color: var(--gold);">Medium</strong></p>
+                <div class="confidence-bar">
+                    <span style="font-size: 0.75rem; color: var(--text-muted);">60%</span>
+                    <div class="confidence-bg"><div class="confidence-fill" style="width: 60%;"></div></div>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">The mapping is mathematically valid but partially reverse-engineered from theology. Independent grounding from ISO-002 raises confidence.</p>
+            </div>
+            <div style="flex: 3; min-width: 240px;">
+                <h4 style="font-size: 0.8rem; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 0.5rem;">EVIDENCE CHIPS</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+                    <span class="chip">G² = G (D9.2)</span>
+                    <span class="chip">G†G ≠ I</span>
+                    <span class="chip">rank(G)=1</span>
+                    <span class="chip">det(G)=0</span>
+                    <span class="chip">Eph 2:8-9</span>
+                    <span class="chip">Heb 10:14</span>
+                    <span class="chip">Rom 11:29</span>
+                    <span class="chip">ISO-002 (6 theorems)</span>
+                    <span class="chip">BC8 voluntary coupling</span>
+                    <span class="chip">HM.3, HM.4</span>
+                    <span class="chip">A9.1, A9.2</span>
+                </div>
+                <h4 style="font-size: 0.8rem; letter-spacing: 0.08em; color: var(--gold); margin: 1rem 0 0.5rem;">LAWS INVOKED</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+                    <span class="law-tag">Law 6 · Grace/External Input</span>
+                    <span class="law-tag">Law 9 · Morality/Sign</span>
+                    <span class="law-tag">Law 4 · Incompleteness/Gödel Boundary</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. FALSIFICATION CRITERIA -->
+    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+        <span class="section-number">05</span>
+        <h2 style="font-size: 1.3rem;">Falsification Criteria</h2>
+    </div>
+    <div class="falsify-box" style="margin-bottom: 2rem;">
+        <p style="font-size: 0.85rem; color: var(--danger); margin-bottom: 0.75rem;"><i class="fa-regular fa-circle-xmark" style="margin-right: 0.4rem;"></i> Kill conditions — if any are met, the isomorphism is broken:</p>
+        <ol style="padding-left: 1.5rem; font-size: 0.9rem; color: #e5e7eb; display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><strong>Externality broken:</strong> Show that a closed two-state system can spontaneously flip from |-1⟩ to |+1⟩ without external intervention.</li>
+            <li><strong>Idempotency broken:</strong> Show that G² ≠ G for the grace operator (i.e., repeated application of grace produces a different state than single application). This would require re-salvation.</li>
+            <li><strong>Irreversibility broken:</strong> Show that the inverse G⁻¹ exists and is physically realizable (i.e., that grace can be undone).</li>
+            <li><strong>External-origin broken:</strong> Demonstrate a theological tradition where grace is genuinely self-generated and yet produces lasting moral transformation.</li>
+        </ol>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.75rem;"><i class="fa-regular fa-flask"></i> All four conditions are genuine — if any are met, the mapping fails regardless of theological preference.</p>
+    </div>
+
+    <!-- 8. RELATED ISOMORPHISMS -->
+    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+        <span class="section-number">06</span>
+        <h2 style="font-size: 1.3rem;">Related Isomorphisms</h2>
+    </div>
+    <div class="grid-4" style="margin-bottom: 2rem;">
+        <div class="card" style="padding: 1rem 1.25rem;">
+            <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--gold);">ISO-001</div>
+            <h4 style="font-size: 0.85rem; margin: 0.2rem 0;">Trinity</h4>
+            <p style="font-size: 0.75rem; color: var(--text-muted);">Source of the grace operator</p>
+        </div>
+        <div class="card" style="padding: 1rem 1.25rem;">
+            <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--gold);">ISO-002</div>
+            <h4 style="font-size: 0.85rem; margin: 0.2rem 0;">Terminus Sui</h4>
+            <p style="font-size: 0.75rem; color: var(--text-muted);">Why external intervention is necessary</p>
+        </div>
+        <div class="card" style="padding: 1rem 1.25rem;">
+            <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--gold);">ISO-003</div>
+            <h4 style="font-size: 0.85rem; margin: 0.2rem 0;">Entropy / Sin</h4>
+            <p style="font-size: 0.75rem; color: var(--text-muted);">What grace reverses</p>
+        </div>
+        <div class="card" style="padding: 1rem 1.25rem;">
+            <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--gold);">ISO-019</div>
+            <h4 style="font-size: 0.85rem; margin: 0.2rem 0;">Boundary Conditions</h4>
+            <p style="font-size: 0.75rem; color: var(--text-muted);">Voluntary reception BC8</p>
+        </div>
+    </div>
+
+    <!-- 9. FOOTER -->
+    <footer style="margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">

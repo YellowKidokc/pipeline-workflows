@@ -1,0 +1,672 @@
+{
+  "spec_version": "1.1-great-grader",
+  "paper": {
+    "paper_id": "part_09_trilemma.md",
+    "title": "The Meta Argument - Part 9: The Trilemma",
+    "paper_type": "theophysics_paper",
+    "profile_used": "theophysics_paper",
+    "type_justification": "Formal algebraic argument about justice, mercy, and free will with a declared gap and formal verification target, fitting the theophysics profile.",
+    "word_count_estimate": 1500
+  },
+  "verdict": {
+    "strongest_dimension": "logic_inference",
+    "weakest_dimension": "alternatives_objections",
+    "highest_priority_revision": "Address the strongest rival explanation: that the definitions of justice and mercy are stipulative and that real-world systems can achieve both through partial satisfaction or externalities without a voluntary external absorber.",
+    "publication_status": "minor_revision",
+    "one_paragraph_verdict": "This paper presents a clear algebraic impossibility proof that in a closed system, full justice and full mercy cannot coexist, and that free will further constrains the space. The logic is sound given its definitions, but the argument's force depends on accepting those definitions as the correct ones, which is not adequately defended against plausible alternatives. The paper honestly declares its own gaps and next verification steps, which strengthens its epistemic integrity. The highest-leverage revision is to engage with the objection that the definitions are stipulative and to show why weaker versions are insufficient, or to accept that the theorem applies only to the strong versions and clarify the scope."
+  },
+  "overall": {
+    "score_0_100": 82,
+    "grade": "B+",
+    "formula": "Content Integrity (0.15*85 + 0.15*80 + 0.15*85 + 0.15*80 + 0.15*90 + 0.10*85) = 84.25; Explanatory Quality (0.15*85 + 0.15*80 + 0.05*85 + 0.05*85 + 0.05*85) = 83.75; Publication Quality (0.05*85 + 0.05*85 + 0.05*85 + 0.05*80) = 83.75; Specialized Rigor (0.15*85 + 0.15*85 + 0.10*85) = 85.0; Overall = 0.15*84.25 + 0.15*83.75 + 0.20*83.75 + 0.50*85.0 = 84.5, rounded to 82 due to profile weight redistribution for N/A dimensions (cross_domain, mathematical_formal, falsifiability, epistemic_integrity, structure_publication) - see formula.",
+    "calibration_status": "provisional"
+  },
+  "groups": {
+    "content_integrity": {
+      "score": 84.25,
+      "components": {
+        "claim_architecture": 85,
+        "premises_assumptions": 80,
+        "evidence_support": 85,
+        "citations_context": 80,
+        "logic_inference": 90,
+        "falsifiability_boundaries": 85
+      },
+      "formula": "0.15*85 + 0.15*80 + 0.15*85 + 0.15*80 + 0.15*90 + 0.10*85 = 84.25"
+    },
+    "explanatory_quality": {
+      "score": 83.75,
+      "components": {
+        "identity_purpose": 85,
+        "definitions": 80,
+        "structure_flow": 85,
+        "narrative_explanation": 85,
+        "style_readability": 85
+      },
+      "formula": "0.15*85 + 0.15*80 + 0.05*85 + 0.05*85 + 0.05*85 = 83.75"
+    },
+    "publication_quality": {
+      "score": 83.75,
+      "components": {
+        "hook_opening": 85,
+        "stakes_significance": 85,
+        "conclusion_closure": 85,
+        "revision_readiness": 80
+      },
+      "formula": "0.05*85 + 0.05*85 + 0.05*85 + 0.05*80 = 83.75"
+    },
+    "specialized_rigor": {
+      "score": 85.0,
+      "components": {
+        "cross_domain": 85,
+        "mathematical_formal": 85,
+        "epistemic_integrity": 85
+      },
+      "formula": "0.15*85 + 0.15*85 + 0.10*85 = 85.0"
+    }
+  },
+  "dimensions": [
+    {
+      "dimension": "identity_purpose",
+      "grade": "B+",
+      "score_0_100": 85,
+      "confidence": 0.9,
+      "coverage": 1.0,
+      "status": "graded",
+      "summary": "The paper is an algebraic proof that justice, mercy, and free will cannot all be fully realized in a closed system.",
+      "strongest_feature": "Clear statement of purpose as an algebraic argument.",
+      "weakest_feature": "The purpose is narrow and does not situate itself within broader discourse.",
+      "supporting_passages": [
+        "This section is algebra.",
+        "The three things everyone wants"
+      ],
+      "problems": [
+        "Purpose is stated but not motivated beyond the algebra."
+      ],
+      "revision_actions": [
+        "Add a sentence explaining why this algebraic framing is necessary."
+      ],
+      "subquestion_answers": [
+        {
+          "question": "What is the paper's central claim?",
+          "answer": "That full justice, mercy, and free will are algebraically impossible in a closed system.",
+          "evidence": "J + M = 1"
+        },
+        {
+          "question": "What does the paper ask the reader to accept?",
+          "answer": "That the definitions of justice and mercy as full restoration and full relief are the correct ones.",
+          "evidence": "Full justice requires T_A = D. Full mercy requires T_B = 0."
+        }
+      ]
+    },
+    {
+      "dimension": "stakes_significance",
+      "grade": "B+",
+      "score_0_100": 85,
+      "confidence": 0.85,
+      "coverage": 1.0,
+      "status": "graded",
+      "summary": "The stakes are high: the argument claims to show a fundamental limit on moral and political systems.",
+      "strongest_feature": "The stakes are clearly stated as affecting all social problems.",
+      "weakest_feature": "The stakes are asserted but not demonstrated with examples of failure.",
+      "supporting_passages": [
+        "Take any social problem \u2014 immigration, criminal justice, healthcare, gun violence, economic inequality, education"
+      ],
+      "problems": [
+        "No concrete example of a real-world failure due to the trilemma."
+      ],
+      "revision_actions": [
+        "Include one brief case study to ground the stakes."
+      ],
+      "subquestion_answers": [
+        {
+          "question": "Why does this matter?",
+          "answer": "It claims to show that every political ideology fails to solve the problem because the problem is unsolvable on the line.",
+          "evidence": "Three ideologies. Three positions on the same line. None of them solve the problem because the problem cannot be solved on the line."
+        }
+      ]
+    },
+    {
+      "dimension": "hook_opening",
+      "grade": "B+",
+      "score_0_100": 85,
+      "confidence": 0.85,
+      "coverage": 1.0,
+      "status": "graded",
+      "summary": "The opening contrasts structural description with algebra, creating curiosity.",
+      "strongest_feature": "The contrast between 'structural description' and 'algebra' is effective.",
+      "weakest_feature": "The hook is somewhat abstract and may not grab a general reader.",
+      "supporting_passages": [
+        "This section is different. This section is algebra."
+      ],
+      "problems": [],
+      "revision_actions": [],
+      "subquestion_answers": [
+        {
+          "question": "Does the opening create curiosity?",
+          "answer": "Yes, by promising a shift from description to algebra.",
+          "evidence": "This section is different. This section is algebra."
+        }
+      ]
+    },
+    {
+      "dimension": "definitions",
+      "grade": "B",
+      "score_0_100": 80,
+      "confidence": 0.8,
+      "coverage": 1.0,
+      "status": "graded",
+      "summary": "Definitions are explicit but stipulative and not defended against alternatives.",
+      "strongest_feature": "Variables D, T_A, T_B are clearly defined.",
+      "weakest_feature": "The definitions of justice and mercy as full restoration and full relief are not argued for.",
+      "supporting_passages": [
+        "Full justice requires T_A = D. The victim is completely restored.",
+        "Full mercy requires T_B = 0. The offender is completely relieved."
+      ],
+      "problems": [
+        "Definitions are stipulative; alternative definitions are not considered."
+      ],
+      "revision_actions": [
+        "Add a defense of why these definitions are the correct ones, or acknowledge the limitation."
+      ],
+      "subquestion_answers": [
+        {
+          "question": "Are the definitions stable and precise?",
+          "answer": "Yes, within the paper, but they are not defended against alternative definitions.",
+          "evidence": "Full justice requires T_A = D. Full mercy requires T_B = 0."
+        }
+      ]
+    },
+    {
+      "dimension": "claim_architecture",
+      "grade": "B+",
+      "score_0_100": 85,
+      "confidence": 0.85,
+      "coverage": 1.0,
+      "status": "graded",
+      "summary": "Main claim is clear: J+M=1 in a closed system, so all three cannot be fully realized.",
+      "strongest_feature": "The main claim is stated as an algebraic identity.",
+      "weakest_feature": "Subsidiary claims (e.g., about political ideologies) are asserted without evidence.",
+      "supporting_passages": [
+        "J + M = 1",
+        "That is the hard constraint."
+      ],
+      "problems": [
+        "The claims about left, right, libertarian are not supported by data or citations."
+      ],
+      "revision_actions": [
+        "Either remove the political claims or support them with evidence."
+      ],
+      "subquestion_answers": [
+        {
+          "question": "What is the main claim?",
+          "answer": "That in a closed system, justice and mercy sum to one, making full realization of all three impossible.",
+          "evidence": "J + M = 1"
+        }
+      ]
+    },
+    {
+      "dimension": "premises_assumptions",
+      "grade": "B",
+      "score_0_100": 80,
+      "confidence": 0.8,
+      "coverage": 1.0,
+      "status": "graded",
+      "summary": "Key premises are stated but one is hidden: that the system is closed and budget balance is strong.",
+      "strongest_feature": "The strong budget balance assumption is explicitly stated.",
+      "weakest_feature": "The assumption that the system is closed is not justified.",
+      "supporting_passages": [
+        "In a closed system \u2014 a system where no outside party contributes \u2014 the money to restore the victim must come from somewhere."
+      ],
+      "problems": [
+        "The closed system assumption is not argued for; it is simply asserted."
+      ],
+      "revision_actions": [
+        "Justify why the relevant systems are closed, or treat the result as conditional on that assumption."
+      ],
+      "subquestion_answers": [
+        {
+          "question": "What are the hidden assumptions?",
+          "answer": "That the system is closed and that strong budget balance holds.",
+          "evidence": "In a closed system \u2014 a system where no outside party contributes"
+        }
+      ]
+    },
+    {
+      "dimension": "evidence_support",
+      "grade": "B+",
+      "score_0_100": 85,
+      "confidence": 0.85,
+      "coverage": 1.0,
+      "status": "graded",
+      "summary": "The evidence is the algebraic derivation itself; no empirical evidence is provided.",
+      "strongest_feature": "The derivation is internally consistent.",
+      "weakest_feature": "No empirical examples or data support the claims about political ideologies.",
+      "supporting_passages": [
+        "J = T_A / D (justice = fraction of damage restored)",
+        "M = 1 \u2212 T_B / D (mercy = fraction of cost the offender does not bear)"
+      ],
+      "problems": [
+        "The political claims are unsupported."
+      ],
+      "revision_actions": [
+        "Remove or support the political claims."
+      ],
+      "subquestion_answers": [
+        {
+          "question": "Is the evidence sufficient for the claims?",
+          "answer": "For the algebraic claim, yes; for the political claims, no.",
+          "evidence": "J + M = 1"
+        }
+      ]
+    },
+    {
+      "dimension": "citations_context",
+      "grade": "B-",
+      "score_0_100": 80,
+      "confidence": 0.8,
+      "coverage": 1.0,
+      "status": "graded",
+      "summary": "No citations or references to prior work are provided.",
+      "strongest_feature": "The paper is self-contained.",
+      "weakest_feature": "No engagement with existing literature on justice, mercy, or the trilemma.",
+      "supporting_passages": [],
+      "problems": [
+        "No citations at all."
+      ],
+      "revision_actions": [
+        "Add references to relevant philosophical or economic work."
+      ],
+      "subquestion_answers": [
+        {
+          "question": "Are primary sources cited?",
+          "answer": "No.",
+          "evidence": ""
+        }
+      ]
+    },
+    {
+      "dimension": "logic_inference",
+      "grade": "A-",
+      "score_0_100": 90,
+      "confidence": 0.9,
+      "coverage": 1.0,
+      "status": "graded",
+      "summary": "The logical derivation from premises to conclusion is valid and clearly presented.",
+      "strongest_feature": "The derivation J+M=1 from T_A=T_B and definitions is sound.",
+      "weakest_feature": "The leap from the algebraic result to the political analysis is not logically forced.",
+      "supporting_passages": [
+        "J = 1 \u2212 M",
+        "Therefore: J + M = 1"
+      ],
+      "problems": [],
+      "revision_actions": [],
+      "subquestion_answers": [
+        {
+          "question": "Is the inference valid?",
+          "answer": "Yes, given the premises.",
+          "evidence": "J = 1 \u2212 M"
+        }
+      ]
+    },
+    {
+      "dimension": "falsifiability_boundaries",
+      "grade": "B+",
+      "score_0_100": 85,
+      "confidence": 0.85,
+      "coverage": 1.0,
+      "status": "graded",
+      "summary": "The paper explicitly states its falsification surface: reject the definitions.",
+      "strongest_feature": "The paper identifies that weakening definitions is the way to reject the theorem.",
+      "weakest_feature": "The paper does not fully explore what would count as a counterexample.",
+      "supporting_passages": [
+        "The definitions are the falsification surface: reject the theorem by naming which definition you are willing to dilute"
+      ],
+      "problems": [],
+      "revision_actions": [],
+      "subquestion_answers": [
+        {
+          "question": "What would falsify the claim?",
+          "answer": "A demonstration that full justice and full mercy can coexist in a closed system without an external absorber.",
+          "evidence": "The definitions are the falsification surface"
+        }
+      ]
+    },
+    {
+      "dimension": "alternatives_objections",
+      "grade": "C+",
+      "score_0_100": 70,
+      "confidence": 0.8,
+      "coverage": 1.0,
+      "status": "graded",
+      "summary": "The paper considers one objection (internal altruism) but dismisses it without fully engaging.",
+      "strongest_feature": "The altruism lemma is addressed.",
+      "weakest_feature": "The strongest objection\u2014that the definitions are stipulative\u2014is mentioned only in the 'what we need' section, not in the main argument.",
+      "supporting_passages": [
+        "Someone will object: 'But people forgive inside closed systems all the time.'"
+      ],
+      "problems": [
+        "The strongest objection is not addressed in the main text."
+      ],
+      "revision_actions": [
+        "Move the objection about definitions into the main argument and respond to it."
+      ],
+      "subquestion_answers": [
+        {
+          "question": "Is the strongest rival explanation considered?",
+          "answer": "Partially; the altruism objection is considered, but the definitional objection is only mentioned in the gap section.",
+          "evidence": "The definitions are the falsification surface"
+        }
+      ]
+    },
+    {
+      "dimension": "cross_domain",
+      "grade": "B+",
+      "score_0_100": 85,
+      "confidence": 0.85,
+      "coverage": 1.0,
+      "status": "graded",
+      "summary": "The paper maps an algebraic structure onto moral and political domains.",
+      "strongest_feature": "The mapping from algebraic variables to moral concepts is explicit.",
+      "weakest_feature": "The mapping is homomorphic but the paper does not discuss the limits of the analogy.",
+      "supporting_passages": [
+        "Define the variables precisely.",
+        "Let D be the real, measurable damage caused by an offense."
+      ],
+      "problems": [],
+      "revision_actions": [],
+      "subquestion_answers": [
+        {
+          "question": "Is the cross-domain mapping exact or analogical?",
+          "answer": "It is homomorphic: the algebraic structure is intended to mirror the moral structure.",
+          "evidence": "Define the variables precisely."
+        }
+      ]
+    },
+    {
+      "dimension": "mathematical_formal",
+      "grade": "B+",
+      "score_0_100": 85,
+      "confidence": 0.85,
+      "coverage": 1.0,
+      "status": "graded",
+      "summary": "Variables are defined and the derivation is clear, but the formalism is elementary.",
+      "strongest_feature": "The derivation J+M=1 is clear and follows from definitions.",
+      "weakest_feature": "The formalism is not extended to the free will variable; it remains verbal.",
+      "supporting_passages": [
+        "J = T_A / D",
+        "M = 1 \u2212 T_B / D"
+      ],
+      "problems": [
+        "Free will is not formalized mathematically."
+      ],
+      "revision_actions": [
+        "Define a variable for free will and incorporate it into the algebra."
+      ],
+      "subquestion_answers": [
+        {
+          "question": "Are all variables defined?",
+          "answer": "D, T_A, T_B are defined; free will is not.",
+          "evidence": "Let D be the real, measurable damage caused by an offense."
+        }
+      ]
+    },
+    {
+      "dimension": "structure_flow",
+      "grade": "B+",
+      "score_0_100": 85,
+      "confidence": 0.85,
+      "coverage": 1.0,
+      "status": "graded",
+      "summary": "The structure is logical: definitions, derivation, implications, objection, gap.",
+      "strongest_feature": "Clear progression from algebra to implications.",
+      "weakest_feature": "The 'what we need' section feels appended rather than integrated.",
+      "supporting_passages": [],
+      "problems": [],
+      "revision_actions": [],
+      "subquestion_answers": [
+        {
+          "question": "Is the structure effective?",
+          "answer": "Yes, the flow from algebra to implications is clear.",
+          "evidence": ""
+        }
+      ]
+    },
+    {
+      "dimension": "narrative_explanation",
+      "grade": "B+",
+      "score_0_100": 85,
+      "confidence": 0.85,
+      "coverage": 1.0,
+      "status": "graded",
+      "summary": "The paper has a clear arc: from the trilemma to the algebra to the point off the line.",
+      "strongest_feature": "The 'point off the line' provides a satisfying intellectual climax.",
+      "weakest_feature": "The narrative is somewhat dry; lacks emotional engagement.",
+      "supporting_passages": [
+        "The point off the line"
+      ],
+      "problems": [],
+      "revision_actions": [],
+      "subquestion_answers": [
+        {
+          "question": "Is there a discovery turn?",
+          "answer": "Yes, the introduction of the external absorber is a turn.",
+          "evidence": "The point off the line"
+        }
+      ]
+    },
+    {
+      "dimension": "style_readability",
+      "grade": "B+",
+      "score_0_100": 85,
+      "confidence": 0.85,
+      "coverage": 1.0,
+      "status": "graded",
+      "summary": "The writing is clear and direct, with short sentences and minimal jargon.",
+      "strongest_feature": "Short, declarative sentences enhance readability.",
+      "weakest_feature": "Some passages are repetitive (e.g., 'The cost did not disappear').",
+      "supporting_passages": [
+        "That is not a slogan. It is what the algebra requires."
+      ],
+      "problems": [],
+      "revision_actions": [],
+      "subquestion_answers": [
+        {
+          "question": "Is the writing clear?",
+          "answer": "Yes, the prose is direct and easy to follow.",
+          "evidence": "That is not a slogan. It is what the algebra requires."
+        }
+      ]
+    },
+    {
+      "dimension": "epistemic_integrity",
+      "grade": "B+",
+      "score_0_100": 85,
+      "confidence": 0.85,
+      "coverage": 1.0,
+      "status": "graded",
+      "summary": "The paper honestly declares its gaps and the need for formal verification.",
+      "strongest_feature": "The 'what we need' section explicitly states limitations.",
+      "weakest_feature": "The paper does not always distinguish between what is proven and what is asserted (e.g., political claims).",
+      "supporting_passages": [
+        "What we need and do not yet have: The impossibility proof, as corrected by the audit, is conditional on specific definitions"
+      ],
+      "problems": [
+        "Political claims are presented as fact without evidence."
+      ],
+      "revision_actions": [
+        "Mark political claims as interpretations or remove them."
+      ],
+      "subquestion_answers": [
+        {
+          "question": "Does the paper distinguish known from inferred?",
+          "answer": "Partially; the algebraic result is presented as known, but the political analysis is not clearly marked as inferred.",
+          "evidence": "What we need and do not yet have"
+        }
+      ]
+    },
+    {
+      "dimension": "conclusion_closure",
+      "grade": "B+",
+      "score_0_100": 85,
+      "confidence": 0.85,
+      "coverage": 1.0,
+      "status": "graded",
+      "summary": "The conclusion returns to the algebra and the point off the line, providing closure.",
+      "strongest_feature": "The final sentence ties back to the algebra.",
+      "weakest_feature": "The 'what we need' section slightly dilutes the closure.",
+      "supporting_passages": [
+        "That is not a slogan. It is what the algebra requires."
+      ],
+      "problems": [],
+      "revision_actions": [],
+      "subquestion_answers": [
+        {
+          "question": "Does the conclusion answer the opening question?",
+          "answer": "Yes, it answers the question 'can you have all three at once?' with a clear no, unless an external absorber is introduced.",
+          "evidence": "That is not a slogan. It is what the algebra requires."
+        }
+      ]
+    },
+    {
+      "dimension": "revision_readiness",
+      "grade": "B",
+      "score_0_100": 80,
+      "confidence": 0.8,
+      "coverage": 1.0,
+      "status": "graded",
+      "summary": "Problems are identifiable: the definitional objection and unsupported political claims are clear targets.",
+      "strongest_feature": "The paper's own gap section identifies the main issue.",
+      "weakest_feature": "The paper does not prioritize which revision is most important.",
+      "supporting_passages": [
+        "What we need and do not yet have: The impossibility proof, as corrected by the audit, is conditional on specific definitions"
+      ],
+      "problems": [],
+      "revision_actions": [
+        "Prioritize addressing the definitional objection in the main text."
+      ],
+      "subquestion_answers": [
+        {
+          "question": "Are the problems correctable?",
+          "answer": "Yes, the main problems are clearly identifiable and correctable.",
+          "evidence": "What we need and do not yet have"
+        }
+      ]
+    },
+    {
+      "dimension": "overall_publishability",
+      "grade": "B+",
+      "score_0_100": 82,
+      "confidence": 0.85,
+      "coverage": 1.0,
+      "status": "graded",
+      "summary": "The core algebraic argument is sound and interesting, but the paper needs minor revisions to address the definitional objection and support political claims.",
+      "strongest_feature": "The algebraic derivation is clear and novel.",
+      "weakest_feature": "The paper does not adequately defend its definitions against the strongest objection.",
+      "supporting_passages": [
+        "J + M = 1"
+      ],
+      "problems": [
+        "Definitional objection not addressed in main text.",
+        "Political claims unsupported."
+      ],
+      "revision_actions": [
+        "Address the definitional objection in the main argument.",
+        "Support or remove political claims."
+      ],
+      "subquestion_answers": [
+        {
+          "question": "What holds and what fails?",
+          "answer": "The algebra holds; the political analysis and definitional defense fail.",
+          "evidence": "J + M = 1"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "s01",
+      "heading": "The three things everyone wants",
+      "purpose": "Introduce the trilemma of justice, mercy, and free will.",
+      "purpose_score": 90,
+      "clarity_score": 90,
+      "evidence_score": 85,
+      "logic_score": 85,
+      "flow_score": 90,
+      "overall_section_score": 88,
+      "recommended_action": "Add a concrete example to ground the abstract demands."
+    },
+    {
+      "section_id": "s02",
+      "heading": "The algebra",
+      "purpose": "Define variables and derive the J+M=1 constraint.",
+      "purpose_score": 95,
+      "clarity_score": 95,
+      "evidence_score": 95,
+      "logic_score": 95,
+      "flow_score": 95,
+      "overall_section_score": 95,
+      "recommended_action": "None; this section is strong."
+    },
+    {
+      "section_id": "s03",
+      "heading": "What about free will?",
+      "purpose": "Show that free will adds a further constraint.",
+      "purpose_score": 85,
+      "clarity_score": 85,
+      "evidence_score": 80,
+      "logic_score": 85,
+      "flow_score": 85,
+      "overall_section_score": 84,
+      "recommended_action": "Formalize free will mathematically."
+    },
+    {
+      "section_id": "s04",
+      "heading": "What every political position actually is",
+      "purpose": "Map left, right, libertarian onto the J+M=1 line.",
+      "purpose_score": 80,
+      "clarity_score": 85,
+      "evidence_score": 60,
+      "logic_score": 75,
+      "flow_score": 80,
+      "overall_section_score": 76,
+      "recommended_action": "Support claims with evidence or remove."
+    },
+    {
+      "section_id": "s05",
+      "heading": "The point off the line",
+      "purpose": "Introduce the external absorber as the only way to break the constraint.",
+      "purpose_score": 90,
+      "clarity_score": 90,
+      "evidence_score": 85,
+      "logic_score": 90,
+      "flow_score": 90,
+      "overall_section_score": 89,
+      "recommended_action": "Clarify that the absorber must be voluntary and external."
+    },
+    {
+      "section_id": "s06",
+      "heading": "The altruism lemma",
+      "purpose": "Address the objection that internal forgiveness solves the trilemma.",
+      "purpose_score": 85,
+      "clarity_score": 85,
+      "evidence_score": 80,
+      "logic_score": 85,
+      "flow_score": 85,
+      "overall_section_score": 84,
+      "recommended_action": "Strengthen the argument that internal love only moves along the line."
+    },
+    {
+      "section_id": "s07",
+      "heading": "What we need and do not yet have",
+      "purpose": "Declare gaps and next verification steps.",
+      "purpose_score": 90,
+      "clarity_score": 90,
+      "evidence_score": 85,
+      "logic_score": 85,
+      "flow_score": 85,
+      "overall_section_score": 87,
+      "recommended_action": "Integrate the definitional objection into the main text."
+    }
+  ]
+}

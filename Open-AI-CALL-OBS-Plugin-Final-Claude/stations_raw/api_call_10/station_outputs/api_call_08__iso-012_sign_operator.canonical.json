@@ -1,0 +1,724 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "Quantum Mechanics",
+        "type": "physics",
+        "strength": 10
+      },
+      {
+        "name": "Reformed Theology",
+        "type": "theology",
+        "strength": 10
+      },
+      {
+        "name": "Operator Algebra",
+        "type": "mathematics",
+        "strength": 9
+      },
+      {
+        "name": "Soteriology",
+        "type": "theology",
+        "strength": 9
+      },
+      {
+        "name": "Moral Philosophy",
+        "type": "philosophy",
+        "strength": 6
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "M",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "E",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "S",
+        "present": true,
+        "role": "Moral orientation as binary \u00b11, love as the positive eigenvalue state",
+        "strength": 8
+      },
+      {
+        "variable": "T",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Logos as the external operator V_grace that flips the sign; the Son as the one who provides V_grace",
+        "strength": 9
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "Relationship between self and external grace; the coupling between the system and V_grace",
+        "strength": 7
+      },
+      {
+        "variable": "Q",
+        "present": true,
+        "role": "Faith as the mechanism of coupling to V_grace; the collapse from superposition to \u00b11",
+        "strength": 8
+      },
+      {
+        "variable": "F",
+        "present": true,
+        "role": "Sin as the \u22121 eigenstate; weakness that cannot self-correct",
+        "strength": 9
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence with God as the +1 eigenstate; Christ as the mediator who provides V_grace",
+        "strength": 9
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A1.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A5.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC6",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A1.3",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "T3.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "External Grace is the core of the mapping: V_grace is an external operator that does not commute with self-effort, required to flip the moral sign from \u22121 to +1"
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "The sign \u03c3 is conserved under self-evolution ([\u03c3, U_self] = 0), meaning moral orientation is invariant under internal operations"
+      },
+      {
+        "id": "BC8",
+        "invoked": true,
+        "how": "Voluntary coupling to V_grace is required for sign flip; the external operator must be allowed to act on the system"
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "source of grace",
+          "ground of being",
+          "origin of V_grace"
+        ]
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "mediator",
+          "the one who provides V_grace",
+          "Logos",
+          "image of God"
+        ]
+      },
+      "spirit": {
+        "present": false,
+        "manifestations": []
+      },
+      "trinitarian_structure": "implicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-012",
+        "domain_a": "Quantum Mechanics",
+        "domain_b": "Christian Theology",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-001",
+        "domain_a": "Trinity",
+        "domain_b": "Christian Theology",
+        "strength": 7,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-002",
+        "domain_a": "Grace",
+        "domain_b": "Christian Theology",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-003",
+        "domain_a": "Entropy",
+        "domain_b": "Sin",
+        "strength": 8,
+        "type": "analogical"
+      },
+      {
+        "id": "ISO-004",
+        "domain_a": "Fall",
+        "domain_b": "Christian Theology",
+        "strength": 8,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-010",
+        "domain_a": "Observer",
+        "domain_b": "Christian Theology",
+        "strength": 6,
+        "type": "analogical"
+      },
+      {
+        "id": "ISO-011",
+        "domain_a": "Superposition",
+        "domain_b": "Collapse",
+        "strength": 7,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "Total Depravity",
+        "context": "Universal \u22121 eigenstate post-Fall; all humans are in the \u22121 eigenspace and cannot self-flip",
+        "weight": 10
+      },
+      {
+        "concept": "Grace",
+        "context": "External operator V_grace that does not commute with self-effort; required for sign flip",
+        "weight": 10
+      },
+      {
+        "concept": "Salvation",
+        "context": "Sign flip from \u22121 to +1 via V_grace; conversion/regeneration",
+        "weight": 9
+      },
+      {
+        "concept": "Works",
+        "context": "Self-generated unitary operations U_self that cannot change the eigenvalue; behavioral improvement within eigenspace",
+        "weight": 8
+      },
+      {
+        "concept": "Pelagianism",
+        "context": "Claim that [\u03c3, U_self] \u2260 0; mathematically impossible under the mapping",
+        "weight": 7
+      },
+      {
+        "concept": "Monergism",
+        "context": "Grace alone flips the sign; consistent with V_grace as external operator",
+        "weight": 6
+      },
+      {
+        "concept": "Synergism",
+        "context": "God + human effort; acceptable if V_grace is external even when combined with U_self",
+        "weight": 5
+      },
+      {
+        "concept": "Covenant",
+        "context": "Binary moral status: in Adam (\u22121) or in Christ (+1)",
+        "weight": 6
+      },
+      {
+        "concept": "Regeneration",
+        "context": "Sign flip via external grace; new birth",
+        "weight": 7
+      },
+      {
+        "concept": "Civil Righteousness",
+        "context": "Behavioral improvement within \u22121 eigenspace without sign change",
+        "weight": 5
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "Commutation",
+        "context": "[\u03c3, U] = 0 means invariance under self-evolution; core of the mapping",
+        "weight": 10
+      },
+      {
+        "concept": "Eigenvalue",
+        "context": "Binary \u00b11; fixed under self-operations",
+        "weight": 9
+      },
+      {
+        "concept": "Constant of Motion",
+        "context": "\u03c3 is conserved under self-generated time evolution",
+        "weight": 8
+      },
+      {
+        "concept": "External Perturbation",
+        "context": "V with [\u03c3, V] \u2260 0 required for sign flip",
+        "weight": 9
+      },
+      {
+        "concept": "Binary Spectrum",
+        "context": "Only \u00b11 eigenvalues; no neutral state",
+        "weight": 8
+      },
+      {
+        "concept": "Conditional Mapping",
+        "context": "ISO holds only if Reformed theological anthropology is accepted",
+        "weight": 7
+      },
+      {
+        "concept": "Falsifiability",
+        "context": "Four tests proposed to falsify the mapping",
+        "weight": 8
+      },
+      {
+        "concept": "Structural vs Ontological",
+        "context": "Mapping is structural (same algebra), not ontological (same substance)",
+        "weight": 6
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "love",
+        "present": true,
+        "strength": 7
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "patience",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 6
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "self_control",
+        "present": false,
+        "strength": 0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "physics:Sign_Operator_\u03c3",
+      "to": "theology:Moral_Orientation",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "physics:Eigenvalue_+1",
+      "to": "theology:Righteousness",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "physics:Eigenvalue_\u22121",
+      "to": "theology:Fallenness",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "physics:[\u03c3,U]=0",
+      "to": "theology:Self-Effort_Cannot_Save",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "physics:U_self",
+      "to": "theology:Works",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "physics:V_external",
+      "to": "theology:Grace",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "physics:Spin_Flip",
+      "to": "theology:Conversion",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "theology:Total_Depravity",
+      "to": "physics:Universal_\u22121_Eigenstate",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "theology:Pelagianism",
+      "to": "physics:[\u03c3,U]\u22600",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "ISO-012",
+      "to": "ISO-002",
+      "relation": "derives_from",
+      "weight": 9
+    },
+    {
+      "from": "ISO-012",
+      "to": "ISO-003",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "ISO-012",
+      "to": "ISO-004",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "ISO-012",
+      "to": "ISO-011",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "theology:Binary_Moral_Status",
+      "to": "physics:Hermitian_Operator_Spectrum",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "theology:Behavioral_Improvement",
+      "to": "physics:State_Rotation_Within_Eigenspace",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "theology:External_Grace",
+      "to": "physics:Non-Commuting_Operator",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "theology:Faith",
+      "to": "physics:Coupling_to_V",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "theology:Christ",
+      "to": "physics:V_grace_Provider",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "theology:Romans_3:10-12",
+      "to": "physics:Universal_\u22121_Eigenstate",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "theology:Ephesians_2:8-9",
+      "to": "physics:V_grace_Not_U_self",
+      "relation": "supports",
+      "weight": 9
+    }
+  ],
+  "tags": {
+    "primary": [
+      "sign-operator",
+      "grace",
+      "total-depravity",
+      "sola-gratia",
+      "moral-orientation"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/theology",
+      "pillar/mathematics"
+    ],
+    "series": "isomorphism",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "Romans 3:10-12",
+        "context": "Universal \u22121 eigenstate: 'None is righteous, no, not one'"
+      },
+      {
+        "ref": "Ephesians 2:8-9",
+        "context": "Grace as external V_grace: 'By grace you have been saved through faith, not of works'"
+      },
+      {
+        "ref": "Matthew 12:30",
+        "context": "Binary moral orientation: 'He who is not with me is against me'"
+      },
+      {
+        "ref": "John 3:3",
+        "context": "Sign flip as rebirth: 'Unless one is born again'"
+      },
+      {
+        "ref": "Romans 7:18-19",
+        "context": "Moral effort within \u22121 eigenspace: 'I have the desire to do what is right, but not the ability'"
+      },
+      {
+        "ref": "Jeremiah 13:23",
+        "context": "[\u03c3, U_self] = 0: 'Can the Ethiopian change his skin... then also you can do good'"
+      }
+    ],
+    "academic": [
+      {
+        "ref": "Pauli, W. (1925), Spin matrices and the exclusion principle",
+        "context": "Origin of Pauli matrices with eigenvalues \u00b11"
+      },
+      {
+        "ref": "Dirac, P.A.M. (1930), Principles of Quantum Mechanics",
+        "context": "Operator algebra and commutation relations"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "ISO-002",
+        "context": "Grace as Terminus Sui; V_grace as external operator"
+      },
+      {
+        "ref": "ISO-003",
+        "context": "Entropy/Sin; \u22121 eigenstate as entropy-dominated condition"
+      },
+      {
+        "ref": "ISO-004",
+        "context": "Fall; initial collapse to \u22121 eigenstate"
+      },
+      {
+        "ref": "ISO-011",
+        "context": "Superposition/Collapse; collapse to \u00b11 as determination event"
+      }
+    ],
+    "total_count": 10
+  },
+  "word_anomalies": [
+    {
+      "word": "commutation",
+      "frequency": 15,
+      "significance": "Central mathematical concept; [\u03c3, U] = 0 is the core structural claim"
+    },
+    {
+      "word": "eigenspace",
+      "frequency": 12,
+      "significance": "Distinguishes state vector (continuous) from eigenvalue (discrete); resolves behavioral vs status distinction"
+    },
+    {
+      "word": "Pelagianism",
+      "frequency": 5,
+      "significance": "Theological position ruled out by the mapping; key falsification target"
+    },
+    {
+      "word": "monergism",
+      "frequency": 2,
+      "significance": "Theological position consistent with the mapping"
+    },
+    {
+      "word": "synergism",
+      "frequency": 2,
+      "significance": "Theological position conditionally consistent with the mapping"
+    },
+    {
+      "word": "civil righteousness",
+      "frequency": 2,
+      "significance": "Reformed term for behavioral improvement without sign change"
+    },
+    {
+      "word": "soteriology",
+      "frequency": 3,
+      "significance": "Doctrine of salvation; the mapping's theological domain"
+    },
+    {
+      "word": "hermitian",
+      "frequency": 4,
+      "significance": "Mathematical property ensuring real eigenvalues; necessary for binary \u00b11 spectrum"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "Analytical and constructive; the document assumes the isomorphism is valid and explores its implications with rigorous mathematical and theological reasoning",
+    "Q1_identity": "An isomorphism record (ISO-012) mapping the mathematical structure of a Hermitian sign operator with eigenvalues \u00b11 to the theological concept of moral orientation, specifically within Reformed soteriology",
+    "Q2_domain": "Intersection of quantum mechanics (operator algebra), Reformed theology (soteriology), and mathematical philosophy (structural isomorphism)",
+    "Q3_claim": "The mathematical structure of a binary sign operator \u03c3 with [\u03c3, U_self] = 0 (invariance under self-evolution) maps onto the Reformed theological claim that self-effort cannot change moral orientation (total depravity), and that an external non-commuting operator V_grace is required for sign flip (grace alone)",
+    "Q4_support": "Rigorous mathematical derivation from quantum mechanics (constants of motion, commutation relations), scriptural evidence (Romans 3, Ephesians 2, Matthew 12), and theological tradition (Westminster Confession, Reformed orthodoxy)",
+    "Q5_dependencies": "Depends on the validity of Reformed theological anthropology (binary moral status), the mathematical framework of Hermitian operators and commutation, and the acceptance of structural isomorphism as a valid method",
+    "Q6_consequences": "Rules out Pelagianism as mathematically impossible; predicts behavioral improvement without sign change; constrains soteriology to require external grace; provides a mathematical language for discussing grace vs works",
+    "Q7_kill": "The mapping fails if moral orientation is not binary (e.g., Catholic venial/mortal sin distinction, Eastern Orthodox theosis as continuous process, or secular multidimensional moral frameworks); also fails if a genuine case of self-salvation is demonstrated"
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "ISO-002 (Grace/Terminus Sui)",
+      "ISO-003 (Entropy/Sin)",
+      "ISO-004 (Fall)",
+      "ISO-011 (Superposition/Collapse)",
+      "Quantum Mechanics (operator algebra)",
+      "Reformed Theology (soteriology)"
+    ],
+    "required_by": [
+      "ISO-010 (Observer)",
+      "Future ISOs on moral transformation"
+    ],
+    "parallel_to": [
+      "ISO-001 (Trinity)",
+      "ISO-002 (Grace)"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 38,
+    "total_edges": 20,
+    "dominant_domain": "theology",
+    "dominant_chi": "F (Weak/Sin)",
+    "connectivity_score": 9,
+    "one_sentence": "ISO-012 establishes a structural isomorphism between the quantum mechanical sign operator (with eigenvalues \u00b11 and commutation invariance under self-evolution) and the Reformed theological claim that moral orientation is binary, self-effort cannot change it, and external grace is required for salvation."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": true,
+      "how": "Grace (V_grace) and Faith (coupling to V_grace) are paired as the external operator and the mechanism of coupling"
+    },
+    "2_9_will_conservation": {
+      "active": true,
+      "how": "Conservation of \u03c3 under self-evolution (BC7) and the will's inability to self-flip are paired"
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Truth (binary moral reality) and Coherence (Christ as +1 state) are paired"
+    },
+    "4_7_love_relationship": {
+      "active": true,
+      "how": "Love (+1 eigenvalue state) and Relationship (coupling to V_grace) are paired"
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Judgment (binary separation) and Logos (Christ as V_grace provider) are paired"
+    },
+    "pairs_active_count": 5
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 10
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 8
+    },
+    "love": {
+      "present": true,
+      "strength": 7
+    },
+    "judgment": {
+      "present": true,
+      "strength": 8
+    },
+    "logos": {
+      "present": true,
+      "strength": 9
+    },
+    "righteousness": {
+      "present": true,
+      "strength": 9
+    },
+    "faith": {
+      "present": true,
+      "strength": 8
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": true,
+      "strength": 9
+    },
+    "operators_present_count": 8
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "ISO-002 (Grace/Terminus Sui)",
+      "ISO-003 (Entropy/Sin)",
+      "ISO-004 (Fall)",
+      "Basic quantum mechanics (operator algebra)"
+    ],
+    "read_after": [
+      "ISO-010 (Observer)",
+      "ISO-011 (Superposition/Collapse)",
+      "Applications to soteriology"
+    ]
+  }
+}

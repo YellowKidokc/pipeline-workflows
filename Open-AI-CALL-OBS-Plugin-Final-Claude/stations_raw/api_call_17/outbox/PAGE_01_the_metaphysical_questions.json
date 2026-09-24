@@ -1,0 +1,255 @@
+{
+  "spec_version": "1.0",
+  "page_id": "PAGE_01",
+  "page_title": "The Metaphysical Questions",
+  "page_slug": "the_metaphysical_questions",
+  "source_file": "PAGE_01_the_metaphysical_questions.md",
+  "generated_by": "adversarial_auditor_v1",
+  "generated_date": "2025-04-10",
+  "adversarial_audit": {
+    "fatal_issue": "The claim that the 7Q classifier eliminates 60 worldviews to exactly one is presented as a verified result, but no actual worldviews are named, no elimination proofs are shown, and the SMT verification is claimed for 46/47 eliminations without any trace of the input encoding or solver output. This is a bare assertion masquerading as a formal result.",
+    "major_issue": "The mapping from the God Story narrative to formal axioms (AX-001 through AX-006) is asserted but not demonstrated. The four constraints listed (aloneness, goodness, freedom, cost) are not shown to be logically necessary consequences of the narrative, nor are they linked to specific axiom numbers. This is a hand-wavy derivation, not a formal one.",
+    "sharpening_issue": "The term 'M-complete' is defined but never used again. The paper claims a stronger condition than G\u00f6del-incompleteness but provides no proof that any candidate system actually satisfies M-completeness. The definition is decorative.",
+    "smart_hostile_physicist_check": {
+      "primary_confusion": "analogy",
+      "diagnosis": "The God Story is presented as a 'requirements-extraction device' analogous to a formal specification. But the narrative is not formalized; it is a parable. The analogy between a story about a lonely God and a set of logical constraints is not justified. The step from 'you create, you give freedom, you accept the cost' to 'creation requires existence, freedom requires free will, cost requires entropy' is a leap that assumes the conclusion.",
+      "sentence_to_rewrite": "The answer \u2014 you create, you give freedom, you accept the cost \u2014 generates every structural demand the axiom spine (Page 02) must satisfy.",
+      "required_fix": "Show the formal derivation from the narrative to the axioms, or remove the claim of generation. At minimum, provide a mapping table with explicit logical steps."
+    },
+    "physics_process_check": {
+      "does_mirror_physics_process": false,
+      "physics_process_named": "",
+      "one_to_one_verdict": "broken",
+      "where_mapping_holds": "",
+      "where_mapping_breaks": "",
+      "sentence_to_rewrite": "",
+      "required_fix": "No physics process is named or mirrored in this page. The page relies on logical elimination, not physical process. This is a structural weakness: the paper claims to be a 'theophysics' but the first substantive page contains no physics."
+    },
+    "strongest_non_framework_alternative": "The three metaphysical questions are classic philosophical problems with extensive literature. The paper ignores all prior work (e.g., Leibniz, Heidegger, Nozick) and presents a novel classification as if it were the first rigorous treatment. A simpler alternative: the questions are not formalizable in the way claimed, and the 7Q classifier is an arbitrary taxonomy with no demonstrated predictive power.",
+    "what_would_force_public_narrowing": "A public challenge to produce the actual Z3/CVC5 input files and the list of 60 worldviews with their 7-tuples. Without these, the elimination funnel is an unverifiable black box.",
+    "rewrite_priority": "fatal"
+  },
+  "structure_audit": {
+    "opening_hook_strength": 7,
+    "logical_flow_strength": 3,
+    "transition_quality": 4,
+    "does_opening_promise_match_ending": false,
+    "sequence_verdict": "broken",
+    "best_order_step_by_step": [
+      "State the three questions clearly.",
+      "Define M-completeness formally.",
+      "Introduce the 7Q classifier with examples.",
+      "Show the elimination funnel with actual worldviews and their 7-tuples.",
+      "Provide the Z3/CVC5 verification artifacts.",
+      "Derive the God Story constraints formally.",
+      "Map constraints to axioms."
+    ],
+    "flow_breaks": [
+      {
+        "from_section": "The Claim",
+        "to_section": "The Derivation",
+        "problem": "The Claim section asserts that the God Story generates structural demands, but the Derivation section does not actually derive them. It instead introduces the 7Q classifier, which is not mentioned in the Claim. The narrative and the classifier are disconnected.",
+        "fix": "Restructure so that the God Story is used to motivate the classifier, or separate the two arguments entirely."
+      }
+    ],
+    "sentence_that_carries_too_much_weight": "Sixty worldviews tested. One standing. This is not selection bias \u2014 it is a funnel with a Z3/CVC5 verified kill count.",
+    "why_it_carries_too_much_weight": "This single sentence is the entire empirical claim of the page. It asserts a verified result without any supporting evidence (no list of worldviews, no solver output, no explanation of how 60 was chosen). If this sentence is false or unverifiable, the entire page collapses."
+  },
+  "framework_presence": {
+    "master_equation": [
+      {
+        "present": true,
+        "quote": "$$\\mathcal{S} \\text{ is M-complete} \\iff \\mathcal{S} \\vdash Q_{\\text{existence}} \\land \\mathcal{S} \\vdash Q_{\\text{intelligibility}} \\land \\mathcal{S} \\vdash Q_{\\text{meaning}}$$",
+        "function": "Defines M-completeness, but never used again."
+      }
+    ],
+    "axioms": [
+      {
+        "id": "AX-001 through AX-006",
+        "present": false,
+        "quote": "",
+        "function": "Referenced but not shown or defined."
+      }
+    ],
+    "lean4": [],
+    "claims_layer": [
+      {
+        "present": true,
+        "quote": "Any system that cannot answer all three is incomplete \u2014 not in the soft sense of 'could be improved,' but in the Godel sense: it contains truths it cannot reach.",
+        "function": "Core claim of the page."
+      }
+    ],
+    "proof_layer": [],
+    "tests_layer": [],
+    "laws_layer": []
+  },
+  "paper_changing_questions": [
+    {
+      "question": "What exact prediction does this page make that is currently testable?",
+      "why_it_matters": "Without a testable prediction, the page is unfalsifiable and cannot be evaluated scientifically.",
+      "if_unanswered_then": "The page remains a philosophical assertion, not a scientific or mathematical claim.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Which named physics process is being mirrored, and where is the one-to-one transition map?",
+      "why_it_matters": "The paper is titled 'Theophysics' and claims to mirror physics processes. This page contains no physics.",
+      "if_unanswered_then": "The paper fails its own stated purpose.",
+      "severity": "fatal"
+    },
+    {
+      "question": "What is the strongest falsifying data point against the core thesis that exactly one worldview survives the 7Q funnel?",
+      "why_it_matters": "The elimination funnel is the central result. If it cannot be falsified, it is not a scientific claim.",
+      "if_unanswered_then": "The funnel is an unfalsifiable assertion.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Which assumption in the derivation of the God Story constraints is least justified, and what minimum condition would weaken it?",
+      "why_it_matters": "The God Story is used as a requirements-extraction device. If the assumptions are arbitrary, the derived constraints are arbitrary.",
+      "if_unanswered_then": "The entire axiom spine is built on sand.",
+      "severity": "major"
+    },
+    {
+      "question": "Are the 60 worldviews and their 7-tuples documented anywhere? If so, where? If not, why should the reader trust the claim?",
+      "why_it_matters": "Without documentation, the elimination funnel is an appeal to authority (the author's claim of verification).",
+      "if_unanswered_then": "The page is not reproducible and fails basic scientific standards.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Which term is used in multiple meanings in the same argument?",
+      "why_it_matters": "Ambiguity undermines logical rigor.",
+      "if_unanswered_then": "The argument may be equivocating.",
+      "severity": "major"
+    },
+    {
+      "question": "What single sentence should be rewritten to remove non-falsifiable certainty?",
+      "why_it_matters": "Certainty without evidence is a hallmark of pseudoscience.",
+      "if_unanswered_then": "The page will be dismissed by skeptical readers.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "Which claim is confessional vs evidentiary, and how is that distinguished in the copy?",
+      "why_it_matters": "Confessional claims (e.g., 'God is good') are not subject to empirical verification. Evidentiary claims (e.g., 'the funnel eliminates 59 worldviews') are. The page conflates the two.",
+      "if_unanswered_then": "The reader cannot tell what is being argued.",
+      "severity": "major"
+    },
+    {
+      "question": "What minimal counterexample would break the central analogy between the God Story and a formal requirements specification?",
+      "why_it_matters": "Analogies are not proofs. A counterexample would show the analogy is not one-to-one.",
+      "if_unanswered_then": "The analogy is assumed valid without justification.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "Can this page be safely ingested into downstream metadata fields (claim_id, axiom_id, test_id) without ambiguity?",
+      "why_it_matters": "The page introduces terms (M-complete, 7Q classifier) that are not formally defined in a machine-readable way.",
+      "if_unanswered_then": "Downstream automated reasoning will fail.",
+      "severity": "major"
+    }
+  ],
+  "sentence_annotations": [
+    {
+      "anchor_quote": "Sixty worldviews tested. One standing. This is not selection bias \u2014 it is a funnel with a Z3/CVC5 verified kill count.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Central empirical claim with no supporting evidence. No list of worldviews, no solver output, no explanation of how 60 was chosen.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The answer \u2014 you create, you give freedom, you accept the cost \u2014 generates every structural demand the axiom spine (Page 02) must satisfy.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Claims generation without showing the derivation. This is a leap from narrative to formal axioms.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [
+          "AX-001",
+          "AX-002",
+          "AX-003",
+          "AX-004",
+          "AX-005",
+          "AX-006"
+        ],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Any system that cannot answer all three is incomplete \u2014 not in the soft sense of 'could be improved,' but in the Godel sense: it contains truths it cannot reach.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Misuses G\u00f6del's incompleteness theorems. G\u00f6del's theorems apply to formal systems capable of arithmetic, not to 'systems' in general. This is a category error.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The Z3/CVC5 SMT solvers verified 46 of 47 eliminations formally",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "No evidence of verification. No input files, no output logs, no explanation of how the worldviews were encoded.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The 7Q Universal Classifier provides the elimination engine.",
+      "annotation_type": "claim",
+      "ui_color": "gold",
+      "why_flagged": "The classifier is introduced but not defined in a way that allows independent verification. The seven questions are listed but their binary-to-ternary nature is not explained.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The surviving worldview satisfies: external source, personal reality, moral problem, grace solution, relational telos, falsifiable verification.",
+      "annotation_type": "claim",
+      "ui_color": "gold",
+      "why_flagged": "This is the conclusion of the funnel, but it is not shown how these values are derived from the M-completeness requirement. The reasoning is missing.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "This is not selection bias \u2014 it is a funnel with a Z3/CVC5 verified kill count.",
+      "annotation_type": "clarification",
+      "ui_color": "violet",
+      "why_flagged": "The denial of selection bias is itself a claim that requires justification. The funnel could easily be biased by the choice of initial 60 worldviews and the encoding of the questions.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    }
+  ]
+}

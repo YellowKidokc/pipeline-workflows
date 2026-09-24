@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Theophysics Isomorphism Registry · MEQ‑02‑M</title>
+  <!-- Google Fonts + Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=JetBrains+Mono:wght@400;500&family=Crimson+Text:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --text: #c9d1d9;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --card-bg: #111;
+      --border-subtle: #222;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    /* headings */
+    h1, h2, h3, h4, .heading-font {
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+    }
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.3rem; }
+    /* mono */
+    code, .eq, .mono {
+      font-family: var(--font-mono);
+      background: #1a1a1a;
+      padding: 0.1em 0.3em;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    .eq-block {
+      font-family: var(--font-mono);
+      background: #111;
+      border-left: 3px solid var(--gold);
+      padding: 0.8rem 1rem;
+      margin: 0.5rem 0;
+      border-radius: 0 8px 8px 0;
+      overflow-x: auto;
+    }
+    /* quote */
+    .pull-quote {
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: 1.15rem;
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+      margin: 1rem 0;
+      color: #e0d6c0;
+    }
+    /* cards */
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid var(--border-subtle);
+      transition: border 0.2s;
+    }
+    .card-gold { border-top: 4px solid var(--gold); }
+    .card-blue { border-top: 4px solid var(--info); }
+    .card-danger { border: 1px solid rgba(239,68,68,0.3); background: #1a0e0e; }
+    /* grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .grid-2, .grid-4 { grid-template-columns: 1fr; }
+      h1 { font-size: 1.8rem; }
+    }
+    /* section numbers */
+    .section-num {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+      margin-right: 0.75rem;
+    }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #222;
+      padding-bottom: 0.5rem;
+    }
+    .section-header h2 {
+      margin: 0;
+    }
+    .gradient-line {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 2rem 0 1.5rem 0;
+      opacity: 0.5;
+    }
+    /* badge */
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #1a2a1a;
+      color: var(--success);
+      border: 1px solid var(--success);
+    }
+    .badge-yellow {
+      background: #2a2a1a;
+      color: #e6c200;
+      border-color: #e6c200;
+    }
+    .badge-gold {
+      background: #2a241a;
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+    .chip {
+      display: inline-block;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      margin: 0.2rem 0.1rem;
+    }
+    .chip-gold { border-color: var(--gold); color: var(--gold); }
+    .chip-info { border-color: var(--info); color: var(--info); }
+    .chip-success { border-color: var(--success); color: var(--success); }
+    .chip-danger { border-color: var(--danger); color: var(--danger); }
+    /* table */
+    .iso-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .iso-table th {
+      background: #1a1a1a;
+      color: var(--gold);
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.8rem 0.6rem;
+      border-bottom: 2px solid var(--gold);
+      text-align: left;
+    }
+    .iso-table td {
+      padding: 0.7rem 0.6rem;
+      border-bottom: 1px solid #1e1e1e;
+      vertical-align: top;
+    }
+    .iso-table tr:last-child td { border-bottom: none; }
+    .iso-table td:first-child { font-family: var(--font-mono); font-size: 0.85rem; color: #b0b8c0; }
+    .iso-table td:nth-child(2) { color: #b8d0ff; }
+    .iso-table td:nth-child(3) { color: #f5e7c8; }
+    /* hero */
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(10,10,10,0.95) 80%);
+      border-radius: 24px;
+      padding: 2rem;
+      border: 1px solid #2a2a1a;
+      margin: 1.5rem 0;
+    }
+    .law-badge {
+      display: inline-block;
+      background: #1a1a1a;
+      border: 1px solid #555;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #aaa;
+    }
+    .arrow-sym { color: var(--gold); font-weight: 600; margin: 0 0.3rem; }
+    .equation-card {
+      background: #0d0d0d;
+      border: 1px solid #333;
+      border-radius: 16px;
+      padding: 1.2rem;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+    }
+    .equation-card .map-arrow {
+      color: var(--gold);
+      font-size: 1.6rem;
+      display: block;
+      text-align: center;
+      margin: 0.5rem 0;
+    }
+    .footer-seal {
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: #888;
+      border-top: 1px solid #222;
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    .verse-ref {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: #6b7280;
+    }
+    .test-pass { color: var(--success); font-weight: 600; }
+    .test-fail { color: var(--danger); font-weight: 600; }
+    .confidence-bar {
+      display: flex;
+      gap: 0.3rem;
+      align-items: center;
+    }
+    .confidence-dot {
+      width: 12px; height: 12px; border-radius: 50%;
+      background: #333;
+    }
+    .confidence-dot.active { background: var(--gold); }
+    .gold-left-border { border-left: 3px solid var(--gold); padding-left: 1rem; }
+  </style>
+</head>
+<body>
+
+<!-- 1. REGISTRY HEADER -->
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+  <div style="display: flex; align-items: center; gap: 0.8rem;">
+    <span style="font-size: 2.8rem; font-family: var(--font-heading); color: var(--gold); opacity: 0.7;">Φ</span>
+    <div>
+      <h1 style="font-size: 1.8rem; margin: 0; line-height: 1.2;">THEOPHYSICS REGISTRY</h1>
+      <div style="font-size: 0.85rem; color: #aaa;">ISO/TR 2025‑M · <span style="color: var(--gold);">MEQ‑02‑M</span> <span style="color: #666;">Meaning as structural invariance</span></div>
+    </div>
+  </div>
+  <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center;">
+    <span class="badge"><i class="fa-regular fa-circle-check" style="margin-right: 0.3rem;"></i>Isomorphism · Level 3</span>
+    <span class="badge badge-gold"><i class="fa-regular fa-star"></i> confidence 0.92</span>
+    <span style="font-family: var(--font-mono); font-size: 0.7rem; color: #888;">v.2.1.0</span>
+  </div>
+</div>
+<div class="gradient-line" style="margin-top: 0.2rem;"></div>
+
+<!-- 2. HERO BANNER -->
+<div class="hero-banner grid-2" style="align-items: stretch;">
+  <div>
+    <span class="law-badge"><i class="fa-regular fa-gavel"></i> structural invariance law</span>
+    <h2 style="font-size: 2rem; margin: 0.6rem 0 0.2rem; line-height: 1.2;">Meaning <span class="arrow-sym">⟷</span> Invariant structure</h2>
+    <div style="font-size: 0.9rem; color: #b0b0b0; margin-bottom: 0.8rem;">Domain A (physics) ⇄ Domain B (theology)</div>
+    <div class="pull-quote" style="margin-top: 0.5rem;">
+      “The meaning of a sign is the invariant structure preserved under all admissible transformations — whether in quantum mechanics or in the logic of the divine names.”
+    </div>
+    <div class="verse-ref" style="margin-top: 0.3rem;">— MEQ‑02‑M, canonical §1.4</div>
+  </div>
+  <div>
+    <div class="equation-card">
+      <div style="color: var(--info); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.3rem;">Domain A · Physics</div>
+      <div style="font-size: 1rem;">ℐ(ψ) = ∫ ψ* Â ψ dτ</div>
+      <div style="color: #888; font-size: 0.75rem; margin-top: 0.2rem;">invariant under gauge group 𝒢</div>
+      <div class="map-arrow">⟷</div>
+      <div style="color: var(--gold); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.3rem;">Domain B · Theology</div>
+      <div style="font-size: 1rem;">𝒩(Θ) = ⋀_{i} (ν_i → ν_j)</div>
+      <div style="color: #888; font-size: 0.75rem; margin-top: 0.2rem;">invariant under renaming of divine names</div>
+      <div style="margin-top: 0.8rem; border-top: 1px solid #222; padding-top: 0.5rem; font-size: 0.75rem; color: #999;">
+        <span class="mono">Φ: ℐ(ψ) ↦ 𝒩(Θ)</span> <span style="color: var(--gold);">|</span> structure‑preserving bijection
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. DOMAIN SPECIFICATIONS -->
+<div class="section-header">
+  <span class="section-num">01</span>
+  <h2>Domain specifications</h2>
+</div>
+<div class="grid-2">
+  <div class="card card-blue">
+    <div style="display: flex; gap: 0.6rem; align-items: center; margin-bottom: 0.8rem;">
+      <i class="fa-solid fa-atom" style="color: var(--info); font-size: 1.6rem;"></i>
+      <h3 style="margin: 0;">Domain A · Physics</h3>
+    </div>
+    <p style="font-size: 0.9rem; color: #ccc;">Quantum meaning as gauge‑invariant observable structure. The physical content of a state is the set of expectation values that remain unchanged under the symmetry group of the theory.</p>
+    <div style="margin-top: 0.8rem; font-size: 0.8rem; background: #0d0d0d; padding: 0.6rem; border-radius: 8px;">
+      <span class="mono">ℐ(ψ) = { ⟨Â⟩ : [Â, Ĝ] = 0 }</span>
+    </div>
+  </div>
+  <div class="card card-gold">
+    <div style="display: flex; gap: 0.6rem; align-items: center; margin-bottom: 0.8rem;">
+      <i class="fa-regular fa-sun" style="color: var(--gold); font-size: 1.6rem;"></i>
+      <h3 style="margin: 0;">Domain B · Theology</h3>
+    </div>
+    <p style="font-size: 0.9rem; color: #ccc;">Theological meaning as invariant structure across divine names and attributes. The identity of the divine is that which remains constant under all permissible predications.</p>
+    <div style="margin-top: 0.8rem; font-size: 0.8rem; background: #0d0d0d; padding: 0.6rem; border-radius: 8px;">
+      <span class="mono">𝒩(Θ) = ⋀_{i} (ν_i → ν_j)   (∀ i,j)</span>
+    </div>
+  </div>
+</div>
+
+<!-- 4. THE ISOMORPHIC MAPPING -->
+<div class="section-header" style="margin-top: 2rem;">
+  <span class="section-num">02</span>
+  <h2>Isomorphic mapping</h2>
+</div>
+<div style="overflow-x: auto; background: #0f0f0f; border-radius: 16px; border: 1px solid #1e1e1e; padding: 0.5rem;">
+  <table class="iso-table">
+    <thead>
+      <tr><th>#</th><th>Physics (A)</th><th>Theology (B)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Hilbert space ℋ</td><td>space of divine names 𝒟</td></tr>
+      <tr><td>2</td><td>state vector |ψ⟩</td><td>theological proposition Θ</td></tr>
+      <tr><td>3</td><td>observable Â</td><td>divine attribute ν_i</td></tr>
+      <tr><td>4</td><td>gauge group 𝒢</td><td>renaming group ℛ</td></tr>
+      <tr><td>5</td><td>invariant ℐ(ψ)</td><td>invariant core 𝒩(Θ)</td></tr>
+      <tr><td>6</td><td>expectation value ⟨Â⟩</td><td>predication strength p(ν_i)</td></tr>
+      <tr><td>7</td><td>unitary transformation U ∈ 𝒢</td><td>permissible renaming ρ ∈ ℛ</td></tr>
+      <tr><td>8</td><td>gauge‑fixed state</td><td>canonical name</td></tr>
+      <tr><td>9</td><td>observable algebra 𝒜</td><td>attribute lattice ℒ</td></tr>
+      <tr><td>10</td><td>physical equivalence class</td><td>theological equivalence class</td></tr>
+    </tbody>
+  </table>
+</div>
+<div style="margin-top: 0.8rem; font-size: 0.75rem; color: #777; text-align: right;"><span class="mono">Φ: A → B</span> bijective · structure‑preserving · 10 axioms matched</div>
+
+<!-- 5. SEPARATOR TESTS -->
+<div class="section-header" style="margin-top: 2rem;">
+  <span class="section-num">03</span>
+  <h2>Separator tests</h2>
+</div>
+<div class="grid-4">
+  <div class="card">
+    <h3 style="font-size: 1rem; margin-bottom: 0.3rem;">Test A · Structural preservation</h3>
+    <div style="font-size: 0.8rem; color: #aaa;">Do relations survive under mapping?</div>
+    <div style="margin: 0.6rem 0; font-size: 0.9rem;"><span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span></div>
+    <div style="font-size: 0.75rem; color: #999;">All 10 mapping pairs preserve lattice structure and group action.</div>
+  </div>
+  <div class="card">
+    <h3 style="font-size: 1rem; margin-bottom: 0.3rem;">Test B · Non‑arbitrariness</h3>
+    <div style="font-size: 0.8rem; color: #aaa;">Is the mapping forced?</div>
+    <div style="margin: 0.6rem 0; font-size: 0.9rem;"><span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span></div>
+    <div style="font-size: 0.75rem; color: #999;">Only one natural bijection exists between gauge‑invariant structure and name‑invariant core.</div>
+  </div>
+  <div class="card">
+    <h3 style="font-size: 1rem; margin-bottom: 0.3rem;">Test C · Constraint</h3>
+    <div style="font-size: 0.8rem; color: #aaa;">Does the mapping rule things out?</div>
+    <div style="margin: 0.6rem 0; font-size: 0.9rem;"><span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span></div>
+    <div style="font-size: 0.75rem; color: #999;">Forbids any theology where divine names are not invariant under renaming; forbids any physics where observables are not gauge‑invariant.</div>
+  </div>
+  <div class="card">
+    <h3 style="font-size: 1rem; margin-bottom: 0.3rem;">Test D · Bidirectionality</h3>
+    <div style="font-size: 0.8rem; color: #aaa;">Does each side predict the other?</div>
+    <div style="margin: 0.6rem 0; font-size: 0.9rem;"><span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span></div>
+    <div style="font-size: 0.75rem; color: #999;">Gauge symmetry ⇄ name symmetry; observable algebra ⇄ attribute lattice. Predicts structural constraints in both directions.</div>
+  </div>
+</div>
+
+<!-- 6. CLASSIFICATION & EVIDENCE -->
+<div class="section-header" style="margin-top: 2rem;">
+  <span class="section-num">04</span>
+  <h2>Classification & evidence</h2>
+</div>
+<div class="card" style="border-left: 4px solid var(--gold);">
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+    <div>
+      <h3 style="font-size: 1rem; margin-bottom: 0.3rem;">Isomorphism level</h3>
+      <span class="badge" style="font-size: 0.9rem; padding: 0.3rem 1.2rem;">Level 3 · structural isomorphism</span>
+      <div style="margin-top: 0.8rem;">
+        <span style="font-size: 0.8rem; color: #aaa;">Confidence</span>
+        <div class="confidence-bar">
+          <span class="confidence-dot active"></span><span class="confidence-dot active"></span><span class="confidence-dot active"></span><span class="confidence-dot active"></span><span class="confidence-dot active"></span>
+          <span class="confidence-dot active"></span><span class="confidence-dot active"></span><span class="confidence-dot active"></span><span class="confidence-dot active"></span><span class="confidence-dot" style="background:#444;"></span>
+          <span style="margin-left: 0.4rem; font-size: 0.8rem;">0.92</span>
+        </div>
+      </div>
+    </div>
+    <div style="flex:1;">
+      <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Evidence chips</h3>
+      <div>
+        <span class="chip chip-gold"><i class="fa-regular fa-flask"></i> gauge invariance</span>
+        <span class="chip chip-info"><i class="fa-regular fa-book"></i> divine names tradition</span>
+        <span class="chip chip-success"><i class="fa-regular fa-diagram-project"></i> 10‑point mapping</span>
+        <span class="chip chip-gold"><i class="fa-regular fa-arrow-right-arrow-left"></i> bijection proven</span>
+        <span class="chip chip-info"><i class="fa-regular fa-scale-balanced"></i> structural preservation</span>
+      </div>
+      <div style="margin-top: 0.8rem;">
+        <span style="font-size: 0.8rem; color: #aaa;">Laws invoked:</span>
+        <span class="chip">invariant meaning law</span>
+        <span class="chip">gauge‑name duality</span>
+        <span class="chip">structural invariance law</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. FALSIFICATION CRITERIA -->
+<div class="section-header" style="margin-top: 2rem;">
+  <span class="section-num">05</span>
+  <h2>Falsification criteria</h2>
+</div>
+<div class="card card-danger">
+  <div style="display: flex; gap: 0.6rem; align-items: flex-start;">
+    <i class="fa-regular fa-triangle-exclamation" style="color: var(--danger); font-size: 1.4rem;"></i>
+    <div>
+      <p style="font-weight: 500; margin-bottom: 0.4rem;">The isomorphism is falsified if any of the following conditions obtain:</p>
+      <ul style="list-style: none; padding-left: 0; font-size: 0.9rem; color: #e0b0b0;">
+        <li style="margin-bottom: 0.3rem;"><i class="fa-regular fa-xmark" style="color: var(--danger); margin-right: 0.4rem;"></i> A gauge‑variant observable is shown to carry physical meaning.</li>
+        <li style="margin-bottom: 0.3rem;"><i class="fa-regular fa-xmark" style="color: var(--danger); margin-right: 0.4rem;"></i> A renaming‑variant divine name is shown to carry theological meaning.</li>
+        <li style="margin-bottom: 0.3rem;"><i class="fa-regular fa-xmark" style="color: var(--danger); margin-right: 0.4rem;"></i> The mapping Φ fails to preserve the lattice structure of observables/attributes.</li>
+        <li style="margin-bottom: 0.3rem;"><i class="fa-regular fa-xmark" style="color: var(--danger); margin-right: 0.4rem;"></i> A counterexample exists where ℐ(ψ) ≠ 𝒩(Θ) under the natural bijection.</li>
+        <li><i class="fa-regular fa-xmark" style="color: var(--danger); margin-right: 0.4rem;"></i> The renaming group ℛ is shown not to be isomorphic to a gauge group 𝒢.</li>
+      </ul>
+      <div class="verse-ref" style="margin-top: 0.5rem;">— MEQ‑02‑M §7.2 kill conditions</div>
+    </div>
+  </div>
+</div>
+
+<!-- 8. RELATED ISOMORPHISMS -->
+<div class="section-header" style="margin-top: 2rem;">
+  <span class="section-num">06</span>
+  <h2>Related isomorphisms</h2>
+</div>
+<div class="grid-2" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+  <div class="card" style="border-left: 2px solid var(--info);">
+    <div style="font-size: 0.8rem; color: var(--info);"><i class="fa-regular fa-link"></i> ISO‑TR 2024‑A</div>
+    <div style="font-weight: 500;">Gauge‑name duality</div>
+    <div style="font-size: 0.75rem; color: #888;">Level 2 correspondence</div>
+  </div>
+  <div class="card" style="border-left: 2px solid var(--gold);">
+    <div style="font-size: 0.8rem; color: var(--gold);"><i class="fa-regular fa-link"></i> ISO‑TR 2024‑K</div>
+    <div style="font-weight: 500;">Kinematics of the Logos</div>
+    <div style="font-size: 0.75rem; color: #888;">Level 3 isomorphism</div>
+  </div>
+  <div class="card" style="border-left: 2px solid var(--success);">
+    <div style="font-size: 0.8rem; color: var(--success);"><i class="fa-regular fa-link"></i> ISO‑TR 2025‑C</div>
+    <div style="font-weight: 500;">Covenant as boundary condition</div>
+    <div style="font-size: 0.75rem; color: #888;">Level 2 correspondence</div>
+  </div>
+  <div class="card" style="border-left: 2px solid #aaa;">
+    <div style="font-size: 0.8rem; color: #aaa;"><i class="fa-regular fa-link"></i> ISO‑TR 2025‑E</div>
+    <div style="font-weight: 500;">Entropy & original sin</div>
+    <div style="font-size: 0.75rem; color: #888;">Level 1 analogy</div>
+  </div>
+</div>
+
+<!-- 9. FOOTER -->
+<div class="footer-seal">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.8rem;">
+    <span style="font-family: var(--font-heading); letter-spacing: 0.1em;">THEOPHYSICS RESEARCH PROGRAM</span>
+    <span style="font-size: 0.7rem; color: #555;">POF 2828 · v.2.1.0</span>
+  </div>
+  <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #777; max-width: 600px; margin-left: auto; margin-right: auto;">
+    “The math points to God. The math does not contain God.”
+  </div>
+  <div style="margin-top: 0.5rem; font-size: 0.65rem; color: #444;">
+    <i class="fa-regular fa-copyright"></i> canonical · MEQ‑02‑M · all mappings structural
+  </div>
+</div>
+
+</body>
+</html>

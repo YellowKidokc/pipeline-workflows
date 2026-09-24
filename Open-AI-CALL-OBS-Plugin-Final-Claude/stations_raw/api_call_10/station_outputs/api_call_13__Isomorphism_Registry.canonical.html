@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theophysics Isomorphism Registry · faiththruphysics.com</title>
+  <!-- Google Fonts: Oswald, Inter, JetBrains Mono, Crimson Text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg-card: #111;
+      --bg-card-hover: #181818;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --gold-light: #f0d060;
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border: #2a2a2a;
+      --border-gold: #d4af37;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+    }
+    .container { max-width: 1280px; margin: 0 auto; }
+    /* headings */
+    h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
+    h1 { font-size: 2.6rem; line-height: 1.2; }
+    h2 { font-size: 2rem; margin-bottom: 1rem; }
+    h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+    h4 { font-size: 1.1rem; }
+    /* mono for equations */
+    .eq, code, .mono { font-family: var(--font-mono); font-weight: 400; }
+    /* quote style */
+    .quote, blockquote { font-family: var(--font-quote); font-style: italic; }
+    /* gold accent */
+    .gold { color: var(--gold); }
+    .gold-border { border-left: 4px solid var(--gold); padding-left: 1.2rem; }
+    .success { color: var(--success); }
+    .danger { color: var(--danger); }
+    .info { color: var(--info); }
+    .text-muted { color: var(--text-muted); }
+    .small-mono { font-family: var(--font-mono); font-size: 0.75rem; color: #6b7280; }
+    /* cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+      transition: background 0.2s;
+    }
+    .card:hover { background: var(--bg-card-hover); }
+    .card-blue { border-top: 4px solid var(--info); }
+    .card-gold { border-top: 4px solid var(--gold); }
+    .card-red { border-top: 4px solid var(--danger); background: #1a0c0c; }
+    .card-green { border-top: 4px solid var(--success); }
+    /* grid */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    @media (max-width: 768px) {
+      .grid-2, .grid-4, .grid-3 { grid-template-columns: 1fr; }
+      h1 { font-size: 2rem; }
+      body { padding: 1rem; }
+    }
+    /* section number */
+    .section-number {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      font-weight: 700;
+      color: rgba(212, 175, 55, 0.15);
+      line-height: 1;
+      margin-bottom: -1.5rem;
+      pointer-events: none;
+      user-select: none;
+    }
+    /* gradient line */
+    .gradient-line {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 2rem 0 2.5rem 0;
+      opacity: 0.4;
+    }
+    /* badge */
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+      background: rgba(34, 197, 94, 0.15);
+      color: var(--success);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    .badge-yellow {
+      background: rgba(234, 179, 8, 0.15);
+      color: #eab308;
+      border-color: rgba(234, 179, 8, 0.3);
+    }
+    .badge-red {
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--danger);
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+    .badge-info {
+      background: rgba(74, 158, 255, 0.12);
+      color: var(--info);
+      border-color: rgba(74, 158, 255, 0.3);
+    }
+    /* table */
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    .mapping-table th {
+      background: #1a1a1a;
+      color: var(--gold);
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.9rem 1rem;
+      border-bottom: 2px solid var(--gold);
+      text-align: left;
+    }
+    .mapping-table td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid #222;
+      vertical-align: top;
+    }
+    .mapping-table tr:last-child td { border-bottom: none; }
+    .mapping-table tr:hover td { background: #141414; }
+    /* hero banner */
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(10, 10, 10, 0.9));
+      border: 1px solid #2a2a2a;
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .hero-left .law-badge {
+      display: inline-block;
+      background: #1a1a1a;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      border: 1px solid #333;
+      margin-bottom: 1rem;
+    }
+    .equation-card {
+      background: #0d0d0d;
+      border: 1px solid #2a2a2a;
+      border-radius: 16px;
+      padding: 1.8rem;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+    .equation-card .arrow { color: var(--gold); font-size: 1.4rem; margin: 0 0.5rem; }
+    /* test card */
+    .test-card { border-radius: 12px; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border); }
+    .test-card h4 { font-family: var(--font-heading); letter-spacing: 0.04em; }
+    .test-pass { border-left: 6px solid var(--success); }
+    .test-fail { border-left: 6px solid var(--danger); }
+    /* evidence chip */
+    .chip {
+      display: inline-block;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      margin: 0.2rem 0.3rem;
+    }
+    .chip-gold { border-color: var(--gold); color: var(--gold); }
+    /* footer */
+    .footer-seal {
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--gold);
+      border-top: 1px solid #222;
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    /* misc */
+    .flex { display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem; }
+    .gap-1 { gap: 1rem; }
+    .mt-1 { margin-top: 1rem; }
+    .mt-2 { margin-top: 2rem; }
+    .mb-1 { margin-bottom: 1rem; }
+    .mb-2 { margin-bottom: 2rem; }
+    .fw-600 { font-weight: 600; }
+    .fw-400 { font-weight: 400; }
+    .text-center { text-align: center; }
+    .op-3 { opacity: 0.3; }
+    .small { font-size: 0.8rem; }
+    .inline-icon { margin-right: 0.4rem; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ===== SECTION 1: REGISTRY HEADER ===== -->
+  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin-bottom: 0.5rem;">
+    <div style="font-size: 3.5rem; color: var(--gold); font-family: var(--font-heading); line-height: 1;"><i class="fas fa-phi"></i> Φ</div>
+    <div>
+      <h1 style="margin-bottom: 0.2rem;">Theophysics Registry</h1>
+      <div style="font-size: 1rem; color: var(--text-muted); font-weight: 300;">ISO-001 · Trinity ↔ Mathematical Structure</div>
+    </div>
+    <div style="margin-left: auto; display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center;">
+      <span class="badge"><i class="fas fa-check-circle" style="margin-right: 0.3rem;"></i>Isomorphism (Level 3)</span>
+      <span class="badge badge-info"><i class="fas fa-chart-line"></i> Confidence: HIGH</span>
+      <span class="small-mono">v2.4 · 2026-03-10</span>
+    </div>
+  </div>
+  <div class="gradient-line" style="margin-top: 0.5rem;"></div>
+
+  <!-- ===== SECTION 2: HERO BANNER ===== -->
+  <div class="hero-banner">
+    <div class="grid-2" style="align-items: start;">
+      <div class="hero-left">
+        <div class="law-badge"><i class="fas fa-gavel"></i> Law I · Generative Axiom</div>
+        <h2 style="font-size: 2.2rem; line-height: 1.2; margin: 0.5rem 0;">Trinity <span style="color: var(--gold);">↔</span> Mathematical Structure</h2>
+        <div style="color: var(--text-muted); margin-bottom: 1.2rem;">Three-fold operation of any self-consistent system maps onto Trinitarian theology</div>
+        <blockquote class="quote gold-border" style="font-size: 1.1rem; color: #d8d0c0;">
+          “The operator algebraic result: Ĉ = g[Â, B̂] — the third operator arises as the commutator of the first two.”
+        </blockquote>
+        <div class="small-mono" style="margin-top: 0.8rem;"><i class="fas fa-arrows-left-right"></i> Swap: PASS · Bidirectional: YES</div>
+      </div>
+      <div>
+        <div class="equation-card">
+          <div><span class="gold">Physics / Mathematics</span></div>
+          <div style="margin-top: 0.5rem;">χ ≡ I (field = information, pure potential)</div>
+          <div>χ ↻ χ (self-referential, creates structure)</div>
+          <div>∇·χ = 0 (conserved, zero divergence)</div>
+          <div style="margin: 0.8rem 0; border-top: 1px solid #2a2a2a;"></div>
+          <div><span class="gold">Christian Theology</span></div>
+          <div>Father → unbounded generative source</div>
+          <div>Son/Logos → structure, self-expression</div>
+          <div>Spirit → actualization, brings into being</div>
+          <div style="margin: 0.8rem 0; border-top: 1px solid #2a2a2a; text-align: center; font-size: 1.6rem; color: var(--gold);">⟷</div>
+          <div style="font-family: var(--font-mono);">Ĉ = g[Â, B̂] &nbsp;—&nbsp; Spirit as commutator</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 3: DOMAIN SPECIFICATIONS ===== -->
+  <div class="section-number">01</div>
+  <h2>Domain Specifications</h2>
+  <div class="gradient-line"></div>
+  <div class="grid-2">
+    <div class="card card-blue">
+      <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
+        <i class="fas fa-atom" style="font-size: 2rem; color: var(--info);"></i>
+        <h3 style="margin: 0;">Domain A · Physics / Mathematics</h3>
+      </div>
+      <p style="color: var(--text-muted);">The three-fold operation required for any self-consistent system: generative (axiom), structural (self-reference, Gödel), actualization (computation/collapse). The field χ is pure potential, self-referential, conserved.</p>
+      <div class="eq" style="background: #0d0d0d; padding: 0.8rem; border-radius: 8px; margin-top: 1rem; font-size: 0.9rem;">
+        χ ≡ I &nbsp;·&nbsp; χ ↻ χ &nbsp;·&nbsp; ∇·χ = 0
+      </div>
+    </div>
+    <div class="card card-gold">
+      <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
+        <i class="fas fa-church" style="font-size: 2rem; color: var(--gold);"></i>
+        <h3 style="margin: 0;">Domain B · Christian Theology</h3>
+      </div>
+      <p style="color: var(--text-muted);">Trinitarian persons: Father (unbounded generative source), Son/Logos (structure, self-expression), Spirit (actualization, brings into being). One substrate, three inseparable modes. Remove any one: null, chaos, or fantasy.</p>
+      <div class="quote" style="background: #0d0d0d; padding: 0.8rem; border-radius: 8px; margin-top: 1rem; font-size: 0.95rem; border-left: 3px solid var(--gold);">
+        “from whom all proceeds” · “through Him all things were made” · “the Spirit gives life”
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 4: THE ISOMORPHIC MAPPING ===== -->
+  <div class="section-number" style="margin-top: 2rem;">02</div>
+  <h2>The Isomorphic Mapping</h2>
+  <div class="gradient-line"></div>
+  <div class="card" style="padding: 0; overflow-x: auto;">
+    <table class="mapping-table">
+      <thead>
+        <tr><th style="width: 25%;">Physics / Mathematics</th><th style="width: 25%;">Theology</th><th style="width: 50%;">Structural Correspondence</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="eq">χ ≡ I (field = information)</td><td>Father — unbounded source</td><td>Generative ground; both are primary, irreducible</td></tr>
+        <tr><td class="eq">χ ↻ χ (self-reference)</td><td>Son/Logos — structure, self-expression</td><td>Self-referential ordering; Gödelian self-reference maps to Logos as rational structure</td></tr>
+        <tr><td class="eq">∇·χ = 0 (conservation)</td><td>Spirit — actualization, coherence</td><td>Conservation of total χ; Spirit as the mode that actualizes without loss</td></tr>
+        <tr><td class="eq">Ĉ = g[Â, B̂]</td><td>Spirit as commutator of Father and Son</td><td>Third operator arises from the first two; procession theology</td></tr>
+        <tr><td>Remove generative → null state</td><td>Remove Father → no source</td><td>Both domains: absence of first mode yields collapse</td></tr>
+        <tr><td>Remove structure → chaos</td><td>Remove Son → no form</td><td>Order requires structural principle</td></tr>
+        <tr><td>Remove actualization → fantasy</td><td>Remove Spirit → no life</td><td>Potential never becomes real without third mode</td></tr>
+        <tr><td>Self-consistent system requires all three</td><td>Trinity: three persons, one substance</td><td>Minimal completeness condition</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== SECTION 5: SEPARATOR TESTS ===== -->
+  <div class="section-number" style="margin-top: 2rem;">03</div>
+  <h2>Separator Tests</h2>
+  <div class="gradient-line"></div>
+  <div class="grid-2">
+    <div class="test-card test-pass">
+      <h4><i class="fas fa-check-circle success"></i> Test A: Structural Preservation</h4>
+      <p style="margin-top: 0.5rem; font-size: 0.95rem;">Do relations survive under mapping? The commutator relation Ĉ = g[Â, B̂] maps directly to Spirit proceeding from Father and Son. The three-mode structure is preserved in both directions.</p>
+      <span class="badge" style="margin-top: 0.5rem;">PASS</span>
+    </div>
+    <div class="test-card test-pass">
+      <h4><i class="fas fa-check-circle success"></i> Test B: Non-Arbitrariness</h4>
+      <p style="margin-top: 0.5rem; font-size: 0.95rem;">Could you swap targets? Son → generative slot fails: theorems don't generate axioms. Spirit → structural slot fails: computation isn't self-reference. Roles are non-interchangeable in both domains.</p>
+      <span class="badge" style="margin-top: 0.5rem;">PASS</span>
+    </div>
+    <div class="test-card test-pass">
+      <h4><i class="fas fa-check-circle success"></i> Test C: Constraint</h4>
+      <p style="margin-top: 0.5rem; font-size: 0.95rem;">Does the mapping rule things out? Yes: modalism = trivial collapse, Arianism = incomplete system. Heresies correspond to mathematical pathologies. The mapping constrains viable theological positions.</p>
+      <span class="badge" style="margin-top: 0.5rem;">PASS</span>
+    </div>
+    <div class="test-card test-pass">
+      <h4><i class="fas fa-check-circle success"></i> Test D: Bidirectionality</h4>
+      <p style="margin-top: 0.5rem; font-size: 0.95rem;">Does each side predict the other? Physics predicts any complete theory needs three modes; theology predicts Trinitarian completeness. GR/QM tension maps to actualization bridge failure.</p>
+      <span class="badge" style="margin-top: 0.5rem;">PASS</span>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 6: CLASSIFICATION & EVIDENCE ===== -->
+  <div class="section-number" style="margin-top: 2rem;">04</div>
+  <h2>Classification &amp; Evidence</h2>
+  <div class="gradient-line"></div>
+  <div class="card" style="border-left: 4px solid var(--gold);">
+    <div class="flex" style="margin-bottom: 1rem;">
+      <span class="badge" style="font-size: 0.9rem; padding: 0.3rem 1.2rem;"><i class="fas fa-shield-alt"></i> Structural Isomorphism</span>
+      <span class="badge badge-info"><i class="fas fa-tachometer-alt"></i> Confidence: HIGH</span>
+      <span class="badge"><i class="fas fa-layer-group"></i> Axiomatic Level</span>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+      <span class="chip chip-gold"><i class="fas fa-check"></i> All 10 Laws</span>
+      <span class="chip"><i class="fas fa-arrow-right"></i> Law I: Generative</span>
+      <span class="chip"><i class="fas fa-arrow-right"></i> Law II: Structural</span>
+      <span class="chip"><i class="fas fa-arrow-right"></i> Law III: Actualization</span>
+      <span class="chip"><i class="fas fa-arrow-right"></i> Conservation</span>
+      <span class="chip"><i class="fas fa-arrow-right"></i> Commutator structure</span>
+    </div>
+    <div style="font-size: 0.9rem; color: var(--text-muted);">
+      <i class="fas fa-scale-balanced"></i> <strong>Laws invoked:</strong> Generative Axiom, Self-Reference (Gödel), Conservation, Operator Algebra. The mapping satisfies all four separator tests.
+    </div>
+  </div>
+
+  <!-- ===== SECTION 7: FALSIFICATION CRITERIA ===== -->
+  <div class="section-number" style="margin-top: 2rem;">05</div>
+  <h2>Falsification Criteria</h2>
+  <div class="gradient-line"></div>
+  <div class="card card-red">
+    <div style="display: flex; gap: 0.8rem; align-items: flex-start;">
+      <i class="fas fa-skull" style="font-size: 2rem; color: var(--danger);"></i>
+      <div>
+        <h4 style="color: var(--danger);">Kill Conditions</h4>
+        <ul style="list-style: none; margin-top: 0.8rem; line-height: 1.8;">
+          <li><i class="fas fa-times-circle danger" style="margin-right: 0.5rem;"></i> Find a complete system operating in only two modes</li>
+          <li><i class="fas fa-times-circle danger" style="margin-right: 0.5rem;"></i> Find unification without an actualization mechanism</li>
+          <li><i class="fas fa-times-circle danger" style="margin-right: 0.5rem;"></i> Show Trinitarian roles are interchangeable without heresy</li>
+          <li><i class="fas fa-times-circle danger" style="margin-right: 0.5rem;"></i> Demonstrate a consistent three-mode system where the third is not generated by the first two</li>
+        </ul>
+        <div class="small-mono" style="margin-top: 0.8rem;">Any one condition met → isomorphism falsified</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 8: RELATED ISOMORPHISMS ===== -->
+  <div class="section-number" style="margin-top: 2rem;">06</div>
+  <h2>Related Isomorphisms</h2>
+  <div class="gradient-line"></div>
+  <div class="grid-3">
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <div class="small-mono" style="color: var(--info);">ISO-002</div>
+      <h4 style="margin: 0.2rem 0;">Terminus Sui ↔ Grace</h4>
+      <div class="small text-muted">Six impossibility theorems → five grace properties</div>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--success);">
+      <div class="small-mono" style="color: var(--success);">ISO-003</div>
+      <h4 style="margin: 0.2rem 0;">Entropy ↔ Sin</h4>
+      <div class="small text-muted">Second Law topology, irreversible degradation</div>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--gold);">
+      <div class="small-mono" style="color: var(--gold);">ISO-006</div>
+      <h4 style="margin: 0.2rem 0;">Information Primacy ↔ Logos</h4>
+      <div class="small text-muted">Wheeler's "It from Bit" maps to John 1:1</div>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <div class="small-mono" style="color: var(--info);">ISO-011</div>
+      <h4 style="margin: 0.2rem 0;">Superposition ↔ Mystery</h4>
+      <div class="small text-muted">Collapse & revelation, E6.2 testable</div>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--success);">
+      <div class="small-mono" style="color: var(--success);">ISO-012</div>
+      <h4 style="margin: 0.2rem 0;">Sign Operator ↔ Moral Orientation</h4>
+      <div class="small text-muted">[σ, U] = 0, grace as external V</div>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--gold);">
+      <div class="small-mono" style="color: var(--gold);">ISO-013</div>
+      <h4 style="margin: 0.2rem 0;">Grace Operator</h4>
+      <div class="small text-muted">G = [[1,0],[1,0]], idempotent, non-unitary</div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 9: FOOTER ===== -->
+  <div style="margin-top: 3rem; border-top: 1px solid #1a1a1a; padding-top: 2rem;">
+    <div class="grid-2" style="align-items: center;">
+      <div>
+        <div style="font-family: var(--font-heading); letter-spacing: 0.06em; font-size: 1.2rem; color: var(--gold);">Theophysics Research Program</div>
+        <div class="small-mono" style="margin-top: 0.3rem;">POF 2828 · Oklahoma City · 2026</div>
+        <div class="small text-muted" style="margin-top: 0.5rem;"><i class="fas fa-database"></i> 36 records · 27 testing · 8 candidate · 1 undetermined · 0 falsified</div>
+      </div>
+      <div class="footer-seal" style="text-align: right;">
+        “The math points to God.<br>The math does not contain God.”
+        <div style="font-size: 0.7rem; color: #6b7280; margin-top: 0.3rem; font-family: var(--font-mono);">Φ · ISO-001 · v2.4</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

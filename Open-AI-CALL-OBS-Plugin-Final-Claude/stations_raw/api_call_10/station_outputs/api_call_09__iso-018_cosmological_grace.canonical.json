@@ -1,0 +1,499 @@
+{
+  "definitions": [
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A structural similarity or mapping between two different systems that preserves their relationships.",
+      "example": "Like how a map of a subway system is isomorphic to the actual subway lines \u2014 the connections are the same even though the map looks different.",
+      "grade_level": "college",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A statement or principle accepted as true without proof, serving as a starting point for further reasoning.",
+      "example": "In geometry, 'a straight line is the shortest distance between two points' is an axiom.",
+      "grade_level": "10",
+      "first_appearance": "Axioms Established"
+    },
+    {
+      "term": "dynamic dark energy",
+      "category": "physics",
+      "definition": "The idea that dark energy (the force causing the universe to expand faster) changes over time instead of staying constant.",
+      "example": "Like a car's speed that varies rather than staying at exactly 60 mph.",
+      "grade_level": "college",
+      "first_appearance": "Axioms Established"
+    },
+    {
+      "term": "cosmic expansion rate",
+      "category": "physics",
+      "definition": "How fast the universe is stretching or growing larger over time.",
+      "example": "Like the speed at which a balloon inflates.",
+      "grade_level": "10",
+      "first_appearance": "Claims Derived"
+    },
+    {
+      "term": "consciousness",
+      "category": "philosophy",
+      "definition": "The state of being aware of oneself and one's surroundings; subjective experience.",
+      "example": "The difference between being awake and aware versus being in a deep sleep without dreams.",
+      "grade_level": "10",
+      "first_appearance": "Claims Derived"
+    },
+    {
+      "term": "modified Friedmann equation",
+      "category": "physics",
+      "definition": "An updated version of the equation that describes how the universe expands, including new terms for dark energy and consciousness.",
+      "example": "Like updating a recipe to include a new ingredient.",
+      "grade_level": "college",
+      "first_appearance": "Evidence Anchored"
+    },
+    {
+      "term": "structural parallel",
+      "category": "framework",
+      "definition": "A similarity in the way two different things are organized or function, even if they are in different fields.",
+      "example": "The way a tree's branches spread out is structurally parallel to how a river's tributaries branch.",
+      "grade_level": "12",
+      "first_appearance": "Bridges Claimed"
+    },
+    {
+      "term": "divine sustenance",
+      "category": "theology",
+      "definition": "The idea that God continuously supports and maintains the existence of the universe.",
+      "example": "Like a parent constantly holding up a child learning to walk, not just setting them down once.",
+      "grade_level": "12",
+      "first_appearance": "Bridges Claimed"
+    },
+    {
+      "term": "cosmological constant",
+      "category": "physics",
+      "definition": "A number in Einstein's equations that represents a constant repulsive force causing the universe to expand.",
+      "example": "Like a background 'anti-gravity' that pushes everything apart.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "grace function",
+      "category": "framework",
+      "definition": "A mathematical function that represents how divine sustaining action changes over time and interacts with consciousness.",
+      "example": "Like a formula that describes how a parent's support changes as a child grows up.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "collective consciousness",
+      "category": "philosophy",
+      "definition": "The combined awareness or mental state of all conscious beings in the universe.",
+      "example": "Like the total 'mood' of everyone in a stadium during a concert.",
+      "grade_level": "12",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "deism",
+      "category": "theology",
+      "definition": "The belief that God created the universe but does not interact with it afterward.",
+      "example": "Like a clockmaker who builds a clock, winds it, and then leaves it to run on its own.",
+      "grade_level": "12",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "theism",
+      "category": "theology",
+      "definition": "The belief that God created the universe and continues to be actively involved in it.",
+      "example": "Like a gardener who not only plants seeds but also waters and tends the plants daily.",
+      "grade_level": "12",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "heat death",
+      "category": "physics",
+      "definition": "A possible end of the universe where everything reaches the same temperature and no energy can be used for work.",
+      "example": "Like a cup of hot coffee that eventually cools to room temperature and can't warm anything else.",
+      "grade_level": "12",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "recollapse",
+      "category": "physics",
+      "definition": "The hypothetical scenario where the universe stops expanding and starts contracting back to a single point.",
+      "example": "Like a balloon that inflates and then deflates back to its original size.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Hubble constant",
+      "category": "physics",
+      "definition": "A number that tells how fast the universe is expanding today.",
+      "example": "Like the speedometer reading for the universe's expansion.",
+      "grade_level": "college",
+      "first_appearance": "Key features"
+    },
+    {
+      "term": "Hubble tension",
+      "category": "physics",
+      "definition": "A disagreement between two different ways of measuring the Hubble constant, giving different results.",
+      "example": "Like two speedometers in the same car showing different speeds.",
+      "grade_level": "college",
+      "first_appearance": "Key features"
+    },
+    {
+      "term": "sigma",
+      "category": "math",
+      "definition": "A measure of how confident scientists are that a result is not due to random chance; 5 sigma means very high confidence.",
+      "example": "Like a 99.99994% chance that a result is real, not a fluke.",
+      "grade_level": "college",
+      "first_appearance": "Key features"
+    },
+    {
+      "term": "fine-tuning",
+      "category": "philosophy",
+      "definition": "The observation that certain physical constants seem precisely set to allow life to exist, as if adjusted on purpose.",
+      "example": "Like a radio dial that must be set exactly to a specific frequency to get a clear station.",
+      "grade_level": "12",
+      "first_appearance": "Key features"
+    },
+    {
+      "term": "cosmological constant problem",
+      "category": "physics",
+      "definition": "The huge mismatch between the predicted and observed value of the cosmological constant (off by a factor of 10^120).",
+      "example": "Like predicting a car's speed as 1,000,000 mph but measuring only 1 mph.",
+      "grade_level": "college",
+      "first_appearance": "Key features"
+    },
+    {
+      "term": "Planck units",
+      "category": "physics",
+      "definition": "A system of natural units based on fundamental constants of nature, used in high-energy physics.",
+      "example": "Like using the speed of light as a unit of speed instead of miles per hour.",
+      "grade_level": "college",
+      "first_appearance": "Key features"
+    },
+    {
+      "term": "quantum field theory",
+      "category": "physics",
+      "definition": "A theory that describes how particles and forces behave at the smallest scales using fields.",
+      "example": "Like a theory that explains how ripples in a pond (fields) create waves (particles).",
+      "grade_level": "college",
+      "first_appearance": "Key features"
+    },
+    {
+      "term": "orders of magnitude",
+      "category": "math",
+      "definition": "A way to compare sizes using powers of ten; each order of magnitude is a factor of 10.",
+      "example": "100 is two orders of magnitude larger than 1 (10^2 vs 10^0).",
+      "grade_level": "10",
+      "first_appearance": "Key features"
+    },
+    {
+      "term": "discrepancy",
+      "category": "academic",
+      "definition": "A difference or disagreement between two things that should be the same.",
+      "example": "If two clocks show different times, that's a discrepancy.",
+      "grade_level": "10",
+      "first_appearance": "Key features"
+    },
+    {
+      "term": "asymptotically",
+      "category": "math",
+      "definition": "Approaching a value closer and closer but never quite reaching it.",
+      "example": "Like a car slowing down and getting closer to 0 mph but never stopping completely.",
+      "grade_level": "12",
+      "first_appearance": "Key features"
+    },
+    {
+      "term": "providence",
+      "category": "theology",
+      "definition": "The protective care of God over the universe and its creatures.",
+      "example": "Like a lifeguard watching over swimmers, ready to help if needed.",
+      "grade_level": "12",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "quintessence",
+      "category": "physics",
+      "definition": "A hypothetical form of dark energy that changes over time, often modeled as a field.",
+      "example": "Like a 'fifth element' that pushes the universe apart and can vary in strength.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "scalar field",
+      "category": "physics",
+      "definition": "A field that has a single value at every point in space (like temperature), used in physics to describe forces.",
+      "example": "Like a map of temperature across a room, where each point has one number.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "potential",
+      "category": "physics",
+      "definition": "A function that describes the energy of a system based on its configuration.",
+      "example": "Like a hill: the higher you are, the more potential energy you have to roll down.",
+      "grade_level": "12",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "boundary conditions",
+      "category": "math",
+      "definition": "Constraints or limits placed on a problem at the edges of the region being studied.",
+      "example": "Like saying a race must start at 0 miles and end at 26.2 miles.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "equation of state",
+      "category": "physics",
+      "definition": "A mathematical relationship that describes how a substance (like dark energy) behaves under different conditions.",
+      "example": "Like a formula that relates the pressure and volume of a gas in a balloon.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "anthropic landscape",
+      "category": "physics",
+      "definition": "The idea that there are many possible universes with different physical laws, and we live in one that allows life.",
+      "example": "Like a huge wardrobe with many outfits; we only wear the ones that fit.",
+      "grade_level": "college",
+      "first_appearance": "Falsification"
+    },
+    {
+      "term": "symmetry mechanism",
+      "category": "physics",
+      "definition": "A mathematical principle that forces certain quantities to be small or zero due to a symmetry of nature.",
+      "example": "Like how a perfectly balanced seesaw stays level because both sides are symmetric.",
+      "grade_level": "college",
+      "first_appearance": "Falsification"
+    },
+    {
+      "term": "BAO",
+      "category": "physics",
+      "definition": "Baryon Acoustic Oscillations \u2014 regular patterns in the distribution of galaxies from sound waves in the early universe.",
+      "example": "Like ripples in a pond that froze in place, showing where galaxies formed.",
+      "grade_level": "college",
+      "first_appearance": "Falsification"
+    },
+    {
+      "term": "CMB",
+      "category": "physics",
+      "definition": "Cosmic Microwave Background \u2014 the faint glow left over from the Big Bang, filling the universe.",
+      "example": "Like the afterglow of a fire that still gives off a dim light.",
+      "grade_level": "college",
+      "first_appearance": "Falsification"
+    },
+    {
+      "term": "SNe Ia",
+      "category": "physics",
+      "definition": "Type Ia supernovae \u2014 exploding stars used as 'standard candles' to measure cosmic distances.",
+      "example": "Like light bulbs of known brightness used to measure how far away they are.",
+      "grade_level": "college",
+      "first_appearance": "Falsification"
+    },
+    {
+      "term": "unfalsifiable",
+      "category": "academic",
+      "definition": "A claim that cannot be proven wrong by any experiment or observation.",
+      "example": "Saying 'invisible unicorns live on the moon' is unfalsifiable because you can't check.",
+      "grade_level": "12",
+      "first_appearance": "Honest Assessment"
+    },
+    {
+      "term": "panpsychism",
+      "category": "philosophy",
+      "definition": "The belief that consciousness is a fundamental property of all matter, not just brains.",
+      "example": "The idea that even a rock has some tiny form of awareness.",
+      "grade_level": "college",
+      "first_appearance": "Honest Assessment"
+    },
+    {
+      "term": "cosmopsychism",
+      "category": "philosophy",
+      "definition": "The belief that the entire universe as a whole is conscious.",
+      "example": "The idea that the cosmos itself has a mind or awareness.",
+      "grade_level": "college",
+      "first_appearance": "Honest Assessment"
+    },
+    {
+      "term": "empirical",
+      "category": "academic",
+      "definition": "Based on observation or experiment rather than theory or logic alone.",
+      "example": "Checking if a plant grows faster with music is an empirical test.",
+      "grade_level": "10",
+      "first_appearance": "Honest Assessment"
+    },
+    {
+      "term": "macroscopic",
+      "category": "physics",
+      "definition": "Large enough to be seen with the naked eye, not microscopic.",
+      "example": "A table is macroscopic; a bacterium is microscopic.",
+      "grade_level": "10",
+      "first_appearance": "Honest Assessment"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation, especially how humans are saved from sin and its consequences.",
+      "example": "Like studying how a rescue team saves people from a burning building.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text, but related to grace"
+    },
+    {
+      "term": "hamartiology",
+      "category": "theology",
+      "definition": "The study of sin, its origin, and its effects.",
+      "example": "Like studying what causes a disease and how it spreads.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "sanctification",
+      "category": "theology",
+      "definition": "The process of becoming holy or morally pure, often through divine help.",
+      "example": "Like cleaning a dirty room until it's spotless.",
+      "grade_level": "12",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "atonement",
+      "category": "theology",
+      "definition": "The act of making amends for a wrong or sin, often through a sacrifice.",
+      "example": "Like apologizing and paying for a broken window to make things right.",
+      "grade_level": "12",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "ontology",
+      "category": "philosophy",
+      "definition": "The study of what exists, what kinds of things there are in reality.",
+      "example": "Like asking 'Do numbers really exist, or are they just ideas in our heads?'",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "epistemology",
+      "category": "philosophy",
+      "definition": "The study of knowledge: how we know things and what counts as knowledge.",
+      "example": "Like asking 'How do you know the sun will rise tomorrow?'",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "contingent",
+      "category": "philosophy",
+      "definition": "Something that could be different or might not exist at all; dependent on something else.",
+      "example": "Your existence is contingent on your parents meeting.",
+      "grade_level": "12",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "necessary",
+      "category": "philosophy",
+      "definition": "Something that must exist and cannot be otherwise.",
+      "example": "A triangle having three sides is a necessary truth.",
+      "grade_level": "10",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "chi-field",
+      "category": "framework",
+      "definition": "A hypothetical field in the Theophysics framework that mediates moral or spiritual influences.",
+      "example": "Like a 'goodness field' that affects how things behave.",
+      "grade_level": "specialist",
+      "first_appearance": "Not explicitly in text, but referenced in other ISOs"
+    },
+    {
+      "term": "coherence functional",
+      "category": "framework",
+      "definition": "A mathematical function that measures how well different parts of a system are aligned or harmonious.",
+      "example": "Like a score that tells how well a choir sings together.",
+      "grade_level": "specialist",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "moral curvature",
+      "category": "framework",
+      "definition": "A concept in Theophysics that describes how moral actions affect the geometry of spacetime or reality.",
+      "example": "Like how a heavy ball curves a rubber sheet, but for good or bad actions.",
+      "grade_level": "specialist",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "falsifiable",
+      "category": "academic",
+      "definition": "Able to be proven wrong by an experiment or observation.",
+      "example": "The claim 'all swans are white' is falsifiable if you find a black swan.",
+      "grade_level": "12",
+      "first_appearance": "Honest Assessment"
+    },
+    {
+      "term": "theorem",
+      "category": "math",
+      "definition": "A statement that has been proven to be true based on axioms and logic.",
+      "example": "The Pythagorean theorem (a^2 + b^2 = c^2) is a proven mathematical truth.",
+      "grade_level": "10",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "tensor",
+      "category": "math",
+      "definition": "A mathematical object that describes relationships between vectors and scalars, used in physics for forces and spacetime.",
+      "example": "Like a spreadsheet that holds multiple numbers describing how something stretches or twists.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "Noether",
+      "category": "math",
+      "definition": "Refers to Emmy Noether's theorem, which links symmetries in nature to conservation laws (like energy conservation).",
+      "example": "If a system looks the same at all times, energy is conserved.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text"
+    },
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A structural similarity or mapping between two different systems that preserves their relationships.",
+      "example": "Like how a map of a subway system is isomorphic to the actual subway lines \u2014 the connections are the same even though the map looks different.",
+      "grade_level": "college",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "Hebrews 1:3",
+      "category": "language",
+      "definition": "A Bible verse: 'He upholds all things by the word of His power.'",
+      "example": "A line from the Bible used to support the idea that God sustains the universe.",
+      "grade_level": "10",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Romans 8:19",
+      "category": "language",
+      "definition": "A Bible verse: 'The creation waits in eager expectation for the children of God to be revealed.'",
+      "example": "A line from the Bible suggesting that nature itself is waiting for something.",
+      "grade_level": "10",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Acts 17:28",
+      "category": "language",
+      "definition": "A Bible verse: 'In Him we live and move and have our being.'",
+      "example": "A line from the Bible suggesting that God is the environment in which we exist.",
+      "grade_level": "10",
+      "first_appearance": "Cross-Reference"
+    }
+  ],
+  "stats": {
+    "total_terms_found": 52,
+    "by_category": {
+      "physics": 18,
+      "theology": 8,
+      "math": 6,
+      "philosophy": 6,
+      "framework": 4,
+      "academic": 5,
+      "language": 5
+    },
+    "highest_grade_level": "specialist",
+    "average_grade_level": "12.5",
+    "accessibility_score": 25
+  }
+}

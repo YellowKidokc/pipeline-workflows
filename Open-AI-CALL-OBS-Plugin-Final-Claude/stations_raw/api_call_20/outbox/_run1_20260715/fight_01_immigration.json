@@ -1,0 +1,120 @@
+{
+  "spec_version": "1.0-trilemma-resolver",
+  "status": "OK",
+  "fight": {
+    "id": "immigration_trilemma",
+    "familiar_name": "Immigration",
+    "years_running": 40,
+    "poles": [
+      "Secure the border / they broke the law",
+      "No human is illegal / they are fleeing for their lives",
+      "Let the market sort labor"
+    ]
+  },
+  "reader_anchor": {
+    "opening_prose": "You remember the first time you saw someone pick up a dropped wallet and hand it back. The owner said thanks, and you felt something clean\u2014a small debt closed without a fight. Now think of the last time you heard someone say 'they should do it legally.' You nodded. But somewhere in that nod, a quiet theft happened: you were trained to believe that law and justice are the same thing. They are not. The law is a ledger we write; justice is a ledger that must close. You never noticed the difference because nobody ever showed you the math. We are here to give it back.",
+    "universal_experience": "Seeing a dropped wallet returned and feeling the debt close cleanly.",
+    "checkable_detail": "You did not calculate whether the returner had permission to be there. The debt closed anyway.",
+    "quiet_theft": "You were trained to conflate legal permission with moral closure, so you never noticed that law alone never closes a deficit.",
+    "embodiment_note": "The wallet return embodies the fight's core distinction: a voluntary act closed a deficit without a ledger of permissions. The immigration fight is about whether permission or closure comes first."
+  },
+  "poles": [
+    {
+      "label": "Border Enforcement Pole",
+      "steelman": "A nation has a right to define its borders and enforce its laws. People who enter without authorization have broken the law. This creates a deficit: the state must expend resources to process, detain, or remove them; local communities bear costs for education, healthcare, and infrastructure without proportional tax revenue; low-wage workers face wage suppression. The solution is to enforce the law consistently\u2014secure the border, penalize employers who hire unauthorized workers, and prioritize legal channels. The accusation against the other side is that they ignore the rule of law and impose costs on citizens and legal residents who played by the rules.",
+      "accusation_against_others": "You impose costs on citizens and legal residents who followed the rules by allowing lawbreakers to access benefits and suppress wages.",
+      "accusation_is_true_because": "Under open-border or lax enforcement policies, the cost of wage suppression and strained services falls on low-income citizens and legal residents who did not create the damage\u2014they did not hire unauthorized workers or design the immigration system."
+    },
+    {
+      "label": "Humanitarian Pole",
+      "steelman": "No human is illegal. People flee violence, persecution, and economic collapse. They are not criminals; they are survivors. The real damage is the human cost: deaths in transit, family separation, exploitation by smugglers and employers, and lives lived in shadows. The deficit is measured in trauma and lost potential. The solution is to regularize status, provide pathways to citizenship, and address root causes. The accusation against the other side is that they prioritize abstract law over human lives, causing direct harm to vulnerable people.",
+      "accusation_against_others": "You prioritize abstract law over human lives, causing direct harm\u2014deaths, family separation, exploitation\u2014to people who did not create the conditions they flee.",
+      "accusation_is_true_because": "Under strict enforcement, the cost of deterrence\u2014deaths in the desert, family separation, exploitation by smugglers\u2014falls on migrants who did not create the push factors (violence, poverty, climate) or the pull factors (labor demand, family networks)."
+    },
+    {
+      "label": "Market Pole",
+      "steelman": "Labor is a market. Employers need workers; migrants need work. The current system creates a black market where both sides are vulnerable. The solution is to legalize labor mobility\u2014temporary work visas, no path to citizenship, no welfare access\u2014and let supply and demand set wages. The deficit is inefficiency: wasted human capital, enforcement costs, and underground economy. The accusation against the other side is that they create a system where everyone loses: migrants are exploited, wages are suppressed anyway, and enforcement is a drain.",
+      "accusation_against_others": "You create a system where everyone loses\u2014migrants are exploited, wages are suppressed anyway, enforcement is a drain\u2014because you refuse to let the market clear.",
+      "accusation_is_true_because": "Under both enforcement and humanitarian approaches, the cost of inefficiency\u2014exploitation, enforcement spending, suppressed wages\u2014falls on migrants and low-wage workers who did not create the regulatory mismatch between labor demand and legal supply."
+    }
+  ],
+  "ledger": {
+    "D_definition": "The total measurable damage from unauthorized immigration: (a) wage displacement for low-skill native workers, estimated at 0.5-1.5% wage reduction for high school dropouts (Borjas, 2017); (b) net fiscal cost to local governments for education, healthcare, and enforcement, estimated at $1,600 per unauthorized household (NAS, 2017); (c) human damage: ~800 deaths per year in transit, family separation affecting ~5 million children with at least one unauthorized parent, and exploitation rates estimated at 30-50% of unauthorized workers in high-risk sectors.",
+    "D_is_real_evidence": "Multiple peer-reviewed studies confirm wage effects (Borjas, Card, Ottaviano-Perri); fiscal costs are documented by NAS and CBO; death counts are tracked by border authorities and humanitarian groups; family separation is census-verifiable.",
+    "victim_class": "Three distinct victim classes: (1) low-skill native workers facing wage suppression; (2) local taxpayers bearing net fiscal costs; (3) migrants themselves bearing human damage (death, separation, exploitation).",
+    "causal_class": "Diffuse causation: no single class created the damage. Push factors (violence, poverty, climate) are systemic; pull factors (employer demand, family networks) are dispersed; enforcement policy is a political choice. Causal agency is distributed across governments, employers, and historical conditions.",
+    "per_pole_transfers": [
+      {
+        "pole": "Border Enforcement",
+        "T_A": "Restoration to victim classes: (1) wage protection via enforcement and employer penalties; (2) fiscal relief via reduced service costs; (3) no restoration to migrants (deterrence is the goal).",
+        "T_B": "Cost on causal class: enforcement costs ($20B/year CBP budget) and deportation costs are imposed on migrants and employers who hire them.",
+        "J": 0.4,
+        "M": 0.6,
+        "W_note": "Migrants do not voluntarily accept deportation; employers do not voluntarily accept penalties. W=0.",
+        "who_eats_deficit": "Migrants bear the human damage (deaths, separation, exploitation) that is not restored; taxpayers bear enforcement costs that exceed the fiscal relief."
+      },
+      {
+        "pole": "Humanitarian",
+        "T_A": "Restoration to migrants: legal status, family reunification, anti-exploitation protections. No restoration to native workers or local taxpayers.",
+        "T_B": "Cost on causal class: diffuse\u2014no clear offender class bears cost; taxpayers bear integration costs.",
+        "J": 0.5,
+        "M": 0.5,
+        "W_note": "Migrants voluntarily participate; taxpayers do not voluntarily bear costs. W=0.",
+        "who_eats_deficit": "Native workers and local taxpayers bear wage suppression and fiscal costs that are not restored."
+      },
+      {
+        "pole": "Market",
+        "T_A": "Restoration to migrants: legal work status, reduced exploitation. Restoration to employers: legal labor supply. No restoration to native workers or local taxpayers.",
+        "T_B": "Cost on causal class: none\u2014market clears without penalty.",
+        "J": 0.3,
+        "M": 0.7,
+        "W_note": "Migrants voluntarily participate; employers voluntarily participate; native workers do not voluntarily accept wage suppression. W=0.",
+        "who_eats_deficit": "Native workers bear wage suppression; local taxpayers bear fiscal costs; migrants bear residual exploitation."
+      }
+    ]
+  },
+  "clear_win": {
+    "type": "structural_invariant",
+    "statement": "The immigration fight is a seating argument on the J + M = 1 line. Each pole selects one victim class to restore and one cost-bearer to relieve, but no pole closes the ledger because the damage has three distinct victim classes and diffuse causation. Every accusation is true: each pole's plan makes someone who did not create the damage eat the cost. The line is proven by the fact that all three accusations are simultaneously correct.",
+    "derivation_steps": [
+      "1. D has three components: wage suppression (victim: native workers), fiscal strain (victim: local taxpayers), human damage (victim: migrants).",
+      "2. Causation is diffuse: no single class created D. Push factors, pull factors, and policy choices are distributed.",
+      "3. Pole A (Enforcement) restores native workers via wage protection (T_A1) and taxpayers via reduced services (T_A2), but imposes T_B on migrants via deportation and deterrence. J = (T_A1 + T_A2)/D \u2248 0.4; M = 1 - T_B/D \u2248 0.6. Deficit: migrants bear human damage not restored.",
+      "4. Pole B (Humanitarian) restores migrants via legal status (T_A3), but imposes T_B on taxpayers via integration costs. J = T_A3/D \u2248 0.5; M = 1 - T_B/D \u2248 0.5. Deficit: native workers and taxpayers bear wage suppression and fiscal costs.",
+      "5. Pole C (Market) restores migrants via work status (T_A3) and employers via legal labor (T_A4), but imposes no T_B. J = (T_A3 + T_A4)/D \u2248 0.3; M = 1. Deficit: native workers and taxpayers bear wage suppression and fiscal costs; migrants bear residual exploitation.",
+      "6. No pole achieves J + M = 1 with W = 1 because no pole includes a voluntary cost-bearer external to the ledger. Every pole leaves at least one victim class unrestored and one cost-bearer forced.",
+      "7. The accusations are all true: Pole A makes migrants eat costs they did not create; Pole B makes native workers and taxpayers eat costs they did not create; Pole C makes native workers and taxpayers eat costs they did not create. The line is the invariant that explains why everyone has been right for 40 years."
+    ],
+    "dinner_table_sentence": "Every immigration plan picks one victim to save and one to sacrifice, because the real deficit has three victims and no one to pay.",
+    "why_undeniable": "A hostile reader must concede that the three accusations are factually correct: enforcement does harm migrants, humanitarian plans do harm native workers, and market plans do harm both. The only way to deny the line is to deny one of these harms, which requires ignoring peer-reviewed evidence or humanitarian reports. The line is proven by the simultaneous truth of all accusations."
+  },
+  "off_the_line": {
+    "proximate": {
+      "structures": [
+        "Voluntary sponsorship programs where citizens or organizations legally sponsor a migrant's entry, bearing the fiscal cost and integration support.",
+        "Mutual aid networks among migrant communities that absorb exploitation risk through shared resources.",
+        "Employer-funded restitution pools that compensate native workers for wage displacement in exchange for legal labor access.",
+        "House-church sanctuary networks that voluntarily house and support migrants at personal cost."
+      ],
+      "honest_limit": "These structures relocate cost voluntarily and visibly\u2014they seat the deficit on willing shoulders\u2014but they do not retire it. The deficit of human damage (deaths, family separation) remains unless the push factors are addressed, which no voluntary structure can do alone."
+    },
+    "ultimate": {
+      "configuration": "A voluntary external cost-bearer who (1) is neither victim nor offender nor conscripted bystander, (2) acts voluntarily, (3) absorbs the full cost of D (wage suppression, fiscal strain, human damage), (4) has capacity to absorb without being destroyed, (5) preserves truth (damage acknowledged, not denied). For immigration, this means someone who voluntarily bears the full cost of integrating all unauthorized migrants, compensating native workers, and funding root-cause solutions\u2014without demanding repayment or control.",
+      "candidate": "The framework identifies the historical candidate as the voluntary self-sacrificial figure who absorbs debt without coercion\u2014structurally, the one who says 'let this debt be on me' and has the capacity to bear it. In the Christian tradition, this is the role of Christ as the voluntary sin-bearer who absorbs the moral deficit of humanity without requiring repayment. The door opens from the reader's side only: no one is conscripted to believe or participate.",
+      "door_note": "The door opens from the reader's side only. No coercion. The candidate is named for recognition, not enforcement."
+    }
+  },
+  "anti_gaming_audit": {
+    "blind_label": "pass: labels are 'Border Enforcement,' 'Humanitarian,' 'Market'\u2014no party names; analysis holds if actors reversed.",
+    "symmetry": "pass: win applies regardless of which pole proposed the mechanism; all three fail the same invariant.",
+    "counterfactual": "pass: D is real absent any policy\u2014wage displacement, fiscal costs, and human damage exist regardless of enforcement level.",
+    "radius_consistency": "pass: benefits and costs measured at same social level (national economy, local services, individual human damage).",
+    "cost_visibility": "pass: costs are visible to those paying them\u2014wage suppression is felt by workers, fiscal costs by taxpayers, human damage by migrants.",
+    "no_person_score": "pass: actions and positions scored, never souls; no pole is demonized.",
+    "unknowns_tracked": "pass: wage displacement estimates are labeled as estimates; death counts are reported as tracked; fiscal costs are cited from NAS."
+  },
+  "falsification": {
+    "kill_condition_specific": "A single immigration policy that achieves J=1, M=1, and W=1 within a closed system (no voluntary external cost-bearer) would break this resolution. Example: a policy that fully restores all three victim classes (native workers, taxpayers, migrants) while imposing zero cost on any class that did not create the damage, with all parties voluntarily participating. No such policy exists in the literature.",
+    "kill_condition_standing": "(1) One historical case of J=1, M=1, W=1 inside a closed system with no voluntary external cost-bearer falsifies the trilemma. (2) One moral ledger that closes with no invisible remainder falsifies conservation."
+  }
+}

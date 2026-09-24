@@ -1,0 +1,523 @@
+{
+  "definitions": [
+    {
+      "term": "entropy signature",
+      "category": "physics",
+      "definition": "A measurable pattern of disorder or decay in a system.",
+      "example": "Like the way a sandcastle slowly crumbles into a flat pile of sand.",
+      "grade_level": "college",
+      "first_appearance": "02 Despair"
+    },
+    {
+      "term": "contingent",
+      "category": "philosophy",
+      "definition": "Something that depends on something else to happen or exist.",
+      "example": "Whether you get ice cream today is contingent on the weather being nice.",
+      "grade_level": "college",
+      "first_appearance": "02 Joy"
+    },
+    {
+      "term": "attack vector",
+      "category": "framework",
+      "definition": "A specific way an enemy can break into or damage a system.",
+      "example": "A locked door is an attack vector if someone has the key.",
+      "grade_level": "college",
+      "first_appearance": "02 Joy"
+    },
+    {
+      "term": "coherence",
+      "category": "physics",
+      "definition": "When parts of a system work together in an orderly, stable way.",
+      "example": "A choir singing in perfect harmony has coherence; a crowd shouting random words does not.",
+      "grade_level": "college",
+      "first_appearance": "05 Kindness"
+    },
+    {
+      "term": "degradation",
+      "category": "physics",
+      "definition": "The process of something breaking down or becoming less ordered over time.",
+      "example": "A metal chain rusting in the rain is degradation.",
+      "grade_level": "college",
+      "first_appearance": "02 Despair"
+    },
+    {
+      "term": "chi-field",
+      "category": "framework",
+      "definition": "A theoretical field of divine presence and order that sustains coherence.",
+      "example": "Like an invisible force field that keeps everything in a room organized and peaceful.",
+      "grade_level": "specialist",
+      "first_appearance": "The Thing That Follows From This"
+    },
+    {
+      "term": "coupling coefficient",
+      "category": "physics",
+      "definition": "A number that measures how strongly two systems are connected or influence each other.",
+      "example": "Like the volume knob on a speaker that controls how much the music affects the room.",
+      "grade_level": "college",
+      "first_appearance": "09 Self-Control"
+    },
+    {
+      "term": "Logos",
+      "category": "theology",
+      "definition": "A Greek word meaning 'Word' or 'reason,' used in the Bible to refer to Jesus as the divine order of the universe.",
+      "example": "Like the blueprint that holds all of creation together.",
+      "grade_level": "college",
+      "first_appearance": "07 Betrayal"
+    },
+    {
+      "term": "invariance",
+      "category": "math",
+      "definition": "A property that stays the same even when other things change.",
+      "example": "The number of sides of a square is invariant no matter how big you draw it.",
+      "grade_level": "college",
+      "first_appearance": "07 Betrayal"
+    },
+    {
+      "term": "Godelian violation",
+      "category": "math",
+      "definition": "A logical error where a system claims to be the source of its own rules, which is impossible.",
+      "example": "Like a computer program trying to write its own code without any outside help.",
+      "grade_level": "graduate",
+      "first_appearance": "08 Arrogance"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A basic rule or starting point that is accepted as true without proof.",
+      "example": "In math, 'a whole number plus zero equals itself' is an axiom.",
+      "grade_level": "college",
+      "first_appearance": "08 Arrogance"
+    },
+    {
+      "term": "CPT invariance",
+      "category": "physics",
+      "definition": "A physics principle that says the laws of nature stay the same if you flip charge, mirror space, and reverse time all at once.",
+      "example": "Like a video played backward that still makes sense if you also swap left and right and change colors.",
+      "grade_level": "graduate",
+      "first_appearance": "IV The Bundle Property"
+    },
+    {
+      "term": "symmetry",
+      "category": "physics",
+      "definition": "A property that stays the same after a transformation, like flipping or rotating.",
+      "example": "A butterfly's wings are symmetric: one side mirrors the other.",
+      "grade_level": "college",
+      "first_appearance": "IV The Bundle Property"
+    },
+    {
+      "term": "neurochemistry",
+      "category": "physics",
+      "definition": "The study of chemicals in the brain that affect mood, thoughts, and behavior.",
+      "example": "Like how caffeine changes your alertness by affecting brain chemicals.",
+      "grade_level": "college",
+      "first_appearance": "04 Wrath"
+    },
+    {
+      "term": "prefrontal cortex",
+      "category": "physics",
+      "definition": "The front part of the brain that helps with planning, decision-making, and self-control.",
+      "example": "It's like the CEO of your brain, helping you think before you act.",
+      "grade_level": "college",
+      "first_appearance": "04 Wrath"
+    },
+    {
+      "term": "Path 2 thinking",
+      "category": "framework",
+      "definition": "A mode of thinking that is slow, deliberate, and self-aware, often leading to exhaustion.",
+      "example": "Like trying to solve a hard math problem while also worrying about how you're doing.",
+      "grade_level": "specialist",
+      "first_appearance": "V The Drift Protocol"
+    },
+    {
+      "term": "decoherence",
+      "category": "physics",
+      "definition": "The process where a quantum system loses its orderly wave-like behavior and becomes random.",
+      "example": "Like a perfectly synchronized dance falling apart into chaotic individual moves.",
+      "grade_level": "college",
+      "first_appearance": "The Thing That Follows From This"
+    },
+    {
+      "term": "s = +1",
+      "category": "framework",
+      "definition": "A symbol for a state of full openness and connection to the divine source.",
+      "example": "Like a radio perfectly tuned to a station with no static.",
+      "grade_level": "specialist",
+      "first_appearance": "V The Drift Protocol"
+    },
+    {
+      "term": "s = 0",
+      "category": "framework",
+      "definition": "A symbol for a neutral or performance-based state, disconnected from the source.",
+      "example": "Like a phone on airplane mode: still works but not connected to the network.",
+      "grade_level": "specialist",
+      "first_appearance": "V The Drift Protocol"
+    },
+    {
+      "term": "s = -1",
+      "category": "framework",
+      "definition": "A symbol for a state of active opposition or disconnection from the divine source.",
+      "example": "Like a phone that's been smashed and can't receive any signal.",
+      "grade_level": "specialist",
+      "first_appearance": "V The Drift Protocol"
+    },
+    {
+      "term": "PFC suppression",
+      "category": "physics",
+      "definition": "When the prefrontal cortex is less active, making it harder to think clearly or control impulses.",
+      "example": "Like when you're very tired and can't focus on a puzzle.",
+      "grade_level": "college",
+      "first_appearance": "V The Drift Protocol"
+    },
+    {
+      "term": "bundle property",
+      "category": "framework",
+      "definition": "The idea that the nine Fruits of the Spirit come together as one package, not separately.",
+      "example": "Like a bicycle: you need all the parts working together, not just the wheels.",
+      "grade_level": "specialist",
+      "first_appearance": "IV The Bundle Property"
+    },
+    {
+      "term": "co-emerge",
+      "category": "academic",
+      "definition": "To appear or develop together at the same time.",
+      "example": "In a forest, mushrooms and ferns often co-emerge after rain.",
+      "grade_level": "college",
+      "first_appearance": "IV The Bundle Property"
+    },
+    {
+      "term": "co-decay",
+      "category": "academic",
+      "definition": "To break down or weaken together at the same time.",
+      "example": "Like a pair of old shoes that both get holes at the same time.",
+      "grade_level": "college",
+      "first_appearance": "IV The Bundle Property"
+    },
+    {
+      "term": "dynamical states",
+      "category": "physics",
+      "definition": "Different patterns of behavior a system can have as it changes over time.",
+      "example": "Water can be in dynamical states like liquid, ice, or steam.",
+      "grade_level": "college",
+      "first_appearance": "V Why This Changes the Practical Question"
+    },
+    {
+      "term": "neurochemically",
+      "category": "physics",
+      "definition": "In a way that relates to brain chemicals and their effects.",
+      "example": "Caffeine works neurochemically by blocking chemicals that make you sleepy.",
+      "grade_level": "college",
+      "first_appearance": "V Why This Changes the Practical Question"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation and how people are saved.",
+      "example": "Like learning about how a rescue team saves people from a burning building.",
+      "grade_level": "college",
+      "first_appearance": "VI The Full Operation"
+    },
+    {
+      "term": "hamartiology",
+      "category": "theology",
+      "definition": "The study of sin and what it means.",
+      "example": "Like studying what 'breaking the rules' means in a game.",
+      "grade_level": "college",
+      "first_appearance": "VI The Full Operation"
+    },
+    {
+      "term": "sanctification",
+      "category": "theology",
+      "definition": "The process of becoming more holy or set apart for God.",
+      "example": "Like cleaning and polishing a dirty coin until it shines like new.",
+      "grade_level": "college",
+      "first_appearance": "VI The Full Operation"
+    },
+    {
+      "term": "atonement",
+      "category": "theology",
+      "definition": "The act of making up for a wrong or repairing a broken relationship.",
+      "example": "Like saying sorry and fixing a toy you broke to make peace with your friend.",
+      "grade_level": "college",
+      "first_appearance": "VI The Full Operation"
+    },
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A mapping between two structures that shows they are essentially the same in form.",
+      "example": "Like a map of a subway system that looks different but shows the same connections as the real tracks.",
+      "grade_level": "college",
+      "first_appearance": "VI The Full Operation"
+    },
+    {
+      "term": "bijection",
+      "category": "math",
+      "definition": "A perfect one-to-one pairing between two sets where every item matches exactly one item in the other set.",
+      "example": "Like assigning each student in a class a unique locker number.",
+      "grade_level": "college",
+      "first_appearance": "VI The Full Operation"
+    },
+    {
+      "term": "Noether",
+      "category": "math",
+      "definition": "Refers to Emmy Noether's theorem, which links symmetries in physics to conservation laws.",
+      "example": "Like how the symmetry of a spinning top means its spin stays constant unless something stops it.",
+      "grade_level": "graduate",
+      "first_appearance": "VI The Full Operation"
+    },
+    {
+      "term": "tensor",
+      "category": "math",
+      "definition": "A mathematical object that describes relationships between multiple quantities in space.",
+      "example": "Like a spreadsheet that shows how stretching a rubber band in one direction affects its shape in all directions.",
+      "grade_level": "college",
+      "first_appearance": "VI The Full Operation"
+    },
+    {
+      "term": "ontology",
+      "category": "philosophy",
+      "definition": "The study of what exists and the nature of reality.",
+      "example": "Like asking 'Is a dream real?' and trying to figure out what 'real' means.",
+      "grade_level": "college",
+      "first_appearance": "VI The Full Operation"
+    },
+    {
+      "term": "epistemology",
+      "category": "philosophy",
+      "definition": "The study of how we know things and what counts as knowledge.",
+      "example": "Like asking 'How do you know the sun will rise tomorrow?' and looking for proof.",
+      "grade_level": "college",
+      "first_appearance": "VI The Full Operation"
+    },
+    {
+      "term": "necessary",
+      "category": "philosophy",
+      "definition": "Something that must be true or exist, and cannot be otherwise.",
+      "example": "In math, 2+2=4 is a necessary truth.",
+      "grade_level": "college",
+      "first_appearance": "VI The Full Operation"
+    },
+    {
+      "term": "empirical",
+      "category": "academic",
+      "definition": "Based on observation or experiment, not just theory.",
+      "example": "A doctor testing a new medicine on patients is doing empirical research.",
+      "grade_level": "college",
+      "first_appearance": "VI The Full Operation"
+    },
+    {
+      "term": "falsifiable",
+      "category": "academic",
+      "definition": "Able to be proven wrong by evidence or experiment.",
+      "example": "The claim 'all swans are white' is falsifiable because finding one black swan proves it wrong.",
+      "grade_level": "college",
+      "first_appearance": "VI The Full Operation"
+    },
+    {
+      "term": "theorem",
+      "category": "academic",
+      "definition": "A statement that has been proven to be true using logic and rules.",
+      "example": "The Pythagorean theorem is a proven rule about right triangles.",
+      "grade_level": "college",
+      "first_appearance": "VI The Full Operation"
+    },
+    {
+      "term": "\u03c7",
+      "category": "framework",
+      "definition": "A Greek letter (chi) used in the framework to represent the divine coherence field.",
+      "example": "Like a symbol for the invisible force that keeps everything in order.",
+      "grade_level": "specialist",
+      "first_appearance": "02 Despair"
+    },
+    {
+      "term": "Logos-misalignment",
+      "category": "framework",
+      "definition": "When a system is out of sync with the divine order or reason.",
+      "example": "Like a guitar string that's out of tune with the rest of the band.",
+      "grade_level": "specialist",
+      "first_appearance": "07 Betrayal"
+    },
+    {
+      "term": "coherence-preserving contact",
+      "category": "framework",
+      "definition": "An interaction that helps keep a system orderly and stable.",
+      "example": "Like a teacher calmly helping a student focus on their work.",
+      "grade_level": "specialist",
+      "first_appearance": "05 Kindness"
+    },
+    {
+      "term": "information destruction",
+      "category": "physics",
+      "definition": "The process of erasing or scrambling information so it can't be recovered.",
+      "example": "Like shredding a letter into tiny pieces so you can't read it.",
+      "grade_level": "college",
+      "first_appearance": "05 Cruelty"
+    },
+    {
+      "term": "structural capacity to regenerate",
+      "category": "framework",
+      "definition": "The ability of a system to repair or rebuild itself after damage.",
+      "example": "Like a forest that can grow back after a fire.",
+      "grade_level": "college",
+      "first_appearance": "05 Cruelty"
+    },
+    {
+      "term": "degradation drift",
+      "category": "framework",
+      "definition": "A slow, unnoticed process of breaking down or becoming less ordered.",
+      "example": "Like a fence that slowly rots over years without anyone noticing.",
+      "grade_level": "specialist",
+      "first_appearance": "06 Corruption"
+    },
+    {
+      "term": "deniable drift",
+      "category": "framework",
+      "definition": "A slow change that is hard to notice or prove is happening.",
+      "example": "Like gaining a pound a month: you don't see it day to day, but after a year it's obvious.",
+      "grade_level": "specialist",
+      "first_appearance": "06 Corruption"
+    },
+    {
+      "term": "network collapse",
+      "category": "framework",
+      "definition": "When a system of connections between people or parts breaks down completely.",
+      "example": "Like when a social media site crashes and no one can talk to each other.",
+      "grade_level": "college",
+      "first_appearance": "07 Betrayal"
+    },
+    {
+      "term": "calibrated force",
+      "category": "framework",
+      "definition": "Using exactly the right amount of pressure or effort for a situation.",
+      "example": "Like a surgeon making a precise cut, not too deep or too shallow.",
+      "grade_level": "college",
+      "first_appearance": "08 Gentleness"
+    },
+    {
+      "term": "receptor desensitization",
+      "category": "physics",
+      "definition": "When a system becomes less sensitive to a signal because it's been exposed too much.",
+      "example": "Like needing more and more coffee to feel awake because your body got used to it.",
+      "grade_level": "college",
+      "first_appearance": "09 Compulsion"
+    },
+    {
+      "term": "entropy-generating sources",
+      "category": "physics",
+      "definition": "Things that increase disorder or chaos in a system.",
+      "example": "Like a toddler throwing toys everywhere in a clean room.",
+      "grade_level": "college",
+      "first_appearance": "09 Compulsion"
+    },
+    {
+      "term": "coherence bundle",
+      "category": "framework",
+      "definition": "The idea that the nine Fruits of the Spirit form a single, unified package of order.",
+      "example": "Like a complete set of tools: you need all of them to fix a car, not just a hammer.",
+      "grade_level": "specialist",
+      "first_appearance": "IV The Bundle Property"
+    },
+    {
+      "term": "CPT armor",
+      "category": "framework",
+      "definition": "A metaphor for the protective strength that comes from having all three divine operations (Father, Son, Spirit) working together.",
+      "example": "Like a knight wearing a full suit of armor instead of just a helmet.",
+      "grade_level": "specialist",
+      "first_appearance": "IV The Bundle Property"
+    },
+    {
+      "term": "mutually load-bearing",
+      "category": "framework",
+      "definition": "Parts of a system that support each other, so if one fails, the others are affected.",
+      "example": "Like the legs of a table: if one breaks, the whole table might collapse.",
+      "grade_level": "college",
+      "first_appearance": "IV The Bundle Property"
+    },
+    {
+      "term": "attack surface",
+      "category": "framework",
+      "definition": "All the points where an enemy can try to break into a system.",
+      "example": "Like all the doors and windows of a house that a burglar could try to open.",
+      "grade_level": "college",
+      "first_appearance": "IV The Bundle Property"
+    },
+    {
+      "term": "cascade",
+      "category": "physics",
+      "definition": "A chain reaction where one event triggers a series of others.",
+      "example": "Like knocking over the first domino, which makes all the others fall.",
+      "grade_level": "college",
+      "first_appearance": "V Why This Changes the Practical Question"
+    },
+    {
+      "term": "weak force domain",
+      "category": "physics",
+      "definition": "An area where forces are subtle and hard to detect, like the weak nuclear force in physics.",
+      "example": "Like the gentle push of wind that slowly erodes a rock over centuries.",
+      "grade_level": "college",
+      "first_appearance": "VI The Full Operation"
+    },
+    {
+      "term": "inviolable",
+      "category": "academic",
+      "definition": "Something that cannot be broken, violated, or harmed.",
+      "example": "A sacred promise that must never be broken is inviolable.",
+      "grade_level": "college",
+      "first_appearance": "VI The Full Operation"
+    },
+    {
+      "term": "Galatians 5:22-23",
+      "category": "theology",
+      "definition": "A Bible verse listing the nine Fruits of the Spirit: love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control.",
+      "example": "Like a recipe for a good life given in the Bible.",
+      "grade_level": "college",
+      "first_appearance": "VI The Full Operation"
+    },
+    {
+      "term": "Ephesians 6:11",
+      "category": "theology",
+      "definition": "A Bible verse about putting on the full armor of God to resist evil.",
+      "example": "Like a instruction manual for spiritual protection.",
+      "grade_level": "college",
+      "first_appearance": "The Thing That Follows From This"
+    },
+    {
+      "term": "\u03c7 field",
+      "category": "framework",
+      "definition": "The divine coherence field that sustains order and connection to God.",
+      "example": "Like an invisible network that keeps everything in harmony.",
+      "grade_level": "specialist",
+      "first_appearance": "The Thing That Follows From This"
+    },
+    {
+      "term": "full coupling",
+      "category": "physics",
+      "definition": "When two systems are completely connected and influence each other strongly.",
+      "example": "Like two gears that are perfectly meshed so turning one turns the other.",
+      "grade_level": "college",
+      "first_appearance": "The Thing That Follows From This"
+    },
+    {
+      "term": "environmental noise",
+      "category": "physics",
+      "definition": "Random disturbances from the surroundings that can disrupt a system.",
+      "example": "Like static on a radio caused by nearby electronics.",
+      "grade_level": "college",
+      "first_appearance": "The Thing That Follows From This"
+    }
+  ],
+  "stats": {
+    "total_terms_found": 60,
+    "by_category": {
+      "physics": 18,
+      "theology": 8,
+      "math": 5,
+      "philosophy": 4,
+      "framework": 18,
+      "academic": 5,
+      "language": 2
+    },
+    "highest_grade_level": "Godelian violation",
+    "average_grade_level": "college",
+    "accessibility_score": 25
+  }
+}

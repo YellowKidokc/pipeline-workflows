@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ISO-031 · Network Science / Ecclesiology · Theophysics Registry</title>
+  <!-- Google Fonts: Oswald + Inter + JetBrains Mono + Crimson Text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:opsz,wght@14..32,300..700&family=JetBrains+Mono:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* ----- CSS reset & variables ----- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-dim: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212,175,55,0.3);
+      --gold-line: rgba(212,175,55,0.2);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --blue-border: #3b82f6;
+      --gold-border: #d4af37;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+    html { background: var(--bg); color: var(--text); font-family: var(--font-body); font-weight: 300; line-height: 1.6; scroll-behavior: smooth; }
+    body { max-width: 1280px; margin: 0 auto; padding: 2rem 1.5rem 3rem; background: var(--bg); }
+    img, svg { max-width: 100%; display: block; }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ----- typography helpers ----- */
+    .heading { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
+    .mono { font-family: var(--font-mono); font-size: 0.9rem; }
+    .quote { font-family: var(--font-quote); font-style: italic; }
+    .small-mono { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dim); }
+
+    /* ----- section number faded ----- */
+    .section-number {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      font-weight: 700;
+      color: rgba(212,175,55,0.15);
+      line-height: 1;
+      letter-spacing: 0.05em;
+      user-select: none;
+      pointer-events: none;
+    }
+    @media (max-width: 600px) {
+      .section-number { font-size: 2.8rem; }
+    }
+
+    /* ----- gradient separator ----- */
+    .separator {
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--gold) 70%, transparent 100%);
+      margin: 1.2rem 0 2rem;
+      opacity: 0.5;
+    }
+
+    /* ----- cards & panels ----- */
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      border: 1px solid #222;
+    }
+    .card-gold { border-top: 3px solid var(--gold); }
+    .card-blue { border-top: 3px solid var(--blue-border); }
+    .card-danger { border: 1px solid rgba(239,68,68,0.3); background: #1a0f0f; }
+
+    /* ----- badges ----- */
+    .badge {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+      font-weight: 600;
+      background: #222;
+      color: var(--text);
+    }
+    .badge-green { background: rgba(34,197,94,0.2); color: var(--success); border: 1px solid rgba(34,197,94,0.3); }
+    .badge-yellow { background: rgba(212,175,55,0.2); color: var(--gold); border: 1px solid rgba(212,175,55,0.3); }
+    .badge-gold { background: rgba(212,175,55,0.15); color: var(--gold); border: 1px solid var(--gold); }
+
+    /* ----- grid utilities ----- */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .grid-2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) {
+      .grid-2, .grid-2x2 { grid-template-columns: 1fr; }
+    }
+
+    /* ----- hero banner ----- */
+    .hero-banner {
+      background: linear-gradient(135deg, #0f0d08 0%, #1a150a 100%);
+      border: 1px solid rgba(212,175,55,0.2);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      margin: 1.5rem 0;
+    }
+    .hero-left { display: flex; flex-direction: column; gap: 1rem; }
+    .hero-right { display: flex; align-items: center; justify-content: center; }
+    .equation-card {
+      background: #0d0d0d;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      line-height: 1.8;
+      width: 100%;
+      box-shadow: inset 0 0 0 1px rgba(212,175,55,0.1);
+    }
+    .eq-arrow { color: var(--gold); font-size: 1.6rem; display: block; text-align: center; margin: 0.5rem 0; }
+
+    /* ----- mapping table ----- */
+    .mapping-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .mapping-table th {
+      background: #1a1a1a;
+      color: var(--gold);
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+      padding: 0.9rem 1rem;
+      border-bottom: 2px solid var(--gold);
+      text-align: left;
+    }
+    .mapping-table td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid #222;
+      vertical-align: top;
+    }
+    .mapping-table tr:last-child td { border-bottom: none; }
+    .mapping-table tr:hover td { background: rgba(212,175,55,0.03); }
+
+    /* ----- test cards ----- */
+    .test-pass { color: var(--success); font-weight: 600; }
+    .test-fail { color: var(--danger); font-weight: 600; }
+
+    /* ----- evidence chips ----- */
+    .chip {
+      display: inline-block;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 30px;
+      padding: 0.25rem 1rem;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      color: var(--text-dim);
+      margin: 0.2rem 0.3rem;
+    }
+    .chip-gold { border-color: var(--gold); color: var(--gold); }
+
+    /* ----- footer seal ----- */
+    .footer-seal { font-family: var(--font-quote); font-style: italic; color: var(--gold); font-size: 0.9rem; border-top: 1px solid #222; padding-top: 1.5rem; margin-top: 2rem; }
+
+    /* ----- responsive tweaks ----- */
+    @media (max-width: 600px) {
+      body { padding: 1rem; }
+      .hero-banner { padding: 1.2rem; }
+      .equation-card { font-size: 0.75rem; padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== 1. REGISTRY HEADER ===== -->
+  <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-bottom: 0.5rem;">
+    <div style="display: flex; align-items: center; gap: 0.8rem;">
+      <span style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: 300; color: var(--gold); letter-spacing: 0.05em;">Φ</span>
+      <div>
+        <h1 style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; margin: 0; line-height: 1.2;">Theophysics Registry</h1>
+        <span style="font-size: 0.8rem; color: var(--text-dim); font-family: var(--font-mono);">ISO-031 · Network Science / Ecclesiology</span>
+      </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; align-items: center; margin-left: auto;">
+      <span class="badge badge-green"><i class="fa-regular fa-circle-check" style="margin-right: 0.3rem;"></i>Isomorphism · Level 3</span>
+      <span class="badge badge-gold"><i class="fa-regular fa-chart-line"></i> Confidence: High</span>
+      <span class="small-mono" style="border-left: 1px solid #333; padding-left: 0.8rem;">v1.0 · 2026-03-10</span>
+    </div>
+  </header>
+  <div class="separator" style="margin-top: 0.2rem;"></div>
+
+  <!-- ===== 2. HERO BANNER ===== -->
+  <div class="hero-banner">
+    <div class="grid-2" style="align-items: stretch;">
+      <!-- left -->
+      <div class="hero-left">
+        <div>
+          <span class="badge" style="background: rgba(212,175,55,0.12); border: 1px solid rgba(212,175,55,0.2); margin-bottom: 0.6rem;"><i class="fa-regular fa-gavel"></i> Structural Isomorphism</span>
+        </div>
+        <h2 style="font-family: var(--font-heading); font-size: 2rem; font-weight: 600; letter-spacing: 0.02em; color: #fff; line-height: 1.2; margin: 0;">
+          Network Science <span style="color: var(--gold);">⇄</span> Ecclesiology
+        </h2>
+        <p style="color: var(--text-dim); font-size: 0.95rem; max-width: 90%;">Scale-free growth, small-world diffusion, hub vulnerability &amp; resilience — the topology of the early church matches network dynamics.</p>
+        <blockquote class="quote" style="border-left: 3px solid var(--gold); padding-left: 1rem; color: #d4c9a8; font-size: 1rem; margin: 0.2rem 0 0;">
+          “The convergence is the evidence, not a claim of intentional mathematical reference.”
+        </blockquote>
+      </div>
+      <!-- right: equation card -->
+      <div class="hero-right">
+        <div class="equation-card">
+          <div style="color: var(--gold); font-family: var(--font-heading); letter-spacing: 0.04em; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 0.5rem;">Core equations</div>
+          <div><span style="color: #f0c674;">P(k) ~ k<sup>−γ</sup></span> &nbsp; (γ ∈ (2,3))</div>
+          <div><span style="color: #8ab4f8;">Π(i) = kᵢ / Σⱼ kⱼ</span></div>
+          <div style="margin-top: 0.4rem; border-top: 1px solid #2a2a2a; padding-top: 0.4rem; color: #aaa;">L ~ ln N / ln ⟨k⟩ &nbsp;·&nbsp; C ≫ C<sub>rand</sub></div>
+          <span class="eq-arrow">⟷</span>
+          <div style="color: #d4c9a8;">“To those who have, more will be given” <span class="small-mono">(Mt 25:29)</span></div>
+          <div style="color: #d4c9a8;">P(new convert ∝ size<sub>i</sub> / Σ size<sub>j</sub>)</div>
+          <div style="margin-top: 0.4rem; border-top: 1px solid #2a2a2a; padding-top: 0.4rem; font-size: 0.75rem; color: var(--text-dim);">Acts 1:8 · Romans 16 · 1 Cor 12:28-29</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 3. DOMAIN SPECIFICATIONS ===== -->
+  <div style="display: flex; align-items: baseline; gap: 0.8rem; margin: 2rem 0 0.2rem;">
+    <span class="section-number">01</span>
+    <h3 class="heading" style="font-size: 1.3rem; color: #fff; margin: 0;">Domain Specifications</h3>
+  </div>
+  <div class="separator"></div>
+
+  <div class="grid-2">
+    <!-- Domain A -->
+    <div class="card card-blue">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+        <i class="fa-solid fa-project-diagram" style="color: var(--info); font-size: 1.4rem;"></i>
+        <h4 style="font-family: var(--font-heading); font-size: 1.1rem; letter-spacing: 0.04em; color: #fff; margin: 0;">Domain A · Physics</h4>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-dim); margin-bottom: 0.4rem;"><span class="badge" style="background: #1e293b; border-color: #334155;">Network Science</span></p>
+      <p style="font-size: 0.9rem;">Graph theory, small-world networks, preferential attachment, scale-free degree distributions, resilience &amp; cascading failure. Barabási–Albert, Watts–Strogatz, Granovetter weak ties.</p>
+      <div class="small-mono" style="margin-top: 0.6rem; color: var(--text-dim);">P(k) ~ k<sup>−γ</sup> · Π(i) ∝ kᵢ · L ~ ln N / ln ⟨k⟩ · C ≫ C<sub>rand</sub></div>
+    </div>
+    <!-- Domain B -->
+    <div class="card card-gold">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+        <i class="fa-solid fa-church" style="color: var(--gold); font-size: 1.4rem;"></i>
+        <h4 style="font-family: var(--font-heading); font-size: 1.1rem; letter-spacing: 0.04em; color: #fff; margin: 0;">Domain B · Theology</h4>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-dim); margin-bottom: 0.4rem;"><span class="badge" style="background: #2a1f0a; border-color: #5c4a1e;">NT Ecclesiology</span></p>
+      <p style="font-size: 0.9rem;">Church structure, growth via apostolic hubs, house-church clustering, persecution resilience, gift distribution (1 Cor 12), bridge missionaries, network diameter expansion (Acts 1:8).</p>
+      <div class="small-mono" style="margin-top: 0.6rem; color: var(--text-dim);">Acts 2:42 · Acts 13-28 · Romans 16 · Matthew 25:29</div>
+    </div>
+  </div>
+
+  <!-- ===== 4. THE ISOMORPHIC MAPPING ===== -->
+  <div style="display: flex; align-items: baseline; gap: 0.8rem; margin: 2.5rem 0 0.2rem;">
+    <span class="section-number">02</span>
+    <h3 class="heading" style="font-size: 1.3rem; color: #fff; margin: 0;">The Isomorphic Mapping</h3>
+  </div>
+  <div class="separator"></div>
+
+  <div class="card" style="padding: 0; overflow-x: auto;">
+    <table class="mapping-table">
+      <thead>
+        <tr><th style="width: 5%;">#</th><th style="width: 30%;">Network Science (A)</th><th style="width: 30%;">Ecclesiology (B)</th><th style="width: 35%;">Shared Structure</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="mono">1</td><td>Preferential attachment: Π(i) = kᵢ / Σ kⱼ</td><td>New converts connect to established apostolic centers (Jerusalem, Antioch, Ephesus, Rome)</td><td>Scale-free growth; Matthew 25:29 verbal formulation</td></tr>
+        <tr><td class="mono">2</td><td>Small-world path length L ~ ln N / ln ⟨k⟩</td><td>Gospel reaches Rome from Jerusalem in ~30 years via short relational chains</td><td>Logarithmically short diameter; Romans 16 greeting list</td></tr>
+        <tr><td class="mono">3</td><td>High clustering coefficient C ≫ C<sub>rand</sub></td><td>House churches: “they devoted themselves … to the breaking of bread” (Acts 2:42)</td><td>Intense local interconnectivity; clustering ~1.0</td></tr>
+        <tr><td class="mono">4</td><td>Hub nodes (high-degree) connect otherwise disconnected clusters</td><td>Paul, Peter, Barnabas, Apollos, Priscilla &amp; Aquila as apostolic hubs</td><td>Power-law degree distribution; 1 Cor 12: “not all are apostles”</td></tr>
+        <tr><td class="mono">5</td><td>Weak ties / bridge ties enable cross-cluster diffusion (Granovetter)</td><td>Cross-cultural missionaries: Philip to Samaria, Peter to Cornelius, Paul to Gentiles</td><td>Bridge ties connecting previously disconnected clusters</td></tr>
+        <tr><td class="mono">6</td><td>Robust to random node removal (up to ~80%)</td><td>General persecution (random imprisonment) does not fragment the church</td><td>Scale-free resilience to random failure</td></tr>
+        <tr><td class="mono">7</td><td>Vulnerable to targeted hub removal (percolation at ~5-15%)</td><td>Rome targets apostles (James, Peter, Paul) but network survives via secondary hubs</td><td>Hub attack vulnerability + propagation past initial hubs</td></tr>
+        <tr><td class="mono">8</td><td>Cascading failure from high-degree node failure</td><td>Hub apostasy (Diotrephes, 3 John 9-10); Paul warns “draw away disciples” (Acts 20:30)</td><td>Damage proportional to hub degree</td></tr>
+        <tr><td class="mono">9</td><td>Network diameter = maximum shortest path</td><td>“Jerusalem, Judea, Samaria, ends of the earth” (Acts 1:8) — diameter expansion</td><td>Geographic reach as network diameter</td></tr>
+        <tr><td class="mono">10</td><td>Organic preferential attachment yields scale-free; designed yields regular/random</td><td>Acts church grows organically via relational pathways; later institutional structures lose scale-free resilience</td><td>Organic vs. institutional growth patterns</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== 5. SEPARATOR TESTS ===== -->
+  <div style="display: flex; align-items: baseline; gap: 0.8rem; margin: 2.5rem 0 0.2rem;">
+    <span class="section-number">03</span>
+    <h3 class="heading" style="font-size: 1.3rem; color: #fff; margin: 0;">Separator Tests</h3>
+  </div>
+  <div class="separator"></div>
+
+  <div class="grid-2x2">
+    <!-- Test A -->
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h5 class="heading" style="font-size: 0.9rem; color: var(--gold); margin: 0;">Test A · Structural Preservation</h5>
+        <span class="badge badge-green"><i class="fa-regular fa-circle-check"></i> PASS</span>
+      </div>
+      <p style="font-size: 0.85rem; margin-top: 0.6rem;">Do relations survive under mapping? Power-law, small-world, clustering, resilience, bridge ties — all preserved. Topological relations hold across domains.</p>
+    </div>
+    <!-- Test B -->
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h5 class="heading" style="font-size: 0.9rem; color: var(--gold); margin: 0;">Test B · Non-Arbitrariness</h5>
+        <span class="badge badge-green"><i class="fa-regular fa-circle-check"></i> PASS</span>
+      </div>
+      <p style="font-size: 0.85rem; margin-top: 0.6rem;">Could you swap targets? Topology maps uniquely; metric-level swap fails (no clustering coefficient on doctrine). Consistent with structural isomorphism.</p>
+    </div>
+    <!-- Test C -->
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h5 class="heading" style="font-size: 0.9rem; color: var(--gold); margin: 0;">Test C · Constraint</h5>
+        <span class="badge badge-green"><i class="fa-regular fa-circle-check"></i> PASS</span>
+      </div>
+      <p style="font-size: 0.85rem; margin-top: 0.6rem;">Mapping rules things out: uniform degree distribution, centrally planned growth, long path lengths, equal resilience of institutional networks — all excluded.</p>
+    </div>
+    <!-- Test D -->
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h5 class="heading" style="font-size: 0.9rem; color: var(--gold); margin: 0;">Test D · Bidirectionality</h5>
+        <span class="badge badge-green"><i class="fa-regular fa-circle-check"></i> PASS</span>
+      </div>
+      <p style="font-size: 0.85rem; margin-top: 0.6rem;">Network science explains why targeting leaders failed; theology provides independent dataset (Romans 16 edge list) for testing network formation models.</p>
+    </div>
+  </div>
+
+  <!-- ===== 6. CLASSIFICATION & EVIDENCE ===== -->
+  <div style="display: flex; align-items: baseline; gap: 0.8rem; margin: 2.5rem 0 0.2rem;">
+    <span class="section-number">04</span>
+    <h3 class="heading" style="font-size: 1.3rem; color: #fff; margin: 0;">Classification &amp; Evidence</h3>
+  </div>
+  <div class="separator"></div>
+
+  <div class="card" style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start;">
+    <div style="min-width: 180px;">
+      <span class="badge badge-green" style="font-size: 0.8rem; padding: 0.3rem 1.2rem;"><i class="fa-regular fa-circle-check"></i> Structural Isomorphism</span>
+      <div style="margin-top: 0.8rem;">
+        <span class="small-mono" style="display: block;">Confidence: <span style="color: var(--gold); font-weight: 600;">High</span></span>
+        <span class="small-mono" style="display: block;">Reframe Level: <span style="color: var(--gold);">Structural (Level 2)</span></span>
+        <span class="small-mono" style="display: block;">Connection Count: <span style="color: var(--gold);">10</span> (threshold 7)</span>
+      </div>
+    </div>
+    <div style="flex: 1;">
+      <div style="font-family: var(--font-heading); font-size: 0.8rem; letter-spacing: 0.06em; color: var(--gold); margin-bottom: 0.4rem;">EVIDENCE BUNDLES</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+        <span class="chip chip-gold">Romans 16 edge list</span>
+        <span class="chip chip-gold">Acts growth narrative</span>
+        <span class="chip chip-gold">Pauline itineraries</span>
+        <span class="chip chip-gold">Acts 12, Acts 7 (hub removal)</span>
+        <span class="chip chip-gold">Matthew 25:29</span>
+        <span class="chip chip-gold">1 Cor 12:28-29</span>
+        <span class="chip chip-gold">3 John 9-10</span>
+        <span class="chip chip-gold">Barabási (1999)</span>
+        <span class="chip chip-gold">Watts-Strogatz (1998)</span>
+        <span class="chip chip-gold">Granovetter (1973)</span>
+      </div>
+      <div style="margin-top: 0.8rem; font-size: 0.8rem; color: var(--text-dim);">
+        <span class="small-mono">Laws invoked:</span> Law I (Convergence), Law V (Incompleteness), Law VII (Conservation under Transformation), Law IX (Grace)
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 7. FALSIFICATION CRITERIA ===== -->
+  <div style="display: flex; align-items: baseline; gap: 0.8rem; margin: 2.5rem 0 0.2rem;">
+    <span class="section-number">05</span>
+    <h3 class="heading" style="font-size: 1.3rem; color: #fff; margin: 0;">Falsification Criteria</h3>
+  </div>
+  <div class="separator"></div>
+
+  <div class="card card-danger">
+    <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem;">
+      <i class="fa-solid fa-triangle-exclamation" style="color: var(--danger);"></i>
+      <h5 class="heading" style="font-size: 0.9rem; color: var(--danger); margin: 0;">Kill conditions — any one breaks the isomorphism</h5>
+    </div>
+    <ol style="padding-left: 1.2rem; font-size: 0.85rem; color: #e5c9c9; display: flex; flex-direction: column; gap: 0.5rem;">
+      <li><strong>In Network Science:</strong> Demonstrate a scale-free network robust to targeted hub removal (unaffected). Breaks “vulnerability to hub attack” correspondence.</li>
+      <li><strong>In Network Science:</strong> Demonstrate that preferential attachment does NOT produce power-law degree distributions under standard conditions. Breaks Matthew 25:29 correspondence.</li>
+      <li><strong>In Theology:</strong> Demonstrate that the early church grew through a non-scale-free mechanism — uniform degree distributions, centrally planned growth, long path lengths. SNA of Pauline epistles reveals random/regular network.</li>
+      <li><strong>In Theology:</strong> Demonstrate that institutionally structured (non-scale-free) churches are equally or more resilient to targeted persecution than organic (scale-free) churches.</li>
+      <li><strong>Break the topology:</strong> Show that structural features (preferential attachment, small-world, hub vulnerability, bridge-tie diffusion, cascading failure) do not actually match between network science and Acts narrative.</li>
+    </ol>
+  </div>
+
+  <!-- ===== 8. RELATED ISOMORPHISMS ===== -->
+  <div style="display: flex; align-items: baseline; gap: 0.8rem; margin: 2.5rem 0 0.2rem;">
+    <span class="section-number">06</span>
+    <h3 class="heading" style="font-size: 1.3rem; color: #fff; margin: 0;">Related Isomorphisms</h3>
+  </div>
+  <div class="separator"></div>
+
+  <div class="grid-2" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
+    <div class="card" style="padding: 1rem; border-left: 2px solid var(--gold);">
+      <span class="small-mono" style="color: var(--gold);">ISO-001</span>
+      <div style="font-family: var(--font-heading); font-size: 0.9rem; color: #fff;">Trinity</div>
+      <div style="font-size: 0.75rem; color: var(--text-dim);">Source node from which all church structure emanates</div>
+    </div>
+    <div class="card" style="padding: 1rem; border-left: 2px solid var(--gold);">
+      <span class="small-mono" style="color: var(--gold);">ISO-003</span>
+      <div style="font-family: var(--font-heading); font-size: 0.9rem; color: #fff;">Entropy / Sin</div>
+      <div style="font-size: 0.75rem; color: var(--text-dim);">Cascading failure as network entropy</div>
+    </div>
+    <div class="card" style="padding: 1rem; border-left: 2px solid var(--gold);">
+      <span class="small-mono" style="color: var(--gold);">ISO-008</span>
+      <div style="font-family: var(--font-heading); font-size: 0.9rem; color: #fff;">Coherence / Order</div>
+      <div style="font-size: 0.75rem; color: var(--text-dim);">Clustering coefficient as local coherence</div>
+    </div>
+  </div>
+
+  <!-- ===== 9. FOOTER ===== -->
+  <footer style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #1e1e1e;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.8rem;">
+      <div>
+        <span style="font-family: var(--font-heading); font-size: 0.75rem; letter-spacing: 0.08em; color: var(--text-dim);">THEOPHYSICS RESEARCH PROGRAM</span>
+        <span class="small-mono" style="display: block; color: #555;">POF 2828 · ISO-031 v1.0</span>
+      </div>
+      <div class="footer-seal" style="border: none; padding: 0; margin: 0; text-align: right;">
+        “The math points to God. The math does not contain God.”
+      </div>
+    </div>
+    <div style="margin-top: 1rem; font-size: 0.7rem; color: #333; text-align: center; font-family: var(--font-mono);">
+      <i class="fa-regular fa-copyright"></i> faiththruphysics.com · Registry public · All mappings provisional
+    </div>
+  </footer>
+
+</body>
+</html>

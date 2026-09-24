@@ -1,0 +1,579 @@
+{
+  "definitions": [
+    {
+      "term": "coherent",
+      "category": "physics",
+      "definition": "Waves that are in step with each other, with a fixed relationship.",
+      "example": "A laser beam is coherent light; a flashlight is not.",
+      "grade_level": "college",
+      "first_appearance": "Law 3 \u2014 Truth / Maxwell"
+    },
+    {
+      "term": "propagates",
+      "category": "physics",
+      "definition": "Travels or spreads through a medium.",
+      "example": "Sound propagates through air.",
+      "grade_level": "10",
+      "first_appearance": "Law 3 \u2014 Truth / Maxwell"
+    },
+    {
+      "term": "spacetime curvature",
+      "category": "physics",
+      "definition": "The bending of the four-dimensional fabric of space and time caused by mass and energy.",
+      "example": "A heavy ball on a rubber sheet makes a dip; that dip is like spacetime curvature.",
+      "grade_level": "college",
+      "first_appearance": "Law 1 \u2014 Grace / Gravitation"
+    },
+    {
+      "term": "geodesic",
+      "category": "physics",
+      "definition": "The straightest possible path in a curved space.",
+      "example": "An airplane flying a great circle route is following a geodesic on Earth.",
+      "grade_level": "college",
+      "first_appearance": "Law 1 \u2014 Grace / Gravitation"
+    },
+    {
+      "term": "general relativity",
+      "category": "physics",
+      "definition": "Einstein's theory that gravity is caused by the curvature of spacetime.",
+      "example": "It explains why planets orbit the sun.",
+      "grade_level": "college",
+      "first_appearance": "Law 1 \u2014 Grace / Gravitation"
+    },
+    {
+      "term": "phase transition",
+      "category": "physics",
+      "definition": "A change from one state of matter to another, like solid to liquid.",
+      "example": "Ice melting into water is a phase transition.",
+      "grade_level": "10",
+      "first_appearance": "Act 2 \u2014 The Crisis"
+    },
+    {
+      "term": "open system",
+      "category": "physics",
+      "definition": "A system that can exchange energy and matter with its surroundings.",
+      "example": "A pot of boiling water on a stove is an open system.",
+      "grade_level": "college",
+      "first_appearance": "Law 2 \u2014 Holy Spirit / E = mc\u00b2"
+    },
+    {
+      "term": "closed system",
+      "category": "physics",
+      "definition": "A system that does not exchange energy or matter with its surroundings.",
+      "example": "A sealed, insulated thermos is nearly a closed system.",
+      "grade_level": "college",
+      "first_appearance": "Law 2 \u2014 Holy Spirit / E = mc\u00b2"
+    },
+    {
+      "term": "thermodynamically",
+      "category": "physics",
+      "definition": "Related to the laws of heat, energy, and work.",
+      "example": "A reaction that releases heat is thermodynamically favorable.",
+      "grade_level": "college",
+      "first_appearance": "Law 2 \u2014 Holy Spirit / E = mc\u00b2"
+    },
+    {
+      "term": "entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system.",
+      "example": "A messy room has higher entropy than a tidy one.",
+      "grade_level": "college",
+      "first_appearance": "Law 2 \u2014 Holy Spirit / E = mc\u00b2"
+    },
+    {
+      "term": "dS",
+      "category": "physics",
+      "definition": "The change in entropy of a system.",
+      "example": "If dS is negative, the system becomes more ordered.",
+      "grade_level": "college",
+      "first_appearance": "Law 2 \u2014 Holy Spirit / E = mc\u00b2"
+    },
+    {
+      "term": "Jext",
+      "category": "physics",
+      "definition": "The flow of energy from outside the system.",
+      "example": "Sunlight hitting a solar panel is Jext.",
+      "grade_level": "graduate",
+      "first_appearance": "Law 2 \u2014 Holy Spirit / E = mc\u00b2"
+    },
+    {
+      "term": "activation energy",
+      "category": "physics",
+      "definition": "The minimum energy needed to start a chemical reaction.",
+      "example": "A spark provides activation energy to start a fire.",
+      "grade_level": "college",
+      "first_appearance": "Law 2 \u2014 Holy Spirit / E = mc\u00b2"
+    },
+    {
+      "term": "wavefunction",
+      "category": "physics",
+      "definition": "A mathematical description of the quantum state of a particle.",
+      "example": "It tells you the probability of finding a particle in a certain place.",
+      "grade_level": "college",
+      "first_appearance": "Law 5 \u2014 Faith / Quantum Mechanics"
+    },
+    {
+      "term": "superposition",
+      "category": "physics",
+      "definition": "The ability of a quantum system to be in multiple states at once.",
+      "example": "A spinning coin is in a superposition of heads and tails until it lands.",
+      "grade_level": "college",
+      "first_appearance": "Law 5 \u2014 Faith / Quantum Mechanics"
+    },
+    {
+      "term": "eigenstate",
+      "category": "physics",
+      "definition": "A definite, measurable state of a quantum system.",
+      "example": "After measurement, the coin is in the eigenstate 'heads'.",
+      "grade_level": "graduate",
+      "first_appearance": "Law 5 \u2014 Faith / Quantum Mechanics"
+    },
+    {
+      "term": "irreversible",
+      "category": "physics",
+      "definition": "Cannot be undone or reversed.",
+      "example": "Burning paper is irreversible; you can't unburn it.",
+      "grade_level": "10",
+      "first_appearance": "Law 5 \u2014 Faith / Quantum Mechanics"
+    },
+    {
+      "term": "\u0394G = \u0394H \u2212 T\u0394S",
+      "category": "physics",
+      "definition": "The Gibbs free energy equation, which tells if a reaction will happen spontaneously.",
+      "example": "If \u0394G is negative, the reaction happens on its own.",
+      "grade_level": "college",
+      "first_appearance": "Law 6 \u2014 Justice / Mercy / Thermodynamics"
+    },
+    {
+      "term": "free energy",
+      "category": "physics",
+      "definition": "The energy available to do useful work in a system.",
+      "example": "A charged battery has high free energy.",
+      "grade_level": "college",
+      "first_appearance": "Law 6 \u2014 Justice / Mercy / Thermodynamics"
+    },
+    {
+      "term": "spontaneously",
+      "category": "physics",
+      "definition": "Happening without outside help.",
+      "example": "A ball rolls downhill spontaneously.",
+      "grade_level": "10",
+      "first_appearance": "Law 6 \u2014 Justice / Mercy / Thermodynamics"
+    },
+    {
+      "term": "beta decay",
+      "category": "physics",
+      "definition": "A type of radioactive decay where a neutron turns into a proton.",
+      "example": "It's how some unstable atoms become more stable.",
+      "grade_level": "college",
+      "first_appearance": "Law 7 \u2014 Redemption / Weak Force"
+    },
+    {
+      "term": "flavor change",
+      "category": "physics",
+      "definition": "A change in the type of a subatomic particle (like from neutron to proton).",
+      "example": "In beta decay, a down quark changes to an up quark.",
+      "grade_level": "graduate",
+      "first_appearance": "Law 7 \u2014 Redemption / Weak Force"
+    },
+    {
+      "term": "transmutation",
+      "category": "physics",
+      "definition": "Changing one element into another.",
+      "example": "Alchemists tried to turn lead into gold by transmutation.",
+      "grade_level": "college",
+      "first_appearance": "Law 7 \u2014 Redemption / Weak Force"
+    },
+    {
+      "term": "Cornell potential",
+      "category": "physics",
+      "definition": "A formula describing the force between quarks: strong at a distance, weak up close.",
+      "example": "It's like a rubber band: easy to pull a little, but very hard to stretch far.",
+      "grade_level": "graduate",
+      "first_appearance": "Law 4 \u2014 Love / Strong Force"
+    },
+    {
+      "term": "asymptotic freedom",
+      "category": "physics",
+      "definition": "The property that quarks interact weakly when very close together.",
+      "example": "Quarks inside a proton barely feel each other when they're right next to each other.",
+      "grade_level": "graduate",
+      "first_appearance": "Law 4 \u2014 Love / Strong Force"
+    },
+    {
+      "term": "confinement",
+      "category": "physics",
+      "definition": "The property that quarks cannot be isolated; they are always bound together.",
+      "example": "You can never pull a single quark out of a proton.",
+      "grade_level": "graduate",
+      "first_appearance": "Law 4 \u2014 Love / Strong Force"
+    },
+    {
+      "term": "Noether's theorem",
+      "category": "physics",
+      "definition": "A theorem stating that every symmetry in nature leads to a conservation law.",
+      "example": "The symmetry of time leads to conservation of energy.",
+      "grade_level": "college",
+      "first_appearance": "Law 8 \u2014 Righteousness / Noether's Theorem"
+    },
+    {
+      "term": "symmetry",
+      "category": "physics",
+      "definition": "A property that stays the same after a transformation.",
+      "example": "A circle has rotational symmetry; it looks the same after any spin.",
+      "grade_level": "10",
+      "first_appearance": "Law 8 \u2014 Righteousness / Noether's Theorem"
+    },
+    {
+      "term": "conservation law",
+      "category": "physics",
+      "definition": "A rule that a certain quantity (like energy) stays constant in a closed system.",
+      "example": "Energy cannot be created or destroyed, only changed form.",
+      "grade_level": "college",
+      "first_appearance": "Law 8 \u2014 Righteousness / Noether's Theorem"
+    },
+    {
+      "term": "\u2202\u03bc j\u03bc = 0",
+      "category": "physics",
+      "definition": "A mathematical expression of a conservation law in four-dimensional spacetime.",
+      "example": "It means that something (like charge) is neither created nor destroyed.",
+      "grade_level": "graduate",
+      "first_appearance": "Law 8 \u2014 Righteousness / Noether's Theorem"
+    },
+    {
+      "term": "Kuramoto order parameter",
+      "category": "physics",
+      "definition": "A number that measures how synchronized a group of oscillators are.",
+      "example": "If everyone in a crowd claps in rhythm, the Kuramoto parameter is close to 1.",
+      "grade_level": "graduate",
+      "first_appearance": "Law 10 \u2014 Christ / Coherence"
+    },
+    {
+      "term": "oscillator",
+      "category": "physics",
+      "definition": "Something that moves back and forth regularly.",
+      "example": "A pendulum or a swinging child on a swing is an oscillator.",
+      "grade_level": "college",
+      "first_appearance": "Law 10 \u2014 Christ / Coherence"
+    },
+    {
+      "term": "constructive regime",
+      "category": "framework",
+      "definition": "A state where all forces or laws work together to build up, not tear down.",
+      "example": "A team where everyone helps each other is in a constructive regime.",
+      "grade_level": "college",
+      "first_appearance": "Law 10 \u2014 Christ / Coherence"
+    },
+    {
+      "term": "coherence",
+      "category": "framework",
+      "definition": "A state of harmony and integration where all parts work together smoothly.",
+      "example": "A well-rehearsed orchestra playing in perfect time has coherence.",
+      "grade_level": "college",
+      "first_appearance": "Law 10 \u2014 Christ / Coherence"
+    },
+    {
+      "term": "chi-field",
+      "category": "framework",
+      "definition": "A proposed field that represents the overall coherence or alignment of a system.",
+      "example": "Think of it as a measure of how 'in sync' everything is.",
+      "grade_level": "specialist",
+      "first_appearance": "Law 10 \u2014 Christ / Coherence"
+    },
+    {
+      "term": "moral curvature",
+      "category": "framework",
+      "definition": "A concept suggesting that moral choices bend the path of one's life, like gravity bends spacetime.",
+      "example": "Choosing to help someone might curve your life toward better outcomes.",
+      "grade_level": "college",
+      "first_appearance": "Law 1 \u2014 Grace / Gravitation"
+    },
+    {
+      "term": "salvation",
+      "category": "theology",
+      "definition": "Being saved from sin and its consequences, and given eternal life.",
+      "example": "In Christianity, accepting Jesus is the path to salvation.",
+      "grade_level": "10",
+      "first_appearance": "Act 2 \u2014 The Crisis"
+    },
+    {
+      "term": "grace",
+      "category": "theology",
+      "definition": "Unearned favor or help from God.",
+      "example": "A student getting an A they didn't earn is like grace.",
+      "grade_level": "10",
+      "first_appearance": "Law 1 \u2014 Grace / Gravitation"
+    },
+    {
+      "term": "redemption",
+      "category": "theology",
+      "definition": "Being bought back or freed from sin by Jesus' sacrifice.",
+      "example": "Paying a ransom to free a hostage is like redemption.",
+      "grade_level": "10",
+      "first_appearance": "Law 7 \u2014 Redemption / Weak Force"
+    },
+    {
+      "term": "righteousness",
+      "category": "theology",
+      "definition": "The state of being morally right or just, especially in God's eyes.",
+      "example": "A judge declaring someone 'not guilty' is like righteousness.",
+      "grade_level": "10",
+      "first_appearance": "Law 8 \u2014 Righteousness / Noether's Theorem"
+    },
+    {
+      "term": "sanctification",
+      "category": "theology",
+      "definition": "The process of becoming more holy and set apart for God.",
+      "example": "Slowly becoming a better person over time.",
+      "grade_level": "college",
+      "first_appearance": "Act 3 \u2014 The Transformation"
+    },
+    {
+      "term": "atonement",
+      "category": "theology",
+      "definition": "Making up for a wrong or sin, often through a sacrifice.",
+      "example": "Apologizing and fixing a broken window is a form of atonement.",
+      "grade_level": "college",
+      "first_appearance": "Law 6 \u2014 Justice / Mercy / Thermodynamics"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation.",
+      "example": "A class on how people are saved is studying soteriology.",
+      "grade_level": "college",
+      "first_appearance": "Act 2 \u2014 The Crisis"
+    },
+    {
+      "term": "hamartiology",
+      "category": "theology",
+      "definition": "The study of sin.",
+      "example": "Understanding what sin is and where it comes from is hamartiology.",
+      "grade_level": "college",
+      "first_appearance": "Act 2 \u2014 The Crisis"
+    },
+    {
+      "term": "ontology",
+      "category": "philosophy",
+      "definition": "The study of what exists and the nature of reality.",
+      "example": "Asking 'Does God exist?' is an ontological question.",
+      "grade_level": "college",
+      "first_appearance": "Act 1 \u2014 The Setup"
+    },
+    {
+      "term": "epistemology",
+      "category": "philosophy",
+      "definition": "The study of knowledge: how we know what we know.",
+      "example": "Asking 'How can we be sure of anything?' is an epistemological question.",
+      "grade_level": "college",
+      "first_appearance": "Act 1 \u2014 The Setup"
+    },
+    {
+      "term": "contingent",
+      "category": "philosophy",
+      "definition": "Something that could be different or might not exist at all.",
+      "example": "A tree is contingent; it could have been planted elsewhere or not at all.",
+      "grade_level": "college",
+      "first_appearance": "Act 1 \u2014 The Setup"
+    },
+    {
+      "term": "necessary",
+      "category": "philosophy",
+      "definition": "Something that must exist and cannot be otherwise.",
+      "example": "A perfect circle is a necessary concept in geometry.",
+      "grade_level": "college",
+      "first_appearance": "Act 1 \u2014 The Setup"
+    },
+    {
+      "term": "empirical",
+      "category": "academic",
+      "definition": "Based on observation or experience, not just theory.",
+      "example": "A scientist doing an experiment is gathering empirical data.",
+      "grade_level": "10",
+      "first_appearance": "Act 1 \u2014 The Setup"
+    },
+    {
+      "term": "falsifiable",
+      "category": "academic",
+      "definition": "Able to be proven wrong by evidence.",
+      "example": "The claim 'all swans are white' is falsifiable if you find a black swan.",
+      "grade_level": "college",
+      "first_appearance": "Act 1 \u2014 The Setup"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A statement accepted as true without proof, used as a starting point.",
+      "example": "In geometry, 'a straight line is the shortest distance between two points' is an axiom.",
+      "grade_level": "college",
+      "first_appearance": "Act 1 \u2014 The Setup"
+    },
+    {
+      "term": "theorem",
+      "category": "academic",
+      "definition": "A statement that can be proven from axioms and other theorems.",
+      "example": "The Pythagorean theorem is a proven statement about right triangles.",
+      "grade_level": "10",
+      "first_appearance": "Law 8 \u2014 Righteousness / Noether's Theorem"
+    },
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A mapping between two structures that shows they are essentially the same.",
+      "example": "A map of a subway system is isomorphic to the actual tracks.",
+      "grade_level": "college",
+      "first_appearance": "Act 1 \u2014 The Setup"
+    },
+    {
+      "term": "bijection",
+      "category": "math",
+      "definition": "A one-to-one pairing between two sets, where each element matches exactly one in the other set.",
+      "example": "Seats and students in a classroom with no empty seats is a bijection.",
+      "grade_level": "college",
+      "first_appearance": "Act 1 \u2014 The Setup"
+    },
+    {
+      "term": "tensor",
+      "category": "math",
+      "definition": "A mathematical object that describes relationships between vectors and scalars.",
+      "example": "Stress and strain in a material are described by tensors.",
+      "grade_level": "graduate",
+      "first_appearance": "Act 1 \u2014 The Setup"
+    },
+    {
+      "term": "Lagrangian",
+      "category": "physics",
+      "definition": "A function that summarizes the dynamics of a system, used to derive equations of motion.",
+      "example": "It's like a recipe that tells you how a system will evolve.",
+      "grade_level": "graduate",
+      "first_appearance": "Act 1 \u2014 The Setup"
+    },
+    {
+      "term": "eigenmode",
+      "category": "physics",
+      "definition": "A natural vibration pattern of a system.",
+      "example": "A guitar string has eigenmodes that produce different notes.",
+      "grade_level": "graduate",
+      "first_appearance": "Act 1 \u2014 The Setup"
+    },
+    {
+      "term": "decoherence",
+      "category": "physics",
+      "definition": "The process by which a quantum system loses its quantum properties and behaves classically.",
+      "example": "A quantum computer loses its power when decoherence occurs.",
+      "grade_level": "college",
+      "first_appearance": "Act 1 \u2014 The Setup"
+    },
+    {
+      "term": "coherence functional",
+      "category": "framework",
+      "definition": "A mathematical function that measures how coherent or integrated a system is.",
+      "example": "It's like a score for how well all parts of a system work together.",
+      "grade_level": "specialist",
+      "first_appearance": "Law 10 \u2014 Christ / Coherence"
+    },
+    {
+      "term": "\u03c7",
+      "category": "framework",
+      "definition": "A symbol used to represent the coherence or chi-field in the framework.",
+      "example": "It's like a variable for 'togetherness'.",
+      "grade_level": "specialist",
+      "first_appearance": "Law 10 \u2014 Christ / Coherence"
+    },
+    {
+      "term": "\u220fXi d\u03a9",
+      "category": "math",
+      "definition": "A product of all variables integrated over a space, representing a total measure.",
+      "example": "It's like multiplying all factors together and summing over all possibilities.",
+      "grade_level": "graduate",
+      "first_appearance": "Law 10 \u2014 Christ / Coherence"
+    },
+    {
+      "term": "r \u2192 1",
+      "category": "physics",
+      "definition": "The Kuramoto order parameter approaching 1, meaning perfect synchronization.",
+      "example": "All clocks ticking in perfect unison.",
+      "grade_level": "college",
+      "first_appearance": "Law 10 \u2014 Christ / Coherence"
+    },
+    {
+      "term": "W \u2192 0",
+      "category": "framework",
+      "definition": "A measure of disorder or wasted energy approaching zero.",
+      "example": "A perfectly efficient engine has W = 0.",
+      "grade_level": "specialist",
+      "first_appearance": "Law 10 \u2014 Christ / Coherence"
+    },
+    {
+      "term": "John 1:5",
+      "category": "language",
+      "definition": "A Bible verse: 'The light shines in the darkness, and the darkness has not overcome it.'",
+      "example": "It's a quote from the Gospel of John.",
+      "grade_level": "10",
+      "first_appearance": "Law 3 \u2014 Truth / Maxwell"
+    },
+    {
+      "term": "John 6:44",
+      "category": "language",
+      "definition": "A Bible verse: 'No one can come to me unless the Father draws him.'",
+      "example": "It's a quote from the Gospel of John.",
+      "grade_level": "10",
+      "first_appearance": "Law 1 \u2014 Grace / Gravitation"
+    },
+    {
+      "term": "Hebrews 11:1",
+      "category": "language",
+      "definition": "A Bible verse: 'Faith is the substance of things hoped for, the evidence of things not seen.'",
+      "example": "It's a quote from the book of Hebrews.",
+      "grade_level": "10",
+      "first_appearance": "Law 5 \u2014 Faith / Quantum Mechanics"
+    },
+    {
+      "term": "2 Corinthians 5:17",
+      "category": "language",
+      "definition": "A Bible verse: 'If anyone is in Christ, the new creation has come.'",
+      "example": "It's a quote from Paul's second letter to the Corinthians.",
+      "grade_level": "10",
+      "first_appearance": "Law 7 \u2014 Redemption / Weak Force"
+    },
+    {
+      "term": "Colossians 3:14",
+      "category": "language",
+      "definition": "A Bible verse: 'And over all these virtues put on love, which binds them all together in perfect unity.'",
+      "example": "It's a quote from Paul's letter to the Colossians.",
+      "grade_level": "10",
+      "first_appearance": "Law 4 \u2014 Love / Strong Force"
+    },
+    {
+      "term": "Romans 8:1",
+      "category": "language",
+      "definition": "A Bible verse: 'There is therefore now no condemnation for those who are in Christ Jesus.'",
+      "example": "It's a quote from Paul's letter to the Romans.",
+      "grade_level": "10",
+      "first_appearance": "Law 8 \u2014 Righteousness / Noether's Theorem"
+    },
+    {
+      "term": "Colossians 1:17",
+      "category": "language",
+      "definition": "A Bible verse: 'In him all things hold together.'",
+      "example": "It's a quote from Paul's letter to the Colossians.",
+      "grade_level": "10",
+      "first_appearance": "Law 10 \u2014 Christ / Coherence"
+    }
+  ],
+  "stats": {
+    "total_terms_found": 62,
+    "by_category": {
+      "physics": 30,
+      "theology": 8,
+      "math": 4,
+      "philosophy": 4,
+      "framework": 6,
+      "academic": 4,
+      "language": 6
+    },
+    "highest_grade_level": "specialist",
+    "average_grade_level": "college",
+    "accessibility_score": 25
+  }
+}

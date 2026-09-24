@@ -1,0 +1,551 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "Quantum Mechanics",
+        "type": "physics",
+        "strength": 10
+      },
+      {
+        "name": "Christian Theology",
+        "type": "theology",
+        "strength": 10
+      },
+      {
+        "name": "Information Theory",
+        "type": "information",
+        "strength": 6
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "M",
+        "present": true,
+        "role": "Moral superposition and meaning collapse",
+        "strength": 8
+      },
+      {
+        "variable": "E",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "S",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Irreversible collapse as judgment",
+        "strength": 7
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Knowledge of good and evil as measurement outcome",
+        "strength": 9
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "Non-local entanglement across humanity in Adam",
+        "strength": 8
+      },
+      {
+        "variable": "Q",
+        "present": true,
+        "role": "Wavefunction collapse as structural model for Fall",
+        "strength": 10
+      },
+      {
+        "variable": "F",
+        "present": true,
+        "role": "Weak interaction as sin/decoherence agent",
+        "strength": 6
+      },
+      {
+        "variable": "C",
+        "present": false,
+        "role": "",
+        "strength": 0
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "Existence of pre-Fall state and post-Fall state as distinct ontological conditions"
+      },
+      {
+        "id": "A1.2",
+        "invoked": true,
+        "how": "Distinction between Eve's measurement and Adam's authoritative measurement"
+      },
+      {
+        "id": "A2.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A5.1",
+        "invoked": true,
+        "how": "Observation as irreversible state transition; measurement collapses superposition"
+      },
+      {
+        "id": "BC4",
+        "invoked": true,
+        "how": "Three observers: Eve (non-authoritative), Adam (federal), Serpent (decoherence agent)"
+      },
+      {
+        "id": "BC6",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A1.3",
+        "invoked": true,
+        "how": "Information primacy: knowledge of good/evil is the measured eigenstate"
+      },
+      {
+        "id": "T3.1",
+        "invoked": true,
+        "how": "Coherence cannot self-increase: post-Fall state cannot return to innocence without external intervention"
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "External grace required for redemption (second federal observer Christ)"
+      },
+      {
+        "id": "BC7",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC8",
+        "invoked": true,
+        "how": "Voluntary coupling: Adam and Eve freely chose to eat from the Tree"
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": false,
+        "manifestations": []
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "second Adam",
+          "last Adam",
+          "redemptive re-measurement"
+        ]
+      },
+      "spirit": {
+        "present": false,
+        "manifestations": []
+      },
+      "trinitarian_structure": "implicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-004",
+        "domain_a": "Quantum Mechanics",
+        "domain_b": "Christian Theology",
+        "strength": 8,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "Fall",
+        "context": "Irreversible collapse from moral superposition to fallen state",
+        "weight": 10
+      },
+      {
+        "concept": "Original Sin",
+        "context": "Non-local entanglement of all humanity in Adam's measurement",
+        "weight": 8
+      },
+      {
+        "concept": "Redemption",
+        "context": "Second federal observer (Christ) required for re-measurement",
+        "weight": 7
+      },
+      {
+        "concept": "Federal Headship",
+        "context": "Adam as authoritative observer whose measurement collapses the system",
+        "weight": 9
+      },
+      {
+        "concept": "Knowledge of Good and Evil",
+        "context": "Eigenstate resulting from measurement on the Tree",
+        "weight": 8
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "Irreversibility",
+        "context": "Wavefunction collapse and Fall are both irreversible transitions",
+        "weight": 9
+      },
+      {
+        "concept": "Non-locality",
+        "context": "Entanglement across humanity in Adam's fall",
+        "weight": 8
+      },
+      {
+        "concept": "Observer Dependence",
+        "context": "Not all observers trigger collapse equally; observer hierarchy",
+        "weight": 7
+      },
+      {
+        "concept": "Structural Isomorphism",
+        "context": "Seven-point mapping between quantum measurement and Genesis 3",
+        "weight": 10
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 3
+      },
+      {
+        "fruit": "self_control",
+        "present": true,
+        "strength": 2
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "domain:Quantum Mechanics",
+      "to": "domain:Christian Theology",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "chi_variable:Q",
+      "to": "chi_variable:K",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "chi_variable:R",
+      "to": "theological_concept:Federal Headship",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "axiom:A5.1",
+      "to": "theological_concept:Fall",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "axiom:BC4",
+      "to": "theological_concept:Federal Headship",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "axiom:T3.1",
+      "to": "theological_concept:Redemption",
+      "relation": "requires",
+      "weight": 6
+    },
+    {
+      "from": "axiom:BC2",
+      "to": "theological_concept:Redemption",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "theological_concept:Fall",
+      "to": "theological_concept:Original Sin",
+      "relation": "produces",
+      "weight": 9
+    },
+    {
+      "from": "theological_concept:Fall",
+      "to": "theological_concept:Redemption",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "trinity:son",
+      "to": "theological_concept:Redemption",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "isomorphism:ISO-004",
+      "to": "domain:Quantum Mechanics",
+      "relation": "maps_from",
+      "weight": 8
+    },
+    {
+      "from": "isomorphism:ISO-004",
+      "to": "domain:Christian Theology",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:Irreversibility",
+      "to": "theological_concept:Fall",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "logical_concept:Non-locality",
+      "to": "theological_concept:Original Sin",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:Observer Dependence",
+      "to": "theological_concept:Federal Headship",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "chi_variable:F",
+      "to": "theological_concept:Fall",
+      "relation": "maps_to",
+      "weight": 6
+    },
+    {
+      "from": "chi_variable:T",
+      "to": "logical_concept:Irreversibility",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "axiom:A1.3",
+      "to": "chi_variable:K",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "axiom:BC8",
+      "to": "theological_concept:Fall",
+      "relation": "supports",
+      "weight": 6
+    }
+  ],
+  "tags": {
+    "primary": [
+      "quantum collapse",
+      "Fall of Man",
+      "structural isomorphism",
+      "observer hierarchy",
+      "federal headship"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/theology"
+    ],
+    "series": "isomorphism",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "Genesis 2:17",
+        "context": "The prohibition establishing the measurement apparatus"
+      },
+      {
+        "ref": "Genesis 3:1-7",
+        "context": "The Fall sequence with decoherence, measurements, and collapse"
+      },
+      {
+        "ref": "1 Corinthians 15:22",
+        "context": "Non-local entangled collapse: 'in Adam all die'"
+      },
+      {
+        "ref": "1 Corinthians 15:45",
+        "context": "Second federal observer: 'the last Adam'"
+      }
+    ],
+    "academic": [
+      {
+        "ref": "Von Neumann's measurement postulate (1932)",
+        "context": "Standard quantum measurement theory"
+      },
+      {
+        "ref": "Bell's theorem and non-locality (1964)",
+        "context": "Quantum entanglement and non-local correlations"
+      },
+      {
+        "ref": "Decoherence theory (Zurek, Zeh, 1970s-1980s)",
+        "context": "Environmental coupling as measurement-like process"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "ISO-001",
+        "context": "Trinity as ground state from which superposition originates"
+      },
+      {
+        "ref": "ISO-002",
+        "context": "Grace as external intervention required post-collapse"
+      },
+      {
+        "ref": "ISO-003",
+        "context": "Entropy/Sin as degradation trajectory after collapse"
+      }
+    ],
+    "total_count": 10
+  },
+  "word_anomalies": [
+    {
+      "word": "federal headship",
+      "frequency": 4,
+      "significance": "Theological concept mapped to observer hierarchy in quantum measurement"
+    },
+    {
+      "word": "decoherence agent",
+      "frequency": 3,
+      "significance": "Serpent mapped to environmental noise that makes measurement likely"
+    },
+    {
+      "word": "observer hierarchy",
+      "frequency": 5,
+      "significance": "Key structural feature not present in standard QM; open problem"
+    },
+    {
+      "word": "non-local entangled collapse",
+      "frequency": 2,
+      "significance": "Maps 'in Adam all die' to quantum entanglement"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "Analytical and exploratory; acknowledges open problems and limitations",
+    "Q1_identity": "An isomorphism record mapping quantum wavefunction collapse to the Fall of Man",
+    "Q2_domain": "Physics and theology intersection; structural isomorphism",
+    "Q3_claim": "The Fall of Man is structurally isomorphic to quantum wavefunction collapse at seven points, with observer hierarchy as an open problem",
+    "Q4_support": "Seven-point element-by-element mapping, swap test, bidirectional analysis, falsification conditions",
+    "Q5_dependencies": "Standard quantum measurement theory, Genesis 3 narrative, federal theology, decoherence theory",
+    "Q6_consequences": "Irreversibility of Fall is structural; redemption requires second federal observer; observer hierarchy may be fundamental in QM",
+    "Q7_kill": "Textual evidence showing no asymmetry in Genesis 3:6-7; physical proof that observer properties never affect measurement; demonstration that mapping is arbitrary pattern-matching"
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "ISO-001",
+      "ISO-002",
+      "ISO-003",
+      "Standard Quantum Mechanics",
+      "Genesis 3"
+    ],
+    "required_by": [
+      "Redemption isomorphism",
+      "Observer hierarchy theory"
+    ],
+    "parallel_to": [
+      "ISO-001",
+      "ISO-002",
+      "ISO-003"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 28,
+    "total_edges": 20,
+    "dominant_domain": "Quantum Mechanics",
+    "dominant_chi": "Q (Quantum/Faith)",
+    "connectivity_score": 8,
+    "one_sentence": "This document establishes a structural isomorphism between quantum wavefunction collapse and the Fall of Man, mapping seven operational points and identifying observer hierarchy as an open problem."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": false,
+      "how": ""
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": false,
+      "how": ""
+    },
+    "4_7_love_relationship": {
+      "active": false,
+      "how": ""
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Judgment (T) as irreversible collapse; Logos (K) as knowledge of good/evil eigenstate"
+    },
+    "pairs_active_count": 1
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 6
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 7
+    },
+    "love": {
+      "present": false,
+      "strength": 0
+    },
+    "judgment": {
+      "present": true,
+      "strength": 8
+    },
+    "logos": {
+      "present": true,
+      "strength": 9
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": false,
+      "strength": 0
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": true,
+      "strength": 7
+    },
+    "operators_present_count": 5
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "ISO-001",
+      "ISO-002",
+      "ISO-003",
+      "Standard Quantum Mechanics overview"
+    ],
+    "read_after": [
+      "Redemption isomorphism",
+      "Observer hierarchy theory"
+    ]
+  }
+}

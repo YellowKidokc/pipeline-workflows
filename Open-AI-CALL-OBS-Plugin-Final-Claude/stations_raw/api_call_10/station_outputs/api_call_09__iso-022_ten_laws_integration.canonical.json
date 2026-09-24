@@ -1,0 +1,547 @@
+{
+  "definitions": [
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A mapping between two structures that shows they have the same form or pattern, even if they look different on the surface.",
+      "example": "A map of a subway system is isomorphic to the actual tracks because the connections between stations are the same, even though the map is not the same size or shape as the real thing.",
+      "grade_level": "college",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "Lagrangian mechanics",
+      "category": "physics",
+      "definition": "A way of describing how a system moves using a single function (the Lagrangian) that tracks the difference between kinetic and potential energy.",
+      "example": "Instead of calculating forces one by one, you write one equation for a swinging pendulum that includes its speed and height, and that equation tells you its whole motion.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "symmetry groups",
+      "category": "math",
+      "definition": "A set of transformations (like rotations or reflections) that leave an object or system unchanged.",
+      "example": "A snowflake has a symmetry group of six rotations and six reflections that make it look the same after turning or flipping.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "coupled dynamical systems",
+      "category": "physics",
+      "definition": "Two or more systems that affect each other's behavior over time.",
+      "example": "Two pendulums connected by a spring are coupled because the motion of one changes the motion of the other.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "coherence",
+      "category": "framework",
+      "definition": "The quality of being logically consistent and fitting together in a unified way.",
+      "example": "A good story has coherence when all the details support the same plot and don't contradict each other.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "divine simplicity",
+      "category": "theology",
+      "definition": "The idea that God is not made up of parts or pieces, but is completely one and simple.",
+      "example": "Unlike a human who has a body, mind, and emotions that can be separated, God is just one whole thing with no divisions.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "unified description of reality",
+      "category": "physics",
+      "definition": "A single theory that explains all physical phenomena, from tiny particles to huge galaxies.",
+      "example": "Scientists hope to find one equation that explains everything from how atoms stick together to how stars form.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "information theory",
+      "category": "physics",
+      "definition": "The mathematical study of how information is measured, stored, and communicated.",
+      "example": "When you send a text message, information theory helps figure out how to compress it so it sends faster without losing meaning.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "consciousness",
+      "category": "philosophy",
+      "definition": "The state of being aware of your own thoughts, feelings, and surroundings.",
+      "example": "When you are awake and thinking about what you're reading, that is consciousness.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "instantiate",
+      "category": "academic",
+      "definition": "To make an abstract idea real or concrete in a specific example.",
+      "example": "A blueprint instantiates the idea of a house into a detailed plan that can be built.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system; things tend to become more disordered over time.",
+      "example": "An ice cube melting into a puddle increases entropy because the water molecules become more spread out and random.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "phase transitions",
+      "category": "physics",
+      "definition": "A change from one state of matter to another, like solid to liquid, or liquid to gas.",
+      "example": "Water boiling into steam is a phase transition from liquid to gas.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Euler-Lagrange equations",
+      "category": "physics",
+      "definition": "A set of equations derived from the Lagrangian that describe how a system will actually move.",
+      "example": "If you know the Lagrangian for a bouncing ball, the Euler-Lagrange equations tell you its exact path through the air.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Noether's theorem",
+      "category": "physics",
+      "definition": "A principle that says every symmetry in nature leads to a conservation law (like energy or momentum being conserved).",
+      "example": "Because the laws of physics are the same today as yesterday (symmetry in time), energy is conserved.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "action",
+      "category": "physics",
+      "definition": "A quantity in physics defined as the integral of the Lagrangian over time; nature chooses the path that minimizes or makes this quantity stationary.",
+      "example": "A roller coaster follows the path that minimizes the action, which is why it doesn't fly off the track randomly.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "kinetic energy",
+      "category": "physics",
+      "definition": "The energy an object has because it is moving.",
+      "example": "A speeding car has more kinetic energy than a parked one.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "potential energy",
+      "category": "physics",
+      "definition": "Stored energy that an object has because of its position or condition.",
+      "example": "A book on a high shelf has potential energy because it could fall down.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "symmetry",
+      "category": "math",
+      "definition": "A property where something looks the same after a change, like a rotation or reflection.",
+      "example": "A butterfly has symmetry because its left and right wings are mirror images.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "conservation laws",
+      "category": "physics",
+      "definition": "Rules that say certain quantities (like energy or momentum) stay the same in a closed system, even as things change.",
+      "example": "In a game of pool, the total momentum of all the balls stays the same before and after a collision.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "generalized coordinates",
+      "category": "physics",
+      "definition": "A set of variables used to describe the position and orientation of a system in Lagrangian mechanics.",
+      "example": "For a pendulum, the generalized coordinate might be the angle it swings, not its x and y position.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Hamilton's principle",
+      "category": "physics",
+      "definition": "The idea that a system follows the path that makes the action stationary (usually a minimum).",
+      "example": "A light beam travels the path that takes the least time, which is a version of Hamilton's principle.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "degrees of freedom",
+      "category": "physics",
+      "definition": "The number of independent ways a system can move or change.",
+      "example": "A single marble on a flat table has two degrees of freedom: it can move left/right and forward/backward.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "contingent",
+      "category": "philosophy",
+      "definition": "Something that could be different or might not exist at all; not necessary.",
+      "example": "The color of your shirt is contingent because you could have chosen a different one.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "necessary",
+      "category": "philosophy",
+      "definition": "Something that must be true or exist and cannot be otherwise.",
+      "example": "In math, 2+2=4 is necessary because it cannot be false.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "ontology",
+      "category": "philosophy",
+      "definition": "The study of what exists and the nature of reality.",
+      "example": "Asking whether numbers really exist or are just ideas is a question of ontology.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "epistemology",
+      "category": "philosophy",
+      "definition": "The study of how we know things and what counts as knowledge.",
+      "example": "Wondering if you can trust your senses or if you need proof is part of epistemology.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A statement that is accepted as true without proof, used as a starting point for reasoning.",
+      "example": "In geometry, 'a straight line is the shortest distance between two points' is an axiom.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "theorem",
+      "category": "academic",
+      "definition": "A statement that has been proven to be true using logic and axioms.",
+      "example": "The Pythagorean theorem is a proven rule about right triangles.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "empirical",
+      "category": "academic",
+      "definition": "Based on observation or experiment, not just theory.",
+      "example": "A doctor testing a new drug on patients is doing empirical research.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "falsifiable",
+      "category": "academic",
+      "definition": "Able to be proven wrong by evidence or experiment.",
+      "example": "The claim 'all swans are white' is falsifiable because finding one black swan would prove it wrong.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "chi-field",
+      "category": "framework",
+      "definition": "A proposed field in the framework that connects physical, informational, and moral aspects of reality.",
+      "example": "Think of it like a field that carries both energy and meaning, similar to how a magnetic field carries force.",
+      "grade_level": "specialist",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "coherence functional",
+      "category": "framework",
+      "definition": "A mathematical function that measures how well different parts of a system fit together consistently.",
+      "example": "Like a score that tells you how well the pieces of a puzzle match each other.",
+      "grade_level": "specialist",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "moral curvature",
+      "category": "framework",
+      "definition": "A concept in the framework that describes how moral choices bend or shape the structure of reality, similar to how gravity bends space.",
+      "example": "Like a heavy ball on a rubber sheet creating a dip, a good or bad action might 'bend' the moral landscape around it.",
+      "grade_level": "specialist",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "sanctification",
+      "category": "theology",
+      "definition": "The process of becoming more holy or morally pure, often seen as a gradual change guided by God.",
+      "example": "Like slowly cleaning a dirty window until it becomes completely clear.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "atonement",
+      "category": "theology",
+      "definition": "The act of making up for a wrong or sin, often through a sacrifice or payment.",
+      "example": "Apologizing and doing something nice to fix a broken friendship is a small-scale atonement.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation \u2014 how people are saved from sin and its consequences.",
+      "example": "Different religions have different soteriology, like being saved by faith or by good deeds.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "hamartiology",
+      "category": "theology",
+      "definition": "The study of sin \u2014 what it is, where it comes from, and its effects.",
+      "example": "Hamartiology asks questions like 'Is sin just a bad choice or something deeper?'",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "eigenmode",
+      "category": "physics",
+      "definition": "A natural pattern of vibration or oscillation that a system can sustain on its own.",
+      "example": "A guitar string has eigenmodes that produce different musical notes when plucked.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "tensor",
+      "category": "math",
+      "definition": "A mathematical object that can describe relationships between multiple quantities in different directions, like a generalization of a vector.",
+      "example": "A tensor can describe how stress spreads through a solid object in all directions at once.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "bijection",
+      "category": "math",
+      "definition": "A one-to-one matching between two sets where every element in one set pairs with exactly one element in the other, and vice versa.",
+      "example": "If you have five apples and five baskets, a bijection puts each apple in exactly one basket and each basket gets exactly one apple.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "grand unification",
+      "category": "physics",
+      "definition": "A theory that tries to combine three of the four fundamental forces (electromagnetism, strong nuclear, weak nuclear) into a single force.",
+      "example": "Like trying to show that electricity and magnetism are actually the same force, but for all forces except gravity.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "secular truth",
+      "category": "philosophy",
+      "definition": "Truth that is discovered through science and reason, without reference to religion.",
+      "example": "The fact that water boils at 100\u00b0C is a secular truth.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "sacred truth",
+      "category": "theology",
+      "definition": "Truth that comes from religious texts or divine revelation.",
+      "example": "The belief that God created the universe is a sacred truth for many religions.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "post-dicting",
+      "category": "academic",
+      "definition": "Explaining something that has already been observed, rather than predicting something new.",
+      "example": "Saying 'I knew the sun would rise' after it has already risen is post-dicting, not predicting.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "voluntarism",
+      "category": "theology",
+      "definition": "The belief that God's will is the ultimate basis for everything, including moral laws and the laws of nature.",
+      "example": "A voluntarist might say that murder is wrong simply because God wills it, not because it is inherently wrong.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "structural isomorphism",
+      "category": "math",
+      "definition": "A strong form of isomorphism where the internal relationships of one system exactly match those of another.",
+      "example": "The structure of a family tree and the structure of a company's management chart can be structurally isomorphic if the connections are the same pattern.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "aspirational notation",
+      "category": "academic",
+      "definition": "Using symbols or terms that look scientific but don't actually do the work of real science or math.",
+      "example": "Writing 'E = mc\u00b2' on a poster without understanding what it means is aspirational notation.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "prestige label",
+      "category": "academic",
+      "definition": "A fancy term used to make an idea sound more important or credible than it really is.",
+      "example": "Calling a simple list a 'paradigm shift' is using a prestige label.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Landauer's principle",
+      "category": "physics",
+      "definition": "A principle stating that erasing one bit of information in a computer releases a tiny amount of heat.",
+      "example": "When you delete a file on your computer, a very small amount of energy is turned into heat because of Landauer's principle.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Shannon entropy",
+      "category": "physics",
+      "definition": "A measure of how much information is in a message, or how unpredictable it is.",
+      "example": "A coin flip has high Shannon entropy because it's unpredictable; a boring lecture has low entropy because you know what's coming.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "thermodynamic entropy",
+      "category": "physics",
+      "definition": "A measure of disorder in a physical system, related to how much energy is available to do work.",
+      "example": "A hot cup of coffee has lower thermodynamic entropy than the same coffee at room temperature because the heat is more concentrated.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "AdS/CFT",
+      "category": "physics",
+      "definition": "A theoretical idea that a type of gravity in a curved space (Anti-de Sitter space) is equivalent to a quantum field theory on the boundary of that space.",
+      "example": "Like a hologram on a 2D surface that contains all the information of a 3D object.",
+      "grade_level": "specialist",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Hawking-Page transition",
+      "category": "physics",
+      "definition": "A phase transition in theoretical physics between a black hole and a 'thermal gas' in a curved space.",
+      "example": "Like water turning to steam, but for black holes in a special kind of space.",
+      "grade_level": "specialist",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "stellar collapse",
+      "category": "physics",
+      "definition": "The process where a star runs out of fuel and its core collapses under gravity, often leading to a supernova or black hole.",
+      "example": "When a massive star dies, it can no longer hold itself up, and it collapses inward like a deflating balloon.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "QFT",
+      "category": "physics",
+      "definition": "Quantum Field Theory: a theory that combines quantum mechanics with special relativity to describe particles as excitations in fields.",
+      "example": "In QFT, an electron is not a tiny ball but a ripple in an electron field that fills all of space.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "GR",
+      "category": "physics",
+      "definition": "General Relativity: Einstein's theory that describes gravity as the curvature of space and time caused by mass and energy.",
+      "example": "GR explains why planets orbit the sun: the sun's mass curves space around it, and planets follow those curves.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Colossians 1:17",
+      "category": "language",
+      "definition": "A Bible verse that says 'in Him all things hold together,' referring to Christ as the sustainer of the universe.",
+      "example": "This verse is often used to support the idea that everything in creation is interconnected and maintained by God.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Summa Theologica",
+      "category": "language",
+      "definition": "A major work by Thomas Aquinas that systematically covers Christian theology.",
+      "example": "It's like an encyclopedia of theology, written in the 13th century, that tries to answer every big question about God and faith.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Aquinas",
+      "category": "language",
+      "definition": "Thomas Aquinas, a medieval philosopher and theologian who tried to combine Christian faith with reason.",
+      "example": "Aquinas is famous for his 'five ways' to prove God's existence using logic and observation.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Augustine",
+      "category": "language",
+      "definition": "An early Christian philosopher and theologian who wrote about God, truth, and the nature of evil.",
+      "example": "Augustine is known for saying 'our hearts are restless until they rest in God.'",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Arthur Holmes",
+      "category": "language",
+      "definition": "A 20th-century Christian philosopher who wrote about the unity of all truth under God.",
+      "example": "Holmes argued that because God is the source of all truth, science and faith cannot ultimately conflict.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Einstein",
+      "category": "language",
+      "definition": "Albert Einstein, the physicist who developed the theories of special and general relativity.",
+      "example": "Einstein is famous for the equation E=mc\u00b2 and for showing that space and time are connected.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Noether",
+      "category": "language",
+      "definition": "Emmy Noether, a mathematician who proved Noether's theorem, linking symmetries to conservation laws.",
+      "example": "Noether's work is fundamental to modern physics, even though she faced discrimination as a woman in science.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Weinberg",
+      "category": "language",
+      "definition": "Steven Weinberg, a physicist who helped develop the theory that unifies electromagnetism and the weak nuclear force.",
+      "example": "Weinberg won a Nobel Prize for his work on the electroweak theory.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Shannon",
+      "category": "language",
+      "definition": "Claude Shannon, a mathematician who founded information theory.",
+      "example": "Shannon figured out how to measure information in bits, which is the basis for all digital communication.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Landauer",
+      "category": "language",
+      "definition": "Rolf Landauer, a physicist who showed that erasing information always produces heat.",
+      "example": "Landauer's principle connects information to physics by showing that information is physical.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    }
+  ],
+  "stats": {
+    "total_terms_found": 63,
+    "by_category": {
+      "physics": 24,
+      "theology": 10,
+      "math": 6,
+      "philosophy": 5,
+      "framework": 3,
+      "academic": 8,
+      "language": 7
+    },
+    "highest_grade_level": "chi-field",
+    "average_grade_level": "college",
+    "accessibility_score": 15
+  }
+}

@@ -1,0 +1,427 @@
+{
+  "definitions": [
+    {
+      "term": "Isomorphism",
+      "category": "math",
+      "definition": "A mapping between two things that shows they have the same structure or form.",
+      "example": "Like a map of a subway system that has the same layout as the actual tracks, even though the map is smaller.",
+      "grade_level": "college",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "Principle of Least Action",
+      "category": "physics",
+      "definition": "A rule in physics that says nature always chooses the path that requires the least amount of 'action' (a measure of energy over time).",
+      "example": "Like a ball rolling down a hill always taking the fastest path to the bottom.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Kolmogorov Complexity",
+      "category": "physics",
+      "definition": "A measure of how simple or complex a piece of data is, based on the length of the shortest computer program that can produce it.",
+      "example": "A repeating pattern like 'ABABAB' has low Kolmogorov complexity because a short program can generate it; random letters have high complexity.",
+      "grade_level": "graduate",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Occam's Razor",
+      "category": "philosophy",
+      "definition": "The idea that the simplest explanation is usually the best one.",
+      "example": "If you hear hoofbeats, think horses, not zebras.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Extremal",
+      "category": "math",
+      "definition": "Relating to the maximum or minimum value of something.",
+      "example": "The highest or lowest point on a roller coaster track.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Action (S)",
+      "category": "physics",
+      "definition": "A quantity in physics that combines energy and time; nature chooses paths that make this quantity as small or as large as possible.",
+      "example": "Think of it like the 'cost' of a journey; nature picks the cheapest route.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Lagrangian (L)",
+      "category": "physics",
+      "definition": "A function that describes the energy of a system, used to find the path a system will take.",
+      "example": "Like a recipe that tells you how to calculate the motion of a planet around the sun.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Variational Principle",
+      "category": "physics",
+      "definition": "A method that finds the best path or shape by making a certain quantity as small or as large as possible.",
+      "example": "Finding the shortest path between two points on a curved surface.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Compressible",
+      "category": "physics",
+      "definition": "Able to be described in a shorter form without losing important information.",
+      "example": "A long story that can be summarized in one sentence is compressible.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Empirical",
+      "category": "academic",
+      "definition": "Based on observation or experience, not just theory.",
+      "example": "A scientist doing an experiment to see if a plant grows faster in sunlight is using empirical methods.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Wisdom Theology",
+      "category": "theology",
+      "definition": "A branch of theology that focuses on God's wisdom as the way He created and ordered the world.",
+      "example": "The idea that the universe is not random but carefully designed with intelligence.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Divine Simplicity",
+      "category": "theology",
+      "definition": "The belief that God is not made up of parts; God's essence is completely simple and unified.",
+      "example": "Unlike a human who has a body, mind, and soul, God is just one simple thing.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Economy (in creation)",
+      "category": "theology",
+      "definition": "The idea that God creates with maximum effect using minimal means.",
+      "example": "Like a chef making a delicious meal with only a few ingredients.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "\u05d7\u05b8\u05db\u05b0\u05de\u05b8\u05d4 (chokhmah)",
+      "category": "language",
+      "definition": "Hebrew word for 'wisdom,' often personified in the Bible as a feminine figure who helped God create the world.",
+      "example": "In Proverbs, chokhmah is described as being with God before the world began.",
+      "grade_level": "specialist",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Sophia",
+      "category": "language",
+      "definition": "Greek word for 'wisdom,' used in the New Testament and early Christian theology.",
+      "example": "Jesus is sometimes called the 'Sophia' or wisdom of God.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "\u1f01\u03c0\u03bb\u03bf\u1fe6\u03c2 (haplous)",
+      "category": "language",
+      "definition": "Greek word meaning 'simple' or 'single-focused,' used in the Bible to describe a healthy spiritual state.",
+      "example": "Having a 'haplous' eye means seeing things clearly without mixed motives.",
+      "grade_level": "specialist",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Simplicitas Dei",
+      "category": "theology",
+      "definition": "Latin phrase for 'divine simplicity,' the idea that God is not made of parts.",
+      "example": "It means God doesn't have a body or a mind that can be separated.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "\u03b4S = 0",
+      "category": "math",
+      "definition": "A mathematical equation saying that the change in action (S) is zero, meaning the path is at a maximum or minimum.",
+      "example": "Like finding the bottom of a valley where the slope is flat.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "S = \u222b\u2080\u1d57 L(q, q\u0307, t) dt",
+      "category": "math",
+      "definition": "An equation that defines action (S) as the sum (integral) of the Lagrangian (L) over time.",
+      "example": "Like adding up the 'cost' of a journey second by second.",
+      "grade_level": "graduate",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "K(x) = min{|p| : U(p) = x}",
+      "category": "math",
+      "definition": "The definition of Kolmogorov complexity: the length of the shortest program (p) that produces the string (x).",
+      "example": "If the shortest program to print 'ABABAB' is 5 characters, then K('ABABAB') = 5.",
+      "grade_level": "graduate",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Universal Turing Machine (U)",
+      "category": "math",
+      "definition": "A theoretical computer that can run any program, used to define Kolmogorov complexity.",
+      "example": "Like a generic computer that can run any app.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Standard Model Lagrangian",
+      "category": "physics",
+      "definition": "A set of equations that describe all known particles and forces (except gravity) in a very compact form.",
+      "example": "It's like a short recipe that can make every dish in a huge restaurant.",
+      "grade_level": "graduate",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Information-theoretic",
+      "category": "physics",
+      "definition": "Relating to the mathematical study of information, like how much data is needed to describe something.",
+      "example": "Thinking about how many yes/no questions it takes to guess a number.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Compression algorithm",
+      "category": "physics",
+      "definition": "A method for making data smaller while keeping its essential information.",
+      "example": "Like a ZIP file that shrinks a photo without losing the picture.",
+      "grade_level": "10",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Personified",
+      "category": "academic",
+      "definition": "When an abstract idea is described as if it were a person.",
+      "example": "In the Bible, Wisdom is personified as a woman who speaks.",
+      "grade_level": "10",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "Metaphysical",
+      "category": "philosophy",
+      "definition": "Relating to the nature of reality, beyond what we can see or measure.",
+      "example": "Asking whether numbers really exist is a metaphysical question.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Anthropic selection",
+      "category": "physics",
+      "definition": "The idea that we observe the universe to be a certain way because if it were different, we wouldn't be here to observe it.",
+      "example": "We live on a planet with water because if it didn't have water, we couldn't live here.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Multiverse",
+      "category": "physics",
+      "definition": "The theory that there are many universes besides our own, each with different laws.",
+      "example": "Like an infinite number of parallel worlds.",
+      "grade_level": "10",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Strain Analysis",
+      "category": "academic",
+      "definition": "An honest evaluation of the weaknesses or problems in an argument.",
+      "example": "Like a teacher pointing out where your essay's logic is weak.",
+      "grade_level": "college",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "Free parameters",
+      "category": "physics",
+      "definition": "Numbers in a theory that are not predicted by the theory itself, but must be measured.",
+      "example": "The mass of an electron is a free parameter in the Standard Model.",
+      "grade_level": "college",
+      "first_appearance": "Test 1"
+    },
+    {
+      "term": "Ad hoc",
+      "category": "academic",
+      "definition": "Something created for a specific purpose, often without general principle.",
+      "example": "Adding a new rule just to fix one problem is an ad hoc solution.",
+      "grade_level": "10",
+      "first_appearance": "Test 1"
+    },
+    {
+      "term": "Variational structure",
+      "category": "physics",
+      "definition": "A pattern where things are determined by making a quantity as small or as large as possible.",
+      "example": "Light bending when it enters water follows a variational structure (least time).",
+      "grade_level": "college",
+      "first_appearance": "Test 1"
+    },
+    {
+      "term": "Symmetry Breaking",
+      "category": "physics",
+      "definition": "When a system that looks the same from all angles suddenly picks a specific direction or state.",
+      "example": "A perfectly round ball rolling down a hill will eventually stop in one spot, breaking the symmetry.",
+      "grade_level": "college",
+      "first_appearance": "Test 2"
+    },
+    {
+      "term": "Renormalization group flow",
+      "category": "physics",
+      "definition": "A method in physics that shows how a theory changes when you look at different scales (like zooming in or out).",
+      "example": "A smooth surface looks rough under a microscope; renormalization group flow describes that change.",
+      "grade_level": "graduate",
+      "first_appearance": "Test 2"
+    },
+    {
+      "term": "String landscape",
+      "category": "physics",
+      "definition": "The huge collection of possible universes predicted by string theory, each with different laws.",
+      "example": "Like a menu of 10^500 different possible realities.",
+      "grade_level": "graduate",
+      "first_appearance": "Test 2"
+    },
+    {
+      "term": "Classical theism",
+      "category": "theology",
+      "definition": "The traditional view of God as all-powerful, all-knowing, and simple, held by thinkers like Augustine and Aquinas.",
+      "example": "The belief that God is not a being among beings but the ground of all being.",
+      "grade_level": "college",
+      "first_appearance": "Test 2"
+    },
+    {
+      "term": "Conditional",
+      "category": "academic",
+      "definition": "Something that is true only if something else is true.",
+      "example": "'If it rains, the ground gets wet' is a conditional statement.",
+      "grade_level": "10",
+      "first_appearance": "Test 2"
+    },
+    {
+      "term": "Connection Density",
+      "category": "framework",
+      "definition": "A measure of how many other ideas or records a given idea is linked to.",
+      "example": "A popular Wikipedia article has high connection density because many other articles link to it.",
+      "grade_level": "college",
+      "first_appearance": "Test 3"
+    },
+    {
+      "term": "Falsifiability",
+      "category": "academic",
+      "definition": "The ability of a theory to be proven wrong by evidence.",
+      "example": "The claim 'all swans are white' is falsifiable because finding one black swan disproves it.",
+      "grade_level": "10",
+      "first_appearance": "Test 4"
+    },
+    {
+      "term": "Incompressible",
+      "category": "physics",
+      "definition": "Cannot be made shorter or simpler without losing information.",
+      "example": "A truly random string of numbers cannot be compressed.",
+      "grade_level": "10",
+      "first_appearance": "Test 4"
+    },
+    {
+      "term": "Vacuous",
+      "category": "academic",
+      "definition": "Empty of meaning or content; trivial.",
+      "example": "Saying 'everything is what it is' is a vacuous statement.",
+      "grade_level": "college",
+      "first_appearance": "Test 4"
+    },
+    {
+      "term": "Structural isomorphism",
+      "category": "math",
+      "definition": "A strong mapping where two systems have exactly the same structure, not just a few similarities.",
+      "example": "Two different computer programs that have the same logic but different code.",
+      "grade_level": "college",
+      "first_appearance": "Strain Analysis"
+    },
+    {
+      "term": "Ontology",
+      "category": "philosophy",
+      "definition": "The study of what exists and the nature of reality.",
+      "example": "Asking whether numbers or emotions are real is an ontological question.",
+      "grade_level": "college",
+      "first_appearance": "Cross-Reference"
+    },
+    {
+      "term": "Path Integral Formulation",
+      "category": "physics",
+      "definition": "A way of doing quantum mechanics where you sum up all possible paths a particle could take.",
+      "example": "Like considering every possible route a raindrop could take to the ground.",
+      "grade_level": "graduate",
+      "first_appearance": "Cross-Reference"
+    },
+    {
+      "term": "Algorithmic Probability",
+      "category": "physics",
+      "definition": "A way of assigning probabilities to data based on how simple the program that generates it is.",
+      "example": "A simple pattern is more likely than a random one.",
+      "grade_level": "graduate",
+      "first_appearance": "Cross-Reference"
+    },
+    {
+      "term": "Induction",
+      "category": "philosophy",
+      "definition": "Reasoning from specific examples to general rules.",
+      "example": "Seeing many white swans and concluding all swans are white is induction.",
+      "grade_level": "10",
+      "first_appearance": "Cross-Reference"
+    },
+    {
+      "term": "\u03b4\u03af\u03c8\u03c5\u03c7\u03bf\u03c2 (dipsychos)",
+      "category": "language",
+      "definition": "Greek word meaning 'double-minded' or 'unstable,' used in the Bible to describe someone with divided loyalties.",
+      "example": "A person who tries to serve both God and money is dipsychos.",
+      "grade_level": "specialist",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "R\u03bc\u03bd - \u00bdg\u03bc\u03bdR = 8\u03c0GT\u03bc\u03bd",
+      "category": "physics",
+      "definition": "Einstein's field equations, which describe how matter and energy curve spacetime, causing gravity.",
+      "example": "This equation explains why planets orbit the sun.",
+      "grade_level": "graduate",
+      "first_appearance": "Cross-Reference"
+    },
+    {
+      "term": "Axiom",
+      "category": "academic",
+      "definition": "A basic assumption that is accepted without proof, used as a starting point for reasoning.",
+      "example": "In geometry, 'a straight line is the shortest distance between two points' is an axiom.",
+      "grade_level": "10",
+      "first_appearance": "Axiom Dependencies"
+    },
+    {
+      "term": "Coherence",
+      "category": "framework",
+      "definition": "The quality of being logically consistent and forming a unified whole.",
+      "example": "A good story has coherence because all the parts fit together.",
+      "grade_level": "10",
+      "first_appearance": "Other ISOs Connected"
+    },
+    {
+      "term": "Fundamental Substrate",
+      "category": "framework",
+      "definition": "The basic underlying reality or stuff that everything else is made of.",
+      "example": "In physics, the fundamental substrate might be quantum fields.",
+      "grade_level": "college",
+      "first_appearance": "Laws Invoked"
+    }
+  ],
+  "stats": {
+    "total_terms_found": 46,
+    "by_category": {
+      "physics": 16,
+      "theology": 6,
+      "math": 7,
+      "philosophy": 3,
+      "framework": 3,
+      "academic": 8,
+      "language": 4
+    },
+    "highest_grade_level": "graduate",
+    "average_grade_level": "college",
+    "accessibility_score": 25
+  }
+}

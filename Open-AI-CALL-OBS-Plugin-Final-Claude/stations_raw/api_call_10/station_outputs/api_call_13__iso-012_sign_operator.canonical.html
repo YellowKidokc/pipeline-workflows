@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>ISO-012 · Sign Operator · Theophysics Registry</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg-card: #111;
+      --bg-card-alt: #141414;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --gold-glow: rgba(212, 175, 55, 0.08);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border: #222;
+      --border-light: #2a2a2a;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.6);
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+    }
+    .container { max-width: 1280px; margin: 0 auto; }
+    /* headings */
+    h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; color: #f0f0f0; }
+    h1 { font-size: 2.6rem; line-height: 1.1; }
+    h2 { font-size: 1.8rem; margin-bottom: 1.2rem; }
+    h3 { font-size: 1.3rem; margin-bottom: 0.6rem; }
+    /* section numbers */
+    .section-num {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+      margin-bottom: -1.2rem;
+      pointer-events: none;
+      user-select: none;
+    }
+    /* gradient separator */
+    .sep {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold-dim), var(--gold), var(--gold-dim));
+      margin: 2.5rem 0 2rem 0;
+      opacity: 0.5;
+    }
+    /* cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      box-shadow: var(--shadow);
+      transition: border 0.2s;
+    }
+    .card:hover { border-color: #333; }
+    /* grid */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+    .grid-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) {
+      .grid-2, .grid-4 { grid-template-columns: 1fr; }
+      h1 { font-size: 2rem; }
+      body { padding: 1rem; }
+    }
+    /* badge */
+    .badge {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 1rem;
+      border-radius: 100px;
+      text-transform: uppercase;
+      background: #1a1a1a;
+      border: 1px solid #333;
+    }
+    .badge-green { background: rgba(34,197,94,0.15); color: var(--success); border-color: var(--success); }
+    .badge-yellow { background: rgba(212,175,55,0.15); color: var(--gold); border-color: var(--gold); }
+    .badge-red { background: rgba(239,68,68,0.15); color: var(--danger); border-color: var(--danger); }
+    .badge-blue { background: rgba(74,158,255,0.15); color: var(--info); border-color: var(--info); }
+    /* gold accent */
+    .gold-border-left { border-left: 4px solid var(--gold); padding-left: 1.2rem; }
+    /* quote */
+    .quote {
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #d0d0d0;
+    }
+    /* equation */
+    .eq {
+      font-family: var(--font-mono);
+      background: #0d0d0d;
+      padding: 0.8rem 1.2rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid #1e1e1e;
+      display: inline-block;
+      color: #e0e0e0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .eq-block { display: block; margin: 0.6rem 0; }
+    /* mapping table */
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    .mapping-table th {
+      background: #1a1508;
+      color: var(--gold);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 1rem 1.2rem;
+      border-bottom: 2px solid var(--gold);
+      text-align: left;
+    }
+    .mapping-table td {
+      padding: 0.9rem 1.2rem;
+      border-bottom: 1px solid #1e1e1e;
+      vertical-align: top;
+    }
+    .mapping-table tr:last-child td { border-bottom: none; }
+    .mapping-table tr:hover td { background: #0f0f0f; }
+    /* test cards */
+    .test-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .test-card h4 { font-family: var(--font-heading); font-size: 1rem; letter-spacing: 0.06em; margin-bottom: 0.4rem; }
+    .test-pass { color: var(--success); font-weight: 600; }
+    .test-fail { color: var(--danger); font-weight: 600; }
+    /* evidence chips */
+    .chip {
+      display: inline-block;
+      background: #181818;
+      border: 1px solid #2a2a2a;
+      border-radius: 100px;
+      padding: 0.2rem 1rem;
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      margin: 0.2rem 0.3rem;
+    }
+    .chip-gold { border-color: var(--gold-dim); color: var(--gold); }
+    /* falsification box */
+    .falsify-box {
+      background: #1a0808;
+      border: 1px solid #3a1a1a;
+      border-radius: var(--radius);
+      padding: 1.8rem;
+    }
+    .falsify-box ul { list-style: none; padding: 0; }
+    .falsify-box li { padding: 0.5rem 0; border-bottom: 1px solid #1e1212; }
+    .falsify-box li:last-child { border-bottom: none; }
+    .falsify-box li::before { content: "⚠ "; color: var(--danger); font-weight: 600; }
+    /* footer */
+    .footer-seal {
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.7;
+      font-size: 0.9rem;
+      border-top: 1px solid #1e1e1e;
+      padding-top: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    /* misc */
+    .text-gold { color: var(--gold); }
+    .text-mono { font-family: var(--font-mono); }
+    .text-small { font-size: 0.85rem; color: var(--text-muted); }
+    .mt-1 { margin-top: 1rem; }
+    .mb-1 { margin-bottom: 1rem; }
+    .flex { display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem; }
+    .gap-1 { gap: 1rem; }
+    .op-3 { opacity: 0.3; }
+    .fw-600 { font-weight: 600; }
+    .iso-link { color: var(--info); text-decoration: none; border-bottom: 1px dotted #333; }
+    .iso-link:hover { color: var(--gold); border-bottom-color: var(--gold); }
+    .hero-pull { border-left: 4px solid var(--gold); padding-left: 1.5rem; margin: 1rem 0; }
+    .law-badge { background: #1a1a1a; border: 1px solid #333; border-radius: 100px; padding: 0.2rem 1.2rem; font-size: 0.7rem; font-family: var(--font-heading); letter-spacing: 0.1em; display: inline-block; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ===== 1. REGISTRY HEADER ===== -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1.5rem; margin-bottom: 0.5rem;">
+    <div style="display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap;">
+      <div style="font-size: 3.2rem; font-family: var(--font-heading); color: var(--gold); opacity: 0.7; line-height: 1;">Φ</div>
+      <div>
+        <h1 style="font-size: 2rem; margin: 0; letter-spacing: 0.08em;">THEOPHYSICS REGISTRY</h1>
+        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">
+          ISO-012 · Sign Operator · 2026-03-10
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center;">
+      <span class="badge badge-green"><i class="fas fa-check-circle" style="margin-right: 0.3rem;"></i> Level 3 · Isomorphism</span>
+      <span class="badge badge-yellow"><i class="fas fa-balance-scale" style="margin-right: 0.3rem;"></i> Confidence: High (Reformed)</span>
+      <span class="badge" style="border-color: #444;"><i class="far fa-file-alt" style="margin-right: 0.3rem;"></i> v1.0</span>
+    </div>
+  </div>
+
+  <!-- ===== 2. HERO BANNER ===== -->
+  <div class="grid-2" style="margin: 2rem 0 1.5rem; background: linear-gradient(135deg, rgba(212,175,55,0.06) 0%, rgba(10,10,10,1) 80%); border-radius: var(--radius); padding: 2rem; border: 1px solid #1e1e1e;">
+    <!-- left -->
+    <div>
+      <span class="law-badge"><i class="fas fa-gavel" style="margin-right: 0.3rem;"></i> Law 2 · Conservation</span>
+      <h2 style="font-size: 2.2rem; margin: 0.8rem 0 0.4rem; line-height: 1.2;">σ <span style="color: var(--gold); font-weight: 300; margin: 0 0.3rem;">⟷</span> Moral Sign</h2>
+      <div style="font-family: var(--font-body); font-weight: 300; color: var(--text-muted); font-size: 1rem; margin-bottom: 1.2rem;">
+        Hermitian operator with eigenvalues ±1 · Commutation invariance · External flip
+      </div>
+      <div class="hero-pull quote" style="font-size: 1.05rem;">
+        “The moral sign remains −1 regardless of which self‑operation is applied. … To flip the sign, an external operator V_grace is required where [σ_moral, V_grace] ≠ 0.”
+      </div>
+      <div class="text-small" style="margin-top: 0.6rem;"><i class="fas fa-quote-right" style="margin-right: 0.3rem;"></i> Ephesians 2:8‑9 · Romans 3:10‑12</div>
+    </div>
+    <!-- right: equation card -->
+    <div class="card" style="background: #0d0d0d; border-color: #2a2a2a;">
+      <div style="font-family: var(--font-heading); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 0.8rem;"><i class="fas fa-equals"></i> CORE EQUATIONS</div>
+      <div class="eq eq-block">σ|+⟩ = +1|+⟩ &nbsp;&nbsp; σ|−⟩ = −1|−⟩</div>
+      <div class="eq eq-block">[σ, U] = 0 &nbsp;⟹&nbsp; σU|−⟩ = −U|−⟩</div>
+      <div style="text-align: center; margin: 0.6rem 0; font-size: 1.6rem; color: var(--gold); opacity: 0.5;">⟷</div>
+      <div class="eq eq-block">σ_moral|person⟩ = ±1|person⟩</div>
+      <div class="eq eq-block">[σ_moral, U_self] = 0 &nbsp;⟹&nbsp; no self‑flip</div>
+      <div class="eq eq-block" style="border-color: #3a2a1a;">V_grace |−⟩ → |+⟩ &nbsp; <span style="color: var(--gold); font-size: 0.8rem;">[σ, V] ≠ 0</span></div>
+      <div style="margin-top: 0.8rem; font-size: 0.75rem; color: var(--text-muted); text-align: right; font-family: var(--font-mono);">σ Hermitian · spectrum {±1}</div>
+    </div>
+  </div>
+
+  <!-- ===== 3. DOMAIN SPECIFICATIONS ===== -->
+  <div class="section-num">01</div>
+  <h2>Domain Specifications</h2>
+  <div class="grid-2">
+    <!-- Domain A -->
+    <div class="card" style="border-top: 4px solid var(--info);">
+      <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
+        <i class="fas fa-atom" style="font-size: 1.8rem; color: var(--info);"></i>
+        <h3 style="margin: 0;">Domain A · Physics</h3>
+      </div>
+      <p><strong>Quantum Mechanics — Hermitian Operator with Eigenvalues ±1</strong></p>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">The sign operator σ (Pauli‑like) with spectrum {+1, −1}. For any unitary U generated by the system’s own Hamiltonian: [σ, U] = 0. The eigenvalue is a constant of motion under self‑evolution. Spin‑flip requires an external non‑commuting perturbation V.</p>
+      <div class="eq eq-block" style="margin-top: 0.8rem;">σ|+⟩ = +1|+⟩ &nbsp; σ|−⟩ = −1|−⟩ &nbsp; [σ, U] = 0</div>
+      <div class="text-small" style="margin-top: 0.6rem;"><i class="fas fa-flask"></i> NMR, ESR, spin‑flip experiments</div>
+    </div>
+    <!-- Domain B -->
+    <div class="card" style="border-top: 4px solid var(--gold);">
+      <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
+        <i class="fas fa-cross" style="font-size: 1.8rem; color: var(--gold);"></i>
+        <h3 style="margin: 0;">Domain B · Theology</h3>
+      </div>
+      <p><strong>Moral Orientation — Total Depravity, Soteriology</strong></p>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">Moral sign σ_moral: +1 aligned with God, −1 opposed. Post‑Fall all humans are in the −1 eigenstate. Self‑generated moral operations (works, effort) cannot flip the sign: [σ_moral, U_self] = 0. Grace (V_grace) is an external non‑commuting operator that flips the sign.</p>
+      <div class="eq eq-block" style="margin-top: 0.8rem;">σ_moral|humanity⟩ = −1|humanity⟩ &nbsp; V_grace|−⟩ → |+⟩</div>
+      <div class="text-small" style="margin-top: 0.6rem;"><i class="fas fa-book-open"></i> Romans 3:10‑12 · Eph 2:8‑9 · Jer 13:23</div>
+    </div>
+  </div>
+
+  <!-- ===== 4. THE ISOMORPHIC MAPPING ===== -->
+  <div class="sep"></div>
+  <div class="section-num">02</div>
+  <h2>Isomorphic Mapping</h2>
+  <p style="margin-bottom: 1.2rem; color: var(--text-muted);">Structural isomorphism — not metaphor. The same algebraic structure (binary operator, commutation invariance, external flip) governs both domains.</p>
+  <div style="overflow-x: auto;">
+    <table class="mapping-table">
+      <thead>
+        <tr><th>Physics</th><th>Theology</th><th>Structural Role</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>σ (Hermitian operator)</td><td>Moral orientation</td><td>Binary classifier with fixed eigenvalues</td></tr>
+        <tr><td>Eigenvalue +1</td><td>Righteousness / alignment with God</td><td>Positive orientation</td></tr>
+        <tr><td>Eigenvalue −1</td><td>Fallenness / opposition to God</td><td>Negative orientation</td></tr>
+        <tr><td>[σ, U] = 0</td><td>Self‑effort cannot change moral sign</td><td>Commutation = invariance under internal ops</td></tr>
+        <tr><td>U (unitary, self‑generated)</td><td>Works, moral effort, religion</td><td>Internal operations that preserve sign</td></tr>
+        <tr><td>V (external, [σ,V]≠0)</td><td>Grace</td><td>External operator that flips sign</td></tr>
+        <tr><td>Spin flip via external field</td><td>Conversion / regeneration</td><td>Sign reversal via external coupling</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="margin-top: 1.2rem; display: flex; flex-wrap: wrap; gap: 0.6rem;">
+    <span class="chip chip-gold"><i class="fas fa-check"></i> Binary spectrum</span>
+    <span class="chip chip-gold"><i class="fas fa-check"></i> Invariance under self‑ops</span>
+    <span class="chip chip-gold"><i class="fas fa-check"></i> External perturbation required</span>
+    <span class="chip chip-gold"><i class="fas fa-check"></i> Operations ≠ eigenvalue</span>
+  </div>
+
+  <!-- ===== 5. SEPARATOR TESTS ===== -->
+  <div class="sep"></div>
+  <div class="section-num">03</div>
+  <h2>Separator Tests</h2>
+  <div class="grid-4">
+    <!-- Test A -->
+    <div class="test-card">
+      <h4><i class="fas fa-sitemap" style="margin-right: 0.5rem; color: var(--gold);"></i> Test A · Structural Preservation</h4>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">Do relations survive under mapping? Binary spectrum, commutation, external flip all map exactly.</p>
+      <span class="test-pass"><i class="fas fa-check-circle"></i> PASS</span>
+      <div class="text-small" style="margin-top: 0.4rem;">Commutation relation preserved; external flip required in both domains.</div>
+    </div>
+    <!-- Test B -->
+    <div class="test-card">
+      <h4><i class="fas fa-random" style="margin-right: 0.5rem; color: var(--gold);"></i> Test B · Non‑Arbitrariness</h4>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">Could you swap +1/−1 or internal/external? Theologically asymmetric; swapping reverses content.</p>
+      <span class="test-pass"><i class="fas fa-check-circle"></i> PASS</span>
+      <div class="text-small" style="margin-top: 0.4rem;">Roles not interchangeable without reversing theological content.</div>
+    </div>
+    <!-- Test C -->
+    <div class="test-card">
+      <h4><i class="fas fa-ban" style="margin-right: 0.5rem; color: var(--gold);"></i> Test C · Constraint</h4>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">Does the mapping rule things out? Pelagianism is mathematically impossible under the mapping.</p>
+      <span class="test-pass"><i class="fas fa-check-circle"></i> PASS</span>
+      <div class="text-small" style="margin-top: 0.4rem;">Rules out self‑salvation; requires external grace for sign flip.</div>
+    </div>
+    <!-- Test D -->
+    <div class="test-card">
+      <h4><i class="fas fa-arrows-alt-h" style="margin-right: 0.5rem; color: var(--gold);"></i> Test D · Bidirectionality</h4>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">Does each side predict the other? Physics predicts grace structure; theology predicts conserved sign.</p>
+      <span class="test-pass"><i class="fas fa-check-circle"></i> PASS</span>
+      <div class="text-small" style="margin-top: 0.4rem;">Mutual constraint: both domains require external non‑commuting operator.</div>
+    </div>
+  </div>
+
+  <!-- ===== 6. CLASSIFICATION & EVIDENCE ===== -->
+  <div class="sep"></div>
+  <div class="section-num">04</div>
+  <h2>Classification &amp; Evidence</h2>
+  <div class="card" style="background: var(--bg-card);">
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
+      <div>
+        <span class="badge badge-green" style="font-size: 0.9rem; padding: 0.3rem 1.5rem;">Level 3 · Axiomatic Isomorphism</span>
+        <div style="margin-top: 1rem;">
+          <div><span class="fw-600">Confidence:</span> High (Reformed) / Medium (cross‑tradition) / Low (outside Christian)</div>
+          <div><span class="fw-600">Connection Count:</span> 9 elements · 6 direct ISO links</div>
+          <div><span class="fw-600">Laws Invoked:</span> Law 2 (Conservation), Law 5 (Dependence), Law 8 (Irreversibility), Law 9 (Grace)</div>
+        </div>
+      </div>
+      <div>
+        <div style="font-family: var(--font-heading); letter-spacing: 0.06em; color: var(--gold); margin-bottom: 0.5rem;">EVIDENCE BUNDLES</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+          <span class="chip">Rom 3:10‑12</span>
+          <span class="chip">Eph 2:8‑9</span>
+          <span class="chip">Matt 12:30</span>
+          <span class="chip">John 3:3</span>
+          <span class="chip">Rom 7:18‑19</span>
+          <span class="chip">Jer 13:23</span>
+          <span class="chip">Westminster IX</span>
+          <span class="chip">NMR/ESR</span>
+          <span class="chip">Constants of motion</span>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 1.5rem; border-top: 1px solid #1e1e1e; padding-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.8rem;">
+      <span class="chip chip-gold"><i class="fas-regular fa-link"></i> ISO-001 Trinity</span>
+      <span class="chip chip-gold"><i class="fas-regular fa-link"></i> ISO-002 Grace</span>
+      <span class="chip chip-gold"><i class="fas-regular fa-link"></i> ISO-003 Entropy/Sin</span>
+      <span class="chip chip-gold"><i class="fas-regular fa-link"></i> ISO-004 Fall</span>
+      <span class="chip chip-gold"><i class="fas-regular fa-link"></i> ISO-010 Observer</span>
+      <span class="chip chip-gold"><i class="fas-regular fa-link"></i> ISO-011 Superposition</span>
+    </div>
+  </div>
+
+  <!-- ===== 7. FALSIFICATION CRITERIA ===== -->
+  <div class="sep"></div>
+  <div class="section-num">05</div>
+  <h2>Falsification Criteria</h2>
+  <div class="falsify-box">
+    <p style="color: var(--danger); font-family: var(--font-heading); letter-spacing: 0.06em; margin-bottom: 0.8rem;"><i class="fas fa-exclamation-triangle"></i> KILL CONDITIONS — any one breaks the isomorphism</p>
+    <ul>
+      <li><strong>Show a genuine self‑salvation:</strong> a moral agent in clear opposition to God (−1) flips to full alignment (+1) through purely internal resources — no external grace, no revelation. Then [σ, U_self] ≠ 0 and the mapping fails.</li>
+      <li><strong>Show moral orientation is continuous, not binary:</strong> demonstrate a continuous spectrum between −1 and +1 with measurable intermediate values. Then the spectrum {±1} is the wrong model.</li>
+      <li><strong>Show that [σ, U_self] ≠ 0 in physics</strong> for the relevant operator (i.e., the sign operator changes under self‑evolution for a properly constructed system). This would undermine the mathematical underpinning.</li>
+      <li><strong>Show that grace can be self‑generated:</strong> if V_grace = U_self for some self‑operation, the internal/external distinction collapses and the mapping becomes trivial.</li>
+    </ul>
+  </div>
+
+  <!-- ===== 8. RELATED ISOMORPHISMS ===== -->
+  <div class="sep"></div>
+  <div class="section-num">06</div>
+  <h2>Related Isomorphisms</h2>
+  <div class="grid-2" style="margin-bottom: 1rem;">
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <i class="fas fa-link" style="color: var(--info);"></i>
+        <span class="fw-600">ISO-001</span> <span class="text-muted">Trinity</span>
+      </div>
+      <div class="text-small">The Son/Logos as the one who makes V_grace possible.</div>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--gold);">
+      <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <i class="fas fa-link" style="color: var(--gold);"></i>
+        <span class="fw-600">ISO-002</span> <span class="text-muted">Grace / Terminus Sui</span>
+      </div>
+      <div class="text-small">Grace IS V_grace — the external operator that does not commute with self‑effort.</div>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--danger);">
+      <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <i class="fas fa-link" style="color: var(--danger);"></i>
+        <span class="fw-600">ISO-003</span> <span class="text-muted">Entropy / Sin</span>
+      </div>
+      <div class="text-small">Sin as the condition of being in the −1 eigenstate.</div>
+    </div>
+    <div class="card" style="border-left: 3px solid #aaa;">
+      <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <i class="fas fa-link" style="color: #aaa;"></i>
+        <span class="fw-600">ISO-004</span> <span class="text-muted">Fall</span>
+      </div>
+      <div class="text-small">The Fall as the event that collapsed all humanity into the −1 eigenspace.</div>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--success);">
+      <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <i class="fas fa-link" style="color: var(--success);"></i>
+        <span class="fw-600">ISO-010</span> <span class="text-muted">Observer</span>
+      </div>
+      <div class="text-small">The observer’s sign determines what they can participate in.</div>
+    </div>
+    <div class="card" style="border-left: 3px solid #a855f7;">
+      <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <i class="fas fa-link" style="color: #a855f7;"></i>
+        <span class="fw-600">ISO-011</span> <span class="text-muted">Superposition / Collapse</span>
+      </div>
+      <div class="text-small">Collapse to ±1 as the resolution of moral superposition.</div>
+    </div>
+  </div>
+
+  <!-- ===== 9. FOOTER ===== -->
+  <div class="sep" style="margin-top: 3rem;"></div>
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 0 0.5rem;">
+    <div>
+      <div style="font-family: var(--font-heading); letter-spacing: 0.08em; color: var(--gold);">THEOPHYSICS RESEARCH PROGRAM</div>
+      <div class="text-small">POF 2828 · ISO-012 v1.0 · 2026-03-10</div>
+    </div>
+    <div class="footer-seal" style="border: none; padding: 0; margin: 0; text-align: right;">
+      “The math points to God. The math does not contain God.”
+    </div>
+  </div>
+  <div style="border-top: 1px solid #1a1a1a; margin-top: 1rem; padding-top: 0.8rem; text-align: center; font-size: 0.7rem; color: #3a3a3a; font-family: var(--font-mono);">
+    <i class="fas-regular fa-copyright"></i> faiththruphysics.com · registry entry ISO-012 · generated 2026
+  </div>
+
+</div>
+</body>
+</html>

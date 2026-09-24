@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>ISO-011 · Superposition & Collapse · Theophysics Registry</title>
+  <!-- Google Fonts: Oswald, Inter, JetBrains Mono, Crimson Text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border: #2a2a2a;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    /* headings */
+    h1, h2, h3, h4, .heading-font {
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+    }
+    h1 { font-size: 2.4rem; letter-spacing: 0.08em; }
+    h2 { font-size: 1.8rem; letter-spacing: 0.06em; margin-bottom: 0.5rem; }
+    h3 { font-size: 1.3rem; letter-spacing: 0.04em; }
+    .section-number {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.25;
+      line-height: 1;
+      margin-right: 0.75rem;
+    }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    .section-header h2 { margin-bottom: 0; }
+    .gradient-sep {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 2.5rem 0 2rem 0;
+      opacity: 0.5;
+    }
+    /* cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: border-color 0.2s;
+    }
+    .card-gold { border-top: 4px solid var(--gold); }
+    .card-blue { border-top: 4px solid var(--info); }
+    .card-red { border-top: 4px solid var(--danger); background: #1c1010; }
+    .card-green { border-top: 4px solid var(--success); }
+    .card-yellow { border-top: 4px solid #eab308; }
+    /* grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .grid-2, .grid-4 { grid-template-columns: 1fr; }
+      h1 { font-size: 1.8rem; }
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+    /* hero */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      background: linear-gradient(135deg, rgba(212,175,55,0.08), transparent 70%);
+      border: 1px solid #2a2a1a;
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .law-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: #0a0a0a;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .pull-quote {
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: 1.1rem;
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+      margin: 1rem 0;
+      color: #d0d7de;
+    }
+    .equation-card {
+      background: #0d0d0d;
+      border: 1px solid #2a2a1a;
+      border-radius: 14px;
+      padding: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+    .eq { color: #e6c87c; }
+    .arrow-map { color: var(--gold); font-size: 1.8rem; text-align: center; display: block; margin: 0.5rem 0; }
+    /* table */
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    .mapping-table thead {
+      background: #1a1508;
+      border-bottom: 2px solid var(--gold);
+    }
+    .mapping-table th {
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+      padding: 0.9rem 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .mapping-table td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid #1e1e1e;
+      vertical-align: top;
+    }
+    .mapping-table tbody tr:hover { background: #121212; }
+    .mono { font-family: var(--font-mono); font-size: 0.85rem; }
+    .chip {
+      display: inline-block;
+      background: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 30px;
+      padding: 0.2rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin: 0.2rem 0.2rem;
+    }
+    .chip-gold { border-color: var(--gold); color: var(--gold); }
+    .chip-success { border-color: var(--success); color: var(--success); }
+    .chip-danger { border-color: var(--danger); color: var(--danger); }
+    .chip-info { border-color: var(--info); color: var(--info); }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .badge-green { background: #0f2e1a; color: var(--success); border: 1px solid var(--success); }
+    .badge-yellow { background: #2a2410; color: #eab308; border: 1px solid #eab308; }
+    .badge-red { background: #2a1010; color: var(--danger); border: 1px solid var(--danger); }
+    .test-pass { color: var(--success); font-weight: 700; }
+    .test-fail { color: var(--danger); font-weight: 700; }
+    .footer-seal {
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.7;
+      font-size: 0.9rem;
+      border-top: 1px solid #1e1e1e;
+      padding-top: 1rem;
+      margin-top: 1.5rem;
+    }
+    .verse-ref {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: #6b7280;
+    }
+    .evidence-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .iso-link {
+      background: #111;
+      border: 1px solid #2a2a2a;
+      border-radius: 30px;
+      padding: 0.3rem 1.2rem;
+      font-size: 0.8rem;
+      color: var(--info);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .iso-link:hover { border-color: var(--info); }
+    .kill-list {
+      list-style: none;
+      padding: 0;
+    }
+    .kill-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #1e1e1e;
+      display: flex;
+      gap: 0.75rem;
+    }
+    .kill-list li:last-child { border-bottom: none; }
+    .kill-list i { color: var(--danger); margin-top: 0.2rem; }
+  </style>
+</head>
+<body>
+
+<!-- REGISTRY HEADER -->
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+  <div style="display: flex; align-items: center; gap: 1rem;">
+    <span style="font-size: 3rem; font-family: var(--font-heading); color: var(--gold); font-weight: 700; line-height: 1;">Φ</span>
+    <div>
+      <h1 style="margin: 0; line-height: 1.2;">THEOPHYSICS REGISTRY</h1>
+      <div style="font-size: 0.85rem; color: var(--text-muted);">ISO-011 · Superposition &amp; Collapse / Mystery &amp; Revelation</div>
+    </div>
+  </div>
+  <div style="display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: center; margin-top: 0.5rem;">
+    <span class="badge badge-green">LEVEL 3 · ISOMORPHISM</span>
+    <span class="chip chip-gold"><i class="fa-regular fa-star" style="margin-right: 0.3rem;"></i>Confidence: MEDIUM-HIGH</span>
+    <span class="chip chip-info">v1.0 · 2026-03-10</span>
+  </div>
+</div>
+
+<!-- HERO BANNER -->
+<div class="hero-grid">
+  <div>
+    <span class="law-badge"><i class="fa-regular fa-scale-balanced" style="margin-right: 0.4rem;"></i>LAW 2 · 6 · 7 · 8</span>
+    <h2 style="font-size: 2rem; margin: 0.25rem 0 0.25rem 0;">QUANTUM SUPERPOSITION <span style="color: var(--gold);">⟷</span> THEOLOGICAL MYSTERY</h2>
+    <div style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">Collapse · Irreversibility · Landauer Bound · Ἐφάπαξ</div>
+    <div class="pull-quote">
+      “The process shape — multiplicity → resolution → irreversibility — is identical in both domains. The thermodynamic cost structure is a non‑trivial parallel.”
+    </div>
+  </div>
+  <div class="equation-card">
+    <div><span class="eq">|ψ⟩ = Σᵢ cᵢ|aᵢ⟩</span> <span style="color: #6b7280; font-size: 0.7rem;">superposition</span></div>
+    <div><span class="eq">|ψ⟩ → |aₖ⟩</span> <span style="color: #6b7280; font-size: 0.7rem;">collapse</span></div>
+    <div><span class="eq">ΔQ ≥ kT ln 2</span> <span style="color: #6b7280; font-size: 0.7rem;">Landauer bound</span></div>
+    <div style="margin-top: 0.5rem; border-top: 1px solid #2a2a1a; padding-top: 0.5rem;">
+      <span class="eq">iℏ ∂|ψ⟩/∂t = Ĥ|ψ⟩ − iγΦ(|ψ⟩⟨ψ| − ρ<sub>class</sub>)|ψ⟩</span>
+      <span style="color: #6b7280; font-size: 0.7rem;"> (E6.2)</span>
+    </div>
+    <span class="arrow-map">⟷</span>
+    <div style="color: #d0d7de; font-family: var(--font-mono); font-size: 0.85rem;">
+      <div>μυστήριον → ἀποκάλυψις</div>
+      <div>ἐφάπαξ (Hebrews 7:27; 9:12; 10:10)</div>
+      <div style="color: #6b7280; font-size: 0.7rem;">“the mystery hidden for ages, now revealed”</div>
+    </div>
+  </div>
+</div>
+
+<!-- DOMAIN SPECIFICATIONS -->
+<div class="grid-2" style="margin-bottom: 1.5rem;">
+  <div class="card card-blue">
+    <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.75rem;">
+      <i class="fa-solid fa-atom" style="color: var(--info); font-size: 1.8rem;"></i>
+      <h3 style="margin: 0;">Domain A · Physics</h3>
+    </div>
+    <p><strong>Quantum Superposition &amp; Wavefunction Collapse</strong> — A system in superposition <span class="mono">|ψ⟩ = Σᵢ cᵢ|aᵢ⟩</span> is genuinely in multiple states simultaneously. Measurement irreversibly collapses to a single eigenstate <span class="mono">|aₖ⟩</span>. Landauer bound sets thermodynamic cost <span class="mono">kT ln 2</span> per bit erased. Modified Schrödinger equation (E6.2) proposes Φ‑dependent collapse rate.</p>
+  </div>
+  <div class="card card-gold">
+    <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.75rem;">
+      <i class="fa-solid fa-church" style="color: var(--gold); font-size: 1.8rem;"></i>
+      <h3 style="margin: 0;">Domain B · Christian Theology</h3>
+    </div>
+    <p><strong>Mystery (μυστήριον) &amp; Revelation (ἀποκάλυψις)</strong> — Divine truth hidden in multiplicity before revelation. The Incarnation (Galatians 4:4) is the “collapse event”: the eternal Logos takes definite historical form. Salvation‑historical events are <em>ephapax</em> — once for all, irreversible (Hebrews 7:27; 9:12; 10:10). Revelation costs — ultimately the Cross.</p>
+  </div>
+</div>
+
+<!-- THE ISOMORPHIC MAPPING -->
+<div class="section-header">
+  <span class="section-number">03</span>
+  <h2>THE ISOMORPHIC MAPPING</h2>
+</div>
+<div style="overflow-x: auto; margin-bottom: 2rem;">
+  <table class="mapping-table">
+    <thead>
+      <tr><th style="width: 25%;">Physics (Domain A)</th><th style="width: 25%;">Theology (Domain B)</th><th style="width: 50%;">Structural Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="mono">|ψ⟩ = Σᵢ cᵢ|aᵢ⟩</td><td>Mystery (μυστήριον) — hidden truth, multiple interpretive possibilities</td><td>Pre‑resolution multiplicity; both are genuine multiplicity (ontological in A, epistemological in B)</td></tr>
+      <tr><td class="mono">|ψ⟩ → |aₖ⟩</td><td>Revelation (ἀποκάλυψις) — Incarnation, definite disclosure</td><td>Resolution event: collapse to a single definite state / person</td></tr>
+      <tr><td>Irreversible collapse (Copenhagen)</td><td>Ἐφάπαξ — once for all (Hebrews 7:27; 9:12; 10:10)</td><td>One‑way process; prior state cannot be recovered</td></tr>
+      <tr><td>Landauer bound: ΔQ ≥ kT ln 2</td><td>“Cost” of revelation — Incarnation, Crucifixion</td><td>Structural thermodynamic parallel; not metric but formal</td></tr>
+      <tr><td>Temporal order: superposition before collapse</td><td>Temporal order: mystery before revelation (Colossians 1:26)</td><td>Fixed before/after structure; not reversible</td></tr>
+      <tr><td>Modified Schrödinger (E6.2): <span class="mono">iℏ∂|ψ⟩/∂t = Ĥ|ψ⟩ − iγΦ(|ψ⟩⟨ψ|−ρ<sub>class</sub>)|ψ⟩</span></td><td>Revelation rate depends on “readiness” / coherence of recipient</td><td>Testable prediction: collapse rate ∝ Φ (integrated information)</td></tr>
+      <tr><td>Measurement problem / projection postulate</td><td>“When the fullness of time had come” (Galatians 4:4)</td><td>Collapse at a specific, appointed moment</td></tr>
+      <tr><td>Decoherence / loss of coherence</td><td>Progressive hardening of revelation in salvation history</td><td>Both involve transition from indefinite to definite</td></tr>
+      <tr><td>Information content: {cᵢ} → aₖ</td><td>Typological multiplicity → singular Christological fulfillment</td><td>Information compression / resolution</td></tr>
+      <tr><td>No hidden “real state” underneath (Copenhagen)</td><td>God knows the outcome (Acts 15:18) — epistemological hiddenness</td><td>Deepest strain: ontological vs. epistemological multiplicity</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SEPARATOR TESTS -->
+<div class="section-header">
+  <span class="section-number">04</span>
+  <h2>SEPARATOR TESTS</h2>
+</div>
+<div class="grid-4">
+  <div class="card">
+    <h3 style="display: flex; justify-content: space-between; align-items: center;">Test A · Structural Preservation <span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span></h3>
+    <p style="font-size: 0.9rem; margin-top: 0.3rem;">Do relations survive under mapping? The temporal ordering (multiplicity → resolution → irreversibility) is preserved in both domains. Collapse and revelation both resolve a prior indefinite state. Irreversibility is structural in both (Copenhagen projection / <em>ephapax</em>).</p>
+  </div>
+  <div class="card">
+    <h3 style="display: flex; justify-content: space-between; align-items: center;">Test B · Non‑Arbitrariness <span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span></h3>
+    <p style="font-size: 0.9rem; margin-top: 0.3rem;">Cannot swap roles: collapse cannot precede superposition; revelation cannot precede mystery. The fixed temporal order is forced by the definitions in both domains. Symmetry breaking is strict.</p>
+  </div>
+  <div class="card">
+    <h3 style="display: flex; justify-content: space-between; align-items: center;">Test C · Constraint <span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span></h3>
+    <p style="font-size: 0.9rem; margin-top: 0.3rem;">The mapping rules things out: if mystery is not genuine multiplicity (if OT prophecy was always univocal), the mapping fails. If many‑worlds is correct (no collapse), the strong version fails. E6.2 predicts Φ‑dependent collapse — a falsifiable constraint.</p>
+  </div>
+  <div class="card">
+    <h3 style="display: flex; justify-content: space-between; align-items: center;">Test D · Bidirectionality <span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span></h3>
+    <p style="font-size: 0.9rem; margin-top: 0.3rem;">Each side predicts the other: Landauer bound suggests revelation has a cost; <em>ephapax</em> suggests collapse should be irreversible. E6.2 is a direct cross‑domain prediction. The mapping generates novel questions in both domains.</p>
+  </div>
+</div>
+
+<!-- CLASSIFICATION & EVIDENCE -->
+<div class="section-header">
+  <span class="section-number">05</span>
+  <h2>CLASSIFICATION &amp; EVIDENCE</h2>
+</div>
+<div class="grid-2" style="margin-bottom: 2rem;">
+  <div class="card">
+    <h3>Classification Panel</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0.8rem 0;">
+      <span class="badge badge-green">LEVEL 3 ISOMORPHISM</span>
+      <span class="chip chip-gold">Confidence: MEDIUM-HIGH</span>
+      <span class="chip chip-info">Process‑Topological</span>
+      <span class="chip chip-success">7 direct ISO connections</span>
+    </div>
+    <p style="font-size: 0.9rem;"><strong>Reframe Level:</strong> Structural (Level 2) → Axiomatic (Level 3) if E6.2 confirmed. <strong>Element density:</strong> 10 framework elements — highest of any ISO.</p>
+    <p style="font-size: 0.9rem;"><strong>Laws invoked:</strong> Law 2 (Conservation), Law 6 (Entropy), Law 7 (Actualization), Law 8 (Irreversibility).</p>
+  </div>
+  <div class="card">
+    <h3>Evidence Bundles</h3>
+    <div class="evidence-grid">
+      <span class="chip chip-gold">Colossians 1:26-27</span>
+      <span class="chip chip-gold">Galatians 4:4</span>
+      <span class="chip chip-gold">Hebrews 7:27; 9:12; 10:10</span>
+      <span class="chip chip-gold">Romans 11:29</span>
+      <span class="chip chip-gold">Romans 16:25-26</span>
+      <span class="chip chip-info">Double‑slit experiment</span>
+      <span class="chip chip-info">Landauer bound (Berut et al. 2012)</span>
+      <span class="chip chip-info">Decoherence (Haroche lab)</span>
+      <span class="chip chip-success">E6.2 testable prediction</span>
+    </div>
+    <p style="font-size: 0.85rem; margin-top: 0.8rem; color: var(--text-muted);"><span class="verse-ref">Acts 15:18</span> · <span class="verse-ref">Ephesians 3:3-6</span> · <span class="verse-ref">Colossians 1:26</span></p>
+  </div>
+</div>
+
+<!-- FALSIFICATION CRITERIA -->
+<div class="section-header">
+  <span class="section-number">06</span>
+  <h2>FALSIFICATION CRITERIA</h2>
+</div>
+<div class="card card-red" style="margin-bottom: 2rem;">
+  <h3 style="color: var(--danger);"><i class="fa-regular fa-triangle-exclamation" style="margin-right: 0.5rem;"></i>Kill Conditions</h3>
+  <ul class="kill-list">
+    <li><i class="fa-regular fa-circle-xmark"></i><span><strong>E6.2 falsified:</strong> If collapse rate is independent of Φ (integrated information), the modified Schrödinger equation fails and the strongest specific prediction collapses.</span></li>
+    <li><i class="fa-regular fa-circle-xmark"></i><span><strong>Reversible collapse demonstrated:</strong> If quantum error correction or post‑selection fully recovers the original superposition with all amplitude information, irreversibility in Domain A fails.</span></li>
+    <li><i class="fa-regular fa-circle-xmark"></i><span><strong>Mystery not genuine multiplicity:</strong> If Old Testament prophecy was always univocal (one clear interpretation from the start), the “mystery as superposition” mapping fails.</span></li>
+    <li><i class="fa-regular fa-circle-xmark"></i><span><strong>Many‑worlds confirmed:</strong> If Everett interpretation is correct, there is no collapse — the strong version of this ISO fails. (Branching irreversibility might partially salvage it.)</span></li>
+  </ul>
+</div>
+
+<!-- RELATED ISOMORPHISMS -->
+<div class="section-header">
+  <span class="section-number">07</span>
+  <h2>RELATED ISOMORPHISMS</h2>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2.5rem;">
+  <a href="#" class="iso-link">ISO-001 · Trinity (Spirit as collapse operator)</a>
+  <a href="#" class="iso-link">ISO-003 · Entropy/Sin (irreversibility &amp; thermodynamic cost)</a>
+  <a href="#" class="iso-link">ISO-004 · Fall (first irreversible collapse event)</a>
+  <a href="#" class="iso-link">ISO-006 · Information (collapse as information resolution)</a>
+  <a href="#" class="iso-link">ISO-008 · Coherence (decoherence during collapse)</a>
+  <a href="#" class="iso-link">ISO-010 · Observer (agent of collapse/revelation)</a>
+  <a href="#" class="iso-link">ISO-012 · Sign (collapse to ±1 eigenvalue)</a>
+</div>
+
+<!-- FOOTER -->
+<div style="border-top: 1px solid #1e1e1e; padding-top: 1.5rem; margin-top: 1rem;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+    <div>
+      <span style="font-family: var(--font-heading); letter-spacing: 0.1em; color: var(--gold);">THEOPHYSICS RESEARCH PROGRAM</span>
+      <span style="color: var(--text-muted); margin-left: 1rem; font-size: 0.8rem;">POF 2828</span>
+      <span style="color: var(--text-muted); margin-left: 1rem; font-size: 0.8rem;">v1.0 · ISO-011</span>
+    </div>
+    <div class="footer-seal">
+      “The math points to God. The math does not contain God.”
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

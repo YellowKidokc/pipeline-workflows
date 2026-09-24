@@ -1,0 +1,502 @@
+{
+  "definitions": [
+    {
+      "term": "Isomorphism",
+      "category": "math",
+      "definition": "A mapping between two systems that shows they have the same structure, so that operations in one system correspond to operations in the other.",
+      "example": "A map of a subway system is isomorphic to the actual subway lines: each station on the map corresponds to a real station, and connections match.",
+      "grade_level": "college",
+      "first_appearance": "Title: Isomorphism Explorer"
+    },
+    {
+      "term": "bidirectional",
+      "category": "academic",
+      "definition": "Going in both directions; a two-way relationship.",
+      "example": "A two-way street allows traffic to flow both ways, just like a bidirectional mapping works from system A to system B and back.",
+      "grade_level": "10",
+      "first_appearance": "Formal mappings between physics, theology, and mathematics. Each isomorphism is bidirectional, falsifiable, and grounded in both domains."
+    },
+    {
+      "term": "falsifiable",
+      "category": "academic",
+      "definition": "Able to be proven wrong by evidence or experiment.",
+      "example": "The claim 'all swans are white' is falsifiable because finding one black swan would prove it false.",
+      "grade_level": "12",
+      "first_appearance": "Formal mappings between physics, theology, and mathematics. Each isomorphism is bidirectional, falsifiable, and grounded in both domains."
+    },
+    {
+      "term": "grounded in both domains",
+      "category": "framework",
+      "definition": "Based on solid evidence and reasoning from two different fields of study.",
+      "example": "A theory that uses both physics and theology to explain something is grounded in both domains.",
+      "grade_level": "12",
+      "first_appearance": "Formal mappings between physics, theology, and mathematics. Each isomorphism is bidirectional, falsifiable, and grounded in both domains."
+    },
+    {
+      "term": "Trinity",
+      "category": "theology",
+      "definition": "The Christian doctrine that God is one being in three persons: Father, Son, and Holy Spirit.",
+      "example": "The Trinity is like a three-leaf clover: three distinct leaves but one plant.",
+      "grade_level": "10",
+      "first_appearance": "ISO-001_Trinity_Mathematical_Structure"
+    },
+    {
+      "term": "Terminus Sui Grace",
+      "category": "framework",
+      "definition": "A concept meaning 'grace that is its own end' or self-sufficient grace, possibly a unique term in this framework.",
+      "example": "Like a gift that is valuable in itself, not because of what it leads to.",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-002_Terminus_Sui_Grace"
+    },
+    {
+      "term": "Entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system; the tendency for things to become more mixed up over time.",
+      "example": "A messy room has higher entropy than a tidy one, and it naturally gets messier without effort.",
+      "grade_level": "12",
+      "first_appearance": "ISO-003_Entropy_Sin"
+    },
+    {
+      "term": "Sin",
+      "category": "theology",
+      "definition": "An act, thought, or state that goes against God's will or moral law.",
+      "example": "Lying or stealing are examples of sin in many religious traditions.",
+      "grade_level": "10",
+      "first_appearance": "ISO-003_Entropy_Sin"
+    },
+    {
+      "term": "Quantum Collapse",
+      "category": "physics",
+      "definition": "The process by which a quantum system in multiple possible states (superposition) 'chooses' one definite state when measured.",
+      "example": "Like a spinning coin that is both heads and tails until you catch it and it becomes one or the other.",
+      "grade_level": "college",
+      "first_appearance": "ISO-004_Quantum_Collapse_Fall"
+    },
+    {
+      "term": "Fall",
+      "category": "theology",
+      "definition": "The event in Christian theology when humanity first disobeyed God, leading to a broken relationship with God and a sinful nature.",
+      "example": "The story of Adam and Eve eating the forbidden fruit is called the Fall.",
+      "grade_level": "10",
+      "first_appearance": "ISO-004_Quantum_Collapse_Fall"
+    },
+    {
+      "term": "Fiat",
+      "category": "theology",
+      "definition": "A decree or command, especially God's creative command 'Let there be...' in the Bible.",
+      "example": "When God said 'Let there be light,' that was a fiat.",
+      "grade_level": "12",
+      "first_appearance": "ISO-005_Fiat_Phantom_Energy"
+    },
+    {
+      "term": "Phantom Energy",
+      "category": "physics",
+      "definition": "A hypothetical form of dark energy that might cause the universe to expand faster and faster, eventually tearing everything apart.",
+      "example": "Imagine a balloon being blown up so fast it eventually pops—phantom energy is like that for the universe.",
+      "grade_level": "college",
+      "first_appearance": "ISO-005_Fiat_Phantom_Energy"
+    },
+    {
+      "term": "Information Primacy",
+      "category": "physics",
+      "definition": "The idea that information is the most fundamental thing in the universe, more basic than matter or energy.",
+      "example": "Like thinking of the universe as a giant computer where bits of information are the building blocks of everything.",
+      "grade_level": "college",
+      "first_appearance": "ISO-006_Information_Primacy"
+    },
+    {
+      "term": "Self-Grounding Substrate",
+      "category": "framework",
+      "definition": "A foundation or base that supports itself, not needing anything else to exist.",
+      "example": "Like a table that holds itself up without legs—it's its own support.",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-007_Self_Grounding_Substrate"
+    },
+    {
+      "term": "Coherence",
+      "category": "physics",
+      "definition": "The property of waves being in step with each other, leading to clear patterns; also used more broadly for order and consistency.",
+      "example": "A choir singing in perfect harmony has coherence; a crowd shouting randomly does not.",
+      "grade_level": "12",
+      "first_appearance": "ISO-008_Coherence_Order"
+    },
+    {
+      "term": "Compression",
+      "category": "math",
+      "definition": "Reducing the amount of data needed to represent information, often by finding patterns.",
+      "example": "Zipping a computer file makes it smaller by removing repeated parts.",
+      "grade_level": "10",
+      "first_appearance": "ISO-009_Compression_Simplicity"
+    },
+    {
+      "term": "Observer Participation",
+      "category": "physics",
+      "definition": "The idea that the act of observing or measuring a system can affect its state, especially in quantum mechanics.",
+      "example": "Checking if a light is on might change whether it's on or off in some quantum experiments.",
+      "grade_level": "college",
+      "first_appearance": "ISO-010_Observer_Participation"
+    },
+    {
+      "term": "Superposition",
+      "category": "physics",
+      "definition": "The ability of a quantum system to be in multiple states at the same time until it is measured.",
+      "example": "A cat that is both alive and dead at the same time (Schrödinger's cat) is in a superposition.",
+      "grade_level": "college",
+      "first_appearance": "ISO-011_Superposition_Collapse"
+    },
+    {
+      "term": "Collapse",
+      "category": "physics",
+      "definition": "The sudden change of a quantum system from a superposition of states to a single definite state when measured.",
+      "example": "When you open the box, Schrödinger's cat 'collapses' to either alive or dead.",
+      "grade_level": "college",
+      "first_appearance": "ISO-011_Superposition_Collapse"
+    },
+    {
+      "term": "Sign Operator",
+      "category": "math",
+      "definition": "A mathematical operation that determines the sign (positive or negative) of a number or function.",
+      "example": "The sign operator tells you if a number is + or -.",
+      "grade_level": "college",
+      "first_appearance": "ISO-012_Sign_Operator"
+    },
+    {
+      "term": "Grace Operator",
+      "category": "framework",
+      "definition": "A proposed mathematical or conceptual operation representing divine grace, possibly transforming a system from a state of sin to righteousness.",
+      "example": "Like a 'forgiveness button' that resets a relationship to a good state.",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-013_Grace_Operator"
+    },
+    {
+      "term": "Soul Field",
+      "category": "framework",
+      "definition": "A hypothetical field or substance that carries the essence of a soul, analogous to physical fields like the electromagnetic field.",
+      "example": "Like a magnetic field around a magnet, but for the soul.",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-014_Soul_Field"
+    },
+    {
+      "term": "Moral Physics",
+      "category": "framework",
+      "definition": "The study of moral or ethical laws using the methods and concepts of physics.",
+      "example": "Treating good and evil like forces that affect people's behavior, similar to gravity.",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-015_Moral_Physics"
+    },
+    {
+      "term": "Eschatological Attractors",
+      "category": "framework",
+      "definition": "End-points or goals in the future that pull history toward them, like a final destiny in theology.",
+      "example": "Like a magnet pulling iron filings toward it—the end of the world is an attractor.",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-016_Eschatological_Attractors"
+    },
+    {
+      "term": "Quantum Gravity Unification",
+      "category": "physics",
+      "definition": "The attempt to combine quantum mechanics (the physics of tiny particles) with general relativity (the physics of gravity and large-scale structure) into one theory.",
+      "example": "Trying to find a single set of rules that works for both atoms and galaxies.",
+      "grade_level": "college",
+      "first_appearance": "ISO-017_Quantum_Gravity_Unification"
+    },
+    {
+      "term": "Cosmological Grace",
+      "category": "framework",
+      "definition": "The idea that grace (unmerited favor) operates on a cosmic scale, affecting the entire universe.",
+      "example": "Like a universal 'reset button' that keeps the universe from falling into complete disorder.",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-018_Cosmological_Grace"
+    },
+    {
+      "term": "Boundary Conditions",
+      "category": "math",
+      "definition": "Constraints or limits placed on a system at its edges, which determine how the system behaves inside.",
+      "example": "The temperature at the ends of a metal rod affects how heat flows through it.",
+      "grade_level": "college",
+      "first_appearance": "ISO-019_Boundary_Conditions"
+    },
+    {
+      "term": "AI Consciousness",
+      "category": "academic",
+      "definition": "The question of whether artificial intelligence can have subjective experience or self-awareness like humans do.",
+      "example": "Could a computer ever feel pain or joy, or is it just processing data?",
+      "grade_level": "12",
+      "first_appearance": "ISO-020_AI_Consciousness"
+    },
+    {
+      "term": "Falsifiability Architecture",
+      "category": "framework",
+      "definition": "A structure or system designed to ensure that a theory can be tested and potentially proven false.",
+      "example": "A scientific theory that makes clear predictions that can be checked by experiments.",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-021_Falsifiability_Architecture"
+    },
+    {
+      "term": "Ten Laws Integration",
+      "category": "framework",
+      "definition": "The process of combining the Ten Commandments (or ten laws) with other systems of thought.",
+      "example": "Showing how the Ten Commandments relate to natural laws like gravity.",
+      "grade_level": "12",
+      "first_appearance": "ISO-022_Ten_Laws_Integration"
+    },
+    {
+      "term": "Consilience",
+      "category": "academic",
+      "definition": "The principle that evidence from independent, unrelated sources can converge to strong conclusions.",
+      "example": "If a detective finds fingerprints, a witness, and a motive all pointing to the same person, that's consilience.",
+      "grade_level": "college",
+      "first_appearance": "ISO-023_Consilience"
+    },
+    {
+      "term": "Worldview Uniqueness",
+      "category": "philosophy",
+      "definition": "The idea that a particular worldview (way of seeing the world) is distinct and not reducible to others.",
+      "example": "The Christian worldview has unique claims about God, humanity, and salvation that other worldviews don't share.",
+      "grade_level": "12",
+      "first_appearance": "ISO-024_Worldview_Uniqueness"
+    },
+    {
+      "term": "Immunology Soteriology",
+      "category": "framework",
+      "definition": "A comparison between the immune system (biology) and the doctrine of salvation (theology).",
+      "example": "Like how vaccines train the immune system to fight disease, grace trains the soul to resist sin.",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-025_Immunology_Soteriology"
+    },
+    {
+      "term": "Addiction Sin Bondage",
+      "category": "framework",
+      "definition": "The idea that sin can be like an addiction, trapping a person in a cycle of harmful behavior.",
+      "example": "Just as a drug addict feels compelled to use drugs, a person trapped in sin feels unable to stop sinning.",
+      "grade_level": "12",
+      "first_appearance": "ISO-026_Addiction_Sin_Bondage"
+    },
+    {
+      "term": "Epidemiology Sin Propagation",
+      "category": "framework",
+      "definition": "The study of how sin spreads through a population, like a disease.",
+      "example": "Like how a virus spreads from person to person, bad habits or sins can spread through a community.",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-027_Epidemiology_Sin_Propagation"
+    },
+    {
+      "term": "Ecology Ecclesiology",
+      "category": "framework",
+      "definition": "A comparison between ecosystems (ecology) and the church (ecclesiology).",
+      "example": "Like a forest where different species depend on each other, the church has different members with different roles.",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-028_Ecology_Ecclesiology"
+    },
+    {
+      "term": "Music Theory Trinitarian Harmony",
+      "category": "framework",
+      "definition": "A comparison between musical harmony and the Trinity, where three notes (like Father, Son, Spirit) create a harmonious whole.",
+      "example": "A chord with three notes sounds harmonious, just as the three persons of the Trinity are in perfect harmony.",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-029_Music_Theory_Trinitarian_Harmony"
+    },
+    {
+      "term": "Genetics Scriptural Transmission",
+      "category": "framework",
+      "definition": "A comparison between how genes pass traits from parents to children and how scripture is passed down through generations.",
+      "example": "Like DNA carrying information, the Bible carries God's message through history.",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-030_Genetics_Scriptural_Transmission"
+    },
+    {
+      "term": "Network Science Ecclesiology",
+      "category": "framework",
+      "definition": "The study of the church using network theory, looking at connections between members.",
+      "example": "Like a social network where people are nodes and friendships are links, the church is a network of believers.",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-031_Network_Science_Ecclesiology"
+    },
+    {
+      "term": "Attachment Theory Prayer Worship",
+      "category": "framework",
+      "definition": "A comparison between how children form bonds with parents (attachment theory) and how believers relate to God through prayer and worship.",
+      "example": "Like a child feeling secure when near a parent, prayer can make a believer feel close to God.",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-032_Attachment_Theory_Prayer_Worship"
+    },
+    {
+      "term": "Pharmacology Grace Mechanics",
+      "category": "framework",
+      "definition": "The study of how grace works like a medicine, with dosages, effects, and mechanisms.",
+      "example": "Like a drug that heals a disease, grace heals the soul from sin.",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-033_Pharmacology_Grace_Mechanics"
+    },
+    {
+      "term": "Control Theory Providence",
+      "category": "framework",
+      "definition": "A comparison between control systems (like a thermostat) and divine providence (God's guidance of the world).",
+      "example": "Like a thermostat that keeps a room at a set temperature, God's providence keeps the universe on track.",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-034_Control_Theory_Providence"
+    },
+    {
+      "term": "Cryptography Mystery Revelation",
+      "category": "framework",
+      "definition": "A comparison between codes and ciphers (cryptography) and how God reveals hidden truths (mystery and revelation).",
+      "example": "Like decoding a secret message, understanding God's plan requires a key (faith).",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-035_Cryptography_Mystery_Revelation"
+    },
+    {
+      "term": "Fluid Dynamics Pneumatology",
+      "category": "framework",
+      "definition": "A comparison between the flow of fluids (fluid dynamics) and the work of the Holy Spirit (pneumatology).",
+      "example": "Like wind or water moving, the Holy Spirit moves through people and situations.",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-036_Fluid_Dynamics_Pneumatology"
+    },
+    {
+      "term": "Beer Lambert Transaction Extraction",
+      "category": "framework",
+      "definition": "A comparison between the Beer-Lambert law (how light is absorbed by a material) and the extraction of sin or grace in a transaction.",
+      "example": "Like how a filter absorbs certain colors of light, grace absorbs the effects of sin.",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-037_Beer_Lambert_Transaction_Extraction"
+    },
+    {
+      "term": "Fulbright Isomorphism",
+      "category": "framework",
+      "definition": "A specific isomorphism named after the Fulbright program, emphasizing light-bearing knowledge and disciplined exchange across boundaries.",
+      "example": "Like an exchange student bringing knowledge from one culture to another, this isomorphism bridges disciplines.",
+      "grade_level": "specialist",
+      "first_appearance": "ISO-038Fulbright Isomorphism"
+    },
+    {
+      "term": "ontology",
+      "category": "philosophy",
+      "definition": "The branch of philosophy that studies the nature of being, existence, and reality.",
+      "example": "Asking 'What does it mean to exist?' is an ontological question.",
+      "grade_level": "college",
+      "first_appearance": "Implicit in the framework (e.g., 'Self-Grounding Substrate')"
+    },
+    {
+      "term": "epistemology",
+      "category": "philosophy",
+      "definition": "The branch of philosophy that studies knowledge: how we know what we know.",
+      "example": "Asking 'How can we be sure that science is true?' is an epistemological question.",
+      "grade_level": "college",
+      "first_appearance": "Implicit in the framework (e.g., 'Falsifiability Architecture')"
+    },
+    {
+      "term": "contingent",
+      "category": "philosophy",
+      "definition": "Something that depends on something else for its existence; not necessary.",
+      "example": "A tree is contingent because it needs soil, water, and sunlight to exist.",
+      "grade_level": "college",
+      "first_appearance": "Implicit in the framework (e.g., 'Self-Grounding Substrate')"
+    },
+    {
+      "term": "necessary",
+      "category": "philosophy",
+      "definition": "Something that must exist and cannot not exist; self-sufficient.",
+      "example": "In philosophy, God is often considered a necessary being because God doesn't depend on anything else.",
+      "grade_level": "college",
+      "first_appearance": "Implicit in the framework (e.g., 'Self-Grounding Substrate')"
+    },
+    {
+      "term": "empirical",
+      "category": "academic",
+      "definition": "Based on observation or experience, not just theory.",
+      "example": "A scientist doing an experiment to test a hypothesis is using empirical methods.",
+      "grade_level": "12",
+      "first_appearance": "Implicit in the framework (e.g., 'falsifiable')"
+    },
+    {
+      "term": "axiom",
+      "category": "math",
+      "definition": "A statement that is accepted as true without proof, used as a starting point for reasoning.",
+      "example": "In geometry, 'a straight line is the shortest distance between two points' is an axiom.",
+      "grade_level": "12",
+      "first_appearance": "Implicit in the framework (e.g., 'Isomorphism Explorer')"
+    },
+    {
+      "term": "theorem",
+      "category": "math",
+      "definition": "A statement that has been proven to be true based on axioms and other theorems.",
+      "example": "The Pythagorean theorem (a² + b² = c²) is a proven mathematical statement.",
+      "grade_level": "10",
+      "first_appearance": "Implicit in the framework (e.g., 'Isomorphism Explorer')"
+    },
+    {
+      "term": "chi-field",
+      "category": "framework",
+      "definition": "A hypothetical field in the Theophysics framework that may represent a fundamental aspect of reality, possibly related to information or consciousness.",
+      "example": "Like a field that carries moral or spiritual information, similar to how a magnetic field carries magnetic force.",
+      "grade_level": "specialist",
+      "first_appearance": "Implicit in the framework (e.g., 'Soul Field')"
+    },
+    {
+      "term": "moral curvature",
+      "category": "framework",
+      "definition": "A concept suggesting that moral or ethical 'space' can be curved, analogous to how gravity curves physical space.",
+      "example": "Like a heavy ball on a rubber sheet creating a dip, sin might 'curve' the moral landscape around it.",
+      "grade_level": "specialist",
+      "first_appearance": "Implicit in the framework (e.g., 'Moral Physics')"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation, especially how humans are saved from sin and reconciled to God.",
+      "example": "Christian soteriology asks: How does Jesus' death save people?",
+      "grade_level": "college",
+      "first_appearance": "ISO-025_Immunology_Soteriology"
+    },
+    {
+      "term": "hamartiology",
+      "category": "theology",
+      "definition": "The study of sin, its origin, nature, and consequences.",
+      "example": "Hamartiology asks: What is sin and how does it affect humanity?",
+      "grade_level": "college",
+      "first_appearance": "Implicit in the framework (e.g., 'Sin' and 'Entropy Sin')"
+    },
+    {
+      "term": "sanctification",
+      "category": "theology",
+      "definition": "The process of becoming holy or set apart for God's purposes.",
+      "example": "A person growing in kindness and faith is being sanctified.",
+      "grade_level": "12",
+      "first_appearance": "Implicit in the framework (e.g., 'Grace Operator')"
+    },
+    {
+      "term": "atonement",
+      "category": "theology",
+      "definition": "The act of making amends for wrongdoing, especially Jesus' sacrifice to reconcile humanity with God.",
+      "example": "Saying sorry and making things right is a form of atonement.",
+      "grade_level": "12",
+      "first_appearance": "Implicit in the framework (e.g., 'Grace Operator')"
+    },
+    {
+      "term": "eigenmode",
+      "category": "physics",
+      "definition": "A specific pattern of vibration or oscillation that a system can sustain naturally.",
+      "example": "A guitar string has eigenmodes that produce different notes when plucked.",
+      "grade_level": "college",
+      "first_appearance": "Implicit in the framework (e.g., 'Coherence Order')"
+    },
+    {
+      "term": "Lagrangian",
+      "category": "physics",
+      "definition": "A function that summarizes the dynamics of a system, used to derive equations of motion.",
+      "example": "The Lagrangian for a pendulum tells you how it will swing.",
+      "grade_level": "college",
+      "first_appearance": "Implicit in the framework (e.g., 'Moral Physics')"
+    },
+    {
+      "term": "Noether",
+      "category": "math",
+      "definition": "Refers to Emmy Noether's theorem, which states that every symmetry in physics corresponds to a conservation law.",
+      "example": "The symmetry of time leads to conservation of energy.",
+      "grade_level": "college",
+      "first_appearance": "Implicit in the framework (e.g., 'Isomorphism Explorer')"
+    },
+    {
+      "term": "tensor",
+      "category": "math",
+      "definition": "A mathematical object that describes linear relationships between vectors, scalars, and other tensors, used in physics for quantities like stress and curvature.",

@@ -1,0 +1,568 @@
+{
+  "definitions": [
+    {
+      "term": "boundary conditions",
+      "category": "physics",
+      "definition": "Extra rules that a solution to an equation must follow at the edges of the problem, like a fence that keeps the answer from wandering off.",
+      "example": "If you're solving for the temperature along a metal rod, the boundary conditions might be that the ends are kept at 0°C and 100°C.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "uniqueness theorems",
+      "category": "math",
+      "definition": "Mathematical proofs that show a problem has only one correct answer.",
+      "example": "A puzzle with exactly one solution has a uniqueness theorem; a puzzle with many solutions does not.",
+      "grade_level": "12",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "partial differential equations",
+      "category": "physics",
+      "definition": "Equations that describe how things change in space and time, using rates of change (derivatives).",
+      "example": "The equation that predicts how heat spreads through a pan is a partial differential equation.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "variational problems",
+      "category": "math",
+      "definition": "Problems where you find the shape or path that makes something as small or as large as possible.",
+      "example": "Finding the shortest path between two points on a curved surface is a variational problem.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "solution space",
+      "category": "math",
+      "definition": "The set of all possible answers to an equation or problem.",
+      "example": "If an equation has three possible answers, those three answers together form the solution space.",
+      "grade_level": "12",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "finite-dimensional family",
+      "category": "math",
+      "definition": "A group of solutions that can be described by a limited number of independent choices.",
+      "example": "All straight lines on a flat sheet of paper form a two-dimensional family (you choose slope and intercept).",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "chi-field",
+      "category": "framework",
+      "definition": "A made-up field in the Theophysics framework that represents the spiritual or moral state of a person or universe.",
+      "example": "Think of it like a spiritual 'temperature' that changes based on sin and grace.",
+      "grade_level": "specialist",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "necessary and sufficient",
+      "category": "academic",
+      "definition": "Necessary means you must have it; sufficient means having it is enough. Together they mean exactly what's needed and nothing more.",
+      "example": "Having a key is necessary to open a locked door; turning the key is sufficient. Both together are necessary and sufficient.",
+      "grade_level": "11",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "ill-posed",
+      "category": "math",
+      "definition": "A problem that is missing something important, so it either has no answer, too many answers, or the answer changes wildly with tiny changes.",
+      "example": "Asking 'What is the number?' without any clues is an ill-posed problem.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "existence",
+      "category": "academic",
+      "definition": "Whether a solution actually exists at all.",
+      "example": "The problem 'Find a number that is both even and odd' has no existence.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "stability",
+      "category": "physics",
+      "definition": "How much a solution changes when you make a tiny change to the problem. A stable solution barely changes.",
+      "example": "A pencil standing on its tip is unstable; a pencil lying flat is stable.",
+      "grade_level": "11",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "second-order PDE",
+      "category": "physics",
+      "definition": "A partial differential equation that involves second derivatives (rates of change of rates of change).",
+      "example": "The wave equation that describes how a guitar string vibrates is a second-order PDE.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "spacetime",
+      "category": "physics",
+      "definition": "The four-dimensional fabric that combines the three dimensions of space with the one dimension of time.",
+      "example": "Everything that happens in the universe happens somewhere in spacetime.",
+      "grade_level": "11",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "self-grounding",
+      "category": "philosophy",
+      "definition": "The idea that something can be the reason for its own existence, without needing something else to cause it.",
+      "example": "If God is self-grounding, He doesn't need a creator; He just exists by His own nature.",
+      "grade_level": "college",
+      "first_appearance": "BC1"
+    },
+    {
+      "term": "infinite regress",
+      "category": "philosophy",
+      "definition": "An endless chain of causes where each thing is caused by something before it, with no beginning.",
+      "example": "If every book is copied from an earlier book, and that from an earlier one, you never get to the first book — that's an infinite regress.",
+      "grade_level": "12",
+      "first_appearance": "BC1"
+    },
+    {
+      "term": "necessary being",
+      "category": "philosophy",
+      "definition": "A being that must exist and cannot not exist, unlike ordinary things that could have been different.",
+      "example": "A triangle must have three sides; a necessary being must exist, just like that.",
+      "grade_level": "12",
+      "first_appearance": "BC1"
+    },
+    {
+      "term": "Trinity",
+      "category": "theology",
+      "definition": "The Christian belief that God is one being in three persons: Father, Son, and Holy Spirit.",
+      "example": "Like one pie cut into three slices — each slice is fully pie, but there's only one pie.",
+      "grade_level": "10",
+      "first_appearance": "BC2"
+    },
+    {
+      "term": "irreducible modes",
+      "category": "theology",
+      "definition": "Ways of being that cannot be broken down into simpler parts. In the Trinity, each person is a distinct mode of God.",
+      "example": "Water can be liquid, ice, or steam — three modes that can't be reduced to just one.",
+      "grade_level": "college",
+      "first_appearance": "BC2"
+    },
+    {
+      "term": "Triune God",
+      "category": "theology",
+      "definition": "Another name for the Trinity: God who is three-in-one.",
+      "example": "Christians worship the Triune God: Father, Son, and Holy Spirit.",
+      "grade_level": "10",
+      "first_appearance": "BC2"
+    },
+    {
+      "term": "conservation",
+      "category": "physics",
+      "definition": "The principle that some quantity (like energy or charge) stays the same over time, even if it changes form.",
+      "example": "When you drop a ball, its energy changes from potential to kinetic, but the total energy stays the same.",
+      "grade_level": "10",
+      "first_appearance": "BC3"
+    },
+    {
+      "term": "moral immutability",
+      "category": "theology",
+      "definition": "The idea that God's moral character never changes; He is always good and just.",
+      "example": "If God is morally immutable, He won't suddenly decide that lying is okay tomorrow.",
+      "grade_level": "college",
+      "first_appearance": "BC3"
+    },
+    {
+      "term": "Gödel boundary",
+      "category": "math",
+      "definition": "A limit based on Gödel's incompleteness theorems, which show that any sufficiently complex system cannot prove all truths about itself.",
+      "example": "A computer program can't check if it itself will ever crash — that's a Gödel boundary.",
+      "grade_level": "college",
+      "first_appearance": "BC4"
+    },
+    {
+      "term": "revelation",
+      "category": "theology",
+      "definition": "When God shows or tells humans something about Himself that they couldn't figure out on their own.",
+      "example": "The Bible is considered by Christians to be a form of revelation from God.",
+      "grade_level": "10",
+      "first_appearance": "BC4"
+    },
+    {
+      "term": "entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system. In closed systems, entropy always increases over time.",
+      "example": "A messy bedroom tends to get messier on its own — that's entropy in action.",
+      "grade_level": "11",
+      "first_appearance": "BC5"
+    },
+    {
+      "term": "degradation",
+      "category": "physics",
+      "definition": "The process of breaking down or becoming worse over time.",
+      "example": "A car left outside will rust and degrade over the years.",
+      "grade_level": "10",
+      "first_appearance": "BC5"
+    },
+    {
+      "term": "Fall",
+      "category": "theology",
+      "definition": "In Christianity, the event when Adam and Eve disobeyed God, bringing sin and death into the world.",
+      "example": "The Fall is like the original 'oops' that messed up everything for everyone.",
+      "grade_level": "10",
+      "first_appearance": "BC5"
+    },
+    {
+      "term": "sin nature",
+      "category": "theology",
+      "definition": "The tendency all humans have to do wrong things, inherited from Adam and Eve's original sin.",
+      "example": "It's like a built-in selfishness that makes it easier to do bad than good.",
+      "grade_level": "10",
+      "first_appearance": "BC5"
+    },
+    {
+      "term": "non-unitary",
+      "category": "physics",
+      "definition": "In quantum mechanics, a process that doesn't preserve total probability, meaning information can be lost or added.",
+      "example": "A measurement that collapses a quantum state is non-unitary because it changes the system unpredictably.",
+      "grade_level": "college",
+      "first_appearance": "BC6"
+    },
+    {
+      "term": "external intervention",
+      "category": "physics",
+      "definition": "Something from outside a system that changes it, rather than the system changing on its own.",
+      "example": "If a video game character gets a power-up from outside the game, that's external intervention.",
+      "grade_level": "11",
+      "first_appearance": "BC6"
+    },
+    {
+      "term": "grace operator",
+      "category": "framework",
+      "definition": "In the Theophysics framework, a mathematical way to represent God's grace acting on the chi-field.",
+      "example": "Think of it like a 'forgiveness button' that resets the spiritual state.",
+      "grade_level": "specialist",
+      "first_appearance": "BC6"
+    },
+    {
+      "term": "atonement",
+      "category": "theology",
+      "definition": "The act of making up for a wrong or sin, especially through Jesus's death on the cross in Christianity.",
+      "example": "If you break a window, paying to fix it is a form of atonement.",
+      "grade_level": "10",
+      "first_appearance": "BC6"
+    },
+    {
+      "term": "actualization",
+      "category": "philosophy",
+      "definition": "The process of making something real or bringing it into existence.",
+      "example": "Turning a blueprint into a real house is actualization.",
+      "grade_level": "12",
+      "first_appearance": "BC7"
+    },
+    {
+      "term": "observer-dependent collapse",
+      "category": "physics",
+      "definition": "In quantum mechanics, the idea that a particle's state becomes definite only when it is measured by an observer.",
+      "example": "A spinning coin is both heads and tails until you catch it — that's observer-dependent collapse.",
+      "grade_level": "college",
+      "first_appearance": "BC7"
+    },
+    {
+      "term": "incarnation",
+      "category": "theology",
+      "definition": "The Christian belief that God became human in the person of Jesus Christ.",
+      "example": "Like an author stepping into their own story as a character.",
+      "grade_level": "10",
+      "first_appearance": "BC7"
+    },
+    {
+      "term": "free will",
+      "category": "philosophy",
+      "definition": "The ability to make choices that are not forced by anything else.",
+      "example": "Choosing chocolate or vanilla ice cream is an exercise of free will.",
+      "grade_level": "10",
+      "first_appearance": "BC8"
+    },
+    {
+      "term": "voluntary coupling",
+      "category": "framework",
+      "definition": "In the Theophysics framework, the idea that a person's free will connects to the chi-field only if they choose to.",
+      "example": "Like a Wi-Fi connection that only works if you accept the terms.",
+      "grade_level": "specialist",
+      "first_appearance": "BC8"
+    },
+    {
+      "term": "covenant",
+      "category": "theology",
+      "definition": "A serious agreement or promise between God and people, like a contract.",
+      "example": "The rainbow after the flood is a sign of God's covenant with Noah.",
+      "grade_level": "10",
+      "first_appearance": "BC8"
+    },
+    {
+      "term": "consent",
+      "category": "academic",
+      "definition": "Permission given freely, without being forced.",
+      "example": "You need consent before borrowing someone's phone.",
+      "grade_level": "9",
+      "first_appearance": "BC8"
+    },
+    {
+      "term": "jointly necessary",
+      "category": "academic",
+      "definition": "A set of conditions where each one is required; if any is missing, the whole thing fails.",
+      "example": "For a car to run, you need gas, a battery, and oil — all are jointly necessary.",
+      "grade_level": "11",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "jointly sufficient",
+      "category": "academic",
+      "definition": "A set of conditions that, when all are met, guarantee the result.",
+      "example": "Having a key, turning it, and pushing the door are jointly sufficient to open a locked door.",
+      "grade_level": "11",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "worldview",
+      "category": "philosophy",
+      "definition": "A person's overall way of understanding the world, including their beliefs about God, meaning, and morality.",
+      "example": "A scientist and a religious person might have different worldviews.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Advaita",
+      "category": "language",
+      "definition": "A school of Hindu philosophy that teaches that everything is one and the individual self is the same as ultimate reality (Brahman). Pronounced: ad-VAI-ta.",
+      "example": "Advaita says you and the universe are not really separate.",
+      "grade_level": "college",
+      "first_appearance": "Worldview table"
+    },
+    {
+      "term": "Materialism",
+      "category": "philosophy",
+      "definition": "The belief that only physical matter exists, and there is no God, soul, or spirit.",
+      "example": "A materialist thinks thoughts are just brain activity, not a soul.",
+      "grade_level": "11",
+      "first_appearance": "Worldview table"
+    },
+    {
+      "term": "Atheism",
+      "category": "philosophy",
+      "definition": "The belief that there is no God or gods.",
+      "example": "An atheist does not believe in any deity.",
+      "grade_level": "10",
+      "first_appearance": "Worldview table"
+    },
+    {
+      "term": "Deism",
+      "category": "theology",
+      "definition": "The belief that God created the universe but does not interfere with it afterward.",
+      "example": "A deist thinks God wound up the universe like a clock and let it run.",
+      "grade_level": "11",
+      "first_appearance": "Worldview table"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A basic statement that is accepted as true without proof, used as a starting point for reasoning.",
+      "example": "In geometry, 'two points determine a line' is an axiom.",
+      "grade_level": "11",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "axiom systems",
+      "category": "academic",
+      "definition": "A collection of axioms that together form the foundation of a theory.",
+      "example": "Euclidean geometry is built on an axiom system of five postulates.",
+      "grade_level": "12",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "self-reference",
+      "category": "philosophy",
+      "definition": "When a statement or system refers to itself, which can lead to paradoxes.",
+      "example": "This sentence is false' is a self-referential paradox.",
+      "grade_level": "12",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "internally coherent",
+      "category": "academic",
+      "definition": "When all parts of a system fit together without contradiction.",
+      "example": "A story where the hero is both alive and dead is not internally coherent.",
+      "grade_level": "12",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "logical paradox",
+      "category": "philosophy",
+      "definition": "A statement that seems to contradict itself, like 'This statement is false.'",
+      "example": "The barber who shaves everyone who doesn't shave themselves is a logical paradox.",
+      "grade_level": "11",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "law of identity",
+      "category": "philosophy",
+      "definition": "The logical principle that a thing is itself and not something else: A = A.",
+      "example": "A cat is a cat, not a dog — that's the law of identity.",
+      "grade_level": "12",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "empirical falsifiability",
+      "category": "academic",
+      "definition": "The ability to test a claim by seeing if it could be proven wrong through observation or experiment.",
+      "example": "All swans are white' is falsifiable because finding one black swan would prove it wrong.",
+      "grade_level": "12",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "empirical claims",
+      "category": "academic",
+      "definition": "Statements that can be tested by observing the world.",
+      "example": "Water boils at 100°C is an empirical claim.",
+      "grade_level": "11",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "historical",
+      "category": "academic",
+      "definition": "Relating to events that happened in the past, which cannot be repeated in a lab.",
+      "example": "The claim that Julius Caesar crossed the Rubicon is historical, not repeatable.",
+      "grade_level": "9",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "degrees of freedom",
+      "category": "physics",
+      "definition": "The number of independent ways a system can change or move.",
+      "example": "A point on a flat surface has two degrees of freedom: left-right and up-down.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "Cauchy-Kowalevski theorem",
+      "category": "math",
+      "definition": "A theorem that guarantees a unique solution exists for certain partial differential equations, as long as the equations and initial conditions are smooth.",
+      "example": "It's like a guarantee that if you set up a physics problem smoothly, there's exactly one answer.",
+      "grade_level": "graduate",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "analytic PDEs",
+      "category": "math",
+      "definition": "Partial differential equations that can be written as a power series (an infinite polynomial) and are very smooth.",
+      "example": "Most simple wave equations are analytic PDEs.",
+      "grade_level": "graduate",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "Lax-Milgram theorem",
+      "category": "math",
+      "definition": "A theorem that guarantees a unique solution exists for certain types of problems (elliptic PDEs) under specific conditions.",
+      "example": "It's a mathematical tool that says 'yes, this problem has exactly one answer.'",
+      "grade_level": "graduate",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "elliptic problems",
+      "category": "math",
+      "definition": "A type of partial differential equation that describes steady-state situations, like the shape of a stretched membrane.",
+      "example": "The equation for a soap bubble's shape is an elliptic problem.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "pathology",
+      "category": "academic",
+      "definition": "An abnormal or harmful condition; in this context, a specific way a worldview breaks down.",
+      "example": "A car that won't start has a pathology in its engine.",
+      "grade_level": "12",
+      "first_appearance": "Prediction in Domain B"
+    },
+    {
+      "term": "Pelagian incoherence",
+      "category": "theology",
+      "definition": "A contradiction in the belief (Pelagianism) that humans can save themselves without God's grace.",
+      "example": "Saying you can fix a broken elevator with no tools is Pelagian incoherence.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B"
+    },
+    {
+      "term": "determinism",
+      "category": "philosophy",
+      "definition": "The belief that every event is caused by previous events and nothing is truly free.",
+      "example": "If determinism is true, your choice of cereal was already decided by the past.",
+      "grade_level": "11",
+      "first_appearance": "Prediction in Domain B"
+    },
+    {
+      "term": "divine compulsion",
+      "category": "theology",
+      "definition": "The idea that God forces people to act a certain way, taking away their free will.",
+      "example": "If God makes you love Him, that's divine compulsion, not free choice.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain B"
+    },
+    {
+      "term": "Calvinism",
+      "category": "theology",
+      "definition": "A branch of Christianity that emphasizes God's control over everything, including who is saved.",
+      "example": "Calvinism teaches that God chooses who goes to heaven, not humans.",
+      "grade_level": "11",
+      "first_appearance": "Prediction in Domain B"
+    },
+    {
+      "term": "falsification",
+      "category": "academic",
+      "definition": "The act of proving a claim false by showing evidence against it.",
+      "example": "Finding a black swan falsifies the claim that all swans are white.",
+      "grade_level": "12",
+      "first_appearance": "Falsification"
+    },
+    {
+      "term": "circularity",
+      "category": "academic",
+      "definition": "A flaw in reasoning where the conclusion is assumed in the premises, like a snake eating its own tail.",
+      "example": "Saying 'the Bible is true because it says it is true' is circular.",
+      "grade_level": "12",
+      "first_appearance": "Honest Assessment"
+    },
+    {
+      "term": "exclusivist claim",
+      "category": "theology",
+      "definition": "A claim that only one religion or path is correct and all others are wrong.",
+      "example": "Saying 'only Christians go to heaven' is an exclusivist claim.",
+      "grade_level": "11",
+      "first_appearance": "Honest Assessment"
+    },
+    {
+      "term": "domain-independent principles",
+      "category": "academic",
+      "definition": "Rules or truths that apply to all areas of knowledge, not just one specific field.",
+      "example": "The law of non-contradiction (something can't be both true and false) is domain-independent.",
+      "grade_level": "college",
+      "first_appearance": "Honest Assessment"
+    },
+    {
+      "term": "presuppositional",
+      "category": "philosophy",
+      "definition": "Based on assumptions that are taken for granted before any reasoning begins.",
+      "example": "If you assume God exists before looking at evidence, your reasoning is presuppositional.",
+      "grade_level": "college",
+      "first_appearance": "Honest Assessment"
+    },
+    {
+      "term": "libertarian free will",
+      "category": "philosophy",
+      "definition": "The belief that free will is real and not determined by anything else, including God or physics.",
+      "example": "Libertarian free will means you could have chosen the other flavor of ice cream.",
+      "grade_level": "college",
+      "first_appearance": "Honest Assessment"
+    },
+    {
+      "term": "apologetics",
+      "category": "theology",
+      "definition": "The practice of defending a religious belief using arguments and evidence.",
+      "example": "Writing a book to show why Christianity is reasonable is apologetics.",
+      "

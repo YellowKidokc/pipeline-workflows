@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>ISO-021 · Falsifiability Architecture · Theophysics Registry</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ----- RESET & VARIABLES ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --gold-line: rgba(212, 175, 55, 0.25);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --blue-border: #3b82f6;
+      --gold-border: #d4af37;
+      --card-bg: #121212;
+      --card-border: #2a2a2a;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+    html { background: var(--bg); color: var(--text); font-family: var(--font-body); font-weight: 300; line-height: 1.6; }
+    body { max-width: 1280px; margin: 0 auto; padding: 2rem 1.5rem 3rem; background: var(--bg); }
+    h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 500; color: #f0f0f0; }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .gold-text { color: var(--gold); }
+    .mono { font-family: var(--font-mono); font-size: 0.9rem; }
+    .small-mono { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); }
+    .section-number { font-family: var(--font-heading); font-size: 3.2rem; font-weight: 700; color: rgba(212,175,55,0.15); line-height: 1; margin-right: 0.75rem; }
+    .gradient-sep { height: 2px; background: linear-gradient(90deg, var(--gold), transparent); margin: 2rem 0 1.5rem 0; opacity: 0.4; }
+    .badge { display: inline-block; padding: 0.2rem 0.9rem; border-radius: 30px; font-family: var(--font-heading); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: var(--text); }
+    .badge-green { background: rgba(34,197,94,0.15); border-color: var(--success); color: var(--success); }
+    .badge-yellow { background: rgba(234,179,8,0.15); border-color: #eab308; color: #eab308; }
+    .badge-gold { background: rgba(212,175,55,0.15); border-color: var(--gold); color: var(--gold); }
+    .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); transition: border 0.2s; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+    .grid-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) {
+      .grid-2, .grid-4 { grid-template-columns: 1fr; gap: 1.2rem; }
+      body { padding: 1rem 0.8rem 2rem; }
+      .section-number { font-size: 2.4rem; }
+    }
+    .icon-circle { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); }
+    .gold-left-border { border-left: 4px solid var(--gold); padding-left: 1.2rem; }
+    .table-wrap { overflow-x: auto; }
+    table.iso-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    table.iso-table th { background: #1c1c1c; color: var(--gold); font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; padding: 0.9rem 1rem; border-bottom: 2px solid var(--gold); text-align: left; }
+    table.iso-table td { padding: 0.8rem 1rem; border-bottom: 1px solid #2a2a2a; vertical-align: top; }
+    table.iso-table tr:last-child td { border-bottom: none; }
+    table.iso-table tr:hover td { background: rgba(212,175,55,0.03); }
+    .test-pass { color: var(--success); font-weight: 600; }
+    .test-fail { color: var(--danger); font-weight: 600; }
+    .test-partial { color: #eab308; font-weight: 600; }
+    .falsify-box { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.25); border-radius: var(--radius); padding: 1.5rem; }
+    .falsify-box h4 { color: var(--danger); }
+    .evidence-chip { display: inline-block; background: rgba(74,158,255,0.1); border: 1px solid rgba(74,158,255,0.2); color: var(--info); padding: 0.2rem 0.9rem; border-radius: 30px; font-size: 0.75rem; font-family: var(--font-mono); margin: 0.2rem 0.3rem; }
+    .footer-seal { font-family: var(--font-quote); font-style: italic; font-size: 0.9rem; color: var(--gold-dim); border-top: 1px solid #2a2a2a; padding-top: 1.2rem; margin-top: 2rem; text-align: center; }
+    .hero-quote { font-family: var(--font-quote); font-style: italic; font-size: 1.1rem; line-height: 1.5; color: #d0d7de; }
+    .eq-card { background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 10px; padding: 1.2rem; font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.8; }
+    .arrow-mapping { color: var(--gold); font-size: 1.6rem; margin: 0 0.4rem; }
+    .badge-lg { font-size: 0.85rem; padding: 0.3rem 1.2rem; }
+  </style>
+</head>
+<body>
+
+<!-- ===== 1. REGISTRY HEADER ===== -->
+<header style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.8rem; margin-bottom: 0.5rem;">
+  <div style="display: flex; align-items: center; gap: 0.8rem;">
+    <span style="font-size: 2.8rem; font-family: var(--font-heading); color: var(--gold); font-weight: 300; letter-spacing: 0;">Φ</span>
+    <div>
+      <h1 style="font-size: 1.6rem; margin: 0; line-height: 1.2;">THEOPHYSICS REGISTRY</h1>
+      <span style="font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.04em;">ISO-021 · Falsifiability Architecture</span>
+    </div>
+  </div>
+  <div style="display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; margin-left: auto; align-items: center;">
+    <span class="badge badge-yellow badge-lg">Level 2 · Correspondence</span>
+    <span class="badge badge-gold" style="border-color: var(--gold); color: var(--gold);"><i class="fa-regular fa-chart-line" style="margin-right: 0.3rem;"></i>Confidence: Low</span>
+    <span class="small-mono" style="border-left: 1px solid #333; padding-left: 0.8rem;">v1.0 · 2026-03-10</span>
+  </div>
+</header>
+
+<!-- ===== 2. HERO BANNER ===== -->
+<div style="background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(10,10,10,0.95) 80%); border-radius: var(--radius); padding: 2rem 1.8rem; margin: 1.8rem 0 2.2rem; border: 1px solid rgba(212,175,55,0.12);">
+  <div class="grid-2" style="align-items: start;">
+    <!-- left -->
+    <div>
+      <span class="badge badge-gold" style="margin-bottom: 0.8rem; display: inline-block;"><i class="fa-regular fa-scale-balanced"></i> Law · A18.1 / A18.2</span>
+      <h2 style="font-size: 2rem; font-weight: 600; line-height: 1.2; margin: 0.3rem 0 0.2rem;">Philosophy of Science <span style="color: var(--gold); font-weight: 300; margin: 0 0.3rem;">⇄</span> Christian Theology</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.2rem;">Falsifiability · Popperian demarcation · 6‑sigma · fides quaerens intellectum</p>
+      <div class="gold-left-border hero-quote" style="margin-top: 0.2rem;">
+        “Theology, properly done, is not anti‑rational but shares structural features with scientific inquiry — an iterative loop of hypothesis, test, and revision.”
+      </div>
+    </div>
+    <!-- right: equation card -->
+    <div class="eq-card">
+      <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+        <div><span style="color: var(--info);">Domain A</span> <span style="color: var(--text-muted);">(Science)</span></div>
+        <div style="padding-left: 0.5rem; border-left: 2px solid var(--info);">
+          H → P → O → falsification ∨ confirmation<br>
+          <span style="color: var(--text-muted);">6‑σ threshold: p &lt; 3.4×10⁻⁶</span>
+        </div>
+        <div style="text-align: center; font-size: 1.4rem; color: var(--gold); margin: 0.2rem 0;">⟷</div>
+        <div><span style="color: var(--gold);">Domain B</span> <span style="color: var(--text-muted);">(Theology)</span></div>
+        <div style="padding-left: 0.5rem; border-left: 2px solid var(--gold);">
+          F → U → (E,S,T,R) → revision ∨ deepening<br>
+          <span style="color: var(--text-muted);">“faith seeking understanding” loop</span>
+        </div>
+        <div style="margin-top: 0.6rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid #2a2a2a; padding-top: 0.5rem;">
+          <i class="fa-regular fa-copy"></i> mapping: hypothesis ⇄ faith commitment · prediction ⇄ expected consequences · falsification ⇄ revision
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 3. DOMAIN SPECIFICATIONS ===== -->
+<div style="margin: 2.5rem 0 1.8rem;">
+  <div style="display: flex; align-items: baseline; gap: 0.4rem; margin-bottom: 0.2rem;">
+    <span class="section-number">01</span>
+    <h2 style="font-size: 1.5rem; margin: 0;">Domain Specifications</h2>
+  </div>
+  <div class="gradient-sep"></div>
+  <div class="grid-2">
+    <!-- Domain A -->
+    <div class="card" style="border-top: 4px solid var(--blue-border);">
+      <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem;">
+        <div class="icon-circle" style="border-color: var(--blue-border); color: var(--info);"><i class="fa-solid fa-flask"></i></div>
+        <div>
+          <h3 style="font-size: 1.1rem; margin: 0;">Domain A · Physics / Philosophy of Science</h3>
+          <span class="small-mono">A18.1 · A18.2 · Popperian demarcation</span>
+        </div>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">A valid scientific theory must generate predictions that can, in principle, be shown false. Gold standard: 6‑sigma (p &lt; 3.4×10⁻⁶). Method: hypothesize → predict → test → revise or reject. Self‑correcting epistemic engine.</p>
+      <div style="margin-top: 0.6rem; font-family: var(--font-mono); font-size: 0.8rem; background: #0d0d0d; padding: 0.5rem 0.8rem; border-radius: 6px;">
+        H → P → O → falsification ∨ confirmation (6σ)
+      </div>
+    </div>
+    <!-- Domain B -->
+    <div class="card" style="border-top: 4px solid var(--gold-border);">
+      <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem;">
+        <div class="icon-circle" style="border-color: var(--gold); color: var(--gold);"><i class="fa-solid fa-cross"></i></div>
+        <div>
+          <h3 style="font-size: 1.1rem; margin: 0;">Domain B · Christian Theology</h3>
+          <span class="small-mono">Isaiah 1:18 · 1 Thess 5:21 · Anselm</span>
+        </div>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">Biblical and classical theology invites rational scrutiny: “Come now, let us reason together.” Faith seeking understanding. Doctrine tested against Scripture, tradition, reason, experience (Wesleyan Quadrilateral). Iterative refinement, not blind assent.</p>
+      <div style="margin-top: 0.6rem; font-family: var(--font-mono); font-size: 0.8rem; background: #0d0d0d; padding: 0.5rem 0.8rem; border-radius: 6px;">
+        F → U → (E,S,T,R) → revision ∨ deepening
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 4. THE ISOMORPHIC MAPPING ===== -->
+<div style="margin: 2.5rem 0 1.8rem;">
+  <div style="display: flex; align-items: baseline; gap: 0.4rem; margin-bottom: 0.2rem;">
+    <span class="section-number">02</span>
+    <h2 style="font-size: 1.5rem; margin: 0;">The Isomorphic Mapping</h2>
+  </div>
+  <div class="gradient-sep"></div>
+  <div class="table-wrap">
+    <table class="iso-table">
+      <thead>
+        <tr><th>Scientific Method</th><th>Theological Epistemology</th><th>Structural Role</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Hypothesis</td><td>Faith commitment / doctrine</td><td>Starting framework</td></tr>
+        <tr><td>Prediction</td><td>Expected consequences of belief (moral, experiential, historical)</td><td>Derivation from framework</td></tr>
+        <tr><td>Observation / experiment</td><td>Experience, historical evidence, rational analysis</td><td>Test data</td></tr>
+        <tr><td>Falsification</td><td>Revision of understanding (heresy detection, doctrinal development)</td><td>Error correction</td></tr>
+        <tr><td>Theory survival after testing</td><td>Deepened faith through tested understanding</td><td>Confirmation</td></tr>
+        <tr><td>Peer review / replication</td><td>Community discernment (councils, tradition, scholarly debate)</td><td>Social epistemic check</td></tr>
+        <tr><td>Paradigm shift (Kuhn)</td><td>Reformation / doctrinal development</td><td>Large‑scale framework revision</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 0.6rem 1.5rem;">
+    <span><i class="fa-regular fa-circle-check" style="color: var(--gold);"></i> Shared: iterative refinement, falsifiability as virtue, community validation, willingness to revise</span>
+    <span><i class="fa-regular fa-circle-xmark" style="color: var(--text-muted);"></i> NOT claimed: same method, 6‑sigma for theology, science as faith, all claims testable</span>
+  </div>
+</div>
+
+<!-- ===== 5. SEPARATOR TESTS ===== -->
+<div style="margin: 2.5rem 0 1.8rem;">
+  <div style="display: flex; align-items: baseline; gap: 0.4rem; margin-bottom: 0.2rem;">
+    <span class="section-number">03</span>
+    <h2 style="font-size: 1.5rem; margin: 0;">Separator Tests</h2>
+  </div>
+  <div class="gradient-sep"></div>
+  <div class="grid-4">
+    <!-- Test A -->
+    <div class="card">
+      <h4 style="font-size: 0.9rem; letter-spacing: 0.06em; color: var(--gold);"><i class="fa-regular fa-sitemap"></i> Test A · Structural Preservation</h4>
+      <p style="font-size: 0.85rem; margin: 0.5rem 0;">Do relations survive under mapping? The iterative loop maps cleanly; quantitative apparatus does not.</p>
+      <span class="test-partial"><i class="fa-regular fa-circle-check"></i> PARTIAL PASS</span>
+      <div class="small-mono" style="margin-top: 0.4rem;">loop structure preserved · sigma threshold fails</div>
+    </div>
+    <!-- Test B -->
+    <div class="card">
+      <h4 style="font-size: 0.9rem; letter-spacing: 0.06em; color: var(--gold);"><i class="fa-regular fa-arrow-right-arrow-left"></i> Test B · Non‑Arbitrariness</h4>
+      <p style="font-size: 0.85rem; margin: 0.5rem 0;">Swap test: iterative structure swaps cleanly; quantitative apparatus does not transfer.</p>
+      <span class="test-partial"><i class="fa-regular fa-circle-check"></i> PARTIAL PASS</span>
+      <div class="small-mono" style="margin-top: 0.4rem;">epistemic architecture swaps · methodology fails</div>
+    </div>
+    <!-- Test C -->
+    <div class="card">
+      <h4 style="font-size: 0.9rem; letter-spacing: 0.06em; color: var(--gold);"><i class="fa-regular fa-ban"></i> Test C · Constraint</h4>
+      <p style="font-size: 0.85rem; margin: 0.5rem 0;">Does the mapping rule things out? Weak: too generic — applies to many rational activities.</p>
+      <span class="test-fail"><i class="fa-regular fa-circle-xmark"></i> FAIL</span>
+      <div class="small-mono" style="margin-top: 0.4rem;">triviality concern: hypothesis‑test‑revise loop is universal</div>
+    </div>
+    <!-- Test D -->
+    <div class="card">
+      <h4 style="font-size: 0.9rem; letter-spacing: 0.06em; color: var(--gold);"><i class="fa-regular fa-arrow-left-long"></i><i class="fa-regular fa-arrow-right-long"></i> Test D · Bidirectionality</h4>
+      <p style="font-size: 0.85rem; margin: 0.5rem 0;">Science→Theology: structural template. Theology→Science: tacit commitments. Thin flow.</p>
+      <span class="test-fail"><i class="fa-regular fa-circle-xmark"></i> FAIL</span>
+      <div class="small-mono" style="margin-top: 0.4rem;">asymmetric · each domain has better internal resources</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 6. CLASSIFICATION & EVIDENCE ===== -->
+<div style="margin: 2.5rem 0 1.8rem;">
+  <div style="display: flex; align-items: baseline; gap: 0.4rem; margin-bottom: 0.2rem;">
+    <span class="section-number">04</span>
+    <h2 style="font-size: 1.5rem; margin: 0;">Classification &amp; Evidence</h2>
+  </div>
+  <div class="gradient-sep"></div>
+  <div class="card" style="padding: 1.8rem;">
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem 2.5rem; align-items: flex-start;">
+      <div>
+        <span class="badge badge-yellow badge-lg" style="font-size: 0.9rem;">Level 2 · Correspondence</span>
+        <div style="margin-top: 0.6rem;"><span class="badge badge-gold">Confidence: Low</span></div>
+        <div style="margin-top: 0.4rem; font-size: 0.8rem; color: var(--text-muted);">Reframe Level: Surface (Level 1) · Connection Count: Meta</div>
+      </div>
+      <div style="flex: 1;">
+        <h4 style="font-size: 0.85rem; letter-spacing: 0.06em; color: var(--gold); margin-bottom: 0.4rem;">EVIDENCE CHIPS</h4>
+        <div>
+          <span class="evidence-chip">A18.1 testable predictions</span>
+          <span class="evidence-chip">A18.2 6‑sigma standard</span>
+          <span class="evidence-chip">Isaiah 1:18</span>
+          <span class="evidence-chip">1 Thess 5:21</span>
+          <span class="evidence-chip">Galileo affair</span>
+          <span class="evidence-chip">Big Bang cosmology</span>
+          <span class="evidence-chip">Popper 1963</span>
+          <span class="evidence-chip">Kuhn 1962</span>
+          <span class="evidence-chip">Anselm Proslogion</span>
+        </div>
+        <h4 style="font-size: 0.85rem; letter-spacing: 0.06em; color: var(--gold); margin: 1rem 0 0.3rem;">LAWS INVOKED</h4>
+        <div class="small-mono">Meta — this ISO is about the method for testing the Laws, not about a specific Law.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 7. FALSIFICATION CRITERIA ===== -->
+<div style="margin: 2.5rem 0 1.8rem;">
+  <div style="display: flex; align-items: baseline; gap: 0.4rem; margin-bottom: 0.2rem;">
+    <span class="section-number">05</span>
+    <h2 style="font-size: 1.5rem; margin: 0;">Falsification Criteria</h2>
+  </div>
+  <div class="gradient-sep"></div>
+  <div class="falsify-box">
+    <h4 style="font-size: 1rem; margin-bottom: 0.8rem;"><i class="fa-regular fa-triangle-exclamation"></i> Kill conditions — if any hold, the isomorphism is refuted</h4>
+    <ol style="padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.7rem; font-size: 0.9rem;">
+      <li><strong>Show the structure doesn't actually map:</strong> If theological epistemology is fundamentally non‑iterative (revelation is received, not tested; doctrine is declared, not refined), the loop structure fails. Strict sola scriptura traditions would break the mapping.</li>
+      <li><strong>Show the mapping is trivial:</strong> Any two human knowledge‑gathering activities involve hypothesis‑test‑revise. If the structure is too generic to be informative, it is a trivial analogy, not an isomorphism.</li>
+      <li><strong>Show the quantitative gap is fatal:</strong> If the difference between 6‑sigma standards and theological “evidence” is not a matter of degree but of kind (empirical vs. revelation/tradition), the shared structure is superficial.</li>
+      <li><strong>Historical falsification:</strong> Show that theological traditions that engage with rational scrutiny do NOT outperform isolationist traditions in intellectual coherence or durability.</li>
+    </ol>
+    <div style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid rgba(239,68,68,0.2); padding-top: 0.8rem;">
+      <i class="fa-regular fa-clock"></i> Honest assessment: triviality concern is the most serious objection. The mapping may be too general to count as an isomorphism.
+    </div>
+  </div>
+</div>
+
+<!-- ===== 8. RELATED ISOMORPHISMS ===== -->
+<div style="margin: 2.5rem 0 1.8rem;">
+  <div style="display: flex; align-items: baseline; gap: 0.4rem; margin-bottom: 0.2rem;">
+    <span class="section-number">06</span>
+    <h2 style="font-size: 1.5rem; margin: 0;">Related Isomorphisms</h2>
+  </div>
+  <div class="gradient-sep"></div>
+  <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+    <span class="badge badge-gold" style="font-size: 0.8rem; padding: 0.3rem 1rem;"><i class="fa-regular fa-link"></i> ISO-001 · Trinity</span>
+    <span class="badge badge-gold" style="font-size: 0.8rem; padding: 0.3rem 1rem;"><i class="fa-regular fa-link"></i> ISO-023 · Consilience</span>
+    <span class="badge" style="font-size: 0.8rem; padding: 0.3rem 1rem; background: rgba(255,255,255,0.03);"><i class="fa-regular fa-diagram-project"></i> All ISOs (meta‑methodology)</span>
+  </div>
+  <div style="margin-top: 0.8rem; font-size: 0.8rem; color: var(--text-muted);">
+    <i class="fa-regular fa-book-open"></i> Related papers: Popper (1963), Kuhn (1962), Anselm (Proslogion), Polanyi (1958), Lakatos (1978)
+  </div>
+</div>
+
+<!-- ===== 9. FOOTER ===== -->
+<footer style="margin-top: 3rem; border-top: 1px solid #2a2a2a; padding-top: 1.5rem;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.8rem;">
+    <div>
+      <span style="font-family: var(--font-heading); letter-spacing: 0.06em; font-size: 0.9rem;">THEOPHYSICS RESEARCH PROGRAM</span>
+      <span style="color: var(--text-muted); margin-left: 1rem; font-size: 0.8rem;">POF 2828</span>
+    </div>
+    <div class="small-mono">v1.0 · ISO-021 · 2026-03-10</div>
+  </div>
+  <div class="footer-seal">
+    “The math points to God. The math does not contain God.”
+  </div>
+</footer>
+
+</body>
+</html>

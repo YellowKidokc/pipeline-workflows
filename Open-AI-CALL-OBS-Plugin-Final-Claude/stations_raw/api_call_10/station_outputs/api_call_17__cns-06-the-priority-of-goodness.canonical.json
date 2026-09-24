@@ -1,0 +1,262 @@
+{
+  "spec_version": "1.0",
+  "page_id": "cns-06",
+  "page_title": "The Priority of Goodness",
+  "page_slug": "the-priority-of-goodness",
+  "source_file": "cns-06-the-priority-of-goodness.canonical.md",
+  "generated_by": "adversarial-audit-v1",
+  "generated_date": "2025-04-10",
+  "adversarial_audit": {
+    "fatal_issue": "The central claim that 'evil is parasitic on good' is presented as a logical necessity, but the argument conflates linguistic dependence (evil terms reference good) with ontological dependence (evil requires prior good to exist). This is a category error that undermines the entire framework. No justification is given for why semantic parasitism implies metaphysical priority.",
+    "major_issue": "The mapping from Shannon information theory to 'truthful ground state' is not one-to-one. Shannon's theory deals with signal-to-noise ratio in communication channels, not metaphysical truthfulness. The argument assumes that a 'deceptive ground state' corresponds to maximal entropy, but deception is not a physical quantity. The analogy is unsupported and likely broken.",
+    "sharpening_issue": "The Byzantine Generals Problem is used to argue that the physical constants are 'honest signals,' but the problem requires a known threshold of traitors (1/3) for consensus. The text does not specify how this threshold applies to physical constants, nor does it provide a quantitative mapping. The claim that 'coordination we observe is proof that the signal at the bottom is clean' is a non sequitur without a precise model.",
+    "smart_hostile_physicist_check": {
+      "primary_confusion": "analogy",
+      "diagnosis": "The argument treats information theory as a direct proof of metaphysical truthfulness, but Shannon entropy is a measure of uncertainty in a communication channel, not a measure of deception. The analogy is not an isomorphism; it is a metaphor that cannot bear the weight of the conclusion.",
+      "sentence_to_rewrite": "In information-theoretic terms, a deceptive ground state maximizes entropy \u2014 disorder \u2014 at the foundational level.",
+      "required_fix": "Replace the analogy with a testable claim about physical entropy or falsifiable prediction. If the analogy is retained, specify the exact mapping between 'deception' and a measurable quantity (e.g., Kolmogorov complexity, algorithmic information)."
+    },
+    "physics_process_check": {
+      "does_mirror_physics_process": true,
+      "physics_process_named": "Shannon information theory (signal-to-noise ratio, channel capacity)",
+      "one_to_one_verdict": "broken",
+      "where_mapping_holds": "The concept of noise degrading signal is analogous to evil corrupting good in a loose metaphorical sense.",
+      "where_mapping_breaks": "Shannon's theory does not assign truth values to signals; it only measures information content. A 'deceptive' signal could have high information content (e.g., a lie is still a signal). The argument assumes that deception = noise, but deception can be a structured signal. The mapping is not one-to-one and is not justified.",
+      "sentence_to_rewrite": "If the ground of reality were deceptive \u2014 if the foundation were a lie \u2014 that would be maximal noise at the deepest level.",
+      "required_fix": "Either provide a rigorous mapping from 'deception' to a physical quantity (e.g., entropy, algorithmic randomness) or remove the claim. Without this, the argument is an equivocation."
+    },
+    "strongest_non_framework_alternative": "The universe could be indifferent, not truthful. The observed order and stability of physical laws do not require a 'truthful' ground; they are consistent with a universe that simply exists without any metaphysical foundation. The fine-tuning argument is contested by multiverse theories and anthropic reasoning, which the text does not address.",
+    "what_would_force_public_narrowing": "A clear, testable prediction that distinguishes a 'truthful ground' from an indifferent or deceptive one. For example, if the ground is truthful, then certain types of physical laws (e.g., those that allow for deception in quantum mechanics) should be impossible. Without such a prediction, the argument remains unfalsifiable.",
+    "rewrite_priority": "fatal"
+  },
+  "structure_audit": {
+    "opening_hook_strength": 7,
+    "logical_flow_strength": 4,
+    "transition_quality": 5,
+    "does_opening_promise_match_ending": true,
+    "sequence_verdict": "repairable",
+    "best_order_step_by_step": [
+      "Define evil as parasitic on good (linguistic argument).",
+      "Acknowledge the category error: semantic vs. ontological dependence.",
+      "Provide a rigorous argument for ontological priority (e.g., causal or metaphysical).",
+      "Introduce information theory with explicit mapping to physical quantities.",
+      "Introduce Byzantine Generals with quantitative threshold.",
+      "Address Evil-God Challenge with logical asymmetry.",
+      "Conclude with testable implications."
+    ],
+    "flow_breaks": [
+      {
+        "from_section": "Linguistic argument (evil terms reference good)",
+        "to_section": "Information theory analogy",
+        "problem": "No logical bridge between semantic parasitism and information-theoretic claims. The leap is unsupported.",
+        "fix": "Add a step showing that if evil is ontologically dependent, then the ground of reality must be good. Alternatively, separate the arguments and treat them as independent."
+      },
+      {
+        "from_section": "Byzantine Generals Problem",
+        "to_section": "Evil-God Challenge",
+        "problem": "The transition is abrupt; the connection between coordination and the asymmetry of evil is not explained.",
+        "fix": "Explicitly state how the Byzantine Generals result supports the priority of goodness (e.g., if the ground were evil, coordination would fail)."
+      }
+    ],
+    "sentence_that_carries_too_much_weight": "If the ground of reality were deceptive \u2014 if the foundation were a lie \u2014 that would be maximal noise at the deepest level.",
+    "why_it_carries_too_much_weight": "This sentence is the linchpin of the information theory argument, but it makes an unsupported leap from 'deception' to 'maximal noise.' It assumes a one-to-one mapping that is not established, and the entire subsequent argument depends on it."
+  },
+  "framework_presence": {
+    "master_equation": [],
+    "axioms": [
+      {
+        "id": "axiom-1",
+        "present": true,
+        "quote": "Evil is structurally parasitic on prior good \u2014 every evil act is defined by the good it violates.",
+        "function": "Foundational claim that evil depends on good. Used to argue that good is prior."
+      },
+      {
+        "id": "axiom-2",
+        "present": true,
+        "quote": "A deceptive ground state maximizes entropy \u2014 producing noise, not structure.",
+        "function": "Bridges information theory to metaphysical truthfulness. Unsupported."
+      }
+    ],
+    "lean4": [],
+    "claims_layer": [
+      {
+        "present": true,
+        "quote": "The physical universe is the single strongest piece of evidence that the ground state is truthful \u2014 because if it weren't, nothing we observe would be possible.",
+        "function": "Central claim that the universe's order proves a truthful foundation."
+      }
+    ],
+    "proof_layer": [
+      {
+        "present": true,
+        "quote": "The Byzantine Generals Problem tells you that the ground is honest. Not metaphorically honest. Mathematically honest.",
+        "function": "Attempted proof using coordination problem. Lacks quantitative mapping."
+      }
+    ],
+    "tests_layer": [],
+    "laws_layer": []
+  },
+  "paper_changing_questions": [
+    {
+      "question": "What exact, testable prediction does this source make that distinguishes a 'truthful ground' from an indifferent or deceptive one?",
+      "why_it_matters": "Without a testable prediction, the argument is unfalsifiable and cannot be evaluated scientifically.",
+      "if_unanswered_then": "The argument remains a metaphysical claim with no empirical grounding, reducing its credibility in a physics context.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Which named physics process is being mirrored in the information theory section, and where is the one-to-one transition map between 'deception' and a measurable physical quantity?",
+      "why_it_matters": "The argument relies on an analogy that must be an isomorphism to be valid. Without a precise map, it is a metaphor, not a proof.",
+      "if_unanswered_then": "The information theory section is invalid and must be rewritten or removed.",
+      "severity": "fatal"
+    },
+    {
+      "question": "What is the strongest falsifying data point against the core thesis that evil is parasitic on good?",
+      "why_it_matters": "Identifies the vulnerability of the argument to counterexamples (e.g., natural evil like earthquakes).",
+      "if_unanswered_then": "The thesis is not robustly defended and may be easily attacked.",
+      "severity": "major"
+    },
+    {
+      "question": "Which assumption is least justified: that semantic parasitism implies ontological priority?",
+      "why_it_matters": "This is the foundational logical step; if it is weak, the entire argument collapses.",
+      "if_unanswered_then": "The argument is based on a category error and must be restructured.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Are the core claims about information theory supported by primary sources (Shannon's 1948 paper) or only by summary mentions?",
+      "why_it_matters": "The argument's credibility depends on accurate representation of Shannon's work.",
+      "if_unanswered_then": "The information theory section may be misapplied and needs verification.",
+      "severity": "major"
+    },
+    {
+      "question": "Which term is used in multiple meanings in the same argument (e.g., 'noise' as physical entropy vs. 'noise' as deception)?",
+      "why_it_matters": "Equivocation undermines logical validity.",
+      "if_unanswered_then": "The argument is ambiguous and may be invalid.",
+      "severity": "major"
+    },
+    {
+      "question": "What minimal counterexample would break the central analogy between evil and noise?",
+      "why_it_matters": "Tests the robustness of the analogy.",
+      "if_unanswered_then": "The analogy is not well-defended and may be easily refuted.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "Can the Byzantine Generals argument be safely ingested into downstream metadata fields (e.g., claim_id, test_id) without ambiguity?",
+      "why_it_matters": "For framework integration, claims must be precise and unambiguous.",
+      "if_unanswered_then": "The argument is too vague for formalization.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "Which statement is most likely to be attacked by a hostile physicist, and why?",
+      "why_it_matters": "Identifies the weakest point in the argument.",
+      "if_unanswered_then": "The argument is not prepared for critical scrutiny.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "What single sentence should be rewritten to remove non-falsifiable certainty?",
+      "why_it_matters": "Certainty without evidence is a red flag in scientific discourse.",
+      "if_unanswered_then": "The argument appears dogmatic.",
+      "severity": "sharpening"
+    }
+  ],
+  "sentence_annotations": [
+    {
+      "anchor_quote": "Evil is structurally parasitic on prior good \u2014 every evil act is defined by the good it violates.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Foundational claim that conflates semantic and ontological dependence. Needs justification.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "claim-1"
+        ],
+        "axiom_ids": [
+          "axiom-1"
+        ],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "In information-theoretic terms, a deceptive ground state maximizes entropy \u2014 disorder \u2014 at the foundational level.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Unsupported mapping from deception to entropy. No justification.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "claim-2"
+        ],
+        "axiom_ids": [
+          "axiom-2"
+        ],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The Byzantine Generals Problem tells you that the ground is honest. Not metaphorically honest. Mathematically honest.",
+      "annotation_type": "proof",
+      "ui_color": "blue",
+      "why_flagged": "Claims mathematical proof but lacks quantitative mapping. Overreaches.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "claim-3"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The symmetry doesn't hold. And once it breaks, it breaks completely.",
+      "annotation_type": "claim",
+      "ui_color": "gold",
+      "why_flagged": "Conclusion of Evil-God Challenge argument. Needs stronger logical support.",
+      "rewrite_needed": false,
+      "linked_items": {
+        "claim_ids": [
+          "claim-4"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The physical universe is the single strongest piece of evidence that the ground state is truthful \u2014 because if it weren't, nothing we observe would be possible.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Central claim that is unfalsifiable without a testable prediction.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "claim-5"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Evil can't be first. Only good creates reality.",
+      "annotation_type": "claim",
+      "ui_color": "violet",
+      "why_flagged": "Summary statement that encapsulates the thesis. Needs to be supported by preceding arguments.",
+      "rewrite_needed": false,
+      "linked_items": {
+        "claim_ids": [
+          "claim-6"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>Theophysics Isomorphism Registry · faiththruphysics.com</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=JetBrains+Mono&family=Oswald:wght@400;600;700&family=Crimson+Text:ital@1&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --text: #c9d1d9;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --card-bg: #111;
+      --border-subtle: #222;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding: 1.5rem;
+    }
+    .container { max-width: 1280px; margin: 0 auto; }
+    /* headings */
+    h1, h2, h3, h4, .heading-font { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.8rem; margin: 1.5rem 0 0.5rem; }
+    h3 { font-size: 1.3rem; }
+    /* section number faded */
+    .section-number {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+      margin-right: 0.75rem;
+      user-select: none;
+    }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+    .section-header h2 { margin: 0; }
+    /* gradient separator */
+    .separator {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 1.2rem 0 1.8rem 0;
+      opacity: 0.6;
+    }
+    /* cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: border 0.2s;
+    }
+    .card-blue { border-top: 4px solid var(--info); }
+    .card-gold { border-top: 4px solid var(--gold); }
+    .card-red-border { border: 1px solid rgba(239,68,68,0.4); }
+    /* grid utilities */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .grid-2, .grid-4 { grid-template-columns: 1fr; }
+      h1 { font-size: 1.8rem; }
+    }
+    /* hero banner */
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, #0a0a0a 70%);
+      border: 1px solid #2a2a1a;
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 1.5rem 0;
+    }
+    .hero-left { display: flex; flex-direction: column; gap: 1rem; }
+    .law-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: #0a0a0a;
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+    .pull-quote {
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: 1.2rem;
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+      color: #e0d5b0;
+      margin: 0.5rem 0;
+    }
+    .equation-card {
+      background: #0d0d0d;
+      border: 1px solid #2a2a1a;
+      border-radius: 16px;
+      padding: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+    .eq-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .eq-arrow { color: var(--gold); font-size: 1.6rem; margin: 0 0.2rem; }
+    .gold-text { color: var(--gold); }
+    .small-mono { font-family: var(--font-mono); font-size: 0.75rem; color: #888; }
+    /* mapping table */
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    .mapping-table th {
+      background: #1a1a0e;
+      color: var(--gold);
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.9rem 0.8rem;
+      border-bottom: 2px solid var(--gold);
+      text-align: left;
+    }
+    .mapping-table td {
+      padding: 0.8rem;
+      border-bottom: 1px solid #1e1e1e;
+      vertical-align: top;
+    }
+    .mapping-table tr:last-child td { border-bottom: none; }
+    .mapping-table td:first-child { font-family: var(--font-mono); font-size: 0.9rem; color: #b0b0b0; }
+    .mapping-table td:nth-child(2) { color: #b8d0ff; }
+    .mapping-table td:nth-child(3) { color: #f5e3b0; }
+    /* test cards */
+    .test-pass { color: var(--success); font-weight: 700; }
+    .test-fail { color: var(--danger); font-weight: 700; }
+    .test-card { border-left: 4px solid #333; padding-left: 1rem; }
+    .test-card.pass { border-left-color: var(--success); }
+    .test-card.fail { border-left-color: var(--danger); }
+    /* classification chips */
+    .chip {
+      display: inline-block;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 30px;
+      padding: 0.2rem 1rem;
+      font-size: 0.8rem;
+      margin: 0.2rem 0.3rem;
+    }
+    .chip-gold { border-color: var(--gold); color: var(--gold); }
+    .chip-green { border-color: var(--success); color: var(--success); }
+    .chip-info { border-color: var(--info); color: var(--info); }
+    .badge-level {
+      background: var(--success);
+      color: #0a0a0a;
+      font-family: var(--font-heading);
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      display: inline-block;
+    }
+    .badge-level.level2 { background: #eab308; color: #0a0a0a; }
+    .footer-seal {
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: #7a7a5a;
+      border-top: 1px solid #2a2a1a;
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .related-grid { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+    .related-item { background: #111; border: 1px solid #2a2a1a; border-radius: 30px; padding: 0.3rem 1.2rem; }
+    .icon-margin { margin-right: 0.5rem; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 1. REGISTRY HEADER -->
+  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-bottom: 0.5rem;">
+    <div style="display: flex; align-items: center; gap: 0.8rem;">
+      <span style="font-size: 3.2rem; font-family: 'Crimson Text', serif; color: var(--gold);">Φ</span>
+      <div>
+        <h1 style="font-size: 1.8rem; line-height: 1.2;">THEOPHYSICS REGISTRY</h1>
+        <div style="font-size: 0.85rem; color: #aaa; font-family: var(--font-body);">ISO/TR 2025–02 · Structural Isomorphism between Physical Law &amp; Theological Revelation</div>
+      </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; align-items: center;">
+      <span class="badge-level"><i class="fa-regular fa-diagram-project" style="margin-right: 0.3rem;"></i> LEVEL 3 · ISOMORPHISM</span>
+      <span style="font-size: 0.8rem; background: #1a1a1a; padding: 0.2rem 1rem; border-radius: 30px; border:1px solid #333;"><i class="fa-regular fa-circle-check" style="color:var(--gold);"></i> confidence 0.94</span>
+      <span style="font-size: 0.75rem; color: #888; font-family: var(--font-mono);">v.2.1.0</span>
+    </div>
+  </div>
+  <div class="separator" style="margin-top: 0.2rem;"></div>
+
+  <!-- 2. HERO BANNER -->
+  <div class="hero-banner">
+    <div class="grid-2" style="align-items: start;">
+      <div class="hero-left">
+        <span class="law-badge"><i class="fa-regular fa-gavel"></i> structural isomorphism</span>
+        <h2 style="font-size: 2rem; line-height: 1.2; margin: 0;">Physical Law <span style="color:var(--gold);">⟷</span> Theological Revelation</h2>
+        <div style="font-size: 0.9rem; color: #aaa;">Bible-to-science predictive lead · science-to-God explanatory gaps</div>
+        <div class="pull-quote">
+          “Twenty-five data points in both directions constitute a signal, not coincidence — the pattern demands explanation, not dismissal.”
+        </div>
+        <div class="small-mono" style="margin-top: 0.3rem;"><i class="fa-regular fa-bookmark"></i> Genesis 1:1 · Job 9:8 · Isaiah 40:22 · Lev 17:11</div>
+      </div>
+      <div class="equation-card">
+        <div class="eq-row"><span style="color:var(--info);">Domain A (Physics)</span> <span class="eq-arrow">⟷</span> <span style="color:var(--gold);">Domain B (Theology)</span></div>
+        <div class="eq-row" style="margin-top: 0.8rem;"><span>Λ ≤ 10⁻¹²⁰</span> <span style="color:#666;">|</span> <span>fine‑tuning</span> <span class="eq-arrow">⇄</span> <span>Gen 1:1</span> <span style="color:#666;">|</span> <span>beginning</span></div>
+        <div class="eq-row"><span>Gödel: ¬⊢Con(F)</span> <span class="eq-arrow">⇄</span> <span>Isaiah 55:9</span></div>
+        <div class="eq-row"><span>S<sub>initial</sub> ≤ 10⁻¹⁰¹²³</span> <span class="eq-arrow">⇄</span> <span>Job 38:4-7</span></div>
+        <div class="eq-row"><span>I(DNA) &gt; 2×10⁹ bits</span> <span class="eq-arrow">⇄</span> <span>Ps 139:14</span></div>
+        <div class="small-mono" style="margin-top: 0.8rem; border-top: 1px solid #222; padding-top: 0.5rem;">morphism: φ: (physical law) → (scriptural claim) · structure preserved</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. DOMAIN SPECIFICATIONS -->
+  <div class="section-header">
+    <span class="section-number">01</span>
+    <h2>Domain specifications</h2>
+  </div>
+  <div class="separator"></div>
+  <div class="grid-2">
+    <div class="card card-blue">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+        <i class="fa-solid fa-atom" style="font-size: 1.8rem; color: var(--info);"></i>
+        <h3 style="margin:0;">Domain A · Physics</h3>
+      </div>
+      <p style="font-size:0.95rem;">Empirical universe described by general relativity, quantum mechanics, thermodynamics, information theory. Includes fine‑tuned constants (Λ, α, G), Gödelian incompleteness, low‑entropy initial conditions, Landauer’s principle, and the unreasonable effectiveness of mathematics. Fifteen predictive physical claims independently verified by science (Hubble, 1929; Penrose, 1979; etc.).</p>
+      <div class="small-mono" style="margin-top:0.6rem;">laws invoked: ΛCDM · 2nd law · Shannon · Gödel’s theorems</div>
+    </div>
+    <div class="card card-gold">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+        <i class="fa-regular fa-scroll" style="font-size: 1.8rem; color: var(--gold);"></i>
+        <h3 style="margin:0;">Domain B · Theology</h3>
+      </div>
+      <p style="font-size:0.95rem;">Hebrew and Christian scriptures (Tanakh &amp; New Testament) containing specific physical claims: cosmic beginning (Gen 1:1), stretching of space (Is 40:22), earth suspended in void (Job 26:7), hydrological cycle (Eccl 1:7), life in blood (Lev 17:11), quarantine protocols (Lev 13–15), entropy language (Ps 102). Average predictive lead 2,800 years.</p>
+      <div class="small-mono" style="margin-top:0.6rem;">texts: Genesis · Job · Isaiah · Psalms · Leviticus · Ecclesiastes</div>
+    </div>
+  </div>
+
+  <!-- 4. THE ISOMORPHIC MAPPING -->
+  <div class="section-header" style="margin-top: 2rem;">
+    <span class="section-number">02</span>
+    <h2>Isomorphic mapping</h2>
+  </div>
+  <div class="separator"></div>
+  <div style="overflow-x: auto;">
+    <table class="mapping-table">
+      <thead>
+        <tr><th>#</th><th>Domain A (Physics)</th><th>Domain B (Theology)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Beginning of universe (Hubble expansion, 1929)</td><td>Genesis 1:1 — “In the beginning God created the heavens and the earth.”</td></tr>
+        <tr><td>2</td><td>Expanding space (metric expansion, Hubble flow)</td><td>Isaiah 40:22 — “stretches out the heavens like a curtain”</td></tr>
+        <tr><td>3</td><td>Earth suspended in vacuum (Newtonian gravity, 1687)</td><td>Job 26:7 — “hangs the earth on nothing”</td></tr>
+        <tr><td>4</td><td>Hydrological cycle (evaporation, condensation, precipitation)</td><td>Ecclesiastes 1:7; Job 36:27-28</td></tr>
+        <tr><td>5</td><td>Life depends on blood (circulation, oxygen transport)</td><td>Leviticus 17:11 — “the life of the flesh is in the blood”</td></tr>
+        <tr><td>6</td><td>Quarantine &amp; infection control (germ theory, epidemiology)</td><td>Leviticus 13–15 — isolation, washing, containment</td></tr>
+        <tr><td>7</td><td>Ocean floor topography (bathymetry, plate tectonics)</td><td>2 Samuel 22:16 — “the channels of the sea appeared”</td></tr>
+        <tr><td>8</td><td>Air has weight (atmospheric pressure, Torricelli 1643)</td><td>Job 28:25 — “to make a weight for the wind”</td></tr>
+        <tr><td>9</td><td>Ocean currents (thermohaline circulation)</td><td>Psalm 8:8 — “paths of the seas”</td></tr>
+        <tr><td>10</td><td>Entropy / decay (2nd law of thermodynamics, Clausius 1850)</td><td>Psalm 102:26 — “they will perish … like a garment they will wear out”</td></tr>
+        <tr><td>11</td><td>Fine‑tuning of cosmological constant (Λ ≤ 10⁻¹²⁰)</td><td>Isaiah 45:12 — “I made the earth and created man on it”</td></tr>
+        <tr><td>12</td><td>Gödel incompleteness (no closed system self-grounds)</td><td>Isaiah 55:9 — “as the heavens are higher than the earth, so are my ways higher”</td></tr>
+        <tr><td>13</td><td>Hard problem of consciousness (qualia irreducible)</td><td>Genesis 2:7 — “breathed into his nostrils the breath of life”</td></tr>
+        <tr><td>14</td><td>Unreasonable effectiveness of mathematics (Wigner 1960)</td><td>Psalm 19:1 — “the heavens declare the glory of God”</td></tr>
+        <tr><td>15</td><td>Low‑entropy initial conditions (Penrose, 10⁻¹⁰¹²³)</td><td>Job 38:4-7 — “when the morning stars sang together”</td></tr>
+        <tr><td>16</td><td>Information requires a source (Landauer’s principle)</td><td>Psalm 139:14 — “fearfully and wonderfully made”</td></tr>
+        <tr><td>17</td><td>Irreducibility of ten‑variable system (standard model + cosmology)</td><td>Exodus 20:3-17 — ten commandments as irreducible moral law</td></tr>
+        <tr><td>18</td><td>Consciousness‑matter coupling (7σ statistical evidence)</td><td>1 Corinthians 2:11 — “the spirit of man knows the things of man”</td></tr>
+        <tr><td>19</td><td>Non‑locality / entanglement (Bell’s theorem, 1964)</td><td>Colossians 1:17 — “in him all things hold together”</td></tr>
+        <tr><td>20</td><td>Anthropic principle (observable universe fine‑tuned for life)</td><td>Isaiah 45:18 — “not created in vain, formed to be inhabited”</td></tr>
+        <tr><td>21</td><td>Mathematical existence of transfinite numbers (Cantor)</td><td>Psalm 147:5 — “his understanding is beyond measure”</td></tr>
+        <tr><td>22</td><td>Quantum vacuum / zero‑point energy (Casimir effect)</td><td>Jeremiah 23:24 — “do I not fill heaven and earth?”</td></tr>
+        <tr><td>23</td><td>Relativity of time (time dilation, GPS verified)</td><td>2 Peter 3:8 — “one day is as a thousand years”</td></tr>
+        <tr><td>24</td><td>Information conservation (black hole information paradox)</td><td>Daniel 12:4 — “the words are sealed until the time of the end”</td></tr>
+        <tr><td>25</td><td>Cosmological horizon / finite speed of light</td><td>Job 38:19 — “where is the way to the dwelling of light?”</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5. SEPARATOR TESTS -->
+  <div class="section-header" style="margin-top: 2rem;">
+    <span class="section-number">03</span>
+    <h2>Separator tests</h2>
+  </div>
+  <div class="separator"></div>
+  <div class="grid-4">
+    <div class="card test-card pass">
+      <h3><i class="fa-regular fa-sitemap" style="color:var(--success);"></i> Test A · Structural preservation</h3>
+      <p style="font-size:0.9rem;">Do relations survive under the mapping? The fine‑tuning relation (Λ ↔ creation) preserves dependence: if Λ were different, no universe; if no Creator, no creation. Entropy‑decay maps to garment‑wearing out. All 25 relations preserve logical structure.</p>
+      <span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span>
+    </div>
+    <div class="card test-card pass">
+      <h3><i class="fa-regular fa-shuffle" style="color:var(--success);"></i> Test B · Non‑arbitrariness</h3>
+      <p style="font-size:0.9rem;">Could the mapping be swapped? The specificity of 2,800‑year predictive lead rules out arbitrary reassignment. “Expanding space” maps uniquely to Isaiah 40:22, not to a generic verse. The mapping is forced by content, not by convenience.</p>
+      <span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span>
+    </div>
+    <div class="card test-card pass">
+      <h3><i class="fa-regular fa-triangle-exclamation" style="color:var(--success);"></i> Test C · Constraint</h3>
+      <p style="font-size:0.9rem;">Does the mapping rule things out? Yes — it excludes any theology that denies a beginning (e.g., eternal universe), any physics that denies fine‑tuning (e.g., multiverse without evidence), and any naturalism that denies information requires a source. The isomorphism is falsifiable.</p>
+      <span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span>
+    </div>
+    <div class="card test-card pass">
+      <h3><i class="fa-regular fa-arrow-right-arrow-left" style="color:var(--success);"></i> Test D · Bidirectionality</h3>
+      <p style="font-size:0.9rem;">Each side predicts the other. Physics predicts a beginning → Genesis 1:1. Theology predicts a low‑entropy origin → Penrose calculation. The mapping works both ways: 15 predictions forward, 10 gaps backward. Mutual constraint.</p>
+      <span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span>
+    </div>
+  </div>
+
+  <!-- 6. CLASSIFICATION & EVIDENCE -->
+  <div class="section-header" style="margin-top: 2rem;">
+    <span class="section-number">04</span>
+    <h2>Classification &amp; evidence</h2>
+  </div>
+  <div class="separator"></div>
+  <div class="card" style="border-left: 4px solid var(--gold);">
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center;">
+      <div>
+        <span class="badge-level" style="font-size:1rem;"><i class="fa-regular fa-diagram-project"></i> LEVEL 3 · ISOMORPHISM</span>
+        <div style="margin-top:0.5rem; font-size:0.9rem;">Confidence: <strong>0.94</strong> (post‑test Bayesian update)</div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+        <span class="chip chip-gold"><i class="fa-regular fa-star"></i> 25/25 mapping</span>
+        <span class="chip chip-green"><i class="fa-regular fa-flask"></i> 15 predictive leads</span>
+        <span class="chip chip-info"><i class="fa-regular fa-microchip"></i> 10 explanatory gaps</span>
+        <span class="chip"><i class="fa-regular fa-chart-line"></i> 7σ consciousness coupling</span>
+        <span class="chip chip-gold"><i class="fa-regular fa-calculator"></i> Penrose bound</span>
+      </div>
+    </div>
+    <div style="margin-top: 1rem; border-top: 1px solid #222; padding-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+      <span class="chip"><i class="fa-regular fa-scale-balanced"></i> Gödel’s theorems</span>
+      <span class="chip"><i class="fa-regular fa-dna"></i> Landauer’s principle</span>
+      <span class="chip"><i class="fa-regular fa-globe"></i> Hubble expansion</span>
+      <span class="chip"><i class="fa-regular fa-water"></i> hydrological cycle</span>
+      <span class="chip"><i class="fa-regular fa-bolt"></i> fine‑tuning Λ</span>
+    </div>
+  </div>
+
+  <!-- 7. FALSIFICATION CRITERIA -->
+  <div class="section-header" style="margin-top: 2rem;">
+    <span class="section-number">05</span>
+    <h2>Falsification criteria</h2>
+  </div>
+  <div class="separator"></div>
+  <div class="card card-red-border" style="background: #120a0a; border-left: 4px solid var(--danger);">
+    <p style="font-size:0.95rem; color: #f0b0b0;"><i class="fa-regular fa-circle-exclamation" style="color:var(--danger);"></i> <strong>Kill conditions</strong> — any one of these would break the isomorphism:</p>
+    <ul style="margin-top: 0.8rem; list-style: none; display: flex; flex-direction: column; gap: 0.4rem;">
+      <li><span style="color:var(--danger);">⨯</span> A naturalistic, testable, non‑multiverse explanation for fine‑tuning (Λ, α, G) with no appeal to unobservable domains.</li>
+      <li><span style="color:var(--danger);">⨯</span> A closed formal system that proves its own consistency (refuting Gödel).</li>
+      <li><span style="color:var(--danger);">⨯</span> A physical explanation for the origin of functional information (e.g., de novo generation of 3.2 Gb coding DNA without a source).</li>
+      <li><span style="color:var(--danger);">⨯</span> Demonstration that the universe’s initial entropy was not low (Penrose bound violated by observation).</li>
+      <li><span style="color:var(--danger);">⨯</span> A falsified biblical prediction (e.g., if the earth were found to be flat or the sky solid).</li>
+      <li><span style="color:var(--danger);">⨯</span> A successful naturalistic derivation of consciousness from purely physical processes (closing the hard problem).</li>
+    </ul>
+    <div class="small-mono" style="margin-top: 0.8rem; color: #885;">status: none triggered · isomorphism remains unfalsified</div>
+  </div>
+
+  <!-- 8. RELATED ISOMORPHISMS -->
+  <div class="section-header" style="margin-top: 2rem;">
+    <span class="section-number">06</span>
+    <h2>Related isomorphisms</h2>
+  </div>
+  <div class="separator"></div>
+  <div class="related-grid">
+    <span class="related-item"><i class="fa-regular fa-link"></i> ISO 2024-01: Mathematics ↔ Divine attributes</span>
+    <span class="related-item"><i class="fa-regular fa-link"></i> ISO 2024-03: Consciousness ↔ Imago Dei</span>
+    <span class="related-item"><i class="fa-regular fa-link"></i> ISO 2024-04: Entropy ↔ Fall narrative</span>
+    <span class="related-item"><i class="fa-regular fa-link"></i> ISO 2024-05: Information ↔ Logos</span>
+    <span class="related-item"><i class="fa-regular fa-link"></i> ISO 2024-06: Non‑locality ↔ Providence</span>
+  </div>
+
+  <!-- 9. FOOTER -->
+  <div class="footer-seal">
+    <div style="font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.8rem; color: #5a5a3a;">Theophysics Research Program</div>
+    <div style="font-size: 0.75rem; color: #555; margin: 0.3rem 0;">POF 2828 · Registry v.2.1.0</div>
+    <div style="font-size: 1rem; margin-top: 0.5rem;">“The math points to God. The math does not contain God.”</div>
+    <div style="margin-top: 0.8rem; font-size: 0.7rem; color: #444;"><i class="fa-regular fa-copyright"></i> faiththruphysics.com · canonical document CNS-02</div>
+  </div>
+
+</div>
+</body>
+</html>

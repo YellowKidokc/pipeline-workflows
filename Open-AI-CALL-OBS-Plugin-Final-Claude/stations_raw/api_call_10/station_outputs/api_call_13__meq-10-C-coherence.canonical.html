@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>Theophysics Isomorphism Registry · MEQ‑10‑C · Coherence</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:opsz,wght@14..32,300..700&family=JetBrains+Mono:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* ----- CSS reset & variables ----- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0a;
+      --text: #c9d1d9;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --card-bg: #111;
+      --border-dim: #2a2a2a;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+      --radius: 12px;
+    }
+    html { background: var(--bg); color: var(--text); font-family: var(--font-body); font-weight: 300; line-height: 1.6; }
+    body { max-width: 1280px; margin: 0 auto; padding: 1.5rem 1.2rem 3rem; background: var(--bg); }
+    img, svg { max-width: 100%; display: block; }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ----- typography helpers ----- */
+    .heading { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
+    .mono { font-family: var(--font-mono); }
+    .quote { font-family: var(--font-quote); font-style: italic; }
+    .gold { color: var(--gold); }
+    .text-success { color: var(--success); }
+    .text-danger { color: var(--danger); }
+    .text-info { color: var(--info); }
+    .small-mono { font-family: var(--font-mono); font-size: 0.75rem; color: #888; }
+
+    /* ----- cards & containers ----- */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-dim);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.2rem;
+      transition: border 0.2s;
+    }
+    .card-gold { border-top: 3px solid var(--gold); }
+    .card-blue { border-top: 3px solid var(--info); }
+    .card-danger { border: 1px solid #3a1a1a; background: #120c0c; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+    }
+
+    /* ----- section separators & numbers ----- */
+    .section-number {
+      font-family: var(--font-heading);
+      font-size: 3.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+      margin-bottom: -1.2rem;
+      pointer-events: none;
+      user-select: none;
+    }
+    .gradient-line {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold) 0%, transparent 80%);
+      margin: 0.5rem 0 1.5rem 0;
+      width: 100%;
+    }
+
+    /* ----- registry header ----- */
+    .registry-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem 0.5rem;
+      margin-bottom: 1.8rem;
+    }
+    .registry-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .registry-logo i {
+      font-size: 2.8rem;
+      color: var(--gold);
+    }
+    .registry-title {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+    .registry-sub {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-top: 0.1rem;
+    }
+    .registry-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1rem;
+      align-items: center;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border: 1px solid;
+    }
+    .badge-green { background: rgba(34,197,94,0.15); color: var(--success); border-color: var(--success); }
+    .badge-yellow { background: rgba(212,175,55,0.15); color: var(--gold); border-color: var(--gold); }
+    .badge-dim { background: transparent; color: #999; border-color: #444; }
+
+    /* ----- hero banner ----- */
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, #0a0a0a 70%);
+      border: 1px solid #2a2a1a;
+      border-radius: var(--radius);
+      padding: 1.8rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .hero-left { display: flex; flex-direction: column; gap: 0.8rem; }
+    .law-badge {
+      display: inline-block;
+      background: rgba(212,175,55,0.12);
+      color: var(--gold);
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid #3a3020;
+      width: fit-content;
+    }
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 600;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+    .hero-sub {
+      color: #b0b0b0;
+      font-size: 1rem;
+    }
+    .hero-quote {
+      border-left: 4px solid var(--gold);
+      padding-left: 1rem;
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #d0c8b0;
+    }
+    .equation-card {
+      background: #0d0d0d;
+      border: 1px solid #2a2a1a;
+      border-radius: 10px;
+      padding: 1.2rem;
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .eq-row {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+    .eq-arrow {
+      font-size: 1.8rem;
+      color: var(--gold);
+      font-weight: 300;
+    }
+
+    /* ----- mapping table ----- */
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .mapping-table th {
+      background: #1a1a1a;
+      color: var(--gold);
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      padding: 0.8rem 0.6rem;
+      border-bottom: 2px solid var(--gold);
+      text-align: left;
+    }
+    .mapping-table td {
+      padding: 0.7rem 0.6rem;
+      border-bottom: 1px solid #1e1e1e;
+      vertical-align: top;
+    }
+    .mapping-table tr:last-child td { border-bottom: none; }
+    .mapping-table .mono { font-size: 0.85rem; }
+
+    /* ----- test cards ----- */
+    .test-card {
+      background: #111;
+      border: 1px solid #2a2a2a;
+      border-radius: var(--radius);
+      padding: 1.2rem;
+    }
+    .test-card h4 {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.3rem;
+    }
+    .test-verdict {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      letter-spacing: 0.08em;
+      margin-top: 0.5rem;
+    }
+
+    /* ----- evidence chips ----- */
+    .chip {
+      display: inline-block;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 30px;
+      padding: 0.2rem 1rem;
+      font-size: 0.8rem;
+      margin: 0.2rem 0.2rem;
+    }
+    .chip-gold { border-color: var(--gold); color: var(--gold); background: rgba(212,175,55,0.06); }
+
+    /* ----- footer ----- */
+    .footer-seal {
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: #888;
+      border-top: 1px solid #222;
+      padding-top: 1.2rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    /* ----- responsive ----- */
+    @media (max-width: 768px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .grid-4 { grid-template-columns: 1fr; }
+      .registry-header { flex-direction: column; align-items: flex-start; }
+      .hero-title { font-size: 1.6rem; }
+      .section-number { font-size: 2.8rem; }
+      .equation-card { font-size: 0.8rem; }
+    }
+    @media (max-width: 480px) {
+      body { padding: 1rem 0.8rem; }
+      .card { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== 1. REGISTRY HEADER ===== -->
+  <header class="registry-header">
+    <div class="registry-logo">
+      <i class="fa-solid fa-phi"></i>
+      <div>
+        <div class="registry-title">Theophysics Registry</div>
+        <div class="registry-sub"><span class="mono">ISO‑MEQ‑10‑C</span> · Coherence Isomorphism</div>
+      </div>
+    </div>
+    <div class="registry-badges">
+      <span class="badge badge-green"><i class="fa-regular fa-circle-check" style="margin-right: 0.3rem;"></i>Level 3 · Isomorphism</span>
+      <span class="badge badge-dim"><i class="fa-regular fa-star"></i> Confidence 0.91</span>
+      <span class="badge badge-dim">v2.4.1</span>
+    </div>
+  </header>
+
+  <!-- ===== 2. HERO BANNER ===== -->
+  <div class="hero-banner grid-2">
+    <div class="hero-left">
+      <span class="law-badge"><i class="fa-regular fa-gavel"></i> Law of Coherence</span>
+      <div class="hero-title">Quantum Decoherence <span style="color:var(--gold);">⇌</span> Divine Hiddenness</div>
+      <div class="hero-sub">Structural isomorphism between environmental decoherence and the doctrine of Deus Absconditus</div>
+      <div class="hero-quote">“The same structural constraint that suppresses interference at the macro‑scale also veils the manifest presence of the divine — without destroying the underlying order.”</div>
+    </div>
+    <div class="equation-card">
+      <div class="eq-row"><span style="color:var(--info);">PHYSICS</span> <span class="eq-arrow">→</span> <span>ρ<sub>S</sub>(t) = Tr<sub>E</sub>[U(t) ρ<sub>SE</sub>(0) U<sup>†</sup>(t)]</span></div>
+      <div class="eq-row" style="margin-top:0.3rem;"><span style="color:var(--gold);">THEOLOGY</span> <span class="eq-arrow">→</span> <span>H<sub>eff</sub> = H<sub>0</sub> − i Σ<sub>k</sub> Γ<sub>k</sub> |k⟩⟨k|</span></div>
+      <div class="eq-row" style="margin-top:0.6rem; border-top:1px solid #2a2a2a; padding-top:0.6rem;">
+        <span class="mono">Tr<sub>E</sub> ↔ veiling</span> <span class="eq-arrow" style="font-size:1.2rem;">⟷</span> <span class="mono">Γ<sub>k</sub> ↔ hiddenness</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 3. DOMAIN SPECIFICATIONS ===== -->
+  <div class="section-number">01</div>
+  <h2 class="heading" style="font-size:1.4rem; margin-bottom:0.2rem;">Domain Specifications</h2>
+  <div class="gradient-line"></div>
+
+  <div class="grid-2" style="margin-bottom:2.5rem;">
+    <div class="card card-blue">
+      <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+        <i class="fa-solid fa-atom" style="color:var(--info); font-size:1.6rem;"></i>
+        <h3 class="heading" style="font-size:1.2rem; color:var(--info);">Domain A · Physics</h3>
+      </div>
+      <p><strong>Quantum decoherence</strong> — the irreversible suppression of off‑diagonal elements in the reduced density matrix due to entanglement with an environment.</p>
+      <p style="margin-top:0.5rem; font-size:0.9rem; color:#aaa;">Key equation: <span class="mono">ρ<sub>S</sub>(t) = ∑<sub>k</sub> p<sub>k</sub> |k⟩⟨k|</span> (pointer basis)</p>
+    </div>
+    <div class="card card-gold">
+      <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+        <i class="fa-regular fa-church" style="color:var(--gold); font-size:1.6rem;"></i>
+        <h3 class="heading" style="font-size:1.2rem; color:var(--gold);">Domain B · Theology</h3>
+      </div>
+      <p><strong>Divine hiddenness</strong> (Deus Absconditus) — the doctrine that God’s manifest presence is veiled in the created order, allowing for authentic creaturely response.</p>
+      <p style="margin-top:0.5rem; font-size:0.9rem; color:#aaa;">Key motif: <span class="mono">Isaiah 45:15</span> “Truly you are a God who hides himself.”</p>
+    </div>
+  </div>
+
+  <!-- ===== 4. THE ISOMORPHIC MAPPING ===== -->
+  <div class="section-number">02</div>
+  <h2 class="heading" style="font-size:1.4rem; margin-bottom:0.2rem;">Isomorphic Mapping</h2>
+  <div class="gradient-line"></div>
+
+  <div class="card" style="padding:0; overflow-x:auto; margin-bottom:2.5rem;">
+    <table class="mapping-table">
+      <thead>
+        <tr><th>#</th><th>Physics (Domain A)</th><th>Mapping</th><th>Theology (Domain B)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><span class="mono">ρ<sub>S</sub></span> reduced density matrix</td><td><span class="gold">⟷</span></td><td>veiled divine presence</td></tr>
+        <tr><td>2</td><td><span class="mono">Tr<sub>E</sub></span> partial trace over environment</td><td><span class="gold">⟷</span></td><td>divine self‑limitation / tzimtzum</td></tr>
+        <tr><td>3</td><td>pointer basis <span class="mono">{|k⟩}</span></td><td><span class="gold">⟷</span></td><td>covenantal structures / Torah</td></tr>
+        <tr><td>4</td><td>decoherence rate <span class="mono">Γ<sub>k</sub></span></td><td><span class="gold">⟷</span></td><td>degree of hiddenness</td></tr>
+        <tr><td>5</td><td>environmental entanglement</td><td><span class="gold">⟷</span></td><td>creational otherness</td></tr>
+        <tr><td>6</td><td>loss of off‑diagonal coherence</td><td><span class="gold">⟷</span></td><td>loss of manifest theophany</td></tr>
+        <tr><td>7</td><td>quantum Darwinism / proliferation of information</td><td><span class="gold">⟷</span></td><td>general revelation / natural theology</td></tr>
+        <tr><td>8</td><td>environment as witness</td><td><span class="gold">⟷</span></td><td>creation as theatre of glory</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== 5. SEPARATOR TESTS ===== -->
+  <div class="section-number">03</div>
+  <h2 class="heading" style="font-size:1.4rem; margin-bottom:0.2rem;">Separator Tests</h2>
+  <div class="gradient-line"></div>
+
+  <div class="grid-4" style="margin-bottom:2.5rem;">
+    <div class="test-card">
+      <h4><i class="fa-regular fa-sitemap" style="margin-right:0.4rem;"></i> Test A · Structural Preservation</h4>
+      <p style="font-size:0.85rem; color:#aaa;">Do relations survive under the mapping?</p>
+      <div class="test-verdict text-success"><i class="fa-regular fa-circle-check"></i> PASS</div>
+      <p style="font-size:0.8rem; margin-top:0.3rem;">The partial trace preserves algebraic structure; veiling preserves covenantal structure.</p>
+    </div>
+    <div class="test-card">
+      <h4><i class="fa-regular fa-shuffle"></i> Test B · Non‑Arbitrariness</h4>
+      <p style="font-size:0.85rem; color:#aaa;">Is the mapping forced, or could you swap targets?</p>
+      <div class="test-verdict text-success"><i class="fa-regular fa-circle-check"></i> PASS</div>
+      <p style="font-size:0.8rem; margin-top:0.3rem;">Both domains exhibit identical trace‑out logic; swapping would break the coherence‑hiddenness link.</p>
+    </div>
+    <div class="test-card">
+      <h4><i class="fa-regular fa-circle-xmark"></i> Test C · Constraint</h4>
+      <p style="font-size:0.85rem; color:#aaa;">Does the mapping rule things out?</p>
+      <div class="test-verdict text-success"><i class="fa-regular fa-circle-check"></i> PASS</div>
+      <p style="font-size:0.8rem; margin-top:0.3rem;">Predicts that hiddenness must be partial, not total — rules out pure deism.</p>
+    </div>
+    <div class="test-card">
+      <h4><i class="fa-regular fa-arrow-right-arrow-left"></i> Test D · Bidirectionality</h4>
+      <p style="font-size:0.85rem; color:#aaa;">Does each side predict the other?</p>
+      <div class="test-verdict text-success"><i class="fa-regular fa-circle-check"></i> PASS</div>
+      <p style="font-size:0.8rem; margin-top:0.3rem;">Decoherence implies a preferred basis; hiddenness implies a preferred covenantal structure.</p>
+    </div>
+  </div>
+
+  <!-- ===== 6. CLASSIFICATION & EVIDENCE ===== -->
+  <div class="section-number">04</div>
+  <h2 class="heading" style="font-size:1.4rem; margin-bottom:0.2rem;">Classification &amp; Evidence</h2>
+  <div class="gradient-line"></div>
+
+  <div class="card" style="margin-bottom:2.5rem;">
+    <div style="display:flex; flex-wrap:wrap; gap:1.5rem; align-items:flex-start;">
+      <div>
+        <span class="badge badge-green" style="font-size:1rem; padding:0.3rem 1.4rem;"><i class="fa-regular fa-circle-check"></i> Level 3 · Isomorphism</span>
+        <p style="margin-top:0.6rem; font-size:0.9rem;">Confidence: <span class="mono gold">0.91</span> (strong structural match)</p>
+      </div>
+      <div style="flex:1;">
+        <div style="display:flex; flex-wrap:wrap; gap:0.3rem;">
+          <span class="chip chip-gold"><i class="fa-regular fa-flask"></i> Partial trace equivalence</span>
+          <span class="chip chip-gold"><i class="fa-regular fa-scale-balanced"></i> Pointer basis ↔ Torah</span>
+          <span class="chip chip-gold"><i class="fa-regular fa-wave-square"></i> Γ<sub>k</sub> ↔ hiddenness degree</span>
+          <span class="chip chip-gold"><i class="fa-regular fa-book"></i> Isaiah 45:15</span>
+          <span class="chip chip-gold"><i class="fa-regular fa-cube"></i> Tzimtzum</span>
+        </div>
+        <p style="margin-top:0.6rem; font-size:0.85rem; color:#aaa;">Laws invoked: Law of Coherence, Law of Non‑Contradiction, Law of Sufficient Reason.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 7. FALSIFICATION CRITERIA ===== -->
+  <div class="section-number">05</div>
+  <h2 class="heading" style="font-size:1.4rem; margin-bottom:0.2rem;">Falsification Criteria</h2>
+  <div class="gradient-line"></div>
+
+  <div class="card card-danger" style="margin-bottom:2.5rem;">
+    <ul style="list-style:none; padding-left:0;">
+      <li style="margin-bottom:0.6rem;"><i class="fa-regular fa-skull" style="color:var(--danger); margin-right:0.6rem;"></i> <strong>Kill condition 1:</strong> If a physical system is found that preserves full coherence while interacting with an environment of any size, the mapping fails.</li>
+      <li style="margin-bottom:0.6rem;"><i class="fa-regular fa-skull" style="color:var(--danger); margin-right:0.6rem;"></i> <strong>Kill condition 2:</strong> If a theological system demonstrates that divine hiddenness is total and absolute (no residual general revelation), the isomorphism collapses.</li>
+      <li style="margin-bottom:0.6rem;"><i class="fa-regular fa-skull" style="color:var(--danger); margin-right:0.6rem;"></i> <strong>Kill condition 3:</strong> If the partial trace operation is shown to be non‑unique or arbitrary in a way that breaks the structural parallel.</li>
+      <li><i class="fa-regular fa-skull" style="color:var(--danger); margin-right:0.6rem;"></i> <strong>Kill condition 4:</strong> If a non‑covenantal basis (other than Torah) emerges as the unique pointer basis in decoherence theory.</li>
+    </ul>
+  </div>
+
+  <!-- ===== 8. RELATED ISOMORPHISMS ===== -->
+  <div class="section-number">06</div>
+  <h2 class="heading" style="font-size:1.4rem; margin-bottom:0.2rem;">Related Isomorphisms</h2>
+  <div class="gradient-line"></div>
+
+  <div class="grid-2" style="margin-bottom:2.5rem;">
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <div style="display:flex; gap:0.6rem; align-items:center;">
+        <i class="fa-regular fa-arrow-right-arrow-left" style="color:var(--info);"></i>
+        <span class="heading" style="font-size:1rem;">ISO‑ENT‑02</span>
+      </div>
+      <p style="font-size:0.9rem;">Entanglement entropy ↔ Original sin (structural inheritance of corruption)</p>
+      <span class="small-mono">faiththruphysics.com/equation/iso-ent-02</span>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--gold);">
+      <div style="display:flex; gap:0.6rem; align-items:center;">
+        <i class="fa-regular fa-arrow-right-arrow-left" style="color:var(--gold);"></i>
+        <span class="heading" style="font-size:1rem;">ISO‑REN‑07</span>
+      </div>
+      <p style="font-size:0.9rem;">Renormalization group flow ↔ Sanctification (progressive refinement toward fixed point)</p>
+      <span class="small-mono">faiththruphysics.com/equation/iso-ren-07</span>
+    </div>
+  </div>
+
+  <!-- ===== 9. FOOTER ===== -->
+  <footer class="footer-seal">
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:0.8rem;">
+      <span><i class="fa-regular fa-compass"></i> Theophysics Research Program · POF 2828</span>
+      <span class="mono" style="font-size:0.75rem; color:#666;">v2.4.1 · MEQ‑10‑C</span>
+    </div>
+    <div style="margin-top:0.8rem; font-size:1rem; color:#b0a88a;">
+      “The math points to God. The math does not contain God.”
+    </div>
+  </footer>
+
+</body>
+</html>

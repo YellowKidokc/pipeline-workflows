@@ -1,0 +1,102 @@
+{
+  "spec_version": "1.0-trilemma-resolver",
+  "status": "OK",
+  "fight": {
+    "id": "affirmative_action",
+    "familiar_name": "Affirmative action",
+    "years_running": 60,
+    "poles": [
+      "Repair historic injustice / level the playing field",
+      "Fighting discrimination with discrimination / judge by merit"
+    ]
+  },
+  "reader_anchor": {
+    "opening_prose": "You are seven years old, sitting on the floor of your bedroom, building a tower from wooden blocks. You have a red block, a blue block, and a green block. Your friend has the same three colors, but their tower is already taller because they started earlier. You want to catch up. You reach for their red block. They say, 'That's mine.' You say, 'But I need it.' The teacher walks in and says, 'Give them one of yours.' You feel the unfairness in your chest: you didn't take their block, you didn't start earlier, and now you have to give up something you earned. But you also see your friend's tower, and you know they didn't earn their head start either. That moment\u2014the one where you had to choose between fairness of outcome and fairness of process, and no choice felt clean\u2014that is the fight you have been in ever since. The quiet theft: you were never told that the real problem was the pile of blocks on the floor, not who got which color. You learned to argue about distribution before you learned to ask where the blocks came from.",
+    "universal_experience": "building a tower with blocks and feeling the unfairness of both giving and receiving a block",
+    "checkable_detail": "You physically reached for someone else's block, and you felt the resistance in your hand when they pulled it back.",
+    "quiet_theft": "You were trained to argue about distribution before you learned to ask where the blocks came from.",
+    "embodiment_note": "The block tower embodies the fight's core distinction: the deficit (uneven starting positions) is real, but every redistribution inside the game forces someone who did not create the deficit to pay."
+  },
+  "poles": [
+    {
+      "label": "Repair pole: active compensation for historical disadvantage",
+      "steelman": "For centuries, systematic discrimination\u2014slavery, Jim Crow, redlining, educational exclusion\u2014created a massive, measurable gap in wealth, opportunity, and social capital. This gap persists today, not because of individual merit, but because of accumulated structural advantage and disadvantage. Affirmative action is not preference; it is repair. It is the only mechanism that has been shown to partially close the gap in admissions, hiring, and contracting. Without it, the same networks and resources that were built on exclusion will continue to replicate the exclusion. The cost is real\u2014some qualified individuals will be passed over\u2014but that cost is dwarfed by the ongoing cost of unrepaired injustice. The alternative is not meritocracy; it is the continuation of a rigged game.",
+      "accusation_against_others": "The merit-only pole is defending a system that was never meritocratic\u2014it was built on exclusion and continues to reward those who inherited the benefits of that exclusion. Their 'neutrality' is a defense of the status quo, which is itself a product of injustice.",
+      "accusation_is_true_because": "The merit-only pole's plan leaves the existing gap in place. That gap was created by past discrimination. By refusing to transfer resources to the victim class, the merit-only pole forces the descendants of victims to continue bearing the cost of damage they did not create."
+    },
+    {
+      "label": "Merit pole: individual assessment without group preference",
+      "steelman": "Discrimination is wrong whether it is based on race, gender, or any other group identity. Affirmative action is discrimination: it treats individuals differently based on group membership, not on their own qualifications or character. It tells a qualified applicant who happens to be from a non-preferred group that their hard work counts less because of their ancestry. That is the same logic as the original discrimination. The proper response to past injustice is to ensure that future decisions are blind to race, ethnicity, and gender\u2014judge each person as an individual. Anything else creates a new class of victims to pay for old debts they did not incur. The damage of past discrimination is real, but the remedy cannot be more discrimination.",
+      "accusation_against_others": "The repair pole is fighting discrimination with discrimination. They are creating a new class of victims\u2014qualified individuals who are passed over because of their group membership\u2014to pay for debts they did not incur. That is not justice; it is scapegoating.",
+      "accusation_is_true_because": "Under the repair pole's plan, a specific individual who did not create the original damage (a qualified applicant from a non-preferred group) is forced to bear the cost of repair by being denied a position they would have otherwise received. That person is paying for a debt they did not incur."
+    }
+  ],
+  "ledger": {
+    "D_definition": "The measurable gap in wealth, income, educational attainment, and social capital between historically disadvantaged groups (e.g., Black Americans descended from slaves) and historically advantaged groups (e.g., White Americans), attributable to centuries of state-enforced discrimination.",
+    "D_is_real_evidence": "The racial wealth gap in the US: median White household wealth is approximately 8 times median Black household wealth (Federal Reserve, 2019). Educational attainment gaps persist even controlling for income. These gaps are not explained by individual effort alone; they correlate with historical policies (redlining, GI Bill exclusion, school segregation).",
+    "victim_class": "Descendants of historically disadvantaged groups who continue to suffer from the accumulated effects of discrimination (e.g., Black Americans, Indigenous peoples).",
+    "causal_class": "Diffuse but traceable: the causal class includes past actors (slaveholders, segregationists, discriminatory institutions) and present beneficiaries of the accumulated advantage (descendants of advantaged groups who inherit wealth, networks, and opportunities built on exclusion). Note: present individuals in the advantaged group did not personally create the original damage, but they are the current holders of the advantage that was built on that damage.",
+    "per_pole_transfers": [
+      {
+        "pole": "Repair pole",
+        "T_A": "Preferential treatment in admissions, hiring, and contracting for members of the victim class (estimated: a 10-20% boost in admission probability for qualified minority applicants at selective institutions).",
+        "T_B": "Denial of positions to qualified individuals from the non-victim class who would have been admitted under a race-blind process (estimated: a 5-15% reduction in admission probability for qualified White and Asian applicants at selective institutions).",
+        "J": 0.15,
+        "M": 0.85,
+        "W_note": "Victim class receives partial restoration (J=0.15) but must still accept that most of the gap remains. Offender class bears only 15% of the cost (M=0.85). Neither side finds this voluntary: victims want full restoration, offenders want no cost.",
+        "who_eats_deficit": "Qualified individuals from the non-victim class (e.g., White and Asian applicants) who are denied positions they would have received under race-blind criteria. They pay for damage they did not create."
+      },
+      {
+        "pole": "Merit pole",
+        "T_A": "No transfer to the victim class (race-blind process, no preferential treatment).",
+        "T_B": "No cost imposed on the offender class (no one is denied a position due to group membership).",
+        "J": 0.0,
+        "M": 1.0,
+        "W_note": "Victim class receives no restoration (J=0). Offender class bears no cost (M=1). Victims do not find this voluntary\u2014they continue to bear the full weight of the unrepaired gap.",
+        "who_eats_deficit": "The victim class (descendants of historically disadvantaged groups) continues to bear the full cost of the unrepaired damage (the wealth and opportunity gap). They pay for damage they did not create."
+      }
+    ]
+  },
+  "clear_win": {
+    "type": "structural_invariant",
+    "statement": "The affirmative action fight is a seating argument on the J + M = 1 line. Both poles' accusations are simultaneously true: under the repair pole, qualified non-victims pay for damage they did not create; under the merit pole, victims continue to pay for damage they did not create. The ledger never closes because every internal transfer forces someone who did not cause the damage to eat the cost. The line is the villain.",
+    "derivation_steps": [
+      "1. Define D as the measurable racial wealth/opportunity gap (e.g., 8:1 wealth ratio).",
+      "2. Under the repair pole: T_A = partial transfer to victims (J \u2248 0.15), T_B = cost imposed on non-victims (M \u2248 0.85). The non-victim who is denied a position pays for damage they did not create. The victim still bears 85% of the gap.",
+      "3. Under the merit pole: T_A = 0 (J = 0), T_B = 0 (M = 1). The victim continues to bear the full gap. No cost is imposed on the causal class or its beneficiaries.",
+      "4. In both cases, the person eating the deficit is someone who did not create the original damage: either a qualified non-victim (repair pole) or a descendant of victims (merit pole).",
+      "5. No position on the line assigns the full cost to the original causal actors (past discriminators) because they are dead or diffuse. Every internal transfer relocates the cost to a present innocent.",
+      "6. Therefore, the fight is structurally irresolvable on the line. The only exit is a voluntary external cost-bearer who absorbs the deficit without forcing it onto any present innocent."
+    ],
+    "dinner_table_sentence": "Both sides are right: every plan makes someone who didn't break it pay for it. The line is the problem.",
+    "why_undeniable": "A hostile reader from either pole must concede that their own accusation against the other side is true, and that the same accusation applies to their own position when the other pole's perspective is adopted. The derivation is checkable in under one minute: define D, define T_A and T_B for each pole, observe that the cost-bearer in each case is innocent of the original damage."
+  },
+  "off_the_line": {
+    "proximate": {
+      "structures": [
+        "Voluntary sponsorship programs where individuals from advantaged backgrounds personally mentor, fund, and advocate for individuals from disadvantaged backgrounds, absorbing the cost of the gap through their own time and resources.",
+        "Community-based mutual aid funds that pool resources from voluntary donors to directly close wealth and opportunity gaps for specific families or neighborhoods.",
+        "House-church or covenantal communities where members voluntarily share resources across racial and economic lines, with the explicit goal of repairing historical damage."
+      ],
+      "honest_limit": "These structures relocate the cost voluntarily and visibly, but they do not retire the deficit. The gap remains at the societal level; the cost is merely borne by willing individuals rather than forced onto unwilling ones. The altruism lemma holds: internal love relocates, it does not retire."
+    },
+    "ultimate": {
+      "configuration": "A voluntary external cost-bearer who (1) is neither victim nor offender nor conscripted bystander, (2) acts voluntarily, (3) absorbs the full cost of the racial wealth/opportunity gap (D), (4) has the capacity to absorb it without being destroyed, and (5) preserves the truth that the damage is real and acknowledged.",
+      "candidate": "The framework identifies the historical candidate as the figure of Christ in Christian theology\u2014a voluntary, innocent, external cost-bearer who absorbs the full deficit of human sin and injustice, including structural injustice, without forcing the cost onto any present party. The door opens from the reader's side only: no one is coerced to accept this configuration.",
+      "door_note": "The door opens from the reader's side only. No coercion. The reader must choose to step into the configuration where the deficit is retired, not merely relocated."
+    }
+  },
+  "anti_gaming_audit": {
+    "blind_label": "pass: the analysis uses 'victim class' and 'non-victim class' without naming any party, politician, or pundit; the mechanism would be identical if the groups were reversed.",
+    "symmetry": "pass: the win applies regardless of which pole proposed the mechanism; both poles' accusations are true simultaneously.",
+    "counterfactual": "pass: D (the racial wealth/opportunity gap) is real and measurable absent any affirmative action policy; it exists as a historical fact.",
+    "radius_consistency": "pass: benefits and costs are measured at the same social level (individual admissions/hiring decisions and societal wealth gap).",
+    "cost_visibility": "pass: the costs are visible to those paying them\u2014denied applicants know they were denied, and victims know they bear the gap.",
+    "no_person_score": "pass: actions and positions are scored, never souls; no individual is condemned, only the structural line.",
+    "unknowns_tracked": "pass: the diffuse nature of the causal class is honestly noted; the exact proportion of the gap attributable to past vs. present discrimination is unknown and reported as unknown."
+  },
+  "falsification": {
+    "kill_condition_specific": "This resolution would be broken if a historical case could be produced where a society closed a racial wealth/opportunity gap through internal transfers (affirmative action or race-blind merit) without forcing any innocent party to bear the cost. No such case exists.",
+    "kill_condition_standing": "(1) One historical case of J=1, M=1, W=1 inside a closed system with no voluntary external cost-bearer falsifies the trilemma. (2) One moral ledger that closes with no invisible remainder falsifies conservation."
+  }
+}

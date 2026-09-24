@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>ISO-022 · Ten Laws Integration · Theophysics Registry</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* ----- RESET & VARIABLES ----- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --gold-glow: rgba(212, 175, 55, 0.08);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border: #2a2a2a;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.6;
+      padding: 2rem 1.5rem 4rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    /* ----- TYPOGRAPHY ----- */
+    h1, h2, h3, h4, .heading { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
+    .mono { font-family: var(--font-mono); }
+    .quote { font-family: var(--font-quote); font-style: italic; }
+    .small-mono { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); }
+    /* ----- UTILITY ----- */
+    .flex { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 500;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .badge-green { background: rgba(34,197,94,0.15); border-color: var(--success); color: var(--success); }
+    .badge-yellow { background: rgba(212,175,55,0.15); border-color: var(--gold); color: var(--gold); }
+    .badge-gold { background: rgba(212,175,55,0.12); border-color: var(--gold); color: var(--gold); }
+    .badge-info { background: rgba(74,158,255,0.12); border-color: var(--info); color: var(--info); }
+    .badge-danger { background: rgba(239,68,68,0.15); border-color: var(--danger); color: var(--danger); }
+    .section-number {
+      font-family: var(--font-heading);
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.25;
+      line-height: 1;
+      margin-right: 0.75rem;
+    }
+    .gradient-line {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent 80%);
+      margin: 1.2rem 0 2rem 0;
+      width: 100%;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      box-shadow: var(--shadow);
+      transition: border 0.2s;
+    }
+    .card-blue { border-top: 4px solid var(--info); }
+    .card-gold { border-top: 4px solid var(--gold); }
+    .card-red { border: 1px solid rgba(239,68,68,0.3); background: rgba(239,68,68,0.05); }
+    /* ----- HEADER / HERO ----- */
+    .registry-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+      gap: 1rem;
+    }
+    .logo-area { display: flex; align-items: center; gap: 1rem; }
+    .logo-phi {
+      font-family: var(--font-heading);
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      background: var(--surface2);
+      width: 64px; height: 64px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+    }
+    .registry-title h1 { font-size: 1.8rem; color: var(--gold); margin: 0; line-height: 1.2; }
+    .registry-title .sub { font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.03em; }
+    .registry-meta { display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; }
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      background: linear-gradient(135deg, rgba(212,175,55,0.06) 0%, rgba(10,10,10,1) 80%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+    .hero-left .law-badge { margin-bottom: 1rem; }
+    .hero-left h2 { font-size: 2.2rem; line-height: 1.2; color: var(--gold); margin: 0.5rem 0; }
+    .hero-left .subtitle { color: var(--text-muted); font-size: 1rem; margin-bottom: 1.2rem; }
+    .hero-left .pull-quote {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #e6e6e6;
+      background: rgba(212,175,55,0.03);
+      padding: 1rem 1.2rem;
+      border-radius: 0 8px 8px 0;
+    }
+    .hero-right .equation-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      line-height: 2;
+    }
+    .eq-block { margin: 0.6rem 0; }
+    .eq-arrow { color: var(--gold); font-size: 1.4rem; margin: 0 0.3rem; }
+    .eq-label { color: var(--text-muted); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; font-family: var(--font-heading); }
+    /* DOMAIN SPEC */
+    .domain-icon { font-size: 2rem; margin-bottom: 0.5rem; display: inline-block; }
+    .domain-card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .domain-card p { font-size: 0.95rem; color: #b0b8c0; }
+    /* MAPPING TABLE */
+    .mapping-table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+    .mapping-table th {
+      background: rgba(212,175,55,0.15);
+      color: var(--gold);
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 2px solid var(--gold);
+      font-weight: 500;
+    }
+    .mapping-table td {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      font-size: 0.9rem;
+    }
+    .mapping-table tr:last-child td { border-bottom: none; }
+    .mapping-table td:first-child { font-family: var(--font-mono); font-size: 0.85rem; color: #b8c0cc; }
+    .mapping-table td:nth-child(2) { color: #e0e6ed; }
+    .mapping-table td:last-child { color: var(--text-muted); }
+    /* TEST CARDS */
+    .test-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+    .test-card h4 { font-size: 1.1rem; margin-bottom: 0.3rem; }
+    .test-card .test-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
+    .test-result { margin-top: 0.8rem; font-weight: 600; font-size: 1rem; }
+    .test-result.pass { color: var(--success); }
+    .test-result.fail { color: var(--danger); }
+    .test-result.untested { color: var(--gold); }
+    /* CLASSIFICATION */
+    .evidence-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+    .chip { background: var(--surface2); border: 1px solid var(--border); border-radius: 40px; padding: 0.2rem 1rem; font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-muted); }
+    .chip-gold { border-color: var(--gold); color: var(--gold); background: rgba(212,175,55,0.06); }
+    /* FALSIFICATION */
+    .falsify-list { list-style: none; padding: 0; }
+    .falsify-list li { padding: 0.6rem 0; border-bottom: 1px solid rgba(239,68,68,0.1); display: flex; gap: 0.8rem; align-items: flex-start; }
+    .falsify-list li:last-child { border-bottom: none; }
+    .falsify-list li i { color: var(--danger); margin-top: 0.2rem; min-width: 1.2rem; }
+    /* RELATED */
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px,1fr)); gap: 1rem; }
+    .related-item { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 0.8rem 1rem; text-align: center; font-size: 0.85rem; font-family: var(--font-mono); color: var(--gold); }
+    /* FOOTER */
+    .footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; font-size: 0.8rem; color: var(--text-muted); }
+    .footer-seal { font-family: var(--font-quote); font-style: italic; color: var(--gold); font-size: 1rem; margin-top: 0.5rem; }
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      body { padding: 1.2rem 1rem; }
+      .hero { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .grid-4 { grid-template-columns: 1fr; }
+      .registry-header { flex-direction: column; align-items: flex-start; }
+      .hero-left h2 { font-size: 1.6rem; }
+      .mapping-table th, .mapping-table td { padding: 0.6rem 0.6rem; font-size: 0.8rem; }
+    }
+    @media (max-width: 480px) {
+      .logo-phi { width: 48px; height: 48px; font-size: 2rem; }
+      .registry-title h1 { font-size: 1.3rem; }
+    }
+    /* misc */
+    .inline-icon { margin-right: 0.4rem; color: var(--gold); }
+    .gold-text { color: var(--gold); }
+    .mt-2 { margin-top: 2rem; }
+    .mb-1 { margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+
+<!-- ===== 1. REGISTRY HEADER ===== -->
+<header class="registry-header">
+  <div class="logo-area">
+    <div class="logo-phi">Φ</div>
+    <div class="registry-title">
+      <h1>Theophysics Registry</h1>
+      <div class="sub">ISO-022 · Ten Laws Integration</div>
+    </div>
+  </div>
+  <div class="registry-meta">
+    <span class="badge badge-green"><i class="fa-regular fa-circle-check" style="margin-right:0.3rem;"></i>Level 3 · Isomorphism</span>
+    <span class="badge badge-info"><i class="fa-regular fa-flask"></i> Testing</span>
+    <span class="badge badge-gold"><i class="fa-regular fa-gem"></i> Confidence: Medium</span>
+    <span class="small-mono" style="background:var(--surface2); padding:0.2rem 0.8rem; border-radius:40px;">v1.0</span>
+  </div>
+</header>
+
+<!-- ===== 2. HERO BANNER ===== -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="law-badge"><span class="badge badge-gold"><i class="fa-regular fa-file-lines"></i> Law Integration · LLC</span></div>
+    <h2>Ten Laws <span style="font-weight:300; color:var(--text-muted);">⇄</span> Divine Unity</h2>
+    <div class="subtitle">Structural isomorphism between the Lowe Coherence Lagrangian and the coherence of truth under one Creator</div>
+    <div class="pull-quote">
+      “All truth is God’s truth — truths in different domains should cohere because they derive from one reality.”
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="equation-card">
+      <div class="eq-label"><i class="fa-regular fa-square-root-variable"></i> Domain A — LLC</div>
+      <div class="eq-block">ℒ(G, C, E, O, I, S, T, P, Q, M) = T – V</div>
+      <div class="eq-block" style="color:var(--gold);">↓&nbsp; symmetry pairs &nbsp;↓</div>
+      <div class="eq-block">1↔8 &nbsp; 2↔9 &nbsp; 3↔10 &nbsp; 4↔7 &nbsp; 5↔6</div>
+      <div style="border-top:1px solid var(--border); margin:0.8rem 0 0.4rem;"></div>
+      <div class="eq-label"><i class="fa-regular fa-cross"></i> Domain B — Theology</div>
+      <div class="eq-block">Divine Simplicity &nbsp;→&nbsp; Unity of Truth</div>
+      <div class="eq-block" style="color:var(--gold);">“in Him all things hold together” (Col 1:17)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 3. DOMAIN SPECIFICATIONS ===== -->
+<div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
+  <span class="section-number">03</span>
+  <h2 style="font-size:1.6rem;">Domain Specifications</h2>
+</div>
+<div class="gradient-line"></div>
+
+<div class="grid-2">
+  <div class="card card-blue domain-card">
+    <div class="domain-icon"><i class="fa-regular fa-atom"></i></div>
+    <h3>Domain A · Physics / Mathematics</h3>
+    <p><strong>Grand unification, Lagrangian mechanics, symmetry groups, coupled dynamical systems.</strong> The Lowe Coherence Lagrangian (LLC) encodes ten laws as coupled variables with specific symmetry pairs (1–8, 2–9, 3–10, 4–7, 5–6). The claim: these ten laws, properly coupled, generate a unified description of reality that integrates physics, information theory, and consciousness.</p>
+    <div style="margin-top:1rem; font-family:var(--font-mono); font-size:0.8rem; background:var(--surface2); padding:0.6rem 1rem; border-radius:8px;">
+      <span class="gold-text">A19.1</span> Ten laws as coupled Lagrangian &nbsp;·&nbsp; <span class="gold-text">D19.1</span> Symmetry pairs derivable
+    </div>
+  </div>
+  <div class="card card-gold domain-card">
+    <div class="domain-icon"><i class="fa-regular fa-church"></i></div>
+    <h3>Domain B · Christian Theology</h3>
+    <p><strong>Unity of truth, coherence of reality under one Creator, divine simplicity.</strong> Christian theology holds that all truth is unified because all truth originates from one God. There is no “secular truth” and “sacred truth” — there is truth. A creation by a coherent Creator should exhibit coherent structure. The ten laws mapping to a unified Lagrangian would instantiate this theological claim physically.</p>
+    <div style="margin-top:1rem; font-family:var(--font-mono); font-size:0.8rem; background:var(--surface2); padding:0.6rem 1rem; border-radius:8px;">
+      <span class="gold-text">T19.1</span> Unity of truth as physical instantiation &nbsp;·&nbsp; <span class="gold-text">E19.1</span> Symmetry pair evidence
+    </div>
+  </div>
+</div>
+
+<!-- ===== 4. THE ISOMORPHIC MAPPING ===== -->
+<div style="display:flex; align-items:center; gap:0.5rem; margin-top:3rem; margin-bottom:0.5rem;">
+  <span class="section-number">04</span>
+  <h2 style="font-size:1.6rem;">Isomorphic Mapping</h2>
+</div>
+<div class="gradient-line"></div>
+
+<div class="card" style="overflow-x:auto; padding:0.5rem 0;">
+  <table class="mapping-table">
+    <thead>
+      <tr><th>Physics / Mathematics</th><th>Theology</th><th>Structural Role</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Lagrangian (single function encoding all dynamics)</td><td>Divine simplicity (one God, not parts)</td><td>Unity of source</td></tr>
+      <tr><td>Euler–Lagrange equations (dynamics derived from single principle)</td><td>Creation from one God (all reality derives from one source)</td><td>Derivation from unity</td></tr>
+      <tr><td>Symmetry pairs (laws related by transformation)</td><td>Coherence of truth (different truths reflect one reality)</td><td>Internal harmony</td></tr>
+      <tr><td>Noether’s theorem (symmetry → conservation law)</td><td>God’s faithfulness → constancy of nature</td><td>Symmetry-preservation link</td></tr>
+      <tr><td>Coupled system (laws interact, not independent)</td><td>Interconnection of all creation (“in Him all things hold together,” Col 1:17)</td><td>Holistic coupling</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 5. SEPARATOR TESTS ===== -->
+<div style="display:flex; align-items:center; gap:0.5rem; margin-top:3rem; margin-bottom:0.5rem;">
+  <span class="section-number">05</span>
+  <h2 style="font-size:1.6rem;">Separator Tests</h2>
+</div>
+<div class="gradient-line"></div>
+
+<div class="grid-4">
+  <!-- Test A -->
+  <div class="test-card">
+    <h4><i class="fa-regular fa-sitemap" style="color:var(--gold);"></i> Test A · Structural Preservation</h4>
+    <div class="test-label">Do relations survive under mapping?</div>
+    <p style="font-size:0.85rem; margin-top:0.5rem; color:var(--text-muted);">Lagrangian structure maps to divine simplicity; Euler–Lagrange to creation; symmetry pairs to coherence. Relations are preserved at the conceptual level.</p>
+    <div class="test-result pass"><i class="fa-regular fa-circle-check"></i> PASS</div>
+  </div>
+  <!-- Test B -->
+  <div class="test-card">
+    <h4><i class="fa-regular fa-arrows-rotate" style="color:var(--gold);"></i> Test B · Non-Arbitrariness</h4>
+    <div class="test-label">Is the mapping forced or could you swap targets?</div>
+    <p style="font-size:0.85rem; margin-top:0.5rem; color:var(--text-muted);">Symmetry pairs (1↔8, 2↔9, etc.) are claimed but transformation group not exhibited. Swap test cannot be performed — mapping is not yet forced.</p>
+    <div class="test-result untested"><i class="fa-regular fa-clock"></i> UNTESTED</div>
+  </div>
+  <!-- Test C -->
+  <div class="test-card">
+    <h4><i class="fa-regular fa-triangle-exclamation" style="color:var(--gold);"></i> Test C · Constraint</h4>
+    <div class="test-label">Does the mapping rule things out?</div>
+    <p style="font-size:0.85rem; margin-top:0.5rem; color:var(--text-muted);">If LLC is a genuine Lagrangian, it rules out non-unified theories. If symmetry pairs are real, arbitrary pairings are excluded. Currently aspirational.</p>
+    <div class="test-result untested"><i class="fa-regular fa-clock"></i> UNTESTED</div>
+  </div>
+  <!-- Test D -->
+  <div class="test-card">
+    <h4><i class="fa-regular fa-arrow-right-arrow-left" style="color:var(--gold);"></i> Test D · Bidirectionality</h4>
+    <div class="test-label">Does each side predict the other?</div>
+    <p style="font-size:0.85rem; margin-top:0.5rem; color:var(--text-muted);">Physics → Theology: LLC instantiates “all truth is God’s truth” formally. Theology → Physics: expectation of coherence motivates unification. Moderate bidirectionality.</p>
+    <div class="test-result pass"><i class="fa-regular fa-circle-check"></i> PASS (moderate)</div>
+  </div>
+</div>
+
+<!-- ===== 6. CLASSIFICATION & EVIDENCE ===== -->
+<div style="display:flex; align-items:center; gap:0.5rem; margin-top:3rem; margin-bottom:0.5rem;">
+  <span class="section-number">06</span>
+  <h2 style="font-size:1.6rem;">Classification &amp; Evidence</h2>
+</div>
+<div class="gradient-line"></div>
+
+<div class="card" style="border-top:2px solid var(--gold);">
+  <div style="display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:space-between; align-items:center;">
+    <div>
+      <span class="badge badge-green" style="font-size:0.9rem; padding:0.3rem 1.2rem;"><i class="fa-regular fa-layer-group"></i> Level 3 · Axiomatic Isomorphism</span>
+      <span class="badge badge-gold" style="margin-left:0.8rem;"><i class="fa-regular fa-gem"></i> Confidence: Medium</span>
+    </div>
+    <div class="small-mono">Reframe: Axiomatic · Connection count: Maximal (all ten laws)</div>
+  </div>
+  <div style="margin-top:1.2rem;">
+    <div style="font-weight:600; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--gold);">Evidence Bundles</div>
+    <div class="evidence-chips">
+      <span class="chip chip-gold">A19.1 · Coupled Lagrangian</span>
+      <span class="chip chip-gold">D19.1 · Symmetry pair derivation</span>
+      <span class="chip chip-gold">P19.1 · Cross-domain predictions</span>
+      <span class="chip chip-gold">T19.1 · Unity of truth</span>
+      <span class="chip chip-gold">E19.1 · Symmetry pair evidence</span>
+      <span class="chip">Shannon / Landauer (info–entropy)</span>
+      <span class="chip">Gravitational phase transitions</span>
+    </div>
+  </div>
+  <div style="margin-top:1rem;">
+    <div style="font-weight:600; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--gold);">Laws Invoked</div>
+    <div style="font-family:var(--font-mono); font-size:0.85rem; color:var(--text-muted); margin-top:0.3rem;">All 10 · G, C, E, O, I, S, T, P, Q, M (Laws 1–10)</div>
+  </div>
+</div>
+
+<!-- ===== 7. FALSIFICATION CRITERIA ===== -->
+<div style="display:flex; align-items:center; gap:0.5rem; margin-top:3rem; margin-bottom:0.5rem;">
+  <span class="section-number">07</span>
+  <h2 style="font-size:1.6rem;">Falsification Criteria</h2>
+</div>
+<div class="gradient-line"></div>
+
+<div class="card card-red">
+  <ul class="falsify-list">
+    <li><i class="fa-regular fa-circle-xmark"></i> <strong>1. LLC is not a real Lagrangian:</strong> Show that the LLC does not satisfy Euler–Lagrange equations or cannot reproduce known physics in any limit. If it uses Lagrangian notation without Lagrangian content, the physics side collapses to notation.</li>
+    <li><i class="fa-regular fa-circle-xmark"></i> <strong>2. Symmetry pairs are numbering-dependent:</strong> Re-number the laws and check if the “symmetry” structure persists. If Law 1↔8 is an artifact of labeling, the symmetry is imposed, not discovered.</li>
+    <li><i class="fa-regular fa-circle-xmark"></i> <strong>3. The ten laws are not independent:</strong> If some laws are derivable from others, the system is overcounted. A Lagrangian with ten coupled variables must have ten independent degrees of freedom.</li>
+    <li><i class="fa-regular fa-circle-xmark"></i> <strong>4. Any ten items can be paired this way:</strong> Take any ten items (laws, amendments, recipes), pair them 1–8, 2–9, 3–10, 4–7, 5–6, and find “structural connections.” If this always works, the pairing is trivially uninformative.</li>
+    <li><i class="fa-regular fa-circle-xmark"></i> <strong>5. Theological falsification:</strong> Show that divine simplicity does not entail unified physical law. If laws are contingent decrees (voluntarism), there is no theological reason to expect a unified Lagrangian.</li>
+  </ul>
+</div>
+
+<!-- ===== 8. RELATED ISOMORPHISMS ===== -->
+<div style="display:flex; align-items:center; gap:0.5rem; margin-top:3rem; margin-bottom:0.5rem;">
+  <span class="section-number">08</span>
+  <h2 style="font-size:1.6rem;">Related Isomorphisms</h2>
+</div>
+<div class="gradient-line"></div>
+
+<div class="related-grid">
+  <div class="related-item">ISO-001 · Trinity (Law 3)</div>
+  <div class="related-item">ISO-002 · Grace (Law 2)</div>
+  <div class="related-item">ISO-003 · Entropy/Sin (Law 6)</div>
+  <div class="related-item">ISO-004 · Quantum Collapse (Law 4)</div>
+  <div class="related-item">ISO-005 · Fiat/Conservation (Law 2)</div>
+  <div class="related-item" style="border-color:var(--gold); color:var(--gold);">All ISOs · integration layer</div>
+</div>
+
+<!-- ===== 9. FOOTER ===== -->
+<footer class="footer">
+  <div style="font-family:var(--font-heading); text-transform:uppercase; letter-spacing:0.08em; font-size:0.9rem;">Theophysics Research Program</div>
+  <div style="margin-top:0.2rem;">POF 2828 · ISO-022 · v1.0</div>
+  <div class="footer-seal">“The math points to God. The math does not contain God.”</div>
+  <div style="margin-top:1rem; font-size:0.7rem; opacity:0.4;"><i class="fa-regular fa-phi"></i> faiththruphysics.com · registry</div>
+</footer>
+
+</body>
+</html>

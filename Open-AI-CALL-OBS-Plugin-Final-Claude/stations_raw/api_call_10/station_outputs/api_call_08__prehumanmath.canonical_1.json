@@ -1,0 +1,510 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "physics",
+        "type": "physics",
+        "strength": 9
+      },
+      {
+        "name": "philosophy",
+        "type": "philosophy",
+        "strength": 8
+      },
+      {
+        "name": "theology",
+        "type": "theology",
+        "strength": 7
+      },
+      {
+        "name": "mathematics",
+        "type": "mathematics",
+        "strength": 9
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": true,
+        "role": "Gravity as governed by inverse-square law, pre-human",
+        "strength": 7
+      },
+      {
+        "variable": "M",
+        "present": true,
+        "role": "Meaning/Mass: mass-energy equivalence in E=mc^2, pre-human",
+        "strength": 8
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Energy/Spirit: energy in nuclear fusion, pre-human",
+        "strength": 8
+      },
+      {
+        "variable": "S",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "T",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Info/Logos: mathematical order as Logos, pre-human rational structure",
+        "strength": 10
+      },
+      {
+        "variable": "R",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "Q",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "F",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence/Christ: mathematical coherence of universe, pre-human",
+        "strength": 6
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "Existence of mathematical order prior to matter and mind"
+      },
+      {
+        "id": "A1.2",
+        "invoked": true,
+        "how": "Distinction between matter, mind, and mathematical substrate"
+      },
+      {
+        "id": "A2.1",
+        "invoked": true,
+        "how": "Substrate: mathematical structure exists in an immaterial, eternal substrate"
+      },
+      {
+        "id": "A2.2",
+        "invoked": true,
+        "how": "Self-grounding: the mathematical order is not dependent on anything else"
+      },
+      {
+        "id": "A5.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC6",
+        "invoked": true,
+        "how": "Infinite Source: the mathematical order is eternal, predating universe"
+      },
+      {
+        "id": "A1.3",
+        "invoked": true,
+        "how": "Info Primacy: information (mathematical structure) is primary over matter"
+      },
+      {
+        "id": "T3.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "Info Conservation: mathematical laws are conserved across time"
+      },
+      {
+        "id": "BC8",
+        "invoked": false,
+        "how": ""
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "source",
+          "ground",
+          "origin"
+        ]
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "logos",
+          "word",
+          "rational order"
+        ]
+      },
+      "spirit": {
+        "present": false,
+        "manifestations": []
+      },
+      "trinitarian_structure": "implicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-001",
+        "domain_a": "mathematics",
+        "domain_b": "theology",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-002",
+        "domain_a": "physics",
+        "domain_b": "philosophy",
+        "strength": 8,
+        "type": "analogical"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "logos",
+        "context": "Greek term for rational order, structure, logic; equated with pre-human mathematical order",
+        "weight": 10
+      },
+      {
+        "concept": "creation",
+        "context": "universe created with mathematical laws already operative",
+        "weight": 6
+      },
+      {
+        "concept": "eternality",
+        "context": "mathematical order is eternal, predating universe",
+        "weight": 8
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "necessity",
+        "context": "mathematical laws are necessary, not contingent",
+        "weight": 9
+      },
+      {
+        "concept": "independence",
+        "context": "math exists independently of matter and mind",
+        "weight": 9
+      },
+      {
+        "concept": "discovery",
+        "context": "math is discovered, not invented",
+        "weight": 8
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 5
+      },
+      {
+        "fruit": "peace",
+        "present": true,
+        "strength": 3
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "domain:mathematics",
+      "to": "domain:physics",
+      "relation": "governs",
+      "weight": 10
+    },
+    {
+      "from": "domain:mathematics",
+      "to": "domain:theology",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:K",
+      "to": "theological_concept:logos",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "axiom:A1.1",
+      "to": "domain:mathematics",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "axiom:A2.1",
+      "to": "domain:mathematics",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "axiom:BC6",
+      "to": "domain:mathematics",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "axiom:A1.3",
+      "to": "domain:mathematics",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "axiom:BC7",
+      "to": "domain:mathematics",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "domain:physics",
+      "to": "chi_variable:G",
+      "relation": "contains",
+      "weight": 7
+    },
+    {
+      "from": "domain:physics",
+      "to": "chi_variable:M",
+      "relation": "contains",
+      "weight": 8
+    },
+    {
+      "from": "domain:physics",
+      "to": "chi_variable:E",
+      "relation": "contains",
+      "weight": 8
+    },
+    {
+      "from": "domain:physics",
+      "to": "chi_variable:K",
+      "relation": "contains",
+      "weight": 10
+    },
+    {
+      "from": "domain:physics",
+      "to": "chi_variable:C",
+      "relation": "contains",
+      "weight": 6
+    },
+    {
+      "from": "theological_concept:logos",
+      "to": "trinity:son",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "logical_concept:necessity",
+      "to": "axiom:A1.1",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:independence",
+      "to": "axiom:A2.1",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:discovery",
+      "to": "domain:mathematics",
+      "relation": "describes",
+      "weight": 8
+    },
+    {
+      "from": "isomorphism:ISO-001",
+      "to": "domain:mathematics",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "isomorphism:ISO-001",
+      "to": "domain:theology",
+      "relation": "maps_to",
+      "weight": 9
+    }
+  ],
+  "tags": {
+    "primary": [
+      "pre-human math",
+      "logos",
+      "mathematical realism",
+      "discovery vs invention",
+      "eternal laws"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/mathematics",
+      "pillar/philosophy",
+      "pillar/theology"
+    ],
+    "series": "master-equation",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "John 1:1",
+        "context": "In the beginning was the Logos, equated with pre-human mathematical order"
+      }
+    ],
+    "academic": [
+      {
+        "ref": "Einstein, 1905",
+        "context": "E=mc^2 discovered, not invented"
+      },
+      {
+        "ref": "Newton, 1687",
+        "context": "Principia, gravity laws discovered"
+      },
+      {
+        "ref": "Euclid, ~300 BC",
+        "context": "Geometry formalized, not invented"
+      }
+    ],
+    "internal": [],
+    "total_count": 4
+  },
+  "word_anomalies": [
+    {
+      "word": "Logos",
+      "frequency": 2,
+      "significance": "Central theological term equated with mathematical order"
+    },
+    {
+      "word": "substrate",
+      "frequency": 1,
+      "significance": "Technical term for the immaterial basis of math"
+    },
+    {
+      "word": "pre-human",
+      "frequency": 5,
+      "significance": "Key concept: math existed before humans"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "Inquisitive, logical, seeking to resolve a paradox about the origin of mathematical laws.",
+    "Q1_identity": "A philosophical and theological analysis arguing that mathematical structure exists independently of matter and mind, and is identified with the Logos.",
+    "Q2_domain": "Primarily philosophy of mathematics and physics, with theological implications.",
+    "Q3_claim": "Mathematical laws are discovered, not invented; they exist in an eternal, immaterial substrate identified with the Logos (John 1:1).",
+    "Q4_support": "Logical elimination of alternatives (matter, mind, nowhere) and historical timeline showing math operative before humans.",
+    "Q5_dependencies": "Assumes realism about mathematical truth; requires distinction between discovery and invention.",
+    "Q6_consequences": "Supports theism (specifically Christian Logos theology); undermines materialism and mathematical anti-realism.",
+    "Q7_kill": "If mathematical laws could be shown to be contingent or emergent from matter, the argument collapses."
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "Five Proofs (terminus.html)",
+      "Fine-Tuning (prehumanmath.html)"
+    ],
+    "required_by": [],
+    "parallel_to": []
+  },
+  "graph_summary": {
+    "total_nodes": 25,
+    "total_edges": 20,
+    "dominant_domain": "mathematics",
+    "dominant_chi": "K",
+    "connectivity_score": 9,
+    "one_sentence": "This document establishes that mathematical laws are pre-human, eternal, and identified with the Logos, forming a bridge between physics and theology."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": false,
+      "how": ""
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Truth (mathematical order) and Coherence (Christ/Logos) are identified"
+    },
+    "4_7_love_relationship": {
+      "active": false,
+      "how": ""
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Logos (K) is central; judgment not invoked"
+    },
+    "pairs_active_count": 2
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": false,
+      "strength": 0
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 9
+    },
+    "love": {
+      "present": false,
+      "strength": 0
+    },
+    "judgment": {
+      "present": false,
+      "strength": 0
+    },
+    "logos": {
+      "present": true,
+      "strength": 10
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": false,
+      "strength": 0
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": true,
+      "strength": 8
+    },
+    "operators_present_count": 3
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "Five Proofs (terminus.html)"
+    ],
+    "read_after": [
+      "Fine-Tuning (prehumanmath.html)"
+    ]
+  }
+}

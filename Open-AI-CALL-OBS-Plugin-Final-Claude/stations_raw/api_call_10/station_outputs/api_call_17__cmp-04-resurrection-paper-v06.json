@@ -1,0 +1,273 @@
+{
+  "spec_version": "1.0",
+  "page_id": "cmp-04-resurrection-paper-v06",
+  "page_title": "Irreversible Coupling-Architecture Modification in Dual-Substrate Systems",
+  "page_slug": "cmp-04-resurrection-paper-v06",
+  "source_file": "cmp-04-resurrection-paper-v06.md",
+  "generated_by": "adversarial_audit_v1",
+  "generated_date": "2026-04-27",
+  "adversarial_audit": {
+    "fatal_issue": "The paper claims a structural correspondence between a dual-substrate model and a theological sequence, but the mapping is asserted via analogy and metaphor, not proven via isomorphism. The model's key parameters (\u03c4_lock, coupling constants) are not derived from physics but accepted from theology, making the correspondence circular.",
+    "major_issue": "The dual-substrate model is speculative and not grounded in any established physics framework. The paper does not provide a Lagrangian, Hamiltonian, or any dynamical equations for the substrates or their coupling. Without a formal mathematical definition, the model is unfalsifiable.",
+    "sharpening_issue": "The paper conflates 'structural correspondence' with 'analogy' throughout. The claim that the mapping is 'operation by operation' is not supported by explicit categorical or algebraic mappings. The paper needs to define what 'structural correspondence' means formally and then prove it.",
+    "smart_hostile_physicist_check": {
+      "primary_confusion": "analogy",
+      "diagnosis": "The paper repeatedly uses physics terminology (SSB, vacuum stabilization, coupling architecture) but applies them to a theological narrative without demonstrating that the mathematical structures are isomorphic. The mapping is descriptive, not predictive.",
+      "sentence_to_rewrite": "The model is then shown to exhibit a candidate structural correspondence with a specific sequence of historical-theological events \u2014 the Incarnation, Crucifixion, Resurrection, and Pentecost \u2014 where the mapping preserves the physics at every stage and the theological identification emerges from constraint satisfaction rather than imposition.",
+      "required_fix": "Replace 'structural correspondence' with 'analogy' or provide a formal categorical mapping that proves the correspondence is an isomorphism, not just a metaphor."
+    },
+    "physics_process_check": {
+      "does_mirror_physics_process": false,
+      "physics_process_named": "Spontaneous Symmetry Breaking (SSB)",
+      "one_to_one_verdict": "broken",
+      "where_mapping_holds": "The paper correctly describes SSB in a scalar field with a Mexican hat potential.",
+      "where_mapping_breaks": "The paper then claims that a distributed field in \u03a3_F undergoes SSB by localizing into \u03a3_D. This is not SSB as defined. SSB occurs when the vacuum state of a field changes symmetry, not when a field localizes into another substrate. The mapping is a category error.",
+      "sentence_to_rewrite": "\u03a8_F(distributed) \u2192 [SSB] \u2192 \u03c8_D(localized) Structurally analogous to the Higgs mechanism: a field distributed across the full substrate acquires a non-zero VEV at a specific point.",
+      "required_fix": "Either define a new process (not SSB) or show how localization is equivalent to SSB in the dual-substrate context. The current mapping is invalid."
+    },
+    "strongest_non_framework_alternative": "The observed historical changes (e.g., spread of Christianity) can be explained by standard sociological, economic, and political factors without invoking any new physics or theological entities. The model adds no explanatory power.",
+    "what_would_force_public_narrowing": "A formal derivation of \u03c4_lock from first principles, a Lagrangian for the dual-substrate system, and a proof that the mapping is an isomorphism (not just analogy) would force the paper to be taken seriously. Without these, the paper remains speculative theology dressed in physics jargon.",
+    "rewrite_priority": "fatal"
+  },
+  "structure_audit": {
+    "opening_hook_strength": 7,
+    "logical_flow_strength": 4,
+    "transition_quality": 5,
+    "does_opening_promise_match_ending": false,
+    "sequence_verdict": "broken",
+    "best_order_step_by_step": [
+      "Define the dual-substrate model mathematically (Lagrangian, coupling terms, symmetry groups).",
+      "Derive the conditions for SSB in this model.",
+      "Define \u03c4_lock and derive it from the model parameters.",
+      "Show that the model produces a sequence of transitions (localization, locking, release, etc.).",
+      "Prove that this sequence is isomorphic to the theological sequence.",
+      "State falsifiable predictions derived from the model.",
+      "Conclude with open problems."
+    ],
+    "flow_breaks": [
+      {
+        "from_section": "Section 3: The Dual-Substrate Model",
+        "to_section": "Section 4: The Symmetry-Breaking Sequence",
+        "problem": "The model is not formally defined (no equations, no dynamics), so the sequence in Section 4 is not derived from the model but imposed on it.",
+        "fix": "Provide a mathematical definition of the model before describing its dynamics."
+      },
+      {
+        "from_section": "Section 4: The Symmetry-Breaking Sequence",
+        "to_section": "Section 5: Energy Conservation Across the Full Arc",
+        "problem": "The energy conservation table is presented as a consequence of the model, but the model has no defined energy terms. The table is ad hoc.",
+        "fix": "Derive the energy conservation from the model's Lagrangian and boundary conditions."
+      },
+      {
+        "from_section": "Section 6: The Activation Constraint",
+        "to_section": "Section 7: Why No Single Physics Phenomenon Captures the Full Sequence",
+        "problem": "Section 6 introduces a Master Equation (\u03c7) that is not defined or derived anywhere in the paper. It appears out of nowhere.",
+        "fix": "Either derive the Master Equation from the model or remove it as it is not part of the physics."
+      }
+    ],
+    "sentence_that_carries_too_much_weight": "The model is then shown to exhibit a candidate structural correspondence with a specific sequence of historical-theological events \u2014 the Incarnation, Crucifixion, Resurrection, and Pentecost \u2014 where the mapping preserves the physics at every stage and the theological identification emerges from constraint satisfaction rather than imposition.",
+    "why_it_carries_too_much_weight": "This sentence is the central claim of the paper, but it is not supported by any formal proof. It asserts that the mapping 'preserves the physics' and 'emerges from constraint satisfaction,' but neither is demonstrated. The entire paper hinges on this sentence, yet it is vague and unsubstantiated."
+  },
+  "framework_presence": {
+    "master_equation": [
+      {
+        "present": true,
+        "quote": "\u03c7 = \u222d(G\u00b7M\u00b7E\u00b7S\u00b7T\u00b7K\u00b7R\u00b7Q\u00b7F\u00b7C) dx dy dt",
+        "function": "Introduced in Section 6 as the Master Equation, but not derived or used elsewhere. It appears to be a placeholder for a formal model that is never developed."
+      }
+    ],
+    "axioms": [],
+    "lean4": [],
+    "claims_layer": [
+      {
+        "present": true,
+        "quote": "The model is then shown to exhibit a candidate structural correspondence...",
+        "function": "Central claim of the paper, but not proven."
+      }
+    ],
+    "proof_layer": [],
+    "tests_layer": [
+      {
+        "present": true,
+        "quote": "Prediction 1: Coupling-domain observables should change discontinuously at ~AD 33.",
+        "function": "Falsifiable prediction, but not derived from the model. It is a post-hoc interpretation of historical data."
+      }
+    ],
+    "laws_layer": []
+  },
+  "paper_changing_questions": [
+    {
+      "question": "What is the Lagrangian (or Hamiltonian) for the dual-substrate system? Provide explicit terms for the fields, their interactions, and the coupling between \u03a3_F and \u03a3_D.",
+      "why_it_matters": "Without a Lagrangian, the model is not a physics model. It is a narrative. The paper cannot make falsifiable predictions without a mathematical foundation.",
+      "if_unanswered_then": "The paper is not a physics paper and should be rewritten as a theological analogy, not a physics model.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Is the mapping between the model's stages and the theological sequence an isomorphism (structure-preserving bijection) or an analogy? Prove it.",
+      "why_it_matters": "The paper claims 'structural correspondence' but never defines what that means. If it is an analogy, the paper is not doing physics. If it is an isomorphism, the paper must provide a categorical or algebraic proof.",
+      "if_unanswered_then": "The paper's central claim is unsubstantiated and should be downgraded to a speculative analogy.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Derive \u03c4_lock from the coupling constants and entropy landscape of the model. Show that it equals approximately 33 years.",
+      "why_it_matters": "The paper admits \u03c4_lock is accepted from theology, not derived from physics. This is circular. A derivation would be a genuine prediction.",
+      "if_unanswered_then": "The model is not predictive; it is a post-hoc rationalization of a pre-existing narrative.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Is the process of 'localization' of \u03a8_F into \u03a3_D actually spontaneous symmetry breaking? Provide the symmetry group, the vacuum manifold, and show that the localization corresponds to a choice of vacuum.",
+      "why_it_matters": "The paper claims SSB but the process described (field localizing into another substrate) is not SSB as defined in physics. This is a category error.",
+      "if_unanswered_then": "The paper misuses a fundamental physics concept and the mapping is invalid.",
+      "severity": "major"
+    },
+    {
+      "question": "What are the coupling-domain observables? Define them mathematically and show how they change discontinuously at AD 33.",
+      "why_it_matters": "Prediction 1 is vague. Without a definition, it cannot be tested.",
+      "if_unanswered_then": "The prediction is unfalsifiable.",
+      "severity": "major"
+    },
+    {
+      "question": "How does the model account for the fact that the theological sequence (Incarnation, Crucifixion, Resurrection, Pentecost) is a one-time event, while SSB is a general phenomenon?",
+      "why_it_matters": "If the model is a physics model, it should predict many such events. If it predicts only one, it is not a physics model.",
+      "if_unanswered_then": "The model is ad hoc and not generalizable.",
+      "severity": "major"
+    },
+    {
+      "question": "What is the physical meaning of the Master Equation \u03c7 = \u222d(G\u00b7M\u00b7E\u00b7S\u00b7T\u00b7K\u00b7R\u00b7Q\u00b7F\u00b7C) dx dy dt? Derive it from the model or remove it.",
+      "why_it_matters": "The Master Equation appears without derivation and is not used elsewhere. It seems to be a placeholder for a formal model that does not exist.",
+      "if_unanswered_then": "The paper contains an undefined, non-physical equation that undermines its credibility.",
+      "severity": "major"
+    },
+    {
+      "question": "Is the coupling-architecture modification C\u2080 \u2192 C\u2081 reversible by an external operator? If not, why is it irreversible?",
+      "why_it_matters": "The paper claims irreversibility but does not provide a proof. In physics, irreversibility is a strong claim that requires a mechanism (e.g., entropy increase, infinite energy barrier).",
+      "if_unanswered_then": "The claim of irreversibility is unsupported.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "How does the model handle the fact that the Resurrection is described as a physical event (empty tomb, appearances) while the model says the change is in the coupling domain, invisible to internal observers?",
+      "why_it_matters": "The paper claims the modification is invisible to \u03a3_D observers, but the theological narrative includes physical evidence. This is a contradiction.",
+      "if_unanswered_then": "The model does not correspond to the theological narrative it claims to map.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "What is the evidence that the coupling architecture changed at AD 33? The paper cites historical changes in the Christian community, but correlation is not causation. How does the model rule out alternative explanations?",
+      "why_it_matters": "The paper's predictions are post-hoc interpretations of historical data. Without a controlled experiment, the model is not testable.",
+      "if_unanswered_then": "The model is not falsifiable.",
+      "severity": "sharpening"
+    }
+  ],
+  "sentence_annotations": [
+    {
+      "anchor_quote": "The model is then shown to exhibit a candidate structural correspondence with a specific sequence of historical-theological events \u2014 the Incarnation, Crucifixion, Resurrection, and Pentecost \u2014 where the mapping preserves the physics at every stage and the theological identification emerges from constraint satisfaction rather than imposition.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is the central claim of the paper, but it is not supported by any formal proof. The paper does not define 'structural correspondence' or show that the mapping is an isomorphism.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "central_claim"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "\u03a8_F(distributed) \u2192 [SSB] \u2192 \u03c8_D(localized) Structurally analogous to the Higgs mechanism: a field distributed across the full substrate acquires a non-zero VEV at a specific point.",
+      "annotation_type": "math",
+      "ui_color": "red",
+      "why_flagged": "This is not SSB. SSB is a change in the vacuum state of a field, not a field localizing into another substrate. The analogy is incorrect.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "ssb_claim"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "We define the locking threshold \u03c4_lock as the minimum duration required for permanence. For t < \u03c4_lock, the break can decay. For t \u2265 \u03c4_lock, the break is irreversible.",
+      "annotation_type": "clarification",
+      "ui_color": "violet",
+      "why_flagged": "\u03c4_lock is accepted from theology, not derived from physics. This is a critical weakness.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "tau_lock_claim"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The Master Equation \u03c7 = \u222d(G\u00b7M\u00b7E\u00b7S\u00b7T\u00b7K\u00b7R\u00b7Q\u00b7F\u00b7C) dx dy dt contains Q (quantum/will) as a multiplicative variable. If Q = 0, \u03c7 = 0 regardless of all other variables.",
+      "annotation_type": "math",
+      "ui_color": "red",
+      "why_flagged": "This equation is not derived from the model and appears without justification. It is not a physics equation.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "master_eq_claim"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The full sequence is a composition of four operations, each with 1:1 physics analog. The composition does not have a single-phenomenon analog.",
+      "annotation_type": "claim",
+      "ui_color": "gold",
+      "why_flagged": "This is a key claim, but the paper does not prove that the composition is not reducible to a known phenomenon. It is an assertion without evidence.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "composition_claim"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Prediction 1: Coupling-domain observables should change discontinuously at ~AD 33.",
+      "annotation_type": "test",
+      "ui_color": "blue",
+      "why_flagged": "The prediction is vague. 'Coupling-domain observables' are not defined, so the prediction cannot be tested.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "prediction_1"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The Resurrection of Jesus Christ, understood as vacuum-state confirmation of a symmetry-breaking event initiated at the Incarnation, exhibits candidate structural correspondence with spontaneous symmetry breaking and permanent coupling-architecture modification in a dual-substrate system.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is the paper's conclusion, but it is not supported by the preceding analysis. The paper has not proven that the Resurrection is a vacuum-state confirmation.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "conclusion_claim"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    }
+  ]
+}

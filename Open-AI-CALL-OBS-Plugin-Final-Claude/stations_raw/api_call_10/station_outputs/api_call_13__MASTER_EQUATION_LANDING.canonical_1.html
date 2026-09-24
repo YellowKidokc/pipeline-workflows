@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Theophysics Isomorphism Registry · faiththruphysics.com</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:opsz,wght@14..32,300..700&family=JetBrains+Mono:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border: #2a2a2a;
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    /* headings */
+    h1, h2, h3, h4, .heading-font {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+    }
+    .section-number {
+      font-family: 'Oswald', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+      margin-right: 0.75rem;
+      user-select: none;
+    }
+    /* equations */
+    code, .eq, .mono {
+      font-family: 'JetBrains Mono', monospace;
+      background: rgba(212, 175, 55, 0.08);
+      padding: 0.1em 0.3em;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    .eq-block {
+      font-family: 'JetBrains Mono', monospace;
+      background: #0d0d0d;
+      border-left: 3px solid var(--gold);
+      padding: 1rem 1.2rem;
+      margin: 0.8rem 0;
+      border-radius: 0 8px 8px 0;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    /* quotes */
+    .pull-quote {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+      color: #e2e8f0;
+      margin: 1rem 0;
+    }
+    /* cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: border 0.2s;
+    }
+    .card-gold-top { border-top: 4px solid var(--gold); }
+    .card-blue-top { border-top: 4px solid var(--info); }
+    .card-red-box {
+      background: #1c1010;
+      border: 1px solid #4a1a1a;
+      border-left: 6px solid var(--danger);
+    }
+    /* grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .grid-2, .grid-4 { grid-template-columns: 1fr; }
+      body { padding: 1rem; }
+    }
+    /* badges */
+    .badge {
+      display: inline-block;
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .badge-green {
+      background: rgba(34, 197, 94, 0.15);
+      border-color: var(--success);
+      color: var(--success);
+    }
+    .badge-yellow {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .badge-gold {
+      background: rgba(212, 175, 55, 0.12);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .badge-info {
+      background: rgba(74, 158, 255, 0.12);
+      border-color: var(--info);
+      color: var(--info);
+    }
+    /* table */
+    .iso-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    .iso-table th {
+      background: #1a1a1a;
+      color: var(--gold);
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.9rem 0.8rem;
+      border-bottom: 2px solid var(--gold);
+      text-align: left;
+    }
+    .iso-table td {
+      padding: 0.8rem;
+      border-bottom: 1px solid #222;
+      vertical-align: top;
+    }
+    .iso-table tr:last-child td { border-bottom: none; }
+    .iso-table tr:hover td { background: #141414; }
+    /* hero banner */
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(10,10,10,0.9) 80%);
+      border: 1px solid #2a2a1a;
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+    .hero-left .law-badge {
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      margin-bottom: 0.8rem;
+    }
+    .hero-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin: 0.5rem 0;
+    }
+    .hero-sub {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .equation-card {
+      background: #0d0d0d;
+      border: 1px solid #2a2a1a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+    .arrow-mapping {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--gold);
+      font-size: 1.8rem;
+      margin: 0.5rem 0;
+    }
+    .chip {
+      display: inline-block;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 30px;
+      padding: 0.2rem 1rem;
+      font-size: 0.75rem;
+      margin: 0.2rem 0.2rem;
+    }
+    .chip-gold {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .separator-line {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 2.5rem 0 1.5rem 0;
+      opacity: 0.4;
+    }
+    .verse-ref {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: #6b7280;
+      letter-spacing: 0.02em;
+    }
+    .footer-seal {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+    .pass { color: var(--success); font-weight: 600; }
+    .fail { color: var(--danger); font-weight: 600; }
+    .gold-text { color: var(--gold); }
+    .info-text { color: var(--info); }
+    .small-mono { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; }
+  </style>
+</head>
+<body>
+
+  <!-- 1. REGISTRY HEADER -->
+  <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-bottom: 0.5rem;">
+    <div style="display: flex; align-items: center; gap: 0.8rem;">
+      <span style="font-size: 2.8rem; font-family: 'Crimson Text', serif; color: var(--gold); font-weight: 700;">Φ</span>
+      <div>
+        <h1 style="font-size: 1.8rem; letter-spacing: 0.08em; margin: 0; line-height: 1.1;">THEOPHYSICS REGISTRY</h1>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; align-items: baseline; margin-top: 0.2rem;">
+          <span class="badge badge-gold" style="font-size: 0.7rem;">ISO/TR 2025-001</span>
+          <span class="badge badge-green"><i class="fa-regular fa-circle-check" style="margin-right: 0.3rem;"></i>LEVEL 3 · ISOMORPHISM</span>
+          <span class="badge badge-info"><i class="fa-regular fa-star"></i> CONFIDENCE 0.92</span>
+          <span class="small-mono" style="color: var(--text-muted);">v. 2.1.0</span>
+        </div>
+      </div>
+    </div>
+    <div style="margin-left: auto; font-size: 0.85rem; color: var(--text-muted); text-align: right;">
+      <span style="display: block;"><i class="fa-regular fa-file-lines"></i> The Equation That Changes Everything</span>
+      <span class="small-mono">canonical · Lindblad–theology mapping</span>
+    </div>
+  </header>
+
+  <!-- 2. HERO BANNER -->
+  <div class="hero-banner grid-2" style="margin-top: 1.2rem;">
+    <div class="hero-left">
+      <span class="law-badge"><i class="fa-regular fa-scale-balanced"></i> LINDBLAD MASTER EQUATION</span>
+      <div class="hero-title">Quantum Physics <span style="color: var(--gold);">⟷</span> Spiritual Dynamics</div>
+      <div class="hero-sub">Structural isomorphism between open quantum systems and soteriological coherence</div>
+      <div class="pull-quote" style="font-size: 1.1rem;">
+        “The universe's fundamental dynamic is the battle between coherence and chaos. Decoherence is sin. Grace is negentropy. Salvation is the Lyapunov-stable attractor of maximum coherence.”
+      </div>
+      <div class="verse-ref"><i class="fa-regular fa-bookmark"></i> Lindblad 1976 · Gorini–Kossakowski–Sudarshan</div>
+    </div>
+    <div>
+      <div class="equation-card">
+        <div style="color: var(--gold); font-family: 'Oswald', sans-serif; letter-spacing: 0.04em; font-size: 0.8rem; margin-bottom: 0.5rem;"><i class="fa-regular fa-square-root-variable"></i> CORE EQUATIONS</div>
+        <div style="margin-bottom: 1rem;">
+          <div style="font-weight: 600; color: var(--info);">Physics (Lindblad)</div>
+          <div class="eq-block" style="margin: 0.2rem 0 0.4rem 0;">dρ/dt = -i[H, ρ] + Σᵢ γᵢ(LᵢρLᵢ† - ½{Lᵢ†Lᵢ, ρ})</div>
+        </div>
+        <div class="arrow-mapping">⟷</div>
+        <div>
+          <div style="font-weight: 600; color: var(--gold);">Theology (Covenant attractor)</div>
+          <div class="eq-block" style="margin: 0.2rem 0 0.4rem 0;">dV/dt ≤ −γ·V(t) &nbsp; where V(ρ)=1−⟨Ω|ρ|Ω⟩</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem;">Lyapunov convergence to |Ω⟩ (Covenant)</div>
+        </div>
+        <div style="border-top: 1px solid #2a2a1a; margin-top: 1rem; padding-top: 0.8rem; display: flex; gap: 0.6rem; flex-wrap: wrap;">
+          <span class="chip chip-gold"><i class="fa-regular fa-circle-check"></i> structural preservation</span>
+          <span class="chip"><i class="fa-regular fa-arrow-right-arrow-left"></i> bijective</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. DOMAIN SPECIFICATIONS -->
+  <div style="margin-top: 2.5rem; display: flex; align-items: baseline; gap: 0.5rem;">
+    <span class="section-number">01</span>
+    <h2 style="font-size: 1.6rem;">Domain Specifications</h2>
+  </div>
+  <div class="separator-line"></div>
+  <div class="grid-2">
+    <div class="card card-blue-top">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+        <i class="fa-solid fa-atom" style="color: var(--info); font-size: 1.6rem;"></i>
+        <h3 style="font-size: 1.3rem; margin: 0;">Domain A · Physics</h3>
+      </div>
+      <p style="color: var(--text-muted); margin-bottom: 0.5rem;"><span class="badge badge-info">open quantum systems</span></p>
+      <p>The Lindblad master equation governs the evolution of density matrices under Markovian decoherence. Operators: Hamiltonian H, Lindblad jump operators Lᵢ, decoherence channels D[ρ]. The state space is a Hilbert space with inner product; the attractor is the maximally mixed or pure steady state depending on the operators.</p>
+      <div class="eq-block" style="margin-top: 0.6rem;">dρ/dt = -i[H, ρ] + Σᵢ γᵢ(LᵢρLᵢ† - ½{Lᵢ†Lᵢ, ρ})</div>
+    </div>
+    <div class="card card-gold-top">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+        <i class="fa-solid fa-dove" style="color: var(--gold); font-size: 1.6rem;"></i>
+        <h3 style="font-size: 1.3rem; margin: 0;">Domain B · Theology</h3>
+      </div>
+      <p style="color: var(--text-muted); margin-bottom: 0.5rem;"><span class="badge badge-gold">soteriological coherence</span></p>
+      <p>Spiritual dynamics described by operators: Grace (L₁), Faith (L₂), Love (L₃), Redemption (L₄). The target state |Ω⟩ (Covenant) is the attractor of maximal coherence. Sin is decoherence; salvation is convergence to |Ω⟩. The Lyapunov function V(ρ) = 1 − ⟨Ω|ρ|Ω⟩ measures distance from salvation.</p>
+      <div class="eq-block" style="margin-top: 0.6rem;">dV/dt ≤ −γ·V(t) &nbsp; (exponential convergence)</div>
+    </div>
+  </div>
+
+  <!-- 4. THE ISOMORPHIC MAPPING -->
+  <div style="margin-top: 2.5rem; display: flex; align-items: baseline; gap: 0.5rem;">
+    <span class="section-number">02</span>
+    <h2 style="font-size: 1.6rem;">The Isomorphic Mapping</h2>
+  </div>
+  <div class="separator-line"></div>
+  <div class="card" style="padding: 0.5rem 0 0 0; overflow-x: auto;">
+    <table class="iso-table">
+      <thead>
+        <tr><th>#</th><th>Physics (Domain A)</th><th>Symbol</th><th>⟷</th><th>Theology (Domain B)</th><th>Symbol</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Lindblad master equation</td><td><code>dρ/dt</code></td><td>⟷</td><td>Spiritual dynamics (salvation flow)</td><td><code>dV/dt</code></td></tr>
+        <tr><td>2</td><td>Hamiltonian H</td><td><code>H</code></td><td>⟷</td><td>Divine order / covenantal structure</td><td><code>Ω</code></td></tr>
+        <tr><td>3</td><td>Jump operator L₁ (Grace)</td><td><code>L₁</code></td><td>⟷</td><td>Restorative coherence operator</td><td><code>L₁</code></td></tr>
+        <tr><td>4</td><td>Jump operator L₂ (Faith)</td><td><code>L₂</code></td><td>⟷</td><td>Stabilizing / anti-decoherence operator</td><td><code>L₂</code></td></tr>
+        <tr><td>5</td><td>Jump operator L₃ (Love)</td><td><code>L₃</code></td><td>⟷</td><td>Entanglement / non-local unity operator</td><td><code>L₃</code></td></tr>
+        <tr><td>6</td><td>Jump operator L₄ (Redemption)</td><td><code>L₄</code></td><td>⟷</td><td>Transformation / error correction operator</td><td><code>L₄</code></td></tr>
+        <tr><td>7</td><td>Decoherence term D[ρ]</td><td><code>D[ρ]</code></td><td>⟷</td><td>Sin / entropy / separation</td><td><code>D[ρ]</code></td></tr>
+        <tr><td>8</td><td>Pure steady state / attractor</td><td><code>|Ω⟩</code></td><td>⟷</td><td>Covenant / maximal coherence</td><td><code>|Ω⟩</code></td></tr>
+        <tr><td>9</td><td>Lyapunov function V(ρ)</td><td><code>V(ρ)</code></td><td>⟷</td><td>Distance from salvation</td><td><code>V(ρ)</code></td></tr>
+        <tr><td>10</td><td>Exponential convergence rate γ</td><td><code>γ</code></td><td>⟷</td><td>Strength of Grace &amp; Redemption</td><td><code>γ</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted); text-align: right;">
+    <i class="fa-regular fa-table"></i> All 10 mappings preserve causal order and operator composition
+  </div>
+
+  <!-- 5. SEPARATOR TESTS -->
+  <div style="margin-top: 2.5rem; display: flex; align-items: baseline; gap: 0.5rem;">
+    <span class="section-number">03</span>
+    <h2 style="font-size: 1.6rem;">Separator Tests</h2>
+  </div>
+  <div class="separator-line"></div>
+  <div class="grid-4">
+    <div class="card">
+      <h3 style="font-size: 1rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fa-regular fa-sitemap"></i> Test A · Structural Preservation</h3>
+      <p style="font-size: 0.85rem; margin: 0.5rem 0;">Do relations survive under mapping? The Lindblad commutator structure maps to spiritual operator algebra; the Lyapunov convergence theorem maps to the promise of salvation. All causal relations preserved.</p>
+      <span class="pass"><i class="fa-regular fa-circle-check"></i> PASS</span>
+    </div>
+    <div class="card">
+      <h3 style="font-size: 1rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fa-regular fa-shuffle"></i> Test B · Non-Arbitrariness</h3>
+      <p style="font-size: 0.85rem; margin: 0.5rem 0;">Could you swap targets? The mapping is forced: each Lindblad operator has a unique theological counterpart (Grace, Faith, Love, Redemption). The attractor |Ω⟩ maps uniquely to Covenant. No alternative alignment yields the same convergence proof.</p>
+      <span class="pass"><i class="fa-regular fa-circle-check"></i> PASS</span>
+    </div>
+    <div class="card">
+      <h3 style="font-size: 1rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fa-regular fa-ban"></i> Test C · Constraint</h3>
+      <p style="font-size: 0.85rem; margin: 0.5rem 0;">Does the mapping rule things out? It forbids any theology without a coherence attractor; it forbids any physics without restorative operators. It predicts that sin (decoherence) must be reversible only through specific operators.</p>
+      <span class="pass"><i class="fa-regular fa-circle-check"></i> PASS</span>
+    </div>
+    <div class="card">
+      <h3 style="font-size: 1rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fa-regular fa-arrow-right-arrow-left"></i> Test D · Bidirectionality</h3>
+      <p style="font-size: 0.85rem; margin: 0.5rem 0;">Does each side predict the other? Forward: physics of open systems predicts spiritual convergence (salvation). Reverse: theology predicts that coherence restoration is a universal law. Time-inverse solutions: creation from unity.</p>
+      <span class="pass"><i class="fa-regular fa-circle-check"></i> PASS</span>
+    </div>
+  </div>
+
+  <!-- 6. CLASSIFICATION & EVIDENCE -->
+  <div style="margin-top: 2.5rem; display: flex; align-items: baseline; gap: 0.5rem;">
+    <span class="section-number">04</span>
+    <h2 style="font-size: 1.6rem;">Classification &amp; Evidence</h2>
+  </div>
+  <div class="separator-line"></div>
+  <div class="card" style="display: flex; flex-wrap: wrap; gap: 1.5rem 2.5rem;">
+    <div style="min-width: 180px;">
+      <span class="badge badge-green" style="font-size: 0.9rem; padding: 0.3rem 1.2rem;"><i class="fa-regular fa-circle-check"></i> LEVEL 3 · ISOMORPHISM</span>
+      <div style="margin-top: 0.8rem;">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">Confidence</div>
+        <div style="font-size: 1.8rem; font-weight: 700; color: var(--gold);">0.92</div>
+        <div style="font-size: 0.7rem; color: var(--text-muted);">based on 10/10 mapping + simulation</div>
+      </div>
+    </div>
+    <div style="flex: 1;">
+      <div style="font-weight: 600; margin-bottom: 0.4rem;"><i class="fa-regular fa-flask"></i> Evidence chips</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+        <span class="chip chip-gold">Lyapunov convergence</span>
+        <span class="chip chip-gold">Lindblad operator algebra</span>
+        <span class="chip chip-gold">simulation: Grace+Redemption λ≈0.18</span>
+        <span class="chip chip-gold">probability 1:10¹⁴</span>
+        <span class="chip chip-gold">causal order preservation</span>
+        <span class="chip chip-gold">bidirectional time-inverse</span>
+      </div>
+      <div style="margin-top: 0.8rem; font-size: 0.8rem; color: var(--text-muted);">
+        <i class="fa-regular fa-scale-balanced"></i> Laws invoked: Lindblad master equation, Lyapunov stability theorem, quantum error correction, entanglement monotones.
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. FALSIFICATION CRITERIA -->
+  <div style="margin-top: 2.5rem; display: flex; align-items: baseline; gap: 0.5rem;">
+    <span class="section-number">05</span>
+    <h2 style="font-size: 1.6rem;">Falsification Criteria</h2>
+  </div>
+  <div class="separator-line"></div>
+  <div class="card card-red-box">
+    <div style="display: flex; gap: 0.8rem; align-items: flex-start;">
+      <i class="fa-solid fa-triangle-exclamation" style="color: var(--danger); font-size: 1.6rem;"></i>
+      <div>
+        <p style="font-weight: 600; color: var(--danger);">Kill conditions — any one falsifies the isomorphism</p>
+        <ul style="list-style: none; margin-top: 0.6rem; display: flex; flex-direction: column; gap: 0.4rem;">
+          <li><i class="fa-regular fa-circle-xmark" style="color: var(--danger); width: 1.4rem;"></i> <strong>No coherence restoration</strong> observed in any biological, cognitive, or cosmological system after targeted intervention.</li>
+          <li><i class="fa-regular fa-circle-xmark" style="color: var(--danger); width: 1.4rem;"></i> <strong>Alternative mapping</strong> with equal or better structural preservation that does not reference a coherence attractor.</li>
+          <li><i class="fa-regular fa-circle-xmark" style="color: var(--danger); width: 1.4rem;"></i> <strong>Violation of Lindblad form</strong> for any proposed spiritual operator (non-Markovian or non-CPTP).</li>
+          <li><i class="fa-regular fa-circle-xmark" style="color: var(--danger); width: 1.4rem;"></i> <strong>Decoherence cannot be reversed</strong> by any combination of Grace, Faith, Love, Redemption analogs in a controlled quantum system.</li>
+          <li><i class="fa-regular fa-circle-xmark" style="color: var(--danger); width: 1.4rem;"></i> <strong>Probability bound violated:</strong> if the mapping is shown to be a coincidence with p &gt; 10⁻¹² under rigorous combinatorial null.</li>
+        </ul>
+        <div class="verse-ref" style="margin-top: 0.8rem;"><i class="fa-regular fa-flask"></i> Falsifiability is built in: the framework is testable.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. RELATED ISOMORPHISMS -->
+  <div style="margin-top: 2.5rem; display: flex; align-items: baseline; gap: 0.5rem;">
+    <span class="section-number">06</span>
+    <h2 style="font-size: 1.6rem;">Related Isomorphisms</h2>
+  </div>
+  <div class="separator-line"></div>
+  <div class="grid-2" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+    <div class="card" style="padding: 1rem;">
+      <i class="fa-regular fa-circle-nodes" style="color: var(--info);"></i>
+      <span style="margin-left: 0.4rem; font-weight: 600;">Quantum Error Correction ↔ Atonement</span>
+      <div class="small-mono" style="color: var(--text-muted);">ISO/TR 2024-009</div>
+    </div>
+    <div class="card" style="padding: 1rem;">
+      <i class="fa-regular fa-circle-nodes" style="color: var(--info);"></i>
+      <span style="margin-left: 0.4rem; font-weight: 600;">Entanglement Entropy ↔ Original Sin</span>
+      <div class="small-mono" style="color: var(--text-muted);">ISO/TR 2024-012</div>
+    </div>
+    <div class="card" style="padding: 1rem;">
+      <i class="fa-regular fa-circle-nodes" style="color: var(--info);"></i>
+      <span style="margin-left: 0.4rem; font-weight: 600;">Renormalization Group ↔ Sanctification</span>
+      <div class="small-mono" style="color: var(--text-muted);">ISO/TR 2025-003</div>
+    </div>
+    <div class="card" style="padding: 1rem;">
+      <i class="fa-regular fa-circle-nodes" style="color: var(--info);"></i>
+      <span style="margin-left: 0.4rem; font-weight: 600;">AdS/CFT ↔ Incarnation</span>
+      <div class="small-mono" style="color: var(--text-muted);">ISO/TR 2025-007</div>
+    </div>
+  </div>
+
+  <!-- 9. FOOTER -->
+  <footer style="margin-top: 3rem; border-top: 1px solid #1e1e1e; padding-top: 1.8rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+    <div>
+      <div style="font-family: 'Oswald', sans-serif; letter-spacing: 0.06em; color: var(--gold);">THEOPHYSICS RESEARCH PROGRAM</div>
+      <div style="font-size: 0.75rem; color: var(--text-muted);">POF 2828 · faiththruphysics.com</div>
+      <div class="small-mono" style="color: #555;">v. 2.1.0 · ISO/TR 2025-001</div>
+    </div>
+    <div class="footer-seal" style="text-align: right; max-width: 280px;">
+      “The math points to God. The math does not contain God.”
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #555; margin-top: 0.2rem;">Φ · Ω · dρ/dt</div>
+    </div>
+  </footer>
+
+</body>
+</html>

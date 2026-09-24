@@ -1,0 +1,583 @@
+{
+  "definitions": [
+    {
+      "term": "entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system.",
+      "example": "A messy room has high entropy; a tidy room has low entropy.",
+      "grade_level": "12",
+      "first_appearance": "The Core Architecture"
+    },
+    {
+      "term": "decoherence",
+      "category": "physics",
+      "definition": "The process by which a quantum system loses its quantum properties and behaves classically.",
+      "example": "A spinning coin wobbles and then falls flat — that's like decoherence.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text, but implied in Law 08"
+    },
+    {
+      "term": "Lagrangian",
+      "category": "physics",
+      "definition": "A function that summarizes the dynamics of a system, used to derive equations of motion.",
+      "example": "It's like a recipe that tells you how a ball will roll down a hill.",
+      "grade_level": "college",
+      "first_appearance": "The Offer of Depth (LLC Lagrangian)"
+    },
+    {
+      "term": "eigenmode",
+      "category": "physics",
+      "definition": "A natural vibration pattern of a system where all parts move together at a specific frequency.",
+      "example": "A guitar string vibrating at its fundamental note is an eigenmode.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text, but implied in framework"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation — how people are saved or rescued from sin.",
+      "example": "Christians believe Jesus' death and resurrection are central to soteriology.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text, but implied in Law 10"
+    },
+    {
+      "term": "hamartiology",
+      "category": "theology",
+      "definition": "The study of sin — what it is, where it comes from, and its effects.",
+      "example": "Hamartiology asks why people do wrong things and how that affects them.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text, but implied in Law 05"
+    },
+    {
+      "term": "sanctification",
+      "category": "theology",
+      "definition": "The process of becoming more holy or morally pure, often through divine help.",
+      "example": "A person trying to be kinder and more honest is undergoing sanctification.",
+      "grade_level": "12",
+      "first_appearance": "Not explicitly in text, but implied in Law 05"
+    },
+    {
+      "term": "atonement",
+      "category": "theology",
+      "definition": "The act of making amends for a wrong or sin, often through a sacrifice.",
+      "example": "In some religions, an animal sacrifice was used for atonement.",
+      "grade_level": "12",
+      "first_appearance": "Not explicitly in text, but implied in Law 10"
+    },
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A mapping between two structures that shows they are essentially the same in form.",
+      "example": "A map of a subway system is isomorphic to the actual tracks — same connections, different look.",
+      "grade_level": "college",
+      "first_appearance": "The Offer of Depth"
+    },
+    {
+      "term": "bijection",
+      "category": "math",
+      "definition": "A one-to-one pairing between two sets where every element in one set matches exactly one in the other.",
+      "example": "If you have 5 apples and 5 oranges, you can pair each apple with one orange — that's a bijection.",
+      "grade_level": "12",
+      "first_appearance": "Not explicitly in text, but implied in framework"
+    },
+    {
+      "term": "Noether",
+      "category": "math",
+      "definition": "Refers to Emmy Noether's theorem: every symmetry in physics has a corresponding conservation law.",
+      "example": "If a system looks the same after a shift in time, energy is conserved — that's Noether's theorem.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text, but implied in framework"
+    },
+    {
+      "term": "tensor",
+      "category": "math",
+      "definition": "A mathematical object that describes relationships between vectors, scalars, and other tensors, often used in physics.",
+      "example": "A stress tensor tells you how forces are distributed inside a material.",
+      "grade_level": "college",
+      "first_appearance": "Law 01 (Einstein tensor)"
+    },
+    {
+      "term": "ontology",
+      "category": "philosophy",
+      "definition": "The study of what exists — the nature of being and reality.",
+      "example": "Ontology asks: Do numbers exist? Do souls exist?",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text, but implied in framework"
+    },
+    {
+      "term": "epistemology",
+      "category": "philosophy",
+      "definition": "The study of knowledge — how we know what we know.",
+      "example": "Epistemology asks: Can we trust our senses? What counts as proof?",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text, but implied in framework"
+    },
+    {
+      "term": "contingent",
+      "category": "philosophy",
+      "definition": "Something that could be different or not exist at all — it depends on something else.",
+      "example": "Your phone is contingent — it could have been made differently or not exist.",
+      "grade_level": "12",
+      "first_appearance": "Not explicitly in text, but implied in framework"
+    },
+    {
+      "term": "necessary",
+      "category": "philosophy",
+      "definition": "Something that must exist and cannot be otherwise.",
+      "example": "A triangle having three sides is necessary — it can't be a triangle without them.",
+      "grade_level": "12",
+      "first_appearance": "The Core Architecture"
+    },
+    {
+      "term": "chi-field",
+      "category": "framework",
+      "definition": "The field of maximum coherence in the framework, representing the integrated state of all laws.",
+      "example": "Think of it as the perfect harmony of all forces and spiritual realities.",
+      "grade_level": "specialist",
+      "first_appearance": "Law 10"
+    },
+    {
+      "term": "coherence functional",
+      "category": "framework",
+      "definition": "A mathematical function that measures how well all the laws work together in harmony.",
+      "example": "It's like a score that tells you how 'in sync' everything is.",
+      "grade_level": "specialist",
+      "first_appearance": "Not explicitly in text, but implied in Law 10"
+    },
+    {
+      "term": "moral curvature",
+      "category": "framework",
+      "definition": "A concept that moral choices bend the 'space' of relationships, like mass bends spacetime.",
+      "example": "A lie might 'curve' the trust between two people, making it harder to be close.",
+      "grade_level": "specialist",
+      "first_appearance": "Not explicitly in text, but implied in Law 07"
+    },
+    {
+      "term": "empirical",
+      "category": "academic",
+      "definition": "Based on observation or experience, not just theory.",
+      "example": "A doctor testing a new drug on patients is doing empirical research.",
+      "grade_level": "12",
+      "first_appearance": "Not explicitly in text, but implied in framework"
+    },
+    {
+      "term": "falsifiable",
+      "category": "academic",
+      "definition": "Able to be proven wrong by evidence or experiment.",
+      "example": "The claim 'all swans are white' is falsifiable — one black swan disproves it.",
+      "grade_level": "12",
+      "first_appearance": "Law 10"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A basic statement that is accepted as true without proof, used as a starting point.",
+      "example": "In geometry, 'a straight line is the shortest distance between two points' is an axiom.",
+      "grade_level": "12",
+      "first_appearance": "Not explicitly in text, but implied in framework"
+    },
+    {
+      "term": "theorem",
+      "category": "academic",
+      "definition": "A statement that has been proven to be true using logic and axioms.",
+      "example": "The Pythagorean theorem is a proven fact about right triangles.",
+      "grade_level": "12",
+      "first_appearance": "Not explicitly in text, but implied in framework"
+    },
+    {
+      "term": "Logos",
+      "category": "language",
+      "definition": "A Greek word meaning 'word,' 'reason,' or 'principle' — in Christian theology, it refers to Jesus as the divine Word.",
+      "example": "In the Bible, 'In the beginning was the Word (Logos), and the Word was with God.'",
+      "grade_level": "12",
+      "first_appearance": "Variable Reference"
+    },
+    {
+      "term": "Christ",
+      "category": "language",
+      "definition": "A Greek word meaning 'anointed one' — used as a title for Jesus in Christianity.",
+      "example": "Christians believe Jesus is the Christ, the savior promised in the Old Testament.",
+      "grade_level": "10",
+      "first_appearance": "Variable Reference"
+    },
+    {
+      "term": "grace",
+      "category": "theology",
+      "definition": "Unearned favor or help from God, often seen as a free gift.",
+      "example": "A parent forgiving a child without the child earning it is like grace.",
+      "grade_level": "10",
+      "first_appearance": "The Core Architecture"
+    },
+    {
+      "term": "covenant",
+      "category": "theology",
+      "definition": "A solemn, binding agreement between God and people, often with promises and obligations.",
+      "example": "The marriage covenant is a promise to stay together through good and bad.",
+      "grade_level": "10",
+      "first_appearance": "Variable Reference"
+    },
+    {
+      "term": "sin",
+      "category": "theology",
+      "definition": "An act that goes against God's will or moral law, often causing separation from God.",
+      "example": "Lying, stealing, or hurting someone intentionally are considered sins.",
+      "grade_level": "10",
+      "first_appearance": "Variable Reference"
+    },
+    {
+      "term": "faith",
+      "category": "theology",
+      "definition": "Trust or belief in something, especially in God or religious teachings, without needing proof.",
+      "example": "Having faith that a friend will keep a promise is like trusting them.",
+      "grade_level": "10",
+      "first_appearance": "Variable Reference"
+    },
+    {
+      "term": "redemption",
+      "category": "theology",
+      "definition": "The act of being saved from sin or evil, often through a sacrifice or payment.",
+      "example": "A prisoner being freed after a ransom is paid is like redemption.",
+      "grade_level": "10",
+      "first_appearance": "Law 10"
+    },
+    {
+      "term": "wholeness",
+      "category": "theology",
+      "definition": "A state of being complete, healthy, and without brokenness, often spiritually.",
+      "example": "Feeling whole means you are at peace and not missing anything important.",
+      "grade_level": "10",
+      "first_appearance": "Law 09"
+    },
+    {
+      "term": "spacetime",
+      "category": "physics",
+      "definition": "The four-dimensional fabric of the universe that combines space and time into one thing.",
+      "example": "Imagine a trampoline sheet — a heavy ball on it curves the sheet, like mass curves spacetime.",
+      "grade_level": "12",
+      "first_appearance": "Law 01"
+    },
+    {
+      "term": "invariant",
+      "category": "physics",
+      "definition": "A quantity that stays the same for all observers, no matter how they are moving.",
+      "example": "The speed of light is invariant — it's the same for everyone.",
+      "grade_level": "college",
+      "first_appearance": "Law 07"
+    },
+    {
+      "term": "superposition",
+      "category": "physics",
+      "definition": "In quantum mechanics, the state where a particle exists in all possible states at once until measured.",
+      "example": "A spinning coin is both heads and tails until it lands — that's like superposition.",
+      "grade_level": "college",
+      "first_appearance": "Law 08"
+    },
+    {
+      "term": "wavefunction",
+      "category": "physics",
+      "definition": "A mathematical description of the quantum state of a particle, containing all possible outcomes.",
+      "example": "It's like a recipe that tells you the chances of finding a particle in different places.",
+      "grade_level": "college",
+      "first_appearance": "Law 08"
+    },
+    {
+      "term": "collapse",
+      "category": "physics",
+      "definition": "The process where a quantum system's superposition reduces to a single definite state when measured.",
+      "example": "When you open a box with a cat that might be dead or alive, the possibilities 'collapse' to one reality.",
+      "grade_level": "college",
+      "first_appearance": "Law 08"
+    },
+    {
+      "term": "Born Rule",
+      "category": "physics",
+      "definition": "A rule in quantum mechanics that gives the probability of finding a particle in a particular state.",
+      "example": "It's like saying: if you roll a die, the chance of getting a 4 is 1/6.",
+      "grade_level": "college",
+      "first_appearance": "Law 08"
+    },
+    {
+      "term": "Hamiltonian",
+      "category": "physics",
+      "definition": "An operator that represents the total energy of a system in quantum mechanics.",
+      "example": "It's like a function that tells you how a system's energy changes over time.",
+      "grade_level": "college",
+      "first_appearance": "Law 08"
+    },
+    {
+      "term": "Planck constant",
+      "category": "physics",
+      "definition": "A fundamental constant that sets the scale of quantum effects, very small.",
+      "example": "It's the 'quantum of action' — the smallest possible change in energy times time.",
+      "grade_level": "college",
+      "first_appearance": "Law 08"
+    },
+    {
+      "term": "Fermi coupling constant",
+      "category": "physics",
+      "definition": "A constant that measures the strength of the weak nuclear force in particle decays.",
+      "example": "It's like a knob that controls how fast radioactive decay happens.",
+      "grade_level": "college",
+      "first_appearance": "Law 09"
+    },
+    {
+      "term": "decay rate",
+      "category": "physics",
+      "definition": "How fast a particle transforms into other particles, measured in decays per second.",
+      "example": "A radioactive atom has a decay rate that tells you how quickly it will break down.",
+      "grade_level": "12",
+      "first_appearance": "Law 09"
+    },
+    {
+      "term": "half-life",
+      "category": "physics",
+      "definition": "The time it takes for half of a radioactive sample to decay.",
+      "example": "If a substance has a half-life of 10 years, after 10 years half of it is gone.",
+      "grade_level": "10",
+      "first_appearance": "Law 09"
+    },
+    {
+      "term": "quark",
+      "category": "physics",
+      "definition": "A fundamental particle that makes up protons and neutrons.",
+      "example": "Think of quarks as the tiny building blocks inside the nucleus of an atom.",
+      "grade_level": "12",
+      "first_appearance": "Law 04"
+    },
+    {
+      "term": "gluon",
+      "category": "physics",
+      "definition": "A particle that carries the strong nuclear force, binding quarks together.",
+      "example": "Gluons are like the glue that holds quarks inside protons and neutrons.",
+      "grade_level": "college",
+      "first_appearance": "Not explicitly in text, but implied in Law 04"
+    },
+    {
+      "term": "QCD",
+      "category": "physics",
+      "definition": "Quantum Chromodynamics — the theory of the strong nuclear force that binds quarks.",
+      "example": "QCD is the rulebook for how quarks and gluons interact.",
+      "grade_level": "college",
+      "first_appearance": "Law 04"
+    },
+    {
+      "term": "string tension",
+      "category": "physics",
+      "definition": "In QCD, the force that increases as quarks are pulled apart, like a rubber band.",
+      "example": "Imagine pulling two magnets apart — the force gets stronger the further you pull.",
+      "grade_level": "college",
+      "first_appearance": "Law 04"
+    },
+    {
+      "term": "confinement",
+      "category": "physics",
+      "definition": "The property that quarks cannot be isolated; they are always bound together in particles.",
+      "example": "You can't have a single quark by itself — it's always stuck with others.",
+      "grade_level": "college",
+      "first_appearance": "Law 04"
+    },
+    {
+      "term": "Shannon entropy",
+      "category": "physics",
+      "definition": "A measure of the information content or surprise in a message, from information theory.",
+      "example": "A coin flip has 1 bit of Shannon entropy — it's equally surprising either way.",
+      "grade_level": "college",
+      "first_appearance": "Law 03"
+    },
+    {
+      "term": "Kolmogorov complexity",
+      "category": "physics",
+      "definition": "The length of the shortest computer program that can produce a given piece of data.",
+      "example": "A simple pattern like 'ABABAB' has low Kolmogorov complexity; random letters have high.",
+      "grade_level": "college",
+      "first_appearance": "Law 06"
+    },
+    {
+      "term": "Landauer principle",
+      "category": "physics",
+      "definition": "The principle that erasing one bit of information in a computer releases a tiny amount of heat.",
+      "example": "Every time you delete a file, a tiny bit of energy is lost as heat.",
+      "grade_level": "college",
+      "first_appearance": "Law 05"
+    },
+    {
+      "term": "negentropy",
+      "category": "physics",
+      "definition": "Negative entropy — a measure of order or information that can be used to do work.",
+      "example": "A battery has negentropy because it can do work, unlike a dead battery.",
+      "grade_level": "college",
+      "first_appearance": "Law 05"
+    },
+    {
+      "term": "Lorentz transformation",
+      "category": "physics",
+      "definition": "A set of equations that relate space and time measurements between moving observers.",
+      "example": "It's the math that explains why time slows down for astronauts moving fast.",
+      "grade_level": "college",
+      "first_appearance": "Law 07"
+    },
+    {
+      "term": "reference frame",
+      "category": "physics",
+      "definition": "A point of view from which measurements of space and time are made.",
+      "example": "A person on a train and a person on the ground have different reference frames.",
+      "grade_level": "12",
+      "first_appearance": "Law 07"
+    },
+    {
+      "term": "cosmological constant",
+      "category": "physics",
+      "definition": "A term in Einstein's equations that represents the energy of empty space, causing the universe to expand.",
+      "example": "It's like a mysterious force pushing galaxies apart.",
+      "grade_level": "college",
+      "first_appearance": "Law 01"
+    },
+    {
+      "term": "stress-energy tensor",
+      "category": "physics",
+      "definition": "A mathematical object that describes the distribution of matter, energy, and momentum in spacetime.",
+      "example": "It's like a map of where all the mass and energy are in the universe.",
+      "grade_level": "college",
+      "first_appearance": "Law 01"
+    },
+    {
+      "term": "Einstein tensor",
+      "category": "physics",
+      "definition": "A mathematical object that describes the curvature of spacetime in general relativity.",
+      "example": "It's the left side of Einstein's equation, telling spacetime how to curve.",
+      "grade_level": "college",
+      "first_appearance": "Law 01"
+    },
+    {
+      "term": "Hessian matrix",
+      "category": "math",
+      "definition": "A matrix of second derivatives that tells you about the curvature of a function.",
+      "example": "It's like a tool that finds the steepest point on a hill.",
+      "grade_level": "college",
+      "first_appearance": "Law 04"
+    },
+    {
+      "term": "integral",
+      "category": "math",
+      "definition": "A mathematical operation that adds up infinitely many tiny pieces to find a total.",
+      "example": "To find the area under a curve, you use an integral.",
+      "grade_level": "12",
+      "first_appearance": "Law 10"
+    },
+    {
+      "term": "derivative",
+      "category": "math",
+      "definition": "A measure of how a quantity changes over time or space.",
+      "example": "Speed is the derivative of distance — it tells you how fast you're moving.",
+      "grade_level": "12",
+      "first_appearance": "Law 05"
+    },
+    {
+      "term": "operator",
+      "category": "math",
+      "definition": "A symbol or function that performs an operation on a mathematical object.",
+      "example": "The plus sign (+) is an operator that adds numbers.",
+      "grade_level": "12",
+      "first_appearance": "Law 01"
+    },
+    {
+      "term": "coupling constant",
+      "category": "physics",
+      "definition": "A number that determines the strength of a force between particles.",
+      "example": "The strong force has a large coupling constant, meaning it's very strong.",
+      "grade_level": "college",
+      "first_appearance": "Law 04"
+    },
+    {
+      "term": "potential energy",
+      "category": "physics",
+      "definition": "Stored energy that can be released, like a ball at the top of a hill.",
+      "example": "A stretched rubber band has potential energy because it can snap back.",
+      "grade_level": "10",
+      "first_appearance": "Law 04"
+    },
+    {
+      "term": "kinetic energy",
+      "category": "physics",
+      "definition": "Energy of motion.",
+      "example": "A moving car has kinetic energy.",
+      "grade_level": "10",
+      "first_appearance": "Not explicitly in text, but implied in Law 02"
+    },
+    {
+      "term": "field",
+      "category": "physics",
+      "definition": "A region of space where a force can be felt, like a magnetic field around a magnet.",
+      "example": "A Wi-Fi signal is a field — you can't see it, but it's there.",
+      "grade_level": "10",
+      "first_appearance": "Law 01"
+    },
+    {
+      "term": "wave equation",
+      "category": "physics",
+      "definition": "A mathematical equation that describes how waves (like light or sound) travel.",
+      "example": "It's the formula that predicts how ripples spread on a pond.",
+      "grade_level": "college",
+      "first_appearance": "Law 03"
+    },
+    {
+      "term": "propagation",
+      "category": "physics",
+      "definition": "The way a wave or signal travels through space or a medium.",
+      "example": "Sound propagation is how noise travels through air.",
+      "grade_level": "12",
+      "first_appearance": "Law 03"
+    },
+    {
+      "term": "source term",
+      "category": "physics",
+      "definition": "A part of an equation that represents where something (like energy or charge) comes from.",
+      "example": "In a river, a spring adding water is a source term.",
+      "grade_level": "college",
+      "first_appearance": "Law 03"
+    },
+    {
+      "term": "configuration space",
+      "category": "physics",
+      "definition": "A mathematical space where every point represents a possible state of a system.",
+      "example": "For a moving particle, configuration space is all the positions it could be in.",
+      "grade_level": "college",
+      "first_appearance": "Law 10"
+    },
+    {
+      "term": "asymmetry",
+      "category": "academic",
+      "definition": "A lack of symmetry or balance between two things.",
+      "example": "A face with one eye higher than the other has asymmetry.",
+      "grade_level": "10",
+      "first_appearance": "The Core Architecture"
+    },
+    {
+      "term": "structural identification",
+      "category": "academic",
+      "definition": "Finding that two different things have the same underlying form or pattern.",
+      "example": "A tree's branches and a river's tributaries have a structural identification — both branch out.",
+      "grade_level": "college",
+      "first_appearance": "Law 06"
+    },
+    {
+      "term": "convergence",
+      "category": "academic",
+      "definition": "The process of coming together toward a common point or result.",
+      "example": "Multiple roads converging at a roundabout is like convergence.",
+      "grade_level": "12",
+      "first_appearance": "Law 10"
+    },
+    {
+      "term": "kill condition",
+      "category": "framework",
+      "definition": "A specific test that, if failed, would disprove the entire framework.",
+      "example": "It's like a 'checkmate' move in chess — if it happens, the theory loses.",
+      "grade_level": "specialist",
+      "first_appearance": "Law 10"
+    },
+    {
+      "term": "adversary",
+      "category": "framework",
+      "definition": "In this framework, a force that uses entropy to cause moral decay, distinct from entropy itself.",
+      "

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>ISO-019 · Boundary Conditions · Theophysics Registry</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:opsz,wght@14..32,300..700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --gold-line: rgba(212, 175, 55, 0.2);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --blue-border: #3b82f6;
+      --gold-border: #d4af37;
+      --red-tint: rgba(239, 68, 68, 0.08);
+      --red-border: rgba(239, 68, 68, 0.3);
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .container { max-width: 1280px; margin: 0 auto; }
+    /* headings */
+    h1, h2, h3, h4, .heading-font { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
+    h1 { font-size: 2.4rem; line-height: 1.2; }
+    h2 { font-size: 1.8rem; margin-bottom: 1rem; }
+    h3 { font-size: 1.3rem; margin-bottom: 0.6rem; }
+    /* section numbers */
+    .section-number {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+      letter-spacing: 0.05em;
+      user-select: none;
+    }
+    /* gradient separator */
+    .separator {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-line), var(--gold), var(--gold-line), transparent);
+      margin: 2rem 0 2.5rem 0;
+      opacity: 0.5;
+    }
+    /* cards */
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .card-glow { border: 1px solid rgba(212,175,55,0.15); }
+    /* badges */
+    .badge {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.9rem;
+      border-radius: 40px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text-muted);
+    }
+    .badge-success { background: rgba(34,197,94,0.15); border-color: var(--success); color: var(--success); }
+    .badge-warning { background: rgba(212,175,55,0.15); border-color: var(--gold); color: var(--gold); }
+    .badge-danger { background: rgba(239,68,68,0.15); border-color: var(--danger); color: var(--danger); }
+    .badge-info { background: rgba(74,158,255,0.12); border-color: var(--info); color: var(--info); }
+    /* grid */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+    .grid-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) {
+      .grid-2, .grid-4 { grid-template-columns: 1fr; gap: 1.2rem; }
+      h1 { font-size: 1.8rem; }
+      .hero-pull { font-size: 1rem; }
+    }
+    /* hero banner */
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(10,10,10,0.9) 80%);
+      border-radius: var(--radius);
+      padding: 2rem;
+      border: 1px solid rgba(212,175,55,0.12);
+    }
+    .hero-left { display: flex; flex-direction: column; gap: 1.2rem; }
+    .pull-quote {
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: 1.15rem;
+      line-height: 1.5;
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+      color: #e0d5b0;
+    }
+    .equation-card {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(212,175,55,0.2);
+      border-radius: 10px;
+      padding: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+    .eq-arrow { color: var(--gold); font-size: 1.6rem; display: block; text-align: center; margin: 0.4rem 0; }
+    /* domain cards */
+    .domain-card { border-top: 4px solid var(--blue-border); padding-top: 1.2rem; }
+    .domain-card.gold-top { border-top-color: var(--gold-border); }
+    .domain-icon { font-size: 1.8rem; margin-bottom: 0.5rem; opacity: 0.7; }
+    /* table */
+    .iso-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      background: var(--surface);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .iso-table th {
+      background: rgba(212,175,55,0.15);
+      color: var(--gold);
+      font-family: var(--font-heading);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.9rem 0.6rem;
+      border-bottom: 1px solid rgba(212,175,55,0.2);
+    }
+    .iso-table td {
+      padding: 0.7rem 0.6rem;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      vertical-align: top;
+    }
+    .iso-table tr:last-child td { border-bottom: none; }
+    .iso-table .y { color: var(--success); font-weight: 600; }
+    .iso-table .n { color: var(--danger); font-weight: 600; }
+    .iso-table .p { color: var(--gold); font-weight: 500; }
+    .mono-sm { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); }
+    /* test cards */
+    .test-card {
+      background: var(--surface2);
+      border-radius: 10px;
+      padding: 1.4rem;
+      border-left: 4px solid var(--gold);
+    }
+    .test-card.pass { border-left-color: var(--success); }
+    .test-card.fail { border-left-color: var(--danger); }
+    .test-verdict {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+    }
+    /* falsification box */
+    .falsify-box {
+      background: var(--red-tint);
+      border: 1px solid var(--red-border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+    }
+    /* evidence chips */
+    .chip {
+      display: inline-block;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 40px;
+      padding: 0.2rem 1rem;
+      font-size: 0.75rem;
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      margin: 0.2rem 0.2rem;
+    }
+    .chip-gold { border-color: rgba(212,175,55,0.3); color: var(--gold); }
+    /* footer */
+    .footer-seal {
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.6;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(212,175,55,0.15);
+      padding-top: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .verse-ref { font-family: var(--font-mono); font-size: 0.7rem; color: #6b7280; }
+    a { color: var(--info); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .fw-300 { font-weight: 300; }
+    .fw-600 { font-weight: 600; }
+    .text-gold { color: var(--gold); }
+    .text-muted { color: var(--text-muted); }
+    .mt-1 { margin-top: 1rem; }
+    .mb-1 { margin-bottom: 1rem; }
+    .gap-1 { gap: 1rem; }
+    .flex { display: flex; flex-wrap: wrap; align-items: center; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 1. REGISTRY HEADER -->
+  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1.2rem; margin-bottom: 0.5rem;">
+    <div style="font-size: 3rem; font-weight: 300; color: var(--gold); opacity: 0.5; font-family: 'Crimson Text', serif;">Φ</div>
+    <div>
+      <h1 style="font-size: 1.8rem; margin: 0; letter-spacing: 0.08em;">THEOPHYSICS REGISTRY</h1>
+      <div style="font-family: var(--font-heading); letter-spacing: 0.04em; color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase;">
+        ISO-019 · Boundary Conditions &amp; Uniqueness Theorems
+      </div>
+    </div>
+    <div style="margin-left: auto; display: flex; gap: 0.6rem; flex-wrap: wrap;">
+      <span class="badge badge-warning"><i class="fa-regular fa-circle-check" style="margin-right: 0.3rem;"></i>Level 3 · Isomorphism</span>
+      <span class="badge badge-info"><i class="fa-regular fa-chart-line"></i> Confidence: Low</span>
+      <span class="badge">v.1.0 · Candidate</span>
+    </div>
+  </div>
+  <div class="separator" style="margin-top: 0.8rem;"></div>
+
+  <!-- 2. HERO BANNER -->
+  <div class="hero-banner grid-2" style="margin-bottom: 2.5rem;">
+    <div class="hero-left">
+      <div><span class="badge badge-success"><i class="fa-regular fa-flask"></i> Law · Uniqueness</span></div>
+      <h1 style="font-size: 2.2rem; line-height: 1.2;">Boundary Conditions <span style="color: var(--gold);">⟷</span> Divine Covenant</h1>
+      <div style="color: var(--text-muted); font-size: 0.95rem;">8 constraints · unique solution · worldview completeness</div>
+      <div class="pull-quote">
+        “The 8 boundary conditions are jointly necessary and sufficient; Christianity is the unique solution.”
+        <div class="verse-ref" style="margin-top: 0.3rem;">— T7.1 · John 14:6</div>
+      </div>
+    </div>
+    <div class="equation-card">
+      <div style="font-family: var(--font-heading); letter-spacing: 0.06em; font-size: 0.7rem; color: var(--gold); text-transform: uppercase; margin-bottom: 0.6rem;"><i class="fa-regular fa-square-root-variable"></i> Core equations</div>
+      <div style="margin-bottom: 0.6rem;">
+        <span style="color: var(--info);">□ χ + dV/dχ χ = J<sub>source</sub></span>
+        <span style="color: var(--text-muted); margin-left: 0.5rem;">(chi-field)</span>
+      </div>
+      <div style="font-size: 0.8rem; color: var(--text-muted);">BC1–BC8 constrain solution space</div>
+      <div class="eq-arrow">⟷</div>
+      <div>
+        <span style="color: var(--gold);">Covenant conditions</span>
+        <span style="color: var(--text-muted); margin-left: 0.5rem;">(8 requirements)</span>
+      </div>
+      <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.4rem;">Unique worldview solution · 8/8 Christianity</div>
+    </div>
+  </div>
+
+  <!-- 3. DOMAIN SPECIFICATIONS -->
+  <div style="display: flex; align-items: baseline; gap: 0.8rem;">
+    <span class="section-number">01</span>
+    <h2>Domain specifications</h2>
+  </div>
+  <div class="grid-2" style="margin-bottom: 1.2rem;">
+    <div class="card domain-card">
+      <div class="domain-icon"><i class="fa-regular fa-atom"></i></div>
+      <h3>Domain A · Physics / Mathematics</h3>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">Boundary conditions &amp; uniqueness theorems for PDEs. The chi-field equation <span style="font-family: var(--font-mono);">(□ + dV/dχ)χ = J<sub>source</sub></span> requires 8 independent BCs for a well-posed unique solution. Standard PDE theory (Cauchy–Kowalevski, Lax–Milgram) guarantees uniqueness when constraints are sufficient.</p>
+      <div class="verse-ref" style="margin-top: 0.6rem;">A7.1 · A7.2 · Hadamard well-posedness</div>
+    </div>
+    <div class="card domain-card gold-top">
+      <div class="domain-icon"><i class="fa-regular fa-church"></i></div>
+      <h3>Domain B · Christian Theology</h3>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">Divine covenant as a set of 8 conditions any complete worldview must satisfy. Christianity uniquely satisfies all 8 (BC1–BC8). Other traditions satisfy subsets, yielding ill‑posed “solutions” — lacking existence, uniqueness, or stability.</p>
+      <div class="verse-ref" style="margin-top: 0.6rem;">T7.1 · John 14:6 · Acts 4:12</div>
+    </div>
+  </div>
+  <div class="separator"></div>
+
+  <!-- 4. THE ISOMORPHIC MAPPING (full table) -->
+  <div style="display: flex; align-items: baseline; gap: 0.8rem;">
+    <span class="section-number">02</span>
+    <h2>Isomorphic mapping</h2>
+  </div>
+  <div style="overflow-x: auto; margin-bottom: 1.5rem;">
+    <table class="iso-table">
+      <thead>
+        <tr><th>BC</th><th>Mathematical constraint</th><th>Theological mapping</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>BC1</td><td>Self‑grounding substrate (no infinite regress)</td><td>God as necessary being</td></tr>
+        <tr><td>BC2</td><td>Trinity structure (three irreducible modes)</td><td>Triune God</td></tr>
+        <tr><td>BC3</td><td>Conservation (div χ = 0)</td><td>Moral immutability</td></tr>
+        <tr><td>BC4</td><td>Incompleteness / Gödel boundary (system cannot self‑validate)</td><td>Need for revelation</td></tr>
+        <tr><td>BC5</td><td>Entropy / degradation (closed systems decay)</td><td>Fall / sin nature</td></tr>
+        <tr><td>BC6</td><td>Non‑unitary external intervention (grace operator)</td><td>Grace / atonement</td></tr>
+        <tr><td>BC7</td><td>Actualization (observer‑dependent collapse)</td><td>Incarnation / divine entry into creation</td></tr>
+        <tr><td>BC8</td><td>Free will (voluntary coupling, α(u))</td><td>Covenant requires consent</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- worldview comparison table -->
+  <div style="overflow-x: auto; margin-bottom: 2rem;">
+    <table class="iso-table">
+      <thead>
+        <tr><th>Worldview</th><th>BC1</th><th>BC2</th><th>BC3</th><th>BC4</th><th>BC5</th><th>BC6</th><th>BC7</th><th>BC8</th><th>Score</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Christianity</td><td class="y">Y</td><td class="y">Y</td><td class="y">Y</td><td class="y">Y</td><td class="y">Y</td><td class="y">Y</td><td class="y">Y</td><td class="y">Y</td><td class="y">8/8</td></tr>
+        <tr><td>Islam</td><td class="y">Y</td><td class="n">N</td><td class="y">Y</td><td class="y">Y</td><td class="y">Y</td><td class="p">Partial</td><td class="n">N</td><td class="p">Partial</td><td>5–6/8</td></tr>
+        <tr><td>Judaism</td><td class="y">Y</td><td class="n">N</td><td class="y">Y</td><td class="y">Y</td><td class="y">Y</td><td class="p">Partial</td><td class="n">N</td><td class="y">Y</td><td>5–6/8</td></tr>
+        <tr><td>Hinduism (Advaita)</td><td class="y">Y</td><td class="n">N</td><td class="p">Partial</td><td class="p">Partial</td><td class="p">Partial</td><td class="n">N</td><td class="p">Partial</td><td class="n">N</td><td>2–4/8</td></tr>
+        <tr><td>Buddhism</td><td class="n">N</td><td class="n">N</td><td class="p">Partial</td><td class="p">Partial</td><td class="y">Y</td><td class="n">N</td><td class="n">N</td><td class="y">Y</td><td>2–3/8</td></tr>
+        <tr><td>Materialism / Atheism</td><td class="n">N</td><td class="n">N</td><td class="y">Y</td><td class="n">N</td><td class="y">Y</td><td class="n">N</td><td class="n">N</td><td class="p">Partial</td><td>2–3/8</td></tr>
+        <tr><td>Deism</td><td class="y">Y</td><td class="n">N</td><td class="y">Y</td><td class="y">Y</td><td class="y">Y</td><td class="n">N</td><td class="n">N</td><td class="n">N</td><td>4/8</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="separator"></div>
+
+  <!-- 5. SEPARATOR TESTS (2x2 grid) -->
+  <div style="display: flex; align-items: baseline; gap: 0.8rem;">
+    <span class="section-number">03</span>
+    <h2>Separator tests</h2>
+  </div>
+  <div class="grid-4" style="margin-bottom: 2rem;">
+    <div class="test-card pass">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-family: var(--font-heading); letter-spacing: 0.04em;">Test A · Structural Preservation</span>
+        <span class="test-verdict" style="color: var(--success);">PASS</span>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.4rem;">Relations survive under mapping: removing any BC yields ill‑posedness in both domains. The constraint structure is preserved.</p>
+    </div>
+    <div class="test-card fail">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-family: var(--font-heading); letter-spacing: 0.04em;">Test B · Non‑Arbitrariness</span>
+        <span class="test-verdict" style="color: var(--danger);">FAIL</span>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.4rem;">Swap test: BCs can be modified to change outcome. Adding BC9 (no paradox) or empirical falsifiability shifts uniqueness. Circularity concern.</p>
+    </div>
+    <div class="test-card pass">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-family: var(--font-heading); letter-spacing: 0.04em;">Test C · Constraint</span>
+        <span class="test-verdict" style="color: var(--success);">PASS</span>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.4rem;">The 8 BCs rule out materialism, Buddhism, and other worldviews. Even the 4 independent BCs provide genuine constraint.</p>
+    </div>
+    <div class="test-card fail">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-family: var(--font-heading); letter-spacing: 0.04em;">Test D · Bidirectionality</span>
+        <span class="test-verdict" style="color: var(--danger);">FAIL</span>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.4rem;">Weak: physics→theology provides formal language, but theology→physics yields no independent predictions. Uniqueness claim is not reciprocally generative.</p>
+    </div>
+  </div>
+  <div class="separator"></div>
+
+  <!-- 6. CLASSIFICATION & EVIDENCE -->
+  <div style="display: flex; align-items: baseline; gap: 0.8rem;">
+    <span class="section-number">04</span>
+    <h2>Classification &amp; evidence</h2>
+  </div>
+  <div class="card" style="margin-bottom: 2rem;">
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start;">
+      <div>
+        <span class="badge badge-warning" style="font-size: 0.8rem; padding: 0.3rem 1.2rem;">Level 3 · Axiomatic</span>
+        <div style="margin-top: 0.8rem;"><span class="badge badge-info">Confidence: Low</span></div>
+        <div style="margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted);">Structural framework: Medium · Uniqueness claim: Low (circularity)</div>
+      </div>
+      <div style="flex: 1;">
+        <div style="font-family: var(--font-heading); letter-spacing: 0.04em; font-size: 0.8rem; color: var(--gold); margin-bottom: 0.4rem;">EVIDENCE CHIPS</div>
+        <div>
+          <span class="chip chip-gold">Cauchy‑Kowalevski</span>
+          <span class="chip chip-gold">Lax‑Milgram</span>
+          <span class="chip chip-gold">Hadamard conditions</span>
+          <span class="chip">A7.1–A7.2</span>
+          <span class="chip">T7.1</span>
+          <span class="chip">John 14:6</span>
+          <span class="chip">Acts 4:12</span>
+          <span class="chip">BC1–BC8</span>
+        </div>
+        <div style="margin-top: 0.6rem; font-size: 0.8rem; color: var(--text-muted);">
+          <span class="verse-ref">Laws invoked: All 10 · Connected ISOs: 001, 002, 003, 013, 014, 015, 016, 017, 018</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="separator"></div>
+
+  <!-- 7. FALSIFICATION CRITERIA -->
+  <div style="display: flex; align-items: baseline; gap: 0.8rem;">
+    <span class="section-number">05</span>
+    <h2>Falsification criteria</h2>
+  </div>
+  <div class="falsify-box" style="margin-bottom: 2rem;">
+    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem;">
+      <li><i class="fa-regular fa-circle-xmark" style="color: var(--danger); margin-right: 0.6rem;"></i> <strong style="color: #f1f5f9;">Show that the 8 BCs are not independent</strong> — if some BC can be derived from others, the uniqueness claim weakens.</li>
+      <li><i class="fa-regular fa-circle-xmark" style="color: var(--danger); margin-right: 0.6rem;"></i> <strong style="color: #f1f5f9;">Show that a non‑Christian worldview satisfies all 8 BCs</strong> — directly refutes T7.1.</li>
+      <li><i class="fa-regular fa-circle-xmark" style="color: var(--danger); margin-right: 0.6rem;"></i> <strong style="color: #f1f5f9;">Show that the 8 BCs are not sufficient</strong> — if the chi‑field equations with all 8 BCs have multiple solutions, uniqueness fails.</li>
+      <li><i class="fa-regular fa-circle-xmark" style="color: var(--danger); margin-right: 0.6rem;"></i> <strong style="color: #f1f5f9;">Show that the BCs were selected to guarantee the desired outcome</strong> — circularity would invalidate the entire exercise.</li>
+    </ul>
+    <div style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid rgba(239,68,68,0.2); padding-top: 0.8rem;">
+      <i class="fa-regular fa-triangle-exclamation" style="color: var(--gold);"></i> Honest assessment: 4 BCs independently derived, 3 Christian‑presuppositional, 1 mixed. Uniqueness claim currently circular.
+    </div>
+  </div>
+  <div class="separator"></div>
+
+  <!-- 8. RELATED ISOMORPHISMS -->
+  <div style="display: flex; align-items: baseline; gap: 0.8rem;">
+    <span class="section-number">06</span>
+    <h2>Related isomorphisms</h2>
+  </div>
+  <div class="grid-2" style="margin-bottom: 2rem;">
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <div style="font-family: var(--font-heading); letter-spacing: 0.04em;">ISO-001</div>
+      <div style="font-size: 0.85rem; color: var(--text-muted);">Trinity / self‑grounding — BC1, BC2</div>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <div style="font-family: var(--font-heading); letter-spacing: 0.04em;">ISO-002</div>
+      <div style="font-size: 0.85rem; color: var(--text-muted);">Terminus Sui / Grace — BC4, BC6</div>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <div style="font-family: var(--font-heading); letter-spacing: 0.04em;">ISO-003</div>
+      <div style="font-size: 0.85rem; color: var(--text-muted);">Entropy / Sin — BC5</div>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <div style="font-family: var(--font-heading); letter-spacing: 0.04em;">ISO-013 · ISO-017</div>
+      <div style="font-size: 0.85rem; color: var(--text-muted);">Grace operator · Incarnation — BC6, BC7, BC8</div>
+    </div>
+  </div>
+  <div class="separator"></div>
+
+  <!-- 9. FOOTER -->
+  <footer style="margin-top: 2.5rem;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+      <div>
+        <div style="font-family: var(--font-heading); letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.8rem;">Theophysics Research Program</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted);">POF 2828 · ISO-019 v.1.0 · Candidate</div>
+      </div>
+      <div style="font-size: 0.75rem; color: var(--text-muted);">
+        <i class="fa-regular fa-file-lines"></i> <a href="#">The Convergence</a> · <a href="#">Trinity Full Paper</a>
+      </div>
+    </div>
+    <div class="footer-seal">
+      <i class="fa-regular fa-rings-wedding" style="margin-right: 0.5rem;"></i> The math points to God. The math does not contain God.
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

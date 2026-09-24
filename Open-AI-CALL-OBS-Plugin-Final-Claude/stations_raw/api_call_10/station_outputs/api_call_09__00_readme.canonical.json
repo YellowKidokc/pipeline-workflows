@@ -1,0 +1,520 @@
+{
+  "definitions": [
+    {
+      "term": "Isomorphism",
+      "category": "math",
+      "definition": "A mapping between two systems that preserves structure, meaning they behave the same way under transformation.",
+      "example": "A map of a subway system is isomorphic to the actual subway lines if you can follow the same routes.",
+      "grade_level": "college",
+      "first_appearance": "00_README, paragraph 1"
+    },
+    {
+      "term": "Structural isomorphism",
+      "category": "math",
+      "definition": "An isomorphism that focuses on how parts are connected and relate to each other, not just the parts themselves.",
+      "example": "Two different family trees are structurally isomorphic if each person has the same number of parents and children, even if the names are different.",
+      "grade_level": "college",
+      "first_appearance": "00_README, paragraph 1"
+    },
+    {
+      "term": "Cross-domain mappings",
+      "category": "framework",
+      "definition": "Connections made between concepts from different fields of study.",
+      "example": "Comparing how a virus spreads in a population to how a rumor spreads online is a cross-domain mapping.",
+      "grade_level": "college",
+      "first_appearance": "00_README, paragraph 1"
+    },
+    {
+      "term": "Theophysics",
+      "category": "framework",
+      "definition": "A field that studies the connections between physics and theology, treating them as related ways of understanding reality.",
+      "example": "Theophysics might ask if the laws of physics and the nature of God are two sides of the same coin.",
+      "grade_level": "college",
+      "first_appearance": "00_README, paragraph 1"
+    },
+    {
+      "term": "Swap test",
+      "category": "framework",
+      "definition": "A test to see if two things can be swapped without changing the meaning or structure of a system.",
+      "example": "If you swap 'gravity' and 'love' in a sentence and it still makes sense in the same way, the swap test passes.",
+      "grade_level": "college",
+      "first_appearance": "00_README, paragraph 3"
+    },
+    {
+      "term": "Bidirectional predictions",
+      "category": "framework",
+      "definition": "Predictions that go both ways: if A is true, then B is true, and if B is true, then A is true.",
+      "example": "If a new law of physics is discovered, it should also predict something about theology, and vice versa.",
+      "grade_level": "college",
+      "first_appearance": "00_README, paragraph 3"
+    },
+    {
+      "term": "Falsification criteria",
+      "category": "academic",
+      "definition": "Specific conditions that, if met, would prove a theory or claim is false.",
+      "example": "A claim that 'all swans are white' is falsified if you find one black swan.",
+      "grade_level": "college",
+      "first_appearance": "00_README, paragraph 3"
+    },
+    {
+      "term": "Four-Test Protocol",
+      "category": "framework",
+      "definition": "A set of four tests used to evaluate whether a claimed isomorphism is valid.",
+      "example": "Before saying two systems are the same, you run them through the four tests to check.",
+      "grade_level": "college",
+      "first_appearance": "00_README, paragraph 5"
+    },
+    {
+      "term": "Prediction Constraint",
+      "category": "framework",
+      "definition": "The requirement that a mapping must lead to predictions in both domains that can be tested.",
+      "example": "If you map physics to theology, you should be able to predict something new about God from a physics equation.",
+      "grade_level": "college",
+      "first_appearance": "00_README, paragraph 5"
+    },
+    {
+      "term": "Symmetric Breaking",
+      "category": "framework",
+      "definition": "The idea that if you break a rule or pattern in one domain, it should break in the same way in the other domain.",
+      "example": "If you remove a rule from a game, the other game should also break in the same way.",
+      "grade_level": "college",
+      "first_appearance": "00_README, paragraph 5"
+    },
+    {
+      "term": "Connection Density",
+      "category": "framework",
+      "definition": "The number of independent links between two systems; more links make the connection more likely to be real.",
+      "example": "If two puzzles have 10 pieces that fit together, that's a higher connection density than if only 2 pieces fit.",
+      "grade_level": "college",
+      "first_appearance": "00_README, paragraph 5"
+    },
+    {
+      "term": "Falsifiability Invitation",
+      "category": "academic",
+      "definition": "A statement that openly says what would prove the idea wrong, inviting others to test it.",
+      "example": "A scientist says, 'If you find a case where my theory fails, please tell me.'",
+      "grade_level": "college",
+      "first_appearance": "00_README, paragraph 5"
+    },
+    {
+      "term": "Trinity",
+      "category": "theology",
+      "definition": "The Christian belief that God is one being in three persons: Father, Son, and Holy Spirit.",
+      "example": "Like how water can be ice, liquid, and steam but is still H2O.",
+      "grade_level": "10",
+      "first_appearance": "00_README, Current Registry, ISO-001"
+    },
+    {
+      "term": "Terminus Sui",
+      "category": "theology",
+      "definition": "A Latin phrase meaning 'end in itself' or 'self-purpose'; something that exists for its own sake, not as a means to something else.",
+      "example": "Happiness is often considered a terminus sui because we seek it for itself, not for something else.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-002"
+    },
+    {
+      "term": "Grace",
+      "category": "theology",
+      "definition": "In Christianity, the free and unearned favor or help from God.",
+      "example": "A teacher giving you an A even though you didn't study is like grace.",
+      "grade_level": "10",
+      "first_appearance": "00_README, Current Registry, ISO-002"
+    },
+    {
+      "term": "Entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system; things tend to become more disordered over time.",
+      "example": "A messy room has higher entropy than a tidy one, and it naturally gets messier without effort.",
+      "grade_level": "11",
+      "first_appearance": "00_README, Current Registry, ISO-003"
+    },
+    {
+      "term": "Sin",
+      "category": "theology",
+      "definition": "In Christianity, an act or thought that goes against God's will or moral law.",
+      "example": "Lying or stealing are considered sins.",
+      "grade_level": "9",
+      "first_appearance": "00_README, Current Registry, ISO-003"
+    },
+    {
+      "term": "Quantum Collapse",
+      "category": "physics",
+      "definition": "The process by which a quantum system goes from many possible states to one definite state when measured.",
+      "example": "A spinning coin is in many states at once until you slap it down and it's heads or tails.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-004"
+    },
+    {
+      "term": "The Fall",
+      "category": "theology",
+      "definition": "In Christianity, the event when Adam and Eve disobeyed God, bringing sin and suffering into the world.",
+      "example": "The Fall is like a perfect machine breaking because someone used it wrong.",
+      "grade_level": "10",
+      "first_appearance": "00_README, Current Registry, ISO-004"
+    },
+    {
+      "term": "Fiat Currency",
+      "category": "academic",
+      "definition": "Money that has value only because a government says it does, not because it's backed by something like gold.",
+      "example": "Dollar bills are fiat currency; they're just paper until the government says they're worth something.",
+      "grade_level": "11",
+      "first_appearance": "00_README, Current Registry, ISO-005"
+    },
+    {
+      "term": "Phantom Energy",
+      "category": "physics",
+      "definition": "A hypothetical form of energy that might be causing the universe to expand faster and faster.",
+      "example": "Phantom energy is like a mysterious force pushing everything apart, even gravity.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-005"
+    },
+    {
+      "term": "Information Primacy",
+      "category": "physics",
+      "definition": "The idea that information is more fundamental than matter or energy; everything is made of information.",
+      "example": "Like how a computer program is just information, but it can create a whole virtual world.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-006"
+    },
+    {
+      "term": "Logos",
+      "category": "theology",
+      "definition": "A Greek word meaning 'word' or 'reason'; in Christianity, it refers to Jesus as the divine reason or order behind the universe.",
+      "example": "Logos is like the blueprint of the universe, and Jesus is that blueprint made real.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-006"
+    },
+    {
+      "term": "Quantum Vacuum",
+      "category": "physics",
+      "definition": "The lowest possible energy state of a quantum field, which is not empty but full of temporary particles popping in and out of existence.",
+      "example": "The quantum vacuum is like a quiet room that's actually full of tiny, invisible vibrations.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-007"
+    },
+    {
+      "term": "Aseity",
+      "category": "theology",
+      "definition": "The property of being self-existent; having life and existence within oneself, not dependent on anything else.",
+      "example": "God is said to have aseity because He doesn't need anything to exist.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-007"
+    },
+    {
+      "term": "Coherence",
+      "category": "physics",
+      "definition": "When waves or particles are in sync, maintaining a fixed relationship; also used more broadly for order and consistency.",
+      "example": "A laser beam is coherent because all the light waves are marching together.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-008"
+    },
+    {
+      "term": "Divine Order",
+      "category": "theology",
+      "definition": "The idea that God has arranged the universe in a purposeful, harmonious way.",
+      "example": "The seasons changing in a cycle is part of divine order.",
+      "grade_level": "10",
+      "first_appearance": "00_README, Current Registry, ISO-008"
+    },
+    {
+      "term": "Least Action",
+      "category": "physics",
+      "definition": "A principle that says nature always takes the path that requires the least energy or effort.",
+      "example": "A ball rolling down a hill will take the steepest, fastest path, which is the path of least action.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-009"
+    },
+    {
+      "term": "Observer Participation",
+      "category": "physics",
+      "definition": "The idea that the act of observing or measuring a system can affect its state.",
+      "example": "In quantum physics, just looking at a particle can change where it is.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-010"
+    },
+    {
+      "term": "Witness Theology",
+      "category": "theology",
+      "definition": "A branch of theology that focuses on how believers testify or bear witness to their faith.",
+      "example": "Telling others about your religious experiences is part of witness theology.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-010"
+    },
+    {
+      "term": "Superposition",
+      "category": "physics",
+      "definition": "The ability of a quantum system to be in multiple states at the same time until it is measured.",
+      "example": "A cat in a box that is both alive and dead at the same time is in superposition.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-011"
+    },
+    {
+      "term": "Mystery",
+      "category": "theology",
+      "definition": "In theology, a truth that is beyond full human understanding but is revealed by God.",
+      "example": "The Trinity is considered a mystery because we can't fully grasp how God is three and one.",
+      "grade_level": "10",
+      "first_appearance": "00_README, Current Registry, ISO-011"
+    },
+    {
+      "term": "Revelation",
+      "category": "theology",
+      "definition": "The act of God making Himself known to humans, often through scripture or experience.",
+      "example": "A dream or vision that gives insight about God is a form of revelation.",
+      "grade_level": "10",
+      "first_appearance": "00_README, Current Registry, ISO-011"
+    },
+    {
+      "term": "Sign Operator (±1)",
+      "category": "math",
+      "definition": "A mathematical symbol that represents either +1 or -1, often used to indicate two opposite possibilities.",
+      "example": "In an equation, ±1 could mean the answer is either +1 or -1, like flipping a coin.",
+      "grade_level": "10",
+      "first_appearance": "00_README, Current Registry, ISO-012"
+    },
+    {
+      "term": "Moral Orientation",
+      "category": "philosophy",
+      "definition": "A person's basic stance or direction regarding what is right and wrong.",
+      "example": "Choosing to be honest is a moral orientation toward truth.",
+      "grade_level": "11",
+      "first_appearance": "00_README, Current Registry, ISO-012"
+    },
+    {
+      "term": "Non-Unitary Operator",
+      "category": "physics",
+      "definition": "A mathematical operation that does not preserve total probability or information, often associated with irreversible processes.",
+      "example": "A measurement that destroys a quantum state is a non-unitary operation.",
+      "grade_level": "graduate",
+      "first_appearance": "00_README, Current Registry, ISO-013"
+    },
+    {
+      "term": "Scalar Field",
+      "category": "physics",
+      "definition": "A field that has a single value (like temperature) at every point in space and time.",
+      "example": "A weather map showing temperature at every location is a scalar field.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-014"
+    },
+    {
+      "term": "Soul",
+      "category": "theology",
+      "definition": "The immaterial, spiritual part of a person that is often believed to survive death.",
+      "example": "Many people think the soul is what makes you 'you' beyond your body.",
+      "grade_level": "9",
+      "first_appearance": "00_README, Current Registry, ISO-014"
+    },
+    {
+      "term": "Decoherence",
+      "category": "physics",
+      "definition": "The process by which a quantum system loses its quantum properties and behaves classically, often due to interaction with the environment.",
+      "example": "A quantum computer stops working if it gets too hot because decoherence destroys the quantum states.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-015"
+    },
+    {
+      "term": "Virtue",
+      "category": "philosophy",
+      "definition": "A good moral quality or habit, like honesty, courage, or kindness.",
+      "example": "Being patient is a virtue.",
+      "grade_level": "9",
+      "first_appearance": "00_README, Current Registry, ISO-015"
+    },
+    {
+      "term": "Dynamical Attractors",
+      "category": "physics",
+      "definition": "States or patterns that a system naturally evolves toward over time, regardless of starting conditions.",
+      "example": "A pendulum always ends up hanging straight down; that's its attractor.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-016"
+    },
+    {
+      "term": "Eschatology",
+      "category": "theology",
+      "definition": "The study of the end times or final destiny of the world and humanity.",
+      "example": "Ideas about heaven, hell, and the apocalypse are part of eschatology.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-016"
+    },
+    {
+      "term": "Modified Einstein Eq.",
+      "category": "physics",
+      "definition": "Changes or additions to Einstein's equations of general relativity to explain new observations or theories.",
+      "example": "Adding a term to Einstein's equation to account for dark energy is a modification.",
+      "grade_level": "graduate",
+      "first_appearance": "00_README, Current Registry, ISO-017"
+    },
+    {
+      "term": "Christological Mediation",
+      "category": "theology",
+      "definition": "The role of Jesus Christ as the mediator between God and humanity.",
+      "example": "Christological mediation is like a bridge that connects two separated shores.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-017"
+    },
+    {
+      "term": "Modified Friedmann",
+      "category": "physics",
+      "definition": "Changes to the Friedmann equations, which describe the expansion of the universe in cosmology.",
+      "example": "A modified Friedmann equation might include new forces affecting how fast the universe expands.",
+      "grade_level": "graduate",
+      "first_appearance": "00_README, Current Registry, ISO-018"
+    },
+    {
+      "term": "Cosmological Grace",
+      "category": "framework",
+      "definition": "The idea that the universe's structure and laws reflect a kind of unearned gift or favor, similar to grace in theology.",
+      "example": "The fact that the universe is fine-tuned for life could be seen as cosmological grace.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-018"
+    },
+    {
+      "term": "Boundary Conditions",
+      "category": "physics",
+      "definition": "The values or states of a system at the edges or limits of a problem, which determine the solution.",
+      "example": "If you're solving for the temperature in a room, the temperature at the walls is a boundary condition.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-019"
+    },
+    {
+      "term": "Divine Covenant",
+      "category": "theology",
+      "definition": "A solemn agreement or promise between God and humans, often with conditions and blessings.",
+      "example": "The covenant with Noah promised never to flood the whole earth again.",
+      "grade_level": "10",
+      "first_appearance": "00_README, Current Registry, ISO-019"
+    },
+    {
+      "term": "IIT/Phi Threshold",
+      "category": "physics",
+      "definition": "Integrated Information Theory (IIT) measures consciousness with a value called Phi; the threshold is the minimum Phi needed for consciousness.",
+      "example": "A computer might have a Phi below the threshold, meaning it's not conscious.",
+      "grade_level": "graduate",
+      "first_appearance": "00_README, Current Registry, ISO-020"
+    },
+    {
+      "term": "AI Ensoulment",
+      "category": "theology",
+      "definition": "The question of whether an artificial intelligence could have a soul or be considered a spiritual being.",
+      "example": "If a robot becomes self-aware, does it get a soul? That's AI ensoulment.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-020"
+    },
+    {
+      "term": "Faith Seeking Understanding",
+      "category": "theology",
+      "definition": "A phrase meaning that faith leads to deeper knowledge and reason; belief comes first, then understanding.",
+      "example": "You trust a friend, then later you understand why they did something.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-021"
+    },
+    {
+      "term": "Lagrangian Integration",
+      "category": "physics",
+      "definition": "A method in physics that sums up all possible paths or actions to find the most likely outcome.",
+      "example": "It's like considering every possible route a ball could take down a hill and averaging them.",
+      "grade_level": "graduate",
+      "first_appearance": "00_README, Current Registry, ISO-022"
+    },
+    {
+      "term": "Unity of Truth",
+      "category": "philosophy",
+      "definition": "The idea that all truth, whether scientific, religious, or philosophical, is ultimately one coherent whole.",
+      "example": "Science and religion are both seeking truth, and they shouldn't contradict each other.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-022"
+    },
+    {
+      "term": "Consilience",
+      "category": "academic",
+      "definition": "The principle that evidence from different, independent sources converges to support the same conclusion.",
+      "example": "If history, archaeology, and genetics all point to the same event, that's consilience.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-023"
+    },
+    {
+      "term": "Prophetic Witness",
+      "category": "theology",
+      "definition": "The act of speaking or living out a message from God, often calling people to repentance or hope.",
+      "example": "A preacher warning about injustice is engaging in prophetic witness.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-023"
+    },
+    {
+      "term": "8 BCs Uniqueness",
+      "category": "framework",
+      "definition": "A claim that eight specific boundary conditions (BCs) are unique to Christianity and not found in other religions.",
+      "example": "If only Christianity has these eight features, that's 8 BCs uniqueness.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-024"
+    },
+    {
+      "term": "Christian Exclusivity",
+      "category": "theology",
+      "definition": "The belief that Christianity is the only true path to salvation or truth.",
+      "example": "Some Christians believe Jesus is the only way to God, which is Christian exclusivity.",
+      "grade_level": "10",
+      "first_appearance": "00_README, Current Registry, ISO-024"
+    },
+    {
+      "term": "Immunology",
+      "category": "academic",
+      "definition": "The study of the immune system, which protects the body from disease.",
+      "example": "Vaccines work by training the immune system, which is part of immunology.",
+      "grade_level": "11",
+      "first_appearance": "00_README, Current Registry, ISO-025"
+    },
+    {
+      "term": "Soteriology",
+      "category": "theology",
+      "definition": "The study of salvation, especially how humans are saved from sin and reconciled to God.",
+      "example": "Soteriology asks questions like 'How does Jesus save us?'",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-025"
+    },
+    {
+      "term": "Addiction",
+      "category": "academic",
+      "definition": "A condition where a person cannot stop doing something, even if it's harmful, because of strong cravings.",
+      "example": "Someone addicted to video games can't stop playing even when they should.",
+      "grade_level": "9",
+      "first_appearance": "00_README, Current Registry, ISO-026"
+    },
+    {
+      "term": "Sin Bondage",
+      "category": "theology",
+      "definition": "The idea that sin traps a person, making it hard to stop sinning without divine help.",
+      "example": "Like being stuck in a bad habit you can't break on your own.",
+      "grade_level": "10",
+      "first_appearance": "00_README, Current Registry, ISO-026"
+    },
+    {
+      "term": "Epidemiology",
+      "category": "academic",
+      "definition": "The study of how diseases spread and affect populations.",
+      "example": "Epidemiology helped track how COVID-19 spread from person to person.",
+      "grade_level": "college",
+      "first_appearance": "00_README, Current Registry, ISO-027"
+    },
+    {
+      "term": "Sin Propagation",
+      "category": "theology",
+      "definition": "The idea that sin spreads from person to person, like a disease or bad influence.",
+      "example": "One person lying can lead to others lying, spreading sin propagation.",
+      "grade_level": "10",
+      "first_appearance": "00_README, Current Registry, ISO-027"
+    },
+    {
+      "term": "Ecology",
+      "category": "academic",
+      "definition": "The study of how living things interact with each other and their environment.",
+      "example": "Ecology looks at how wolves, deer, and forests all affect each other.",
+      "grade_level": "10",
+      "first_appearance": "00_README, Current Registry, ISO-028"
+    },
+    {
+      "term": "Ecclesiology",
+      "category": "theology",
+      "definition": "The study of the church, its nature, structure, and role in the world.",
+      "example": "Ecclesiology asks questions like 'What is the purpose of the church?'",
+      "grade_level": "col

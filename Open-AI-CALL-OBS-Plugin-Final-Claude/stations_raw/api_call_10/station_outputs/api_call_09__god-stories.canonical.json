@@ -1,0 +1,475 @@
+{
+  "definitions": [
+    {
+      "term": "entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system; things naturally tend to get more messy over time.",
+      "example": "Your bedroom gets messier on its own, but it takes work to clean it up.",
+      "grade_level": "12",
+      "first_appearance": "GS-02"
+    },
+    {
+      "term": "decoherence",
+      "category": "physics",
+      "definition": "The process where a quantum system loses its special quantum properties and starts acting like normal everyday objects.",
+      "example": "Like a spinning top that wobbles and then falls over, losing its perfect spin.",
+      "grade_level": "college",
+      "first_appearance": "GS-14"
+    },
+    {
+      "term": "Lagrangian",
+      "category": "physics",
+      "definition": "A mathematical function that describes the energy of a system and is used to predict how it will move.",
+      "example": "Like a recipe that tells you how much kinetic and potential energy a bouncing ball has at every moment.",
+      "grade_level": "college",
+      "first_appearance": "GS-23"
+    },
+    {
+      "term": "eigenmode",
+      "category": "physics",
+      "definition": "A special pattern of vibration that a system naturally likes to move in, like a guitar string's favorite way to vibrate.",
+      "example": "A guitar string vibrating at its natural frequency to produce a pure note.",
+      "grade_level": "college",
+      "first_appearance": "GS-01"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation\u2014how people are saved or rescued from sin and its consequences.",
+      "example": "Like studying how a lifeguard rescues a drowning person, but for the soul.",
+      "grade_level": "college",
+      "first_appearance": "GS-03"
+    },
+    {
+      "term": "hamartiology",
+      "category": "theology",
+      "definition": "The study of sin\u2014what it is, where it comes from, and how it affects people.",
+      "example": "Like studying the nature of a disease to understand how to cure it.",
+      "grade_level": "college",
+      "first_appearance": "GS-02"
+    },
+    {
+      "term": "sanctification",
+      "category": "theology",
+      "definition": "The process of becoming more holy or morally pure over time, often with help from God.",
+      "example": "Like slowly cleaning a stained shirt until it becomes bright white again.",
+      "grade_level": "12",
+      "first_appearance": "GS-18"
+    },
+    {
+      "term": "atonement",
+      "category": "theology",
+      "definition": "The act of making up for a wrong or repairing a broken relationship, often through a sacrifice.",
+      "example": "Like apologizing and doing something nice to fix a friendship after a fight.",
+      "grade_level": "11",
+      "first_appearance": "GS-19"
+    },
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A one-to-one matching between two things that shows they have the same structure or pattern.",
+      "example": "Like a map of a subway system that matches the real tracks exactly, station for station.",
+      "grade_level": "college",
+      "first_appearance": "GS-12"
+    },
+    {
+      "term": "bijection",
+      "category": "math",
+      "definition": "A perfect pairing where every item in one group is matched with exactly one item in another group, and nothing is left out.",
+      "example": "Like assigning each student in a class a unique locker number, with no lockers left empty.",
+      "grade_level": "college",
+      "first_appearance": "GS-12"
+    },
+    {
+      "term": "Noether",
+      "category": "math",
+      "definition": "Refers to Emmy Noether's theorem, which says that every symmetry in physics leads to a conservation law (like energy being conserved).",
+      "example": "If a game is symmetric (same rules for everyone), then something like fairness is conserved.",
+      "grade_level": "college",
+      "first_appearance": "GS-12"
+    },
+    {
+      "term": "tensor",
+      "category": "math",
+      "definition": "A mathematical object that can describe multiple physical quantities at once, like a grid of numbers that transforms in a specific way.",
+      "example": "Like a spreadsheet that holds numbers for stress, pressure, and direction all in one table.",
+      "grade_level": "college",
+      "first_appearance": "GS-01"
+    },
+    {
+      "term": "ontology",
+      "category": "philosophy",
+      "definition": "The branch of philosophy that studies what exists and what it means for something to be real.",
+      "example": "Asking 'Is a thought as real as a rock?' is an ontological question.",
+      "grade_level": "college",
+      "first_appearance": "GS-09"
+    },
+    {
+      "term": "epistemology",
+      "category": "philosophy",
+      "definition": "The study of knowledge\u2014how we know what we know and what counts as evidence.",
+      "example": "Asking 'How do you know it's raining outside?' is an epistemological question.",
+      "grade_level": "college",
+      "first_appearance": "GS-13"
+    },
+    {
+      "term": "contingent",
+      "category": "philosophy",
+      "definition": "Something that could be different or might not exist at all; dependent on something else.",
+      "example": "Your ice cream cone is contingent\u2014it could melt or be eaten, and it depends on the freezer.",
+      "grade_level": "12",
+      "first_appearance": "GS-09"
+    },
+    {
+      "term": "necessary",
+      "category": "philosophy",
+      "definition": "Something that must exist and cannot be otherwise; it is true in every possible situation.",
+      "example": "A triangle having three sides is necessary\u2014it can't be a triangle without them.",
+      "grade_level": "11",
+      "first_appearance": "GS-09"
+    },
+    {
+      "term": "chi-field",
+      "category": "framework",
+      "definition": "A proposed fundamental field in theophysics that carries moral and informational properties, like a 'goodness' or 'truth' field.",
+      "example": "Like a magnetic field, but instead of affecting magnets, it affects moral choices.",
+      "grade_level": "specialist",
+      "first_appearance": "GS-01"
+    },
+    {
+      "term": "coherence functional",
+      "category": "framework",
+      "definition": "A mathematical function that measures how well different parts of a system fit together in a unified, consistent way.",
+      "example": "Like a score that tells you how well the pieces of a puzzle match up.",
+      "grade_level": "specialist",
+      "first_appearance": "GS-12"
+    },
+    {
+      "term": "moral curvature",
+      "category": "framework",
+      "definition": "A concept in theophysics that describes how moral choices bend or warp the 'space' of reality, similar to how gravity bends space.",
+      "example": "Like a heavy ball on a rubber sheet creating a dip that affects other balls rolling by.",
+      "grade_level": "specialist",
+      "first_appearance": "GS-15"
+    },
+    {
+      "term": "empirical",
+      "category": "academic",
+      "definition": "Based on observation or experiment rather than theory or pure logic.",
+      "example": "Checking if a plant grows faster with music by actually measuring it is an empirical test.",
+      "grade_level": "11",
+      "first_appearance": "GS-13"
+    },
+    {
+      "term": "falsifiable",
+      "category": "academic",
+      "definition": "Able to be proven wrong by evidence; a key feature of scientific theories.",
+      "example": "The claim 'All swans are white' is falsifiable because finding one black swan disproves it.",
+      "grade_level": "12",
+      "first_appearance": "GS-13"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A basic statement that is accepted as true without proof, used as a starting point for reasoning.",
+      "example": "In geometry, 'a straight line is the shortest distance between two points' is an axiom.",
+      "grade_level": "11",
+      "first_appearance": "GS-03"
+    },
+    {
+      "term": "theorem",
+      "category": "academic",
+      "definition": "A statement that has been proven to be true using logic and axioms.",
+      "example": "The Pythagorean theorem (a\u00b2 + b\u00b2 = c\u00b2) is a proven fact about right triangles.",
+      "grade_level": "10",
+      "first_appearance": "GS-03"
+    },
+    {
+      "term": "Logos",
+      "category": "language",
+      "definition": "A Greek word (pronounced 'LOH-gos') meaning 'word,' 'reason,' or 'principle'; in Christian theology, it refers to Christ as the divine reason that orders the universe.",
+      "example": "Like the blueprint or logic behind the entire universe.",
+      "grade_level": "college",
+      "first_appearance": "GS-11"
+    },
+    {
+      "term": "basin of attraction",
+      "category": "physics",
+      "definition": "The set of starting points that lead to a particular final state in a dynamical system, like a valley that funnels water to a lake.",
+      "example": "All the paths that lead to the same sink in a kitchen drain form a basin of attraction.",
+      "grade_level": "college",
+      "first_appearance": "GS-05"
+    },
+    {
+      "term": "dynamical system",
+      "category": "physics",
+      "definition": "A system that changes over time according to fixed rules, like a pendulum swinging or the weather evolving.",
+      "example": "A bouncing ball is a simple dynamical system\u2014its position and speed change predictably.",
+      "grade_level": "college",
+      "first_appearance": "GS-05"
+    },
+    {
+      "term": "attractor state",
+      "category": "physics",
+      "definition": "A stable condition that a dynamical system tends to move toward over time, like a pendulum coming to rest at the bottom.",
+      "example": "A marble in a bowl always rolls to the bottom\u2014that bottom is the attractor state.",
+      "grade_level": "college",
+      "first_appearance": "GS-05"
+    },
+    {
+      "term": "phase transition",
+      "category": "physics",
+      "definition": "A change from one state of matter to another, like ice melting into water, or a sudden change in a system's properties.",
+      "example": "Water turning into steam when boiled is a phase transition.",
+      "grade_level": "12",
+      "first_appearance": "GS-18"
+    },
+    {
+      "term": "regeneration",
+      "category": "theology",
+      "definition": "Spiritual rebirth or renewal, often associated with being 'born again' in Christian thought.",
+      "example": "Like a withered plant coming back to life with new growth.",
+      "grade_level": "11",
+      "first_appearance": "GS-18"
+    },
+    {
+      "term": "substrate",
+      "category": "academic",
+      "definition": "The underlying layer or foundation that supports something else.",
+      "example": "The concrete floor is the substrate for the tiles in a kitchen.",
+      "grade_level": "12",
+      "first_appearance": "GS-09"
+    },
+    {
+      "term": "quantum mechanical",
+      "category": "physics",
+      "definition": "Relating to the strange rules that govern tiny particles like atoms and electrons, where things can be in multiple states at once.",
+      "example": "An electron can be in two places at the same time, which is a quantum mechanical effect.",
+      "grade_level": "college",
+      "first_appearance": "GS-10"
+    },
+    {
+      "term": "it from bit",
+      "category": "physics",
+      "definition": "A phrase by physicist John Wheeler suggesting that reality (the 'it') comes from information (the 'bit').",
+      "example": "Like saying a computer program (information) creates the images you see on screen (reality).",
+      "grade_level": "college",
+      "first_appearance": "GS-11"
+    },
+    {
+      "term": "consensus",
+      "category": "academic",
+      "definition": "General agreement among a group of people, especially experts.",
+      "example": "Scientists have a consensus that climate change is real.",
+      "grade_level": "10",
+      "first_appearance": "GS-14"
+    },
+    {
+      "term": "inverse",
+      "category": "math",
+      "definition": "The opposite or reverse of something, like subtraction is the inverse of addition.",
+      "example": "Hot is the inverse of cold; up is the inverse of down.",
+      "grade_level": "10",
+      "first_appearance": "GS-16"
+    },
+    {
+      "term": "synthesis",
+      "category": "academic",
+      "definition": "Combining different ideas or things to create a new whole.",
+      "example": "Mixing blue and yellow paint to make green is a synthesis.",
+      "grade_level": "11",
+      "first_appearance": "GS-17"
+    },
+    {
+      "term": "first principles",
+      "category": "philosophy",
+      "definition": "The most basic, foundational truths that cannot be deduced from anything else.",
+      "example": "In math, '1+1=2' is a first principle\u2014it's assumed true without proof.",
+      "grade_level": "12",
+      "first_appearance": "GS-03"
+    },
+    {
+      "term": "closed system",
+      "category": "physics",
+      "definition": "A system that does not exchange matter or energy with its surroundings.",
+      "example": "A sealed thermos is a closed system\u2014nothing gets in or out.",
+      "grade_level": "12",
+      "first_appearance": "GS-04"
+    },
+    {
+      "term": "self-grounding",
+      "category": "philosophy",
+      "definition": "Something that provides its own foundation or reason for existence, not dependent on anything else.",
+      "example": "A self-grounding being would be like a building that holds itself up without a foundation.",
+      "grade_level": "college",
+      "first_appearance": "GS-09"
+    },
+    {
+      "term": "unification",
+      "category": "physics",
+      "definition": "The idea of combining different forces or theories into one single, consistent framework.",
+      "example": "Einstein tried to unify gravity with electromagnetism into one theory.",
+      "grade_level": "12",
+      "first_appearance": "GS-12"
+    },
+    {
+      "term": "experimental record",
+      "category": "academic",
+      "definition": "The collection of data and results from experiments that have been performed.",
+      "example": "A scientist's lab notebook with all the measurements and observations is part of the experimental record.",
+      "grade_level": "11",
+      "first_appearance": "GS-13"
+    },
+    {
+      "term": "moral argument",
+      "category": "philosophy",
+      "definition": "An argument that uses moral facts (like good and evil) to support the existence of God or a moral lawgiver.",
+      "example": "If there is an objective right and wrong, there must be a standard outside of humans\u2014that's a moral argument.",
+      "grade_level": "12",
+      "first_appearance": "GS-15"
+    },
+    {
+      "term": "virtue",
+      "category": "philosophy",
+      "definition": "A quality considered morally good or desirable, like honesty or courage.",
+      "example": "Being kind to others is a virtue.",
+      "grade_level": "10",
+      "first_appearance": "GS-16"
+    },
+    {
+      "term": "Second Law of Thermodynamics",
+      "category": "physics",
+      "definition": "The law that says entropy (disorder) in a closed system always increases over time; things naturally get more chaotic.",
+      "example": "An ice cube melts into a puddle\u2014it goes from ordered to disordered, never the reverse.",
+      "grade_level": "12",
+      "first_appearance": "GS-04"
+    },
+    {
+      "term": "Trinity",
+      "category": "theology",
+      "definition": "The Christian doctrine that God is one being in three persons: Father, Son, and Holy Spirit.",
+      "example": "Like water existing as ice, liquid, and steam\u2014all different but all H2O.",
+      "grade_level": "10",
+      "first_appearance": "GS-06"
+    },
+    {
+      "term": "substance",
+      "category": "philosophy",
+      "definition": "The underlying reality or essence of something; what it really is at its core.",
+      "example": "The substance of a chair is wood or metal\u2014what it's made of.",
+      "grade_level": "11",
+      "first_appearance": "GS-07"
+    },
+    {
+      "term": "triune",
+      "category": "theology",
+      "definition": "Having three parts or persons in one; used to describe the Trinity.",
+      "example": "A triune God means three persons sharing one divine nature.",
+      "grade_level": "12",
+      "first_appearance": "GS-07"
+    },
+    {
+      "term": "refracted",
+      "category": "physics",
+      "definition": "Bent or changed direction when passing from one medium to another, like light through a prism.",
+      "example": "A straw looks bent in a glass of water because light is refracted.",
+      "grade_level": "11",
+      "first_appearance": "GS-08"
+    },
+    {
+      "term": "domain",
+      "category": "academic",
+      "definition": "A specific area of knowledge, activity, or influence.",
+      "example": "Biology and chemistry are different domains of science.",
+      "grade_level": "10",
+      "first_appearance": "GS-08"
+    },
+    {
+      "term": "narrative",
+      "category": "academic",
+      "definition": "A story or account of events and experiences.",
+      "example": "The narrative of a movie is the plot that unfolds.",
+      "grade_level": "10",
+      "first_appearance": "GS-10"
+    },
+    {
+      "term": "fundamental",
+      "category": "academic",
+      "definition": "Serving as a basic or essential foundation; primary.",
+      "example": "Gravity is a fundamental force of nature.",
+      "grade_level": "10",
+      "first_appearance": "GS-11"
+    },
+    {
+      "term": "personal",
+      "category": "academic",
+      "definition": "Relating to a person; having the qualities of a conscious being with a mind and will.",
+      "example": "A personal God is one you can have a relationship with, not just an impersonal force.",
+      "grade_level": "9",
+      "first_appearance": "GS-11"
+    },
+    {
+      "term": "consensus problem",
+      "category": "academic",
+      "definition": "The issue that arises when a widely accepted opinion might be wrong because it's based on incomplete or biased information.",
+      "example": "Everyone once thought the Earth was flat\u2014that was a consensus problem.",
+      "grade_level": "12",
+      "first_appearance": "GS-14"
+    },
+    {
+      "term": "signature",
+      "category": "academic",
+      "definition": "A distinctive mark or characteristic that identifies something.",
+      "example": "A fingerprint is a unique signature of a person.",
+      "grade_level": "9",
+      "first_appearance": "GS-16"
+    },
+    {
+      "term": "legal framework",
+      "category": "academic",
+      "definition": "A system of laws and rules that provides structure for a particular area.",
+      "example": "Traffic laws form a legal framework for driving safely.",
+      "grade_level": "11",
+      "first_appearance": "GS-19"
+    },
+    {
+      "term": "comprehensive treatment",
+      "category": "academic",
+      "definition": "A thorough and complete explanation or discussion of a topic.",
+      "example": "A textbook that covers everything about dinosaurs is a comprehensive treatment.",
+      "grade_level": "12",
+      "first_appearance": "GS-21"
+    },
+    {
+      "term": "foundational document",
+      "category": "academic",
+      "definition": "A primary text that establishes the basis for a field of study or belief system.",
+      "example": "The U.S. Constitution is a foundational document for American law.",
+      "grade_level": "11",
+      "first_appearance": "GS-22"
+    },
+    {
+      "term": "mathematical notation",
+      "category": "math",
+      "definition": "A system of symbols used to represent mathematical ideas and operations.",
+      "example": "The plus sign (+) and equals sign (=) are part of mathematical notation.",
+      "grade_level": "10",
+      "first_appearance": "GS-23"
+    }
+  ],
+  "stats": {
+    "total_terms_found": 55,
+    "by_category": {
+      "physics": 14,
+      "theology": 8,
+      "math": 6,
+      "philosophy": 7,
+      "framework": 3,
+      "academic": 16,
+      "language": 1
+    },
+    "highest_grade_level": "specialist",
+    "average_grade_level": "11.5",
+    "accessibility_score": 25
+  }
+}

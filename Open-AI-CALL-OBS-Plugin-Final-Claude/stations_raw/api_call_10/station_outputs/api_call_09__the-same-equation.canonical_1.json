@@ -1,0 +1,606 @@
+{
+  "definitions": [
+    {
+      "term": "entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system.",
+      "example": "A messy room has high entropy; a tidy room has low entropy.",
+      "grade_level": "12",
+      "first_appearance": "LAW 5 — Thermodynamics ↔ Moral Entropy"
+    },
+    {
+      "term": "decoherence",
+      "category": "physics",
+      "definition": "The process by which a quantum system loses its quantum properties and behaves classically.",
+      "example": "A spinning coin wobbles and then falls flat — that's like decoherence.",
+      "grade_level": "college",
+      "first_appearance": "LAW 8 — Quantum Mechanics ↔ Faith"
+    },
+    {
+      "term": "Lagrangian",
+      "category": "physics",
+      "definition": "A mathematical function that describes the dynamics of a system.",
+      "example": "It's like a recipe that tells you how a ball will move when you throw it.",
+      "grade_level": "college",
+      "first_appearance": "Lowe Coherence Lagrangian (LLC)"
+    },
+    {
+      "term": "eigenmode",
+      "category": "physics",
+      "definition": "A natural vibration pattern of a system.",
+      "example": "A guitar string vibrating at its fundamental frequency is an eigenmode.",
+      "grade_level": "college",
+      "first_appearance": "LAW 8 — Quantum Mechanics ↔ Faith"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation.",
+      "example": "It's about how people are saved or rescued from sin.",
+      "grade_level": "college",
+      "first_appearance": "Related Work"
+    },
+    {
+      "term": "hamartiology",
+      "category": "theology",
+      "definition": "The study of sin.",
+      "example": "It's about what sin is and how it affects people.",
+      "grade_level": "college",
+      "first_appearance": "Related Work"
+    },
+    {
+      "term": "sanctification",
+      "category": "theology",
+      "definition": "The process of becoming holy or morally pure.",
+      "example": "It's like cleaning a dirty mirror until it shines.",
+      "grade_level": "12",
+      "first_appearance": "Related Work"
+    },
+    {
+      "term": "atonement",
+      "category": "theology",
+      "definition": "The act of making up for a wrong or sin.",
+      "example": "Apologizing and fixing a broken window is a form of atonement.",
+      "grade_level": "11",
+      "first_appearance": "Related Work"
+    },
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A structure-preserving mapping between two systems.",
+      "example": "A map of a subway system is isomorphic to the actual subway lines.",
+      "grade_level": "college",
+      "first_appearance": "LAW 1 — Gravity ↔ Grace"
+    },
+    {
+      "term": "bijection",
+      "category": "math",
+      "definition": "A one-to-one correspondence between two sets.",
+      "example": "Pairing each student with a unique locker number is a bijection.",
+      "grade_level": "12",
+      "first_appearance": "Substitution Map"
+    },
+    {
+      "term": "Noether",
+      "category": "math",
+      "definition": "Refers to Emmy Noether's theorem, which links symmetries to conservation laws.",
+      "example": "If a system looks the same after a shift in time, energy is conserved.",
+      "grade_level": "college",
+      "first_appearance": "Related Work"
+    },
+    {
+      "term": "tensor",
+      "category": "math",
+      "definition": "A mathematical object that describes relationships between vectors and scalars.",
+      "example": "It's like a spreadsheet that can handle multiple directions at once.",
+      "grade_level": "college",
+      "first_appearance": "LAW 7 — Relativity ↔ Relationship"
+    },
+    {
+      "term": "ontology",
+      "category": "philosophy",
+      "definition": "The study of what exists and the nature of reality.",
+      "example": "It's about asking 'What is real?'",
+      "grade_level": "college",
+      "first_appearance": "Related Work"
+    },
+    {
+      "term": "epistemology",
+      "category": "philosophy",
+      "definition": "The study of knowledge and how we know things.",
+      "example": "It's about asking 'How do we know what we know?'",
+      "grade_level": "college",
+      "first_appearance": "Related Work"
+    },
+    {
+      "term": "contingent",
+      "category": "philosophy",
+      "definition": "Something that could be different or might not exist.",
+      "example": "The color of your shirt is contingent; it could be blue or red.",
+      "grade_level": "12",
+      "first_appearance": "Related Work"
+    },
+    {
+      "term": "necessary",
+      "category": "philosophy",
+      "definition": "Something that must be true and cannot be otherwise.",
+      "example": "2+2=4 is a necessary truth.",
+      "grade_level": "11",
+      "first_appearance": "Related Work"
+    },
+    {
+      "term": "chi-field",
+      "category": "framework",
+      "definition": "A field representing physical coherence in the framework.",
+      "example": "It's like a measure of how ordered and unified a physical system is.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 10 — Coherence ↔ Christ"
+    },
+    {
+      "term": "coherence functional",
+      "category": "framework",
+      "definition": "A mathematical function that measures the degree of coherence.",
+      "example": "It's like a score that tells you how synchronized a system is.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 10 — Coherence ↔ Christ"
+    },
+    {
+      "term": "moral curvature",
+      "category": "framework",
+      "definition": "A concept describing how moral choices bend the spiritual landscape.",
+      "example": "It's like how a heavy ball curves a rubber sheet, but for morality.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 1 — Gravity ↔ Grace"
+    },
+    {
+      "term": "empirical",
+      "category": "academic",
+      "definition": "Based on observation or experience, not just theory.",
+      "example": "A doctor testing a new drug on patients is doing empirical research.",
+      "grade_level": "11",
+      "first_appearance": "Related Work"
+    },
+    {
+      "term": "falsifiable",
+      "category": "academic",
+      "definition": "Able to be proven false by evidence.",
+      "example": "The claim 'all swans are white' is falsifiable if you find a black swan.",
+      "grade_level": "12",
+      "first_appearance": "Related Work"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A statement accepted as true without proof.",
+      "example": "In geometry, 'a straight line is the shortest distance between two points' is an axiom.",
+      "grade_level": "11",
+      "first_appearance": "Related Work"
+    },
+    {
+      "term": "theorem",
+      "category": "academic",
+      "definition": "A statement that can be proven from axioms.",
+      "example": "The Pythagorean theorem is proven from geometric axioms.",
+      "grade_level": "10",
+      "first_appearance": "Related Work"
+    },
+    {
+      "term": "Logos",
+      "category": "language",
+      "definition": "A Greek word meaning 'word', 'reason', or 'principle', often used in theology to refer to Christ.",
+      "example": "In the Bible, Jesus is called the Logos, the divine reason behind creation.",
+      "grade_level": "college",
+      "first_appearance": "LAW 2 — Mass-Energy ↔ Meaning-Consequence"
+    },
+    {
+      "term": "grace force",
+      "category": "framework",
+      "definition": "A spiritual force analogous to gravity, representing divine pull.",
+      "example": "It's like an invisible force that draws people toward goodness.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 1 — Gravity ↔ Grace"
+    },
+    {
+      "term": "moral mass",
+      "category": "framework",
+      "definition": "A measure of the moral weight or significance of an action.",
+      "example": "A small lie has less moral mass than a betrayal.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 2 — Mass-Energy ↔ Meaning-Consequence"
+    },
+    {
+      "term": "acceptance factor",
+      "category": "framework",
+      "definition": "A factor (0 to 1) representing how much truth is accepted.",
+      "example": "If you hear the truth but ignore it, your acceptance factor is low.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 3 — Electromagnetism ↔ Truth"
+    },
+    {
+      "term": "betrayal",
+      "category": "framework",
+      "definition": "A factor that can dissolve a covenant relationship.",
+      "example": "Breaking a promise is an act of betrayal.",
+      "grade_level": "10",
+      "first_appearance": "LAW 4 — Strong Force ↔ Love-Covenant"
+    },
+    {
+      "term": "moral entropy",
+      "category": "framework",
+      "definition": "A measure of moral disorder or corruption.",
+      "example": "A society with lots of crime has high moral entropy.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 5 — Thermodynamics ↔ Moral Entropy"
+    },
+    {
+      "term": "Logos entropy",
+      "category": "framework",
+      "definition": "A measure of surprise or information in the spiritual domain.",
+      "example": "It's like how much new meaning a message contains.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 6 — Information ↔ Logos"
+    },
+    {
+      "term": "relational interval",
+      "category": "framework",
+      "definition": "An invariant measure of the depth of a relationship.",
+      "example": "It's like the true closeness between two people, regardless of how they feel.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 7 — Relativity ↔ Relationship"
+    },
+    {
+      "term": "collapse threshold",
+      "category": "framework",
+      "definition": "The point at which faith causes a spiritual possibility to become real.",
+      "example": "It's like deciding to believe something so strongly it becomes true for you.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 8 — Quantum Mechanics ↔ Faith"
+    },
+    {
+      "term": "sin-decay rate",
+      "category": "framework",
+      "definition": "A measure of how fast sin transforms or decays.",
+      "example": "It's like the speed at which a bad habit changes you.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 9 — Weak Force ↔ Sin-Decay"
+    },
+    {
+      "term": "will factor",
+      "category": "framework",
+      "definition": "A factor representing the role of free will in sin.",
+      "example": "Choosing to resist temptation is using your will factor.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 9 — Weak Force ↔ Sin-Decay"
+    },
+    {
+      "term": "coherence",
+      "category": "framework",
+      "definition": "A measure of how ordered, unified, and consistent a system is.",
+      "example": "A well-organized team has high coherence.",
+      "grade_level": "12",
+      "first_appearance": "LAW 10 — Coherence ↔ Christ"
+    },
+    {
+      "term": "ghost term",
+      "category": "framework",
+      "definition": "A term in an equation that cannot be derived from within the system.",
+      "example": "It's like a mysterious force that can't be explained by the system itself.",
+      "grade_level": "specialist",
+      "first_appearance": "Dynamic Form"
+    },
+    {
+      "term": "ordering operator",
+      "category": "framework",
+      "definition": "A term that brings order to a system.",
+      "example": "It's like a force that tidies up a messy room.",
+      "grade_level": "specialist",
+      "first_appearance": "Dynamic Form"
+    },
+    {
+      "term": "dispersive operator",
+      "category": "framework",
+      "definition": "A term that spreads things out and increases disorder.",
+      "example": "It's like a force that scatters toys across the floor.",
+      "grade_level": "specialist",
+      "first_appearance": "Dynamic Form"
+    },
+    {
+      "term": "entropy drag",
+      "category": "framework",
+      "definition": "A force that opposes coherence, like friction.",
+      "example": "It's like trying to run through water — entropy drag slows you down.",
+      "grade_level": "specialist",
+      "first_appearance": "Lowe Coherence Lagrangian (LLC)"
+    },
+    {
+      "term": "inverse-square",
+      "category": "physics",
+      "definition": "A relationship where a force decreases with the square of the distance.",
+      "example": "Gravity gets weaker as you move away from Earth, following an inverse-square law.",
+      "grade_level": "12",
+      "first_appearance": "LAW 1 — Gravity ↔ Grace"
+    },
+    {
+      "term": "phase space integral",
+      "category": "physics",
+      "definition": "A mathematical calculation over all possible states of a system.",
+      "example": "It's like counting all the ways a dice can land.",
+      "grade_level": "graduate",
+      "first_appearance": "LAW 9 — Weak Force ↔ Sin-Decay"
+    },
+    {
+      "term": "Fermi's theory of beta decay",
+      "category": "physics",
+      "definition": "A theory describing how a neutron turns into a proton, electron, and antineutrino.",
+      "example": "It's like a recipe for how one particle changes into others.",
+      "grade_level": "college",
+      "first_appearance": "LAW 9 — Weak Force ↔ Sin-Decay"
+    },
+    {
+      "term": "Shannon entropy",
+      "category": "physics",
+      "definition": "A measure of information or surprise in a message.",
+      "example": "A coin flip has high Shannon entropy because you don't know the outcome.",
+      "grade_level": "college",
+      "first_appearance": "LAW 6 — Information ↔ Logos"
+    },
+    {
+      "term": "Kolmogorov complexity",
+      "category": "physics",
+      "definition": "A measure of how complex something is based on the shortest description.",
+      "example": "A simple pattern like 'ABABAB' has low Kolmogorov complexity.",
+      "grade_level": "college",
+      "first_appearance": "LAW 6 — Information ↔ Logos"
+    },
+    {
+      "term": "Lorentz interval",
+      "category": "physics",
+      "definition": "A measure of spacetime that is the same for all observers.",
+      "example": "It's like the true distance between two events, regardless of who is watching.",
+      "grade_level": "college",
+      "first_appearance": "LAW 7 — Relativity ↔ Relationship"
+    },
+    {
+      "term": "Born rule",
+      "category": "physics",
+      "definition": "A rule that gives the probability of a quantum outcome.",
+      "example": "It's like a formula that tells you how likely it is to get heads when flipping a quantum coin.",
+      "grade_level": "college",
+      "first_appearance": "LAW 8 — Quantum Mechanics ↔ Faith"
+    },
+    {
+      "term": "Hamiltonian",
+      "category": "physics",
+      "definition": "An operator that represents the total energy of a quantum system.",
+      "example": "It's like a recipe that tells you how a quantum system will evolve over time.",
+      "grade_level": "college",
+      "first_appearance": "LAW 8 — Quantum Mechanics ↔ Faith"
+    },
+    {
+      "term": "wavefunction",
+      "category": "physics",
+      "definition": "A mathematical description of a quantum system's state.",
+      "example": "It's like a cloud of possibilities that describes where an electron might be.",
+      "grade_level": "college",
+      "first_appearance": "LAW 8 — Quantum Mechanics ↔ Faith"
+    },
+    {
+      "term": "Fermi coupling constant",
+      "category": "physics",
+      "definition": "A number that sets the strength of the weak nuclear force.",
+      "example": "It's like a dial that controls how fast radioactive decay happens.",
+      "grade_level": "college",
+      "first_appearance": "LAW 9 — Weak Force ↔ Sin-Decay"
+    },
+    {
+      "term": "negentropy",
+      "category": "physics",
+      "definition": "Negative entropy; a measure of order or information.",
+      "example": "A living organism takes in negentropy from food to stay organized.",
+      "grade_level": "college",
+      "first_appearance": "Dynamic Form"
+    },
+    {
+      "term": "kinetic term",
+      "category": "physics",
+      "definition": "A part of an equation that describes motion.",
+      "example": "In the equation for a moving ball, the kinetic term is related to its speed.",
+      "grade_level": "college",
+      "first_appearance": "Lowe Coherence Lagrangian (LLC)"
+    },
+    {
+      "term": "Logos constant",
+      "category": "framework",
+      "definition": "A constant that sets the scale for spiritual phenomena, analogous to the speed of light.",
+      "example": "It's like the speed limit for meaning and truth.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 2 — Mass-Energy ↔ Meaning-Consequence"
+    },
+    {
+      "term": "interpretation function",
+      "category": "framework",
+      "definition": "A factor that accounts for how an action is received.",
+      "example": "A joke can be funny or offensive depending on the interpretation function.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 2 — Mass-Energy ↔ Meaning-Consequence"
+    },
+    {
+      "term": "Witness field",
+      "category": "framework",
+      "definition": "A spiritual field coupled to the Truth field, analogous to the magnetic field.",
+      "example": "It's like a supporting field that sustains the truth.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 3 — Electromagnetism ↔ Truth"
+    },
+    {
+      "term": "Logos density",
+      "category": "framework",
+      "definition": "A measure of the source strength of the Truth field.",
+      "example": "It's like the amount of divine reason present in a situation.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 3 — Electromagnetism ↔ Truth"
+    },
+    {
+      "term": "love coupling constant",
+      "category": "framework",
+      "definition": "A constant that sets the strength of the love force.",
+      "example": "It's like a dial that controls how strongly love binds people.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 4 — Strong Force ↔ Love-Covenant"
+    },
+    {
+      "term": "covenant tension",
+      "category": "framework",
+      "definition": "A force that increases with separation in a covenant relationship.",
+      "example": "It's like a rubber band that pulls harder the further you stretch it.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 4 — Strong Force ↔ Love-Covenant"
+    },
+    {
+      "term": "intimacy term",
+      "category": "framework",
+      "definition": "A term that describes the attractive force at close range in a relationship.",
+      "example": "It's like the warm feeling of being close to a loved one.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 4 — Strong Force ↔ Love-Covenant"
+    },
+    {
+      "term": "grace work term",
+      "category": "framework",
+      "definition": "A term representing the external work of grace that can reverse moral entropy.",
+      "example": "It's like an outside force that can clean up a messy room.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 5 — Thermodynamics ↔ Moral Entropy"
+    },
+    {
+      "term": "source term",
+      "category": "physics",
+      "definition": "A term in an equation that represents a source of something.",
+      "example": "In a heat equation, a heater would be a source term.",
+      "grade_level": "college",
+      "first_appearance": "LAW 6 — Information ↔ Logos"
+    },
+    {
+      "term": "mutual consent",
+      "category": "framework",
+      "definition": "Agreement between both parties in a relationship.",
+      "example": "Both people must say 'yes' for a friendship to work.",
+      "grade_level": "10",
+      "first_appearance": "LAW 7 — Relativity ↔ Relationship"
+    },
+    {
+      "term": "spiritual Hamiltonian",
+      "category": "framework",
+      "definition": "An operator that governs the evolution of a spiritual state.",
+      "example": "It's like a recipe that tells you how your spiritual state changes over time.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 8 — Quantum Mechanics ↔ Faith"
+    },
+    {
+      "term": "spiritual action quantum",
+      "category": "framework",
+      "definition": "A constant that sets the scale for spiritual quantum effects.",
+      "example": "It's like the smallest possible unit of spiritual change.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 8 — Quantum Mechanics ↔ Faith"
+    },
+    {
+      "term": "Fall coupling constant",
+      "category": "framework",
+      "definition": "A constant that sets the strength of the sin-decay process.",
+      "example": "It's like a dial that controls how easily sin spreads.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 9 — Weak Force ↔ Sin-Decay"
+    },
+    {
+      "term": "spiritual weight",
+      "category": "framework",
+      "definition": "A measure of the moral significance of a soul or action.",
+      "example": "A saint has high spiritual weight; a trivial action has low spiritual weight.",
+      "grade_level": "specialist",
+      "first_appearance": "LAW 9 — Weak Force ↔ Sin-Decay"
+    },
+    {
+      "term": "Trinity",
+      "category": "theology",
+      "definition": "The Christian doctrine that God is three persons: Father, Son, and Holy Spirit.",
+      "example": "It's like one team with three players who work together perfectly.",
+      "grade_level": "11",
+      "first_appearance": "Ratio Form (Combat Structure)"
+    },
+    {
+      "term": "adversary",
+      "category": "theology",
+      "definition": "An opponent or enemy, often referring to Satan in Christian theology.",
+      "example": "In a game, the adversary is the team you're playing against.",
+      "grade_level": "10",
+      "first_appearance": "Ratio Form (Combat Structure)"
+    },
+    {
+      "term": "righteous",
+      "category": "theology",
+      "definition": "Morally right or just, especially in the eyes of God.",
+      "example": "A person who always tries to do the right thing is righteous.",
+      "grade_level": "11",
+      "first_appearance": "Lowe Coherence Lagrangian (LLC)"
+    },
+    {
+      "term": "free will",
+      "category": "philosophy",
+      "definition": "The ability to make choices that are not determined by prior causes.",
+      "example": "Choosing what to eat for breakfast is an exercise of free will.",
+      "grade_level": "10",
+      "first_appearance": "LAW 1 — Gravity ↔ Grace"
+    },
+    {
+      "term": "agent choice",
+      "category": "philosophy",
+      "definition": "A choice made by a conscious being.",
+      "example": "Deciding to help someone is an agent choice.",
+      "grade_level": "11",
+      "first_appearance": "LAW 1 — Gravity ↔ Grace"
+    },
+    {
+      "term": "degree of freedom",
+      "category": "physics",
+      "definition": "An independent way a system can change.",
+      "example": "A ball can move left/right, up/down, and forward/backward — three degrees of freedom.",
+      "grade_level": "college",
+      "first_appearance": "LAW 1 — Gravity ↔ Grace"
+    },
+    {
+      "term": "invariant",
+      "category": "math",
+      "definition": "A quantity that does not change under certain transformations.",
+      "example": "The speed of light is invariant for all observers.",
+      "grade_level": "12",
+      "first_appearance": "LAW 7 — Relativity ↔ Relationship"
+    },
+    {
+      "term": "normalization",
+      "category": "math",
+      "definition": "The process of scaling a quantity so that it sums to one.",
+      "example": "Probabilities are normalized so they add up to 100%.",
+      "grade_level": "college",
+      "first_appearance": "LAW 8 — Quantum Mechanics ↔ Faith"
+    },
+    {
+      "term": "integral",
+      "category": "math",
+      "definition": "A mathematical operation that sums up infinitely many small pieces.",
+      "example": "It's like adding up all the slices to find the area of a pizza.",
+      "grade_level": "12",
+      "first_appearance": "LAW 10 — Coherence ↔ Christ"
+    },
+    {
+      "term": "denominator",
+      "category": "math",
+      "definition": "The bottom part of a fraction.",
+      "example": "In 3/4, 4 is the denominator.",
+      "grade_level": "6",
+      "first_appearance": "LAW 9 — Weak Force ↔ Sin-Decay"
+    },
+    {
+      "term": "numerator",
+      "category": "math",
+      "definition": "

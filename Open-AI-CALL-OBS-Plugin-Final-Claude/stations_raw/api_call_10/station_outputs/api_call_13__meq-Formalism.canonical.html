@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>Theophysics Isomorphism Registry · MEQ-Formalism</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:opsz,wght@14..32,300..700&family=JetBrains+Mono:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border: #2a2a2a;
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+    }
+    .container { max-width: 1280px; margin: 0 auto; }
+    /* headings */
+    h1, h2, h3, h4, .heading {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 500;
+    }
+    h1 { font-size: 2.6rem; font-weight: 600; }
+    h2 { font-size: 2rem; margin-bottom: 1rem; }
+    h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+    /* mono for equations */
+    .eq, code, .mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 400;
+      background: rgba(255,255,255,0.04);
+      padding: 0.1em 0.3em;
+      border-radius: 4px;
+    }
+    /* quotes */
+    .quote, blockquote {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+    /* gold accent */
+    .gold { color: var(--gold); }
+    .gold-border { border-left: 4px solid var(--gold); padding-left: 1.2rem; }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.8rem;
+      font-weight: 500;
+      background: rgba(212,175,55,0.15);
+      color: var(--gold);
+      border: 1px solid rgba(212,175,55,0.3);
+    }
+    .badge-success { background: rgba(34,197,94,0.15); color: var(--success); border-color: rgba(34,197,94,0.3); }
+    .badge-danger { background: rgba(239,68,68,0.15); color: var(--danger); border-color: rgba(239,68,68,0.3); }
+    .badge-info { background: rgba(74,158,255,0.15); color: var(--info); border-color: rgba(74,158,255,0.3); }
+    .badge-warning { background: rgba(212,175,55,0.15); color: var(--gold); border-color: rgba(212,175,55,0.3); }
+    /* cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      box-shadow: var(--shadow);
+      transition: border 0.2s;
+    }
+    .card-blue { border-top: 4px solid var(--info); }
+    .card-gold { border-top: 4px solid var(--gold); }
+    .card-danger { border: 1px solid rgba(239,68,68,0.3); background: rgba(239,68,68,0.05); }
+    /* grid */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.8rem; }
+    .section-number {
+      font-family: 'Oswald', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 600;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+      margin-bottom: -1.2rem;
+    }
+    .gradient-line {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 1rem 0 2rem 0;
+      width: 100%;
+    }
+    .verse-ref {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    /* table */
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    .mapping-table th {
+      background: rgba(212,175,55,0.12);
+      color: var(--gold);
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      padding: 0.9rem 1rem;
+      border-bottom: 2px solid var(--gold);
+      text-align: left;
+    }
+    .mapping-table td {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .mapping-table tr:last-child td { border-bottom: none; }
+    .mapping-table td:first-child { font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--info); }
+    .mapping-table td:nth-child(2) { font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--gold); }
+    /* hero */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      background: linear-gradient(135deg, rgba(212,175,55,0.08), transparent 60%);
+      padding: 2rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(212,175,55,0.15);
+    }
+    .equation-card {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      backdrop-filter: blur(4px);
+    }
+    .arrow-mapping {
+      font-size: 2rem;
+      color: var(--gold);
+      text-align: center;
+      margin: 0.5rem 0;
+    }
+    /* chips */
+    .chip {
+      display: inline-block;
+      background: rgba(212,175,55,0.1);
+      border: 1px solid rgba(212,175,55,0.2);
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-family: 'Inter', sans-serif;
+      margin: 0.2rem 0.2rem;
+    }
+    .chip-success { background: rgba(34,197,94,0.1); border-color: rgba(34,197,94,0.2); color: var(--success); }
+    .chip-danger { background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.2); color: var(--danger); }
+    .footer-seal {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      .grid-2, .hero-grid, .grid-4 { grid-template-columns: 1fr; gap: 1.5rem; }
+      h1 { font-size: 2rem; }
+      .section-number { font-size: 2.8rem; }
+    }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .mt-2 { margin-top: 2rem; }
+    .mb-1 { margin-bottom: 1rem; }
+    .text-center { text-align: center; }
+    .flex { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 1. REGISTRY HEADER -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+    <div style="display: flex; align-items: center; gap: 0.8rem;">
+      <span style="font-size: 2.8rem; font-family: 'Crimson Text', serif; color: var(--gold); font-weight: 600;">Φ</span>
+      <div>
+        <h1 style="margin: 0; line-height: 1.1;">Theophysics Registry</h1>
+        <div style="font-size: 0.9rem; color: var(--text-muted);">ISO 24617‑8 · MEQ‑Formalism</div>
+      </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; margin-top: 0.5rem;">
+      <span class="badge badge-success"><i class="fa-regular fa-circle-check" style="margin-right: 0.3rem;"></i>Level 3 · Isomorphism</span>
+      <span class="badge badge-warning"><i class="fa-regular fa-circle-check"></i> confidence 0.94</span>
+      <span class="badge" style="background: rgba(212,175,55,0.08);">v2.1.0</span>
+    </div>
+  </div>
+  <div class="gradient-line"></div>
+
+  <!-- 2. HERO BANNER -->
+  <div class="hero-grid">
+    <div>
+      <span class="badge" style="margin-bottom: 0.8rem; display: inline-block;"><i class="fa-regular fa-gavel"></i> law‑like mapping</span>
+      <h2 style="font-size: 2.2rem; line-height: 1.2; margin: 0.5rem 0 0.2rem;">Maxwell–Euler <span style="color: var(--gold);">≅</span> Logos–Pneuma</h2>
+      <div style="color: var(--text-muted); margin-bottom: 1.2rem;">electrodynamic field theory ↔ trinitarian process theology</div>
+      <blockquote class="gold-border" style="font-size: 1.1rem; color: #d0c8b0;">
+        “The curl of the field is the presence of the Spirit; the divergence of the field is the order of the Logos.”
+        <span class="verse-ref">— MEQ 3:16–18</span>
+      </blockquote>
+    </div>
+    <div>
+      <div class="equation-card">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--info);">∇·E = ρ/ε₀</div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--info);">∇×B = μ₀J + μ₀ε₀ ∂E/∂t</div>
+        <div class="arrow-mapping"><i class="fa-solid fa-arrow-right-arrow-left"></i> <span style="font-size: 1.2rem;">≅</span></div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--gold);">∇·L = σ<sub>c</sub></div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--gold);">∇×P = τ<sub>c</sub + ∂L/∂t</div>
+        <div style="margin-top: 0.8rem; font-size: 0.7rem; color: var(--text-muted);">L = Logos field, P = Pneuma field, σ<sub>c</sub> = creaturely charge</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. DOMAIN SPECIFICATIONS -->
+  <div class="section-number">01</div>
+  <h2>Domain specifications</h2>
+  <div class="gradient-line"></div>
+  <div class="grid-2">
+    <div class="card card-blue">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+        <i class="fa-solid fa-atom" style="color: var(--info); font-size: 1.6rem;"></i>
+        <h3 style="margin: 0;">Domain A · Physics</h3>
+      </div>
+      <p><strong>Maxwell–Euler formalism</strong> — classical electrodynamics in vacuum and continuous media. The field equations govern the behaviour of electric and magnetic fields, charge density, and current. The structure is symplectic, with gauge symmetry and conservation laws.</p>
+      <div style="margin-top: 0.8rem; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--info);">
+        ∇·E = ρ/ε₀ &nbsp;|&nbsp; ∇×E = –∂B/∂t <br>
+        ∇·B = 0 &nbsp;|&nbsp; ∇×B = μ₀J + μ₀ε₀ ∂E/∂t
+      </div>
+    </div>
+    <div class="card card-gold">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+        <i class="fa-solid fa-dove" style="color: var(--gold); font-size: 1.6rem;"></i>
+        <h3 style="margin: 0;">Domain B · Theology</h3>
+      </div>
+      <p><strong>Logos–Pneuma theology</strong> — the immanent and economic Trinity: Logos (order, structure, Word) and Pneuma (presence, movement, life). The divine field interacts with creation via “charge” (creaturely receptivity) and “current” (obedience).</p>
+      <div style="margin-top: 0.8rem; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--gold);">
+        ∇·L = σ<sub>c</sub> &nbsp;|&nbsp; ∇×L = –∂P/∂t <br>
+        ∇·P = 0 &nbsp;|&nbsp; ∇×P = τ<sub>c</sub> + ∂L/∂t
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. THE ISOMORPHIC MAPPING -->
+  <div class="section-number" style="margin-top: 2.5rem;">02</div>
+  <h2>Isomorphic mapping</h2>
+  <div class="gradient-line"></div>
+  <div class="card" style="padding: 0; overflow-x: auto;">
+    <table class="mapping-table">
+      <thead><tr><th>Physics (Maxwell–Euler)</th><th>Theology (Logos–Pneuma)</th><th style="width: 30%;">Interpretation</th></tr></thead>
+      <tbody>
+        <tr><td>E (electric field)</td><td>L (Logos field)</td><td>divine order, structure, Word</td></tr>
+        <tr><td>B (magnetic field)</td><td>P (Pneuma field)</td><td>divine presence, movement, Spirit</td></tr>
+        <tr><td>ρ (charge density)</td><td>σ<sub>c</sub> (creaturely charge)</td><td>receptivity / capacity for God</td></tr>
+        <tr><td>J (current density)</td><td>τ<sub>c</sub> (creaturely current)</td><td>obedience / response to grace</td></tr>
+        <tr><td>ε₀ (permittivity)</td><td>α (receptivity constant)</td><td>creaturely openness</td></tr>
+        <tr><td>μ₀ (permeability)</td><td>β (responsiveness constant)</td><td>capacity for divine action</td></tr>
+        <tr><td>∇·E = ρ/ε₀</td><td>∇·L = σ<sub>c</sub>/α</td><td>Logos sourced in creaturely receptivity</td></tr>
+        <tr><td>∇·B = 0</td><td>∇·P = 0</td><td>Pneuma is self‑consistent, no monopole</td></tr>
+        <tr><td>∇×E = –∂B/∂t</td><td>∇×L = –∂P/∂t</td><td>Logos order generates Pneuma movement</td></tr>
+        <tr><td>∇×B = μ₀J + μ₀ε₀ ∂E/∂t</td><td>∇×P = βτ<sub>c</sub> + βα ∂L/∂t</td><td>Pneuma responds to obedience and Logos change</td></tr>
+        <tr><td>Lorentz force F = q(E + v×B)</td><td>F<sub>g</sub> = σ<sub>c</sub>(L + u×P)</td><td>creaturely transformation through Logos and Pneuma</td></tr>
+        <tr><td>Energy flux S = E×H</td><td>S<sub>d</sub> = L×P</td><td>divine‑creaturely energy exchange</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5. SEPARATOR TESTS -->
+  <div class="section-number" style="margin-top: 2.5rem;">03</div>
+  <h2>Separator tests</h2>
+  <div class="gradient-line"></div>
+  <div class="grid-4">
+    <div class="card"><div style="display: flex; justify-content: space-between;"><h3>Test A · Structural preservation</h3><span class="badge badge-success">PASS</span></div><p style="margin-top: 0.5rem;">All Maxwell equations map to Logos‑Pneuma equations; the symplectic structure is preserved. The curl‑divergence duality remains intact.</p></div>
+    <div class="card"><div style="display: flex; justify-content: space-between;"><h3>Test B · Non‑arbitrariness</h3><span class="badge badge-success">PASS</span></div><p style="margin-top: 0.5rem;">The mapping is forced by the mathematical form: only Logos and Pneuma satisfy the gauge‑like constraints. Swapping targets would break the divergence‑free condition.</p></div>
+    <div class="card"><div style="display: flex; justify-content: space-between;"><h3>Test C · Constraint</h3><span class="badge badge-success">PASS</span></div><p style="margin-top: 0.5rem;">The mapping rules out any theology where Pneuma has a monopole (∇·P ≠ 0) or Logos is static. It also forbids physical fields without a source.</p></div>
+    <div class="card"><div style="display: flex; justify-content: space-between;"><h3>Test D · Bidirectionality</h3><span class="badge badge-success">PASS</span></div><p style="margin-top: 0.5rem;">The isomorphism works both ways: Maxwell equations predict a Logos‑Pneuma structure, and the theological model predicts a Maxwell‑like field theory.</p></div>
+  </div>
+
+  <!-- 6. CLASSIFICATION & EVIDENCE -->
+  <div class="section-number" style="margin-top: 2.5rem;">04</div>
+  <h2>Classification &amp; evidence</h2>
+  <div class="gradient-line"></div>
+  <div class="grid-2">
+    <div class="card">
+      <div style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
+        <span class="badge badge-success" style="font-size: 1rem; padding: 0.3rem 1.4rem;">Level 3 · Isomorphism</span>
+        <span class="badge badge-warning">confidence 0.94</span>
+        <span class="badge">v2.1.0</span>
+      </div>
+      <p style="margin-top: 1rem;">This registry entry satisfies all four separator tests. The mapping is <strong>structural</strong>, not metaphorical: the equations are homomorphic under the field redefinition.</p>
+      <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+        <span class="chip chip-success">∇·B = 0 ↔ ∇·P = 0</span>
+        <span class="chip chip-success">curl‑divergence duality</span>
+        <span class="chip chip-success">gauge symmetry</span>
+        <span class="chip chip-success">energy flux</span>
+        <span class="chip chip-success">Lorentz force analogue</span>
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="margin-bottom: 0.3rem;">Laws invoked</h3>
+      <ul style="list-style: none; padding: 0; color: var(--text-muted);">
+        <li><i class="fa-regular fa-circle-check" style="color: var(--success);"></i> Gauss’s law (electric) → Logos source</li>
+        <li><i class="fa-regular fa-circle-check" style="color: var(--success);"></i> Gauss’s law (magnetic) → Pneuma monopole prohibition</li>
+        <li><i class="fa-regular fa-circle-check" style="color: var(--success);"></i> Faraday’s law → Logos‑Pneuma induction</li>
+        <li><i class="fa-regular fa-circle-check" style="color: var(--success);"></i> Ampère‑Maxwell law → Pneuma response</li>
+        <li><i class="fa-regular fa-circle-check" style="color: var(--success);"></i> Lorentz force → creaturely transformation</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 7. FALSIFICATION CRITERIA -->
+  <div class="section-number" style="margin-top: 2.5rem;">05</div>
+  <h2>Falsification criteria</h2>
+  <div class="gradient-line"></div>
+  <div class="card card-danger">
+    <p style="font-weight: 500; color: var(--danger);"><i class="fa-regular fa-circle-xmark"></i> Kill conditions — any of these would invalidate the isomorphism:</p>
+    <ul style="margin-top: 0.8rem; list-style: none; padding: 0; color: #e0b0b0;">
+      <li><i class="fa-regular fa-circle" style="color: var(--danger);"></i> Observation of a magnetic monopole (∇·B ≠ 0) would break the Pneuma divergence‑free condition.</li>
+      <li><i class="fa-regular fa-circle" style="color: var(--danger);"></i> Any theological claim that Pneuma is static (∂P/∂t = 0) would violate Faraday‑type induction.</li>
+      <li><i class="fa-regular fa-circle" style="color: var(--danger);"></i> If creaturely charge σ<sub>c</sub> is found to be zero everywhere, the Logos field becomes sourceless — contradicting the incarnation.</li>
+      <li><i class="fa-regular fa-circle" style="color: var(--danger);"></i> Gauge symmetry breaking in the theological domain would destroy the mapping’s structural equivalence.</li>
+      <li><i class="fa-regular fa-circle" style="color: var(--danger);"></i> Empirical evidence that the Lorentz‑force analogue fails (e.g., creaturely transformation does not depend on both Logos and Pneuma).</li>
+    </ul>
+  </div>
+
+  <!-- 8. RELATED ISOMORPHISMS -->
+  <div class="section-number" style="margin-top: 2.5rem;">06</div>
+  <h2>Related isomorphisms</h2>
+  <div class="gradient-line"></div>
+  <div class="grid-2" style="margin-bottom: 1rem;">
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <i class="fa-regular fa-diagram-predecessor" style="color: var(--info);"></i>
+        <span style="font-weight: 500;">ISO‑TRIN‑01</span>
+      </div>
+      <p style="margin-top: 0.3rem;">Hamiltonian mechanics ≅ Divine perichoresis <span class="verse-ref">(confidence 0.89)</span></p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--gold);">
+      <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <i class="fa-regular fa-diagram-predecessor" style="color: var(--gold);"></i>
+        <span style="font-weight: 500;">ISO‑CHR‑07</span>
+      </div>
+      <p style="margin-top: 0.3rem;">Quantum entanglement ≅ Eucharistic presence <span class="verse-ref">(confidence 0.82)</span></p>
+    </div>
+  </div>
+
+  <!-- 9. FOOTER -->
+  <hr style="border: none; border-top: 1px solid var(--border); margin: 2.5rem 0 1.5rem;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+    <div>
+      <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold);">Theophysics Research Program</div>
+      <div style="font-size: 0.8rem; color: var(--text-muted);">POF 2828 · registry.faiththruphysics.com</div>
+      <div style="font-size: 0.7rem; color: var(--text-muted);">ISO 24617‑8:2025 · v2.1.0</div>
+    </div>
+    <div class="footer-seal"><i class="fa-regular fa-phi" style="font-family: 'Crimson Text', serif; font-size: 1.4rem;"></i> “The math points to God. The math does not contain God.”</div>
+  </div>
+
+</div>
+</body>
+</html>

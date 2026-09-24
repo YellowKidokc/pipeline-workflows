@@ -1,0 +1,551 @@
+{
+  "definitions": [
+    {
+      "term": "entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system; things naturally tend to get messier over time.",
+      "example": "Your room gets messy on its own, but it takes work to clean it up.",
+      "grade_level": "college",
+      "first_appearance": "Step 04 - The Need for Salvation"
+    },
+    {
+      "term": "closed system",
+      "category": "physics",
+      "definition": "A system that doesn't exchange energy or matter with anything outside it.",
+      "example": "A sealed, insulated thermos is a closed system—nothing gets in or out.",
+      "grade_level": "college",
+      "first_appearance": "Step 04 - The Need for Salvation"
+    },
+    {
+      "term": "conservation laws",
+      "category": "physics",
+      "definition": "Rules in physics that say certain quantities (like energy) can't be created or destroyed, only changed from one form to another.",
+      "example": "When you burn wood, the energy isn't gone—it turns into heat and light.",
+      "grade_level": "college",
+      "first_appearance": "Step 05 - Ultimate Justice Must Exist"
+    },
+    {
+      "term": "quantum entanglement",
+      "category": "physics",
+      "definition": "When two particles become linked so that measuring one instantly affects the other, no matter how far apart they are.",
+      "example": "Imagine two magic coins that always show opposite sides, even if you separate them by miles.",
+      "grade_level": "college",
+      "first_appearance": "Step 06 - The Justice-Mercy Paradox"
+    },
+    {
+      "term": "wavefunction",
+      "category": "physics",
+      "definition": "A mathematical description of the state of a quantum system, containing all possible information about it.",
+      "example": "Like a recipe that tells you everything about a particle's possible locations and behaviors.",
+      "grade_level": "college",
+      "first_appearance": "Step 06 - The Justice-Mercy Paradox"
+    },
+    {
+      "term": "superposition",
+      "category": "physics",
+      "definition": "The ability of a quantum system to be in multiple states at once until it is measured.",
+      "example": "Like a spinning coin that is both heads and tails until you catch it.",
+      "grade_level": "college",
+      "first_appearance": "Step C - Faith Collapses the State"
+    },
+    {
+      "term": "eigenstate",
+      "category": "physics",
+      "definition": "A specific, definite state that a quantum system can be in after measurement.",
+      "example": "After you catch the spinning coin, it's either heads or tails—that's its eigenstate.",
+      "grade_level": "graduate",
+      "first_appearance": "Step C - Faith Collapses the State"
+    },
+    {
+      "term": "measurement operator",
+      "category": "physics",
+      "definition": "In quantum mechanics, the mathematical tool that represents the act of measuring a property of a system.",
+      "example": "Like a special ruler that, when you use it, forces the system to pick one definite value.",
+      "grade_level": "graduate",
+      "first_appearance": "Step C - Faith Collapses the State"
+    },
+    {
+      "term": "geodesic",
+      "category": "physics",
+      "definition": "The shortest path between two points in curved space, like the path light or objects follow in gravity.",
+      "example": "A plane flying the shortest route between two cities follows a geodesic on Earth's curved surface.",
+      "grade_level": "college",
+      "first_appearance": "Step B - Grace Felt"
+    },
+    {
+      "term": "spacetime",
+      "category": "physics",
+      "definition": "The four-dimensional fabric that combines space and time into a single continuum, according to Einstein's theory.",
+      "example": "Think of it as a stretchy sheet where everything in the universe exists and moves.",
+      "grade_level": "college",
+      "first_appearance": "Step B - Grace Felt"
+    },
+    {
+      "term": "Shannon information content",
+      "category": "math",
+      "definition": "A measure of how much surprise or information is in a message, usually measured in bits.",
+      "example": "A coin flip has 1 bit of information because there are two equally likely outcomes.",
+      "grade_level": "college",
+      "first_appearance": "The Convergence Proof"
+    },
+    {
+      "term": "adversarial scoring session",
+      "category": "academic",
+      "definition": "A process where someone tries to find flaws or weaknesses in a calculation or argument to test its strength.",
+      "example": "Like a debate where one side tries to poke holes in the other's evidence.",
+      "grade_level": "college",
+      "first_appearance": "The Convergence Proof"
+    },
+    {
+      "term": "ontology",
+      "category": "philosophy",
+      "definition": "The study of what exists and the nature of reality.",
+      "example": "Asking 'Is good and evil real things or just opinions?' is an ontology question.",
+      "grade_level": "college",
+      "first_appearance": "Step 01 - Universal Belief in Good and Evil"
+    },
+    {
+      "term": "epistemology",
+      "category": "philosophy",
+      "definition": "The study of how we know things and what counts as knowledge.",
+      "example": "Asking 'How do you know stealing is wrong?' is an epistemology question.",
+      "grade_level": "college",
+      "first_appearance": "Step 01 - Universal Belief in Good and Evil"
+    },
+    {
+      "term": "contingent",
+      "category": "philosophy",
+      "definition": "Something that could be different or might not exist at all; not necessary.",
+      "example": "Your phone is contingent—it could have been a different model or not exist.",
+      "grade_level": "college",
+      "first_appearance": "Step 01 - Universal Belief in Good and Evil"
+    },
+    {
+      "term": "necessary",
+      "category": "philosophy",
+      "definition": "Something that must exist and cannot be otherwise.",
+      "example": "A triangle having three sides is necessary—it can't be a triangle without them.",
+      "grade_level": "college",
+      "first_appearance": "Step 01 - Universal Belief in Good and Evil"
+    },
+    {
+      "term": "falsifiable",
+      "category": "academic",
+      "definition": "Able to be proven wrong by evidence or experiment.",
+      "example": "The claim 'all swans are white' is falsifiable because finding one black swan disproves it.",
+      "grade_level": "college",
+      "first_appearance": "The Method"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A basic statement that is accepted as true without proof, used as a starting point for reasoning.",
+      "example": "In geometry, 'a straight line is the shortest distance between two points' is an axiom.",
+      "grade_level": "college",
+      "first_appearance": "The Chain"
+    },
+    {
+      "term": "theorem",
+      "category": "academic",
+      "definition": "A statement that can be proven true from axioms and other theorems.",
+      "example": "The Pythagorean theorem is proven from geometry axioms.",
+      "grade_level": "college",
+      "first_appearance": "The Chain"
+    },
+    {
+      "term": "empirical",
+      "category": "academic",
+      "definition": "Based on observation or experience rather than theory or logic alone.",
+      "example": "Checking if the sky is blue by looking outside is an empirical test.",
+      "grade_level": "college",
+      "first_appearance": "Step 01 - Universal Belief in Good and Evil"
+    },
+    {
+      "term": "hamartiology",
+      "category": "theology",
+      "definition": "The study of sin, its origin, and its effects.",
+      "example": "The idea that all humans are born with a tendency to do wrong is part of hamartiology.",
+      "grade_level": "college",
+      "first_appearance": "Step 03 - Mixed Moral Nature"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation—how people are saved from sin and its consequences.",
+      "example": "The belief that Jesus died to save people is a key part of soteriology.",
+      "grade_level": "college",
+      "first_appearance": "Step 04 - The Need for Salvation"
+    },
+    {
+      "term": "sanctification",
+      "category": "theology",
+      "definition": "The process of becoming more holy or morally pure, often seen as a gradual change.",
+      "example": "Like slowly cleaning a dirty window until it becomes clear.",
+      "grade_level": "college",
+      "first_appearance": "Step 04 - The Need for Salvation"
+    },
+    {
+      "term": "atonement",
+      "category": "theology",
+      "definition": "The act of making up for a wrong or sin, often through a sacrifice or payment.",
+      "example": "Apologizing and doing something nice to make up for hurting a friend is a small form of atonement.",
+      "grade_level": "college",
+      "first_appearance": "Step 06 - The Justice-Mercy Paradox"
+    },
+    {
+      "term": "substitution",
+      "category": "theology",
+      "definition": "In theology, the idea that one person takes the place of another to bear their punishment or debt.",
+      "example": "If a friend pays for a broken window you caused, that's substitution.",
+      "grade_level": "college",
+      "first_appearance": "Step 06 - The Justice-Mercy Paradox"
+    },
+    {
+      "term": "conviction",
+      "category": "theology",
+      "definition": "A strong feeling of guilt or certainty about being wrong, often seen as coming from God.",
+      "example": "Feeling bad after lying and knowing you shouldn't have done it.",
+      "grade_level": "college",
+      "first_appearance": "Step A - Conviction"
+    },
+    {
+      "term": "grace",
+      "category": "theology",
+      "definition": "Unearned favor or kindness, especially from God, given freely without being deserved.",
+      "example": "A teacher giving you a second chance on a test you failed is like grace.",
+      "grade_level": "college",
+      "first_appearance": "Step B - Grace Felt"
+    },
+    {
+      "term": "faith",
+      "category": "theology",
+      "definition": "Trust or belief in something or someone, especially in a religious context without physical proof.",
+      "example": "Believing a friend will keep a promise even though you can't see their thoughts.",
+      "grade_level": "college",
+      "first_appearance": "Step C - Faith Collapses the State"
+    },
+    {
+      "term": "righteousness",
+      "category": "theology",
+      "definition": "The quality of being morally right or just, often in the eyes of God.",
+      "example": "A person who always does the right thing is said to have righteousness.",
+      "grade_level": "college",
+      "first_appearance": "Step D - Entanglement Seals It"
+    },
+    {
+      "term": "resurrection",
+      "category": "theology",
+      "definition": "The act of coming back to life after death.",
+      "example": "In Christianity, Jesus rising from the dead three days after his crucifixion.",
+      "grade_level": "college",
+      "first_appearance": "Step 06 - The Justice-Mercy Paradox"
+    },
+    {
+      "term": "chi-field",
+      "category": "framework",
+      "definition": "A proposed field in the Theophysics framework that carries moral or spiritual information, similar to how electromagnetic fields carry light.",
+      "example": "Like a Wi-Fi signal that carries moral truth instead of data.",
+      "grade_level": "specialist",
+      "first_appearance": "Step 01 - Physics Mapping"
+    },
+    {
+      "term": "coherence functional",
+      "category": "framework",
+      "definition": "A mathematical function in the framework that measures how well a system's state aligns with a perfect moral standard.",
+      "example": "Like a score that tells you how close your actions are to being perfectly good.",
+      "grade_level": "specialist",
+      "first_appearance": "Step 01 - Physics Mapping"
+    },
+    {
+      "term": "moral curvature",
+      "category": "framework",
+      "definition": "A concept in the framework that describes how moral choices bend the 'space' of moral reality, similar to how mass bends spacetime.",
+      "example": "A good deed might 'curve' the moral field toward goodness, like a heavy ball curves a rubber sheet.",
+      "grade_level": "specialist",
+      "first_appearance": "Step B - Grace Felt"
+    },
+    {
+      "term": "free will variable W",
+      "category": "framework",
+      "definition": "A variable in the Theophysics model that represents the capacity for free choice, with different values for different beings.",
+      "example": "Humans have W that can be any positive number, while animals have W = N/A (not applicable).",
+      "grade_level": "specialist",
+      "first_appearance": "Step 02 - The Consciousness Threshold"
+    },
+    {
+      "term": "native duality",
+      "category": "framework",
+      "definition": "The idea that a system naturally contains both good and bad possibilities, like a coin with two sides.",
+      "example": "A knife can be used to cut food or to hurt someone—it has native duality.",
+      "grade_level": "specialist",
+      "first_appearance": "Step 03 - Mixed Moral Nature"
+    },
+    {
+      "term": "destructive regime",
+      "category": "framework",
+      "definition": "A state or condition where the system tends toward harmful or broken outcomes.",
+      "example": "When a video game character is in 'bad mode' and keeps making wrong choices.",
+      "grade_level": "specialist",
+      "first_appearance": "Step 03 - Mixed Moral Nature"
+    },
+    {
+      "term": "justice-energy",
+      "category": "framework",
+      "definition": "A proposed conserved quantity in the framework that represents the moral weight of actions, like energy in physics.",
+      "example": "Every good or bad deed adds to a 'moral bank account' that must eventually be balanced.",
+      "grade_level": "specialist",
+      "first_appearance": "Step 05 - Ultimate Justice Must Exist"
+    },
+    {
+      "term": "moral field",
+      "category": "framework",
+      "definition": "A hypothetical field that carries moral information, similar to how a magnetic field carries magnetic force.",
+      "example": "Like an invisible force field that responds to right and wrong actions.",
+      "grade_level": "specialist",
+      "first_appearance": "Step 01 - Physics Mapping"
+    },
+    {
+      "term": "three-tier hierarchy of moral weight",
+      "category": "framework",
+      "definition": "A classification system in the framework that ranks beings by their moral responsibility: animals (none), humans (full but imperfect), and Christ (perfect).",
+      "example": "Like a video game with three difficulty levels: no responsibility, some responsibility, and perfect responsibility.",
+      "grade_level": "specialist",
+      "first_appearance": "Framework section"
+    },
+    {
+      "term": "salvation sequence",
+      "category": "framework",
+      "definition": "A step-by-step process in the framework describing how a person moves from being lost to being saved, mapped to physical laws.",
+      "example": "Like a recipe with four steps: conviction, grace, faith, and entanglement.",
+      "grade_level": "specialist",
+      "first_appearance": "Derived April 2026"
+    },
+    {
+      "term": "convergence proof",
+      "category": "framework",
+      "definition": "A demonstration that three independent sources (logic, physics, scripture) lead to the same conclusion, showing it's likely true.",
+      "example": "If three different maps all point to the same treasure, you can be pretty sure it's there.",
+      "grade_level": "specialist",
+      "first_appearance": "The Convergence Proof"
+    },
+    {
+      "term": "W = N/A",
+      "category": "framework",
+      "definition": "A notation meaning the free will variable does not apply to that entity (like animals).",
+      "example": "A lion doesn't have a 'free will score' because it acts on instinct.",
+      "grade_level": "specialist",
+      "first_appearance": "Step 02 - The Consciousness Threshold"
+    },
+    {
+      "term": "W ∈ [0, ∞)",
+      "category": "framework",
+      "definition": "A notation meaning the free will variable can be any number from zero to infinity, representing human free will.",
+      "example": "A human's free will can range from zero (no choice) to infinite (perfect freedom).",
+      "grade_level": "specialist",
+      "first_appearance": "Step 02 - The Consciousness Threshold"
+    },
+    {
+      "term": "W = 1 sustained",
+      "category": "framework",
+      "definition": "A notation meaning the free will variable is perfectly aligned with goodness at every moment, without fail.",
+      "example": "A perfect score of 1.0 on every test, forever.",
+      "grade_level": "specialist",
+      "first_appearance": "Step 06 - The Justice-Mercy Paradox"
+    },
+    {
+      "term": "dS ≥ 0",
+      "category": "physics",
+      "definition": "A mathematical statement that entropy (disorder) in a closed system always increases or stays the same, never decreases.",
+      "example": "Things naturally get messier, not cleaner, without outside help.",
+      "grade_level": "college",
+      "first_appearance": "Step 04 - The Need for Salvation"
+    },
+    {
+      "term": "F = ma",
+      "category": "physics",
+      "definition": "Newton's second law: force equals mass times acceleration; a basic equation of motion.",
+      "example": "Pushing a shopping cart harder makes it speed up more.",
+      "grade_level": "college",
+      "first_appearance": "Step 02 - The Consciousness Threshold"
+    },
+    {
+      "term": "E = mc²",
+      "category": "physics",
+      "definition": "Einstein's equation: energy equals mass times the speed of light squared; shows mass and energy are interchangeable.",
+      "example": "A tiny amount of mass can be turned into a huge amount of energy, like in a nuclear reactor.",
+      "grade_level": "college",
+      "first_appearance": "Step A - Conviction"
+    },
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A mapping between two structures that shows they are essentially the same in form or function.",
+      "example": "A map of a subway system is isomorphic to the actual tracks—same connections, different appearance.",
+      "grade_level": "college",
+      "first_appearance": "The Method"
+    },
+    {
+      "term": "bijection",
+      "category": "math",
+      "definition": "A one-to-one matching between two sets where every element in one set pairs with exactly one in the other, and vice versa.",
+      "example": "If you have 5 apples and 5 oranges, you can pair each apple with exactly one orange—that's a bijection.",
+      "grade_level": "college",
+      "first_appearance": "The Method"
+    },
+    {
+      "term": "Noether",
+      "category": "math",
+      "definition": "Refers to Emmy Noether's theorem: every symmetry in physics leads to a conservation law (like energy conservation).",
+      "example": "If a system looks the same today as tomorrow, energy is conserved.",
+      "grade_level": "college",
+      "first_appearance": "Step 05 - Ultimate Justice Must Exist"
+    },
+    {
+      "term": "tensor",
+      "category": "math",
+      "definition": "A mathematical object that describes relationships between sets of numbers, used in physics for things like stress or curvature.",
+      "example": "Like a spreadsheet that can handle multiple dimensions of data at once.",
+      "grade_level": "college",
+      "first_appearance": "Step B - Grace Felt"
+    },
+    {
+      "term": "Lagrangian",
+      "category": "physics",
+      "definition": "A function that summarizes the dynamics of a system, used to derive equations of motion.",
+      "example": "Like a master formula that tells you how a system will move and change over time.",
+      "grade_level": "college",
+      "first_appearance": "Step 03 - Mixed Moral Nature"
+    },
+    {
+      "term": "eigenmode",
+      "category": "physics",
+      "definition": "A natural vibration pattern of a system, like the specific way a guitar string vibrates when plucked.",
+      "example": "A swing has an eigenmode—it naturally swings at a certain rhythm.",
+      "grade_level": "college",
+      "first_appearance": "Step C - Faith Collapses the State"
+    },
+    {
+      "term": "decoherence",
+      "category": "physics",
+      "definition": "The process by which a quantum system loses its quantum properties (like superposition) due to interaction with its environment.",
+      "example": "Like a spinning coin slowing down and settling into heads or tails because of air resistance.",
+      "grade_level": "college",
+      "first_appearance": "Step D - Entanglement Seals It"
+    },
+    {
+      "term": "coherent signal",
+      "category": "physics",
+      "definition": "A wave that maintains a consistent phase relationship, allowing it to carry information clearly.",
+      "example": "A clear radio station with no static is a coherent signal.",
+      "grade_level": "college",
+      "first_appearance": "Step 01 - Physics Mapping"
+    },
+    {
+      "term": "destructive interference",
+      "category": "physics",
+      "definition": "When two waves cancel each other out, resulting in a weaker or zero signal.",
+      "example": "Two sound waves that are exactly opposite can make silence.",
+      "grade_level": "college",
+      "first_appearance": "Step 03 - Mixed Moral Nature"
+    },
+    {
+      "term": "propagates",
+      "category": "physics",
+      "definition": "To travel or spread through a medium, like a wave moving through water or air.",
+      "example": "Sound propagates through air from a speaker to your ear.",
+      "grade_level": "college",
+      "first_appearance": "Step 01 - Physics Mapping"
+    },
+    {
+      "term": "agency",
+      "category": "philosophy",
+      "definition": "The capacity to make choices and act on them independently.",
+      "example": "A robot has no agency—it only does what it's programmed to do.",
+      "grade_level": "college",
+      "first_appearance": "Step 02 - The Consciousness Threshold"
+    },
+    {
+      "term": "paradox",
+      "category": "academic",
+      "definition": "A statement or situation that seems to contradict itself but might still be true.",
+      "example": "The statement 'this sentence is false' is a paradox.",
+      "grade_level": "college",
+      "first_appearance": "Step 06 - The Justice-Mercy Paradox"
+    },
+    {
+      "term": "derivation",
+      "category": "academic",
+      "definition": "The process of reaching a conclusion through logical steps from starting assumptions.",
+      "example": "Solving a math problem step by step is a derivation.",
+      "grade_level": "college",
+      "first_appearance": "The Method"
+    },
+    {
+      "term": "independent derivation paths",
+      "category": "academic",
+      "definition": "Different ways of reaching the same conclusion that don't rely on each other for evidence.",
+      "example": "Three different witnesses describing the same accident without talking to each other.",
+      "grade_level": "college",
+      "first_appearance": "The Method"
+    },
+    {
+      "term": "adversarial",
+      "category": "academic",
+      "definition": "Involving opposition or conflict, often used in testing to find weaknesses.",
+      "example": "A lawyer questioning a witness is an adversarial process.",
+      "grade_level": "college",
+      "first_appearance": "The Convergence Proof"
+    },
+    {
+      "term": "Shannon",
+      "category": "academic",
+      "definition": "Refers to Claude Shannon, the mathematician who created information theory.",
+      "example": "Shannon's work helps us measure how much information is in a message.",
+      "grade_level": "college",
+      "first_appearance": "The Convergence Proof"
+    },
+    {
+      "term": "GPT-4o",
+      "category": "academic",
+      "definition": "A version of the GPT language model by OpenAI, used for generating and analyzing text.",
+      "example": "An AI that can write essays or answer questions.",
+      "grade_level": "college",
+      "first_appearance": "The Convergence Proof"
+    },
+    {
+      "term": "canonical",
+      "category": "academic",
+      "definition": "Accepted as standard or authoritative, often in a religious or formal context.",
+      "example": "The canonical version of a book is the official one.",
+      "grade_level": "college",
+      "first_appearance": "File name"
+    },
+    {
+      "term": "Scripture",
+      "category": "theology",
+      "definition": "Sacred writings, especially the Bible in Christianity.",
+      "example": "The Bible is Scripture for Christians.",
+      "grade_level": "college",
+      "first_appearance": "The Method"
+    },
+    {
+      "term": "Holy Spirit",
+      "category": "theology",
+      "definition": "In Christianity, the third person of the Trinity, seen as God's active presence in the world.",
+      "example": "The Holy Spirit is often described as a guide or comforter.",
+      "grade_level": "college",
+      "first_appearance": "Step A - Conviction"
+    },
+    {
+      "term": "Christ",
+      "category": "theology",
+      "definition": "A title for Jesus, meaning 'the anointed one' or Messiah in Christianity.",
+      "example": "Christians believe Jesus is the Christ, the savior.",
+      "grade_level": "college",
+      "first_appearance": "Step B - Grace Felt"
+    },
+    {
+      "term": "John 6:44",
+      "category": "theology",
+      "definition": "A Bible verse from the Gospel of John, chapter 6, verse 44.",
+      "example": "A

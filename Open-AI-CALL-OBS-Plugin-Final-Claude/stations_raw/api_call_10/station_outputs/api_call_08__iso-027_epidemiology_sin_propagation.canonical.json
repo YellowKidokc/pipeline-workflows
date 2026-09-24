@@ -1,0 +1,674 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "epidemiology",
+        "type": "biology",
+        "strength": 10
+      },
+      {
+        "name": "theology",
+        "type": "theology",
+        "strength": 10
+      },
+      {
+        "name": "mathematics",
+        "type": "mathematics",
+        "strength": 8
+      },
+      {
+        "name": "sociology",
+        "type": "other",
+        "strength": 5
+      },
+      {
+        "name": "information",
+        "type": "information",
+        "strength": 3
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "M",
+        "present": true,
+        "role": "Meaning/Mass: sin as a meaningful pattern that spreads through communities, analogous to infectious mass",
+        "strength": 7
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Energy/Spirit: the driving force of contagion, both physical (pathogen) and spiritual (sinful influence)",
+        "strength": 6
+      },
+      {
+        "variable": "S",
+        "present": true,
+        "role": "Strong/Love: love as the counterforce to sin's spread, community holiness as protective love",
+        "strength": 5
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Thermo/Judgment: judgment as the thermodynamic arrow of moral decay, sin as entropy increase",
+        "strength": 8
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Info/Logos: the information structure of sin propagation, the logos of contagion dynamics",
+        "strength": 7
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "Relativity/Relationship: relationships as the contact network through which sin spreads",
+        "strength": 9
+      },
+      {
+        "variable": "Q",
+        "present": true,
+        "role": "Quantum/Faith: faith as the probabilistic element in moral choices, the uncertainty of individual response",
+        "strength": 4
+      },
+      {
+        "variable": "F",
+        "present": true,
+        "role": "Weak/Sin: sin as the primary subject of the isomorphism, the 'pathogen' in the moral SIR model",
+        "strength": 10
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence/Christ: Christ as the ultimate recovery mechanism, coherence restored through grace",
+        "strength": 8
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "Existence of the contagion dynamic is assumed; sin exists and spreads through communities"
+      },
+      {
+        "id": "A1.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A5.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC6",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A1.3",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "T3.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "External Grace: the recovery rate \u03b3 requires external input (grace) to sustain against R\u2080 > 1"
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "Info Conservation: the moral standard is conserved; what changes is compliance, not the standard itself"
+      },
+      {
+        "id": "BC8",
+        "invoked": false,
+        "how": ""
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "source of moral order",
+          "ground of the conserved standard"
+        ]
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "mediator of grace",
+          "the one who provides the recovery rate \u03b3"
+        ]
+      },
+      "spirit": {
+        "present": true,
+        "manifestations": [
+          "power that enables restoration",
+          "presence that builds immunity through discipleship"
+        ]
+      },
+      "trinitarian_structure": "implicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-027",
+        "domain_a": "epidemiology",
+        "domain_b": "theology",
+        "strength": 9,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "sin",
+        "context": "primary subject of the isomorphism, modeled as a contagious pathogen spreading through communities",
+        "weight": 10
+      },
+      {
+        "concept": "grace",
+        "context": "the recovery rate \u03b3 in the spiritual SIR model, external input that restores fallen individuals",
+        "weight": 9
+      },
+      {
+        "concept": "church discipline",
+        "context": "quarantine protocol to reduce contact between fallen and vulnerable members",
+        "weight": 8
+      },
+      {
+        "concept": "sanctification",
+        "context": "the process of building immunity through discipleship and spiritual maturity",
+        "weight": 7
+      },
+      {
+        "concept": "original sin",
+        "context": "Patient Zero in Romans 5:12, the initial introduction of sin into the human population",
+        "weight": 6
+      },
+      {
+        "concept": "revival",
+        "context": "a \u03b3-spike that bends the epidemic curve downward, sudden increase in restoration rate",
+        "weight": 7
+      },
+      {
+        "concept": "apostasy",
+        "context": "a \u03b2-spike that initiates a new epidemic of sin",
+        "weight": 6
+      },
+      {
+        "concept": "judgment",
+        "context": "the thermodynamic arrow of moral decay, sin as entropy increase",
+        "weight": 5
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "threshold",
+        "context": "R\u2080 = 1 as the epidemic threshold; herd immunity threshold H = 1 - 1/R\u2080",
+        "weight": 9
+      },
+      {
+        "concept": "conservation",
+        "context": "the moral standard is conserved; compliance changes but the standard does not",
+        "weight": 7
+      },
+      {
+        "concept": "emergence",
+        "context": "herd immunity as an emergent property of individual immunity at the population level",
+        "weight": 6
+      },
+      {
+        "concept": "proportionality",
+        "context": "super-spreader dynamics: ~20% of individuals cause ~80% of transmission",
+        "weight": 5
+      },
+      {
+        "concept": "necessity",
+        "context": "external grace is necessary when R\u2080 > 1; closed systems cannot sustain holiness",
+        "weight": 8
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "love",
+        "present": true,
+        "strength": 6
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "patience",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 5
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "self_control",
+        "present": true,
+        "strength": 4
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "domain:epidemiology",
+      "to": "domain:theology",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:F",
+      "to": "chi_variable:R",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "chi_variable:F",
+      "to": "chi_variable:C",
+      "relation": "contradicts",
+      "weight": 7
+    },
+    {
+      "from": "chi_variable:T",
+      "to": "chi_variable:F",
+      "relation": "produces",
+      "weight": 6
+    },
+    {
+      "from": "chi_variable:C",
+      "to": "chi_variable:T",
+      "relation": "supports",
+      "weight": 5
+    },
+    {
+      "from": "axiom:BC2",
+      "to": "chi_variable:C",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "axiom:BC7",
+      "to": "theological_concept:sin",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "theological_concept:grace",
+      "to": "chi_variable:C",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "theological_concept:church_discipline",
+      "to": "theological_concept:sin",
+      "relation": "contradicts",
+      "weight": 8
+    },
+    {
+      "from": "theological_concept:original_sin",
+      "to": "theological_concept:sin",
+      "relation": "produces",
+      "weight": 6
+    },
+    {
+      "from": "theological_concept:revival",
+      "to": "theological_concept:grace",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "theological_concept:apostasy",
+      "to": "theological_concept:sin",
+      "relation": "produces",
+      "weight": 6
+    },
+    {
+      "from": "logical_concept:threshold",
+      "to": "theological_concept:sin",
+      "relation": "constrains",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:conservation",
+      "to": "axiom:BC7",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "logical_concept:necessity",
+      "to": "axiom:BC2",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "fruit:love",
+      "to": "theological_concept:grace",
+      "relation": "supports",
+      "weight": 6
+    },
+    {
+      "from": "fruit:faithfulness",
+      "to": "theological_concept:sanctification",
+      "relation": "requires",
+      "weight": 5
+    },
+    {
+      "from": "fruit:self_control",
+      "to": "theological_concept:church_discipline",
+      "relation": "supports",
+      "weight": 4
+    },
+    {
+      "from": "isomorphism:ISO-027",
+      "to": "domain:epidemiology",
+      "relation": "contains",
+      "weight": 10
+    },
+    {
+      "from": "isomorphism:ISO-027",
+      "to": "domain:theology",
+      "relation": "contains",
+      "weight": 10
+    }
+  ],
+  "tags": {
+    "primary": [
+      "sin propagation",
+      "SIR model",
+      "church discipline",
+      "herd immunity",
+      "grace"
+    ],
+    "pillar": [
+      "pillar/theology",
+      "pillar/physics",
+      "pillar/mathematics"
+    ],
+    "series": "isomorphism",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "Romans 5:12",
+        "context": "original sin as Patient Zero, sin entering the world through one man"
+      },
+      {
+        "ref": "1 Corinthians 5:1-13",
+        "context": "Paul's quarantine protocol for church discipline"
+      },
+      {
+        "ref": "1 Corinthians 5:6-7",
+        "context": "leaven metaphor: a little leaven leavens the whole lump"
+      },
+      {
+        "ref": "Galatians 5:9",
+        "context": "leaven metaphor repeated"
+      },
+      {
+        "ref": "Hebrews 12:15",
+        "context": "root of bitterness defiling many"
+      },
+      {
+        "ref": "1 Corinthians 15:33",
+        "context": "bad company ruins good morals"
+      },
+      {
+        "ref": "Matthew 16:6",
+        "context": "leaven of the Pharisees as super-spreader influence"
+      },
+      {
+        "ref": "Psalm 19:12",
+        "context": "hidden faults as asymptomatic carriers"
+      },
+      {
+        "ref": "Proverbs 28:13",
+        "context": "concealing transgressions leads to destruction"
+      },
+      {
+        "ref": "James 3:1",
+        "context": "teachers judged with greater strictness due to super-spreader dynamic"
+      },
+      {
+        "ref": "Judges cycle",
+        "context": "repeated epidemic curves of sin, oppression, deliverance, sin"
+      }
+    ],
+    "academic": [
+      {
+        "ref": "Kermack & McKendrick (1927)",
+        "context": "foundational SIR model paper"
+      },
+      {
+        "ref": "Christakis & Fowler (2007)",
+        "context": "empirical evidence for behavioral contagion in social networks"
+      },
+      {
+        "ref": "Lloyd-Smith et al. (2005)",
+        "context": "super-spreader dynamics in disease emergence"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "ISO-003",
+        "context": "Entropy/Sin isomorphism, epidemics as entropy in population health"
+      },
+      {
+        "ref": "ISO-025",
+        "context": "Immunology/Soteriology, herd immunity as population-level manifestation of individual immunity"
+      },
+      {
+        "ref": "ISO-026",
+        "context": "Addiction/Sin Bondage, individual bondage becomes population contagion"
+      }
+    ],
+    "total_count": 17
+  },
+  "word_anomalies": [
+    {
+      "word": "R\u2080",
+      "frequency": 15,
+      "significance": "basic reproduction number, central to the isomorphism as the epidemic threshold"
+    },
+    {
+      "word": "SIR model",
+      "frequency": 8,
+      "significance": "compartmental model of infectious disease, structurally mapped to moral contagion"
+    },
+    {
+      "word": "super-spreader",
+      "frequency": 6,
+      "significance": "disproportionate influence of certain individuals, mapped to leadership sin"
+    },
+    {
+      "word": "herd immunity",
+      "frequency": 5,
+      "significance": "population-level protection threshold, mapped to community holiness"
+    },
+    {
+      "word": "asymptomatic carrier",
+      "frequency": 4,
+      "significance": "hidden sin that spreads without visible symptoms"
+    },
+    {
+      "word": "leaven",
+      "frequency": 5,
+      "significance": "biblical metaphor for contagion, used by Paul and Jesus"
+    },
+    {
+      "word": "\u03b3-spike",
+      "frequency": 2,
+      "significance": "sudden increase in recovery rate, mapped to revival"
+    },
+    {
+      "word": "\u03b2-spike",
+      "frequency": 2,
+      "significance": "sudden increase in transmission rate, mapped to apostasy"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "This document takes a structural-analytical posture, treating both epidemiology and theology as domains with shared mathematical dynamics.",
+    "Q1_identity": "An isomorphism record mapping the SIR model of infectious disease to the propagation of sin in communities.",
+    "Q2_domain": "Lives at the intersection of epidemiology, mathematics, and Christian theology (hamartiology).",
+    "Q3_claim": "Sin spreads through communities according to the same mathematical structure as infectious disease: dS/dt = -\u03b2SI, dI/dt = \u03b2SI - \u03b3I, dR/dt = \u03b3I, with R\u2080 = \u03b2/\u03b3 determining whether sin becomes epidemic or is contained.",
+    "Q4_support": "Supported by 10 independent correspondences (R\u2080 threshold, transmission rate, recovery rate, herd immunity, super-spreaders, quarantine, contact tracing, asymptomatic carriers, vaccination, epidemic curves), biblical citations using contagion language, and empirical social network studies.",
+    "Q5_dependencies": "Depends on the SIR model from epidemiology, the concept of original sin from theology, and the general framework of structural isomorphisms.",
+    "Q6_consequences": "Forces that purely individualistic sanctification models will fail when R\u2080 > 1; requires community-level strategies (discipline, discipleship) to reduce transmission and increase recovery.",
+    "Q7_kill": "Would be falsified if sinful behaviors do not spread through social contact (zero social transmission), if church discipline has no effect on behavioral spread, or if spiritual herd immunity does not exist."
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "ISO-003 (Entropy/Sin)",
+      "ISO-025 (Immunology/Soteriology)",
+      "ISO-026 (Addiction/Sin Bondage)",
+      "SIR model (Kermack & McKendrick 1927)"
+    ],
+    "required_by": [
+      "potential ISO on virtue epidemiology",
+      "potential ISO on revival dynamics"
+    ],
+    "parallel_to": [
+      "ISO-003",
+      "ISO-025",
+      "ISO-026"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 35,
+    "total_edges": 20,
+    "dominant_domain": "theology",
+    "dominant_chi": "F (Weak/Sin)",
+    "connectivity_score": 9,
+    "one_sentence": "This document establishes a structural isomorphism between the SIR model of infectious disease and the propagation of sin in communities, showing that sin spreads according to the same mathematical dynamics as epidemics."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": true,
+      "how": "Grace (\u03b3) and Faith (Q) as the recovery mechanism and probabilistic response to sin"
+    },
+    "2_9_will_conservation": {
+      "active": true,
+      "how": "Conservation of the moral standard (BC7) and the will to comply or not"
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Truth (K) and Coherence (C) as the logos of contagion and the restoration of order"
+    },
+    "4_7_love_relationship": {
+      "active": true,
+      "how": "Love (S) and Relationship (R) as the protective community structure against sin"
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Judgment (T) and Logos (K) as the thermodynamic arrow and information structure of sin"
+    },
+    "pairs_active_count": 5
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 9
+    },
+    "repentance": {
+      "present": true,
+      "strength": 6
+    },
+    "truth": {
+      "present": true,
+      "strength": 7
+    },
+    "love": {
+      "present": true,
+      "strength": 6
+    },
+    "judgment": {
+      "present": true,
+      "strength": 5
+    },
+    "logos": {
+      "present": true,
+      "strength": 7
+    },
+    "righteousness": {
+      "present": true,
+      "strength": 5
+    },
+    "faith": {
+      "present": true,
+      "strength": 4
+    },
+    "atonement": {
+      "present": true,
+      "strength": 6
+    },
+    "christ": {
+      "present": true,
+      "strength": 8
+    },
+    "operators_present_count": 10
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "ISO-003 (Entropy/Sin)",
+      "ISO-025 (Immunology/Soteriology)",
+      "ISO-026 (Addiction/Sin Bondage)"
+    ],
+    "read_after": [
+      "potential ISO on virtue epidemiology",
+      "potential ISO on revival dynamics"
+    ]
+  }
+}

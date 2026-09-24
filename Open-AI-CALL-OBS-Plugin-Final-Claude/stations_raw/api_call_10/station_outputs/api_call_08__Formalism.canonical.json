@@ -1,0 +1,617 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "physics",
+        "type": "physics",
+        "strength": 9
+      },
+      {
+        "name": "theology",
+        "type": "theology",
+        "strength": 9
+      },
+      {
+        "name": "information",
+        "type": "information",
+        "strength": 7
+      },
+      {
+        "name": "mathematics",
+        "type": "mathematics",
+        "strength": 8
+      },
+      {
+        "name": "consciousness",
+        "type": "other",
+        "strength": 5
+      },
+      {
+        "name": "biology",
+        "type": "biology",
+        "strength": 3
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": true,
+        "role": "Grace field as Yukawa-type force with finite range, source J_G (prayer, sacrament, divine initiative)",
+        "strength": 9
+      },
+      {
+        "variable": "M",
+        "present": true,
+        "role": "Moral variable in Lagrangian, coupled to sin/entropy in chi-field term 4",
+        "strength": 5
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Energy coupling in chi-field temporal evolution term",
+        "strength": 6
+      },
+      {
+        "variable": "S",
+        "present": true,
+        "role": "Sin/entropy field with anti-correlation to grace, evolves toward equilibrium",
+        "strength": 9
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Time variable in temporal evolution of chi-field",
+        "strength": 6
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Information in faith network effects term of chi-field",
+        "strength": 6
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "Resurrection factor in grace term, non-unitary transition",
+        "strength": 7
+      },
+      {
+        "variable": "Q",
+        "present": true,
+        "role": "Quantum coupling with consciousness in chi-field term 2",
+        "strength": 6
+      },
+      {
+        "variable": "F",
+        "present": true,
+        "role": "Weak/Sin in faith network effects term",
+        "strength": 5
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence/Christ as chi-field itself, coherence measure",
+        "strength": 10
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": false,
+        "how": "Not explicitly invoked"
+      },
+      {
+        "id": "A1.2",
+        "invoked": false,
+        "how": "Not explicitly invoked"
+      },
+      {
+        "id": "A2.1",
+        "invoked": false,
+        "how": "Not explicitly invoked"
+      },
+      {
+        "id": "A2.2",
+        "invoked": false,
+        "how": "Not explicitly invoked"
+      },
+      {
+        "id": "A5.1",
+        "invoked": false,
+        "how": "Not explicitly invoked"
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": "Not explicitly invoked"
+      },
+      {
+        "id": "BC6",
+        "invoked": false,
+        "how": "Not explicitly invoked"
+      },
+      {
+        "id": "A1.3",
+        "invoked": false,
+        "how": "Not explicitly invoked"
+      },
+      {
+        "id": "T3.1",
+        "invoked": false,
+        "how": "Not explicitly invoked"
+      },
+      {
+        "id": "BC2",
+        "invoked": false,
+        "how": "Not explicitly invoked"
+      },
+      {
+        "id": "BC7",
+        "invoked": false,
+        "how": "Not explicitly invoked"
+      },
+      {
+        "id": "BC8",
+        "invoked": false,
+        "how": "Not explicitly invoked"
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "source",
+          "ground"
+        ]
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "image",
+          "word",
+          "mediator"
+        ]
+      },
+      "spirit": {
+        "present": true,
+        "manifestations": [
+          "power",
+          "presence",
+          "movement",
+          "energy"
+        ]
+      },
+      "trinitarian_structure": "explicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-001",
+        "domain_a": "physics",
+        "domain_b": "theology",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-002",
+        "domain_a": "physics",
+        "domain_b": "information",
+        "strength": 8,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-003",
+        "domain_a": "theology",
+        "domain_b": "information",
+        "strength": 7,
+        "type": "analogical"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "grace",
+        "context": "Physical field with finite range, Yukawa-type force, source J_G",
+        "weight": 10
+      },
+      {
+        "concept": "sin",
+        "context": "Entropy density field, anti-correlated with grace",
+        "weight": 9
+      },
+      {
+        "concept": "resurrection",
+        "context": "Non-unitary transition, singularity in chi-field",
+        "weight": 8
+      },
+      {
+        "concept": "trinity",
+        "context": "SU(3) gauge symmetry, Gell-Mann matrices",
+        "weight": 9
+      },
+      {
+        "concept": "faith",
+        "context": "Mutual information, network effects in ecclesiology",
+        "weight": 6
+      },
+      {
+        "concept": "sacrament",
+        "context": "Source of grace field J_G",
+        "weight": 5
+      },
+      {
+        "concept": "prayer",
+        "context": "Source of grace field J_G",
+        "weight": 5
+      },
+      {
+        "concept": "atonement",
+        "context": "Implied by grace-sin dynamics",
+        "weight": 4
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "isomorphism",
+        "context": "Structural mapping between physics, theology, information",
+        "weight": 9
+      },
+      {
+        "concept": "falsifiability",
+        "context": "Kill conditions explicitly stated",
+        "weight": 8
+      },
+      {
+        "concept": "conservation",
+        "context": "Noether's theorem applied to chi-field",
+        "weight": 7
+      },
+      {
+        "concept": "symmetry",
+        "context": "SU(3) gauge symmetry for Trinity",
+        "weight": 8
+      },
+      {
+        "concept": "binary distinction",
+        "context": "Sign operator sigma with eigenvalues +/-1",
+        "weight": 7
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "love",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "patience",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "faithfulness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "self_control",
+        "present": false,
+        "strength": 0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "chi_variable:C",
+      "to": "chi_variable:G",
+      "relation": "couples_to",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:C",
+      "to": "chi_variable:S",
+      "relation": "couples_to",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:G",
+      "to": "chi_variable:S",
+      "relation": "anti_correlates_with",
+      "weight": 8
+    },
+    {
+      "from": "chi_variable:G",
+      "to": "theological_concepts:grace",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "chi_variable:S",
+      "to": "theological_concepts:sin",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:R",
+      "to": "theological_concepts:resurrection",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "trinity",
+      "to": "domains:physics",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "trinity",
+      "to": "domains:theology",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "isomorphisms:ISO-001",
+      "to": "domains:physics",
+      "relation": "connects",
+      "weight": 9
+    },
+    {
+      "from": "isomorphisms:ISO-001",
+      "to": "domains:theology",
+      "relation": "connects",
+      "weight": 9
+    },
+    {
+      "from": "isomorphisms:ISO-002",
+      "to": "domains:physics",
+      "relation": "connects",
+      "weight": 8
+    },
+    {
+      "from": "isomorphisms:ISO-002",
+      "to": "domains:information",
+      "relation": "connects",
+      "weight": 8
+    },
+    {
+      "from": "isomorphisms:ISO-003",
+      "to": "domains:theology",
+      "relation": "connects",
+      "weight": 7
+    },
+    {
+      "from": "isomorphisms:ISO-003",
+      "to": "domains:information",
+      "relation": "connects",
+      "weight": 7
+    },
+    {
+      "from": "chi_variable:C",
+      "to": "domains:physics",
+      "relation": "defines",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:C",
+      "to": "domains:theology",
+      "relation": "defines",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:C",
+      "to": "domains:information",
+      "relation": "defines",
+      "weight": 8
+    },
+    {
+      "from": "logical_concepts:falsifiability",
+      "to": "theological_concepts:grace",
+      "relation": "tests",
+      "weight": 8
+    },
+    {
+      "from": "logical_concepts:falsifiability",
+      "to": "theological_concepts:resurrection",
+      "relation": "tests",
+      "weight": 7
+    },
+    {
+      "from": "logical_concepts:isomorphism",
+      "to": "isomorphisms:ISO-001",
+      "relation": "supports",
+      "weight": 9
+    }
+  ],
+  "tags": {
+    "primary": [
+      "master-equation",
+      "chi-field",
+      "coherence",
+      "structural-isomorphism",
+      "grace-field"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/theology",
+      "pillar/mathematics",
+      "pillar/information"
+    ],
+    "series": "master-equation",
+    "classification": "foundational"
+  },
+  "citations": {
+    "scripture": [],
+    "academic": [],
+    "internal": [
+      {
+        "ref": "ISO-012",
+        "context": "Sign operator algebra demonstrated"
+      },
+      {
+        "ref": "Protocol #21",
+        "context": "Quantum biology hypothesis test"
+      }
+    ],
+    "total_count": 2
+  },
+  "word_anomalies": [
+    {
+      "word": "chi-field",
+      "frequency": 10,
+      "significance": "Central concept, neologism for coherence field"
+    },
+    {
+      "word": "grace field",
+      "frequency": 5,
+      "significance": "Theological concept treated as physical field"
+    },
+    {
+      "word": "sin/entropy",
+      "frequency": 3,
+      "significance": "Equates sin with entropy, novel mapping"
+    },
+    {
+      "word": "sign operator",
+      "frequency": 3,
+      "significance": "Binary distinction operator, core to formalism"
+    },
+    {
+      "word": "kill condition",
+      "frequency": 4,
+      "significance": "Falsifiability criterion, methodological innovation"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "Proposes a unified mathematical framework bridging physics and theology",
+    "Q1_identity": "Foundational thesis document introducing the Master Equation and chi-field formalism",
+    "Q2_domain": "Physics, theology, information theory, mathematics",
+    "Q3_claim": "Coherence (chi-field) is a measurable field unifying physics, theology, and information",
+    "Q4_support": "Mathematical derivations, Lagrangian formalism, code implementation, kill conditions",
+    "Q5_dependencies": "Quantum field theory, general relativity, information theory, Christian theology",
+    "Q6_consequences": "Requires revision of physics-theology boundary, implies testable predictions",
+    "Q7_kill": "Failure of quantum coherence in biology, non-detection of grace field, consciousness-collapse decoupling"
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "quantum field theory",
+      "general relativity",
+      "information theory",
+      "Christian theology"
+    ],
+    "required_by": [
+      "Protocol #21",
+      "ISO-012"
+    ],
+    "parallel_to": []
+  },
+  "graph_summary": {
+    "total_nodes": 30,
+    "total_edges": 20,
+    "dominant_domain": "physics",
+    "dominant_chi": "C",
+    "connectivity_score": 8,
+    "one_sentence": "Introduces the Master Equation as a coherence field (chi) unifying physics, theology, and information through structural isomorphisms and testable predictions"
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": true,
+      "how": "Grace field (G) and faith (F) coupled via network effects in chi-field term 3"
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": "Not explicitly addressed"
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Coherence (C) as truth measure, chi-field as coherence itself"
+    },
+    "4_7_love_relationship": {
+      "active": false,
+      "how": "Not explicitly addressed"
+    },
+    "5_6_judgment_logos": {
+      "active": false,
+      "how": "Not explicitly addressed"
+    },
+    "pairs_active_count": 2
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 10
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 7
+    },
+    "love": {
+      "present": false,
+      "strength": 0
+    },
+    "judgment": {
+      "present": false,
+      "strength": 0
+    },
+    "logos": {
+      "present": true,
+      "strength": 6
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": true,
+      "strength": 6
+    },
+    "atonement": {
+      "present": true,
+      "strength": 4
+    },
+    "christ": {
+      "present": true,
+      "strength": 10
+    },
+    "operators_present_count": 6
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "quantum field theory basics",
+      "information theory basics",
+      "Christian theology overview"
+    ],
+    "read_after": [
+      "Protocol #21",
+      "ISO-012",
+      "kill condition tests"
+    ]
+  }
+}

@@ -1,0 +1,292 @@
+{
+  "spec_version": "1.0",
+  "page_id": "cmp-06-templeton-ofi-coherence-under-pressure",
+  "page_title": "Coherence Under Pressure: Testing Structural Correspondence in AI-Assisted Science-and-Religion Research",
+  "page_slug": "cmp-06-templeton-ofi-coherence-under-pressure",
+  "source_file": "cmp-06-templeton-ofi-coherence-under-pressure.md",
+  "generated_by": "adversarial_auditor_v1",
+  "generated_date": "2025-04-14",
+  "adversarial_audit": {
+    "fatal_issue": "The project description claims the \u03c7-Evaluator 'subjects claims to pressure states: compression, strongest objection, counterevidence, time, translation, implementation, falsification, and moral output' but provides no operational definition of these pressure states, no metric for scoring them, and no evidence that they are independent or collectively exhaustive. This is a list, not a protocol.",
+    "major_issue": "The 'preliminary evidence' section asserts a 'high-significance synchronized structural break across all nine domains between 1968 and 1973' but does not name the datasets, the statistical test used, the significance threshold, or the effect size. This is an unverifiable claim that cannot be evaluated or replicated.",
+    "sharpening_issue": "The 'Falsification' section lists five separate failure conditions but does not specify which single observation would constitute a definitive falsification of the core claim. Multiple outs weaken the falsification architecture.",
+    "smart_hostile_physicist_check": {
+      "primary_confusion": "analogy",
+      "diagnosis": "The paper treats 'coherence' as a univocal concept across physics, information theory, biology, and theology, but these fields use the term with different formal definitions (e.g., quantum coherence vs. narrative coherence). The mapping is asserted, not derived.",
+      "sentence_to_rewrite": "Physics speaks of entropy and decoherence. Information theory speaks of noise. Biology speaks of disease and loss of homeostasis. Theology speaks of sin. The vocabularies differ, but the structure may be the same: coherence is narrow, breakdown is easy, restoration is costly.",
+      "required_fix": "Replace the universal 'coherence' framing with a domain-specific definition of structural correspondence that does not presuppose a shared essence. Acknowledge that the term is being used metaphorically and that the burden of proof is on the project to show it is more than that."
+    },
+    "physics_process_check": {
+      "does_mirror_physics_process": true,
+      "physics_process_named": "Shannon channel capacity, KL divergence, Crooks fluctuation theorem",
+      "one_to_one_verdict": "broken",
+      "where_mapping_holds": "The diagnostic equation is claimed to 'independently reproduce the mathematical form' of these three formalisms, suggesting a structural analogy.",
+      "where_mapping_breaks": "The paper does not specify which variables in the diagnostic equation correspond to which variables in Shannon, KL, or Crooks. Without a one-to-one mapping of parameters, the claim of 'reproduction' is vacuous. The Crooks fluctuation theorem, in particular, is a statement about work distributions in nonequilibrium thermodynamics; its mapping to a coherence diagnostic is not obvious and is not explained.",
+      "sentence_to_rewrite": "The diagnostic equation independently reproduces the mathematical form of Shannon channel capacity, KL divergence, and the Crooks fluctuation theorem.",
+      "required_fix": "Provide the explicit variable mapping for each of the three formalisms. If the mapping is not one-to-one, state that the resemblance is formal but not isomorphic, and explain what the resemblance means for the project's claims."
+    },
+    "strongest_non_framework_alternative": "The observed 'synchronized structural break' across nine datasets between 1968 and 1973 could be explained by a common external cause (e.g., changes in data collection methodology, geopolitical events, economic shifts) rather than a universal coherence dynamic. The paper does not consider or rule out this alternative.",
+    "what_would_force_public_narrowing": "A published replication failure of the preliminary diagnostic, or a formal proof that the \u03c7-Evaluator's multiplicative architecture is reducible to an additive model, would force the project to narrow its claims from 'universal coherence' to a domain-specific heuristic.",
+    "rewrite_priority": "fatal"
+  },
+  "structure_audit": {
+    "opening_hook_strength": 7,
+    "logical_flow_strength": 5,
+    "transition_quality": 4,
+    "does_opening_promise_match_ending": false,
+    "sequence_verdict": "repairable",
+    "best_order_step_by_step": [
+      "State the problem: no protocol for distinguishing metaphor from isomorphism in cross-domain claims.",
+      "Introduce IED as a candidate protocol with three levels.",
+      "Describe the \u03c7-Evaluator as an implementation of IED.",
+      "Provide a concrete worked example (not just a one-sentence summary).",
+      "Present the falsification conditions.",
+      "Present the preliminary evidence with full methodological transparency.",
+      "State the three-year plan.",
+      "Conclude with the significance and the ask."
+    ],
+    "flow_breaks": [
+      {
+        "from_section": "Method",
+        "to_section": "Instrument",
+        "problem": "The transition from IED to \u03c7-Evaluator is abrupt. The reader does not know how the three levels of IED map onto the ten coherence channels of the evaluator.",
+        "fix": "Add a sentence explicitly linking each IED level to the corresponding evaluator channels."
+      },
+      {
+        "from_section": "Falsification",
+        "to_section": "Preliminary evidence",
+        "problem": "The falsification section lists five conditions, but the evidence section does not address any of them. The evidence is presented as supportive, not as a test of the falsification conditions.",
+        "fix": "Restructure so that the evidence is explicitly framed as a test of one or more falsification conditions."
+      }
+    ],
+    "sentence_that_carries_too_much_weight": "In a pilot mapping between weak-force decay and moral-conservation structure, six process events preserved order, constraint, irreversibility, hidden remainder, spontaneous decay, and conservation structure without contradiction.",
+    "why_it_carries_too_much_weight": "This single sentence is the only concrete example of the IED protocol in action. It is expected to demonstrate the entire method's feasibility, but it provides no details on how the six events were identified, what the domains are, or why the mapping is not arbitrary. The sentence is a claim, not a demonstration."
+  },
+  "framework_presence": {
+    "master_equation": [
+      {
+        "present": false,
+        "quote": "",
+        "function": ""
+      }
+    ],
+    "axioms": [
+      {
+        "present": false,
+        "quote": "",
+        "function": ""
+      }
+    ],
+    "lean4": [
+      {
+        "present": true,
+        "quote": "The runtime logic is formalized in Lean 4 and compiles with 287 verified theorems and zero unproven gaps.",
+        "function": "Provides formal verification of the evaluator's runtime logic, but explicitly does not prove empirical or theological claims."
+      }
+    ],
+    "claims_layer": [
+      {
+        "present": true,
+        "quote": "The diagnostic equation independently reproduces the mathematical form of Shannon channel capacity, KL divergence, and the Crooks fluctuation theorem.",
+        "function": "Core claim of formal correspondence between the project's diagnostic and established physics."
+      }
+    ],
+    "proof_layer": [
+      {
+        "present": false,
+        "quote": "",
+        "function": ""
+      }
+    ],
+    "tests_layer": [
+      {
+        "present": false,
+        "quote": "",
+        "function": ""
+      }
+    ],
+    "laws_layer": [
+      {
+        "present": false,
+        "quote": "",
+        "function": ""
+      }
+    ]
+  },
+  "paper_changing_questions": [
+    {
+      "question": "What are the ten coherence channels of the \u03c7-Evaluator, and how is each one operationally defined and scored?",
+      "why_it_matters": "Without operational definitions, the evaluator is a black box. The project cannot be replicated or falsified.",
+      "if_unanswered_then": "The project is not a method; it is a proposal for a method. The OFI should be rejected as premature.",
+      "severity": "fatal"
+    },
+    {
+      "question": "What are the nine U.S. government datasets used in the preliminary analysis, and what statistical test produced the 'high-significance synchronized structural break'?",
+      "why_it_matters": "The claim is the project's strongest empirical evidence. Without full transparency, it is not evidence at all.",
+      "if_unanswered_then": "The preliminary evidence section must be removed or rewritten as a speculative hypothesis.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Is the mapping between the diagnostic equation and the Crooks fluctuation theorem one-to-one? If so, what is the exact variable correspondence?",
+      "why_it_matters": "The Crooks theorem is a specific result in nonequilibrium thermodynamics. Claiming formal reproduction without a mapping is misleading.",
+      "if_unanswered_then": "The claim of reproducing the Crooks theorem is vacuous and should be retracted.",
+      "severity": "fatal"
+    },
+    {
+      "question": "How does the IED protocol distinguish between a genuine structural isomorphism and a coincidental alignment of parameters?",
+      "why_it_matters": "This is the core methodological question. Without a clear answer, the protocol is not a protocol.",
+      "if_unanswered_then": "The project does not solve the problem it claims to solve.",
+      "severity": "major"
+    },
+    {
+      "question": "What is the threshold IED score that separates 'metaphor' from 'stronger structural correspondence'?",
+      "why_it_matters": "The project promises a continuous variable, but without a threshold, it cannot be used for classification.",
+      "if_unanswered_then": "The method is descriptive, not diagnostic.",
+      "severity": "major"
+    },
+    {
+      "question": "How does the multiplicative architecture of the \u03c7-Evaluator differ from existing additive frameworks in NLP and fact-checking? Provide a concrete example where the two give different verdicts.",
+      "why_it_matters": "The project claims novelty. Without a comparative example, the novelty is asserted, not demonstrated.",
+      "if_unanswered_then": "The claim of structural difference from existing frameworks is unsupported.",
+      "severity": "major"
+    },
+    {
+      "question": "What is the 'coercion detection' (Q) channel, and how is it operationalized?",
+      "why_it_matters": "Two of the ten channels are missing. The evaluator is incomplete.",
+      "if_unanswered_then": "The project cannot be evaluated in its current state.",
+      "severity": "major"
+    },
+    {
+      "question": "What is the 'urgency/propaganda detection' (T) channel, and how is it operationalized?",
+      "why_it_matters": "Same as above.",
+      "if_unanswered_then": "The project cannot be evaluated in its current state.",
+      "severity": "major"
+    },
+    {
+      "question": "How does the project ensure that the Lean 4 verification is not circular\u2014i.e., that the theorems being verified are not trivial consequences of the way the evaluator is defined?",
+      "why_it_matters": "287 theorems sounds impressive, but if they are all tautologies, the verification is meaningless.",
+      "if_unanswered_then": "The Lean 4 claim is a rhetorical flourish, not a substantive guarantee.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "What is the 'asymptotic floor' in the biblical patriarchal lifespans analysis, and how was it predicted independently?",
+      "why_it_matters": "The claim of an 'independently predicted asymptotic floor' is a strong empirical test. Without details, it is not testable.",
+      "if_unanswered_then": "This evidence should be downgraded to anecdotal.",
+      "severity": "sharpening"
+    }
+  ],
+  "sentence_annotations": [
+    {
+      "anchor_quote": "The vocabularies differ, but the structure may be the same: coherence is narrow, breakdown is easy, restoration is costly.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This sentence asserts a universal structure without evidence. It is the foundational metaphor of the entire project.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "This project develops Isomorphic Event Density (IED), a formal protocol for evaluating whether cross-domain mappings preserve event structure, transition order, constraints, boundary conditions, and failure modes.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is the central methodological claim, but the protocol is not described in sufficient detail to be evaluated.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "In a pilot mapping between weak-force decay and moral-conservation structure, six process events preserved order, constraint, irreversibility, hidden remainder, spontaneous decay, and conservation structure without contradiction.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is the only concrete example of the method. It is too vague to be evaluated or replicated.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The diagnostic equation independently reproduces the mathematical form of Shannon channel capacity, KL divergence, and the Crooks fluctuation theorem.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is a strong claim of formal correspondence. Without a variable mapping, it is unverifiable.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "A preliminary analysis produced a high-significance synchronized structural break across all nine domains between 1968 and 1973.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is the project's strongest empirical evidence, but it is presented without any methodological detail.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "A separate analysis of biblical patriarchal lifespans fits an exponential decoherence curve with an independently predicted asymptotic floor.",
+      "annotation_type": "claim",
+      "ui_color": "gold",
+      "why_flagged": "This is a potentially interesting empirical test, but the 'independently predicted' floor is not explained.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The runtime logic is formalized in Lean 4 and compiles with 287 verified theorems and zero unproven gaps.",
+      "annotation_type": "clarification",
+      "ui_color": "violet",
+      "why_flagged": "This is a strong formal claim, but it is not clear what the theorems state or whether they are non-trivial.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "If a domain is found where stable order persists without fidelity, boundary, correction, or external input, the universality claim fails.",
+      "annotation_type": "clarification",
+      "ui_color": "gold",
+      "why_flagged": "This is a falsification condition, but it is vague. What counts as 'stable order'? What counts as 'external input'?",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    }
+  ]
+}

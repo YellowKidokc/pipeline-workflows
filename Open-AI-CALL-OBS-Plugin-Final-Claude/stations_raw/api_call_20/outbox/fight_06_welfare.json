@@ -1,0 +1,115 @@
+{
+  "spec_version": "1.0-trilemma-resolver",
+  "status": "OK",
+  "fight": {
+    "id": "welfare_entitlements",
+    "familiar_name": "Welfare / Entitlements",
+    "years_running": 60,
+    "poles": [
+      "Social safety net / we take care of each other",
+      "Dependency destroys people / welfare traps generations"
+    ]
+  },
+  "reader_anchor": {
+    "opening_prose": "You are seven years old. Your classmate's lunch tray is empty. You have two sandwiches. Your mother packed extra, 'in case someone forgot.' You slide one over without looking. The teacher sees. She nods. No one says a word. That night, you tell your father. He says, 'Good. That's what we do.' You never calculated cost. You never asked if the other kid deserved it. You just saw the empty tray and moved. That was the first time you learned that need and response are the same motion. Then somewhere, someone taught you to stop. They said: 'You can't feed everyone. They'll just expect it. You'll run out.' They were right about the math. They were wrong about the child. The child knew something the math cannot hold: that the giving and the receiving are not two transactions. They are one event. The math calls that a deficit. The child calls it Tuesday.",
+    "universal_experience": "Sharing food with a hungry classmate without calculation",
+    "checkable_detail": "You did not look at the teacher before sliding the sandwich over. You did not check if anyone was watching. Your hand moved before your brain finished the sentence.",
+    "quiet_theft": "You were trained to believe that giving requires a ledger, that someone must be shorted, that generosity is a zero-sum game. The child knew it was not.",
+    "embodiment_note": "The empty tray is D. The sandwich is T_A. The child who gave did not ask for T_B. The deficit was never created because the child did not see a deficit\u2014only a response. This is the external cost-bearer the framework names: the one who absorbs the cost without creating a second deficit."
+  },
+  "poles": [
+    {
+      "label": "Safety Net Pole",
+      "steelman": "A society that does not catch its falling members is not a society. People fall through no fault of their own\u2014job loss, illness, disability, market crashes. The safety net is the price of civilization. We pool resources through progressive taxation and distribute them as cash, food, housing, healthcare. This is not charity; it is solidarity. The alternative is starvation, homelessness, and children going hungry. Every developed nation does this. The accusation against the other pole is that they would let people die to prove a point about self-reliance.",
+      "accusation_against_others": "You would let people starve rather than admit that collective responsibility is necessary.",
+      "accusation_is_true_because": "Under the dependency-concern pole's ideal (no transfers), the victim class (the poor) bears the full cost of their poverty. They did not create the economic system that left them behind, but they pay for it with their lives. The causal class (those who benefit from the system's inequalities) pays nothing. The cost falls on those who did not create the damage.",
+      "axiom_autopsy": {
+        "load_bearing_premise": "The state must compel contributions because voluntary giving is insufficient to meet need.",
+        "self_application": "The safety net pole requires compulsory funding from taxpayers. Many taxpayers are themselves struggling\u2014working multiple jobs, unable to save. The premise 'need justifies compulsion' applied to the safety net pole's own funders means the state could compel the safety net pole's supporters to fund programs they do not support, for needs they do not recognize. The premise justifies its own violation. The safety net pole cannot object to being compelled without undermining its own justification for compulsion.",
+        "one_question_test": "If a majority voted to cut your own benefits to fund a program you oppose, would you accept that as legitimate?",
+        "checkable_in_under_a_minute": true
+      }
+    },
+    {
+      "label": "Dependency Concern Pole",
+      "steelman": "Welfare does not solve poverty; it perpetuates it. When the state provides for basic needs without requiring work or reciprocity, it removes the incentive to develop skills, seek employment, or build family structures. Generations grow up knowing only the check. The safety net becomes a net that traps. The accusation against the other pole is that they are creating a permanent underclass in the name of compassion, and that the compassion is actually a form of control\u2014keeping people dependent on the state.",
+      "accusation_against_others": "You are creating dependency and destroying families under the banner of compassion.",
+      "accusation_is_true_because": "Under the safety net pole's plan, the state provides T_A to the poor, funded by T_B from taxpayers. The taxpayer class includes many who are not wealthy\u2014they are the working poor, the lower-middle class. They did not create the poverty of the recipient class, but they bear the cost. The recipient class receives benefits that can, in practice, reduce their incentive to work, creating a new damage (dependency) that the recipient class did not intend but now bears. The cost of the program falls on those who did not create the original damage, and the program creates a new damage that falls on the recipients themselves.",
+      "axiom_autopsy": {
+        "load_bearing_premise": "Work requirements and time limits prevent dependency and restore autonomy.",
+        "self_application": "The dependency concern pole requires that recipients work to receive benefits. But many recipients are single mothers, disabled, or in areas with no jobs. The premise 'work restores autonomy' applied to the dependency concern pole's own position means that if the state can mandate work, it can mandate any behavior it deems restorative. The premise justifies state control over personal decisions, which is exactly what the dependency concern pole accuses the safety net pole of doing. The premise self-destructs: the cure is the same disease.",
+        "one_question_test": "Would you accept the state mandating your own work schedule if it decided you were insufficiently autonomous?",
+        "checkable_in_under_a_minute": true
+      }
+    }
+  ],
+  "ledger": {
+    "D_definition": "Poverty: lack of sufficient resources for basic human needs (food, shelter, healthcare, education). Measured as the poverty gap\u2014the total amount needed to bring every person above the poverty line.",
+    "D_is_real_evidence": "US Census Bureau reports 37.9 million people in poverty in 2023, with a poverty gap of approximately $150 billion. Real people die from lack of resources (e.g., 2022 study in JAMA: 10,000 excess deaths per year among working-age adults in poverty).",
+    "victim_class": "People in poverty (the poor)",
+    "causal_class": "Diffuse. No single identifiable offender class. Causes include structural economic factors, historical discrimination, personal circumstances, market failures, policy choices. Agency is distributed across employers, policymakers, taxpayers, and the poor themselves. Honest note: causation is systemic, not individual.",
+    "per_pole_transfers": [
+      {
+        "pole": "Safety Net Pole",
+        "T_A": "Cash and in-kind transfers to the poor (e.g., SNAP, Medicaid, housing vouchers, TANF). Estimated $1.5 trillion annually in federal means-tested spending.",
+        "T_B": "Taxes on non-poor households and corporations. Estimated $1.5 trillion annually.",
+        "J": 10.0,
+        "M": 0.0,
+        "W_note": "Victim class receives transfers (high J) but has no choice in the structure. Offender class (taxpayers) bears full cost (M=0) involuntarily. No free will for either class.",
+        "who_eats_deficit": "Taxpayers (including working poor who pay payroll taxes) bear the cost. They did not create the poverty of the recipients, but they pay for it."
+      },
+      {
+        "pole": "Dependency Concern Pole",
+        "T_A": "Reduced or conditional transfers (work requirements, time limits, block grants). T_A is lower than safety net pole, possibly zero for able-bodied adults without dependents.",
+        "T_B": "Lower taxes for non-poor, but increased costs for the poor (unmet needs, homelessness, health crises). T_B is shifted to the poor themselves.",
+        "J": 0.5,
+        "M": 0.5,
+        "W_note": "Victim class receives less (low J) but bears more cost themselves (they pay for their own poverty). Offender class (taxpayers) pays less (high M). No free will: the poor do not choose to bear the cost; it is imposed by policy.",
+        "who_eats_deficit": "The poor themselves bear the cost of unmet needs (homelessness, hunger, untreated illness). They did not create the systemic poverty, but they pay for it with their lives."
+      }
+    ]
+  },
+  "clear_win": {
+    "type": "structural_invariant",
+    "statement": "The welfare fight is a seating argument on the J + M = 1 line. Both poles are correct: the safety net pole correctly identifies that the poor need transfers (J high), but the cost falls on taxpayers who did not create the damage (M=0). The dependency concern pole correctly identifies that transfers create dependency (new damage), but the cost of that dependency falls on the poor themselves (M high for taxpayers, J low for poor). Both accusations are true simultaneously because no position on the line closes the ledger: someone who did not create the damage always eats the cost. The line is the villain.",
+    "derivation_steps": [
+      "1. Define D = poverty gap ($150B).",
+      "2. Safety net pole: T_A = $150B to poor, T_B = $150B from taxpayers. J = 1.0, M = 0.0. Taxpayers eat the deficit.",
+      "3. Dependency concern pole: T_A = $75B (conditional), T_B = $75B from taxpayers (lower taxes). J = 0.5, M = 0.5. The poor eat the deficit of unmet needs.",
+      "4. Both poles produce J + M = 1. No pole produces J = 1, M = 1, W = 1.",
+      "5. The accusations are true: safety net pole's accusation (dependency concern pole lets people starve) is true because the poor bear the cost. Dependency concern pole's accusation (safety net creates dependency) is true because transfers can reduce work incentive, creating a new damage borne by the poor.",
+      "6. The invariant holds: every position on the line requires someone who did not create the damage to bear the cost."
+    ],
+    "dinner_table_sentence": "Both sides are right: welfare helps the poor but hurts taxpayers; cutting it hurts the poor but helps taxpayers. The math never closes.",
+    "why_undeniable": "The derivation uses the actual poverty gap and the actual transfer amounts. A hostile reader must concede that under the safety net pole, taxpayers pay for poverty they did not create; under the dependency concern pole, the poor pay for poverty they did not create. The accusations are structurally true, not rhetorically true."
+  },
+  "off_the_line": {
+    "proximate": {
+      "structures": [
+        "Mutual aid networks: voluntary, community-based resource sharing without government compulsion.",
+        "Sponsorship models: individuals or families directly sponsor a specific person or family in need, providing resources and relationship.",
+        "Employer-based training and hiring programs that pay living wages without government mandate.",
+        "Faith-based charities that provide material aid and relational support."
+      ],
+      "honest_limit": "These structures relocate the cost voluntarily and visibly, but they do not retire the deficit. The cost still falls on someone (the giver). The altruism lemma holds: the deficit is moved, not eliminated."
+    },
+    "ultimate": {
+      "configuration": "A voluntary external cost-bearer who (1) is neither victim nor offender nor conscripted bystander, (2) acts voluntarily, (3) absorbs the full cost of poverty (D), (4) has capacity to absorb without being destroyed, (5) preserves truth (poverty is real, not denied).",
+      "candidate": "The framework identifies the historical candidate as the person of Jesus Christ, who voluntarily absorbed the full cost of human brokenness (including poverty and its root causes) on the cross, satisfying the ledger without requiring payment from either the poor or the non-poor. This is not a policy proposal; it is a structural identification. The door opens from the reader's side only.",
+      "door_note": "No coercion. The reader is free to accept or reject the identification. The framework only shows that the configuration exists; it does not demand participation."
+    }
+  },
+  "anti_gaming_audit": {
+    "blind_label": "pass: analysis uses 'victim class' and 'causal class' without naming parties or politicians; actor reversal (swap poor and non-poor) would produce same structural result.",
+    "symmetry": "pass: win applies regardless of which pole proposed the mechanism; both poles are shown to be on the same line.",
+    "counterfactual": "pass: D (poverty) is real and measurable absent any welfare policy; poverty existed before welfare.",
+    "radius_consistency": "pass: benefits and costs measured at the same social level (national poverty gap and national tax burden).",
+    "cost_visibility": "pass: costs are visible to both taxpayers (tax bills) and the poor (unmet needs); the dependency cost is less visible but documented in research on welfare dependency.",
+    "no_person_score": "pass: actions and positions scored, not souls; no moral judgment on individuals.",
+    "unknowns_tracked": "pass: causal class labeled 'diffuse' with honest note; no false precision."
+  },
+  "falsification": {
+    "kill_condition_specific": "A welfare program that achieves J=1 (all poverty eliminated), M=1 (no taxpayer bears cost), and W=1 (both giver and receiver participate voluntarily) within a closed system with no external cost-bearer would break this resolution. No such program exists.",
+    "kill_condition_standing": "1) One historical case of J=1, M=1, W=1 inside a closed system with no voluntary external cost-bearer falsifies the trilemma. 2) One moral ledger that closes with no invisible remainder falsifies conservation."
+  }
+}

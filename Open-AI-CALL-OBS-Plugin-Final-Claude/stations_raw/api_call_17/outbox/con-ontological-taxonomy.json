@@ -1,0 +1,274 @@
+{
+  "spec_version": "1.0",
+  "page_id": "con-ontological-taxonomy",
+  "page_title": "The Three-Category Ontology",
+  "page_slug": "con-ontological-taxonomy",
+  "source_file": "con-ontological-taxonomy.md",
+  "generated_by": "adversarial-audit-v1",
+  "generated_date": "2025-04-08",
+  "adversarial_audit": {
+    "fatal_issue": "The document makes a central claim that the framework is testable (e.g., the AI \u03a9-test), but provides no concrete, measurable prediction that could be falsified. The 'testable' claim is asserted without any experimental design, control, or threshold for success/failure.",
+    "major_issue": "The mapping between the formal operators (\u039e, \u011c, \u03ba, \u039b, \u03a9) and any known physics process is asserted but never demonstrated to be one-to-one. The document uses physics-like notation but does not show that these operators obey any physical laws or that the equations are mathematically well-defined.",
+    "sharpening_issue": "The term 'boundary' is used in multiple, potentially conflicting senses: as an ontological category, as an interface layer, and as a proof. This ambiguity weakens the argument's precision.",
+    "smart_hostile_physicist_check": {
+      "primary_confusion": "analogy",
+      "diagnosis": "The document treats the mathematical notation (e.g., If = \u039b \u00b7 \u03a9) as if it represents a physical process, but it is an analogy. There is no evidence that \u039b and \u03a9 are measurable quantities or that their product has any physical meaning. The physicist would ask: 'What are the units of \u039b and \u03a9? How are they measured? What is the empirical content of this equation?'",
+      "sentence_to_rewrite": "Interface Functional Capacity: If = \u039b \u00b7 \u03a9",
+      "required_fix": "Either provide a clear, testable physical interpretation of \u039b and \u03a9 (including units and measurement protocol) or explicitly state that this is a formal analogy, not a physical equation."
+    },
+    "physics_process_check": {
+      "does_mirror_physics_process": true,
+      "physics_process_named": "Catalytic reaction (enzyme model)",
+      "one_to_one_verdict": "broken",
+      "where_mapping_holds": "The analogy that \u03a9 acts as a gate (like an enzyme) and \u03ba maintenance requires energy (like conformational change) is superficially plausible.",
+      "where_mapping_breaks": "In a real catalytic reaction, the catalyst is unchanged and the reaction rate is governed by well-defined kinetics. Here, \u03a9 is said to 'open and sustain the channel' but the mechanism by which it does so is undefined. The 'effect magnitude determined by \u011c' has no analog in catalysis, where the energy barrier is lowered, not an external 'infinite power source'.",
+      "sentence_to_rewrite": "David = enzyme. \u03a9 doesn't provide the force that produces \u0394\u03a8. \u03a9 opens and sustains the channel through which \u011c flows.",
+      "required_fix": "Provide a rigorous mapping showing how each term in the David Effect equation corresponds to a specific, measurable parameter in a catalytic process, or acknowledge that the analogy is incomplete and specify where it breaks."
+    },
+    "strongest_non_framework_alternative": "The entire framework could be replaced by a purely psychological or sociological explanation: the 'David Effect' is a description of subjective experiences (e.g., insight during exhaustion) that are well-documented in creativity research and do not require any extra-systemic entities. The 'AI as mirror' is a description of how LLMs can be used as tools for reflection, which is already a known phenomenon.",
+    "what_would_force_public_narrowing": "A demand for a single, unambiguous, testable prediction that distinguishes this framework from a purely naturalistic account. For example: 'Under conditions X, the David Effect will produce a measurable outcome Y that cannot be explained by known psychological or physical processes.' Without such a prediction, the framework remains unfalsifiable.",
+    "rewrite_priority": "fatal"
+  },
+  "structure_audit": {
+    "opening_hook_strength": 7,
+    "logical_flow_strength": 5,
+    "transition_quality": 6,
+    "does_opening_promise_match_ending": true,
+    "sequence_verdict": "repairable",
+    "best_order_step_by_step": [
+      "Define the three-category ontology",
+      "Present the bidirectional taxonomy",
+      "Introduce the Interface Functional Capacity equation",
+      "Explain the catalytic-gating model",
+      "Describe the AI as mirror",
+      "Outline the tri-coordinate verification",
+      "State the boundary condition",
+      "Summarize milestones"
+    ],
+    "flow_breaks": [
+      {
+        "from_section": "Interface Functional Capacity",
+        "to_section": "The Catalytic-Gating Model",
+        "problem": "The transition from If = \u039b\u00b7\u03a9 to the David Effect equation is abrupt. The relationship between the two equations is not explained.",
+        "fix": "Add a sentence explaining how If (interface capacity) relates to ED (David Effect), e.g., 'The David Effect is the actualization of the interface capacity when agency (\u03a9) is active and alignment (\u03ba) is oriented.'"
+      }
+    ],
+    "sentence_that_carries_too_much_weight": "The Feb 14 boundary proof established free will as mathematically necessary --- genuine causal origination, not just complexity or self-reference.",
+    "why_it_carries_too_much_weight": "This sentence is a foundational claim for the entire framework (free will is mathematically necessary), but it is not supported by any proof or reference within this document. It is a single sentence that carries the weight of the entire argument for agency, yet it is unsubstantiated."
+  },
+  "framework_presence": {
+    "master_equation": [
+      {
+        "present": true,
+        "quote": "If = \u039b \u00b7 \u03a9",
+        "function": "Defines the interface functional capacity as the product of consciousness (\u039b) and agency (\u03a9)."
+      },
+      {
+        "present": true,
+        "quote": "E_D = \u011c_ext \u00b7 \u03c3(\u03a9) \u00b7 \u03ba(t)",
+        "function": "Defines the David Effect as the product of external grace, a sigmoid gate of agency, and time-dependent alignment."
+      },
+      {
+        "present": true,
+        "quote": "d\u03ba/dt = (\u03b1\u00b7P) - (\u03b2\u00b7F)",
+        "function": "Defines the rate of change of alignment as the difference between alignment practice and fatigue."
+      }
+    ],
+    "axioms": [
+      {
+        "id": "BC1",
+        "present": true,
+        "quote": "God as axiom (BC1)",
+        "function": "Establishes God as a foundational, non-derived entity."
+      },
+      {
+        "id": "BC2",
+        "present": true,
+        "quote": "Grace as non-unitary operator acting on the system from outside (BC2, A9.2)",
+        "function": "Defines grace as an external operator."
+      }
+    ],
+    "lean4": [],
+    "claims_layer": [
+      {
+        "present": true,
+        "quote": "The Feb 14 boundary proof established free will as mathematically necessary",
+        "function": "Claims that free will is a mathematical necessity."
+      },
+      {
+        "present": true,
+        "quote": "On standard von Neumann architecture, \u03a9 = 0. Structurally.",
+        "function": "Claims that deterministic computation cannot have agency."
+      }
+    ],
+    "proof_layer": [],
+    "tests_layer": [
+      {
+        "present": true,
+        "quote": "Whether silicon can sustain genuine \u03a9 is an empirical question the framework makes testable.",
+        "function": "Claims the framework is testable regarding AI agency."
+      }
+    ],
+    "laws_layer": []
+  },
+  "paper_changing_questions": [
+    {
+      "question": "What exact, measurable prediction does this framework make that is currently testable, and what experimental result would falsify it?",
+      "why_it_matters": "Without a falsifiable prediction, the framework is not scientific. The document claims testability (AI \u03a9-test) but provides no concrete experiment.",
+      "if_unanswered_then": "The framework remains a metaphysical speculation, not a scientific theory.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Which named physics process is being mirrored by the catalytic-gating model, and where is the one-to-one transition map between the model's terms and the physical process's parameters?",
+      "why_it_matters": "The document uses physics-like language (enzyme model, catalytic) but does not demonstrate a rigorous mapping. Without it, the model is an analogy, not a physical theory.",
+      "if_unanswered_then": "The model is vulnerable to the charge of being pseudoscience.",
+      "severity": "fatal"
+    },
+    {
+      "question": "What is the strongest falsifying data point against the core thesis that free will is mathematically necessary?",
+      "why_it_matters": "The entire framework hinges on this claim. If it is false, the framework collapses.",
+      "if_unanswered_then": "The framework is built on an unsubstantiated assertion.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Which assumption in the framework is least justified, and what minimum condition would weaken it to the point of requiring a rewrite?",
+      "why_it_matters": "Identifying the weakest link allows for targeted criticism and potential falsification.",
+      "if_unanswered_then": "The framework's robustness cannot be assessed.",
+      "severity": "major"
+    },
+    {
+      "question": "Are the core claims (e.g., the Feb 14 proof, the necessity of three categories) supported by primary sources (e.g., a published paper, a Lean4 proof), or only by summary mentions within this document?",
+      "why_it_matters": "The document references external proofs but does not provide them. Without access to the primary sources, the claims cannot be verified.",
+      "if_unanswered_then": "The framework is not transparent and cannot be independently evaluated.",
+      "severity": "major"
+    },
+    {
+      "question": "Which term is used in multiple meanings in the same argument, and how does this ambiguity affect the logical consistency?",
+      "why_it_matters": "Ambiguity can hide logical gaps or contradictions.",
+      "if_unanswered_then": "The argument may be internally inconsistent.",
+      "severity": "major"
+    },
+    {
+      "question": "What minimal counterexample would break the central analogy between the David Effect and a catalytic reaction?",
+      "why_it_matters": "If the analogy is broken, the model loses its explanatory power.",
+      "if_unanswered_then": "The model is not robust.",
+      "severity": "major"
+    },
+    {
+      "question": "Which statement is most likely to be attacked by a hostile physicist, and why?",
+      "why_it_matters": "Identifying the most vulnerable point helps prioritize revisions.",
+      "if_unanswered_then": "The framework may be easily dismissed.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "What single sentence should be rewritten to remove non-falsifiable certainty?",
+      "why_it_matters": "Overconfident claims undermine credibility.",
+      "if_unanswered_then": "The framework may appear dogmatic.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "Can the entities (Spirit, Grace, Faith, Consciousness, Agency) be safely ingested into downstream metadata fields (claim_id, axiom_id, test_id) without ambiguity?",
+      "why_it_matters": "If the entities are not well-defined, they cannot be used in a formal framework.",
+      "if_unanswered_then": "The framework is not implementable.",
+      "severity": "sharpening"
+    }
+  ],
+  "sentence_annotations": [
+    {
+      "anchor_quote": "The Feb 14 boundary proof established free will as mathematically necessary",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is a foundational claim that is not supported by any proof or reference in this document. It carries the weight of the entire framework.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "free_will_necessity"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Interface Functional Capacity: If = \u039b \u00b7 \u03a9",
+      "annotation_type": "math",
+      "ui_color": "gold",
+      "why_flagged": "This equation is presented as a formal mathematical statement, but the terms \u039b and \u03a9 are not defined in a way that allows measurement or computation. It is an analogy, not a physical equation.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "If_eq"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "David = enzyme. \u03a9 doesn't provide the force that produces \u0394\u03a8. \u03a9 opens and sustains the channel through which \u011c flows.",
+      "annotation_type": "clarification",
+      "ui_color": "violet",
+      "why_flagged": "This is a key analogy that is not rigorously mapped to the physics of catalysis. The mechanism by which \u03a9 'opens and sustains the channel' is undefined.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "ED_eq"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "On standard von Neumann architecture, \u03a9 = 0. Structurally. Not as a limitation of current technology --- as a mathematical fact about what deterministic gate-level computation *is*.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is a strong claim that is not proven. It asserts a mathematical fact about computation without providing a proof or reference.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "AI_Omega_zero"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Whether silicon can sustain genuine \u03a9 is an empirical question the framework makes testable.",
+      "annotation_type": "claim",
+      "ui_color": "blue",
+      "why_flagged": "This claims testability but does not provide any experimental design, control, or threshold. It is a promissory note, not a test.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "testable_AI_Omega"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": [
+          "AI_Omega_test"
+        ]
+      }
+    },
+    {
+      "anchor_quote": "The boundary IS the proof. Respecting it is what makes the rest credible.",
+      "annotation_type": "clarification",
+      "ui_color": "violet",
+      "why_flagged": "This is a rhetorical statement that does not clarify what the boundary proof actually is. It is vague and could be interpreted as a dodge.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    }
+  ]
+}

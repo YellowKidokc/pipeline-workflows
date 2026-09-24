@@ -1,0 +1,540 @@
+{
+  "definitions": [
+    {
+      "term": "coherence",
+      "category": "physics",
+      "definition": "When parts of a system are aligned and work together smoothly, like waves that are in step.",
+      "example": "A choir singing in perfect harmony is coherent; a crowd shouting randomly is not.",
+      "grade_level": "10",
+      "first_appearance": "The Problem: Two Languages, One Reality"
+    },
+    {
+      "term": "field",
+      "category": "physics",
+      "definition": "A region where something (like gravity or magnetism) can affect objects without touching them.",
+      "example": "A magnet creates a magnetic field that can pull a paperclip from a distance.",
+      "grade_level": "10",
+      "first_appearance": "The Breakthrough: The χ-Field"
+    },
+    {
+      "term": "partial differential equations",
+      "category": "math",
+      "definition": "Equations that describe how things change in space and time, using rates of change.",
+      "example": "Predicting how heat spreads through a metal rod uses partial differential equations.",
+      "grade_level": "college",
+      "first_appearance": "The Breakthrough: The χ-Field"
+    },
+    {
+      "term": "Lagrangian",
+      "category": "physics",
+      "definition": "A mathematical function that sums up all the energy in a system to predict its motion.",
+      "example": "Physicists use a Lagrangian to figure out how a planet will orbit a star.",
+      "grade_level": "college",
+      "first_appearance": "The Ten Variables: A Prism"
+    },
+    {
+      "term": "structural isomorphism",
+      "category": "math",
+      "definition": "When two different things have the same underlying structure or pattern.",
+      "example": "A map of a subway system and a diagram of a computer network can be structurally isomorphic if they have the same connections.",
+      "grade_level": "college",
+      "first_appearance": "The Claim: Structural Isomorphism"
+    },
+    {
+      "term": "Noether's theorem",
+      "category": "physics",
+      "definition": "A rule that says every symmetry in nature leads to a conserved quantity (like energy or momentum).",
+      "example": "Because the laws of physics are the same today as yesterday (symmetry in time), energy is conserved.",
+      "grade_level": "college",
+      "first_appearance": "The Claim: Structural Isomorphism"
+    },
+    {
+      "term": "falsifiable",
+      "category": "academic",
+      "definition": "Able to be proven wrong by an experiment or observation.",
+      "example": "The claim 'all swans are white' is falsifiable because finding one black swan disproves it.",
+      "grade_level": "10",
+      "first_appearance": "The Test: Kill Conditions"
+    },
+    {
+      "term": "quantum coherence",
+      "category": "physics",
+      "definition": "When tiny particles like electrons stay in a synchronized, wave-like state instead of acting like random particles.",
+      "example": "In a quantum computer, quantum coherence lets many calculations happen at once.",
+      "grade_level": "college",
+      "first_appearance": "Kill Condition Example"
+    },
+    {
+      "term": "decoherence",
+      "category": "physics",
+      "definition": "The process where quantum particles lose their synchronized wave behavior and start acting randomly.",
+      "example": "A quantum computer stops working when decoherence makes its particles lose their special quantum properties.",
+      "grade_level": "college",
+      "first_appearance": "Kill Condition Example"
+    },
+    {
+      "term": "d'Alembertian",
+      "category": "physics",
+      "definition": "A mathematical operator that measures how a field changes in space and time, used in wave equations.",
+      "example": "The d'Alembertian helps describe how ripples spread across a pond.",
+      "grade_level": "graduate",
+      "first_appearance": "The χ-Field Equation of Motion"
+    },
+    {
+      "term": "variational principle",
+      "category": "physics",
+      "definition": "A method that finds the path or state a system will take by minimizing a certain quantity (like action).",
+      "example": "A ball rolling down a hill follows the path that minimizes its travel time, which can be found using a variational principle.",
+      "grade_level": "college",
+      "first_appearance": "Start with Variational Principle"
+    },
+    {
+      "term": "Euler-Lagrange",
+      "category": "physics",
+      "definition": "Equations derived from the Lagrangian that describe how a system evolves over time.",
+      "example": "The Euler-Lagrange equations can predict the motion of a pendulum from its energy.",
+      "grade_level": "college",
+      "first_appearance": "Euler-Lagrange for χ"
+    },
+    {
+      "term": "coupling constant",
+      "category": "physics",
+      "definition": "A number that tells how strongly two fields or forces interact with each other.",
+      "example": "The coupling constant for electromagnetism determines how strongly charged particles attract or repel.",
+      "grade_level": "college",
+      "first_appearance": "Expand with Domain Sources"
+    },
+    {
+      "term": "Yukawa-type force",
+      "category": "physics",
+      "definition": "A force that gets weaker quickly with distance because it is carried by a particle with mass.",
+      "example": "The strong nuclear force that holds protons together in an atom is a Yukawa-type force.",
+      "grade_level": "college",
+      "first_appearance": "Grace Field (G) — Yukawa-Type Force"
+    },
+    {
+      "term": "propagates",
+      "category": "physics",
+      "definition": "Moves or spreads through space or a medium.",
+      "example": "Sound propagates through air as waves.",
+      "grade_level": "10",
+      "first_appearance": "Grace Field (G) — Yukawa-Type Force"
+    },
+    {
+      "term": "sacrament",
+      "category": "theology",
+      "definition": "A religious ceremony or ritual believed to convey God's grace, like baptism or communion.",
+      "example": "In Christianity, taking communion is a sacrament that represents Jesus' sacrifice.",
+      "grade_level": "10",
+      "first_appearance": "Grace Field (G) — Yukawa-Type Force"
+    },
+    {
+      "term": "entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system.",
+      "example": "A messy room has higher entropy than a tidy one.",
+      "grade_level": "10",
+      "first_appearance": "Sin Field (S) — Entropy Density"
+    },
+    {
+      "term": "equilibrium",
+      "category": "physics",
+      "definition": "A state where a system is balanced and not changing, like when hot and cold water mix to become lukewarm.",
+      "example": "A ball at the bottom of a bowl is in equilibrium because it won't move unless pushed.",
+      "grade_level": "10",
+      "first_appearance": "Sin Field (S) — Entropy Density"
+    },
+    {
+      "term": "anti-correlation",
+      "category": "physics",
+      "definition": "When two things move in opposite directions: as one goes up, the other goes down.",
+      "example": "Umbrella sales and sunny weather are anti-correlated.",
+      "grade_level": "10",
+      "first_appearance": "Sin Field (S) — Entropy Density"
+    },
+    {
+      "term": "eigenvalues",
+      "category": "math",
+      "definition": "Special numbers that tell you how a transformation stretches or shrinks a vector without changing its direction.",
+      "example": "If you stretch a rubber band, the eigenvalues tell you how much it stretches in each direction.",
+      "grade_level": "college",
+      "first_appearance": "Sign Operator (σ) — Binary Distinction"
+    },
+    {
+      "term": "continuous spectrum",
+      "category": "math",
+      "definition": "A range of values that can take any number in between, like all possible speeds from 0 to 100 mph.",
+      "example": "The colors of a rainbow form a continuous spectrum from red to violet.",
+      "grade_level": "college",
+      "first_appearance": "Sign Operator (σ) — Binary Distinction"
+    },
+    {
+      "term": "unitary evolution",
+      "category": "physics",
+      "definition": "A smooth, reversible change in a quantum system that preserves total probability.",
+      "example": "A spinning top's orientation changes smoothly over time, which is like unitary evolution.",
+      "grade_level": "college",
+      "first_appearance": "Sign Operator (σ) — Binary Distinction"
+    },
+    {
+      "term": "SU(3) gauge structure",
+      "category": "physics",
+      "definition": "A mathematical symmetry group used in particle physics to describe the strong force and quarks.",
+      "example": "The strong force that holds atomic nuclei together is described by SU(3) symmetry.",
+      "grade_level": "graduate",
+      "first_appearance": "Trinity Symmetry — SU(3) Gauge Structure"
+    },
+    {
+      "term": "Gell-Mann matrices",
+      "category": "physics",
+      "definition": "A set of eight special matrices used to represent the SU(3) symmetry in particle physics.",
+      "example": "Gell-Mann matrices are like building blocks for describing how quarks interact.",
+      "grade_level": "graduate",
+      "first_appearance": "Trinity Symmetry — SU(3) Gauge Structure"
+    },
+    {
+      "term": "structure constants",
+      "category": "physics",
+      "definition": "Numbers that define how the generators of a symmetry group combine with each other.",
+      "example": "Structure constants tell you the rules for combining rotations in three dimensions.",
+      "grade_level": "graduate",
+      "first_appearance": "Trinity Symmetry — SU(3) Gauge Structure"
+    },
+    {
+      "term": "spontaneous symmetry breaking",
+      "category": "physics",
+      "definition": "When a system that is symmetric ends up in a state that is not symmetric, like a pencil balancing on its tip falling to one side.",
+      "example": "A perfectly round ball rolling down a hill will end up at a random spot at the bottom, breaking the symmetry of the hilltop.",
+      "grade_level": "college",
+      "first_appearance": "Trinity Symmetry — SU(3) Gauge Structure"
+    },
+    {
+      "term": "gauge bosons",
+      "category": "physics",
+      "definition": "Particles that carry forces, like photons for electromagnetism or gluons for the strong force.",
+      "example": "A photon is a gauge boson that carries the electromagnetic force between charged particles.",
+      "grade_level": "college",
+      "first_appearance": "Trinity Symmetry — SU(3) Gauge Structure"
+    },
+    {
+      "term": "vacuum expectation value",
+      "category": "physics",
+      "definition": "The average value of a field in empty space, which can be non-zero and give mass to particles.",
+      "example": "The Higgs field has a non-zero vacuum expectation value that gives mass to other particles.",
+      "grade_level": "graduate",
+      "first_appearance": "Trinity Symmetry — SU(3) Gauge Structure"
+    },
+    {
+      "term": "χ-field",
+      "category": "framework",
+      "definition": "A proposed field that measures how coherent (aligned) a system is, linking physics, theology, and information.",
+      "example": "The χ-field would be like a thermometer for coherence, telling you how 'in sync' everything is.",
+      "grade_level": "specialist",
+      "first_appearance": "The Breakthrough: The χ-Field"
+    },
+    {
+      "term": "grace field",
+      "category": "framework",
+      "definition": "A proposed physical field that carries divine grace, similar to how a magnetic field carries magnetic force.",
+      "example": "The grace field would be like a spiritual force field that can affect people and events.",
+      "grade_level": "specialist",
+      "first_appearance": "Grace Field (G) — Yukawa-Type Force"
+    },
+    {
+      "term": "sin field",
+      "category": "framework",
+      "definition": "A proposed field related to entropy and moral disorder, anti-correlated with the grace field.",
+      "example": "The sin field would be like a measure of spiritual 'static' or noise.",
+      "grade_level": "specialist",
+      "first_appearance": "Sin Field (S) — Entropy Density"
+    },
+    {
+      "term": "sign operator",
+      "category": "framework",
+      "definition": "A binary operator (like a switch) that indicates whether a system is in a state of grace or fall.",
+      "example": "The sign operator is like a light switch that can only be on or off, not dimmed.",
+      "grade_level": "specialist",
+      "first_appearance": "Sign Operator (σ) — Binary Distinction"
+    },
+    {
+      "term": "coherence functional",
+      "category": "framework",
+      "definition": "A mathematical function that calculates the overall coherence of a system from its parts.",
+      "example": "A coherence functional would be like a formula that grades how well a team works together.",
+      "grade_level": "specialist",
+      "first_appearance": "The χ-Field Equation of Motion"
+    },
+    {
+      "term": "moral curvature",
+      "category": "framework",
+      "definition": "A concept suggesting that moral choices can 'bend' the fabric of reality, analogous to how mass bends spacetime.",
+      "example": "Moral curvature would be like a good deed creating a 'dent' in reality that influences future events.",
+      "grade_level": "specialist",
+      "first_appearance": "The Ten Variables: A Prism"
+    },
+    {
+      "term": "Shannon entropy",
+      "category": "math",
+      "definition": "A measure of uncertainty or information content in a message or system.",
+      "example": "A coin flip has higher Shannon entropy than a two-headed coin because it's more uncertain.",
+      "grade_level": "college",
+      "first_appearance": "Information"
+    },
+    {
+      "term": "mutual information",
+      "category": "math",
+      "definition": "A measure of how much knowing one thing tells you about another thing.",
+      "example": "If it's raining, knowing that the ground is wet gives you mutual information about the rain.",
+      "grade_level": "college",
+      "first_appearance": "Information"
+    },
+    {
+      "term": "ecclesiology",
+      "category": "theology",
+      "definition": "The study of the church, its nature, and its role.",
+      "example": "Ecclesiology asks questions like 'What is the church?' and 'How should it be organized?'",
+      "grade_level": "college",
+      "first_appearance": "Information"
+    },
+    {
+      "term": "ontology",
+      "category": "philosophy",
+      "definition": "The study of what exists and the nature of being.",
+      "example": "Ontology asks questions like 'Does God exist?' or 'Are numbers real?'",
+      "grade_level": "college",
+      "first_appearance": "The Problem: Two Languages, One Reality"
+    },
+    {
+      "term": "epistemology",
+      "category": "philosophy",
+      "definition": "The study of knowledge: how we know what we know.",
+      "example": "Epistemology asks 'How can we be sure of anything?' or 'Is science the only way to know truth?'",
+      "grade_level": "college",
+      "first_appearance": "The Problem: Two Languages, One Reality"
+    },
+    {
+      "term": "contingent",
+      "category": "philosophy",
+      "definition": "Something that could be different or might not exist; dependent on something else.",
+      "example": "Your existence is contingent on your parents meeting; it didn't have to happen.",
+      "grade_level": "10",
+      "first_appearance": "The Problem: Two Languages, One Reality"
+    },
+    {
+      "term": "necessary",
+      "category": "philosophy",
+      "definition": "Something that must exist and cannot be otherwise.",
+      "example": "In mathematics, 2+2=4 is a necessary truth; it couldn't be false.",
+      "grade_level": "10",
+      "first_appearance": "The Problem: Two Languages, One Reality"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A basic statement that is accepted as true without proof, used as a starting point for reasoning.",
+      "example": "In geometry, 'a straight line is the shortest distance between two points' is an axiom.",
+      "grade_level": "10",
+      "first_appearance": "Sin Field (S) — Entropy Density"
+    },
+    {
+      "term": "theorem",
+      "category": "academic",
+      "definition": "A statement that can be proven true using axioms and logic.",
+      "example": "The Pythagorean theorem is a proven rule about right triangles.",
+      "grade_level": "10",
+      "first_appearance": "The Claim: Structural Isomorphism"
+    },
+    {
+      "term": "empirical",
+      "category": "academic",
+      "definition": "Based on observation or experiment, not just theory.",
+      "example": "The claim 'water boils at 100°C' is empirical because you can test it.",
+      "grade_level": "10",
+      "first_appearance": "The Test: Kill Conditions"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation and how it is achieved.",
+      "example": "Soteriology asks 'How are people saved?' or 'What is the role of faith in salvation?'",
+      "grade_level": "college",
+      "first_appearance": "The Ten Variables: A Prism"
+    },
+    {
+      "term": "hamartiology",
+      "category": "theology",
+      "definition": "The study of sin, its origin, and its effects.",
+      "example": "Hamartiology asks 'What is sin?' and 'How does sin affect humanity?'",
+      "grade_level": "college",
+      "first_appearance": "Sin Field (S) — Entropy Density"
+    },
+    {
+      "term": "sanctification",
+      "category": "theology",
+      "definition": "The process of becoming holy or more like God.",
+      "example": "Sanctification is like a spiritual growth process where a person becomes more virtuous over time.",
+      "grade_level": "10",
+      "first_appearance": "Grace Field (G) — Yukawa-Type Force"
+    },
+    {
+      "term": "atonement",
+      "category": "theology",
+      "definition": "The act of making amends for a wrong or sin, often through a sacrifice.",
+      "example": "In Christianity, Jesus' death on the cross is seen as an atonement for humanity's sins.",
+      "grade_level": "10",
+      "first_appearance": "Grace Field (G) — Yukawa-Type Force"
+    },
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A mapping between two structures that shows they are essentially the same in form.",
+      "example": "A chessboard and an 8x8 grid of squares are isomorphic because they have the same layout.",
+      "grade_level": "college",
+      "first_appearance": "The Claim: Structural Isomorphism"
+    },
+    {
+      "term": "bijection",
+      "category": "math",
+      "definition": "A perfect one-to-one pairing between two sets, where every element in one set matches exactly one in the other.",
+      "example": "If you have 5 apples and 5 oranges, you can create a bijection by pairing each apple with one orange.",
+      "grade_level": "college",
+      "first_appearance": "The Claim: Structural Isomorphism"
+    },
+    {
+      "term": "tensor",
+      "category": "math",
+      "definition": "A mathematical object that can describe relationships between vectors and scalars, often used in physics for forces and fields.",
+      "example": "The stress tensor describes how forces are distributed inside a solid object.",
+      "grade_level": "college",
+      "first_appearance": "The Master Lagrangian"
+    },
+    {
+      "term": "χ (chi)",
+      "category": "language",
+      "definition": "The Greek letter chi (pronounced 'kai' or 'kee'), used here to represent the coherence field.",
+      "example": "Chi is like the symbol for the 'coherence field' in this theory.",
+      "grade_level": "10",
+      "first_appearance": "The Breakthrough: The χ-Field"
+    },
+    {
+      "term": "σ (sigma)",
+      "category": "language",
+      "definition": "The Greek letter sigma (pronounced 'sig-muh'), used here for the sign operator.",
+      "example": "Sigma is the symbol for the 'sign operator' that indicates grace or fall.",
+      "grade_level": "10",
+      "first_appearance": "Sign Operator (σ) — Binary Distinction"
+    },
+    {
+      "term": "ℒ (Lagrangian density)",
+      "category": "physics",
+      "definition": "A function that gives the Lagrangian per unit volume of space, used in field theories.",
+      "example": "The Lagrangian density is like a recipe that tells you the energy content at every point in space.",
+      "grade_level": "graduate",
+      "first_appearance": "The Master Lagrangian"
+    },
+    {
+      "term": "□ (d'Alembertian)",
+      "category": "physics",
+      "definition": "A symbol for the d'Alembertian operator, which combines time and space derivatives.",
+      "example": "The box symbol (□) is shorthand for a mathematical operation that measures wave-like behavior.",
+      "grade_level": "graduate",
+      "first_appearance": "The χ-Field Equation of Motion"
+    },
+    {
+      "term": "∂ (partial derivative)",
+      "category": "math",
+      "definition": "A symbol for a derivative that measures how a function changes when only one variable changes.",
+      "example": "If you have a function of x and y, ∂/∂x measures how it changes when only x changes.",
+      "grade_level": "college",
+      "first_appearance": "Euler-Lagrange for χ"
+    },
+    {
+      "term": "μ (mu)",
+      "category": "language",
+      "definition": "The Greek letter mu (pronounced 'myoo'), often used as an index in physics equations.",
+      "example": "Mu is a common index variable in tensor equations, like a placeholder for dimensions.",
+      "grade_level": "10",
+      "first_appearance": "Euler-Lagrange for χ"
+    },
+    {
+      "term": "λ (lambda)",
+      "category": "language",
+      "definition": "The Greek letter lambda (pronounced 'lam-duh'), often used for coupling constants or wavelengths.",
+      "example": "Lambda is used here to represent the strength of coupling between fields.",
+      "grade_level": "10",
+      "first_appearance": "Expand with Domain Sources"
+    },
+    {
+      "term": "ρ (rho)",
+      "category": "language",
+      "definition": "The Greek letter rho (pronounced 'roe'), often used for density.",
+      "example": "Rho is used here to represent source density for fields.",
+      "grade_level": "10",
+      "first_appearance": "The χ-Field Equation of Motion"
+    },
+    {
+      "term": "γ (gamma)",
+      "category": "language",
+      "definition": "The Greek letter gamma (pronounced 'gam-uh'), often used for a coefficient or factor.",
+      "example": "Gamma is used here as a coupling coefficient between sin and grace fields.",
+      "grade_level": "10",
+      "first_appearance": "Sin Field (S) — Entropy Density"
+    },
+    {
+      "term": "SU(3)",
+      "category": "physics",
+      "definition": "A special unitary group of dimension 3, a mathematical symmetry used in particle physics.",
+      "example": "SU(3) is the symmetry group that describes how quarks interact via the strong force.",
+      "grade_level": "graduate",
+      "first_appearance": "Trinity Symmetry — SU(3) Gauge Structure"
+    },
+    {
+      "term": "f^{abc}",
+      "category": "physics",
+      "definition": "Structure constants of the SU(3) group, defining how the generators combine.",
+      "example": "f^{abc} are numbers that tell you the rules for combining the eight Gell-Mann matrices.",
+      "grade_level": "graduate",
+      "first_appearance": "Trinity Symmetry — SU(3) Gauge Structure"
+    },
+    {
+      "term": "G_0",
+      "category": "framework",
+      "definition": "The vacuum expectation value of the grace field, a baseline value in empty space.",
+      "example": "G_0 is like the 'background level' of grace in the universe.",
+      "grade_level": "specialist",
+      "first_appearance": "Trinity Symmetry — SU(3) Gauge Structure"
+    },
+    {
+      "term": "J_G",
+      "category": "framework",
+      "definition": "The grace current, the source term for the grace field, representing prayer, sacrament, and divine action.",
+      "example": "J_G is like the 'source' that generates the grace field, similar to how electric charge generates an electric field.",
+      "grade_level": "specialist",
+      "first_appearance": "Grace Field (G) — Yukawa-Type Force"
+    },
+    {
+      "term": "m_G",
+      "category": "framework",
+      "definition": "The mass of the grace field particle, determining the range of the grace force.",
+      "example": "m_G is like the 'weight' of the grace particle; a heavier particle means a shorter range.",
+      "grade_level": "specialist",
+      "first_appearance": "Grace Field (G) — Yukawa-Type Force"
+    },
+    {
+      "term": "g_G",
+      "category": "framework",
+      "definition": "The coupling constant for the grace field, determining the strength of the grace interaction.",
+      "example": "g_G is like the 'strength knob' for how strongly grace affects things.",
+      "grade_level": "specialist",
+      "first_appearance": "Grace Field (G) — Yukawa-Type Force"
+    },
+    {
+      "term": "S_eq",
+      "category": "framework",
+      "definition": "The equilibrium value of the sin/entropy field, the state it tends toward.",
+      "example": "S_eq is like the 'natural level' of disorder that the sin field tries to reach.",
+      "grade_level": "specialist",
+      "first_appearance": "Sin Field (S) — Entropy Density"
+    },
+    {
+      "term": "U

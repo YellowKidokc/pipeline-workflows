@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>ISO-030 · Genetics ↔ Scriptural Transmission | Theophysics Registry</title>
+  <!-- Google Fonts: Oswald, Inter, JetBrains Mono, Crimson Text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* ----- CSS reset & variables ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --bg: #0a0a0a;
+      --text: #c9d1d9;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --card-bg: #111;
+      --border-subtle: #222;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+      --section-number: rgba(212, 175, 55, 0.2);
+      --gradient-gold: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0.02) 100%);
+    }
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    /* typography */
+    h1, h2, h3, h4, .heading-font {
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+    }
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.8rem; margin-top: 2.5rem; }
+    h3 { font-size: 1.3rem; margin-top: 1.8rem; }
+    .mono {
+      font-family: var(--font-mono);
+    }
+    .quote {
+      font-family: var(--font-quote);
+      font-style: italic;
+    }
+    .verse-ref {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: #888;
+    }
+    /* utility */
+    .flex { display: flex; flex-wrap: wrap; align-items: center; }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .badge-green { background: #0f2e1a; color: var(--success); border: 1px solid var(--success); }
+    .badge-yellow { background: #2a2410; color: #eab308; border: 1px solid #eab308; }
+    .badge-gold { background: #2a2410; color: var(--gold); border: 1px solid var(--gold); }
+    .badge-danger { background: #2a0f0f; color: var(--danger); border: 1px solid var(--danger); }
+    .badge-info { background: #0f1f3a; color: var(--info); border: 1px solid var(--info); }
+    .section-number {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--section-number);
+      line-height: 1;
+      margin-right: 1rem;
+    }
+    .gradient-sep {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 1.8rem 0 1.2rem 0;
+      opacity: 0.5;
+    }
+    .gold-left-border {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+    }
+    /* cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.8rem;
+      transition: border 0.2s;
+    }
+    .card-blue-top { border-top: 3px solid var(--info); }
+    .card-gold-top { border-top: 3px solid var(--gold); }
+    .card-red-tint {
+      background: #130a0a;
+      border: 1px solid #3a1a1a;
+      border-left: 6px solid var(--danger);
+    }
+    /* mapping table */
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    .mapping-table th {
+      background: #1a1508;
+      color: var(--gold);
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+      padding: 0.9rem 1rem;
+      border-bottom: 2px solid var(--gold);
+      text-align: left;
+    }
+    .mapping-table td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid #1e1e1e;
+      vertical-align: top;
+    }
+    .mapping-table tr:last-child td { border-bottom: none; }
+    .mapping-table td:first-child {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      color: #b0b8c0;
+      width: 28%;
+    }
+    .mapping-table td:nth-child(2) { width: 36%; }
+    .mapping-table td:nth-child(3) { width: 36%; }
+    /* test cards */
+    .test-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .test-card {
+      background: #0f0f0f;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .test-card h4 { margin-bottom: 0.5rem; }
+    .test-pass { color: var(--success); }
+    .test-fail { color: var(--danger); }
+    /* evidence chips */
+    .chip {
+      display: inline-block;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 30px;
+      padding: 0.3rem 1rem;
+      margin: 0.25rem 0.25rem;
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+    }
+    .chip-gold { border-color: var(--gold); color: var(--gold); }
+    /* responsive */
+    @media (max-width: 768px) {
+      body { padding: 1.2rem; }
+      .grid-2 { grid-template-columns: 1fr; gap: 1.5rem; }
+      .test-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 1.8rem; }
+      .section-number { font-size: 3rem; }
+    }
+    /* misc */
+    .hero-equation {
+      background: #0d0d0d;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+    .arrow-mapping {
+      font-size: 2rem;
+      color: var(--gold);
+      text-align: center;
+      margin: 0.5rem 0;
+    }
+    .footer-seal {
+      border-top: 1px solid #222;
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: #999;
+      text-align: center;
+    }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .iso-link-chip {
+      display: inline-block;
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 30px;
+      padding: 0.3rem 1rem;
+      margin: 0.2rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 1. REGISTRY HEADER -->
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-bottom: 0.5rem;">
+  <div style="display: flex; align-items: center; gap: 0.8rem;">
+    <span style="font-family: var(--font-heading); font-size: 3rem; font-weight: 700; color: var(--gold);">Φ</span>
+    <div>
+      <h1 style="margin: 0; line-height: 1.1;">Theophysics Registry</h1>
+      <div style="font-size: 0.9rem; color: #aaa; font-family: var(--font-body);">ISO-030 · Genetics ↔ Scriptural Transmission</div>
+    </div>
+  </div>
+  <div style="display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; align-items: center;">
+    <span class="badge badge-green"><i class="fas fa-link" style="margin-right: 0.3rem;"></i> Isomorphism (Level 3)</span>
+    <span class="badge badge-gold"><i class="fas fa-chart-line"></i> Confidence: High</span>
+    <span class="badge badge-info"><i class="far fa-calendar-alt"></i> v1.0 · 2026-03-10</span>
+  </div>
+</div>
+<div class="gradient-sep" style="margin-top: 0.5rem;"></div>
+
+<!-- 2. HERO BANNER -->
+<div class="grid-2" style="background: var(--gradient-gold); border-radius: 20px; padding: 2rem; margin: 1.5rem 0; border: 1px solid rgba(212,175,55,0.15);">
+  <!-- left -->
+  <div>
+    <span class="badge badge-gold" style="margin-bottom: 1rem; display: inline-block;"><i class="fas fa-gavel"></i> Law · Conservation &amp; Entropy</span>
+    <h2 style="font-size: 2.2rem; line-height: 1.2; margin: 0.5rem 0 0.2rem 0;">Genetics <i class="fas fa-arrow-right" style="color: var(--gold); margin: 0 0.5rem;"></i> Scriptural Transmission</h2>
+    <div style="color: #aaa; font-size: 1rem; margin-bottom: 1.5rem;">Structural isomorphism in information-processing topology</div>
+    <div class="quote gold-left-border" style="font-size: 1.1rem; line-height: 1.5; color: #ddd;">
+      “The same information-theoretic problem — preserve a message across generations despite copying errors — converges on the same solution: redundancy + repair.”
+    </div>
+    <div class="verse-ref" style="margin-top: 0.8rem;"><i class="fas fa-book"></i> 2 Tim 3:16 · Jude 3 · Isa 40:8</div>
+  </div>
+  <!-- right: equation card -->
+  <div class="hero-equation">
+    <div style="margin-bottom: 0.8rem; font-family: var(--font-heading); letter-spacing: 0.04em; color: var(--gold); font-size: 0.85rem;"><i class="fas fa-dna"></i> Domain A · Genetics</div>
+    <div>H(DNA) = –Σ pᵢ log₂ pᵢ</div>
+    <div>R = 1 – H/H_max</div>
+    <div>μ ≈ 10⁻⁹ – 10⁻¹⁰ (post-repair)</div>
+    <div style="margin: 0.8rem 0 0.4rem 0; border-top: 1px solid #2a2a2a; padding-top: 0.8rem; font-family: var(--font-heading); letter-spacing: 0.04em; color: var(--gold); font-size: 0.85rem;"><i class="fas fa-scroll"></i> Domain B · Theology</div>
+    <div>H(Scripture) = information content</div>
+    <div>R = 1 – H/H_max (manuscript redundancy)</div>
+    <div>Stability ≈ 99.5% (Aland &amp; Aland)</div>
+    <div class="arrow-mapping"><i class="fas fa-long-arrow-alt-right"></i> mapping <i class="fas fa-long-arrow-alt-left"></i></div>
+    <div style="text-align: center; font-size: 0.85rem; color: #aaa;">degeneracy: 64 codons → 20 aa ∥ 5,800+ mss → same doctrine</div>
+  </div>
+</div>
+
+<!-- 3. DOMAIN SPECIFICATIONS -->
+<h2 style="display: flex; align-items: center; gap: 0.5rem;"><span class="section-number">01</span> Domain Specifications</h2>
+<div class="gradient-sep"></div>
+<div class="grid-2" style="margin-bottom: 2rem;">
+  <!-- Domain A -->
+  <div class="card card-blue-top">
+    <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
+      <i class="fas fa-dna" style="font-size: 2rem; color: var(--info);"></i>
+      <h3 style="margin: 0;">Domain A · Physics</h3>
+    </div>
+    <p style="color: #ccc;"><strong>Molecular Biology — Genetics</strong> DNA, transcription, translation, mutation, repair, epigenetics. Information-theoretic description: Shannon entropy, redundancy, error rates (~10⁻⁹ per base after repair), central dogma (DNA → RNA → protein), genetic code degeneracy.</p>
+    <div class="verse-ref" style="margin-top: 0.8rem;">Crick 1958 · Drake 1998 · Shannon 1948</div>
+  </div>
+  <!-- Domain B -->
+  <div class="card card-gold-top">
+    <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
+      <i class="fas fa-scroll" style="font-size: 2rem; color: var(--gold);"></i>
+      <h3 style="margin: 0;">Domain B · Theology</h3>
+    </div>
+    <p style="color: #ccc;"><strong>Christian Theology — Bibliology</strong> Inspiration, transmission, textual criticism, canon formation. Scripture as stable information carrier; preaching as transcription; lived practice as translation; textual corruption corrected by criticism; manuscript redundancy (5,800+ Greek NT mss); sola scriptura as unidirectional authority.</p>
+    <div class="verse-ref" style="margin-top: 0.8rem;">Aland &amp; Aland 1987 · Metzger &amp; Ehrman 2005</div>
+  </div>
+</div>
+
+<!-- 4. THE ISOMORPHIC MAPPING -->
+<h2 style="display: flex; align-items: center; gap: 0.5rem;"><span class="section-number">02</span> Isomorphic Mapping</h2>
+<div class="gradient-sep"></div>
+<div style="overflow-x: auto; margin-bottom: 2rem;">
+  <table class="mapping-table">
+    <thead>
+      <tr><th>#</th><th>Domain A · Genetics</th><th>Domain B · Theology</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>DNA — stable long-term information store</td><td>Scripture (autograph &amp; faithful copies) — stable revelation store</td></tr>
+      <tr><td>2</td><td>Transcription (DNA → mRNA) — context-specific readout</td><td>Preaching / teaching — faithful, context-specific readout</td></tr>
+      <tr><td>3</td><td>Translation (mRNA → protein) — information becomes function</td><td>Lived practice — the Word becomes flesh (John 1:14)</td></tr>
+      <tr><td>4</td><td>Mutation — point mutations (silent, missense, nonsense)</td><td>Scribal errors — orthographic, significant, heretical</td></tr>
+      <tr><td>5</td><td>Repair enzymes (proofreading, mismatch, excision) — redundancy-based correction</td><td>Textual criticism (stemmatic, internal, external) — reconstruction of original</td></tr>
+      <tr><td>6</td><td>Redundancy: 64 codons → 20 amino acids → error tolerance</td><td>Redundancy: 5,800+ Greek mss → error detection &amp; correction</td></tr>
+      <tr><td>7</td><td>Degeneracy: GCU, GCC, GCA, GCG all encode alanine</td><td>Degeneracy: NIV, ESV, KJV encode same doctrine (silent variation)</td></tr>
+      <tr><td>8</td><td>Central dogma: DNA → RNA → protein (unidirectional)</td><td>Sola scriptura: Scripture → doctrine → practice (unidirectional authority)</td></tr>
+      <tr><td>9</td><td>Epigenetics: same DNA, different expression (neuron vs. liver)</td><td>Cultural context: same Scripture, different emphases (eschatology, justification, mission)</td></tr>
+      <tr><td>10</td><td>Horizontal gene transfer (conjugation, transformation)</td><td>Cross-tradition influence (ecumenical dialogue, shared scholarship)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 5. SEPARATOR TESTS -->
+<h2 style="display: flex; align-items: center; gap: 0.5rem;"><span class="section-number">03</span> Separator Tests</h2>
+<div class="gradient-sep"></div>
+<div class="test-grid" style="margin-bottom: 2rem;">
+  <!-- A -->
+  <div class="test-card">
+    <h4><i class="fas fa-sitemap" style="color: var(--info);"></i> Test A · Structural Preservation</h4>
+    <p style="font-size: 0.9rem; color: #bbb;">Do relations survive under mapping? Information carrier, transcription, translation, mutation, repair, degeneracy, unidirectional flow — all preserved.</p>
+    <span class="badge badge-green" style="margin-top: 0.5rem;"><i class="fas fa-check-circle"></i> PASS</span>
+  </div>
+  <!-- B -->
+  <div class="test-card">
+    <h4><i class="fas fa-random" style="color: var(--gold);"></i> Test B · Non-Arbitrariness</h4>
+    <p style="font-size: 0.9rem; color: #bbb;">Could you swap targets? Topological mapping is forced; metric level fails (DNA bases vs. manuscripts). Consistent with structural isomorphism.</p>
+    <span class="badge badge-green" style="margin-top: 0.5rem;"><i class="fas fa-check-circle"></i> PASS (topological)</span>
+    <span class="badge badge-yellow" style="margin-top: 0.5rem; margin-left: 0.3rem;"><i class="fas fa-exclamation-triangle"></i> FAIL (metric)</span>
+  </div>
+  <!-- C -->
+  <div class="test-card">
+    <h4><i class="fas fa-ban" style="color: var(--danger);"></i> Test C · Constraint</h4>
+    <p style="font-size: 0.9rem; color: #bbb;">Does the mapping rule things out? Yes: no error-free replication without repair; no doctrine rewriting scripture without pathology; no single-copy fidelity over centuries.</p>
+    <span class="badge badge-green" style="margin-top: 0.5rem;"><i class="fas fa-check-circle"></i> PASS</span>
+  </div>
+  <!-- D -->
+  <div class="test-card">
+    <h4><i class="fas fa-exchange-alt" style="color: var(--success);"></i> Test D · Bidirectionality</h4>
+    <p style="font-size: 0.9rem; color: #bbb;">Genetics → Theology: information theory constrains transmission models. Theology → Genetics: doctrine of Scripture predicts redundancy, repair, unidirectional flow — confirmed in every genetic system.</p>
+    <span class="badge badge-green" style="margin-top: 0.5rem;"><i class="fas fa-check-circle"></i> PASS</span>
+  </div>
+</div>
+
+<!-- 6. CLASSIFICATION & EVIDENCE -->
+<h2 style="display: flex; align-items: center; gap: 0.5rem;"><span class="section-number">04</span> Classification &amp; Evidence</h2>
+<div class="gradient-sep"></div>
+<div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 2rem;">
+  <div style="flex: 2; min-width: 240px;">
+    <div class="card" style="height: 100%;">
+      <div style="display: flex; flex-wrap: wrap; gap: 0.8rem 1.5rem; align-items: center; margin-bottom: 1rem;">
+        <span class="badge badge-green" style="font-size: 1rem; padding: 0.4rem 1.5rem;"><i class="fas fa-shield-alt"></i> Structural Isomorphism</span>
+        <span class="badge badge-gold"><i class="fas fa-tachometer-alt"></i> Confidence: High</span>
+        <span class="badge badge-info"><i class="fas fa-layer-group"></i> Level 2 (Structural)</span>
+      </div>
+      <p style="color: #ccc;"><strong>10 independent correspondences</strong> (threshold: 7). Reframe from surface phenomena to information-processing topology of multigenerational transmission.</p>
+      <div style="margin-top: 1rem;">
+        <span class="chip chip-gold"><i class="fas fa-dna"></i> DNA polymerase error rates</span>
+        <span class="chip chip-gold"><i class="fas fa-table"></i> Genetic code redundancy</span>
+        <span class="chip chip-gold"><i class="fas fa-scroll"></i> NT manuscript count &amp; variants</span>
+        <span class="chip chip-gold"><i class="fas fa-virus"></i> Retroviruses as pathological</span>
+        <span class="chip chip-gold"><i class="fas fa-bible"></i> 2 Tim 3:16 · Jude 3 · Isa 40:8</span>
+      </div>
+    </div>
+  </div>
+  <div style="flex: 1; min-width: 180px;">
+    <div class="card" style="height: 100%;">
+      <h4 style="margin-bottom: 0.5rem;"><i class="fas fa-gavel" style="color: var(--gold);"></i> Laws Invoked</h4>
+      <ul style="list-style: none; padding: 0; color: #bbb;">
+        <li><span class="verse-ref">Law 2</span> Conservation — code preserved</li>
+        <li><span class="verse-ref">Law 6</span> Entropy — mutation / scribal error</li>
+        <li><span class="verse-ref">Law 9</span> Grace — repair as external correction</li>
+      </ul>
+      <div style="margin-top: 1rem; border-top: 1px solid #222; padding-top: 0.8rem;">
+        <span class="verse-ref">Axiom A1.1 · Law II · Law VI · Law IX</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. FALSIFICATION CRITERIA -->
+<h2 style="display: flex; align-items: center; gap: 0.5rem;"><span class="section-number">05</span> Falsification Criteria</h2>
+<div class="gradient-sep"></div>
+<div class="card-red-tint" style="margin-bottom: 2rem; padding: 1.8rem;">
+  <h4 style="color: var(--danger); margin-bottom: 1rem;"><i class="fas fa-skull-crossbones"></i> Kill conditions — any one breaks the isomorphism</h4>
+  <ol style="color: #ddd; padding-left: 1.5rem; line-height: 2;">
+    <li><strong>In Genetics:</strong> Error-free DNA replication without any repair mechanism (no proofreading, no mismatch repair, no excision repair).</li>
+    <li><strong>In Genetics:</strong> Routine, non-pathological protein-to-DNA information flow (Lamarckian inheritance at molecular level).</li>
+    <li><strong>In Theology:</strong> Manuscript tradition preserving doctrinal fidelity over 1,000+ years with a single copy and no correction mechanism.</li>
+    <li><strong>In Theology:</strong> Practice-to-Scripture authority reversal producing stable, healthy theology over generations (sola scriptura not structurally necessary).</li>
+    <li><strong>Break the topology:</strong> A structural feature present in one domain but absent in the other (stable carrier, transcription, translation, mutation, repair, redundancy, degeneracy, unidirectional flow, epigenetic expression).</li>
+  </ol>
+  <div class="verse-ref" style="margin-top: 0.8rem;"><i class="fas fa-flask"></i> Falsification would require empirical demonstration of any condition above.</div>
+</div>
+
+<!-- 8. RELATED ISOMORPHISMS -->
+<h2 style="display: flex; align-items: center; gap: 0.5rem;"><span class="section-number">06</span> Related Isomorphisms</h2>
+<div class="gradient-sep"></div>
+<div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem;">
+  <a href="#" class="iso-link-chip"><i class="fas fa-link"></i> ISO-003 · Entropy/Sin (mutation as degradation)</a>
+  <a href="#" class="iso-link-chip"><i class="fas fa-link"></i> ISO-006 · Information Primacy (information precedes material)</a>
+  <a href="#" class="iso-link-chip"><i class="fas fa-link"></i> ISO-008 · Coherence/Order (redundancy preserves coherence)</a>
+</div>
+
+<!-- 9. FOOTER -->
+<footer style="margin-top: 3rem; border-top: 1px solid #222; padding-top: 1.5rem;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+    <div>
+      <span style="font-family: var(--font-heading); letter-spacing: 0.06em; color: var(--gold);">Theophysics Research Program</span>
+      <span style="margin: 0 1rem; color: #555;">|</span>
+      <span class="verse-ref">POF 2828</span>
+      <span style="margin: 0 1rem; color: #555;">|</span>
+      <span class="verse-ref">v1.0 · ISO-030</span>
+    </div>
+    <div style="font-size: 0.9rem; color: #888;">
+      <i class="fas fa-robot"></i> Registry seal
+    </div>
+  </div>
+  <div class="footer-seal">
+    “The math points to God. The math does not contain God.”
+  </div>
+  <div style="text-align: center; margin-top: 1rem; font-size: 0.75rem; color: #555;">
+    <i class="fas fa-copyright"></i> Faiththruphysics · Structural isomorphism · Not metaphor.
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,467 @@
+{
+  "definitions": [
+    {
+      "term": "Isomorphism",
+      "category": "math",
+      "definition": "A mapping between two systems that shows they have the same structure, so that operations in one system correspond to operations in the other.",
+      "example": "A map of a subway system is isomorphic to the actual subway lines: stations and connections match up one-to-one.",
+      "grade_level": "college",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "Cryptography",
+      "category": "physics",
+      "definition": "The practice of hiding information by turning it into a secret code so that only the intended receiver can read it.",
+      "example": "When you send a password over the internet, cryptography scrambles it so hackers can't steal it.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Encryption",
+      "category": "physics",
+      "definition": "The process of converting a readable message into a secret code (ciphertext) using a key.",
+      "example": "Turning the word 'HELLO' into 'KHOOR' by shifting each letter forward by 3 is a simple encryption.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Decryption",
+      "category": "physics",
+      "definition": "The process of converting secret code back into a readable message using a key.",
+      "example": "Using the key to turn 'KHOOR' back into 'HELLO' is decryption.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Public/private key infrastructure",
+      "category": "physics",
+      "definition": "A system where two different keys are used: a public key that anyone can use to encrypt a message, and a private key that only the owner has to decrypt it.",
+      "example": "When you visit a secure website, your browser uses the site's public key to encrypt your credit card number, and only the site's private key can decrypt it.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Information-theoretic security",
+      "category": "physics",
+      "definition": "A type of security where even an attacker with unlimited computing power cannot break the encryption, because the ciphertext gives absolutely no information about the message without the key.",
+      "example": "A one-time pad, where a random key as long as the message is used only once, is information-theoretically secure.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Zero-knowledge proof",
+      "category": "physics",
+      "definition": "A method where one person proves to another that they know a secret without revealing the secret itself.",
+      "example": "Imagine proving you know the password to a club by walking through a secret door, without ever saying the password out loud.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Steganography",
+      "category": "physics",
+      "definition": "The practice of hiding a secret message inside an ordinary, innocent-looking message or image.",
+      "example": "Writing a letter where the first letter of every word spells out a secret message is a form of steganography.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Hash function",
+      "category": "physics",
+      "definition": "A mathematical function that takes any input and produces a fixed-size output (a hash) that is easy to compute but nearly impossible to reverse.",
+      "example": "When you create a password, the website stores a hash of it. Even if hackers steal the hash, they can't figure out your original password.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Key exchange protocol",
+      "category": "physics",
+      "definition": "A method for two parties to agree on a shared secret key over an insecure channel, without anyone else learning the key.",
+      "example": "The Diffie-Hellman protocol lets two people create a shared secret color by mixing paints in public, but an eavesdropper can't figure out the final mixture.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "Mystery and revelation theology",
+      "category": "theology",
+      "definition": "The study of how God hides and reveals truth, including concepts like divine hiddenness, progressive revelation, and the role of the Holy Spirit in making truth known.",
+      "example": "Christians believe that some truths about God are hidden mysteries that are only revealed through the Holy Spirit.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Divine hiddenness",
+      "category": "theology",
+      "definition": "The idea that God is not obviously visible or provable, but remains hidden, requiring faith to perceive.",
+      "example": "Many people wonder why God doesn't show himself clearly; divine hiddenness is the theological explanation for that.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Progressive revelation",
+      "category": "theology",
+      "definition": "The idea that God revealed truth gradually over time, with later revelations building on and clarifying earlier ones.",
+      "example": "In the Bible, God's plan of salvation becomes clearer from the Old Testament to the New Testament.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "General vs. special revelation",
+      "category": "theology",
+      "definition": "General revelation is what God shows to everyone through nature and creation; special revelation is what God shows to specific people through Scripture, Jesus, or the Holy Spirit.",
+      "example": "Seeing a beautiful sunset is general revelation; reading the Bible is special revelation.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Illumination",
+      "category": "theology",
+      "definition": "The work of the Holy Spirit in helping a person understand spiritual truth, like turning on a light in a dark room.",
+      "example": "A person might read a Bible verse many times, but then suddenly understand it deeply\u2014that's illumination.",
+      "grade_level": "college",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "Ciphertext",
+      "category": "physics",
+      "definition": "The scrambled, unreadable output of encryption.",
+      "example": "If you encrypt 'HELLO' with a key, the ciphertext might look like 'XJKLW'.",
+      "grade_level": "10",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "Shannon's perfect secrecy",
+      "category": "physics",
+      "definition": "A condition where the ciphertext gives zero information about the message unless you have the key, proven by Claude Shannon.",
+      "example": "A one-time pad achieves perfect secrecy because the ciphertext is completely random without the key.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "Conditional entropy",
+      "category": "physics",
+      "definition": "A measure of how much uncertainty remains about one thing after you know another thing.",
+      "example": "If you know the ciphertext but not the key, the conditional entropy of the message is high\u2014you're still very uncertain.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Mutual information",
+      "category": "physics",
+      "definition": "A measure of how much knowing one thing tells you about another thing.",
+      "example": "If two variables have zero mutual information, knowing one gives you no clue about the other.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Statistically independent",
+      "category": "math",
+      "definition": "When two events or variables have no influence on each other; knowing one gives no information about the other.",
+      "example": "Flipping a coin and rolling a die are statistically independent\u2014the coin result doesn't affect the die.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "One-way",
+      "category": "physics",
+      "definition": "A function that is easy to compute in one direction but extremely hard to reverse.",
+      "example": "Mixing two colors of paint is easy, but separating them back is nearly impossible\u2014that's a one-way process.",
+      "grade_level": "10",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Deterministic",
+      "category": "math",
+      "definition": "A process that always produces the same output from the same input, with no randomness.",
+      "example": "A vending machine is deterministic: if you press A1, you always get the same snack.",
+      "grade_level": "10",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Collision-resistant",
+      "category": "physics",
+      "definition": "A property of hash functions where it's extremely hard to find two different inputs that produce the same output.",
+      "example": "It's like trying to find two different people with the exact same fingerprint\u2014possible in theory, but practically impossible.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Computationally infeasible",
+      "category": "physics",
+      "definition": "A task that would take so much time or computing power that it's practically impossible to do.",
+      "example": "Trying every possible password by hand is computationally infeasible\u2014it would take millions of years.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "Information-theoretic structure",
+      "category": "physics",
+      "definition": "The way information is organized and flows in a system, including how much uncertainty exists and how it's reduced.",
+      "example": "The information-theoretic structure of a phone call includes the speaker's voice, the line noise, and how much the listener can understand.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "Structural identity",
+      "category": "math",
+      "definition": "When two different things have the same underlying pattern or form, even if they look different on the surface.",
+      "example": "A tree's branches and a river's tributaries have a structural identity\u2014both are branching networks.",
+      "grade_level": "college",
+      "first_appearance": "The Thirteen Correspondences"
+    },
+    {
+      "term": "Brute force attack",
+      "category": "physics",
+      "definition": "An attempt to break encryption by trying every possible key until one works.",
+      "example": "Trying every combination on a bike lock from 0000 to 9999 is a brute force attack.",
+      "grade_level": "10",
+      "first_appearance": "The Thirteen Correspondences"
+    },
+    {
+      "term": "Rationalist theology",
+      "category": "theology",
+      "definition": "The approach of trying to understand God and spiritual truths using only human reason, without relying on revelation or faith.",
+      "example": "Someone who tries to prove God's existence using logic alone is practicing rationalist theology.",
+      "grade_level": "college",
+      "first_appearance": "The Thirteen Correspondences"
+    },
+    {
+      "term": "Key exchange problem",
+      "category": "physics",
+      "definition": "The challenge of securely sharing a secret key between two parties who have never met and are communicating over an insecure channel.",
+      "example": "If Alice and Bob have never met, how can they agree on a secret code without an eavesdropper learning it? That's the key exchange problem.",
+      "grade_level": "college",
+      "first_appearance": "The Thirteen Correspondences"
+    },
+    {
+      "term": "Incarnation",
+      "category": "theology",
+      "definition": "The Christian belief that God became human in the person of Jesus Christ.",
+      "example": "Christmas celebrates the incarnation\u2014God taking on human flesh as the baby Jesus.",
+      "grade_level": "10",
+      "first_appearance": "The Thirteen Correspondences"
+    },
+    {
+      "term": "Diffie-Hellman",
+      "category": "physics",
+      "definition": "A method for two parties to securely agree on a shared secret key over a public channel, invented by Whitfield Diffie and Martin Hellman in 1976.",
+      "example": "Diffie-Hellman is like two people mixing their own secret paint colors in public, then combining them to get a shared secret color that no one else can figure out.",
+      "grade_level": "college",
+      "first_appearance": "The Thirteen Correspondences"
+    },
+    {
+      "term": "Forward secrecy",
+      "category": "physics",
+      "definition": "A property of encryption where even if a long-term key is stolen, past communications remain secure because each session used a different temporary key.",
+      "example": "If a hacker steals your phone's master key today, they still can't read your messages from last week because each message had its own temporary key.",
+      "grade_level": "college",
+      "first_appearance": "The Thirteen Correspondences"
+    },
+    {
+      "term": "Digital signature",
+      "category": "physics",
+      "definition": "A mathematical way to prove that a message was created by a specific sender and hasn't been tampered with.",
+      "example": "When you download software, a digital signature confirms it really came from the official company, not a hacker.",
+      "grade_level": "10",
+      "first_appearance": "The Thirteen Correspondences"
+    },
+    {
+      "term": "Cipher suite negotiation",
+      "category": "physics",
+      "definition": "The process where two computers agree on which encryption methods to use before they start communicating securely.",
+      "example": "When your browser connects to a secure website, it and the server negotiate which encryption algorithms to use, like agreeing on a secret language.",
+      "grade_level": "college",
+      "first_appearance": "The Thirteen Correspondences"
+    },
+    {
+      "term": "Hermeneutical framework",
+      "category": "philosophy",
+      "definition": "A set of assumptions and methods used to interpret a text, especially the Bible.",
+      "example": "A literalist and a metaphorical reader have different hermeneutical frameworks for understanding the same story.",
+      "grade_level": "college",
+      "first_appearance": "The Thirteen Correspondences"
+    },
+    {
+      "term": "Key revocation",
+      "category": "physics",
+      "definition": "The process of declaring that a previously valid encryption key is no longer trustworthy or valid.",
+      "example": "If you lose your phone, you can revoke its encryption keys so that no one can use them to access your accounts.",
+      "grade_level": "college",
+      "first_appearance": "The Thirteen Correspondences"
+    },
+    {
+      "term": "Covenant transition",
+      "category": "theology",
+      "definition": "The shift from one major agreement between God and humanity to another, such as from the Old Covenant (Law of Moses) to the New Covenant (through Jesus).",
+      "example": "Christians believe that Jesus' death and resurrection marked a covenant transition, replacing the old system of sacrifices.",
+      "grade_level": "college",
+      "first_appearance": "The Thirteen Correspondences"
+    },
+    {
+      "term": "Key escrow system",
+      "category": "physics",
+      "definition": "A system where a trusted third party holds a copy of encryption keys so that they can be accessed if needed, like a backup.",
+      "example": "A company might keep a copy of all employee encryption keys in a safe, so they can read files if an employee leaves.",
+      "grade_level": "college",
+      "first_appearance": "The Key Exchange Problem as Incarnation"
+    },
+    {
+      "term": "Man-in-the-middle attack",
+      "category": "physics",
+      "definition": "An attack where someone secretly intercepts and possibly alters the communication between two parties, making them think they're talking directly to each other.",
+      "example": "If a hacker sits between you and your bank's website and pretends to be the bank, that's a man-in-the-middle attack.",
+      "grade_level": "college",
+      "first_appearance": "The Key Exchange Problem as Incarnation"
+    },
+    {
+      "term": "Hypostatic union",
+      "category": "theology",
+      "definition": "The Christian doctrine that Jesus Christ is both fully God and fully human in one person, with two natures united without mixing or separating.",
+      "example": "The hypostatic union means Jesus could be tired (human) and also calm a storm (divine) at the same time.",
+      "grade_level": "college",
+      "first_appearance": "The Key Exchange Problem as Incarnation"
+    },
+    {
+      "term": "Computationally irreducible",
+      "category": "physics",
+      "definition": "A process that cannot be simplified or predicted without actually running it step by step.",
+      "example": "The weather is computationally irreducible\u2014you can't predict it without simulating every detail.",
+      "grade_level": "college",
+      "first_appearance": "The Key Exchange Problem as Incarnation"
+    },
+    {
+      "term": "Discrete logarithm problem",
+      "category": "physics",
+      "definition": "A mathematical problem that is easy to do in one direction (exponentiation) but extremely hard to reverse (finding the exponent), used in many encryption systems.",
+      "example": "It's easy to compute 3^5 = 243, but given 243 and 3, finding the exponent 5 is very hard for large numbers.",
+      "grade_level": "college",
+      "first_appearance": "The Key Exchange Problem as Incarnation"
+    },
+    {
+      "term": "Residual entropy",
+      "category": "physics",
+      "definition": "The remaining uncertainty or disorder in a system after some processing, like after decryption with an incorrect key.",
+      "example": "If you decrypt a message with the wrong key, you get gibberish\u2014that's residual entropy.",
+      "grade_level": "college",
+      "first_appearance": "Shannon's Perfect Secrecy and 1 Corinthians 2:14"
+    },
+    {
+      "term": "Obscurantism",
+      "category": "philosophy",
+      "definition": "The practice of deliberately making something unclear or hard to understand, often to prevent others from questioning it.",
+      "example": "Using overly complex language to confuse people instead of explaining clearly is obscurantism.",
+      "grade_level": "college",
+      "first_appearance": "Test 1 \u2014 Prediction Constraint"
+    },
+    {
+      "term": "Phase transition",
+      "category": "physics",
+      "definition": "A sudden change in the state of a system, like water turning to ice, often triggered by a small change in conditions.",
+      "example": "Water freezes at 0\u00b0C\u2014that's a phase transition from liquid to solid.",
+      "grade_level": "10",
+      "first_appearance": "Test 1 \u2014 Prediction Constraint"
+    },
+    {
+      "term": "Syntactically valid",
+      "category": "academic",
+      "definition": "Following the rules of grammar or structure, even if the meaning is wrong or nonsensical.",
+      "example": "The sentence 'Colorless green ideas sleep furiously' is syntactically valid but makes no sense.",
+      "grade_level": "college",
+      "first_appearance": "Test 1 \u2014 Prediction Constraint"
+    },
+    {
+      "term": "Semantically wrong",
+      "category": "academic",
+      "definition": "Having incorrect meaning, even if the structure or grammar is correct.",
+      "example": "Saying 'The cat is a type of tree' is semantically wrong because cats aren't trees.",
+      "grade_level": "college",
+      "first_appearance": "Test 1 \u2014 Prediction Constraint"
+    },
+    {
+      "term": "Symmetric breaking",
+      "category": "physics",
+      "definition": "A situation where a symmetry or correspondence between two systems is broken, meaning they no longer match.",
+      "example": "If you have a mirror and it breaks, the reflection no longer matches the original\u2014that's symmetric breaking.",
+      "grade_level": "college",
+      "first_appearance": "Test 2 \u2014 Symmetric Breaking"
+    },
+    {
+      "term": "Falsifiability",
+      "category": "academic",
+      "definition": "The ability of a theory to be proven wrong by evidence or experiment; a key feature of scientific theories.",
+      "example": "The claim 'All swans are white' is falsifiable because finding one black swan would prove it wrong.",
+      "grade_level": "college",
+      "first_appearance": "Test 4 \u2014 Falsifiability Invitation"
+    },
+    {
+      "term": "Salvific knowledge",
+      "category": "theology",
+      "definition": "Knowledge that leads to salvation, not just intellectual understanding.",
+      "example": "Knowing facts about God isn't salvific knowledge; trusting in Jesus for salvation is.",
+      "grade_level": "college",
+      "first_appearance": "Test 4 \u2014 Falsifiability Invitation"
+    },
+    {
+      "term": "Ontologically asymmetric",
+      "category": "philosophy",
+      "definition": "A relationship between two things that are fundamentally different in their nature or level of existence.",
+      "example": "God and humans are ontologically asymmetric\u2014God is infinite and eternal, while humans are finite and temporal.",
+      "grade_level": "college",
+      "first_appearance": "Bidirectional"
+    },
+    {
+      "term": "Structural Isomorphism",
+      "category": "math",
+      "definition": "A mapping between two systems that preserves their structure, meaning relationships in one system correspond to relationships in the other.",
+      "example": "A map of a subway system is structurally isomorphic to the actual subway lines.",
+      "grade_level": "college",
+      "first_appearance": "Classification"
+    },
+    {
+      "term": "Epistemology",
+      "category": "philosophy",
+      "definition": "The branch of philosophy that studies what knowledge is, how we get it, and what counts as justified belief.",
+      "example": "Asking 'How do you know that the sun will rise tomorrow?' is an epistemological question.",
+      "grade_level": "college",
+      "first_appearance": "Classification"
+    },
+    {
+      "term": "Axiomatic foundations",
+      "category": "math",
+      "definition": "The basic assumptions or starting points from which a system of knowledge is built.",
+      "example": "In geometry, the idea that a straight line can be drawn between any two points is an axiom\u2014a foundational assumption.",
+      "grade_level": "college",
+      "first_appearance": "Classification"
+    },
+    {
+      "term": "Ligand",
+      "category": "physics",
+      "definition": "A molecule that binds to a receptor, like a key fitting into a lock, to trigger a biological response.",
+      "example": "A hormone like insulin is a ligand that binds to receptors on cells to let sugar in.",
+      "grade_level": "college",
+      "first_appearance": "Classification"
+    },
+    {
+      "term": "Observability",
+      "category": "physics",
+      "definition": "In control theory, the ability to infer the internal state of a system from its outputs.",
+      "example": "You can tell if a car engine is running by listening to its sound\u2014that's observability of the engine's state.",
+      "grade_level": "college",
+      "first_appearance": "Other ISOs Connected"
+    }
+  ],
+  "stats": {
+    "total_terms_found": 52,
+    "by_category": {
+      "physics": 28,
+      "theology": 11,
+      "math": 5,
+      "philosophy": 4,
+      "framework": 0,
+      "academic": 3,
+      "language": 0
+    },
+    "highest_grade_level": "college",
+    "average_grade_level": "college",
+    "accessibility_score": 15
+  }
+}

@@ -1,0 +1,666 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "physics",
+        "type": "physics",
+        "strength": 9
+      },
+      {
+        "name": "theology",
+        "type": "theology",
+        "strength": 9
+      },
+      {
+        "name": "mathematics",
+        "type": "mathematics",
+        "strength": 7
+      },
+      {
+        "name": "biology",
+        "type": "biology",
+        "strength": 5
+      },
+      {
+        "name": "information",
+        "type": "information",
+        "strength": 4
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence variable in the Lowe Coherence Equation, mapped to spiritual maturity/sanctification",
+        "strength": 10
+      },
+      {
+        "variable": "G",
+        "present": true,
+        "role": "Grace field strength in the equation, mapped to sovereign grace (Calvinist variable)",
+        "strength": 9
+      },
+      {
+        "variable": "M",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "E",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "S",
+        "present": true,
+        "role": "Entropy/noise in the equation, mapped to sin/temptation/worldly entropy",
+        "strength": 8
+      },
+      {
+        "variable": "T",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "K",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "R",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "Q",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "F",
+        "present": false,
+        "role": "",
+        "strength": 0
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A1.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A5.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC6",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A1.3",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "T3.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "External Grace: The G variable in the equation represents an external grace field that is always > 0, consistent with BC2's claim that grace is external and not self-generated."
+      },
+      {
+        "id": "BC7",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC8",
+        "invoked": true,
+        "how": "Voluntary Coupling: The O variable (openness/observer coupling) represents voluntary human response, and the s parameter (surrender coefficient) determines the coupling regime, consistent with BC8's claim that coupling is voluntary."
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": false,
+        "manifestations": []
+      },
+      "son": {
+        "present": false,
+        "manifestations": []
+      },
+      "spirit": {
+        "present": false,
+        "manifestations": []
+      },
+      "trinitarian_structure": "none"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-006",
+        "domain_a": "physics",
+        "domain_b": "theology",
+        "strength": 10,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "salvation",
+        "context": "Mapped to the Lowe Coherence Equation's dynamics; the process of moving from spiritual death toward coherence with God",
+        "weight": 10
+      },
+      {
+        "concept": "sanctification",
+        "context": "Mapped to the growth trajectory of coherence C toward equilibrium Ceq",
+        "weight": 9
+      },
+      {
+        "concept": "grace",
+        "context": "Mapped to the G variable in the equation; sovereign grace as identified by Calvinism",
+        "weight": 9
+      },
+      {
+        "concept": "sin",
+        "context": "Mapped to the S variable (entropy/noise) in the equation",
+        "weight": 8
+      },
+      {
+        "concept": "free will",
+        "context": "Mapped to the O variable (openness/observer coupling) as identified by Arminianism",
+        "weight": 8
+      },
+      {
+        "concept": "surrender",
+        "context": "Mapped to the s parameter (coupling/surrender coefficient) that determines the phase regime",
+        "weight": 9
+      },
+      {
+        "concept": "Calvinism",
+        "context": "Identified the G factor (sovereign grace) in the product O\u00b7G",
+        "weight": 7
+      },
+      {
+        "concept": "Arminianism",
+        "context": "Identified the O factor (free will/human response) in the product O\u00b7G",
+        "weight": 7
+      },
+      {
+        "concept": "works-based religion",
+        "context": "Mapped to the s \u2248 0 regime (Performance Mode) where effort without surrender leads to burnout",
+        "weight": 6
+      },
+      {
+        "concept": "spiritual death",
+        "context": "Mapped to the s = -1 regime (Autonomous Decay) where coherence collapses exponentially",
+        "weight": 6
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "isomorphism",
+        "context": "The central claim of the document: a structural mapping between the Lowe Coherence Equation and salvation/sanctification dynamics",
+        "weight": 10
+      },
+      {
+        "concept": "necessity",
+        "context": "Both O and G are necessary variables in the product; neither camp is wrong but each holds one factor",
+        "weight": 8
+      },
+      {
+        "concept": "sufficiency",
+        "context": "The product O\u00b7G is sufficient to determine the equilibrium Ceq given S",
+        "weight": 7
+      },
+      {
+        "concept": "contradiction",
+        "context": "The equation dissolves the Calvinist-Arminian contradiction by showing both are factors of a product",
+        "weight": 9
+      },
+      {
+        "concept": "equivalence",
+        "context": "The three phase regimes are mathematically equivalent to three spiritual states described in Scripture",
+        "weight": 8
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "love",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "patience",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "faithfulness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "self_control",
+        "present": false,
+        "strength": 0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "physics:Lowe Coherence Equation",
+      "to": "theology:Salvation/Sanctification Dynamics",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "chi_variable:C",
+      "to": "theology:Spiritual Maturity",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "chi_variable:G",
+      "to": "theology:Sovereign Grace",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:O",
+      "to": "theology:Free Will/Human Response",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:S",
+      "to": "theology:Sin/Entropy",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "parameter:s",
+      "to": "theology:Surrender Coefficient",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "regime:s=-1",
+      "to": "theology:Autonomous Decay (Romans 1:24-28)",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "regime:s\u22480",
+      "to": "theology:Performance Mode (Works-Based Religion)",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "regime:s=+1",
+      "to": "theology:Full Surrender (Philippians 2:12-13)",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "axiom:BC2",
+      "to": "chi_variable:G",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "axiom:BC8",
+      "to": "chi_variable:O",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "theology:Calvinism",
+      "to": "chi_variable:G",
+      "relation": "identifies",
+      "weight": 7
+    },
+    {
+      "from": "theology:Arminianism",
+      "to": "chi_variable:O",
+      "relation": "identifies",
+      "weight": 7
+    },
+    {
+      "from": "empirical:Cochrane 2020",
+      "to": "regime:s-change",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "empirical:PET Scan D2",
+      "to": "regime:s=-1",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "empirical:fMRI ACC",
+      "to": "regime:s\u22480",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "empirical:Newberg vmPFC",
+      "to": "regime:s=+1",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "scripture:Philippians 2:12-13",
+      "to": "equation:dC/dt = O\u00b7G(1-C) - S\u00b7C",
+      "relation": "encodes",
+      "weight": 9
+    },
+    {
+      "from": "scripture:Romans 1:24-28",
+      "to": "regime:s=-1",
+      "relation": "describes",
+      "weight": 8
+    }
+  ],
+  "tags": {
+    "primary": [
+      "coherence",
+      "salvation",
+      "sanctification",
+      "Calvinist-Arminian resolution",
+      "logistic growth"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/theology",
+      "pillar/mathematics"
+    ],
+    "series": "isomorphism",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "Philippians 2:12-13",
+        "context": "Central scriptural anchor: 'Work out your salvation... for it is God who works in you.' The comma encodes the equation dC/dt = O\u00b7G(1-C) - S\u00b7C."
+      },
+      {
+        "ref": "Romans 1:24-28",
+        "context": "Describes the autonomous decay regime (s = -1): 'God gave them over' to exponential collapse with no floor."
+      }
+    ],
+    "academic": [
+      {
+        "ref": "Cochrane Review 2020 (N=10,565)",
+        "context": "Empirical support: AA \u2265 CBT for addiction recovery; AA changes s (surrender coefficient) while CBT optimizes O at fixed s."
+      },
+      {
+        "ref": "PET Scan D2 Receptor Data",
+        "context": "D2 downregulation in addiction maps to the s = -1 autonomous decay regime."
+      },
+      {
+        "ref": "fMRI: ACC Hyperactivity",
+        "context": "Anterior cingulate cortex hyperactivity in performance religion maps to the s \u2248 0 regime."
+      },
+      {
+        "ref": "Newberg Imaging: vmPFC Activation",
+        "context": "Ventromedial prefrontal cortex activation in contemplative prayer maps to the s = +1 regime."
+      }
+    ],
+    "internal": [
+      {
+        "ref": "GTQ-03",
+        "context": "Source article: Coherence Equation"
+      },
+      {
+        "ref": "GTQ-03a",
+        "context": "Source article: Phase Regimes"
+      },
+      {
+        "ref": "GTQ-03b",
+        "context": "Source article: Calvinist-Arminian Resolution"
+      },
+      {
+        "ref": "GTQ-03c",
+        "context": "Source article: Empirical Validation"
+      },
+      {
+        "ref": "ISO-005",
+        "context": "Related isomorphism: Decoherence \u2194 Lifespan"
+      },
+      {
+        "ref": "ISO-006a",
+        "context": "Sub-isomorphism: Phase Transitions"
+      },
+      {
+        "ref": "ISO-006b",
+        "context": "Sub-isomorphism: Exponential Decay"
+      },
+      {
+        "ref": "ISO-006c",
+        "context": "Sub-isomorphism: Attractor Basins"
+      },
+      {
+        "ref": "ISO-006d",
+        "context": "Sub-isomorphism: CBT vs AA"
+      },
+      {
+        "ref": "ISO-006e",
+        "context": "Sub-isomorphism: Augustine's States"
+      }
+    ],
+    "total_count": 14
+  },
+  "word_anomalies": [
+    {
+      "word": "Lowe Coherence Equation",
+      "frequency": 5,
+      "significance": "Central equation of the isomorphism; a logistic-type ODE with two-variable coupling product O\u00b7G."
+    },
+    {
+      "word": "surrender coefficient",
+      "frequency": 4,
+      "significance": "The s parameter that determines the coupling regime; a neologism for the spiritual posture toward God."
+    },
+    {
+      "word": "Calvinist-Arminian resolution",
+      "frequency": 3,
+      "significance": "Key theological contribution: the equation dissolves the debate by showing both are factors of a product."
+    },
+    {
+      "word": "autonomous decay",
+      "frequency": 2,
+      "significance": "The s = -1 regime where coherence collapses exponentially with no floor."
+    },
+    {
+      "word": "performance mode",
+      "frequency": 2,
+      "significance": "The s \u2248 0 regime of effort without surrender; burnout trajectory."
+    },
+    {
+      "word": "full surrender",
+      "frequency": 2,
+      "significance": "The s = +1 regime of growth toward high equilibrium."
+    },
+    {
+      "word": "grace floor",
+      "frequency": 1,
+      "significance": "The claim that C = 0 is mathematically unreachable when G > 0, providing a theological guarantee."
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "This document takes a confident, analytical posture, asserting a structural isomorphism between a physics equation and a theological process, supported by empirical evidence.",
+    "Q1_identity": "A Level 3 Structural Isomorphism document (ISO-006) that maps the Lowe Coherence Equation onto salvation and sanctification dynamics.",
+    "Q2_domain": "Lives at the intersection of physics (differential equations, logistic growth), theology (soteriology, sanctification), and mathematics (ODE analysis, equilibrium).",
+    "Q3_claim": "The Lowe Coherence Equation dC/dt = O\u00b7G(1-C) - S\u00b7C maps exactly onto salvation and sanctification dynamics, with three phase regimes (autonomous decay, performance mode, full surrender) that correspond to distinct spiritual states described in Scripture.",
+    "Q4_support": "Supported by: (1) the equation's own mathematical structure forcing three regimes, (2) scriptural evidence (Philippians 2:12-13, Romans 1:24-28), (3) empirical evidence (Cochrane 2020 N=10,565, PET D2 data, fMRI ACC data, Newberg vmPFC imaging), and (4) the Calvinist-Arminian resolution emerging from the product structure.",
+    "Q5_dependencies": "Depends on: the Lowe Coherence Equation (GTQ-03), the concept of structural isomorphism, the Calvinist-Arminian theological debate, and empirical validation studies.",
+    "Q6_consequences": "Forces: (1) the Calvinist-Arminian debate is resolved by the product O\u00b7G, (2) three distinct spiritual regimes are mathematically necessary, (3) surrender (changing s) is categorically more powerful than optimization (changing O at fixed s), (4) the grace floor (C=0 unreachable with G>0) is mathematically guaranteed.",
+    "Q7_kill": "Destroyed by: (1) O and G collapsing to one variable, (2) CBT consistently outperforming surrender-based approaches, (3) C=0 reachable with G>0, (4) unobserved predicted behavior, (5) Augustine's four states failing to map, (6) neuroimaging contradicting the three-regime prediction."
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "GTQ-03 (Coherence Equation)",
+      "GTQ-03a (Phase Regimes)",
+      "GTQ-03b (Calvinist-Arminian Resolution)",
+      "GTQ-03c (Empirical Validation)",
+      "ISO-005 (Decoherence \u2194 Lifespan)"
+    ],
+    "required_by": [
+      "ISO-006a (Phase Transitions)",
+      "ISO-006b (Exponential Decay)",
+      "ISO-006c (Attractor Basins)",
+      "ISO-006d (CBT vs AA)",
+      "ISO-006e (Augustine's States)"
+    ],
+    "parallel_to": [
+      "ISO-005 (Decoherence \u2194 Lifespan)"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 42,
+    "total_edges": 20,
+    "dominant_domain": "physics",
+    "dominant_chi": "C",
+    "connectivity_score": 9,
+    "one_sentence": "ISO-006 establishes a Level 3 structural isomorphism between the Lowe Coherence Equation and salvation/sanctification dynamics, resolving the Calvinist-Arminian debate by showing both are factors of a product O\u00b7G, with three phase regimes empirically validated by Cochrane data and neuroimaging."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": false,
+      "how": ""
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "The coherence variable C maps to truth/Christ, and the equation's structure shows that coherence cannot self-increase (T3.1) but requires external grace (G) and voluntary coupling (O)."
+    },
+    "4_7_love_relationship": {
+      "active": false,
+      "how": ""
+    },
+    "5_6_judgment_logos": {
+      "active": false,
+      "how": ""
+    },
+    "pairs_active_count": 1
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 9
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": false,
+      "strength": 0
+    },
+    "love": {
+      "present": false,
+      "strength": 0
+    },
+    "judgment": {
+      "present": false,
+      "strength": 0
+    },
+    "logos": {
+      "present": false,
+      "strength": 0
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": false,
+      "strength": 0
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": false,
+      "strength": 0
+    },
+    "operators_present_count": 1
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "GTQ-03 (Coherence Equation)",
+      "GTQ-03a (Phase Regimes)",
+      "GTQ-03b (Calvinist-Arminian Resolution)",
+      "GTQ-03c (Empirical Validation)"
+    ],
+    "read_after": [
+      "ISO-006a (Phase Transitions)",
+      "ISO-006b (Exponential Decay)",
+      "ISO-006c (Attractor Basins)",
+      "ISO-006d (CBT vs AA)",
+      "ISO-006e (Augustine's States)"
+    ]
+  }
+}

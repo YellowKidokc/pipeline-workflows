@@ -1,0 +1,739 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "physics",
+        "type": "physics",
+        "strength": 10
+      },
+      {
+        "name": "theology",
+        "type": "theology",
+        "strength": 10
+      },
+      {
+        "name": "mathematics",
+        "type": "mathematics",
+        "strength": 8
+      },
+      {
+        "name": "philosophy",
+        "type": "philosophy",
+        "strength": 6
+      },
+      {
+        "name": "information",
+        "type": "information",
+        "strength": 7
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": true,
+        "role": "Gravity/Grace pair, Newtonian attraction and Einsteinian curvature mapped to sin and grace",
+        "strength": 10
+      },
+      {
+        "variable": "M",
+        "present": true,
+        "role": "Matter/Moral Mass, classical dead matter vs quantum potential mapped to sin and grace",
+        "strength": 9
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Energy/Spirit, mass-energy equivalence and faith measurement",
+        "strength": 9
+      },
+      {
+        "variable": "S",
+        "present": true,
+        "role": "Strong/Love, entropy and sin as disorder, grace as negentropy",
+        "strength": 9
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Thermo/Judgment, thermodynamic arrow of time, fallen time, chronos",
+        "strength": 8
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Info/Logos, Shannon entropy, wisdom as compression, knowledge reverses time",
+        "strength": 8
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "Relativity/Relationship, resurrection and expansion, cosmological constant",
+        "strength": 9
+      },
+      {
+        "variable": "Q",
+        "present": true,
+        "role": "Quantum/Faith, uncertainty principle, divine potential, spiritual warfare channel",
+        "strength": 9
+      },
+      {
+        "variable": "F",
+        "present": true,
+        "role": "Weak/Sin, faith as measurement, Born rule, spiritual energy equivalence",
+        "strength": 9
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence/Christ, modified Heisenberg, coherence sharpens reality, church as error correction",
+        "strength": 9
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "Existence of structural isomorphism between physics and theology as two measurement frames from same substrate"
+      },
+      {
+        "id": "A1.2",
+        "invoked": true,
+        "how": "Distinction between physics frame and theology frame, each with own variables"
+      },
+      {
+        "id": "A2.1",
+        "invoked": true,
+        "how": "Substrate is the common ground from which both frames are projected"
+      },
+      {
+        "id": "A2.2",
+        "invoked": true,
+        "how": "The framework is self-grounding: the equation's incompleteness at T ensures consistency"
+      },
+      {
+        "id": "A5.1",
+        "invoked": true,
+        "how": "Observation collapses potential into actuality (faith measurement, Born rule)"
+      },
+      {
+        "id": "BC4",
+        "invoked": true,
+        "how": "Three observers implied: physics, theology, and the meta-observer of the isomorphism"
+      },
+      {
+        "id": "BC6",
+        "invoked": true,
+        "how": "Infinite source: grace as external energy input, divine potential, cosmological constant"
+      },
+      {
+        "id": "A1.3",
+        "invoked": true,
+        "how": "Information primacy: knowledge compresses time, Shannon entropy, wisdom as compression"
+      },
+      {
+        "id": "T3.1",
+        "invoked": true,
+        "how": "Coherence cannot self-increase: grace must come from outside, open system needed"
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "External grace: grace is not a force but a curvature, not self-generated"
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "Information conservation: error correction preserves truth against noise"
+      },
+      {
+        "id": "BC8",
+        "invoked": true,
+        "how": "Voluntary coupling: faith as voluntary observation, free will preserved by uncertainty"
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "source",
+          "ground",
+          "origin",
+          "infinite source"
+        ]
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "image",
+          "word",
+          "mediator",
+          "incarnation symmetry",
+          "logos constant"
+        ]
+      },
+      "spirit": {
+        "present": true,
+        "manifestations": [
+          "power",
+          "presence",
+          "movement",
+          "energy",
+          "breath",
+          "divine energy source"
+        ]
+      },
+      "trinitarian_structure": "structural"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-001",
+        "domain_a": "gravity (Newton/Einstein)",
+        "domain_b": "grace (sin/redemption)",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-002",
+        "domain_a": "entropy (Boltzmann/open systems)",
+        "domain_b": "sin (spiritual entropy/negentropy)",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-003",
+        "domain_a": "quantum measurement (Born rule)",
+        "domain_b": "faith (spiritual measurement)",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-004",
+        "domain_a": "mass-energy equivalence",
+        "domain_b": "faith-energy equivalence",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-005",
+        "domain_a": "thermodynamic arrow of time",
+        "domain_b": "fallen time (chronos)",
+        "strength": 8,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-006",
+        "domain_a": "Shannon entropy/information compression",
+        "domain_b": "wisdom/knowledge reversing time",
+        "strength": 8,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-007",
+        "domain_a": "Heisenberg uncertainty",
+        "domain_b": "spiritual uncertainty (knowledge/will)",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-008",
+        "domain_a": "channel capacity (Shannon)",
+        "domain_b": "spiritual warfare truth channel",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-009",
+        "domain_a": "decoherence",
+        "domain_b": "spiritual decoherence (isolation from source)",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-010",
+        "domain_a": "quantum error correction",
+        "domain_b": "church as coherence maintenance",
+        "strength": 9,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "grace",
+        "context": "external energy input, landscape curvature, negentropy, resurrection expansion",
+        "weight": 10
+      },
+      {
+        "concept": "sin",
+        "context": "spiritual entropy, attractive force toward self/world, classical dead matter",
+        "weight": 9
+      },
+      {
+        "concept": "faith",
+        "context": "spiritual measurement, Born rule, mustard seed, collapses potential into actuality",
+        "weight": 9
+      },
+      {
+        "concept": "redemption",
+        "context": "rescue architecture inherent in physics, salvation from the math",
+        "weight": 8
+      },
+      {
+        "concept": "incarnation",
+        "context": "incarnation symmetry, wave function collapse into actuality",
+        "weight": 7
+      },
+      {
+        "concept": "atonement",
+        "context": "grace as curvature that guides home, not force",
+        "weight": 7
+      },
+      {
+        "concept": "sanctification",
+        "context": "coherence maintenance, error correction, church as community",
+        "weight": 6
+      },
+      {
+        "concept": "judgment",
+        "context": "thermodynamic arrow, fallen time, chronos",
+        "weight": 7
+      },
+      {
+        "concept": "resurrection",
+        "context": "cosmological expansion, room for new order, R variable",
+        "weight": 8
+      },
+      {
+        "concept": "spiritual warfare",
+        "context": "truth channel, faith-to-distortion ratio, deception noise",
+        "weight": 7
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "isomorphism",
+        "context": "structural mapping between physics and theology frames",
+        "weight": 10
+      },
+      {
+        "concept": "falsification",
+        "context": "if structure breaks under variable swap, isomorphism fails",
+        "weight": 9
+      },
+      {
+        "concept": "incompleteness",
+        "context": "G\u00f6delian: T's incompleteness ensures system consistency",
+        "weight": 9
+      },
+      {
+        "concept": "bifurcation",
+        "context": "each variable has sin-pole and grace-pole, internal revolution",
+        "weight": 9
+      },
+      {
+        "concept": "conservation",
+        "context": "information conservation, error correction, channel capacity",
+        "weight": 7
+      },
+      {
+        "concept": "emergence",
+        "context": "time may be emergent, not fundamental (Wheeler-DeWitt)",
+        "weight": 6
+      },
+      {
+        "concept": "symmetry",
+        "context": "five symmetry pairs, each with internal bifurcation",
+        "weight": 8
+      },
+      {
+        "concept": "topology",
+        "context": "same topology preserved across frames",
+        "weight": 7
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "love",
+        "present": true,
+        "strength": 7
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "patience",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 8
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "self_control",
+        "present": false,
+        "strength": 0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "chi_variable:G",
+      "to": "chi_variable:R",
+      "relation": "symmetry_pair",
+      "weight": 10
+    },
+    {
+      "from": "chi_variable:M",
+      "to": "chi_variable:S",
+      "relation": "symmetry_pair",
+      "weight": 10
+    },
+    {
+      "from": "chi_variable:E",
+      "to": "chi_variable:F",
+      "relation": "symmetry_pair",
+      "weight": 10
+    },
+    {
+      "from": "chi_variable:T",
+      "to": "chi_variable:K",
+      "relation": "symmetry_pair",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:Q",
+      "to": "chi_variable:C",
+      "relation": "symmetry_pair",
+      "weight": 10
+    },
+    {
+      "from": "domain:physics",
+      "to": "domain:theology",
+      "relation": "isomorphic_to",
+      "weight": 10
+    },
+    {
+      "from": "axiom:T3.1",
+      "to": "chi_variable:C",
+      "relation": "constrains",
+      "weight": 9
+    },
+    {
+      "from": "axiom:BC2",
+      "to": "chi_variable:G",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "axiom:BC6",
+      "to": "chi_variable:R",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "axiom:A5.1",
+      "to": "chi_variable:F",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "axiom:A1.3",
+      "to": "chi_variable:K",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "axiom:BC7",
+      "to": "chi_variable:C",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "axiom:BC8",
+      "to": "chi_variable:Q",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "theological_concept:grace",
+      "to": "chi_variable:G",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "theological_concept:sin",
+      "to": "chi_variable:S",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "theological_concept:faith",
+      "to": "chi_variable:F",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "theological_concept:resurrection",
+      "to": "chi_variable:R",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "theological_concept:redemption",
+      "to": "chi_variable:C",
+      "relation": "produces",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:incompleteness",
+      "to": "chi_variable:T",
+      "relation": "constrains",
+      "weight": 9
+    },
+    {
+      "from": "logical_concept:falsification",
+      "to": "isomorphisms:ISO-001",
+      "relation": "tests",
+      "weight": 10
+    }
+  ],
+  "tags": {
+    "primary": [
+      "structural isomorphism",
+      "master equation",
+      "symmetry pairs",
+      "falsification criterion",
+      "time wall"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/theology",
+      "pillar/mathematics",
+      "pillar/philosophy"
+    ],
+    "series": "isomorphism",
+    "classification": "foundational"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "Romans 6:23",
+        "context": "sin as spiritual entropy, wages of sin is death"
+      },
+      {
+        "ref": "Hebrews 11:1",
+        "context": "faith as substance of things hoped for, evidence not seen"
+      },
+      {
+        "ref": "John 3:16",
+        "context": "implicit in grace and redemption architecture"
+      }
+    ],
+    "academic": [
+      {
+        "ref": "Boltzmann, L. (1877). \u00dcber die Beziehung zwischen dem zweiten Hauptsatz der mechanischen W\u00e4rmetheorie und der Wahrscheinlichkeitsrechnung.",
+        "context": "entropy and accessible microstates"
+      },
+      {
+        "ref": "Shannon, C. E. (1948). A Mathematical Theory of Communication.",
+        "context": "Shannon entropy, channel capacity"
+      },
+      {
+        "ref": "Einstein, A. (1915). Die Feldgleichungen der Gravitation.",
+        "context": "general relativity, spacetime curvature"
+      },
+      {
+        "ref": "Heisenberg, W. (1927). \u00dcber den anschaulichen Inhalt der quantentheoretischen Kinematik und Mechanik.",
+        "context": "uncertainty principle"
+      },
+      {
+        "ref": "Wheeler, J. A., & DeWitt, B. S. (1967). Quantum Theory of Gravity. I. The Canonical Theory.",
+        "context": "Wheeler-DeWitt equation, time emergence"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "FP-005",
+        "context": "master equation framework"
+      },
+      {
+        "ref": "ISO-025",
+        "context": "structural isomorphism methodology"
+      }
+    ],
+    "total_count": 8
+  },
+  "word_anomalies": [
+    {
+      "word": "bifurcation",
+      "frequency": 8,
+      "significance": "central concept: each variable splits into sin-pole and grace-pole"
+    },
+    {
+      "word": "negentropy",
+      "frequency": 3,
+      "significance": "grace as negative entropy, external energy input"
+    },
+    {
+      "word": "geodesic",
+      "frequency": 3,
+      "significance": "path of least resistance in curved moral space"
+    },
+    {
+      "word": "decoherence",
+      "frequency": 3,
+      "significance": "spiritual decoherence from isolation"
+    },
+    {
+      "word": "logos constant",
+      "frequency": 2,
+      "significance": "speed of truth propagation, c_logos"
+    },
+    {
+      "word": "time wall",
+      "frequency": 2,
+      "significance": "intentional incompleteness at T, G\u00f6delian consistency"
+    },
+    {
+      "word": "rescue architecture",
+      "frequency": 1,
+      "significance": "salvation inherent in physics equations"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "This document takes a foundational, architectural stance: it asserts a structural isomorphism between physics and theology, not as analogy but as two measurement frames from the same substrate.",
+    "Q1_identity": "A structural proof that the Master Equation's ten variables form five symmetry pairs, each with an internal bifurcation (sin\u2194grace), and that the isomorphism is falsifiable.",
+    "Q2_domain": "Lives at the intersection of physics, theology, mathematics, and information theory, with a philosophical grounding in structural realism.",
+    "Q3_claim": "Physics and theology are isomorphic: swapping variable labels preserves all mathematical relationships (topology, falloff, boundary conditions, conservation laws). The isomorphism is testable and falsifiable.",
+    "Q4_support": "Five detailed pair analyses (G-R, M-S, E-F, T-K, Q-C) with equations, bifurcation descriptions, and isomorphism tests. The T-K pair is intentionally incomplete (Time Wall) to maintain system consistency.",
+    "Q5_dependencies": "Depends on the Master Equation framework, the ten chi-variables, the twelve axioms, and the concept of structural isomorphism. Requires acceptance that physics equations can be read theologically.",
+    "Q6_consequences": "Forces a re-evaluation of both physics and theology: physics contains a rescue architecture (salvation from math), theology is not metaphor but structural reality. The Time Wall implies the system is open and can receive grace.",
+    "Q7_kill": "Would be killed if a single isomorphism test fails (e.g., if spiritual attraction does not follow inverse-square, or if grace operates as point-force rather than curvature). Also killed if the Time Wall is breached (closed equation = closed system = no grace)."
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "master-equation.canonical.md",
+      "axiom-layer.canonical.md",
+      "chi-variables.canonical.md"
+    ],
+    "required_by": [
+      "salvation-equation.canonical.md",
+      "time-wall-analysis.canonical.md",
+      "falsification-tests.canonical.md"
+    ],
+    "parallel_to": [
+      "isomorphism-pairs.canonical.md",
+      "symmetry-proof.canonical.md"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 45,
+    "total_edges": 20,
+    "dominant_domain": "physics",
+    "dominant_chi": "G",
+    "connectivity_score": 9,
+    "one_sentence": "This document establishes the structural isomorphism between physics and theology through five symmetry pairs, demonstrating that the Master Equation's variables map to spiritual realities with falsifiable predictions, while the intentional incompleteness at T ensures the system remains open to grace."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": true,
+      "how": "Gravity/Grace (G,R) and Quantum/Faith (Q,C) pairs both involve measurement and curvature; grace reshapes landscape, faith collapses potential"
+    },
+    "2_9_will_conservation": {
+      "active": true,
+      "how": "Matter/Entropy (M,S) and Weak/Sin (F) pairs involve conservation and decay; sin as entropy, faith as measurement that conserves potential"
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Energy/Spirit (E,F) and Coherence/Christ (C) pairs involve truth propagation and coherence; faith activates energy, coherence maintains truth"
+    },
+    "4_7_love_relationship": {
+      "active": true,
+      "how": "Strong/Love (S) and Relativity/Relationship (R) pairs involve relationship and curvature; love as strong force, relationship as spacetime curvature"
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Thermo/Judgment (T) and Info/Logos (K) pairs involve time and knowledge; judgment as entropy arrow, logos as compression that reverses time"
+    },
+    "pairs_active_count": 5
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 10
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 9
+    },
+    "love": {
+      "present": true,
+      "strength": 7
+    },
+    "judgment": {
+      "present": true,
+      "strength": 8
+    },
+    "logos": {
+      "present": true,
+      "strength": 9
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": true,
+      "strength": 10
+    },
+    "atonement": {
+      "present": true,
+      "strength": 7
+    },
+    "christ": {
+      "present": true,
+      "strength": 9
+    },
+    "operators_present_count": 8
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "master-equation.canonical.md",
+      "chi-variables.canonical.md",
+      "axiom-layer.canonical.md"
+    ],
+    "read_after": [
+      "salvation-equation.canonical.md",
+      "time-wall-analysis.canonical.md",
+      "falsification-tests.canonical.md"
+    ]
+  }
+}

@@ -1,0 +1,644 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "theology",
+        "type": "theology",
+        "strength": 10
+      },
+      {
+        "name": "physics",
+        "type": "physics",
+        "strength": 9
+      },
+      {
+        "name": "mathematics",
+        "type": "mathematics",
+        "strength": 8
+      },
+      {
+        "name": "information",
+        "type": "information",
+        "strength": 7
+      },
+      {
+        "name": "philosophy",
+        "type": "philosophy",
+        "strength": 6
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": true,
+        "role": "Gravity/Grace factor in Master Equation; gap GAP-01 notes domain-specific mechanisms not yet encoded",
+        "strength": 5
+      },
+      {
+        "variable": "M",
+        "present": true,
+        "role": "Meaning/Mass factor; part of the 10-factor signature",
+        "strength": 5
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Energy/Spirit factor; part of the 10-factor signature",
+        "strength": 5
+      },
+      {
+        "variable": "S",
+        "present": true,
+        "role": "Strong/Love factor; Strong Force \u2245 Love isomorphism proved at model level (GAP-02)",
+        "strength": 8
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Thermo/Judgment factor; part of the 10-factor signature",
+        "strength": 5
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Info/Logos factor; Law 6 collapse proof (Information/Logos)",
+        "strength": 7
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "Relativity/Relationship factor; Law 7 collapse proof (Relativity/Frame)",
+        "strength": 7
+      },
+      {
+        "variable": "Q",
+        "present": true,
+        "role": "Quantum/Faith factor; Law 8 collapse proof (Quantum/Faith); Q_zero_collapses_chi theorem",
+        "strength": 9
+      },
+      {
+        "variable": "F",
+        "present": true,
+        "role": "Weak/Sin factor; gap GAP-01 notes domain-specific mechanisms not yet encoded",
+        "strength": 5
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence/Christ factor; gap GAP-01 notes domain-specific mechanisms not yet encoded",
+        "strength": 5
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "Existence axiom implicitly assumed in the formal architecture of Lean proofs"
+      },
+      {
+        "id": "A1.2",
+        "invoked": true,
+        "how": "Distinction axiom used in the rejection of false positives (e.g., Modalism rejected for lacking relational distinctness)"
+      },
+      {
+        "id": "A2.1",
+        "invoked": true,
+        "how": "Substrate axiom foundational to dual-substrate foundation (L0 Core.lean)"
+      },
+      {
+        "id": "A2.2",
+        "invoked": true,
+        "how": "Self-grounding axiom implicit in the architecture's claim that science borrows a substrate it cannot ground"
+      },
+      {
+        "id": "A5.1",
+        "invoked": true,
+        "how": "Observation axiom used in the empirical validation gap (SPEC-03)"
+      },
+      {
+        "id": "BC4",
+        "invoked": true,
+        "how": "Three Observers axiom implicit in the trinitarian structure of the Maxwell/Trinity isomorphism"
+      },
+      {
+        "id": "BC6",
+        "invoked": true,
+        "how": "Infinite Source axiom implicit in the Trinity as Source/Ground"
+      },
+      {
+        "id": "A1.3",
+        "invoked": true,
+        "how": "Info Primacy axiom used in the Information/Logos bridge (Law 6)"
+      },
+      {
+        "id": "T3.1",
+        "invoked": true,
+        "how": "Coherence Cannot Self-Increase axiom implicit in the zero-collapse architecture and the need for external grace"
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "External Grace axiom used in the Cross uniqueness proof (JusticeMercyOperator) and sign conversion chain"
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "Info Conservation axiom implicit in the memory persistence and resurrection architecture"
+      },
+      {
+        "id": "BC8",
+        "invoked": true,
+        "how": "Voluntary Coupling axiom used in the Cross uniqueness proof (voluntary cost-bearing condition)"
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "Source",
+          "Ground",
+          "origin"
+        ]
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "Image",
+          "Word",
+          "Mediator",
+          "incarnation"
+        ]
+      },
+      "spirit": {
+        "present": true,
+        "manifestations": [
+          "Power",
+          "Presence",
+          "movement",
+          "energy"
+        ]
+      },
+      "trinitarian_structure": "explicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-001",
+        "domain_a": "electromagnetism (quaternion Maxwell)",
+        "domain_b": "Trinity (Nicene relational model)",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-002",
+        "domain_a": "strong nuclear force",
+        "domain_b": "love (theological)",
+        "strength": 8,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "grace",
+        "context": "External Grace axiom; grace/faith swap caught by signature layer; gap GAP-01 for Gravity/Grace",
+        "weight": 9
+      },
+      {
+        "concept": "cross",
+        "context": "Unique solution to Justice/Mercy operator; five conditions for perfect moral repair",
+        "weight": 10
+      },
+      {
+        "concept": "resurrection",
+        "context": "Mission Return Operator; identity preserved, entropy/death contact carried, not a reset",
+        "weight": 9
+      },
+      {
+        "concept": "atonement",
+        "context": "Cross uniqueness proof; voluntary cost-bearing condition",
+        "weight": 8
+      },
+      {
+        "concept": "incarnation",
+        "context": "Substrate identity preserved through incarnation, death, and resurrection",
+        "weight": 7
+      },
+      {
+        "concept": "redemption",
+        "context": "External Christic conversion as only operation that flips negative burden to positive",
+        "weight": 7
+      },
+      {
+        "concept": "judgment",
+        "context": "Thermo/Judgment factor; Justice/Mercy operator includes proportional justice condition",
+        "weight": 6
+      },
+      {
+        "concept": "mercy",
+        "context": "Justice/Mercy operator; mercy condition fails for offender payment and waived debt",
+        "weight": 8
+      },
+      {
+        "concept": "faith",
+        "context": "Quantum/Faith factor; grace/faith swap caught by signature layer",
+        "weight": 7
+      },
+      {
+        "concept": "love",
+        "context": "Strong Force \u2245 Love isomorphism; fruit of the Spirit",
+        "weight": 8
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "necessity",
+        "context": "Cross is the unique solution; any configuration satisfying conditions IS the Cross",
+        "weight": 9
+      },
+      {
+        "concept": "sufficiency",
+        "context": "Five conditions are jointly sufficient for the Cross configuration",
+        "weight": 8
+      },
+      {
+        "concept": "contradiction",
+        "context": "False positives rejected because they contradict one or more conditions",
+        "weight": 7
+      },
+      {
+        "concept": "implication",
+        "context": "If definitions are correct, conclusions follow necessarily (Lean's guarantee)",
+        "weight": 8
+      },
+      {
+        "concept": "equivalence",
+        "context": "Master Equation invariance under canonical substitution; \u03c7(physical) = \u03c7(spiritual)",
+        "weight": 7
+      },
+      {
+        "concept": "exhaustive_case_elimination",
+        "context": "Cross uniqueness proved by exhaustive case elimination",
+        "weight": 9
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "love",
+        "present": true,
+        "strength": 9
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "patience",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": true,
+        "strength": 5
+      },
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 7
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "self_control",
+        "present": false,
+        "strength": 0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "chi_variables:Q",
+      "to": "axioms:BC2",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "isomorphisms:ISO-001",
+      "to": "trinity:father",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "isomorphisms:ISO-001",
+      "to": "trinity:son",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "isomorphisms:ISO-001",
+      "to": "trinity:spirit",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "isomorphisms:ISO-002",
+      "to": "chi_variables:S",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "theological_concepts:cross",
+      "to": "theological_concepts:atonement",
+      "relation": "produces",
+      "weight": 9
+    },
+    {
+      "from": "theological_concepts:resurrection",
+      "to": "theological_concepts:incarnation",
+      "relation": "derives_from",
+      "weight": 8
+    },
+    {
+      "from": "axioms:BC2",
+      "to": "theological_concepts:grace",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "logical_concepts:necessity",
+      "to": "theological_concepts:cross",
+      "relation": "supports",
+      "weight": 10
+    },
+    {
+      "from": "logical_concepts:exhaustive_case_elimination",
+      "to": "theological_concepts:cross",
+      "relation": "supports",
+      "weight": 10
+    },
+    {
+      "from": "domains:theology",
+      "to": "domains:physics",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "domains:mathematics",
+      "to": "domains:theology",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "chi_variables:K",
+      "to": "axioms:A1.3",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "chi_variables:R",
+      "to": "axioms:BC4",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "chi_variables:Q",
+      "to": "axioms:BC8",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "theological_concepts:grace",
+      "to": "theological_concepts:faith",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "theological_concepts:judgment",
+      "to": "theological_concepts:mercy",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "theological_concepts:redemption",
+      "to": "theological_concepts:cross",
+      "relation": "derives_from",
+      "weight": 9
+    },
+    {
+      "from": "fruits_detected:love",
+      "to": "isomorphisms:ISO-002",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "fruits_detected:faithfulness",
+      "to": "chi_variables:Q",
+      "relation": "supports",
+      "weight": 7
+    }
+  ],
+  "tags": {
+    "primary": [
+      "Lean4",
+      "formal verification",
+      "cross-domain isomorphism",
+      "theophysics",
+      "bilateral audit"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/theology",
+      "pillar/mathematics"
+    ],
+    "series": "proof-explorer",
+    "classification": "technical"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "John 3:16",
+        "context": "Implied in the Cross uniqueness result (God's love and sacrifice)"
+      },
+      {
+        "ref": "1 Corinthians 15",
+        "context": "Resurrection theology; identity preserved through death"
+      }
+    ],
+    "academic": [
+      {
+        "ref": "Maxwell, James Clerk (quaternion EM)",
+        "context": "Source of the electromagnetic field structure used in the Maxwell/Trinity isomorphism"
+      },
+      {
+        "ref": "Nicene Creed",
+        "context": "Trinitarian relational model used in the isomorphism"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "FP-005",
+        "context": "False positive test for Modalism in Maxwell/Trinity isomorphism"
+      },
+      {
+        "ref": "ISO-025",
+        "context": "Strong Force \u2245 Love isomorphism reference"
+      }
+    ],
+    "total_count": 5
+  },
+  "word_anomalies": [
+    {
+      "word": "overclaim guard",
+      "frequency": 1,
+      "significance": "Neologism for the mechanism that prevents overstating what Lean proves"
+    },
+    {
+      "word": "bilateral audit",
+      "frequency": 2,
+      "significance": "Central concept of the corpus; cross-domain verification framework"
+    },
+    {
+      "word": "kill conditions",
+      "frequency": 1,
+      "significance": "Named conditions that would falsify the claims; key to adversarial testing"
+    },
+    {
+      "word": "RichLawIso",
+      "frequency": 1,
+      "significance": "Technical term for a stronger isomorphism level (roles AND transitions preserved)"
+    },
+    {
+      "word": "TriadicIso",
+      "frequency": 1,
+      "significance": "Technical term for the structural isomorphism between quaternion EM and Trinity"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "This document takes a stance of formal rigor and adversarial testing, presenting Lean 4 proofs as the foundation for cross-domain claims.",
+    "Q1_identity": "A technical summary of the Lean 4 formal verification corpus for theophysics, presenting key theorems, isomorphisms, and gaps.",
+    "Q2_domain": "Lives at the intersection of formal mathematics (Lean 4), theoretical physics, and systematic theology.",
+    "Q3_claim": "The corpus provides machine-checkable structural isomorphisms between physics and theology, with the Cross as the unique solution to the Justice/Mercy operator and the Maxwell/Trinity isomorphism as the strongest standalone result.",
+    "Q4_support": "287 theorems proved in Lean 4 with zero sorry/admit; five false positives rejected for Maxwell/Trinity; exhaustive case elimination for Cross uniqueness.",
+    "Q5_dependencies": "Depends on Lean 4 theorem prover, the definitions in Core.lean, and the domain judgments that the formal models faithfully represent historical Maxwell EM and Nicene doctrine.",
+    "Q6_consequences": "Forces that any alternative to the Cross fails at least one of five conditions; that science operates on a substrate it did not build; that the Master Equation is domain-neutral.",
+    "Q7_kill": "Would be destroyed if a Lean proof error is found (contradiction in definitions), if the domain models are shown to be unfaithful representations, or if empirical evidence contradicts the structural claims."
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "Core.lean",
+      "BridgeMatrix.lean",
+      "MasterEquationInvariance.lean",
+      "IsomorphismTest.lean",
+      "JusticeMercyOperator.lean",
+      "MissionReturnOperator.lean"
+    ],
+    "required_by": [
+      "Future empirical validation papers",
+      "Theophysics synthesis documents"
+    ],
+    "parallel_to": [
+      "The bilateral audit empirical papers",
+      "Domain judgment papers"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 42,
+    "total_edges": 20,
+    "dominant_domain": "theology",
+    "dominant_chi": "Q (Quantum/Faith)",
+    "connectivity_score": 9,
+    "one_sentence": "This document provides the formal Lean 4 verification backbone for the theophysics corpus, proving structural isomorphisms between physics and theology with the Cross as the unique solution to the Justice/Mercy operator."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": true,
+      "how": "Grace/faith swap caught by signature layer; both are load-bearing factors in the Master Equation"
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": "Not explicitly discussed; gap GAP-01 for Motion/Will and Weak Force/Moral Conservation"
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "EM/Truth bridge (Law 3) and Coherence/Christ factor; both are load-bearing"
+    },
+    "4_7_love_relationship": {
+      "active": true,
+      "how": "Strong Force \u2245 Love isomorphism (Law 4) and Relativity/Relationship bridge (Law 7)"
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Thermo/Judgment factor and Information/Logos bridge (Law 6); both are load-bearing"
+    },
+    "pairs_active_count": 4
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 9
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 8
+    },
+    "love": {
+      "present": true,
+      "strength": 9
+    },
+    "judgment": {
+      "present": true,
+      "strength": 8
+    },
+    "logos": {
+      "present": true,
+      "strength": 7
+    },
+    "righteousness": {
+      "present": true,
+      "strength": 7
+    },
+    "faith": {
+      "present": true,
+      "strength": 8
+    },
+    "atonement": {
+      "present": true,
+      "strength": 9
+    },
+    "christ": {
+      "present": true,
+      "strength": 10
+    },
+    "operators_present_count": 9
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "Core.lean documentation",
+      "BridgeMatrix.lean documentation",
+      "MasterEquationInvariance.lean documentation"
+    ],
+    "read_after": [
+      "Empirical validation papers",
+      "Domain judgment papers",
+      "Theophysics synthesis"
+    ]
+  }
+}

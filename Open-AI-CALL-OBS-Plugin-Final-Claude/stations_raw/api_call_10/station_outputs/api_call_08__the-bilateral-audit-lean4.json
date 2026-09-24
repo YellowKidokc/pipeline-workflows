@@ -1,0 +1,362 @@
+{
+  "definitions": [
+    {
+      "term": "Lean 4",
+      "plain_definition": "A computer program that checks if mathematical proofs are correct, step by step.",
+      "domain": "mathematics",
+      "used_in_context": "Lean 4 is an interactive theorem prover.",
+      "related_terms": ["theorem prover", "formal verification"]
+    },
+    {
+      "term": "theorem prover",
+      "plain_definition": "A software tool that helps mathematicians write and check proofs.",
+      "domain": "mathematics",
+      "used_in_context": "Lean 4 is an interactive theorem prover.",
+      "related_terms": ["Lean 4", "formal verification"]
+    },
+    {
+      "term": "sorry",
+      "plain_definition": "A placeholder in a proof that says 'I haven't proved this part yet.'",
+      "domain": "mathematics",
+      "used_in_context": "When a theorem compiles with zero sorry or admit placeholders, it means the proof is formally complete.",
+      "related_terms": ["admit", "formal verification"]
+    },
+    {
+      "term": "admit",
+      "plain_definition": "A placeholder in a proof that says 'I'm assuming this part is true without proof.'",
+      "domain": "mathematics",
+      "used_in_context": "When a theorem compiles with zero sorry or admit placeholders, it means the proof is formally complete.",
+      "related_terms": ["sorry", "formal verification"]
+    },
+    {
+      "term": "formally complete",
+      "plain_definition": "Every step of the proof has been checked by a computer and is correct.",
+      "domain": "mathematics",
+      "used_in_context": "When a theorem compiles with zero sorry or admit placeholders, it means the proof is formally complete.",
+      "related_terms": ["formal verification", "Lean 4"]
+    },
+    {
+      "term": "structural",
+      "plain_definition": "Relating to the way parts are arranged or connected, not the content itself.",
+      "domain": "general_academic",
+      "used_in_context": "What it proves is structural: if the definitions are correct, the conclusions follow necessarily.",
+      "related_terms": ["isomorphism", "architecture"]
+    },
+    {
+      "term": "overclaim guard",
+      "plain_definition": "A rule or check that prevents someone from saying something is true when it hasn't been fully proven.",
+      "domain": "general_academic",
+      "used_in_context": "The overclaim guard runs on every theorem in this corpus.",
+      "related_terms": ["adversarial testing", "kill conditions"]
+    },
+    {
+      "term": "corpus",
+      "plain_definition": "A collection of written works or data, here referring to the set of Lean proof files.",
+      "domain": "general_academic",
+      "used_in_context": "The overclaim guard runs on every theorem in this corpus.",
+      "related_terms": ["theorem", "Lean 4"]
+    },
+    {
+      "term": "internally consistent",
+      "plain_definition": "All the parts of a system agree with each other and don't contradict themselves.",
+      "domain": "general_academic",
+      "used_in_context": "Lean proves the architecture is internally consistent.",
+      "related_terms": ["structural", "formal verification"]
+    },
+    {
+      "term": "machine-checkable",
+      "plain_definition": "A statement or proof that a computer can verify as correct.",
+      "domain": "mathematics",
+      "used_in_context": "it makes the structural claims machine-checkable, adversarially testable, and publicly bounded by named kill conditions.",
+      "related_terms": ["formal verification", "Lean 4"]
+    },
+    {
+      "term": "adversarially testable",
+      "plain_definition": "Able to be tested by trying to find flaws or counterexamples, like a legal cross-examination.",
+      "domain": "general_academic",
+      "used_in_context": "it makes the structural claims machine-checkable, adversarially testable, and publicly bounded by named kill conditions.",
+      "related_terms": ["overclaim guard", "false positives"]
+    },
+    {
+      "term": "kill conditions",
+      "plain_definition": "Specific rules that, if violated, mean the whole idea is rejected.",
+      "domain": "general_academic",
+      "used_in_context": "it makes the structural claims machine-checkable, adversarially testable, and publicly bounded by named kill conditions.",
+      "related_terms": ["overclaim guard", "adversarial testing"]
+    },
+    {
+      "term": "isomorphism",
+      "plain_definition": "A mapping between two structures that shows they are essentially the same in form or behavior.",
+      "domain": "mathematics",
+      "used_in_context": "Maxwell / Trinity Isomorphism",
+      "related_terms": ["structural", "mapping"]
+    },
+    {
+      "term": "quaternion",
+      "plain_definition": "A type of number that extends complex numbers, used in 3D rotations and physics.",
+      "domain": "physics",
+      "used_in_context": "Maxwell's original quaternion electromagnetic field structure",
+      "related_terms": ["electromagnetic field", "Maxwell"]
+    },
+    {
+      "term": "electromagnetic field",
+      "plain_definition": "A physical field that carries electric and magnetic forces.",
+      "domain": "physics",
+      "used_in_context": "Maxwell's original quaternion electromagnetic field structure",
+      "related_terms": ["quaternion", "Maxwell"]
+    },
+    {
+      "term": "Nicene Trinitarian",
+      "plain_definition": "Relating to the Christian doctrine of the Trinity as defined at the Council of Nicaea.",
+      "domain": "theology",
+      "used_in_context": "the Nicene Trinitarian relational model",
+      "related_terms": ["Trinity", "relational model"]
+    },
+    {
+      "term": "relational model",
+      "plain_definition": "A way of describing something based on relationships between parts, not just the parts themselves.",
+      "domain": "general_academic",
+      "used_in_context": "the Nicene Trinitarian relational model",
+      "related_terms": ["Trinity", "Nicene Trinitarian"]
+    },
+    {
+      "term": "false positives",
+      "plain_definition": "Things that look like they fit a pattern but actually don't when checked carefully.",
+      "domain": "general_academic",
+      "used_in_context": "Five specific false positives were tested and rejected.",
+      "related_terms": ["adversarial testing", "overclaim guard"]
+    },
+    {
+      "term": "load-bearing",
+      "plain_definition": "Essential for the whole structure to work; if removed, the structure collapses.",
+      "domain": "general_academic",
+      "used_in_context": "Every guard is load-bearing — removing any single guard admits the corresponding false positive.",
+      "related_terms": ["guard", "kill conditions"]
+    },
+    {
+      "term": "guard",
+      "plain_definition": "A condition or check that must be satisfied for something to be considered valid.",
+      "domain": "general_academic",
+      "used_in_context": "Every guard is load-bearing — removing any single guard admits the corresponding false positive.",
+      "related_terms": ["load-bearing", "kill conditions"]
+    },
+    {
+      "term": "Modalism",
+      "plain_definition": "A Christian heresy that says the Father, Son, and Holy Spirit are just different modes or roles of one person, not distinct persons.",
+      "domain": "theology",
+      "used_in_context": "Modalism — no relational distinctness, persons collapse",
+      "related_terms": ["Trinity", "Nicene Trinitarian"]
+    },
+    {
+      "term": "relational distinctness",
+      "plain_definition": "The idea that each person in a relationship is a separate, unique individual, not just a different aspect of the same person.",
+      "domain": "theology",
+      "used_in_context": "Modalism — no relational distinctness, persons collapse",
+      "related_terms": ["Modalism", "Trinity"]
+    },
+    {
+      "term": "triadic structure",
+      "plain_definition": "A structure made of three parts that are related in a specific way.",
+      "domain": "general_academic",
+      "used_in_context": "Static single-field EM — not full dynamic triadic structure",
+      "related_terms": ["isomorphism", "Trinity"]
+    },
+    {
+      "term": "role profiles",
+      "plain_definition": "The specific functions or jobs that each part of a system has.",
+      "domain": "general_academic",
+      "used_in_context": "Generic 3-part system — wrong role profiles",
+      "related_terms": ["triadic structure", "isomorphism"]
+    },
+    {
+      "term": "exhaustive case elimination",
+      "plain_definition": "A proof method that checks every possible option and shows only one works.",
+      "domain": "mathematics",
+      "used_in_context": "The theorem proves not just that the Cross satisfies all five — it proves by exhaustive case elimination that the Cross is the only configuration that does.",
+      "related_terms": ["theorem prover", "formal verification"]
+    },
+    {
+      "term": "convergence conditions",
+      "plain_definition": "A set of requirements that all must be met for something to be considered a valid solution.",
+      "domain": "general_academic",
+      "used_in_context": "The Cross configuration meets all five convergence conditions simultaneously",
+      "related_terms": ["kill conditions", "guard"]
+    },
+    {
+      "term": "justice",
+      "plain_definition": "Fairness, especially in giving people what they deserve.",
+      "domain": "theology",
+      "used_in_context": "proportional justice, impartiality, truth-naming, victim restoration, and voluntary cost-bearing",
+      "related_terms": ["mercy", "atonement"]
+    },
+    {
+      "term": "mercy",
+      "plain_definition": "Showing kindness or forgiveness to someone who deserves punishment.",
+      "domain": "theology",
+      "used_in_context": "proportional justice, impartiality, truth-naming, victim restoration, and voluntary cost-bearing",
+      "related_terms": ["justice", "atonement"]
+    },
+    {
+      "term": "impartiality",
+      "plain_definition": "Treating everyone equally, without favoritism.",
+      "domain": "general_academic",
+      "used_in_context": "proportional justice, impartiality, truth-naming, victim restoration, and voluntary cost-bearing",
+      "related_terms": ["justice", "fairness"]
+    },
+    {
+      "term": "truth-naming",
+      "plain_definition": "Calling something what it really is, especially when it's wrong or harmful.",
+      "domain": "theology",
+      "used_in_context": "proportional justice, impartiality, truth-naming, victim restoration, and voluntary cost-bearing",
+      "related_terms": ["justice", "repentance"]
+    },
+    {
+      "term": "victim restoration",
+      "plain_definition": "Making things right for the person who was harmed.",
+      "domain": "theology",
+      "used_in_context": "proportional justice, impartiality, truth-naming, victim restoration, and voluntary cost-bearing",
+      "related_terms": ["justice", "mercy"]
+    },
+    {
+      "term": "voluntary cost-bearing",
+      "plain_definition": "Choosing to take on a burden or punishment yourself, even though you don't have to.",
+      "domain": "theology",
+      "used_in_context": "proportional justice, impartiality, truth-naming, victim restoration, and voluntary cost-bearing",
+      "related_terms": ["atonement", "Cross"]
+    },
+    {
+      "term": "cheap grace",
+      "plain_definition": "The idea that forgiveness is easy and doesn't require any real change or cost.",
+      "domain": "theology",
+      "used_in_context": "Waiving the debt entirely fails justice — the cost is not paid. Cheap grace formally eliminated.",
+      "related_terms": ["grace", "justice"]
+    },
+    {
+      "term": "substrate",
+      "plain_definition": "The underlying layer or foundation that supports everything else.",
+      "domain": "general_academic",
+      "used_in_context": "science operates on a substrate it did not build and cannot ground from within",
+      "related_terms": ["foundation", "architecture"]
+    },
+    {
+      "term": "metaphysically",
+      "plain_definition": "Relating to the fundamental nature of reality, beyond what physics can measure.",
+      "domain": "philosophy",
+      "used_in_context": "They do not prove the claim metaphysically — they show the architecture that the claim requires already compiles formally",
+      "related_terms": ["ontological", "epistemological"]
+    },
+    {
+      "term": "multiplicative architecture",
+      "plain_definition": "A system where all parts are multiplied together, so if one part is zero, the whole thing is zero.",
+      "domain": "mathematics",
+      "used_in_context": "This is the multiplicative architecture: no compensation is possible.",
+      "related_terms": ["zero-collapse", "product"]
+    },
+    {
+      "term": "zero-collapse",
+      "plain_definition": "The property that if any single factor is zero, the whole system fails completely.",
+      "domain": "mathematics",
+      "used_in_context": "The zero-collapse architecture — any single zero kills the product.",
+      "related_terms": ["multiplicative architecture", "product"]
+    },
+    {
+      "term": "additive scoring frameworks",
+      "plain_definition": "A system where scores are added together, so a weakness in one area can be balanced by strength in another.",
+      "domain": "general_academic",
+      "used_in_context": "This formalizes why the additive scoring frameworks used by every existing cross-domain evaluation system are structurally weaker",
+      "related_terms": ["multiplicative architecture", "zero-collapse"]
+    },
+    {
+      "term": "domain-neutral",
+      "plain_definition": "Not belonging to any specific field of study; applicable to many areas.",
+      "domain": "general_academic",
+      "used_in_context": "The equation is genuinely domain-neutral — it does not belong to either register.",
+      "related_terms": ["invariance", "substrate"]
+    },
+    {
+      "term": "boundary conditions",
+      "plain_definition": "The limits or edges of a system that determine how it behaves.",
+      "domain": "physics",
+      "used_in_context": "What differs is boundary conditions — and boundary conditions are where worldview enters.",
+      "related_terms": ["substrate", "domain-neutral"]
+    },
+    {
+      "term": "signature layer",
+      "plain_definition": "An additional check that ensures the labels or meanings of variables are correct, not just their values.",
+      "domain": "general_academic",
+      "used_in_context": "But the signature layer catches the swap. Both product AND signature are required.",
+      "related_terms": ["product", "guard"]
+    },
+    {
+      "term": "semantic swaps",
+      "plain_definition": "Swapping the meanings or labels of things, even if the numbers stay the same.",
+      "domain": "general_academic",
+      "used_in_context": "Product alone is blind to semantic swaps — grace and faith can be exchanged and the product passes.",
+      "related_terms": ["signature layer", "guard"]
+    },
+    {
+      "term": "adversarial boundary",
+      "plain_definition": "A limit or edge of a system that is tested by trying to break it.",
+      "domain": "general_academic",
+      "used_in_context": "This theorem named an adversarial boundary inside the system before critics could.",
+      "related_terms": ["adversarial testing", "guard"]
+    },
+    {
+      "term": "domain review",
+      "plain_definition": "A check by experts in a specific field to see if the model matches reality.",
+      "domain": "general_academic",
+      "used_in_context": "The guard is domain review.",
+      "related_terms": ["spec gap", "empirical validation"]
+    },
+    {
+      "term": "moral burden domain",
+      "plain_definition": "The area of ethics dealing with guilt, responsibility, and the need for forgiveness.",
+      "domain": "theology",
+      "used_in_context": "In the moral burden domain, two negatives stay negative.",
+      "related_terms": ["sign conversion", "justice"]
+    },
+    {
+      "term": "Christic conversion",
+      "plain_definition": "The idea that only Jesus Christ can change a person's moral state from guilty to forgiven.",
+      "domain": "theology",
+      "used_in_context": "External Christic conversion is the only operation that flips a negative burden to positive.",
+      "related_terms": ["atonement", "Cross"]
+    },
+    {
+      "term": "ontologically prior",
+      "plain_definition": "Existing more fundamentally; being the basis for something else's existence.",
+      "domain": "philosophy",
+      "used_in_context": "good_is_ontologically_prior",
+      "related_terms": ["ontological", "metaphysically"]
+    },
+    {
+      "term": "parasitic",
+      "plain_definition": "Depending on something else for its existence, like a parasite on a host.",
+      "domain": "general_academic",
+      "used_in_context": "positive is generative, negative is parasitic.",
+      "related_terms": ["ontologically prior", "good"]
+    },
+    {
+      "term": "contingently prior",
+      "plain_definition": "Existing first only by chance or circumstance, not by necessity.",
+      "domain": "philosophy",
+      "used_in_context": "Good is structurally prior, not contingently prior.",
+      "related_terms": ["ontologically prior", "necessary"]
+    },
+    {
+      "term": "structural requirement",
+      "plain_definition": "A condition that must be true for the system to work at all.",
+      "domain": "general_academic",
+      "used_in_context": "It is a structural requirement of the coherence architecture.",
+      "related_terms": ["load-bearing", "guard"]
+    },
+    {
+      "term": "isomorphism test",
+      "plain_definition": "A check to see if two structures are essentially the same.",
+      "domain": "mathematics",
+      "used_in_context": "IsomorphismTest.lean",
+      "related_terms": ["isomorphism", "mapping"]
+    },
+    {
+      "term": "RichLawIso",
+      "plain_definition

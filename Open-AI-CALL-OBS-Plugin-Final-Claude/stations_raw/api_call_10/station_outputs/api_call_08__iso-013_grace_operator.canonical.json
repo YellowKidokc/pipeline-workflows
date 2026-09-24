@@ -1,0 +1,657 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "Operator Algebra",
+        "type": "mathematics",
+        "strength": 9
+      },
+      {
+        "name": "Quantum Mechanics",
+        "type": "physics",
+        "strength": 8
+      },
+      {
+        "name": "Christian Theology",
+        "type": "theology",
+        "strength": 9
+      },
+      {
+        "name": "Soteriology",
+        "type": "theology",
+        "strength": 8
+      },
+      {
+        "name": "Information Theory",
+        "type": "mathematics",
+        "strength": 5
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": true,
+        "role": "Grace operator as non-unitary, idempotent projection mapping both states to +1",
+        "strength": 10
+      },
+      {
+        "variable": "M",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Grace-coupled energy E_grace = integral G(t) rho(x,t) d^3x",
+        "strength": 4
+      },
+      {
+        "variable": "S",
+        "present": true,
+        "role": "Love as the nature of the grace operator's output state (+1)",
+        "strength": 5
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Judgment as the irreversible sign-flip from -1 to +1",
+        "strength": 5
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Logos as the informational structure of the operator",
+        "strength": 4
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "Relationship as the voluntary coupling required for grace reception",
+        "strength": 6
+      },
+      {
+        "variable": "Q",
+        "present": true,
+        "role": "Faith as the voluntary reception boundary condition BC8",
+        "strength": 7
+      },
+      {
+        "variable": "F",
+        "present": true,
+        "role": "Sin as the -1 state that grace reverses",
+        "strength": 6
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence as the state restored by grace (from entropy/sin)",
+        "strength": 7
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A1.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A5.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC6",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A1.3",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "T3.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "External grace as non-derivable input from outside the system",
+        "strength": 9
+      },
+      {
+        "id": "BC7",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC8",
+        "invoked": true,
+        "how": "Voluntary coupling required for grace operator to act; alpha(u=1)=0",
+        "strength": 9
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "source of grace",
+          "external origin",
+          "ground of being"
+        ]
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "mediator of grace",
+          "once-for-all sacrifice",
+          "image of God"
+        ]
+      },
+      "spirit": {
+        "present": true,
+        "manifestations": [
+          "power of transformation",
+          "presence in sanctification",
+          "breath of new life"
+        ]
+      },
+      "trinitarian_structure": "implicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-013",
+        "domain_a": "Non-Unitary Operator Algebra",
+        "domain_b": "Doctrine of Grace",
+        "strength": 8,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-002",
+        "domain_a": "Impossibility Theorems",
+        "domain_b": "Terminus Sui",
+        "strength": 7,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-003",
+        "domain_a": "Entropy",
+        "domain_b": "Sin",
+        "strength": 6,
+        "type": "analogical"
+      },
+      {
+        "id": "ISO-001",
+        "domain_a": "Trinity",
+        "domain_b": "Triune God",
+        "strength": 5,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-019",
+        "domain_a": "Boundary Conditions",
+        "domain_b": "Free Will",
+        "strength": 7,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "Grace",
+        "context": "Prevenient grace as external divine intervention flipping moral sign",
+        "weight": 10
+      },
+      {
+        "concept": "Justification",
+        "context": "Idempotent application of grace (once for all)",
+        "weight": 8
+      },
+      {
+        "concept": "Sanctification",
+        "context": "Ongoing unitary transformation on already-justified state",
+        "weight": 7
+      },
+      {
+        "concept": "Sola Gratia",
+        "context": "Mathematical version: alpha=1 for idempotency",
+        "weight": 6
+      },
+      {
+        "concept": "Pelagianism",
+        "context": "Attempt to generate G from internal Hamiltonian",
+        "weight": 5
+      },
+      {
+        "concept": "Irrevocability",
+        "context": "Romans 11:29; det(G)=0 means no inverse",
+        "weight": 7
+      },
+      {
+        "concept": "Atonement",
+        "context": "Once-for-all sacrifice (Hebrews 10:14)",
+        "weight": 6
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "Idempotency",
+        "context": "G^2 = G; once is enough",
+        "weight": 9
+      },
+      {
+        "concept": "Non-unitarity",
+        "context": "G dagger G != I; irreversible",
+        "weight": 9
+      },
+      {
+        "concept": "Externality",
+        "context": "Operator not generated by internal Hamiltonian",
+        "weight": 8
+      },
+      {
+        "concept": "Rank deficiency",
+        "context": "rank(G)=1; collapses state space",
+        "weight": 7
+      },
+      {
+        "concept": "Singularity",
+        "context": "det(G)=0; no inverse exists",
+        "weight": 7
+      },
+      {
+        "concept": "Circularity",
+        "context": "Reverse-engineering risk: properties selected to match theology",
+        "weight": 8
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "love",
+        "present": true,
+        "strength": 7
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "patience",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 5
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "self_control",
+        "present": false,
+        "strength": 0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "chi_variables:G",
+      "to": "isomorphisms:ISO-013",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "isomorphisms:ISO-013",
+      "to": "axioms:BC2",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "isomorphisms:ISO-013",
+      "to": "axioms:BC8",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "isomorphisms:ISO-013",
+      "to": "isomorphisms:ISO-002",
+      "relation": "derives_from",
+      "weight": 8
+    },
+    {
+      "from": "isomorphisms:ISO-013",
+      "to": "isomorphisms:ISO-003",
+      "relation": "reverses",
+      "weight": 7
+    },
+    {
+      "from": "isomorphisms:ISO-013",
+      "to": "isomorphisms:ISO-001",
+      "relation": "derives_from",
+      "weight": 6
+    },
+    {
+      "from": "isomorphisms:ISO-013",
+      "to": "isomorphisms:ISO-019",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "theological_concepts:Justification",
+      "to": "theological_concepts:Sanctification",
+      "relation": "distinct_from",
+      "weight": 8
+    },
+    {
+      "from": "theological_concepts:Justification",
+      "to": "logical_concepts:Idempotency",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "theological_concepts:Sanctification",
+      "to": "logical_concepts:Non-unitarity",
+      "relation": "contrasts_with",
+      "weight": 6
+    },
+    {
+      "from": "theological_concepts:Pelagianism",
+      "to": "logical_concepts:Externality",
+      "relation": "contradicts",
+      "weight": 8
+    },
+    {
+      "from": "theological_concepts:Irrevocability",
+      "to": "logical_concepts:Singularity",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "logical_concepts:Circularity",
+      "to": "isomorphisms:ISO-013",
+      "relation": "qualifies",
+      "weight": 8
+    },
+    {
+      "from": "chi_variables:Q",
+      "to": "axioms:BC8",
+      "relation": "maps_to",
+      "weight": 7
+    },
+    {
+      "from": "chi_variables:F",
+      "to": "isomorphisms:ISO-003",
+      "relation": "maps_to",
+      "weight": 6
+    },
+    {
+      "from": "chi_variables:C",
+      "to": "isomorphisms:ISO-003",
+      "relation": "restores",
+      "weight": 7
+    },
+    {
+      "from": "domains:Operator Algebra",
+      "to": "domains:Christian Theology",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "trinity:father",
+      "to": "theological_concepts:Grace",
+      "relation": "source_of",
+      "weight": 9
+    },
+    {
+      "from": "trinity:son",
+      "to": "theological_concepts:Atonement",
+      "relation": "mediates",
+      "weight": 8
+    },
+    {
+      "from": "trinity:spirit",
+      "to": "theological_concepts:Sanctification",
+      "relation": "powers",
+      "weight": 7
+    }
+  ],
+  "tags": {
+    "primary": [
+      "grace-operator",
+      "non-unitary-transformation",
+      "sola-gratia",
+      "operator-algebra",
+      "theophysics"
+    ],
+    "pillar": [
+      "pillar/theology",
+      "pillar/physics",
+      "pillar/mathematics"
+    ],
+    "series": "isomorphism",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "Ephesians 2:8-9",
+        "context": "Grace externality and sufficiency"
+      },
+      {
+        "ref": "Hebrews 10:14",
+        "context": "Once-for-all completion"
+      },
+      {
+        "ref": "Romans 11:29",
+        "context": "Irrevocability of divine gifts"
+      }
+    ],
+    "academic": [
+      {
+        "ref": "von Neumann, 1932",
+        "context": "Projection operators in measurement theory"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "ISO-001",
+        "context": "Trinity as source of grace operator"
+      },
+      {
+        "ref": "ISO-002",
+        "context": "Terminus Sui as necessity for external intervention"
+      },
+      {
+        "ref": "ISO-003",
+        "context": "Entropy/Sin as what grace reverses"
+      },
+      {
+        "ref": "ISO-019",
+        "context": "Boundary conditions including voluntary reception BC8"
+      }
+    ],
+    "total_count": 7
+  },
+  "word_anomalies": [
+    {
+      "word": "idempotent",
+      "frequency": 12,
+      "significance": "Core property of grace operator; maps to 'once is enough'"
+    },
+    {
+      "word": "non-unitary",
+      "frequency": 10,
+      "significance": "Irreversibility of grace; cannot be undone"
+    },
+    {
+      "word": "rank-1",
+      "frequency": 4,
+      "significance": "Collapses state space to one dimension"
+    },
+    {
+      "word": "reverse-engineering",
+      "frequency": 3,
+      "significance": "Epistemic caveat about direction of construction"
+    },
+    {
+      "word": "Pelagianism",
+      "frequency": 2,
+      "significance": "Heresy that attempts self-generated grace"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "Analytical and self-critical; acknowledges reverse-engineering risk while defending structural validity",
+    "Q1_identity": "An isomorphism record formalizing the doctrine of grace as a non-unitary, idempotent operator in Hilbert space",
+    "Q2_domain": "Intersection of operator algebra, quantum mechanics, and Christian soteriology",
+    "Q3_claim": "Grace has the structural properties of an idempotent, non-unitary, rank-1 projection operator that is externally sourced and requires voluntary reception",
+    "Q4_support": "Mathematical properties of projection operators; theological doctrines from Ephesians, Hebrews, Romans; impossibility theorems from ISO-002",
+    "Q5_dependencies": "ISO-002 (Terminus Sui), ISO-003 (Entropy/Sin), BC8 (Voluntary coupling), A9.1, A9.2, HM.3, HM.4",
+    "Q6_consequences": "Justification is idempotent (once for all); sanctification is a different operator; Pelagianism is structurally incoherent; sola gratia is mathematically required",
+    "Q7_kill": "Show a closed system can spontaneously flip sign; show G^2 != G; show grace is reversible; demonstrate a self-generated grace tradition that works"
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "ISO-002",
+      "ISO-003",
+      "ISO-019",
+      "BC8",
+      "A9.1",
+      "A9.2"
+    ],
+    "required_by": [
+      "ISO-001",
+      "ISO-014"
+    ],
+    "parallel_to": [
+      "ISO-003",
+      "ISO-019"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 35,
+    "total_edges": 20,
+    "dominant_domain": "Operator Algebra",
+    "dominant_chi": "G (Grace)",
+    "connectivity_score": 8,
+    "one_sentence": "Formalizes the doctrine of grace as a non-unitary, idempotent projection operator that requires external origin and voluntary reception, with acknowledged reverse-engineering risk."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": true,
+      "how": "Grace operator G requires faith (BC8 voluntary coupling) to act"
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Grace restores coherence (C) from sin/entropy (F)"
+    },
+    "4_7_love_relationship": {
+      "active": true,
+      "how": "Love (S) is the output state (+1); relationship (R) is the voluntary coupling"
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Judgment (T) is the irreversible sign-flip; Logos (K) is the informational structure"
+    },
+    "pairs_active_count": 4
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 10
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": false,
+      "strength": 0
+    },
+    "love": {
+      "present": true,
+      "strength": 7
+    },
+    "judgment": {
+      "present": true,
+      "strength": 5
+    },
+    "logos": {
+      "present": true,
+      "strength": 4
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": true,
+      "strength": 7
+    },
+    "atonement": {
+      "present": true,
+      "strength": 6
+    },
+    "christ": {
+      "present": true,
+      "strength": 8
+    },
+    "operators_present_count": 7
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "ISO-002",
+      "ISO-003",
+      "ISO-019"
+    ],
+    "read_after": [
+      "ISO-001",
+      "ISO-014"
+    ]
+  }
+}

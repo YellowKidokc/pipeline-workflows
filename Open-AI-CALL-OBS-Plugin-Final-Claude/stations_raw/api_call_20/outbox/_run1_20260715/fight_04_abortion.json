@@ -1,0 +1,102 @@
+{
+  "spec_version": "1.0-trilemma-resolver",
+  "status": "OK",
+  "fight": {
+    "id": "abortion",
+    "familiar_name": "Abortion",
+    "years_running": 50,
+    "poles": [
+      "My body, my choice",
+      "Abortion is murder"
+    ]
+  },
+  "reader_anchor": {
+    "opening_prose": "You are four years old. You are sitting on the kitchen floor with a cardboard box of crayons. The box has a hole torn in the corner, and you have lined the crayons up by color, then by size, then by how much the paper is peeled. You are not coloring. You are arranging. The arrangement matters because you are the one who decided it. Nobody told you to do it. Nobody told you it was wrong. You are the sovereign of the crayons. Then your older sister walks in, picks up the red one, and snaps it in half. She says, 'I needed it.' You do not yet have the word 'violation.' You have the feeling. It lives in your chest as a hot, wordless knot. The feeling is not about the crayon. The crayon is a dollar. The feeling is about the boundary. You drew a line around your things, your space, your decision, and someone crossed it without asking. That feeling is the seed of every rights claim you will ever make. But here is what nobody told you: the sister also had a feeling. She looked at the red crayon and saw a need, not a theft. She did not see your line. She saw her lack. Two sovereigns, one crayon. You have been replaying that moment your whole life, in bigger rooms, with bigger stakes, and you have never once asked: what if both sovereigns are right? What if the fight is not about who owns the crayon, but about the fact that the crayon is already attached to something neither of you made?",
+    "universal_experience": "A child having a possession taken by a sibling without permission.",
+    "checkable_detail": "You felt the violation in your chest before you had words for it. You did not calculate fairness. You felt the boundary break.",
+    "quiet_theft": "You were trained to argue about who owns the thing, and never trained to ask who made the thing and what the thing already is.",
+    "embodiment_note": "The fight over abortion is the same structure: two sovereigns, one body, one life. The fight is about whose line is real. The anchor shows the reader they already know the shape of the fight from before they could talk."
+  },
+  "poles": [
+    {
+      "label": "Bodily autonomy maximizer",
+      "steelman": "A woman has absolute sovereignty over her own body. No person, state, or entity may compel her to use her body to sustain another life against her will. Forced gestation is a physical invasion of the most intimate kind, and no right to life includes the right to use someone else's body without consent. The legal right to terminate a pregnancy is a necessary protection against state-enforced servitude. The alternative is a world where women are incubators, not persons.",
+      "accusation_against_others": "The anti-abortion position forces women to bear the physical, emotional, and economic costs of pregnancy against their will, treating them as vessels rather than rights-bearing individuals.",
+      "accusation_is_true_because": "Under a total abortion ban, the woman bears the full cost of gestation (physical risk, lost income, lifelong bodily changes) for a pregnancy she did not consent to. She did not create the damage of unwanted pregnancy alone, but she is forced to pay the entire bill."
+    },
+    {
+      "label": "Life protection maximizer",
+      "steelman": "The unborn child is a living human being from conception. It has a right to life that does not depend on being wanted or convenient. Abortion is the intentional killing of an innocent human being, and no right to bodily autonomy includes the right to kill another person. The state has a compelling interest in protecting all human life, especially the most vulnerable. The alternative is a world where some humans are disposable based on location and size.",
+      "accusation_against_others": "The pro-choice position allows the killing of a defenseless human being to avoid inconvenience, treating the unborn as a parasite rather than a person.",
+      "accusation_is_true_because": "Under unrestricted abortion access, the unborn child bears the full cost of the unwanted pregnancy (its life). The child did not create the pregnancy, but it is the one who dies."
+    }
+  ],
+  "ledger": {
+    "D_definition": "The unwanted pregnancy: a situation where a woman is pregnant against her will, and a human life exists that will die if the pregnancy is terminated.",
+    "D_is_real_evidence": "Unwanted pregnancies occur at a rate of approximately 3 million per year in the US (Guttmacher Institute). Each involves a woman who does not want to be pregnant and a fetus that will die if aborted. The damage is the conflict itself: two incompatible interests in one body.",
+    "victim_class": "Both: the woman (whose body is occupied against her will) and the fetus (whose life is at risk). The fight is over which victim is visible.",
+    "causal_class": "Diffuse. The pregnancy is caused by biological reproduction, not by a single identifiable offender. Both poles agree that the woman did not cause the pregnancy alone; they disagree on whether the fetus is an offender.",
+    "per_pole_transfers": [
+      {
+        "pole": "Bodily autonomy maximizer",
+        "T_A": "Woman is relieved of pregnancy (restoration of bodily control)",
+        "T_B": "Fetus bears the cost of death",
+        "J": 1.0,
+        "M": 0.0,
+        "W_note": "Woman's will is satisfied; fetus has no will to satisfy",
+        "who_eats_deficit": "The fetus (unborn child) pays with its life"
+      },
+      {
+        "pole": "Life protection maximizer",
+        "T_A": "Fetus is allowed to live (restoration of life)",
+        "T_B": "Woman bears the cost of forced gestation",
+        "J": 1.0,
+        "M": 0.0,
+        "W_note": "Fetus's will to live is satisfied; woman's will is violated",
+        "who_eats_deficit": "The woman pays with her bodily autonomy and health"
+      }
+    ]
+  },
+  "clear_win": {
+    "type": "structural_invariant",
+    "statement": "The abortion fight is a pure seating argument on the J + M = 1 line. Both poles are correct: each side's accusation is true. The woman is forced to bear the cost under a ban; the fetus is forced to bear the cost under access. The ledger cannot close because the deficit is a single body containing two persons with opposing interests, and no internal transfer can satisfy both. The fight is not about whether abortion is wrong; it is about which victim the law will see. The line proves that no legal position retires the deficit\u2014it only chooses which side pays.",
+    "derivation_steps": [
+      "1. Define D = unwanted pregnancy: a situation where a woman is pregnant against her will and a human life exists.",
+      "2. Under pole A (abortion access): T_A = woman relieved of pregnancy, T_B = fetus dies. J = 1 (woman fully restored), M = 0 (fetus bears full cost). The fetus eats the deficit.",
+      "3. Under pole B (abortion ban): T_A = fetus lives, T_B = woman forced to gestate. J = 1 (fetus fully restored), M = 0 (woman bears full cost). The woman eats the deficit.",
+      "4. In both cases, J + M = 1. No position on the line gives both J=1 and M=1 simultaneously.",
+      "5. The accusations are both true: pole A correctly says the ban forces the woman to pay; pole B correctly says access forces the fetus to pay.",
+      "6. The fight is a seating argument on the line. The line itself is the villain."
+    ],
+    "dinner_table_sentence": "Both sides are right: one body, two persons, no internal fix\u2014the fight is about which victim pays.",
+    "why_undeniable": "The derivation requires no empirical claim about when life begins. It only requires that both poles believe their victim is real. The line holds regardless of personhood status. A hostile reader must concede that each pole's accusation is true under the other pole's policy, and that no policy can make both accusations false."
+  },
+  "off_the_line": {
+    "proximate": {
+      "structures": [
+        "Voluntary pregnancy support networks that provide financial, medical, and emotional support to women who choose to carry to term, absorbing some of the cost of the ban.",
+        "Voluntary abortion funds that cover the cost of the procedure and travel for women who choose to terminate, absorbing some of the cost of access.",
+        "Adoption as a voluntary transfer of the child to a willing family, relocating the cost of raising the child."
+      ],
+      "honest_limit": "These structures relocate the cost voluntarily but do not retire the deficit. The woman still bears the physical cost of gestation under a ban; the fetus still dies under access. The altruism lemma holds: internal love relocates, it does not retire."
+    },
+    "ultimate": {
+      "configuration": "A voluntary external cost-bearer who (1) is neither the woman nor the fetus, (2) acts voluntarily, (3) absorbs the full cost of the unwanted pregnancy (both the physical cost of gestation and the life of the child), (4) has capacity to absorb without being destroyed, (5) preserves truth (the damage is acknowledged, not denied).",
+      "candidate": "The framework identifies no historical candidate for this fight. The cost is too high: no external being can gestate a pregnancy for another woman or resurrect a terminated fetus. The trilemma reveals that this fight has no human resolution. The deficit is real and permanent.",
+      "door_note": "The door opens from the reader's side only. No coercion. The framework does not demand a solution; it demands honesty about the cost."
+    }
+  },
+  "anti_gaming_audit": {
+    "blind_label": "pass: no party names used; poles defined by mechanism (bodily control vs life protection)",
+    "symmetry": "pass: the win applies regardless of which pole proposed the policy; both are on the line",
+    "counterfactual": "pass: D (unwanted pregnancy) exists absent any policy; it is a biological reality",
+    "radius_consistency": "pass: benefits and costs measured at the same level (the pregnant woman and the fetus)",
+    "cost_visibility": "pass: the costs are visible to those paying them (woman under ban, fetus under access)",
+    "no_person_score": "pass: actions and positions scored, not souls; no moral judgment on individuals",
+    "unknowns_tracked": "pass: personhood is not resolved; the derivation holds regardless"
+  },
+  "falsification": {
+    "kill_condition_specific": "A demonstration that the fetus is not a person (pole A) or that the woman's bodily autonomy is not a right (pole B) would break the win, but the win does not depend on either claim\u2014it only requires that each pole believes its victim is real. The win breaks if one pole concedes its victim is not real.",
+    "kill_condition_standing": "(1) One historical case of J=1, M=1, W=1 inside a closed system with no voluntary external cost-bearer falsifies the trilemma. (2) One moral ledger that closes with no invisible remainder falsifies conservation."
+  }
+}

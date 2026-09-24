@@ -1,0 +1,612 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "Physics",
+        "type": "physics",
+        "strength": 9
+      },
+      {
+        "name": "Theology",
+        "type": "theology",
+        "strength": 10
+      },
+      {
+        "name": "Information Theory",
+        "type": "information",
+        "strength": 8
+      },
+      {
+        "name": "Consciousness",
+        "type": "biology",
+        "strength": 7
+      },
+      {
+        "name": "Morality",
+        "type": "philosophy",
+        "strength": 8
+      },
+      {
+        "name": "Cosmology",
+        "type": "physics",
+        "strength": 7
+      },
+      {
+        "name": "Mathematics",
+        "type": "mathematics",
+        "strength": 9
+      },
+      {
+        "name": "Eschatology",
+        "type": "theology",
+        "strength": 6
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": true,
+        "role": "Compressed theology domain; grace operator, external coherence source",
+        "strength": 9
+      },
+      {
+        "variable": "M",
+        "present": true,
+        "role": "Compressed moral domain; coherence-morality identity",
+        "strength": 8
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Energy/consciousness bridge; substrate, coherence, thermodynamic openness",
+        "strength": 7
+      },
+      {
+        "variable": "S",
+        "present": true,
+        "role": "Entropy; disorder pulling against coherence",
+        "strength": 8
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Judgment/Time; temporal-informational axis",
+        "strength": 6
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Compressed information domain; Shannon/Kolmogorov behavior",
+        "strength": 8
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "Relational structure; coupled to grace and coherence",
+        "strength": 7
+      },
+      {
+        "variable": "Q",
+        "present": true,
+        "role": "Compressed quantum domain; modified Schr\u00f6dinger collapse",
+        "strength": 8
+      },
+      {
+        "variable": "F",
+        "present": true,
+        "role": "Weak/Sin-Decay; moral axis with meaning",
+        "strength": 6
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence; organized structure, terminus solution",
+        "strength": 9
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "Existence (Self-Grounding) \u2192 'There is a Source'; \u03c7(\u03c7) = \u03c7"
+      },
+      {
+        "id": "A1.2",
+        "invoked": false,
+        "how": "Not directly invoked"
+      },
+      {
+        "id": "A2.1",
+        "invoked": false,
+        "how": "Not directly invoked"
+      },
+      {
+        "id": "A2.2",
+        "invoked": false,
+        "how": "Not directly invoked"
+      },
+      {
+        "id": "A5.1",
+        "invoked": false,
+        "how": "Not directly invoked"
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": "Not directly invoked"
+      },
+      {
+        "id": "BC6",
+        "invoked": false,
+        "how": "Not directly invoked"
+      },
+      {
+        "id": "A1.3",
+        "invoked": false,
+        "how": "Not directly invoked"
+      },
+      {
+        "id": "T3.1",
+        "invoked": true,
+        "how": "Kill condition: prove coherence can self-increase in a closed system (violating T3.1)"
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "Open System (Grace External) \u2192 'The Source intervenes'; universe receives external negentropic input"
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "Conservation of Information \u2192 'The Source preserves us'; soul pattern survives physical decoherence"
+      },
+      {
+        "id": "BC8",
+        "invoked": false,
+        "how": "Not directly invoked"
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "Source",
+          "Ground",
+          "Self-grounding"
+        ]
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "Image",
+          "Word",
+          "Mediator",
+          "Christ",
+          "Terminus"
+        ]
+      },
+      "spirit": {
+        "present": true,
+        "manifestations": [
+          "Power",
+          "Presence",
+          "Movement",
+          "Energy"
+        ]
+      },
+      "trinitarian_structure": "explicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-012",
+        "domain_a": "Sign Algebra (\u03c3 = \u00b11)",
+        "domain_b": "Grace/Fall Theology",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-DT-001",
+        "domain_a": "Mathematics",
+        "domain_b": "Morality/Divine Attributes",
+        "strength": 9,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "Grace",
+        "context": "External source; grace operator \u011c\u00b2 = \u011c, \u011c\u2020\u011c \u2260 I; formal structure of Reformed soteriology",
+        "weight": 10
+      },
+      {
+        "concept": "Salvation",
+        "context": "Impossibility of self-salvation; sign conservation theorem [\u03c3, U] = 0",
+        "weight": 8
+      },
+      {
+        "concept": "Christ",
+        "context": "Terminus solution \u03c7 = \ud835\udc9e = Christ; maximum coherence identification",
+        "weight": 10
+      },
+      {
+        "concept": "Eternal Life",
+        "context": "Conservation of information; soul pattern survives physical decoherence",
+        "weight": 6
+      },
+      {
+        "concept": "Creation",
+        "context": "Open system; creation open to its Creator",
+        "weight": 7
+      },
+      {
+        "concept": "Sin",
+        "context": "Sign operator; self-flip impossible; moral axis",
+        "weight": 6
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "Compression",
+        "context": "Lossless compression from 188 axioms to 1 equation",
+        "weight": 9
+      },
+      {
+        "concept": "Isomorphism",
+        "context": "Structure-preserving bijection between domains",
+        "weight": 9
+      },
+      {
+        "concept": "Projection",
+        "context": "Domain equations as projections of the LLC onto different coordinate systems",
+        "weight": 9
+      },
+      {
+        "concept": "Kill Condition",
+        "context": "Precisely stated falsification conditions for claims",
+        "weight": 8
+      },
+      {
+        "concept": "Open System",
+        "context": "System receiving external input; energy not conserved but balanced",
+        "weight": 8
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "love",
+        "present": true,
+        "strength": 7
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "patience",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": true,
+        "strength": 5
+      },
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 6
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "self_control",
+        "present": false,
+        "strength": 0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "chi_variables:G",
+      "to": "domains:Theology",
+      "relation": "compresses",
+      "weight": 10
+    },
+    {
+      "from": "chi_variables:K",
+      "to": "domains:Information Theory",
+      "relation": "compresses",
+      "weight": 9
+    },
+    {
+      "from": "chi_variables:Q",
+      "to": "domains:Physics",
+      "relation": "compresses",
+      "weight": 9
+    },
+    {
+      "from": "chi_variables:M",
+      "to": "domains:Morality",
+      "relation": "compresses",
+      "weight": 9
+    },
+    {
+      "from": "chi_variables:S",
+      "to": "domains:Physics",
+      "relation": "compresses",
+      "weight": 8
+    },
+    {
+      "from": "chi_variables:E",
+      "to": "domains:Cosmology",
+      "relation": "compresses",
+      "weight": 7
+    },
+    {
+      "from": "chi_variables:C",
+      "to": "theological_concepts:Christ",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "axioms:BC2",
+      "to": "theological_concepts:Grace",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "axioms:BC7",
+      "to": "theological_concepts:Eternal Life",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "axioms:A1.1",
+      "to": "trinity:father",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "isomorphisms:ISO-012",
+      "to": "chi_variables:G",
+      "relation": "derives_from",
+      "weight": 9
+    },
+    {
+      "from": "isomorphisms:ISO-DT-001",
+      "to": "domains:Mathematics",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "isomorphisms:ISO-DT-001",
+      "to": "domains:Morality",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "theological_concepts:Christ",
+      "to": "trinity:son",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "chi_variables:G",
+      "to": "theological_concepts:Grace",
+      "relation": "produces",
+      "weight": 10
+    },
+    {
+      "from": "chi_variables:S",
+      "to": "chi_variables:R",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "chi_variables:G",
+      "to": "chi_variables:Q",
+      "relation": "requires",
+      "weight": 7
+    },
+    {
+      "from": "logical_concepts:Kill Condition",
+      "to": "axioms:T3.1",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "logical_concepts:Open System",
+      "to": "axioms:BC2",
+      "relation": "derives_from",
+      "weight": 8
+    }
+  ],
+  "tags": {
+    "primary": [
+      "prism",
+      "compression",
+      "LLC",
+      "domain-projection",
+      "terminus"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/theology",
+      "pillar/mathematics"
+    ],
+    "series": "master-equation",
+    "classification": "synthesis"
+  },
+  "citations": {
+    "scripture": [],
+    "academic": [
+      {
+        "ref": "Shannon, C.E. (1948). 'A Mathematical Theory of Communication.' Bell System Technical Journal, 27(3), 379-423.",
+        "context": "Shannon entropy as K-isolation result of LLC"
+      },
+      {
+        "ref": "Tononi, G. (2004). 'An Information Integration Theory of Consciousness.' BMC Neuroscience, 5(42).",
+        "context": "Integrated information as \u03a6-isolation result of LLC"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "DT-001",
+        "context": "24-property convergence; strongest element of the paper"
+      },
+      {
+        "ref": "ISO-012",
+        "context": "Sign operator isomorphism; formally verified"
+      },
+      {
+        "ref": "LAG-01",
+        "context": "Formal statement of the Lowe Coherence Lagrangian"
+      }
+    ],
+    "total_count": 5
+  },
+  "word_anomalies": [
+    {
+      "word": "Biaxiosum",
+      "frequency": 3,
+      "significance": "Neologism for declared axiom position; central epistemological commitment"
+    },
+    {
+      "word": "Terminus",
+      "frequency": 3,
+      "significance": "Unique solution when all LLC variables active; identified as Christ"
+    },
+    {
+      "word": "Kill Condition",
+      "frequency": 5,
+      "significance": "Precisely stated falsification condition; key methodological innovation"
+    },
+    {
+      "word": "Domain Projection",
+      "frequency": 4,
+      "significance": "Core concept: isolating one LLC variable produces domain's natural equation"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "Declared and transparent: ontological (mathematical realism), theological (Christian theism, Reformed soteriology), methodological (cross-domain structural analysis).",
+    "Q1_identity": "A capstone technical-narrative paper demonstrating that 188 axioms across 7 domains are the unpacked contents of a single generating function (the Lowe Coherence Lagrangian).",
+    "Q2_domain": "Cross-domain: physics, theology, information theory, consciousness, morality, cosmology, eschatology.",
+    "Q3_claim": "The LLC compresses 188 axioms into one equation; isolating any one variable produces that domain's natural equation; the compression is lossless; the terminus solution is \u03c7 = \ud835\udc9e = Christ.",
+    "Q4_support": "24-property convergence (DT-001), sign operator isomorphism (ISO-012), structural argument for domain projections, Python verification suite, open system argument.",
+    "Q5_dependencies": "Lagrangian mechanics, Shannon information theory, sign algebra, integrated information theory, Reformed soteriology, mathematical realism.",
+    "Q6_consequences": "Physics and theology are projections of the same generating function; moral realism is mathematically grounded; cosmic expansion tracks coherence field; AI alignment becomes coherence optimization.",
+    "Q7_kill": "Show any domain's natural equation cannot be derived from LLC under variable isolation; find a property unique to only one domain in DT-001; prove coherence can self-increase in a closed system (violating T3.1)."
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "DT-001: Math Is Moral",
+      "ISO-012: Sign Operator Isomorphism",
+      "LAG-01: Lowe Coherence Lagrangian Formal Statement"
+    ],
+    "required_by": [
+      "Formal Euler-Lagrange derivations for each domain projection",
+      "Coupling term formalization"
+    ],
+    "parallel_to": []
+  },
+  "graph_summary": {
+    "total_nodes": 35,
+    "total_edges": 20,
+    "dominant_domain": "Theology",
+    "dominant_chi": "C",
+    "connectivity_score": 9,
+    "one_sentence": "This paper establishes the Lowe Coherence Lagrangian as the lossless compression of 188 axioms across 7 domains, with each variable's isolation producing that domain's natural equation and the terminus solution identified as Christ."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": true,
+      "how": "G \u2194 Q: External gift paired with internal reception; neither operates without the other"
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": "Not explicitly discussed"
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "E \u2194 C: Raw energy paired with organized structure; power vs pattern"
+    },
+    "4_7_love_relationship": {
+      "active": true,
+      "how": "S \u2194 R: Disorder vs connection; isolation fragments, relationship restores"
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "T \u2194 K: When things are measured vs what measures them; temporal-informational axis"
+    },
+    "pairs_active_count": 4
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 10
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 8
+    },
+    "love": {
+      "present": true,
+      "strength": 7
+    },
+    "judgment": {
+      "present": true,
+      "strength": 6
+    },
+    "logos": {
+      "present": true,
+      "strength": 8
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": true,
+      "strength": 7
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": true,
+      "strength": 10
+    },
+    "operators_present_count": 7
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "DT-001: Math Is Moral",
+      "ISO-012: Sign Operator Isomorphism",
+      "LAG-01: Lowe Coherence Lagrangian Formal Statement"
+    ],
+    "read_after": [
+      "Formal Euler-Lagrange derivations for each domain projection",
+      "Coupling term formalization papers"
+    ]
+  }
+}

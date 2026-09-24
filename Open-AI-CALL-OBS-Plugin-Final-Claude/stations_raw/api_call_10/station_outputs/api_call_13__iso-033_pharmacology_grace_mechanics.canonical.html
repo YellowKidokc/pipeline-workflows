@@ -1,0 +1,523 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>ISO-033 · Pharmacology ↔ Grace Mechanics | Theophysics Registry</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --gold-light: #f0d060;
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --blue: #3b82f6;
+      --border: #2a2a2a;
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 500;
+      color: #f0f0f0;
+    }
+    .section-number {
+      font-family: 'Oswald', sans-serif;
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+      margin-bottom: -1.5rem;
+      pointer-events: none;
+      user-select: none;
+    }
+    .gradient-line {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 1.5rem 0 2rem 0;
+      opacity: 0.4;
+    }
+    .gold-border-left {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+    }
+    .equation {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+      background: var(--surface);
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      border: 1px solid var(--border);
+      color: #e6e6e6;
+      word-break: break-word;
+    }
+    .verse {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+    }
+    .pull-quote {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #e0d6c8;
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+      margin: 1rem 0;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 1rem;
+      border-radius: 100px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 500;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .badge.isomorphism { background: rgba(34, 197, 94, 0.15); border-color: var(--success); color: var(--success); }
+    .badge.correspondence { background: rgba(234, 179, 8, 0.15); border-color: #eab308; color: #eab308; }
+    .badge.gold { background: rgba(212, 175, 55, 0.15); border-color: var(--gold); color: var(--gold); }
+    .badge.info { background: rgba(74, 158, 255, 0.12); border-color: var(--info); color: var(--info); }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: border 0.2s;
+    }
+    .card.blue-top { border-top: 4px solid var(--blue); }
+    .card.gold-top { border-top: 4px solid var(--gold); }
+    .card.danger-border { border: 1px solid rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05); }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .mapping-table th {
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold-light);
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      padding: 0.8rem 1rem;
+      text-align: left;
+      border-bottom: 2px solid var(--gold);
+    }
+    .mapping-table td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .mapping-table tr:last-child td { border-bottom: none; }
+    .mapping-table tr:hover td { background: rgba(212, 175, 55, 0.04); }
+    .test-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .test-card .test-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+    }
+    .test-card .test-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    .pass { color: var(--success); }
+    .fail { color: var(--danger); }
+    .chip {
+      display: inline-block;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.2rem 0.9rem;
+      font-size: 0.75rem;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-muted);
+      margin: 0.2rem 0.2rem;
+    }
+    .chip.gold { border-color: var(--gold); color: var(--gold); background: rgba(212, 175, 55, 0.08); }
+    .chip.info { border-color: var(--info); color: var(--info); background: rgba(74, 158, 255, 0.08); }
+    .chip.success { border-color: var(--success); color: var(--success); background: rgba(34, 197, 94, 0.08); }
+    .footer-seal {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--gold-dim);
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .logo-glyph {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-right: 0.5rem;
+    }
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), transparent 70%);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+    .law-badge {
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 0.2rem 1rem;
+      border-radius: 100px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .arrow-symbol {
+      color: var(--gold);
+      font-weight: 300;
+      margin: 0 0.3rem;
+    }
+    .eq-card {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      line-height: 1.7;
+    }
+    .eq-card .eq-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 0.8rem;
+    }
+    .related-item {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.5rem 0.8rem;
+      font-size: 0.8rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--info);
+    }
+    @media (max-width: 768px) {
+      body { padding: 1rem; }
+      .hero-grid, .grid-2, .grid-4 { grid-template-columns: 1fr; }
+      .section-number { font-size: 3rem; }
+    }
+    hr { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+    .mt-1 { margin-top: 1rem; }
+    .mt-2 { margin-top: 2rem; }
+    .mb-1 { margin-bottom: 1rem; }
+    .mb-2 { margin-bottom: 2rem; }
+    .flex { display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem; }
+    .flex-center { display: flex; align-items: center; gap: 0.5rem; }
+  </style>
+</head>
+<body>
+
+  <!-- 1. REGISTRY HEADER -->
+  <header style="margin-bottom: 2rem;">
+    <div class="flex" style="justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+      <div class="flex" style="align-items: center;">
+        <span class="logo-glyph"><i class="fas fa-phi" style="font-style: normal;">Φ</i></span>
+        <div>
+          <h1 style="font-size: 1.8rem; margin: 0; line-height: 1.2;">Theophysics Registry</h1>
+          <div style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--text-muted);">
+            ISO-033 · Pharmacology ↔ Grace Mechanics
+          </div>
+        </div>
+      </div>
+      <div class="flex" style="gap: 0.6rem; flex-wrap: wrap;">
+        <span class="badge isomorphism"><i class="fas fa-link"></i> Isomorphism · Level 3</span>
+        <span class="badge gold"><i class="fas fa-chart-line"></i> Confidence: High</span>
+        <span class="badge info"><i class="fas fa-code-branch"></i> v1.0</span>
+      </div>
+    </div>
+    <div style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 1rem;">
+      <span><i class="far fa-calendar-alt"></i> 2026-03-10</span>
+      <span><i class="fas fa-flask"></i> Status: Testing</span>
+      <span><i class="fas fa-shield-alt"></i> Structural Isomorphism</span>
+    </div>
+  </header>
+
+  <!-- 2. HERO BANNER -->
+  <section class="hero-banner mb-2">
+    <div class="hero-grid">
+      <div>
+        <span class="law-badge"><i class="fas fa-gavel"></i> Law 4 · Law 6 · Law 9</span>
+        <h2 style="font-size: 2rem; margin: 0.8rem 0 0.3rem; line-height: 1.2;">
+          Pharmacology <span class="arrow-symbol">⟷</span> Grace Mechanics
+        </h2>
+        <div style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">
+          Dose-response dynamics · receptor binding · agonist/antagonist competition · ADME
+        </div>
+        <div class="pull-quote">
+          “Grace (the divine ligand) engages the human agent through faith (the receptor). The response follows a threshold-sigmoidal pattern: below threshold, no observable transformation; above threshold, rapid conversion; beyond saturation, additional grace does not produce proportionally greater effect because the receptor system is finite.”
+        </div>
+        <div class="verse" style="margin-top: 0.5rem;">— Romans 5:20 · Ephesians 2:8-9 · Hebrews 6:4-6</div>
+      </div>
+      <div>
+        <div class="eq-card">
+          <div class="eq-label"><i class="fas fa-dna"></i> Domain A · Pharmacology</div>
+          <div style="margin: 0.5rem 0 0.2rem;">E = E<sub>max</sub> · [D]<sup>n</sup> / (EC<sub>50</sub><sup>n</sup> + [D]<sup>n</sup>)</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">[D] + [R] ⇌ [DR] &nbsp; K<sub>d</sub> = [D][R]/[DR]</div>
+          <hr style="margin: 0.8rem 0; opacity: 0.3;">
+          <div class="eq-label"><i class="fas fa-pray"></i> Domain B · Theology</div>
+          <div style="margin: 0.5rem 0 0.2rem;">E = α · [G]<sup>n</sup> / (GT<sub>50</sub><sup>n</sup> + [G]<sup>n</sup>)</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">α = 1 − u &nbsp;·&nbsp; sin as competitive antagonist</div>
+          <hr style="margin: 0.8rem 0; opacity: 0.3;">
+          <div style="text-align: center; font-size: 1.4rem; color: var(--gold);">⟷</div>
+          <div style="text-align: center; font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.05em;">structural isomorphism · Hill equation governs both</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. DOMAIN SPECIFICATIONS -->
+  <section class="mb-2">
+    <div class="section-number">01</div>
+    <h2 style="font-size: 1.6rem;">Domain Specifications</h2>
+    <div class="gradient-line"></div>
+    <div class="grid-2">
+      <div class="card blue-top">
+        <div class="flex-center" style="margin-bottom: 0.8rem;">
+          <i class="fas fa-flask" style="color: var(--blue); font-size: 1.6rem; width: 2rem;"></i>
+          <h3 style="margin: 0; font-size: 1.2rem;">Domain A · Physics</h3>
+        </div>
+        <p style="font-size: 0.95rem; color: var(--text-muted);"><strong>Pharmacology</strong> — Dose-response dynamics, receptor binding kinetics, pharmacokinetics (ADME), agonist/antagonist competition, tolerance, and receptor regulation.</p>
+        <p style="font-size: 0.9rem; margin-top: 0.6rem;">A drug (ligand) binds to a receptor with affinity K<sub>d</sub>, producing a dose-response curve governed by the Hill equation. The therapeutic window defines the range between minimum effective dose and toxic dose. Agonists activate, antagonists block, and the system exhibits tolerance, sensitization, and receptor up/downregulation.</p>
+        <div class="equation" style="margin-top: 0.6rem;">E = E<sub>max</sub>·[D]<sup>n</sup> / (EC<sub>50</sub><sup>n</sup> + [D]<sup>n</sup>)</div>
+      </div>
+      <div class="card gold-top">
+        <div class="flex-center" style="margin-bottom: 0.8rem;">
+          <i class="fas fa-church" style="color: var(--gold); font-size: 1.6rem; width: 2rem;"></i>
+          <h3 style="margin: 0; font-size: 1.2rem;">Domain B · Theology</h3>
+        </div>
+        <p style="font-size: 0.95rem; color: var(--text-muted);"><strong>Christian Grace Mechanics</strong> — Prevenient, justifying, sanctifying grace; means of grace; sacramental theology; faith as reception; sin as blockade.</p>
+        <p style="font-size: 0.9rem; margin-top: 0.6rem;">Grace (the divine ligand) engages the human agent through faith (the receptor). The response follows a threshold-sigmoidal pattern: below threshold, no observable transformation; above threshold, rapid conversion; beyond saturation, additional grace does not produce proportionally greater effect because the receptor system is finite. Sin functions as a competitive antagonist occupying the binding site.</p>
+        <div class="equation" style="margin-top: 0.6rem;">E = α·[G]<sup>n</sup> / (GT<sub>50</sub><sup>n</sup> + [G]<sup>n</sup>)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. THE ISOMORPHIC MAPPING -->
+  <section class="mb-2">
+    <div class="section-number">02</div>
+    <h2 style="font-size: 1.6rem;">The Isomorphic Mapping</h2>
+    <div class="gradient-line"></div>
+    <div style="overflow-x: auto;">
+      <table class="mapping-table">
+        <thead>
+          <tr><th style="width: 25%;">Domain A · Pharmacology</th><th style="width: 25%;">Domain B · Theology</th><th style="width: 50%;">Structural Note</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Hill equation: sigmoidal dose-response</td><td>Grace-response curve (sigmoidal)</td><td>Same mathematical form; threshold, saturation, cooperativity</td></tr>
+          <tr><td>E<sub>max</sub> (maximum effect)</td><td>α = 1 − u (coupling coefficient, ISO-002)</td><td>Maximum openness to grace; limited by autonomy parameter</td></tr>
+          <tr><td>[D] (drug concentration)</td><td>[G] (grace availability)</td><td>Grace objectively unlimited (Rom 5:20); functionally variable via means</td></tr>
+          <tr><td>EC<sub>50</sub> (half-max concentration)</td><td>GT<sub>50</sub> (grace threshold for 50% transformation)</td><td>Individual tipping point; varies by person</td></tr>
+          <tr><td>n (Hill coefficient, cooperativity)</td><td>Faith-receptor density / community reinforcement</td><td>n=1 gradual; n&gt;1 steep; n≫1 binary (ISO-012)</td></tr>
+          <tr><td>Competitive antagonist [A]</td><td>Sin [S] as competitive blocker</td><td>Right-shifts curve; more agonist needed; outcompeteable</td></tr>
+          <tr><td>K<sub>i</sub> (antagonist affinity)</td><td>K<sub>sin</sub> (sin binding affinity)</td><td>Strength of sin blockade; varies by habituation</td></tr>
+          <tr><td>Receptor binding: [D]+[R] ⇌ [DR]</td><td>Grace + faith ⇌ transformation</td><td>Coupling requires both ligand and receptor</td></tr>
+          <tr><td>Therapeutic window</td><td>The narrow way (Matt 7:14)</td><td>Receptor-availability constraint, not grace-supply constraint</td></tr>
+          <tr><td>Tolerance (downregulation)</td><td>Presumption on grace (Heb 6:4-6)</td><td>Repeated uncoupled exposure decreases sensitivity</td></tr>
+          <tr><td>Receptor upregulation (sensitization)</td><td>Spiritual hunger (Matt 5:6)</td><td>Deprivation increases receptor density</td></tr>
+          <tr><td>Absorption (ADME)</td><td>Hearing the Word (Rom 10:17)</td><td>First step: grace enters the system</td></tr>
+          <tr><td>Distribution (ADME)</td><td>Spirit distributing gifts (1 Cor 12:11)</td><td>Grace spread across the body</td></tr>
+          <tr><td>Metabolism (ADME)</td><td>Sanctification (Phil 2:12-13)</td><td>Processing grace into transformation</td></tr>
+          <tr><td>Excretion (ADME)</td><td>ABSENT — no renal clearance of grace</td><td>Structural asymmetry; irreversibility of justification / indelible character</td></tr>
+          <tr><td>Agonist</td><td>Grace (activator)</td><td>Binds and produces response</td></tr>
+          <tr><td>Antagonist</td><td>Sin (blocker)</td><td>Binds without activation; competes for same site</td></tr>
+          <tr><td>First-pass effect</td><td>Cultural/denominational filtering</td><td>Loss of potency through intermediary processing</td></tr>
+          <tr><td>Receptor affinity K<sub>d</sub></td><td>Individual predisposition to faith</td><td>Some receptors bind more readily</td></tr>
+          <tr><td>Drug holiday (reversal of tolerance)</td><td>Exile-and-return pattern (Israel)</td><td>Absence restores sensitivity</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">
+      <i class="fas fa-arrow-right" style="color: var(--gold);"></i> 11 independent correspondences (p &lt; 5×10<sup>−15</sup>)
+    </div>
+  </section>
+
+  <!-- 5. SEPARATOR TESTS -->
+  <section class="mb-2">
+    <div class="section-number">03</div>
+    <h2 style="font-size: 1.6rem;">Separator Tests</h2>
+    <div class="gradient-line"></div>
+    <div class="grid-4">
+      <div class="test-card">
+        <div class="test-label"><i class="fas fa-sitemap"></i> Test A</div>
+        <div class="test-title">Structural Preservation</div>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.6rem;">Do relations survive under mapping? Sigmoidal response, competitive binding, tolerance, ADME — all preserve relational structure.</p>
+        <span class="badge isomorphism" style="font-size: 0.9rem; padding: 0.2rem 1.2rem;"><i class="fas fa-check-circle"></i> PASS</span>
+      </div>
+      <div class="test-card">
+        <div class="test-label"><i class="fas fa-random"></i> Test B</div>
+        <div class="test-title">Non-Arbitrariness</div>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.6rem;">Swap test: enzyme kinetics (Michaelis-Menten) lacks cooperativity, antagonism, tolerance, ADME. Pharmacology is the full model — mapping is forced, not generic.</p>
+        <span class="badge isomorphism" style="font-size: 0.9rem; padding: 0.2rem 1.2rem;"><i class="fas fa-check-circle"></i> PASS</span>
+      </div>
+      <div class="test-card">
+        <div class="test-label"><i class="fas fa-ban"></i> Test C</div>
+        <div class="test-title">Constraint</div>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.6rem;">Rules out antinomianism (sin must impede grace), linear sanctification (must be sigmoidal), and grace without faith (receptor required).</p>
+        <span class="badge isomorphism" style="font-size: 0.9rem; padding: 0.2rem 1.2rem;"><i class="fas fa-check-circle"></i> PASS</span>
+      </div>
+      <div class="test-card">
+        <div class="test-label"><i class="fas fa-exchange-alt"></i> Test D</div>
+        <div class="test-title">Bidirectionality</div>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.6rem;">Pharmacology → Theology: grace must follow receptor dynamics. Theology → Pharmacology: competitive inhibition reversibility maps to unforgivable sin as receptor ablation.</p>
+        <span class="badge isomorphism" style="font-size: 0.9rem; padding: 0.2rem 1.2rem;"><i class="fas fa-check-circle"></i> PASS</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CLASSIFICATION & EVIDENCE -->
+  <section class="mb-2">
+    <div class="section-number">04</div>
+    <h2 style="font-size: 1.6rem;">Classification &amp; Evidence</h2>
+    <div class="gradient-line"></div>
+    <div class="card" style="border-color: rgba(212,175,55,0.3);">
+      <div class="flex" style="justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.3rem;">Structural Isomorphism</h3>
+          <div class="flex" style="gap: 0.5rem; flex-wrap: wrap;">
+            <span class="badge isomorphism">Level 3 · Isomorphism</span>
+            <span class="badge gold">Confidence: High</span>
+            <span class="badge info">Reframe: Structural (Level 2)</span>
+          </div>
+        </div>
+        <div>
+          <span class="badge gold" style="font-size: 0.9rem; padding: 0.3rem 1.2rem;"><i class="fas fa-link"></i> 6 connections</span>
+        </div>
+      </div>
+      <hr style="opacity: 0.2; margin: 1rem 0;">
+      <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.8rem;"><i class="fas fa-microscope"></i> Evidence bundles</div>
+      <div class="flex" style="gap: 0.4rem; flex-wrap: wrap;">
+        <span class="chip success">Hill equation (110+ yr)</span>
+        <span class="chip gold">Competitive inhibition kinetics</span>
+        <span class="chip info">Receptor regulation literature</span>
+        <span class="chip success">Conversion narrative analysis</span>
+        <span class="chip gold">Spiritual biography sigmoidal patterns</span>
+        <span class="chip info">Schild regression / dose-ratio</span>
+      </div>
+      <hr style="opacity: 0.2; margin: 1rem 0;">
+      <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.4rem;"><i class="fas fa-gavel"></i> Laws invoked</div>
+      <div class="flex" style="gap: 0.4rem; flex-wrap: wrap;">
+        <span class="chip gold">Law 4 · Incompleteness</span>
+        <span class="chip gold">Law 6 · Entropy</span>
+        <span class="chip gold">Law 9 · Grace</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FALSIFICATION CRITERIA -->
+  <section class="mb-2">
+    <div class="section-number">05</div>
+    <h2 style="font-size: 1.6rem;">Falsification Criteria</h2>
+    <div class="gradient-line"></div>
+    <div class="card danger-border">
+      <div style="display: flex; gap: 0.8rem; align-items: flex-start; flex-wrap: wrap;">
+        <i class="fas fa-skull" style="color: var(--danger); font-size: 1.8rem; opacity: 0.7;"></i>
+        <div>
+          <p style="font-weight: 600; color: #fca5a5; margin-bottom: 0.5rem;">The mapping is destroyed if ANY of the following are demonstrated:</p>
+          <ol style="padding-left: 1.5rem; color: #e5e7eb; font-size: 0.9rem; line-height: 1.8;">
+            <li><strong>Grace reception is dose-independent</strong> — spiritual transformation shows no correlation with exposure to means of grace (prayer, Scripture, sacraments, community).</li>
+            <li><strong>Sin does not impede grace</strong> — habitual, unrepented sin leaves spiritual receptivity unchanged (antinomianism structurally incoherent).</li>
+            <li><strong>Tolerance is impossible</strong> — repeated exposure to grace without response never decreases sensitivity (contradicts Hebrews 6:4-6 and empirical observation).</li>
+            <li><strong>The Hill equation is wrong</strong> — dose-response relationships in pharmacology are not sigmoidal but follow some other function (linear, exponential, random).</li>
+            <li><strong>Conversion is linear, not threshold-based</strong> — spiritual transformation is strictly proportional to grace exposure with no threshold behavior.</li>
+          </ol>
+          <div class="verse" style="margin-top: 0.8rem; color: var(--text-muted);">— Hebrews 6:4-6 · Mark 3:28-29 · Romans 6:1-2</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. RELATED ISOMORPHISMS -->
+  <section class="mb-2">
+    <div class="section-number">06</div>
+    <h2 style="font-size: 1.6rem;">Related Isomorphisms</h2>
+    <div class="gradient-line"></div>
+    <div class="related-grid">
+      <div class="related-item"><i class="fas fa-code-branch"></i> ISO-002 · Terminus Sui</div>
+      <div class="related-item"><i class="fas fa-code-branch"></i> ISO-003 · Entropy / Sin</div>
+      <div class="related-item"><i class="fas fa-code-branch"></i> ISO-012 · Sign Operator</div>
+      <div class="related-item"><i class="fas fa-code-branch"></i> ISO-013 · Grace Operator</div>
+      <div class="related-item"><i class="fas fa-code-branch"></i> ISO-025 · Immunology / Soteriology</div>
+      <div class="related-item"><i class="fas fa-code-branch"></i> ISO-034 · Control Theory</div>
+      <div class="related-item"><i class="fas fa-code-branch"></i> ISO-022 · Ten Laws (Law 9)</div>
+    </div>
+    <div style="margin-top: 0.8rem; font-size: 0.8rem; color: var(--text-muted);">
+      <i class="fas fa-book"></i> Cross-ref: Hill (1910), Clark (1933), Ephesians 2:8-9, Romans 5:20, Hebrews 3:13, Hebrews 6:4-6, Matthew 5:6, Matthew 7:14, Romans 10:17, Mark 3:28-29
+    </div>
+  </section>
+
+  <!-- 9. FOOTER -->
+  <footer style="border-top: 1px solid var(--border); padding-top: 2rem; margin

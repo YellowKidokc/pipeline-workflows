@@ -1,0 +1,752 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "Pharmacology",
+        "type": "biology",
+        "strength": 10
+      },
+      {
+        "name": "Christian Theology",
+        "type": "theology",
+        "strength": 10
+      },
+      {
+        "name": "Mathematics",
+        "type": "mathematics",
+        "strength": 8
+      },
+      {
+        "name": "Information Theory",
+        "type": "information",
+        "strength": 5
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": true,
+        "role": "Grace as the divine ligand in the dose-response model",
+        "strength": 10
+      },
+      {
+        "variable": "M",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Spiritual transformation as the observed effect E in the Hill equation",
+        "strength": 8
+      },
+      {
+        "variable": "S",
+        "present": true,
+        "role": "Sin as competitive antagonist blocking grace reception",
+        "strength": 9
+      },
+      {
+        "variable": "T",
+        "present": false,
+        "role": "",
+        "strength": 0
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Faith as the receptor system; Hill coefficient n as faith-receptor density",
+        "strength": 9
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "Receptor binding kinetics; coupling between grace and faith",
+        "strength": 8
+      },
+      {
+        "variable": "Q",
+        "present": true,
+        "role": "Faith as the quantum-like receptor that couples grace to transformation",
+        "strength": 7
+      },
+      {
+        "variable": "F",
+        "present": true,
+        "role": "Sin as the weak-force antagonist in the binding competition",
+        "strength": 7
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Coherence between grace and faith produces transformation; Christ as the ultimate agonist",
+        "strength": 8
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": true,
+        "how": "Existence of the dose-response relationship presupposes existence of both ligand and receptor"
+      },
+      {
+        "id": "A1.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A2.2",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "A5.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC6",
+        "invoked": true,
+        "how": "Grace is objectively unlimited per Romans 5:20; the infinite source provides the ligand"
+      },
+      {
+        "id": "A1.3",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "T3.1",
+        "invoked": false,
+        "how": ""
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "External grace is required; the system cannot generate its own ligand (Law 4 Incompleteness)"
+      },
+      {
+        "id": "BC7",
+        "invoked": true,
+        "how": "Grace is not consumed in binding; it is catalytic, not stoichiometric"
+      },
+      {
+        "id": "BC8",
+        "invoked": true,
+        "how": "Voluntary coupling through faith as the receptor; grace requires a receptor to bind"
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "source of grace",
+          "ground of the divine act"
+        ]
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "Christ as the ultimate agonist",
+          "mediator of grace",
+          "incarnation as the perfect ligand"
+        ]
+      },
+      "spirit": {
+        "present": true,
+        "manifestations": [
+          "distributing gifts and conviction",
+          "presence that processes grace into transformation",
+          "power that couples grace to the agent"
+        ]
+      },
+      "trinitarian_structure": "implicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-033",
+        "domain_a": "Pharmacology",
+        "domain_b": "Christian Theology",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-002",
+        "domain_a": "Physics",
+        "domain_b": "Theology",
+        "strength": 7,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-003",
+        "domain_a": "Thermodynamics",
+        "domain_b": "Theology",
+        "strength": 7,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-012",
+        "domain_a": "Mathematics",
+        "domain_b": "Theology",
+        "strength": 8,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-013",
+        "domain_a": "Physics",
+        "domain_b": "Theology",
+        "strength": 7,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-025",
+        "domain_a": "Immunology",
+        "domain_b": "Theology",
+        "strength": 6,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "grace",
+        "context": "Divine ligand that binds to faith-receptors; prevenient, justifying, sanctifying grace",
+        "weight": 10
+      },
+      {
+        "concept": "faith",
+        "context": "Receptor system through which grace couples to the human agent",
+        "weight": 10
+      },
+      {
+        "concept": "sin",
+        "context": "Competitive antagonist that occupies the faith-receptor binding site",
+        "weight": 9
+      },
+      {
+        "concept": "sanctification",
+        "context": "Observed effect E; progressive transformation following sigmoidal curve",
+        "weight": 8
+      },
+      {
+        "concept": "conversion",
+        "context": "Threshold crossing event; rapid transition from sub-threshold to supra-threshold",
+        "weight": 8
+      },
+      {
+        "concept": "justification",
+        "context": "Irreversible binding; grace is retained (no excretion)",
+        "weight": 7
+      },
+      {
+        "concept": "sacraments",
+        "context": "Means of grace; the pathway through which the ligand reaches the receptor",
+        "weight": 7
+      },
+      {
+        "concept": "repentance",
+        "context": "Receptor upregulation through spiritual hunger and desperation",
+        "weight": 6
+      },
+      {
+        "concept": "atonement",
+        "context": "The ultimate agonist action that overcomes sin blockade",
+        "weight": 7
+      },
+      {
+        "concept": "antinomianism",
+        "context": "Claim that sin does not impede grace; structurally incoherent per the model",
+        "weight": 5
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "necessity",
+        "context": "Receptor is necessary for grace to produce transformation; grace alone is insufficient without coupling",
+        "weight": 9
+      },
+      {
+        "concept": "sufficiency",
+        "context": "Sufficient grace concentration can overcome competitive inhibition by sin",
+        "weight": 8
+      },
+      {
+        "concept": "contradiction",
+        "context": "Antinomianism contradicts the competitive inhibition structure",
+        "weight": 6
+      },
+      {
+        "concept": "implication",
+        "context": "If receptor density is zero, transformation is zero regardless of grace availability",
+        "weight": 8
+      },
+      {
+        "concept": "equivalence",
+        "context": "Hill equation with n->infinity is equivalent to the sign operator step function",
+        "weight": 7
+      },
+      {
+        "concept": "asymmetry",
+        "context": "Grace is not excreted; structural asymmetry between pharmacology and theology",
+        "weight": 7
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "love",
+        "present": true,
+        "strength": 6
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "patience",
+        "present": true,
+        "strength": 5
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "faithfulness",
+        "present": true,
+        "strength": 8
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "self_control",
+        "present": false,
+        "strength": 0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "domain:Pharmacology",
+      "to": "domain:Christian Theology",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "chi_variable:G",
+      "to": "chi_variable:K",
+      "relation": "requires",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:G",
+      "to": "chi_variable:S",
+      "relation": "contradicts",
+      "weight": 8
+    },
+    {
+      "from": "chi_variable:G",
+      "to": "chi_variable:E",
+      "relation": "produces",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:S",
+      "to": "chi_variable:K",
+      "relation": "blocks",
+      "weight": 8
+    },
+    {
+      "from": "axiom:BC2",
+      "to": "chi_variable:G",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "axiom:BC6",
+      "to": "chi_variable:G",
+      "relation": "supports",
+      "weight": 8
+    },
+    {
+      "from": "axiom:BC7",
+      "to": "chi_variable:G",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "axiom:BC8",
+      "to": "chi_variable:K",
+      "relation": "requires",
+      "weight": 8
+    },
+    {
+      "from": "isomorphism:ISO-033",
+      "to": "isomorphism:ISO-012",
+      "relation": "derives_from",
+      "weight": 8
+    },
+    {
+      "from": "isomorphism:ISO-033",
+      "to": "isomorphism:ISO-002",
+      "relation": "derives_from",
+      "weight": 7
+    },
+    {
+      "from": "isomorphism:ISO-033",
+      "to": "isomorphism:ISO-003",
+      "relation": "derives_from",
+      "weight": 7
+    },
+    {
+      "from": "theological_concept:grace",
+      "to": "theological_concept:faith",
+      "relation": "requires",
+      "weight": 10
+    },
+    {
+      "from": "theological_concept:sin",
+      "to": "theological_concept:faith",
+      "relation": "blocks",
+      "weight": 9
+    },
+    {
+      "from": "theological_concept:grace",
+      "to": "theological_concept:sanctification",
+      "relation": "produces",
+      "weight": 8
+    },
+    {
+      "from": "theological_concept:faith",
+      "to": "theological_concept:conversion",
+      "relation": "produces",
+      "weight": 8
+    },
+    {
+      "from": "logical_concept:necessity",
+      "to": "theological_concept:faith",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "logical_concept:asymmetry",
+      "to": "theological_concept:justification",
+      "relation": "supports",
+      "weight": 7
+    },
+    {
+      "from": "fruit:faithfulness",
+      "to": "chi_variable:K",
+      "relation": "maps_to",
+      "weight": 6
+    }
+  ],
+  "tags": {
+    "primary": [
+      "pharmacology",
+      "grace mechanics",
+      "dose-response",
+      "faith as receptor",
+      "competitive inhibition"
+    ],
+    "pillar": [
+      "pillar/theology",
+      "pillar/physics",
+      "pillar/mathematics"
+    ],
+    "series": "isomorphism",
+    "classification": "analysis"
+  },
+  "citations": {
+    "scripture": [
+      {
+        "ref": "Romans 5:20",
+        "context": "Grace is objectively unlimited; where sin increased, grace abounded all the more"
+      },
+      {
+        "ref": "Ephesians 2:8-9",
+        "context": "By grace through faith; faith is the receptor through which grace binds"
+      },
+      {
+        "ref": "Hebrews 6:4-6",
+        "context": "Tolerance to grace; impossible to restore to repentance after repeated uncoupled exposure"
+      },
+      {
+        "ref": "Matthew 5:6",
+        "context": "Blessed are those who hunger and thirst; spiritual desperation upregulates receptors"
+      },
+      {
+        "ref": "Matthew 7:14",
+        "context": "The narrow way as a receptor-availability constraint, not a grace-supply constraint"
+      },
+      {
+        "ref": "Romans 10:17",
+        "context": "Faith comes from hearing; absorption of grace through the Word"
+      },
+      {
+        "ref": "1 Corinthians 12:11",
+        "context": "The Spirit distributes gifts; distribution phase of pharmacokinetics"
+      },
+      {
+        "ref": "Philippians 2:12-13",
+        "context": "Work out your salvation; metabolism of grace into transformation"
+      },
+      {
+        "ref": "Matthew 18:20",
+        "context": "Where two or three are gathered; community increases Hill coefficient n"
+      },
+      {
+        "ref": "James 2:17",
+        "context": "Faith without works is dead; grace without faith-receptors produces no transformation"
+      },
+      {
+        "ref": "Hebrews 3:13",
+        "context": "Sin hardens the heart; sin impedes grace reception"
+      },
+      {
+        "ref": "Mark 3:28-29",
+        "context": "Unforgivable sin as permanent destruction of the receptor itself"
+      }
+    ],
+    "academic": [
+      {
+        "ref": "Hill, A.V. (1910). The possible effects of the aggregation of the molecules of haemoglobin on its dissociation curves. J Physiol 40:iv-vii.",
+        "context": "Original Hill equation; mathematical foundation of the isomorphism"
+      },
+      {
+        "ref": "Clark, A.J. (1933). The Mode of Action of Drugs on Cells.",
+        "context": "Receptor theory; foundation of pharmacological dose-response"
+      }
+    ],
+    "internal": [
+      {
+        "ref": "ISO-002",
+        "context": "Coupling coefficient alpha; maximum openness to grace"
+      },
+      {
+        "ref": "ISO-003",
+        "context": "Entropy/sin as the antagonist in the binding competition"
+      },
+      {
+        "ref": "ISO-012",
+        "context": "Sign operator as limiting case of Hill equation with n->infinity"
+      },
+      {
+        "ref": "ISO-013",
+        "context": "Grace operator as the agonist ligand"
+      },
+      {
+        "ref": "ISO-025",
+        "context": "Immunology shares the biological-theological structural mapping pattern"
+      },
+      {
+        "ref": "ISO-034",
+        "context": "Control theory; feedback dynamics of grace reception"
+      }
+    ],
+    "total_count": 18
+  },
+  "word_anomalies": [
+    {
+      "word": "ligand",
+      "frequency": 8,
+      "significance": "Technical pharmacological term for a molecule that binds to a receptor; used as the structural analog for grace"
+    },
+    {
+      "word": "Hill coefficient",
+      "frequency": 6,
+      "significance": "Mathematical parameter controlling sigmoidal steepness; mapped to faith-receptor density and community cooperativity"
+    },
+    {
+      "word": "EC_50",
+      "frequency": 4,
+      "significance": "Half-maximal effective concentration; mapped to individual grace threshold GT_50"
+    },
+    {
+      "word": "K_d",
+      "frequency": 3,
+      "significance": "Dissociation constant; mapped to individual predisposition to faith"
+    },
+    {
+      "word": "ADME",
+      "frequency": 3,
+      "significance": "Pharmacokinetic framework (Absorption, Distribution, Metabolism, Excretion); mapped to means of grace pathway"
+    },
+    {
+      "word": "competitive antagonist",
+      "frequency": 5,
+      "significance": "Pharmacological concept of a blocker that competes for the same binding site; mapped to sin"
+    },
+    {
+      "word": "receptor downregulation",
+      "frequency": 4,
+      "significance": "Decreased receptor density from repeated uncoupled exposure; mapped to presumption on grace"
+    },
+    {
+      "word": "receptor upregulation",
+      "frequency": 3,
+      "significance": "Increased receptor density from deprivation; mapped to spiritual hunger"
+    },
+    {
+      "word": "therapeutic window",
+      "frequency": 2,
+      "significance": "Range between minimum effective dose and toxic dose; mapped to the narrow way"
+    },
+    {
+      "word": "sigmoidal",
+      "frequency": 5,
+      "significance": "S-shaped curve characteristic of dose-response; mapped to threshold-dependent spiritual transformation"
+    },
+    {
+      "word": "cooperativity",
+      "frequency": 3,
+      "significance": "Hill coefficient n > 1 indicates cooperative binding; mapped to community faith reinforcement"
+    },
+    {
+      "word": "antinomianism",
+      "frequency": 1,
+      "significance": "Theological claim that sin does not impede grace; predicted to be structurally incoherent by the model"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "This document takes a rigorous, analytical posture, treating theological concepts as structural systems that can be formally modeled using mathematical frameworks from pharmacology.",
+    "Q1_identity": "An isomorphism record (ISO-033) that maps pharmacological dose-response dynamics onto Christian theology of grace mechanics, using the Hill equation as the shared mathematical structure.",
+    "Q2_domain": "Lives at the intersection of pharmacology (biology), Christian theology, and mathematics, with connections to information theory and control theory.",
+    "Q3_claim": "Grace reception follows receptor-mediated dynamics governed by the Hill equation, with faith as the receptor, sin as a competitive antagonist, and spiritual transformation as the dose-response effect.",
+    "Q4_support": "Supported by 11 independent correspondences between pharmacology and theology, the Hill equation (empirically validated since 1910), competitive inhibition kinetics, receptor regulation literature, conversion narrative analysis, and scriptural references.",
+    "Q5_dependencies": "Depends on the Hill equation as the mathematical foundation, receptor theory in pharmacology, the theological concepts of grace, faith, and sin, and prior isomorphisms (ISO-002, ISO-003, ISO-012, ISO-013, ISO-025).",
+    "Q6_consequences": "Forces a structural understanding of grace reception as threshold-dependent, competitive, and subject to tolerance and sensitization; constrains viable soteriologies; predicts sigmoidal sanctification curves and community-dependent conversion thresholds.",
+    "Q7_kill": "Destroyed if grace reception is dose-independent, sin does not impede grace, tolerance is impossible, the Hill equation is wrong, or conversion is linear rather than threshold-based."
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "ISO-002",
+      "ISO-003",
+      "ISO-012",
+      "ISO-013",
+      "ISO-025",
+      "Hill equation",
+      "receptor theory"
+    ],
+    "required_by": [
+      "ISO-034",
+      "soteriology models",
+      "sanctification dynamics"
+    ],
+    "parallel_to": [
+      "ISO-025"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 45,
+    "total_edges": 20,
+    "dominant_domain": "Christian Theology",
+    "dominant_chi": "G (Grace/Gravity)",
+    "connectivity_score": 9,
+    "one_sentence": "This document establishes a structural isomorphism between pharmacological dose-response dynamics and Christian grace mechanics, using the Hill equation to model faith as a receptor, sin as a competitive antagonist, and spiritual transformation as a sigmoidal threshold response."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": true,
+      "how": "Grace (G) as the ligand and faith (Q) as the receptor form the agonist-receptor pair; the coupling between them determines transformation"
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": ""
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Truth (K) as the information content of grace and coherence (C) as the binding that produces transformation"
+    },
+    "4_7_love_relationship": {
+      "active": true,
+      "how": "Love (S) as the strong force of grace and relationship (R) as the receptor binding dynamics"
+    },
+    "5_6_judgment_logos": {
+      "active": true,
+      "how": "Judgment (T) as the threshold and logos (K) as the information structure of the dose-response curve"
+    },
+    "pairs_active_count": 4
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 10
+    },
+    "repentance": {
+      "present": true,
+      "strength": 7
+    },
+    "truth": {
+      "present": true,
+      "strength": 8
+    },
+    "love": {
+      "present": true,
+      "strength": 6
+    },
+    "judgment": {
+      "present": true,
+      "strength": 5
+    },
+    "logos": {
+      "present": true,
+      "strength": 8
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": true,
+      "strength": 10
+    },
+    "atonement": {
+      "present": true,
+      "strength": 7
+    },
+    "christ": {
+      "present": true,
+      "strength": 9
+    },
+    "operators_present_count": 8
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "ISO-002",
+      "ISO-003",
+      "ISO-012",
+      "ISO-013",
+      "ISO-025"
+    ],
+    "read_after": [
+      "ISO-034",
+      "soteriology models",
+      "sanctification dynamics"
+    ]
+  }
+}

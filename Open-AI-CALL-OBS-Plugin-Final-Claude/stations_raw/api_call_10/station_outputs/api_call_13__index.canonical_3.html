@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>Theophysics Isomorphism Registry · faiththruphysics.com</title>
+  <!-- Google Fonts CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  <style>
+    /* ----- CSS variables (design tokens) ----- */
+    :root {
+      --bg-primary: #0a0a0a;
+      --bg-card: #111111;
+      --bg-card-alt: #161616;
+      --text-primary: #c9d1d9;
+      --text-secondary: #8b949e;
+      --gold: #d4af37;
+      --gold-light: #e4c45a;
+      --gold-dark: #b8962e;
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border-subtle: #2a2a2a;
+      --border-card: #2e2e2e;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow-card: 0 8px 24px rgba(0,0,0,0.6);
+    }
+
+    /* ----- reset & base ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.6;
+      padding: 2rem 1.5rem 3rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    a:hover {
+      opacity: 0.8;
+    }
+    img, svg {
+      display: block;
+    }
+    hr {
+      border: none;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 2.5rem 0;
+    }
+
+    /* ----- typography helpers ----- */
+    .heading {
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+    }
+    .mono {
+      font-family: var(--font-mono);
+    }
+    .quote {
+      font-family: var(--font-quote);
+      font-style: italic;
+    }
+    .small-mono {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    /* ----- section number faded ----- */
+    .section-number {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+      margin-bottom: -1.2rem;
+      user-select: none;
+      letter-spacing: 0.02em;
+    }
+
+    /* ----- cards & containers ----- */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.8rem;
+      box-shadow: var(--shadow-card);
+      transition: border 0.2s;
+    }
+    .card-glow {
+      border-color: rgba(212, 175, 55, 0.25);
+    }
+
+    /* ----- grid utilities ----- */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .grid-2x2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+
+    /* ----- badges & chips ----- */
+    .badge {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      background: rgba(212, 175, 55, 0.12);
+      color: var(--gold);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .badge-green {
+      background: rgba(34, 197, 94, 0.15);
+      color: var(--success);
+      border-color: rgba(34, 197, 94, 0.3);
+    }
+    .badge-yellow {
+      background: rgba(234, 179, 8, 0.15);
+      color: #eab308;
+      border-color: rgba(234, 179, 8, 0.3);
+    }
+    .badge-red {
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--danger);
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+    .badge-info {
+      background: rgba(74, 158, 255, 0.12);
+      color: var(--info);
+      border-color: rgba(74, 158, 255, 0.25);
+    }
+    .chip {
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 30px;
+      padding: 0.2rem 1rem;
+      font-size: 0.75rem;
+      font-family: var(--font-body);
+      color: var(--text-secondary);
+      margin: 0.2rem 0.3rem 0.2rem 0;
+    }
+
+    /* ----- registry header ----- */
+    .registry-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+      gap: 1rem;
+    }
+    .registry-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .registry-logo .phi {
+      font-family: var(--font-heading);
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .registry-title {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+    .registry-sub {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 0.1rem;
+    }
+    .registry-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.8rem 1.5rem;
+    }
+    .registry-meta span {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    /* ----- hero banner ----- */
+    .hero-banner {
+      background: linear-gradient(145deg, rgba(212, 175, 55, 0.08) 0%, rgba(10, 10, 10, 0.9) 80%);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: var(--radius);
+      padding: 2rem 2rem 2.2rem;
+      margin: 2rem 0 2.8rem;
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .hero-left .law-badge {
+      align-self: flex-start;
+    }
+    .hero-left h2 {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 1.2;
+      color: #f0e6d0;
+    }
+    .hero-left .subtitle {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.4rem;
+    }
+    .hero-left .pull-quote {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #d4c9b0;
+      margin: 0.5rem 0 0.2rem;
+    }
+    .hero-right .equation-card {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: var(--radius-sm);
+      padding: 1.4rem 1.6rem;
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      line-height: 2;
+      color: #e2dcc8;
+    }
+    .equation-card .arrow {
+      color: var(--gold);
+      font-size: 1.6rem;
+      margin: 0.2rem 0;
+      display: block;
+    }
+
+    /* ----- domain cards ----- */
+    .domain-card {
+      border-radius: var(--radius);
+      padding: 1.6rem 1.8rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      box-shadow: var(--shadow-card);
+    }
+    .domain-card.phys {
+      border-top: 4px solid var(--info);
+    }
+    .domain-card.theo {
+      border-top: 4px solid var(--gold);
+    }
+    .domain-card .domain-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .domain-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.4rem;
+    }
+    .domain-card p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    /* ----- mapping table ----- */
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+    .mapping-table thead {
+      background: rgba(212, 175, 55, 0.15);
+      border-bottom: 2px solid var(--gold);
+    }
+    .mapping-table th {
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      color: var(--gold);
+      padding: 0.9rem 1rem;
+      text-align: left;
+    }
+    .mapping-table td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid #222;
+      vertical-align: top;
+    }
+    .mapping-table tbody tr:hover {
+      background: rgba(212, 175, 55, 0.04);
+    }
+    .mapping-table .map-arrow {
+      color: var(--gold);
+      font-weight: 600;
+      font-family: var(--font-mono);
+    }
+
+    /* ----- test cards ----- */
+    .test-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.6rem;
+    }
+    .test-card .test-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .test-card .test-name {
+      font-family: var(--font-heading);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      font-size: 1rem;
+    }
+    .test-card .test-result {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      letter-spacing: 0.06em;
+    }
+    .test-card .test-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    .pass {
+      background: rgba(34, 197, 94, 0.15);
+      color: var(--success);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    .fail {
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--danger);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    /* ----- classification panel ----- */
+    .classification-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius);
+      padding: 1.8rem 2rem;
+    }
+    .evidence-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.8rem 0 1.2rem;
+    }
+
+    /* ----- falsification box ----- */
+    .falsification-box {
+      background: rgba(239, 68, 68, 0.06);
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      border-radius: var(--radius);
+      padding: 1.8rem 2rem;
+    }
+    .falsification-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .falsification-box li {
+      padding: 0.4rem 0;
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(239, 68, 68, 0.08);
+    }
+    .falsification-box li:last-child {
+      border-bottom: none;
+    }
+    .falsification-box li::before {
+      content: "⚠ ";
+      color: var(--danger);
+      font-weight: 600;
+    }
+
+    /* ----- related grid ----- */
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .related-item {
+      background: var(--bg-card-alt);
+      border: 1px solid #2a2a2a;
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      transition: border 0.2s;
+    }
+    .related-item:hover {
+      border-color: var(--gold);
+    }
+    .related-item i {
+      color: var(--gold);
+      margin-right: 0.4rem;
+    }
+
+    /* ----- footer ----- */
+    .footer {
+      margin-top: 3rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #222;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    .footer-seal {
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.7;
+      max-width: 280px;
+      text-align: right;
+    }
+
+    /* ----- mobile responsive ----- */
+    @media (max-width: 768px) {
+      body {
+        padding: 1.2rem 1rem 2rem;
+      }
+      .grid-2col, .grid-2x2 {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .registry-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .registry-meta {
+        margin-top: 0.3rem;
+      }
+      .hero-banner {
+        padding: 1.5rem;
+      }
+      .hero-left h2 {
+        font-size: 1.6rem;
+      }
+      .mapping-table {
+        font-size: 0.75rem;
+      }
+      .mapping-table th, .mapping-table td {
+        padding: 0.5rem 0.6rem;
+      }
+      .footer {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+      }
+      .footer-seal {
+        text-align: center;
+      }
+    }
+    @media (max-width: 480px) {
+      .mapping-table {
+        font-size: 0.65rem;
+      }
+      .mapping-table th, .mapping-table td {
+        padding: 0.3rem 0.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== 1. REGISTRY HEADER ===== -->
+  <header class="registry-header">
+    <div class="registry-logo">
+      <span class="phi">Φ</span>
+      <div>
+        <div class="registry-title">Theophysics Registry</div>
+        <div class="registry-sub">ISO 24617‑TIR · Structural Isomorphism between Physics &amp; Theology</div>
+      </div>
+    </div>
+    <div class="registry-meta">
+      <span class="badge badge-green"><i class="fa-regular fa-circle-check" style="margin-right:0.4rem;"></i>Level 3 · Isomorphism</span>
+      <span><i class="fa-regular fa-gem" style="color:var(--gold);margin-right:0.3rem;"></i>Confidence: 0.91</span>
+      <span class="small-mono">v2.4.1</span>
+    </div>
+  </header>
+
+  <!-- ===== 2. HERO BANNER ===== -->
+  <div class="hero-banner grid-2col">
+    <div class="hero-left">
+      <span class="badge law-badge"><i class="fa-regular fa-scale-balanced" style="margin-right:0.4rem;"></i>Law · Structural Invariance</span>
+      <h2>Physics Domain <span style="color:var(--gold);">⟷</span> Theology Domain</h2>
+      <div class="subtitle">Theophysics Isomorphism Registry · Canonical mapping</div>
+      <div class="pull-quote">
+        “The structure of physical law and the structure of theological doctrine exhibit a non‑arbitrary, bidirectional mapping that preserves relational constraints — this is not metaphor, it is isomorphism.”
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="equation-card">
+        <div><span style="color:var(--info);">Physics:</span> &nbsp; ∇·E = ρ/ε₀ &nbsp; &nbsp; ∇×B = μ₀J + μ₀ε₀ ∂E/∂t</div>
+        <div class="arrow">⟷</div>
+        <div><span style="color:var(--gold);">Theology:</span> &nbsp; ∇·G = σ/κ &nbsp; &nbsp; ∇×M = λJ<sub>m</sub> + λκ ∂G/∂t</div>
+        <div style="margin-top:0.6rem;font-size:0.75rem;color:var(--text-secondary);">where G = grace field, σ = sin density, κ = mercy permittivity, M = mercy current</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 3. DOMAIN SPECIFICATIONS ===== -->
+  <div>
+    <div class="section-number">01</div>
+    <h2 class="heading" style="font-size:1.4rem;margin-bottom:1.2rem;">Domain Specifications</h2>
+  </div>
+  <div class="grid-2col" style="margin-bottom:2.5rem;">
+    <div class="domain-card phys">
+      <div class="domain-icon"><i class="fa-solid fa-atom" style="color:var(--info);"></i></div>
+      <h3 style="color:var(--info);">Domain A · Physics</h3>
+      <p>Classical electrodynamics and field theory: Maxwell’s equations, continuity equations, gauge invariance. The domain is defined by four coupled partial differential equations governing electric and magnetic fields, with sources (charge/current densities) and universal constants (ε₀, μ₀).</p>
+    </div>
+    <div class="domain-card theo">
+      <div class="domain-icon"><i class="fa-regular fa-sun" style="color:var(--gold);"></i></div>
+      <h3 style="color:var(--gold);">Domain B · Theology</h3>
+      <p>Systematic theology of grace and mercy: a field‑theoretic reformulation of hamartiology (sin) and soteriology (grace). The domain defines a grace field G, sin density σ, mercy permittivity κ, and mercy current M, satisfying structurally identical equations.</p>
+    </div>
+  </div>
+
+  <!-- ===== 4. THE ISOMORPHIC MAPPING ===== -->
+  <div>
+    <div class="section-number">02</div>
+    <h2 class="heading" style="font-size:1.4rem;margin-bottom:1.2rem;">The Isomorphic Mapping</h2>
+  </div>
+  <div class="card" style="overflow-x:auto;padding:0.8rem 0.2rem 1.2rem;">
+    <table class="mapping-table">
+      <thead>
+        <tr><th>Physics element</th><th style="text-align:center;">⟷</th><th>Theology element</th><th>Constraint / note</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Electric field <strong>E</strong></td><td class="map-arrow" style="text-align:center;">⟷</td><td>Grace field <strong>G</strong></td><td>Vector field, source of restorative force</td></tr>
+        <tr><td>Magnetic field <strong>B</strong></td><td class="map-arrow" style="text-align:center;">⟷</td><td>Mercy field <strong>M</strong></td><td>Pseudovector, curvature of grace</td></tr>
+        <tr><td>Charge density ρ</td><td class="map-arrow" style="text-align:center;">⟷</td><td>Sin density σ</td><td>Scalar source, violates symmetry</td></tr>
+        <tr><td>Current density <strong>J</strong></td><td class="map-arrow" style="text-align:center;">⟷</td><td>Mercy current <strong>J<sub>m</sub></strong></td><td>Flow of transgression / repentance</td></tr>
+        <tr><td>Vacuum permittivity ε₀</td><td class="map-arrow" style="text-align:center;">⟷</td><td>Mercy permittivity κ</td><td>Universal constant, resistance to grace</td></tr>
+        <tr><td>Vacuum permeability μ₀</td><td class="map-arrow" style="text-align:center;">⟷</td><td>Grace permeability λ</td><td>Response to mercy current</td></tr>
+        <tr><td>Gauss’s law: ∇·E = ρ/ε₀</td><td class="map-arrow" style="text-align:center;">⟷</td><td>∇·G = σ/κ</td><td>Source equation</td></tr>
+        <tr><td>Gauss’s law for magnetism: ∇·B = 0</td><td class="map-arrow" style="text-align:center;">⟷</td><td>∇·M = 0</td><td>No mercy monopole</td></tr>
+        <tr><td>Faraday’s law: ∇×E = –∂B/∂t</td><td class="map-arrow" style="text-align:center;">⟷</td><td>∇×G = –∂M/∂t</td><td>Grace induces change in mercy</td></tr>
+        <tr><td>Ampère–Maxwell: ∇×B = μ₀J + μ₀ε₀ ∂E/∂t</td><td class="map-arrow" style="text-align:center;">⟷</td><td>∇×M = λJ<sub>m</sub> + λκ ∂G/∂t</td><td>Mercy sourced by current + displacement</td></tr>
+        <tr><td>Continuity: ∂ρ/∂t + ∇·J = 0</td><td class="map-arrow" style="text-align:center;">⟷</td><td>∂σ/∂t + ∇·J<sub>m</sub> = 0</td><td>Charge / sin conservation</td></tr>
+        <tr><td>Lorenz gauge: ∇·A + μ₀ε₀ ∂φ/∂t = 0</td><td class="map-arrow" style="text-align:center;">⟷</td><td>∇·A<sub>g</sub> + λκ ∂φ<sub>g</sub>/∂t = 0</td><td>Gauge fixing for potentials</td></tr>
+        <tr><td>Energy density: u = ½(ε₀E² + B²/μ₀)</td><td class="map-arrow" style="text-align:center;">⟷</td><td>u<sub>g</sub> = ½(κG² + M²/λ)</td><td>Grace‑mercy energy</td></tr>
+        <tr><td>Poynting vector: S = E×B/μ₀</td><td class="map-arrow" style="text-align:center;">⟷</td><td>S<sub>g</sub> = G×M/λ</td><td>Flow of grace‑mercy power</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== 5. SEPARATOR TESTS ===== -->
+  <hr>
+  <div>
+    <div class="section-number">03</div>
+    <h2 class="heading" style="font-size:1.4rem;margin-bottom:1.2rem;">Separator Tests</h2>
+  </div>
+  <div class="grid-2x2">
+    <div class="test-card">
+      <div class="test-header">
+        <span class="test-name"><i class="fa-regular fa-sitemap" style="margin-right:0.5rem;color:var(--gold);"></i>Test A · Structural Preservation</span>
+        <span class="test-result pass">PASS</span>
+      </div>
+      <div class="test-desc">All relations (∇·, ∇×, ∂/∂t) survive under mapping. The equation forms are identical up to renaming of fields and constants.</div>
+    </div>
+    <div class="test-card">
+      <div class="test-header">
+        <span class="test-name"><i class="fa-regular fa-dice-d6" style="margin-right:0.5rem;color:var(--gold);"></i>Test B · Non‑Arbitrariness</span>
+        <span class="test-result pass">PASS</span>
+      </div>
+      <div class="test-desc">Mapping is forced by the algebraic structure: each physics term has a unique theological counterpart. Swapping targets (e.g., E ⟷ sin) breaks the equations.</div>
+    </div>
+    <div class="test-card">
+      <div class="test-header">
+        <span class="test-name"><i class="fa-regular fa-ban" style="margin-right:0.5rem;color:var(--gold);"></i>Test C · Constraint</span>
+        <span class="test-result pass">PASS</span>
+      </div>
+      <div class="test-desc">The mapping rules out many alternative theological models. For instance, any theology without a conserved sin density or without a mercy field fails the mapping.</div>
+    </div>
+    <div class="test-card">
+      <div class="test-header">
+        <span class="test-name"><i class="fa-regular fa-arrow-right-arrow-left" style="margin-right:0.5rem;color:var(--gold);"></i>Test D · Bidirectionality</span>
+        <span class="test-result pass">PASS</span>
+      </div>
+      <div class="test-desc">Physics predicts the form of theological equations; theology predicts the existence of a gauge structure and continuity law. Both directions hold.</div>
+    </div>
+  </div>
+
+  <!-- ===== 6. CLASSIFICATION & EVIDENCE ===== -->
+  <hr>
+  <div>
+    <div class="section-number">04</div>
+    <h2 class="heading" style="font-size:1.4rem;margin-bottom:1.2rem;">Classification &amp; Evidence</h2>
+  </div>
+  <div class="classification-panel">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:1rem 2rem;margin-bottom:0.8rem;">
+      <span class="badge badge-green" style="font-size:0.85rem;padding:0.4rem 1.4rem;">Level 3 · Isomorphism</span>
+      <span><i class="fa-regular fa-gem" style="color:var(--gold);margin-right:0.3rem;"></i> Confidence: <strong>0.91</strong> / 1.0</span>
+      <span class="small-mono">v2.4.1</span>
+    </div>
+    <div class="evidence-chips">
+      <span class="chip"><i class="fa-regular fa-flask" style="margin-right:0.3rem;"></i>14 mapped equations</span>
+      <span class="chip"><i class="fa-regular fa-arrow-right-arrow-left" style="margin-right:0.3rem;"></i>Bidirectional constraints</span>
+      <span class="chip"><i class="fa-regular fa-circle-check" style="color:var(--success);margin-right:0.3rem;"></i>All separator tests PASS</span>
+      <span class="chip"><i class="fa-regular fa-scale-balanced" style="margin-right:0.3rem;"></i>Gauge invariance preserved</span>
+      <span class="chip"><i class="fa-regular fa-chart-line" style="margin-right:0.3rem;"></i>Continuity law conserved</span>
+    </div>
+    <div style="margin-top:0.6rem;font-size:0.85rem;color:var(--text-secondary);">
+      <span style="color:var(--gold);">Laws invoked:</span> Maxwell‑Lorentz gauge, Poynting theorem, charge conservation, energy density, Lorenz gauge.
+    </div>
+  </div>
+
+  <!-- ===== 7. FALSIFICATION CRITERIA ===== -->
+  <hr>
+  <div>
+    <div class="section-number">05</div>
+    <h2 class="heading" style="font-size:1.4rem;margin-bottom:1.2rem;">Falsification Criteria</h2>
+  </div>
+  <div class="falsification-box">
+    <ul>
+      <li>If a theological model violates ∇·M = 0 (mercy monopole), the isomorphism fails.</li>
+      <li>If the continuity equation ∂σ/∂t + ∇·J<sub>m</sub> = 0 is broken, the mapping is invalid.</li>
+      <li>If the gauge condition ∇·A<sub>g</sub> + λκ ∂φ<sub>g</sub>/∂t = 0 cannot be satisfied, the structure collapses.</li>
+      <li>If the energy density u<sub>g</sub> = ½(κG² + M²/λ) is not positive‑definite, the analogy is not physical.</li>
+      <li>If the Poynting vector S<sub>g</sub> = G×M/λ does not represent a real flow, the isomorphism is broken.</li>
+      <li>If any of the four Maxwell‑like equations cannot be written in the theological domain, the mapping is incomplete.</li>
+    </ul>
+  </div>
+
+  <!-- ===== 8. RELATED ISOMORPHISMS ===== -->
+  <hr>
+  <div>
+    <div class="section-number">06</div>
+    <h2 class="heading" style="font-size:1.4rem;margin-bottom:1.2rem;">Related Isomorphisms</h2>
+  </div>
+  <div class="related-grid">
+    <div class="related-item"><i class="fa-regular fa-wave-square"></i> Quantum‑Grace</div>
+    <div class="related-item"><i class="fa-regular fa-circle-nodes"></i> Trinity Gauge</div>
+    <div class="related-item"><i class="fa-regular fa-chart-pie"></i> Entropy &amp; Sin</div>
+    <div class="related-item"><i class="fa-regular fa-arrow-trend-up"></i> Resurrection Field</div>
+    <div class="related-item"><i class="fa-regular fa-snowflake"></i> Covenant Symmetry</div>
+    <div class="related-item"><i class="fa-regular fa-bolt"></i> Atonement Current</div>
+  </div>
+
+  <!-- ===== 9. FOOTER ===== -->
+  <footer class="footer">
+    <div>
+      <div style="font-family:var(--font-heading);letter-spacing:0.06em;text-transform:uppercase;color:var(--gold);">Theophysics Research Program</div>
+      <div style="margin-top:0.2rem;">POF 2828 · <span class="small-mono">v2.4.1</span></div>
+    </div>
+    <div class="footer-seal">
+      “The math points to God. The math does not contain God.”
+    </div>
+  </footer>
+
+</body>
+</html>

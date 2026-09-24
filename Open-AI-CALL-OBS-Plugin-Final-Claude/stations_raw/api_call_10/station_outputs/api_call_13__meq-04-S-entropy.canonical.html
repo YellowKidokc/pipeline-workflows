@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>Theophysics Isomorphism Registry · MEQ‑04‑S</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:opsz,wght@14..32,300..700&family=JetBrains+Mono:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border: #2a2a2a;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+      --section-number: rgba(212, 175, 55, 0.2);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* headings */
+    h1, h2, h3, h4, .heading-font {
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+    }
+
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.3rem; }
+    h4 { font-size: 1.1rem; }
+
+    /* utility */
+    .gold { color: var(--gold); }
+    .text-muted { color: var(--text-muted); }
+    .mono { font-family: var(--font-mono); }
+    .quote { font-family: var(--font-quote); font-style: italic; }
+    .small-mono { font-family: var(--font-mono); font-size: 0.75rem; color: #6b7280; }
+
+    /* cards & panels */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      transition: border 0.2s;
+    }
+    .card-gold { border-top: 3px solid var(--gold); }
+    .card-blue { border-top: 3px solid var(--info); }
+    .card-danger { border: 1px solid #7f1d1d; background: #1c0f0f; }
+
+    /* grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .grid-2, .grid-4 { grid-template-columns: 1fr; }
+      body { padding: 1rem; }
+      h1 { font-size: 1.8rem; }
+    }
+
+    /* hero banner */
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(10,10,10,0.95) 80%);
+      border: 1px solid #2a2a1a;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .law-badge {
+      display: inline-block;
+      background: #1e293b;
+      color: var(--gold);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      border: 1px solid #3a3a1a;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+
+    .pull-quote {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+      margin: 1rem 0;
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #e2d9c0;
+    }
+
+    .equation-card {
+      background: #0d0d0d;
+      border: 1px solid #2a2a1a;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .eq-arrow {
+      color: var(--gold);
+      font-size: 1.8rem;
+      display: block;
+      text-align: center;
+      margin: 0.4rem 0;
+    }
+
+    /* mapping table */
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.5rem;
+    }
+    .mapping-table th {
+      background: #1a1a0e;
+      color: var(--gold);
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      padding: 0.8rem 0.6rem;
+      border-bottom: 2px solid var(--gold);
+      text-align: left;
+    }
+    .mapping-table td {
+      padding: 0.7rem 0.6rem;
+      border-bottom: 1px solid #1e1e1e;
+      vertical-align: top;
+    }
+    .mapping-table tr:last-child td { border-bottom: none; }
+    .mapping-table .domain-a { color: var(--info); font-weight: 500; }
+    .mapping-table .domain-b { color: var(--gold); font-weight: 500; }
+
+    /* separator */
+    .section-sep {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 2.5rem 0 1.5rem 0;
+      opacity: 0.4;
+    }
+
+    .section-number {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      color: var(--section-number);
+      line-height: 1;
+      margin-right: 0.75rem;
+    }
+
+    /* classification chips */
+    .chip {
+      display: inline-block;
+      background: #1e1e1e;
+      border: 1px solid #2a2a2a;
+      border-radius: 30px;
+      padding: 0.2rem 1rem;
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+      margin: 0.2rem 0.3rem;
+    }
+    .chip-gold { border-color: var(--gold); color: var(--gold); }
+    .chip-green { border-color: var(--success); color: var(--success); }
+    .chip-red { border-color: var(--danger); color: var(--danger); }
+
+    .badge-level {
+      display: inline-block;
+      background: #1a2a1a;
+      color: var(--success);
+      border: 1px solid var(--success);
+      border-radius: 30px;
+      padding: 0.15rem 1rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+
+    .badge-level-2 {
+      background: #2a2a1a;
+      color: #eab308;
+      border-color: #eab308;
+    }
+
+    .footer-seal {
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: #7a7a7a;
+      border-top: 1px solid #1e1e1e;
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .verse-ref {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: #5a5a5a;
+    }
+
+    /* test pass/fail */
+    .test-pass { color: var(--success); font-weight: 600; }
+    .test-fail { color: var(--danger); font-weight: 600; }
+
+    /* related grid */
+    .related-link {
+      background: #111;
+      border: 1px solid #1e1e1e;
+      border-radius: 2rem;
+      padding: 0.4rem 1.2rem;
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .related-link:hover { border-color: var(--gold); }
+  </style>
+</head>
+<body>
+
+<!-- 1. REGISTRY HEADER -->
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem 1.5rem; margin-bottom: 0.5rem;">
+  <span style="font-size: 2.8rem; font-family: 'Crimson Text', serif; color: var(--gold); font-weight: 400; line-height: 1;">Φ</span>
+  <div>
+    <h1 style="margin: 0; line-height: 1.2;">Theophysics Registry</h1>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.8rem 1.8rem; align-items: center; margin-top: 0.2rem;">
+      <span class="mono" style="color: var(--text-muted);">ISO‑TIR: MEQ‑04‑S</span>
+      <span class="mono" style="color: var(--text-muted);">“Entropy &amp; the Fall — structural isomorphism”</span>
+      <span class="badge-level"><i class="fa-regular fa-circle-check" style="margin-right: 0.3rem;"></i>Level 3 · Isomorphism</span>
+      <span class="small-mono">confidence: 0.89</span>
+      <span class="small-mono">v2.1.0</span>
+    </div>
+  </div>
+</div>
+
+<!-- 2. HERO BANNER -->
+<div class="hero-banner">
+  <div class="grid-2" style="align-items: start;">
+    <!-- left -->
+    <div>
+      <span class="law-badge"><i class="fa-regular fa-file-lines" style="margin-right: 0.4rem;"></i>Second Law / Curse</span>
+      <h2 style="font-size: 2rem; margin: 0.5rem 0 0.2rem; line-height: 1.2;">Entropy <span style="color: var(--gold);">⟷</span> The Fall</h2>
+      <div style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.8rem;">Domain A (physics) ⇄ Domain B (theology)</div>
+      <div class="pull-quote">
+        “The increase of entropy in an isolated system corresponds structurally to the theological condition of a creation subjected to futility — a binding that is both real and contingent.”
+      </div>
+      <div class="verse-ref"><i class="fa-regular fa-bookmark"></i> Rom 8:20–22, Gen 3:17–19</div>
+    </div>
+    <!-- right: equation card -->
+    <div class="equation-card">
+      <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+        <div><span style="color: var(--info);">Physics</span> <span class="text-muted">(Clausius / Boltzmann)</span></div>
+        <div style="font-size: 1.1rem;">dS ≥ 0 &nbsp;·&nbsp; S = k<sub>B</sub> ln Ω</div>
+        <div class="eq-arrow">⟷</div>
+        <div><span style="color: var(--gold);">Theology</span> <span class="text-muted">(Fall / Curse)</span></div>
+        <div style="font-size: 1.1rem;">∂<sub>t</sub>δ <span style="color: #aaa;">≥</span> 0 &nbsp;·&nbsp; δ = <span style="color: #aaa;">∫</span> (futility) dτ</div>
+        <div style="border-top: 1px solid #1e1e1e; margin-top: 0.6rem; padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-muted);">
+          <span class="mono">S ↔ δ &nbsp;·&nbsp; dS/dt ↔ ∂δ/∂t &nbsp;·&nbsp; Ω ↔ creation‑state</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. DOMAIN SPECIFICATIONS -->
+<div style="display: flex; align-items: baseline; gap: 0.5rem; margin: 1.5rem 0 0.5rem;">
+  <span class="section-number">01</span>
+  <h2>Domain specifications</h2>
+</div>
+<div class="section-sep"></div>
+
+<div class="grid-2">
+  <!-- Domain A -->
+  <div class="card card-blue">
+    <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+      <i class="fa-solid fa-atom" style="color: var(--info); font-size: 1.6rem;"></i>
+      <h3 style="margin: 0;">Domain A · Physics</h3>
+    </div>
+    <p><strong>Entropy &amp; the Second Law</strong> — In any isolated system, entropy never decreases. The Boltzmann entropy <span class="mono">S = k<sub>B</sub> ln Ω</span> measures the number of accessible microstates. The law is statistical, directional, and irreversible on macroscopic scales.</p>
+    <div class="small-mono" style="margin-top: 0.6rem;">Clausius (1865), Boltzmann (1877) · dS ≥ 0</div>
+  </div>
+  <!-- Domain B -->
+  <div class="card card-gold">
+    <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+      <i class="fa-solid fa-dove" style="color: var(--gold); font-size: 1.6rem;"></i>
+      <h3 style="margin: 0;">Domain B · Theology</h3>
+    </div>
+    <p><strong>The Fall &amp; the Curse</strong> — Creation was subjected to futility (mataiotēs) not by its own choice, but by the one who subjected it, in hope. Decay, death, and disorder enter the created order as a consequence of rebellion. The condition is universal, directional, and awaits redemption.</p>
+    <div class="small-mono" style="margin-top: 0.6rem;">Gen 3:17–19 · Rom 8:20–22 · 1 Cor 15:21</div>
+  </div>
+</div>
+
+<!-- 4. THE ISOMORPHIC MAPPING -->
+<div style="display: flex; align-items: baseline; gap: 0.5rem; margin: 2rem 0 0.5rem;">
+  <span class="section-number">02</span>
+  <h2>Isomorphic mapping</h2>
+</div>
+<div class="section-sep"></div>
+
+<div class="card" style="overflow-x: auto;">
+  <table class="mapping-table">
+    <thead>
+      <tr><th>#</th><th>Domain A (physics)</th><th>Domain B (theology)</th><th>type</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td class="domain-a">Entropy S</td><td class="domain-b">Futility‑bound δ</td><td>bijection</td></tr>
+      <tr><td>2</td><td class="domain-a">Second Law: dS/dt ≥ 0</td><td class="domain-b">Curse: ∂δ/∂t ≥ 0</td><td>relation preservation</td></tr>
+      <tr><td>3</td><td class="domain-a">Microstate count Ω</td><td class="domain-b">Creation‑state multiplicity</td><td>structural</td></tr>
+      <tr><td>4</td><td class="domain-a">Irreversibility (time‑asymmetry)</td><td class="domain-b">Historical once‑for‑all Fall</td><td>directional</td></tr>
+      <tr><td>5</td><td class="domain-a">Thermal equilibrium (maximum S)</td><td class="domain-b">Eschatological restoration (new creation)</td><td>limit correspondence</td></tr>
+      <tr><td>6</td><td class="domain-a">Fluctuations (statistical)</td><td class="domain-b">Remnant / grace‑interventions</td><td>analogous</td></tr>
+      <tr><td>7</td><td class="domain-a">Entropy as a measure of disorder</td><td class="domain-b">Sin / decay as moral‑ontological disorder</td><td>interpretive</td></tr>
+      <tr><td>8</td><td class="domain-a">Boltzmann constant k<sub>B</sub></td><td class="domain-b">Divine decree / contingency factor</td><td>scaling</td></tr>
+      <tr><td>9</td><td class="domain-a">Isolated system assumption</td><td class="domain-b">Creation “subjected” (Rom 8:20)</td><td>boundary condition</td></tr>
+      <tr><td>10</td><td class="domain-a">Entropy increase ⇒ heat death</td><td class="domain-b">Curse ⇒ death &amp; futility</td><td>terminal correspondence</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 5. SEPARATOR TESTS -->
+<div style="display: flex; align-items: baseline; gap: 0.5rem; margin: 2rem 0 0.5rem;">
+  <span class="section-number">03</span>
+  <h2>Separator tests</h2>
+</div>
+<div class="section-sep"></div>
+
+<div class="grid-4">
+  <!-- Test A -->
+  <div class="card">
+    <h4><i class="fa-regular fa-sitemap" style="margin-right: 0.4rem;"></i> Test A · Structural preservation</h4>
+    <p style="font-size: 0.9rem; margin: 0.5rem 0;">Do relations survive under mapping? The inequality dS ≥ 0 maps to ∂δ/∂t ≥ 0; the partial order of microstates maps to the ordering of creation‑states under futility.</p>
+    <span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span>
+  </div>
+  <!-- Test B -->
+  <div class="card">
+    <h4><i class="fa-regular fa-dice-d6" style="margin-right: 0.4rem;"></i> Test B · Non‑arbitrariness</h4>
+    <p style="font-size: 0.9rem; margin: 0.5rem 0;">Could entropy map to something else? The directional, statistical, and terminal features uniquely align with the Fall narrative; swapping targets (e.g., Incarnation) loses the irreversible decay structure.</p>
+    <span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span>
+  </div>
+  <!-- Test C -->
+  <div class="card">
+    <h4><i class="fa-regular fa-circle-xmark" style="margin-right: 0.4rem;"></i> Test C · Constraint</h4>
+    <p style="font-size: 0.9rem; margin: 0.5rem 0;">Does the mapping rule things out? It forbids any theology where the Fall is reversible by human effort, and any physics where entropy decreases spontaneously in isolated systems.</p>
+    <span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span>
+  </div>
+  <!-- Test D -->
+  <div class="card">
+    <h4><i class="fa-regular fa-arrow-right-arrow-left" style="margin-right: 0.4rem;"></i> Test D · Bidirectionality</h4>
+    <p style="font-size: 0.9rem; margin: 0.5rem 0;">Does each side predict the other? The Second Law predicts a “subjected” creation; the Fall predicts a thermodynamic arrow. Both point to a contingent, directional, non‑eternal universe.</p>
+    <span class="test-pass"><i class="fa-regular fa-circle-check"></i> PASS</span>
+  </div>
+</div>
+
+<!-- 6. CLASSIFICATION & EVIDENCE -->
+<div style="display: flex; align-items: baseline; gap: 0.5rem; margin: 2rem 0 0.5rem;">
+  <span class="section-number">04</span>
+  <h2>Classification &amp; evidence</h2>
+</div>
+<div class="section-sep"></div>
+
+<div class="card" style="border-left: 4px solid var(--gold);">
+  <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center;">
+    <div>
+      <span class="badge-level" style="font-size: 0.9rem; padding: 0.3rem 1.5rem;"><i class="fa-regular fa-circle-check"></i> Level 3 · Isomorphism</span>
+      <div style="margin-top: 0.5rem; font-size: 0.9rem;">Confidence: <strong>0.89</strong> / 1.0</div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+      <span class="chip chip-gold"><i class="fa-regular fa-flask"></i> Second Law</span>
+      <span class="chip chip-gold"><i class="fa-regular fa-book"></i> Rom 8:20–22</span>
+      <span class="chip chip-green"><i class="fa-regular fa-chart-line"></i> dS/dt ↔ ∂δ/∂t</span>
+      <span class="chip chip-green"><i class="fa-regular fa-microchip"></i> Boltzmann ↔ futility</span>
+      <span class="chip"><i class="fa-regular fa-scale-balanced"></i> 10‑point mapping</span>
+    </div>
+  </div>
+  <div style="margin-top: 1rem; border-top: 1px solid #1e1e1e; padding-top: 0.8rem; font-size: 0.85rem; color: var(--text-muted);">
+    <span class="mono">laws invoked:</span> Clausius inequality, Boltzmann entropy, Curse‑decay irreversibility, eschatological new creation.
+  </div>
+</div>
+
+<!-- 7. FALSIFICATION CRITERIA -->
+<div style="display: flex; align-items: baseline; gap: 0.5rem; margin: 2rem 0 0.5rem;">
+  <span class="section-number">05</span>
+  <h2>Falsification criteria</h2>
+</div>
+<div class="section-sep"></div>
+
+<div class="card card-danger">
+  <div style="display: flex; gap: 0.8rem; align-items: flex-start;">
+    <i class="fa-solid fa-triangle-exclamation" style="color: var(--danger); font-size: 1.6rem;"></i>
+    <div>
+      <p style="font-weight: 600; color: #fca5a5;">The isomorphism is falsified if any of the following obtain:</p>
+      <ul style="list-style: none; margin-top: 0.5rem;">
+        <li style="margin-bottom: 0.4rem;">✓ &nbsp; Entropy is found to decrease spontaneously in an isolated system (violation of Second Law).</li>
+        <li style="margin-bottom: 0.4rem;">✓ &nbsp; The Fall is shown to be a reversible event (i.e., creation can return to pre‑Fall state by natural processes).</li>
+        <li style="margin-bottom: 0.4rem;">✓ &nbsp; A non‑theological account of the Second Law eliminates the need for any “subjected” condition.</li>
+        <li style="margin-bottom: 0.4rem;">✓ &nbsp; The mapping between microstate multiplicity and creation‑state multiplicity is broken by a discovery of a non‑statistical origin of the Second Law.</li>
+        <li>✓ &nbsp; Eschatological restoration is demonstrated to be impossible in principle (contradicts limit correspondence).</li>
+      </ul>
+      <div class="verse-ref" style="margin-top: 0.5rem;">kill conditions derived from MEQ‑04‑S §7</div>
+    </div>
+  </div>
+</div>
+
+<!-- 8. RELATED ISOMORPHISMS -->
+<div style="display: flex; align-items: baseline; gap: 0.5rem; margin: 2rem 0 0.5rem;">
+  <span class="section-number">06</span>
+  <h2>Related isomorphisms</h2>
+</div>
+<div class="section-sep"></div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+  <a href="#" class="related-link"><i class="fa-regular fa-link"></i> MEQ‑02‑T · Wavefunction &amp; Logos</a>
+  <a href="#" class="related-link"><i class="fa-regular fa-link"></i> MEQ‑07‑R · Renormalization &amp; Atonement</a>
+  <a href="#" class="related-link"><i class="fa-regular fa-link"></i> MEQ‑11‑C · Cosmology &amp; Creation</a>
+  <a href="#" class="related-link"><i class="fa-regular fa-link"></i> MEQ‑03‑F · Fine‑tuning &amp; Providence</a>
+</div>
+
+<!-- 9. FOOTER -->
+<div class="footer-seal">
+  <div style="font-family: var(--font-heading); letter-spacing: 0.1em; font-size: 0.8rem; color: #5a5a5a;">THEOPHYSICS RESEARCH PROGRAM</div>
+  <div style="margin: 0.3rem 0; font-size: 0.75rem; color: #4a4a4a;">POF 2828 · v2.1.0 · MEQ‑04‑S</div>
+  <div style="max-width: 500px; margin: 0.8rem auto 0; font-size: 0.9rem; color: #6b7280;">“The math points to God. The math does not contain God.”</div>
+  <div style="margin-top: 0.5rem;"><i class="fa-regular fa-phi" style="color: var(--gold-dim); font-size: 1.2rem;"></i></div>
+</div>
+
+</body>
+</html>

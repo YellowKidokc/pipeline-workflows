@@ -1,0 +1,302 @@
+{
+  "spec_version": "1.0",
+  "page_id": "PAGE_12",
+  "page_title": "LAW 9: THE EXPOSED PROOF",
+  "page_slug": "law-9-the-exposed-proof",
+  "source_file": "PAGE_12_LAW_9_THE_EXPOSED_PROOF.md",
+  "generated_by": "adversarial_audit_bot",
+  "generated_date": "2026-07-15",
+  "adversarial_audit": {
+    "fatal_issue": "The core claim that the cubic term \u03bb\u03c8\u00b3 makes transitions irreversible is not supported by the derivation. The Euler-Lagrange equation and Noether current are derived from a Lagrangian that is time-reversal invariant in its kinetic term; the cubic term breaks parity (\u03c8 \u2192 -\u03c8) but does not break time-reversal symmetry (t \u2192 -t). Irreversibility requires a term with an odd number of time derivatives or explicit time dependence. The derivation shows conservation, not irreversibility.",
+    "major_issue": "The mapping from muon decay to moral decay is a metaphor, not an isomorphism. The table assigns \u03b4 (visible damage) to \u03bd\u0304_e (invisible) and \u03bd_loss (invisible remainder) to \u03bd_\u03bc (invisible), but the text earlier calls \u03b4 'visible damage' and \u03bd_loss 'invisible remainder'. The mapping is inconsistent: two invisible particles in the physics process map to one visible and one invisible in the moral process. This breaks the claimed one-to-one correspondence.",
+    "sharpening_issue": "The decay rate \u0393_sin = (G\u00b2_fall \u00b7 \u03c8\u2075)/(192\u03c0\u00b3) \u00b7 P_will is asserted without derivation. The phase-space factor 192\u03c0\u00b3 comes from muon decay, which involves a different mass scale and coupling structure. No justification is given for why the moral-sector phase space is identical, nor why \u03c8\u2075 appears (muon decay has m_\u03bc\u2075). The volitional gate P_will is undefined and not derived from the Lagrangian.",
+    "smart_hostile_physicist_check": {
+      "primary_confusion": "analogy",
+      "diagnosis": "The text claims the cubic term makes the process irreversible, but the Lagrangian is time-reversal symmetric. The Noether derivation shows conservation, not irreversibility. The muon decay analogy is presented as a structural mapping but contains internal contradictions (visible vs invisible assignments).",
+      "sentence_to_rewrite": "The cubic term satisfies \u03bb\u03c8\u00b3 \u2260 \u03bb(-\u03c8)\u00b3, encoding irreversibility: the transition \u03c8_whole \u2192 \u03c8_broken is not the time-reverse of \u03c8_broken \u2192 \u03c8_whole.",
+      "required_fix": "Replace 'irreversibility' with 'parity violation' and provide a separate mechanism for time-reversal breaking (e.g., a term with a first-order time derivative or explicit time dependence). Clarify that parity violation does not imply irreversibility."
+    },
+    "physics_process_check": {
+      "does_mirror_physics_process": true,
+      "physics_process_named": "Muon decay (\u03bc\u207b \u2192 e\u207b + \u03bd\u0304_e + \u03bd_\u03bc)",
+      "one_to_one_verdict": "broken",
+      "where_mapping_holds": "The three-body decay structure and phase-space factor 192\u03c0\u00b3 are borrowed from muon decay.",
+      "where_mapping_breaks": "The mapping table assigns \u03b4 (visible damage) to \u03bd\u0304_e (invisible) and \u03bd_loss (invisible remainder) to \u03bd_\u03bc (invisible), but the text earlier calls \u03b4 'visible damage' and \u03bd_loss 'invisible remainder'. This is inconsistent: two invisible particles in physics map to one visible and one invisible in the moral process. The coupling constant G_fall is not defined in terms of any measurable quantity.",
+      "sentence_to_rewrite": "The 192\u03c0\u00b3 is not arbitrary. It is the phase-space factor from muon decay (\u03bc\u207b \u2192 e\u207b + \u03bd\u0304_e + \u03bd_\u03bc). The borrowing is named: the three-body moral decay has the same kinematic structure as the three-body leptonic decay.",
+      "required_fix": "Either correct the mapping so that both invisible particles map to invisible moral quantities, or acknowledge that the mapping is a heuristic analogy, not a one-to-one isomorphism. Provide a derivation of the phase-space factor from the moral-sector Lagrangian."
+    },
+    "strongest_non_framework_alternative": "The moral cost is not conserved but is dissipated as heat or entropy increase in an open system, with no invisible remainder. The three-body decay is a specific model; a simpler alternative is that moral cost is a social construct with no conserved quantity.",
+    "what_would_force_public_narrowing": "A demonstration that the cubic term in the Lagrangian actually breaks time-reversal symmetry (it does not), or a derivation of the decay rate from first principles without borrowing from particle physics.",
+    "rewrite_priority": "fatal"
+  },
+  "structure_audit": {
+    "opening_hook_strength": 7,
+    "logical_flow_strength": 5,
+    "transition_quality": 6,
+    "does_opening_promise_match_ending": false,
+    "sequence_verdict": "repairable",
+    "best_order_step_by_step": [
+      "State the claim: moral cost is conserved and irreversible.",
+      "Define the Lagrangian and explain why the cubic term breaks parity but not time-reversal.",
+      "Derive the Euler-Lagrange equation.",
+      "Perform the Noether derivation for time-translation symmetry.",
+      "Show the conservation proof.",
+      "Introduce the three-body decay as a model, with a clear statement that it is an analogy.",
+      "Provide the decay rate derivation or state it as a postulate.",
+      "Discuss grace and atonement as open-system extensions.",
+      "List kill conditions."
+    ],
+    "flow_breaks": [
+      {
+        "from_section": "The Derivation",
+        "to_section": "The Three-Body Decay",
+        "problem": "The transition from a general Noether derivation to a specific decay model is abrupt. The decay rate formula appears without derivation, and the mapping to muon decay is introduced without acknowledging the inconsistency in the visible/invisible assignment.",
+        "fix": "Add a transitional paragraph explaining that the three-body decay is a concrete example of the conservation law, and derive the decay rate from the Lagrangian or state it as a postulate. Correct the mapping table."
+      }
+    ],
+    "sentence_that_carries_too_much_weight": "The cubic term satisfies \u03bb\u03c8\u00b3 \u2260 \u03bb(-\u03c8)\u00b3, encoding irreversibility: the transition \u03c8_whole \u2192 \u03c8_broken is not the time-reverse of \u03c8_broken \u2192 \u03c8_whole.",
+    "why_it_carries_too_much_weight": "This single sentence is the foundation for the claim of irreversibility, which is central to the entire page. However, it is false: parity violation does not imply time-reversal violation. The sentence must be rewritten to avoid a fatal error."
+  },
+  "framework_presence": {
+    "master_equation": [
+      {
+        "present": true,
+        "quote": "Q_m = 1/2 \u03c8\u0307\u00b2 + V(\u03c8) + \u03bb\u03c8\u00b3",
+        "function": "Defines the conserved charge for the moral sector."
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1",
+        "present": true,
+        "quote": "Moral cost must be conserved",
+        "function": "Assumed from Page 09."
+      },
+      {
+        "id": "A2",
+        "present": true,
+        "quote": "The system has Lagrangian structure",
+        "function": "Assumed from Page 05."
+      }
+    ],
+    "lean4": [
+      {
+        "present": true,
+        "quote": "cost_cannot_vanish (C20)",
+        "function": "Lean theorem verifying conservation."
+      },
+      {
+        "present": true,
+        "quote": "conjugate_transfer (C19)",
+        "function": "Lean theorem for conjugate transfer."
+      }
+    ],
+    "claims_layer": [
+      {
+        "present": true,
+        "quote": "The claim is not metaphor dressed in equations.",
+        "function": "States that the derivation is a literal Noether derivation."
+      }
+    ],
+    "proof_layer": [
+      {
+        "present": true,
+        "quote": "The bracket vanishes by the Euler-Lagrange equation.",
+        "function": "Shows the conservation proof."
+      }
+    ],
+    "tests_layer": [
+      {
+        "present": true,
+        "quote": "Kill Conditions",
+        "function": "Provides falsifiability criteria."
+      }
+    ],
+    "laws_layer": [
+      {
+        "id": "L9",
+        "present": true,
+        "quote": "LAW 9: THE EXPOSED PROOF",
+        "function": "States the law."
+      }
+    ]
+  },
+  "paper_changing_questions": [
+    {
+      "question": "What exact prediction does this source make that is currently testable?",
+      "why_it_matters": "Without a testable prediction, the framework is unfalsifiable and cannot be distinguished from a metaphor.",
+      "if_unanswered_then": "The page remains a theological claim dressed in physics language, not a scientific theory.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Which named physics process is being mirrored, and where is the one-to-one transition map?",
+      "why_it_matters": "The muon decay mapping is central to the three-body decay model, but the mapping is inconsistent (visible vs invisible).",
+      "if_unanswered_then": "The analogy is broken and the decay rate formula is unjustified.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Does the cubic term \u03bb\u03c8\u00b3 actually break time-reversal symmetry, or only parity?",
+      "why_it_matters": "The claim of irreversibility depends on time-reversal breaking, but the Lagrangian is time-reversal invariant.",
+      "if_unanswered_then": "The central claim of the page is false.",
+      "severity": "fatal"
+    },
+    {
+      "question": "What is the strongest falsifying data point against the core thesis?",
+      "why_it_matters": "The kill conditions are vague; a concrete falsifying data point would make the framework testable.",
+      "if_unanswered_then": "The framework is not falsifiable.",
+      "severity": "major"
+    },
+    {
+      "question": "Which assumption is least justified, and what minimum condition would weaken it?",
+      "why_it_matters": "The Lagrangian structure is assumed from earlier pages; if that assumption is weak, the entire derivation collapses.",
+      "if_unanswered_then": "The proof is built on an unexamined foundation.",
+      "severity": "major"
+    },
+    {
+      "question": "Are core claims supported by primary sources, not summary mentions only?",
+      "why_it_matters": "The page references muon decay but does not cite any particle physics source for the phase-space factor.",
+      "if_unanswered_then": "The derivation is not reproducible.",
+      "severity": "major"
+    },
+    {
+      "question": "Which term is used in multiple meanings in the same argument?",
+      "why_it_matters": "The term 'invisible' is used for both \u03b4 and \u03bd_loss in the mapping table, but \u03b4 is called 'visible damage' in the text.",
+      "if_unanswered_then": "The argument is internally inconsistent.",
+      "severity": "major"
+    },
+    {
+      "question": "Which statement is most likely to be attacked and why?",
+      "why_it_matters": "The claim that the cubic term encodes irreversibility is the most vulnerable point.",
+      "if_unanswered_then": "The page will be dismissed by physicists.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "What single sentence should be rewritten to remove non-falsifiable certainty?",
+      "why_it_matters": "The sentence about irreversibility is stated as fact but is not supported.",
+      "if_unanswered_then": "The page contains a false claim.",
+      "severity": "fatal"
+    },
+    {
+      "question": "What minimal counterexample would break the central analogy?",
+      "why_it_matters": "If a two-body moral decay exists (\u03c8_whole \u2192 \u03c8_broken with no \u03bd_loss), the three-body structure is wrong.",
+      "if_unanswered_then": "The analogy is not robust.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "Can this be safely ingested into downstream metadata fields without ambiguity?",
+      "why_it_matters": "The mapping table has an inconsistency that would propagate errors.",
+      "if_unanswered_then": "The framework cannot be reliably formalized.",
+      "severity": "major"
+    }
+  ],
+  "sentence_annotations": [
+    {
+      "anchor_quote": "The cubic term satisfies \u03bb\u03c8\u00b3 \u2260 \u03bb(-\u03c8)\u00b3, encoding irreversibility",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Falsely claims parity violation implies irreversibility. This is a fatal error.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "C_irreversibility"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "E_cubic"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The 192\u03c0\u00b3 is not arbitrary. It is the phase-space factor from muon decay",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Asserts an exact numerical factor without derivation from the moral-sector Lagrangian.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "C_phase_space"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "E_decay_rate"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "\u03b4 (visible damage) and \u03bd_loss (invisible remainder)",
+      "annotation_type": "clarification",
+      "ui_color": "violet",
+      "why_flagged": "Inconsistent with the mapping table where \u03b4 is mapped to \u03bd\u0304_e (invisible) and \u03bd_loss to \u03bd_\u03bc (invisible).",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "C_mapping"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The bracket vanishes by the Euler-Lagrange equation",
+      "annotation_type": "proof",
+      "ui_color": "blue",
+      "why_flagged": "This is the core of the conservation proof; it is mathematically correct but does not address irreversibility.",
+      "rewrite_needed": false,
+      "linked_items": {
+        "claim_ids": [
+          "C_conservation"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [
+          "T_conservation"
+        ],
+        "equation_ids": [
+          "E_conservation_proof"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Grace enters as the explicit open-system source",
+      "annotation_type": "claim",
+      "ui_color": "gold",
+      "why_flagged": "Introduces a new term without derivation; the equation \u2202_\u03bc T^{\u03bc0} = J^0_grace is not derived from the Lagrangian.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "C_grace_source"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "E_grace"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Atonement is not the denial of cost. It is the payment of cost by an external source",
+      "annotation_type": "clarification",
+      "ui_color": "violet",
+      "why_flagged": "This is a theological claim dressed in thermodynamic language; the equation dS_m/dt = \u03c3 - W_grace/T is asserted without derivation.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "C_atonement"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "E_entropy"
+        ],
+        "test_ids": []
+      }
+    }
+  ]
+}

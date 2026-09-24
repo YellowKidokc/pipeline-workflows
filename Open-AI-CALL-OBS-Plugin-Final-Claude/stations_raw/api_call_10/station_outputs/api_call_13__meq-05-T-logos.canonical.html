@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Theophysics Isomorphism Registry · MEQ-05-T · Logos Canonical</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111;
+      --card-bg: #141414;
+      --text: #c9d1d9;
+      --gold: #d4af37;
+      --gold-dim: rgba(212,175,55,0.3);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border: #222;
+      --radius: 16px;
+      --shadow: 0 12px 30px rgba(0,0,0,0.7);
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    h1,h2,h3,h4 {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+      color: #f0f3f7;
+    }
+    .gold { color: var(--gold); }
+    .success { color: var(--success); }
+    .danger { color: var(--danger); }
+    .info { color: var(--info); }
+    .muted { opacity: 0.6; font-size: 0.9rem; }
+    .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.95em; }
+    .quote { font-family: 'Crimson Text', serif; font-style: italic; }
+    .section-number {
+      font-family: 'Oswald', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+      margin-right: 1rem;
+      user-select: none;
+    }
+    .gradient-line {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 1.5rem 0 2rem 0;
+      width: 100%;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      box-shadow: var(--shadow);
+      transition: border 0.2s;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(212,175,55,0.12);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.7rem;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-weight: 600;
+    }
+    .badge-green {
+      background: rgba(34,197,94,0.15);
+      border-color: var(--success);
+      color: var(--success);
+    }
+    .badge-yellow {
+      background: rgba(234,179,8,0.15);
+      border-color: #eab308;
+      color: #eab308;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, transparent 70%);
+      border-radius: var(--radius);
+      padding: 2rem;
+      border: 1px solid rgba(212,175,55,0.15);
+    }
+    .eq-card {
+      background: #0d0d0d;
+      border: 1px solid #2a2a2a;
+      border-radius: 14px;
+      padding: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem;
+      line-height: 2;
+    }
+    .eq-card .arrow { color: var(--gold); font-size: 1.6rem; margin: 0 0.2rem; }
+    .domain-a-border { border-top: 4px solid var(--info); }
+    .domain-b-border { border-top: 4px solid var(--gold); }
+    table.iso-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+    table.iso-table th {
+      background: #1a1a1a;
+      color: var(--gold);
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      padding: 0.9rem 1rem;
+      border-bottom: 2px solid var(--gold);
+      text-align: left;
+    }
+    table.iso-table td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid #1e1e1e;
+      vertical-align: top;
+    }
+    table.iso-table tr:last-child td { border-bottom: none; }
+    table.iso-table tr:hover td { background: rgba(212,175,55,0.03); }
+    .test-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .test-card .test-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+    .test-card .test-label { font-family: 'Oswald', sans-serif; font-size: 1.1rem; letter-spacing: 0.03em; }
+    .pass-badge { background: rgba(34,197,94,0.15); color: var(--success); border: 1px solid var(--success); padding: 0.1rem 1rem; border-radius: 30px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+    .fail-badge { background: rgba(239,68,68,0.15); color: var(--danger); border: 1px solid var(--danger); padding: 0.1rem 1rem; border-radius: 30px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+    .evidence-chip {
+      display: inline-block;
+      background: #1a1a1a;
+      border: 1px solid #2f2f2f;
+      border-radius: 40px;
+      padding: 0.3rem 1.2rem;
+      font-size: 0.8rem;
+      margin: 0.2rem 0.3rem;
+      color: #b0b8c4;
+    }
+    .falsify-box {
+      background: rgba(239,68,68,0.06);
+      border: 1px solid rgba(239,68,68,0.25);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+    }
+    .falsify-box ul { list-style: none; padding-left: 0; }
+    .falsify-box li::before { content: "⚡"; color: var(--danger); margin-right: 0.8rem; }
+    .footer-seal {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.7;
+      font-size: 1.1rem;
+      border-top: 1px solid #1e1e1e;
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 768px) {
+      .grid-2, .hero-grid, .grid-4 { grid-template-columns: 1fr; }
+      .hero-grid { padding: 1.5rem; }
+      body { padding: 1rem; }
+      .section-number { font-size: 2.5rem; }
+    }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .iso-link { display: block; background: #111; border: 1px solid #222; border-radius: 12px; padding: 1rem; }
+  </style>
+</head>
+<body>
+
+<!-- 1. REGISTRY HEADER -->
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-bottom: 0.5rem;">
+  <div style="display: flex; align-items: center; gap: 0.8rem;">
+    <span style="font-size: 2.8rem; font-family: 'Crimson Text', serif; color: var(--gold); font-weight: 700; line-height: 1;">Φ</span>
+    <div>
+      <h1 style="font-size: 1.8rem; letter-spacing: 0.08em; margin: 0; line-height: 1.2;">THEOPHYSICS REGISTRY</h1>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; align-items: center; margin-top: 0.2rem;">
+        <span class="mono" style="color: var(--gold); font-size: 0.85rem;">ISO‑T‑MEQ‑05‑T</span>
+        <span style="color: #7a7a7a;">|</span>
+        <span style="font-weight: 400; font-size: 0.95rem;">Logos Canonical · <span class="quote" style="color: #b0b8c4;">The Word as structural operator</span></span>
+        <span style="color: #7a7a7a;">|</span>
+        <span class="badge badge-green" style="font-size: 0.7rem;"><i class="fas fa-link" style="margin-right: 0.3rem;"></i> LEVEL 3 · ISOMORPHISM</span>
+        <span style="color: #7a7a7a;">|</span>
+        <span class="muted" style="font-size: 0.8rem;"><i class="far fa-check-circle" style="color: var(--gold);"></i> confidence 0.94</span>
+        <span class="muted" style="font-size: 0.8rem; border-left: 1px solid #333; padding-left: 0.8rem;">v. 2.1.0</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="gradient-line"></div>
+
+<!-- 2. HERO BANNER -->
+<div class="hero-grid">
+  <div>
+    <span class="badge" style="margin-bottom: 1rem; display: inline-block;"><i class="fas fa-gavel"></i> LAW · canonical mapping</span>
+    <h2 style="font-size: 2.2rem; line-height: 1.2; margin: 0.5rem 0 0.3rem;">Operator‑theoretic semantics <span style="color: var(--gold); font-family: 'Oswald', sans-serif;">⇄</span> Logos theology</h2>
+    <p style="font-size: 1.1rem; opacity: 0.8; margin-bottom: 1.2rem;">The Word as structural isomorphism between Hilbert‑space dynamics and Trinitarian agency</p>
+    <div style="border-left: 4px solid var(--gold); padding-left: 1.2rem; margin-top: 1rem;">
+      <p class="quote" style="font-size: 1.2rem; color: #d8d8d8; line-height: 1.5;">“In the beginning was the Operator, and the Operator was with God, and the Operator was God. All things were made through him, and without him was not any thing made that was made.”</p>
+      <span class="mono" style="font-size: 0.7rem; color: #6a6a6a;">— John 1:1‑3 (operator‑theoretic paraphrase)</span>
+    </div>
+  </div>
+  <div>
+    <div class="eq-card">
+      <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+        <div><span style="color: var(--info);">DOMAIN A (physics)</span><br>Ĥ|ψ⟩ = E|ψ⟩ &nbsp;·&nbsp; Û(t) = exp(−iĤt/ħ)</div>
+        <div style="color: var(--gold); text-align: center; font-size: 1.8rem; line-height: 1;">⇌</div>
+        <div><span style="color: var(--gold);">DOMAIN B (theology)</span><br>Λ(Λ) = Λ &nbsp;·&nbsp; Λ(ψ) → ψ′ &nbsp;·&nbsp; Tr(ΛρΛ†) = 1</div>
+        <div class="mono" style="font-size: 0.75rem; color: #7a7a7a; border-top: 1px solid #222; padding-top: 0.6rem; margin-top: 0.4rem;">
+          <i class="fas fa-arrow-right"></i> mapping: Ĥ ↔ Λ (Logos) &nbsp;|&nbsp; |ψ⟩ ↔ creation &nbsp;|&nbsp; Û(t) ↔ providential action
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. DOMAIN SPECIFICATIONS -->
+<div style="margin-top: 3rem;">
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <span class="section-number">01</span>
+    <h2>Domain specifications</h2>
+  </div>
+  <div class="gradient-line"></div>
+  <div class="grid-2">
+    <div class="card domain-a-border">
+      <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem;">
+        <i class="fas fa-atom" style="color: var(--info); font-size: 1.8rem;"></i>
+        <h3 style="margin: 0; font-size: 1.4rem;">Domain A · Physics</h3>
+      </div>
+      <p><strong>Quantum operator theory / Hilbert‑space dynamics</strong></p>
+      <p style="opacity: 0.85;">Self‑adjoint operators on ℋ, unitary evolution, spectral decomposition, expectation values. The algebra of observables and state vectors under linear transformations.</p>
+      <div class="mono" style="margin-top: 0.8rem; font-size: 0.85rem; background: #0d0d0d; padding: 0.6rem 1rem; border-radius: 8px;">
+        Ĥ = ∑ λᵢ|eᵢ⟩⟨eᵢ| &nbsp;·&nbsp; [Ĥ, Û] = 0 &nbsp;·&nbsp; ⟨ψ|ψ⟩ = 1
+      </div>
+    </div>
+    <div class="card domain-b-border">
+      <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem;">
+        <i class="fas fa-cross" style="color: var(--gold); font-size: 1.8rem;"></i>
+        <h3 style="margin: 0; font-size: 1.4rem;">Domain B · Theology</h3>
+      </div>
+      <p><strong>Logos Christology / Trinitarian agency</strong></p>
+      <p style="opacity: 0.85;">The Word (Λ) as the principle of order, coherence, and generative action. Creation, incarnation, and providence as operations of the Logos. John 1, Colossians 1, Hebrews 1.</p>
+      <div class="mono" style="margin-top: 0.8rem; font-size: 0.85rem; background: #0d0d0d; padding: 0.6rem 1rem; border-radius: 8px;">
+        Λ(Λ) = Λ &nbsp;·&nbsp; Λ(ψ) → ψ′ &nbsp;·&nbsp; Tr(ΛρΛ†) = 1
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. THE ISOMORPHIC MAPPING -->
+<div style="margin-top: 3rem;">
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <span class="section-number">02</span>
+    <h2>Isomorphic mapping</h2>
+  </div>
+  <div class="gradient-line"></div>
+  <div class="card" style="overflow-x: auto; padding: 0.5rem 0;">
+    <table class="iso-table">
+      <thead>
+        <tr><th>#</th><th>Physics (Domain A)</th><th>Mapping</th><th>Theology (Domain B)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Hilbert space ℋ</td><td>↔</td><td>Creation / ordered reality</td></tr>
+        <tr><td>2</td><td>Hamiltonian Ĥ (self‑adjoint)</td><td>↔</td><td>Logos Λ (self‑identical, eternal)</td></tr>
+        <tr><td>3</td><td>State vector |ψ⟩</td><td>↔</td><td>Creaturely being / contingent reality</td></tr>
+        <tr><td>4</td><td>Unitary evolution Û(t)</td><td>↔</td><td>Providential action / sustaining will</td></tr>
+        <tr><td>5</td><td>Spectral decomposition Ĥ = ∑ λᵢ|eᵢ⟩⟨eᵢ|</td><td>↔</td><td>Logos as source of order and differentiation</td></tr>
+        <tr><td>6</td><td>Expectation value ⟨ψ|Â|ψ⟩</td><td>↔</td><td>Teleological meaning / purpose</td></tr>
+        <tr><td>7</td><td>Commutator [Ĥ, Â]</td><td>↔</td><td>Distinction of persons / perichoresis</td></tr>
+        <tr><td>8</td><td>Projector |eᵢ⟩⟨eᵢ|</td><td>↔</td><td>Incarnation / particular manifestation</td></tr>
+        <tr><td>9</td><td>Trace Tr(ρ)</td><td>↔</td><td>Unity / recapitulation in Christ</td></tr>
+        <tr><td>10</td><td>Superposition α|0⟩+β|1⟩</td><td>↔</td><td>Potentiality / divine sovereignty and human freedom</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 5. SEPARATOR TESTS -->
+<div style="margin-top: 3rem;">
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <span class="section-number">03</span>
+    <h2>Separator tests</h2>
+  </div>
+  <div class="gradient-line"></div>
+  <div class="grid-4">
+    <div class="test-card">
+      <div class="test-header">
+        <span class="test-label"><i class="fas fa-sitemap" style="color: var(--info);"></i> Test A · Structural preservation</span>
+        <span class="pass-badge">PASS</span>
+      </div>
+      <p style="font-size: 0.9rem; opacity: 0.85;">Relations survive under mapping: if Ĥ₁ → Λ₁ and Ĥ₂ → Λ₂, then [Ĥ₁,Ĥ₂] → [Λ₁,Λ₂] (perichoresis). The algebra of operators maps to the grammar of Trinitarian relations.</p>
+    </div>
+    <div class="test-card">
+      <div class="test-header">
+        <span class="test-label"><i class="fas fa-random" style="color: var(--info);"></i> Test B · Non‑arbitrariness</span>
+        <span class="pass-badge">PASS</span>
+      </div>
+      <p style="font-size: 0.9rem; opacity: 0.85;">Mapping forced by structural role: Hamiltonian as generator of time translation ↔ Logos as agent of creation. Swapping with e.g. momentum operator fails to preserve generative semantics.</p>
+    </div>
+    <div class="test-card">
+      <div class="test-header">
+        <span class="test-label"><i class="fas fa-ban" style="color: var(--info);"></i> Test C · Constraint</span>
+        <span class="pass-badge">PASS</span>
+      </div>
+      <p style="font-size: 0.9rem; opacity: 0.85;">Mapping rules out Arianism (Λ created) and modalism (Λ not distinct). The self‑adjoint condition forbids treating Logos as contingent. Spectral decomposition forces distinction of persons.</p>
+    </div>
+    <div class="test-card">
+      <div class="test-header">
+        <span class="test-label"><i class="fas fa-exchange-alt" style="color: var(--info);"></i> Test D · Bidirectionality</span>
+        <span class="pass-badge">PASS</span>
+      </div>
+      <p style="font-size: 0.9rem; opacity: 0.85;">Each side predicts the other: quantum unitarity predicts providential continuity; Trinitarian perichoresis predicts non‑commutative structure. The isomorphism is invertible.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 6. CLASSIFICATION & EVIDENCE -->
+<div style="margin-top: 3rem;">
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <span class="section-number">04</span>
+    <h2>Classification &amp; evidence</h2>
+  </div>
+  <div class="gradient-line"></div>
+  <div class="card" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+    <div style="min-width: 180px;">
+      <span class="badge badge-green" style="font-size: 0.9rem; padding: 0.3rem 1.5rem;"><i class="fas fa-link"></i> LEVEL 3 · ISOMORPHISM</span>
+      <div style="margin-top: 1rem;">
+        <span class="muted" style="display: block;">confidence</span>
+        <span style="font-size: 2.2rem; font-weight: 600; color: var(--gold);">0.94</span>
+        <span class="muted">/ 1.0</span>
+      </div>
+    </div>
+    <div style="flex: 1;">
+      <h4 style="font-size: 0.9rem; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 0.5rem;"><i class="fas fa-microchip"></i> EVIDENCE CHIPS</h4>
+      <div>
+        <span class="evidence-chip">John 1:1‑3</span>
+        <span class="evidence-chip">Colossians 1:15‑17</span>
+        <span class="evidence-chip">Hebrews 1:3</span>
+        <span class="evidence-chip">Ĥ self‑adjoint</span>
+        <span class="evidence-chip">Unitary group</span>
+        <span class="evidence-chip">Spectral theorem</span>
+        <span class="evidence-chip">Perichoresis</span>
+        <span class="evidence-chip">Nicene creed</span>
+      </div>
+      <h4 style="font-size: 0.9rem; letter-spacing: 0.1em; color: var(--gold); margin: 1rem 0 0.3rem;"><i class="fas fa-scale-balanced"></i> LAWS INVOKED</h4>
+      <div class="mono" style="font-size: 0.85rem; color: #b0b8c4;">Law of non‑contradiction · Law of identity · Principle of sufficient reason · Structural invariance</div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. FALSIFICATION CRITERIA -->
+<div style="margin-top: 3rem;">
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <span class="section-number">05</span>
+    <h2>Falsification criteria</h2>
+  </div>
+  <div class="gradient-line"></div>
+  <div class="falsify-box">
+    <p style="font-weight: 600; color: var(--danger); margin-bottom: 0.8rem;"><i class="fas fa-bolt"></i> KILL CONDITIONS — if any obtain, the isomorphism is falsified</p>
+    <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+      <li>If the Hamiltonian Ĥ is shown to be non‑self‑adjoint in a way that breaks spectral decomposition, the mapping to Logos fails.</li>
+      <li>If a consistent Trinitarian theology permits the Logos to be created or mutable (Arianism), the isomorphism is void.</li>
+      <li>If quantum evolution is proven non‑unitary at the fundamental level, the providential mapping collapses.</li>
+      <li>If the commutator structure of observables does not correspond to perichoretic distinction, the mapping is broken.</li>
+      <li>If a rival mapping (e.g. Logos ↔ momentum operator) yields equal or better structural preservation, this isomorphism is demoted.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 8. RELATED ISOMORPHISMS -->
+<div style="margin-top: 3rem;">
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <span class="section-number">06</span>
+    <h2>Related isomorphisms</h2>
+  </div>
+  <div class="gradient-line"></div>
+  <div class="grid-2" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
+    <a href="#" class="iso-link"><i class="fas fa-arrow-right" style="color: var(--gold);"></i> ISO‑T‑MEQ‑03‑T · Trinity &amp; three‑body problem</a>
+    <a href="#" class="iso-link"><i class="fas fa-arrow-right" style="color: var(--gold);"></i> ISO‑T‑MEQ‑07‑T · Resurrection &amp; quantum revival</a>
+    <a href="#" class="iso-link"><i class="fas fa-arrow-right" style="color: var(--gold);"></i> ISO‑T‑MEQ‑02‑T · Covenant &amp; gauge symmetry</a>
+    <a href="#" class="iso-link"><i class="fas fa-arrow-right" style="color: var(--gold);"></i> ISO‑T‑MEQ‑11‑T · Eschatology &amp; entropy</a>
+  </div>
+</div>
+
+<!-- 9. FOOTER -->
+<div style="margin-top: 4rem; border-top: 1px solid #1a1a1a; padding-top: 1.5rem;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+    <div>
+      <span style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold);">Theophysics Research Program</span>
+      <span class="muted" style="margin-left: 1.2rem;">POF 2828</span>
+      <span class="muted" style="margin-left: 1.2rem;">v. 2.1.0</span>
+    </div>
+    <div class="footer-seal">
+      “The math points to God. The math does not contain God.”
+    </div>
+  </div>
+  <div style="margin-top: 1rem; font-size: 0.75rem; color: #4a4a4a; text-align: center;">
+    <i class="fas fa-omega"></i> canonical · faiththruphysics.com · registry id: MEQ‑05‑T
+  </div>
+</div>
+
+</body>
+</html>

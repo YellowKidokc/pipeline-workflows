@@ -1,0 +1,387 @@
+{
+  "definitions": [
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A mapping between two things that shows they have the same structure or pattern, even if they look different on the surface.",
+      "example": "A map of a subway system is isomorphic to the actual subway lines because the connections between stations are the same, even though the map is not the real thing.",
+      "grade_level": "college",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "ecclesiology",
+      "category": "theology",
+      "definition": "The study of the church, its nature, structure, and purpose.",
+      "example": "Ecclesiology asks questions like 'What is the church supposed to be like?' and 'How should it be organized?'",
+      "grade_level": "college",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "graph theory",
+      "category": "math",
+      "definition": "A branch of mathematics that studies networks made of points (nodes) and the lines (edges) connecting them.",
+      "example": "Graph theory is used to model social networks like Facebook, where people are nodes and friendships are edges.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "small-world networks",
+      "category": "physics",
+      "definition": "A type of network where most nodes are not directly connected, but any two nodes can be reached through a surprisingly short chain of connections.",
+      "example": "The idea that you are only six handshakes away from anyone on Earth is a small-world network property.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "preferential attachment",
+      "category": "physics",
+      "definition": "A process where new nodes in a network are more likely to connect to nodes that already have many connections, like 'the rich get richer'.",
+      "example": "On YouTube, a new video is more likely to be linked to a popular channel with millions of subscribers than to a channel with only a few.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "scale-free networks",
+      "category": "physics",
+      "definition": "A network where a few nodes (hubs) have a huge number of connections, while most nodes have very few, following a power-law distribution.",
+      "example": "The internet is a scale-free network: a few websites like Google have billions of links, while most websites have only a few.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "resilience",
+      "category": "physics",
+      "definition": "The ability of a network to keep working even when some of its parts are removed or fail.",
+      "example": "A rope made of many strands is resilient because if one strand breaks, the rope still holds.",
+      "grade_level": "10",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "cascading failure",
+      "category": "physics",
+      "definition": "A situation where the failure of one part of a network causes a chain reaction of failures in other parts.",
+      "example": "When a power plant goes offline, it can cause other plants to overload and shut down, leading to a widespread blackout.",
+      "grade_level": "college",
+      "first_appearance": "Domain A"
+    },
+    {
+      "term": "New Testament",
+      "category": "theology",
+      "definition": "The second part of the Christian Bible, containing writings about the life of Jesus and the early church.",
+      "example": "The New Testament includes the Gospels (Matthew, Mark, Luke, John) and letters from apostles like Paul.",
+      "grade_level": "10",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "spiritual gifts",
+      "category": "theology",
+      "definition": "Special abilities given by the Holy Spirit to Christians to help serve the church and others.",
+      "example": "Some spiritual gifts include teaching, healing, leadership, and showing mercy.",
+      "grade_level": "11",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "persecution",
+      "category": "theology",
+      "definition": "Hostility or mistreatment directed at people because of their beliefs, especially religious beliefs.",
+      "example": "In ancient Rome, Christians were sometimes thrown to lions because of their faith.",
+      "grade_level": "10",
+      "first_appearance": "Domain B"
+    },
+    {
+      "term": "average path length",
+      "category": "physics",
+      "definition": "The average number of steps along the shortest paths for all pairs of nodes in a network.",
+      "example": "In a friend network, the average path length is the average number of 'friend-of-a-friend' connections between any two people.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "clustering",
+      "category": "physics",
+      "definition": "The tendency for nodes in a network to form tightly knit groups where many connections exist within the group.",
+      "example": "In a school, a group of friends who all know each other is a cluster.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "degree distribution",
+      "category": "physics",
+      "definition": "A description of how many connections (degrees) each node in a network has, often shown as a graph.",
+      "example": "In a social network, the degree distribution shows how many people have 1 friend, 10 friends, 100 friends, etc.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "power-law",
+      "category": "math",
+      "definition": "A mathematical relationship where a few events are very common and many events are very rare, following a specific pattern.",
+      "example": "Earthquakes follow a power-law: a few huge earthquakes happen, but thousands of tiny ones happen all the time.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "hubs",
+      "category": "physics",
+      "definition": "Nodes in a network that have a very high number of connections, acting as central points.",
+      "example": "An airport like Atlanta is a hub because it connects flights from many smaller airports.",
+      "grade_level": "10",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "random failure",
+      "category": "physics",
+      "definition": "When parts of a network break down by chance, without targeting any specific part.",
+      "example": "If a few random streetlights go out in a city, the traffic network still works fine.",
+      "grade_level": "11",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "targeted hub attack",
+      "category": "physics",
+      "definition": "When someone deliberately removes or disables the most connected nodes in a network to cause maximum damage.",
+      "example": "If a hacker takes down Google, it would disrupt the internet much more than taking down a small blog.",
+      "grade_level": "college",
+      "first_appearance": "Concept A"
+    },
+    {
+      "term": "apostolic",
+      "category": "theology",
+      "definition": "Relating to the apostles, the first leaders sent out by Jesus to spread the Christian message.",
+      "example": "The apostolic church refers to the early church led by the apostles like Peter and Paul.",
+      "grade_level": "11",
+      "first_appearance": "Concept B"
+    },
+    {
+      "term": "disproportionately",
+      "category": "academic",
+      "definition": "In a way that is larger or smaller than expected based on size or importance.",
+      "example": "In a game, the best player might score disproportionately more points than the rest of the team.",
+      "grade_level": "11",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "clustering coefficient",
+      "category": "physics",
+      "definition": "A measure of how connected the neighbors of a node are to each other, indicating how 'cliquey' a network is.",
+      "example": "If all your friends also know each other, your clustering coefficient is high.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "percolation threshold",
+      "category": "physics",
+      "definition": "The point at which a network breaks apart into isolated pieces when nodes are removed.",
+      "example": "If you remove enough roads from a city map, eventually you can't drive from one side to the other \u2014 that's the percolation threshold.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "bridge ties",
+      "category": "physics",
+      "definition": "Connections between different groups in a network that link otherwise separate clusters.",
+      "example": "A student who is friends with both the jocks and the nerds is a bridge tie between those groups.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "information diffusion",
+      "category": "physics",
+      "definition": "The process by which information spreads through a network from person to person.",
+      "example": "A rumor spreading through a school is an example of information diffusion.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "redundant information",
+      "category": "academic",
+      "definition": "Information that is already known or repeated, providing no new knowledge.",
+      "example": "If your friend tells you the same joke you already heard, that's redundant information.",
+      "grade_level": "11",
+      "first_appearance": "Mathematical Form A"
+    },
+    {
+      "term": "itinerant",
+      "category": "academic",
+      "definition": "Traveling from place to place, especially for work or religious purposes.",
+      "example": "An itinerant preacher travels to different towns to give sermons.",
+      "grade_level": "11",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "network diameter",
+      "category": "physics",
+      "definition": "The longest shortest path between any two nodes in a network, measuring the network's overall size.",
+      "example": "In a social network, the network diameter is the maximum number of handshakes needed to connect any two people.",
+      "grade_level": "college",
+      "first_appearance": "Mathematical Form B"
+    },
+    {
+      "term": "topology",
+      "category": "math",
+      "definition": "The study of how parts of a network are arranged and connected, focusing on shape and structure rather than exact positions.",
+      "example": "The topology of a subway map shows which stations connect to which, not the exact geographic locations.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "empirically verifiable",
+      "category": "academic",
+      "definition": "Able to be checked or proven through observation or experiment.",
+      "example": "The claim that water boils at 100\u00b0C is empirically verifiable by heating water and measuring its temperature.",
+      "grade_level": "11",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "sociological",
+      "category": "academic",
+      "definition": "Relating to the study of society, social groups, and human relationships.",
+      "example": "A sociological study might look at how friendships form in a school.",
+      "grade_level": "11",
+      "first_appearance": "What Is NOT Claimed"
+    },
+    {
+      "term": "adjacency matrices",
+      "category": "math",
+      "definition": "A table used to show which nodes in a network are connected to each other, with rows and columns representing nodes.",
+      "example": "In a class of 5 students, an adjacency matrix would have a 1 if two students are friends and a 0 if they are not.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "structural isomorphism",
+      "category": "math",
+      "definition": "A type of mapping where the underlying structure or pattern is the same between two systems, even if the details differ.",
+      "example": "A chessboard and a checkerboard have a structural isomorphism because both are 8x8 grids with alternating colors.",
+      "grade_level": "college",
+      "first_appearance": "Swap Test"
+    },
+    {
+      "term": "epidemiology",
+      "category": "academic",
+      "definition": "The study of how diseases spread and affect populations.",
+      "example": "Epidemiology helped scientists understand how COVID-19 spread from person to person.",
+      "grade_level": "college",
+      "first_appearance": "Prediction in Domain A"
+    },
+    {
+      "term": "organic",
+      "category": "academic",
+      "definition": "Growing naturally and without artificial or external control, like a plant growing from a seed.",
+      "example": "An organic friendship develops naturally over time, not because someone forces it.",
+      "grade_level": "10",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "institutional",
+      "category": "academic",
+      "definition": "Relating to an established organization or system with formal rules and structures.",
+      "example": "An institutional church has a formal hierarchy like bishops and parishes.",
+      "grade_level": "11",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "cascade",
+      "category": "physics",
+      "definition": "A series of events that happen one after another, often spreading like a waterfall.",
+      "example": "A cascade of applause starts when one person claps and then everyone joins in.",
+      "grade_level": "10",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "apostasy",
+      "category": "theology",
+      "definition": "The act of abandoning or renouncing one's religious faith.",
+      "example": "If a Christian decides to stop believing in God and leaves the church, that is apostasy.",
+      "grade_level": "college",
+      "first_appearance": "Shared Structure"
+    },
+    {
+      "term": "falsification",
+      "category": "academic",
+      "definition": "The process of proving a theory or claim wrong by finding evidence that contradicts it.",
+      "example": "The theory that all swans are white was falsified when black swans were discovered in Australia.",
+      "grade_level": "college",
+      "first_appearance": "Falsification"
+    },
+    {
+      "term": "correspondence",
+      "category": "academic",
+      "definition": "A close similarity or connection between two things.",
+      "example": "There is a correspondence between the keys on a piano and the notes they produce.",
+      "grade_level": "10",
+      "first_appearance": "Falsification"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A statement or principle that is accepted as true without needing proof, serving as a starting point for reasoning.",
+      "example": "In geometry, 'a straight line is the shortest distance between two points' is an axiom.",
+      "grade_level": "college",
+      "first_appearance": "Axiom Dependencies"
+    },
+    {
+      "term": "convergence",
+      "category": "math",
+      "definition": "The process of coming together or moving toward a common point or result.",
+      "example": "Multiple streams converging into a single river is a physical example of convergence.",
+      "grade_level": "11",
+      "first_appearance": "Axiom Dependencies"
+    },
+    {
+      "term": "incompleteness",
+      "category": "math",
+      "definition": "The state of not being complete or whole; in logic, the idea that some truths cannot be proven within a system.",
+      "example": "A puzzle with missing pieces has incompleteness.",
+      "grade_level": "11",
+      "first_appearance": "Axiom Dependencies"
+    },
+    {
+      "term": "grace",
+      "category": "theology",
+      "definition": "Unearned favor or kindness from God, often seen as a free gift.",
+      "example": "Grace is like a teacher giving a student an 'A' not because the student earned it, but out of kindness.",
+      "grade_level": "10",
+      "first_appearance": "Axiom Dependencies"
+    },
+    {
+      "term": "entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system; things tend to become more disordered over time.",
+      "example": "A messy bedroom has higher entropy than a tidy one, and it naturally gets messier without effort.",
+      "grade_level": "college",
+      "first_appearance": "Other ISOs Connected"
+    },
+    {
+      "term": "decoherence",
+      "category": "physics",
+      "definition": "The process by which a quantum system loses its quantum properties and behaves classically, often due to interaction with the environment.",
+      "example": "Decoherence is like a spinning top that slowly wobbles and stops due to friction with the air.",
+      "grade_level": "college",
+      "first_appearance": "Other ISOs Connected"
+    },
+    {
+      "term": "coherence",
+      "category": "physics",
+      "definition": "The quality of being logical, consistent, and forming a unified whole; in physics, waves that are in step with each other.",
+      "example": "A choir singing in harmony has coherence; a crowd shouting randomly does not.",
+      "grade_level": "11",
+      "first_appearance": "Other ISOs Connected"
+    }
+  ],
+  "stats": {
+    "total_terms_found": 42,
+    "by_category": {
+      "physics": 18,
+      "theology": 8,
+      "math": 7,
+      "philosophy": 0,
+      "framework": 0,
+      "academic": 9,
+      "language": 0
+    },
+    "highest_grade_level": "college",
+    "average_grade_level": "11.5",
+    "accessibility_score": 25
+  }
+}

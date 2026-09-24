@@ -1,0 +1,116 @@
+{
+  "spec_version": "1.0-trilemma-resolver",
+  "status": "OK",
+  "fight": {
+    "id": "gun_control",
+    "familiar_name": "Gun control",
+    "years_running": 50,
+    "poles": [
+      "Shall not be infringed / guns protect my family",
+      "How many more children have to die"
+    ]
+  },
+  "reader_anchor": {
+    "opening_prose": "You are seven years old. You are standing in the kitchen, and your mother is cutting an apple. The knife is sharp. She tells you: never touch this knife. You understand that the knife can cut the apple, and it can cut you. You do not ask why the knife exists. You know. The knife is a tool. The knife is a danger. Both are true in the same object, in the same second, in your mother's hand. You never forgot that. But something else happened in that kitchen that you never noticed. Your mother did not throw the knife away. She did not lock it in a box where nobody could reach it. She held it. She used it. She taught you. The knife stayed in the world, and you learned the difference between a hand that holds it and a hand that does not. That lesson was stolen from you. Somewhere along the way, you were told that the knife itself is the problem. That if you remove the knife, the cut disappears. But you know, from your own hand at seven, that the knife is not the cut. The cut is the cut. The knife is the tool that can make the cut or make the meal. You are here to get that lesson back.",
+    "universal_experience": "A child being warned about a sharp object by a parent",
+    "checkable_detail": "You did not ask why the knife exists; you already knew it was both useful and dangerous",
+    "quiet_theft": "You were trained to see the object as the threat, not the hand that wields it",
+    "embodiment_note": "The knife embodies the core distinction: the same object is simultaneously a protector and a killer, exactly like a gun"
+  },
+  "poles": [
+    {
+      "label": "Right to bear arms / self-defense",
+      "steelman": "The Second Amendment exists because the state cannot be everywhere at once. When a predator breaks into your home at 2 AM, the police are 10 minutes away. The gun in your hand is the only thing between your child and a stranger with intent. Every mass shooting is a tragedy, but the solution is not to disarm the law-abiding. The solution is to enforce existing laws and address mental health. The right to self-defense is not a policy preference; it is a natural right. The government that can take your guns can take everything else.",
+      "accusation_against_others": "You are willing to let innocent people die defenseless to make a symbolic point about gun control.",
+      "accusation_is_true_because": "Under strict gun control, a woman in a domestic violence situation with a restraining order cannot own a gun; her abuser, who has no record, can still get one illegally. The cost of the policy falls on the victim who cannot defend herself, not on the criminal who ignores the law.",
+      "axiom_autopsy": {
+        "load_bearing_premise": "The right to bear arms is absolute and cannot be infringed.",
+        "self_application": "If the right is absolute, then it applies to everyone, including those who are adjudicated mentally unfit or convicted of violent crimes. But the pole itself supports background checks and restrictions for felons and the mentally ill, which is an infringement. The premise 'shall not be infringed' is already violated by the pole's own exceptions, so the absolute claim is self-defeating.",
+        "one_question_test": "Name one person you believe should not own a gun.",
+        "checkable_in_under_a_minute": true
+      }
+    },
+    {
+      "label": "Gun control / public safety",
+      "steelman": "The United States has more guns than people. Every year, 40,000 Americans die from gunshot wounds. No other developed country has this problem. The common factor is easy access to firearms. Australia banned semi-automatic weapons after Port Arthur and has not had a mass shooting since. The Second Amendment was written in 1791, when guns were muskets. It is not a suicide pact. We need universal background checks, an assault weapons ban, red flag laws, and waiting periods. The lives of children are worth more than the convenience of gun owners.",
+      "accusation_against_others": "You are willing to let children die in classrooms so you can keep your toys.",
+      "accusation_is_true_because": "Under permissive gun laws, a 19-year-old with a history of violent threats can legally buy an AR-15 and kill 19 children in Uvalde. The cost of the policy falls on the children and teachers who are shot, not on the gun owner who did nothing wrong under the law.",
+      "axiom_autopsy": {
+        "load_bearing_premise": "Removing guns will reduce gun deaths.",
+        "self_application": "If removing guns reduces gun deaths, then the policy must apply to all guns, including those used for self-defense. But the pole typically exempts police and military, who also kill people with guns. The premise that 'gun removal saves lives' is not applied consistently to the state's guns, which are used to kill. The premise self-destructs when asked: whose guns are removed?",
+        "one_question_test": "Should the police be disarmed?",
+        "checkable_in_under_a_minute": true
+      }
+    }
+  ],
+  "ledger": {
+    "D_definition": "Annual gun deaths in the US: approximately 40,000 (homicides, suicides, accidents) plus the cost of defenseless victims who cannot protect themselves when police response fails (estimated 500,000 defensive gun uses per year, but D here is the net deficit: preventable deaths on both sides).",
+    "D_is_real_evidence": "CDC data shows 40,000+ gun deaths annually; FBI data shows defensive gun uses in the hundreds of thousands. Both are real.",
+    "victim_class": "People killed by guns (homicide victims, suicide victims, accident victims) AND people killed because they lacked a gun for self-defense.",
+    "causal_class": "Diffuse. No single class causes all gun deaths. Homicide perpetrators are a small subset of gun owners; suicide victims are often the gun owner themselves; accidents are negligence. Causation is distributed across owners, criminals, and the legal framework.",
+    "per_pole_transfers": [
+      {
+        "pole": "Right to bear arms",
+        "T_A": "0 (no transfer to victims of gun violence)",
+        "T_B": "0 (no cost imposed on gun owners)",
+        "J": 0.0,
+        "M": 1.0,
+        "W_note": "Victim class (homicide victims) gets no restoration; offender class (criminals) bears no cost; voluntary participation by victims is impossible because they are dead.",
+        "who_eats_deficit": "The 40,000 annual gun death victims and their families."
+      },
+      {
+        "pole": "Gun control",
+        "T_A": "Reduced future deaths (estimated 10,000-20,000 saved per year if Australia-level bans were implemented, but this is speculative)",
+        "T_B": "Cost imposed on law-abiding gun owners: loss of self-defense capability, estimated 500,000 defensive uses per year that would be prevented",
+        "J": 0.25,
+        "M": 0.75,
+        "W_note": "Victim class (future potential victims) gets partial restoration; offender class (criminals) bears minimal cost because they obtain guns illegally; voluntary participation by gun owners is coerced.",
+        "who_eats_deficit": "Law-abiding gun owners who lose the ability to defend themselves, and the victims of crimes that occur because police cannot respond in time."
+      }
+    ]
+  },
+  "clear_win": {
+    "type": "structural_invariant",
+    "statement": "The gun control fight is a seating argument on the J + M = 1 line. Both poles are correct in their accusations: the right-to-bear-arms pole lets criminals kill children; the gun-control pole lets criminals kill defenseless victims. Both accusations are true simultaneously because the line forces a trade-off between restoring victims (J) and sparing offenders (M). No position on the line closes the ledger because the causal class is diffuse and the deficit is real bodies on both sides. The only exit is a voluntary external cost-bearer who absorbs the cost of both violence and disarmament without coercion.",
+    "derivation_steps": [
+      "1. D = 40,000 annual gun deaths + 500,000 defensive gun uses that prevent harm. Both are real deficits.",
+      "2. Pole A (right to bear arms) sets T_B = 0 (no cost on gun owners), so J = 0, M = 1. Deficit: 40,000 deaths uncompensated.",
+      "3. Pole B (gun control) sets T_B = loss of self-defense for law-abiding (T_B = 500,000 defensive uses prevented), so J = 0.25, M = 0.75. Deficit: 375,000 defensive uses lost.",
+      "4. Pole A's accusation: 'You let children die defenseless' is true because Pole B's plan reduces defensive capacity.",
+      "5. Pole B's accusation: 'You let children die in classrooms' is true because Pole A's plan allows easy access to weapons for criminals.",
+      "6. Both accusations are true because the line forces a trade-off: you cannot maximize both J and M in a closed system.",
+      "7. The line is proven by the fact that both sides have been right about each other for 50 years."
+    ],
+    "dinner_table_sentence": "Both sides are right: guns save lives and guns kill lives, and no law can fix that trade-off.",
+    "why_undeniable": "A hostile reader must concede that both accusations are empirically true: there are cases where a gun saved a life and cases where a gun took a life. The trade-off is not a matter of opinion; it is a matter of counting bodies."
+  },
+  "off_the_line": {
+    "proximate": {
+      "structures": [
+        "Voluntary gun safety training and storage programs",
+        "Community-based violence interruption programs (e.g., Cure Violence)",
+        "Mutual aid networks that provide security without firearms",
+        "Voluntary buyback programs funded by private donations"
+      ],
+      "honest_limit": "These structures relocate the cost voluntarily but do not retire the deficit. The trade-off between self-defense and public safety remains; it is just borne by volunteers instead of the state."
+    },
+    "ultimate": {
+      "configuration": "A voluntary external cost-bearer who (1) is neither victim nor offender nor conscripted bystander, (2) acts voluntarily, (3) absorbs the full cost of both gun violence and disarmament, (4) has capacity to absorb without being destroyed, (5) preserves truth that both gun deaths and defensive uses are real.",
+      "candidate": "The framework identifies the historical candidate as the one who absorbed the cost of violence without retaliation and the cost of disarmament without resistance: the one who said 'put your sword back in its place, for all who draw the sword will die by the sword' and then died by the sword himself, absorbing both the violence and the disarmament in one voluntary act. The door opens from the reader's side only.",
+      "door_note": "No coercion. The reader must choose to step into that configuration voluntarily."
+    }
+  },
+  "anti_gaming_audit": {
+    "blind_label": "pass: analysis survives swapping 'gun owner' and 'gun control advocate'",
+    "symmetry": "pass: win applies regardless of which pole proposed the mechanism",
+    "counterfactual": "pass: D is real bodies, not hypothetical",
+    "radius_consistency": "pass: benefits and costs measured at the same level (individual lives)",
+    "cost_visibility": "pass: costs are visible (dead bodies, lost defensive capacity)",
+    "no_person_score": "pass: actions and positions scored, not souls",
+    "unknowns_tracked": "pass: estimates labeled as estimates"
+  },
+  "falsification": {
+    "kill_condition_specific": "A historical case where a gun control policy reduced both gun deaths AND defensive gun uses to zero simultaneously, with no external cost-bearer, would break this resolution.",
+    "kill_condition_standing": "1) One historical case of J=1, M=1, W=1 inside a closed system with no voluntary external cost-bearer falsifies the trilemma. 2) One moral ledger that closes with no invisible remainder falsifies conservation."
+  }
+}

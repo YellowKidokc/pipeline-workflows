@@ -1,0 +1,103 @@
+{
+  "spec_version": "1.0-trilemma-resolver",
+  "status": "OK",
+  "fight": {
+    "id": "welfare_entitlements",
+    "familiar_name": "Welfare / Entitlements",
+    "years_running": 60,
+    "poles": [
+      "Social safety net / we take care of each other",
+      "Dependency destroys people / welfare traps generations"
+    ]
+  },
+  "reader_anchor": {
+    "opening_prose": "You are five years old. You are standing at the edge of the sandbox, and another child is crying because their tower fell. You didn't knock it down. You didn't even see it fall. But you feel something in your chest: a pull to go over and help rebuild. You don't ask whose fault it was. You don't calculate whether you have enough sand. You just go. You kneel, and you start patting sand into a new wall. The crying stops. For a moment, the tower is taller than before. Then you look up and see the adult standing at the gate, arms crossed, watching. And you hear: 'Don't do that. They need to learn to build their own tower. If you keep helping, they'll never learn.' You freeze. The child is still sniffling. Your hands are still sandy. And you feel a quiet theft: someone just taught you that mercy and strength are enemies. That helping someone stand up is the same as making them weak. You never checked if that was true. You just put your hands in your pockets. You have been putting your hands in your pockets ever since. We are here to give your hands back.",
+    "universal_experience": "A child seeing another child in distress and instinctively moving to help, then being stopped by an adult's warning about creating dependency.",
+    "checkable_detail": "You did not look at the adult before moving. You did not calculate whether you had enough sand. Your hands moved before your brain finished the sentence 'they need help.'",
+    "quiet_theft": "The belief that helping someone is the same as weakening them was trained into you before you could test it against reality. You never checked if the tower would have been rebuilt anyway, or if the crying child would have learned anything from being left alone.",
+    "embodiment_note": "This fight is the adult at the gate: one pole says 'help rebuild,' the other says 'they must learn.' Both are true. The child needs both the tower and the lesson. The fight is about who pays for the sand."
+  },
+  "poles": [
+    {
+      "label": "Safety Net Pole",
+      "steelman": "A society that does not catch its falling members is not a society. People lose jobs, get sick, are born into poverty through no fault of their own. The alternative to a safety net is not self-reliance; it is starvation, homelessness, and untreated illness. We are all one bad month away from needing help. The cost of providing basic food, housing, and healthcare is a fraction of the cost of policing the desperation that follows their absence. This is not charity; it is solidarity. We pay into it together so that none of us fall through the cracks. The accusation against the other side is that they would let people die to prove a point about personal responsibility.",
+      "accusation_against_others": "You would let people starve, freeze, or die of treatable illness to enforce an ideology of self-reliance that you yourself do not practice (you have insurance, savings, family).",
+      "accusation_is_true_because": "Under the Dependency Pole's plan, when a person exhausts all private options and still cannot afford food or shelter, no public transfer occurs. The cost of that person's survival is then borne by the person themselves, who did not create the economic conditions that left them destitute. The damage (hunger, exposure, illness) is real, and the person who did not cause it eats the full cost."
+    },
+    {
+      "label": "Dependency Pole",
+      "steelman": "Welfare does not solve poverty; it perpetuates it. When the state provides food, housing, and cash with no requirement to work or improve, it removes the pressure that drives human development. Generations grow up never knowing anyone who works a full-time job. The safety net becomes a trap: it is rational to stay on benefits because leaving means losing healthcare, losing housing subsidies, and taking a low-wage job with no security. The system creates the very dependency it claims to cure. The only way out is to make the safety net temporary, conditional, and less comfortable than work. The accusation against the other side is that they are buying votes with other people's money while destroying the poor's capacity for self-respect and self-support.",
+      "accusation_against_others": "You are trapping people in poverty by removing the consequences of idleness, and you are forcing productive people to pay for it.",
+      "accusation_is_true_because": "Under the Safety Net Pole's plan, the cost of supporting a non-working adult is transferred to taxpayers who did not create that adult's unemployment. The taxpayer eats the cost of a deficit (lost productivity, dependency culture) that they did not cause. Additionally, the recipient's long-term autonomy is eroded, a damage borne by the recipient themselves, who did not choose to be dependent."
+    }
+  ],
+  "ledger": {
+    "D_definition": "The measurable deficit in material well-being (food, housing, healthcare, income) experienced by individuals who are unable to provide these for themselves through market participation, plus the loss of human capital and autonomy from prolonged non-participation.",
+    "D_is_real_evidence": "US poverty rate ~11.5% (2022 Census); 37.9 million people below poverty line. Food insecurity affects ~10% of households. Housing insecurity: ~580,000 homeless on any given night. These are not imaginary.",
+    "victim_class": "People experiencing poverty: unable to meet basic needs through market income.",
+    "causal_class": "Diffuse. No single actor causes poverty. Causes include economic restructuring, disability, family breakdown, discrimination, mental illness, addiction, and plain bad luck. Attribution is structural, not personal.",
+    "per_pole_transfers": [
+      {
+        "pole": "Safety Net",
+        "T_A": "Cash, food, housing, healthcare transferred to the poor (approx $1.2T/year in US federal means-tested programs).",
+        "T_B": "Taxes collected from non-poor households and corporations (same $1.2T).",
+        "J": 1.0,
+        "M": 0.0,
+        "W_note": "Recipient receives aid voluntarily; taxpayer pays involuntarily. No free will for the payer.",
+        "who_eats_deficit": "Taxpayers who did not create the poverty eat the full cost. The deficit of autonomy (dependency) is eaten by the recipient."
+      },
+      {
+        "pole": "Dependency",
+        "T_A": "Minimal or no transfer; private charity only (approx $200B/year private giving to basic needs, covers ~15% of need).",
+        "T_B": "No tax transfer; poor bear cost of own survival.",
+        "J": 0.15,
+        "M": 1.0,
+        "W_note": "Taxpayer is free; recipient bears full cost of deficit involuntarily.",
+        "who_eats_deficit": "The poor person eats the deficit of unmet need (hunger, homelessness). They did not create the economic conditions that caused their poverty."
+      }
+    ]
+  },
+  "clear_win": {
+    "type": "structural_invariant",
+    "statement": "The welfare fight is a seating argument on the J + M = 1 line. The Safety Net pole achieves J=1 (full material restoration) by imposing T_B on taxpayers who did not cause the poverty, achieving M=0. The Dependency pole achieves M=1 (no cost on taxpayers) by leaving the poor to bear the full deficit, achieving J=0. Both accusations are true: the Safety Net pole forces an innocent class to pay; the Dependency pole lets the innocent poor suffer. No position on the line closes the ledger because the deficit is real and someone who did not create it always eats it. The line itself is the villain.",
+    "derivation_steps": [
+      "1. Define D = material deficit of the poor (poverty gap).",
+      "2. Safety Net: T_A = D (full transfer), T_B = D (taxes). J = 1, M = 0. Taxpayer eats cost they did not cause.",
+      "3. Dependency: T_A = 0, T_B = 0. J = 0, M = 1. Poor person eats cost they did not cause.",
+      "4. Any intermediate point (e.g., conditional welfare) shifts the split but preserves J + M = 1. The sum of costs borne by innocent parties always equals D.",
+      "5. No position on the line allows both J=1 and M=1 simultaneously. The ledger never closes without an external cost-bearer.",
+      "6. Therefore, the fight is not about which pole is right; it is about which innocent class bears the deficit. Both poles are correct about the other's injustice."
+    ],
+    "dinner_table_sentence": "The welfare fight is not about helping or hurting the poor; it is about which innocent person pays for a deficit nobody caused.",
+    "why_undeniable": "A hostile reader must concede that under any welfare policy, either the taxpayer pays for a deficit they did not create, or the poor person pays for a deficit they did not create. The math is invariant. The only question is which innocent class bears the cost. This is not a moral equivalence; it is a structural identity."
+  },
+  "off_the_line": {
+    "proximate": {
+      "structures": [
+        "Mutual aid networks: voluntary associations where members pool resources for each other's emergencies, with known faces and reciprocal expectations.",
+        "Sponsorship models: one family or community directly sponsors a specific family in need, with visible relationship and accountability.",
+        "Community land trusts and cooperative housing: shared ownership reduces market pressure and creates voluntary safety nets.",
+        "Time banking: labor exchanged without money, valuing all contributions equally."
+      ],
+      "honest_limit": "These structures relocate the cost voluntarily and visibly, but they do not retire the deficit. Someone still pays. The altruism lemma holds: internal love relocates the cost; it does not cancel it."
+    },
+    "ultimate": {
+      "configuration": "A voluntary external cost-bearer who (1) is neither the poor person nor the taxpayer, (2) acts voluntarily, (3) absorbs the full material deficit, (4) has capacity to absorb without being destroyed, and (5) preserves truth (poverty is real, not denied).",
+      "candidate": "The framework identifies the historical candidate as the person of Jesus Christ, who in Christian theology voluntarily absorbed the full deficit of human sin and brokenness (including structural poverty) on the cross, satisfying both justice (debt paid) and mercy (debtor freed) without conscripting any third party. The resurrection is the capacity to absorb without being destroyed.",
+      "door_note": "This door opens from the reader's side only. No one can be coerced into believing or receiving. The offer stands; the reader must choose to walk through."
+    }
+  },
+  "anti_gaming_audit": {
+    "blind_label": "pass: analysis uses 'taxpayer' and 'poor person' - no party names. Actor reversal (swap rich/poor) does not change structure.",
+    "symmetry": "pass: win applies regardless of which pole proposed the mechanism. The invariant holds for any welfare policy.",
+    "counterfactual": "pass: D (poverty gap) is real and measurable absent any welfare policy. It is not created by the policy.",
+    "radius_consistency": "pass: benefits and costs measured at same level (individual/household material well-being).",
+    "cost_visibility": "pass: taxpayer costs are visible (tax bills, government budgets). Poor person costs are visible (hunger, homelessness). Both are observable.",
+    "no_person_score": "pass: actions and positions scored, never souls. 'Taxpayer' and 'poor person' are roles, not moral judgments.",
+    "unknowns_tracked": "pass: causal class is honestly labeled 'diffuse.' No claim that poverty is entirely the poor person's fault or entirely society's fault."
+  },
+  "falsification": {
+    "kill_condition_specific": "A welfare program that achieves J=1 and M=1 simultaneously (full material restoration with zero cost to any innocent party) would break this resolution. No such program exists or is logically possible in a closed system.",
+    "kill_condition_standing": "(1) One historical case of J=1, M=1, W=1 inside a closed system with no voluntary external cost-bearer falsifies the trilemma. (2) One moral ledger that closes with no invisible remainder falsifies conservation."
+  }
+}

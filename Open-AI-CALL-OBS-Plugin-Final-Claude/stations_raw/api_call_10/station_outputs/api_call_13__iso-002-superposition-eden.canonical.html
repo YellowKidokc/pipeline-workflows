@@ -1,0 +1,568 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISO-002 · Superposition ↔ Eden · Theophysics Registry</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-dim: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --gold-glow: rgba(212, 175, 55, 0.08);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --border: #2a2a2a;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.6);
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    /* headings */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+      color: #f0f0f0;
+    }
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.3rem; }
+    /* mono for equations */
+    .eq, code, .mono {
+      font-family: var(--font-mono);
+      font-weight: 400;
+    }
+    /* quote style */
+    .quote, blockquote {
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-weight: 400;
+    }
+    /* utility */
+    .gold { color: var(--gold); }
+    .success { color: var(--success); }
+    .danger { color: var(--danger); }
+    .info { color: var(--info); }
+    .text-dim { color: var(--text-dim); }
+    .small { font-size: 0.8rem; }
+    .uppercase { text-transform: uppercase; letter-spacing: 0.06em; }
+    .fw-600 { font-weight: 600; }
+    .mb-1 { margin-bottom: 0.5rem; }
+    .mb-2 { margin-bottom: 1rem; }
+    .mb-3 { margin-bottom: 1.5rem; }
+    .mt-2 { margin-top: 1rem; }
+    .mt-3 { margin-top: 1.5rem; }
+    .mt-4 { margin-top: 2rem; }
+    .flex { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+    }
+    @media (max-width: 768px) {
+      .grid-2, .grid-4 { grid-template-columns: 1fr; }
+      body { padding: 1rem; }
+      h1 { font-size: 1.8rem; }
+    }
+    /* cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .card-glow {
+      background: linear-gradient(145deg, #141414, #0f0f0f);
+      border: 1px solid rgba(212,175,55,0.15);
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .badge-green { background: rgba(34,197,94,0.15); color: var(--success); border-color: rgba(34,197,94,0.3); }
+    .badge-yellow { background: rgba(212,175,55,0.15); color: var(--gold); border-color: rgba(212,175,55,0.3); }
+    .badge-red { background: rgba(239,68,68,0.15); color: var(--danger); border-color: rgba(239,68,68,0.3); }
+    .badge-blue { background: rgba(74,158,255,0.15); color: var(--info); border-color: rgba(74,158,255,0.3); }
+    /* section numbers */
+    .section-num {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      font-weight: 700;
+      color: rgba(212,175,55,0.2);
+      line-height: 1;
+      margin-bottom: -1.2rem;
+      pointer-events: none;
+      user-select: none;
+    }
+    .gradient-line {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 1.2rem 0 1.8rem 0;
+      opacity: 0.5;
+    }
+    /* hero banner */
+    .hero-banner {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.5rem;
+      background: linear-gradient(135deg, rgba(212,175,55,0.06), rgba(10,10,10,0.9));
+      border: 1px solid rgba(212,175,55,0.2);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    @media (max-width: 768px) {
+      .hero-banner { grid-template-columns: 1fr; }
+    }
+    .hero-left .law-badge {
+      display: inline-block;
+      background: rgba(212,175,55,0.12);
+      padding: 0.2rem 1rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      border: 1px solid rgba(212,175,55,0.25);
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .hero-left h2 {
+      font-size: 2rem;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .hero-left .subtitle {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .pull-quote {
+      border-left: 3px solid var(--gold);
+      padding-left: 1.2rem;
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: 1rem;
+      color: #d0d0d0;
+      margin-top: 1rem;
+    }
+    .equation-card {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(212,175,55,0.2);
+      border-radius: var(--radius-sm);
+      padding: 1.2rem;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+    .equation-card .arrow {
+      color: var(--gold);
+      font-size: 1.4rem;
+      margin: 0.3rem 0;
+    }
+    /* domain cards */
+    .domain-card {
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .domain-card.phys { border-top: 4px solid var(--info); }
+    .domain-card.theo { border-top: 4px solid var(--gold); }
+    .domain-card .icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    /* mapping table */
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .mapping-table thead {
+      background: rgba(212,175,55,0.12);
+      color: var(--gold);
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .mapping-table th, .mapping-table td {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .mapping-table th:first-child { border-radius: var(--radius-sm) 0 0 0; }
+    .mapping-table th:last-child { border-radius: 0 var(--radius-sm) 0 0; }
+    .mapping-table tbody tr:hover { background: rgba(212,175,55,0.03); }
+    .mapping-table .arrow-cell {
+      text-align: center;
+      font-size: 1.2rem;
+      color: var(--gold);
+      width: 40px;
+    }
+    /* test cards */
+    .test-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+    }
+    .test-card .test-label {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      color: var(--text-dim);
+      margin-bottom: 0.3rem;
+    }
+    .test-card .test-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+    .test-card .test-verdict {
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 0.4rem;
+    }
+    /* classification panel */
+    .class-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .evidence-chip {
+      display: inline-block;
+      background: rgba(74,158,255,0.1);
+      border: 1px solid rgba(74,158,255,0.2);
+      padding: 0.2rem 0.8rem;
+      border-radius: 16px;
+      font-size: 0.7rem;
+      font-family: var(--font-mono);
+      color: var(--info);
+      margin: 0.2rem;
+    }
+    /* falsification */
+    .falsify-box {
+      background: rgba(239,68,68,0.06);
+      border: 1px solid rgba(239,68,68,0.25);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .falsify-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .falsify-box li {
+      padding: 0.4rem 0;
+      border-bottom: 1px solid rgba(239,68,68,0.08);
+    }
+    .falsify-box li::before {
+      content: "› ";
+      color: var(--danger);
+      font-weight: 700;
+    }
+    /* footer */
+    .footer-seal {
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: var(--gold);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(212,175,55,0.2);
+      padding-top: 1.2rem;
+      margin-top: 1.2rem;
+    }
+    a { color: var(--info); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .verse-ref {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: #6b7280;
+    }
+    .chip-group { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.5rem 0; }
+    .kill-active {
+      display: inline-block;
+      background: rgba(239,68,68,0.1);
+      color: var(--danger);
+      border: 1px solid rgba(239,68,68,0.2);
+      padding: 0.1rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. REGISTRY HEADER -->
+  <div style="display:flex; flex-wrap:wrap; align-items:center; gap:1rem 2rem; margin-bottom:0.5rem;">
+    <div style="font-size:2.8rem; color:var(--gold); font-family:var(--font-heading); font-weight:300; line-height:1;">Φ</div>
+    <div>
+      <h1 style="margin:0; font-size:1.8rem;">Theophysics Registry</h1>
+      <div style="display:flex; flex-wrap:wrap; gap:0.8rem; align-items:center; margin-top:0.2rem;">
+        <span class="badge badge-green" style="font-size:0.7rem;"><i class="fas fa-check-circle" style="margin-right:0.3rem;"></i>Level 3 · Isomorphism</span>
+        <span class="text-dim small">ISO-002</span>
+        <span class="text-dim small">|</span>
+        <span class="text-dim small">Superposition ↔ Eden</span>
+        <span class="text-dim small">|</span>
+        <span class="badge badge-blue" style="font-size:0.6rem;">v1.0</span>
+        <span class="badge" style="font-size:0.6rem; background:rgba(212,175,55,0.08);">Confidence: HIGH</span>
+      </div>
+    </div>
+  </div>
+  <div style="font-size:0.8rem; color:var(--text-dim); margin-bottom:1.8rem; border-bottom:1px solid var(--border); padding-bottom:0.8rem;">
+    <i class="fas fa-fingerprint" style="color:var(--gold); margin-right:0.4rem;"></i> Five-Property Structural Isomorphism · ψ LAW 05 — Observation ↔ Consciousness
+  </div>
+
+  <!-- 2. HERO BANNER -->
+  <div class="hero-banner">
+    <div class="hero-left">
+      <div class="law-badge"><i class="fas fa-scroll" style="margin-right:0.4rem;"></i> ψ LAW 05 — Observation ↔ Consciousness</div>
+      <h2>Superposition <span style="color:var(--gold);">↔</span> Eden</h2>
+      <div class="subtitle">Five-Property Structural Isomorphism Between Quantum Superposition and the Pre-Fall Moral State</div>
+      <div class="pull-quote">
+        “This is a five-property structural isomorphism — not analogy, not metaphor. Each defining property of quantum superposition maps one-to-one onto attested properties of the pre-Fall world.”
+      </div>
+    </div>
+    <div>
+      <div class="equation-card">
+        <div style="font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.06em; color:var(--gold); margin-bottom:0.5rem;">CORE EQUATIONS</div>
+        <div>|Ψ<sub>moral</sub>⟩ = α|Good⟩ + β|Evil⟩</div>
+        <div class="arrow">↓</div>
+        <div style="color:var(--text-dim);">5 properties → 5 properties</div>
+        <div style="margin-top:0.6rem; border-top:1px solid rgba(212,175,55,0.15); padding-top:0.6rem; font-size:0.8rem;">
+          <span class="gold">Coexistence</span> · <span class="gold">No collapse</span> · <span class="gold">Irreversibility</span>
+        </div>
+        <div style="margin-top:0.5rem; font-size:0.7rem; color:var(--text-dim);">
+          <i class="fas fa-arrow-right"></i> Phase transition: V(φ) = –μ²φ² + λφ⁴
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. DOMAIN SPECIFICATIONS -->
+  <div class="section-num">02</div>
+  <h2>Domain Specifications</h2>
+  <div class="gradient-line"></div>
+  <div class="grid-2" style="margin-bottom:2.5rem;">
+    <div class="domain-card phys">
+      <div class="icon"><i class="fas fa-atom" style="color:var(--info);"></i></div>
+      <h3 style="color:var(--info); margin-bottom:0.3rem;">Domain A — Physics</h3>
+      <div class="text-dim small uppercase mb-2">Quantum Mechanics</div>
+      <p><strong>Quantum Superposition.</strong> A quantum system exists in a linear combination of eigenstates: |Ψ<sub>moral</sub>⟩ = α|Good⟩ + β|Evil⟩. Multiple outcomes coexist simultaneously. No definite value exists without measurement. Collapse is irreversible. The observer's measurement basis determines which eigenstate is realized. Post-collapse dynamics differ qualitatively from the superposed state.</p>
+    </div>
+    <div class="domain-card theo">
+      <div class="icon"><i class="fas fa-tree" style="color:var(--gold);"></i></div>
+      <h3 style="color:var(--gold); margin-bottom:0.3rem;">Domain B — Theology</h3>
+      <div class="text-dim small uppercase mb-2">Genesis 2–3</div>
+      <p><strong>The Pre-Fall Moral State.</strong> Before the Fall, both obedience and transgression exist as genuine possibilities. Death and entropy exist only as boundary conditions (“in the day you eat…”), not actualized states. The moral state is structurally undetermined — neither collapsed into obedience nor disobedience. The agent's free choice determines which possibility becomes actual. After the Fall, the entire system operates under qualitatively different rules.</p>
+    </div>
+  </div>
+
+  <!-- 4. THE ISOMORPHIC MAPPING -->
+  <div class="section-num">03</div>
+  <h2>The Isomorphic Mapping</h2>
+  <div class="gradient-line"></div>
+  <div style="overflow-x:auto; margin-bottom:2rem;">
+    <table class="mapping-table">
+      <thead>
+        <tr>
+          <th style="width:5%;">#</th>
+          <th style="width:38%;">Quantum Superposition (Physics)</th>
+          <th style="width:8%;"></th>
+          <th style="width:38%;">Pre-Fall Moral State (Genesis 2–3)</th>
+          <th style="width:11%;">Ref.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><strong>Multiple eigenstates coexist simultaneously</strong><br><span class="text-dim small">The particle exists in all allowed states at once</span></td>
+          <td class="arrow-cell">↔</td>
+          <td><strong>Obedience and transgression coexist as genuine possibilities</strong><br><span class="text-dim small">Genesis 2:9 — Tree of Life and Tree of Knowledge both present</span></td>
+          <td><span class="verse-ref">Gen 2:9</span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>No definite outcome without measurement</strong><br><span class="text-dim small">The system has no determined value until observed</span></td>
+          <td class="arrow-cell">↔</td>
+          <td><strong>The moral state is structurally undetermined</strong><br><span class="text-dim small">Genesis 2:16-17 — Death/entropy exist only as boundary conditions (“in the day you eat…”), not actualized states</span></td>
+          <td><span class="verse-ref">Gen 2:16-17</span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>Collapse is irreversible</strong><br><span class="text-dim small">Once measured, the superposition is destroyed</span></td>
+          <td class="arrow-cell">↔</td>
+          <td><strong>The Fall is irreversible by human means</strong><br><span class="text-dim small">Genesis 3:22-24 — Cherubim guard the way back; no return to Eden</span></td>
+          <td><span class="verse-ref">Gen 3:22-24</span></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><strong>Observer's measurement basis determines outcome</strong><br><span class="text-dim small">The choice of measurement selects which eigenstate collapses into reality</span></td>
+          <td class="arrow-cell">↔</td>
+          <td><strong>The agent's choice determines which moral state actualizes</strong><br><span class="text-dim small">Genesis 3:6 — “She took… she ate… she gave”</span></td>
+          <td><span class="verse-ref">Gen 3:6</span></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><strong>Post-collapse dynamics qualitatively differ from pre-collapse</strong><br><span class="text-dim small">Classical physics governs post-measurement; quantum rules no longer apply</span></td>
+          <td class="arrow-cell">↔</td>
+          <td><strong>Post-Fall dynamics qualitatively differ from pre-Fall</strong><br><span class="text-dim small">Genesis 3:7 — “The eyes of both were opened” — new regime of shame, toil, death</span></td>
+          <td><span class="verse-ref">Gen 3:7</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5. SEPARATOR TESTS -->
+  <div class="section-num">04</div>
+  <h2>Separator Tests</h2>
+  <div class="gradient-line"></div>
+  <p class="text-dim small mb-2" style="margin-top:-0.5rem;">These four tests are the gatekeepers between Correspondence and Isomorphism. <strong>ALL FOUR must pass</strong> for Level 3 classification.</p>
+  <div class="grid-2" style="margin-bottom:2.5rem;">
+    <div class="test-card">
+      <div class="test-label"><i class="fas fa-check-circle" style="color:var(--success);"></i> Test A</div>
+      <div class="test-title">Structural Preservation</div>
+      <p class="small text-dim">Do the key relations survive under the mapping? All five superposition properties — coexistence, indeterminacy, irreversible collapse, observer-determined outcome, and qualitative regime change — map cleanly onto the Genesis 2-3 narrative without forcing or reinterpretation.</p>
+      <div class="test-verdict success"><i class="fas fa-check"></i> PASS — All Five Properties Map</div>
+    </div>
+    <div class="test-card">
+      <div class="test-label"><i class="fas fa-check-circle" style="color:var(--success);"></i> Test B</div>
+      <div class="test-title">Non-Arbitrariness</div>
+      <p class="small text-dim">Is the mapping forced, or could you swap in another theological target? Superposition's specific properties map <em>uniquely</em> to the pre-Fall state. You cannot swap “sanctification” or “eschatology” into this slot and preserve all five properties. The mapping is forced, not interchangeable.</p>
+      <div class="test-verdict success"><i class="fas fa-check"></i> PASS — Mapping is Forced</div>
+    </div>
+    <div class="test-card">
+      <div class="test-label"><i class="fas fa-check-circle" style="color:var(--success);"></i> Test C</div>
+      <div class="test-title">Constraint</div>
+      <p class="small text-dim">Does the mapping rule things out? Yes. If any of the five properties fails to map, the isomorphism dies. If the pre-Fall state were already determined (no genuine coexistence), the mapping breaks. If the Fall were reversible by human effort, Property 3 fails. The isomorphism forbids configurations that violate the five-property structure.</p>
+      <div class="test-verdict success"><i class="fas fa-check"></i> PASS — Rules Out Violations</div>
+    </div>
+    <div class="test-card">
+      <div class="test-label"><i class="fas fa-check-circle" style="color:var(--success);"></i> Test D</div>
+      <div class="test-title">Bidirectionality</div>
+      <p class="small text-dim">Physics predicts theology: if superposition collapse is irreversible, then the Fall must be irreversible by natural means (confirmed: Genesis 3:24). Theology predicts physics: if Eden required genuine moral freedom, then the quantum measurement problem must involve genuine indeterminacy, not hidden variables (confirmed: Bell's theorem, 1964).</p>
+      <div class="test-verdict success"><i class="fas fa-check"></i> PASS — Bidirectional Consequence</div>
+    </div>
+  </div>
+
+  <!-- 6. CLASSIFICATION & EVIDENCE -->
+  <div class="section-num">05</div>
+  <h2>Classification &amp; Evidence</h2>
+  <div class="gradient-line"></div>
+  <div class="grid-2" style="margin-bottom:2.5rem;">
+    <div class="class-panel">
+      <div style="display:flex; flex-wrap:wrap; gap:0.8rem; align-items:center; margin-bottom:1rem;">
+        <span class="badge badge-green" style="font-size:0.8rem; padding:0.3rem 1rem;">Level 3 — Structural Isomorphism</span>
+        <span class="text-dim small">Five-property structural match confirmed</span>
+        <span class="text-dim small">| April 2026</span>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:1.5rem; margin-bottom:1rem;">
+        <div><span class="text-dim small uppercase">Type</span><br><span class="fw-600">Isomorphism</span><br><span class="text-dim small">Five-property bijective map</span></div>
+        <div><span class="text-dim small uppercase">Confidence</span><br><span class="fw-600 gold">HIGH</span><br><span class="text-dim small">Phase transition independently confirms</span></div>
+        <div><span class="text-dim small uppercase">Kill Condition</span><br><span class="kill-active"><i class="fas fa-skull" style="margin-right:0.3rem;"></i>ACTIVE</span><br><span class="text-dim small">See falsification criteria below</span></div>
+      </div>
+      <div class="chip-group">
+        <span class="evidence-chip"><i class="fas fa-wave-square"></i> φ Phase Transition V(φ) = –μ²φ² + λφ⁴</span>
+        <span class="evidence-chip"><i class="fas fa-chart-line"></i> PEAR Lab 6.35σ (2.5M trials)</span>
+        <span class="evidence-chip"><i class="fas fa-globe"></i> Global Consciousness Project 6σ (325+ events)</span>
+      </div>
+      <p class="small text-dim" style="margin-top:0.8rem;"><strong>Phase transition confirmation:</strong> The potential V(φ) = –μ²φ² + λφ⁴ independently confirms the same five-property structure: symmetric state (coexistence), spontaneous symmetry breaking (collapse), irreversibility, selection mechanism, and qualitatively different post-break dynamics. Universality confirmation — the same structural skeleton appearing in a second, independent physical system.</p>
+      <div style="margin-top:0.8rem; border-top:1px solid var(--border); padding-top:0.8rem;">
+        <span class="text-dim small uppercase">Laws Invoked</span><br>
+        <span class="badge badge-blue" style="font-size:0.7rem;"><i class="fas fa-gavel"></i> LAW 05 Observation ↔ Consciousness</span>
+      </div>
+    </div>
+    <div class="falsify-box">
+      <h3 style="color:var(--danger); font-size:1rem; margin-bottom:0.8rem;"><i class="fas fa-exclamation-triangle"></i> Falsification Criteria</h3>
+      <p class="small text-dim" style="margin-bottom:0.8rem;">This claim carries its own kill condition. If any of the following are demonstrated, the isomorphism is demoted to Correspondence (Level 2) or Analogy (Level 1):</p>
+      <ul>
+        <li><strong>Property failure:</strong> If any of the five superposition properties fails to map onto Genesis 1–3 without interpretive stretching, the isomorphism collapses.</li>
+        <li><strong>4/5 threshold:</strong> All five must hold. A 4/5 mapping is analogy, not isomorphism. There is no “close enough.”</li>
+        <li><strong>Universality failure:</strong> The phase transition mapping (V(φ) = –μ²φ² + λφ⁴) must also show the same five properties as universality confirmation. If it does not, the universality claim collapses.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 7. PREDICTIONS (condensed from source) -->
+  <div class="section-num">06</div>
+  <h2>Predictions &amp; Consequences</h2>
+  <div class="gradient-line"></div>
+  <div class="grid-2" style="margin-bottom:2.5rem;">
+    <div class="card">
+      <h3 style="color:var(--gold);"><i class="fas fa-arrow-trend-up"></i> Universality Prediction</h3>
+      <p><strong>Symmetry-Breaking Confirmation.</strong> The same five-property structure should appear in symmetry-breaking phase transitions. If the isomorphism is real, then any physical system exhibiting spontaneous symmetry breaking must display all five properties: coexistence of states, indeterminacy before breaking, irreversibility, selection mechanism, and qualitative regime change. The phase transition potential V(φ) = –μ²φ² + λφ⁴ confirms this independently.</p>
+    </div>
+    <div class="card" style="border-color:rgba(239,68,68,0.2);">
+      <h3 style="color:var(--danger);"><i class="fas fa-skull"></i> Kill Prediction</h3>
+      <p><strong>If Universality Fails.</strong> If the five-property structure does not appear in phase transitions, the universality claim collapses. The isomorphism would survive as a local mapping between quantum mechanics and Genesis, but the stronger claim — that this structure is a universal signature of how the substrate operates — would be dead. This is a genuine prediction with genuine risk.</p>
+    </div>
+  </div>
+
+  <!-- 8. RELATED ISOMORPHISMS -->
+  <div class="section-num">08</div>
+  <h2>Related Isomorphisms</h2>
+  <div class="gradient-line"></div>
+  <div class="grid-2" style="margin-bottom:2rem;">
+    <a href="iso-001-gravity-sin.html" class="card" style="display:block; border-left:3px solid var(--gold); transition:0.2s;">
+      <div class="small gold uppercase"><i class="fas fa-link"></i> ISO-001</div>
+      <div style="font-weight:600;">Gravity ↔ Sin</div>
+      <div class="badge badge-green" style="font-size:0.6rem;">Level 3 — Isomorphism</div>
+    </a>
+    <a href="iso-003-collapse-fall.html" class="card" style="display:block; border-left:3px solid var(--gold); transition:0.2s;">
+      <div class="small gold uppercase"><i class="fas fa-link"></i> ISO-003</div>
+      <div style="font-weight:600;">Wavefunction Collapse ↔ The Fall</div>
+      <div class="badge badge-green" style="font-size:0.6rem;">Level 3 — Isomorphism</div>
+    </a>
+    <a href="iso-007-substrate-fracture.html" class="card" style="display:block; border-left:3px solid var(--gold); transition:0.2s;">
+      <div class="small gold uppercase"><i class="fas fa-link"></i> ISO-007</div>
+      <div style="font-weight:600;">GR/QM ↔ Substrate Fracture</div>
+      <div class="badge badge-green" style="font-size:0.6rem;">Level 3 — Isomorphism</div>
+    </a>
+    <div class="card" style="background:transparent; border-color:transparent; box-shadow:none;">
+      <div class="text-dim small"><i class="fas fa-book-open"></i> Related Work</div>
+      <p class="small">Core article, supporting evidence, and broader context</p>
+    </div>
+  </div>
+
+  <!-- 9. FOOTER -->
+  <footer style="margin-top:3rem; border-top:1px solid var(--border);

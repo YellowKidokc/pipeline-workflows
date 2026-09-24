@@ -1,0 +1,119 @@
+{
+  "spec_version": "1.0-trilemma-resolver",
+  "status": "OK",
+  "fight": {
+    "id": "criminal_justice_incarceration",
+    "familiar_name": "Criminal justice / incarceration",
+    "years_running": 50,
+    "poles": [
+      "Tough on crime / lock them up",
+      "Mass incarceration is the new Jim Crow / rehabilitation not punishment"
+    ]
+  },
+  "reader_anchor": {
+    "opening_prose": "You are seven years old. Your little brother takes the last cookie from the jar. You saw him do it. Your mother asks who took it. He says nothing. You feel the injustice in your chest\u2014the wrongness of the act, the silence, the stolen sweetness. You want him to confess, to be punished, to make it right. But then you remember last week, when you broke his toy and hid it under the bed, and he never told on you. The cookie is gone. The toy is still broken. Someone has to pay, but you both already know: paying doesn't bring the cookie back. That's the first time you feel the ledger\u2014the damage that stays even after the punishment. Nobody ever told you that the real problem isn't who gets punished. It's that the cookie is still gone. And nobody ever taught you how to get a new cookie for the jar.",
+    "universal_experience": "A childhood transgression where punishment didn't restore what was lost.",
+    "checkable_detail": "You felt the injustice of the act and the insufficiency of the punishment simultaneously\u2014the cookie was still gone, the toy still broken.",
+    "quiet_theft": "You were trained to equate punishment with justice, and never taught that the damage remains unpaid.",
+    "embodiment_note": "The cookie jar fight embodies the core distinction: punishment (T_B) and restoration (T_A) are separate, and the deficit (D) persists regardless of who is punished."
+  },
+  "poles": [
+    {
+      "label": "Punishment as deterrence and retribution (Tough on crime)",
+      "steelman": "Crime is a choice. Adults who harm others must face consequences that are swift, certain, and proportional. Punishment deters future crime, incapacitates dangerous people, and affirms that victims matter. When sentences are weak, crime rises. The victim's suffering demands that the offender pay a price. Rehabilitation is a luxury for those who have already proven they can follow rules. The primary duty of the justice system is public safety, not offender comfort.",
+      "accusation_against_others": "You coddle criminals at the expense of victims and public safety.",
+      "accusation_is_true_because": "Rehabilitation-focused policies reduce prison time and early release, which means some offenders return to the community before full accountability\u2014the victim and the public (who did not create the damage) bear the cost of future crimes and unaddressed harm.",
+      "axiom_autopsy": {
+        "load_bearing_premise": "Punishment is the primary mechanism for justice and deterrence.",
+        "self_application": "If punishment is the primary mechanism, then the state must punish every crime proportionally. But the state cannot punish every crime\u2014police clear rates are low, many crimes go unreported. So the premise requires universal enforcement to be just, but universal enforcement is impossible. Therefore the system selectively punishes, which is not justice\u2014it is arbitrary force. The premise self-destructs: punishment as primary mechanism requires a capacity the state does not have.",
+        "one_question_test": "If punishment is the primary mechanism for justice, what do you do about crimes that are never reported or never solved?",
+        "checkable_in_under_a_minute": true
+      }
+    },
+    {
+      "label": "Rehabilitation and decarceration (Mass incarceration is the new Jim Crow)",
+      "steelman": "The current system is a racist, classist machine that destroys communities. Most incarcerated people are nonviolent, many are mentally ill or addicted. Prisons do not reduce crime\u2014they create recidivism by breaking families and removing people from the workforce. Rehabilitation, education, and restorative justice reduce crime more effectively than punishment. We should release nonviolent offenders, end cash bail, and invest in communities instead of cages. The system is broken because it punishes poverty and race, not harm.",
+      "accusation_against_others": "You perpetuate a racist system of mass incarceration that harms communities and does not reduce crime.",
+      "accusation_is_true_because": "Tough-on-crime policies disproportionately incarcerate poor and minority individuals for nonviolent offenses\u2014the community (which did not create the damage of the original crime) bears the cost of broken families, lost wages, and social instability, while the actual harm to victims often goes unaddressed.",
+      "axiom_autopsy": {
+        "load_bearing_premise": "Rehabilitation and decarceration reduce crime and are sufficient for justice.",
+        "self_application": "If rehabilitation is sufficient, then offenders who refuse rehabilitation or reoffend after treatment must be held accountable. But the premise offers no mechanism for accountability beyond continued rehabilitation\u2014which fails for those who reject it. Applied to itself: the premise requires that all offenders are willing and able to be rehabilitated, but many are not. So the system either coerces rehabilitation (which is punishment by another name) or releases unrepentant offenders back to the community. The premise self-destructs: it requires a voluntariness that does not exist in the offender population.",
+        "one_question_test": "What do you do with an offender who completes rehabilitation programs and then commits the same crime again?",
+        "checkable_in_under_a_minute": true
+      }
+    }
+  ],
+  "ledger": {
+    "D_definition": "The total harm caused by crime in a given period: physical injury, property loss, psychological trauma, and social costs (e.g., reduced neighborhood safety, economic losses). Estimated at $1.5 trillion annually in the US (including direct losses, medical costs, lost productivity, and pain and suffering).",
+    "D_is_real_evidence": "Crime victims report measurable harm; property loss is documented; medical and mental health costs are tracked; neighborhoods with high crime show depressed property values and business flight.",
+    "victim_class": "Direct victims of crime (individuals harmed) and indirect victims (communities bearing fear, economic loss, and social instability).",
+    "causal_class": "Identifiable offenders who commit crimes with meaningful agency, plus diffuse systemic factors (poverty, addiction, mental illness, racism) that contribute to crime rates but are not individually causal.",
+    "per_pole_transfers": [
+      {
+        "pole": "Tough on crime",
+        "T_A": "Minimal direct restoration to victims (victim compensation funds are small; most victims get nothing). Estimated T_A < 0.01 * D.",
+        "T_B": "High cost on offenders: incarceration, fines, supervision. Estimated T_B \u2248 0.1 * D (annual corrections spending ~$80B, plus lost wages and family costs).",
+        "J": 0.01,
+        "M": 0.9,
+        "W_note": "Victim is coerced (no choice in being harmed or in receiving minimal restoration). Offender is coerced (incarceration is involuntary). Neither participates voluntarily.",
+        "who_eats_deficit": "Victims and their communities eat the deficit: they bear the unrepaired harm (D - T_A = 0.99 * D) while the offender bears only a fraction of the cost (T_B = 0.1 * D). The public also pays for incarceration through taxes."
+      },
+      {
+        "pole": "Rehabilitation and decarceration",
+        "T_A": "Some restoration through community programs, restitution orders, and victim services. Estimated T_A \u2248 0.05 * D (restitution collection rates are low; victim services are underfunded).",
+        "T_B": "Reduced cost on offenders: shorter sentences, more diversion, less supervision. Estimated T_B \u2248 0.03 * D (lower incarceration costs, but still some supervision and treatment).",
+        "J": 0.05,
+        "M": 0.97,
+        "W_note": "Victim is coerced (no choice in being harmed or in the reduced punishment of the offender). Offender may have more choice (voluntary participation in rehabilitation), but the system still coerces compliance. W is low for both.",
+        "who_eats_deficit": "Victims and communities eat the deficit: unrepaired harm (D - T_A = 0.95 * D) plus the cost of future crimes by unpunished offenders. The public also pays for rehabilitation programs."
+      }
+    ]
+  },
+  "clear_win": {
+    "type": "structural_invariant",
+    "statement": "The entire criminal justice fight is a seating argument on the J + M = 1 line. Both poles are correct in their accusations: each side's plan forces someone who did not create the damage to eat the cost. The line cannot be escaped by any internal policy because the deficit D is real and the closed system constraint T_A = T_B forces J + M = 1. No position on the line achieves both high J (restoration to victims) and high M (mercy to offenders) simultaneously while preserving free will for both. The only exit is a voluntary external cost-bearer who absorbs the full deficit without coercion.",
+    "derivation_steps": [
+      "1. Define D = total annual harm from crime \u2248 $1.5 trillion.",
+      "2. Define T_A = restoration to victims (compensation, restitution, services).",
+      "3. Define T_B = cost imposed on offenders (incarceration, fines, supervision).",
+      "4. Closed system: T_A = T_B (the state's budget for criminal justice is a single pool; money spent on punishment is not spent on restoration, and vice versa).",
+      "5. J = T_A / D, M = 1 - T_B / D. Substituting T_A = T_B gives J + M = 1.",
+      "6. Tough-on-crime pole: high T_B (high M \u2248 0.9), low T_A (low J \u2248 0.01). Victims eat 99% of the deficit.",
+      "7. Rehabilitation pole: low T_B (high M \u2248 0.97), moderate T_A (low J \u2248 0.05). Victims eat 95% of the deficit.",
+      "8. Both poles' accusations are true: each side forces someone who did not create the damage (victims in tough-on-crime, communities in rehabilitation) to bear the cost.",
+      "9. Free will W requires voluntary participation by both victim and offender. In both poles, the victim is coerced (no choice in being harmed or in the restoration offered) and the offender is coerced (incarceration or mandatory treatment). W is structurally impossible on the line.",
+      "10. The only exit is a voluntary external cost-bearer who absorbs the full deficit D, satisfying all five requirements: (1) not victim, not offender, not conscripted bystander; (2) acts voluntarily; (3) absorbs full cost; (4) has capacity; (5) preserves truth (damage acknowledged)."
+    ],
+    "dinner_table_sentence": "Both sides are right: the other side makes someone who didn't break it pay for it, because the math says someone always does.",
+    "why_undeniable": "The derivation uses only the definitions of D, T_A, T_B, and the closed-system constraint. A hostile reader must concede that the state's budget is finite and that spending on punishment reduces spending on restoration. The accusations each side makes are empirically verifiable: tough-on-crime does not restore victims; rehabilitation does not hold offenders accountable. The invariant J + M = 1 is a mathematical identity given the definitions. No internal policy can break it."
+  },
+  "off_the_line": {
+    "proximate": {
+      "structures": [
+        "Victim-offender mediation programs where offenders voluntarily pay restitution directly to victims.",
+        "Community-based restorative justice circles that involve both victim and offender in a voluntary agreement to repair harm.",
+        "Mutual aid networks that provide direct financial and emotional support to crime victims, funded by voluntary donations.",
+        "Sponsorship models where former offenders voluntarily mentor and support new offenders, funded by private donations."
+      ],
+      "honest_limit": "These structures relocate the cost voluntarily and visibly, but they do not retire the deficit. The victim still bears the original harm; the offender still bears the cost of restitution. The altruism lemma holds: internal love/forgiveness/restitution relocates the deficit along the line; it never retires it."
+    },
+    "ultimate": {
+      "configuration": "A voluntary external cost-bearer who (1) is neither victim nor offender nor conscripted bystander, (2) acts voluntarily, (3) absorbs the full cost of the deficit D (the unrepaired harm), (4) has capacity to absorb without being destroyed, and (5) preserves truth (the damage is acknowledged, not denied).",
+      "candidate": "The historical candidate identified by the framework is the figure of Christ in Christian theology\u2014the innocent who voluntarily takes on the penalty and cost of sin/debt, satisfying justice (J = 1, full restoration) and mercy (M = 1, full forgiveness) simultaneously, while preserving free will (W = 1, voluntary acceptance by both victim and offender). The door opens from the reader's side only: no coercion, only invitation.",
+      "door_note": "The door opens from the reader's side only. No one is forced to accept this configuration. It is offered as the only structural exit from the line."
+    }
+  },
+  "anti_gaming_audit": {
+    "blind_label": "pass: analysis survives swapping 'tough on crime' and 'rehabilitation' labels; the mechanism is the same.",
+    "symmetry": "pass: the win applies regardless of which pole proposed the mechanism; both are on the line.",
+    "counterfactual": "pass: D (crime harm) is real and exists absent any policy.",
+    "radius_consistency": "pass: benefits (restoration to victims) and costs (punishment of offenders) are measured at the same social level\u2014the individual and community.",
+    "cost_visibility": "pass: costs are visible to those paying them\u2014victims feel the unrepaired harm; offenders feel incarceration; taxpayers see the budget.",
+    "no_person_score": "pass: actions and positions are scored, not souls.",
+    "unknowns_tracked": "pass: the exact value of D is estimated and labeled as such; the invariant J + M = 1 is exact regardless."
+  },
+  "falsification": {
+    "kill_condition_specific": "A historical case where a criminal justice system achieved full restoration to all victims (J=1) and full mercy to all offenders (M=1) with voluntary participation by both (W=1) inside a closed system with no voluntary external cost-bearer would break this resolution.",
+    "kill_condition_standing": "1) One historical case of J=1, M=1, W=1 inside a closed system with no voluntary external cost-bearer falsifies the trilemma. 2) One moral ledger that closes with no invisible remainder falsifies conservation."
+  }
+}

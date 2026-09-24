@@ -1,0 +1,597 @@
+{
+  "definitions": [
+    {
+      "term": "theorem prover",
+      "category": "academic",
+      "definition": "A computer program that checks if a mathematical statement is proven correctly by following every logical step.",
+      "example": "Like a spell-checker for math proofs.",
+      "grade_level": "college",
+      "first_appearance": "What Lean 4 Actually Proves"
+    },
+    {
+      "term": "compiles",
+      "category": "academic",
+      "definition": "When a computer program is translated into machine code and checked for errors without any missing parts.",
+      "example": "Like a teacher checking that every step of your homework is done before giving a grade.",
+      "grade_level": "college",
+      "first_appearance": "What Lean 4 Actually Proves"
+    },
+    {
+      "term": "sorry",
+      "category": "academic",
+      "definition": "A placeholder in Lean that means 'I haven't proved this part yet' — like leaving a blank in a proof.",
+      "example": "Like writing 'I'll finish this later' on a test question.",
+      "grade_level": "college",
+      "first_appearance": "What Lean 4 Actually Proves"
+    },
+    {
+      "term": "admit",
+      "category": "academic",
+      "definition": "A command in Lean that tells the computer to accept a statement as true without proof — like assuming something is true.",
+      "example": "Like saying 'just trust me' in a math proof.",
+      "grade_level": "college",
+      "first_appearance": "What Lean 4 Actually Proves"
+    },
+    {
+      "term": "formally complete",
+      "category": "academic",
+      "definition": "A proof where every single step has been checked by a computer and nothing is missing.",
+      "example": "Like a puzzle where every piece is in place and verified.",
+      "grade_level": "college",
+      "first_appearance": "What Lean 4 Actually Proves"
+    },
+    {
+      "term": "structural",
+      "category": "academic",
+      "definition": "Relating to the way parts are arranged or connected, not the specific details.",
+      "example": "Like the frame of a house — the walls and roof are structural, the paint color is not.",
+      "grade_level": "college",
+      "first_appearance": "What Lean 4 Actually Proves"
+    },
+    {
+      "term": "empirical evidence",
+      "category": "academic",
+      "definition": "Information that comes from observation or experiments, not just theory.",
+      "example": "Like measuring the temperature outside instead of guessing.",
+      "grade_level": "college",
+      "first_appearance": "What Lean 4 Actually Proves"
+    },
+    {
+      "term": "bilateral audit",
+      "category": "academic",
+      "definition": "A check that looks at two sides (like physics and theology) to see if they match up.",
+      "example": "Like comparing two maps of the same city to see if they agree.",
+      "grade_level": "college",
+      "first_appearance": "What Lean 4 Actually Proves"
+    },
+    {
+      "term": "discourse",
+      "category": "academic",
+      "definition": "A formal discussion or conversation about a topic.",
+      "example": "Like a debate in class about a book.",
+      "grade_level": "college",
+      "first_appearance": "What Lean 4 Actually Proves"
+    },
+    {
+      "term": "machine-checkable",
+      "category": "academic",
+      "definition": "Something that a computer can verify automatically.",
+      "example": "Like a computer checking if your password is correct.",
+      "grade_level": "college",
+      "first_appearance": "What Lean 4 Actually Proves"
+    },
+    {
+      "term": "adversarially testable",
+      "category": "academic",
+      "definition": "Able to be tested by trying to break it or find flaws, like a hacker testing security.",
+      "example": "Like a friend trying to find mistakes in your argument on purpose.",
+      "grade_level": "college",
+      "first_appearance": "What Lean 4 Actually Proves"
+    },
+    {
+      "term": "kill conditions",
+      "category": "framework",
+      "definition": "Specific rules that, if broken, mean the whole idea is wrong — like a 'game over' condition.",
+      "example": "Like in a video game, if you lose all your health, the game ends.",
+      "grade_level": "college",
+      "first_appearance": "What Lean 4 Actually Proves"
+    },
+    {
+      "term": "rigor monopoly",
+      "category": "academic",
+      "definition": "The idea that only one field (like science) is allowed to be strict and precise.",
+      "example": "Like saying only math can be exact, but not art.",
+      "grade_level": "college",
+      "first_appearance": "What Lean 4 Actually Proves"
+    },
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A perfect one-to-one mapping between two structures that preserves all relationships.",
+      "example": "Like two different maps of the same city that show the same streets and connections.",
+      "grade_level": "college",
+      "first_appearance": "Maxwell / Trinity Isomorphism"
+    },
+    {
+      "term": "quaternion",
+      "category": "math",
+      "definition": "A type of number that extends complex numbers, used to describe rotations in 3D space.",
+      "example": "Like a special tool for spinning objects in computer graphics.",
+      "grade_level": "college",
+      "first_appearance": "Maxwell / Trinity Isomorphism"
+    },
+    {
+      "term": "electromagnetic field",
+      "category": "physics",
+      "definition": "A physical field that carries electric and magnetic forces, like around a magnet or wire.",
+      "example": "Like the invisible force that makes a compass needle point north.",
+      "grade_level": "college",
+      "first_appearance": "Maxwell / Trinity Isomorphism"
+    },
+    {
+      "term": "Nicene Trinitarian relational model",
+      "category": "theology",
+      "definition": "The Christian idea of God as three persons (Father, Son, Holy Spirit) in one being, based on the Nicene Creed.",
+      "example": "Like a family where three people are distinct but share the same family name.",
+      "grade_level": "college",
+      "first_appearance": "Maxwell / Trinity Isomorphism"
+    },
+    {
+      "term": "false positives",
+      "category": "academic",
+      "definition": "Results that look correct but are actually wrong — like a test saying you have a disease when you don't.",
+      "example": "Like a fire alarm that goes off when there's no fire.",
+      "grade_level": "college",
+      "first_appearance": "Maxwell / Trinity Isomorphism"
+    },
+    {
+      "term": "load-bearing",
+      "category": "academic",
+      "definition": "A part that is essential for the whole structure to work — if removed, everything collapses.",
+      "example": "Like the main pillar holding up a roof.",
+      "grade_level": "college",
+      "first_appearance": "Maxwell / Trinity Isomorphism"
+    },
+    {
+      "term": "coupling invariant",
+      "category": "physics",
+      "definition": "A property that stays the same when two things are connected, even if other things change.",
+      "example": "Like the total amount of money in two bank accounts stays the same when you transfer money between them.",
+      "grade_level": "college",
+      "first_appearance": "Maxwell / Trinity Isomorphism"
+    },
+    {
+      "term": "scalar-vector coupling",
+      "category": "physics",
+      "definition": "A way of combining a number (scalar) with a direction (vector) in physics equations.",
+      "example": "Like combining speed (a number) with direction to get velocity.",
+      "grade_level": "college",
+      "first_appearance": "Maxwell / Trinity Isomorphism"
+    },
+    {
+      "term": "vector-only",
+      "category": "physics",
+      "definition": "Using only quantities that have both size and direction, without separate numbers.",
+      "example": "Like using only arrows, not plain numbers.",
+      "grade_level": "college",
+      "first_appearance": "Maxwell / Trinity Isomorphism"
+    },
+    {
+      "term": "Modalism",
+      "category": "theology",
+      "definition": "The belief that God is one person who appears in different modes (like Father, Son, Spirit) but is not three distinct persons.",
+      "example": "Like an actor playing three different roles, but being the same person.",
+      "grade_level": "college",
+      "first_appearance": "Maxwell / Trinity Isomorphism"
+    },
+    {
+      "term": "relational distinctness",
+      "category": "theology",
+      "definition": "The idea that each person in the Trinity is a separate 'who' with their own relationships, not just a different role.",
+      "example": "Like three friends who are different people, not one person wearing different hats.",
+      "grade_level": "college",
+      "first_appearance": "Maxwell / Trinity Isomorphism"
+    },
+    {
+      "term": "dynamic triadic structure",
+      "category": "framework",
+      "definition": "A three-part system where the parts interact and change over time.",
+      "example": "Like a three-person team where each member's role changes based on the situation.",
+      "grade_level": "college",
+      "first_appearance": "Maxwell / Trinity Isomorphism"
+    },
+    {
+      "term": "role profiles",
+      "category": "framework",
+      "definition": "The specific jobs or functions that each part of a system has.",
+      "example": "Like in a sports team, each player has a position (goalie, forward, etc.).",
+      "grade_level": "college",
+      "first_appearance": "Maxwell / Trinity Isomorphism"
+    },
+    {
+      "term": "specification",
+      "category": "academic",
+      "definition": "A detailed description of what something must do or be.",
+      "example": "Like a recipe that lists exactly what ingredients and steps are needed.",
+      "grade_level": "college",
+      "first_appearance": "Maxwell / Trinity Isomorphism"
+    },
+    {
+      "term": "exhaustive case elimination",
+      "category": "math",
+      "definition": "A proof method that checks every possible option and shows only one works.",
+      "example": "Like trying every key on a key ring to find the one that opens a lock.",
+      "grade_level": "college",
+      "first_appearance": "The Cross Is the Unique Solution"
+    },
+    {
+      "term": "convergence",
+      "category": "math",
+      "definition": "When multiple things come together to a single point or result.",
+      "example": "Like several roads meeting at a roundabout.",
+      "grade_level": "college",
+      "first_appearance": "The Cross Is the Unique Solution"
+    },
+    {
+      "term": "proportional justice",
+      "category": "philosophy",
+      "definition": "Fairness where the punishment fits the crime — not too harsh or too lenient.",
+      "example": "Like getting a detention for being late, not expelled.",
+      "grade_level": "college",
+      "first_appearance": "The Cross Is the Unique Solution"
+    },
+    {
+      "term": "impartiality",
+      "category": "philosophy",
+      "definition": "Treating everyone the same without favoritism.",
+      "example": "Like a referee who calls fouls on both teams equally.",
+      "grade_level": "college",
+      "first_appearance": "The Cross Is the Unique Solution"
+    },
+    {
+      "term": "victim restoration",
+      "category": "philosophy",
+      "definition": "Making things right for the person who was harmed.",
+      "example": "Like someone who breaks a window paying to fix it.",
+      "grade_level": "college",
+      "first_appearance": "The Cross Is the Unique Solution"
+    },
+    {
+      "term": "voluntary cost-bearing",
+      "category": "philosophy",
+      "definition": "Choosing to take on a burden or pay a price willingly, not being forced.",
+      "example": "Like volunteering to help a friend move instead of being told to.",
+      "grade_level": "college",
+      "first_appearance": "The Cross Is the Unique Solution"
+    },
+    {
+      "term": "universality",
+      "category": "philosophy",
+      "definition": "Applying to everyone, everywhere, without exception.",
+      "example": "Like the rule 'don't steal' applies to all people.",
+      "grade_level": "college",
+      "first_appearance": "The Cross Is the Unique Solution"
+    },
+    {
+      "term": "cheap grace",
+      "category": "theology",
+      "definition": "The idea that forgiveness is easy and costs nothing, without real change or responsibility.",
+      "example": "Like saying 'sorry' but not meaning it or fixing the problem.",
+      "grade_level": "college",
+      "first_appearance": "The Cross Is the Unique Solution"
+    },
+    {
+      "term": "substrate",
+      "category": "framework",
+      "definition": "The basic underlying layer or foundation that everything else is built on.",
+      "example": "Like the ground under a building.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation"
+    },
+    {
+      "term": "metaphysically",
+      "category": "philosophy",
+      "definition": "Relating to the nature of reality beyond what we can see or measure.",
+      "example": "Like asking 'what is real?' or 'does God exist?'",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation"
+    },
+    {
+      "term": "coherence",
+      "category": "framework",
+      "definition": "The quality of being logically consistent and fitting together well.",
+      "example": "Like a story where all the details make sense together.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation"
+    },
+    {
+      "term": "multiplicative architecture",
+      "category": "math",
+      "definition": "A system where parts are multiplied together, so if one part is zero, the whole result is zero.",
+      "example": "Like a chain: if one link breaks, the whole chain fails.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation"
+    },
+    {
+      "term": "additive scoring frameworks",
+      "category": "academic",
+      "definition": "A system where scores are added up, so a weakness in one area can be balanced by strength in another.",
+      "example": "Like a test where you can get a low score on one question but still pass if you do well on others.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation"
+    },
+    {
+      "term": "canonical variable map",
+      "category": "math",
+      "definition": "A standard way to match variables from one system to another.",
+      "example": "Like a translation dictionary that maps words from English to Spanish.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation"
+    },
+    {
+      "term": "domain-neutral",
+      "category": "academic",
+      "definition": "Not belonging to any specific field; works the same in different areas.",
+      "example": "Like the number 2, which is the same in math, physics, and cooking.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation"
+    },
+    {
+      "term": "boundary conditions",
+      "category": "physics",
+      "definition": "The limits or edges of a system that affect how it behaves.",
+      "example": "Like the walls of a pool that determine how water moves.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation"
+    },
+    {
+      "term": "worldview",
+      "category": "philosophy",
+      "definition": "A person's overall way of understanding the world, including their beliefs and values.",
+      "example": "Like seeing the world through a certain lens — scientific, religious, etc.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation"
+    },
+    {
+      "term": "signature layer",
+      "category": "framework",
+      "definition": "An extra level of checking that looks at the type or meaning of something, not just its value.",
+      "example": "Like checking not just that a package weighs 5 pounds, but that it's labeled 'fragile'.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation"
+    },
+    {
+      "term": "semantic swaps",
+      "category": "academic",
+      "definition": "Swapping two things that have different meanings but look similar in a calculation.",
+      "example": "Like swapping 'salt' and 'sugar' in a recipe — they look the same but taste different.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation"
+    },
+    {
+      "term": "adversarial boundary",
+      "category": "academic",
+      "definition": "A limit or test designed to catch mistakes or attacks.",
+      "example": "Like a security checkpoint that checks for fake IDs.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation"
+    },
+    {
+      "term": "domain review",
+      "category": "academic",
+      "definition": "A check by experts in a specific field to see if something is correct.",
+      "example": "Like having a doctor review a medical article.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation"
+    },
+    {
+      "term": "moral burden",
+      "category": "philosophy",
+      "definition": "The weight of guilt or responsibility for doing wrong.",
+      "example": "Like feeling guilty after lying to a friend.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation"
+    },
+    {
+      "term": "Christic conversion",
+      "category": "theology",
+      "definition": "The Christian idea that Jesus Christ changes a person's moral state from guilty to forgiven.",
+      "example": "Like having a debt paid by someone else.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation"
+    },
+    {
+      "term": "ontologically prior",
+      "category": "philosophy",
+      "definition": "Existing first or being more fundamental in reality.",
+      "example": "Like saying a tree exists before its shadow.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation"
+    },
+    {
+      "term": "parasitic",
+      "category": "philosophy",
+      "definition": "Something that depends on another thing for its existence, like a parasite on a host.",
+      "example": "Like a lie that twists the truth — it needs truth to exist.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation"
+    },
+    {
+      "term": "contingently prior",
+      "category": "philosophy",
+      "definition": "Existing first only by chance or circumstance, not necessarily.",
+      "example": "Like being first in line because you arrived early, not because you're the leader.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation"
+    },
+    {
+      "term": "structurally isomorphic",
+      "category": "math",
+      "definition": "Having the same arrangement or pattern, even if the parts look different.",
+      "example": "Like two different puzzles that have the same shape but different pictures.",
+      "grade_level": "college",
+      "first_appearance": "The Borrowed Foundation"
+    },
+    {
+      "term": "incarnation",
+      "category": "theology",
+      "definition": "The Christian belief that God became human in the person of Jesus Christ.",
+      "example": "Like a king becoming a commoner to live among the people.",
+      "grade_level": "college",
+      "first_appearance": "Resurrection as Mission Return"
+    },
+    {
+      "term": "entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system; things tend to become more disordered over time.",
+      "example": "Like a room getting messier if you don't clean it.",
+      "grade_level": "college",
+      "first_appearance": "Resurrection as Mission Return"
+    },
+    {
+      "term": "death contact records",
+      "category": "framework",
+      "definition": "The information or experience of having died, carried forward.",
+      "example": "Like a scar that shows you were injured, even after you heal.",
+      "grade_level": "college",
+      "first_appearance": "Resurrection as Mission Return"
+    },
+    {
+      "term": "pre-incarnate state",
+      "category": "theology",
+      "definition": "The state of Jesus Christ before becoming human.",
+      "example": "Like a person before they are born.",
+      "grade_level": "college",
+      "first_appearance": "Resurrection as Mission Return"
+    },
+    {
+      "term": "resuscitation",
+      "category": "academic",
+      "definition": "Bringing someone back to life after they have stopped breathing or their heart has stopped.",
+      "example": "Like CPR reviving a drowning person.",
+      "grade_level": "college",
+      "first_appearance": "Resurrection as Mission Return"
+    },
+    {
+      "term": "reset",
+      "category": "academic",
+      "definition": "Returning something to its original state, like restarting a computer.",
+      "example": "Like erasing a drawing and starting over on a blank page.",
+      "grade_level": "college",
+      "first_appearance": "Resurrection as Mission Return"
+    },
+    {
+      "term": "dual-substrate foundation",
+      "category": "framework",
+      "definition": "A base made of two different layers or materials that work together.",
+      "example": "Like a road built on both gravel and asphalt.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "coupling states",
+      "category": "physics",
+      "definition": "The way two systems are connected or linked together.",
+      "example": "Like two gears that are meshed together.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "irreversibility gate",
+      "category": "physics",
+      "definition": "A condition that prevents a process from going backward.",
+      "example": "Like an egg that can't be un-scrambled.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "chi product",
+      "category": "framework",
+      "definition": "A mathematical product (multiplication) of all factors that determines overall coherence.",
+      "example": "Like a final score that is the product of several test scores.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "zero-collapse architecture",
+      "category": "framework",
+      "definition": "A design where if any single part is zero, the whole system fails.",
+      "example": "Like a chain where one broken link makes the whole chain useless.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "bridge matrix",
+      "category": "framework",
+      "definition": "A table or grid that shows how two domains (like physics and theology) connect.",
+      "example": "Like a translation table between two languages.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "canonical bridge rows",
+      "category": "framework",
+      "definition": "Standard, accepted connections between two domains.",
+      "example": "Like official translations in a dictionary.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "domain invariance",
+      "category": "math",
+      "definition": "A property that stays the same even when you change the context or field.",
+      "example": "Like the number 2 being the same in math and physics.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "canonical map",
+      "category": "math",
+      "definition": "A standard, agreed-upon way to match elements from one set to another.",
+      "example": "Like a standard conversion chart from inches to centimeters.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "collapse proofs",
+      "category": "math",
+      "definition": "Proofs that show if a certain condition is met, the whole system fails.",
+      "example": "Like showing that if one ingredient is missing, the recipe fails.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "two-level isomorphism",
+      "category": "math",
+      "definition": "A mapping that preserves both the basic structure and the way parts change or interact.",
+      "example": "Like a map that shows both the streets and the traffic rules.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "adversarial false-positive testing",
+      "category": "academic",
+      "definition": "Testing by deliberately trying to create wrong results that look correct.",
+      "example": "Like a hacker trying to break into a system to find weaknesses.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "structural specification",
+      "category": "academic",
+      "definition": "A detailed description of how parts are arranged and connected.",
+      "example": "Like a blueprint for a building showing where walls and doors go.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "discipline chain",
+      "category": "framework",
+      "definition": "A series of rules or checks that must be followed in order.",
+      "example": "Like a checklist that must be completed step by step.",
+      "grade_level": "college",
+      "first_appearance": "Full Corpus"
+    },
+    {
+      "term": "polarity",
+      "category": "physics",

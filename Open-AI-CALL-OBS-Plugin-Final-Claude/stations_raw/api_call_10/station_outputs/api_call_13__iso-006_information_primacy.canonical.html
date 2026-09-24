@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISO-006 · Information Primacy · Theophysics Registry</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ----- RESET & VARIABLES ----- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-dim: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --gold-line: rgba(212, 175, 55, 0.2);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --blue-border: #3b82f6;
+      --gold-border: #d4af37;
+      --card-bg: #111;
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    /* ----- TYPOGRAPHY ----- */
+    h1, h2, h3, h4, .heading-font {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+    }
+    .eq {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 400;
+      background: rgba(255,255,255,0.04);
+      padding: 0.1em 0.3em;
+      border-radius: 4px;
+    }
+    .verse {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      letter-spacing: 0.02em;
+    }
+    .pull-quote {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+      color: #e2e8f0;
+    }
+    /* ----- UTILITY ----- */
+    .gold { color: var(--gold); }
+    .success { color: var(--success); }
+    .danger { color: var(--danger); }
+    .info { color: var(--info); }
+    .text-dim { color: var(--text-dim); }
+    .fw-600 { font-weight: 600; }
+    .mt-2 { margin-top: 2rem; }
+    .mb-1 { margin-bottom: 1rem; }
+    .mb-2 { margin-bottom: 2rem; }
+    .flex { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+    .gap-1 { gap: 1rem; }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .badge-green { background: rgba(34,197,94,0.15); color: var(--success); border-color: var(--success); }
+    .badge-yellow { background: rgba(212,175,55,0.15); color: var(--gold); border-color: var(--gold); }
+    .badge-red { background: rgba(239,68,68,0.15); color: var(--danger); border-color: var(--danger); }
+    .badge-blue { background: rgba(74,158,255,0.15); color: var(--info); border-color: var(--info); }
+    .section-number {
+      font-family: 'Oswald', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: rgba(212,175,55,0.2);
+      line-height: 1;
+      margin-right: 0.75rem;
+    }
+    .gradient-line {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 1.5rem 0 2rem 0;
+      opacity: 0.5;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    /* ----- GRID ----- */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .grid-2, .grid-4 { grid-template-columns: 1fr; }
+      body { padding: 1rem; }
+    }
+    /* ----- HERO ----- */
+    .hero {
+      background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(10,10,10,0.95) 80%);
+      border-radius: var(--radius);
+      padding: 2rem;
+      border: 1px solid rgba(212,175,55,0.15);
+    }
+    .hero .left-col { display: flex; flex-direction: column; gap: 1rem; }
+    .hero .right-col { display: flex; flex-direction: column; justify-content: center; }
+    .equation-card {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(212,175,55,0.2);
+      border-radius: 10px;
+      padding: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem;
+      line-height: 2;
+    }
+    .equation-card .arrow { color: var(--gold); font-size: 1.6rem; margin: 0.2rem 0; }
+    /* ----- TABLE ----- */
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    .mapping-table thead {
+      background: rgba(212,175,55,0.15);
+      color: var(--gold);
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .mapping-table th, .mapping-table td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .mapping-table tbody tr:hover { background: rgba(212,175,55,0.04); }
+    .mapping-table th:first-child { border-radius: 8px 0 0 0; }
+    .mapping-table th:last-child { border-radius: 0 8px 0 0; }
+    /* ----- TEST CARDS ----- */
+    .test-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      border-left: 4px solid var(--gold);
+      box-shadow: var(--shadow);
+    }
+    .test-card .test-title { font-family: 'Oswald', sans-serif; font-size: 1.1rem; letter-spacing: 0.03em; }
+    .test-card .verdict { font-weight: 700; font-size: 1.2rem; margin-top: 0.5rem; }
+    /* ----- CLASSIFICATION PANEL ----- */
+    .class-panel {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      border: 1px solid rgba(212,175,55,0.15);
+    }
+    .evidence-chip {
+      display: inline-block;
+      background: rgba(74,158,255,0.1);
+      color: var(--info);
+      border: 1px solid rgba(74,158,255,0.2);
+      padding: 0.25rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin: 0.25rem;
+    }
+    /* ----- FALSIFICATION BOX ----- */
+    .falsify-box {
+      background: rgba(239,68,68,0.08);
+      border: 1px solid rgba(239,68,68,0.25);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+    }
+    .falsify-box ul { list-style: none; padding-left: 0; }
+    .falsify-box li::before { content: "⚠ "; color: var(--danger); font-weight: 700; }
+    .falsify-box li { margin-bottom: 0.75rem; padding-left: 0.5rem; }
+    /* ----- FOOTER ----- */
+    .footer {
+      border-top: 1px solid rgba(212,175,55,0.15);
+      padding-top: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+    .footer .seal {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      color: var(--gold);
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+    /* misc */
+    .law-badge {
+      background: rgba(212,175,55,0.12);
+      color: var(--gold);
+      border: 1px solid rgba(212,175,55,0.2);
+      border-radius: 40px;
+      padding: 0.2rem 1rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      display: inline-block;
+    }
+    hr { border: none; border-top: 1px solid rgba(255,255,255,0.05); margin: 1.5rem 0; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== 1. REGISTRY HEADER ===== -->
+  <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-bottom: 0.5rem;">
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <span style="font-size: 2.8rem; font-weight: 300; color: var(--gold); font-family: 'Crimson Text', serif;">Φ</span>
+      <div>
+        <h1 style="font-size: 1.8rem; line-height: 1.1; margin: 0;">Theophysics Registry</h1>
+        <div style="font-size: 0.85rem; color: var(--text-dim);">
+          <span class="eq">ISO-006</span> · Information Primacy
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; align-items: center; margin-left: auto;">
+      <span class="badge badge-green"><i class="fas fa-check-circle" style="margin-right: 0.3rem;"></i> Level 3 · Isomorphism</span>
+      <span class="badge badge-blue"><i class="fas fa-chart-line"></i> Confidence: Medium</span>
+      <span class="badge" style="border-color: rgba(255,255,255,0.1);"><i class="far fa-calendar-alt"></i> v1.0 · 2026-03-10</span>
+    </div>
+  </header>
+  <div class="gradient-line" style="margin-top: 0.5rem;"></div>
+
+  <!-- ===== 2. HERO BANNER ===== -->
+  <section class="hero grid-2" style="margin-top: 1.5rem;">
+    <div class="left-col">
+      <span class="law-badge"><i class="fas fa-gavel"></i> Law 1 · Information/Logos substrate</span>
+      <h2 style="font-size: 2.2rem; line-height: 1.2; margin: 0.2rem 0;">
+        Physics / Information Theory <span style="color: var(--gold); font-weight: 300;">⟷</span> Johannine Prologue
+      </h2>
+      <p style="color: var(--text-dim); font-size: 1rem; margin-bottom: 0.5rem;">
+        <span class="eq">It from Bit</span> ↔ <span class="eq">In the beginning was the Logos</span>
+      </p>
+      <div class="pull-quote">
+        “The claim that reality is information-first (not matter-first) maps cleanly onto the claim that reality is logos-first.”
+      </div>
+    </div>
+    <div class="right-col">
+      <div class="equation-card">
+        <div><span style="color: var(--info);">Domain A (Physics)</span></div>
+        <div class="eq" style="font-size: 1.1rem;">R = f(I) &nbsp;·&nbsp; I irreducible, R derivative</div>
+        <div style="margin: 0.6rem 0; border-top: 1px solid rgba(212,175,55,0.15);"></div>
+        <div><span style="color: var(--gold);">Domain B (Theology)</span></div>
+        <div class="eq" style="font-size: 1.1rem;">M = f(L) &nbsp;·&nbsp; L ontologically prior, M derivative</div>
+        <div class="arrow" style="text-align: center; margin-top: 0.6rem;">⟷</div>
+        <div style="font-size: 0.75rem; color: var(--text-dim); text-align: center; font-family: 'Inter', sans-serif;">
+          <i class="fas fa-arrow-right"></i> structural isomorphism
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. DOMAIN SPECIFICATIONS ===== -->
+  <section style="margin-top: 3rem;">
+    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+      <span class="section-number">03</span>
+      <h2 style="font-size: 1.6rem; margin: 0;">Domain Specifications</h2>
+    </div>
+    <div class="gradient-line"></div>
+    <div class="grid-2">
+      <!-- Domain A -->
+      <div class="card" style="border-top: 4px solid var(--blue-border);">
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+          <i class="fas fa-atom" style="font-size: 1.8rem; color: var(--info);"></i>
+          <h3 style="font-size: 1.3rem; margin: 0;">Domain A · Physics</h3>
+        </div>
+        <p><strong>Information Theory / Wheeler’s “It from Bit”</strong></p>
+        <p style="color: var(--text-dim);">Physical reality derives from information-theoretic underpinnings. Matter and energy are derivative; distinguishability (information) is fundamental.</p>
+        <ul style="list-style: none; padding-left: 0; margin-top: 0.8rem; font-size: 0.9rem; color: var(--text-dim);">
+          <li><i class="fas fa-check-circle" style="color: var(--success); width: 1.4rem;"></i> Landauer’s Principle: erasure cost <span class="eq">kT ln(2)</span></li>
+          <li><i class="fas fa-check-circle" style="color: var(--success); width: 1.4rem;"></i> Zeilinger: each qubit carries exactly one bit</li>
+          <li><i class="fas fa-check-circle" style="color: var(--success); width: 1.4rem;"></i> Quantum state <span class="eq">|ψ⟩</span> as complete ontology</li>
+        </ul>
+      </div>
+      <!-- Domain B -->
+      <div class="card" style="border-top: 4px solid var(--gold-border);">
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+          <i class="fas fa-cross" style="font-size: 1.8rem; color: var(--gold);"></i>
+          <h3 style="font-size: 1.3rem; margin: 0;">Domain B · Theology</h3>
+        </div>
+        <p><strong>Johannine Prologue / Creation Theology</strong></p>
+        <p style="color: var(--text-dim);">“In the beginning was the Word (Logos)” — rational, structuring information precedes and generates all material reality.</p>
+        <ul style="list-style: none; padding-left: 0; margin-top: 0.8rem; font-size: 0.9rem; color: var(--text-dim);">
+          <li><i class="fas fa-check-circle" style="color: var(--success); width: 1.4rem;"></i> John 1:1-3 — Logos as ontologically prior</li>
+          <li><i class="fas fa-check-circle" style="color: var(--success); width: 1.4rem;"></i> Genesis 1 — creation by speech act</li>
+          <li><i class="fas fa-check-circle" style="color: var(--success); width: 1.4rem;"></i> Hebrews 11:3 — visible from invisible</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. THE ISOMORPHIC MAPPING ===== -->
+  <section style="margin-top: 3rem;">
+    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+      <span class="section-number">04</span>
+      <h2 style="font-size: 1.6rem; margin: 0;">The Isomorphic Mapping</h2>
+    </div>
+    <div class="gradient-line"></div>
+    <div class="card" style="overflow-x: auto;">
+      <table class="mapping-table">
+        <thead>
+          <tr>
+            <th>Structure</th>
+            <th>Domain A (Physics)</th>
+            <th>Domain B (Theology)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Ontological priority</strong></td>
+            <td>Information (bit) is first; matter/energy derived</td>
+            <td>Logos (Word) is first; all things made through him</td>
+          </tr>
+          <tr>
+            <td><strong>Generative function</strong></td>
+            <td>Bit generates the “it” — <span class="eq">R = f(I)</span></td>
+            <td>God’s word generates creation — <span class="eq">M = f(L)</span></td>
+          </tr>
+          <tr>
+            <td><strong>Irreducibility</strong></td>
+            <td>Cannot ask “what is the bit made of?”</td>
+            <td>Cannot ask “what preceded the Logos?”</td>
+          </tr>
+          <tr>
+            <td><strong>Physical cost / consequence</strong></td>
+            <td>Landauer: erasure dissipates <span class="eq">kT ln(2)</span></td>
+            <td>“Let there be light” — and there was light</td>
+          </tr>
+          <tr>
+            <td><strong>Scope</strong></td>
+            <td>All physical reality derives from information</td>
+            <td>“Without him was not any thing made” (John 1:3)</td>
+          </tr>
+          <tr>
+            <td><strong>Substrate nature</strong></td>
+            <td>Impersonal, mathematical, unconscious</td>
+            <td>Personal, conscious, divine (Logos as person)</td>
+          </tr>
+          <tr>
+            <td><strong>Supporting principle</strong></td>
+            <td>Unitarity / information conservation</td>
+            <td>Colossians 1:17 — “in him all things hold together”</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== 5. SEPARATOR TESTS ===== -->
+  <section style="margin-top: 3rem;">
+    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+      <span class="section-number">05</span>
+      <h2 style="font-size: 1.6rem; margin: 0;">Separator Tests</h2>
+    </div>
+    <div class="gradient-line"></div>
+    <div class="grid-4">
+      <!-- Test A -->
+      <div class="test-card" style="border-left-color: var(--success);">
+        <div class="test-title"><i class="fas fa-sitemap" style="margin-right: 0.4rem;"></i> Test A · Structural Preservation</div>
+        <p style="font-size: 0.9rem; color: var(--text-dim); margin-top: 0.3rem;">Do relations survive under mapping?</p>
+        <div class="verdict success"><i class="fas fa-check-circle"></i> PASS</div>
+        <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.4rem;">Generative direction, irreducibility, ontological priority all match.</p>
+      </div>
+      <!-- Test B -->
+      <div class="test-card" style="border-left-color: var(--success);">
+        <div class="test-title"><i class="fas fa-random" style="margin-right: 0.4rem;"></i> Test B · Non-Arbitrariness</div>
+        <p style="font-size: 0.9rem; color: var(--text-dim); margin-top: 0.3rem;">Is the mapping forced or could you swap targets?</p>
+        <div class="verdict success"><i class="fas fa-check-circle"></i> PASS</div>
+        <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.4rem;">Ordering non-arbitrary in both domains; swapping collapses framework.</p>
+      </div>
+      <!-- Test C -->
+      <div class="test-card" style="border-left-color: var(--gold);">
+        <div class="test-title"><i class="fas fa-ban" style="margin-right: 0.4rem;"></i> Test C · Constraint</div>
+        <p style="font-size: 0.9rem; color: var(--text-dim); margin-top: 0.3rem;">Does the mapping rule things out?</p>
+        <div class="verdict gold"><i class="fas fa-check-circle"></i> PARTIAL PASS</div>
+        <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.4rem;">Physics constraints quantitative &amp; testable; theology constraints qualitative.</p>
+      </div>
+      <!-- Test D -->
+      <div class="test-card" style="border-left-color: var(--success);">
+        <div class="test-title"><i class="fas fa-exchange-alt" style="margin-right: 0.4rem;"></i> Test D · Bidirectionality</div>
+        <p style="font-size: 0.9rem; color: var(--text-dim); margin-top: 0.3rem;">Does each side predict the other?</p>
+        <div class="verdict success"><i class="fas fa-check-circle"></i> PASS</div>
+        <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.4rem;">Information conservation ↔ creation by Word; both imply irreversible substrate.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. CLASSIFICATION & EVIDENCE ===== -->
+  <section style="margin-top: 3rem;">
+    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+      <span class="section-number">06</span>
+      <h2 style="font-size: 1.6rem; margin: 0;">Classification &amp; Evidence</h2>
+    </div>
+    <div class="gradient-line"></div>
+    <div class="class-panel">
+      <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+        <div>
+          <h3 style="font-size: 1rem; color: var(--gold); margin-bottom: 0.5rem;">Type</h3>
+          <p>Structural Isomorphism <span style="color: var(--text-dim);">(with strain at personal/impersonal boundary)</span></p>
+          <h3 style="font-size: 1rem; color: var(--gold); margin-top: 1rem; margin-bottom: 0.5rem;">Confidence</h3>
+          <span class="badge badge-blue" style="font-size: 0.9rem;">Medium</span>
+          <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.3rem;">Structural mapping clean; semantic gap between logos and information real.</p>
+        </div>
+        <div>
+          <h3 style="font-size: 1rem; color: var(--gold); margin-bottom: 0.5rem;">Evidence Bundles</h3>
+          <div style="max-width: 500px;">
+            <span class="evidence-chip">John 1:1-3</span>
+            <span class="evidence-chip">Genesis 1</span>
+            <span class="evidence-chip">Hebrews 11:3</span>
+            <span class="evidence-chip">Colossians 1:17</span>
+            <span class="evidence-chip">Black Hole Information Paradox</span>
+            <span class="evidence-chip">Landauer’s Principle (Berut et al. 2012)</span>
+            <span class="evidence-chip">Bekenstein bound</span>
+            <span class="evidence-chip">Wheeler 1990</span>
+            <span class="evidence-chip">Zeilinger 1999</span>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size: 1rem; color: var(--gold); margin-bottom: 0.5rem;">Laws Invoked</h3>
+          <div><span class="badge badge-blue">Law 1</span> Information/Logos as fundamental substrate</div>
+          <div style="margin-top: 0.3rem;"><span class="badge badge-blue">Law 3</span> Self-Reference (information about information)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. FALSIFICATION CRITERIA ===== -->
+  <section style="margin-top: 3rem;">
+    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+      <span class="section-number">07</span>
+      <h2 style="font-size: 1.6rem; margin: 0;">Falsification Criteria</h2>
+    </div>
+    <div class="gradient-line"></div>
+    <div class="falsify-box">
+      <p style="font-weight: 600; color: var(--danger); margin-bottom: 1rem;"><i class="fas fa-exclamation-triangle"></i> Kill conditions — any one breaks the isomorphism</p>
+      <ul>
+        <li>Show that “It from Bit” is wrong — information emerges from a sub-informational physical substrate (hidden variables, superdeterminism, or a future theory that derives quantum information from something more fundamental). If information is NOT ontologically primitive in physics, Domain A collapses and the mapping fails.</li>
+        <li>Show that John’s <em>logos</em> is not about information primacy but purely about divine personhood with no cosmological generative claim. A purely existentialist reading of the Prologue would weaken Domain B.</li>
+        <li>Find a physical system whose behavior cannot be described informationally. If there exists a real physical process that carries zero information content, Wheeler’s thesis fails.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== 8. RELATED ISOMORPHISMS ===== -->
+  <section style="margin-top: 3rem;">
+    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+      <span class="section-number">08</span>
+      <h2 style="font-size: 1.6rem; margin: 0;">Related Isomorphisms</h2>
+    </div>
+    <div class="gradient-line"></div>
+    <div class="grid-2" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+      <div class="card" style="padding: 1rem; text-align: center;">
+        <span class="badge badge-blue">ISO-001</span>
+        <p style="margin-top: 0.5rem;">Trinity — Logos as second person</p>
+      </div>
+      <div class="card" style="padding: 1rem; text-align: center;">
+        <span class="badge badge-blue">ISO-003</span>
+        <p style="margin-top: 0.5rem;">Entropy/Sin — information degradation</p>
+      </div>
+      <div class="card" style="padding: 1rem; text-align: center;">
+        <span class="badge badge-blue">ISO-011</span>
+        <p style="margin-top: 0.5rem;">Superposition/Collapse — information states</p>
+      </div>
+      <div class="card" style="padding: 1rem; text-align: center;">
+        <span class="badge badge-blue">ISO-012</span>
+        <p style="margin-top: 0.5rem;">Sign Operator — information content of moral orientation</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 9. FOOTER ===== -->
+  <footer class="footer">
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem 3rem; align-items: center;">
+      <span><i class="fas fa-flask"></i> Theophysics Research Program</span>
+      <span><i class="far fa-file-alt"></i> POF 2828</span>
+      <span><i class="fas fa-code-branch"></i> v1.0 · ISO-006</span>
+    </div>
+    <div class="seal">“The math points to God. The math does not contain God.”</div>
+    <div style="margin-top: 1rem; font-size: 0.7rem; opacity: 0.5;">
+      <i class="fas fa-database"></i> Registry entry canonical · generated from ISO-006_Information_Primacy
+    </div>
+  </footer>
+
+</body>
+</html>

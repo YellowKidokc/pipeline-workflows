@@ -1,0 +1,205 @@
+{
+  "spec_version": "1.0",
+  "page_id": "cns-index",
+  "page_title": "The Convergence Series",
+  "page_slug": "index",
+  "source_file": "index.canonical.md",
+  "generated_by": "adversarial_auditor_v1",
+  "generated_date": "2025-04-14",
+  "adversarial_audit": {
+    "fatal_issue": "The page makes a series of strong, non-falsifiable claims (e.g., 'moral evaluator is firmware', 'evil is parasitic') without any testable predictions or evidence. It presents a narrative of convergence without defining what would constitute disproof.",
+    "major_issue": "The central analogy between physics and theology is asserted but never mapped to a specific physics process. The claim that 'both systems are circular' is a rhetorical move that avoids the burden of proof.",
+    "sharpening_issue": "The phrase 'Run it yourself' implies reproducibility, but no code, data, or formal model is provided. This is a promise that the rest of the series must fulfill or the page is misleading.",
+    "smart_hostile_physicist_check": {
+      "primary_confusion": "analogy",
+      "diagnosis": "The page treats the historical pattern of paradigm shifts in physics as evidence for a theological conclusion, confusing a descriptive pattern with a prescriptive or metaphysical one.",
+      "sentence_to_rewrite": "Science doesn't accumulate truth \u2014 it converges toward a structure it's discovering.",
+      "required_fix": "Replace with a precise, testable claim about what 'structure' is being discovered and how convergence is measured, or remove the sentence as non-falsifiable."
+    },
+    "physics_process_check": {
+      "does_mirror_physics_process": false,
+      "physics_process_named": "None",
+      "one_to_one_verdict": "broken",
+      "where_mapping_holds": "Nowhere explicitly",
+      "where_mapping_breaks": "The entire page lacks any named physics process; the analogy is purely rhetorical.",
+      "sentence_to_rewrite": "Where physics meets theology and the structure holds.",
+      "required_fix": "Name a specific physics process (e.g., renormalization group flow, symmetry breaking) and provide a one-to-one mapping to a theological concept, or remove the claim."
+    },
+    "strongest_non_framework_alternative": "The observed convergence in physics is a result of methodological naturalism and empirical testing, not evidence for a theological substrate. The pattern of paradigm shifts is consistent with scientific progress toward better approximations, not toward a pre-existing 'structure'.",
+    "what_would_force_public_narrowing": "A clear statement of what specific, testable prediction the series makes that would distinguish it from a purely naturalistic account of science and morality.",
+    "rewrite_priority": "fatal"
+  },
+  "structure_audit": {
+    "opening_hook_strength": 3,
+    "logical_flow_strength": 2,
+    "transition_quality": 2,
+    "does_opening_promise_match_ending": false,
+    "sequence_verdict": "broken",
+    "best_order_step_by_step": [
+      "Define the central claim and its testable implications.",
+      "Present evidence that is independently verifiable.",
+      "Explain the analogy to a specific physics process.",
+      "Address the strongest counterarguments.",
+      "Provide a reproducible model or code."
+    ],
+    "flow_breaks": [
+      {
+        "from_section": "The Playing Field",
+        "to_section": "The Evidence",
+        "problem": "No logical connection between the claim of circularity and the evidence presented.",
+        "fix": "Explain how the circularity is resolved or why it is not a problem for the argument."
+      },
+      {
+        "from_section": "Why Math Works",
+        "to_section": "The Paradigm Graveyard",
+        "problem": "The Wigner miracle is cited as support, but the paradigm graveyard section undermines the reliability of scientific progress.",
+        "fix": "Reconcile the two: if science converges, why are paradigms replaced? Or if paradigms are replaced, why trust the current one?"
+      }
+    ],
+    "sentence_that_carries_too_much_weight": "Science doesn't accumulate truth \u2014 it converges toward a structure it's discovering.",
+    "why_it_carries_too_much_weight": "This single sentence is the core epistemological claim of the series, but it is unsupported, ambiguous, and non-falsifiable. It must be justified or removed."
+  },
+  "framework_presence": {
+    "master_equation": [],
+    "axioms": [],
+    "lean4": [],
+    "claims_layer": [],
+    "proof_layer": [],
+    "tests_layer": [],
+    "laws_layer": []
+  },
+  "paper_changing_questions": [
+    {
+      "question": "What exact, currently testable prediction does this series make that would distinguish it from a purely naturalistic account?",
+      "why_it_matters": "Without a testable prediction, the series is not scientific and cannot be evaluated.",
+      "if_unanswered_then": "The series remains a philosophical or theological claim, not a physics-theology convergence.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Which named physics process is being mirrored in the claim that 'both systems are circular'? Provide the one-to-one transition map.",
+      "why_it_matters": "The central analogy must be precise to be meaningful; otherwise it is rhetorical.",
+      "if_unanswered_then": "The analogy is vacuous and the series fails its core premise.",
+      "severity": "fatal"
+    },
+    {
+      "question": "What is the strongest falsifying data point against the core thesis that science converges toward a theological structure?",
+      "why_it_matters": "Falsifiability is a hallmark of scientific claims; without it, the thesis is unfalsifiable.",
+      "if_unanswered_then": "The thesis is not scientific and should not be presented as such.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Which assumption in the series is least justified, and what minimum condition would weaken it?",
+      "why_it_matters": "Identifies the weakest link in the argument chain.",
+      "if_unanswered_then": "The argument may rest on an unjustified premise.",
+      "severity": "major"
+    },
+    {
+      "question": "Are the core claims about paradigm shifts supported by primary sources (e.g., Kuhn's original work) or only by summary mentions?",
+      "why_it_matters": "Accuracy of historical claims is essential for credibility.",
+      "if_unanswered_then": "The evidence may be cherry-picked or misrepresented.",
+      "severity": "major"
+    },
+    {
+      "question": "Which term (e.g., 'convergence', 'structure', 'firmware') is used in multiple meanings in the same argument?",
+      "why_it_matters": "Ambiguity can hide logical gaps.",
+      "if_unanswered_then": "The argument may equivocate.",
+      "severity": "major"
+    },
+    {
+      "question": "What single sentence should be rewritten to remove non-falsifiable certainty?",
+      "why_it_matters": "Certainty without evidence undermines the entire project.",
+      "if_unanswered_then": "The series appears dogmatic.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "Which claim is confessional vs evidentiary, and how is that distinguished in the copy?",
+      "why_it_matters": "Confuses the reader about what is being argued vs. assumed.",
+      "if_unanswered_then": "The series may be preaching to the choir.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "What minimal counterexample would break the central analogy between paradigm shifts and theological convergence?",
+      "why_it_matters": "Tests the robustness of the analogy.",
+      "if_unanswered_then": "The analogy may be fragile.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "Can the claims in this series be safely ingested into downstream metadata fields (claim_id, axiom_id, test_id) without ambiguity?",
+      "why_it_matters": "For reproducibility and formal verification.",
+      "if_unanswered_then": "The series cannot be integrated into a formal framework.",
+      "severity": "major"
+    }
+  ],
+  "sentence_annotations": [
+    {
+      "anchor_quote": "Both systems are circular. Neither side gets the high ground.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is a rhetorical move that avoids the burden of proof. It asserts equivalence without justification.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Science doesn't accumulate truth \u2014 it converges toward a structure it's discovering.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Core epistemological claim that is unsupported, ambiguous, and non-falsifiable.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Every human runs a moral evaluator they didn't build, can't uninstall, and can't override. That's not culture. That's firmware.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Strong empirical claim about human nature with no evidence provided. Confuses a metaphor with a fact.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Evil is parasitic. It borrows every word from good and inverts it.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Metaphysical claim presented as fact. No definition of 'good' or 'evil' provided.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Run it yourself",
+      "annotation_type": "clarification",
+      "ui_color": "violet",
+      "why_flagged": "Implies reproducibility, but no code, data, or model is provided. This is a promise that must be fulfilled.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    }
+  ]
+}

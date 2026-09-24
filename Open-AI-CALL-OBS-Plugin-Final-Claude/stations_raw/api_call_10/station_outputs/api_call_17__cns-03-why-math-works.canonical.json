@@ -1,0 +1,290 @@
+{
+  "spec_version": "1.0",
+  "page_id": "cns-03-why-math-works",
+  "page_title": "Why Math Works",
+  "page_slug": "cns-03-why-math-works",
+  "source_file": "cns-03-why-math-works.canonical.md",
+  "generated_by": "adversarial_audit_v1",
+  "generated_date": "2025-04-14",
+  "adversarial_audit": {
+    "fatal_issue": "The central claim that 'math works because the Author of logic and the Author of reality are the same' is presented as the only explanation that accounts for all data, but the argument relies on a false trilemma (invented/discovered/common origin) that excludes hybrid or emergent explanations (e.g., evolutionary Bayesian priors, mathematical realism with naturalistic grounding). The 'common origin' explanation is not empirically distinguishable from a naturalistic mathematical realism that posits a Platonic realm without a creator; the paper provides no testable prediction that would differentiate them.",
+    "major_issue": "The paper conflates 'predictive excess' with 'unreasonable effectiveness' without defining a metric. The examples given (conic sections, non-Euclidean geometry, Dirac equation, group theory, complex numbers) are all cases where mathematics was developed for abstract reasons, but the paper does not address the vast majority of mathematical structures that have no physical application. The selection bias is not acknowledged, and the argument would be equally supported by cherry-picking successes while ignoring failures.",
+    "sharpening_issue": "The paper uses 'unreasonable' as an emotional appeal rather than a precise term. Wigner's original paper is cited but not analyzed; the paper does not engage with Wigner's own proposed explanations or the subsequent literature (e.g., Hamming, Steiner, or Tegmark). The argument would be strengthened by acknowledging counterarguments and addressing them directly.",
+    "smart_hostile_physicist_check": {
+      "primary_confusion": "analogy",
+      "diagnosis": "The paper treats the relationship between mathematics and physics as an analogy (blueprint/building, author/book) but then asserts a causal connection (same architect). The analogy is not an isomorphism; it does not specify how the 'mind of God' grounds mathematical objects or why that grounding would produce predictive excess. The sentence that carries the load is: 'The reason math works is the same reason a blueprint matches a building: they have the same architect.' This is a metaphor, not an explanation.",
+      "sentence_to_rewrite": "The reason math works is the same reason a blueprint matches a building: they have the same architect.",
+      "required_fix": "Replace the metaphor with a testable mechanism or admit that the explanation is not causal but analogical. If the claim is that God's mind is the ground of mathematical truth, specify how that differs from Platonism and what empirical consequence follows."
+    },
+    "physics_process_check": {
+      "does_mirror_physics_process": false,
+      "physics_process_named": "",
+      "one_to_one_verdict": "broken",
+      "where_mapping_holds": "",
+      "where_mapping_breaks": "The paper does not identify any physics process that is being mirrored. The argument is about the relationship between mathematics and physics, not about a specific physical mechanism. The claim that 'the Author of logic and the Author of reality are the same' is not a physics process; it is a metaphysical assertion. No one-to-one mapping to a known physical process is provided.",
+      "sentence_to_rewrite": "The reason math works is the same reason a blueprint matches a building: they have the same architect.",
+      "required_fix": "Either identify a specific physics process (e.g., symmetry breaking, renormalization) that is mirrored by the theological claim, or remove the physics-process language. If the claim is not about a physics process, state that explicitly."
+    },
+    "strongest_non_framework_alternative": "Mathematical Platonism combined with naturalistic evolution of human cognition: humans evolved to recognize patterns that are objectively real in a Platonic realm, and the predictive success of mathematics is a consequence of the fact that the universe instantiates those patterns. This alternative explains predictive excess without a creator and does not require a separate grounding for the Platonic realm (it is simply a brute fact).",
+    "what_would_force_public_narrowing": "A demand for a testable prediction that distinguishes the 'common origin' hypothesis from mathematical Platonism. For example: if the common origin hypothesis is true, then there should be a specific class of mathematical structures that are both aesthetically pleasing and physically realized, with a quantifiable measure of 'beauty' that correlates with physical truth. Without such a prediction, the argument is unfalsifiable and cannot be narrowed.",
+    "rewrite_priority": "fatal"
+  },
+  "structure_audit": {
+    "opening_hook_strength": 8,
+    "logical_flow_strength": 5,
+    "transition_quality": 6,
+    "does_opening_promise_match_ending": true,
+    "sequence_verdict": "repairable",
+    "best_order_step_by_step": [
+      "Define the problem: Wigner's unreasonable effectiveness",
+      "Present examples of predictive excess",
+      "State the three explanations",
+      "Critique invention and discovery",
+      "Present common origin as the best explanation",
+      "Acknowledge the selection bias and counterarguments",
+      "Conclude with the theological implication"
+    ],
+    "flow_breaks": [
+      {
+        "from_section": "Examples of predictive excess",
+        "to_section": "Three explanations",
+        "problem": "The transition from examples to explanations is abrupt; the paper does not explain why the examples are representative or why they force a trilemma.",
+        "fix": "Add a paragraph that summarizes the pattern in the examples and explicitly states that only three logical possibilities exist, with a brief justification for why hybrid options are excluded."
+      },
+      {
+        "from_section": "Critique of invention and discovery",
+        "to_section": "Common origin as best explanation",
+        "problem": "The critique of discovery is weak: it says 'where is the abstract realm?' but does not address the possibility that the realm is simply a brute fact. The paper then jumps to common origin without showing why it is superior to a brute-fact Platonism.",
+        "fix": "Add a comparison between common origin and brute-fact Platonism, showing why the former is more parsimonious or has greater explanatory power."
+      }
+    ],
+    "sentence_that_carries_too_much_weight": "Camp three \u2014 the Common Origin \u2014 explains both. Math predicts because the same intelligence designed the structure and the perceiver.",
+    "why_it_carries_too_much_weight": "This sentence is the core thesis of the paper, but it is not supported by any argument that distinguishes it from Platonism. It assumes that 'same intelligence' is a better explanation than 'same structure' without justification. The entire paper hinges on this sentence, yet it is presented as a conclusion rather than a claim that requires defense."
+  },
+  "framework_presence": {
+    "master_equation": [],
+    "axioms": [
+      {
+        "id": "axiom_1",
+        "present": true,
+        "quote": "There are exactly three possible explanations for why math works on reality.",
+        "function": "This is the foundational axiom that structures the entire argument. It is presented as exhaustive but is not justified."
+      }
+    ],
+    "lean4": [],
+    "claims_layer": [
+      {
+        "present": true,
+        "quote": "Eight documented cases of predictive mathematical excess",
+        "function": "These are the empirical claims that the argument rests on. They are presented as facts but are not sourced or verified."
+      }
+    ],
+    "proof_layer": [
+      {
+        "present": true,
+        "quote": "Camp one \u2014 math is invented \u2014 can't explain predictive excess.",
+        "function": "This is a proof step that attempts to eliminate one of the three options. It is valid only if predictive excess is indeed a problem for invention, which is contested."
+      }
+    ],
+    "tests_layer": [],
+    "laws_layer": []
+  },
+  "paper_changing_questions": [
+    {
+      "question": "What specific, testable prediction does the 'common origin' hypothesis make that distinguishes it from mathematical Platonism?",
+      "why_it_matters": "Without a testable prediction, the hypothesis is unfalsifiable and cannot be evaluated scientifically. The paper claims it is the best explanation, but 'best' requires a criterion that can be applied.",
+      "if_unanswered_then": "The paper remains a theological assertion, not a scientific or philosophical argument that can be assessed.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Which named physics process is being mirrored by the claim that 'the Author of logic and the Author of reality are the same'? Provide the one-to-one transition map.",
+      "why_it_matters": "The paper uses language that suggests a physical mechanism (e.g., 'blueprint matches a building'), but no such mechanism is identified. Without a physics process, the argument is analogical, not causal.",
+      "if_unanswered_then": "The central analogy collapses into a metaphor, and the paper fails to provide a substantive explanation.",
+      "severity": "fatal"
+    },
+    {
+      "question": "What is the strongest falsifying data point against the core thesis that math works because of a common author?",
+      "why_it_matters": "A scientific or philosophical claim should have a known falsifier. If no data could possibly contradict the thesis, it is not a meaningful explanation.",
+      "if_unanswered_then": "The thesis is unfalsifiable and therefore not a candidate for a scientific explanation.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Are the eight documented cases of predictive excess representative of all mathematical structures, or are they cherry-picked? What is the ratio of successful predictions to failed ones?",
+      "why_it_matters": "The argument relies on the existence of predictive excess, but if most mathematical structures have no physical application, the phenomenon is rare and requires a different explanation.",
+      "if_unanswered_then": "The argument commits the fallacy of selection bias, and the conclusion is not supported by the evidence.",
+      "severity": "major"
+    },
+    {
+      "question": "Which assumption is least justified: that the three explanations are exhaustive, that predictive excess is a problem for invention, or that discovery requires a grounding?",
+      "why_it_matters": "The entire argument hinges on these assumptions. If any one is weak, the trilemma collapses.",
+      "if_unanswered_then": "The argument is built on unexamined premises and is not logically sound.",
+      "severity": "major"
+    },
+    {
+      "question": "What is the minimal counterexample that would break the central analogy between a blueprint/building and math/reality?",
+      "why_it_matters": "Analogies are not proofs. Identifying a counterexample reveals the limits of the analogy and forces a more precise formulation.",
+      "if_unanswered_then": "The analogy is accepted uncritically, and the argument remains at the level of metaphor.",
+      "severity": "major"
+    },
+    {
+      "question": "How does the 'common origin' hypothesis account for the fact that many mathematical structures are discovered long before they find physical application, while others are never applied?",
+      "why_it_matters": "If the same intelligence designed both, one might expect all mathematical structures to have physical correlates, or at least a higher success rate than observed.",
+      "if_unanswered_then": "The hypothesis overpredicts and is inconsistent with the data.",
+      "severity": "major"
+    },
+    {
+      "question": "Is the claim that 'the founders of modern physics explicitly stated that math works because God wrote both the book and the reader' supported by primary sources, or are the quotes taken out of context?",
+      "why_it_matters": "The paper appeals to authority, but if the quotes are decontextualized or misrepresented, the argument loses credibility.",
+      "if_unanswered_then": "The paper's use of historical figures is suspect and may be an appeal to false authority.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "Which term is used in multiple meanings in the same argument: 'unreasonable', 'predictive excess', 'grounding', or 'author'?",
+      "why_it_matters": "Ambiguity in key terms can hide logical gaps. For example, 'author' could mean creator, designer, or sustainer, each with different implications.",
+      "if_unanswered_then": "The argument is vulnerable to equivocation and may be internally inconsistent.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "What single sentence should be rewritten to remove non-falsifiable certainty?",
+      "why_it_matters": "The paper presents the common origin hypothesis as the only viable explanation, but this certainty is not justified. Rewriting it to acknowledge uncertainty would improve the argument's honesty.",
+      "if_unanswered_then": "The paper overstates its conclusion and may be seen as dogmatic.",
+      "severity": "sharpening"
+    }
+  ],
+  "sentence_annotations": [
+    {
+      "anchor_quote": "There are exactly three possible explanations for why math works on reality.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is a foundational claim that is not justified. The paper does not argue why these three are exhaustive, and it ignores hybrid or emergent explanations.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "claim_1"
+        ],
+        "axiom_ids": [
+          "axiom_1"
+        ],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The reason math works is the same reason a blueprint matches a building: they have the same architect.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is the central analogy that carries the entire argument, but it is a metaphor, not an explanation. It does not specify a mechanism or provide a testable prediction.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "claim_2"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Camp three \u2014 the Common Origin \u2014 explains both. Math predicts because the same intelligence designed the structure and the perceiver.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This sentence asserts that the common origin hypothesis explains predictive excess and grounding, but it does not show how. It is a conclusion without a supporting argument.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "claim_3"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The founders of modern physics \u2014 Newton, Planck, Faraday, Maxwell, Polkinghorne \u2014 explicitly stated in published work that math works because God wrote both the book and the reader.",
+      "annotation_type": "claim",
+      "ui_color": "gold",
+      "why_flagged": "This is an appeal to authority that requires verification. The paper does not provide citations or context for these quotes, and it is unclear whether they support the specific claim being made.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "claim_4"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Eight documented cases of predictive mathematical excess \u2014 conic sections (200 BC \u2192 Kepler 1609), Non-Euclidean geometry (1854 \u2192 Einstein 1915), Dirac equation (1928 \u2192 positron 1932), group theory (1830s \u2192 Standard Model), complex numbers (1545 \u2192 quantum mechanics).",
+      "annotation_type": "claim",
+      "ui_color": "gold",
+      "why_flagged": "These are presented as facts, but the paper does not provide sources or discuss counterexamples. The selection bias is not addressed.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "claim_5"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Camp one \u2014 math is invented \u2014 can't explain predictive excess. A human tool doesn't reach beyond human observation, but math does.",
+      "annotation_type": "proof",
+      "ui_color": "blue",
+      "why_flagged": "This is a key proof step, but it assumes that invention cannot produce predictive excess. This is contested: evolutionary epistemology suggests that cognitive tools can be adapted to predict beyond immediate observation.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "claim_1"
+        ],
+        "axiom_ids": [
+          "axiom_1"
+        ],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "Camp two \u2014 math is discovered \u2014 explains the predictive excess but can't explain the Platonic realm. Where do mathematical objects live? What grounds them?",
+      "annotation_type": "proof",
+      "ui_color": "blue",
+      "why_flagged": "This proof step assumes that the Platonic realm requires grounding, but many philosophers (e.g., Quine, Putnam) argue that mathematical objects are grounded in their utility or in the structure of scientific theories. The paper does not engage with these alternatives.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "claim_1"
+        ],
+        "axiom_ids": [
+          "axiom_1"
+        ],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The effectiveness of mathematics is not a problem for the theist. It's a prediction.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This sentence claims that the effectiveness of mathematics is a prediction of theism, but it does not specify what the prediction is or how it could be tested. It is a rhetorical move, not a logical one.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "claim_6"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    }
+  ]
+}

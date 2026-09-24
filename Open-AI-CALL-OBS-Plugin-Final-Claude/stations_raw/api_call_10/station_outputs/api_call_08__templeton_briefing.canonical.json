@@ -1,0 +1,602 @@
+{
+  "nodes": {
+    "domains": [
+      {
+        "name": "physics",
+        "type": "physics",
+        "strength": 9
+      },
+      {
+        "name": "theology",
+        "type": "theology",
+        "strength": 8
+      },
+      {
+        "name": "mathematics",
+        "type": "mathematics",
+        "strength": 10
+      },
+      {
+        "name": "information",
+        "type": "information",
+        "strength": 7
+      },
+      {
+        "name": "biology",
+        "type": "biology",
+        "strength": 5
+      },
+      {
+        "name": "philosophy",
+        "type": "philosophy",
+        "strength": 6
+      },
+      {
+        "name": "other",
+        "type": "other",
+        "strength": 4
+      }
+    ],
+    "chi_variables": [
+      {
+        "variable": "G",
+        "present": true,
+        "role": "Grace as initiating coherence operator, formalized in Lean 4",
+        "strength": 9
+      },
+      {
+        "variable": "M",
+        "present": true,
+        "role": "Matter as physical substrate in Master Equation",
+        "strength": 7
+      },
+      {
+        "variable": "E",
+        "present": true,
+        "role": "Energy as dynamic potential in Master Equation",
+        "strength": 7
+      },
+      {
+        "variable": "S",
+        "present": true,
+        "role": "Space as relational field in Master Equation",
+        "strength": 6
+      },
+      {
+        "variable": "T",
+        "present": true,
+        "role": "Time as causal arrow in Master Equation",
+        "strength": 6
+      },
+      {
+        "variable": "K",
+        "present": true,
+        "role": "Knowledge as information state in Master Equation",
+        "strength": 7
+      },
+      {
+        "variable": "R",
+        "present": true,
+        "role": "Relation as coupling in Master Equation",
+        "strength": 7
+      },
+      {
+        "variable": "Q",
+        "present": true,
+        "role": "Quantum as observer selection in Master Equation",
+        "strength": 7
+      },
+      {
+        "variable": "F",
+        "present": true,
+        "role": "Field as alignment vector in Master Equation",
+        "strength": 7
+      },
+      {
+        "variable": "C",
+        "present": true,
+        "role": "Covenant as binding commitment in Master Equation",
+        "strength": 8
+      }
+    ],
+    "axioms": [
+      {
+        "id": "A1.1",
+        "invoked": false,
+        "how": "not directly invoked"
+      },
+      {
+        "id": "A1.2",
+        "invoked": false,
+        "how": "not directly invoked"
+      },
+      {
+        "id": "A2.1",
+        "invoked": false,
+        "how": "not directly invoked"
+      },
+      {
+        "id": "A2.2",
+        "invoked": false,
+        "how": "not directly invoked"
+      },
+      {
+        "id": "A5.1",
+        "invoked": false,
+        "how": "not directly invoked"
+      },
+      {
+        "id": "BC4",
+        "invoked": false,
+        "how": "not directly invoked"
+      },
+      {
+        "id": "BC6",
+        "invoked": false,
+        "how": "not directly invoked"
+      },
+      {
+        "id": "A1.3",
+        "invoked": false,
+        "how": "not directly invoked"
+      },
+      {
+        "id": "T3.1",
+        "invoked": false,
+        "how": "not directly invoked"
+      },
+      {
+        "id": "BC2",
+        "invoked": true,
+        "how": "grace_irreversible theorem implies external grace as initiating coherence"
+      },
+      {
+        "id": "BC7",
+        "invoked": false,
+        "how": "not directly invoked"
+      },
+      {
+        "id": "BC8",
+        "invoked": false,
+        "how": "not directly invoked"
+      }
+    ],
+    "trinity": {
+      "father": {
+        "present": true,
+        "manifestations": [
+          "source",
+          "ground",
+          "origin"
+        ]
+      },
+      "son": {
+        "present": true,
+        "manifestations": [
+          "image",
+          "word",
+          "mediator",
+          "incarnation"
+        ]
+      },
+      "spirit": {
+        "present": true,
+        "manifestations": [
+          "power",
+          "presence",
+          "movement",
+          "energy",
+          "breath"
+        ]
+      },
+      "trinitarian_structure": "explicit"
+    },
+    "isomorphisms": [
+      {
+        "id": "ISO-001",
+        "domain_a": "algebraic structure (non-commutative triadic)",
+        "domain_b": "Trinity (Father, Son, Spirit)",
+        "strength": 10,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-002",
+        "domain_a": "coherence/decoherence polarity",
+        "domain_b": "moral order (good/bad)",
+        "strength": 9,
+        "type": "structural"
+      },
+      {
+        "id": "ISO-003",
+        "domain_a": "Master Equation \u03c7",
+        "domain_b": "generating function for universal pattern",
+        "strength": 8,
+        "type": "structural"
+      }
+    ],
+    "theological_concepts": [
+      {
+        "concept": "grace",
+        "context": "initiating coherence, formalized as irreversible operator in Lean 4",
+        "weight": 10
+      },
+      {
+        "concept": "covenant",
+        "context": "binding commitment sustaining order, variable C in Master Equation",
+        "weight": 8
+      },
+      {
+        "concept": "faith",
+        "context": "alignment vector, variable F in Master Equation",
+        "weight": 7
+      },
+      {
+        "concept": "trinity",
+        "context": "formal isomorphism proved in Lean 4",
+        "weight": 10
+      },
+      {
+        "concept": "incarnation",
+        "context": "implied by Son as mediator in trinitarian structure",
+        "weight": 5
+      }
+    ],
+    "logical_concepts": [
+      {
+        "concept": "contradiction",
+        "context": "used in grace_irreversible proof: zero_ne_one",
+        "weight": 9
+      },
+      {
+        "concept": "implication",
+        "context": "theorems derived from axioms",
+        "weight": 8
+      },
+      {
+        "concept": "non-commutativity",
+        "context": "proved for triadic algebraic structure",
+        "weight": 9
+      },
+      {
+        "concept": "non-factorability",
+        "context": "central claim of Master Equation",
+        "weight": 10
+      },
+      {
+        "concept": "isomorphism",
+        "context": "structural mapping between domains",
+        "weight": 10
+      }
+    ],
+    "fruits_detected": [
+      {
+        "fruit": "love",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "joy",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "peace",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "patience",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "kindness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "goodness",
+        "present": true,
+        "strength": 3
+      },
+      {
+        "fruit": "faithfulness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "gentleness",
+        "present": false,
+        "strength": 0
+      },
+      {
+        "fruit": "self_control",
+        "present": false,
+        "strength": 0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "chi_variable:G",
+      "to": "theological_concepts:grace",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "chi_variable:C",
+      "to": "theological_concepts:covenant",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "chi_variable:F",
+      "to": "theological_concepts:faith",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "isomorphisms:ISO-001",
+      "to": "trinity",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "isomorphisms:ISO-002",
+      "to": "domains:theology",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "isomorphisms:ISO-003",
+      "to": "chi_variables",
+      "relation": "contains",
+      "weight": 8
+    },
+    {
+      "from": "axioms:BC2",
+      "to": "theological_concepts:grace",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "logical_concepts:non-factorability",
+      "to": "chi_variables",
+      "relation": "requires",
+      "weight": 10
+    },
+    {
+      "from": "logical_concepts:contradiction",
+      "to": "theological_concepts:grace",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "domains:mathematics",
+      "to": "isomorphisms:ISO-001",
+      "relation": "produces",
+      "weight": 10
+    },
+    {
+      "from": "domains:physics",
+      "to": "chi_variables",
+      "relation": "contains",
+      "weight": 7
+    },
+    {
+      "from": "domains:theology",
+      "to": "trinity",
+      "relation": "contains",
+      "weight": 10
+    },
+    {
+      "from": "logical_concepts:isomorphism",
+      "to": "isomorphisms:ISO-001",
+      "relation": "produces",
+      "weight": 10
+    },
+    {
+      "from": "logical_concepts:non-commutativity",
+      "to": "isomorphisms:ISO-001",
+      "relation": "supports",
+      "weight": 9
+    },
+    {
+      "from": "theological_concepts:grace",
+      "to": "chi_variable:G",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "theological_concepts:covenant",
+      "to": "chi_variable:C",
+      "relation": "maps_to",
+      "weight": 9
+    },
+    {
+      "from": "theological_concepts:faith",
+      "to": "chi_variable:F",
+      "relation": "maps_to",
+      "weight": 8
+    },
+    {
+      "from": "trinity",
+      "to": "isomorphisms:ISO-001",
+      "relation": "maps_to",
+      "weight": 10
+    },
+    {
+      "from": "domains:mathematics",
+      "to": "logical_concepts:contradiction",
+      "relation": "contains",
+      "weight": 8
+    },
+    {
+      "from": "domains:mathematics",
+      "to": "logical_concepts:non-factorability",
+      "relation": "contains",
+      "weight": 9
+    }
+  ],
+  "tags": {
+    "primary": [
+      "coherence",
+      "intelligence",
+      "trinity isomorphism",
+      "master equation",
+      "machine verification"
+    ],
+    "pillar": [
+      "pillar/physics",
+      "pillar/theology",
+      "pillar/mathematics"
+    ],
+    "series": "master-equation",
+    "classification": "foundational"
+  },
+  "citations": {
+    "scripture": [],
+    "academic": [],
+    "internal": [
+      {
+        "ref": "FP-005",
+        "context": "Trinity Isomorphism Formal Proof"
+      },
+      {
+        "ref": "ISO-025",
+        "context": "Coherence/Decoherence Polarity"
+      }
+    ],
+    "total_count": 2
+  },
+  "word_anomalies": [
+    {
+      "word": "non-factorable",
+      "frequency": 3,
+      "significance": "central mathematical property of Master Equation"
+    },
+    {
+      "word": "grace_irreversible",
+      "frequency": 2,
+      "significance": "theorem name in Lean 4 proof"
+    },
+    {
+      "word": "coherence_product",
+      "frequency": 1,
+      "significance": "algebraic operation in Lean 4 proof"
+    },
+    {
+      "word": "impostor_rejection_lemma",
+      "frequency": 1,
+      "significance": "lemma rejecting alternative structures"
+    }
+  ],
+  "seven_q": {
+    "Q0_posture": "confident, formal, persuasive \u2014 presents a mathematically verified framework as a Templeton funding proposal",
+    "Q1_identity": "a research grant proposal for Templeton's 2026 Intelligence Venture, presenting a mathematical framework for coherence as cosmic intelligence",
+    "Q2_domain": "interdisciplinary: mathematics (Lean 4 proofs), physics (Master Equation), theology (Trinity isomorphism), philosophy (moral order)",
+    "Q3_claim": "intelligence is written into the fabric of reality as a non-factorable coherence function \u03c7, formally isomorphic to the Trinity, with machine-verified proofs and empirical support across 49 domains",
+    "Q4_support": "287 Lean 4 theorems, zero 'sorry' statements, 49-domain empirical test, grace_irreversible theorem, five impostor rejections",
+    "Q5_dependencies": "Lean 4 compiler, PEAR and Seshat datasets, computational simulation engine, interdisciplinary team",
+    "Q6_consequences": "forces a unified view of physical, informational, and moral order; predicts failure of single-domain models; provides testable hypotheses for Templeton funding",
+    "Q7_kill": "disproof of non-factorability by Lean 4, failure of empirical predictions, or successful dismissal as 'mere analogy' without mathematical rigor"
+  },
+  "dependency_graph": {
+    "depends_on": [
+      "FP-005 (Trinity Isomorphism Formal Proof)",
+      "ISO-025 (Coherence/Decoherence Polarity)"
+    ],
+    "required_by": [
+      "future empirical validation papers",
+      "simulation platform"
+    ],
+    "parallel_to": [
+      "other Templeton 2026 Intelligence Venture proposals"
+    ]
+  },
+  "graph_summary": {
+    "total_nodes": 30,
+    "total_edges": 20,
+    "dominant_domain": "mathematics",
+    "dominant_chi": "G",
+    "connectivity_score": 9,
+    "one_sentence": "This document presents a machine-verified mathematical framework for coherence as cosmic intelligence, with a formal Trinity isomorphism and a non-factorable Master Equation, as a Templeton funding proposal."
+  },
+  "symmetry_pairs": {
+    "1_8_grace_faith": {
+      "active": true,
+      "how": "Grace (G) initiates, Faith (F) aligns \u2014 both present in Master Equation"
+    },
+    "2_9_will_conservation": {
+      "active": false,
+      "how": "not directly addressed"
+    },
+    "3_10_truth_coherence": {
+      "active": true,
+      "how": "Coherence (C) as covenant binding truth; truth implied by machine verification"
+    },
+    "4_7_love_relationship": {
+      "active": false,
+      "how": "not directly addressed"
+    },
+    "5_6_judgment_logos": {
+      "active": false,
+      "how": "not directly addressed"
+    },
+    "pairs_active_count": 2
+  },
+  "restoration_operators": {
+    "grace": {
+      "present": true,
+      "strength": 10
+    },
+    "repentance": {
+      "present": false,
+      "strength": 0
+    },
+    "truth": {
+      "present": true,
+      "strength": 9
+    },
+    "love": {
+      "present": false,
+      "strength": 0
+    },
+    "judgment": {
+      "present": false,
+      "strength": 0
+    },
+    "logos": {
+      "present": true,
+      "strength": 8
+    },
+    "righteousness": {
+      "present": false,
+      "strength": 0
+    },
+    "faith": {
+      "present": true,
+      "strength": 7
+    },
+    "atonement": {
+      "present": false,
+      "strength": 0
+    },
+    "christ": {
+      "present": true,
+      "strength": 8
+    },
+    "operators_present_count": 5
+  },
+  "audience": "mixed",
+  "reading_pathway": {
+    "read_before": [
+      "FP-005 (Trinity Isomorphism Formal Proof)",
+      "ISO-025 (Coherence/Decoherence Polarity)"
+    ],
+    "read_after": [
+      "empirical validation papers",
+      "simulation platform documentation"
+    ]
+  }
+}

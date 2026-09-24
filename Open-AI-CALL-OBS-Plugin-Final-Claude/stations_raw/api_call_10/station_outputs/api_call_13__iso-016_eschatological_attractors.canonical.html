@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO-016 · Eschatological Attractors · Theophysics Registry</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;600&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6.4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #111;
+            --surface2: #1a1a1a;
+            --text: #c9d1d9;
+            --text-muted: #8b949e;
+            --gold: #d4af37;
+            --gold-dim: rgba(212, 175, 55, 0.3);
+            --success: #22c55e;
+            --danger: #ef4444;
+            --info: #4a9eff;
+            --border: #2a2a2a;
+            --font-heading: 'Oswald', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-quote: 'Crimson Text', serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-weight: 600;
+        }
+        a { color: var(--gold); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .mono { font-family: var(--font-mono); font-size: 0.9rem; }
+        .quote { font-family: var(--font-quote); font-style: italic; }
+        .gold-border-left { border-left: 4px solid var(--gold); padding-left: 1.2rem; }
+        .section-number {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            opacity: 0.2;
+            line-height: 1;
+            margin-right: 1rem;
+        }
+        .gradient-line {
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            margin: 2rem 0 1.5rem 0;
+            width: 100%;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+        }
+        .badge-green { background: rgba(34,197,94,0.15); color: var(--success); border-color: var(--success); }
+        .badge-yellow { background: rgba(212,175,55,0.15); color: var(--gold); border-color: var(--gold); }
+        .badge-red { background: rgba(239,68,68,0.15); color: var(--danger); border-color: var(--danger); }
+        .badge-blue { background: rgba(74,158,255,0.15); color: var(--info); border-color: var(--info); }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: border 0.2s;
+        }
+        .card-top-blue { border-top: 3px solid var(--info); }
+        .card-top-gold { border-top: 3px solid var(--gold); }
+        .card-top-red { border-top: 3px solid var(--danger); }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .grid-4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        .mapping-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .mapping-table th {
+            background: rgba(212,175,55,0.12);
+            color: var(--gold);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 0.9rem 1rem;
+            border-bottom: 2px solid var(--gold);
+            text-align: left;
+        }
+        .mapping-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        .mapping-table tr:last-child td { border-bottom: none; }
+        .mapping-table tr:hover td { background: rgba(212,175,55,0.04); }
+        .equation-card {
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        .equation-card .arrow-mapping {
+            display: block;
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin: 0.5rem 0;
+        }
+        .test-pass { color: var(--success); font-weight: 700; }
+        .test-fail { color: var(--danger); font-weight: 700; }
+        .falsification-box {
+            background: rgba(239,68,68,0.08);
+            border: 1px solid rgba(239,68,68,0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        .falsification-box ul { list-style: none; padding-left: 0; }
+        .falsification-box li::before { content: "⚠ "; color: var(--danger); }
+        .evidence-chip {
+            display: inline-block;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            padding: 0.3rem 1rem;
+            margin: 0.2rem 0.3rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .footer-seal {
+            font-family: var(--font-quote);
+            font-style: italic;
+            color: var(--gold);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        .verse-ref {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+        @media (max-width: 768px) {
+            .hero-grid, .grid-2, .grid-4 { grid-template-columns: 1fr; }
+            .section-number { font-size: 2.5rem; }
+        }
+        .gold-tint {
+            background: linear-gradient(135deg, rgba(212,175,55,0.06), transparent 70%);
+        }
+        .icon-lg { font-size: 1.8rem; margin-right: 0.5rem; }
+        .flex-row { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+        .mt-1 { margin-top: 1rem; }
+        .mb-1 { margin-bottom: 1rem; }
+        .op-7 { opacity: 0.7; }
+    </style>
+</head>
+<body>
+
+<!-- ===== 1. REGISTRY HEADER ===== -->
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-bottom: 0.5rem;">
+    <div style="display: flex; align-items: center; gap: 0.8rem;">
+        <span style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: 300; color: var(--gold); letter-spacing: 0;">Φ</span>
+        <div>
+            <h1 style="font-size: 1.6rem; margin: 0; line-height: 1.2;">Theophysics Registry</h1>
+            <div style="font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.04em;">faiththruphysics.com · canonical</div>
+        </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; align-items: center;">
+        <span class="badge badge-green" style="font-size: 0.75rem;"><i class="fas fa-code-branch" style="margin-right: 0.3rem;"></i>ISO-016 · Level 3 Isomorphism</span>
+        <span class="badge badge-blue" style="font-size: 0.75rem;"><i class="fas fa-check-circle"></i> Testing</span>
+        <span class="badge" style="font-size: 0.75rem; background: var(--surface2);"><i class="fas fa-tag"></i> v1.0</span>
+    </div>
+</div>
+<div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.2rem;">
+    <i class="fas fa-fingerprint" style="color: var(--gold); margin-right: 0.4rem;"></i>ISO-016 · 2026-03-10 · Eschatological Attractors
+</div>
+<div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
+    <span class="badge badge-green"><i class="fas fa-shield-alt"></i> structural isomorphism</span>
+    <span class="badge" style="background: rgba(212,175,55,0.1); color: var(--gold); border-color: var(--gold);">confidence: medium</span>
+</div>
+<div class="gradient-line"></div>
+
+<!-- ===== 2. HERO BANNER ===== -->
+<div class="hero-grid gold-tint" style="padding: 1.5rem 0 0.5rem 0;">
+    <!-- left -->
+    <div>
+        <span class="badge badge-blue" style="margin-bottom: 0.8rem; display: inline-block;"><i class="fas fa-gavel"></i> law · dynamical systems</span>
+        <h2 style="font-size: 2rem; line-height: 1.2; margin: 0.5rem 0 0.3rem 0;">
+            Moral State Evolution <span style="color: var(--gold);">⇄</span> Eschatological Destiny
+        </h2>
+        <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.2rem;">Domain A (physics) → Domain B (theology)</div>
+        <div class="quote gold-border-left" style="font-size: 1.1rem; color: #d0d7de;">
+            “The narrow gate is a knife-edge saddle separating two eternal basins. Every trajectory terminates in one of two attractors — no neutral terminus exists.”
+        </div>
+        <div class="verse-ref" style="margin-top: 0.5rem;">Matthew 7:13-14 · Matthew 25:31-46</div>
+    </div>
+    <!-- right: equation card -->
+    <div class="equation-card" style="background: #0f0f0f;">
+        <div style="font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.7rem; color: var(--gold); margin-bottom: 0.5rem;"><i class="fas fa-square-root-variable"></i> core equations</div>
+        <div><span style="color: var(--info);">dΦ/dt</span> = σ · γ · (Φ_max − Φ) · Φ</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">Φ ∈ [0,1] · σ = moral sensitivity · γ = grace coefficient</div>
+        <div class="arrow-mapping">⟷</div>
+        <div><span style="color: var(--gold);">Heaven</span> : Φ → 1 (stable) &nbsp;·&nbsp; <span style="color: var(--danger);">Hell</span> : Φ → 0 (stable)</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">saddle at Φ = 0.5 · basin boundary · narrow gate</div>
+        <div style="margin-top: 0.8rem; border-top: 1px solid var(--border); padding-top: 0.6rem; font-size: 0.75rem;">
+            <span class="mono">escape: ∫ σ (dΦ/dt) dt > Φ_threshold</span>
+        </div>
+    </div>
+</div>
+<div class="gradient-line"></div>
+
+<!-- ===== 3. DOMAIN SPECIFICATIONS ===== -->
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+    <span class="section-number">01</span>
+    <h2 style="font-size: 1.3rem; margin: 0;">Domain Specifications</h2>
+</div>
+<div class="grid-2">
+    <!-- Domain A -->
+    <div class="card card-top-blue">
+        <div class="flex-row"><i class="fas fa-atom icon-lg" style="color: var(--info);"></i><h3 style="margin: 0;">Domain A · Physics / Mathematics</h3></div>
+        <div style="margin-top: 0.8rem; font-size: 0.9rem; color: var(--text-muted);">Dynamical Systems Theory · Attractors · Phase Space Analysis</div>
+        <p style="margin-top: 0.8rem; font-size: 0.95rem;">A dynamical system with two stable fixed-point attractors (Φ=0, Φ=1) and one unstable saddle (Φ=0.5). The moral state Φ evolves under logistic-type dynamics dΦ/dt = σ γ (Φ_max − Φ) Φ, producing a bimodal phase portrait. No neutral terminus exists — all trajectories terminate at one of the two attractors.</p>
+        <div class="verse-ref" style="margin-top: 0.6rem;">E12.1 · A12.1 · D12.1</div>
+    </div>
+    <!-- Domain B -->
+    <div class="card card-top-gold">
+        <div class="flex-row"><i class="fas fa-church icon-lg" style="color: var(--gold);"></i><h3 style="margin: 0;">Domain B · Christian Theology</h3></div>
+        <div style="margin-top: 0.8rem; font-size: 0.9rem; color: var(--text-muted);">Eschatology · Heaven · Hell · Final Judgment · Bimodal Destiny</div>
+        <p style="margin-top: 0.8rem; font-size: 0.95rem;">Heaven as maximal coherence (eternal alignment with God, Φ→1). Hell as minimal coherence (eternal separation, Φ→0). No neutral final state — every person's trajectory terminates in one of two destinations. The "narrow gate" (Matthew 7:13-14) corresponds to the unstable saddle at Φ=0.5 that separates the two basins.</p>
+        <div class="verse-ref" style="margin-top: 0.6rem;">Matthew 25:31-46 · Luke 16:26</div>
+    </div>
+</div>
+<div class="gradient-line"></div>
+
+<!-- ===== 4. THE ISOMORPHIC MAPPING ===== -->
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+    <span class="section-number">02</span>
+    <h2 style="font-size: 1.3rem; margin: 0;">The Isomorphic Mapping</h2>
+</div>
+<div style="overflow-x: auto; margin-bottom: 1rem;">
+    <table class="mapping-table">
+        <thead>
+            <tr><th>Element</th><th>Physics / Mathematics</th><th>Theology</th><th>Reference</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Stable attractor 1</td><td>Φ = 1 (fixed point, stable)</td><td>Heaven — maximal coherence, eternal alignment</td><td>Matthew 13:43</td></tr>
+            <tr><td>Stable attractor 2</td><td>Φ = 0 (fixed point, stable)</td><td>Hell — minimal coherence, eternal separation</td><td>Matthew 25:41</td></tr>
+            <tr><td>Unstable saddle</td><td>Φ = 0.5 (saddle point)</td><td>Narrow gate — knife-edge between destinies</td><td>Matthew 7:13-14</td></tr>
+            <tr><td>Basin of attraction</td><td>Φ < 0.5 → Φ=0 ; Φ > 0.5 → Φ=1</td><td>Choices + grace determine eternal trajectory</td><td>A12.2, D12.2</td></tr>
+            <tr><td>Dynamical equation</td><td>dΦ/dt = σ γ (Φ_max − Φ) Φ</td><td>Moral state evolution under grace and sensitivity</td><td>E12.1</td></tr>
+            <tr><td>Escape condition</td><td>∫ σ (dΦ/dt) dt > Φ_threshold</td><td>Grace-driven basin crossing (ISO-013)</td><td>E12.2</td></tr>
+            <tr><td>Bimodality</td><td>Two stable fixed points, no neutral terminus</td><td>Sheep/goats, wheat/tares — only two final states</td><td>Matthew 25:31-46</td></tr>
+            <tr><td>Critical slowing</td><td>Trajectories near saddle evolve slowly</td><td>Moral agonizing near conversion decision</td><td>T12.2, P12.2</td></tr>
+            <tr><td>Hysteresis / irreversibility</td><td>Deep basins require large perturbations to escape</td><td>Hardened heart / hardened saint — resistance to change</td><td>Luke 16:26</td></tr>
+            <tr><td>Binary sign variable</td><td>σ ∈ {+1, −1}</td><td>Moral orientation: aligned or opposed</td><td>HM.2</td></tr>
+            <tr><td>Grace as forcing</td><td>External input shifts basin boundary</td><td>Grace operator (ISO-013) rescues from Φ=0 basin</td><td>ISO-013</td></tr>
+            <tr><td>Metastable state (optional)</td><td>Local minimum decaying to Φ=1</td><td>Purgatory (transitional purification)</td><td>Catholic doctrine</td></tr>
+        </tbody>
+    </table>
+</div>
+<div class="verse-ref" style="text-align: right; margin-top: -0.5rem; margin-bottom: 1rem;">full mapping · 12 structural correspondences</div>
+<div class="gradient-line"></div>
+
+<!-- ===== 5. SEPARATOR TESTS ===== -->
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+    <span class="section-number">03</span>
+    <h2 style="font-size: 1.3rem; margin: 0;">Separator Tests</h2>
+</div>
+<div class="grid-4">
+    <!-- Test A -->
+    <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h4 style="margin: 0; font-size: 0.9rem;">Test A · Structural Preservation</h4>
+            <span class="test-pass"><i class="fas fa-check-circle"></i> PASS</span>
+        </div>
+        <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-muted);">Do relations survive under mapping? The dynamical relations (attractor stability, basin boundaries, saddle sensitivity) map directly to theological relations (eternal destinations, narrow gate, conversion dynamics). The logistic equation preserves the bimodal structure.</p>
+    </div>
+    <!-- Test B -->
+    <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h4 style="margin: 0; font-size: 0.9rem;">Test B · Non-Arbitrariness</h4>
+            <span class="test-pass" style="color: var(--gold);"><i class="fas fa-exclamation-triangle"></i> PARTIAL</span>
+        </div>
+        <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-muted);">The binary attractor structure is consistent but not unique. The logistic equation was chosen to produce bimodality; other equations could produce different attractor counts. The mapping is partially forced by the binary sign variable (σ = ±1).</p>
+    </div>
+    <!-- Test C -->
+    <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h4 style="margin: 0; font-size: 0.9rem;">Test C · Constraint</h4>
+            <span class="test-pass"><i class="fas fa-check-circle"></i> PASS</span>
+        </div>
+        <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-muted);">The mapping rules out universalism (single attractor), neutral final states, and unimodal distributions. It predicts critical slowing near the saddle and hysteresis — both falsifiable.</p>
+    </div>
+    <!-- Test D -->
+    <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h4 style="margin: 0; font-size: 0.9rem;">Test D · Bidirectionality</h4>
+            <span class="test-pass" style="color: var(--gold);"><i class="fas fa-arrow-right-arrow-left"></i> MODERATE</span>
+        </div>
+        <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-muted);">Physics → Theology: dynamical systems provides precise language for narrow gate, hardening, point of no return. Theology → Physics: bimodal prediction (P12.1) is testable if a coherence proxy can be defined.</p>
+    </div>
+</div>
+<div class="gradient-line"></div>
+
+<!-- ===== 6. CLASSIFICATION & EVIDENCE ===== -->
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+    <span class="section-number">04</span>
+    <h2 style="font-size: 1.3rem; margin: 0;">Classification &amp; Evidence</h2>
+</div>
+<div class="card" style="border-left: 4px solid var(--gold);">
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center;">
+        <div>
+            <span class="badge badge-green" style="font-size: 0.8rem;">structural isomorphism</span>
+            <span class="badge badge-yellow" style="font-size: 0.8rem; margin-left: 0.5rem;">level 2 · structural</span>
+        </div>
+        <div><span style="font-weight: 600; color: var(--gold);">confidence:</span> medium</div>
+        <div><span style="font-weight: 600; color: var(--gold);">connection count:</span> high (ISO-013, 014, 015, 019)</div>
+    </div>
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+        <span class="evidence-chip"><i class="fas fa-flask"></i> E12.1 moral state equation</span>
+        <span class="evidence-chip"><i class="fas fa-flask"></i> E12.2 escape condition</span>
+        <span class="evidence-chip"><i class="fas fa-book"></i> logistic equation (Verhulst 1838)</span>
+        <span class="evidence-chip"><i class="fas fa-book"></i> Strogatz · Nonlinear Dynamics</span>
+        <span class="evidence-chip"><i class="fas fa-bible"></i> Matthew 25:31-46</span>
+        <span class="evidence-chip"><i class="fas fa-bible"></i> Matthew 7:13-14</span>
+        <span class="evidence-chip"><i class="fas fa-bible"></i> Luke 16:26</span>
+    </div>
+    <div style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--text-muted);">
+        <i class="fas fa-scale-balanced"></i> Laws invoked: Law 6 (Grace) · Law 9 (Morality) · Law 10 (Destiny)
+    </div>
+</div>
+<div class="gradient-line"></div>
+
+<!-- ===== 7. FALSIFICATION CRITERIA ===== -->
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+    <span class="section-number">05</span>
+    <h2 style="font-size: 1.3rem; margin: 0;">Falsification Criteria</h2>
+</div>
+<div class="falsification-box">
+    <ul style="list-style: none; padding-left: 0;">
+        <li style="margin-bottom: 0.6rem;"><span style="color: var(--danger); font-weight: 600;">1.</span> Show that moral state distributions are unimodal (bell curve), not bimodal — directly refutes P12.1.</li>
+        <li style="margin-bottom: 0.6rem;"><span style="color: var(--danger); font-weight: 600;">2.</span> Show that the logistic equation does not produce the correct qualitative behavior of moral trajectories (e.g., linear rather than S-shaped growth).</li>
+        <li style="margin-bottom: 0.6rem;"><span style="color: var(--danger); font-weight: 600;">3.</span> Show that universalism is theologically correct — all trajectories reach Φ=1, eliminating the Φ=0 attractor.</li>
+        <li style="margin-bottom: 0.6rem;"><span style="color: var(--danger); font-weight: 600;">4.</span> Demonstrate a stable third attractor in moral dynamics — a permanent neutral state neither heaven nor hell.</li>
+        <li style="margin-bottom: 0.6rem;"><span style="color: var(--danger); font-weight: 600;">5.</span> Show that the binary sign variable (σ = ±1) is an oversimplification — moral orientation admits continuous values, changing attractor structure.</li>
+    </ul>
+    <div style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-muted);"><i class="fas fa-skull"></i> kill conditions from source document · any one sufficient to refute ISO-016</div>
+</div>
+<div class="gradient-line"></div>
+
+<!-- ===== 8. RELATED ISOMORPHISMS ===== -->
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+    <span class="section-number">06</span>
+    <h2 style="font-size: 1.3rem; margin: 0;">Related Isomorphisms</h2>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+    <a href="#" class="badge badge-blue" style="font-size: 0.8rem; padding: 0.4rem 1.2rem;"><i class="fas fa-link"></i> ISO-002 · Terminus Sui</a>
+    <a href="#" class="badge badge-blue" style="font-size: 0.8rem; padding: 0.4rem 1.2rem;"><i class="fas fa-link"></i> ISO-013 · Grace Operator</a>
+    <a href="#" class="badge badge-blue" style="font-size: 0.8rem; padding: 0.4rem 1.2rem;"><i class="fas fa-link"></i> ISO-014 · Soul Field</a>
+    <a href="#" class="badge badge-blue" style="font-size: 0.8rem; padding: 0.4rem 1.2rem;"><i class="fas fa-link"></i> ISO-015 · Moral Physics</a>
+    <a href="#" class="badge badge-blue" style="font-size: 0.8rem; padding: 0.4rem 1.2rem;"><i class="fas fa-link"></i> ISO-019 · Boundary Conditions</a>
+    <a href="#" class="badge" style="font-size: 0.8rem; padding: 0.4rem 1.2rem; background: var(--surface2);"><i class="fas fa-file-alt"></i> Decalogue Cosmos (paper)</a>
+</div>
+<div class="gradient-line"></div>
+
+<!-- ===== 9. FOOTER ===== -->
+<footer style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+    <div>
+        <div style="font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; color: var(--gold);">Theophysics Research Program</div>
+        <div style="font-size: 0.7rem; color: var(--text-muted);">POF 2828 · ISO-016 · v1.0 · 2026-03-10</div>
+    </div>
+    <div class="footer-seal">
+        “The math points to God. The math does not contain God.”
+    </div>
+</footer>
+
+</body>
+</html>

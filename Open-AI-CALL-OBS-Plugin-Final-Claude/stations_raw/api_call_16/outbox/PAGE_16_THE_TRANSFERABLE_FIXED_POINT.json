@@ -1,0 +1,141 @@
+{
+  "spec_version": "1.0",
+  "page_id": "PAGE_16",
+  "page_title": "THE TRANSFERABLE FIXED POINT",
+  "page_slug": "the-transferable-fixed-point",
+  "source_file": "PAGE_16_THE_TRANSFERABLE_FIXED_POINT.md",
+  "generated_by": "proof-map-extractor",
+  "generated_date": "2025-04-14",
+  "equations": [
+    {
+      "equation_id": "PAGE_16-E1",
+      "equation_name": "Closed system decay",
+      "equation_text": "c(t) = c_0 * e^{-sigma t}",
+      "law_or_domain": "moral thermodynamics",
+      "source_ref": "Theorem 1",
+      "status": "active"
+    },
+    {
+      "equation_id": "PAGE_16-E2",
+      "equation_name": "Finite source steady state",
+      "equation_text": "C* = Lambda / (Lambda + S) < 1",
+      "law_or_domain": "moral thermodynamics",
+      "source_ref": "Theorem 2",
+      "status": "active"
+    },
+    {
+      "equation_id": "PAGE_16-E3",
+      "equation_name": "Salvation dynamics",
+      "equation_text": "dc/dt = -sigma c + beta O Gamma_ext (1 - c)",
+      "law_or_domain": "moral thermodynamics",
+      "source_ref": "Theorem 3",
+      "status": "active"
+    },
+    {
+      "equation_id": "PAGE_16-E4",
+      "equation_name": "Effective coupling",
+      "equation_text": "Effective coupling = O * G",
+      "law_or_domain": "moral thermodynamics",
+      "source_ref": "Theorem 5",
+      "status": "active"
+    }
+  ],
+  "mappings": [
+    {
+      "map_id": "PAGE_16-M1",
+      "axiom_id": "",
+      "theorem_id": "closed_moral_system_decays",
+      "equation_id": "PAGE_16-E1",
+      "law_id": "",
+      "claim_id": "",
+      "test_id": "",
+      "status": "active",
+      "notes": "Theorem 1: closed system decay, Lean C22 verified"
+    },
+    {
+      "map_id": "PAGE_16-M2",
+      "axiom_id": "",
+      "theorem_id": "finite_source_raises_floor",
+      "equation_id": "PAGE_16-E2",
+      "law_id": "",
+      "claim_id": "",
+      "test_id": "",
+      "status": "active",
+      "notes": "Theorem 2: finite source raises floor but caps ceiling, Lean C25 verified"
+    },
+    {
+      "map_id": "PAGE_16-M3",
+      "axiom_id": "",
+      "theorem_id": "mustard_seed_epsilon_form",
+      "equation_id": "PAGE_16-E3",
+      "law_id": "",
+      "claim_id": "",
+      "test_id": "",
+      "status": "active",
+      "notes": "Theorem 3: infinite source with O>0 drives C to 1, epsilon-form verified"
+    },
+    {
+      "map_id": "PAGE_16-M4",
+      "axiom_id": "",
+      "theorem_id": "",
+      "equation_id": "PAGE_16-E3",
+      "law_id": "",
+      "claim_id": "",
+      "test_id": "",
+      "status": "active",
+      "notes": "Theorem 4: mustard seed \u2014 O=0 vs O>0 is the saving distinction"
+    },
+    {
+      "map_id": "PAGE_16-M5",
+      "axiom_id": "",
+      "theorem_id": "",
+      "equation_id": "PAGE_16-E4",
+      "law_id": "",
+      "claim_id": "",
+      "test_id": "",
+      "status": "active",
+      "notes": "Theorem 5: faith gates, grace powers \u2014 O*G product"
+    },
+    {
+      "map_id": "PAGE_16-M6",
+      "axiom_id": "",
+      "theorem_id": "",
+      "equation_id": "",
+      "law_id": "",
+      "claim_id": "",
+      "test_id": "",
+      "status": "active",
+      "notes": "Theorem 6: Incarnation and Pentecost \u2014 coupling interface and distribution mechanism"
+    },
+    {
+      "map_id": "PAGE_16-M7",
+      "axiom_id": "",
+      "theorem_id": "",
+      "equation_id": "PAGE_16-E3",
+      "law_id": "",
+      "claim_id": "",
+      "test_id": "",
+      "status": "active",
+      "notes": "Physician theorem: (1-c) term \u2014 repair rate maximal at c=0"
+    }
+  ],
+  "page_record": {
+    "premium_tier": "free",
+    "published_status": "draft",
+    "claim_ids": [],
+    "axiom_ids": [],
+    "theorem_ids": [
+      "closed_moral_system_decays",
+      "finite_source_raises_floor",
+      "mustard_seed_epsilon_form"
+    ],
+    "equation_ids": [
+      "PAGE_16-E1",
+      "PAGE_16-E2",
+      "PAGE_16-E3",
+      "PAGE_16-E4"
+    ],
+    "test_ids": [],
+    "notes": "Page 16: Transferable fixed point \u2014 eleven theorems, all Lean Level 5 verified, zero sorry, zero local axioms. Theorems 4, 5, 6 are described but not given formal IDs in source."
+  }
+}

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISO-003 · Entropy / Sin · Theophysics Registry</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=JetBrains+Mono&family=Oswald:wght@400;600;700&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --text: #c9d1d9;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --card-bg: #111;
+      --border-subtle: #222;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    h1, h2, h3, h4, .heading {
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+    }
+    .mono { font-family: var(--font-mono); font-size: 0.9rem; }
+    .quote { font-family: var(--font-quote); font-style: italic; }
+    .gold { color: var(--gold); }
+    .success { color: var(--success); }
+    .danger { color: var(--danger); }
+    .info { color: var(--info); }
+    .text-muted { color: #8b949e; }
+    .small { font-size: 0.8rem; }
+    .op-3 { opacity: 0.3; }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-subtle);
+    }
+    .badge-green { background: rgba(34,197,94,0.15); color: var(--success); border-color: var(--success); }
+    .badge-yellow { background: rgba(212,175,55,0.15); color: var(--gold); border-color: var(--gold); }
+    .badge-red { background: rgba(239,68,68,0.15); color: var(--danger); border-color: var(--danger); }
+    .badge-blue { background: rgba(74,158,255,0.15); color: var(--info); border-color: var(--info); }
+    .section-number {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.3;
+      line-height: 1;
+      margin-bottom: -1.2rem;
+    }
+    .gradient-line {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 1.5rem 0 2rem 0;
+      width: 100%;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: border 0.2s;
+    }
+    .card-blue-top { border-top: 3px solid var(--info); }
+    .card-gold-top { border-top: 3px solid var(--gold); }
+    .card-red-tint { background: rgba(239,68,68,0.06); border-color: rgba(239,68,68,0.25); }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      background: linear-gradient(135deg, rgba(212,175,55,0.08), transparent 70%);
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(212,175,55,0.15);
+    }
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .mapping-table th {
+      background: rgba(212,175,55,0.12);
+      color: var(--gold);
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 2px solid var(--gold);
+    }
+    .mapping-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #1e1e1e;
+      vertical-align: top;
+    }
+    .mapping-table tr:last-child td { border-bottom: none; }
+    .mapping-table tr:hover td { background: rgba(212,175,55,0.03); }
+    .equation-card {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+    .arrow-mapping {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--gold);
+      padding: 0.5rem 0;
+    }
+    .pull-quote {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.2rem;
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: #e6dbb3;
+      margin: 1rem 0;
+    }
+    .test-pass { color: var(--success); font-weight: 700; }
+    .test-fail { color: var(--danger); font-weight: 700; }
+    .evidence-chip {
+      display: inline-block;
+      background: rgba(212,175,55,0.08);
+      border: 1px solid rgba(212,175,55,0.2);
+      border-radius: 30px;
+      padding: 0.2rem 1rem;
+      font-size: 0.75rem;
+      margin: 0.2rem 0.3rem;
+      color: var(--gold);
+    }
+    .footer-seal {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #8b949e;
+    }
+    .footer-seal .seal-text {
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.7;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 0.8rem;
+    }
+    .related-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      font-size: 0.8rem;
+      color: var(--info);
+      transition: border 0.2s;
+    }
+    .related-item:hover { border-color: var(--info); }
+    @media (max-width: 768px) {
+      .grid-2, .hero-grid, .grid-4 { grid-template-columns: 1fr; }
+      .section-number { font-size: 2.5rem; }
+      body { padding: 1rem; }
+    }
+    a { color: var(--info); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .inline-icon { margin-right: 0.4rem; }
+    .law-badge {
+      display: inline-block;
+      background: rgba(74,158,255,0.12);
+      border: 1px solid rgba(74,158,255,0.25);
+      border-radius: 6px;
+      padding: 0.2rem 0.8rem;
+      font-size: 0.7rem;
+      font-family: var(--font-mono);
+      color: var(--info);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. REGISTRY HEADER -->
+  <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+    <span style="font-size: 2.8rem; font-family: var(--font-heading); color: var(--gold); opacity: 0.7; line-height: 1;">Φ</span>
+    <div>
+      <h1 style="font-size: 1.8rem; letter-spacing: 0.08em; color: var(--gold); margin: 0;">THEOPHYSICS REGISTRY</h1>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin-top: 0.2rem;">
+        <span class="mono" style="color: var(--gold);">ISO-003</span>
+        <span class="text-muted small">|</span>
+        <span style="font-size: 0.9rem;"><span class="gold">Entropy ↔ Sin</span> <span class="text-muted small">· Structural Isomorphism</span></span>
+        <span class="badge badge-green">LEVEL 3 · ISOMORPHISM</span>
+        <span class="badge badge-yellow" style="margin-left: 0.2rem;">LEVEL 2 · CORRESPONDENCE</span>
+        <span class="badge badge-blue">CONFIDENCE HIGH</span>
+        <span class="mono small text-muted">v.1.0.0</span>
+      </div>
+    </div>
+  </div>
+  <div class="gradient-line" style="margin-top: 0.8rem;"></div>
+
+  <!-- 2. HERO BANNER -->
+  <div class="hero-grid" style="margin: 1.5rem 0;">
+    <div>
+      <span class="law-badge"><i class="fa-solid fa-gavel inline-icon"></i>LAW 5 · CLAUSIUS</span>
+      <h2 style="font-size: 2rem; margin: 0.8rem 0 0.2rem; line-height: 1.2; color: #fff;">
+        Thermodynamics <span style="color: var(--gold);">⟷</span> Hamartiology
+      </h2>
+      <p class="text-muted" style="font-size: 0.95rem; margin-bottom: 1rem;">Second Law of Thermodynamics mapped to the doctrine of sin</p>
+      <div class="pull-quote">
+        “Both describe irreversible degradation in closed systems requiring external input to reverse. Sin is not the destruction of the moral field; it is the system's increasing inability to couple with it.”
+      </div>
+    </div>
+    <div>
+      <div class="equation-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #2a2a2a; padding-bottom: 0.5rem; margin-bottom: 0.8rem;">
+          <span class="gold" style="font-family: var(--font-heading); letter-spacing: 0.05em; font-size: 0.75rem;">CORE EQUATIONS</span>
+          <span class="mono small text-muted">ISO-003</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+          <div><span class="gold">Domain A</span> <span class="text-muted small">(physics)</span><br><span class="mono">dS/dt ≥ 0</span> <span class="text-muted small">· S = k_B ln(Ω)</span></div>
+          <div class="arrow-mapping" style="font-size: 1.4rem;">⟷</div>
+          <div><span class="gold">Domain B</span> <span class="text-muted small">(theology)</span><br><span class="mono">dD/dt &gt; 0</span> <span class="text-muted small">· div(C) = 0</span></div>
+          <div style="border-top: 1px solid #2a2a2a; padding-top: 0.6rem; margin-top: 0.2rem; font-size: 0.75rem; color: #8b949e;">
+            <span class="mono">S</span> = thermodynamic entropy · <span class="mono">D</span> = moral disorder · <span class="mono">C</span> = coherence field
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. DOMAIN SPECIFICATIONS -->
+  <div>
+    <div class="section-number">01</div>
+    <h2 style="font-size: 1.4rem; color: var(--gold); margin-bottom: 0.2rem;">Domain Specifications</h2>
+    <div class="gradient-line"></div>
+    <div class="grid-2">
+      <div class="card card-blue-top">
+        <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+          <i class="fa-solid fa-atom" style="color: var(--info); font-size: 1.4rem;"></i>
+          <h3 style="font-size: 1.1rem; color: var(--info); margin: 0;">Domain A · Physics</h3>
+        </div>
+        <p><strong>Thermodynamics</strong> — Second Law: in isolated systems, entropy never decreases. Order degrades without external energy input. The only way to decrease local entropy is to import energy from outside, increasing entropy elsewhere.</p>
+        <div class="mono" style="background: #0d0d0d; padding: 0.6rem; border-radius: 6px; margin-top: 0.8rem; font-size: 0.85rem;">
+          dS/dt ≥ 0 &nbsp;·&nbsp; S = k_B ln(Ω) &nbsp;·&nbsp; ΔS_univ ≥ 0
+        </div>
+      </div>
+      <div class="card card-gold-top">
+        <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+          <i class="fa-solid fa-cross" style="color: var(--gold); font-size: 1.4rem;"></i>
+          <h3 style="font-size: 1.1rem; color: var(--gold); margin: 0;">Domain B · Theology</h3>
+        </div>
+        <p><strong>Hamartiology</strong> — Doctrine of sin: moral disorder increases monotonically in systems closed to grace. The coherence field C is conserved (div(C)=0), but the system's coupling coefficient degrades. Sin is the inability to align with moral reality.</p>
+        <div class="mono" style="background: #0d0d0d; padding: 0.6rem; border-radius: 6px; margin-top: 0.8rem; font-size: 0.85rem;">
+          dD/dt &gt; 0 &nbsp;·&nbsp; div(C) = 0 &nbsp;·&nbsp; α(u) = coupling coefficient
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. THE ISOMORPHIC MAPPING -->
+  <div style="margin-top: 2.5rem;">
+    <div class="section-number">02</div>
+    <h2 style="font-size: 1.4rem; color: var(--gold); margin-bottom: 0.2rem;">The Isomorphic Mapping</h2>
+    <div class="gradient-line"></div>
+    <div class="card" style="overflow-x: auto; padding: 0.5rem 0;">
+      <table class="mapping-table">
+        <thead>
+          <tr><th style="width: 25%;">Structural Feature</th><th style="width: 25%;">Domain A (Physics)</th><th style="width: 25%;">Domain B (Theology)</th><th style="width: 25%;">Shared Topology</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Directionality</td><td class="mono">dS/dt ≥ 0</td><td class="mono">dD/dt &gt; 0</td><td>Unidirectional in closed systems</td></tr>
+          <tr><td>Closure condition</td><td>Isolated system → entropy increases</td><td>System closed to grace → moral disorder increases</td><td>Closure is the cause of degradation</td></tr>
+          <tr><td>External reversal</td><td>Energy input (open system) decreases local S</td><td>Grace input decreases moral disorder</td><td>External input reverses local degradation</td></tr>
+          <tr><td>Conservation</td><td>Total energy conserved; ΔS_univ ≥ 0</td><td>div(C) = 0 (coherence field conserved)</td><td>Source field is not degraded; coupling changes</td></tr>
+          <tr><td>Irreversibility</td><td>Broken egg does not reassemble</td><td>Fallen agent does not self-restore</td><td>Work from outside required</td></tr>
+          <tr><td>Endpoint</td><td>Heat death (max entropy, zero free energy)</td><td>Total depravity (α → 0, zero moral free energy)</td><td>System reaches flat, featureless equilibrium</td></tr>
+          <tr><td>Cost of reversal</td><td>Entropy exported elsewhere; source bears cost</td><td>Christ bears the cost of grace</td><td>Source bears thermodynamic/moral cost</td></tr>
+          <tr><td>Measurement</td><td>Joules per kelvin (metric)</td><td>Coherence variable C (topological)</td><td>Different metrics, identical shape</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 5. SEPARATOR TESTS -->
+  <div style="margin-top: 2.5rem;">
+    <div class="section-number">03</div>
+    <h2 style="font-size: 1.4rem; color: var(--gold); margin-bottom: 0.2rem;">Separator Tests</h2>
+    <div class="gradient-line"></div>
+    <div class="grid-4">
+      <div class="card">
+        <h3 style="font-size: 0.9rem; color: var(--gold); letter-spacing: 0.05em;">Test A · Structural Preservation</h3>
+        <p class="small text-muted" style="margin: 0.4rem 0 0.6rem;">Do relations survive under mapping?</p>
+        <p class="small">Monotonic increase, closure-dependence, reversal-by-external-input, conservation of source field — all map identically.</p>
+        <div style="margin-top: 0.6rem;"><span class="test-pass"><i class="fa-solid fa-circle-check"></i> PASS</span></div>
+      </div>
+      <div class="card">
+        <h3 style="font-size: 0.9rem; color: var(--gold); letter-spacing: 0.05em;">Test B · Non-Arbitrariness</h3>
+        <p class="small text-muted" style="margin: 0.4rem 0 0.6rem;">Is the mapping forced or could you swap targets?</p>
+        <p class="small">Swap test: topological level passes (same shape), metric level fails (different units). Expected for cross-domain structural isomorphism.</p>
+        <div style="margin-top: 0.6rem;"><span class="test-pass"><i class="fa-solid fa-circle-check"></i> PASS (topological)</span> <span class="test-fail small">FAIL (metric)</span></div>
+      </div>
+      <div class="card">
+        <h3 style="font-size: 0.9rem; color: var(--gold); letter-spacing: 0.05em;">Test C · Constraint</h3>
+        <p class="small text-muted" style="margin: 0.4rem 0 0.6rem;">Does the mapping rule things out?</p>
+        <p class="small">Yes: Pelagianism (self-salvation) is structurally equivalent to a perpetual motion machine. Any theology claiming self-salvation violates the mapping.</p>
+        <div style="margin-top: 0.6rem;"><span class="test-pass"><i class="fa-solid fa-circle-check"></i> PASS</span></div>
+      </div>
+      <div class="card">
+        <h3 style="font-size: 0.9rem; color: var(--gold); letter-spacing: 0.05em;">Test D · Bidirectionality</h3>
+        <p class="small text-muted" style="margin: 0.4rem 0 0.6rem;">Does each side predict the other?</p>
+        <p class="small">Physics → Theology: Second Law constrains viable soteriologies. Theology → Physics: predicts entropy-like variable in agent-based models.</p>
+        <div style="margin-top: 0.6rem;"><span class="test-pass"><i class="fa-solid fa-circle-check"></i> PASS</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CLASSIFICATION & EVIDENCE -->
+  <div style="margin-top: 2.5rem;">
+    <div class="section-number">04</div>
+    <h2 style="font-size: 1.4rem; color: var(--gold); margin-bottom: 0.2rem;">Classification &amp; Evidence</h2>
+    <div class="gradient-line"></div>
+    <div class="grid-2">
+      <div class="card">
+        <h3 style="font-size: 0.9rem; color: var(--gold); letter-spacing: 0.05em;">Classification</h3>
+        <div style="margin-top: 0.6rem;">
+          <p><span class="badge badge-green" style="font-size: 0.8rem;">STRUCTURAL ISOMORPHISM</span></p>
+          <p class="small text-muted" style="margin-top: 0.4rem;">Confidence: <strong class="gold">High</strong> · Reframe Level: Structural (Level 2)</p>
+          <p class="small text-muted">Connection Count: High — ISO-001, ISO-002, Master Equation, Second Law, Landauer</p>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="font-size: 0.9rem; color: var(--gold); letter-spacing: 0.05em;">Evidence &amp; Laws</h3>
+        <div style="margin-top: 0.6rem; display: flex; flex-wrap: wrap; gap: 0.3rem;">
+          <span class="evidence-chip">Clausius (1850)</span>
+          <span class="evidence-chip">Boltzmann S = k_B ln(Ω)</span>
+          <span class="evidence-chip">Carnot's theorem</span>
+          <span class="evidence-chip">Romans 1:18-32</span>
+          <span class="evidence-chip">Romans 3:10-12</span>
+          <span class="evidence-chip">Genesis 3-11</span>
+          <span class="evidence-chip">Law 5 (Entropy)</span>
+          <span class="evidence-chip">Law 1 (Grace)</span>
+          <span class="evidence-chip">Law 9 (Sin)</span>
+          <span class="evidence-chip">A1.1 (Existence)</span>
+          <span class="evidence-chip">∇·χ = 0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. FALSIFICATION CRITERIA -->
+  <div style="margin-top: 2.5rem;">
+    <div class="section-number">05</div>
+    <h2 style="font-size: 1.4rem; color: var(--gold); margin-bottom: 0.2rem;">Falsification Criteria</h2>
+    <div class="gradient-line"></div>
+    <div class="card card-red-tint">
+      <p style="font-weight: 600; color: var(--danger);"><i class="fa-solid fa-triangle-exclamation"></i> Kill conditions — any one of these breaks the isomorphism:</p>
+      <ul style="margin-top: 0.8rem; list-style: none; display: flex; flex-direction: column; gap: 0.6rem;">
+        <li style="display: flex; gap: 0.6rem;"><span class="danger" style="font-family: var(--font-mono);">1.</span> <span><strong>In Physics:</strong> Show thermodynamic entropy spontaneously decreasing in a truly isolated system (not a fluctuation in a small system, but a sustained macroscopic decrease). This would break the Second Law and eliminate the structural necessity for external input.</span></li>
+        <li style="display: flex; gap: 0.6rem;"><span class="danger" style="font-family: var(--font-mono);">2.</span> <span><strong>In Theology:</strong> Show a moral community that maintains or increases its moral order over multiple generations with zero external moral input — no revelation, no grace, no contact with any moral source beyond its own internal resources. If such a community exists, the moral entropy thesis fails.</span></li>
+        <li style="display: flex; gap: 0.6rem;"><span class="danger" style="font-family: var(--font-mono);">3.</span> <span><strong>Break the topology:</strong> Show that the structural features (monotonic increase, closure-dependence, reversal-by-external-input, conservation of source field) do not actually match between the domains. This would require demonstrating that one domain has a structural feature the other lacks at the topological level.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 8. RELATED ISOMORPHISMS -->
+  <div style="margin-top: 2.5rem;">
+    <div class="section-number">06</div>
+    <h2 style="font-size: 1.4rem; color: var(--gold); margin-bottom: 0.2rem;">Related Isomorphisms</h2>
+    <div class="gradient-line"></div>
+    <div class="related-grid">
+      <div class="related-item"><i class="fa-solid fa-link"></i> ISO-001 · Trinity</div>
+      <div class="related-item"><i class="fa-solid fa-link"></i> ISO-002 · Terminus Sui / Grace</div>
+      <div class="related-item"><i class="fa-solid fa-link"></i> ISO-004 · Quantum Collapse / Fall</div>
+      <div class="related-item"><i class="fa-solid fa-link"></i> ISO-025 · Immunology / Soteriology</div>
+      <div class="related-item"><i class="fa-solid fa-link"></i> ISO-026 · Addiction / Sin Bondage</div>
+      <div class="related-item"><i class="fa-solid fa-link"></i> ISO-027 · Epidemiology / Sin Propagation</div>
+      <div class="related-item"><i class="fa-solid fa-book"></i> Law 5 · Thermodynamics</div>
+      <div class="related-item"><i class="fa-solid fa-book"></i> Ten Laws Canonical</div>
+      <div class="related-item"><i class="fa-solid fa-book"></i> Canonical Index</div>
+    </div>
+  </div>
+
+  <!-- 9. FOOTER -->
+  <div class="footer-seal">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+      <span style="font-family: var(--font-heading); letter-spacing: 0.06em; color: var(--gold);">THEOPHYSICS RESEARCH PROGRAM</span>
+      <span class="mono small text-muted">POF 2828 · v.1.0.0</span>
+    </div>
+    <div class="seal-text" style="margin-top: 0.8rem;">
+      “The math points to God. The math does not contain God.”
+    </div>
+    <div style="margin-top: 0.6rem; font-size: 0.7rem; color: #555;">
+      <i class="fa-regular fa-copyright"></i> structural isomorphism · ISO-003 · entropy ↔ sin
+    </div>
+  </div>
+
+</body>
+</html>

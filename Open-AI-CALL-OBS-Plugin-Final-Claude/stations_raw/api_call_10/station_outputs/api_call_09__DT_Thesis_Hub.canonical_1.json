@@ -1,0 +1,507 @@
+{
+  "definitions": [
+    {
+      "term": "ontological",
+      "category": "philosophy",
+      "definition": "Relating to the study of what exists and the nature of reality.",
+      "example": "Asking whether numbers are real things or just ideas is an ontological question.",
+      "grade_level": "college",
+      "first_appearance": "Framework Overview"
+    },
+    {
+      "term": "theophysics",
+      "category": "framework",
+      "definition": "A made-up field that combines theology (study of God) and physics to explain reality using math.",
+      "example": "Theophysics tries to use equations to describe things like God or morality.",
+      "grade_level": "college",
+      "first_appearance": "Framework Overview"
+    },
+    {
+      "term": "dissertation",
+      "category": "academic",
+      "definition": "A long, formal research paper written for a university degree, like a PhD.",
+      "example": "A student might spend years writing a dissertation on black holes.",
+      "grade_level": "college",
+      "first_appearance": "Framework Overview"
+    },
+    {
+      "term": "ontology",
+      "category": "philosophy",
+      "definition": "The branch of philosophy that studies what kinds of things exist in reality.",
+      "example": "Deciding if 'love' exists as a real thing or just a feeling is part of ontology.",
+      "grade_level": "college",
+      "first_appearance": "Framework Overview"
+    },
+    {
+      "term": "irreducible",
+      "category": "academic",
+      "definition": "Cannot be broken down into simpler parts; the most basic version.",
+      "example": "An atom used to be thought of as irreducible, but we now know it has parts.",
+      "grade_level": "college",
+      "first_appearance": "Math Before Matter"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A statement that is accepted as true without needing proof, used as a starting point for other ideas.",
+      "example": "In geometry, 'a straight line is the shortest distance between two points' is an axiom.",
+      "grade_level": "college",
+      "first_appearance": "Math Before Matter"
+    },
+    {
+      "term": "bedrock",
+      "category": "academic",
+      "definition": "The solid, basic foundation that everything else is built on.",
+      "example": "Trust is the bedrock of a good friendship.",
+      "grade_level": "10",
+      "first_appearance": "Math Before Matter"
+    },
+    {
+      "term": "isomorphism",
+      "category": "math",
+      "definition": "A perfect matching between two things where every part of one corresponds to a part of the other in a way that preserves structure.",
+      "example": "A map of a subway system is isomorphic to the actual subway lines if every station and connection matches up.",
+      "grade_level": "college",
+      "first_appearance": "Math Is Moral"
+    },
+    {
+      "term": "divine attributes",
+      "category": "theology",
+      "definition": "Qualities or characteristics that are believed to belong to God, like being all-powerful or all-knowing.",
+      "example": "Omnipotence (all-powerful) and omniscience (all-knowing) are divine attributes.",
+      "grade_level": "college",
+      "first_appearance": "Math Is Moral"
+    },
+    {
+      "term": "wavefunction collapse",
+      "category": "physics",
+      "definition": "In quantum mechanics, the moment a particle's many possible states suddenly become one definite state when measured.",
+      "example": "It's like a spinning coin that is both heads and tails until you slap it on the table, and it becomes just one side.",
+      "grade_level": "college",
+      "first_appearance": "The Trinity Requirement"
+    },
+    {
+      "term": "irreducible operators",
+      "category": "math",
+      "definition": "Mathematical actions (like adding or rotating) that cannot be simplified into a combination of other actions.",
+      "example": "In a game, 'move forward one step' might be an irreducible operator if you can't break it into smaller moves.",
+      "grade_level": "college",
+      "first_appearance": "The Trinity Requirement"
+    },
+    {
+      "term": "operator algebra",
+      "category": "math",
+      "definition": "A branch of math that studies how mathematical actions (operators) combine and interact, like adding or multiplying them.",
+      "example": "If you have a 'rotate' operator and a 'flip' operator, operator algebra tells you what happens when you do rotate then flip.",
+      "grade_level": "college",
+      "first_appearance": "The Trinity Requirement"
+    },
+    {
+      "term": "Nicene theology",
+      "category": "theology",
+      "definition": "The set of Christian beliefs about the Trinity (Father, Son, Holy Spirit) that were agreed upon at the Council of Nicaea in 325 AD.",
+      "example": "The Nicene Creed, which says Jesus is 'true God from true God,' is a summary of Nicene theology.",
+      "grade_level": "college",
+      "first_appearance": "The Trinity Requirement"
+    },
+    {
+      "term": "coherence",
+      "category": "framework",
+      "definition": "The state of being logically consistent, unified, and making sense as a whole.",
+      "example": "A good story has coherence because all the parts fit together without contradictions.",
+      "grade_level": "college",
+      "first_appearance": "The Pharisee Function"
+    },
+    {
+      "term": "suppressing complexity",
+      "category": "framework",
+      "definition": "Ignoring or forcing out complicated details to make a system seem simpler or more orderly than it really is.",
+      "example": "A teacher who only grades based on one test score is suppressing the complexity of a student's learning.",
+      "grade_level": "college",
+      "first_appearance": "The Pharisee Function"
+    },
+    {
+      "term": "infinite regress",
+      "category": "philosophy",
+      "definition": "A chain of reasoning that goes on forever without a starting point, like asking 'what caused that?' and then 'what caused that cause?' endlessly.",
+      "example": "If you say every idea needs proof, and that proof needs proof, you get an infinite regress.",
+      "grade_level": "college",
+      "first_appearance": "Turtles and the Floor"
+    },
+    {
+      "term": "epistemology",
+      "category": "philosophy",
+      "definition": "The branch of philosophy that studies what knowledge is and how we can know things.",
+      "example": "Asking 'how do you know the sun will rise tomorrow?' is an epistemological question.",
+      "grade_level": "college",
+      "first_appearance": "Turtles and the Floor"
+    },
+    {
+      "term": "metaphysics",
+      "category": "philosophy",
+      "definition": "The branch of philosophy that studies the basic nature of reality, including time, space, and existence.",
+      "example": "Questions like 'what is time?' or 'does free will exist?' are metaphysical.",
+      "grade_level": "college",
+      "first_appearance": "Turtles and the Floor"
+    },
+    {
+      "term": "Master Equation",
+      "category": "framework",
+      "definition": "A single, all-encompassing formula (\u03c7) that the framework claims explains everything from math to consciousness.",
+      "example": "It's like a 'theory of everything' written as one big equation.",
+      "grade_level": "college",
+      "first_appearance": "Turtles and the Floor"
+    },
+    {
+      "term": "methodology",
+      "category": "academic",
+      "definition": "A system of methods and rules used to do research or solve a problem.",
+      "example": "The scientific method is a methodology that includes making observations and testing hypotheses.",
+      "grade_level": "college",
+      "first_appearance": "Unforced Consensus"
+    },
+    {
+      "term": "converge",
+      "category": "academic",
+      "definition": "To come together from different directions and meet at the same point or conclusion.",
+      "example": "If two detectives investigate a crime separately but both find the same suspect, their investigations converge.",
+      "grade_level": "college",
+      "first_appearance": "Unforced Consensus"
+    },
+    {
+      "term": "load-bearing",
+      "category": "academic",
+      "definition": "A part of a structure that is essential for holding everything up; if removed, the whole thing collapses.",
+      "example": "In a house, the main walls are load-bearing; a decorative column is not.",
+      "grade_level": "college",
+      "first_appearance": "The Binding Contract"
+    },
+    {
+      "term": "decorative clauses",
+      "category": "academic",
+      "definition": "Parts of a document (like a constitution) that look important but don't actually do anything essential.",
+      "example": "A law that says 'the flag shall be treated with respect' might be a decorative clause if there's no penalty for disrespecting it.",
+      "grade_level": "college",
+      "first_appearance": "The Binding Contract"
+    },
+    {
+      "term": "coherence decay",
+      "category": "framework",
+      "definition": "The gradual loss of logical consistency and unity in a system over time.",
+      "example": "An organization that starts with clear rules but slowly becomes contradictory and messy is experiencing coherence decay.",
+      "grade_level": "college",
+      "first_appearance": "The Binding Contract"
+    },
+    {
+      "term": "institutional structures",
+      "category": "academic",
+      "definition": "The organized systems and rules that make up large organizations like governments, schools, or churches.",
+      "example": "The court system, with judges and laws, is an institutional structure.",
+      "grade_level": "college",
+      "first_appearance": "The Binding Contract"
+    },
+    {
+      "term": "nucleation",
+      "category": "framework",
+      "definition": "The process where a small, stable core forms and then grows, like a seed that starts a new crystal or a new society.",
+      "example": "A tiny scratch on a surface can be a nucleation point for a crystal to form in a solution.",
+      "grade_level": "college",
+      "first_appearance": "Nucleation Thesis"
+    },
+    {
+      "term": "cascade",
+      "category": "academic",
+      "definition": "A series of events that happen one after another, each one caused by the previous one, like a chain reaction.",
+      "example": "A single domino falling can start a cascade that knocks down a whole row of dominoes.",
+      "grade_level": "college",
+      "first_appearance": "Nucleation Thesis"
+    },
+    {
+      "term": "semantic",
+      "category": "academic",
+      "definition": "Relating to the meaning of words, symbols, or ideas.",
+      "example": "The semantic difference between 'house' and 'home' is that 'home' implies a feeling of belonging.",
+      "grade_level": "college",
+      "first_appearance": "Nucleation Thesis"
+    },
+    {
+      "term": "familial",
+      "category": "academic",
+      "definition": "Relating to family or the structure of a family.",
+      "example": "A familial bond is the connection between parents and children.",
+      "grade_level": "10",
+      "first_appearance": "Nucleation Thesis"
+    },
+    {
+      "term": "anti-coherence",
+      "category": "framework",
+      "definition": "The opposite of coherence; a force or pattern that actively breaks down logical consistency and unity.",
+      "example": "Spreading lies and contradictions is an anti-coherence activity because it destroys shared understanding.",
+      "grade_level": "college",
+      "first_appearance": "The Adversary Thread"
+    },
+    {
+      "term": "constitutional erosion",
+      "category": "academic",
+      "definition": "The gradual weakening or destruction of a constitution's rules and principles over time.",
+      "example": "If a government starts ignoring parts of its constitution, that's constitutional erosion.",
+      "grade_level": "college",
+      "first_appearance": "The Adversary Thread"
+    },
+    {
+      "term": "institutional hollowing",
+      "category": "academic",
+      "definition": "When an organization keeps its outer form but loses its real purpose, effectiveness, or meaning.",
+      "example": "A school that still has classes but no longer actually teaches students is hollowed out.",
+      "grade_level": "college",
+      "first_appearance": "The Adversary Thread"
+    },
+    {
+      "term": "semantic corruption",
+      "category": "academic",
+      "definition": "When the meaning of words or ideas gets twisted or degraded, often on purpose.",
+      "example": "Using the word 'freedom' to mean 'the freedom to do whatever you want, even hurt others' is semantic corruption.",
+      "grade_level": "college",
+      "first_appearance": "The Adversary Thread"
+    },
+    {
+      "term": "formalization",
+      "category": "academic",
+      "definition": "The process of turning an idea into a precise, structured, and often mathematical form.",
+      "example": "Turning a hunch about gravity into the equation F=G*m1*m2/r^2 is a formalization.",
+      "grade_level": "college",
+      "first_appearance": "The Adversary Thread"
+    },
+    {
+      "term": "triadic structure",
+      "category": "framework",
+      "definition": "A pattern or system made of three parts that are connected and work together.",
+      "example": "The three branches of the US government (executive, legislative, judicial) form a triadic structure.",
+      "grade_level": "college",
+      "first_appearance": "How Units Connect"
+    },
+    {
+      "term": "constraint",
+      "category": "academic",
+      "definition": "A limit or restriction that controls what can happen.",
+      "example": "Having only 10 minutes to finish a test is a constraint.",
+      "grade_level": "10",
+      "first_appearance": "How Units Connect"
+    },
+    {
+      "term": "empirical",
+      "category": "academic",
+      "definition": "Based on observation or experience, not just theory or logic.",
+      "example": "A doctor's diagnosis is empirical if it's based on test results and examining the patient.",
+      "grade_level": "college",
+      "first_appearance": "Supporting Resources & References"
+    },
+    {
+      "term": "falsifiable",
+      "category": "academic",
+      "definition": "Able to be proven wrong by evidence; a key feature of a scientific theory.",
+      "example": "The claim 'all swans are white' is falsifiable because finding one black swan would prove it wrong.",
+      "grade_level": "college",
+      "first_appearance": "Supporting Resources & References"
+    },
+    {
+      "term": "canonical",
+      "category": "academic",
+      "definition": "Accepted as the standard or official version of something.",
+      "example": "The canonical text of a religion is the one that is considered the most authoritative.",
+      "grade_level": "college",
+      "first_appearance": "Supporting Resources & References"
+    },
+    {
+      "term": "sigma (\u03c3)",
+      "category": "math",
+      "definition": "A Greek letter used in statistics to measure how unusual a result is; the higher the sigma, the less likely the result is due to chance.",
+      "example": "A 5-sigma result means there's only a 1 in 3.5 million chance it happened randomly.",
+      "grade_level": "college",
+      "first_appearance": "Supporting Resources & References"
+    },
+    {
+      "term": "consciousness-collapse coupling",
+      "category": "framework",
+      "definition": "The idea that human consciousness can directly cause a quantum system to collapse from many possibilities into one reality.",
+      "example": "It's like saying your mind can make a coin land on heads just by looking at it.",
+      "grade_level": "college",
+      "first_appearance": "Supporting Resources & References"
+    },
+    {
+      "term": "Victorian/Awakening/Meiji",
+      "category": "academic",
+      "definition": "Three historical periods: Victorian (UK, 1837-1901), Great Awakening (US religious revivals, 18th-19th centuries), Meiji (Japan, 1868-1912).",
+      "example": "These are examples of times when societies went through big changes and reforms.",
+      "grade_level": "college",
+      "first_appearance": "Supporting Resources & References"
+    },
+    {
+      "term": "Biaxiosum",
+      "category": "language",
+      "definition": "A made-up Latin-sounding word meaning 'two-life' or 'double-life,' used as a declaration of a new starting point.",
+      "example": "It's like saying 'page zero' to mark a fresh beginning.",
+      "grade_level": "specialist",
+      "first_appearance": "Supporting Resources & References"
+    },
+    {
+      "term": "adversarial",
+      "category": "academic",
+      "definition": "Involving opposition or conflict; like a debate where two sides argue against each other.",
+      "example": "A courtroom trial is adversarial because the prosecution and defense are on opposite sides.",
+      "grade_level": "college",
+      "first_appearance": "Supporting Resources & References"
+    },
+    {
+      "term": "chi-field (\u03c7)",
+      "category": "framework",
+      "definition": "A theoretical field, represented by the Greek letter \u03c7 (chi), that is supposed to connect math, physics, and consciousness.",
+      "example": "It's like a 'force field' for ideas that makes everything fit together.",
+      "grade_level": "specialist",
+      "first_appearance": "Framework Overview"
+    },
+    {
+      "term": "coherence functional",
+      "category": "framework",
+      "definition": "A mathematical tool that measures how logically consistent and unified a system is.",
+      "example": "It's like a 'consistency score' for a set of ideas.",
+      "grade_level": "specialist",
+      "first_appearance": "Framework Overview"
+    },
+    {
+      "term": "moral curvature",
+      "category": "framework",
+      "definition": "A made-up concept that describes how moral or ethical a system is, like the 'bend' in its moral landscape.",
+      "example": "A society with high moral curvature would be very just and fair.",
+      "grade_level": "specialist",
+      "first_appearance": "Framework Overview"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation, or how people are saved from sin and its consequences.",
+      "example": "Different religions have different soteriology: some say you are saved by faith, others by good deeds.",
+      "grade_level": "college",
+      "first_appearance": "Framework Overview"
+    },
+    {
+      "term": "hamartiology",
+      "category": "theology",
+      "definition": "The study of sin, what it is, and how it affects people.",
+      "example": "Hamartiology asks questions like 'is sin just breaking rules, or is it a deeper problem?'",
+      "grade_level": "college",
+      "first_appearance": "Framework Overview"
+    },
+    {
+      "term": "sanctification",
+      "category": "theology",
+      "definition": "The process of becoming more holy or morally pure, often seen as a gradual change.",
+      "example": "In some religions, prayer and good works are part of sanctification.",
+      "grade_level": "college",
+      "first_appearance": "Framework Overview"
+    },
+    {
+      "term": "atonement",
+      "category": "theology",
+      "definition": "The act of making up for a wrong or sin, often to restore a broken relationship.",
+      "example": "Apologizing and fixing what you broke can be a form of atonement.",
+      "grade_level": "college",
+      "first_appearance": "Framework Overview"
+    },
+    {
+      "term": "bijection",
+      "category": "math",
+      "definition": "A perfect one-to-one matching between two sets where every item in one set is paired with exactly one item in the other, and nothing is left out.",
+      "example": "If you have 5 apples and 5 oranges, you can create a bijection by pairing each apple with one orange.",
+      "grade_level": "college",
+      "first_appearance": "Math Is Moral"
+    },
+    {
+      "term": "Noether",
+      "category": "math",
+      "definition": "Refers to Emmy Noether, a mathematician who proved that every symmetry in physics leads to a conservation law (like conservation of energy).",
+      "example": "Noether's theorem says that if the laws of physics are the same today as tomorrow, then energy is conserved.",
+      "grade_level": "college",
+      "first_appearance": "Framework Overview"
+    },
+    {
+      "term": "tensor",
+      "category": "math",
+      "definition": "A mathematical object that can describe multiple related quantities and how they change in different directions, like a more complex version of a vector.",
+      "example": "Stress in a material is described by a tensor because it has different values in different directions.",
+      "grade_level": "college",
+      "first_appearance": "Framework Overview"
+    },
+    {
+      "term": "contingent",
+      "category": "philosophy",
+      "definition": "Something that could be different or might not exist at all; dependent on something else.",
+      "example": "The fact that you are reading this is contingent on you having a device and choosing to read.",
+      "grade_level": "college",
+      "first_appearance": "Framework Overview"
+    },
+    {
+      "term": "necessary",
+      "category": "philosophy",
+      "definition": "Something that must be true or must exist; it cannot be otherwise.",
+      "example": "In logic, '2+2=4' is a necessary truth.",
+      "grade_level": "college",
+      "first_appearance": "Framework Overview"
+    },
+    {
+      "term": "theorem",
+      "category": "academic",
+      "definition": "A statement that has been proven to be true using logic and axioms.",
+      "example": "The Pythagorean theorem (a\u00b2+b\u00b2=c\u00b2) is a proven mathematical theorem.",
+      "grade_level": "college",
+      "first_appearance": "Math Before Matter"
+    },
+    {
+      "term": "entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system; the universe tends toward higher entropy.",
+      "example": "A messy room has higher entropy than a tidy one.",
+      "grade_level": "college",
+      "first_appearance": "Framework Overview"
+    },
+    {
+      "term": "decoherence",
+      "category": "physics",
+      "definition": "The process by which a quantum system loses its quantum properties (like being in multiple states at once) and starts behaving like a normal, classical system.",
+      "example": "It's like a spinning coin that slowly wobbles and falls flat, losing its 'both heads and tails' state.",
+      "grade_level": "college",
+      "first_appearance": "Framework Overview"
+    },
+    {
+      "term": "Lagrangian",
+      "category": "physics",
+      "definition": "A mathematical function that summarizes the dynamics of a physical system, used to derive equations of motion.",
+      "example": "The Lagrangian for a falling ball includes its kinetic energy (motion) and potential energy (height).",
+      "grade_level": "college",
+      "first_appearance": "Framework Overview"
+    },
+    {
+      "term": "eigenmode",
+      "category": "physics",
+      "definition": "A special, natural vibration pattern of a system where all parts move together at the same frequency.",
+      "example": "A guitar string has eigenmodes that produce its different musical notes.",
+      "grade_level": "college",
+      "first_appearance": "Framework Overview"
+    }
+  ],
+  "stats": {
+    "total_terms_found": 53,
+    "by_category": {
+      "physics": 5,
+      "theology": 6,
+      "math": 6,
+      "philosophy": 6,
+      "framework": 12,
+      "academic": 17,
+      "language": 1
+    },
+    "highest_grade_level": "specialist",
+    "average_grade_level": "college",
+    "accessibility_score": 15
+  }
+}

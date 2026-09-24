@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISO-029 · Music Theory ⇢ Trinitarian Harmony · Theophysics Registry</title>
+  <!-- Google Fonts: Oswald, Inter, JetBrains Mono, Crimson Text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6.4 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* ----- CSS variables (dark theme) ----- */
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --surface2: #1a1a1a;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --gold: #d4af37;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --gold-light: rgba(212, 175, 55, 0.08);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --info: #4a9eff;
+      --blue-border: #3b82f6;
+      --gold-border: #d4af37;
+      --red-tint: rgba(239, 68, 68, 0.12);
+      --red-border: #ef4444;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-quote: 'Crimson Text', serif;
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    /* headings */
+    h1, h2, h3, h4, .heading-font {
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 500;
+    }
+
+    h1 { font-size: 2.4rem; font-weight: 600; }
+    h2 { font-size: 1.8rem; margin-bottom: 1rem; }
+    h3 { font-size: 1.3rem; margin-bottom: 0.6rem; }
+    h4 { font-size: 1.0rem; letter-spacing: 0.06em; }
+
+    /* mono for equations */
+    .eq, code, .mono {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      background: rgba(255,255,255,0.04);
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+    }
+
+    /* quote style */
+    .quote {
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.2rem;
+      margin: 1rem 0;
+      color: #d0d7de;
+    }
+
+    /* section numbers */
+    .section-number {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+      margin-right: 0.75rem;
+      user-select: none;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .section-header h2 {
+      margin-bottom: 0;
+    }
+
+    /* gradient separator */
+    .separator {
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 2.5rem 0 2rem 0;
+      opacity: 0.5;
+    }
+
+    /* cards */
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .card-gold {
+      border-top: 3px solid var(--gold);
+    }
+
+    .card-blue {
+      border-top: 3px solid var(--blue-border);
+    }
+
+    .card-red {
+      background: var(--red-tint);
+      border: 1px solid var(--red-border);
+    }
+
+    /* grid utilities */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .grid-2, .grid-4 { grid-template-columns: 1fr; }
+      h1 { font-size: 1.8rem; }
+      .hero-banner { grid-template-columns: 1fr; }
+    }
+
+    /* hero banner */
+    .hero-banner {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(10,10,10,0.95) 80%);
+      border-radius: var(--radius);
+      padding: 2rem 2rem 2.5rem 2rem;
+      margin: 1.5rem 0 2.5rem 0;
+      border: 1px solid rgba(212,175,55,0.15);
+    }
+
+    .law-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: #0a0a0a;
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin: 0.3rem 0 0.5rem 0;
+      color: #f0f6fc;
+    }
+
+    .hero-sub {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .equation-card {
+      background: rgba(0,0,0,0.5);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      border: 1px solid rgba(212,175,55,0.2);
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .equation-card .arrow {
+      color: var(--gold);
+      font-size: 1.6rem;
+      display: block;
+      text-align: center;
+      margin: 0.4rem 0;
+    }
+
+    /* mapping table */
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .mapping-table thead {
+      background: var(--gold);
+      color: #0a0a0a;
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 500;
+    }
+
+    .mapping-table th, .mapping-table td {
+      padding: 0.8rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      vertical-align: top;
+    }
+
+    .mapping-table tbody tr:hover {
+      background: rgba(212,175,55,0.05);
+    }
+
+    .mapping-table th:first-child { border-radius: var(--radius) 0 0 0; }
+    .mapping-table th:last-child { border-radius: 0 var(--radius) 0 0; }
+
+    /* test cards */
+    .test-pass {
+      color: var(--success);
+      font-weight: 600;
+      font-family: var(--font-heading);
+      letter-spacing: 0.05em;
+    }
+
+    .test-fail {
+      color: var(--danger);
+      font-weight: 600;
+      font-family: var(--font-heading);
+      letter-spacing: 0.05em;
+    }
+
+    .test-card {
+      background: var(--surface2);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.4rem;
+      border-left: 4px solid var(--gold);
+    }
+
+    .test-card h4 {
+      margin-bottom: 0.3rem;
+    }
+
+    /* evidence chips */
+    .chip {
+      display: inline-block;
+      background: rgba(212,175,55,0.12);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      margin: 0.2rem 0.2rem;
+      border: 1px solid rgba(212,175,55,0.2);
+      font-family: var(--font-body);
+    }
+
+    .chip-info {
+      background: rgba(74,158,255,0.12);
+      color: var(--info);
+      border-color: rgba(74,158,255,0.2);
+    }
+
+    .chip-success {
+      background: rgba(34,197,94,0.12);
+      color: var(--success);
+      border-color: rgba(34,197,94,0.2);
+    }
+
+    /* classification panel */
+    .class-panel {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      margin: 1rem 0;
+    }
+
+    .class-badge {
+      background: var(--success);
+      color: #0a0a0a;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      padding: 0.3rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .class-badge.level2 {
+      background: #eab308;
+    }
+
+    .confidence-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .confidence-fill {
+      height: 6px;
+      width: 120px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .confidence-fill span {
+      display: block;
+      height: 100%;
+      background: var(--gold);
+      border-radius: 10px;
+    }
+
+    /* footer */
+    .footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(212,175,55,0.15);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-seal {
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: var(--gold);
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    .verse-ref {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: #6e7681;
+      letter-spacing: 0.02em;
+    }
+
+    /* misc */
+    .gold-text { color: var(--gold); }
+    .muted-text { color: var(--text-muted); }
+    .small-mono { font-family: var(--font-mono); font-size: 0.75rem; color: #6e7681; }
+    .mt-1 { margin-top: 0.5rem; }
+    .mt-2 { margin-top: 1rem; }
+    .mb-1 { margin-bottom: 0.5rem; }
+    .flex { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+    .gap-1 { gap: 0.5rem; }
+    .gap-2 { gap: 1rem; }
+    .items-center { align-items: center; }
+    .fw-600 { font-weight: 600; }
+
+    /* registry header */
+    .registry-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .registry-logo {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      font-family: var(--font-heading);
+      margin-right: 0.5rem;
+    }
+
+    .registry-id {
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .iso-badge {
+      background: rgba(212,175,55,0.15);
+      border: 1px solid rgba(212,175,55,0.3);
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--gold);
+      font-family: var(--font-heading);
+      letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ===== 1. REGISTRY HEADER ===== -->
+  <div class="registry-header">
+    <div style="display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap;">
+      <span class="registry-logo"><i class="fas fa-phi"></i> Φ</span>
+      <div>
+        <h1 style="font-size:1.6rem; margin:0; line-height:1.2;">Theophysics Registry</h1>
+        <div style="display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; margin-top:0.2rem;">
+          <span class="registry-id">ISO-029</span>
+          <span style="color:var(--text-muted); font-size:0.8rem;">|</span>
+          <span style="font-size:0.85rem; color:var(--text);">Music Theory ⇢ Trinitarian Harmony</span>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center;">
+      <span class="iso-badge"><i class="fas fa-check-circle" style="color:var(--success);"></i> Level 3 · Isomorphism</span>
+      <span class="iso-badge" style="background:rgba(34,197,94,0.1); border-color:rgba(34,197,94,0.2); color:var(--success);"><i class="fas fa-shield-alt"></i> Confidence: High</span>
+      <span class="small-mono">v1.0 · 2026-03-10</span>
+    </div>
+  </div>
+
+  <!-- ===== 2. HERO BANNER ===== -->
+  <div class="hero-banner">
+    <div>
+      <span class="law-badge"><i class="fas fa-gavel"></i> Law I · Convergence</span>
+      <div class="hero-title">Music Theory <span style="color:var(--gold);">⇢</span> Trinitarian Harmony</div>
+      <div class="hero-sub">Structural isomorphism between the harmonic series / tonal gravity and the triune Godhead / divine coherence</div>
+      <div class="quote">
+        “The triad is the minimal structure that establishes tonal identity. The Trinity is the minimal structure that establishes relational completeness — love requires a lover, a beloved, and the love between them.”
+        <span class="verse-ref">— Augustine, De Trinitate</span>
+      </div>
+    </div>
+    <div>
+      <div class="equation-card">
+        <div><span class="gold-text">Domain A · Music</span></div>
+        <div>f, 2f, 3f, 4f, 5f, … &nbsp; (harmonic series)</div>
+        <div>A(x → T) ∝ 1/d(x,T)² &nbsp; (tonal attraction)</div>
+        <div class="arrow">⇣ ⇢ ⇣</div>
+        <div><span class="gold-text">Domain B · Theology</span></div>
+        <div>Father → Son (eternal generation)</div>
+        <div>Father (&amp; Son) → Spirit (procession)</div>
+        <div>div(C) = 0 &nbsp; (coherence conservation)</div>
+        <div style="margin-top:0.6rem; font-size:0.75rem; color:var(--text-muted); border-top:1px solid rgba(212,175,55,0.15); padding-top:0.5rem;">
+          <i class="fas fa-arrow-right"></i> Single source · perfect image · dynamic third · minimal completeness
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 3. DOMAIN SPECIFICATIONS ===== -->
+  <div class="section-header">
+    <span class="section-number">01</span>
+    <h2>Domain Specifications</h2>
+  </div>
+  <div class="grid-2">
+    <div class="card card-blue">
+      <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+        <i class="fas fa-music" style="color:var(--blue-border); font-size:1.6rem;"></i>
+        <h3 style="margin:0;">Domain A · Music Theory</h3>
+      </div>
+      <p><strong>Harmonic series, consonance/dissonance, chord structure, tonal gravity.</strong> All musical pitch material is generated from a single fundamental frequency f by integer multiples. Consonance arises from simple integer ratios (2:1, 3:2, 4:3). A minimum of three notes (root, third, fifth) is required for harmonic completeness. Tonal gravity draws all tones toward resolution at the tonic.</p>
+      <div class="eq" style="margin-top:0.6rem;">f, 2f, 3f, 4f, 5f, … &nbsp;·&nbsp; A(x→T) ∝ 1/d(x,T)²</div>
+    </div>
+    <div class="card card-gold">
+      <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem;">
+        <i class="fas fa-church" style="color:var(--gold); font-size:1.6rem;"></i>
+        <h3 style="margin:0;">Domain B · Christian Theology</h3>
+      </div>
+      <p><strong>Trinity, beauty, worship.</strong> One God existing as three persons: Father, Son, and Holy Spirit. The Father generates the Son; the Spirit proceeds from the Father (and Son). Beauty and worship arise from coherent relational structure. All creation is drawn toward its source (Law I Convergence).</p>
+      <div class="eq" style="margin-top:0.6rem;">Father → Son · Father (&amp; Son) → Spirit · div(C) = 0</div>
+    </div>
+  </div>
+
+  <!-- ===== 4. THE ISOMORPHIC MAPPING ===== -->
+  <div class="separator"></div>
+  <div class="section-header">
+    <span class="section-number">02</span>
+    <h2>The Isomorphic Mapping</h2>
+  </div>
+  <div class="card" style="overflow-x:auto; padding:0.5rem 0;">
+    <table class="mapping-table">
+      <thead>
+        <tr><th style="width:5%;">#</th><th style="width:20%;">Music Theory</th><th style="width:20%;">Theology</th><th style="width:55%;">Shared Structure</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Single fundamental generates all pitches by integer multiples</td><td>Father generates Son and Spirit (single source)</td><td>Single-source generation — derived entities preserve the nature of the source</td></tr>
+        <tr><td>2</td><td>Octave (2f) is perceptually identical to fundamental</td><td>Son is “the image of the invisible God” (Col 1:15)</td><td>First generated entity is a perfect copy, not a degraded version</td></tr>
+        <tr><td>3</td><td>Fifth (3:2) generates harmonic motion; cycle of fifths produces all tones</td><td>Spirit is the mover — “hovers over the waters” (Gen 1:2)</td><td>Second derivative introduces dynamic motion into the system</td></tr>
+        <tr><td>4</td><td>Triad (root, third, fifth) is minimal for harmonic identity</td><td>Trinity (three persons) is minimal for relational completeness</td><td>Three is the minimum for completeness; two gives interval/relationship, not harmony/communion</td></tr>
+        <tr><td>5</td><td>Simple ratios → consonance; complex ratios → dissonance</td><td>Moral/spiritual coherence from relational alignment with source</td><td>Consonance as relational coherence, not property of isolated entities</td></tr>
+        <tr><td>6</td><td>Dominant seventh (V7) tritone must resolve to tonic</td><td>Sin creates tension that requires resolution (grace)</td><td>Dissonance requires resolution — not stylistic but structural</td></tr>
+        <tr><td>7</td><td>Voice-leading rules require specific stepwise motion</td><td>Grace is costly — “bought with a price” (1 Cor 6:20)</td><td>Resolution is costly, requires directed action, not random motion</td></tr>
+        <tr><td>8</td><td>Lerdahl attraction: A ∝ 1/d² toward tonic</td><td>Law I Convergence: all things drawn toward source</td><td>Tonal gravity as convergence — force inversely proportional to distance</td></tr>
+        <tr><td>9</td><td>Key change transposes relationships; internal structure conserved</td><td>Law VII: same truths expressed in different cultural frames</td><td>Modulation preserves structure — conservation under transformation</td></tr>
+        <tr><td>10</td><td>Harmonic series generates ALL pitch relationships from one fundamental</td><td>“All things were made through him” (John 1:3)</td><td>Generative source is exhaustive — nothing exists outside what the source generates</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== 5. SEPARATOR TESTS ===== -->
+  <div class="separator"></div>
+  <div class="section-header">
+    <span class="section-number">03</span>
+    <h2>Separator Tests</h2>
+  </div>
+  <div class="grid-4">
+    <div class="test-card">
+      <h4><i class="fas fa-sitemap"></i> Test A · Structural Preservation</h4>
+      <p style="font-size:0.85rem; margin:0.3rem 0 0.5rem 0;">Do relations survive under the mapping?</p>
+      <span class="test-pass"><i class="fas fa-check-circle"></i> PASS</span>
+      <p style="font-size:0.8rem; margin-top:0.4rem; color:var(--text-muted);">Generative topology (single source → perfect image → dynamic third → minimal completeness) is preserved in both directions.</p>
+    </div>
+    <div class="test-card">
+      <h4><i class="fas fa-random"></i> Test B · Non-Arbitrariness</h4>
+      <p style="font-size:0.85rem; margin:0.3rem 0 0.5rem 0;">Is the mapping forced, or could you swap targets?</p>
+      <span class="test-pass"><i class="fas fa-check-circle"></i> PASS</span>
+      <p style="font-size:0.8rem; margin-top:0.4rem; color:var(--text-muted);">Swap test passes at topological level (fails at metric level, as expected for structural isomorphism).</p>
+    </div>
+    <div class="test-card">
+      <h4><i class="fas fa-ban"></i> Test C · Constraint</h4>
+      <p style="font-size:0.85rem; margin:0.3rem 0 0.5rem 0;">Does the mapping rule things out?</p>
+      <span class="test-pass"><i class="fas fa-check-circle"></i> PASS</span>
+      <p style="font-size:0.8rem; margin-top:0.4rem; color:var(--text-muted);">Rules out Binitarianism (incomplete) and Quaternity (redundant); predicts tonal centering in all cultures.</p>
+    </div>
+    <div class="test-card">
+      <h4><i class="fas fa-exchange-alt"></i> Test D · Bidirectionality</h4>
+      <p style="font-size:0.85rem; margin:0.3rem 0 0.5rem 0;">Does each side predict the other?</p>
+      <span class="test-pass"><i class="fas fa-check-circle"></i> PASS</span>
+      <p style="font-size:0.8rem; margin-top:0.4rem; color:var(--text-muted);">Music theory constrains viable trinitarian models; trinitarian theology predicts single-source generation, imagistic first derivative, dynamic second derivative, gravitational attraction.</p>
+    </div>
+  </div>
+
+  <!-- ===== 6. CLASSIFICATION & EVIDENCE ===== -->
+  <div class="separator"></div>
+  <div class="section-header">
+    <span class="section-number">04</span>
+    <h2>Classification &amp; Evidence</h2>
+  </div>
+  <div class="card">
+    <div class="class-panel">
+      <div><span class="class-badge"><i class="fas fa-check-circle"></i> Structural Isomorphism</span></div>
+      <div class="confidence-bar">
+        <span style="font-size:0.8rem; font-weight:500;">Confidence:</span>
+        <div class="confidence-fill"><span style="width:88%;"></span></div>
+        <span style="font-size:0.8rem; color:var(--gold);">High</span>
+      </div>
+      <div><span class="iso-badge" style="background:rgba(212,175,55,0.1);">Level 2 · Structural</span></div>
+      <div><span class="iso-badge" style="background:rgba(34,197,94,0.1); border-color:rgba(34,197,94,0.2); color:var(--success);">10 independent correspondences</span></div>
+    </div>
+    <div style="margin-top:1rem;">
+      <h4 style="margin-bottom:0.4rem; font-size:0.9rem;"><i class="fas fa-tag"></i> Evidence bundles</h4>
+      <div class="flex">
+        <span class="chip chip-success">Harmonic series (wave equation)</span>
+        <span class="chip chip-success">Lerdahl tonal attraction</span>
+        <span class="chip chip-info">Cross-cultural tonal centering</span>
+        <span class="chip chip-info">Nicene Creed (325/381)</span>
+        <span class="chip chip-info">Colossians 1:15 · Hebrews 1:3</span>
+        <span class="chip chip-info">Genesis 1:2 · John 3:8</span>
+        <span class="chip chip-success">Euler · Helmholtz · Plomp-Levelt</span>
+        <span class="chip chip-success">Augustine · Boethius</span>
+      </div>
+    </div>
+    <div style="margin-top:1rem;">
+      <h4 style="margin-bottom:0.4rem; font-size:0.9rem;"><i class="fas fa-gavel"></i> Laws invoked</h4>
+      <div class="flex">
+        <span class="chip">Law I · Convergence (tonal gravity)</span>
+        <span class="chip">Law II · Conservation (harmonic series)</span>
+        <span class="chip">Law VII · Transformation (modulation)</span>
+      </div>
+    </div>
+    <div style="margin-top:0.8rem; font-size:0.8rem; color:var(--text-muted);">
+      <i class="fas fa-link"></i> Connected ISOs: ISO-001 (Trinity), ISO-003 (Entropy/Sin), ISO-008 (Coherence/Order)
+    </div>
+  </div>
+
+  <!-- ===== 7. FALSIFICATION CRITERIA ===== -->
+  <div class="separator"></div>
+  <div class="section-header">
+    <span class="section-number">05</span>
+    <h2>Falsification Criteria</h2>
+  </div>
+  <div class="card card-red">
+    <p style="font-weight:500; margin-bottom:0.8rem;"><i class="fas fa-skull-crossbones" style="color:var(--danger);"></i> Kill conditions — any one of these would break the isomorphism:</p>
+    <ul style="list-style: none; padding-left:0;">
+      <li style="margin-bottom:0.6rem; padding-left:1.5rem; text-indent:-1.5rem;"><i class="fas fa-times-circle" style="color:var(--danger); width:1.2rem;"></i> <strong>In Music Theory:</strong> Demonstrate that two pitch classes (not three) are sufficient for complete harmonic function — tonic identification, mode determination, functional harmony, and voice-leading resolution. No known musical system achieves this.</li>
+      <li style="margin-bottom:0.6rem; padding-left:1.5rem; text-indent:-1.5rem;"><i class="fas fa-times-circle" style="color:var(--danger); width:1.2rem;"></i> <strong>In Music Theory:</strong> Show that the harmonic series does NOT generate from a single fundamental — that overtones arise independently rather than as integer multiples of a source frequency. Physics rules this out (wave equation on a bounded string).</li>
+      <li style="margin-bottom:0.6rem; padding-left:1.5rem; text-indent:-1.5rem;"><i class="fas fa-times-circle" style="color:var(--danger); width:1.2rem;"></i> <strong>In Theology:</strong> Produce a coherent, stable theology with exactly two divine persons that fully accounts for divine action, love, and procession without structural gaps. If Binitarianism can be made complete, the Trinity-triad parallel loses its force.</li>
+      <li style="padding-left:1.5rem; text-indent:-1.5rem;"><i class="fas fa-times-circle" style="color:var(--danger); width:1.2rem;"></i> <strong>Break the topology:</strong> Show that the generative structure of the harmonic series (single source → perfect image → dynamic mover → minimum three for completeness) does not actually match the generative structure of trinitarian theology. Requires demonstrating a structural feature present in one domain but absent in the other.</li>
+    </ul>
+  </div>
+
+  <!-- ===== 8. RELATED ISOMORPHISMS ===== -->
+  <div class="separator"></div>
+  <div class="section-header">
+    <span class="section-number">06</span>
+    <h2>Related Isomorphisms</h2>
+  </div>
+  <div class="grid-2" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+    <div class="card" style="border-left:3px solid var(--info); padding:1rem;">
+      <h4 style="margin:0; font-size:0.9rem;">ISO-001</h4>
+      <p style="font-size:0.8rem; margin:0.2rem 0 0 0;">Trinity — mathematical structure</p>
+    </div>
+    <div class="card" style="border-left:3px solid var(--danger); padding:1rem;">
+      <h4 style="margin:0; font-size:0.9rem;">ISO-003</h4>
+      <p style="font-size:0.8rem; margin:0.2rem 0 0 0;">Entropy / Sin — dissonance as disorder</p>
+    </div>
+    <div class="card" style="border-left:3px solid var(--success); padding:1rem;">
+      <h4 style="margin:0; font-size:0.9rem;">ISO-008</h4>
+      <p style="font-size:0.8rem; margin:0.2rem 0 0 0;">Coherence / Order — consonance as coherence</p>
+    </div>
+  </div>
+
+  <!-- ===== 9. FOOTER ===== -->
+  <div class="footer">
+    <div>
+      <div style="font-family:var(--font-heading); letter-spacing:0.06em; text-transform:uppercase; color:var(--gold);">Theophysics Research Program</div>
+      <div style="font-size:0.75rem; margin-top:0.2rem;">POF 2828 · ISO-029 · v1.0</div>
+    </div>
+    <div class="footer-seal">
+      <i class="fas fa-asterisk" style="opacity:0.5;"></i> The math points to God. The math does not contain God. <i class="fas fa-asterisk" style="opacity:0.5;"></i>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

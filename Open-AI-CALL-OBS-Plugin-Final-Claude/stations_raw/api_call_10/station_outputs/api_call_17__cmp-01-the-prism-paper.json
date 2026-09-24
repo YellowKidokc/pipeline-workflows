@@ -1,0 +1,337 @@
+{
+  "spec_version": "1.0",
+  "page_id": "cmp-01",
+  "page_title": "The Prism: One Equation, Seven Domains, Lossless Compression",
+  "page_slug": "cmp-01-the-prism-paper",
+  "source_file": "cmp-01-the-prism-paper.md",
+  "generated_by": "adversarial_audit_v1",
+  "generated_date": "2025-04-14",
+  "adversarial_audit": {
+    "fatal_issue": "The paper claims the LLC generates domain equations under variable isolation, but provides no actual Euler-Lagrange derivation for any domain. The 'projection' is asserted, not demonstrated. This is a fatal gap: without derivations, the central claim is unsupported.",
+    "major_issue": "The identification of \u03c7 = \ud835\udc9e = Christ is presented as a terminus but explicitly declared an axiom (Biaxiosum), not a derived result. This creates a bait-and-switch: the mathematical structure appears to lead to a theological conclusion, but the conclusion is pre-loaded. The paper must clarify whether the terminus is a mathematical consequence or a theological commitment.",
+    "sharpening_issue": "The paper uses 'lossless compression' in an information-theoretic sense but never defines the encoding or decoding procedure. Without a formal mapping between the 188 axioms and the LLC variables, the claim of losslessness is metaphorical, not mathematical.",
+    "smart_hostile_physicist_check": {
+      "primary_confusion": "analogy",
+      "diagnosis": "The paper treats the LLC as a generating function analogous to a Lagrangian in physics, but the LLC is not a standard Lagrangian: it lacks a clear action principle, the variables are not generalized coordinates, and the Euler-Lagrange procedure is never applied. The 'projection' claim is an analogy, not an isomorphism.",
+      "sentence_to_rewrite": "When one variable is isolated\u2014that is, when the other nine are held constant and only one is permitted to vary\u2014the LLC reduces to that domain's natural equation.",
+      "required_fix": "Provide a concrete example of the Euler-Lagrange derivation for at least one domain, showing how the LLC reduces to the claimed equation. Without this, the sentence is a promissory note, not a demonstration."
+    },
+    "strongest_non_framework_alternative": "The 24-property convergence (DT-001) could be explained by a common cognitive bias or cultural inheritance rather than a shared underlying structure. The paper does not rule out that the properties are artifacts of human pattern-seeking.",
+    "what_would_force_public_narrowing": "A formal demonstration that the LLC cannot generate the Schr\u00f6dinger equation under any reasonable variable isolation would force the paper to retract its central claim or narrow to a subset of domains.",
+    "rewrite_priority": "fatal"
+  },
+  "structure_audit": {
+    "opening_hook_strength": 7,
+    "logical_flow_strength": 5,
+    "transition_quality": 6,
+    "does_opening_promise_match_ending": false,
+    "sequence_verdict": "repairable",
+    "best_order_step_by_step": [
+      "State the compression problem and the 188 axioms.",
+      "Define the LLC explicitly with all variables and their domains.",
+      "Provide at least one full Euler-Lagrange derivation for a domain equation.",
+      "Show the compression chain with formal mappings.",
+      "Address the open-system objection with mathematical rigor.",
+      "Present the terminus as a theological axiom, not a derived result.",
+      "List kill conditions and confidence assessments."
+    ],
+    "flow_breaks": [
+      {
+        "from_section": "4.2 The Lowe Coherence Lagrangian",
+        "to_section": "4.3 Domain Projections",
+        "problem": "The paper jumps from defining the LLC to claiming it generates domain equations without any derivation or intermediate steps.",
+        "fix": "Insert a subsection that performs the Euler-Lagrange derivation for at least one domain (e.g., information \u2192 Shannon entropy) to demonstrate the mechanism."
+      },
+      {
+        "from_section": "5. Implications",
+        "to_section": "6. The Terminus",
+        "problem": "The paper transitions from implications to the terminus without addressing the gap between mathematical coherence and theological identification.",
+        "fix": "Add a section that explicitly separates the mathematical result (maximum coherence) from the theological interpretation (Christ), clarifying that the latter is an axiom."
+      }
+    ],
+    "sentence_that_carries_too_much_weight": "When one variable is isolated\u2014that is, when the other nine are held constant and only one is permitted to vary\u2014the LLC reduces to that domain's natural equation.",
+    "why_it_carries_too_much_weight": "This single sentence is the entire justification for the prism metaphor and the central claim of the paper. It is unsupported by any derivation, example, or formal argument. If this sentence fails, the entire paper collapses."
+  },
+  "framework_presence": {
+    "master_equation": [
+      {
+        "present": true,
+        "quote": "\\mathcal{L}_{LLC} = \\chi(t) \\left( \\frac{d}{dt} \\sum_{i} V_i \\right)^2 - S \\cdot \\chi(t)",
+        "function": "Central generating function from which all domain equations are claimed to derive."
+      }
+    ],
+    "axioms": [
+      {
+        "id": "Biaxiosum",
+        "present": true,
+        "quote": "Biaxio, ergo sum",
+        "function": "Declares the author's ontological, theological, and methodological commitments."
+      },
+      {
+        "id": "\u03c7 = \ud835\udc9e = Christ",
+        "present": true,
+        "quote": "\\chi = \\mathcal{C} = \\text{Christ}",
+        "function": "Identifies the maximum-coherence solution with Christ, declared as an axiom."
+      }
+    ],
+    "lean4": [],
+    "claims_layer": [
+      {
+        "present": true,
+        "quote": "The compression from 188 axioms to one equation is lossless.",
+        "function": "Central claim of the paper."
+      },
+      {
+        "present": true,
+        "quote": "Each of the LLC's ten variables compresses an entire domain.",
+        "function": "Sub-claim supporting the compression claim."
+      }
+    ],
+    "proof_layer": [],
+    "tests_layer": [
+      {
+        "present": true,
+        "quote": "All claims in this paper have been tested computationally.",
+        "function": "References verification scripts but does not provide results or methodology."
+      }
+    ],
+    "laws_layer": [
+      {
+        "id": "Noether's theorem",
+        "present": true,
+        "quote": "All canonical Lagrangians conserve energy in isolation. This is Noether's theorem applied to time-translation invariance.",
+        "function": "Used to argue that energy non-conservation in the LLC is due to openness."
+      }
+    ]
+  },
+  "paper_changing_questions": [
+    {
+      "question": "Can you provide the explicit Euler-Lagrange derivation for at least one domain (e.g., information \u2192 Shannon entropy) showing how the LLC reduces to that equation?",
+      "why_it_matters": "Without a concrete derivation, the central claim of the paper is an assertion, not a demonstration.",
+      "if_unanswered_then": "The paper's main thesis remains unsubstantiated, and the prism metaphor is an analogy, not a formal result.",
+      "severity": "fatal"
+    },
+    {
+      "question": "What is the formal definition of 'lossless compression' in this context, and how is it measured? Provide the encoding and decoding maps between the 188 axioms and the LLC.",
+      "why_it_matters": "The paper uses information-theoretic language without defining the compression scheme, making the claim untestable.",
+      "if_unanswered_then": "The claim of losslessness is metaphorical and cannot be verified or falsified.",
+      "severity": "fatal"
+    },
+    {
+      "question": "Is the identification \u03c7 = \ud835\udc9e = Christ a mathematical consequence of the LLC or a theological axiom? If the latter, why is it presented as a terminus of the mathematical argument?",
+      "why_it_matters": "The paper blurs the line between mathematical derivation and theological commitment, which undermines its scientific credibility.",
+      "if_unanswered_then": "The paper misleads readers into thinking the mathematics proves a theological conclusion.",
+      "severity": "fatal"
+    },
+    {
+      "question": "How do you define 'variable isolation' in the context of the LLC? Is it a mathematical operation (e.g., setting derivatives to zero) or a conceptual one?",
+      "why_it_matters": "The paper's central mechanism is unclear; without a precise definition, the claim cannot be evaluated.",
+      "if_unanswered_then": "The domain projections remain hand-waving rather than formal results.",
+      "severity": "major"
+    },
+    {
+      "question": "What are the units of the LLC variables? The paper lists 'dimensionless' for \u03c7 but does not specify units for others like S (entropy) or E (energy). How does the Lagrangian maintain dimensional consistency?",
+      "why_it_matters": "A Lagrangian must be dimensionally consistent to be physically meaningful.",
+      "if_unanswered_then": "The LLC may be mathematically ill-posed, undermining its claim to be a generating function.",
+      "severity": "major"
+    },
+    {
+      "question": "The paper claims the LLC generates the Schr\u00f6dinger equation. Can you show the derivation step-by-step, including how the complex phase and time evolution emerge?",
+      "why_it_matters": "The Schr\u00f6dinger equation is a cornerstone of quantum mechanics; a flawed derivation would discredit the framework.",
+      "if_unanswered_then": "The quantum domain projection is unsubstantiated.",
+      "severity": "major"
+    },
+    {
+      "question": "How does the LLC account for the probabilistic interpretation of quantum mechanics (Born rule)? The Schr\u00f6dinger equation alone does not specify measurement outcomes.",
+      "why_it_matters": "A complete quantum framework must address measurement.",
+      "if_unanswered_then": "The quantum projection is incomplete.",
+      "severity": "major"
+    },
+    {
+      "question": "The paper lists 'Kill Conditions' but does not provide a protocol for testing them. How would one experimentally or mathematically test whether the LLC generates a domain equation?",
+      "why_it_matters": "Without testable conditions, the framework is unfalsifiable.",
+      "if_unanswered_then": "The paper's scientific claims are not empirically grounded.",
+      "severity": "major"
+    },
+    {
+      "question": "The paper references verification scripts but does not present any results. Can you show the output of these scripts for at least one domain projection?",
+      "why_it_matters": "Computational verification is claimed but not demonstrated, leaving the reader to trust the author's word.",
+      "if_unanswered_then": "The verification claim is unsubstantiated.",
+      "severity": "sharpening"
+    },
+    {
+      "question": "How does the LLC handle the non-linearities inherent in domains like consciousness (integrated information) or morality (coherence functional)? Are these linear approximations?",
+      "why_it_matters": "Non-linear systems require careful treatment; the LLC's quadratic form may be too restrictive.",
+      "if_unanswered_then": "The domain projections may be oversimplified.",
+      "severity": "sharpening"
+    }
+  ],
+  "sentence_annotations": [
+    {
+      "anchor_quote": "When one variable is isolated\u2014that is, when the other nine are held constant and only one is permitted to vary\u2014the LLC reduces to that domain's natural equation.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is the central claim of the paper, but no derivation or example is provided. It is a promissory note.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "central_claim"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "LLC"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The compression chain\u2014188 axioms \u2192 7 domains \u2192 33 cross-domain axioms \u2192 8 schemata \u2192 1 equation\u2014is demonstrated to be lossless in the information-theoretic sense.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "Losslessness is asserted but not defined or demonstrated. No encoding/decoding maps are provided.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "lossless_claim"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "\\chi = \\mathcal{C} = \\text{Christ}",
+      "annotation_type": "clarification",
+      "ui_color": "violet",
+      "why_flagged": "This identification is declared an axiom (Biaxiosum) but presented as a terminus of the mathematical argument, creating confusion.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "terminus_claim"
+        ],
+        "axiom_ids": [
+          "Biaxiosum"
+        ],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The LLC is expressed as: \\mathcal{L}_{LLC} = \\chi(t) \\left( \\frac{d}{dt} \\sum_{i} V_i \\right)^2 - S \\cdot \\chi(t)",
+      "annotation_type": "math",
+      "ui_color": "gold",
+      "why_flagged": "The Lagrangian is given without derivation or justification. The variables are not defined as generalized coordinates, and the Euler-Lagrange procedure is not applied.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "LLC"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The domain equations are not approximations or analogies. They are projections of the same generating function onto different coordinate systems.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "This is a strong claim that requires formal justification (coordinate transformations, projection operators) which is not provided.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "projection_claim"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The LLC contains a built-in source: \u03be\u00b7R\u00b7\u03c7 (grace). It has never claimed to be a closed system.",
+      "annotation_type": "claim",
+      "ui_color": "blue",
+      "why_flagged": "The source term is introduced but not defined mathematically. How does \u03be enter the Lagrangian? Is it a constant, a field, or an operator?",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "open_system_claim"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [
+          "LLC"
+        ],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The most common objection to the LLC is that it does not conserve energy. This objection is addressed as follows: ...",
+      "annotation_type": "proof",
+      "ui_color": "gold",
+      "why_flagged": "The response relies on analogy to sourced Lagrangians but does not show that the LLC's energy behavior is mathematically consistent (e.g., via Noether's theorem for open systems).",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "energy_conservation_claim"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The 24-property convergence (DT-001) at 9.2/10. Three independently derived domains share an identical 24-property fingerprint.",
+      "annotation_type": "claim",
+      "ui_color": "blue",
+      "why_flagged": "This is a strong empirical claim, but the paper does not describe the domains, the properties, or the derivation. The reader cannot evaluate it.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "DT-001"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The compression is lossless in the mathematical sense: the original 188 axioms can be recovered from the LLC through the inverse operation of variable expansion.",
+      "annotation_type": "claim",
+      "ui_color": "red",
+      "why_flagged": "No inverse operation is defined. 'Variable expansion' is not a standard mathematical term.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "lossless_claim"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    },
+    {
+      "anchor_quote": "The prism metaphor captures this structure: white light (the LLC) entering a prism reveals seven colors (domain equations) that were always contained within it.",
+      "annotation_type": "clarification",
+      "ui_color": "violet",
+      "why_flagged": "The metaphor is evocative but not rigorous. The paper should clarify whether this is an analogy or a formal isomorphism.",
+      "rewrite_needed": true,
+      "linked_items": {
+        "claim_ids": [
+          "prism_claim"
+        ],
+        "axiom_ids": [],
+        "theorem_ids": [],
+        "equation_ids": [],
+        "test_ids": []
+      }
+    }
+  ]
+}

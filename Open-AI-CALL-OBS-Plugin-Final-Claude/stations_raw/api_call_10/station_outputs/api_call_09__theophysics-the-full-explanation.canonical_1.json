@@ -1,0 +1,574 @@
+{
+  "definitions": [
+    {
+      "term": "asymmetry",
+      "category": "framework",
+      "definition": "A difference between two things that are otherwise the same, like a mirror image that has one extra detail.",
+      "example": "A left hand and a right hand are symmetrical, but a left hand with a ring on one finger is asymmetrical.",
+      "grade_level": "10",
+      "first_appearance": "Law 4"
+    },
+    {
+      "term": "acceptance factor",
+      "category": "framework",
+      "definition": "A number that represents how much truth a person is willing to accept, ranging from 0 (total rejection) to 1 (full acceptance).",
+      "example": "If someone is only half-listening, their acceptance factor might be 0.5.",
+      "grade_level": "11",
+      "first_appearance": "Law 4"
+    },
+    {
+      "term": "Quantum Chromodynamics (QCD)",
+      "category": "physics",
+      "definition": "The physics theory that describes how quarks and gluons interact via the strong nuclear force.",
+      "example": "QCD explains why protons and neutrons stick together inside an atom's nucleus.",
+      "grade_level": "college",
+      "first_appearance": "Law 4"
+    },
+    {
+      "term": "potential energy",
+      "category": "physics",
+      "definition": "Stored energy that an object has because of its position or condition, waiting to be released.",
+      "example": "A ball held above the ground has potential energy because gravity can pull it down.",
+      "grade_level": "10",
+      "first_appearance": "Law 4"
+    },
+    {
+      "term": "quarks",
+      "category": "physics",
+      "definition": "Tiny particles that are the building blocks of protons and neutrons.",
+      "example": "Quarks are like the LEGO bricks that make up the bigger pieces inside an atom's nucleus.",
+      "grade_level": "11",
+      "first_appearance": "Law 4"
+    },
+    {
+      "term": "string tension",
+      "category": "physics",
+      "definition": "The force that pulls quarks back together when they try to separate, like an invisible rubber band.",
+      "example": "Imagine two magnets pulling apart, but the farther they go, the stronger the pull back.",
+      "grade_level": "college",
+      "first_appearance": "Law 4"
+    },
+    {
+      "term": "confinement",
+      "category": "physics",
+      "definition": "The rule that quarks can never be isolated alone; they are always stuck together in groups.",
+      "example": "You can't have a single quark by itself, just like you can't have a single north pole without a south pole.",
+      "grade_level": "college",
+      "first_appearance": "Law 4"
+    },
+    {
+      "term": "coupling constant",
+      "category": "physics",
+      "definition": "A number that tells how strong a force is between two particles or objects.",
+      "example": "A strong magnet has a high coupling constant; a weak one has a low coupling constant.",
+      "grade_level": "college",
+      "first_appearance": "Law 4"
+    },
+    {
+      "term": "covenant tension",
+      "category": "framework",
+      "definition": "The pull-back force in a relationship when two people are separated, like the tension in a promise that keeps them connected.",
+      "example": "When a close friend moves away, the covenant tension is the feeling that keeps you in touch.",
+      "grade_level": "11",
+      "first_appearance": "Law 4"
+    },
+    {
+      "term": "betrayal/rejection factor",
+      "category": "framework",
+      "definition": "A number that represents how much a relationship is damaged by betrayal or rejection, reducing the force of love.",
+      "example": "If someone breaks a promise, the betrayal factor goes up and the relationship weakens.",
+      "grade_level": "11",
+      "first_appearance": "Law 4"
+    },
+    {
+      "term": "entropy",
+      "category": "physics",
+      "definition": "A measure of disorder or randomness in a system; things tend to get messier over time.",
+      "example": "Your bedroom naturally gets messier over time unless you clean it.",
+      "grade_level": "11",
+      "first_appearance": "Law 5"
+    },
+    {
+      "term": "closed system",
+      "category": "physics",
+      "definition": "A system that does not exchange energy or matter with anything outside it.",
+      "example": "A sealed thermos of hot coffee is a closed system because no heat or liquid gets in or out.",
+      "grade_level": "11",
+      "first_appearance": "Law 5"
+    },
+    {
+      "term": "thermodynamic arrow of time",
+      "category": "physics",
+      "definition": "The direction of time that we experience, defined by the fact that entropy always increases.",
+      "example": "You can tell a video is playing forward because a dropped glass shatters, not unshatters.",
+      "grade_level": "college",
+      "first_appearance": "Law 5"
+    },
+    {
+      "term": "moral entropy",
+      "category": "framework",
+      "definition": "A measure of spiritual or moral disorder in a person's life that tends to increase over time.",
+      "example": "Small bad choices add up, making it harder to do the right thing later.",
+      "grade_level": "11",
+      "first_appearance": "Law 5"
+    },
+    {
+      "term": "external work",
+      "category": "physics",
+      "definition": "Energy added to a system from outside to change its state.",
+      "example": "Pushing a stalled car is external work that gets it moving again.",
+      "grade_level": "10",
+      "first_appearance": "Law 5"
+    },
+    {
+      "term": "grace",
+      "category": "theology",
+      "definition": "Unearned help or favor from God that can change a person's spiritual state.",
+      "example": "Getting a second chance you didn't deserve is like receiving grace.",
+      "grade_level": "10",
+      "first_appearance": "Law 5"
+    },
+    {
+      "term": "Shannon entropy",
+      "category": "physics",
+      "definition": "A measure of how much uncertainty or information is in a message or set of possibilities.",
+      "example": "A coin flip has high Shannon entropy because you're uncertain; a coin that always lands heads has zero.",
+      "grade_level": "college",
+      "first_appearance": "Law 6"
+    },
+    {
+      "term": "probability distribution",
+      "category": "math",
+      "definition": "A list or graph that shows how likely each possible outcome is.",
+      "example": "A dice roll has a probability distribution where each number 1-6 has a 1/6 chance.",
+      "grade_level": "11",
+      "first_appearance": "Law 6"
+    },
+    {
+      "term": "Logos",
+      "category": "theology",
+      "definition": "A Greek word meaning 'Word' or 'Reason'; in Christian theology, it refers to Jesus Christ as the divine principle through which the universe was created.",
+      "example": "The Logos is like the blueprint or code that the universe runs on.",
+      "grade_level": "college",
+      "first_appearance": "Law 6"
+    },
+    {
+      "term": "Kolmogorov complexity",
+      "category": "math",
+      "definition": "A measure of how complex a piece of data is, based on the length of the shortest computer program that can produce it.",
+      "example": "A simple pattern like 'ABABAB' has low Kolmogorov complexity; random letters have high complexity.",
+      "grade_level": "college",
+      "first_appearance": "Law 6"
+    },
+    {
+      "term": "source term",
+      "category": "physics",
+      "definition": "A part of an equation that represents something being added or generated from within the system.",
+      "example": "A fountain adds water to a pool; the fountain is the source term.",
+      "grade_level": "college",
+      "first_appearance": "Law 6"
+    },
+    {
+      "term": "Lorentz invariant",
+      "category": "physics",
+      "definition": "A quantity that stays the same for all observers, even if they are moving at different speeds.",
+      "example": "The speed of light is a Lorentz invariant because everyone measures it to be the same.",
+      "grade_level": "college",
+      "first_appearance": "Law 7"
+    },
+    {
+      "term": "spacetime interval",
+      "category": "physics",
+      "definition": "A combined measure of distance and time between two events that all observers agree on.",
+      "example": "Two people might disagree on how far apart events are in space or time, but they agree on the spacetime interval.",
+      "grade_level": "college",
+      "first_appearance": "Law 7"
+    },
+    {
+      "term": "special relativity",
+      "category": "physics",
+      "definition": "Einstein's theory that the laws of physics are the same for all observers moving at constant speed, and that the speed of light is constant.",
+      "example": "Special relativity explains why time slows down for astronauts traveling near the speed of light.",
+      "grade_level": "college",
+      "first_appearance": "Law 7"
+    },
+    {
+      "term": "invariant",
+      "category": "math",
+      "definition": "A property that does not change even when other things change.",
+      "example": "The number of sides of a square is invariant even if you rotate or move it.",
+      "grade_level": "11",
+      "first_appearance": "Law 7"
+    },
+    {
+      "term": "relational proper time",
+      "category": "framework",
+      "definition": "A measure of the real, shared experience between two people that captures the depth of their relationship.",
+      "example": "Two friends might remember the same event differently, but the time they spent together is their relational proper time.",
+      "grade_level": "11",
+      "first_appearance": "Law 7"
+    },
+    {
+      "term": "consent term",
+      "category": "framework",
+      "definition": "A mathematical factor that represents whether both parties freely choose to be in a relationship.",
+      "example": "A handshake only works if both people agree to shake; that agreement is the consent term.",
+      "grade_level": "11",
+      "first_appearance": "Law 7"
+    },
+    {
+      "term": "Schrödinger's equation",
+      "category": "physics",
+      "definition": "The fundamental equation of quantum mechanics that describes how a quantum system changes over time.",
+      "example": "Schrödinger's equation predicts where an electron is likely to be found around an atom.",
+      "grade_level": "college",
+      "first_appearance": "Law 8"
+    },
+    {
+      "term": "quantum state",
+      "category": "physics",
+      "definition": "A description of all the possible properties a quantum particle can have at a given time.",
+      "example": "An electron's quantum state includes its possible positions, speeds, and spins.",
+      "grade_level": "college",
+      "first_appearance": "Law 8"
+    },
+    {
+      "term": "superposition",
+      "category": "physics",
+      "definition": "The ability of a quantum particle to be in multiple states at the same time until it is measured.",
+      "example": "A spinning coin is in superposition of heads and tails until it lands.",
+      "grade_level": "college",
+      "first_appearance": "Law 8"
+    },
+    {
+      "term": "Born rule",
+      "category": "physics",
+      "definition": "A formula that calculates the probability of finding a quantum particle in a particular state when measured.",
+      "example": "The Born rule tells you the chance of finding an electron at a specific spot.",
+      "grade_level": "college",
+      "first_appearance": "Law 8"
+    },
+    {
+      "term": "faith commitment factor",
+      "category": "framework",
+      "definition": "A number that represents how strongly a person commits to a belief or outcome, influencing the result.",
+      "example": "If you truly believe you will pass a test, your faith commitment factor is high.",
+      "grade_level": "11",
+      "first_appearance": "Law 8"
+    },
+    {
+      "term": "collapse",
+      "category": "physics",
+      "definition": "The moment when a quantum system in superposition settles into a single definite state after measurement.",
+      "example": "When you open the box with Schrödinger's cat, the cat's state collapses to either alive or dead.",
+      "grade_level": "college",
+      "first_appearance": "Law 8"
+    },
+    {
+      "term": "beta decay",
+      "category": "physics",
+      "definition": "A type of radioactive decay where a neutron turns into a proton, releasing an electron and an antineutrino.",
+      "example": "Beta decay is one way that unstable atoms become more stable.",
+      "grade_level": "college",
+      "first_appearance": "Law 9"
+    },
+    {
+      "term": "weak nuclear force",
+      "category": "physics",
+      "definition": "One of the four fundamental forces, responsible for certain types of radioactive decay.",
+      "example": "The weak force is what makes some atoms radioactive and powers the sun.",
+      "grade_level": "college",
+      "first_appearance": "Law 9"
+    },
+    {
+      "term": "neutron",
+      "category": "physics",
+      "definition": "A particle in the nucleus of an atom that has no electric charge.",
+      "example": "Neutrons help hold the nucleus together by balancing the repulsion between protons.",
+      "grade_level": "10",
+      "first_appearance": "Law 9"
+    },
+    {
+      "term": "proton",
+      "category": "physics",
+      "definition": "A positively charged particle in the nucleus of an atom.",
+      "example": "The number of protons determines what element an atom is.",
+      "grade_level": "10",
+      "first_appearance": "Law 9"
+    },
+    {
+      "term": "electron",
+      "category": "physics",
+      "definition": "A tiny negatively charged particle that orbits the nucleus of an atom.",
+      "example": "Electrons are responsible for electricity and chemical bonds.",
+      "grade_level": "10",
+      "first_appearance": "Law 9"
+    },
+    {
+      "term": "antineutrino",
+      "category": "physics",
+      "definition": "The antimatter counterpart of a neutrino, a nearly massless particle released in beta decay.",
+      "example": "Antineutrinos are ghostly particles that barely interact with anything.",
+      "grade_level": "college",
+      "first_appearance": "Law 9"
+    },
+    {
+      "term": "flavor-changing decay",
+      "category": "physics",
+      "definition": "A process where a quark changes from one type (flavor) to another, like a down quark becoming an up quark.",
+      "example": "Flavor-changing decay is like a LEGO brick changing color while staying the same shape.",
+      "grade_level": "college",
+      "first_appearance": "Law 9"
+    },
+    {
+      "term": "radioactive isotopes",
+      "category": "physics",
+      "definition": "Atoms of the same element that have an unstable nucleus and decay over time.",
+      "example": "Carbon-14 is a radioactive isotope used to date ancient artifacts.",
+      "grade_level": "11",
+      "first_appearance": "Law 9"
+    },
+    {
+      "term": "decay rate",
+      "category": "physics",
+      "definition": "How fast a radioactive substance decays, measured by the number of decays per second.",
+      "example": "A high decay rate means the substance is very radioactive and doesn't last long.",
+      "grade_level": "11",
+      "first_appearance": "Law 9"
+    },
+    {
+      "term": "quantum field-theoretic calculation",
+      "category": "physics",
+      "definition": "A complex mathematical method used in quantum field theory to predict particle interactions.",
+      "example": "Physicists use quantum field-theoretic calculations to predict what happens when particles collide.",
+      "grade_level": "graduate",
+      "first_appearance": "Law 9"
+    },
+    {
+      "term": "will factor",
+      "category": "framework",
+      "definition": "A mathematical term that represents a person's free choice to sin or not.",
+      "example": "The will factor is like a switch that lets you choose between right and wrong.",
+      "grade_level": "10",
+      "first_appearance": "Law 9"
+    },
+    {
+      "term": "coherence",
+      "category": "framework",
+      "definition": "A measure of how well all parts of a system fit together in a unified, orderly way.",
+      "example": "A well-organized team has high coherence because everyone works together smoothly.",
+      "grade_level": "11",
+      "first_appearance": "Law 10"
+    },
+    {
+      "term": "configuration space",
+      "category": "physics",
+      "definition": "A mathematical space that includes all possible positions and states of a system.",
+      "example": "For a moving particle, configuration space includes every possible location it could be.",
+      "grade_level": "college",
+      "first_appearance": "Law 10"
+    },
+    {
+      "term": "integral",
+      "category": "math",
+      "definition": "A mathematical operation that adds up infinitely many tiny pieces to find a total.",
+      "example": "An integral can find the total distance traveled by adding up tiny steps over time.",
+      "grade_level": "12",
+      "first_appearance": "Law 10"
+    },
+    {
+      "term": "free-will modifier",
+      "category": "framework",
+      "definition": "A mathematical term added to a spiritual equation that represents human choice, making it different from the physical version.",
+      "example": "The free-will modifier is like an 'if-then' statement that lets a person choose the outcome.",
+      "grade_level": "11",
+      "first_appearance": "Law 10"
+    },
+    {
+      "term": "self-recursive structure",
+      "category": "framework",
+      "definition": "A system where each part is defined in terms of itself or other parts, creating a loop.",
+      "example": "A mirror reflecting another mirror creates a self-recursive image that goes on forever.",
+      "grade_level": "college",
+      "first_appearance": "Part Seven"
+    },
+    {
+      "term": "master equation",
+      "category": "framework",
+      "definition": "The main equation of the framework that combines all ten laws into one formula for total coherence.",
+      "example": "The master equation is like the final score that sums up all the individual game stats.",
+      "grade_level": "11",
+      "first_appearance": "Part Seven"
+    },
+    {
+      "term": "differential equation",
+      "category": "math",
+      "definition": "An equation that describes how a quantity changes over time or space.",
+      "example": "A differential equation can describe how the temperature of a cup of coffee cools down.",
+      "grade_level": "12",
+      "first_appearance": "Part Seven"
+    },
+    {
+      "term": "dynamic system",
+      "category": "math",
+      "definition": "A system that changes over time according to fixed rules.",
+      "example": "The weather is a dynamic system because it changes based on temperature, pressure, and wind.",
+      "grade_level": "11",
+      "first_appearance": "Part Seven"
+    },
+    {
+      "term": "recursive dynamic system",
+      "category": "framework",
+      "definition": "A system where each variable's change depends on the others, creating a feedback loop.",
+      "example": "In an ecosystem, the number of rabbits affects the number of foxes, which affects the rabbits again.",
+      "grade_level": "college",
+      "first_appearance": "Part Seven"
+    },
+    {
+      "term": "equilibrium",
+      "category": "physics",
+      "definition": "A state where a system is balanced and not changing over time.",
+      "example": "A seesaw with equal weights on both sides is in equilibrium.",
+      "grade_level": "11",
+      "first_appearance": "Part Seven"
+    },
+    {
+      "term": "salvation",
+      "category": "theology",
+      "definition": "In Christianity, the rescue of a person's soul from sin and its consequences, leading to eternal life with God.",
+      "example": "Salvation is like being saved from a sinking ship and brought to safety.",
+      "grade_level": "10",
+      "first_appearance": "Part Seven"
+    },
+    {
+      "term": "unified field equation",
+      "category": "framework",
+      "definition": "An equation that combines all forces or domains into one description.",
+      "example": "A unified field equation would be like a single rule that explains gravity, magnetism, and love all at once.",
+      "grade_level": "college",
+      "first_appearance": "Part Seven"
+    },
+    {
+      "term": "efficiency function",
+      "category": "framework",
+      "definition": "A mathematical function that measures how well something is being used or received.",
+      "example": "A car's fuel efficiency function tells how many miles per gallon it gets.",
+      "grade_level": "11",
+      "first_appearance": "Part Seven"
+    },
+    {
+      "term": "soteriological limit",
+      "category": "framework",
+      "definition": "The mathematical condition that must be met for salvation to be possible, requiring an infinite source of grace.",
+      "example": "The soteriological limit is like needing an endless fuel supply to keep a spaceship running forever.",
+      "grade_level": "college",
+      "first_appearance": "Part Seven"
+    },
+    {
+      "term": "soteriology",
+      "category": "theology",
+      "definition": "The study of salvation, especially in Christian theology.",
+      "example": "Soteriology asks questions like 'How are people saved?' and 'What does salvation mean?'",
+      "grade_level": "college",
+      "first_appearance": "Part Seven"
+    },
+    {
+      "term": "unprovability theorem",
+      "category": "framework",
+      "definition": "A mathematical proof that the ultimate foundation of any system cannot be proven from within that system.",
+      "example": "You can't use a ruler to prove the ruler is exactly one foot long; you need something else.",
+      "grade_level": "college",
+      "first_appearance": "Part Eight"
+    },
+    {
+      "term": "axiom",
+      "category": "academic",
+      "definition": "A basic statement that is accepted as true without proof, used as a starting point for reasoning.",
+      "example": "In geometry, 'a straight line is the shortest distance between two points' is an axiom.",
+      "grade_level": "11",
+      "first_appearance": "Part Eight"
+    },
+    {
+      "term": "foundational ground",
+      "category": "philosophy",
+      "definition": "The most basic thing that everything else depends on, which cannot itself depend on anything else.",
+      "example": "The foundation of a house is the ground that supports the whole building.",
+      "grade_level": "college",
+      "first_appearance": "Part Eight"
+    },
+    {
+      "term": "corollary",
+      "category": "academic",
+      "definition": "A statement that follows directly from a previously proven statement.",
+      "example": "If all squares are rectangles, a corollary is that all square corners are right angles.",
+      "grade_level": "11",
+      "first_appearance": "Part Eight"
+    },
+    {
+      "term": "Gödel's Second Theorem",
+      "category": "math",
+      "definition": "A famous theorem by Kurt Gödel showing that any consistent mathematical system cannot prove its own consistency.",
+      "example": "Gödel's theorem means that math can't prove that math itself is free of contradictions.",
+      "grade_level": "graduate",
+      "first_appearance": "Part Eight"
+    },
+    {
+      "term": "operationally certain",
+      "category": "philosophy",
+      "definition": "Something we are so sure of that we act on it every day, even if we can't prove it formally.",
+      "example": "You are operationally certain that the sun will rise tomorrow, even though you can't prove it.",
+      "grade_level": "college",
+      "first_appearance": "Part Eight"
+    },
+    {
+      "term": "cosmic irony",
+      "category": "philosophy",
+      "definition": "A situation where the universe seems to be arranged in a way that is the opposite of what you'd expect.",
+      "example": "It's cosmic irony that the tools we use to seek proof of God cannot reach Him.",
+      "grade_level": "11",
+      "first_appearance": "Part Eight"
+    },
+    {
+      "term": "theorem",
+      "category": "academic",
+      "definition": "A statement that has been proven to be true using logic and axioms.",
+      "example": "The Pythagorean theorem is a proven rule about right triangles.",
+      "grade_level": "10",
+      "first_appearance": "Part Eight"
+    },
+    {
+      "term": "artifact",
+      "category": "academic",
+      "definition": "Something created by a process or system, not the original thing itself.",
+      "example": "A fossil is an artifact of a once-living creature, not the creature itself.",
+      "grade_level": "10",
+      "first_appearance": "Part Eight"
+    },
+    {
+      "term": "constraint chain",
+      "category": "framework",
+      "definition": "A series of logical requirements that any ultimate foundation must satisfy.",
+      "example": "A constraint chain is like a checklist: the ground must be non-physical, necessary, etc.",
+      "grade_level": "college",
+      "first_appearance": "Part Eight"
+    },
+    {
+      "term": "non-physical",
+      "category": "philosophy",
+      "definition": "Not made of matter or energy; existing outside the physical universe.",
+      "example": "Thoughts and numbers are non-physical; you can't weigh or touch them.",
+      "grade_level": "10",
+      "first_appearance": "Part Eight"
+    },
+    {
+      "term": "non-contingent",
+      "category": "philosophy",
+      "definition": "Something that does not depend on anything else for its existence; it just exists necessarily.",
+      "example": "A rock is contingent because it could be broken; a non-contingent thing cannot not exist.",
+      "grade_level": "college",
+      "first_appearance": "Part Eight"
+    },
+    {
+      "term": "contingent",
+      "category": "philosophy",
+      "definition": "Something that could

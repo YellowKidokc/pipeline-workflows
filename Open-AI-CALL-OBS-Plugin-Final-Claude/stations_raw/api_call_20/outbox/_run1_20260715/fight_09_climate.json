@@ -1,0 +1,103 @@
+{
+  "spec_version": "1.0-trilemma-resolver",
+  "status": "OK",
+  "fight": {
+    "id": "climate_policy",
+    "familiar_name": "Climate policy",
+    "years_running": 35,
+    "poles": [
+      "Existential crisis / act now whatever it costs",
+      "Crushing energy costs on the working class for negligible temperature effect"
+    ]
+  },
+  "reader_anchor": {
+    "opening_prose": "You are seven years old. You are standing on a beach, holding a plastic bucket. The tide is coming in. You have built a sandcastle with a moat. You know, with the certainty of a child who has watched three waves, that the water will take it. You do not ask whether you should have built it closer to the dunes. You do not calculate the cost of the bucket. You dig the moat deeper anyway. You have never heard the word 'discount rate.' You have never heard the word 'externality.' You only know that the water is coming and that your hands are the only thing between the castle and the sea.\n\nHere is the detail nobody ever points out: you never once looked at the child next to you and asked them to help. You just dug. The problem was not that you lacked a plan. The problem was that the water did not care whose hands were in the sand. The castle was going to be taken, and the only question was whether you would be standing there when it happened.\n\nWhat was trained out of you was the willingness to dig without a guarantee. Somewhere between that beach and this desk, you learned to ask: 'What will it cost me? What will it cost them? Will it even work?' You learned to treat the tide as a negotiation. You learned to treat the castle as a ledger.\n\nWe are here to give it back. Not the castle. The digging.",
+    "universal_experience": "building a sandcastle as the tide comes in",
+    "checkable_detail": "you never looked at the child next to you and asked them to help; you just dug",
+    "quiet_theft": "the willingness to act without a guarantee of success",
+    "embodiment_note": "The sandcastle fight is the climate fight: a known damage (the tide), a voluntary action (digging), a diffuse causal class (nobody owns the tide), and a deficit that no amount of digging on the beach can retire\u2014only the water itself can stop, and it will not."
+  },
+  "poles": [
+    {
+      "label": "Emergency mobilization pole",
+      "steelman": "The climate is a global commons undergoing irreversible damage from cumulative CO2 emissions. The damage is existential: sea-level rise, crop failure, mass displacement, ecosystem collapse. Future generations\u2014who have no vote, no voice, no seat at this table\u2014will bear the full cost of our inaction. The only morally coherent response is to treat this as a wartime mobilization: deploy every available technology (renewables, nuclear, carbon capture, geoengineering), impose carbon taxes, ban fossil fuel extraction, and spend whatever is necessary. The cost of inaction is infinite; the cost of action is finite. Any delay is a death sentence for the young and the unborn.",
+      "accusation_against_others": "The other pole is committing intergenerational theft: imposing catastrophic costs on future people to protect current energy profits.",
+      "accusation_is_true_because": "Under the other pole's plan, future generations\u2014who did not emit the CO2\u2014will eat the full cost of climate damage (D) through flooded cities, failed crops, and forced migration, while current emitters pay nothing (T_B = 0)."
+    },
+    {
+      "label": "Economic realism pole",
+      "steelman": "The climate is a real problem, but the proposed solutions are a regressive tax on the world's poor. Carbon taxes and energy bans raise the price of food, heating, transportation, and manufacturing\u2014costs that fall hardest on the working class and developing nations who did the least to cause the problem. The temperature effect of any single nation's emissions cuts is negligible: even if the US went to zero tomorrow, global temperature would drop by less than 0.1\u00b0C by 2100. Meanwhile, the cost of decarbonization is measured in trillions of dollars, diverted from healthcare, education, and poverty alleviation. The real moral failure is to impose crushing costs on the living for a hypothetical benefit to the unborn, especially when the living are the ones who cannot afford it.",
+      "accusation_against_others": "The other pole is committing present-generation theft: imposing crushing energy costs on the working class and the global poor for negligible temperature effect.",
+      "accusation_is_true_because": "Under the other pole's plan, the working class and global poor\u2014who did not create the bulk of historical emissions\u2014will eat the full cost of energy transition (T_B) through higher prices and lost economic opportunity, while the benefits (reduced D) are negligible and distant."
+    }
+  ],
+  "ledger": {
+    "D_definition": "The cumulative damage from climate change: sea-level rise, extreme weather, agricultural disruption, biodiversity loss, human displacement, and economic costs, measured in trillions of dollars and human suffering, concentrated on future generations (50+ years out) and the global poor.",
+    "D_is_real_evidence": "IPCC reports, NOAA data on rising global temperatures, observed increases in extreme weather events, and economic models estimating 10-20% GDP loss by 2100 under high-emission scenarios. D > 0 is not contested by any major scientific body.",
+    "victim_class": "Future generations (unborn, no consent, no voice) and the global poor (lowest historical emissions, highest vulnerability).",
+    "causal_class": "Diffuse but concentrated: the fossil fuel industry and high-emitting nations (top 20% of emitters produce ~80% of cumulative emissions), with meaningful agency in investment and policy decisions.",
+    "per_pole_transfers": [
+      {
+        "pole": "Emergency mobilization",
+        "T_A": "Massive investment in decarbonization, adaptation, and compensation to future victims (trillions of dollars in subsidies, infrastructure, and technology transfer).",
+        "T_B": "Cost imposed on current fossil fuel producers and consumers through carbon taxes, bans, and regulation (trillions of dollars in lost profits and higher energy prices).",
+        "J": 0.8,
+        "M": 0.2,
+        "W_note": "Future victims cannot consent; current emitters resist. W = 0.",
+        "who_eats_deficit": "The working class and global poor pay higher energy costs (T_B), while future generations receive partial restoration (T_A). The deficit is the gap between the full damage D and what is actually restored\u2014borne by future generations as unmitigated damage."
+      },
+      {
+        "pole": "Economic realism",
+        "T_A": "Minimal or no transfer to future victims (continued emissions, no compensation).",
+        "T_B": "No cost imposed on current emitters (no carbon tax, no bans).",
+        "J": 0.1,
+        "M": 0.9,
+        "W_note": "Current emitters are relieved; future victims have no voice. W = 0.",
+        "who_eats_deficit": "Future generations eat the full damage D with minimal restoration (T_A \u2248 0). The deficit is the entire climate damage."
+      }
+    ]
+  },
+  "clear_win": {
+    "type": "structural_invariant",
+    "statement": "The climate fight is a seating argument on the J + M = 1 line. Both poles' accusations are true: each side correctly identifies that the other's plan forces someone who did not create the damage to eat the cost. The line cannot be escaped because the victim class (future generations) cannot consent and the causal class (current emitters) will not volunteer. The ledger never closes without a voluntary external cost-bearer.",
+    "derivation_steps": [
+      "1. Define D = cumulative climate damage (trillions of dollars, concentrated on future generations and the global poor).",
+      "2. Pole A (emergency mobilization) sets T_A = large (decarbonization investment), T_B = large (carbon taxes on emitters). J = T_A/D \u2248 0.8, M = 1 - T_B/D \u2248 0.2. The deficit is the unmitigated damage still borne by future generations (D - T_A).",
+      "3. Pole B (economic realism) sets T_A \u2248 0 (no restoration to future victims), T_B \u2248 0 (no cost on emitters). J \u2248 0.1, M \u2248 0.9. The deficit is the full damage D borne by future generations.",
+      "4. Both accusations reduce to: 'Your plan makes someone who did not create the damage eat the cost.' Pole A says future generations eat the cost under Pole B. Pole B says the working class eats the cost under Pole A. Both are true.",
+      "5. No position on the line yields J = 1, M = 1, W = 1 simultaneously because future generations cannot consent (W = 0) and current emitters will not volunteer (W = 0).",
+      "6. The only exit is a voluntary external cost-bearer who absorbs the full damage D without requiring consent from future generations or coercion of current emitters."
+    ],
+    "dinner_table_sentence": "Both sides are right: one plan drowns the future, the other crushes the poor\u2014the ledger never closes.",
+    "why_undeniable": "A hostile reader from either pole must concede that the other pole's accusation is factually accurate: future generations do bear the cost under Pole B, and the working class does bear the cost under Pole A. The invariant J + M = 1 is mathematical, not rhetorical. No amount of policy tweaking can make future generations consent or make current emitters volunteer."
+  },
+  "off_the_line": {
+    "proximate": {
+      "structures": [
+        "Voluntary carbon offset markets where individuals and corporations pay for verified emission reductions",
+        "Community-owned renewable energy cooperatives that absorb local energy costs voluntarily",
+        "Intergenerational trusts that fund adaptation for future communities",
+        "Mutual aid networks for climate-displaced populations"
+      ],
+      "honest_limit": "These structures relocate the cost voluntarily and visibly, but they do not retire the deficit. The damage D remains real, and the external cost-bearer is still internal to the system (current volunteers). The altruism lemma holds: internal love relocates, it does not retire."
+    },
+    "ultimate": {
+      "configuration": "A voluntary external cost-bearer who (1) is neither victim (future generations) nor offender (current emitters) nor conscripted bystander, (2) acts voluntarily, (3) absorbs the full cost of climate damage D (trillions of dollars and human suffering), (4) has capacity to absorb without being destroyed, and (5) preserves truth (damage acknowledged, not denied).",
+      "candidate": "The framework identifies the historical candidate as the figure who absorbs the cost of cosmic rebellion voluntarily\u2014the one who, in Christian theology, takes the full weight of sin and death onto himself without coercion, satisfying justice and mercy simultaneously. For this fight, that configuration is the cross: a voluntary external cost-bearer who retires the deficit of a broken creation, including the climate, by absorbing it into himself.",
+      "door_note": "The door opens from the reader's side only. No coercion. The reader must choose to step into that configuration voluntarily, or the ledger remains open."
+    }
+  },
+  "anti_gaming_audit": {
+    "blind_label": "pass: the analysis uses 'victim class' (future generations) and 'causal class' (current emitters) without naming parties, politicians, or pundits; the mechanism holds if roles were reversed.",
+    "symmetry": "pass: the win applies regardless of which pole proposed the mechanism; both poles' accusations are symmetric and true.",
+    "counterfactual": "pass: D (climate damage) is real and measurable independent of any policy; it exists absent any intervention.",
+    "radius_consistency": "pass: benefits (reduced future damage) and costs (current energy prices) are measured at the same social level\u2014global, intergenerational.",
+    "cost_visibility": "pass: costs are visible to those paying them (higher energy prices for working class, lost profits for emitters, future damage for unborn\u2014though the unborn cannot see them, the costs are real and modeled).",
+    "no_person_score": "pass: actions and positions are scored, not souls; no pole is demonized.",
+    "unknowns_tracked": "pass: the exact magnitude of D is estimated (IPCC ranges), and the analysis does not coerce it to zero; unknowns are reported as unknowns."
+  },
+  "falsification": {
+    "kill_condition_specific": "This resolution is broken if a policy is found that achieves J = 1, M = 1, and W = 1 within a closed system\u2014i.e., a carbon tax that fully restores future victims (J = 1) while fully relieving current emitters (M = 1) with voluntary participation by both (W = 1). No such policy exists because future generations cannot consent.",
+    "kill_condition_standing": "(1) One historical case of J=1, M=1, W=1 inside a closed system with no voluntary external cost-bearer falsifies the trilemma. (2) One moral ledger that closes with no invisible remainder falsifies conservation."
+  }
+}

@@ -1,0 +1,563 @@
+{
+  "definitions": [
+    {
+      "term": "fracture point",
+      "category": "framework",
+      "definition": "The specific moment when a system breaks into separate, opposing parts.",
+      "example": "Like the exact second a glass window cracks from a rock hit.",
+      "grade_level": "10",
+      "first_appearance": "Title"
+    },
+    {
+      "term": "partisan language distinctiveness",
+      "category": "academic",
+      "definition": "A measure of how different the words and phrases used by one political party are from the other party's.",
+      "example": "If Democrats always say 'climate crisis' and Republicans always say 'energy freedom,' that's high distinctiveness.",
+      "grade_level": "college",
+      "first_appearance": "Key Finding"
+    },
+    {
+      "term": "semantic universes",
+      "category": "academic",
+      "definition": "Separate worlds of meaning where the same words have different meanings for different groups.",
+      "example": "Like how 'freedom' means 'no government rules' to one person and 'healthcare for all' to another.",
+      "grade_level": "college",
+      "first_appearance": "Key Finding"
+    },
+    {
+      "term": "downstream",
+      "category": "academic",
+      "definition": "Coming after or as a result of something else, not the cause.",
+      "example": "If you decide what to eat based on your mood, your food choice is downstream of your mood.",
+      "grade_level": "10",
+      "first_appearance": "Critical Insight"
+    },
+    {
+      "term": "upstream",
+      "category": "academic",
+      "definition": "Being the cause or source of something, not the result.",
+      "example": "Your mood is upstream of your food choice if your mood decides what you eat.",
+      "grade_level": "10",
+      "first_appearance": "Critical Insight"
+    },
+    {
+      "term": "identity-framed methods",
+      "category": "framework",
+      "definition": "Ways of doing things that are chosen mainly because they signal which group you belong to, not because they are the best way.",
+      "example": "Wearing a certain brand of sneakers not because they're comfortable but because your friends wear them.",
+      "grade_level": "college",
+      "first_appearance": "Critical Insight"
+    },
+    {
+      "term": "nationalized",
+      "category": "academic",
+      "definition": "Made to be about the whole country instead of just a local area.",
+      "example": "When a local school board election becomes about national issues like immigration, it's been nationalized.",
+      "grade_level": "10",
+      "first_appearance": "Executive Summary"
+    },
+    {
+      "term": "mega-identities",
+      "category": "framework",
+      "definition": "Super-sized group identities that combine many parts of a person's life—like where they live, who they marry, what they buy—into one big political label.",
+      "example": "Being a Democrat or Republican now predicts your favorite news channel, your car brand, and even your pet preference.",
+      "grade_level": "college",
+      "first_appearance": "Executive Summary"
+    },
+    {
+      "term": "tribal identity formation",
+      "category": "framework",
+      "definition": "The process of people grouping into 'tribes' based on strong emotional loyalty, not just logical agreement.",
+      "example": "Sports fans who hate the rival team even when they agree on other things.",
+      "grade_level": "10",
+      "first_appearance": "Executive Summary"
+    },
+    {
+      "term": "inflection point",
+      "category": "math",
+      "definition": "A moment when something changes direction or starts growing much faster.",
+      "example": "The exact second a roller coaster stops climbing and starts dropping.",
+      "grade_level": "11",
+      "first_appearance": "Primary Inflection Point"
+    },
+    {
+      "term": "algorithmic analysis",
+      "category": "academic",
+      "definition": "Using computer programs to find patterns in large amounts of data.",
+      "example": "A computer scanning millions of tweets to see which words are used most by each party.",
+      "grade_level": "college",
+      "first_appearance": "Primary Inflection Point"
+    },
+    {
+      "term": "temporal marker",
+      "category": "academic",
+      "definition": "A specific point in time that marks an important change.",
+      "example": "The date 'September 11, 2001' is a temporal marker for the start of the War on Terror.",
+      "grade_level": "college",
+      "first_appearance": "Primary Inflection Point"
+    },
+    {
+      "term": "linguistic divergence",
+      "category": "academic",
+      "definition": "When two groups start using language in different ways, making it harder to understand each other.",
+      "example": "Teenagers inventing slang that adults don't understand.",
+      "grade_level": "college",
+      "first_appearance": "Primary Inflection Point"
+    },
+    {
+      "term": "negative partisanship",
+      "category": "academic",
+      "definition": "Being loyal to your party mainly because you hate the other party, not because you love your own.",
+      "example": "Voting for your team just to keep the other team out of power.",
+      "grade_level": "college",
+      "first_appearance": "Secondary Acceleration Points"
+    },
+    {
+      "term": "consolidated",
+      "category": "academic",
+      "definition": "Made stronger or more unified.",
+      "example": "After the big win, the team's confidence consolidated into a winning streak.",
+      "grade_level": "10",
+      "first_appearance": "Secondary Acceleration Points"
+    },
+    {
+      "term": "scalable",
+      "category": "academic",
+      "definition": "Able to grow from a small group to a large one without breaking.",
+      "example": "A lemonade stand recipe that works for 10 cups and also for 10,000 cups is scalable.",
+      "grade_level": "10",
+      "first_appearance": "Secondary Acceleration Points"
+    },
+    {
+      "term": "tribal mobilization",
+      "category": "framework",
+      "definition": "Getting members of a group to take action together based on their shared identity.",
+      "example": "A church organizing a protest because members feel their values are threatened.",
+      "grade_level": "college",
+      "first_appearance": "Secondary Acceleration Points"
+    },
+    {
+      "term": "issue alignment correlation",
+      "category": "academic",
+      "definition": "A measure of how much knowing someone's opinion on one topic lets you predict their opinion on another topic.",
+      "example": "If knowing someone is pro-choice lets you guess they are also pro-environment, that's high correlation.",
+      "grade_level": "college",
+      "first_appearance": "Core Finding"
+    },
+    {
+      "term": "cross-party congressional overlap",
+      "category": "academic",
+      "definition": "When members of different political parties vote similarly on laws.",
+      "example": "A Democrat and a Republican both voting for the same education bill.",
+      "grade_level": "college",
+      "first_appearance": "Core Finding"
+    },
+    {
+      "term": "DW-NOMINATE",
+      "category": "academic",
+      "definition": "A computer model that scores how liberal or conservative each member of Congress is based on their voting record.",
+      "example": "A score of -1 means very liberal, +1 means very conservative, and 0 means moderate.",
+      "grade_level": "graduate",
+      "first_appearance": "Core Finding"
+    },
+    {
+      "term": "ticket-splitting",
+      "category": "academic",
+      "definition": "Voting for candidates from different parties in the same election.",
+      "example": "Voting for a Republican for president and a Democrat for senator.",
+      "grade_level": "10",
+      "first_appearance": "Core Finding"
+    },
+    {
+      "term": "affective polarization",
+      "category": "academic",
+      "definition": "When people dislike members of the other political party as people, not just disagree with their ideas.",
+      "example": "Not wanting your child to marry someone from the other party, even if you agree on policies.",
+      "grade_level": "college",
+      "first_appearance": "Core Finding"
+    },
+    {
+      "term": "feeling thermometers",
+      "category": "academic",
+      "definition": "A survey tool where people rate how warm or cold they feel toward a group, from 0 (very cold) to 100 (very warm).",
+      "example": "Rating your own party at 90 and the other party at 10 shows high affective polarization.",
+      "grade_level": "college",
+      "first_appearance": "Core Finding"
+    },
+    {
+      "term": "gauge symmetries",
+      "category": "physics",
+      "definition": "Rules in physics that say the laws of nature stay the same even when you change certain things, like the way you measure energy.",
+      "example": "Like how a game of chess is the same no matter what color the board is.",
+      "grade_level": "graduate",
+      "first_appearance": "The Physics Analogy"
+    },
+    {
+      "term": "Standard Model",
+      "category": "physics",
+      "definition": "The best scientific theory we have that explains all the known particles and forces in the universe (except gravity).",
+      "example": "It's like the ultimate instruction manual for how the smallest building blocks of matter work.",
+      "grade_level": "college",
+      "first_appearance": "The Physics Analogy"
+    },
+    {
+      "term": "structural conditions",
+      "category": "academic",
+      "definition": "The underlying systems and arrangements that shape how things happen, not just the surface details.",
+      "example": "The rules of a game (structural conditions) determine how players behave, not just their individual choices.",
+      "grade_level": "college",
+      "first_appearance": "The Physics Analogy"
+    },
+    {
+      "term": "partisan sorting",
+      "category": "academic",
+      "definition": "When people's various identities (like religion, race, where they live) all line up with their political party.",
+      "example": "A white evangelical Christian who lives in a rural area is very likely to be a Republican.",
+      "grade_level": "college",
+      "first_appearance": "Key Mechanisms"
+    },
+    {
+      "term": "ideological self-placement",
+      "category": "academic",
+      "definition": "Where a person puts themselves on a scale from very liberal to very conservative.",
+      "example": "Saying 'I am a moderate' or 'I am very conservative' is ideological self-placement.",
+      "grade_level": "college",
+      "first_appearance": "Key Mechanisms"
+    },
+    {
+      "term": "partisan discrimination",
+      "category": "academic",
+      "definition": "Treating people unfairly because of their political party, similar to racial discrimination.",
+      "example": "Not hiring someone because they are a Democrat or a Republican.",
+      "grade_level": "college",
+      "first_appearance": "Key Mechanisms"
+    },
+    {
+      "term": "behavioral experiments",
+      "category": "academic",
+      "definition": "Studies where scientists watch what people actually do, not just what they say.",
+      "example": "Giving people money to share and seeing if they give more to their own party members.",
+      "grade_level": "college",
+      "first_appearance": "Key Mechanisms"
+    },
+    {
+      "term": "issue alignment paradox",
+      "category": "framework",
+      "definition": "The strange fact that knowing someone's opinion on one issue lets you predict their opinion on all others, which shouldn't happen if people think independently.",
+      "example": "If you know someone wants lower taxes, you can guess they also want stricter immigration laws, even though those are unrelated.",
+      "grade_level": "college",
+      "first_appearance": "Key Mechanisms"
+    },
+    {
+      "term": "latent variable",
+      "category": "math",
+      "definition": "A hidden factor that is not directly measured but explains why other things are connected.",
+      "example": "Intelligence is a latent variable that explains why good grades in math and English often go together.",
+      "grade_level": "college",
+      "first_appearance": "Key Mechanisms"
+    },
+    {
+      "term": "Casting Director Effect",
+      "category": "framework",
+      "definition": "When media chooses to show the most extreme members of the other party, making them seem scarier or weirder than they really are.",
+      "example": "A news show always interviewing the angriest protester from the other side, not the calm ones.",
+      "grade_level": "college",
+      "first_appearance": "The Casting Director Effect"
+    },
+    {
+      "term": "Bernays Playbook",
+      "category": "framework",
+      "definition": "A set of persuasion techniques that target people's emotions and identities instead of their logic, named after Edward Bernays.",
+      "example": "An ad that makes you feel patriotic instead of listing product features.",
+      "grade_level": "college",
+      "first_appearance": "The Bernays Playbook"
+    },
+    {
+      "term": "operationalized",
+      "category": "academic",
+      "definition": "Turned a concept into a specific, measurable action or process.",
+      "example": "Turning 'customer satisfaction' into a survey with a 1-10 rating scale.",
+      "grade_level": "college",
+      "first_appearance": "The Bernays Playbook"
+    },
+    {
+      "term": "bipartisan cooperation",
+      "category": "academic",
+      "definition": "When members of two different political parties work together to achieve something.",
+      "example": "Democrats and Republicans writing a law together.",
+      "grade_level": "10",
+      "first_appearance": "The Decade Before the Fracture"
+    },
+    {
+      "term": "progressivity",
+      "category": "academic",
+      "definition": "A tax system where people who earn more money pay a higher percentage in taxes.",
+      "example": "A person earning $1 million pays 37% tax, while someone earning $30,000 pays 12%.",
+      "grade_level": "college",
+      "first_appearance": "1986 Tax Reform Act"
+    },
+    {
+      "term": "cross-pressured division",
+      "category": "academic",
+      "definition": "When people are pulled in different directions by conflicting loyalties or values.",
+      "example": "A union member who supports the Democratic party but also wants lower taxes, which Republicans promise.",
+      "grade_level": "college",
+      "first_appearance": "1991 Gulf War"
+    },
+    {
+      "term": "party-line voting",
+      "category": "academic",
+      "definition": "Voting exactly the way your political party tells you to, without crossing over to the other side.",
+      "example": "Every Republican voting 'no' and every Democrat voting 'yes' on a bill.",
+      "grade_level": "10",
+      "first_appearance": "1991 Gulf War"
+    },
+    {
+      "term": "triangulation",
+      "category": "academic",
+      "definition": "A political strategy where a leader takes a position that is between the two parties' positions, to appeal to the middle.",
+      "example": "A president supporting a smaller tax cut than Republicans want but a bigger one than Democrats want.",
+      "grade_level": "college",
+      "first_appearance": "Democratic Transformation"
+    },
+    {
+      "term": "partisan endogamy",
+      "category": "academic",
+      "definition": "The tendency for people to marry someone from the same political party.",
+      "example": "A Democrat marrying another Democrat instead of a Republican.",
+      "grade_level": "college",
+      "first_appearance": "Democratic Transformation"
+    },
+    {
+      "term": "geographic concentration",
+      "category": "academic",
+      "definition": "When people of the same type (like same party) live close together in certain areas.",
+      "example": "Democrats clustering in cities and Republicans in rural areas.",
+      "grade_level": "10",
+      "first_appearance": "Democratic Transformation"
+    },
+    {
+      "term": "non-negotiable issues",
+      "category": "academic",
+      "definition": "Topics that a person or group refuses to compromise on, no matter what.",
+      "example": "For some, abortion rights are non-negotiable—they will never accept restrictions.",
+      "grade_level": "10",
+      "first_appearance": "Democratic Transformation"
+    },
+    {
+      "term": "neoconservative",
+      "category": "academic",
+      "definition": "A type of conservatism that supports using American military power to spread democracy around the world.",
+      "example": "Supporting the Iraq War to remove Saddam Hussein and establish democracy.",
+      "grade_level": "college",
+      "first_appearance": "Republican Transformation"
+    },
+    {
+      "term": "ascendancy",
+      "category": "academic",
+      "definition": "A rise to power, influence, or popularity.",
+      "example": "The ascendancy of smartphones in the 2010s meant everyone had one.",
+      "grade_level": "10",
+      "first_appearance": "Republican Transformation"
+    },
+    {
+      "term": "RINO",
+      "category": "academic",
+      "definition": "Stands for 'Republican In Name Only'—a insult used by some Republicans against others they think are not conservative enough.",
+      "example": "Calling a Republican who supports some Democratic ideas a RINO.",
+      "grade_level": "10",
+      "first_appearance": "Republican Transformation"
+    },
+    {
+      "term": "primary challenge",
+      "category": "academic",
+      "definition": "When someone runs against an existing officeholder from their own party in the primary election.",
+      "example": "A conservative Republican running against a moderate Republican who is already in Congress.",
+      "grade_level": "10",
+      "first_appearance": "Republican Transformation"
+    },
+    {
+      "term": "social distance",
+      "category": "academic",
+      "definition": "How far apart people feel from each other in terms of trust, understanding, and willingness to interact.",
+      "example": "Feeling like you have nothing in common with someone from the other party is high social distance.",
+      "grade_level": "college",
+      "first_appearance": "Affective Polarization"
+    },
+    {
+      "term": "single-payer",
+      "category": "academic",
+      "definition": "A healthcare system where the government pays for all medical costs, like in Canada or the UK.",
+      "example": "Medicare for All is a type of single-payer system.",
+      "grade_level": "10",
+      "first_appearance": "Healthcare Mandates"
+    },
+    {
+      "term": "socialist overreach",
+      "category": "academic",
+      "definition": "A phrase used to criticize a policy as going too far toward socialism, or government control of the economy.",
+      "example": "Calling a new government healthcare program 'socialist overreach'.",
+      "grade_level": "college",
+      "first_appearance": "Healthcare Mandates"
+    },
+    {
+      "term": "PNTR",
+      "category": "academic",
+      "definition": "Permanent Normal Trade Relations—a status that gives a country normal trade benefits without yearly review.",
+      "example": "Giving China PNTR meant American companies could trade with China without special restrictions.",
+      "grade_level": "college",
+      "first_appearance": "Trade Policy"
+    },
+    {
+      "term": "WTO accession",
+      "category": "academic",
+      "definition": "The process of a country joining the World Trade Organization, which sets global trade rules.",
+      "example": "China's WTO accession in 2001 opened its markets to more foreign goods.",
+      "grade_level": "college",
+      "first_appearance": "Trade Policy"
+    },
+    {
+      "term": "wag the dog",
+      "category": "academic",
+      "definition": "A phrase meaning starting a small war to distract people from domestic problems.",
+      "example": "Accusing a president of bombing another country just to change the news from a scandal at home.",
+      "grade_level": "college",
+      "first_appearance": "Foreign Intervention"
+    },
+    {
+      "term": "authorization",
+      "category": "academic",
+      "definition": "Official approval from Congress for the president to use military force.",
+      "example": "Congress voting to authorize the president to go to war in Iraq.",
+      "grade_level": "10",
+      "first_appearance": "Foreign Intervention"
+    },
+    {
+      "term": "correlation",
+      "category": "math",
+      "definition": "A measure of how two things change together, from -1 (opposite) to 0 (no relation) to 1 (perfect match).",
+      "example": "Ice cream sales and temperature have a high positive correlation—when it's hot, both go up.",
+      "grade_level": "10",
+      "first_appearance": "Issue Alignment"
+    },
+    {
+      "term": "mathematically impossible",
+      "category": "math",
+      "definition": "A situation that cannot happen because it would break the rules of math.",
+      "example": "Having a triangle with four sides is mathematically impossible.",
+      "grade_level": "10",
+      "first_appearance": "Issue Alignment"
+    },
+    {
+      "term": "executive power",
+      "category": "academic",
+      "definition": "The authority of the president or governor to act without Congress's approval.",
+      "example": "A president using an executive order to change immigration policy.",
+      "grade_level": "10",
+      "first_appearance": "Same-Actor Position Reversals"
+    },
+    {
+      "term": "filibuster",
+      "category": "academic",
+      "definition": "A tactic in the Senate where a senator talks for a long time to delay or block a vote on a bill.",
+      "example": "A senator reading a phone book for hours to stop a law from passing.",
+      "grade_level": "10",
+      "first_appearance": "Same-Actor Position Reversals"
+    },
+    {
+      "term": "nuclear option",
+      "category": "academic",
+      "definition": "A Senate rule change that allows a simple majority (51 votes) to end a filibuster, instead of the usual 60.",
+      "example": "Using the nuclear option to confirm a Supreme Court justice with only 51 votes.",
+      "grade_level": "college",
+      "first_appearance": "Same-Actor Position Reversals"
+    },
+    {
+      "term": "exhausted majority",
+      "category": "framework",
+      "definition": "The large group of people (about 67% of Americans) who are tired of political fighting and want compromise.",
+      "example": "People who don't post about politics online but wish both sides would just get along.",
+      "grade_level": "college",
+      "first_appearance": "The Exhausted Majority"
+    },
+    {
+      "term": "pragmatic",
+      "category": "academic",
+      "definition": "Focused on practical results rather than strict principles or ideology.",
+      "example": "A pragmatic person would support a policy that works, even if it's not perfect according to their beliefs.",
+      "grade_level": "10",
+      "first_appearance": "The Exhausted Majority"
+    },
+    {
+      "term": "procedural fairness",
+      "category": "academic",
+      "definition": "The idea that the rules and processes used to make decisions should be fair and consistent.",
+      "example": "Everyone getting the same chance to speak in a meeting is procedural fairness.",
+      "grade_level": "college",
+      "first_appearance": "Documented Universal Aspirations"
+    },
+    {
+      "term": "distributive justice",
+      "category": "academic",
+      "definition": "The idea that resources and benefits in society should be shared fairly among all people.",
+      "example": "Making sure rich and poor neighborhoods both get good schools is distributive justice.",
+      "grade_level": "college",
+      "first_appearance": "Documented Universal Aspirations"
+    },
+    {
+      "term": "negative liberty",
+      "category": "philosophy",
+      "definition": "Freedom from interference by others, especially the government.",
+      "example": "The freedom to say what you want without being arrested.",
+      "grade_level": "college",
+      "first_appearance": "Documented Universal Aspirations"
+    },
+    {
+      "term": "positive liberty",
+      "category": "philosophy",
+      "definition": "Freedom to achieve your potential, which may require help from society or government.",
+      "example": "The freedom to go to college, which requires affordable tuition and schools.",
+      "grade_level": "college",
+      "first_appearance": "Documented Universal Aspirations"
+    },
+    {
+      "term": "content analyses",
+      "category": "academic",
+      "definition": "A research method where you systematically count and categorize the content of media, like news shows or tweets.",
+      "example": "Counting how many times each party is mentioned on Fox News vs. MSNBC.",
+      "grade_level": "college",
+      "first_appearance": "Documented Patterns"
+    },
+    {
+      "term": "dose-response relationships",
+      "category": "academic",
+      "definition": "A pattern where the more you are exposed to something, the stronger the effect.",
+      "example": "The more hours you watch partisan news, the more you dislike the other party.",
+      "grade_level": "college",
+      "first_appearance": "Causal Evidence"
+    },
+    {
+      "term": "algorithmic curation",
+      "category": "academic",
+      "definition": "When a computer program (like on YouTube or Facebook) chooses what content to show you based on your past behavior.",
+      "example": "After you watch one political video, the algorithm shows you more similar ones.",
+      "grade_level": "college",
+      "first_appearance": "Media Acceleration"
+    },
+    {
+      "term": "outrage optimization",
+      "category": "academic",
+      "definition": "Designing content to make people as angry or upset as possible, because that gets more clicks and shares.",
+      "example": "A headline that says 'You won't believe what they did now!' to make you furious.",
+      "grade_level": "college",
+      "first_appearance": "Media Acceleration"
+    },
+    {
+      "term": "psychoanalytic theory",
+      "category": "academic",
+      "definition": "A set of ideas from Sigmund Freud about how hidden desires and childhood experiences shape our behavior.",
+      "example": "The idea that you buy a certain car because it makes you feel powerful, not because you need it.",
+      "grade_level": "college",
+      "first_appearance": "Historical Foundation"
+    },
+    {
