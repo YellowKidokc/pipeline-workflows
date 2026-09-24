@@ -73,6 +73,18 @@ credentials. Add versioned JSON Schemas, lifecycle folders, atomic claiming,
 parallel-safe workers, bounded retry/backoff, append-only state history, a
 canonical JSON merger, and a six-result completion barrier.
 
+Every implemented station must include portable Windows launchers beside its
+operator-facing folder:
+- `RUN.bat` for normal inbox processing;
+- `RUN_ONE.bat` for an explicitly supplied paper;
+- `TROUBLESHOOT.bat` for read-only configuration and dependency checks.
+
+Launchers must resolve paths from `%~dp0`, work after the complete repository is
+moved, pass arguments through unchanged, return the underlying Python exit code,
+and pause only when explicitly launched in interactive mode. A launcher must not
+claim success when its Python command is missing or fails. Do not add placeholder
+launchers for unimplemented stations.
+
 Make dependencies explicit in a machine-readable DAG. Claims must use an
 atomic filesystem primitive and must prevent two workers from owning the same
 paper/station attempt. A retry must preserve attempt history and reuse valid
@@ -92,6 +104,7 @@ Acceptance criteria:
 - Atomic-claim contention has a deterministic automated test.
 - State transitions and retry attempts are auditable.
 - Completion is impossible with fewer than six valid results.
+- Every implemented station has tested portable Windows launchers.
 ```
 
 ## Prompt 3 — Paper Metrics
@@ -281,12 +294,26 @@ inputs recursively in strict lane order: Priority, Series, General. Never proces
 Hold. Prove no duplicate claiming under contention, resume from valid station
 results, and apply shared rate limiting and bounded retry.
 
+Provide bundle-level Windows launchers:
+- `RUN_COMPLETE_GRADING.bat`;
+- `RUN_BATCH.bat`;
+- `RUN_PARALLEL.bat`;
+- `RETRY_FAILED.bat`;
+- `STATUS.bat`;
+- `VALIDATE.bat`;
+- `TROUBLESHOOT.bat`.
+
+Each launcher must call the same Python API used by automated tests; `.bat` files
+must remain thin operator entry points rather than separate implementations.
+
 Acceptance criteria:
 - The pilot produces a verification report for every assertion above.
 - Failed/incomplete bundles never appear in PROCESSED or as completed output.
 - Batch mode cannot be enabled unless the pilot gate passes.
 - Worker count, rate limits, and retry policy are configuration, not constants.
 - JSON remains canonical; projections are reproducible and consistent.
+- Every launcher is exercised by a Windows smoke test, including paths containing
+  spaces and a copied/moved repository root.
 ```
 
 ## Review gates
