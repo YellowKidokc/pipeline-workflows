@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "scope": "Initial exact mathematical definitions; broader spiritual registry awaits receipt matching",
+  "definitions": [
+    {
+      "id": "DEF-PM-001",
+      "version": 1,
+      "term": "Supplied capacity",
+      "aliases": [
+        "power",
+        "capacity"
+      ],
+      "plain_definition": "Strictly positive capacity available to the model.",
+      "mathematical_definition": "P > 0",
+      "assumptions": [
+        "P is real"
+      ],
+      "lean_file": "LEAN_SOURCE/PrivativeMagnitude.lean",
+      "lean_symbol": "PrivativeMagnitude.State.power",
+      "theorem_names": [
+        "bounded_power"
+      ],
+      "source_sha256": "9373c645fe56f2195357705e10b9d35b99f3d0814a2715329ca093a7e0e50b2f",
+      "definition_status": "CANONICAL_MATHEMATICAL_CORE",
+      "proof_status": "SOURCE_INSPECTED_HISTORICAL_PASS_REPORTED",
+      "receipt": "RECEIPTS/01_MASTER_DERIVATION_FORMAL_VERIFICATION_SHOW_THE_WORK.md",
+      "fresh_build": false,
+      "receipt_commit_match": "NOT_VERIFIED",
+      "theological_application": "Use as the capacity component of the privation model; not every ordinary use of power.",
+      "scanner_policy": "Contextual comparison required; aliases retrieve candidates, never establish equivalence"
+    },
+    {
+      "id": "DEF-PM-002",
+      "version": 1,
+      "term": "Deprivation",
+      "aliases": [
+        "privation",
+        "deprivation"
+      ],
+      "plain_definition": "The bounded fraction of supplied capacity lost.",
+      "mathematical_definition": "0 <= d <= 1; remaining = (1-d)*P",
+      "assumptions": [
+        "P > 0; d real"
+      ],
+      "lean_file": "LEAN_SOURCE/PrivativeMagnitude.lean",
+      "lean_symbol": "PrivativeMagnitude.remaining",
+      "theorem_names": [
+        "remaining_nonneg",
+        "remaining_le_power",
+        "deprivation_reduces_capacity"
+      ],
+      "source_sha256": "9373c645fe56f2195357705e10b9d35b99f3d0814a2715329ca093a7e0e50b2f",
+      "definition_status": "CANONICAL_MATHEMATICAL_CORE",
+      "proof_status": "SOURCE_INSPECTED_HISTORICAL_PASS_REPORTED",
+      "receipt": "RECEIPTS/01_MASTER_DERIVATION_FORMAL_VERIFICATION_SHOW_THE_WORK.md",
+      "fresh_build": false,
+      "receipt_commit_match": "NOT_VERIFIED",
+      "theological_application": "The spiritual application must retain this model and domain, not merely the word sin.",
+      "scanner_policy": "Contextual comparison required; aliases retrieve candidates, never establish equivalence"
+    },
+    {
+      "id": "DEF-PM-003",
+      "version": 1,
+      "term": "Oriented effect",
+      "aliases": [
+        "enacted effect"
+      ],
+      "plain_definition": "Remaining capacity with a toward or against orientation.",
+      "mathematical_definition": "E = sigma*(1-d)*P; sigma in {-1,+1}",
+      "assumptions": [
+        "P > 0; 0 <= d <= 1"
+      ],
+      "lean_file": "LEAN_SOURCE/PrivativeMagnitude.lean",
+      "lean_symbol": "PrivativeMagnitude.effect",
+      "theorem_names": [
+        "abs_effect_eq_remaining",
+        "sign_changes_direction_not_magnitude"
+      ],
+      "source_sha256": "9373c645fe56f2195357705e10b9d35b99f3d0814a2715329ca093a7e0e50b2f",
+      "definition_status": "CANONICAL_MATHEMATICAL_CORE",
+      "proof_status": "SOURCE_INSPECTED_HISTORICAL_PASS_REPORTED",
+      "receipt": "RECEIPTS/01_MASTER_DERIVATION_FORMAL_VERIFICATION_SHOW_THE_WORK.md",
+      "fresh_build": false,
+      "receipt_commit_match": "NOT_VERIFIED",
+      "theological_application": "Negative orientation is the framework application; theological identity is separate from the algebra.",
+      "scanner_policy": "Contextual comparison required; aliases retrieve candidates, never establish equivalence"
+    },
+    {
+      "id": "DEF-PM-004",
+      "version": 1,
+      "term": "Total deprivation",
+      "aliases": [
+        "total deprivation"
+      ],
+      "plain_definition": "The boundary at which no supplied capacity remains available for enactment.",
+      "mathematical_definition": "d = 1 implies E = 0",
+      "assumptions": [
+        "P > 0; sigma in {-1,+1}"
+      ],
+      "lean_file": "LEAN_SOURCE/PrivativeMagnitude.lean",
+      "lean_symbol": "PrivativeMagnitude.total_deprivation_annihilates",
+      "theorem_names": [
+        "total_deprivation_annihilates"
+      ],
+      "source_sha256": "9373c645fe56f2195357705e10b9d35b99f3d0814a2715329ca093a7e0e50b2f",
+      "definition_status": "CANONICAL_MATHEMATICAL_CORE",
+      "proof_status": "SOURCE_INSPECTED_HISTORICAL_PASS_REPORTED",
+      "receipt": "RECEIPTS/01_MASTER_DERIVATION_FORMAL_VERIFICATION_SHOW_THE_WORK.md",
+      "fresh_build": false,
+      "receipt_commit_match": "NOT_VERIFIED",
+      "theological_application": "Do not infer the converse or a real-world measurement from this one-way theorem.",
+      "scanner_policy": "Contextual comparison required; aliases retrieve candidates, never establish equivalence"
+    },
+    {
+      "id": "DEF-ME-001",
+      "version": 1,
+      "term": "Nine-coordinate product",
+      "aliases": [
+        "kernel product",
+        "normalized product"
+      ],
+      "plain_definition": "Product of nine normalized real coordinates.",
+      "mathematical_definition": "K(x) = product(i=0..8, x_i); x_i in [0,1]",
+      "assumptions": [
+        "Exactly nine real coordinates; all in unit interval"
+      ],
+      "lean_file": "LEAN_SOURCE/KernelV1.lean",
+      "lean_symbol": "Theophysics.KernelV1.kernelProduct",
+      "theorem_names": [
+        "product_stays_in_unit_interval",
+        "zero_veto",
+        "product_one_forces_all_coordinates_one",
+        "coordinatewise_increase_cannot_lower_product"
+      ],
+      "source_sha256": "f537307c28ff8810b9925f53945e83acc8be65cbfa124744e7b241240fa6f198",
+      "definition_status": "CANONICAL_MATHEMATICAL_CORE",
+      "proof_status": "SOURCE_INSPECTED_HISTORICAL_PASS_REPORTED",
+      "receipt": "RECEIPTS/01_MASTER_DERIVATION_FORMAL_VERIFICATION_SHOW_THE_WORK.md",
+      "fresh_build": false,
+      "receipt_commit_match": "NOT_VERIFIED",
+      "theological_application": "This is the product core, not a definition of all uses of coherence or the full C_W wrapper.",
+      "scanner_policy": "Contextual comparison required; aliases retrieve candidates, never establish equivalence"
+    }
+  ]
+}
