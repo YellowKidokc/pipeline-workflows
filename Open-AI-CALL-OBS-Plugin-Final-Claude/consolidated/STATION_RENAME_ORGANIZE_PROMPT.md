@@ -5,20 +5,14 @@ Path in repo: `Open-AI-CALL-OBS-Plugin-Final-Claude/stations_raw/`
 (originally from a local repo called `Open-AI-CALL-claude-multi-api-batch-processor`
 on a separate drive — that origin no longer matters, work only in this repo/branch)
 
-## IMPORTANT — this is a partial import, check before you start
+## Before you start
 
-As of this prompt, only stations **01 through 10** have been pushed to
-`stations_raw/` (`api_call_01` .. `api_call_10`). Stations 11-23 were not
-copied over yet in this pass. Before doing anything:
-
-1. Run `ls Open-AI-CALL-OBS-Plugin-Final-Claude/stations_raw/` and confirm
-   which `api_call_NN*` folders actually exist in the repo right now.
-2. Only rename the ones that are actually present. Use the full mapping
-   table below as reference for correct target names, but skip any row
-   whose `current` folder isn't in the repo yet — do not invent or
-   create placeholder folders for missing stations.
-3. Note in your final report which station numbers (of 01-23) were
-   present vs. missing, so the next import pass knows what's left.
+All 23 stations (`api_call_01` through `api_call_23_MTL`) are now present
+in `stations_raw/` — run `ls Open-AI-CALL-OBS-Plugin-Final-Claude/stations_raw/`
+to confirm the full set is there before proceeding, since folder contents
+can still drift between when this prompt was written and when you run it.
+If any are unexpectedly missing, note it in your final report rather than
+inventing or skipping silently.
 
 Also check `Open-AI-CALL-OBS-Plugin-Final-Claude/consolidated/multi_api_batch_core/`
 in this same repo — that's the shared engine (`worker.py`, `providers.py`,
