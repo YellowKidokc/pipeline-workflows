@@ -1,0 +1,39 @@
+{
+  "actions": [
+    {
+      "name": "List available workflows",
+      "category": "Workflows",
+      "description": "Show the registered workflows without changing any files.",
+      "command": ["{python}", "scripts/unified.py", "list"],
+      "selection": "none"
+    },
+    {
+      "name": "Preview a workflow packet",
+      "category": "Workflows",
+      "description": "Preview the selected workflow JSON against a packet folder. This does not execute stations.",
+      "command": ["{python}", "scripts/unified.py", "run", "{file}", "{folder}"],
+      "selection": "file_and_folder"
+    },
+    {
+      "name": "Combine Markdown files",
+      "category": "Markdown & documents",
+      "description": "Open the existing interactive Markdown combiner for a folder of notes.",
+      "command": ["{powershell}", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "APIs/Reusable_Tools_From_Theophysics/Split_Combine_and_Organize/01_ENGINE/Scripts/Combine-All-Markdown.ps1", "{folder}"],
+      "selection": "folder"
+    },
+    {
+      "name": "Vault split, number, and group tools",
+      "category": "Files & folders",
+      "description": "Open the existing VaultTools menu. It asks before choosing an operation and path.",
+      "command": ["{powershell}", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "APIs/Reusable_Tools_From_Theophysics/Split_Combine_and_Organize/01_ENGINE/01_ENGINE/scripts/VaultTools.ps1"],
+      "selection": "none"
+    },
+    {
+      "name": "Excel sheets to CSV",
+      "category": "Conversions",
+      "description": "Open the existing Excel-to-CSV PowerShell tool (desktop Excel is required).",
+      "command": ["{powershell}", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "APIs/Reusable_Tools_From_Theophysics/Conversions_and_Data_Tools/01_ENGINE/Scripts/Excelsheets_to_CSV.ps1"],
+      "selection": "none"
+    }
+  ]
+}
