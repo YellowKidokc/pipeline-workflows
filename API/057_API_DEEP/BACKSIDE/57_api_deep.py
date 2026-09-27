@@ -429,7 +429,7 @@ def run_calls(specs, a, cache, out: Path) -> dict:
 def prepare(src: Path, paper: Path | None, a) -> dict:
     text = src.read_text(encoding="utf-8", errors="replace")
     meta, body = split_front_matter(text)
-    body = re.sub(r"<!-- scorecard:start -->.*?<!-- scorecard:end -->", "", body, flags=re.S)   # machine scorecard, not the speaker's words
+    body = re.sub(r"<!-- (analysis|scorecard):start -->.*?<!-- \1:end -->\n?", "", body, flags=re.S)   # our own blocks, not the speaker's words (AGENTS.md: read the source only)
     body = re.sub(r"^\[Watch on YouTube\].*$", "", body, flags=re.M)
     title = (re.search(r'^title:\s*"?(.*?)"?\s*$', meta, re.M) or re.search(r"^#\s+(.+)$", body, re.M))
     title = title.group(1).strip() if title else src.stem

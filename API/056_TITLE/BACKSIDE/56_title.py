@@ -13,4 +13,6 @@ if __name__ == "__main__":
     if not items:
         items = [str(d) for d in (MAIN / n / "INBOX" for n in INBOXES) if d.is_dir() and any(d.rglob("*.md"))]
         print(f"56_TITLE: {'titling ' + ', '.join(items) if items else 'no .md notes waiting in the inboxes; nothing to title'}")
-    raise SystemExit(subprocess.run([sys.executable, str(TOOL), *items, "--apply"]).returncode if items else 0)
+    flags = [] if "--dry-run" in sys.argv else ["--apply"]   # a dry run only shows the titles; it never renames
+    flags += ["--all"] if "--all" in sys.argv else []
+    raise SystemExit(subprocess.run([sys.executable, str(TOOL), *items, *flags]).returncode if items else 0)

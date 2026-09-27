@@ -352,3 +352,10 @@ API/**/OUTBOX/[0-9][0-9][0-9]_*/OUTBOX/**
 !API/**/OUTBOX/[0-9][0-9][0-9]_*/INBOX/**/
 !API/**/OUTBOX/[0-9][0-9][0-9]_*/**/.gitkeep
 API/**/OUTBOX/[0-9][0-9][0-9]_*/**/__pycache__/
+
+# API keys and quick-call scratch never go to the public repo
+**/key.txt
+**/*.key
+.env
+API/000_QUICK_CALL/input/
+API/000_QUICK_CALL/output/

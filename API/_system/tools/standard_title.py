@@ -241,6 +241,8 @@ def process(note: Path, apply: bool) -> str:
     need_title = not field(text, "doc_title") and bool(SLUG.fullmatch(raw))
     if not keys or not move or need_title or (series_code and not series):
         body = text.split("## Transcript", 1)[-1] if "## Transcript" in text else text
+        body = re.sub(r"<!-- (analysis|scorecard):start -->.*?<!-- \1:end -->\n?", "", body, flags=re.S)   # the source only
+        body = re.sub(r"\A---\n.*?\n---\n", "", body, flags=re.S)                                          # not the YAML
         d = tag(title, body, author, want_title=need_title,
                 series=(series_code, part, series) if series_code and not series else None)
         keys, move = (keys, move) if keys and move else (d["keywords"], d["move"])
