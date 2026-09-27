@@ -279,6 +279,9 @@ def _call_one(messages: list[dict[str, str]], *, provider: str, model: str,
         body["max_tokens"] = max_tokens
     if json_mode:
         body["response_format"] = {"type": "json_object"}
+        # DeepSeek refuses json_object mode (HTTP 400) unless the prompt says "json" somewhere
+        if not any("json" in str(m.get("content", "")).lower() for m in messages):
+            body["messages"] = [*messages, {"role": "system", "content": "Reply with a single JSON object."}]
     raw = json.dumps(body).encode("utf-8")
     headers = {"Content-Type": "application/json", "X-One-Menu-Task": task, "X-One-Menu-Focus": "engine"}
     gateway = os.environ.get("ONE_MENU_GATEWAY", "")
@@ -288,7 +291,7 @@ def _call_one(messages: list[dict[str, str]], *, provider: str, model: str,
         status, payload, _, attempts, error = forward_with_policy(provider, spec["chat"], raw, headers)
     elapsed = time.monotonic() - t0
     if error or status >= 400:
-        detail = error or f"HTTP {status}: {payload[:300]!r}"
+        detail = f"{error or f'HTTP {status}'}: {payload[:300]!r}" if payload else (error or f"HTTP {status}")
         return LLMResult("", provider, model, attempts=attempts, elapsed_seconds=elapsed, started_at=started, error=detail, task=task)
     try:
         text, pt, ct = _parse_completion(payload)
