@@ -315,8 +315,9 @@ def call_deepseek_raw(
 
 class PaperProcessor:
     def __init__(self, index_writer: MasterIndexWriter, provider: str = "auto", model: str | None = None,
-                 timeout: int = 900):
+                 timeout: int = 900, focus: list[str] | None = None):
         self.index_writer = index_writer
+        self.focus = [f for f in (focus or []) if f.strip()]     # David's extra questions (up to 5, from the button)
         self.provider = provider
         self.model = model
         self.timeout = timeout
@@ -362,7 +363,7 @@ class PaperProcessor:
         slug = make_slug(paper_path.name)
 
         # Idempotency / No-Redo Check: Only skip if fully indexed AND output companion exists
-        if not force and self._is_already_completed(file_sha, slug):
+        if not force and not self.focus and self._is_already_completed(file_sha, slug):   # new questions = new run
             print(f"    [SKIP] Already processed & verified: {paper_path.name} (SHA: {file_sha[:8]})")
             PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
             dest_orig = PROCESSED_DIR / f"{slug}_{paper_path.suffix}"
@@ -387,6 +388,10 @@ class PaperProcessor:
         original_bytes, _orig_sha, _preserved_path = article_stack.preserve(paper_path)
         raw_text = original_bytes.decode("utf-8", errors="replace")
         scripture_hits = scripture.find(raw_text)
+        focus_block = ("14. YOUR QUESTIONS (from David, for this run): right after the S01 section, add a section "
+                       "\"## Your questions\" that answers each one below from the source, with quotes and timestamps; "
+                       "say plainly when the source does not address it.\n"
+                       + "\n".join(f"    - {q}" for q in self.focus) + "\n") if self.focus else ""
 
         # Series Shared Memory / DeepSeek Cross-Paper Notes & Persistent Scratchpad
         series_context = ""
@@ -443,7 +448,7 @@ INSTRUCTIONS:
 13. Under "S02 · Claim Definition", right after "## Definitions", fill "## Scriptures": one row per passage, with what
     the source says about it.
 {scripture.prompt_block(scripture_hits)}
-
+{focus_block}
 CANONICAL TEMPLATE SKELETON:
 {self.template_text}
 
@@ -632,6 +637,7 @@ def main():
     parser.add_argument("--continuous", action="store_true", help="Keep running as daemon watching inbox")
     parser.add_argument("--root", type=Path, default=None, help="Working EVIDENCE folder (default: parent of SCRIPTS dir)")
     parser.add_argument("--limit", type=int, default=None, help="ONE_MENU: process at most N documents, then stop")
+    parser.add_argument("--focus", action="append", default=[], help="an extra question to answer (repeatable, up to 5)")
     args = parser.parse_args()
 
     if args.root:
@@ -640,7 +646,7 @@ def main():
     print(f"=== TURBO ACTIONABLE UPGRADE ENGINE STARTING (Workers: {args.workers} | Provider: {args.provider} | Model: {args.model or 'default'}) ===")
     print(f"Root: {ROOT_DIR}")
     index_writer = MasterIndexWriter(OUTBOX_DIR / "MASTER_INDEX")
-    processor = PaperProcessor(index_writer, provider=args.provider, model=args.model, timeout=args.timeout)
+    processor = PaperProcessor(index_writer, provider=args.provider, model=args.model, timeout=args.timeout, focus=args.focus)
 
     total_completed = 0
     total_errors = 0

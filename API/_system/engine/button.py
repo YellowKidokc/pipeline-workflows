@@ -137,8 +137,8 @@ def title_first(notes: list[Path]) -> list[Path]:
 
 # ------------------------------------------------------------------ 5 run
 
-def deep_ckg(front: Path, notes: list[Path]) -> int:
-    """The deep CKG companion (evidence turbo runner) on these notes; flat '<note> · CKG.md' into OUTBOX."""
+def deep_ckg(front: Path, notes: list[Path], out: Path, workers: int, focus: list[str]) -> int:
+    """The deep CKG companion (evidence turbo runner) on these notes; flat '<note> · CKG.md' into `out`."""
     runner = SYSTEM / "vendor" / "evidence" / "SCRIPTS" / "turbo_pipeline_runner.py"
     work = front / "BACKSIDE" / "_deep"
     inbox = work / "INBOX"
@@ -148,43 +148,60 @@ def deep_ckg(front: Path, notes: list[Path]) -> int:
         text = re.sub(r"<!-- (analysis|scorecard):start -->.*?<!-- \1:end -->\n?", "", text, flags=re.S)
         (inbox / n.name).write_text(text, encoding="utf-8")
     started = datetime.now().timestamp()
-    code = subprocess.run([sys.executable, str(runner), "--root", str(work), "--workers", "4", "--provider", "deepseek"],
+    code = subprocess.run([sys.executable, "-u", str(runner), "--root", str(work), "--workers", str(workers),
+                           "--provider", "deepseek", *[a for q in focus for a in ("--focus", q)]],
                           cwd=runner.parent).returncode
-    outbox = front / "OUTBOX"
     made = [p for p in (work / "OUTBOX").rglob("*_C1_*.md") if p.stat().st_mtime >= started - 5]
     for n in notes:
-        slug = _slug(n.name)
-        hits = sorted((p for p in made if p.name.startswith(slug)), key=lambda p: p.stat().st_mtime)
+        hits = sorted((p for p in made if p.name.startswith(_slug(n.name))), key=lambda p: p.stat().st_mtime)
         if hits:
-            shutil.copy2(hits[-1], outbox / f"{n.stem} · CKG.md")
+            shutil.copy2(hits[-1], out / f"{n.stem} · CKG.md")
         else:
             print(f"    no CKG companion found for {n.name}")
     return code
 
 
 def _slug(name: str) -> str:
-
     s = re.sub(r"[^\w\-]", "_", Path(name).stem)
     s = re.sub(r"_+", "_", s).strip("_")
     return s[:80] if s else "untitled_paper"
 
 
-def run_station(front: Path, st: dict, notes: list[Path], focus: list[str]) -> int:
+def run_station(front: Path, st: dict, notes: list[Path], out: Path, workers: int, focus: list[str]) -> int:
     (front / "OUTBOX").mkdir(exist_ok=True)
+    out.mkdir(parents=True, exist_ok=True)
     listfile = front / "OUTBOX" / LAST                 # every station keeps the list of notes it last ran
     listfile.write_text("\n".join(map(str, notes)) + "\n", encoding="utf-8")
+    say(f"{st['label']}: {len(notes)} note(s), {workers} at once, results -> {out}"
+        + (f", looking for: {' | '.join(focus)}" if focus else ""))
     if st["number"] == "20":
-        code = deep_ckg(front, notes)
-    else:
-        row = next(r for r in station_rows() if r["number"] == st["number"])
-        if st.get("kind") == "legacy":                  # a wrapped older tool: it reads its own inputs, run as before
-            cmd = [sys.executable, str(SYSTEM / "engine" / "menu.py"), st["number"], "--yes"]
-        else:                                           # engine station: these notes, flat copies in this OUTBOX
-            cmd = [sys.executable, str(station_dir(row["label"]) / row["script"]), f"@{listfile}",
-                   "--outbox", str(front / "OUTBOX")] + (["--focus", "; ".join(focus)] if focus else [])
-        print(f"\n$ {' '.join(cmd)}")
-        code = subprocess.run(cmd, cwd=MAIN).returncode
-    return code
+        return deep_ckg(front, notes, out, workers, focus)
+    row = next(r for r in station_rows() if r["number"] == st["number"])
+    if st.get("kind") == "legacy":                      # a wrapped older tool: it reads its own inputs, run as before
+        cmd = [sys.executable, str(SYSTEM / "engine" / "menu.py"), st["number"], "--yes", "--workers", str(workers)]
+    else:                                               # engine station: these notes, flat copies into `out`
+        cmd = [sys.executable, "-u", str(station_dir(row["label"]) / row["script"]), f"@{listfile}",
+               "--outbox", str(out), "--workers", str(workers)] + (["--focus", "; ".join(focus)] if focus else [])
+    return subprocess.run(cmd, cwd=MAIN).returncode
+
+
+def say(line: str) -> None:
+    print(f"\n[{datetime.now():%H:%M:%S}] {line}", flush=True)
+
+
+def ask_int(question: str, default: int, low: int, high: int) -> int:
+    raw = ask(f"{question} ({low}-{high}, Enter = {default}) ")
+    return max(low, min(high, int(raw))) if raw.isdigit() else default
+
+
+def ask_focus() -> list[str]:
+    focus = []
+    for i in range(5):
+        extra = ask(f"  Anything else to look for in this pass? ({i + 1}/5, Enter = done) ")
+        if not extra:
+            break
+        focus.append(extra)
+    return focus
 
 
 # ------------------------------------------------------------------ main
@@ -209,39 +226,45 @@ def main(mode: str, front: Path) -> int:
                 print(f"Nothing in {front / 'INBOX'}. Drop a channel folder, a folder of notes, or notes in it.")
                 return 0
         else:
-            raw = ask("Where are the notes? (drag a folder or a note here) ")
+            raw = ask("Where is the folder? (drag a folder or a note here) ")
             sources = [Path(raw)] if raw else []
             if not sources or not sources[0].exists():
                 print(f"Not found: {raw}")
                 return 2
+        say("scanning")
         notes = gather(sources)
         if not notes:
             return 0
-        if not base:
-            notes = title_first(notes)
-    if ask(f"\nRun {st['label']} on {len(notes)} note(s)? [Y/n] ").lower() in ("n", "no"):
+    where = ask(f"Where do you want the output? (Enter = {front / 'OUTBOX'}; answers always also go on each note) ")
+    out = Path(where) if where else front / "OUTBOX"
+    workers = ask_int("How many at once?", 8, 1, 30)
+    focus = ask_focus()                                 # up to 5 extra questions for this pass
+    if ask(f"\nRun {st['label']} on {len(notes)} note(s), {workers} at once? [Y/n] ").lower() in ("n", "no"):
         return 1
-    focus: list[str] = []
-    code = run_station(front, st, notes, focus)
+    if not base:
+        say("title: notes without their standard title")
+        notes = title_first(notes)
+    code = run_station(front, st, notes, out, workers, focus)
+    say("scriptures into each note's YAML")
     scripture = action("scripture")
-    for n in notes:                                   # scriptures into the YAML, then everything onto the note
+    for n in notes:
         if n.is_file():
             r = scripture.run(n, n.read_text(encoding="utf-8"))
             n.write_text(N.set_fields(n.read_text(encoding="utf-8"), r["yaml"]), encoding="utf-8")
-    layers =sorted(d for d in (front / "OUTBOX").iterdir() if d.is_dir() and (d / "BACKSIDE" / "station.json").is_file())
+    layers = sorted(d for d in (front / "OUTBOX").iterdir() if d.is_dir() and (d / "BACKSIDE" / "station.json").is_file())
+    looked = [out]
     if layers and not base:
-        for i in range(5):
-            extra = ask(f"\nAnything else to look for in these notes? ({i + 1}/5, Enter = done) ")
-            if not extra:
-                break
-            focus.append(extra)
-        menu = "  ".join(f"{station_of(d)['number']} {d.name.split('_', 1)[1]}" for d in layers)
-        picked = ask(f"Run a layer on the same notes? {menu}  (numbers, Enter = none) ").replace(",", " ").split()
-        for d in layers:
-            if station_of(d)["number"] in picked:
-                code |= run_station(d, station_of(d), notes, focus)
-    publish_on_note(notes)          # last: the CKG, then each layer under it, all above the transcript
-    print(f"\nDone. Results: {front / 'OUTBOX'}   Answers: on each note.")
+        menu = "  ".join(f"{i} {d.name.split('_', 1)[1].replace('_', ' ').title()}" for i, d in enumerate(layers, 1))
+        picked = ask(f"\nPut a second layer on these notes? {menu}  (numbers, Enter = none) ").replace(",", " ").split()
+        for i, d in enumerate(layers, 1):
+            if str(i) in picked:
+                print(f"\n{d.name}")
+                layer_out = d / "OUTBOX" if out == front / "OUTBOX" else out / d.name
+                code |= run_station(d, station_of(d), notes, layer_out, workers, ask_focus())
+                looked.append(layer_out)
+    say("onto each note: the CKG, then each layer under it, above the transcript")
+    publish_on_note(notes, looked)
+    say(f"done. Results: {out}   Answers: on each note.")
     return code
 
 
