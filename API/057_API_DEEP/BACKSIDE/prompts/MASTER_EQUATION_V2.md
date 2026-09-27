@@ -23,7 +23,7 @@ The factors multiply, so if any required factor is zero the whole collapses (zer
 | F | Non-local correlation: related systems are no longer independent |
 | C | Integration: the local integrator inside the product |
 
-Source: `D:\GitHub\Faith-through-physics-atoms\mothership\pills\master-equation\01_canonical\`. The runner
+Source: the `me_pills` location in `_system/config/paths.json`. The runner
 should read the slot meanings from those pills at run time rather than hard-coding this table.
 
 ## Part A: the analog (every paper)

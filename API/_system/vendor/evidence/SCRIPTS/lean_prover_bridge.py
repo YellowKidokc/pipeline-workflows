@@ -4,7 +4,7 @@ LEAN 4 PROVER BRIDGE & FORMAL VERIFIER (v0.5)
 Translates Theophysics truth predicates and Master Equation axioms into formal
 Lean 4 definitions and theorems, verifies them via Lake, and records Lean receipts.
 
-Target Lean Project: D:\\GitHub\\Canonizationv1
+Target Lean Project: the ``canonization_root`` key in ``config/paths.json``.
 """
 
 from __future__ import annotations
@@ -282,5 +282,4 @@ if __name__ == "__main__":
     parser.add_argument("--continuous", action="store_true", help="Keep running as daemon watching inbox")
     args = parser.parse_args()
     run_lean_verification(Path(args.lean_dir), workers=args.workers, continuous=args.continuous)
-
 

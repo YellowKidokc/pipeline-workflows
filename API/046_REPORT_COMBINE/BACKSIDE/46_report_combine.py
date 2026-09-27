@@ -3,7 +3,7 @@ report.xlsx, and fill every Excel template map in config/excel_templates/. Local
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_system"))
+sys.path.insert(0, str(next(p for p in Path(__file__).resolve().parents if (p / "_system").is_dir()) / "_system"))
 from engine.output import page  # noqa: E402
 from engine.paths import inside  # noqa: E402
 from engine.report import build  # noqa: E402

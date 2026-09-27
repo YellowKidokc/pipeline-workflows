@@ -29,7 +29,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from . import llm
-from .focus import append, compose
+from .focus import append, compose, findings_md
 from .goals import goal_id
 from .items import Item, discover
 from .output import dated_run_dir, write_bundle
@@ -299,6 +299,18 @@ class Station:
         out = dated_run_dir(folder, self.label)
         if result is None:
             result = ItemResult({"errors": ctx.errors}, "<p>This run failed; see the receipt.</p>")
+        # Focus answers are part of the report, not merely the receipt.  Collect them
+        # recursively because multi-call stations commonly return one object per pass.
+        def focus_answers(value):
+            if isinstance(value, dict):
+                return list(value.get("focus_findings") or []) + [x for v in value.values() for x in focus_answers(v)]
+            if isinstance(value, list):
+                return [x for v in value for x in focus_answers(v)]
+            return []
+        answers = list(dict.fromkeys(json.dumps(x, sort_keys=True) for x in focus_answers(result.data)))
+        if answers and result.markdown:
+            rendered = findings_md([json.loads(x) for x in answers])
+            result.markdown = "\n".join(rendered) + result.markdown
         write_bundle(out, self.label, result.data, result.html, receipt, result.sheets)
         if result.markdown:
             (out / f"{self.label}.md").write_text(result.markdown, encoding="utf-8")

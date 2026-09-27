@@ -33,7 +33,11 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
 
-    root = args.root or Path(__file__).resolve().parents[3]
+    if args.root is None:
+        system = next(p for p in Path(__file__).resolve().parents if p.name == "_system")
+        sys.path.insert(0, str(system))
+        from engine.paths import station_dir
+    root = args.root or station_dir("20_CKG_RUN").parent
     counts = extract_all(root, args.input)
     total = sum(counts.values())
     print(f"Extracted {total} atom(s):")

@@ -2,9 +2,9 @@
 SQLITE MASTER PIPELINE DATABASE & SYNC ENGINE (v0.5)
 ====================================================
 Idempotently imports all paper companions, master index records, truth predicates,
-claims, math operators, and pipeline runs into an optimized SQLite database on D:\ drive.
+claims, math operators, and pipeline runs into SQLite.
 
-Target Database: D:\\GitHub\\Canonizationv1\\theophysics_pipeline.db
+Target Database: ``theophysics_pipeline.db`` under the ``canonization_root`` path key.
 """
 
 from __future__ import annotations

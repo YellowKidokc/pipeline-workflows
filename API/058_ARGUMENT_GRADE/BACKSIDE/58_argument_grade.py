@@ -235,7 +235,7 @@ def main() -> int:
     p = argparse.ArgumentParser(prog=LABEL, description=__doc__.splitlines()[0])
     p.add_argument("items", nargs="*"); p.add_argument("--limit", type=int); p.add_argument("--workers", type=int, default=30)
     p.add_argument("--provider", default="deepseek"); p.add_argument("--model", default="deepseek-chat")
-    p.add_argument("--focus", default=""); p.add_argument("--redo", action="store_true"); p.add_argument("--out")
+    p.add_argument("--focus", action="append", default=[]); p.add_argument("--redo", action="store_true"); p.add_argument("--out", "--outbox", dest="out")
     p.add_argument("--publish", action="store_true", help="afterwards write the analysis onto each source note")
     p.add_argument("--dry-run", action="store_true", help="list what would run; no API")
     a = p.parse_args(); a.copy = None

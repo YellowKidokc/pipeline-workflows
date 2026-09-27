@@ -255,9 +255,19 @@ def run_station(front: Path, st: dict, notes: list[Path], out: Path, workers: in
     row = next(r for r in station_rows() if r["number"] == st["number"])
     if st.get("kind") == "legacy":                      # a wrapped older tool: it reads its own inputs, run as before
         cmd = [sys.executable, str(SYSTEM / "engine" / "menu.py"), st["number"], "--yes", "--workers", str(workers)]
+        if st.get("items"):
+            cmd += [a for n in notes for a in ("--item", str(n))]
+        else:
+            say("legacy station: its configured evidence/data root is used; selected notes are not forwarded")
     else:                                               # engine station: these notes, flat copies into `out`
         cmd = [sys.executable, "-u", str(station_dir(row["label"]) / row["script"]), f"@{listfile}",
                "--outbox", str(out), "--workers", str(workers)] + (["--focus", "; ".join(focus)] if focus else [])
+        if st["number"] in ("48", "49"):
+            topic = ask("What topic should this station synthesize? ")
+            if not topic:
+                print("A topic is required.")
+                return 2
+            cmd += ["--topic", topic]
     return run_guarded(cmd, MAIN)
 
 

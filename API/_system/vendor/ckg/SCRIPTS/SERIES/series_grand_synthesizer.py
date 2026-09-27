@@ -32,9 +32,11 @@ import requests
 import json
 import hashlib
 
-SCRIPTS_DIR = Path(__file__).resolve().parent
-ROOT_DIR = SCRIPTS_DIR.parents[4] / "CKG"
-BACKSIDE_DIR = ROOT_DIR.parent / "_BACKSIDE" / "CKG"
+SYSTEM = next(p for p in Path(__file__).resolve().parents if p.name == "_system")
+sys.path.insert(0, str(SYSTEM))
+from engine.paths import station_dir
+ROOT_DIR = station_dir("20_CKG_RUN").parent
+BACKSIDE_DIR = SYSTEM / "vendor" / "ckg"
 sys.path.insert(0, str(BACKSIDE_DIR))
 from workbench.ckg import atomic, save, lock
 OUTBOX_DIR = ROOT_DIR / "OUTBOX"

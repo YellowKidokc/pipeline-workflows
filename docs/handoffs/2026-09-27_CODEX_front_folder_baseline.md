@@ -112,12 +112,12 @@ Write `API/_system/FRONT_FOLDER_BASELINE.md` with one row per station. The colum
 
 Already fixed by Claude (c9bc346+): `.gitignore` now blocks `key.txt`/`.env`/quick-call input+output; 56 `--dry-run` no longer renames; 57/58 and the title call strip `<!-- analysis -->` blocks and YAML before the model sees the note.
 
-Still to do:
-1. **Legacy stations ignore their INBOX** (030-039, 043, 045, 050-054): `button.py` sends them to `menu.py N --yes`, which runs over vendor data roots and drops the chosen notes. Do not just add two buttons: either wire the chosen notes through, or label the buttons honestly ("runs over the evidence root"). Say which in the report.
-2. **56/57/58 bypass `button.py`** (they call scripts directly and use `ask.py`) and have no INBOX/OUTBOX. Bring them onto `button.py`. Remove the hard-coded inbox list in `56_title.py`.
-3. **`--focus` is lost on 57/58**: `menu.py command_for` repeats `--focus`, but the scripts take one value (`default=""`). Use `action="append"`. `publish`/`out` are listed in stations.json but never passed.
-4. **`parents[2]`** in every non-CKG station script and in `_ACTIONS/actions/*.py`, plus `parents[3]`/`parents[4]` in vendor ckg: replace them with the walk-up finder.
-5. **Prompts hidden in `_system/vendor/**`**: 17 PROMPT.md files are stubs. Copy the real prompt text into each BACKSIDE PROMPT.md (or point the script at it), so David can read and edit it there. The extras 57 tacks onto the end (lean4, coherence, axiom_nodes `unmapped_claims`) go INTO the prompt's JSON schema; LEAN4.md must stop claiming corpus search.
-6. **8k output risk**: 041 PASS1 (a row per paragraph), 045/054 (whole paper in one call), 055 ASSUMPTIONS (markdown paper inside JSON), 060 21_GREAT_GRADER / 13_HTML. Split the calls or continue them; 060 13_ISOMORPHISM_REGISTRY_HTML should return JSON and have a local template render the page.
-7. **Hard-coded machine paths**: `057/BACKSIDE/prompts/MASTER_EQUATION_V2.md`, `engine/paths.py` doc, vendor `lean_prover_bridge.py` and `sync_to_sqlite.py` (`D:\GitHub\Canonizationv1`), and `API_ALL/API_HOME` in the standard_title.py master-record header. Move them to `paths.json` keys.
-8. **Small ones**: 022 is nested inside a BACKSIDE (move it into 020's OUTBOX as a layer or beside it; ask); stations.json labels don't match the folders (41_STORY, 45_CLAIM_ATOMS, 54_AXIOM_NODES_RUNNER); 052 claims `uses_api: true` but only audits; 000_QUICK_CALL gets the two buttons and INBOX/OUTBOX, and its HTTP client must flag `finish_reason=length`.
+Disposition from the Codex baseline pass:
+1. **Legacy inputs — fixed or labelled honestly.** The item-aware legacy stations receive the selected notes. Legacy tools that only support their configured vendor data root say so in both generated button descriptions and at run time; they no longer pretend the chosen INBOX/folder is forwarded. See the per-station report for the distinction.
+2. **56/57/58 front door — fixed.** They now have INBOX/OUTBOX and generated buttons through `button.py`; 56 only defaults to its own INBOX.
+3. **57/58 shared flags — fixed.** Focus is repeatable and `--outbox` is an alias understood by both scripts. Their station option lists now describe accepted spellings.
+4. **Movable scripts — fixed in active stations/actions and vendored CKG entry points.** They find `_system` by walking upward, and CKG entry points resolve the station through `paths.station_dir()`.
+5. **Prompts hidden in `_system/vendor/**` — open.** Prompt exposure/schema work needs a content-by-content pass and is recorded rather than falsely declared complete.
+6. **8k output risk — partly fixed earlier, still open where listed.** The report identifies 41/45/54/55/60 for continuation or content-preserving split design.
+7. **Hard-coded machine paths — fixed for the audited active files.** Documentation and prompts name `paths.json` keys; vendor defaults read the exported configured paths.
+8. **Small ones — partly fixed.** Registry labels resolve their real folders; 000 is now a standard front folder and rejects truncated replies. 022 was not moved without David’s approval and is explicitly proposed in the report. The 052 API declaration still requires a semantic decision about whether enrich mode makes the station API-using.

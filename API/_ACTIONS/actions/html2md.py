@@ -3,7 +3,7 @@ import importlib.util
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_system"))
+sys.path.insert(0, str(next(p for p in Path(__file__).resolve().parents if (p / "_system").is_dir()) / "_system"))
 from engine.paths import configured, external  # noqa: E402
 
 ABOUT = "every .html in a folder -> .md beside it (skips ones already converted), via convert_html_to_markdown"
