@@ -36,13 +36,30 @@ Create `workflows/<name>.txt` with one action name per line, in order. `#` start
 
 ## What's here
 
-| Action | API | Gives you |
-|---|---|---|
-| scripture | free | `scriptures:` and `scripture_books:` in the YAML (every reference, found in code) |
-| title | ~1.5k tokens | the standard name, keywords and move; renames the note |
-| publish | free | every finished analysis onto the note |
+Actions come in two kinds:
+- **Note actions** run on each (ticked) note.
+- **Folder actions** (`SCOPE = "folder"`, with `run_folder(folder)`) run once on the folder, before the note actions.
+
+Actions that wrap an existing tool call it where it lives, through `_system/config/paths.json`. Nothing is rewritten.
+
+| Action | Kind | API | Gives you | Calls |
+|---|---|---|---|---|
+| clean | folder | free | raw YouTube transcripts → `<Channel>/Clean MD` | yt-transcript-downloader `clean_library.py --in-place` |
+| convert | folder | free | PDF/DOCX/HTML/XLSX/PPTX → `<folder>/Converted MD` | ConversionStation `theophysics_conversion.convert` |
+| html2md | folder | free | every .html → .md beside it | Reusable Tools `convert_html_to_markdown` |
+| combine | folder | free | all .md → one `<folder>__combined.md` beside it | Codex-Powershell_GUI `file_actions.py combine-markdown` |
+| scripture | note | free | `scriptures:` and `scripture_books:` in the YAML | `_system/engine/scripture.py` |
+| title | note | ~1.5k tokens | standard name, keywords and move; renames the note | `_system/tools/standard_title.py` |
+| md2html | note | free | the note → .html beside it | Reusable Tools `convert_markdown_to_html` |
+| publish | note | free | every finished analysis onto the note | `_system/tools/publish_analysis.py` |
 
 | Workflow | Steps |
 |---|---|
+| new_channel | clean → title → scripture → publish |
 | new_note | title → scripture → publish |
 | refresh | scripture → publish |
+
+## Tools not wired yet
+
+- **Moving and copying files** (AUTOFOLDER `router_station/route.py`) is rule-driven: it watches folders listed in `route.yaml`. It is not a one-shot "move this there" command, so it is not an action yet. Its NAS rules point at `//192.168.2.50/h_hp/Desktop/APIs/APIs/CKG/INBOX`.
+- **ConversionStation's drop pipeline** (`drop_pipeline.runner`) routes files with DeepSeek, so it would be a paid action.
