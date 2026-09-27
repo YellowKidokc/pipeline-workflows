@@ -128,7 +128,13 @@ See `docs/karpathy-wiki-layer.md`.
 
 ## First Use
 
-Create a new workflow packet:
+On Windows, double-click `ACTION_CENTER.bat` for a searchable desktop menu of
+the repository's existing actions. It organizes the launchers without moving or
+deleting them, supports file and folder selection for curated actions, previews
+the exact command, and asks for confirmation before launch. See
+[`tools/action_center/README.md`](tools/action_center/README.md).
+
+Or create a new workflow packet from the command line:
 
 ```bat
 scripts\create_workflow_packet.bat PaperGrading
