@@ -237,10 +237,14 @@ def main() -> int:
     p.add_argument("--provider", default="deepseek"); p.add_argument("--model", default="deepseek-chat")
     p.add_argument("--focus", default=""); p.add_argument("--redo", action="store_true"); p.add_argument("--out")
     p.add_argument("--publish", action="store_true", help="afterwards write the analysis onto each source note")
+    p.add_argument("--dry-run", action="store_true", help="list what would run; no API")
     a = p.parse_args(); a.copy = None
     inbox = FRONT / "INBOX"
     items = deep48.resolve_items(a.items or [str(inbox)], a.limit)
-    if not items: print(f"No input. Drop .md files into {inbox} or pass files.", file=sys.stderr); return 2
+    if not items: print(f"No input. Drop .md files into {inbox} or pass files.", file=sys.stderr); return 0 if a.dry_run else 2
+    if a.dry_run:
+        for src, _ in items: print("PLAN", src)
+        return 0
     with ThreadPoolExecutor(max_workers=4) as pool:
         results = list(pool.map(lambda sp: process(sp[0], a), items))
     root = Path(a.out or OUTBOX)

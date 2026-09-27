@@ -600,7 +600,7 @@ def main() -> int:
     a = p.parse_args()
     inbox = INBOX
     items = resolve_items(a.items or [str(inbox)], a.limit)
-    if not items: print(f"No input. Drop .md papers into {inbox} or pass files.", file=sys.stderr); return 2
+    if not items: print(f"No input. Drop .md papers into {inbox} or pass files.", file=sys.stderr); return 0 if a.dry_run else 2
     if a.dry_run:
         for src, paper in items: print("PLAN", src, "->", run_dir(src, paper, a.out).parent)
         return 0

@@ -25,7 +25,9 @@ from pathlib import Path
 
 MAIN = Path(__file__).resolve().parents[2]                     # pipeline-workflows\API: the numbered front folders
 EVIDENCE_ROOT = MAIN / "030_EVIDENCE"
-YT_ROOT = Path(r"D:\GitHub\Research-Acquisition\yt-transcript-downloader")
+sys.path.insert(0, str(MAIN / "_system"))
+from engine.paths import configured, external                  # noqa: E402
+YT_ROOT = external("yt_downloader") if configured("yt_downloader") else MAIN / "_data" / "youtube"   # paths.json
 START, END = "<!-- analysis:start -->", "<!-- analysis:end -->"
 
 

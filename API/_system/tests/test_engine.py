@@ -36,11 +36,16 @@ def menu(args: list[str], cfg: Path) -> subprocess.CompletedProcess:
                           capture_output=True, text=True, stdin=subprocess.DEVNULL, timeout=300)
 
 
+def fronts() -> list[Path]:
+    """Every front folder: 0NN_NAME in MAIN, or inside a group folder (01_CKG/020_CKG, 02_YOUTUBE/001_YT_GRAB)."""
+    return sorted([*HOME.parent.glob("[0-9][0-9][0-9]_*"), *HOME.parent.glob("[0-9][0-9]_*/[0-9][0-9][0-9]_*")])
+
+
 class Portability(unittest.TestCase):
     def test_no_absolute_paths_in_our_code(self):
         pattern = re.compile(r"""["'](?:[A-Za-z]:[\\/]|\\\\\\\\|//192\.|/home/|/Users/)""")
         offenders = []
-        folders = [HOME / f for f in ("engine", "stations", "tools")] + sorted(HOME.parent.glob("[0-9][0-9][0-9]_*/BACKSIDE"))
+        folders = [HOME / f for f in ("engine", "stations", "tools")] + [f / "BACKSIDE" for f in fronts()]
         for folder in folders:
             for py in folder.rglob("*.py"):
                 for n, line in enumerate(py.read_text(encoding="utf-8").splitlines(), 1):
@@ -74,8 +79,13 @@ class Portability(unittest.TestCase):
         self.assertEqual([], list(HOME.glob("*.bat")))
         self.assertEqual([], [p for p in (HOME / "stations").rglob("*.bat")])
 
+    def test_group_folders_hold_only_front_folders(self):
+        for group in sorted(HOME.parent.glob("[0-9][0-9]_*")):     # 01_CKG, 02_YOUTUBE: front folders only
+            if group.is_dir() and not group.name[2].isdigit():
+                self.assertEqual([], [p.name for p in group.iterdir() if not re.match(r"\d{3}_", p.name)], group.name)
+
     def test_front_folders_hold_only_launchers_inbox_outbox_backside(self):
-        for front in sorted(HOME.parent.glob("[0-9][0-9][0-9]_*")):
+        for front in fronts():
             if front.name == "000_QUICK_CALL":   # self-contained copy-me folder, its own shape
                 continue
             extra = [p.name for p in front.iterdir() if not (p.suffix.lower() == ".bat" and p.is_file())
