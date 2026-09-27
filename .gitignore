@@ -1,5 +1,6 @@
 # Runtime and private state
 .env
+config.txt
 *.local.*
 CONFIG/*.ini
 CONFIG/*.json
@@ -15,6 +16,8 @@ huggingface/
 embeddings/
 !engines/embeddings/
 !engines/embeddings/**
+!API/API 2/embeddings/
+!API/API 2/embeddings/**
 vector_db/
 qdrant/
 chroma/
