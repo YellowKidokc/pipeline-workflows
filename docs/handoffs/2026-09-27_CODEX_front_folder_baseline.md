@@ -15,6 +15,13 @@ API/0NN_NAME/
   OUTBOX/               results (git-ignored)
 ```
 
+Front folders can sit in a **group folder**: `API/01_CKG/` holds 010, 011 and 020-022, and `API/02_YOUTUBE/` holds 001-009, 012 and 013. A group holds only front folders.
+- In a grouped folder the launchers use `%~dp0..\..\_system\`.
+- Scripts find `_system` by walking up: `next(p for p in Path(__file__).resolve().parents if (p / "_system").is_dir())`. Use that form everywhere.
+- Do not create new groups; David decides those.
+
+Known exception, left for Claude: `01_CKG/020_CKG/SYSTEM/` (the CKG engine's cache records).
+
 Nothing else sits at the top of a front folder. Anything else there now (`SYSTEM/`, extra .bat files, READMEs, `input/`, `output/`) moves into `BACKSIDE/`. Fix every path that pointed at it.
 
 Copy the two launchers from `057_API_DEEP` and change only the station number and the script name:
