@@ -17,7 +17,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(next(p for p in Path(__file__).resolve().parents if (p / "_system").is_dir()) / "_system"))
-from engine import triage  # noqa: E402
+from engine import scripture, triage  # noqa: E402
 from engine.comments import comments, fetch_comments  # noqa: E402
 from engine.output import markdown_to_html, page  # noqa: E402
 from engine.paths import configured, external  # noqa: E402
@@ -60,6 +60,8 @@ def process(ctx):
     names = platform_names()
     index = ckg_index(item)
     audience = comments(item)
+    hits = scripture.find(ctx.text)                        # every reference said aloud, found in code
+    ctx.step(f"scriptures found in code: {len(hits)}")
     ctx.step(f"inputs: transcript, CKG index {'found' if index else 'not found (run 03 first for best results)'}, "
              f"{len(audience)} comment(s)")
     prompt = ((HERE / "PROMPT.md").read_text(encoding="utf-8")
@@ -69,6 +71,7 @@ def process(ctx):
               + f"\n\nITEM: {item.id}\nCHANNEL: {item.meta.get('channel', '')}\nVIDEO: {item.title}\nURL: {item.meta.get('url', '')}"
               + (f"\n\nCKG INDEX FOR THIS VIDEO (station 03):\n{json.dumps(index, ensure_ascii=False)[:60000]}" if index else "")
               + ("\n\nCOMMENTS (most liked first):\n" + "\n".join(audience) if audience else "\n\nCOMMENTS: none acquired")
+              + "\n\n" + scripture.prompt_block(hits) + "\n" + scripture.JSON_ASK
               + f"\n\nTRANSCRIPT:\n{ctx.text}")
     extra = f"index={bool(index)};comments={len(audience)}"
     reply = ctx.cached("triage", lambda: ctx.call_json("theology_triage", prompt), extra=extra)
@@ -93,9 +96,10 @@ def process(ctx):
            "theology_rubric": {"rows": ruled["rows"], "collapse_question": reply.get("collapse_question", ""),
                                "steers_around": bool(reply.get("steers_around")), "rules_applied": ruled["log"],
                                "flags": ruled["flags"], "claims": ruled["claims"], "unknown_for_channel_pass": ruled["unknown"]},
-           "inputs": {"ckg_index": bool(index), "comments": len(audience)}}
+           "scriptures": scripture.merge(hits, reply.get("scriptures")),
+           "inputs": {"ckg_index": bool(index), "comments": len(audience), "scriptures_found_in_code": len(hits)}}
     md = render(item, doc)
-    sheets = {"rubric": ruled["rows"],
+    sheets = {"rubric": ruled["rows"], "scriptures": doc["scriptures"],
               "platform": [{"probe": k, "note": v} for k, v in doc["youtube_specific_probes"].items()]}
     for part in ("claims", "premises", "hidden_premises", "inference_edges", "adversarial_tests"):
         sheets[part] = layer.get(part, []) or []
@@ -111,6 +115,8 @@ def render(item, doc) -> str:
     out += [f"| {r['row']} | {r['probe']} | {r['verdict']}{' (verify)' if r['verify'] and r['verdict'] != 'CLEAN' else ''} | "
             f"{r['line']}{' [' + r['timestamp'] + ']' if r['timestamp'] and r['verdict'] not in ('CLEAN', '??') else ''} |"
             for r in tr["rows"]]
+    if doc.get("scriptures"):
+        out += ["", scripture.HEADING, "", scripture.rows_table(doc["scriptures"])]
     expanded = [r for r in tr["rows"] if r["verdict"] in ("FLAG", "CLAIM") and r["expansion"]]
     if expanded:
         out += [""]

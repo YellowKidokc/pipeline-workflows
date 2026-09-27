@@ -222,6 +222,14 @@ Build next: {{build_next_instruction}}
 | {{term_1}} | {{def_1}} | {{dom_1}} | {{first_used_1}} |
 | {{term_2}} | {{def_2}} | {{dom_2}} | {{first_used_2}} |
 
+## Scriptures
+
+Every passage the source uses: cited by reference, mentioned by book, or alluded to (quoted or paraphrased without a reference). One row each, in order of first use.
+
+| Reference | How | Where | What is said about it |
+|---|---|---|---|
+| {{scripture_ref_1}} | {{cited / mentioned / alluded}} | {{timestamp or section}} | {{what the speaker does with it, one line; for alluded, the words that show it}} |
+
 ## Open the question (Q0–Q14)
 
 > [!quote]+ Q0 · Exact expression
