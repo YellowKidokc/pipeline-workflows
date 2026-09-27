@@ -32,7 +32,7 @@ from pathlib import Path
 SYSTEM = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(SYSTEM))
 from engine import note as N, pick                                  # noqa: E402
-from engine.ask import ask, choose                                   # noqa: E402
+from engine.ask import ask, choose, run_guarded                                   # noqa: E402
 from engine.paths import station_dir, station_rows                   # noqa: E402
 from engine.publish import publish_on_note                           # noqa: E402
 
@@ -148,9 +148,8 @@ def deep_ckg(front: Path, notes: list[Path], out: Path, workers: int, focus: lis
         text = re.sub(r"<!-- (analysis|scorecard):start -->.*?<!-- \1:end -->\n?", "", text, flags=re.S)
         (inbox / n.name).write_text(text, encoding="utf-8")
     started = datetime.now().timestamp()
-    code = subprocess.run([sys.executable, "-u", str(runner), "--root", str(work), "--workers", str(workers),
-                           "--provider", "deepseek", *[a for q in focus for a in ("--focus", q)]],
-                          cwd=runner.parent).returncode
+    code = run_guarded([sys.executable, "-u", str(runner), "--root", str(work), "--workers", str(workers),
+                        "--provider", "deepseek", *[a for q in focus for a in ("--focus", q)]], runner.parent)
     made = [p for p in (work / "OUTBOX").rglob("*_C1_*.md") if p.stat().st_mtime >= started - 5]
     for n in notes:
         hits = sorted((p for p in made if p.name.startswith(_slug(n.name))), key=lambda p: p.stat().st_mtime)
@@ -182,7 +181,7 @@ def run_station(front: Path, st: dict, notes: list[Path], out: Path, workers: in
     else:                                               # engine station: these notes, flat copies into `out`
         cmd = [sys.executable, "-u", str(station_dir(row["label"]) / row["script"]), f"@{listfile}",
                "--outbox", str(out), "--workers", str(workers)] + (["--focus", "; ".join(focus)] if focus else [])
-    return subprocess.run(cmd, cwd=MAIN).returncode
+    return run_guarded(cmd, MAIN)
 
 
 def say(line: str) -> None:

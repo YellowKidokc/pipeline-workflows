@@ -1,0 +1,1 @@
+Read `AGENTS.md` in this folder first. It is the protocol every AI follows here: folder shape, buttons (`_system\engine\button.py`), where results go, and the standards. The working reference is `01_CKG\020_CKG`.

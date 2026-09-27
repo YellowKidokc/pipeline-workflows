@@ -28,11 +28,30 @@ MAX_FOCUS = 5
 
 
 def ask(question: str, default: str = "") -> str:
-    try:
-        answer = input(f"{question} ").strip().strip('"')
-    except EOFError:
-        answer = ""
-    return answer or default
+    while True:
+        try:
+            answer = input(f"{question} ").strip().strip('"')
+        except EOFError:
+            answer = ""
+        except KeyboardInterrupt:           # a stray Ctrl+C (dictation sends "copy") never answers a question
+            print("\n  (Ctrl+C ignored: type your answer)")
+            continue
+        return answer or default
+
+
+def run_guarded(cmd: list[str], cwd) -> int:
+    """Run a long step so a stray Ctrl+C cannot kill it: the child gets its own console group (Ctrl+C does not reach
+    it), and a Ctrl+C here asks before stopping. Only typing `stop` stops the run."""
+    flags = getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
+    proc = subprocess.Popen(cmd, cwd=cwd, creationflags=flags)
+    while True:
+        try:
+            return proc.wait()
+        except KeyboardInterrupt:
+            if ask("\nCtrl+C received. Type stop to stop this run, or press Enter to keep going:").lower() == "stop":
+                proc.terminate()
+                return 130
+            print("  keeping going", flush=True)
 
 
 def stations() -> dict[str, dict]:

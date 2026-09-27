@@ -49,6 +49,15 @@ def field(text, key):
     return m.group(1).strip().strip("`") if m else ""
 
 
+def previous_names(text) -> list[str]:
+    """The note's earlier names, a JSON list (names contain commas, so never split on them)."""
+    m = re.search(r"^previous_names:\s*(\[.*\])\s*$", text[:6000], re.M)
+    try:
+        return [str(x) for x in json.loads(m.group(1))] if m else []
+    except ValueError:
+        return []
+
+
 def listfield(text, key):
     return [x.strip() for x in field(text, key).strip("[]").replace('"', "").split(",") if x.strip()]
 
@@ -81,6 +90,7 @@ def clean_title(title: str, author: str) -> str:
             t = re.sub(rf"\s*[-–—|:]\s*(?:with\s+)?{re.escape(part)}\b.*$", "", t, flags=re.I)
             t = re.sub(rf"\s+(?:with|ft\.?|feat\.?|by)\s+{re.escape(part)}\b.*$", "", t, flags=re.I)    # "... with Gary Habermas"
     t = re.sub(r"\s+(?:with|ft\.?|feat\.?)\s*$", "", t, flags=re.I)
+    t = re.sub(r"\s*:\s+", " – ", t)                                # "Title: Subtitle" keeps its break as a dash
     t = re.sub(r'[<>:"/\\|?*#^\[\]]', "", t)                     # not allowed in Windows file names or Obsidian links
     return re.sub(r"\s{2,}", " ", t).strip(" -–—·.")
 
@@ -152,7 +162,7 @@ Christianity, Religion or Philosophy, never the author's or channel's name, and 
 speaker uses (a topic, not a figure of speech). Title Case, 1-3 words each.
 Reuse a term from KNOWN KEYWORDS whenever one fits, spelled exactly as listed.
 MOVE: exactly one of {moves}: what the source mainly DOES.
-Return JSON only: {{"keywords": ["..."], "move": "..."}}
+{extra}Return JSON only: {{"keywords": ["..."], "move": "..."{extra_json}}}
 
 AUTHOR: {author}
 KNOWN KEYWORDS: {known}
@@ -162,16 +172,38 @@ OPENING OF THE SOURCE:
 {opening}"""
 
 
-def keywords_and_move(title: str, body: str, author: str) -> tuple[list[str], str]:
+SLUG = re.compile(r"[a-z0-9]+(?:[-_][a-z0-9]+)+")                 # a file name, not a title: bgl-02-who-did-jesus-save
+SERIES = re.compile(r"^([a-z]{2,6})[-_](\d{1,3})[-_]", re.I)       # series code + part: bgl-02-...
+ASK_TITLE = ("TITLE is a file name, not a title. Also return \"title\": a proper title for this piece in Title Case, "
+             "taken from the source (its own heading or its main question), at most 10 words.\n")
+ASK_SERIES = ("It is part {part} of a series with the code {code}. Also return \"series\": the series' full name in "
+              "Title Case (usually the title of part 1).{known}\n")
+
+
+def tag(title: str, body: str, author: str, want_title: bool = False, series: tuple | None = None) -> dict:
+    """One small call: keywords and move, plus a proper title and the series name when the title is a file name."""
+    extra, extra_json = "", ""
+    if want_title:
+        extra += ASK_TITLE; extra_json += ', "title": "..."'
+    if series:
+        code, part, known = series
+        extra += ASK_SERIES.format(part=part, code=code, known=f" It is already known as: {known}." if known else "")
+        extra_json += ', "series": "..."'
     prompt = PROMPT.format(moves=", ".join(MOVES), author=author, known=", ".join(vocab()) or "(none yet)",
-                           title=title, opening=" ".join(body.split()[:1200]))
-    r = llm.call([{"role": "user", "content": prompt}], json_mode=True, max_tokens=200, temperature=0.1)
+                           title=title, opening=" ".join(body.split()[:1200]), extra=extra, extra_json=extra_json)
+    r = llm.call([{"role": "user", "content": prompt}], json_mode=True, max_tokens=300, temperature=0.1)
     try:
         d = json.loads(r.text)
-        keys = [str(k).strip() for k in d.get("keywords", []) if str(k).strip() and str(k).strip().lower() not in GENERIC][:3]
-        return keys, (d.get("move") if d.get("move") in MOVES else "Argument")
     except (ValueError, AttributeError):
-        return [], "Argument"
+        d = {}
+    keys = [str(k).strip() for k in d.get("keywords", []) if str(k).strip() and str(k).strip().lower() not in GENERIC][:3]
+    return {"keywords": keys, "move": d.get("move") if d.get("move") in MOVES else "Argument",
+            "title": str(d.get("title") or "").strip(), "series": str(d.get("series") or "").strip()}
+
+
+def keywords_and_move(title: str, body: str, author: str) -> tuple[list[str], str]:
+    d = tag(title, body, author)
+    return d["keywords"], d["move"]
 
 
 def set_yaml(text: str, values: dict) -> str:
@@ -199,11 +231,22 @@ def process(note: Path, apply: bool) -> str:
                      if re.match(r"\d{4}-\d{2}-\d{2}", field(text, k))), "")
             or __import__("datetime").date.fromtimestamp(note.stat().st_mtime).isoformat())
     h1 = re.search(r"^#\s+(.+)$", text.split("\n---", 2)[-1] if text.startswith("---") else text, re.M)
-    title = clean_title(field(text, "title") or (h1.group(1) if h1 else note.stem), author)
+    # the name the source came with; never the standard name we gave it (a rerun would title the title)
+    raw = field(text, "title") or (h1.group(1) if h1 else "") or Path(field(text, "original_file") or note.name).stem
+    title = field(text, "doc_title") or clean_title(raw, author)
     keys, move = listfield(text, "keywords"), field(text, "move")
-    if not keys or not move:
+    sm = SERIES.match(raw)
+    series_code, part = (sm.group(1).upper(), int(sm.group(2))) if sm else ("", 0)
+    series = field(text, "series") or (taxonomy().get("series", {}).get(series_code, "") if series_code else "")
+    need_title = not field(text, "doc_title") and bool(SLUG.fullmatch(raw))
+    if not keys or not move or need_title or (series_code and not series):
         body = text.split("## Transcript", 1)[-1] if "## Transcript" in text else text
-        keys, move = keywords_and_move(title, body, author)
+        d = tag(title, body, author, want_title=need_title,
+                series=(series_code, part, series) if series_code and not series else None)
+        keys, move = (keys, move) if keys and move else (d["keywords"], d["move"])
+        if need_title and d["title"]:
+            title = clean_title(d["title"], author)
+        series = series or d["series"]
     # the name shows keywords the title doesn't already say; the title wins the space, so drop to one keyword before cutting it
     shown = [k for k in keys if k.lower() not in title.lower()] or keys
     shown.sort(key=lambda k: author_share(k, code, field(text, "std_title")) >= 0.4)   # stable: rare-for-this-author first
@@ -216,16 +259,29 @@ def process(note: Path, apply: bool) -> str:
         short = title[:room].rsplit(" ", 1)[0]
         if short.count("(") > short.count(")"): short = short[:short.rindex("(")]   # never leave "(Pt.…"
         short = short.rstrip(" -–—,:;") + "…"
-    std = f"{code} {date} · {short}{tail}"
-    new = note.with_name(std + ".md")
+    label = f"{series_code} {part:02d} · " if series_code else ""
+    std = f"{code} {date} · {label}{short}{tail}"
+    home = note.parent
+    folder_name = re.sub(r'[<>:"/\\|?*]', "", series).strip() if series else ""
+    if folder_name and home.name != folder_name:                     # a series gets its own folder (David)
+        home = home / folder_name
+    new = home / (std + ".md")
     if apply and new != note and new.exists():
         return f"CLASH {note.name} -> {new.name} (a note with that name exists; left as is)"
     if apply:
         remember(new.stem, keys, move, code, author, old=field(text, "std_title"))
-        text = set_yaml(text, {"std_title": std, "author_code": code, "upload_date": date, "keywords": keys, "move": move,
-                               "original_file": field(text, "original_file") or note.name})
+        values = {"std_title": std, "doc_title": title, "author_code": code, "upload_date": date, "keywords": keys,
+                  "move": move, "original_file": field(text, "original_file") or note.name}
+        if new.stem != note.stem:                                     # results made under an earlier name stay findable
+            values["previous_names"] = list(dict.fromkeys(previous_names(text) + [note.stem]))
+        if series_code:
+            values.update({"series": series, "series_code": series_code, "part": part})
+            t = taxonomy(); t.setdefault("series", {}).setdefault(series_code, series)   # first name seen wins
+            TAXONOMY.write_text(json.dumps(t, indent=1, ensure_ascii=False, sort_keys=True), encoding="utf-8")
+        text = set_yaml(text, values)
         note.write_text(text, encoding="utf-8")
         if new != note:
+            new.parent.mkdir(exist_ok=True)
             note.rename(new)
             listing = pick.pick_file_for(new)                               # a channel's _PICK.md sits above Clean MD
             for other in [*note.parent.glob("*.md"), *([listing] if listing and listing.parent != note.parent else [])]:
@@ -233,7 +289,7 @@ def process(note: Path, apply: bool) -> str:
                 t = other.read_text(encoding="utf-8")
                 t2 = t.replace(f"[[{note.stem}|", f"[[{new.stem}|").replace(f"[[{note.stem}]]", f"[[{new.stem}]]")
                 if t2 != t: other.write_text(t2, encoding="utf-8")
-    return f"{new.name}"
+    return str(new.relative_to(note.parent)) if new.parent != note.parent else new.name
 
 
 def main() -> int:

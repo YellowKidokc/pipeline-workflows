@@ -16,4 +16,4 @@ def run(note: Path, text: str) -> dict:
     result = st.process(note, True)
     if result.startswith("CLASH"):
         return {"say": result}
-    return {"note": str(note.with_name(result)), "say": result}
+    return {"note": str(note.parent / result), "say": result}      # result may include a new series folder
