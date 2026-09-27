@@ -138,25 +138,72 @@ def title_first(notes: list[Path]) -> list[Path]:
 # ------------------------------------------------------------------ 5 run
 
 def deep_ckg(front: Path, notes: list[Path], out: Path, workers: int, focus: list[str]) -> int:
-    """The deep CKG companion (evidence turbo runner) on these notes; flat '<note> · CKG.md' into `out`."""
+    """The deep CKG companion on these notes, one engine run per note, `workers` at a time. Each note is FINISHED the
+    moment its CKG is done (flat '<note> · CKG.md' in `out`, scriptures in its YAML, the answer on the note), so an
+    interruption loses nothing that was finished. A note whose CKG is already in `out` is skipped (unless there are
+    new questions)."""
+    import threading
+    from concurrent.futures import ThreadPoolExecutor, as_completed
     runner = SYSTEM / "vendor" / "evidence" / "SCRIPTS" / "turbo_pipeline_runner.py"
-    work = front / "BACKSIDE" / "_deep"
-    inbox = work / "INBOX"
-    inbox.mkdir(parents=True, exist_ok=True)
-    for n in notes:                                    # the source only: our analysis block on the note stays out
-        text = n.read_text(encoding="utf-8", errors="replace")
-        text = re.sub(r"<!-- (analysis|scorecard):start -->.*?<!-- \1:end -->\n?", "", text, flags=re.S)
-        (inbox / n.name).write_text(text, encoding="utf-8")
-    started = datetime.now().timestamp()
-    code = run_guarded([sys.executable, "-u", str(runner), "--root", str(work), "--workers", str(workers),
-                        "--provider", "deepseek", *[a for q in focus for a in ("--focus", q)]], runner.parent)
-    made = [p for p in (work / "OUTBOX").rglob("*_C1_*.md") if p.stat().st_mtime >= started - 5]
+    todo = [n for n in notes if focus or not (out / f"{n.stem} · CKG.md").is_file()]
     for n in notes:
-        hits = sorted((p for p in made if p.name.startswith(_slug(n.name))), key=lambda p: p.stat().st_mtime)
-        if hits:
-            shutil.copy2(hits[-1], out / f"{n.stem} · CKG.md")
-        else:
-            print(f"    no CKG companion found for {n.name}")
+        if n not in todo:
+            print(f"    already done, skipped: {n.name[:100]}")
+    if not todo:
+        return 0
+    flags = getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)      # a stray Ctrl+C never reaches the engine
+    procs: list[subprocess.Popen] = []
+    lock = threading.Lock()
+    scripture = action("scripture")
+    counter = {"done": 0}
+
+    def one(n: Path) -> int:
+        work = front / "BACKSIDE" / "_deep" / _slug(n.name)[:40]
+        (work / "INBOX").mkdir(parents=True, exist_ok=True)
+        text = n.read_text(encoding="utf-8", errors="replace")      # the source only: our analysis block stays out
+        text = re.sub(r"<!-- (analysis|scorecard):start -->.*?<!-- \1:end -->\n?", "", text, flags=re.S)
+        (work / "INBOX" / n.name).write_text(text, encoding="utf-8")
+        started = datetime.now().timestamp()
+        proc = subprocess.Popen([sys.executable, "-u", str(runner), "--root", str(work), "--workers", "1",
+                                 "--provider", "deepseek", *[a for q in focus for a in ("--focus", q)]],
+                                cwd=runner.parent, creationflags=flags)
+        with lock:
+            procs.append(proc)
+        code = proc.wait()
+        hits = sorted((p for p in (work / "OUTBOX").rglob("*_C1_*.md") if p.stat().st_mtime >= started - 5),
+                      key=lambda p: p.stat().st_mtime)
+        with lock:
+            counter["done"] += 1
+            k = counter["done"]
+        if not hits:
+            say(f"[{k}/{len(todo)}] no CKG came back for {n.name[:90]}")
+            return code or 1
+        shutil.copy2(hits[-1], out / f"{n.stem} · CKG.md")          # dump it now, in order: file, YAML, note
+        r = scripture.run(n, n.read_text(encoding="utf-8"))
+        n.write_text(N.set_fields(n.read_text(encoding="utf-8"), r["yaml"]), encoding="utf-8")
+        publish_on_note([n], [out])
+        say(f"[{k}/{len(todo)}] finished and on the note: {n.name[:90]}")
+        return code
+
+    code = 0
+    pool = ThreadPoolExecutor(max_workers=max(1, min(workers, len(todo))))
+    futures = [pool.submit(one, n) for n in todo]
+    pending = set(futures)
+    while pending:
+        try:
+            for f in as_completed(pending):
+                pending.discard(f)
+                code |= f.result() or 0
+        except KeyboardInterrupt:
+            if ask("\nCtrl+C received. Type stop to stop this run, or press Enter to keep going:").lower() == "stop":
+                for proc in procs:
+                    if proc.poll() is None:
+                        proc.terminate()
+                pool.shutdown(wait=False, cancel_futures=True)
+                say("stopped. Notes already finished keep their results; run again to do the rest.")
+                return 130
+            print("  keeping going", flush=True)
+    pool.shutdown()
     return code
 
 
