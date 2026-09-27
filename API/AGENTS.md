@@ -44,6 +44,8 @@ Both launchers call the one script, `_system\engine\button.py`, passing their ow
 2. **X list.**
 3. **Title**, but only for notes that do not carry their standard title yet. A titled note is recognised and skipped.
 
+**Finish each item before the next, in order.** Nothing waits in memory for the end of a run. As soon as a note's result comes back, that note is completed: its file in the OUTBOX, its YAML, then the answer on the note. An interruption loses nothing that was finished, and a rerun skips what is already done. The same goes for folders (for example a series folder): create it at the moment it is needed.
+
 **A stray Ctrl+C never kills a run.** David's dictation tool can send one. Long steps run through `ask.run_guarded`; only typing `stop` stops them. Questions ignore Ctrl+C.
 
 ## 3. Where results go
