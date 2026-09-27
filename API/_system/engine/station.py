@@ -32,12 +32,12 @@ from .focus import append, compose
 from .goals import goal_id
 from .items import Item, discover
 from .output import dated_run_dir, write_bundle
-from .paths import API_HOME, PathConfigurationError, configured, external
+from .paths import API_HOME, PathConfigurationError, configured, external, station_dir
 from .progress import Progress
 
 
 def station_meta(label: str) -> dict:
-    return json.loads((API_HOME / "stations" / label / "station.json").read_text(encoding="utf-8"))
+    return json.loads((station_dir(label) / "station.json").read_text(encoding="utf-8"))
 
 
 def prompt_hash(station_dir: Path, files: list[str]) -> str:
@@ -177,7 +177,7 @@ class Station:
     def __init__(self, label: str, *, kind: str | None = None, extra_args: Callable[[argparse.ArgumentParser], None] | None = None,
                  prompt_files: list[str] | None = None, per_item: bool = True, depends_on: list[str] | None = None):
         self.label = label
-        self.dir = API_HOME / "stations" / label
+        self.dir = station_dir(label)
         self.meta = station_meta(label)
         self.kind = kind or self.meta.get("items", "papers")
         self.settings = llm.settings()

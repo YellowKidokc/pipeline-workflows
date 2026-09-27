@@ -40,8 +40,9 @@ class Portability(unittest.TestCase):
     def test_no_absolute_paths_in_our_code(self):
         pattern = re.compile(r"""["'](?:[A-Za-z]:[\\/]|\\\\\\\\|//192\.|/home/|/Users/)""")
         offenders = []
-        for folder in ("engine", "stations", "tools"):
-            for py in (HOME / folder).rglob("*.py"):
+        folders = [HOME / f for f in ("engine", "stations", "tools")] + sorted(HOME.parent.glob("[0-9][0-9][0-9]_*/BACKSIDE"))
+        for folder in folders:
+            for py in folder.rglob("*.py"):
                 for n, line in enumerate(py.read_text(encoding="utf-8").splitlines(), 1):
                     if pattern.search(line) and "PATH_KEYS" not in line and "noqa-path" not in line and "migrate_legacy" not in py.name:
                         offenders.append(f"{py.relative_to(HOME)}:{n}")
@@ -59,8 +60,11 @@ class Portability(unittest.TestCase):
         numbers = [r["number"] for r in registry]
         self.assertEqual(len(numbers), len(set(numbers)))
         for row in registry:
-            folder = HOME / row["folder"]
-            self.assertEqual(folder.name, f"{row['number']}_{row['name']}")
+            folder = paths.station_dir(row["label"])
+            if folder.name == "BACKSIDE":   # out in its front folder: 0NN_<name>/BACKSIDE
+                self.assertTrue(folder.parent.name.startswith(f"0{row['number']}_"), folder.parent.name)
+            else:
+                self.assertEqual(folder.name, f"{row['number']}_{row['name']}")
             self.assertEqual(row["script"], f"{row['number']}_{row['name'].lower()}.py")
             for required in (row["script"], "FOCUS.md", "PROMPT.md", "station.json", "README.md"):
                 self.assertTrue((folder / required).exists(), f"{folder.name} lacks {required}")
@@ -69,6 +73,20 @@ class Portability(unittest.TestCase):
         self.assertEqual(["ONE_MENU.bat", "SETUP.bat"], sorted(p.name for p in HOME.parent.glob("*.bat")))
         self.assertEqual([], list(HOME.glob("*.bat")))
         self.assertEqual([], [p for p in (HOME / "stations").rglob("*.bat")])
+
+    def test_front_folders_hold_only_launchers_inbox_outbox_backside(self):
+        for front in sorted(HOME.parent.glob("[0-9][0-9][0-9]_*")):
+            if front.name == "000_QUICK_CALL":   # self-contained copy-me folder, its own shape
+                continue
+            extra = [p.name for p in front.iterdir() if not (p.suffix.lower() == ".bat" and p.is_file())
+                     and p.name not in ("INBOX", "OUTBOX", "BACKSIDE")]
+            self.assertEqual([], extra, front.name)
+            launchers = list(front.glob("*.bat"))
+            self.assertTrue(1 <= len(launchers) <= 4, front.name)
+            for bat in launchers:
+                text = bat.read_text(encoding="utf-8", errors="replace")
+                self.assertIn("%~dp0", text, bat.name)
+                self.assertIsNone(re.search(r"[A-Za-z]:\\", text), bat.name)
 
     def test_no_keys_in_config(self):
         for f in (HOME / "config").glob("*.json"):
@@ -169,7 +187,7 @@ class EndToEnd(unittest.TestCase):
         for step in (["47", "--item", str(self.root / "paper.md")], ):
             r = menu(step, self.cfg)
             self.assertEqual(0, r.returncode, r.stdout + r.stderr)
-        subprocess.run([sys.executable, str(HOME / "stations/47_NEW_PAPER/47_new_paper.py"), str(self.root / "mine.md"), "--own"],
+        subprocess.run([sys.executable, str(paths.station_dir("47_NEW_PAPER") / "47_new_paper.py"), str(self.root / "mine.md"), "--own"],
                        env={**os.environ, "ONE_MENU_PATHS_FILE": str(self.cfg)}, capture_output=True, check=True)
         r = menu(["Y", "--mock", "--channel", "Chan"], self.cfg)
         self.assertEqual(0, r.returncode, r.stdout[-3000:] + r.stderr[-3000:])
@@ -200,7 +218,7 @@ class EndToEnd(unittest.TestCase):
         env = {**os.environ, "ONE_MENU_PATHS_FILE": str(self.cfg), "ONE_MENU_NO_FALLBACK": "1"}
         for key in ("DEEPSEEK_API_KEY", "OPENROUTER_API_KEY"):
             env.pop(key, None)
-        r = subprocess.run([sys.executable, str(HOME / "stations/40_ANALYTICAL_ARMS/40_analytical_arms.py"), "--limit", "1", "--redo"],
+        r = subprocess.run([sys.executable, str(paths.station_dir("40_ANALYTICAL_ARMS") / "40_analytical_arms.py"), "--limit", "1", "--redo"],
                            cwd=HOME, env=env, capture_output=True, text=True, timeout=120)
         self.assertNotEqual(0, r.returncode, "a run whose calls all failed must not exit 0")
 
@@ -217,7 +235,7 @@ class EndToEnd(unittest.TestCase):
 class DomainRules(unittest.TestCase):
     def rubric(self):
         from engine import triage
-        return triage.load_rubric((HOME / "stations/10_CKG_THEOLOGY/RUBRIC.md").read_text(encoding="utf-8"))
+        return triage.load_rubric((paths.station_dir("10_CKG_THEOLOGY") / "RUBRIC.md").read_text(encoding="utf-8"))
 
     def test_triage_cap_priority_and_exemptions(self):
         from engine import triage, mock
@@ -270,7 +288,7 @@ class DomainRules(unittest.TestCase):
 
     def test_lean_trust_rules(self):
         import importlib.util
-        spec = importlib.util.spec_from_file_location("lean55", HOME / "stations/55_LEAN_PAPERS/55_lean_papers.py")
+        spec = importlib.util.spec_from_file_location("lean55", paths.station_dir("55_LEAN_PAPERS") / "55_lean_papers.py")
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         claims = [{"claim_id": "C1", "verification_status": "LEAN_CERTIFIED", "uses_assumptions": ["A1", "A9"],

@@ -25,7 +25,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from engine import ytnames  # noqa: E402
 from engine.output import sha256_file  # noqa: E402
-from engine.paths import API_HOME, PathConfigurationError, external  # noqa: E402
+from engine.paths import API_HOME, PathConfigurationError, external, station_dir  # noqa: E402
 from engine.text import strip_front_matter  # noqa: E402
 
 LABEL = "12_YT_TIDY"
@@ -251,7 +251,7 @@ def watch(args, base: Path, out_root: Path) -> int:
                     continue
                 waiting.discard(folder.name)
                 log(f"{folder.name}: download finished, processing")
-                run_station([str(API_HOME / "stations" / "07_YT_CONVERT" / "07_yt_convert.py"), "--channel", folder.name])
+                run_station([str(station_dir("07_YT_CONVERT") / "07_yt_convert.py"), "--channel", folder.name])
                 tidy_channel(folder, args, out_root, [10 ** 9])
                 if not args.no_summary:
                     run_station([str(API_HOME / "engine" / "menu.py"), "13", "--channel", folder.name, "--yes"])

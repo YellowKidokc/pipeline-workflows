@@ -27,7 +27,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from .paths import API_HOME, PathConfigurationError, expand, external, inside, load_paths
+from .paths import API_HOME, PathConfigurationError, expand, external, inside, load_paths, station_dir
 
 
 def options(meta: dict) -> list[str]:
@@ -117,7 +117,7 @@ def build_command(meta: dict, args: argparse.Namespace, passthrough: list[str]) 
 
 
 def main(label: str) -> int:
-    meta = json.loads((API_HOME / "stations" / label / "station.json").read_text(encoding="utf-8"))
+    meta = json.loads((station_dir(label) / "station.json").read_text(encoding="utf-8"))
     parser = argparse.ArgumentParser(prog=label, description=meta.get("description", ""))
     parser.add_argument("items", nargs="*")
     parser.add_argument("--limit", type=int)

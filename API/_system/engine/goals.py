@@ -19,15 +19,17 @@ from pathlib import Path
 
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-    from engine.paths import API_HOME
+    from engine.paths import API_HOME, station_dir, station_rows
 else:
-    from .paths import API_HOME
+    from .paths import API_HOME, station_dir, station_rows
 
 
 @functools.lru_cache(maxsize=1)
 def all_goals() -> list[dict]:
     goals = []
-    for meta_path in sorted((API_HOME / "stations").glob("*/station.json")):
+    for meta_path in sorted(station_dir(row["label"]) / "station.json" for row in station_rows()):
+        if not meta_path.exists():
+            continue
         meta = json.loads(meta_path.read_text(encoding="utf-8"))
         if meta.get("retired"):
             continue
