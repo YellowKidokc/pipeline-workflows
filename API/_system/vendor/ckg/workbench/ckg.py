@@ -362,22 +362,40 @@ class Runner:
             "grade: UNSCORED",
             "---",
             "",
-            f"# CKG Companion — {paper_uuid}",
+            f"# CKG Companion — {(stage_results.get('map') or {}).get('title') or paper_uuid}",
             "",
-            "## Source",
-            "",
-            source_text,
+            f"`{paper_uuid}`",
             "",
         ]
         for stage, result in stage_results.items():
-            lines.append(f"## {stage}")
+            if stage == "map" and isinstance(result, dict) and "objects" in result:
+                lines.extend(self._render_map(result))
+                continue
+            text = result.get("markdown", "") if isinstance(result, dict) and "markdown" in result else None
+            # The model usually opens its markdown with its own "## S01 — ..." heading; don't stack a bare one on top.
+            if not (text and text.lstrip().startswith("#")):
+                lines.append(f"## {stage}")
+                lines.append("")
+            lines.append(text if text is not None else json.dumps(result, indent=2, ensure_ascii=False))
             lines.append("")
-            if isinstance(result, dict) and "markdown" in result:
-                lines.append(result["markdown"])
-            else:
-                lines.append(json.dumps(result, indent=2, ensure_ascii=False))
-            lines.append("")
+        # The source goes last: it is long, and a transcript's own YAML block would otherwise break the page header.
+        lines.extend(["## Source", "", source_text.replace("\n---\n", "\n- - -\n"), ""])
         return "\n".join(lines)
+
+    @staticmethod
+    def _render_map(m: dict) -> list[str]:
+        cell = lambda v: str(v or "").replace("|", "\\|").replace("\n", " ")
+        out = ["## Map", "",
+               f"**Domain:** {cell(m.get('domain'))} · **Project:** {cell(m.get('project'))} · **Purpose:** {cell(m.get('purpose'))}", "",
+               cell(m.get("summary")), "",
+               "**Keywords:** " + ", ".join(map(str, m.get("keywords") or [])), "",
+               "| Key | Type | Register | Statement | Quote |", "|---|---|---|---|---|"]
+        for o in m.get("objects") or []:
+            quote = f"“{cell(o.get('quote'))}”" if o.get("quote") else ""
+            out.append(f"| {cell(o.get('key'))} | {cell(o.get('type'))} | {cell(o.get('register'))} | {cell(o.get('statement'))} | {quote} |")
+        if m.get("unmapped"):
+            out += ["", "**Not captured above:**", ""] + [f"- {cell(u)}" for u in m["unmapped"]]
+        return out + [""]
 
     def _run_stage(
         self,

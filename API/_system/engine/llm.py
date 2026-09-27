@@ -242,7 +242,7 @@ def call(messages: list[dict[str, str]], *, provider: str = "deepseek", model: s
             continue
         result = _call_one(messages, provider=prov, model=mod, temperature=temperature, max_tokens=max_tokens,
                            json_mode=json_mode, task=task, station=station)
-        if result.ok:
+        if result.ok or (result.error or "").startswith("truncated"):   # another provider won't fix a too-long reply
             break
         failures.append({"provider": prov, "model": mod, "error": result.error})
     if failures and result is not None:
@@ -298,7 +298,19 @@ def _call_one(messages: list[dict[str, str]], *, provider: str, model: str,
     except (KeyError, IndexError, ValueError) as exc:
         return LLMResult("", provider, model, attempts=attempts, elapsed_seconds=elapsed, started_at=started,
                          error=f"Unreadable reply: {exc}", task=task)
-    return LLMResult(text, provider, model, pt, ct, attempts, elapsed, started, None, task)
+    finish = _finish_reason(payload)
+    # a reply cut off by the output cap is an error, never passed on as complete (DeepSeek's default cap is ~4k)
+    error = f"truncated: finish_reason=length after {ct} output tokens" if finish == "length" else None
+    result = LLMResult(text, provider, model, pt, ct, attempts, elapsed, started, error, task)
+    result.extra["finish_reason"] = finish
+    return result
+
+
+def _finish_reason(payload: bytes) -> str | None:
+    try:
+        return json.loads(payload)["choices"][0].get("finish_reason")
+    except (KeyError, IndexError, ValueError, TypeError):
+        return None
 
 
 def _via_gateway(gateway: str, station: str, provider: str, rest: str, body: bytes,

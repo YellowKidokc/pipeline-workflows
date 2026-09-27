@@ -184,6 +184,7 @@ def extract_all(root: Path, input_dirs: list[Path] | None = None) -> dict[str, i
         input_dirs = [root / "OUTBOX"]
 
     counts: dict[str, int] = {"claims": 0, "proofs": 0, "evidence": 0}
+    seen_papers: set[str] = set()
     for input_dir in input_dirs:
         if not input_dir.exists():
             continue
@@ -198,6 +199,16 @@ def extract_all(root: Path, input_dirs: list[Path] | None = None) -> dict[str, i
             # renamed or moved by the routing step; skip it rather than crash.
             if not path.exists():
                 continue
+            # The OUTBOX root holds each companion twice (<uuid>.md and a readable-name copy); extract each paper once.
+            try:
+                head = path.read_text(encoding="utf-8", errors="replace")[:400]
+            except OSError:
+                continue
+            uuid_match = re.search(r"^paper_uuid:\s*(\S+)", head, re.M)
+            if uuid_match:
+                if uuid_match.group(1) in seen_papers:
+                    continue
+                seen_papers.add(uuid_match.group(1))
             try:
                 outs = extract_from_companion(root, path)
             except FileNotFoundError:
