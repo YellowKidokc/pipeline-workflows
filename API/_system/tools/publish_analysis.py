@@ -131,6 +131,11 @@ def block(note: Path, text: str, out_dir: Path, dry: bool) -> tuple[str, list[st
     stem = note.stem; found = []; L = []
     # a note renamed to its standard title keeps its old name in original_file; runs made before the rename use that
     stems = [stem] + ([Path(yaml_field(text, "original_file")).stem] if yaml_field(text, "original_file") else [])
+    prev = re.search(r"^previous_names:\s*(\[.*\])\s*$", text, re.M)  # names the note had before standard titling
+    try:
+        stems += [str(x) for x in json.loads(prev.group(1))] if prev else []
+    except ValueError:
+        pass
     pick = lambda f: next((r for r in map(f, stems) if r), None)
     comp = pick(find_companion)
     run48 = pick(lambda s: latest(MAIN / "057_API_DEEP" / "OUTBOX" / s, "*/love_truth.json"))
@@ -211,16 +216,29 @@ def block(note: Path, text: str, out_dir: Path, dry: bool) -> tuple[str, list[st
     return "\n".join([START, *L, END]), found
 
 
+def insert_at(text: str) -> int:
+    """Where the block goes: after the scorecard if there is one, else after the title line, and never above the
+    YAML front matter (which must stay the first thing in a note)."""
+    fm = re.match(r"\A---\r?\n.*?\r?\n---\r?\n", text, re.S)
+    floor = fm.end() if fm else 0
+    if "<!-- scorecard:end -->" in text[floor:]:
+        return text.index("<!-- scorecard:end -->", floor) + len("<!-- scorecard:end -->")
+    m = re.compile(r"^# .*$", re.M).search(text, floor)
+    return m.end() if m and m.start() - floor < 3000 else floor
+
+
 def publish(note: Path, dry: bool) -> str:
     text = note.read_text(encoding="utf-8")
     new_block, found = block(note, text, note.parent / "_ANALYSIS", dry)
-    if START in text and END in text:
-        out = re.sub(re.escape(START) + r".*?" + re.escape(END), lambda _: new_block, text, count=1, flags=re.S)
-    elif "<!-- scorecard:end -->" in text:
-        out = text.replace("<!-- scorecard:end -->", "<!-- scorecard:end -->\n\n" + new_block, 1)
-    else:
-        m = re.search(r"^# .*$", text, re.M)
-        out = text[:m.end()] + "\n\n" + new_block + text[m.end():] if m else new_block + "\n\n" + text
+    old = re.search(re.escape(START) + r".*?" + re.escape(END), text, re.S)
+    had = set(re.findall(r"^## (Analysis · [^\n(]+)", old.group(0), re.M)) if old else set()
+    has = set(re.findall(r"^## (Analysis · [^\n(]+)", new_block, re.M))
+    if had - has:                                    # never wipe analysis that is on the note but was not found again
+        return f"kept  {note.name}: not found again, so the note keeps it: {', '.join(sorted(h.strip() for h in had - has))}"
+    body = re.sub(r"\n*" + re.escape(START) + r".*?" + re.escape(END) + r"\n*", "\n\n", text, count=1, flags=re.S)
+    body = body.lstrip("\n") if body.startswith("\n\n---") else body          # a block that sat above the YAML
+    at = insert_at(body)
+    out = body[:at].rstrip("\n") + ("\n\n" if at else "") + new_block + "\n\n" + body[at:].lstrip("\n")
     if not dry and out != text: note.write_text(out, encoding="utf-8")
     return f"{'plan' if dry else 'done'}  {note.name}: {', '.join(found) or 'nothing found'} ({len(out.split()):,} words)"
 
