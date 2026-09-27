@@ -26,7 +26,7 @@ import sys
 import threading
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_system"))
 from engine import inbox  # noqa: E402
 from engine.output import markdown_to_html, page, write_xlsx  # noqa: E402
 from engine.paths import PathConfigurationError, external, inside  # noqa: E402
