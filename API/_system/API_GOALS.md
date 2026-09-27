@@ -5,15 +5,16 @@ from each station's `station.json`; do not edit by hand. Receipts and saved repl
 
 | Goal id | Title | Station | What it asks for |
 |---|---|---|---|
+| `API-20.0` | CKG_RUN | 20_CKG_RUN | the prompts built into the wrapped script |
+| `API-10.1` | THEOLOGY_TRIAGE | 10_CKG_THEOLOGY | 17-probe verdicts + expansions, collapse question, platform notes, argument layer (claims, premises, hidden premises, edges, tests, win condition) |
+| `API-10.2` | THEOLOGY_SCRIPTURES | 10_CKG_THEOLOGY | every Bible passage used (cited / mentioned / alluded), where, and what the speaker does with it; the references found in code must all appear |
+| `API-11.1` | PHYSICS_MIRROR | 11_CKG_PHYSICS | mirrors between theological events and physics processes: stages in order, direction, level (identity / structural / analogy / none), transferring prediction, breaks, law axis |
 | `API-03.0` | YT_INDEX | 03_YT_INDEX | the prompts built into the wrapped script |
 | `API-04.0` | YT_LENSES | 04_YT_LENSES | the prompts built into the wrapped script |
 | `API-06.0` | YT_WATCH | 06_YT_WATCH | the prompts built into the wrapped script |
 | `API-08.1` | YT_SUMMARY | 08_YT_SUMMARY | answers to QUESTIONS.md (base summary) with timestamps |
 | `API-09.1` | YT_DEEP_ANALYSIS | 09_YT_DEEP | detailed analysis per DETAIL.md, building on the 08 summary |
-| `API-10.1` | THEOLOGY_TRIAGE | 10_CKG_THEOLOGY | 17-probe verdicts + expansions, collapse question, platform notes, argument layer (claims, premises, hidden premises, edges, tests, win condition) |
-| `API-11.1` | PHYSICS_MIRROR | 11_CKG_PHYSICS | mirrors between theological events and physics processes: stages in order, direction, level (identity / structural / analogy / none), transferring prediction, breaks, law axis |
 | `API-13.1` | YT_CHANNEL_SUMMARY | 13_YT_CHANNEL_SUMMARY | three-sentence summary, 2-3 keywords, one value per COLUMNS.md column |
-| `API-20.0` | CKG_RUN | 20_CKG_RUN | the prompts built into the wrapped script |
 | `API-30.0` | EVIDENCE_INTAKE | 30_EVIDENCE_INTAKE | the prompts built into the wrapped script |
 | `API-33.0` | EVIDENCE_BUILD_ONE_ARGUMENT | 33_EVIDENCE_BUILD_ONE_ARGUMENT | the prompts built into the wrapped script |
 | `API-34.0` | EVIDENCE_SERIES_SYNTHESIS | 34_EVIDENCE_SERIES_SYNTHESIS | the prompts built into the wrapped script |

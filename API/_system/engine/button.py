@@ -1,0 +1,250 @@
+"""The one script behind every front-folder button. Each .bat passes the folder it sits in:
+
+    1 RUN HERE.bat       python button.py here   "<its folder>"
+    2 RUN ON FOLDER.bat  python button.py folder "<its folder>"
+
+The folder says the rest: its BACKSIDE/station.json names the station, and a station that sits inside another
+station's OUTBOX is a LAYER (010 theology inside 020_CKG/OUTBOX).
+
+Base station (020_CKG), in order:
+  1 where    here = its INBOX (every channel / folder dropped in it, and loose notes); folder = asks (inside or outside)
+  2 prepare  a YouTube channel folder gets Clean MD / Prompts / Channel Summary; raw transcripts are cleaned
+             (clean_library.py, local); the X list (_PICK.md) is written or refreshed
+  3 which    ticked notes, or "how many?" (engine/ask.choose)
+  4 title    notes that do not carry their standard title yet get one (a titled note is recognised and skipped)
+  5 run      the station on those notes; for 020 the deep CKG companion. Results go FLAT into its OUTBOX,
+             answers onto each note (publish_analysis), scriptures into the note's YAML
+  6 layers   offers the layer stations in its OUTBOX, run on the same notes
+Layer station: here = the notes its parent just ran (<parent>/OUTBOX/_last_run.txt); folder = asks. Its results go
+into its own OUTBOX.
+"""
+from __future__ import annotations
+
+import importlib.util
+import json
+import re
+import shutil
+import subprocess
+import sys
+from datetime import datetime
+from pathlib import Path
+
+SYSTEM = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(SYSTEM))
+from engine import note as N, pick                                  # noqa: E402
+from engine.ask import ask, choose                                   # noqa: E402
+from engine.paths import station_dir, station_rows                   # noqa: E402
+from engine.publish import publish_on_note                           # noqa: E402
+
+MAIN = SYSTEM.parent
+ACTIONS = MAIN / "_ACTIONS" / "actions"
+LAST = "_last_run.txt"
+YT_RAW = (".srt", ".vtt")
+SUBFOLDERS = ("Clean MD", "Prompts", "Channel Summary")
+LANES = {"00_PRIORITY", "01_SERIES", "02_GROUP", "02_GENERAL"}
+
+
+def action(name: str):
+    spec = importlib.util.spec_from_file_location(f"action_{name}", ACTIONS / f"{name}.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def station_of(front: Path) -> dict:
+    return json.loads((front / "BACKSIDE" / "station.json").read_text(encoding="utf-8"))
+
+
+def parent_station(front: Path) -> Path | None:
+    """The base station whose OUTBOX holds this one (for a layer), else None."""
+    box = front.parent
+    return box.parent if box.name == "OUTBOX" and (box.parent / "BACKSIDE" / "station.json").is_file() else None
+
+
+# ------------------------------------------------------------------ 2 prepare
+
+def raw_transcripts(folder: Path) -> list[Path]:
+    """Downloaded transcripts not cleaned yet: .srt/.vtt, or .md with a video id and no `cleaned:` field."""
+    raw = []
+    for f in folder.iterdir():
+        if not f.is_file() or f.name.startswith("_"):
+            continue
+        if f.suffix.lower() in YT_RAW:
+            raw.append(f)
+        elif f.suffix.lower() == ".md":
+            head = f.read_text(encoding="utf-8", errors="replace")[:1500]
+            if ("video_id:" in head or "**Video ID:**" in head) and "cleaned:" not in head:
+                raw.append(f)
+    return raw
+
+
+def prepare(folder: Path) -> None:
+    """A YouTube channel folder: make Clean MD / Prompts / Channel Summary and clean what is still raw (local)."""
+    raw = raw_transcripts(folder)
+    if not raw and not (folder / "Clean MD").is_dir():
+        return                                         # a folder of clean notes or papers: nothing to prepare
+    for sub in SUBFOLDERS:
+        (folder / sub).mkdir(exist_ok=True)
+    if raw:
+        print(f"  prepare {folder.name}: {len(raw)} raw transcript(s): {action('clean').run_folder(folder).get('say', '')}")
+
+
+def units(root: Path) -> list[Path]:
+    """The folders under an INBOX that hold something to run: channel folders, groups, lanes with loose notes."""
+    found = [root] if any(root.glob("*.md")) else []
+    for d in sorted(p for p in root.rglob("*") if p.is_dir()):
+        rel = d.relative_to(root).parts
+        if any(part in SUBFOLDERS or part.startswith(("_", ".")) for part in rel):
+            continue
+        if any(d.glob("*.md")) or any(d.glob("*.srt")) or any(d.glob("*.vtt")) or (d / "Clean MD").is_dir():
+            found.append(d)
+    return found
+
+
+# ------------------------------------------------------------------ 3-4 which, title
+
+def gather(sources: list[Path]) -> list[Path]:
+    notes: list[Path] = []
+    for src in sources:
+        if src.is_file():
+            notes.append(src)
+            continue
+        prepare(src)
+        chosen = choose(src)
+        if chosen:
+            notes += chosen
+    return list(dict.fromkeys(notes))
+
+
+def titled(note: Path) -> bool:
+    return N.fields(note.read_text(encoding="utf-8", errors="replace")).get("std_title") == note.stem
+
+
+def title_first(notes: list[Path]) -> list[Path]:
+    todo = [n for n in notes if not titled(n)]
+    if not todo:
+        return notes
+    print(f"\n  title: {len(todo)} of {len(notes)} note(s) not titled yet (~1.5k tokens each)")
+    t = action("title")
+    renamed = {}
+    for n in todo:
+        r = t.run(n, n.read_text(encoding="utf-8"))
+        print(f"    {r.get('say', '')[:120]}")
+        if r.get("note"):
+            renamed[n] = Path(r["note"])
+    return [renamed.get(n, n) for n in notes]
+
+
+# ------------------------------------------------------------------ 5 run
+
+def deep_ckg(front: Path, notes: list[Path]) -> int:
+    """The deep CKG companion (evidence turbo runner) on these notes; flat '<note> · CKG.md' into OUTBOX."""
+    runner = SYSTEM / "vendor" / "evidence" / "SCRIPTS" / "turbo_pipeline_runner.py"
+    work = front / "BACKSIDE" / "_deep"
+    inbox = work / "INBOX"
+    inbox.mkdir(parents=True, exist_ok=True)
+    for n in notes:                                    # the source only: our analysis block on the note stays out
+        text = n.read_text(encoding="utf-8", errors="replace")
+        text = re.sub(r"<!-- (analysis|scorecard):start -->.*?<!-- \1:end -->\n?", "", text, flags=re.S)
+        (inbox / n.name).write_text(text, encoding="utf-8")
+    started = datetime.now().timestamp()
+    code = subprocess.run([sys.executable, str(runner), "--root", str(work), "--workers", "4", "--provider", "deepseek"],
+                          cwd=runner.parent).returncode
+    outbox = front / "OUTBOX"
+    made = [p for p in (work / "OUTBOX").rglob("*_C1_*.md") if p.stat().st_mtime >= started - 5]
+    for n in notes:
+        slug = _slug(n.name)
+        hits = sorted((p for p in made if p.name.startswith(slug)), key=lambda p: p.stat().st_mtime)
+        if hits:
+            shutil.copy2(hits[-1], outbox / f"{n.stem} · CKG.md")
+        else:
+            print(f"    no CKG companion found for {n.name}")
+    return code
+
+
+def _slug(name: str) -> str:
+
+    s = re.sub(r"[^\w\-]", "_", Path(name).stem)
+    s = re.sub(r"_+", "_", s).strip("_")
+    return s[:80] if s else "untitled_paper"
+
+
+def run_station(front: Path, st: dict, notes: list[Path], focus: list[str]) -> int:
+    (front / "OUTBOX").mkdir(exist_ok=True)
+    listfile = front / "OUTBOX" / LAST                 # every station keeps the list of notes it last ran
+    listfile.write_text("\n".join(map(str, notes)) + "\n", encoding="utf-8")
+    if st["number"] == "20":
+        code = deep_ckg(front, notes)
+    else:
+        row = next(r for r in station_rows() if r["number"] == st["number"])
+        if st.get("kind") == "legacy":                  # a wrapped older tool: it reads its own inputs, run as before
+            cmd = [sys.executable, str(SYSTEM / "engine" / "menu.py"), st["number"], "--yes"]
+        else:                                           # engine station: these notes, flat copies in this OUTBOX
+            cmd = [sys.executable, str(station_dir(row["label"]) / row["script"]), f"@{listfile}",
+                   "--outbox", str(front / "OUTBOX")] + (["--focus", "; ".join(focus)] if focus else [])
+        print(f"\n$ {' '.join(cmd)}")
+        code = subprocess.run(cmd, cwd=MAIN).returncode
+    return code
+
+
+# ------------------------------------------------------------------ main
+
+def main(mode: str, front: Path) -> int:
+    st = station_of(front)
+    base = parent_station(front)
+    title = f"{st['label']}" + (f"  (layer of {station_of(base)['label']})" if base else "")
+    print(f"\n{title}\n{'=' * len(title)}")
+    if base and mode == "here":
+        listed = base / "OUTBOX" / LAST
+        notes = [p for p in pick.read_list(listed) if p.is_file()] if listed.is_file() else []
+        if not notes:
+            print(f"No notes yet: run {station_of(base)['label']} first (its list is {listed}).")
+            return 0
+        if ask(f"Run on the {len(notes)} note(s) {station_of(base)['label']} just did? [Y/n] ").lower() in ("n", "no"):
+            return 1
+    else:
+        if mode == "here":
+            sources = units(front / "INBOX")
+            if not sources:
+                print(f"Nothing in {front / 'INBOX'}. Drop a channel folder, a folder of notes, or notes in it.")
+                return 0
+        else:
+            raw = ask("Where are the notes? (drag a folder or a note here) ")
+            sources = [Path(raw)] if raw else []
+            if not sources or not sources[0].exists():
+                print(f"Not found: {raw}")
+                return 2
+        notes = gather(sources)
+        if not notes:
+            return 0
+        if not base:
+            notes = title_first(notes)
+    if ask(f"\nRun {st['label']} on {len(notes)} note(s)? [Y/n] ").lower() in ("n", "no"):
+        return 1
+    focus: list[str] = []
+    code = run_station(front, st, notes, focus)
+    scripture = action("scripture")
+    for n in notes:                                   # scriptures into the YAML, then everything onto the note
+        if n.is_file():
+            r = scripture.run(n, n.read_text(encoding="utf-8"))
+            n.write_text(N.set_fields(n.read_text(encoding="utf-8"), r["yaml"]), encoding="utf-8")
+    layers =sorted(d for d in (front / "OUTBOX").iterdir() if d.is_dir() and (d / "BACKSIDE" / "station.json").is_file())
+    if layers and not base:
+        for i in range(5):
+            extra = ask(f"\nAnything else to look for in these notes? ({i + 1}/5, Enter = done) ")
+            if not extra:
+                break
+            focus.append(extra)
+        menu = "  ".join(f"{station_of(d)['number']} {d.name.split('_', 1)[1]}" for d in layers)
+        picked = ask(f"Run a layer on the same notes? {menu}  (numbers, Enter = none) ").replace(",", " ").split()
+        for d in layers:
+            if station_of(d)["number"] in picked:
+                code |= run_station(d, station_of(d), notes, focus)
+    publish_on_note(notes)          # last: the CKG, then each layer under it, all above the transcript
+    print(f"\nDone. Results: {front / 'OUTBOX'}   Answers: on each note.")
+    return code
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv[1] if len(sys.argv) > 1 else "here",
+                          Path(sys.argv[2]).resolve() if len(sys.argv) > 2 else Path.cwd()))

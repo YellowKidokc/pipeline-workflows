@@ -46,7 +46,30 @@ def yaml_field(text: str, key: str) -> str:
     return m.group(1).strip() if m else ""
 
 
+def glob_escape(name: str) -> str:
+    return re.sub(r"([\[\]*?])", r"[\1]", name)
+
+
+def find_layers(stems: list[str]) -> list[tuple[str, Path]]:
+    """Layer results the buttons leave flat in a layer's OUTBOX: '<note> · <NN_LABEL>.md' (theology, physics...),
+    newest per layer, in station-number order."""
+    out: dict[str, Path] = {}
+    for stem in stems:
+        for depth in range(1, 6):
+            for p in MAIN.glob("*/" * depth + f"OUTBOX/{glob_escape(stem)} · *.md"):
+                label = p.stem.rsplit(" · ", 1)[-1]
+                if label == "CKG" or not re.match(r"\d+_", label):
+                    continue
+                if label not in out or p.stat().st_mtime > out[label].stat().st_mtime:
+                    out[label] = p
+    return sorted(out.items(), key=lambda kv: int(kv[0].split("_")[0]))
+
+
 def find_companion(stem: str) -> Path | None:
+    # the CKG button leaves "<note> · CKG.md" flat in its front folder's OUTBOX (01_CKG/020_CKG/OUTBOX ...)
+    flat = [p for pat in ("*/OUTBOX/", "*/*/OUTBOX/", "*/*/*/OUTBOX/") for p in MAIN.glob(f"{pat}{glob_escape(stem)} · CKG.md")]
+    if flat:
+        return max(flat, key=lambda p: p.stat().st_mtime)
     slug = re.sub(r"[^\w.-]+", "_", stem).strip("_")[:40]
     hits = [p for p in (EVIDENCE_ROOT / "OUTBOX" / "BY_DOMAIN").glob("*/*_C1_*.md") if p.name.startswith(slug)]
     complete = [p for p in hits if "## S10" in p.read_text(encoding="utf-8", errors="replace")]
@@ -152,6 +175,11 @@ def block(note: Path, text: str, out_dir: Path, dry: bool) -> tuple[str, list[st
         L += [f"Interactive charts: [Fruits of Love and Truth report](<_ANALYSIS/{dest.name}>)", ""]
     if comp:
         L += ["## Analysis · Deep CKG (MASTER PAPER COMPANION)", "", demote(companion_body(ctext)), ""]
+    for label, path in find_layers(stems):              # layers under the CKG, before everything else (David)
+        found.append(label.split("_", 1)[1].replace("_", " ").title())
+        body = path.read_text(encoding="utf-8", errors="replace")
+        body = re.sub(r"\A# .*\n", "", body)             # the layer's own title line; our heading replaces it
+        L += [f"## Analysis · Layer {label}", "", demote(body).strip(), ""]
     if args:
         L += ["## Analysis · Argument grades", "",
               "Strength and originality are each 0–8, computed from yes / partly / no checks with quotes and averaged over two "

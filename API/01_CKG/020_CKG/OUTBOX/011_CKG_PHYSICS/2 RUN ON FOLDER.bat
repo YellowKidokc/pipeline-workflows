@@ -1,6 +1,6 @@
 @echo off
 setlocal
-rem Split CKG outputs into claims / proofs / evidence (local).
+rem Physics mirror layer on any folder or note (X list applies); results in this folder.
 rem Find _system by walking up, so this folder can be moved anywhere under API\.
 set "SYS=%~dp0"
 :findsys
@@ -12,7 +12,6 @@ set "SYS=%UP%"
 goto :findsys
 :sysok
 set "SYS=%SYS%_system\"
-where py >nul 2>nul && (py -3 "%SYS%engine\menu.py" 21 --yes %* & goto :done)
-python "%SYS%engine\menu.py" 21 --yes %*
-:done
+set "PY=python" & where py >nul 2>nul && set "PY=py -3"
+%PY% "%SYS%engine\button.py" folder "%~dp0."
 pause

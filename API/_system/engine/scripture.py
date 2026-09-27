@@ -204,6 +204,15 @@ def ensure_section(markdown: str, hits: list[dict], after: str = "## Definitions
     return markdown[:start] + section.rstrip() + "\n" + rows + "\n\n" + markdown[end:].lstrip("\n")
 
 
+def standalone_prompt(hits: list[dict], source: str) -> str:
+    """Its own small call (a long analysis reply plus 60 scripture rows overruns the 8k output cap)."""
+    return ("List every Bible passage this source uses, in order of first use, as JSON:\n"
+            '{"scriptures": [{"ref": "Book 1:2-3", "how": "cited|mentioned|alluded", "where": "timestamp or section", '
+            '"said": "what the speaker does with it, at most 15 words; for alluded, the words that show it"}]}\n'
+            "One row per use: a passage used for two different points gets two rows with their own timestamps.\n"
+            + prompt_block(hits) + "\n\nSOURCE:\n" + source)
+
+
 JSON_ASK = ('Also return "scriptures": [{"ref": "Book 1:2-3", "how": "cited|mentioned|alluded", "where": "timestamp", '
             '"said": "what the speaker does with it, one line; for alluded, the words that show it"}] listing every '
             'passage the source uses.')

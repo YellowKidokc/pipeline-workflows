@@ -40,7 +40,13 @@ MAX_NAME = 140                               # Windows paths stop at 260 charact
 
 def field(text, key):
     m = re.search(rf'^{key}:\s*"?(.*?)"?\s*$', text[:4000], re.M)
-    return m.group(1).strip() if m else ""
+    if m:
+        return m.group(1).strip()
+    # Raw YouTube downloader notes use bold Markdown metadata rather than YAML,
+    # for example ``**Video ID:** `abc123``` and ``**Captured:** 2026-09-27``.
+    label = key.replace("_", " ")
+    m = re.search(rf'^\*\*{re.escape(label)}:\*\*\s*`?(.+?)`?\s*$', text[:4000], re.M | re.I)
+    return m.group(1).strip().strip("`") if m else ""
 
 
 def listfield(text, key):
@@ -184,6 +190,7 @@ def set_yaml(text: str, values: dict) -> str:
 def process(note: Path, apply: bool) -> str:
     text = note.read_text(encoding="utf-8")
     author = (field(text, "author") or field(text, "channel") or field(text, "by")
+              or (note.parent.name if field(text, "video_id") else "")
               or ("David Lowe" if re.search(r"David Lowe|POF 2828", text[:3000]) or not field(text, "video_id") else "Unknown"))
     # a source with no author and no video is one of David's own papers
     code = author_code(author)

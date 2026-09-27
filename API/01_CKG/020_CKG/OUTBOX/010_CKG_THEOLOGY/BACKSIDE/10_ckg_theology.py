@@ -71,12 +71,14 @@ def process(ctx):
               + f"\n\nITEM: {item.id}\nCHANNEL: {item.meta.get('channel', '')}\nVIDEO: {item.title}\nURL: {item.meta.get('url', '')}"
               + (f"\n\nCKG INDEX FOR THIS VIDEO (station 03):\n{json.dumps(index, ensure_ascii=False)[:60000]}" if index else "")
               + ("\n\nCOMMENTS (most liked first):\n" + "\n".join(audience) if audience else "\n\nCOMMENTS: none acquired")
-              + "\n\n" + scripture.prompt_block(hits) + "\n" + scripture.JSON_ASK
               + f"\n\nTRANSCRIPT:\n{ctx.text}")
     extra = f"index={bool(index)};comments={len(audience)}"
     reply = ctx.cached("triage", lambda: ctx.call_json("theology_triage", prompt), extra=extra)
     if not isinstance(reply, dict):
         return None
+    # scriptures get their own small call: added to the triage reply they overran the 8k output cap
+    verses = ctx.cached("scriptures", lambda: ctx.call_json("theology_scriptures", scripture.standalone_prompt(hits, ctx.text)))
+    reply["scriptures"] = (verses or {}).get("scriptures") if isinstance(verses, dict) else None
     ruled = triage.enforce(reply, rubric, comments_available=bool(audience))
     for line in ruled["log"]:
         ctx.step(f"rule: {line}")
