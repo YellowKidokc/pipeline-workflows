@@ -17,11 +17,31 @@ import os
 from pathlib import Path
 
 API_HOME = Path(__file__).resolve().parents[1]
+MAIN = API_HOME.parent                    # the folder David opens: NNN_NAME\ front folders + _system\
 CONFIG_DIR = API_HOME / "config"
 
 
 class PathConfigurationError(RuntimeError):
     pass
+
+
+def station_rows() -> list[dict]:
+    return json.loads((CONFIG_DIR / "stations.json").read_text(encoding="utf-8"))
+
+
+def station_dir(label: str) -> Path:
+    """A station's own folder, from its `folder` in stations.json (relative to _system):
+    `../055_LEAN_PAPERS/BACKSIDE` once it has a front folder, `stations/NN_NAME` before.
+    Accepts the label (55_LEAN_PAPERS) or the number (55). Never outside MAIN."""
+    for row in station_rows():
+        if label in (row["label"], row["number"]):
+            folder = (API_HOME / row["folder"]).resolve()
+            try:
+                folder.relative_to(MAIN)
+            except ValueError as exc:
+                raise PathConfigurationError(f"Station folder escapes {MAIN}: {folder}") from exc
+            return folder
+    raise PathConfigurationError(f"No station {label!r} in config/stations.json")
 
 
 def inside(*parts: str) -> Path:
