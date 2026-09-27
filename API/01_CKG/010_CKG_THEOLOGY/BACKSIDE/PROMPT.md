@@ -26,6 +26,11 @@ Also give the PLATFORM PROBES (one line each, at most 12 words; they are notes, 
 layer: claims, premises, hidden premises (with load_bearing and the reason), inference edges with status, adversarial
 tests, and the win condition (what would win this argument, what would defeat it).
 
+SCRIPTURES: list every passage the video uses, one entry each, in order of first use. Include every reference in the
+"SCRIPTURE REFERENCES DETECTED IN CODE" list below, and say what the speaker does with it. Then add every passage the
+speaker quotes or paraphrases without naming it ("how": "alluded"), and quote the words that show it. Never add a passage
+the video does not use.
+
 Return one JSON object:
 {"speaker": "", "rubric": [{"row": 1, "verdict": "CLEAN", "line": "", "severity": 0, "timestamp": "", "expansion": "",
    "mode": "", "verify": false}],
@@ -37,5 +42,7 @@ Return one JSON object:
    "inference_edges": [{"from": "P001", "to": "C001", "relation": "supports", "status": "VALID|CONDITIONAL|FAILED"}],
    "adversarial_tests": [{"test": "", "target": "C001", "result": "PASSED|CONDITIONAL|FAILED|UNRESOLVED", "finding": ""}],
    "win_condition": {"what_would_win": "", "what_would_defeat": ""}},
+ "scriptures": [{"ref": "Book 1:2-3", "how": "cited|mentioned|alluded", "where": "timestamp",
+   "said": "what the speaker does with it, one line; for alluded, the words that show it"}],
  "anomalies_detected": [], "synthesis_hooks": [], "keywords": [], "source_reliability": "high|mixed|low",
  "focus_findings": []}

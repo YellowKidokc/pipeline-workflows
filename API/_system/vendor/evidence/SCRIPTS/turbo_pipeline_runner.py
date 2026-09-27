@@ -52,6 +52,8 @@ OUTBOX_DIR = ROOT_DIR / "OUTBOX"
 import sys as _sys
 _sys.path.insert(0, str(SCRIPTS_DIR))
 import article_stack  # original article always preserved + stacked below generated material
+_sys.path.insert(0, str(next(p for p in SCRIPTS_DIR.parents if (p / "engine").is_dir())))
+from engine import scripture  # scripture references found in code; the companion's Scriptures table must hold them all
 PROCESSED_DIR = ROOT_DIR / "PROCESSED_ORIGINALS"
 FAILED_DIR = ROOT_DIR / "FAILED"
 LOGS_DIR = ROOT_DIR / "LOGS"
@@ -384,6 +386,7 @@ class PaperProcessor:
         # Preserve the untouched original FIRST (byte-for-byte, SHA-256 verified).
         original_bytes, _orig_sha, _preserved_path = article_stack.preserve(paper_path)
         raw_text = original_bytes.decode("utf-8", errors="replace")
+        scripture_hits = scripture.find(raw_text)
 
         # Series Shared Memory / DeepSeek Cross-Paper Notes & Persistent Scratchpad
         series_context = ""
@@ -437,6 +440,9 @@ INSTRUCTIONS:
 10. Under "Six-Door Explanatory Lens", provide deep, braided insights for all 6 doors (Human, Metaphysical, Theological, Scientific, Formal, External).
 11. Under "Exact source, untouched", fence the complete untouched original text.
 12. CRITICAL: Complete ALL sections down to the final line without truncating.
+13. Under "S02 · Claim Definition", right after "## Definitions", fill "## Scriptures": one row per passage, with what
+    the source says about it.
+{scripture.prompt_block(scripture_hits)}
 
 CANONICAL TEMPLATE SKELETON:
 {self.template_text}
@@ -454,6 +460,7 @@ SOURCE TEXT:
             deadline=self.timeout,
             label=paper_path.name,
         )
+        rendered_output = scripture.ensure_section(rendered_output, scripture_hits)   # nothing found in code is dropped
 
         # Quick Metadata Extraction from YAML
         domain = "theology"
