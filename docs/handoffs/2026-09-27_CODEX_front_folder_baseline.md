@@ -26,7 +26,8 @@ API/01_CKG/                    group folder (a container; David clicks into it)
 
 ## The job
 
-1. **`API/02_YOUTUBE/`**, and then the other numbered folders: give every station the same two buttons. Generate them with `python API/_system/tools/make_buttons.py <front folder> ["what RUN HERE does"] ["what RUN ON FOLDER does"]`. Each .bat is the walk-up block plus one `button.py` call. Remove the old `1 RUN ALL.bat`.
+0. **Do NOT touch `API/02_YOUTUBE/`** (nor anything under it). David is reviewing it himself; much of it should become local Python, not API calls. Leave it exactly as it is.
+1. **Every other numbered folder** (000, 030-060, and anything else under `API/` except `01_CKG` and `02_YOUTUBE`): give every station the same two buttons. Generate them with `python API/_system/tools/make_buttons.py <front folder> ["what RUN HERE does"] ["what RUN ON FOLDER does"]`. Each .bat is the walk-up block plus one `button.py` call. Remove the old `1 RUN ALL.bat`.
 2. **`button.py` has one special case**: station 20 runs the deep CKG engine (`deep_ckg`). Every other engine station is run as `script @<list> --outbox <folder> --workers N [--focus ...]`, and a legacy station runs through `menu.py NN --yes`. If a station needs its own run step (a channel URL for 01, a topic for 48), add a small branch in `run_station`, the way 20 has one. Never write a second button script.
 3. **Decide which stations are layers.** A station that only makes sense after another (a physics pass after the CKG) becomes a layer and moves into that station's `OUTBOX/`. Ask David before moving a station he has not placed. List your proposals in the report (see below).
 4. **Make every engine station honour the shared flags:** `@list` inputs (via `engine/items.discover` or `engine/pick.resolve`), `--outbox`, `--workers`, and `--focus`. Any "focus findings" the model returns must be SHOWN in the report, using `engine/focus.findings_md`, as the first section.
