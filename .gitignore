@@ -7,6 +7,10 @@ CONFIG/*.json
 **/CONFIG/*.ini
 **/CONFIG/*.json
 !**/CONFIG/*.example.*
+# API engine config is code (station list, routines, settings); paths.json stays local
+!API/_system/config/*.json
+!API/_system/vendor/ckg/CONFIG/ckg.json
+API/_system/config/paths.json
 
 # Heavy local artifacts
 models/
@@ -64,3 +68,4 @@ Codex-Powershell_GUI/
 
 # Accidental archive/junk tree with unusable long paths
 workflows/New Folder/
+API/_system/STATE/
