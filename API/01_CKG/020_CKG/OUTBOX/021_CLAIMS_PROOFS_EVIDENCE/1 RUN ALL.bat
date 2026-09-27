@@ -1,6 +1,6 @@
 @echo off
 setlocal
-rem Overlay a topic synthesis on David's own work: expand / contract / holes, and who said it first (citations).
+rem Split CKG outputs into claims / proofs / evidence (local).
 rem Find _system by walking up, so this folder can be moved anywhere under API\.
 set "SYS=%~dp0"
 :findsys
@@ -12,8 +12,7 @@ set "SYS=%UP%"
 goto :findsys
 :sysok
 set "SYS=%SYS%_system\"
-if not defined DEEPSEEK_API_KEY echo DEEPSEEK_API_KEY is not set. Run SETUP.bat once. & pause & exit /b 1
-where py >nul 2>nul && (py -3 "%SYS%engine\menu.py" 49 %* & goto :done)
-python "%SYS%engine\menu.py" 49 %*
+where py >nul 2>nul && (py -3 "%SYS%engine\menu.py" 21 --yes %* & goto :done)
+python "%SYS%engine\menu.py" 21 --yes %*
 :done
 pause

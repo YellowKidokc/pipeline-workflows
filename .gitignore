@@ -343,3 +343,12 @@ API/**/[0-9][0-9][0-9]_*/OUTBOX/**
 !API/**/[0-9][0-9][0-9]_*/**/.gitkeep
 API/**/[0-9][0-9][0-9]_*/BACKSIDE/work/
 API/**/[0-9][0-9][0-9]_*/BACKSIDE/logs/
+# A layer station placed in another station's OUTBOX (010 theology inside 020_CKG/OUTBOX) is code: keep it.
+# Its own INBOX/OUTBOX (the layer's results) stay data.
+!API/**/OUTBOX/[0-9][0-9][0-9]_*/
+!API/**/OUTBOX/[0-9][0-9][0-9]_*/**
+API/**/OUTBOX/[0-9][0-9][0-9]_*/INBOX/**
+API/**/OUTBOX/[0-9][0-9][0-9]_*/OUTBOX/**
+!API/**/OUTBOX/[0-9][0-9][0-9]_*/INBOX/**/
+!API/**/OUTBOX/[0-9][0-9][0-9]_*/**/.gitkeep
+API/**/OUTBOX/[0-9][0-9][0-9]_*/**/__pycache__/

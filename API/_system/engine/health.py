@@ -19,7 +19,7 @@ from pathlib import Path
 
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from engine.paths import API_HOME, expand, key_specs, load_paths  # noqa: E402
+from engine.paths import API_HOME, expand, key_specs, load_paths, station_dir  # noqa: E402
 
 NATIVE_FLAGS = {"limit": "--limit", "workers": "--workers", "provider": "--provider", "model": "--model",
                 "focus": "--focus", "redo": "--redo", "channel": "--channel", "topic": "--topic"}
@@ -37,7 +37,7 @@ def _help(cmd: list[str], cwd: Path) -> tuple[bool, str]:
 
 def check_station(row: dict, quick: bool) -> list[tuple[str, bool, str]]:
     out = []
-    folder = API_HOME / row["folder"]
+    folder = station_dir(row["label"])
     meta_path = folder / "station.json"
     script = folder / row["script"]
     missing = [n for n, p in (("folder", folder), ("script", script), ("FOCUS.md", folder / "FOCUS.md"),

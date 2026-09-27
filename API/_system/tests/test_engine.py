@@ -37,8 +37,11 @@ def menu(args: list[str], cfg: Path) -> subprocess.CompletedProcess:
 
 
 def fronts() -> list[Path]:
-    """Every front folder: 0NN_NAME in MAIN, or inside a group folder (01_CKG/020_CKG, 02_YOUTUBE/001_YT_GRAB)."""
-    return sorted([*HOME.parent.glob("[0-9][0-9][0-9]_*"), *HOME.parent.glob("[0-9][0-9]_*/[0-9][0-9][0-9]_*")])
+    """Every front folder, wherever David put it: in MAIN, in a group (02_YOUTUBE/001_YT_GRAB), or as a layer inside
+    another station's OUTBOX (01_CKG/020_CKG/OUTBOX/010_CKG_THEOLOGY). A front folder is one whose BACKSIDE holds a
+    station.json."""
+    return sorted({p.parent.parent for p in HOME.parent.rglob("BACKSIDE/station.json")
+                   if "_system" not in p.relative_to(HOME.parent).parts and p.parent.parent.name[:3].isdigit()})
 
 
 class Portability(unittest.TestCase):
