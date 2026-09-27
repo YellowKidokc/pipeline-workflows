@@ -103,7 +103,20 @@ def main(argv: list[str]) -> int:
     if not items:
         items = [ask("Which note or folder? (drag it here) ")]
     order = expand(names)
-    steps = [(n, load(n)) for n in order]
+    loaded = [(n, load(n)) for n in order]
+    # folder actions (SCOPE = "folder", e.g. clean: raw transcripts -> Clean MD) run first, on the folders named;
+    # the note actions then run on the notes those folders hold (after the pick list)
+    folder_steps = [(n, m) for n, m in loaded if getattr(m, "SCOPE", "note") == "folder"]
+    steps = [(n, m) for n, m in loaded if getattr(m, "SCOPE", "note") != "folder"]
+    folders = list(dict.fromkeys(Path(i) if Path(i).is_dir() else Path(i).parent for i in items if not i.startswith("@")))
+    for name, mod in folder_steps:
+        paid = " (calls a model)" if getattr(mod, "API", False) else ""
+        if not yes and ask(f"{name}{paid} on {', '.join(f.name for f in folders)}? [Y/n] ").lower() in ("n", "no"):
+            return 1
+        for f in folders:
+            print(f"{name}: {f.name}: {(mod.run_folder(f) or {}).get('say', 'ok')}", flush=True)
+    if not steps:
+        return 0
     notes = pick.resolve(items)
     if not notes:
         print("Nothing to run (see the PICK line above if a pick list was written).")
