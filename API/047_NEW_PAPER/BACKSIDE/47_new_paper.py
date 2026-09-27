@@ -3,7 +3,7 @@ import argparse
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_system"))
+sys.path.insert(0, str(next(p for p in Path(__file__).resolve().parents if (p / "_system").is_dir()) / "_system"))
 from engine.items import create_paper  # noqa: E402
 
 TEXT = {".md", ".txt", ".html", ".htm", ".tex"}
@@ -17,10 +17,21 @@ def main() -> int:
     p.add_argument("--series", default="")
     p.add_argument("--own", action="store_true", help="mark as David's own work (used by 49 GAP_MAP)")
     p.add_argument("--no-tag", action="store_true", help="skip the automatic tagging")
+    p.add_argument("--workers", type=int, default=1, help="accepted for the shared front door; creation is serial")
+    p.add_argument("--provider", help="accepted for the shared front door; this station is local")
+    p.add_argument("--model", help="accepted for the shared front door; this station is local")
+    p.add_argument("--focus", action="append", default=[], help="accepted for the shared front door")
+    p.add_argument("--outbox", help="accepted for the shared front door; paper folders use papers_root")
     p.add_argument("--dry-run", action="store_true")
     a = p.parse_args()
     files = []
     for raw in a.sources:
+        if raw.startswith("@"):
+            listing = Path(raw[1:])
+            if listing.is_file():
+                files += [Path(line.strip()) for line in listing.read_text(encoding="utf-8").splitlines()
+                          if line.strip() and Path(line.strip()).is_file()]
+            continue
         path = Path(raw).expanduser()
         files += sorted(f for f in path.rglob("*") if f.suffix.lower() in TEXT) if path.is_dir() else [path]
     if not files:

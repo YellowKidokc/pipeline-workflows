@@ -10,7 +10,7 @@ import sys
 import time
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_system"))
+sys.path.insert(0, str(next(p for p in Path(__file__).resolve().parents if (p / "_system").is_dir()) / "_system"))
 from engine import bridge  # noqa: E402
 from engine.output import markdown_to_html, page  # noqa: E402
 from engine.station import Context, ItemResult, Station  # noqa: E402

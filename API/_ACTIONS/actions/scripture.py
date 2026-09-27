@@ -2,7 +2,7 @@
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_system"))
+sys.path.insert(0, str(next(p for p in Path(__file__).resolve().parents if (p / "_system").is_dir()) / "_system"))
 from engine import scripture  # noqa: E402
 
 ABOUT = "every Bible reference used (cited or mentioned), found in code -> YAML scriptures: [...]"

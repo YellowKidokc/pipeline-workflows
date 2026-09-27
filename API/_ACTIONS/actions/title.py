@@ -2,7 +2,7 @@
 import importlib.util
 from pathlib import Path
 
-TOOL = Path(__file__).resolve().parents[2] / "_system" / "tools" / "standard_title.py"
+TOOL = next(p for p in Path(__file__).resolve().parents if (p / "_system").is_dir()) / "_system" / "tools" / "standard_title.py"
 _spec = importlib.util.spec_from_file_location("standard_title", TOOL)
 st = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(st)

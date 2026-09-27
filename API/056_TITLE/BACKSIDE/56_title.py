@@ -1,18 +1,22 @@
 """56_TITLE: standard title + keywords + move for each item, before any CKG (_system/tools/standard_title.py --apply).
 
-With no items (as in a routine) it titles the notes waiting in its own INBOX and the inboxes of the stations
-that run after it, so the standard name is in place before any run folder is named after the source.
-Folders obey their _PICK.md like every API station."""
+With no items it titles the notes waiting in its own INBOX. Folders obey their
+_PICK.md like every API station."""
 from pathlib import Path
-import subprocess, sys
-MAIN = Path(__file__).resolve().parents[2]
+import argparse, subprocess, sys
+MAIN = next(p for p in Path(__file__).resolve().parents if (p / "_system").is_dir())
 TOOL = MAIN / "_system" / "tools" / "standard_title.py"
-INBOXES = ["056_TITLE", "057_API_DEEP", "058_ARGUMENT_GRADE"]
 if __name__ == "__main__":
-    items = [a for a in sys.argv[1:] if not a.startswith("--")]
+    ap = argparse.ArgumentParser()
+    ap.add_argument("items", nargs="*"); ap.add_argument("--outbox")
+    ap.add_argument("--workers", type=int, default=1); ap.add_argument("--focus", action="append", default=[])
+    ap.add_argument("--dry-run", action="store_true"); ap.add_argument("--all", action="store_true")
+    a = ap.parse_args()
+    items = a.items
     if not items:
-        items = [str(d) for d in (MAIN / n / "INBOX" for n in INBOXES) if d.is_dir() and any(d.rglob("*.md"))]
-        print(f"56_TITLE: {'titling ' + ', '.join(items) if items else 'no .md notes waiting in the inboxes; nothing to title'}")
-    flags = [] if "--dry-run" in sys.argv else ["--apply"]   # a dry run only shows the titles; it never renames
-    flags += ["--all"] if "--all" in sys.argv else []
+        inbox = Path(__file__).resolve().parent.parent / "INBOX"
+        items = [str(inbox)] if any(inbox.rglob("*.md")) else []
+        print(f"56_TITLE: {'titling its INBOX' if items else 'no .md notes waiting in its INBOX; nothing to title'}")
+    flags = [] if a.dry_run else ["--apply"]
+    flags += ["--all"] if a.all else []
     raise SystemExit(subprocess.run([sys.executable, str(TOOL), *items, *flags]).returncode if items else 0)

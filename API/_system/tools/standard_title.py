@@ -136,7 +136,7 @@ def write_master(t: dict) -> None:
     link = lambda n: f"[[{n}\\|{' '.join(n.split(' ')[:2])}]]"        # shown as "GHabermas 2026-09-12"; \| because it sits in a table
     L = ["# Classification master record", "",
          "Every classification the corpus uses, rebuilt each time a source is titled (tools/standard_title.py; data: "
-         "API_ALL/API_HOME/tools/taxonomy.json). The tagger is told to reuse these terms, so over time this becomes the "
+         "_system/tools/taxonomy.json). The tagger is told to reuse these terms, so over time this becomes the "
          "fixed vocabulary the whole corpus works within.", "",
          "## Rules", "",
          "- File name: `<Author code> <YYYY-MM-DD> · <Title> · <Keyword>, <Keyword> · <Move>`; all keywords are in the note's YAML.",
