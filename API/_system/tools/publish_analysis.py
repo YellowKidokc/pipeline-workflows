@@ -72,8 +72,9 @@ def find_layers(stems: list[str]) -> list[tuple[str, Path]]:
 
 def find_companion(stem: str) -> Path | None:
     # the CKG button leaves "<note> · CKG.md" flat in its front folder's OUTBOX (01_CKG/020_CKG/OUTBOX ...)
-    flat = [p for pat in ("*/OUTBOX/", "*/*/OUTBOX/", "*/*/*/OUTBOX/") for p in MAIN.glob(f"{pat}{glob_escape(stem)} · CKG.md")]
-    flat += [p for d in LOOK_IN for p in d.glob(f"{glob_escape(stem)} · CKG.md")]
+    pats = [x + y for x in ("*/OUTBOX/", "*/*/OUTBOX/", "*/*/*/OUTBOX/") for y in ("CKG/", "")]   # OUTBOX/CKG/ now
+    flat = [p for pat in pats for p in MAIN.glob(f"{pat}{glob_escape(stem)} · CKG.md")]
+    flat += [p for d in LOOK_IN for sub in ("CKG/", "") for p in d.glob(f"{sub}{glob_escape(stem)} · CKG.md")]
     if flat:
         return max(flat, key=lambda p: p.stat().st_mtime)
     slug = re.sub(r"[^\w.-]+", "_", stem).strip("_")[:40]

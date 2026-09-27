@@ -145,7 +145,7 @@ def deep_ckg(front: Path, notes: list[Path], out: Path, workers: int, focus: lis
     import threading
     from concurrent.futures import ThreadPoolExecutor, as_completed
     runner = SYSTEM / "vendor" / "evidence" / "SCRIPTS" / "turbo_pipeline_runner.py"
-    todo = [n for n in notes if focus or not (out / f"{n.stem} · CKG.md").is_file()]
+    todo = [n for n in notes if focus or not (out / "CKG" / f"{n.stem} · CKG.md").is_file()]
     for n in notes:
         if n not in todo:
             print(f"    already done, skipped: {n.name[:100]}")
@@ -178,10 +178,14 @@ def deep_ckg(front: Path, notes: list[Path], out: Path, workers: int, focus: lis
         if not hits:
             say(f"[{k}/{len(todo)}] no CKG came back for {n.name[:90]}")
             return code or 1
-        shutil.copy2(hits[-1], out / f"{n.stem} · CKG.md")          # dump it now, in order: file, YAML, note
+        dest = out / "CKG" / f"{n.stem} · CKG.md"                    # dump it now, in order: file, YAML, note, latest
+        archive(dest, out)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(hits[-1], dest)
         r = scripture.run(n, n.read_text(encoding="utf-8"))
         n.write_text(N.set_fields(n.read_text(encoding="utf-8"), r["yaml"]), encoding="utf-8")
-        publish_on_note([n], [out])
+        publish_on_note([n], [out, out / "CKG"])
+        write_latest(n, out)
         say(f"[{k}/{len(todo)}] finished and on the note: {n.name[:90]}")
         return code
 
@@ -205,6 +209,32 @@ def deep_ckg(front: Path, notes: list[Path], out: Path, workers: int, focus: lis
             print("  keeping going", flush=True)
     pool.shutdown()
     return code
+
+
+def archive(path: Path, out: Path) -> None:
+    """A file about to be replaced moves to <out>/_older/<date>/ (never deleted)."""
+    if not path.is_file():
+        return
+    folder = out / "_older" / datetime.now().strftime("%Y-%m-%d")
+    folder.mkdir(parents=True, exist_ok=True)
+    target = folder / path.name
+    if target.exists():
+        target = folder / f"{path.stem} · {datetime.now():%H%M%S}{path.suffix}"
+    shutil.move(str(path), str(target))
+
+
+def write_latest(note: Path, out: Path) -> None:
+    """<out>/<note> · ANALYSIS.md: the newest full analysis of the note (CKG + every layer), the same as the block on
+    the note, rewritten after every run. The version it replaces goes to _older/."""
+    text = note.read_text(encoding="utf-8", errors="replace")
+    m = re.search(r"<!-- analysis:start -->(.*?)<!-- analysis:end -->", text, re.S)
+    if not m:
+        return
+    dest = out / f"{note.stem} · ANALYSIS.md"
+    archive(dest, out)
+    head = (f"---\nnote: \"[[{note.stem}]]\"\nsource_path: {json.dumps(str(note))}\n"
+            f"updated: {datetime.now():%Y-%m-%d %H:%M}\n---\n\n# {note.stem}\n\n")
+    dest.write_text(head + m.group(1).strip() + "\n", encoding="utf-8")
 
 
 def _slug(name: str) -> str:
@@ -309,7 +339,10 @@ def main(mode: str, front: Path) -> int:
                 code |= run_station(d, station_of(d), notes, layer_out, workers, ask_focus())
                 looked.append(layer_out)
     say("onto each note: the CKG, then each layer under it, above the transcript")
-    publish_on_note(notes, looked)
+    publish_on_note(notes, looked + [out / "CKG"])
+    for n in notes:                                   # the newest full version of each note, in the OUTBOX root
+        if n.is_file():
+            write_latest(n, out if base is None else base / "OUTBOX")
     say(f"done. Results: {out}   Answers: on each note.")
     return code
 

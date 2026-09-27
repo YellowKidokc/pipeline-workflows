@@ -56,7 +56,11 @@ Both launchers call the one script, `_system\engine\button.py`, passing their ow
   3. the rest.
 
   Rerunning replaces the block. No analysis is scattered into side files in the vault.
-- **In the OUTBOX, flat.** The base station's results go straight into its `OUTBOX` root as `<note> · CKG.md`: no BY_DOMAIN, BY_TAG or BY_SERIES folders. A layer's results go into that layer's own `OUTBOX`, as `<note> · <NN_LABEL>.md`.
+- **In the OUTBOX, newest on top.** The station's `OUTBOX` root holds one `<note> · ANALYSIS.md` per note. That file is the newest full analysis: the CKG plus every layer, the same as the block on the note. It is rewritten after every run.
+  - The base results sit one folder down, as `OUTBOX\CKG\<note> · CKG.md`.
+  - Each layer's results sit in that layer's own folder, as `<layer>\OUTBOX\<note> · <NN_LABEL>.md`.
+  - Anything replaced moves to `OUTBOX\_older\<date>\` and is never deleted.
+  - There are no BY_DOMAIN, BY_TAG or BY_SERIES folders.
 - **Stations read the source only.** Our analysis and scorecard blocks on a note are stripped before any station reads it. Analysis always comes from the transcript or paper, never from an earlier layer's output.
 
 ## 4. Standards every analysis follows
