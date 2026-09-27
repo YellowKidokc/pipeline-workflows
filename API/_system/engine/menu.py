@@ -29,7 +29,7 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from engine import focus as focus_lib  # noqa: E402
 from engine.gateway import Gateway, summary_line  # noqa: E402
-from engine.paths import API_HOME, ensure_runtime_dirs  # noqa: E402
+from engine.paths import API_HOME, ensure_runtime_dirs, station_dir  # noqa: E402
 
 FAMILIES = [("01", "19", "YouTube"), ("20", "29", "CKG"), ("30", "39", "Evidence"), ("40", "49", "Papers + bridge layer"),
             ("50", "59", "Lean + axioms"), ("60", "89", "Prompt stations"), ("90", "99", "Tools")]
@@ -45,7 +45,7 @@ def registry() -> dict[str, dict]:
     for row in load("stations.json"):
         if row.get("retired"):
             continue
-        meta = json.loads((API_HOME / row["folder"] / "station.json").read_text(encoding="utf-8"))
+        meta = json.loads((station_dir(row["label"]) / "station.json").read_text(encoding="utf-8"))
         reg[row["number"]] = {**meta, **row}
     return reg
 
@@ -356,7 +356,7 @@ def workers_for(args: argparse.Namespace, settings: dict) -> int:
 
 def command_for(station: dict, args: argparse.Namespace, workers: int, provider: str, model: str | None) -> list[str]:
     accepted = set(station.get("options", []))
-    cmd = [sys.executable, str(API_HOME / station["folder"] / station["script"]), *args.item]
+    cmd = [sys.executable, str(station_dir(station["label"]) / station["script"]), *args.item]
     for flag, value in (("limit", args.limit), ("workers", workers), ("provider", provider), ("model", model),
                         ("channel", args.channel), ("topic", args.topic)):
         if flag in accepted and value not in (None, ""):
@@ -462,7 +462,7 @@ def run(argv=None) -> int:
     try:
         for station in stations:
             label = station["label"]
-            standing, _ = focus_lib.compose(API_HOME / station["folder"], None, run_focus)
+            standing, _ = focus_lib.compose(station_dir(station["label"]), None, run_focus)
             gateway.focus[label] = standing if station.get("focus") == "gateway" else ""
             cmd = command_for(station, args, workers, provider, model)
             env = {**os.environ, **gateway.env_for(label), "ONE_MENU_RUN_ID": run_id}

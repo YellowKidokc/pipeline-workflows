@@ -40,8 +40,8 @@ def stations() -> dict[str, dict]:
 
 
 def script_of(s: dict) -> Path:
-    folder = Path(s["folder"])
-    return (SYSTEM / folder).resolve() / s["script"] if not folder.is_absolute() else folder / s["script"]
+    from engine.paths import station_dir                    # finds a station even after it was moved by hand
+    return station_dir(s["label"]) / s["script"]
 
 
 def choose(source: Path) -> list[Path] | None:

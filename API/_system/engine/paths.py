@@ -36,12 +36,29 @@ def station_dir(label: str) -> Path:
     for row in station_rows():
         if label in (row["label"], row["number"]):
             folder = (API_HOME / row["folder"]).resolve()
+            if not (folder / row["script"]).is_file():
+                folder = find_station(row) or folder       # moved by hand: find it and fix stations.json
             try:
                 folder.relative_to(MAIN)
             except ValueError as exc:
                 raise PathConfigurationError(f"Station folder escapes {MAIN}: {folder}") from exc
             return folder
     raise PathConfigurationError(f"No station {label!r} in config/stations.json")
+
+
+def find_station(row: dict) -> Path | None:
+    """Folders get moved by hand (into a group, into another station's OUTBOX...). Find the folder that holds this
+    station's script and station.json anywhere under MAIN, and record the new place in stations.json."""
+    for hit in MAIN.rglob(row["script"]):
+        if (hit.parent / "station.json").is_file():
+            folder = hit.parent
+            rows = station_rows()
+            for r in rows:
+                if r["number"] == row["number"]:
+                    r["folder"] = os.path.relpath(folder, API_HOME).replace(os.sep, "/")
+            (CONFIG_DIR / "stations.json").write_text(json.dumps(rows, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+            return folder
+    return None
 
 
 def inside(*parts: str) -> Path:
