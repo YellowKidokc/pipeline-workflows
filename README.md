@@ -56,6 +56,10 @@ hold inbox lanes plus the shared lifecycle for the six-station Complete Grading
 Bundle. See [`API/API/README.md`](API/API/README.md) for scheduling, completion
 barrier, retry, state-history, and `PROCESSED` rules.
 
+The staged Codex build plan for inventory, shared contracts, six grading
+stations, the BGL-01 pilot, and gated batch processing is available in
+[`docs/complete-grading-bundle-prompts.md`](docs/complete-grading-bundle-prompts.md).
+
 ## Stages
 
 - Intake: classify, identify, detect format, deduplicate
@@ -124,7 +128,13 @@ See `docs/karpathy-wiki-layer.md`.
 
 ## First Use
 
-Create a new workflow packet:
+On Windows, double-click `ACTION_CENTER.bat` for a searchable desktop menu of
+the repository's existing actions. It organizes the launchers without moving or
+deleting them, supports file and folder selection for curated actions, previews
+the exact command, and asks for confirmation before launch. See
+[`tools/action_center/README.md`](tools/action_center/README.md).
+
+Or create a new workflow packet from the command line:
 
 ```bat
 scripts\create_workflow_packet.bat PaperGrading
@@ -141,3 +151,7 @@ Run:
 ```bat
 workflows\PaperGrading\RUN_PIPELINE.bat
 ```
+
+## Shared system entry point
+
+Run `SYSTEM.bat list` for readable workflow names. Both repositories expose the same front door for workflow runs, folder watching, folder-task assessment, provider profiles, and audited file routing. See [Combined system guide](docs/COMBINED_SYSTEM.md) for ownership, setup, examples, and limits.

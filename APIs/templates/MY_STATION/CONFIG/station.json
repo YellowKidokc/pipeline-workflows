@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "name": "MY_STATION",
+  "description": "Blank portable API processing station",
+  "workflow": "basic-document-workflow-v1",
+  "provider": {"name": "mock", "model": "mock-v1", "credential_env": "", "timeout_seconds": 120, "retry_limit": 3},
+  "concurrency": 12,
+  "token_limits": {"input_chars": 24000, "output_tokens": 2000},
+  "queue": {"settle_seconds": 1, "priority_weight": 3},
+  "series_context": {"policy": "independent", "ordering": "lexical-relative-path"},
+  "steps": [
+    {"name": "source_copy", "type": "preserve"},
+    {"name": "response", "type": "api", "prompt": "01_PROCESS_DOCUMENT.md", "input": "source"},
+    {"name": "validated", "type": "validate"}
+  ],
+  "handoff": {"enabled": false, "destination": "../NEXT_STATION/INBOX"},
+  "dependencies": ["Python 3.10+"]
+}

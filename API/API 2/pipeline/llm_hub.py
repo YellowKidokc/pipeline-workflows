@@ -335,7 +335,14 @@ class LLMHub:
         start = time.time()
 
         try:
-            if backend == "ollama":
+            if backend.startswith("pof:"):
+                from .pof_bridge import call_pof
+                response = call_pof({'action': 'evaluate', 'execute': True,
+                    'profile': backend.split(':', 1)[1], 'text': full_prompt})
+                result = {'status': 'completed', 'result': response['text'],
+                    'cost_tokens': response['input_tokens'] + response['output_tokens'],
+                    'receipt': response['receipt']}
+            elif backend == "ollama":
                 result = self._call_ollama(full_prompt, config)
             elif backend == "claude_api":
                 result = self._call_claude(full_prompt, config)

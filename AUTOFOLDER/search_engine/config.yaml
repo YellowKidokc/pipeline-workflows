@@ -1,0 +1,21 @@
+# Index configuration for `theo index-all`.
+# Each entry becomes: theo index-files --name <key> --source <source> [--exclude ...] [--include ...]
+
+indexes:
+  obsidian:
+    source: "C:/Users/David/Documents/faiththruphysics.com/01_WORKING"
+    exclude: ".git,node_modules,__pycache__,.venv,_reconciliation_receipts"
+
+  d_drive:
+    source: "D:/"
+    include: ".md,.txt,.py,.json,.yaml,.yml,.toml,.csv,.html,.htm,.sql,.log,.ini,.cfg,.rst"
+    exclude: ".git,node_modules,__pycache__,.venv,venv,dist,build,target,*.mp4,*.mp3,*.wav,*.avi,*.mkv,*.mov,*.zip,*.tar,*.gz,*.rar,*.7z,*.exe,*.dll,*.pdb,*.bin,*.iso,*.img,*.dmg"
+
+  h_apis_md:
+    source: "H:/Desktop/APIs/APIs"
+    include: ".md"
+    exclude: ".git,node_modules,__pycache__,.venv,venv"
+
+call_indexes:
+  deepseek_calls:
+    source: "D:/GitHub/Research-Acquisition/yt-transcript-downloader/pipeline-workflows/docs/deepseek-conversations"

@@ -1,0 +1,41 @@
+{
+  "package_version": "1.0.0",
+  "canonical_axiom_version": "2.3",
+  "canonical_sealed_date": "2026-08-22",
+  "authority_order": [
+    "AXIOM_CHAIN_MASTER_v2.3_CANONICAL_SEALED.md",
+    "MASTER_CLASSIFICATION_API_DYNAMIC_INDEX.md"
+  ],
+  "sources": [
+    {
+      "file": "AXIOM_CHAIN_MASTER_v2.3_CANONICAL_SEALED.md",
+      "role": "canonical_axiom_chain",
+      "authority": "controlling",
+      "sha256": "82BD7CAFB42F1B3580A4EF7D885D7A455BD5D5706B79D108869927A86EDB9E82",
+      "line_count": 564,
+      "preserved_byte_for_byte": true
+    },
+    {
+      "file": "MASTER_CLASSIFICATION_API_DYNAMIC_INDEX.md",
+      "role": "classification_and_retrieval_index",
+      "authority": "supplemental",
+      "sha256": "9C9B2E9029C4AE744D14457202FB671BCEA607C4DD720A0966616C9385859F84",
+      "line_count": 4199,
+      "preserved_byte_for_byte": true,
+      "declared_domains": 279,
+      "declared_domain_nodes": 2485
+    }
+  ],
+  "count_interpretation": {
+    "catalog_rows_from_body": 198,
+    "active_graph_claims_from_frontmatter": 197,
+    "drop_duplicate_rows": 1,
+    "status": "preserved_discrepancy_pending_lean_source_verification"
+  },
+  "api_rules": {
+    "canonical_ids_must_exist_in_controlling_source": true,
+    "dynamic_index_may_override_canon": false,
+    "exact_paper_quote_required": true,
+    "unknown_or_conflicting_mapping_routes_to_review": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "review-document",
+  "description": "Read the complete document through a POF provider and produce a candidate review for David.",
+  "version": "1.0",
+  "stages": [
+    {
+      "name": "source-review",
+      "station": "pof-source-review",
+      "depends_on": [],
+      "on_error": "stop"
+    }
+  ]
+}

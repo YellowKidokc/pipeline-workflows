@@ -1,0 +1,14 @@
+settle_seconds: 20
+rules:
+  - name: youtube channel dump
+    match: "channel_*.md"
+    actions:
+      - pipeline: YouTubeChannelRefinery
+  - name: youtube playlist dump
+    match: "playlist_*.md"
+    actions:
+      - pipeline: YouTubeChannelRefinery
+  - name: pdfs to papers
+    match: "*.pdf"
+    actions:
+      - move: "D:/Inbox/Papers/{yyyy}-{mm}/"

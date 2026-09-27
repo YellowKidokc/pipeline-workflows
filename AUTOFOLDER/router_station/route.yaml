@@ -1,0 +1,28 @@
+# Portable router configuration.
+# Drop route.py + FolderWatcher.py + this file into any folder and run:
+#   python route.py
+
+# Log and state files are relative to this folder by default.
+log: route.log
+state: .route_state.json
+
+# Folders to watch. Glob patterns are supported.
+watch:
+  # Example: watch every channel's cleaned transcript output.
+  - "../../obsidian_transcripts/*"
+
+# Ordered routing rules. The first matching rule wins.
+routes:
+  - name: "Markdown transcripts to CKG inbox"
+    match: "*.md"
+    action: copy
+    destinations:
+      # Replace with your CKG inbox path:
+      - "_outbox/ckg_inbox"
+      # - "//192.168.2.50/h_hp/Desktop/APIs/APIs/CKG/INBOX"
+
+  - name: "Everything else to pending queue"
+    match: "*"
+    action: move
+    destinations:
+      - "_outbox/pending"

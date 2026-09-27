@@ -1,0 +1,49 @@
+{
+  "_meta": {
+    "description": "BIL preference model chain extracted for discoverability; slot definitions remain in models/MODEL_REGISTRY.json.",
+    "updated": "2026-06-12",
+    "canonical_registry": "models/MODEL_REGISTRY.json",
+    "doctrine": "FIS = perception, BIL = preference, Pipeline = action."
+  },
+  "chain": [
+    {
+      "order": 1,
+      "slot_key": "P06_river",
+      "role": "online event learning",
+      "feeds_into": [
+        "P05_ppk"
+      ]
+    },
+    {
+      "order": 2,
+      "slot_key": "P05_ppk",
+      "role": "portable preference identity / JSON weights",
+      "feeds_into": [
+        "P01_implicit",
+        "station_routing"
+      ]
+    },
+    {
+      "order": 3,
+      "slot_key": "P01_implicit",
+      "role": "collaborative station/preference patterns",
+      "feeds_into": [
+        "P07_markovify",
+        "station_routing"
+      ]
+    },
+    {
+      "order": 4,
+      "slot_key": "P07_markovify",
+      "role": "text prediction after corpus training",
+      "feeds_into": [
+        "autocomplete"
+      ]
+    }
+  ],
+  "reserved_or_unwired": [
+    "P02_recbole",
+    "P03_lightfm",
+    "P04_paper_recommender"
+  ]
+}

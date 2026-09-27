@@ -108,7 +108,7 @@ class ClassifierStation(StationBase):
         confidence = self._compute_confidence(laws, doc_type)
 
         # Try Ollama for richer classification
-        ollama_result = self._ollama_classify(text[:2000])
+        ollama_result = self._ollama_classify(text)
         if ollama_result:
             manifest.metadata["ollama_classification"] = ollama_result
             confidence = min(1.0, confidence + 0.15)
@@ -156,7 +156,7 @@ class ClassifierStation(StationBase):
         return sorted(scores, key=scores.get, reverse=True)
 
     def _detect_doc_type(self, text: str, fp: Path) -> str:
-        text_sample = text[:3000].lower()
+        text_sample = text.lower()
         scores = {}
         for dtype, patterns in DOC_TYPE_PATTERNS.items():
             hits = sum(1 for p in patterns if re.search(p, text_sample))
@@ -182,13 +182,14 @@ class ClassifierStation(StationBase):
             "\"type\" (paper|article|note|data|code|unknown), "
             "\"topics\" (list of 3-5 topic tags), "
             "\"quality\" (0.0-1.0). "
-            f"Document:\n{text_snippet[:1500]}"
+            f"Document:\n{text_snippet}"
         )
         try:
             r = requests.post(self.ollama_url, json={
                 "model": self.ollama_model,
                 "prompt": prompt,
                 "stream": False,
+                "options": {"num_ctx": len(prompt.encode("utf-8")) + 2048, "num_predict": 2048},
             }, timeout=30)
             if r.ok:
                 raw = r.json().get("response", "")

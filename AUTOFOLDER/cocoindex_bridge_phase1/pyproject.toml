@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "theophysics-bridge-phase1"
+version = "0.1.0"
+description = "Phase 1 CocoIndex knowledge-graph bridge for Faith Through Physics"
+requires-python = ">=3.10"
+dependencies = [
+    "cocoindex>=1.0.24",
+    "neo4j",
+    "pydantic>=2.0",
+]
+
+[tool.setuptools]
+py-modules = ["main", "schema", "contradiction_radar"]

@@ -1,0 +1,34 @@
+# Local secrets and settings
+.env
+.env.*
+!*.example
+CONFIG/*.local.json
+.venv/
+__pycache__/
+*.pyc
+# Private papers and runtime results
+**/INBOX/**
+**/OUTBOX/**
+**/REVIEW/**
+**/ADMITTED/**
+**/PROCESSED_ORIGINALS/**
+**/FAILED/**
+**/LOGS/**
+**/STATE/**
+**/SIDECAR/**
+**/SIDECAR_ARCHIVE/**
+LEAN4/PROJECT/**
+LEAN4/FaithThruPhysics/**
+LEAN4/WAITING INBOX/**
+LEAN4/SCRIPTS/pull_history.json
+!**/INBOX/**/
+!**/OUTBOX/**/
+!**/REVIEW/**/
+!**/ADMITTED/**/
+!**/PROCESSED_ORIGINALS/**/
+!**/FAILED/**/
+!**/LOGS/**/
+!**/STATE/**/
+!**/SIDECAR/**/
+!**/SIDECAR_ARCHIVE/**/
+!**/.gitkeep
