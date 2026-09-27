@@ -214,5 +214,5 @@ HANDLERS = {
     "axiom_nodes": axiom_nodes, "coherence": coherence, "story_paper": story_paper, "story_series": story_series,
     "story_lines": story_lines, "tagger": tagger, "extract_arguments": extract_arguments,
     "synthesize_cluster": synthesize_cluster, "synthesis_overview": synthesis_overview, "gap_match": gap_match,
-    "prior_art": prior_art, "own_claims": own_claims, "yt_summary": yt_summary, "yt_channel_summary": yt_channel_summary, "lean_assumptions": lean_assumptions, "lean_claims": lean_claims, "yt_deep": yt_deep, "theology_triage": theology_triage, "physics_mirror": physics_mirror,
+    "prior_art": prior_art, "own_claims": own_claims, "yt_summary": yt_summary, "yt_channel_summary": yt_channel_summary, "lean_assumptions": lean_assumptions, "lean_claims": lean_claims, "yt_deep": yt_deep, "theology_triage": theology_triage, "theology_scriptures": lambda p: {"scriptures": []}, "physics_mirror": physics_mirror,
 }

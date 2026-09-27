@@ -17,6 +17,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import sys
 import threading
 import time
@@ -193,6 +194,7 @@ class Station:
         parser.add_argument("--redo", action="store_true", help="ignore finished work and run again")
         parser.add_argument("--dry-run", action="store_true", help="show what would run, call nothing")
         parser.add_argument("--channel", help="YouTube channel folder name")
+        parser.add_argument("--outbox", help="also put each report flat into this folder (a front folder's OUTBOX)")
         if extra_args:
             extra_args(parser)
         self.args = parser.parse_args()
@@ -300,6 +302,14 @@ class Station:
         write_bundle(out, self.label, result.data, result.html, receipt, result.sheets)
         if result.markdown:
             (out / f"{self.label}.md").write_text(result.markdown, encoding="utf-8")
+        if self.args.outbox and item:                     # flat copy for the front folder's OUTBOX (David's rule)
+            flat = Path(self.args.outbox)
+            flat.mkdir(parents=True, exist_ok=True)
+            src = item.meta.get("source_file") or ""          # named after the note, so publish_analysis finds it
+            stem = Path(src).stem if src else (re.sub(r'[<>:"/\\|?*]', "", item.title)[:120].strip() or item.id)
+            if result.markdown:
+                (flat / f"{stem} · {self.label}.md").write_text(result.markdown, encoding="utf-8")
+            (flat / f"{stem} · {self.label}.html").write_text(result.html, encoding="utf-8")
         if ctx.calls:
             calls_dir = out / "calls"
             calls_dir.mkdir(exist_ok=True)
