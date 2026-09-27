@@ -10,7 +10,7 @@ import json
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_system"))
 from engine.output import markdown_to_html, page  # noqa: E402
 from engine.station import ItemResult, Station  # noqa: E402
 
