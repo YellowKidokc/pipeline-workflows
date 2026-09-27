@@ -1,0 +1,102 @@
+{
+  "schema_version": "axiom-nodes.v0.1",
+  "station": "axiom_nodes",
+  "paper": {
+    "paper_id": "bgl-01-be-glad-youre-a-loser",
+    "title": "Be Glad You're a Loser",
+    "author": "David Lowe",
+    "date": "2026-03-15",
+    "source_sha256": "0d8980572bf6c774279fe593eab3889acff85fdcbd93936d27ee8798c381b468",
+    "source_filename": "bgl-01-be-glad-youre-a-loser.html"
+  },
+  "mappings": [
+    {
+      "mapping_id": "AN-001",
+      "paper_quote": "Because the whole point — the entire mechanism of salvation — is that you can't earn it. You can't deserve it. You can't qualify for it through moral performance.",
+      "source_location": "The Pattern — Why?",
+      "paper_claim": "Salvation is not earned or deserved through moral performance.",
+      "axiom_id": "BC2",
+      "axiom_name": "Grace External To System",
+      "relationship": "supports",
+      "evidence_class": "theological_interpretation",
+      "rationale": "The paper's claim that salvation cannot be earned aligns with BC2's assertion that grace is external to the system. However, the paper does not explicitly reference the axiom chain or its terminology, so this is a theological interpretation rather than a direct logical dependency.",
+      "confidence": 0.7,
+      "review_required": true,
+      "review_reason": "Theological interpretation; no explicit reference to the axiom chain."
+    },
+    {
+      "mapping_id": "AN-002",
+      "paper_quote": "The Pharisee Function: Spoofed vs. Noisy Channels",
+      "source_location": "The Information Theory",
+      "paper_claim": "The Pharisee Function is analogous to a spoofed channel that reports no errors when errors exist, preventing error correction.",
+      "axiom_id": "T3.1",
+      "axiom_name": "Coherence Cannot Self-Inc",
+      "relationship": "illustrates",
+      "evidence_class": "structural_analogy",
+      "rationale": "The paper's analogy of spoofed vs. noisy channels illustrates the principle that a system cannot self-increase coherence without external input. The Pharisees' self-deception prevents them from receiving correction, paralleling T3.1's claim that coherence cannot self-increase.",
+      "confidence": 0.6,
+      "review_required": true,
+      "review_reason": "Structural analogy; no explicit reference to the axiom chain."
+    },
+    {
+      "mapping_id": "AN-003",
+      "paper_quote": "And an honest diagnostic is the first requirement for error correction. You can't fix what you don't acknowledge is broken.",
+      "source_location": "The Information Theory",
+      "paper_claim": "Honest acknowledgment of brokenness is a prerequisite for receiving grace/correction.",
+      "axiom_id": "BC2",
+      "axiom_name": "Grace External To System",
+      "relationship": "supports",
+      "evidence_class": "theological_interpretation",
+      "rationale": "The paper's claim that honest diagnosis is required for error correction supports the idea that grace is external and must be received by acknowledging one's need. This aligns with BC2's assertion that grace is external to the system.",
+      "confidence": 0.65,
+      "review_required": true,
+      "review_reason": "Theological interpretation; no explicit reference to the axiom chain."
+    },
+    {
+      "mapping_id": "AN-004",
+      "paper_quote": "The thief on the cross had zero freedom. Nailed to wood. Dying. Couldn't move, couldn't escape, couldn't do a single thing to earn or prove or perform. And in that moment of absolute physical constraint, he received absolute spiritual freedom.",
+      "source_location": "The Paradox of Freedom",
+      "paper_claim": "True freedom is found in constraint and dependence on grace, not in worldly autonomy.",
+      "axiom_id": "A9.1",
+      "axiom_name": "External Intervention Req",
+      "relationship": "supports",
+      "evidence_class": "theological_interpretation",
+      "rationale": "The paper's claim that the thief received spiritual freedom through external intervention (Jesus) supports A9.1's assertion that external intervention is required. The thief could not earn or perform; he received grace.",
+      "confidence": 0.6,
+      "review_required": true,
+      "review_reason": "Theological interpretation; no explicit reference to the axiom chain."
+    },
+    {
+      "mapping_id": "AN-005",
+      "paper_quote": "The Pharisees had maximum freedom. Wealth, status, power, mobility, influence. And they were the most enslaved people in the Gospels — enslaved to their own performance, their own reputation, their own identity-as-credential.",
+      "source_location": "The Paradox of Freedom",
+      "paper_claim": "Worldly freedom can lead to spiritual enslavement, while constraint can lead to spiritual freedom.",
+      "axiom_id": "A9.2",
+      "axiom_name": "Non-Unitarity Of Grace",
+      "relationship": "illustrates",
+      "evidence_class": "structural_analogy",
+      "rationale": "The paper's contrast between the Pharisees' worldly freedom and spiritual enslavement illustrates the non-unitary nature of grace—grace operates outside normal causal expectations. The Pharisees' advantages did not lead to spiritual freedom.",
+      "confidence": 0.55,
+      "review_required": true,
+      "review_reason": "Structural analogy; no explicit reference to the axiom chain."
+    }
+  ],
+  "unmapped_claims": [
+    {
+      "paper_quote": "The data companion — 25 named Gospel encounters cataloged and classified — is next.",
+      "reason": "This is a reference to a future work, not a claim that can be mapped to an axiom."
+    },
+    {
+      "paper_quote": "This article is part of the \"Be Glad You're a Loser\" mini-series.",
+      "reason": "This is a series description, not a claim that can be mapped to an axiom."
+    }
+  ],
+  "conflicts": [],
+  "summary": {
+    "strongest_mapping": "AN-001",
+    "weakest_mapping": "AN-005",
+    "dependency_pattern": "The paper's claims primarily support or illustrate the external nature of grace (BC2, A9.1) and the inability of systems to self-correct (T3.1). The mappings are theological interpretations and structural analogies rather than direct logical dependencies.",
+    "greatest_gap": "The paper does not explicitly reference the axiom chain or its terminology, so all mappings require review and are based on thematic alignment rather than direct citation.",
+    "overall_finding": "The paper's themes of grace, moral bankruptcy, and the Pharisee Function align with several axioms in the chain, particularly BC2 (Grace External To System) and T3.1 (Coherence Cannot Self-Inc). However, the mappings are interpretive and require review due to the absence of explicit references to the axiom chain."
+  }
+}
