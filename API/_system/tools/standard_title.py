@@ -24,15 +24,17 @@ from pathlib import Path
 API_HOME = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(API_HOME))
 from engine import llm, pick                                      # noqa: E402
+from engine.paths import configured, external                     # noqa: E402
 
 MOVES = ["Evidence", "Argument", "Objection-reply", "Scholarly-survey", "Method", "Application", "Testimony", "Debate"]
 GENERIC = {"theology", "apologetics", "christianity", "religion", "philosophy", "faith", "bible", "christian apologetics"}
 HERE = Path(__file__).resolve().parent
 CODES = HERE / "author_codes.json"
 TAXONOMY = HERE / "taxonomy.json"             # master record of every classification used (source of truth)
-MASTER_MD = Path(r"C:\Users\David\Documents\faiththruphysics.com\00_CLASSIFICATION_MASTER.md")   # readable copy in the vault
+VAULT = external("vault_root", required=False) if configured("vault_root") else None      # paths.json
+MASTER_MD = VAULT / "00_CLASSIFICATION_MASTER.md" if VAULT else None                        # readable copy in the vault
 NAME_KEYWORDS = 2                            # the most SPECIFIC keywords go in the file name; all of them go into the YAML
-YT_PY = Path(r"D:\GitHub\Research-Acquisition\yt-transcript-downloader\venv\Scripts\python.exe")
+YT_PY = (external("yt_downloader") / "venv" / "Scripts" / "python.exe") if configured("yt_downloader") else Path(sys.executable)
 MAX_NAME = 140                               # Windows paths stop at 260 characters; vault folders take ~110
 
 
@@ -132,6 +134,7 @@ def write_master(t: dict) -> None:
     for m in MOVES: L.append(f"| {m} | {len(t['moves'].get(m, []))} |")
     L += ["", "## Author codes", "", "| Code | Author / channel |", "|---|---|"]
     for c, a in sorted(t["authors"].items()): L.append(f"| {c} | {a} |")
+    if not MASTER_MD: return print("  (master record not written: vault_root is not set in paths.json)")
     try: MASTER_MD.write_text("\n".join(L) + "\n", encoding="utf-8")
     except OSError as exc: print(f"  (master record not written: {exc})")
 
