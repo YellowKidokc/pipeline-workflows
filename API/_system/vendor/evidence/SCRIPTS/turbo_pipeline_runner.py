@@ -163,6 +163,8 @@ def _stream_completion(url, headers, payload, deadline, label, route_name):
                 piece = (choice.get("delta") or {}).get("content")
                 if piece:
                     parts.append(piece)
+                if choice.get("finish_reason"):
+                    usage["_finish_reason"] = choice["finish_reason"]
     return "".join(parts), usage
 
 
@@ -284,7 +286,22 @@ def call_deepseek_raw(
             try:
                 pace_api_start()
                 content, usage = _stream_completion(url, headers, payload, deadline, label, f"{provider}/{model}")
+                # A companion is longer than one reply's output cap (DeepSeek: 8,192 tokens), so a reply cut off
+                # at the cap is continued, up to 4 more times, instead of being saved half-written.
+                rounds = 0
+                while content and usage.get("_finish_reason") == "length" and rounds < 4:
+                    rounds += 1
+                    print(f"    [..] {label}: output cap reached at {len(content):,} chars; continuing (part {rounds + 1})")
+                    more_payload = dict(payload, messages=payload["messages"] + [
+                        {"role": "assistant", "content": content},
+                        {"role": "user", "content": "Continue exactly where you stopped, mid-sentence if needed. "
+                                                    "Do not repeat anything already written and do not restart the document."}])
+                    more, usage2 = _stream_completion(url, headers, more_payload, deadline, label, f"{provider}/{model}")
+                    content += more
+                    usage = {**usage2, "_continuations": rounds}
                 if content:
+                    if usage.get("_finish_reason") == "length":
+                        print(f"    [Warning] {label}: still cut off after {rounds + 1} parts")
                     usage["_route"] = {"provider": provider, "model": model}
                     return content, usage
                 print(f"    [Warning] {provider}/{model} attempt {attempt} returned no text")
@@ -324,8 +341,14 @@ class PaperProcessor:
             if search_dir.exists():
                 for p in search_dir.glob("*.md"):
                     if slug in p.name or p.name.startswith(slug[:20]):
-                        has_output = True
-                        break
+                        # Only a companion that reaches its last section counts; a reply cut off at the output cap is redone.
+                        try:
+                            complete = "## S10" in p.read_text(encoding="utf-8", errors="replace")
+                        except OSError:
+                            complete = False
+                        if complete:
+                            has_output = True
+                            break
             if has_output:
                 break
 

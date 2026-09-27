@@ -186,6 +186,16 @@ def discover(selectors: list[str], kind: str = "papers", limit: int | None = Non
     items: list[Item] = []
     if channel and kind == "both":
         kind = "videos"  # naming a channel means that channel's videos
+    from . import pick                                   # _PICK.md / @list rules, shared by every station
+    expanded: list[str] = []
+    for raw in selectors:                                # @list.txt -> its note paths; a picked folder -> its ticked notes
+        path = Path(raw).expanduser()
+        if raw.startswith("@") or (path.is_dir() and not load(path)
+                                   and ((path / pick.PICK).is_file() or (path / pick.CLEAN).is_dir())):
+            expanded += [str(n) for n in pick.resolve([raw])]
+        else:
+            expanded.append(raw)
+    selectors = expanded
     for raw in selectors:
         path = Path(raw).expanduser()
         if not path.is_absolute() and not path.exists():
