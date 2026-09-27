@@ -9,6 +9,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(next(p for p in Path(__file__).resolve().parents if (p / "_system").is_dir()) / "_system"))
 from engine import mirror  # noqa: E402
+from engine.focus import findings_md  # noqa: E402
 from engine.output import markdown_to_html, page  # noqa: E402
 from engine.station import ItemResult, Station  # noqa: E402
 
@@ -40,7 +41,7 @@ def process(ctx):
 
 
 def render(item, d) -> str:
-    out = [f"# Physics mirror: {item.title}", ""]
+    out = [f"# Physics mirror: {item.title}", "", *findings_md(d.get("focus_findings"))]
     if not d["mirrors"]:
         out += ["No mirror between a theological event and a physics process was found.", ""]
     for m in d["mirrors"]:

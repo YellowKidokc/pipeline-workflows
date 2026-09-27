@@ -46,6 +46,9 @@ def yaml_field(text: str, key: str) -> str:
     return m.group(1).strip() if m else ""
 
 
+LOOK_IN: list[Path] = []                                         # --look-in: output folders chosen at a button
+
+
 def glob_escape(name: str) -> str:
     return re.sub(r"([\[\]*?])", r"[\1]", name)
 
@@ -55,8 +58,10 @@ def find_layers(stems: list[str]) -> list[tuple[str, Path]]:
     newest per layer, in station-number order."""
     out: dict[str, Path] = {}
     for stem in stems:
-        for depth in range(1, 6):
-            for p in MAIN.glob("*/" * depth + f"OUTBOX/{glob_escape(stem)} · *.md"):
+        name = f"{glob_escape(stem)} · *.md"
+        found = [p for depth in range(1, 6) for p in MAIN.glob("*/" * depth + f"OUTBOX/{name}")]
+        found += [p for d in LOOK_IN for p in d.glob(name)]           # an output folder chosen at the button
+        for p in found:
                 label = p.stem.rsplit(" · ", 1)[-1]
                 if label == "CKG" or not re.match(r"\d+_", label):
                     continue
@@ -68,6 +73,7 @@ def find_layers(stems: list[str]) -> list[tuple[str, Path]]:
 def find_companion(stem: str) -> Path | None:
     # the CKG button leaves "<note> · CKG.md" flat in its front folder's OUTBOX (01_CKG/020_CKG/OUTBOX ...)
     flat = [p for pat in ("*/OUTBOX/", "*/*/OUTBOX/", "*/*/*/OUTBOX/") for p in MAIN.glob(f"{pat}{glob_escape(stem)} · CKG.md")]
+    flat += [p for d in LOOK_IN for p in d.glob(f"{glob_escape(stem)} · CKG.md")]
     if flat:
         return max(flat, key=lambda p: p.stat().st_mtime)
     slug = re.sub(r"[^\w.-]+", "_", stem).strip("_")[:40]
@@ -222,7 +228,9 @@ def publish(note: Path, dry: bool) -> str:
 def main() -> int:
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     p.add_argument("items", nargs="+"); p.add_argument("--dry-run", action="store_true")
+    p.add_argument("--look-in", action="append", default=[], help="also look for flat results in this folder")
     a = p.parse_args()
+    LOOK_IN.extend(Path(d) for d in a.look_in if Path(d).is_dir())
     notes = []
     for raw in a.items:
         x = Path(raw)

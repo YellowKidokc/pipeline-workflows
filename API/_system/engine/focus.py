@@ -96,5 +96,21 @@ def compose(station_dir: Path, item_dir: Path | None = None, run_focus: str | li
     return text, hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
+def findings_md(findings) -> list[str]:
+    """The answers to David's extra questions, as the first section of a report (empty when none were asked)."""
+    items = [f for f in (findings or []) if f]
+    if not items:
+        return []
+    out = ["## Your questions", ""]
+    for f in items:
+        if isinstance(f, dict):
+            q = f.get("question") or f.get("point") or f.get("focus") or ""
+            a = f.get("answer") or f.get("finding") or f.get("text") or ""
+            out.append(f"- **{q}** {a}".strip() if q else f"- {a}")
+        else:
+            out.append(f"- {f}")
+    return out + [""]
+
+
 def append(prompt: str, focus_text: str) -> str:
     return prompt.rstrip() + ("\n\n" + focus_text if focus_text else "") + "\n"

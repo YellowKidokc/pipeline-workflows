@@ -19,6 +19,7 @@ from pathlib import Path
 sys.path.insert(0, str(next(p for p in Path(__file__).resolve().parents if (p / "_system").is_dir()) / "_system"))
 from engine import scripture, triage  # noqa: E402
 from engine.comments import comments, fetch_comments  # noqa: E402
+from engine.focus import findings_md  # noqa: E402
 from engine.output import markdown_to_html, page  # noqa: E402
 from engine.paths import configured, external  # noqa: E402
 from engine.station import ItemResult, Station  # noqa: E402
@@ -77,7 +78,8 @@ def process(ctx):
     if not isinstance(reply, dict):
         return None
     # scriptures get their own small call: added to the triage reply they overran the 8k output cap
-    verses = ctx.cached("scriptures", lambda: ctx.call_json("theology_scriptures", scripture.standalone_prompt(hits, ctx.text)))
+    verses = ctx.cached("scriptures", lambda: ctx.call_json("theology_scriptures", scripture.standalone_prompt(hits, ctx.text),
+                                                            focus=False))
     reply["scriptures"] = (verses or {}).get("scriptures") if isinstance(verses, dict) else None
     ruled = triage.enforce(reply, rubric, comments_available=bool(audience))
     for line in ruled["log"]:
@@ -98,7 +100,7 @@ def process(ctx):
            "theology_rubric": {"rows": ruled["rows"], "collapse_question": reply.get("collapse_question", ""),
                                "steers_around": bool(reply.get("steers_around")), "rules_applied": ruled["log"],
                                "flags": ruled["flags"], "claims": ruled["claims"], "unknown_for_channel_pass": ruled["unknown"]},
-           "scriptures": scripture.merge(hits, reply.get("scriptures")),
+           "scriptures": scripture.merge(hits, reply.get("scriptures")), "focus_findings": reply.get("focus_findings") or [],
            "inputs": {"ckg_index": bool(index), "comments": len(audience), "scriptures_found_in_code": len(hits)}}
     md = render(item, doc)
     sheets = {"rubric": ruled["rows"], "scriptures": doc["scriptures"],
@@ -112,6 +114,7 @@ def process(ctx):
 def render(item, doc) -> str:
     tr = doc["theology_rubric"]
     out = [f"# Theology triage: {item.title}", "", f"*{doc.get('channel') or ''} · {doc.get('url') or ''}*", "",
+           *findings_md(doc.get("focus_findings")),
            f"**Collapse question:** {tr['collapse_question']}" + (" *(the speaker steers around it)*" if tr["steers_around"] else ""), "",
            "| # | probe | verdict | ≤12 words |", "|---|---|---|---|"]
     out += [f"| {r['row']} | {r['probe']} | {r['verdict']}{' (verify)' if r['verify'] and r['verdict'] != 'CLEAN' else ''} | "
