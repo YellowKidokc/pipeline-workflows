@@ -142,6 +142,10 @@ def resolve(items: list[str], default: Path | None = None, limit: int | None = N
             found = notes(folder)
             if not found:
                 continue
+            if "00_PRIORITY" in folder.parts:          # dropped in priority = ticked; it sorts first, so runs first
+                say(f"PRIORITY  {folder.name}: {len(found)} note(s)")
+                out += found
+                continue
             pick = read_pick(folder)
             if pick is None and len(found) > PICK_FREE:
                 f = write_pick(folder)
