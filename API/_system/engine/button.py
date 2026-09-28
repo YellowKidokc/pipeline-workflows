@@ -65,7 +65,8 @@ def parent_station(front: Path) -> Path | None:
 # ------------------------------------------------------------------ 2 prepare
 
 def raw_transcripts(folder: Path) -> list[Path]:
-    """Downloaded transcripts not cleaned yet: .srt/.vtt, or .md with a video id and no `cleaned:` field."""
+    """Downloaded transcripts not cleaned yet: .srt/.vtt, or .md with a video id and no `cleaned:` / `converted:` field
+    (`converted:` = the Conversion Station already made it readable prose; the old cleaner would undo that)."""
     raw = []
     for f in folder.iterdir():
         if not f.is_file() or f.name.startswith("_"):
@@ -74,7 +75,7 @@ def raw_transcripts(folder: Path) -> list[Path]:
             raw.append(f)
         elif f.suffix.lower() == ".md":
             head = f.read_text(encoding="utf-8", errors="replace")[:1500]
-            if ("video_id:" in head or "**Video ID:**" in head) and "cleaned:" not in head:
+            if ("video_id:" in head or "**Video ID:**" in head) and not re.search(r"^(cleaned|converted):", head, re.M):
                 raw.append(f)
     return raw
 
