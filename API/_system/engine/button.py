@@ -245,7 +245,8 @@ def write_latest(note: Path, out: Path) -> None:
     archive(dest, out)
     head = (f"---\nnote: \"[[{note.stem}]]\"\nsource_path: {json.dumps(str(note))}\n"
             f"updated: {datetime.now():%Y-%m-%d %H:%M}\n---\n\n# {note.stem}\n\n")
-    dest.write_text(head + m.group(1).strip() + "\n", encoding="utf-8")
+    d = re.search(r"<!-- analysis-detail:start -->(.*?)<!-- analysis-detail:end -->", text, re.S)   # bottom-of-page cards
+    dest.write_text(head + m.group(1).strip() + "\n" + (f"\n{d.group(1).strip()}\n" if d else ""), encoding="utf-8")
 
 
 def _slug(name: str) -> str:

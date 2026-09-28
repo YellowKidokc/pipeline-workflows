@@ -8,7 +8,9 @@ Between <!-- analysis:start --> and <!-- analysis:end --> (placed after the scor
   - ## Analysis · Argument grades     every argument with its checks' outcome
   - ## Analysis · Fruits of Love and Truth
   - ## Analysis · YouTube CKG         the argument catalogue (its transcript left out)
-Rerunning replaces the block; the rest of the note is untouched. The HTML report, which cannot live inside a note,
+The Story Bank goes to its own file (<CKG OUTBOX>/STORY_BANK/<note> · STORIES.md) with a short list on the page, and
+the full claim cards go below the transcript between <!-- analysis-detail:start/end --> (tools/page_layout.py).
+Rerunning replaces the blocks; the rest of the note is untouched. The HTML report, which cannot live inside a note,
 is copied beside it to _ANALYSIS/ and linked. No JSON goes into the vault.
 
 Sources (latest run of each; a missing one is simply left out):
@@ -29,6 +31,9 @@ sys.path.insert(0, str(MAIN / "_system"))
 from engine.paths import configured, external                  # noqa: E402
 YT_ROOT = external("yt_downloader") if configured("yt_downloader") else MAIN / "_data" / "youtube"   # paths.json
 START, END = "<!-- analysis:start -->", "<!-- analysis:end -->"
+DSTART, DEND = "<!-- analysis-detail:start -->", "<!-- analysis-detail:end -->"   # the bottom of the page
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import page_layout  # noqa: E402
 
 
 def latest(folder: Path, pattern: str) -> Path | None:
@@ -128,8 +133,8 @@ def cell(x) -> str:
     return str(x if x is not None else "").replace("|", "\\|").replace("\n", " ").strip()
 
 
-def block(note: Path, text: str, out_dir: Path, dry: bool) -> tuple[str, list[str]]:
-    stem = note.stem; found = []; L = []
+def block(note: Path, text: str, out_dir: Path, dry: bool) -> tuple[str, list[str], str]:
+    stem = note.stem; found = []; L = []; detail = []
     # a note renamed to its standard title keeps its old name in original_file; runs made before the rename use that
     stems = [stem] + ([Path(yaml_field(text, "original_file")).stem] if yaml_field(text, "original_file") else [])
     prev = re.search(r"^previous_names:\s*(\[.*\])\s*$", text, re.M)  # names the note had before standard titling
@@ -186,7 +191,17 @@ def block(note: Path, text: str, out_dir: Path, dry: bool) -> tuple[str, list[st
         if not dry: out_dir.mkdir(exist_ok=True); shutil.copy2(run48.parent / "API_DEEP.html", dest)
         L += [f"Interactive charts: [Fruits of Love and Truth report](<_ANALYSIS/{dest.name}>)", ""]
     if comp:
-        L += ["## Analysis · Deep CKG (MASTER PAPER COMPANION)", "", demote(companion_body(ctext)), ""]
+        cb = companion_body(ctext)
+        cb, stories = page_layout.story_bank(cb, stem)      # own file; a short list stays on the page
+        if stories and not dry:
+            home = (comp.parent.parent if comp.parent.name == "CKG" else comp.parent) / "STORY_BANK"
+            home.mkdir(exist_ok=True)
+            (home / f"{stem} · STORIES.md").write_text(stories, encoding="utf-8")
+        cb, cards = page_layout.claim_cards(cb)             # one row each here; the full cards at the bottom
+        if cards:
+            detail += [f"## Analysis detail · Claim cards · from [[{stem} · CKG]]", "",
+                       demote(cards.split("\n", 1)[1]).strip(), ""]
+        L += ["## Analysis · Deep CKG (MASTER PAPER COMPANION)", "", demote(cb), ""]
     for label, path in find_layers(stems):              # layers under the CKG, before everything else (David)
         found.append(label.split("_", 1)[1].replace("_", " ").title())
         body = path.read_text(encoding="utf-8", errors="replace")
@@ -214,7 +229,7 @@ def block(note: Path, text: str, out_dir: Path, dry: bool) -> tuple[str, list[st
     if yt and yt.exists():
         found.append("YouTube CKG")
         L += ["## Analysis · YouTube CKG (argument catalogue)", "", demote(youtube_body(yt.read_text(encoding="utf-8", errors="replace"))), ""]
-    return "\n".join([START, *L, END]), found
+    return "\n".join([START, *L, END]), found, ("\n".join([DSTART, *detail, DEND]) if detail else "")
 
 
 def insert_at(text: str) -> int:
@@ -230,7 +245,7 @@ def insert_at(text: str) -> int:
 
 def publish(note: Path, dry: bool) -> str:
     text = note.read_text(encoding="utf-8")
-    new_block, found = block(note, text, note.parent / "_ANALYSIS", dry)
+    new_block, found, detail = block(note, text, note.parent / "_ANALYSIS", dry)
     old = re.search(re.escape(START) + r".*?" + re.escape(END), text, re.S)
     had = set(re.findall(r"^## (Analysis · [^\n(]+)", old.group(0), re.M)) if old else set()
     has = set(re.findall(r"^## (Analysis · [^\n(]+)", new_block, re.M))
@@ -240,6 +255,9 @@ def publish(note: Path, dry: bool) -> str:
     body = body.lstrip("\n") if body.startswith("\n\n---") else body          # a block that sat above the YAML
     at = insert_at(body)
     out = body[:at].rstrip("\n") + ("\n\n" if at else "") + new_block + "\n\n" + body[at:].lstrip("\n")
+    out = re.sub(r"\n*" + re.escape(DSTART) + r".*?" + re.escape(DEND) + r"\n*", "\n", out, flags=re.S)
+    if detail:                                       # the full detail sits at the very bottom, below the transcript
+        out = out.rstrip("\n") + "\n\n" + detail + "\n"
     if not dry and out != text: note.write_text(out, encoding="utf-8")
     return f"{'plan' if dry else 'done'}  {note.name}: {', '.join(found) or 'nothing found'} ({len(out.split()):,} words)"
 
