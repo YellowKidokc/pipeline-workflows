@@ -447,6 +447,13 @@ INSTRUCTIONS:
 12. CRITICAL: Complete ALL sections down to the final line without truncating.
 13. Under "S02 · Claim Definition", right after "## Definitions", fill "## Scriptures": one row per passage, with what
     the source says about it.
+14. Right after "## Scriptures", fill "## Story Bank" with EVERY retellable piece of the source: personal stories,
+    Bible stories told with a fresh angle, historical/archaeological/scientific facts, striking numbers, sharp
+    rebuttals (e.g. "whatever God does, He gets blamed"), illustrations, quotable lines. Read it as someone who must
+    retell the source's best material to a new audience. One "### SB<n> · <title>" entry each, every field filled;
+    "Retell it" must stand alone without the source. "Their words" is verbatim from the source, never a paraphrase.
+    Only material the SOURCE tells: never an entry built from your own analysis or formalism. Long sources give
+    10-25 entries, a short clip 2-5; do not pad, do not skip.
 {scripture.prompt_block(scripture_hits)}
 {focus_block}
 CANONICAL TEMPLATE SKELETON:
