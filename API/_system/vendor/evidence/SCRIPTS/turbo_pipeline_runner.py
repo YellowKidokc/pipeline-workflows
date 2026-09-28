@@ -170,6 +170,26 @@ def _stream_completion(url, headers, payload, deadline, label, route_name):
     return "".join(parts), usage
 
 
+def _cut_loop(text: str, run: int = 4, times: int = 3) -> tuple[str, bool]:
+    """A reply stuck in a repetition loop (seen 2026-09-27: the same 8 Scripture rows written ~136 times until every
+    continuation was spent). When the same `run` substantial lines in a row turn up `times` times, cut the text back
+    to just before their second appearance. Single stock lines ("Check first: none") repeating is normal."""
+    lines = text.splitlines(keepends=True)
+    starts, pos = [], 0
+    for line in lines:
+        starts.append(pos)
+        pos += len(line)
+    real = [i for i, l in enumerate(lines) if len(l.strip()) > 15 and not set(l.strip()) <= set("|-: ")]
+    seen: dict[tuple, list[int]] = {}
+    for k in range(len(real) - run + 1):
+        key = tuple(lines[i].strip() for i in real[k:k + run])
+        hits = seen.setdefault(key, [])
+        hits.append(real[k])
+        if len(hits) >= times:
+            return text[:starts[hits[1]]].rstrip() + "\n", True
+    return text, False
+
+
 def call_deepseek_raw(
     prompt: str,
     system_prompt: str,
@@ -289,17 +309,24 @@ def call_deepseek_raw(
                 pace_api_start()
                 content, usage = _stream_completion(url, headers, payload, deadline, label, f"{provider}/{model}")
                 # A companion is longer than one reply's output cap (DeepSeek: 8,192 tokens), so a reply cut off
-                # at the cap is continued, up to 4 more times, instead of being saved half-written.
+                # at the cap is continued, up to 5 more times, instead of being saved half-written.
                 rounds = 0
-                while content and usage.get("_finish_reason") == "length" and rounds < 4:
+                content, looped = _cut_loop(content)
+                while content and (looped or usage.get("_finish_reason") == "length") and rounds < 5:
                     rounds += 1
-                    print(f"    [..] {label}: output cap reached at {len(content):,} chars; continuing (part {rounds + 1})")
+                    if looped:      # the model got stuck writing the same rows over and over: cut the loop, move on
+                        print(f"    [..] {label}: repetition loop cut at {len(content):,} chars; continuing (part {rounds + 1})")
+                        ask = ("You started repeating the same lines over and over; that repetition was removed. The "
+                               "section you were writing is finished. Continue with the NEXT section of the template, "
+                               "and do not repeat anything already written.")
+                    else:
+                        print(f"    [..] {label}: output cap reached at {len(content):,} chars; continuing (part {rounds + 1})")
+                        ask = ("Continue exactly where you stopped, mid-sentence if needed. "
+                               "Do not repeat anything already written and do not restart the document.")
                     more_payload = dict(payload, messages=payload["messages"] + [
-                        {"role": "assistant", "content": content},
-                        {"role": "user", "content": "Continue exactly where you stopped, mid-sentence if needed. "
-                                                    "Do not repeat anything already written and do not restart the document."}])
+                        {"role": "assistant", "content": content}, {"role": "user", "content": ask}])
                     more, usage2 = _stream_completion(url, headers, more_payload, deadline, label, f"{provider}/{model}")
-                    content += more
+                    content, looped = _cut_loop(content + more)
                     usage = {**usage2, "_continuations": rounds}
                 if content:
                     if usage.get("_finish_reason") == "length":
@@ -452,8 +479,9 @@ INSTRUCTIONS:
     rebuttals (e.g. "whatever God does, He gets blamed"), illustrations, quotable lines. Read it as someone who must
     retell the source's best material to a new audience. One "### SB<n> · <title>" entry each, every field filled;
     "Retell it" must stand alone without the source. "Their words" is verbatim from the source, never a paraphrase.
-    Only material the SOURCE tells: never an entry built from your own analysis or formalism. Long sources give
-    10-25 entries, a short clip 2-5; do not pad, do not skip.
+    Only material the SOURCE tells: never an entry built from your own analysis or formalism. At most 20 entries:
+    when the source has more, keep the 20 most striking and retellable. A short clip gives 2-5. Never write the same
+    entry twice. Keep the Story Bank tight so every later section (S03-S11) still gets written.
 {scripture.prompt_block(scripture_hits)}
 {focus_block}
 CANONICAL TEMPLATE SKELETON:

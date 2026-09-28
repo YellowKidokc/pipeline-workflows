@@ -41,12 +41,13 @@ def entries(path: Path) -> list[dict]:
     if not m:
         return []
     note = path.name[: -len(" · CKG.md")]
-    out = []
+    out, titles = [], set()
     for block in re.split(r"^#{3,4} ", m.group(1), flags=re.M)[1:]:
         head, _, body = block.partition("\n")
         title = re.sub(r"^SB\d+\s*·\s*", "", head).strip()
-        if not title or "{{" in title:
+        if not title or "{{" in title or title.lower() in titles:     # a reply that looped writes entries twice
             continue
+        titles.add(title.lower())
         e = {"note": note, "file": str(path), "title": title}
         for key, label in FIELDS.items():
             f = re.search(rf"\*\*{re.escape(label)}:\*\*\s*(.+?)(?=\n\s*-\s*\*\*|\Z)", body, flags=re.S)
