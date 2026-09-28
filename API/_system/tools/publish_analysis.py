@@ -32,6 +32,7 @@ from engine.paths import configured, external                  # noqa: E402
 YT_ROOT = external("yt_downloader") if configured("yt_downloader") else MAIN / "_data" / "youtube"   # paths.json
 START, END = "<!-- analysis:start -->", "<!-- analysis:end -->"
 DSTART, DEND = "<!-- analysis-detail:start -->", "<!-- analysis-detail:end -->"   # the bottom of the page
+BOTTOM_LAYER = "14_STORY"                    # David: "the bottom is always going to be the story"
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import page_layout  # noqa: E402
 
@@ -202,8 +203,12 @@ def block(note: Path, text: str, out_dir: Path, dry: bool) -> tuple[str, list[st
             detail += [f"## Analysis detail · Claim cards · from [[{stem} · CKG]]", "",
                        demote(cards.split("\n", 1)[1]).strip(), ""]
         L += ["## Analysis · Deep CKG (MASTER PAPER COMPANION)", "", demote(cb), ""]
+    story = None
     for label, path in find_layers(stems):              # layers under the CKG, before everything else (David)
         found.append(label.split("_", 1)[1].replace("_", " ").title())
+        if label == BOTTOM_LAYER:                       # the story always sits at the bottom of the page
+            story = path
+            continue
         body = path.read_text(encoding="utf-8", errors="replace")
         body = re.sub(r"\A# .*\n", "", body)             # the layer's own title line; our heading replaces it
         L += [f"## Analysis · Layer {label}", "", demote(body).strip(), ""]
@@ -229,6 +234,11 @@ def block(note: Path, text: str, out_dir: Path, dry: bool) -> tuple[str, list[st
     if yt and yt.exists():
         found.append("YouTube CKG")
         L += ["## Analysis · YouTube CKG (argument catalogue)", "", demote(youtube_body(yt.read_text(encoding="utf-8", errors="replace"))), ""]
+    if story:                                           # last thing on the page: readable cards; the YAML stays in the file
+        body = story.read_text(encoding="utf-8", errors="replace")
+        body = re.split(r"^### Machine record", body, maxsplit=1, flags=re.M)[0]
+        body = re.sub(r"\A# .*\n", "", body).strip()
+        detail += [f"## Story · from [[{story.stem}]] (full record with the YAML)", "", demote(body), ""]
     return "\n".join([START, *L, END]), found, ("\n".join([DSTART, *detail, DEND]) if detail else "")
 
 

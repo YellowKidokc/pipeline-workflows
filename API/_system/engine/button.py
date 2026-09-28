@@ -172,7 +172,7 @@ def deep_ckg(front: Path, notes: list[Path], out: Path, workers: int, focus: lis
         work = front / "BACKSIDE" / "_deep" / _slug(n.name)[:40]
         (work / "INBOX").mkdir(parents=True, exist_ok=True)
         text = n.read_text(encoding="utf-8", errors="replace")      # the source only: our analysis block stays out
-        text = re.sub(r"<!-- (analysis|scorecard):start -->.*?<!-- \1:end -->\n?", "", text, flags=re.S)
+        text = re.sub(r"<!-- (analysis|analysis-detail|scorecard):start -->.*?<!-- \1:end -->\n?", "", text, flags=re.S)
         (work / "INBOX" / n.name).write_text(text, encoding="utf-8")
         started = datetime.now().timestamp()
         proc = subprocess.Popen([sys.executable, "-u", str(runner), "--root", str(work), "--workers", "1",
