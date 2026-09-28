@@ -9,6 +9,8 @@ from each station's `station.json`; do not edit by hand. Receipts and saved repl
 | `API-10.1` | THEOLOGY_TRIAGE | 10_CKG_THEOLOGY | 17-probe verdicts + expansions, collapse question, platform notes, argument layer (claims, premises, hidden premises, edges, tests, win condition) |
 | `API-10.2` | THEOLOGY_SCRIPTURES | 10_CKG_THEOLOGY | every Bible passage used (cited / mentioned / alluded), where, and what the speaker does with it; the references found in code must all appear |
 | `API-11.1` | PHYSICS_MIRROR | 11_CKG_PHYSICS | mirrors between theological events and physics processes: stages in order, direction, level (identity / structural / analogy / none), transferring prediction, breaks, law axis |
+| `API-14.1` | STORY_SECTION | 14_STORY | Story Material records for one ~3,500-word section of the transcript (JSON) |
+| `API-14.2` | STORY_SPINE | 14_STORY | the whole-presentation spine from every record's gist, only once every section was read |
 | `API-03.0` | YT_INDEX | 03_YT_INDEX | the prompts built into the wrapped script |
 | `API-04.0` | YT_LENSES | 04_YT_LENSES | the prompts built into the wrapped script |
 | `API-06.0` | YT_WATCH | 06_YT_WATCH | the prompts built into the wrapped script |

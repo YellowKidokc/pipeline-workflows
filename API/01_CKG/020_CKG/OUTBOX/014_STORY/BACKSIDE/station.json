@@ -1,0 +1,17 @@
+{
+  "number": "14",
+  "name": "STORY",
+  "label": "14_STORY",
+  "kind": "native",
+  "description": "Story Material System v1.0 (pilot): compact, traceable records for original writing (fast facts, human moments, connections, memorable lines, story devices, story spines). Its cards go at the bottom of the transcript page.",
+  "items": "videos",
+  "options": ["limit", "workers", "provider", "model", "focus", "redo", "channel"],
+  "uses_api": true,
+  "prompt_files": ["STORY_MATERIAL_SYSTEM_v1.md"],
+  "goals": [
+    {"id": "API-14.1", "title": "STORY_SECTION", "task": "story_section",
+     "asks": "Story Material records for one ~2,500-word section of the transcript (JSON)"},
+    {"id": "API-14.2", "title": "STORY_SPINE", "task": "story_spine",
+     "asks": "the whole-presentation spine from every record's gist, only once every section was read"}
+  ]
+}

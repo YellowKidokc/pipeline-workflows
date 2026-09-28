@@ -69,7 +69,7 @@ class Item:
             raw = re.sub(r"<br\s*/?>|</p>|</h\d>|</li>", "\n\n", raw, flags=re.I)
             raw = re.sub(r"<[^>]+>", " ", raw)
         # every station reads the source itself: our own analysis and scorecard blocks on the note are left out (David)
-        raw = re.sub(r"<!-- (analysis|scorecard):start -->.*?<!-- \1:end -->\n?", "", raw, flags=re.S)
+        raw = re.sub(r"<!-- (analysis|analysis-detail|scorecard):start -->.*?<!-- \1:end -->\n?", "", raw, flags=re.S)
         return strip_front_matter(raw)
 
     def label(self) -> str:
