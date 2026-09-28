@@ -42,6 +42,7 @@ LAST = "_last_run.txt"
 YT_RAW = (".srt", ".vtt")
 SUBFOLDERS = ("Clean MD", "Prompts", "Channel Summary")
 LANES = {"00_PRIORITY", "01_SERIES", "02_GROUP", "02_GENERAL"}
+PRIORITY = "00_PRIORITY"
 
 
 def action(name: str):
@@ -113,6 +114,15 @@ def gather(sources: list[Path]) -> list[Path]:
         chosen = choose(src)
         if chosen:
             notes += chosen
+    return list(dict.fromkeys(notes))
+
+
+def priority_notes(sources: list[Path]) -> list[Path]:
+    """Everything in INBOX/00_PRIORITY: putting it there is the tick, so no pick list and no "how many?"."""
+    notes: list[Path] = []
+    for src in sources:
+        prepare(src)
+        notes += pick.by_date(pick.notes(src))
     return list(dict.fromkeys(notes))
 
 
@@ -318,7 +328,15 @@ def main(mode: str, front: Path) -> int:
                 print(f"Not found: {raw}")
                 return 2
         say("scanning")
-        notes = gather(sources)
+        first = [s for s in sources if PRIORITY in s.parts]      # dropped in 00_PRIORITY = ticked: runs first, no questions
+        notes = priority_notes(first)
+        rest = [s for s in sources if s not in first]
+        if notes:
+            say(f"priority: {len(notes)} note(s) from {PRIORITY}, these run first")
+            if rest and ask(f"Also go through the rest of the INBOX ({len(rest)} folder(s))? [y/N] ").lower() in ("y", "yes"):
+                notes += [n for n in gather(rest) if n not in notes]
+        else:
+            notes = gather(rest)
         if not notes:
             return 0
     where = ask(f"Where do you want the output? (Enter = {front / 'OUTBOX'}; answers always also go on each note) ")
