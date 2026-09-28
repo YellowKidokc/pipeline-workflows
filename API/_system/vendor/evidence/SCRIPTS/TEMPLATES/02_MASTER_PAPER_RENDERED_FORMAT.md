@@ -230,6 +230,19 @@ Every passage the source uses: cited by reference, mentioned by book, or alluded
 |---|---|---|---|
 | {{scripture_ref_1}} | {{cited / mentioned / alluded}} | {{timestamp or section}} | {{what the speaker does with it, one line; for alluded, the words that show it}} |
 
+## Story Bank
+
+Every piece of the source that could be RETOLD somewhere else: a personal story, a Bible story told with a fresh angle, a historical or archaeological fact, a striking fact or number, a sharp rebuttal or turn of argument, an illustration, a line worth quoting. One entry each, in order of appearance.
+
+### SB1 · {{short title a writer would search for}}
+- **Kind:** {{personal story / Bible story / historical fact / archaeology / science fact / statistic / rebuttal / illustration / quote}}
+- **Use it for:** {{2-4 tags from: intro-hook, closing, heart-family, faith-testimony, conversion, suffering-grief, apologetics-rebuttal, atheism, culture-woke, morality, archaeology-evidence, science, history, bible-insight, prophecy, humor, warning}}
+- **Where:** {{timestamp or section}}
+- **Retell it:** {{3-6 sentences in plain words, complete enough to tell to someone who never saw this source: who, what happened, the turn}}
+- **Their words:** "{{the one sentence that carries it, verbatim}}"
+- **Why it matters:** {{what it proves, shows or makes someone feel; the point it can carry in another piece}}
+- **Check first:** {{the factual claim to verify before retelling, or "none"}}
+
 ## Open the question (Q0–Q14)
 
 > [!quote]+ Q0 · Exact expression

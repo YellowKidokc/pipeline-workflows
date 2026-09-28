@@ -353,6 +353,8 @@ def main(mode: str, front: Path) -> int:
     for n in notes:                                   # the newest full version of each note, in the OUTBOX root
         if n.is_file():
             write_latest(n, out if base is None else base / "OUTBOX")
+    if not base:                                      # every CKG's Story Bank, gathered into one searchable file
+        subprocess.run([sys.executable, str(SYSTEM / "tools" / "story_bank.py"), "--root", str(out)])
     say(f"done. Results: {out}   Answers: on each note.")
     return code
 
