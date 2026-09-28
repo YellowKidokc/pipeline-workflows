@@ -30,6 +30,8 @@ Both launchers call the one script, `_system\engine\button.py`, passing their ow
    - If the folder has an X list (`_PICK.md`), it asks: "N ticked of M, run those?"
    - Otherwise it asks: "M notes, how many?" The answer can be a number, `all`, or `p` (write an X list and stop).
    - A folder with more than 10 notes and no X list never goes to the API by accident.
+   - **`INBOX\00_PRIORITY\` counts as ticked:** whatever is dropped there runs first, with no X list and no "how many".
+     `1 RUN HERE` then asks whether to go through the rest of the INBOX (default no).
 3. **Where do you want the output?** The default is the station's `OUTBOX`. Answers always go onto each note as well.
 4. **How many at once?** From 1 to 30. This is the number of API calls running side by side.
 5. **Anything else to look for?** Up to 5 extra questions. Each is answered in a "Your questions" section.
