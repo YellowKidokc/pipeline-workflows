@@ -58,6 +58,10 @@ Both launchers call the one script, `_system\engine\button.py`, passing their ow
   3. the rest.
 
   Rerunning replaces the block. No analysis is scattered into side files in the vault.
+
+  To keep the page readable (`tools\page_layout.py`, David 2026-09-28), two parts of the CKG are laid out differently on the page. The CKG file itself stays complete.
+  - **Story Bank:** the page shows one line per story (title, kind, tags). Each line links into `OUTBOX\STORY_BANK\<note> · STORIES.md`, which holds the full entries and links back to the note and its CKG.
+  - **Claim cards** ("Warrant Control & Airtight Upgrade Formulations"): the page shows one table row per claim (type, strength, kill condition). The full cards go to the very bottom of the page, below the transcript, between `<!-- analysis-detail:start -->` and `<!-- analysis-detail:end -->`.
 - **In the OUTBOX, newest on top.** The station's `OUTBOX` root holds one `<note> · ANALYSIS.md` per note. That file is the newest full analysis: the CKG plus every layer, the same as the block on the note. It is rewritten after every run.
   - The base results sit one folder down, as `OUTBOX\CKG\<note> · CKG.md`.
   - Each layer's results sit in that layer's own folder, as `<layer>\OUTBOX\<note> · <NN_LABEL>.md`.
