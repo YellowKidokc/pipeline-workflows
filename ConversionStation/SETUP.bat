@@ -19,9 +19,11 @@ set "PYTHON=%CD%\.venv\Scripts\python.exe"
 if errorlevel 1 goto :fail
 "%PYTHON%" -m pip install -r "%CD%\drop_pipeline\requirements.txt"
 if errorlevel 1 goto :fail
-"%PYTHON%" -m pip install -e "%CD%\conversion_engine[all]"
+"%PYTHON%" -m pip install -e "%CD%\conversion_engine[all,whisper]"
 if errorlevel 1 goto :fail
 "%PYTHON%" -m pip install tubescribe
+if errorlevel 1 goto :fail
+"%PYTHON%" -m pip install -r "%CD%\ReadableProseConverter\requirements.txt"
 if errorlevel 1 goto :fail
 
 "%PYTHON%" -m drop_pipeline.runner init --workspace "%CD%\Workspace"
