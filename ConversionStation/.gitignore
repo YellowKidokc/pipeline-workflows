@@ -3,3 +3,16 @@ Workspace/
 __pycache__/
 *.pyc
 tools/**/node_modules/
+
+# Operator drops and generated ConversionStation records stay local.
+INBOX/**
+!INBOX/**/
+!INBOX/**/.gitkeep
+OUTBOX/**
+!OUTBOX/**/
+!OUTBOX/**/.gitkeep
+BACKSIDE/PRESERVED_ORIGINALS/
+BACKSIDE/RECEIPTS/
+BACKSIDE/LOGS/
+BACKSIDE/STATE/
+BACKSIDE/CONFIG/

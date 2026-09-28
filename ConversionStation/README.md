@@ -13,6 +13,7 @@ This folder is self-contained and can be copied, renamed, or moved. Every launch
 
 - Preserved, SHA-256-indexed originals for Markdown, text, SRT, and VTT intake.
 - Local transcript formatting and Obsidian-ready output.
+- Direct readable-prose transcript conversion with five-minute timestamp headings, long paragraphs, conservative speaker-turn markers, channel preservation, and incremental reruns.
 - Document, PDF, HTML, spreadsheet, image, audio/video, and URL conversion through the bundled conversion engine and MarkItDown dependencies.
 - TubeScribe command-line installation for YouTube audio/transcript acquisition.
 - Portable Subtitles MD and Media Transcript Obsidian plugin bundles.
@@ -25,3 +26,13 @@ Run `INSTALL_OBSIDIAN_PLUGINS.bat` and enter a vault path to install both bundle
 Stop the watcher with `STOP.bat`, copy this entire folder, then run `SETUP.bat` at the new location. Do not copy `.venv` between computers; it is machine-specific and is ignored by Git. `Workspace` may be copied when you want its originals, receipts, and output to travel with the station.
 
 No API key is stored here. DeepSeek routing is optional and reads `DEEPSEEK_API_KEY` from the environment when configured.
+
+## Readable-prose transcript conversion
+
+Run:
+
+```bat
+CONVERT_TRANSCRIPTS_TO_READABLE_PROSE.bat "D:\path\to\subtitles" "D:\path\to\output"
+```
+
+This goes directly from raw transcript Markdown/SRT/VTT to the approved readable format; the older timestamp-per-paragraph layer is not required. See `ReadableProseConverter\README.md` for the complete behavior and advanced options.
