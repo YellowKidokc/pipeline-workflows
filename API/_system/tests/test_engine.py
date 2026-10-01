@@ -354,5 +354,33 @@ class Bundles(unittest.TestCase):
         self.run_bundle("45", "45_CLAIM_ATOMS", "45_ATOMS")
 
 
+class SeriesSheet(unittest.TestCase):
+    """61_SERIES_SHEET: a whole series in one run, JSON + markdown per file, one master HTML. Local, no API."""
+
+    def test_series_in_one_run(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            series = root / "01_GOD_IS"
+            series.mkdir()
+            for i in (1, 2):
+                (series / f"AX_GI_0{i}_X_C3_abc{i}.md").write_text(
+                    f'---\npaper_id: "p{i}"\nclean_title: "Paper {i}"\npaper_rating: {i}\ntotal_claims: 2\n---\n# Paper {i}\n\n## Claims\n\n'
+                    f'| ID | Claim |\n|---|---|\n| P{i}-C001 | a |\n| P{i}-C002 | b |\n\n## Exact source\n\n| x | y |\n|---|---|\n| not | analysis |\n', encoding="utf-8")
+            (series / "00_SERIES_SYNTHESIS_NOTEBOOK.md").write_text("# Notebook\n\n## Arc\nx\n", encoding="utf-8")
+            before = {p.name: p.read_bytes() for p in series.iterdir()}
+            script = paths.station_dir("61") / "61_series_sheet.py"
+            r = subprocess.run([sys.executable, str(script), str(series), "--outbox", str(root / "out")], capture_output=True, text=True, timeout=120)
+            self.assertEqual(0, r.returncode, r.stdout + r.stderr)
+            out = root / "out"
+            self.assertEqual(3, len(list(out.glob("* \u00b7 61_SHEET.md"))))
+            self.assertEqual(3, len(list(out.glob("* \u00b7 61_SHEET.json"))))
+            self.assertTrue((out / "01_GOD_IS \u00b7 SERIES_SHEET.html").is_file())
+            rec = json.loads((out / "AX_GI_01_X_C3_abc1 \u00b7 61_SHEET.json").read_text(encoding="utf-8"))
+            self.assertEqual("companion", rec["kind"])
+            self.assertEqual(1, len(rec["tables"]))                     # the table in the projected source is not analysis
+            self.assertEqual(["P1-C001", "P1-C002"], rec["ids"]["claims"])
+            self.assertEqual(before, {p.name: p.read_bytes() for p in series.iterdir()})   # sources untouched
+
+
 if __name__ == "__main__":
     unittest.main()

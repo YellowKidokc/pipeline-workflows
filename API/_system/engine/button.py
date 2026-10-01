@@ -313,7 +313,7 @@ def main(mode: str, front: Path) -> int:
     base = parent_station(front)
     title = f"{st['label']}" + (f"  (layer of {station_of(base)['label']})" if base else "")
     print(f"\n{title}\n{'=' * len(title)}")
-    if base and mode == "here":
+    if base and mode == "here" and not st.get("own_inbox"):
         listed = base / "OUTBOX" / LAST
         notes = [p for p in pick.read_list(listed) if p.is_file()] if listed.is_file() else []
         if not notes:
@@ -351,10 +351,14 @@ def main(mode: str, front: Path) -> int:
     focus = ask_focus()                                 # up to 5 extra questions for this pass
     if ask(f"\nRun {st['label']} on {len(notes)} note(s), {workers} at once? [Y/n] ").lower() in ("n", "no"):
         return 1
-    if not base:
+    on_note = st.get("on_note", True)                  # false: the notes are only read (series sheet): no title, no YAML, no publish
+    if not base and on_note:
         say("title: notes without their standard title")
         notes = title_first(notes)
     code = run_station(front, st, notes, out, workers, focus)
+    if not on_note:                                   # read-only station: nothing is written onto the source files
+        say(f"done. Results: {out}")
+        return code
     say("scriptures into each note's YAML")
     scripture = action("scripture")
     for n in notes:
