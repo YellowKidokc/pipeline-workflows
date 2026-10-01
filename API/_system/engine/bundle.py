@@ -67,8 +67,17 @@ def slug_of(name: str) -> str:
     return re.sub(r"_+", "_", s).strip("_")[:60] or "untitled"
 
 
+SOURCE_MARK = re.compile(r"^(<!-- ===== ORIGINAL ARTICLE BELOW[^\n]*-->|#{1,4} Exact source[^\n]*)\n", re.M)
+
+
 def source_text(note: Path) -> str:
-    return ANALYSIS_BLOCKS.sub("", note.read_text(encoding="utf-8", errors="replace"))
+    """The source only. Our own analysis blocks are stripped; and an evidence companion (C1/C2/C3 file) carries the exact original
+    below its analysis, so for a companion the passes read that original, never the companion's own analysis."""
+    text = ANALYSIS_BLOCKS.sub("", note.read_text(encoding="utf-8", errors="replace"))
+    m = SOURCE_MARK.search(text)
+    if m and re.search(r"^(type: axiom_companion|paper_id:|source_sha256:)", text[:3000], re.M):
+        return text[m.end():].lstrip("\n")
+    return text
 
 
 def demote(text: str, by: int = 2) -> str:
