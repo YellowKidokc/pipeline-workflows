@@ -50,6 +50,12 @@ Both launchers call the one script, `_system\engine\button.py`, passing their ow
 
 **A stray Ctrl+C never kills a run.** David's dictation tool can send one. Long steps run through `ask.run_guarded`; only typing `stop` stops them. Questions ignore Ctrl+C.
 
+## 2b. Bundles
+
+A station with `"kind": "bundle"` in station.json (030_EVIDENCE, 045_ATOMS) runs several passes per note (2 or 3 calls) through
+`_system\engine\bundle.py`: notes in parallel, a private scratch folder per note, the vendored scripts unchanged. It sits in `020_CKG\OUTBOX`
+as a layer (run the CKG, then pick layers by number) and writes `<note> · <NN_LABEL>.md` flat into the output folder you chose.
+
 ## 3. Where results go
 
 - **On the note.** `publish_analysis.py` writes one block between `<!-- analysis:start -->` and `<!-- analysis:end -->`, above the transcript. Inside it, in order:

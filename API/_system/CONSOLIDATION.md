@@ -14,6 +14,16 @@ Evidence comes from reading every gathered script (file:line references are to t
 | **Two CKG runners** | `backside_CKG/workbench` and `backside_workbench` (v3.1.1): same file names, incompatible `complete()` signatures | `backside_CKG/workbench` is wired (it is what `run_ckg.py` uses); `backside_workbench` is not vendored |
 | **Fruits** | `fruits_grade.py` (paper-level 0-4, system prompt file missing), api_call 06 (Yukawa variant), `FRUITS/PROMPT.md` (unimplemented) | station 40 fruits plug-in: rubric v0.3.0 copied in, prompts and lexicons as editable files; api_call 06 still runs under 60 |
 
+## Bundles (2026-10-01)
+
+| Bundle | Folds | Calls per paper |
+|---|---|---|
+| `01_CKG/020_CKG/OUTBOX/030_EVIDENCE` (30) | 30 intake + 36 three dials | 2 (parallel) |
+| `01_CKG/020_CKG/OUTBOX/045_ATOMS` (45) | 45 claim atoms + 54 axiom nodes | 2 (parallel) |
+
+Papers run in parallel, input and output folders are the ones chosen at the button (the old wrapped stations ignored them and read a hard-wired
+workspace). Engine: `engine/bundle.py`. Still to fold: see `PROMPT_OUT_BUNDLES.md`.
+
 ## Data bugs fixed (details in MIGRATION_REPORT.md, `bug-fix` rows)
 
 - `sync_to_sqlite.py` stored Source Role as the warrant and Modality as the formal form (and matched nothing on the real template).

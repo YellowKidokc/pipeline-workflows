@@ -165,10 +165,11 @@
     "number": "30",
     "name": "EVIDENCE_INTAKE",
     "label": "30_EVIDENCE_INTAKE",
-    "folder": "../030_EVIDENCE/BACKSIDE",
+    "folder": "../01_CKG/020_CKG/OUTBOX/030_EVIDENCE/BACKSIDE",
     "script": "30_evidence_intake.py",
     "rank": 8,
-    "retired": false
+    "retired": false,
+    "description": "Evidence in one station: intake companion + three dials per paper (2 calls), papers in parallel"
   },
   {
     "number": "31",
@@ -300,10 +301,11 @@
     "number": "45",
     "name": "CLAIM_ATOMS",
     "label": "45_CLAIM_ATOMS",
-    "folder": "../045_ATOMS/BACKSIDE",
+    "folder": "../01_CKG/020_CKG/OUTBOX/045_ATOMS/BACKSIDE",
     "script": "45_claim_atoms.py",
     "rank": 28,
-    "retired": false
+    "retired": false,
+    "description": "Atoms and axioms in one station: claim atoms + axiom nodes per paper (2 calls), papers in parallel"
   },
   {
     "number": "46",
@@ -471,6 +473,24 @@
     "folder": "stations/91_RELOCATE",
     "script": "91_relocate.py",
     "rank": 35,
+    "retired": false
+  },
+  {
+    "number": "59",
+    "name": "CHI_EVALUATOR",
+    "label": "59_CHI_EVALUATOR",
+    "folder": "../059_CHI_EVALUATOR/BACKSIDE",
+    "script": "59_chi_evaluator.py",
+    "rank": 59,
+    "retired": false
+  },
+  {
+    "number": "61",
+    "name": "SERIES_SHEET",
+    "label": "61_SERIES_SHEET",
+    "folder": "../061_SERIES_SHEET/BACKSIDE",
+    "script": "61_series_sheet.py",
+    "rank": 61,
     "retired": false
   }
 ]

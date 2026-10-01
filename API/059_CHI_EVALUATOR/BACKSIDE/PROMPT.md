@@ -1,0 +1,1 @@
+# 59_CHI_EVALUATOR\n\nThe prompts are in `vendor/chi_evaluator/run_evaluator.py` (SYSTEM_PROMPT) and `synthesize_statements.py`; not duplicated here.\n

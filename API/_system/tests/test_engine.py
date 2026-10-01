@@ -326,5 +326,61 @@ class DomainRules(unittest.TestCase):
         self.assertEqual(["07", "02", "03", "10", "08", "09"], order_chain(["07", "02", "08", "09", "03", "10"]))
 
 
+class Bundles(unittest.TestCase):
+    """EVIDENCE (30) and ATOMS (45): several passes per note, notes in parallel, folders as given. Offline, mock replies."""
+
+    def run_bundle(self, number: str, label: str, out_label: str):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "in").mkdir()
+            for i in (1, 2, 3):
+                (root / "in" / f"paper{i}.md").write_text(f"# Paper {i}\n\nEntropy increases (Romans 8:20). Grace is a boundary condition.\n", encoding="utf-8")
+            script = paths.station_dir(number) / next(p.name for p in paths.station_dir(number).glob("*.py"))
+            env = {**os.environ, "ONE_MENU_PATHS_FILE": str(data_config(root)), "PYTHONIOENCODING": "utf-8"}
+            cmd = [sys.executable, str(script), str(root / "in"), "--out", str(root / "out"), "--workers", "3", "--provider", "mock", "--no-publish"]
+            r = subprocess.run(cmd, cwd=HOME, env=env, capture_output=True, text=True, timeout=300)
+            self.assertEqual(0, r.returncode, r.stdout + r.stderr)
+            made = sorted(p.name for p in (root / "out").glob("*.md"))
+            self.assertEqual([f"paper{i} \u00b7 {out_label}.md" for i in (1, 2, 3)], made)
+            self.assertIn("passes_failed: []", (root / "out" / made[0]).read_text(encoding="utf-8"))
+            again = subprocess.run(cmd, cwd=HOME, env=env, capture_output=True, text=True, timeout=300)
+            self.assertIn("already done, skipped", again.stdout)          # a finished note is never paid for twice
+            self.assertEqual([], list(paths.station_dir(number).glob("_work/*")))   # scratch is cleaned after success
+
+    def test_evidence_bundle(self):
+        self.run_bundle("30", "30_EVIDENCE_INTAKE", "30_EVIDENCE")
+
+    def test_atoms_bundle(self):
+        self.run_bundle("45", "45_CLAIM_ATOMS", "45_ATOMS")
+
+
+class SeriesSheet(unittest.TestCase):
+    """61_SERIES_SHEET: a whole series in one run, JSON + markdown per file, one master HTML. Local, no API."""
+
+    def test_series_in_one_run(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            series = root / "01_GOD_IS"
+            series.mkdir()
+            for i in (1, 2):
+                (series / f"AX_GI_0{i}_X_C3_abc{i}.md").write_text(
+                    f'---\npaper_id: "p{i}"\nclean_title: "Paper {i}"\npaper_rating: {i}\ntotal_claims: 2\n---\n# Paper {i}\n\n## Claims\n\n'
+                    f'| ID | Claim |\n|---|---|\n| P{i}-C001 | a |\n| P{i}-C002 | b |\n\n## Exact source\n\n| x | y |\n|---|---|\n| not | analysis |\n', encoding="utf-8")
+            (series / "00_SERIES_SYNTHESIS_NOTEBOOK.md").write_text("# Notebook\n\n## Arc\nx\n", encoding="utf-8")
+            before = {p.name: p.read_bytes() for p in series.iterdir()}
+            script = paths.station_dir("61") / "61_series_sheet.py"
+            r = subprocess.run([sys.executable, str(script), str(series), "--outbox", str(root / "out")], capture_output=True, text=True, timeout=120)
+            self.assertEqual(0, r.returncode, r.stdout + r.stderr)
+            out = root / "out"
+            self.assertEqual(3, len(list(out.glob("* \u00b7 61_SHEET.md"))))
+            self.assertEqual(3, len(list(out.glob("* \u00b7 61_SHEET.json"))))
+            self.assertTrue((out / "01_GOD_IS \u00b7 SERIES_SHEET.html").is_file())
+            rec = json.loads((out / "AX_GI_01_X_C3_abc1 \u00b7 61_SHEET.json").read_text(encoding="utf-8"))
+            self.assertEqual("companion", rec["kind"])
+            self.assertEqual(1, len(rec["tables"]))                     # the table in the projected source is not analysis
+            self.assertEqual(["P1-C001", "P1-C002"], rec["ids"]["claims"])
+            self.assertEqual(before, {p.name: p.read_bytes() for p in series.iterdir()})   # sources untouched
+
+
 if __name__ == "__main__":
     unittest.main()
