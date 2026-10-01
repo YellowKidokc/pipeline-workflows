@@ -26,10 +26,12 @@ def build(root: Path) -> Path:
     def cell(v):
         c = "var(--g3)" if v >= 5 else "var(--g1)" if v > 0 else "var(--b3)" if v <= -5 else "var(--b1)" if v < 0 else "var(--mid)"
         return f'<span class="c" title="{v:+}" style="background:{c}"></span>'
+    def pct(v):                                            # no nested same-quote f-strings: they need Python 3.12
+        return "" if v is None else str(round(100 * v)) + "%"
     body = "".join(
         f'<tr><td><a href="{html.escape(r["href"])}">{html.escape(r["name"])}</a><div class="id">{r["run"]}</div></td>'
         f'<td>{html.escape(r["quadrant"])}</td><td>{html.escape(r["shape"])}</td>'
-        f'<td class="n">{"" if r["active"] is None else f"{round(100 * r["active"])}%"}</td><td style="white-space:nowrap">{"".join(cell(v) for v in r["net"])}</td>'
+        f'<td class="n">{pct(r["active"])}</td><td style="white-space:nowrap">{"".join(cell(v) for v in r["net"])}</td>'
         f'<td class="n">{r["coh"] if r["coh"] is not None else "—"}</td><td class="n">{r["me"] if r["me"] is not None else "—"}</td>'
         f'<td>{html.escape(str(r["verdict"]))}</td><td class="n">{r["tokens"]:,}</td><td class="n">{r["errors"] or ""}</td></tr>' for r in rows)
     page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
