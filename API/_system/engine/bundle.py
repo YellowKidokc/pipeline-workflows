@@ -171,7 +171,27 @@ def step_axioms(job: Job) -> StepResult:
     return _workspace_step(job, "axioms", "AXIOM_NODES", "run_axiom_nodes.py", "Axiom nodes", "## Axiom Node Mapping (Axiom Nodes API)")
 
 
-STEPS = {"turbo": step_turbo, "dials": step_dials, "atoms": step_atoms, "axioms": step_axioms}
+def step_chi(job: Job) -> StepResult:
+    """chi-Evaluator v2: the Master Equation's ten channels scored per claim, then four synthesized statements.
+    Two calls per claim (evaluate, synthesize), DeepSeek only. The vendored script runs unchanged in a scratch copy."""
+    w = job.work / "chi"
+    (w / "INBOX").mkdir(parents=True, exist_ok=True)
+    for f in (VENDOR / "chi_evaluator").glob("*.py"):
+        shutil.copy2(f, w / f.name)
+    (w / "INBOX" / f"{job.slug}.txt").write_text(job.text, encoding="utf-8")
+    key = os.environ.get("DEEPSEEK_API_KEY", "") or "no-key"
+    (w / "config.txt").write_text(f"RUN_OPENAI=FALSE\nRUN_DEEPSEEK=TRUE\nDEEPSEEK_API_KEY={key}\nDEEPSEEK_MODEL=deepseek-chat\n"
+                                  "DEEPSEEK_MAX_TOKENS=4096\nTEMPERATURE=0.3\nFRUIT_BETA=4.0\nFRUIT_CHI_C=0.30\nARCHIVE_INBOX=TRUE\n", encoding="utf-8")
+    code = run([sys.executable, "-u", str(w / "run_evaluator.py")], w, job.env, w / "run.log")
+    mds = sorted((w / "OUTBOX").rglob("*.md")) if (w / "OUTBOX").is_dir() else []
+    if code or not mds:
+        return StepResult("chi", False, "chi-Evaluator", error=f"no evaluation came back (exit {code}): {tail(w / 'run.log')}")
+    body = "\n\n".join(f"### {m.stem.replace(job.slug + '_', '')}\n\n{demote(m.read_text(encoding='utf-8', errors='replace'), 1)}" for m in mds)
+    files = {p.name: p.read_text(encoding="utf-8", errors="replace") for p in (w / "OUTBOX").rglob("*.json")}
+    return StepResult("chi", True, "chi-Evaluator", body, files)
+
+
+STEPS = {"turbo": step_turbo, "dials": step_dials, "atoms": step_atoms, "axioms": step_axioms, "chi": step_chi}
 
 
 # ------------------------------------------------------------------ one note, then all notes

@@ -1,0 +1,19 @@
+{
+  "number": "59",
+  "name": "CHI_EVALUATOR",
+  "label": "59_CHI_EVALUATOR",
+  "kind": "bundle",
+  "out_label": "59_CHI",
+  "steps": [
+    "chi"
+  ],
+  "description": "chi-Evaluator v2 (pulled out of API 2): each claim scored on the Master Equation's ten channels, then four synthesized statements. 2 calls per claim, DeepSeek.",
+  "uses_api": true,
+  "goals": [],
+  "options": [
+    "limit",
+    "workers",
+    "provider",
+    "redo"
+  ]
+}

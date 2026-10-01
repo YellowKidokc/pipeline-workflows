@@ -17,6 +17,10 @@ Both buttons exist on each: `1 RUN HERE` (the notes the CKG just ran) and `2 RUN
 folder, how many at once). No-question form: `python BACKSIDE\30_evidence_intake.py <folder> --out <folder> --workers 8`.
 Tests: `python -m unittest _system.tests.test_engine.Bundles`.
 
+Also built the same day: `059_CHI_EVALUATOR` (chi-Evaluator from `API 2`, 2 calls per claim, step `chi`) and the `yt_*` actions in `_ACTIONS`
+(see `API_2_3_AUDIT.md`). Not yet verified: **the chi success path** (mock replies cannot satisfy its JSON parser, so only the plumbing and the failure path ran).
+Run it once on a real note and check `_work/<note>/chi/OUTBOX` and the result file.
+
 ## Do next, in this order (each is a small adapter in `engine/bundle.py` `STEPS`, plus its name in the station.json `steps`)
 
 1. **Run one real paper through each bundle** (`--limit 1`, DeepSeek key set) and read the output. Check the three vendored
