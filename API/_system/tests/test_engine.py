@@ -326,5 +326,33 @@ class DomainRules(unittest.TestCase):
         self.assertEqual(["07", "02", "03", "10", "08", "09"], order_chain(["07", "02", "08", "09", "03", "10"]))
 
 
+class Bundles(unittest.TestCase):
+    """EVIDENCE (30) and ATOMS (45): several passes per note, notes in parallel, folders as given. Offline, mock replies."""
+
+    def run_bundle(self, number: str, label: str, out_label: str):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "in").mkdir()
+            for i in (1, 2, 3):
+                (root / "in" / f"paper{i}.md").write_text(f"# Paper {i}\n\nEntropy increases (Romans 8:20). Grace is a boundary condition.\n", encoding="utf-8")
+            script = paths.station_dir(number) / next(p.name for p in paths.station_dir(number).glob("*.py"))
+            env = {**os.environ, "ONE_MENU_PATHS_FILE": str(data_config(root)), "PYTHONIOENCODING": "utf-8"}
+            cmd = [sys.executable, str(script), str(root / "in"), "--out", str(root / "out"), "--workers", "3", "--provider", "mock", "--no-publish"]
+            r = subprocess.run(cmd, cwd=HOME, env=env, capture_output=True, text=True, timeout=300)
+            self.assertEqual(0, r.returncode, r.stdout + r.stderr)
+            made = sorted(p.name for p in (root / "out").glob("*.md"))
+            self.assertEqual([f"paper{i} \u00b7 {out_label}.md" for i in (1, 2, 3)], made)
+            self.assertIn("passes_failed: []", (root / "out" / made[0]).read_text(encoding="utf-8"))
+            again = subprocess.run(cmd, cwd=HOME, env=env, capture_output=True, text=True, timeout=300)
+            self.assertIn("already done, skipped", again.stdout)          # a finished note is never paid for twice
+            self.assertEqual([], list(paths.station_dir(number).glob("_work/*")))   # scratch is cleaned after success
+
+    def test_evidence_bundle(self):
+        self.run_bundle("30", "30_EVIDENCE_INTAKE", "30_EVIDENCE")
+
+    def test_atoms_bundle(self):
+        self.run_bundle("45", "45_CLAIM_ATOMS", "45_ATOMS")
+
+
 if __name__ == "__main__":
     unittest.main()

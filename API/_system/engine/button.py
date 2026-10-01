@@ -264,6 +264,10 @@ def run_station(front: Path, st: dict, notes: list[Path], out: Path, workers: in
         + (f", looking for: {' | '.join(focus)}" if focus else ""))
     if st["number"] == "20":
         return deep_ckg(front, notes, out, workers, focus)
+    if st.get("kind") == "bundle":                      # several passes per note, notes in parallel, folders as chosen here
+        from engine.bundle import run_bundle
+        return run_bundle(front, st, notes, out, workers, focus, lambda n, dirs: publish_on_note([n], dirs),
+                          lambda n, o: None)             # the ANALYSIS.md rewrite happens once, in main(), in the right folder
     row = next(r for r in station_rows() if r["number"] == st["number"])
     if st.get("kind") == "legacy":                      # a wrapped older tool: it reads its own inputs, run as before
         cmd = [sys.executable, str(SYSTEM / "engine" / "menu.py"), st["number"], "--yes", "--workers", str(workers)]
