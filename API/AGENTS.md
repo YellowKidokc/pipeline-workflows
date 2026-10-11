@@ -15,7 +15,7 @@
 - **Groups** are containers you click into. One topic, one group (David, 2026-10-11): stations on the same thing live together.
   - `01_CKG\`, `02_YOUTUBE\`
   - `03_EVIDENCE\` (031, 034-036, 039, 061), `07_ARGUMENTS\` (032 best arguments, 033 build one argument)
-  - `04_PAPER_GRADER\` (040, 042, 043, 046, 057, 058, 059 and `063_PAPER_AUDIT`, the whole audit in one run)
+  - `04_PAPER_GRADER\` (040, 042, 043, 046, 057, 058, 059 and `063_PAPER_AUDIT`, the whole audit in one run, ending in `064_SITE_PACKAGE`: a house per series, a page per part)
   - `05_LEAN\` (050, 051, 052, 055), `06_ATOMS\` (`062_ATOM_BUILDER`, 053, 054)
   - Stations used by everything stay at the top of `API\` (037 SQLite sync, 038 sidecars, 041, 044, 047-049, 056, 060).
 - **INBOX lanes:** `00_PRIORITY\`, `01_SERIES\<series>\`, `02_GENERAL\<group>\` (an old `02_GROUP\` is still read as the same lane).

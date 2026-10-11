@@ -10,6 +10,7 @@ One paper (or a folder of them) through the whole audit, one station after anoth
 | 4 | 59_CHI_EVALUATOR | each claim on the Master Equation's ten channels, then four statements | yes |
 | 5 | 42_STATISTICS_WALL | every metric in Python, with corpus and series percentiles | no |
 | 6 | 46_REPORT_COMBINE | every station's JSON in order: report.html and report.xlsx | no |
+| 7 | 64_SITE_PACKAGE | files it all into the series house: a page per part (Markdown + HTML), the series title page rebuilt | no |
 
 The steps are the `chain` list in `station.json`: edit that list to add, drop or reorder a step.
 40_ANALYTICAL_ARMS is not in the chain: 57 already runs Fruits, the Master Equation, axiom nodes and coherence.
