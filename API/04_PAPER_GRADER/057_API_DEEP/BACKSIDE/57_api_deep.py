@@ -21,7 +21,8 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 FRONT = HERE.parent                                      # 057_API_DEEP: INBOX/ and OUTBOX/ sit next to BACKSIDE/
-sys.path.insert(0, str(FRONT.parent / "_system")); sys.path.insert(0, str(HERE / "lib"))
+sys.path.insert(0, str(next(p for p in HERE.parents if (p / "_system").is_dir()) / "_system"))
+sys.path.insert(0, str(HERE / "lib"))                    # walk up for _system: the folder can move
 from engine import llm                                   # noqa: E402
 from engine.focus import append, compose                 # noqa: E402
 from engine.paths import API_HOME                        # noqa: E402

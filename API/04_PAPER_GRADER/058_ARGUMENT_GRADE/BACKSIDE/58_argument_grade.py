@@ -18,8 +18,9 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 FRONT = HERE.parent                                             # 058_ARGUMENT_GRADE: INBOX/ and OUTBOX/ next to BACKSIDE/
-sys.path.insert(0, str(FRONT.parent / "_system"))
-_spec = importlib.util.spec_from_file_location("deep48", FRONT.parent / "057_API_DEEP" / "BACKSIDE" / "57_api_deep.py")
+sys.path.insert(0, str(next(p for p in HERE.parents if (p / "_system").is_dir()) / "_system"))  # walk up: the folder can move
+from engine.paths import station_dir                           # noqa: E402
+_spec = importlib.util.spec_from_file_location("deep48", station_dir("57") / "57_api_deep.py")
 deep48 = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(deep48)   # reuse its tested call + source prep
 from engine import llm                                          # noqa: E402
 from engine.publish import publish_on_note                      # noqa: E402
