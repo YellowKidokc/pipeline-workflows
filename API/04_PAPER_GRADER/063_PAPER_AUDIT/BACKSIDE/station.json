@@ -1,0 +1,13 @@
+{
+  "number": "63",
+  "name": "PAPER_AUDIT",
+  "label": "63_PAPER_AUDIT",
+  "kind": "chain",
+  "script": "63_paper_audit.py",
+  "items": "papers",
+  "chain": ["43", "57", "58", "59", "42", "46"],
+  "description": "One paper through the whole audit, in order: local grades (43), API Deep chain (57), argument grades (58), chi-Evaluator (59), statistics wall (42), combined report (46).",
+  "uses_api": true,
+  "goals": [],
+  "options": ["limit", "workers", "focus", "outbox"]
+}

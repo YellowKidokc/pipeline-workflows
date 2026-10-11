@@ -12,7 +12,13 @@
   - `OUTBOX\`
 
   Nothing else sits at the top of a front folder.
-- **Groups** such as `01_CKG\` and `02_YOUTUBE\` are containers you click into.
+- **Groups** are containers you click into. One topic, one group (David, 2026-10-11): stations on the same thing live together.
+  - `01_CKG\`, `02_YOUTUBE\`
+  - `03_EVIDENCE\` (031, 034-036, 039, 061), `07_ARGUMENTS\` (032 best arguments, 033 build one argument)
+  - `04_PAPER_GRADER\` (040, 042, 043, 046, 057, 058, 059 and `063_PAPER_AUDIT`, the whole audit in one run)
+  - `05_LEAN\` (050, 051, 052, 055), `06_ATOMS\` (`062_ATOM_BUILDER`, 053, 054)
+  - Stations used by everything stay at the top of `API\` (037 SQLite sync, 038 sidecars, 041, 044, 047-049, 056, 060).
+- **INBOX lanes:** `00_PRIORITY\`, `01_SERIES\<series>\`, `02_GENERAL\<group>\` (an old `02_GROUP\` is still read as the same lane).
 - **A layer is a station that sits inside another station's `OUTBOX\`.** For example, `010_CKG_THEOLOGY` sits inside `020_CKG\OUTBOX`. It runs after that station, on the same notes.
 - **David moves folders by hand. Never hard-code a folder's position.**
   - Scripts find `_system` by walking up the folders.
@@ -55,6 +61,12 @@ Both launchers call the one script, `_system\engine\button.py`, passing their ow
 A station with `"kind": "bundle"` in station.json (030_EVIDENCE, 045_ATOMS) runs several passes per note (2 or 3 calls) through
 `_system\engine\bundle.py`: notes in parallel, a private scratch folder per note, the vendored scripts unchanged. It sits in `020_CKG\OUTBOX`
 as a layer (run the CKG, then pick layers by number) and writes `<note> · <NN_LABEL>.md` flat into the output folder you chose.
+
+## 2c. Chains
+
+A station with `"kind": "chain"` and a `"chain"` list of station numbers (063_PAPER_AUDIT) runs those stations one after another on
+the same notes, each the way its own button runs it, all into the one output folder. Edit the list to add, drop or reorder a step.
+The same list is routine `G` in `ONE_MENU`.
 
 ## 3. Where results go
 

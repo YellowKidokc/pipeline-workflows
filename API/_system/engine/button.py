@@ -41,7 +41,7 @@ ACTIONS = MAIN / "_ACTIONS" / "actions"
 LAST = "_last_run.txt"
 YT_RAW = (".srt", ".vtt")
 SUBFOLDERS = ("Clean MD", "Prompts", "Channel Summary")
-LANES = {"00_PRIORITY", "01_SERIES", "02_GROUP", "02_GENERAL"}
+LANES = {"00_PRIORITY", "01_SERIES", "02_GENERAL", "02_GROUP"}
 PRIORITY = "00_PRIORITY"
 
 
@@ -264,6 +264,14 @@ def run_station(front: Path, st: dict, notes: list[Path], out: Path, workers: in
         + (f", looking for: {' | '.join(focus)}" if focus else ""))
     if st["number"] == "20":
         return deep_ckg(front, notes, out, workers, focus)
+    if st.get("kind") == "chain":                       # one set of papers through several stations, in order, one OUTBOX
+        code = 0
+        for i, number in enumerate(st["chain"], 1):
+            row = next(r for r in station_rows() if r["number"] == number)
+            step = station_dir(row["label"]).parent      # that station's front folder, wherever it was moved
+            say(f"step {i}/{len(st['chain'])}: {row['label']}")
+            code |= run_station(step, station_of(step), notes, out, workers, focus)
+        return code
     if st.get("kind") == "bundle":                      # several passes per note, notes in parallel, folders as chosen here
         from engine.bundle import run_bundle
         return run_bundle(front, st, notes, out, workers, focus, lambda n, dirs: publish_on_note([n], dirs),

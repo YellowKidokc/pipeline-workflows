@@ -110,7 +110,7 @@ def number(v):
 
 def parse(path: Path, series: str | None = None) -> dict:
     raw = path.read_bytes()
-    text = raw.decode("utf-8", errors="replace")
+    text = raw.decode("utf-8", errors="replace").replace("\r\n", "\n")   # Windows line endings read the same
     fm, rest = front_matter(text)
     cut = SOURCE_CUT.search(rest)
     analysis, source = (rest[:cut.start()], rest[cut.start():]) if cut else (rest, "")
