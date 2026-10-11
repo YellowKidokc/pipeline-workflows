@@ -23,7 +23,7 @@ folders stay in `lean_work`). Front folder: `API_HOME\LEAN` (`1 RUN ALL.bat`, `2
 lean_inbox/
   00_PRIORITY/                  first
   01_SERIES/<series name>/      the folder name is the series
-  02_GROUP/<group name>/        grouped like a series without being one (e.g. "One pagers")
+  02_GENERAL/<group name>/      grouped like a series without being one (e.g. "One pagers")
 ```
 
 The lane and group are stamped at the top of every paper and order the masters.

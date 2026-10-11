@@ -34,7 +34,7 @@ FRONT_NAMES = {"20": "CKG", "21": "CLAIMS_PROOFS_EVIDENCE", "30": "EVIDENCE", "4
 ASKS = {"01": "1 GRAB A CHANNEL.bat", "48": "1 RUN A TOPIC.bat", "49": "1 RUN A TOPIC.bat"}
 PLAIN = {"22": "1 CHECK CKG INBOX.bat", "46": "1 BUILD REPORT.bat", "05": "1 BUILD CATALOG.bat"}
 
-LANES = ("INBOX/00_PRIORITY", "INBOX/01_SERIES", "INBOX/02_GROUP", "OUTBOX")
+LANES = ("INBOX/00_PRIORITY", "INBOX/01_SERIES", "INBOX/02_GENERAL", "OUTBOX")
 OLD_IMPORT ="sys.path.insert(0, str(Path(__file__).resolve().parents[2]))"
 NEW_IMPORT = 'sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_system"))'
 

@@ -290,7 +290,7 @@ class DomainRules(unittest.TestCase):
         from engine import inbox
         with tempfile.TemporaryDirectory() as d:
             root = Path(d)
-            for rel in ("02_GROUP/One pagers/b.lean", "01_SERIES/Trinity/2.lean", "01_SERIES/Trinity/1.lean",
+            for rel in ("02_GENERAL/One pagers/b.lean", "01_SERIES/Trinity/2.lean", "01_SERIES/Trinity/1.lean",
                         "00_PRIORITY/p.lean", "loose.lean", "01_SERIES/Trinity/_draft.lean"):
                 (root / rel).parent.mkdir(parents=True, exist_ok=True)
                 (root / rel).write_text("theorem t : True := trivial")

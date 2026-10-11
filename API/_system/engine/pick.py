@@ -122,7 +122,7 @@ def write_pick(folder: Path) -> Path:
 
 def resolve(items: list[str], default: Path | None = None, limit: int | None = None, quiet: bool = False) -> list[Path]:
     """The notes a station should run, after the pick-list rules. Folders are read one level deep, except a
-    station INBOX (lanes 00_PRIORITY/01_SERIES/02_GROUP and their sub-folders), which is read recursively."""
+    station INBOX (lanes 00_PRIORITY/01_SERIES/02_GENERAL and their sub-folders), which is read recursively."""
     say = (lambda *a: None) if quiet else (lambda *a: print(*a, file=sys.stderr))
     out: list[Path] = []
     for raw in items or ([str(default)] if default else []):

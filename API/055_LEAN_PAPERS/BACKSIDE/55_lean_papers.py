@@ -9,7 +9,7 @@ One source = the whole file in every call (no chunking); 30+ sources side by sid
 Claims never carry their assumptions: they point to them by id. Code enforces the trust rules (no LEAN_CERTIFIED from
 the model; PASS only with a cited source line).
 
-Inbox (lean_inbox): 00_PRIORITY/, 01_SERIES/<series>/, 02_GROUP/<group>/, run in that order (engine/inbox.py).
+Inbox (lean_inbox): 00_PRIORITY/, 01_SERIES/<series>/, 02_GENERAL/<group>/, run in that order (engine/inbox.py).
 Outbox (lean_outbox): one flat folder. Every paper is printed into its root:
   <title> - 1 Formal.md, <title> - 2 Reader.md, <title> - 3 Claims.md, <title> - 4 Assumptions.md
 and, rebuilt after every item:
@@ -261,6 +261,6 @@ if __name__ == "__main__":
     found = items(st)
     if not found:
         print(f"{LABEL}: nothing in the Lean inbox. Put .lean / .md files in lean_inbox "
-              "(00_PRIORITY, 01_SERIES/<series>, 02_GROUP/<group>).")
+              "(00_PRIORITY, 01_SERIES/<series>, 02_GENERAL/<group>).")
         raise SystemExit(0)
     raise SystemExit(st.run(process, items=found))

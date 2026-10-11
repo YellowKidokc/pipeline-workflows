@@ -124,7 +124,7 @@ model; anything from the model's general knowledge is marked "verify". Reports l
 ## Inboxes: priority, series, group
 
 Stations that take files in read one inbox shape (`engine/inbox.py`): `00_PRIORITY/` first, then
-`01_SERIES/<series>/`, then `02_GROUP/<group>/`. A group is carried through like a series without being
+`01_SERIES/<series>/`, then `02_GENERAL/<group>/`. A group is carried through like a series without being
 one (e.g. all the one-pagers); the folder name is the group's name and it travels into the outputs. The scripts
 never sit in these folders: `paths.json` points at them. 55_LEAN_PAPERS uses it now (`lean_inbox`).
 
