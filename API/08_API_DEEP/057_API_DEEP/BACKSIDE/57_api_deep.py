@@ -33,6 +33,7 @@ from atom_prompt import build_atom_prompt                # noqa: E402  (copied f
 from axiom_prompt import build_axiom_prompt              # noqa: E402  (copied from 05_API_DEEP_STATIONS/AXIOM_NODES)
 import love_truth as LT                                  # noqa: E402  (Truth Engine v2.0 lexicons + character profiles, local)
 import report_html                                       # noqa: E402  (API_DEEP.html, matrix house style)
+import reports                                           # noqa: E402  (REPORT.html: ledger, fruits, master equation, lean, axioms)
 import runs_index                                        # noqa: E402  (OUTBOX/INDEX.html)
 
 LABEL = "57_API_DEEP"
@@ -510,11 +511,12 @@ def process(src: Path, paper: Path | None, a) -> bool:
     (out / "API_DEEP.json").write_text(json.dumps({"title": ctx["title"], "source": str(src), "order": PAGE_ORDER, **R}, indent=2, ensure_ascii=False), encoding="utf-8")
     (out / "API_DEEP.md").write_text(render_page(ctx, R), encoding="utf-8")
     (out / "API_DEEP.html").write_text(report_html.build(ctx, R, rows), encoding="utf-8")
+    report = reports.build_all(out, ctx["title"])        # one report per station + REPORT.html, all of them in one file
     if paper:
         meta = json.loads((paper / "paper.json").read_text(encoding="utf-8"))
         meta.setdefault("stations_run", []).append({"station": LABEL, "run": str(out.relative_to(paper))})
         (paper / "paper.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
-    print(f"  page: {out / 'API_DEEP.html'}\n  tokens: {receipt['tokens_new']}  errors: {len(errors)}" + "".join(f"\n    FAIL {k}: {v}" for k, v in errors.items()))
+    print(f"  page: {out / 'API_DEEP.html'}\n  report: {report}\n  tokens: {receipt['tokens_new']}  errors: {len(errors)}" + "".join(f"\n    FAIL {k}: {v}" for k, v in errors.items()))
     return not errors
 
 def write_xlsx(path: Path, rows, R: dict, ctx: dict) -> None:
