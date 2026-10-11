@@ -1,0 +1,3491 @@
+{
+ "paper": "D:\\GitHub\\pipeline-workflows\\API_ALL\\05_API_DEEP_STATIONS\\FRUITS\\Fruits_of_the_Spirit_Grading_Station_v0.3.0\\Fruits of the Spirit.md",
+ "paper_name": "Fruits of the Spirit",
+ "stage": "span_judge_v1",
+ "manifest": {
+  "model": "deepseek-chat",
+  "base_url": "https://api.deepseek.com/v1",
+  "temperature": 0.1,
+  "max_tokens": 2000,
+  "prompt_file": "D:\\GitHub\\pipeline-workflows\\API_ALL\\05_API_DEEP_STATIONS\\FRUITS\\Fruits_of_the_Spirit_Grading_Station_v0.3.0\\Fruits_of_the_Spirit_Grading_Station\\scripts\\prompts\\fruits_system_v0.3.0.txt",
+  "prompt_sha256": "70e73f7f4a3837639da8549d9c31dad2e20ddba0e6d965aa31f2e2a47d42c903",
+  "rubric_file": "D:\\GitHub\\pipeline-workflows\\API_ALL\\05_API_DEEP_STATIONS\\FRUITS\\Fruits_of_the_Spirit_Grading_Station_v0.3.0\\Fruits_of_the_Spirit_Grading_Station\\scripts\\rubric\\fruits_rubric_v0.3.0.json",
+  "rubric_sha256": "44951e7c43e587a281195666a572b8469014a8eb62f62bc9ef60ebc0d591f609",
+  "lexicon_cache_file": "D:\\GitHub\\pipeline-workflows\\API_ALL\\05_API_DEEP_STATIONS\\FRUITS\\Fruits_of_the_Spirit_Grading_Station_v0.3.0\\Fruits_of_the_Spirit_Grading_Station\\scripts\\lexicon_cache.json",
+  "lexicon_cache_sha256": "4bff6b2e212a2043157b15412cad8e3bd653bfeb963eef3b6d7f619ae2751f83",
+  "lexicon_json": "D:\\GitHub\\pipeline-workflows\\API_ALL\\05_API_DEEP_STATIONS\\FRUITS\\Fruits_of_the_Spirit_Grading_Station_v0.3.0\\Fruits_of_the_Spirit_Grading_Station\\grading_out\\Fruits of the Spirit.lexicon.json",
+  "started_at": "2026-10-11T16:26:47+00:00",
+  "limit": null,
+  "spans_total": 113,
+  "spans_graded": 113,
+  "finished_at": "2026-10-11T16:28:00+00:00",
+  "ok": 113,
+  "invalid": 0,
+  "tokens": {
+   "prompt": 178976,
+   "completion": 15166,
+   "total": 194142,
+   "cache_hit": 116736,
+   "cache_miss": 62240
+  }
+ },
+ "spans": [
+  {
+   "span_id": 0,
+   "sent_idx_start": 0,
+   "sent_idx_end": 0,
+   "text": "# Semantic Evolution of the “Fruits of the Spirit” (1900–2025)",
+   "status": "ok",
+   "judgment": {
+    "role": "DEFINITION",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.4,
+    "uncertainty_note": "Span is only a title; no substantive claims, mechanisms, or evidence present to evaluate. Role assignment is provisional based on the framing function of a title."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1399,
+    "completion_tokens": 84,
+    "total_tokens": 1483,
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 247
+   }
+  },
+  {
+   "span_id": 1,
+   "sent_idx_start": 1,
+   "sent_idx_end": 1,
+   "text": "## Introduction",
+   "status": "ok",
+   "judgment": {
+    "role": "RHETORIC",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.9,
+    "uncertainty_note": "Span is a section heading with no substantive content; no fruit mechanisms or gates are assessable."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1384,
+    "completion_tokens": 73,
+    "total_tokens": 1457,
+    "prompt_cache_hit_tokens": 1152,
+    "prompt_cache_miss_tokens": 232
+   }
+  },
+  {
+   "span_id": 2,
+   "sent_idx_start": 2,
+   "sent_idx_end": 4,
+   "text": "The “Fruits of the Spirit” – **Love, Joy, Peace, Patience, Kindness, Goodness, Faithfulness, Gentleness,** and **Self-Control** – are nine virtues from biblical tradition (Galatians 5:22–23) long considered pillars of moral character.\nThis study examines how these terms’ usage and meanings have shifted over the past century.\nWe analyze two dimensions: (1) **Frequency Trends in Literature (Google Ngrams, 1900–2025)**, and (2) **Dictionary Definitions (circa 1900 vs.",
+   "status": "ok",
+   "judgment": {
+    "role": "DEFINITION",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.love",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "Love"
+     },
+     {
+      "fruit_id": "fruit.joy",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "Joy"
+     },
+     {
+      "fruit_id": "fruit.peace",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "Peace"
+     },
+     {
+      "fruit_id": "fruit.patience",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "Patience"
+     },
+     {
+      "fruit_id": "fruit.kindness",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "Kindness"
+     },
+     {
+      "fruit_id": "fruit.goodness",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "Goodness"
+     },
+     {
+      "fruit_id": "fruit.faithfulness",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "Faithfulness"
+     },
+     {
+      "fruit_id": "fruit.gentleness",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "Gentleness"
+     },
+     {
+      "fruit_id": "fruit.self_control",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "Self-Control"
+     }
+    ],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.7,
+    "uncertainty_note": "Span is truncated mid-sentence ('circa 1900 vs.'), so the second analytical dimension is incomplete; fruit signals are lexical enumeration of virtue names rather than demonstrated mechanisms, so strengths are minimal."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1676,
+    "completion_tokens": 378,
+    "total_tokens": 2054,
+    "prompt_cache_hit_tokens": 1536,
+    "prompt_cache_miss_tokens": 140
+   }
+  },
+  {
+   "span_id": 3,
+   "sent_idx_start": 5,
+   "sent_idx_end": 7,
+   "text": "2025)**.\nOur goal is to see if there’s a measurable decline in the use of this moral/spiritual lexicon alongside a rise in therapeutic or self-oriented terminology (e.g.\n_trauma, validation, empowerment, self-care, authenticity_).",
+   "status": "ok",
+   "judgment": {
+    "role": "MECHANISM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span states a research goal and method (measuring lexical decline) rather than asserting findings; no factual claims, evidence, or fruit-relevant behavior is present in the text itself. Role could be read as CLAIM (goal statement), but it functions as method/mechanism specification."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1499,
+    "completion_tokens": 111,
+    "total_tokens": 1610,
+    "prompt_cache_hit_tokens": 1280,
+    "prompt_cache_miss_tokens": 219
+   }
+  },
+  {
+   "span_id": 4,
+   "sent_idx_start": 8,
+   "sent_idx_end": 9,
+   "text": "We also assess how definitions may have broadened, narrowed, or changed in tone – a potential “semantic entropy” in which venerable virtues lose clarity or cultural resonance.\nFinally, we consider what these linguistic trends suggest about broader cultural shifts and social cohesion.",
+   "status": "ok",
+   "judgment": {
+    "role": "MECHANISM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span describes a proposed analytical procedure (tracking semantic change in virtue terms) and a research aim; no substantive virtue claims or evidence are present, so fruit signals cannot be confirmed or discounted from this text alone."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1492,
+    "completion_tokens": 96,
+    "total_tokens": 1588,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 468
+   }
+  },
+  {
+   "span_id": 5,
+   "sent_idx_start": 10,
+   "sent_idx_end": 12,
+   "text": "_(Note:_ All Google Ngram findings are based on the English Google Books corpus.\nFrequency is measured as a proportion of all words per year, which inherently normalizes for corpus size growth.\nHowever, we apply caution and smoothing to account for biases such as increasing scientific/technical publications and OCR errors that can cause general downward drifts in word frequency[languagelog.ldc.upenn.edu](https://languagelog.ldc.upenn.edu/nll/?p=40222#:~:text=As%20you%20can%20see%2C%20a,the%20course%20of%20the%20century)[languagelog.ldc.upenn.edu](https://languagelog.ldc.upenn.edu/nll/?p=40222#:~:text=Ngram%20data%20is%20complicated%20and,speaking%20world).)*",
+   "status": "ok",
+   "judgment": {
+    "role": "BOUNDARY",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.faithfulness",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "we apply caution and smoothing to account for biases"
+     },
+     {
+      "fruit_id": "fruit.self_control",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "we apply caution and smoothing"
+     }
+    ],
+    "gate_flags": [
+     "gate.scope",
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "Span is a methodological caveat delimiting corpus scope and known biases; no substantive factual claim is asserted, so truth/evidence gates cannot be fully evaluated. Lexicon hits for 'propaganda' ('all') and 'contradiction' ('however') are incidental and not confirmed as signals in the text."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1741,
+    "completion_tokens": 202,
+    "total_tokens": 1943,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 717
+   }
+  },
+  {
+   "span_id": 6,
+   "sent_idx_start": 13,
+   "sent_idx_end": 14,
+   "text": "## 1.\nGoogle Ngram Frequency Analysis (1900–2025)",
+   "status": "ok",
+   "judgment": {
+    "role": "DEFINITION",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.9,
+    "uncertainty_note": "Span is a section heading only; no substantive claims or fruit-relevant content to evaluate."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1430,
+    "completion_tokens": 71,
+    "total_tokens": 1501,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 406
+   }
+  },
+  {
+   "span_id": 7,
+   "sent_idx_start": 15,
+   "sent_idx_end": 15,
+   "text": "### 1.1 Methodology and Bias Controls",
+   "status": "ok",
+   "judgment": {
+    "role": "DEFINITION",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.4,
+    "uncertainty_note": "Span is a section heading only; no substantive claims, mechanisms, or evidence present to evaluate. Lexicon hit 'bias' is a structural label, not a character signal."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1419,
+    "completion_tokens": 89,
+    "total_tokens": 1508,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 395
+   }
+  },
+  {
+   "span_id": 8,
+   "sent_idx_start": 16,
+   "sent_idx_end": 18,
+   "text": "Using Google’s Ngram Viewer, we tracked the yearly frequency of each virtue from 1900 through the 2010s (data up to ~2019).\nTo mitigate digitization biases, we examined **relative frequencies** (occurrences per million words) rather than raw counts, and applied a 3-year smoothing to reduce noise.\nWe also interpreted trends in light of known biases: for example, the Google Books corpus after 1900 contains a growing proportion of scientific and technical literature, which tends to use moral/religious terms less.",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.faithfulness",
+      "polarity": "+",
+      "strength": 3,
+      "evidence_quote": "we examined **relative frequencies** (occurrences per million words) rather than raw counts, and applied a 3-year smoothing to reduce noise"
+     },
+     {
+      "fruit_id": "fruit.self_control",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "applied a 3-year smoothing to reduce noise"
+     },
+     {
+      "fruit_id": "fruit.goodness",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "We also interpreted trends in light of known biases"
+     }
+    ],
+    "gate_flags": [
+     "gate.provenance",
+     "gate.scope"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.72,
+    "uncertainty_note": "Span describes method and bias mitigation but provides no actual data, results, or traceable artifacts; the claim that relative frequencies mitigate digitization biases is asserted without demonstration, and the corpus-bias interpretation is stated without citation."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1629,
+    "completion_tokens": 246,
+    "total_tokens": 1875,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 605
+   }
+  },
+  {
+   "span_id": 9,
+   "sent_idx_start": 19,
+   "sent_idx_end": 21,
+   "text": "This means a **general downward drift** in many common words’ frequencies over the 20th century is partly an artifact of corpus composition[languagelog.ldc.upenn.edu](https://languagelog.ldc.upenn.edu/nll/?p=40222#:~:text=As%20you%20can%20see%2C%20a,the%20course%20of%20the%20century)[languagelog.ldc.upenn.edu](https://languagelog.ldc.upenn.edu/nll/?p=40222#:~:text=Ngram%20data%20is%20complicated%20and,speaking%20world).\n(One analysis showed ~80% of a random sample of English words appeared less frequently in the latter 20th century than in the early 1900s[languagelog.ldc.upenn.edu](https://languagelog.ldc.upenn.edu/nll/?p=40222#:~:text=squibs%20%20%20%200,0010).)\nWe therefore focus on **comparative differences** – e.g.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "Span is a methodological/empirical claim about corpus artifacts; no clear fruit-axis mechanism is observable in the text. Evidence is cited via links but not verifiable within the span."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1733,
+    "completion_tokens": 88,
+    "total_tokens": 1821,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 709
+   }
+  },
+  {
+   "span_id": 10,
+   "sent_idx_start": 22,
+   "sent_idx_end": 24,
+   "text": "virtue-words vs.\nself-help words – more than the absolute decline of any single term.\nFinally, we checked the **English Fiction** subset for similar patterns to ensure trends weren’t solely due to academic texts.",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span is a fragment describing a methodological robustness check (comparing virtue vs self-help word trends, verifying against English Fiction subset). No fruit-axis mechanisms are observable in this text; no factual claims are asserted within the span itself, so truth/evidence and provenance gates cannot be evaluated from this fragment alone."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1492,
+    "completion_tokens": 113,
+    "total_tokens": 1605,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 468
+   }
+  },
+  {
+   "span_id": 11,
+   "sent_idx_start": 25,
+   "sent_idx_end": 25,
+   "text": "### 1.2 Decline of Virtue Terminology",
+   "status": "ok",
+   "judgment": {
+    "role": "DEFINITION",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.9,
+    "uncertainty_note": "Span is a section heading only; no substantive claims or evidence to evaluate."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1392,
+    "completion_tokens": 68,
+    "total_tokens": 1460,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 368
+   }
+  },
+  {
+   "span_id": 12,
+   "sent_idx_start": 26,
+   "sent_idx_end": 28,
+   "text": "**Figure 1** (below) illustrates the trajectories of the nine “Fruit of the Spirit” terms in published English books since 1900.\nWith few exceptions, these virtues show **flat or declining usage** over the century, especially from mid-20th century onward.\nThis suggests a waning cultural emphasis on explicitly spiritual or moral vocabulary.",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [
+     "gate.scope"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "Span reports a figure and a hedged inference ('suggests') about cultural emphasis; no fruit-mechanism signals are present in the text. The inference from word-frequency to cultural emphasis may exceed the evidence domain (gate.scope), but the figure itself is not provided for verification."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1553,
+    "completion_tokens": 115,
+    "total_tokens": 1668,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 529
+   }
+  },
+  {
+   "span_id": 13,
+   "sent_idx_start": 29,
+   "sent_idx_end": 29,
+   "text": "Key observations:",
+   "status": "ok",
+   "judgment": {
+    "role": "RHETORIC",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.9,
+    "uncertainty_note": "Span is a bare section header with no substantive content; no fruit mechanisms, gates, or veto conditions are assessable from it."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1384,
+    "completion_tokens": 80,
+    "total_tokens": 1464,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 360
+   }
+  },
+  {
+   "span_id": 14,
+   "sent_idx_start": 30,
+   "sent_idx_end": 32,
+   "text": "- **Overall Decline:** A 2012 study of 50 morality-related words found 74% of them declined in frequency over the 20th century[theweek.com](https://theweek.com/articles/791795/death-sacred-speech#:~:text=According%20to%20Google%20Ngram%20Viewer,course%20of%20the%20last%20century)[languagelog.ldc.upenn.edu](https://languagelog.ldc.upenn.edu/nll/?p=40222#:~:text=printed%20works%20stretching%20back%20500,%E2%80%A6).\nIn particular, common Christian virtue terms like _grace, mercy, wisdom, faith,_ etc.\nall showed marked downturns[theweek.com](https://theweek.com/articles/791795/death-sacred-speech#:~:text=According%20to%20Google%20Ngram%20Viewer,course%20of%20the%20last%20century).",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [
+     "gate.truth_evidence",
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.7,
+    "uncertainty_note": "Lexicon hits for 'mercy' and 'wisdom' are topic mentions (words studied), not virtue signals; no fruit mechanism is enacted in the span. The cited study's methodology, sample construction, and Ngram corpus details are not given in-span, so truth/evidence and provenance cannot be fully verified from the text alone."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1777,
+    "completion_tokens": 133,
+    "total_tokens": 1910,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 753
+   }
+  },
+  {
+   "span_id": 15,
+   "sent_idx_start": 33,
+   "sent_idx_end": 35,
+   "text": "Correspondingly, general words for the “fruit of the Spirit” virtues – _love, patience, gentleness, faithfulness,_ etc.\n– **became much rarer in printed use**[theweek.com](https://theweek.com/articles/791795/death-sacred-speech#:~:text=As%20David%20Brooks%20pointed%20out,%E2%80%94%20has%20become%20much%20rarer).\nFor example, “compassion words, like **kindness**, dropped by 56%” over the 1900s[theweek.com](https://theweek.com/articles/791795/death-sacred-speech#:~:text=century), and “humility words, like **modesty**, fell by 52%”[theweek.com](https://theweek.com/articles/791795/death-sacred-speech#:~:text=The%20use%20of%20humility%20words%2C,percent%20over%20the%2020th%20century).",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.72,
+    "uncertainty_note": "The span reports frequency statistics about virtue vocabulary with cited links, but the underlying data source, methodology, and corpus are not described within the span; the fruit terms appear only as objects of linguistic measurement, not as enacted mechanisms, so no fruit-axis signal is warranted."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1784,
+    "completion_tokens": 111,
+    "total_tokens": 1895,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 760
+   }
+  },
+  {
+   "span_id": 16,
+   "sent_idx_start": 36,
+   "sent_idx_end": 37,
+   "text": "The term **gentleness** likewise dwindled, as did **faithfulness**, which by the 21st century is seldom used outside religious or nostalgic contexts[theweek.com](https://theweek.com/articles/791795/death-sacred-speech#:~:text=As%20David%20Brooks%20pointed%20out,%E2%80%94%20has%20become%20much%20rarer).\nEven **patience** – once often extolled as a virtue – appears less frequently now than in our great-grandparents’ time.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.7,
+    "uncertainty_note": "Span makes a lexical-frequency claim about the words 'gentleness', 'faithfulness', and 'patience' declining in usage, citing theweek.com; the cited source is not verifiable within the span, and the claim concerns word usage, not the fruit mechanisms themselves, so no fruit-axis signal is warranted."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1617,
+    "completion_tokens": 115,
+    "total_tokens": 1732,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 593
+   }
+  },
+  {
+   "span_id": 17,
+   "sent_idx_start": 38,
+   "sent_idx_end": 40,
+   "text": "- **Case Study – “Love”:** **Love** is an interesting case.\nIt remains one of the most frequent English nouns throughout the period, but even _love_ saw a subtle decline in relative frequency after mid-century.\nEarlier in the 1900s, literature (especially fiction and poetry) abundantly spoke of love; later decades, with more scientific and informational publications in the mix, diluted its share.",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.85,
+    "uncertainty_note": "The span uses 'love' as a lexical frequency datum, not as a moral/relational mechanism; no fruit-axis signal is present despite the lexicon hit. No evidence is provided for the frequency claims (no corpus, source, or citation), so gate.truth_evidence could be flagged, but the span is descriptive of a study's content rather than asserting unsupported facts."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1615,
+    "completion_tokens": 129,
+    "total_tokens": 1744,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 591
+   }
+  },
+  {
+   "span_id": 18,
+   "sent_idx_start": 41,
+   "sent_idx_end": 42,
+   "text": "David Brooks notes that even basic moral words like _love_ have faded from public conversation, in part due to a broader cultural shift away from sacred language[theweek.com](https://theweek.com/articles/791795/death-sacred-speech#:~:text=As%20David%20Brooks%20pointed%20out,%E2%80%94%20has%20become%20much%20rarer).\n(Notably, _love_ in secular contexts also carries many non-virtuous connotations, but here we track overall usage.)",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "Span reports a third-party observation (David Brooks) with a citation link; the underlying claim about cultural shift is not independently substantiated within the span, and the parenthetical about non-virtuous connotations of 'love' is asserted without evidence. No fruit mechanism is directly enacted or evaluated here."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1563,
+    "completion_tokens": 117,
+    "total_tokens": 1680,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 539
+   }
+  },
+  {
+   "span_id": 19,
+   "sent_idx_start": 43,
+   "sent_idx_end": 45,
+   "text": "- **Wartime Peaks – “Peace”:** The term **peace** bucked the overall trend at specific moments – its frequency spiked around 1918 and 1945 (end of World Wars) and again in the 1960s (“Peace” movement) as global events drove discourse[en.wikipedia.org](https://en.wikipedia.org/wiki/Google_Books_Ngram_Viewer#:~:text=The%20Google%20Books%20Ngram%20Viewer,6).\nBut outside these surges, _peace_ declined in general use through the late 20th century, reflecting less frequent religious/philosophical discussion of “inner peace” or peace as a virtue, compared to a more pragmatic political use (e.g.\n“peace treaty”).",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.peace",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "its frequency spiked around 1918 and 1945 (end of World Wars)"
+     }
+    ],
+    "gate_flags": [
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "The span reports corpus frequency data about the word 'peace' rather than the mechanism of peace; the 'peace' lexicon hits are lexical-topic matches, not evidence of the fruit mechanism. The cited Ngram source is referenced only by a generic URL fragment, so traceability of the specific frequency claims is limited."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1699,
+    "completion_tokens": 169,
+    "total_tokens": 1868,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 675
+   }
+  },
+  {
+   "span_id": 20,
+   "sent_idx_start": 46,
+   "sent_idx_end": 46,
+   "text": "By the 2000s, _peace_ appears less often proportionally than in 1900.",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.75,
+    "uncertainty_note": "No source, dataset, or method is cited for the frequency comparison; the claim is hedged ('appears') but unverifiable from the span alone."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1430,
+    "completion_tokens": 85,
+    "total_tokens": 1515,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 406
+   }
+  },
+  {
+   "span_id": 21,
+   "sent_idx_start": 47,
+   "sent_idx_end": 49,
+   "text": "- **Stable or Mixed Trends:** **Joy** and **goodness** show relatively flatter trends (minor declines).\n_Goodness_ as an exclamation (“Goodness gracious!”)\nkept it in use, albeit as a milder oath rather than a moral term.",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "Lexicon hits for 'joy' and 'goodness' are lexical/etymological mentions of the words, not expressions of the fruit mechanisms; no mechanism-level evidence present. Span is a fragment of a trend report with unclear referent for the trends."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1579,
+    "completion_tokens": 105,
+    "total_tokens": 1684,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 555
+   }
+  },
+  {
+   "span_id": 22,
+   "sent_idx_start": 50,
+   "sent_idx_end": 52,
+   "text": "**Self-control**, interestingly, is one “fruit” that **did not decline** – in fact, it **increased** in usage over time.\nResearch indicates _self-control_ (as a concept in psychology and self-help) rose steadily across the 20th century[researchgate.net](https://www.researchgate.net/publication/364224903_The_self-control_vs_self-indulgence_dilemma_A_culturomic_analysis_of_20th_century_trends#:~:text=%28PDF%29%20The%20self,so%20that%20following%20a).\nThis contrasts with its biblical synonym _temperance_, which sharply declined after the early 1900s (following the temperance movement and Prohibition era).",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.self_control",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "**Self-control**, interestingly, is one “fruit” that **did not decline** – in fact, it **increased** in usage over time."
+     }
+    ],
+    "gate_flags": [
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "The span reports culturomic usage trends for the term 'self-control' and cites a researchgate link, but the actual data, methodology, and source traceability are not shown in the span; the fruit signal is lexical (the word 'self-control' appears) rather than a demonstrated mechanism of boundary integrity or appetite governance."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1713,
+    "completion_tokens": 188,
+    "total_tokens": 1901,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 689
+   }
+  },
+  {
+   "span_id": 23,
+   "sent_idx_start": 53,
+   "sent_idx_end": 54,
+   "text": "Essentially, _temperance_ (with its moral/religious overtones) fell out of favor, while the more secular term _self-control_ gained currency in discussions of personal development and behavior.\nThis **exception** underscores that not all virtue language vanished – some was **reframed in secular terms** (see §2).",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "Span is a historical/linguistic observation about terminology shift; no fruit mechanism is directly evidenced. Lexicon hit 'all' is a scope quantifier, not propaganda."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1511,
+    "completion_tokens": 86,
+    "total_tokens": 1597,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 487
+   }
+  },
+  {
+   "span_id": 24,
+   "sent_idx_start": 55,
+   "sent_idx_end": 56,
+   "text": "**Figure 1: Frequency of “Fruits of the Spirit” terms in English books, 1900–2019.** _Most of these virtue terms show a steady or accelerating decline in relative frequency.\n(Notably, **love** starts high but gradually diminishes, while **self-control** shows an upward trend in late century.)_[theweek.com](https://theweek.com/articles/791795/death-sacred-speech#:~:text=As%20David%20Brooks%20pointed%20out,%E2%80%94%20has%20become%20much%20rarer)[theweek.com](https://theweek.com/articles/791795/death-sacred-speech#:~:text=The%20use%20of%20humility%20words%2C,percent%20over%20the%2020th%20century)",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [
+     "gate.provenance",
+     "gate.scope"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "The span presents a figure caption and trend claims about term frequency, but the underlying data, methodology, corpus, and normalization are not shown; the cited links are to a secondary article, not the primary frequency dataset. The lexicon hits 'love' and 'self-control' are topic labels, not character evidence, so no fruit signals are assigned."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1692,
+    "completion_tokens": 132,
+    "total_tokens": 1824,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 668
+   }
+  },
+  {
+   "span_id": 25,
+   "sent_idx_start": 57,
+   "sent_idx_end": 58,
+   "text": "_Trend of moral virtue words like “love,” “patience,” “kindness,” etc., declining over the 20th century.\n(Data source: Google Ngrams)_",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [
+     "gate.scope",
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.7,
+    "uncertainty_note": "The span reports a lexical-frequency trend from Google Ngrams; the fruit terms are the objects of measurement, not expressions of the fruit mechanisms, so no fruit signal is attributed. Scope is limited: word frequency is not evidence of moral virtue. Provenance is partial (source named, no query, corpus version, or date range)."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1532,
+    "completion_tokens": 129,
+    "total_tokens": 1661,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 508
+   }
+  },
+  {
+   "span_id": 26,
+   "sent_idx_start": 59,
+   "sent_idx_end": 59,
+   "text": "### 1.3 Rise of Therapeutic and Self-Help Vocabulary",
+   "status": "ok",
+   "judgment": {
+    "role": "DEFINITION",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.9,
+    "uncertainty_note": "Span is a section heading only; no substantive claims or evidence to evaluate."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1395,
+    "completion_tokens": 68,
+    "total_tokens": 1463,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 371
+   }
+  },
+  {
+   "span_id": 27,
+   "sent_idx_start": 60,
+   "sent_idx_end": 62,
+   "text": "In stark contrast to the dwindling of traditional virtues, our analysis finds that **therapeutic, psychological, and self-oriented terms have surged** in usage since mid-century.\nWe compared the “fruits” with several representative modern terms: **Trauma, Validation, Empowerment, Self-Care,** and **Authenticity**.\nThe results strongly support the hypothesis of a lexicon shift:",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span asserts a lexicon-shift finding and that results 'strongly support' a hypothesis, but no data, method, or traceable evidence is present in the span; truth_evidence and provenance cannot be assessed from text alone. No fruit-mechanism signals are observable in this methodological/empirical claim."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1551,
+    "completion_tokens": 114,
+    "total_tokens": 1665,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 527
+   }
+  },
+  {
+   "span_id": 28,
+   "sent_idx_start": 63,
+   "sent_idx_end": 65,
+   "text": "- **Therapy and Trauma:** The word **trauma** (in the psychological sense) was virtually absent in 1900s literature outside medical contexts.\nIt began modest growth mid-century, then skyrocketed from the 1970s to today.\nBy the 2010s, _trauma_ is a commonplace term in books on psychology, self-help, social sciences, and even popular media.",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.75,
+    "uncertainty_note": "Lexicon hit 'modest' is a frequency descriptor, not a fruit signal. No traceable citations or corpus/method details are provided for the frequency claims, so gate.truth_evidence and gate.provenance cannot be confirmed from the span alone."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1554,
+    "completion_tokens": 105,
+    "total_tokens": 1659,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 530
+   }
+  },
+  {
+   "span_id": 29,
+   "sent_idx_start": 66,
+   "sent_idx_end": 68,
+   "text": "This reflects how discussing personal psychological wounds has entered the mainstream.\nIndeed, some critics note _“trauma”_ has been **conceptually broadened** in modern usage to cover almost any adversity or emotional wound[quillette.com](https://quillette.com/2023/07/10/the-ever-expanding-definition-of-trauma/#:~:text=One%20of%20the%20best%20examples,to%20describe%20almost%20any%20adversity).\n(We return to this “concept creep” in §3.)",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "Span cites an external source for a claim about conceptual broadening; no fruit-axis lexicon signals present. Attribution is traceable via link, but the underlying claim's support cannot be verified from the span alone."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1567,
+    "completion_tokens": 93,
+    "total_tokens": 1660,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 543
+   }
+  },
+  {
+   "span_id": 30,
+   "sent_idx_start": 69,
+   "sent_idx_end": 69,
+   "text": "The rising curve of _trauma_ inversely mirrors the falling curve of virtues like _patience_ or _forgiveness_.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.patience",
+      "polarity": "-",
+      "strength": 2,
+      "evidence_quote": "falling curve of virtues like _patience_"
+     },
+     {
+      "fruit_id": "fruit.kindness",
+      "polarity": "-",
+      "strength": 1,
+      "evidence_quote": "falling curve of virtues like _patience_ or _forgiveness_"
+     }
+    ],
+    "gate_flags": [
+     "gate.truth_evidence",
+     "gate.scope"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.45,
+    "uncertainty_note": "The span asserts an inverse correlation between trauma and virtues (patience, forgiveness) without citing evidence, data, or a defined measure; 'forgiveness' is not one of the nine graded fruit axes, so its mapping to kindness is approximate. No mechanism, source, or falsification condition is provided."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1408,
+    "completion_tokens": 212,
+    "total_tokens": 1620,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 384
+   }
+  },
+  {
+   "span_id": 31,
+   "sent_idx_start": 70,
+   "sent_idx_end": 72,
+   "text": "- **Empowerment and Self-Care:** The term **empowerment** barely registered in books before 1970.\nIt gained traction with civil rights and feminist movements, and exploded in the 1990s–2000s as the ethos of personal empowerment and agency became popular.\n**Self-care** (in the sense of personal well-being practices) is another late 20th-century creation – its frequency climbed steeply in the 2010s with the wellness movement.",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.7,
+    "uncertainty_note": "Lexicon hit 'rights' is incidental to a historical frequency claim; no fruit mechanism is actually enacted or described. No traceable sources are cited for the frequency claims, but the span is descriptive and does not assert load-bearing normative conclusions."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1570,
+    "completion_tokens": 102,
+    "total_tokens": 1672,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 546
+   }
+  },
+  {
+   "span_id": 32,
+   "sent_idx_start": 73,
+   "sent_idx_end": 74,
+   "text": "These words emphasize **individual improvement and validation** over communal or spiritual virtues.\nThe data suggest that where a 19th-century author might have urged _“charity”_ or _“patience,”_ a 21st-century author is more likely to speak of _“self-care”_ and _“empowerment.”_",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.patience",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "patience"
+     }
+    ],
+    "gate_flags": [
+     "gate.scope"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "The span asserts a historical shift in emphasis but provides no traceable evidence for the 'data' it invokes; the fruit.patience hit is a quoted historical virtue term, not a demonstrated mechanism, so its signal strength is weak."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1542,
+    "completion_tokens": 137,
+    "total_tokens": 1679,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 518
+   }
+  },
+  {
+   "span_id": 33,
+   "sent_idx_start": 75,
+   "sent_idx_end": 77,
+   "text": "- **Authenticity and Validation:** **Authenticity**, meaning _genuineness_ or _being true to oneself_, has long existed philosophically (e.g.\nin existentialist writings), but its popular usage grew in the late 20th century.\nIn recent decades _authenticity_ is a buzzword in self-help (encouraging people to “live authentically”).",
+   "status": "ok",
+   "judgment": {
+    "role": "DEFINITION",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.7,
+    "uncertainty_note": "Span is a descriptive etymological/historical gloss of 'authenticity'; the single lexicon hit ('encouraging') is incidental and does not evidence a fruit mechanism. No factual citations are provided for the historical claims, but they are low-stakes and not load-bearing."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1580,
+    "completion_tokens": 108,
+    "total_tokens": 1688,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 556
+   }
+  },
+  {
+   "span_id": 34,
+   "sent_idx_start": 78,
+   "sent_idx_end": 80,
+   "text": "Its frequency in print climbed accordingly.\n**Validation**, in the context of affirming someone’s feelings or identity, also rose in usage.\nWhile _validation_ as a general word existed (e.g.",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span is a truncated fragment of a lexical-frequency observation; no fruit mechanism is engaged and no evidence pointers were matched. The claim about rising print frequency is asserted without traceable citation in this span."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1487,
+    "completion_tokens": 92,
+    "total_tokens": 1579,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 463
+   }
+  },
+  {
+   "span_id": 35,
+   "sent_idx_start": 81,
+   "sent_idx_end": 82,
+   "text": "validating a parking ticket), the **emotional/social sense** (“seeking validation”, “validate someone’s experience”) is largely a modern development.\nGoogle Books shows a noticeable uptick in _validation_ from the 1980s onward, aligning with the rise of pop psychology and relational vocabulary.",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "Lexicon block shows no matched terms; role inferred from span content (etymological/historical claim with cited Google Books trend). No fruit-axis signals are observable in this text."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1475,
+    "completion_tokens": 90,
+    "total_tokens": 1565,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 451
+   }
+  },
+  {
+   "span_id": 36,
+   "sent_idx_start": 83,
+   "sent_idx_end": 85,
+   "text": "- **Secular Replacements:** It appears that as explicit faith-based words (sin, virtue, soul, etc.)\nreceded, **secular terms filled the void** in discourse about character and well-being.\nFor example, rather than speaking of _meekness_ or _humility_, today’s literature stresses _self-esteem_ and _confidence_.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span asserts a historical/linguistic shift (secular terms replacing faith-based vocabulary) but provides no traceable evidence or citation; the hedge 'appears' softens the claim. No fruit-axis mechanism is directly observable in the text."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1578,
+    "completion_tokens": 100,
+    "total_tokens": 1678,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 554
+   }
+  },
+  {
+   "span_id": 37,
+   "sent_idx_start": 86,
+   "sent_idx_end": 88,
+   "text": "Instead of _long-suffering_ or _forbearance_, we hear _resilience_.\nThis is corroborated by sociological language analyses: One study of U.S.\nState of the Union addresses from 1790–2012 found a decline in “other-oriented” words (like _neighbor_) and a rise in self-focused words (_I, me, mine_) over time[qz.com](https://qz.com/1103808/self-esteem-is-a-myth-perpetrated-by-maslows-hierarchy-of-needs#:~:text=But%20young%20people%20aren%E2%80%99t%20the,between%201975%20and%202007).",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.patience",
+      "polarity": "-",
+      "strength": 2,
+      "evidence_quote": "Instead of _long-suffering_ or _forbearance_, we hear _resilience_."
+     },
+     {
+      "fruit_id": "fruit.faithfulness",
+      "polarity": "-",
+      "strength": 2,
+      "evidence_quote": "a decline in “other-oriented” words (like _neighbor_) and a rise in self-focused words (_I, me, mine_) over time"
+     }
+    ],
+    "gate_flags": [
+     "gate.provenance",
+     "gate.scope"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "The span cites a study via a link but gives no author, dataset details, or effect sizes; the inference from lexical frequency to moral/relational decline is not established within the span, and the 'corroborated' claim rests on an unverified external source."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1704,
+    "completion_tokens": 231,
+    "total_tokens": 1935,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 680
+   }
+  },
+  {
+   "span_id": 38,
+   "sent_idx_start": 89,
+   "sent_idx_end": 90,
+   "text": "Likewise, a Google Ngram of pronouns shows that while “_me_” declined in usage mid-century, it surged by **87%** in frequency from 1975 to 2007[qz.com](https://qz.com/1103808/self-esteem-is-a-myth-perpetrated-by-maslows-hierarchy-of-needs#:~:text=literature%20to%20the%20Twitter%20feeds,between%201975%20and%202007) – evidence of a growing **“Cult of Self”** in our language (as one psychologist dubs it)[qz.com](https://qz.com/1103808/self-esteem-is-a-myth-perpetrated-by-maslows-hierarchy-of-needs#:~:text=receive%20a%20ribbon%20so%20they,experience%20the%20misery%20of%20defeat)[qz.com](https://qz.com/1103808/self-esteem-is-a-myth-perpetrated-by-maslows-hierarchy-of-needs#:~:text=1790%20and%202012%20found%20a,between%201975%20and%202007).\nIn parallel, words like _humility_ and _modesty_ became rarer, while _self-expression_ and _self-worth_ became common.",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [
+     "gate.truth_evidence",
+     "gate.scope"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span cites an Ngram statistic (87% surge) and a psychologist's 'Cult of Self' framing via links; the underlying data, methodology, and the inference from pronoun frequency to a cultural 'Cult of Self' cannot be verified from the span text alone. No fruit-axis mechanism is directly evidenced; lexicon hits ('evidence', 'hierarchy', 'pronouns') are topical, not character signals."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1793,
+    "completion_tokens": 147,
+    "total_tokens": 1940,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 769
+   }
+  },
+  {
+   "span_id": 39,
+   "sent_idx_start": 91,
+   "sent_idx_end": 93,
+   "text": "**Figure 2: Frequency of Selected Psychological/Self-Help Terms, 1900–2019.** _Modern therapeutic terms show dramatic growth.\nFor instance, **trauma** (green line) remains low until mid-century, then rises sharply.\n**Empowerment** (orange) and **self-care** (purple) take off after 1970.",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.75,
+    "uncertainty_note": "Figure caption and trend descriptions reference data not included in the span; no fruit-axis signals are present in this descriptive/evidentiary text."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1522,
+    "completion_tokens": 81,
+    "total_tokens": 1603,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 498
+   }
+  },
+  {
+   "span_id": 40,
+   "sent_idx_start": 94,
+   "sent_idx_end": 94,
+   "text": "These increases coincide with a cultural shift toward individual-centered language._[quillette.com](https://quillette.com/2023/07/10/the-ever-expanding-definition-of-trauma/#:~:text=One%20of%20the%20best%20examples,to%20describe%20almost%20any%20adversity)[qz.com](https://qz.com/1103808/self-esteem-is-a-myth-perpetrated-by-maslows-hierarchy-of-needs#:~:text=1790%20and%202012%20found%20a,between%201975%20and%202007)",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [],
+    "gate_flags": [
+     "gate.truth_evidence",
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "The span asserts a correlation ('coincide with') between unspecified increases and a cultural shift, but the increases themselves, the causal or correlational link, and the cited sources' actual content are not shown in the span; the lexicon hit 'hierarchy' appears only in a URL fragment and is not evidence of anti-fruit. No fruit mechanism is directly observable in this single sentence."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1548,
+    "completion_tokens": 142,
+    "total_tokens": 1690,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 524
+   }
+  },
+  {
+   "span_id": 41,
+   "sent_idx_start": 95,
+   "sent_idx_end": 95,
+   "text": "_Usage trends for “trauma” and similar self-help terms skyrocketing in late 20th century (Google Ngrams)._",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span cites a data source (Google Ngrams) but provides no traceable link, query parameters, corpus version, or date range; the claim of 'skyrocketing' is asserted without quantitative support. No fruit mechanism is observable in this evidentiary pointer."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1407,
+    "completion_tokens": 110,
+    "total_tokens": 1517,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 383
+   }
+  },
+  {
+   "span_id": 42,
+   "sent_idx_start": 96,
+   "sent_idx_end": 96,
+   "text": "### 1.4 Summary of Ngram Findings",
+   "status": "ok",
+   "judgment": {
+    "role": "DEFINITION",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.9,
+    "uncertainty_note": "Span is a section heading with no substantive content; no fruit signals or gate-relevant claims are present."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1392,
+    "completion_tokens": 74,
+    "total_tokens": 1466,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 368
+   }
+  },
+  {
+   "span_id": 43,
+   "sent_idx_start": 97,
+   "sent_idx_end": 99,
+   "text": "In summary, the **last 100+ years have seen a quantifiable decline in the language of traditional virtue, alongside a rise in the language of psychology and self-focus**.\nWe normalized for overall corpus expansion, so this is not merely because there are more books – it reflects a real shift in relative attention.\nTo be clear, people did not stop experiencing love or valuing kindness; rather, they **talk (and write) about them less** in explicit terms, especially outside of religious contexts.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.love",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "people did not stop experiencing love"
+     },
+     {
+      "fruit_id": "fruit.kindness",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "valuing kindness"
+     }
+    ],
+    "gate_flags": [
+     "gate.truth_evidence",
+     "gate.scope"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "The span asserts a quantified corpus-level decline and normalization but provides no traceable data, citation, or method within the span; the fruit terms 'love' and 'kindness' appear only as objects of a claim about language frequency, not as enacted mechanisms, so fruit signals are weak and arguably lexical rather than behavioral."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1646,
+    "completion_tokens": 196,
+    "total_tokens": 1842,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 622
+   }
+  },
+  {
+   "span_id": 44,
+   "sent_idx_start": 100,
+   "sent_idx_end": 102,
+   "text": "Meanwhile, discussions of personal feelings, mental health, and individual empowerment have proliferated.\nThis supports the hypothesis of a long-term drift from a **moral/spiritual lexicon** to a **therapeutic/self-oriented lexicon**.\nSome researchers interpret this as a sign of _“lexical softening”_ or **semantic drift** in our culture’s vocabulary of character[jonathanmerritt.com](https://www.jonathanmerritt.com/article/david-brooks-on-morality-theology-and-his-personal-faith#:~:text=humility%20to%20a%20culture%20of,slipped%20out%20of%20common%20usage)[qz.com](https://qz.com/1103808/self-esteem-is-a-myth-perpetrated-by-maslows-hierarchy-of-needs#:~:text=This%20is%20a%20relatively%20new,of%20how%20talented%20they%20are).",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [],
+    "gate_flags": [
+     "gate.scope"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Lexicon hits ('humility', 'hierarchy') are incidental to the cited article titles, not the span's own assertions; no fruit mechanism is actually enacted or described. The span asserts a drift hypothesis and attributes interpretation to unnamed 'some researchers' without traceable evidence within the span, so gate.truth_evidence is not clearly triggered but scope is soft-flagged for the cross-domain cultural claim."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1748,
+    "completion_tokens": 137,
+    "total_tokens": 1885,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 724
+   }
+  },
+  {
+   "span_id": 45,
+   "sent_idx_start": 103,
+   "sent_idx_end": 104,
+   "text": "The concept of **Semantic Entropy** might be applied here: as classic virtue words lose frequency and clarity, the shared moral meaning in a culture could be “dissipating” or fragmenting.\nIn the next section, we explore whether the _meaning_ of these words has also changed over time, or only their frequency.",
+   "status": "ok",
+   "judgment": {
+    "role": "MECHANISM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span proposes a speculative analogy (Semantic Entropy) with hedged language ('might', 'could'); no factual claims asserted, no evidence provided, and no fruit-axis behavior is observable in the text itself."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1523,
+    "completion_tokens": 96,
+    "total_tokens": 1619,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 499
+   }
+  },
+  {
+   "span_id": 46,
+   "sent_idx_start": 105,
+   "sent_idx_end": 107,
+   "text": "## 2.\nEvolution of Dictionary Definitions (1900 vs.\n2025)",
+   "status": "ok",
+   "judgment": {
+    "role": "DEFINITION",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.4,
+    "uncertainty_note": "Span is a section heading only; no substantive claims, evidence, or fruit-relevant content present to evaluate."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1463,
+    "completion_tokens": 75,
+    "total_tokens": 1538,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 439
+   }
+  },
+  {
+   "span_id": 47,
+   "sent_idx_start": 108,
+   "sent_idx_end": 110,
+   "text": "How have the dictionary definitions of the nine “fruit” terms changed, if at all, from the early 20th century to today?\nTo investigate, we compared entries from **historical dictionaries** (e.g.\nWebster’s 1913 Unabridged, and earlier Webster’s 1828 where insightful) with **current** definitions from Merriam-Webster (2025 edition) and the Oxford English Dictionary (OED).",
+   "status": "ok",
+   "judgment": {
+    "role": "MECHANISM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.75,
+    "uncertainty_note": "Span describes a research method (dictionary comparison) rather than exhibiting any of the nine fruit mechanisms; lexicon hits ('investigate', 'early', 'all') are incidental and not character evidence."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1617,
+    "completion_tokens": 93,
+    "total_tokens": 1710,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 593
+   }
+  },
+  {
+   "span_id": 48,
+   "sent_idx_start": 111,
+   "sent_idx_end": 111,
+   "text": "We looked for shifts in denotation, connotation, and tone – for example, have these virtues been _redefined, broadened, narrowed,_ or given a different emphasis over time?",
+   "status": "ok",
+   "judgment": {
+    "role": "MECHANISM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span describes a methodological procedure (tracking semantic shifts over time) rather than asserting a substantive claim; no fruit-axis signals are present in the text, and the single lexicon hit ('time') is a generic grounding term, not evidence of patience or faithfulness."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1445,
+    "completion_tokens": 105,
+    "total_tokens": 1550,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 421
+   }
+  },
+  {
+   "span_id": 49,
+   "sent_idx_start": 112,
+   "sent_idx_end": 112,
+   "text": "Overall, we found that the **core literal meanings remain remarkably stable** – _love is still love, patience still patience_ – but there are **notable shifts in emphasis and framing**:",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.faithfulness",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "core literal meanings remain remarkably stable"
+     },
+     {
+      "fruit_id": "fruit.patience",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "patience still patience"
+     }
+    ],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "The span asserts stability of 'core literal meanings' and shifts in emphasis without citing the corpus, method, or evidence base; the fruit terms 'love' and 'patience' appear as objects of linguistic analysis rather than as enacted virtues, so fruit signals are weak and lexical rather than behavioral."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1481,
+    "completion_tokens": 182,
+    "total_tokens": 1663,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 457
+   }
+  },
+  {
+   "span_id": 50,
+   "sent_idx_start": 113,
+   "sent_idx_end": 115,
+   "text": "- **From Moral Virtues to Personal Traits:** Early-1900s dictionaries often defined these words in explicitly moral or religious terms, sometimes with prescriptive or florid language.\nModern definitions tend to be more **concise, secular, and value-neutral**.\nIn older editions, one sees words like “virtue,” “uprightness,” “righteous,” or even references to God or scripture in the definition.",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.7,
+    "uncertainty_note": "Lexicon hit 'righteous' is a quoted historical term, not a character signal; no fruit mechanism is observable in this descriptive claim about dictionary language. No traceable citations to specific dictionaries or editions are provided."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1585,
+    "completion_tokens": 96,
+    "total_tokens": 1681,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 561
+   }
+  },
+  {
+   "span_id": 51,
+   "sent_idx_start": 116,
+   "sent_idx_end": 117,
+   "text": "Today’s definitions usually avoid overt value judgments, describing the term in plain behavioral terms.\nThe **tone** has moved from _ideological_ to _descriptive_.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span asserts a descriptive-historical claim about definitional tone without cited evidence; no fruit mechanism is directly signaled by the text."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1450,
+    "completion_tokens": 77,
+    "total_tokens": 1527,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 426
+   }
+  },
+  {
+   "span_id": 52,
+   "sent_idx_start": 118,
+   "sent_idx_end": 120,
+   "text": "- **Loss of Prescriptive Detail:** Older definitions frequently included an explanation of _why_ the trait is good or situations illustrating it.\nNewer definitions assume users know the virtue is positive and focus on _what_ it is.\nFor example, Webster’s 1828 defined **Kindness** as “Good will; benevolence; that temper or disposition which delights in contributing to the happiness of others”[archive.org](https://archive.org/stream/americandictiona00websrich/americandictiona00websrich_djvu.txt#:~:text=Full%20text%20of%20,the%20happiness%20of%20others).",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.kindness",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "that temper or disposition which delights in contributing to the happiness of others"
+     }
+    ],
+    "gate_flags": [
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.7,
+    "uncertainty_note": "Span is a quoted dictionary definition used as historical evidence; the kindness signal is attributed to Webster's 1828 text rather than asserted by the author, and the archive.org link is present but not independently verifiable here."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1636,
+    "completion_tokens": 146,
+    "total_tokens": 1782,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 612
+   }
+  },
+  {
+   "span_id": 53,
+   "sent_idx_start": 121,
+   "sent_idx_end": 123,
+   "text": "This not only defines kindness but extols a worldview of finding joy in helping others.\nMerriam-Webster (2025) defines _kindness_ simply as “the quality of being kind; a kind act”[terms_en.en-academic.com](https://terms_en.en-academic.com/24051/kindness#:~:text=kindness) – a much barer definition that uses _kind_ to define itself, omitting the moral elaboration.\nThe charitable dimension (benevolence, delighting in others’ happiness) is left implicit or relegated to examples.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.kindness",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "defines _kindness_ simply as “the quality of being kind; a kind act”"
+     },
+     {
+      "fruit_id": "fruit.joy",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "finding joy in helping others"
+     },
+     {
+      "fruit_id": "fruit.love",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "benevolence, delighting in others’ happiness"
+     }
+    ],
+    "gate_flags": [
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "Span is a comparative definitional claim about kindness; the 'worldview' being extolled is referenced but not quoted, so the source of that worldview and its full text are not traceable within the span."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1653,
+    "completion_tokens": 224,
+    "total_tokens": 1877,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 629
+   }
+  },
+  {
+   "span_id": 54,
+   "sent_idx_start": 124,
+   "sent_idx_end": 126,
+   "text": "- **Broadening and Semantic Dilution:** Some virtues have acquired broader, less intense meanings in everyday use, which dictionaries have incorporated.\n**Love**, for instance, historically meant deep affection or devotion (with nuances of duty and sacrifice).\nEarlier dictionaries wrestled with defining _love_ – Samuel Johnson even dodged it by quoting others[latimes.com](https://www.latimes.com/archives/la-xpm-1985-03-12-vw-34361-story.html#:~:text=Samuel%20Johnson%20himself%2C%20the%20great,%E2%80%9D).",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.love",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "historically meant deep affection or devotion (with nuances of duty and sacrifice)"
+     }
+    ],
+    "gate_flags": [
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "The span asserts a historical semantic claim about 'love' and cites a latimes.com URL, but the quoted fragment is truncated and the Johnson attribution is not verifiable from the span text alone; the lexicon hits (affection, duty, love, sacrifice) are definitional usage, not behavioral evidence of the fruit mechanism."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1626,
+    "completion_tokens": 167,
+    "total_tokens": 1793,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 602
+   }
+  },
+  {
+   "span_id": 55,
+   "sent_idx_start": 127,
+   "sent_idx_end": 129,
+   "text": "By 1913, Webster’s Secondary School Dictionary defined _love_ as “a feeling of strong personal attachment; ardent affection; (also) desire for, and earnest effort to promote the welfare of another”[latimes.com](https://www.latimes.com/archives/la-xpm-1985-03-12-vw-34361-story.html#:~:text=feeling%20of%20affection%20especially%20to,%E2%80%9D).\nThis definition notably includes _unselfish concern for another’s good_ as part of love.\nIn contrast, Merriam-Webster’s current definition puts the romantic/familial sense first: “strong affection for another arising out of kinship or personal ties”[merriam-webster.com](https://www.merriam-webster.com/dictionary/love#:~:text=a), and “attraction based on sexual desire”[merriam-webster.com](https://www.merriam-webster.com/dictionary/love#:~:text=), with altruistic _“unselfish loyal concern for others”_ appearing later as a subtype (**“love: unselfish loyal and benevolent concern for the good of another”** is listed under a separate sub-sense)[merriam-webster.com](https://www.merriam-webster.com/dictionary/love#:~:text=a)[merriam-webster.com](https://www.merriam-webster.com/dictionary/love#:~:text=%E2%80%A6%20he%20saw%20the%20whole,%E2%80%94ImageJames%20Joyce).",
+   "status": "ok",
+   "judgment": {
+    "role": "DEFINITION",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.love",
+      "polarity": "+",
+      "strength": 3,
+      "evidence_quote": "desire for, and earnest effort to promote the welfare of another"
+     },
+     {
+      "fruit_id": "fruit.love",
+      "polarity": "+",
+      "strength": 3,
+      "evidence_quote": "unselfish loyal and benevolent concern for the good of another"
+     }
+    ],
+    "gate_flags": [
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.85,
+    "uncertainty_note": "Span is a lexical/historical comparison of dictionary definitions; it reports definitions rather than asserting a mechanism. The 'love' signals are quoted dictionary content, not the author's own claim, so polarity reflects the quoted definitions' alignment with the fruit mechanism. No explicit evidence of the author's intent or of how these definitions are used downstream."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1859,
+    "completion_tokens": 210,
+    "total_tokens": 2069,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 835
+   }
+  },
+  {
+   "span_id": 56,
+   "sent_idx_start": 130,
+   "sent_idx_end": 132,
+   "text": "The _ordering_ of meanings has flipped: what 100 years ago might have been the primary essence of love (devotion and welfare of others) is now a secondary or tertiary sense, while emotional attraction is primary.\nThis suggests an **ideological reframing** – love is framed less as virtuous commitment and more as personal feeling.\n(The LA Times noted this shift, commenting that by the 1961 Webster’s Third, _love_ was defined in a more individually indulgent way, “the attraction, desire, or affection felt for a person who arouses delight…,” with no immediate mention of duty[latimes.com](https://www.latimes.com/archives/la-xpm-1985-03-12-vw-34361-story.html#:~:text=That%20brings%20us%20to%20the,%E2%80%9D).)",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.love",
+      "polarity": "-",
+      "strength": 2,
+      "evidence_quote": "love is framed less as virtuous commitment and more as personal feeling"
+     }
+    ],
+    "gate_flags": [
+     "gate.truth_evidence",
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "The span asserts a semantic/ideological shift and cites a secondary source (LA Times) with a link, but the primary dictionary evidence is not directly traceable in the span; the causal claim of 'ideological reframing' is interpretive and hedged ('suggests')."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1737,
+    "completion_tokens": 163,
+    "total_tokens": 1900,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 713
+   }
+  },
+  {
+   "span_id": 57,
+   "sent_idx_start": 133,
+   "sent_idx_end": 135,
+   "text": "- **Reduced Theological Context:** Terms like **Goodness, Faithfulness,** and **Gentleness** had strong religious connotations historically.\n_Goodness_ was often linked to divine goodness or moral excellence; _faithfulness_ was tied to faith (belief in God) and fidelity; _gentleness_ was associated with _meekness_ (a key Christian virtue).\nModern secular dictionaries still define _goodness_ as “the quality or state of being good,” but “good” now is defined by secular standards (e.g.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "Span is a truncated etymological/lexical observation about historical religious connotations of Goodness, Faithfulness, Gentleness; lexicon hits are vocabulary mentions, not character evidence. No mechanism-level fruit signal is observable, and the span is cut off mid-sentence."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1642,
+    "completion_tokens": 104,
+    "total_tokens": 1746,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 618
+   }
+  },
+  {
+   "span_id": 58,
+   "sent_idx_start": 136,
+   "sent_idx_end": 138,
+   "text": "beneficial, pleasant) more than moral righteousness.\n_Faithfulness_ today is usually defined as _loyalty or fidelity_ (to a person, cause, or promise) rather than “full of faith.”\nMerriam-Webster (2025) defines **faithful** chiefly as “steadfast in allegiance or duty: LOYAL” and “firm in adherence to promises” – the religious sense (“faithful to God”) is acknowledged but not foregrounded.",
+   "status": "ok",
+   "judgment": {
+    "role": "DEFINITION",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.faithfulness",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "steadfast in allegiance or duty: LOYAL"
+     },
+     {
+      "fruit_id": "fruit.faithfulness",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "firm in adherence to promises"
+     }
+    ],
+    "gate_flags": [
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.72,
+    "uncertainty_note": "Span is a lexical/definitional report; the cited Merriam-Webster (2025) source is named but not traceable within the span, and the preceding sentence is truncated. No behavioral evidence of faithfulness mechanism, only definitional content."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1645,
+    "completion_tokens": 183,
+    "total_tokens": 1828,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 621
+   }
+  },
+  {
+   "span_id": 59,
+   "sent_idx_start": 139,
+   "sent_idx_end": 141,
+   "text": "In 1828, Webster defined _faithful_ firstly as _“Firm in adherence to the truth and to the duties of religion”_ and “loyal” only after that – clearly a shift from a theological to a secular priority over time.\n**Gentleness** was once nearly synonymous with _meekness_ (praised in older texts); now _gentleness_ is often framed as mildness or kindness – still positive, but the word _meek_ itself has fallen into disfavor (often misunderstood as weak).\nHence, dictionaries now define _gentle/gentleness_ without implying any necessary humility before God or others, just an _absence of harshness_.",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.faithfulness",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "Firm in adherence to the truth and to the duties of religion"
+     },
+     {
+      "fruit_id": "fruit.gentleness",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "Gentleness was once nearly synonymous with _meekness_"
+     }
+    ],
+    "gate_flags": [
+     "gate.provenance",
+     "gate.scope"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span cites Webster 1828 and claims a semantic shift over time, but no traceable citation, edition, or corpus evidence is provided for the 'now' definitions; the historical-shift claim is asserted rather than demonstrated."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1752,
+    "completion_tokens": 194,
+    "total_tokens": 1946,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 728
+   }
+  },
+  {
+   "span_id": 60,
+   "sent_idx_start": 142,
+   "sent_idx_end": 142,
+   "text": "This reflects how _gentle_ remains praised, but _meek_ (its closest biblical synonym) has semantically deteriorated to something like “timid/submissive” in common parlance (a form of entropy of that concept).",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span asserts a semantic-drift claim about 'meek' without traceable evidence; no fruit mechanism is clearly signaled, though the contrast between 'gentle' and 'meek' touches gentleness vocabulary without enacting a gentleness mechanism."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1456,
+    "completion_tokens": 101,
+    "total_tokens": 1557,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 432
+   }
+  },
+  {
+   "span_id": 61,
+   "sent_idx_start": 143,
+   "sent_idx_end": 145,
+   "text": "- **Example – Patience:** The virtue of **Patience** exhibits a clear definitional shift.\nWebster’s 1913 defined _patience_ as _“the state or quality of being patient; the power of suffering with fortitude; uncomplaining endurance of evils or wrongs, as toil, pain, poverty, insult, oppression, calamity, etc.”_[gutenberg.org](https://www.gutenberg.org/files/666/666-h/666-h.htm#:~:text=Pa,poverty%2C%20insult%2C%20oppression%2C%20calamity%2C%20etc).\nThis definition explicitly mentions _suffering, afflictions, and calm endurance of trials_, capturing the classic idea of patience as a **spiritual fortitude** in the face of hardship.",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.patience",
+      "polarity": "+",
+      "strength": 3,
+      "evidence_quote": "the power of suffering with fortitude; uncomplaining endurance of evils or wrongs"
+     },
+     {
+      "fruit_id": "fruit.patience",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "capturing the classic idea of patience as a **spiritual fortitude** in the face of hardship"
+     }
+    ],
+    "gate_flags": [
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.7,
+    "uncertainty_note": "Span cites a dictionary definition as evidence of a definitional shift but does not itself establish that a shift occurred; the 'oppression' anti-fruit hit is a quoted object of endurance, not an endorsement. The claim that this captures 'the classic idea' is asserted without further sourcing."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1718,
+    "completion_tokens": 214,
+    "total_tokens": 1932,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 694
+   }
+  },
+  {
+   "span_id": 62,
+   "sent_idx_start": 146,
+   "sent_idx_end": 148,
+   "text": "It even cited biblical and literary examples of bearing insults and burdens patiently[gutenberg.org](https://www.gutenberg.org/files/666/666-h/666-h.htm#:~:text=,suffering).\nIn contrast, a modern dictionary says, _“patience: the ability to accept or tolerate delay, problems, or suffering without becoming annoyed or anxious.”_ Merriam-Webster (2025) simplifies it to _“the capacity, habit, or fact of being patient,”_ with sub-senses like “the ability to accept delays in a calm way” and “the ability to remain calm under provocation”[merriam-webster.com](https://www.merriam-webster.com/dictionary/patience#:~:text=1)[merriam-webster.com](https://www.merriam-webster.com/dictionary/patience#:~:text=b).\nThe **essence is similar** (calm endurance), but note the difference in **tone and scope**: the 1913 version emphasized **enduring “evil” with fortitude**[gutenberg.org](https://www.gutenberg.org/files/666/666-h/666-h.htm#:~:text=Pa,poverty%2C%20insult%2C%20oppression%2C%20calamity%2C%20etc) – a morally charged description – whereas 2025 emphasizes **not getting annoyed at delays**, a more everyday inconvenience framing.",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.patience",
+      "polarity": "+",
+      "strength": 3,
+      "evidence_quote": "bearing insults and burdens patiently"
+     },
+     {
+      "fruit_id": "fruit.patience",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "the ability to accept or tolerate delay, problems, or suffering without becoming annoyed or anxious"
+     },
+     {
+      "fruit_id": "fruit.patience",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "enduring “evil” with fortitude"
+     }
+    ],
+    "gate_flags": [
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.72,
+    "uncertainty_note": "Span is comparative lexicographic evidence; the 'essence is similar' synthesis is an interpretive claim not fully supported by the quoted definitions alone, and the 1913 source's full context is not shown."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1844,
+    "completion_tokens": 221,
+    "total_tokens": 2065,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 820
+   }
+  },
+  {
+   "span_id": 63,
+   "sent_idx_start": 149,
+   "sent_idx_end": 151,
+   "text": "The heroic ring of virtue is toned down to a practical trait.\nAlso, “suffering” is now just one item in a list and phrased as _adversity_ or _difficulty_; the spiritual connotation of redemptive suffering is gone.\nThis illustrates a subtle _entropy_ in the concept: patience has shifted from an exalted moral quality involving great trials to a mundane skill of anger management in traffic jams.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.patience",
+      "polarity": "-",
+      "strength": 2,
+      "evidence_quote": "patience has shifted from an exalted moral quality involving great trials to a mundane skill of anger management in traffic jams"
+     }
+    ],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "The span asserts a semantic drift in the concept of patience but provides no traceable evidence (no sources, corpora, or citations) for the claimed shift; the 'entropy' framing is interpretive. No gate is clearly triggered since no factual claim is substantiated enough to evaluate, but gate.truth_evidence is arguably at issue."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1571,
+    "completion_tokens": 174,
+    "total_tokens": 1745,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 547
+   }
+  },
+  {
+   "span_id": 64,
+   "sent_idx_start": 152,
+   "sent_idx_end": 154,
+   "text": "- **Ideological Reframing:** In some cases, the **cultural framing** of a virtue changed such that dictionaries added or adjusted senses.\nFor instance, **“Temperance”** a century ago was defined broadly as _self-restraint in appetites and passions_, often with a heavy emphasis on abstaining from alcohol (the Temperance Movement).\nThe word carried both the general virtue meaning and a specific social movement meaning.",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.self_control",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "self-restraint in appetites and passions"
+     }
+    ],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "Span is a descriptive historical/lexical example; the self-control signal is a quoted dictionary sense, not an endorsement or demonstration of the mechanism. No traceable citation for the dictionary claim is provided."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1597,
+    "completion_tokens": 133,
+    "total_tokens": 1730,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 573
+   }
+  },
+  {
+   "span_id": 65,
+   "sent_idx_start": 155,
+   "sent_idx_end": 157,
+   "text": "Today, _temperance_ in common usage is rare (mostly historical); its general sense of self-restraint has been largely taken over by “self-control” or “moderation.”\nModern dictionaries note the archaic sense and the dated capital-T Temperance (anti-alcohol) context.\nThis reflects an ideological shift: the concept of _temperance_ fragmented – part became **“self-control”** (still valued, but framed in psychological terms of impulse control rather than moral purity) and part faded with changing social mores about alcohol.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.self_control",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "its general sense of self-restraint has been largely taken over by “self-control” or “moderation.”"
+     }
+    ],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "Span makes historical/lexical claims about semantic shift without citing traceable sources; no evidence pointers beyond lexicon hits. Fruit signal is descriptive of the concept 'self-control', not an enacted mechanism, so strength is low."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1657,
+    "completion_tokens": 150,
+    "total_tokens": 1807,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 633
+   }
+  },
+  {
+   "span_id": 66,
+   "sent_idx_start": 158,
+   "sent_idx_end": 158,
+   "text": "Similarly, **“Chastity”** (not one of the nine fruits, but a related virtue) would be a dramatic example: once defined in relation to sexual morality and religious duty, now often considered old-fashioned or reinterpreted as “self-chosen abstinence” in niche contexts; the mainstream lexicon replaced _chastity_ with terms like _“safe sex”_ or _“faithfulness”_ in relationships – a profound reframing of a virtue concept over time.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.faithfulness",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "faithfulness"
+     },
+     {
+      "fruit_id": "fruit.self_control",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "self-chosen abstinence"
+     }
+    ],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "The span asserts a historical semantic shift ('once defined... now often considered...') without cited evidence for the mainstream lexicon replacement; 'chastity' and 'duty' are lexicon hits but are not among the nine fruit axes, so only faithfulness and self-control map loosely. No traceable sources given for the reframing claim."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1606,
+    "completion_tokens": 188,
+    "total_tokens": 1794,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 582
+   }
+  },
+  {
+   "span_id": 67,
+   "sent_idx_start": 159,
+   "sent_idx_end": 159,
+   "text": "To concisely illustrate the semantic shifts, the table below compares a few **then-and-now** definitions:",
+   "status": "ok",
+   "judgment": {
+    "role": "RHETORIC",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.85,
+    "uncertainty_note": "Span is a transitional framing sentence introducing a table; no substantive claims or fruit-relevant mechanisms are present in the span text itself."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1404,
+    "completion_tokens": 80,
+    "total_tokens": 1484,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 380
+   }
+  },
+  {
+   "span_id": 68,
+   "sent_idx_start": 160,
+   "sent_idx_end": 160,
+   "text": "|**Term**|**Webster’s 1913 (historic tone)**|**Merriam-Webster 2025 (modern tone)**|\n|---|---|---|\n|**Love**|“_A feeling of strong personal attachment; ardent affection; also desire for, and earnest effort to promote the welfare of another._” [latimes.com](https://www.latimes.com/archives/la-xpm-1985-03-12-vw-34361-story.html#:~:text=feeling%20of%20affection%20especially%20to,%E2%80%9D)  <br>__(Altruistic concern included as part of love)__|“_Strong affection for another arising out of kinship or personal ties; attraction based on sexual desire; affection based on admiration or common interests._”[merriam-webster.com](https://www.merriam-webster.com/dictionary/love#:~:text=a)[merriam-webster.com](https://www.merriam-webster.com/dictionary/love#:~:text=%3A%20affection%20based%20on%20admiration%2C,benevolence%2C%20or%20common%20interests)  <br>__(Love primarily as emotional affection; selfless concern appears later as ‘loyal benevolent concern,’ not central)__|\n|**Patience**|“_The power of suffering with fortitude; uncomplaining endurance of evils or wrongs…_”[gutenberg.org](https://www.gutenberg.org/files/666/666-h/666-h.htm#:~:text=Pa,poverty%2C%20insult%2C%20oppression%2C%20calamity%2C%20etc)  <br>__(Emphasis on enduring hardship virtuously)__|“_The ability to accept or tolerate delay or trouble calmly without getting angry or upset._”[merriam-webster.com](https://www.merriam-webster.com/dictionary/patience#:~:text=1)  <br>__(Emphasis on staying calm, with “suffering” toned down to any annoyance)__|\n|**Kindness**|“_Good will; benevolence; that temper or disposition which delights in contributing to the happiness of others…_” (Webster 1828)[archive.org](https://archive.org/stream/americandictiona00websrich/americandictiona00websrich_djvu.txt#:~:text=Full%20text%20of%20,the%20happiness%20of%20others)  <br>__(Kindness defined by altruistic delight in others’ joy)__|“_The quality or state of being kind; a kind deed_.”[terms_en.en-academic.com](https://terms_en.en-academic.com/24051/kindness#:~:text=kindness)  <br>__(Kindness defined by reference to itself and simple synonym – no explicit mention of benevolence)__|\n|**Faithful / Faithfulness**|“_Firm in adherence to the truth and to duties, _**especially** in religion__; full of faith… true and constant in affection or allegiance._” (Webster 1913) <br>__(Religious faith and moral duty emphasized)_*|“_Steadfast in affection or allegiance: LOYAL; firm in adherence to promises…_” (M-W Collegiate)  <br>__(Focused on loyalty/reliability in human relations; “faith” as belief is a separate sense or implied)__|\n|**Temperance**|“_Habitual moderation in regard to the indulgence of the natural appetites and passions; restrained or moderate indulgence… specifically, moderation in or abstinence from intoxicating drink._” (1913)  <br>__(General self-restraint with a note on alcohol)__|_Temperance_ – **(marked as archaic or historical)**: “_moderation in action, thought, or feeling; habitual moderation in the indulgence of appetites or passions; specifically: moderation in or abstinence from alcoholic beverages._” (Note: modern use largely historical)|",
+   "status": "ok",
+   "judgment": {
+    "role": "DEFINITION",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.love",
+      "polarity": "+",
+      "strength": 3,
+      "evidence_quote": "A feeling of strong personal attachment; ardent affection; also desire for, and earnest effort to promote the welfare of another."
+     },
+     {
+      "fruit_id": "fruit.patience",
+      "polarity": "+",
+      "strength": 3,
+      "evidence_quote": "The power of suffering with fortitude; uncomplaining endurance of evils or wrongs"
+     },
+     {
+      "fruit_id": "fruit.kindness",
+      "polarity": "+",
+      "strength": 3,
+      "evidence_quote": "Good will; benevolence; that temper or disposition which delights in contributing to the happiness of others"
+     },
+     {
+      "fruit_id": "fruit.faithfulness",
+      "polarity": "+",
+      "strength": 3,
+      "evidence_quote": "Firm in adherence to the truth and to duties"
+     },
+     {
+      "fruit_id": "fruit.self_control",
+      "polarity": "+",
+      "strength": 3,
+      "evidence_quote": "Habitual moderation in regard to the indulgence of the natural appetites and passions; restrained or moderate indulgence"
+     }
+    ],
+    "gate_flags": [
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.72,
+    "uncertainty_note": "Span is a lexical comparison table of dictionary definitions; it reports definitions rather than asserting behavioral claims, so fruit signals are definitional rather than enacted. Some citations are partial or secondary (e.g., Webster 1828 via archive.org, Webster 1913 via gutenberg.org) and one link is a Los Angeles Times archive rather than a primary dictionary source, limiting traceability."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 2487,
+    "completion_tokens": 377,
+    "total_tokens": 2864,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 1463
+   }
+  },
+  {
+   "span_id": 69,
+   "sent_idx_start": 161,
+   "sent_idx_end": 163,
+   "text": "_(Table: Comparison of historical vs.\nmodern definitions.\nOlder dictionaries often embed moral judgments or religious context; newer ones use secular language and focus on interpersonal or personal behavior.)_",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span is a table caption/description of dictionary-definition trends; no fruit-axis mechanisms are observable in the text itself, and no source citations or specific dictionary artifacts are provided to verify the historical-vs-modern claim."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1484,
+    "completion_tokens": 97,
+    "total_tokens": 1581,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 460
+   }
+  },
+  {
+   "span_id": 70,
+   "sent_idx_start": 164,
+   "sent_idx_end": 166,
+   "text": "In summary, **the meanings of these virtues have remained semantically recognizable, but the diction and framing have “neutralized” over time**.\nThe virtues have arguably undergone a slight _semantic bleaching_ – stripped of some rich connotations.\nWhat was once couched in the language of moral philosophy or theology is now given in matter-of-fact terms.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "Span asserts a semantic-bleaching thesis about virtue terminology; no evidence or sources are provided within the span, and no fruit-axis mechanism is directly engaged."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1587,
+    "completion_tokens": 83,
+    "total_tokens": 1670,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 563
+   }
+  },
+  {
+   "span_id": 71,
+   "sent_idx_start": 167,
+   "sent_idx_end": 169,
+   "text": "This could be viewed as a form of **semantic entropy**: the “charge” or depth these words carried in a religious society has leaked away as society secularized.\nHowever, it’s important to note that dictionaries reflect usage, and the changes indicate how general usage and context of these words evolved.\nFor instance, if fewer people speak of “the virtue of gentleness” in a spiritual sense, the dictionary will trim that from the primary definition.",
+   "status": "ok",
+   "judgment": {
+    "role": "MECHANISM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "The span describes a proposed causal process (semantic entropy / dictionary drift) rather than asserting a truth-aligned fruit mechanism; the single 'gentleness' hit is a lexical mention of the word, not evidence of the gentleness mechanism. No factual claims are substantiated with traceable evidence, but the span is hedged ('could be viewed') and framed as interpretation, so no hard gate is clearly triggered."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1620,
+    "completion_tokens": 137,
+    "total_tokens": 1757,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 596
+   }
+  },
+  {
+   "span_id": 72,
+   "sent_idx_start": 170,
+   "sent_idx_end": 171,
+   "text": "## 3.\nDiscussion: Semantic Entropy and Social Coherence",
+   "status": "ok",
+   "judgment": {
+    "role": "DEFINITION",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.4,
+    "uncertainty_note": "Span is a section heading with no substantive content; role assignment is provisional and no fruit or gate signals are observable."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1428,
+    "completion_tokens": 76,
+    "total_tokens": 1504,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 404
+   }
+  },
+  {
+   "span_id": 73,
+   "sent_idx_start": 172,
+   "sent_idx_end": 174,
+   "text": "The evidence from both frequency and definitions supports the notion that the **moral/spiritual lexicon has attenuated**, while a more individual-centric lexicon has ascended.\nWe can interpret this through the lens of **“Semantic Entropy”** – essentially, a degradation or dispersion of meaning in a culture’s vocabulary.\nAs words like _love, goodness,_ and _faithfulness_ lose the frequency and context they once had, their meaning to the average person may become less profound or unified.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [],
+    "gate_flags": [
+     "gate.truth_evidence",
+     "gate.scope"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "The span asserts an empirical claim about lexicon attenuation and a 'Semantic Entropy' interpretation, but no traceable evidence (sources, datasets, methods) is provided within the span; the word 'evidence' appears but is not itself evidence. The fruit term 'goodness' is used only as an example of a word losing meaning, not as a signal of the fruit mechanism, so no fruit signal is assigned."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1621,
+    "completion_tokens": 148,
+    "total_tokens": 1769,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 597
+   }
+  },
+  {
+   "span_id": 74,
+   "sent_idx_start": 175,
+   "sent_idx_end": 176,
+   "text": "They risk becoming clichés, or narrowing to personal sentiments (e.g.\n“love” = just a feeling, “faithfulness” = just marital fidelity) rather than encompassing the richer communal or spiritual dimensions they once did.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "The span mentions 'love' and 'faithfulness' only as examples of terms at risk of narrowing; it makes no substantive claim about the fruit mechanisms themselves, so no fruit signal is warranted. The lexicon hits are vocabulary mentions, not character evidence."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1527,
+    "completion_tokens": 102,
+    "total_tokens": 1629,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 503
+   }
+  },
+  {
+   "span_id": 75,
+   "sent_idx_start": 177,
+   "sent_idx_end": 179,
+   "text": "Jonathan Merritt, in _The Week_, argued that as the language of faith and virtue dies off, our collective worldview and behavior shift accordingly[theweek.com](https://theweek.com/articles/791795/death-sacred-speech#:~:text=Ngram%20data%20is%20complicated%20and,speaking%20world)[languagelog.ldc.upenn.edu](https://languagelog.ldc.upenn.edu/nll/?p=40222#:~:text=As%20the%20language%20of%20faith,language%20has%20contributed%20to%20it).\nIt’s a kind of **Neo-Whorfian** idea: if we stop using words like _grace, mercy, patience,_ perhaps we also start valuing those concepts less or at least struggle to articulate them[languagelog.ldc.upenn.edu](https://languagelog.ldc.upenn.edu/nll/?p=40222#:~:text=As%20the%20language%20of%20faith,language%20has%20contributed%20to%20it).\nIndeed, Merritt points out that _“we speak far less of grace, mercy, patience, and compassion… [so] is it a surprise our world is less gracious, merciful, patient, or compassionate?”_[languagelog.ldc.upenn.edu](https://languagelog.ldc.upenn.edu/nll/?p=40222#:~:text=As%20the%20language%20of%20faith,language%20has%20contributed%20to%20it).",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.patience",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "we also start valuing those concepts less or at least struggle to articulate them"
+     },
+     {
+      "fruit_id": "fruit.kindness",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "we speak far less of grace, mercy, patience, and compassion"
+     },
+     {
+      "fruit_id": "fruit.goodness",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "our collective worldview and behavior shift accordingly"
+     }
+    ],
+    "gate_flags": [
+     "gate.truth_evidence",
+     "gate.scope",
+     "gate.bridge_validity"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "The span reports a Neo-Whorfian causal claim (language decline causes virtue decline) attributed to Merritt; the causal direction and empirical support are not established within the span, and the fruit terms appear as quoted vocabulary rather than demonstrated mechanisms. Bridge validity for the linguistic-relativity mapping is asserted, not specified."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1935,
+    "completion_tokens": 258,
+    "total_tokens": 2193,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 911
+   }
+  },
+  {
+   "span_id": 76,
+   "sent_idx_start": 180,
+   "sent_idx_end": 181,
+   "text": "While that may be a philosophical leap, it aligns with research showing language and thought are linked.\nAs a society’s common vocabulary for moral ideals shrinks, it could erode **social coherence** – the shared understanding of virtues that binds communities.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.love",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "the shared understanding of virtues that binds communities"
+     },
+     {
+      "fruit_id": "fruit.peace",
+      "polarity": "-",
+      "strength": 2,
+      "evidence_quote": "it could erode **social coherence**"
+     }
+    ],
+    "gate_flags": [
+     "gate.truth_evidence",
+     "gate.scope"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "The span cites 'research' without any traceable citation, so the truth-evidence gate cannot be confirmed; the causal claim about vocabulary shrinkage eroding social coherence is hedged ('could') and extends beyond the evidence domain. No explicit mechanism for how vocabulary loss produces erosion is given."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1531,
+    "completion_tokens": 195,
+    "total_tokens": 1726,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 507
+   }
+  },
+  {
+   "span_id": 77,
+   "sent_idx_start": 182,
+   "sent_idx_end": 184,
+   "text": "However, skeptics (like linguist Mark Liberman on Language Log) note that the _apparent_ decline of virtue-words may be partly due to neutral factors (like more science books) and that one must be careful concluding moral decay from word frequency[languagelog.ldc.upenn.edu](https://languagelog.ldc.upenn.edu/nll/?p=40222#:~:text=The%20cited%20paper%20is%20Kesebir,that%20collection%20changes%20over%20time)[languagelog.ldc.upenn.edu](https://languagelog.ldc.upenn.edu/nll/?p=40222#:~:text=But%20there%27s%20a%20second%20problem,18).\nIn fact, some objective measures of behavior (e.g.\ndeclines in violent crime, greater humanitarian values, etc.)",
+   "status": "ok",
+   "judgment": {
+    "role": "OBJECTION",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.faithfulness",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "one must be careful concluding moral decay from word frequency"
+     },
+     {
+      "fruit_id": "fruit.self_control",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "skeptics (like linguist Mark Liberman on Language Log) note that the _apparent_ decline of virtue-words may be partly due to neutral factors"
+     }
+    ],
+    "gate_flags": [
+     "gate.truth_evidence",
+     "gate.scope",
+     "gate.falsifiability"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "Span is truncated mid-sentence ('etc.)'), so the behavioral-measures claim is incomplete and its evidentiary support cannot be assessed; the objection is attributed to a named skeptic with a traceable citation, but the underlying evidence is not reproduced in the span."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1710,
+    "completion_tokens": 228,
+    "total_tokens": 1938,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 686
+   }
+  },
+  {
+   "span_id": 78,
+   "sent_idx_start": 185,
+   "sent_idx_end": 187,
+   "text": "suggest society hasn’t _simply_ lost morality[jonathanmerritt.com](https://www.jonathanmerritt.com/article/david-brooks-on-morality-theology-and-his-personal-faith#:~:text=But%20while%20Americans%20have%20increased,and%20crime%20are%20down%20too).\nDavid Brooks likewise observes that while we use moral language less, it doesn’t mean we are in wholesale “moral decline” – the picture is complex[jonathanmerritt.com](https://www.jonathanmerritt.com/article/david-brooks-on-morality-theology-and-his-personal-faith#:~:text=But%20while%20Americans%20have%20increased,and%20crime%20are%20down%20too).\nWe may have traded one set of terms for another.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "Span asserts a nuanced empirical claim about moral language vs. moral decline, citing Brooks; no fruit mechanism is directly evidenced in the text. Lexicon 'but'/'may' hits are contrastive/hedging markers, not fruit signals."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1703,
+    "completion_tokens": 100,
+    "total_tokens": 1803,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 679
+   }
+  },
+  {
+   "span_id": 79,
+   "sent_idx_start": 188,
+   "sent_idx_end": 188,
+   "text": "For example, public discourse now emphasizes _equality, rights,_ and _well-being_ (secular moral values) more than _virtue, sin,_ or _holiness_.",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "The span offers an illustrative observation about shifting public discourse vocabulary but cites no traceable source or data; the lexicon hit 'rights' is a topic term, not a fruit mechanism signal."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1445,
+    "completion_tokens": 91,
+    "total_tokens": 1536,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 421
+   }
+  },
+  {
+   "span_id": 80,
+   "sent_idx_start": 189,
+   "sent_idx_end": 191,
+   "text": "That said, the rise of _therapeutic language_ does reflect a real cultural pivot.\nPsychologist Nick Haslam identifies **“concept creep”** – where concepts of harm (like _trauma, abuse, prejudice_) have expanded their meanings over time[quillette.com](https://quillette.com/2023/07/10/the-ever-expanding-definition-of-trauma/#:~:text=In%20his%202016%20paper%2C%20%E2%80%9CConcept,%E2%80%9D).\nThis can be seen as semantic entropy in action: terms that once had specific thresholds (trauma = life-threatening event) are now applied to far milder experiences[quillette.com](https://quillette.com/2023/07/10/the-ever-expanding-definition-of-trauma/#:~:text=One%20of%20the%20best%20examples,to%20describe%20almost%20any%20adversity).",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.faithfulness",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "terms that once had specific thresholds (trauma = life-threatening event) are now applied to far milder experiences"
+     },
+     {
+      "fruit_id": "fruit.self_control",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "concepts of harm (like _trauma, abuse, prejudice_) have expanded their meanings over time"
+     }
+    ],
+    "gate_flags": [
+     "gate.truth_evidence",
+     "gate.scope"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span cites Haslam's 'concept creep' via a Quillette link with anchor fragments; the underlying 2016 paper is not directly quoted, so traceability of the specific threshold claim (trauma = life-threatening event) is partial. 'Semantic entropy' framing is asserted without definition or bridge to information theory."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1702,
+    "completion_tokens": 232,
+    "total_tokens": 1934,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 678
+   }
+  },
+  {
+   "span_id": 81,
+   "sent_idx_start": 192,
+   "sent_idx_end": 194,
+   "text": "_Trauma,_ _addiction,_ _triggered_ – such words are increasingly ubiquitous and sometimes used metaphorically or hyperbolically.\nThis **inflation of psychological terms** can blur distinctions and, some argue, _“pathologize everyday experience”_[quillette.com](https://quillette.com/2023/07/10/the-ever-expanding-definition-of-trauma/#:~:text=In%20his%202016%20paper%2C%20%E2%80%9CConcept,%E2%80%9D).\nIn parallel, virtue terms have not broadened but simply receded, often surviving in only trivialized forms (e.g.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span is truncated mid-sentence ('e.g.'), so the full claim about trivialized virtue terms is incomplete; no fruit-axis mechanism is directly evidenced, and the 'some argue' attribution lacks traceable support within the span."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1616,
+    "completion_tokens": 98,
+    "total_tokens": 1714,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 592
+   }
+  },
+  {
+   "span_id": 82,
+   "sent_idx_start": 195,
+   "sent_idx_end": 196,
+   "text": "_“sinful chocolate cake”_ – _sin_ reduced to mean “rich/delicious” in marketing, rather than a moral failing[jonathanmerritt.com](https://www.jonathanmerritt.com/article/david-brooks-on-morality-theology-and-his-personal-faith#:~:text=Brooks%20is%20particularly%20troubled%20by,%E2%80%9D)).\nWhen _sin_ is just a flavor of dessert, and _trauma_ can describe losing a cell phone, it’s fair to say we’re witnessing semantic shifts that **dilute the gravity** of both moral and psychological language.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.faithfulness",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "dilute the gravity"
+     },
+     {
+      "fruit_id": "fruit.goodness",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "it’s fair to say"
+     }
+    ],
+    "gate_flags": [
+     "gate.truth_evidence",
+     "gate.scope"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "The span asserts a semantic-dilution claim ('dilute the gravity') with one external citation but no traceable evidence for the broader generalization about 'trauma' describing lost cell phones; the normative 'fair to say' is a judgment rather than a demonstrated mechanism."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1616,
+    "completion_tokens": 190,
+    "total_tokens": 1806,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 592
+   }
+  },
+  {
+   "span_id": 83,
+   "sent_idx_start": 197,
+   "sent_idx_end": 199,
+   "text": "From a social coherence standpoint, a shared moral vocabulary acts like a **cultural glue** – it provides common reference points for what is admirable or reprehensible.\nIf that vocabulary fragments (entropy), it could lead to misunderstandings or a lack of collective vision of the good.\nFor example, older generations might speak of “building _character_” while younger ones talk of “developing _identity_” – similar aims in some ways, but framed differently.",
+   "status": "ok",
+   "judgment": {
+    "role": "MECHANISM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.peace",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "a shared moral vocabulary acts like a **cultural glue** – it provides common reference points for what is admirable or reprehensible"
+     },
+     {
+      "fruit_id": "fruit.peace",
+      "polarity": "-",
+      "strength": 2,
+      "evidence_quote": "If that vocabulary fragments (entropy), it could lead to misunderstandings or a lack of collective vision of the good"
+     }
+    ],
+    "gate_flags": [
+     "gate.scope"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span proposes a causal mechanism (shared moral vocabulary -> social coherence) but offers no traceable evidence for the claim; the 'entropy' framing is asserted rather than derived, and the generational example is illustrative rather than evidential. No explicit bridge law or kill condition is stated."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1647,
+    "completion_tokens": 221,
+    "total_tokens": 1868,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 623
+   }
+  },
+  {
+   "span_id": 84,
+   "sent_idx_start": 200,
+   "sent_idx_end": 202,
+   "text": "Without translation between the two, there’s potential loss in intergenerational coherence.\nAs another example, the term _“integrity”_ may carry less weight if seldom reinforced in discourse, potentially yielding confusion about why it matters.\nOn the other hand, it’s possible new secular terms _have replaced_ the old in function: e.g.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Lexicon hits ('integrity', 'on the other hand') are not fruit-axis signals; the span makes hedged speculative claims about translation, intergenerational coherence, and term replacement, but no observable fruit mechanism or anti-fruit is evidenced."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1583,
+    "completion_tokens": 101,
+    "total_tokens": 1684,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 559
+   }
+  },
+  {
+   "span_id": 85,
+   "sent_idx_start": 203,
+   "sent_idx_end": 204,
+   "text": "_“empathy”_ is now often championed where once _“compassion”_ (or _“charity”_) was, and _“accountability”_ where _“righteousness”_ might have been.\nThe language changed, but social cohesion might persist around new commonly understood ideals.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.love",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "social cohesion might persist around new commonly understood ideals"
+     },
+     {
+      "fruit_id": "fruit.faithfulness",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "The language changed, but social cohesion might persist"
+     }
+    ],
+    "gate_flags": [
+     "gate.scope"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.45,
+    "uncertainty_note": "The span makes a hedged sociological claim about linguistic substitution and cohesion persistence without cited evidence; the lexicon 'fruit' hits (empathy, compassion, accountability) are vocabulary mentions, not character evidence, and the cohesion claim is asserted rather than demonstrated."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1573,
+    "completion_tokens": 184,
+    "total_tokens": 1757,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 549
+   }
+  },
+  {
+   "span_id": 86,
+   "sent_idx_start": 205,
+   "sent_idx_end": 207,
+   "text": "Still, the **erosion of explicitly spiritual language** marks a shift from transcendent or duty-driven ethics toward a more individualistic, feelings-driven ethos[qz.com](https://qz.com/1103808/self-esteem-is-a-myth-perpetrated-by-maslows-hierarchy-of-needs#:~:text=This%20is%20a%20relatively%20new,of%20how%20talented%20they%20are)[adamkaraoguz.substack.com](https://adamkaraoguz.substack.com/p/virtues-return#:~:text=Then%2C%20Postmodernism%20strutted%20onto%20the,as%20culturally%20and%20socially%20constructed).\nThis could presage a less cohesive society if everyone’s _“authentic self”_ is the ultimate guide (the _“live your truth”_ mentality[adamkaraoguz.substack.com](https://adamkaraoguz.substack.com/p/virtues-return#:~:text=In%20our%20lifetimes%2C%20the%20rise,1)), rather than a common narrative of virtue.\nSociologists Bradley Campbell and Jason Manning have described how Western culture moved from a “dignity culture” emphasizing internal virtue to a “victimhood culture” where expressing grievance and trauma gains social currency[quillette.com](https://quillette.com/2023/07/10/the-ever-expanding-definition-of-trauma/#:~:text=In%20his%202016%20paper%2C%20%E2%80%9CConcept,%E2%80%9D).",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.faithfulness",
+      "polarity": "-",
+      "strength": 2,
+      "evidence_quote": "erosion of explicitly spiritual language"
+     },
+     {
+      "fruit_id": "fruit.self_control",
+      "polarity": "-",
+      "strength": 2,
+      "evidence_quote": "feelings-driven ethos"
+     },
+     {
+      "fruit_id": "fruit.peace",
+      "polarity": "-",
+      "strength": 2,
+      "evidence_quote": "less cohesive society"
+     },
+     {
+      "fruit_id": "fruit.love",
+      "polarity": "-",
+      "strength": 1,
+      "evidence_quote": "individualistic"
+     }
+    ],
+    "gate_flags": [
+     "gate.truth_evidence",
+     "gate.scope"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "The span asserts a cultural shift and a causal worry ('could presage') with citations to external sources not included here; the empirical support for the erosion/cohesion link cannot be verified from the span text alone, and 'authentic self'/'live your truth' are quoted framings rather than defined terms."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1936,
+    "completion_tokens": 261,
+    "total_tokens": 2197,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 912
+   }
+  },
+  {
+   "span_id": 87,
+   "sent_idx_start": 208,
+   "sent_idx_end": 210,
+   "text": "The prevalence of harm-related language (trauma, abuse, toxic, etc.)\nand the relative silence about old-fashioned virtues could be symptomatic of that shift.\nIn simple terms, we hear more about what’s been done _to_ us (violations of well-being) than what _we_ should strive to be (virtuous character).",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span makes a hedged interpretive claim about cultural language shift; no factual evidence or traceable sources provided, but the hedge ('could be symptomatic') bounds the assertion. No fruit mechanism is clearly engaged by the text itself."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1544,
+    "completion_tokens": 96,
+    "total_tokens": 1640,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 520
+   }
+  },
+  {
+   "span_id": 88,
+   "sent_idx_start": 211,
+   "sent_idx_end": 211,
+   "text": "That imbalance might undermine social coherence by fostering a mindset that is _reactive_ and self-focused rather than _proactive_ and community-focused.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.love",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "community-focused"
+     },
+     {
+      "fruit_id": "fruit.peace",
+      "polarity": "-",
+      "strength": 2,
+      "evidence_quote": "undermine social coherence"
+     }
+    ],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Hedged speculative causal claim ('might undermine'); no evidence cited for the imbalance or its effects, and 'community' is a lexicon pointer rather than an explicit love-mechanism signal."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1490,
+    "completion_tokens": 156,
+    "total_tokens": 1646,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 466
+   }
+  },
+  {
+   "span_id": 89,
+   "sent_idx_start": 212,
+   "sent_idx_end": 214,
+   "text": "It’s not all loss, however.\nSome of the _Fruits of the Spirit_ have been repackaged in contemporary terms.\n**“Goodness”** in a religious sense might now be discussed through words like _ethics, social responsibility,_ or _justice_.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.goodness",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "**“Goodness”** in a religious sense might now be discussed through words like _ethics, social responsibility,_ or _justice_."
+     }
+    ],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "The span asserts a linguistic repackaging of 'Goodness' into secular terms but provides no traceable evidence for the mapping; the hedge 'might' leaves the claim tentative. No explicit mechanism of truth-aligned benefit is described, so the goodness signal is weak and lexical rather than mechanistic."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1622,
+    "completion_tokens": 170,
+    "total_tokens": 1792,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 598
+   }
+  },
+  {
+   "span_id": 90,
+   "sent_idx_start": 215,
+   "sent_idx_end": 217,
+   "text": "**“Peace”** as inner tranquility finds new life in words like _mindfulness_ and _wellness_.\n**“Love”** – while used loosely – is still a dominant theme in art and life (though we might differentiate romantic love, platonic love, altruistic love with additional adjectives now).\nAnd the enduring popularity of personality and strengths-based psychology (e.g.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.peace",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "**“Peace”** as inner tranquility finds new life in words like _mindfulness_ and _wellness_."
+     },
+     {
+      "fruit_id": "fruit.love",
+      "polarity": "+",
+      "strength": 1,
+      "evidence_quote": "**“Love”** – while used loosely – is still a dominant theme in art and life"
+     }
+    ],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span is a truncated fragment ending mid-parenthetical; it makes descriptive claims about cultural usage of 'peace' and 'love' without traceable evidence, but no load-bearing factual assertion is fully developed. Lexicon hits for peace/love are lexical mentions of the terms, not demonstrations of the fruit mechanisms, so signals are weak."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1625,
+    "completion_tokens": 220,
+    "total_tokens": 1845,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 601
+   }
+  },
+  {
+   "span_id": 91,
+   "sent_idx_start": 218,
+   "sent_idx_end": 218,
+   "text": "_grit, emotional intelligence, optimism_) suggests a continued interest in character qualities, even if the spiritual lexicon isn’t overt.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.4,
+    "uncertainty_note": "Span is a fragment beginning mid-parenthetical; the referent of 'suggests' and the basis for the inference about 'continued interest in character qualities' are not present in the span, so no fruit mechanism can be confirmed or discounted."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1442,
+    "completion_tokens": 101,
+    "total_tokens": 1543,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 418
+   }
+  },
+  {
+   "span_id": 92,
+   "sent_idx_start": 219,
+   "sent_idx_end": 221,
+   "text": "**Conclusion:** The last century’s linguistic trends reveal a significant cultural recalibration.\nThe _Fruits of the Spirit_ – once common parlance for virtues to cultivate – have faded in usage and been reframed in definition to fit a more secular, individualistic age.\nMeanwhile, psychological and self-help vocabulary flourishes, often carrying its own implicit values (personal growth, healing, empowerment).",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "Span asserts a cultural/linguistic trend ('significant cultural recalibration', 'faded in usage', 'reframed in definition') without citing traceable evidence; the lexicon 'healing' hit is incidental vocabulary, not a fruit mechanism signal. No fruit axis is clearly evidenced in the text itself."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1581,
+    "completion_tokens": 113,
+    "total_tokens": 1694,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 557
+   }
+  },
+  {
+   "span_id": 93,
+   "sent_idx_start": 222,
+   "sent_idx_end": 224,
+   "text": "This may represent a kind of **semantic entropy** where our language for virtue and vice becomes less sharply defined and less commonly shared.\nSome observers warn that this precedes a loss of social cohesion – if we no longer have words like _grace_ or _forgiveness_ on our lips, we may find it harder to practice or collectively prioritize them[theweek.com](https://theweek.com/articles/791795/death-sacred-speech#:~:text=Ngram%20data%20is%20complicated%20and,speaking%20world)[jonathanmerritt.com](https://www.jonathanmerritt.com/article/david-brooks-on-morality-theology-and-his-personal-faith#:~:text=humility%20to%20a%20culture%20of,slipped%20out%20of%20common%20usage).\nLanguage is not destiny, but it is a mirror of what we esteem and how we make sense of life.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.peace",
+      "polarity": "-",
+      "strength": 2,
+      "evidence_quote": "this precedes a loss of social cohesion"
+     },
+     {
+      "fruit_id": "fruit.faithfulness",
+      "polarity": "-",
+      "strength": 1,
+      "evidence_quote": "if we no longer have words like _grace_ or _forgiveness_ on our lips"
+     }
+    ],
+    "gate_flags": [
+     "gate.truth_evidence",
+     "gate.scope"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "The span attributes the cohesion warning to unnamed 'some observers' and cites two links without quoting them; the causal claim linking vocabulary loss to practice is hedged ('may') and not independently evidenced within the span. Lexicon hits for 'kind'/'humility' are incidental word matches, not virtue-mechanism signals."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1753,
+    "completion_tokens": 214,
+    "total_tokens": 1967,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 729
+   }
+  },
+  {
+   "span_id": 94,
+   "sent_idx_start": 225,
+   "sent_idx_end": 225,
+   "text": "As such, the drift from a moral-spiritual lexicon to a therapeutic-individualistic one is more than a linguistic curiosity; it encapsulates a broader shift in **cultural focus from the **communal quest for virtue** to the **individual quest for wellness and identity**.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span asserts a cultural shift from communal virtue to individual wellness/identity but provides no traceable evidence within the span; lexicon block shows no matched terms, so fruit signals cannot be confirmed or discounted from this text alone."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1435,
+    "completion_tokens": 95,
+    "total_tokens": 1530,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 411
+   }
+  },
+  {
+   "span_id": 95,
+   "sent_idx_start": 226,
+   "sent_idx_end": 228,
+   "text": "Whether this shift leads to a net loss of “social glue” or simply a new form of it remains an open question.\nWhat is clear is that anyone comparing the discourse of 1900 to that of 2025 can see and _quantitatively_ trace the transformation.\nIn the words of one commentator, _“Sacred words and moral terms are vanishing… Here’s why it matters.”_[theweek.com](https://theweek.com/articles/791795/death-sacred-speech#:~:text=The%20death%20of%20sacred%20speech) It matters because words shape our thinking, and as our words change, so do the stories we tell about who we are and what kind of society we aspire to build.",
+   "status": "ok",
+   "judgment": {
+    "role": "CLAIM",
+    "fruit_signals": [
+     {
+      "fruit_id": "fruit.faithfulness",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "remains an open question"
+     },
+     {
+      "fruit_id": "fruit.patience",
+      "polarity": "+",
+      "strength": 2,
+      "evidence_quote": "remains an open question"
+     }
+    ],
+    "gate_flags": [
+     "gate.truth_evidence",
+     "gate.scope"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "The span asserts a quantitative traceability of discourse transformation but provides no data or method; the cited commentator quote is a bare appeal to authority with a link, and the causal claim 'words shape our thinking' is unsupported. Lexicon hits ('open question', 'aspire', 'kind') are incidental vocabulary, not mechanism evidence."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1676,
+    "completion_tokens": 201,
+    "total_tokens": 1877,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 652
+   }
+  },
+  {
+   "span_id": 96,
+   "sent_idx_start": 229,
+   "sent_idx_end": 229,
+   "text": "## Sources",
+   "status": "ok",
+   "judgment": {
+    "role": "RHETORIC",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.9,
+    "uncertainty_note": "Span is a section heading ('## Sources') with no substantive content; no fruit mechanisms or gates can be evaluated from it."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1384,
+    "completion_tokens": 79,
+    "total_tokens": 1463,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 360
+   }
+  },
+  {
+   "span_id": 97,
+   "sent_idx_start": 230,
+   "sent_idx_end": 230,
+   "text": "- Google Books Ngram data for term frequencies (English 1900–2019)[theweek.com](https://theweek.com/articles/791795/death-sacred-speech#:~:text=As%20David%20Brooks%20pointed%20out,%E2%80%94%20has%20become%20much%20rarer)[theweek.com](https://theweek.com/articles/791795/death-sacred-speech#:~:text=The%20use%20of%20humility%20words%2C,percent%20over%20the%2020th%20century)[qz.com](https://qz.com/1103808/self-esteem-is-a-myth-perpetrated-by-maslows-hierarchy-of-needs#:~:text=1790%20and%202012%20found%20a,between%201975%20and%202007).",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.7,
+    "uncertainty_note": "Span is a citation pointer to external data sources; the underlying data, methodology, and quoted figures are not present in the span, so truth-evidence and provenance cannot be fully verified from text alone. Lexicon 'hierarchy' hit is incidental (Maslow reference in URL), not an anti-fruit signal."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1645,
+    "completion_tokens": 121,
+    "total_tokens": 1766,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 621
+   }
+  },
+  {
+   "span_id": 98,
+   "sent_idx_start": 231,
+   "sent_idx_end": 233,
+   "text": "- Merritt, J.\n(2018).\n_“The death of sacred speech.”_ **The Week**[theweek.com](https://theweek.com/articles/791795/death-sacred-speech#:~:text=According%20to%20Google%20Ngram%20Viewer,course%20of%20the%20last%20century)[theweek.com](https://theweek.com/articles/791795/death-sacred-speech#:~:text=As%20David%20Brooks%20pointed%20out,%E2%80%94%20has%20become%20much%20rarer)[theweek.com](https://theweek.com/articles/791795/death-sacred-speech#:~:text=The%20use%20of%20humility%20words%2C,percent%20over%20the%2020th%20century)[theweek.com](https://theweek.com/articles/791795/death-sacred-speech#:~:text=Ngram%20data%20is%20complicated%20and,speaking%20world).",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.75,
+    "uncertainty_note": "Span is a citation/reference entry only; no substantive claims or fruit-relevant mechanisms are present in the text itself. Provenance is partially supported by author, year, title, outlet, and URL, but the cited content is not reproduced here."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1718,
+    "completion_tokens": 108,
+    "total_tokens": 1826,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 694
+   }
+  },
+  {
+   "span_id": 99,
+   "sent_idx_start": 234,
+   "sent_idx_end": 235,
+   "text": "- Brooks, D., interview in Jonathan Merritt (2015).\n_“Moral vocabulary slipping from common usage.”_ **Religion News**[jonathanmerritt.com](https://www.jonathanmerritt.com/article/david-brooks-on-morality-theology-and-his-personal-faith#:~:text=humility%20to%20a%20culture%20of,slipped%20out%20of%20common%20usage)[jonathanmerritt.com](https://www.jonathanmerritt.com/article/david-brooks-on-morality-theology-and-his-personal-faith#:~:text=Brooks%20is%20particularly%20troubled%20by,%E2%80%9D).",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "Span is a citation/reference entry with a quoted phrase; the lexicon hit 'humility' appears only in the URL fragment, not in the span's substantive text, so no fruit signal is warranted. The quoted phrase is attributed but the surrounding argument is absent, limiting assessment."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1602,
+    "completion_tokens": 114,
+    "total_tokens": 1716,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 578
+   }
+  },
+  {
+   "span_id": 100,
+   "sent_idx_start": 236,
+   "sent_idx_end": 238,
+   "text": "- Liberman, M.\n(2018).\n_“Lexico-cultural decay?”_ **Language Log** (critical analysis of Ngram studies)[languagelog.ldc.upenn.edu](https://languagelog.ldc.upenn.edu/nll/?p=40222#:~:text=printed%20works%20stretching%20back%20500,%E2%80%A6)[languagelog.ldc.upenn.edu](https://languagelog.ldc.upenn.edu/nll/?p=40222#:~:text=As%20you%20can%20see%2C%20a,the%20course%20of%20the%20century)[languagelog.ldc.upenn.edu](https://languagelog.ldc.upenn.edu/nll/?p=40222#:~:text=As%20the%20language%20of%20faith,language%20has%20contributed%20to%20it).",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.75,
+    "uncertainty_note": "Span is a bibliographic citation with hyperlinks; no substantive claims or fruit-relevant content present. Provenance is partially supported by the citation and URLs, but the linked content itself is not included in the span."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1671,
+    "completion_tokens": 101,
+    "total_tokens": 1772,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 647
+   }
+  },
+  {
+   "span_id": 101,
+   "sent_idx_start": 239,
+   "sent_idx_end": 239,
+   "text": "- **Webster’s Dictionary Definitions:** Webster’s Revised Unabridged (1913) via Project Gutenberg[gutenberg.org](https://www.gutenberg.org/files/666/666-h/666-h.htm#:~:text=Pa,poverty%2C%20insult%2C%20oppression%2C%20calamity%2C%20etc); Noah Webster’s Dictionary (1828)[archive.org](https://archive.org/stream/americandictiona00websrich/americandictiona00websrich_djvu.txt#:~:text=Full%20text%20of%20,the%20happiness%20of%20others); Merriam-Webster Online (2025)[merriam-webster.com](https://www.merriam-webster.com/dictionary/patience#:~:text=1)[merriam-webster.com](https://www.merriam-webster.com/dictionary/love#:~:text=a).",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.7,
+    "uncertainty_note": "Span is a citation list of dictionary sources; lexicon hits for 'love' and 'patience' are dictionary headwords in URLs, not substantive fruit signals. No actual definitions or claims are quoted in the span text."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1619,
+    "completion_tokens": 102,
+    "total_tokens": 1721,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 595
+   }
+  },
+  {
+   "span_id": 102,
+   "sent_idx_start": 240,
+   "sent_idx_end": 242,
+   "text": "- LA Times (1985).\n_“What is this thing called love?\n(lexicographical dilemma)”_[latimes.com](https://www.latimes.com/archives/la-xpm-1985-03-12-vw-34361-story.html#:~:text=feeling%20of%20affection%20especially%20to,%E2%80%9D)[latimes.com](https://www.latimes.com/archives/la-xpm-1985-03-12-vw-34361-story.html#:~:text=That%20brings%20us%20to%20the,%E2%80%9D).",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.6,
+    "uncertainty_note": "Span is a citation/reference entry (LA Times 1985) with a quoted title; the lexicon hit 'love' is a title word, not a substantive claim about the fruit mechanism. No mechanism content to grade."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1615,
+    "completion_tokens": 98,
+    "total_tokens": 1713,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 591
+   }
+  },
+  {
+   "span_id": 103,
+   "sent_idx_start": 243,
+   "sent_idx_end": 245,
+   "text": "- Haslam, N.\n(2016).\n_“Concept creep: Psychology’s expanding concepts of harm.”_ **Psychological Inquiry**, 27(1) – summarized in Quillette (2023)[quillette.com](https://quillette.com/2023/07/10/the-ever-expanding-definition-of-trauma/#:~:text=In%20his%202016%20paper%2C%20%E2%80%9CConcept,%E2%80%9D)[quillette.com](https://quillette.com/2023/07/10/the-ever-expanding-definition-of-trauma/#:~:text=One%20of%20the%20best%20examples,to%20describe%20almost%20any%20adversity).",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.75,
+    "uncertainty_note": "Span is a citation/reference entry only; no substantive claim text to evaluate for fruit mechanisms. The single lexicon hit 'inquiry' is part of the journal title 'Psychological Inquiry' and is not a fruit signal. Provenance is partially traceable (author, year, journal, secondary source link) but the primary content is not present in the span."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1642,
+    "completion_tokens": 130,
+    "total_tokens": 1772,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 618
+   }
+  },
+  {
+   "span_id": 104,
+   "sent_idx_start": 246,
+   "sent_idx_end": 248,
+   "text": "- Eurich, T.\n(2017).\n_“Maslow’s hierarchy and the cult of self.”_ **Quartz**[qz.com](https://qz.com/1103808/self-esteem-is-a-myth-perpetrated-by-maslows-hierarchy-of-needs#:~:text=This%20is%20a%20relatively%20new,of%20how%20talented%20they%20are)[qz.com](https://qz.com/1103808/self-esteem-is-a-myth-perpetrated-by-maslows-hierarchy-of-needs#:~:text=literature%20to%20the%20Twitter%20feeds,between%201975%20and%202007).",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [
+     "gate.provenance"
+    ],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.85,
+    "uncertainty_note": "Span is a bibliographic citation only; no substantive claims or fruit mechanisms are present in the text itself. The lexicon hit 'hierarchy' is a title word, not an anti-fruit signal."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1634,
+    "completion_tokens": 98,
+    "total_tokens": 1732,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 610
+   }
+  },
+  {
+   "span_id": 105,
+   "sent_idx_start": 249,
+   "sent_idx_end": 251,
+   "text": "- Karaoguz, A.\n(2024).\n_“Virtue’s Return.”_ **Renaissance Humans** newsletter (discussing virtue vs.",
+   "status": "ok",
+   "judgment": {
+    "role": "EVIDENCE",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.55,
+    "uncertainty_note": "Span is a truncated bibliographic citation fragment; no substantive claims or fruit-relevant content present. Role inferred from citation format."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1480,
+    "completion_tokens": 78,
+    "total_tokens": 1558,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 456
+   }
+  },
+  {
+   "span_id": 106,
+   "sent_idx_start": 252,
+   "sent_idx_end": 252,
+   "text": "value language)[adamkaraoguz.substack.com](https://adamkaraoguz.substack.com/p/virtues-return#:~:text=Image)[adamkaraoguz.substack.com](https://adamkaraoguz.substack.com/p/virtues-return#:~:text=In%20our%20lifetimes%2C%20the%20rise,1).",
+   "status": "ok",
+   "judgment": {
+    "role": "RHETORIC",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.9,
+    "uncertainty_note": "Span is a fragment of link markup and URL text with no substantive propositional content; no fruit mechanisms or gates are assessable."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1464,
+    "completion_tokens": 80,
+    "total_tokens": 1544,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 440
+   }
+  },
+  {
+   "span_id": 107,
+   "sent_idx_start": 253,
+   "sent_idx_end": 253,
+   "text": "![](https://www.google.com/s2/favicons?domain=https://quillette.com&sz=32)",
+   "status": "ok",
+   "judgment": {
+    "role": "RHETORIC",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.9,
+    "uncertainty_note": "Span is a bare favicon image markdown with no substantive text; no fruit, gate, or veto evidence is present."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1405,
+    "completion_tokens": 79,
+    "total_tokens": 1484,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 381
+   }
+  },
+  {
+   "span_id": 108,
+   "sent_idx_start": 254,
+   "sent_idx_end": 254,
+   "text": "![](https://www.google.com/s2/favicons?domain=https://www.researchgate.net&sz=32)",
+   "status": "ok",
+   "judgment": {
+    "role": "RHETORIC",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.9,
+    "uncertainty_note": "Span is a bare favicon image markdown with no propositional content; no fruit mechanism, gate, or veto evidence is present."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1406,
+    "completion_tokens": 81,
+    "total_tokens": 1487,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 382
+   }
+  },
+  {
+   "span_id": 109,
+   "sent_idx_start": 255,
+   "sent_idx_end": 255,
+   "text": "![](https://www.google.com/s2/favicons?domain=https://en.wikipedia.org&sz=32)",
+   "status": "ok",
+   "judgment": {
+    "role": "RHETORIC",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.9,
+    "uncertainty_note": "Span is a bare favicon image markdown with no propositional content; no fruit mechanism, gate, or veto evidence is present."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1404,
+    "completion_tokens": 81,
+    "total_tokens": 1485,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 380
+   }
+  },
+  {
+   "span_id": 110,
+   "sent_idx_start": 256,
+   "sent_idx_end": 256,
+   "text": "![](https://www.google.com/s2/favicons?domain=https://theweek.com&sz=32)",
+   "status": "ok",
+   "judgment": {
+    "role": "RHETORIC",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.95,
+    "uncertainty_note": "Span is a bare favicon image markdown with no propositional content; no fruit mechanism, gate, or veto evidence is present."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1404,
+    "completion_tokens": 81,
+    "total_tokens": 1485,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 380
+   }
+  },
+  {
+   "span_id": 111,
+   "sent_idx_start": 257,
+   "sent_idx_end": 257,
+   "text": "![](https://www.google.com/s2/favicons?domain=https://languagelog.ldc.upenn.edu&sz=32)",
+   "status": "ok",
+   "judgment": {
+    "role": "RHETORIC",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.9,
+    "uncertainty_note": "Span is a bare favicon image markdown with no propositional content; no fruit mechanism, gate, or veto evidence is present."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1412,
+    "completion_tokens": 81,
+    "total_tokens": 1493,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 388
+   }
+  },
+  {
+   "span_id": 112,
+   "sent_idx_start": 258,
+   "sent_idx_end": 258,
+   "text": "Sources",
+   "status": "ok",
+   "judgment": {
+    "role": "RHETORIC",
+    "fruit_signals": [],
+    "gate_flags": [],
+    "veto_flags": [],
+    "counterfeit_suspect": false,
+    "confidence": 0.9,
+    "uncertainty_note": "Single word 'Sources' with no surrounding context; likely a heading or label. No substantive content to evaluate for fruit mechanisms or gates."
+   },
+   "attempts": 1,
+   "json_mode": true,
+   "usage": {
+    "prompt_tokens": 1383,
+    "completion_tokens": 81,
+    "total_tokens": 1464,
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 359
+   }
+  }
+ ]
+}

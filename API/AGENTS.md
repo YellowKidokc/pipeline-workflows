@@ -14,10 +14,11 @@
   Nothing else sits at the top of a front folder.
 - **Groups** are containers you click into. One topic, one group (David, 2026-10-11): stations on the same thing live together.
   - `01_CKG\`, `02_YOUTUBE\`
-  - `03_EVIDENCE\` (031, 034-036, 039, 061)
+  - `03_EVIDENCE\` (031, 034-036, 039, 061, and 050 congruence matrix / 051 GOD IS unproven pairing: evidence scripts)
   - `04_ACADEMIA\`: every metric that classifies and organizes the papers (042 statistics wall, 043 paper grader, 044 tagger,
     046 report, 056 title, 065 Paper Intelligence Suite) and `063_PAPER_AUDIT`, the whole audit in one run, ending in `064_SITE_PACKAGE` (a house per series, a page per part)
-  - `05_LEAN\` (050, 051, 052, 055), `06_ATOMS\` (`062_ATOM_BUILDER`, 053, 054)
+  - `05_LEAN\`: 055 Lean Papers is the station; 052 Lean atom extractor sits in its OUTBOX as a layer
+  - `06_ATOMS\` (`062_ATOM_BUILDER`, 053, 054)
   - `07_ARGUMENTS\` (032 best arguments, 033 build one argument, 058 argument grade)
   - `08_API_DEEP\`: kept out of Academia (David). 057 API Deep, 040 analytical arms, 059 chi-Evaluator
   - Stations used by everything stay at the top of `API\` (037 SQLite sync, 038 sidecars, 041, 047-049, 060).

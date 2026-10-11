@@ -314,6 +314,29 @@ def ask_focus() -> list[str]:
     return focus
 
 
+def lean_here(front: Path, st: dict) -> int:
+    """A Lean station reads its own INBOX (00_PRIORITY, 01_SERIES, 02_GENERAL; .lean as well as .md), so the notes are not
+    gathered here: it runs on its INBOX, then offers the layers in its OUTBOX (050 congruence matrix, 051, 052...)."""
+    workers = ask_int("How many at once?", 8, 1, 30)
+    focus = ask_focus()
+    if ask(f"\nRun {st['label']} on its INBOX, {workers} at once? [Y/n] ").lower() in ("n", "no"):
+        return 1
+    row = next(r for r in station_rows() if r["number"] == st["number"])
+    say(f"{st['label']}: its INBOX, {workers} at once")
+    code = run_guarded([sys.executable, "-u", str(station_dir(row["label"]) / row["script"]), "--workers", str(workers)]
+                       + (["--focus", "; ".join(focus)] if focus else []), MAIN)
+    layers = sorted(d for d in (front / "OUTBOX").iterdir() if d.is_dir() and (d / "BACKSIDE" / "station.json").is_file())
+    if layers:
+        menu = "  ".join(f"{i} {d.name.split('_', 1)[1].replace('_', ' ').title()}" for i, d in enumerate(layers, 1))
+        picked = ask(f"\nAlso run a layer? {menu}  (numbers, Enter = none) ").replace(",", " ").split()
+        for i, d in enumerate(layers, 1):
+            if str(i) in picked:
+                print(f"\n{d.name}")
+                code |= run_station(d, station_of(d), [], d / "OUTBOX", workers, ask_focus())
+    say(f"done. Results: {front / 'OUTBOX'}")
+    return code
+
+
 # ------------------------------------------------------------------ main
 
 def main(mode: str, front: Path) -> int:
@@ -321,6 +344,8 @@ def main(mode: str, front: Path) -> int:
     base = parent_station(front)
     title = f"{st['label']}" + (f"  (layer of {station_of(base)['label']})" if base else "")
     print(f"\n{title}\n{'=' * len(title)}")
+    if st.get("items") == "lean" and mode == "here" and not base:
+        return lean_here(front, st)
     if base and mode == "here" and not st.get("own_inbox"):
         listed = base / "OUTBOX" / LAST
         notes = [p for p in pick.read_list(listed) if p.is_file()] if listed.is_file() else []
