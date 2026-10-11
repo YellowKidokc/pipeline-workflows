@@ -16,7 +16,7 @@
   - `01_CKG\`, `02_YOUTUBE\`
   - `03_EVIDENCE\` (031, 034-036, 039, 061)
   - `04_ACADEMIA\`: every metric that classifies and organizes the papers (042 statistics wall, 043 paper grader, 044 tagger,
-    046 report, 056 title) and `063_PAPER_AUDIT`, the whole audit in one run, ending in `064_SITE_PACKAGE` (a house per series, a page per part)
+    046 report, 056 title, 065 Paper Intelligence Suite) and `063_PAPER_AUDIT`, the whole audit in one run, ending in `064_SITE_PACKAGE` (a house per series, a page per part)
   - `05_LEAN\` (050, 051, 052, 055), `06_ATOMS\` (`062_ATOM_BUILDER`, 053, 054)
   - `07_ARGUMENTS\` (032 best arguments, 033 build one argument, 058 argument grade)
   - `08_API_DEEP\`: kept out of Academia (David). 057 API Deep, 040 analytical arms, 059 chi-Evaluator
