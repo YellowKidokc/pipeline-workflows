@@ -2,9 +2,12 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 import shutil
 import subprocess
+import sys
 import tempfile
+from datetime import date
 from pathlib import Path
 from ..models import ConvertResult
 
@@ -44,21 +47,79 @@ def diarize(source):
             for turn, speaker in output.speaker_diarization]
 
 
-def render(source, segments, speakers, speaker_status):
-    lines = [f"# {source.stem.replace('_', ' ')}", '', f"- Source: `{source}`",
-             f"- Speaker detection: {speaker_status}",
-             f"- Detected voices: {len(speakers) if speaker_status == 'completed' else 'not determined'}", '']
+def split_paragraphs(text, target_chars=900, max_chars=1400):
+    """Build substantial sentence-aligned prose instead of caption fragments."""
+    text = re.sub(r"\s+", " ", text).strip()
+    if not text:
+        return []
+    sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", text) if s.strip()]
+    paragraphs, current = [], []
+    for sentence in sentences:
+        candidate = " ".join(current + [sentence])
+        if current and len(candidate) > max_chars:
+            paragraphs.append(" ".join(current))
+            current = [sentence]
+        else:
+            current.append(sentence)
+        if len(" ".join(current)) >= target_chars and len(current) >= 4:
+            paragraphs.append(" ".join(current))
+            current = []
+    if current:
+        paragraphs.append(" ".join(current))
+    return paragraphs
+
+
+def render(source, segments, speakers, speaker_status, source_hash, model_size, language):
+    title = source.stem.replace('_', ' ')
+    word_count = len(re.findall(r"\b[\w’'-]+\b", " ".join(s.get('text', '') for s in segments)))
+    lines = [
+        '---',
+        f'title: {json.dumps(title, ensure_ascii=False)}',
+        'type: media_transcript',
+        f'source_file: {json.dumps(str(source), ensure_ascii=False)}',
+        f'source_sha256: {json.dumps(source_hash)}',
+        'converted: whisper-readable-prose-v1',
+        f'converted_on: {date.today().isoformat()}',
+        f'whisper_model: {json.dumps(model_size)}',
+        f'language: {json.dumps(language or "")}',
+        'timestamp_interval_minutes: 5',
+        f'words: {word_count}',
+        'tags: [media, transcript, readable-prose]',
+        '---', '',
+        f"# {title}", '',
+        f"**Source:** `{source.name}`", '',
+        f"**Speaker detection:** {speaker_status}",
+        f"**Detected voices:** {len(speakers) if speaker_status == 'completed' else 'not determined'}", ''
+    ]
     if speakers:
         lines += ['## Speakers', ''] + [f'- {s}: identity unconfirmed' for s in speakers] + ['']
     lines += ['## Transcript', '']
-    for s in segments:
-        label = s.get('speaker', 'Speaker unassigned')
-        lines += [f"**[{timestamp(s['start'])}–{timestamp(s['end'])}] {label}**", '', s['text'].strip(), '']
-    return '\n'.join(lines)
+    buckets = {}
+    for segment in segments:
+        bucket = int(float(segment['start']) // 300) * 300
+        buckets.setdefault(bucket, []).append(segment)
+    for bucket, grouped in sorted(buckets.items()):
+        lines += [f"### {timestamp(bucket)}", '']
+        if speaker_status == 'completed':
+            runs = []
+            for segment in grouped:
+                speaker = segment.get('speaker', 'UNRESOLVED')
+                if not runs or runs[-1][0] != speaker:
+                    runs.append([speaker, []])
+                runs[-1][1].append(segment.get('text', '').strip())
+            for speaker, parts in runs:
+                lines += [f"**{speaker}:**", '']
+                for paragraph in split_paragraphs(" ".join(parts)):
+                    lines += [paragraph, '']
+        else:
+            for paragraph in split_paragraphs(" ".join(s.get('text', '').strip() for s in grouped)):
+                lines += [paragraph, '']
+    return '\n'.join(lines).rstrip() + '\n'
 
 
 def transcribe_audio_video(source: Path, *, model_size='base', language=None, speaker_detection=False):
-    exe = shutil.which('whisper')
+    local_exe = Path(sys.executable).resolve().parent / ('whisper.exe' if os.name == 'nt' else 'whisper')
+    exe = str(local_exe) if local_exe.exists() else shutil.which('whisper')
     if not exe:
         return ConvertResult(markdown='', warnings=['Whisper CLI is not available on PATH.'])
     digest = hashlib.sha256(source.read_bytes()).hexdigest()
@@ -95,7 +156,8 @@ def transcribe_audio_video(source: Path, *, model_size='base', language=None, sp
             warnings.append(str(exc))
     if hashlib.sha256(source.read_bytes()).hexdigest() != digest:
         return ConvertResult(markdown='', warnings=['Source changed during processing; retry after download completes.'])
-    return ConvertResult(markdown=render(source, segments, speakers, status), warnings=warnings,
+    return ConvertResult(markdown=render(source, segments, speakers, status, digest, model_size,
+                                         payload.get('language', language)), warnings=warnings,
         metadata={'source_format':'AUDIO_VIDEO', 'transcriber':'whisper-cli', 'model_size':model_size,
                   'source_sha256':digest, 'language':payload.get('language', language),
                   'speaker_detection':status, 'speakers':speakers,

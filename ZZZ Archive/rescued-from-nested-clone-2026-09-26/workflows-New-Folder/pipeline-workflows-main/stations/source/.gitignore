@@ -1,0 +1,43 @@
+# Runtime output folders never belong in the station source mirror.
+**/OUTPUT/**
+**/REVIEW/**
+**/ARCHIVE/**
+**/ERROR/**
+**/LOGS/**
+**/logs/**
+**/exports/**
+
+# Databases, vector indexes, and model/ML artifacts.
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+**/*.db-wal
+**/*.db-shm
+**/*.faiss
+**/*.hnsw
+**/*.qdrant
+**/*.chroma
+**/*.pickle
+**/*.pkl
+**/*.pt
+**/*.pth
+**/*.bin
+**/*.onnx
+**/*.safetensors
+
+# Secrets and local machine/runtime config.
+**/.env
+**/*.env
+**/secrets.*
+**/*secret*
+**/*token*
+**/CONFIG/*.json
+**/CONFIG/*.ini
+!**/CONFIG/*.example.json
+!**/CONFIG/*.example.ini
+
+# Generated logs/exports.
+**/*.log
+**/*.jsonl
+**/*.parquet
+**/*.arrow

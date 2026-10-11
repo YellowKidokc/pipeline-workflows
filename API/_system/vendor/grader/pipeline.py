@@ -639,7 +639,7 @@ def main() -> int:
     out_dirs = _report_dirs()
     primary_out = _cfg_path("output_dir", "OUTPUT")
     exts = {e.lower() for e in CFG.get("text_extensions", [".txt", ".md", ".html", ".htm"])}
-    files = sorted(p for p in input_dir.iterdir() if p.is_file() and p.suffix.lower() in exts)
+    files = sorted(p for p in input_dir.rglob("*") if p.is_file() and p.suffix.lower() in exts)
     log.info("found %d candidate paper files", len(files))
     if not files:
         log.info("nothing to do")

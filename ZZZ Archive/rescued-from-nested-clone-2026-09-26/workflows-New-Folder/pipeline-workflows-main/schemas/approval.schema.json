@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HumanApprovalDecision",
+  "description": "CONFIG/approval.json written by the human approval gate. Approval resumes held packets; rejection requires a reason.",
+  "type": "object",
+  "required": ["approved", "by", "at"],
+  "properties": {
+    "approved": { "type": "boolean" },
+    "by": { "type": "string", "minLength": 1 },
+    "at": { "type": "string", "format": "date-time" },
+    "reason": { "type": "string" },
+    "packet_id": { "type": "string" },
+    "workflow": { "type": "string" },
+    "stage": { "type": "string" },
+    "corrections_file": { "type": "string", "description": "Optional REVIEW/corrections.json path when corrections were captured with the decision" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "approved": { "const": false } }, "required": ["approved"] },
+      "then": { "required": ["reason"] }
+    }
+  ],
+  "additionalProperties": true
+}

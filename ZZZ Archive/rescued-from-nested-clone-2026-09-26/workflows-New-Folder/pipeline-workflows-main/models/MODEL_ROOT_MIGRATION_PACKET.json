@@ -1,0 +1,602 @@
+{
+  "_meta": {
+    "description": "Non-destructive migration packet for cleaning the NAS model root. This packet is a plan only; it does not move files.",
+    "updated": "2026-06-12",
+    "current_models_root": "X:\\Backside\\_models\\_Models",
+    "target_models_root": "X:\\Models",
+    "models_root_env": "MODELS_ROOT",
+    "doctrine": [
+      "GitHub is the governor/spec layer.",
+      "NAS is the runtime/body layer.",
+      "Do not move or delete model weights without an approval packet.",
+      "Prefer MODELS_ROOT indirection over hardcoded paths."
+    ]
+  },
+  "target_layout": {
+    "model_slots": "X:\\Models\\M01-M12 and X:\\Models\\P01-P07",
+    "fallbacks": "X:\\Models\\_fallbacks",
+    "cache": "X:\\Models\\_cache",
+    "envs": "X:\\Models\\_envs",
+    "ops": "X:\\Models\\_ops",
+    "legacy": "X:\\Models\\_legacy"
+  },
+  "dispositions": [
+    {
+      "item": "M01_summarizer",
+      "current_path": "X:\\Backside\\_models\\_Models\\M01_summarizer",
+      "target_path": "X:\\Models\\M01_summarizer",
+      "disposition": "KEEP_AS_MODEL_SLOT",
+      "reason": "Canonical M/P model slot from models/MODEL_REGISTRY.json."
+    },
+    {
+      "item": "M02_embedder",
+      "current_path": "X:\\Backside\\_models\\_Models\\M02_embedder",
+      "target_path": "X:\\Models\\M02_embedder",
+      "disposition": "KEEP_AS_MODEL_SLOT",
+      "reason": "Canonical M/P model slot from models/MODEL_REGISTRY.json."
+    },
+    {
+      "item": "M03_contradiction",
+      "current_path": "X:\\Backside\\_models\\_Models\\M03_contradiction",
+      "target_path": "X:\\Models\\M03_contradiction",
+      "disposition": "KEEP_AS_MODEL_SLOT",
+      "reason": "Canonical M/P model slot from models/MODEL_REGISTRY.json."
+    },
+    {
+      "item": "M04_imager",
+      "current_path": "X:\\Backside\\_models\\_Models\\M04_imager",
+      "target_path": "X:\\Models\\M04_imager",
+      "disposition": "KEEP_AS_MODEL_SLOT",
+      "reason": "Canonical M/P model slot from models/MODEL_REGISTRY.json."
+    },
+    {
+      "item": "M05_transcriber",
+      "current_path": "X:\\Backside\\_models\\_Models\\M05_transcriber",
+      "target_path": "X:\\Models\\M05_transcriber",
+      "disposition": "KEEP_AS_MODEL_SLOT",
+      "reason": "Canonical M/P model slot from models/MODEL_REGISTRY.json."
+    },
+    {
+      "item": "M06_llm",
+      "current_path": "X:\\Backside\\_models\\_Models\\M06_llm",
+      "target_path": "X:\\Models\\M06_llm",
+      "disposition": "KEEP_AS_MODEL_SLOT",
+      "reason": "Canonical M/P model slot from models/MODEL_REGISTRY.json."
+    },
+    {
+      "item": "M07_fact_verify",
+      "current_path": "X:\\Backside\\_models\\_Models\\M07_fact_verify",
+      "target_path": "X:\\Models\\M07_fact_verify",
+      "disposition": "KEEP_AS_MODEL_SLOT",
+      "reason": "Canonical M/P model slot from models/MODEL_REGISTRY.json."
+    },
+    {
+      "item": "M08_contradiction_deep",
+      "current_path": "X:\\Backside\\_models\\_Models\\M08_contradiction_deep",
+      "target_path": "X:\\Models\\M08_contradiction_deep",
+      "disposition": "KEEP_AS_MODEL_SLOT",
+      "reason": "Canonical M/P model slot from models/MODEL_REGISTRY.json."
+    },
+    {
+      "item": "M09_claim_extract",
+      "current_path": "X:\\Backside\\_models\\_Models\\M09_claim_extract",
+      "target_path": "X:\\Models\\M09_claim_extract",
+      "disposition": "KEEP_AS_MODEL_SLOT",
+      "reason": "Canonical M/P model slot from models/MODEL_REGISTRY.json."
+    },
+    {
+      "item": "M10_timeline",
+      "current_path": "X:\\Backside\\_models\\_Models\\M10_timeline",
+      "target_path": "X:\\Models\\M10_timeline",
+      "disposition": "KEEP_AS_MODEL_SLOT",
+      "reason": "Canonical M/P model slot from models/MODEL_REGISTRY.json."
+    },
+    {
+      "item": "M11_math_verify",
+      "current_path": "X:\\Backside\\_models\\_Models\\M11_math_verify",
+      "target_path": "X:\\Models\\M11_math_verify",
+      "disposition": "KEEP_AS_MODEL_SLOT",
+      "reason": "Canonical M/P model slot from models/MODEL_REGISTRY.json."
+    },
+    {
+      "item": "M12_paper_review",
+      "current_path": "X:\\Backside\\_models\\_Models\\M12_paper_review",
+      "target_path": "X:\\Models\\M12_paper_review",
+      "disposition": "KEEP_AS_MODEL_SLOT",
+      "reason": "Canonical M/P model slot from models/MODEL_REGISTRY.json."
+    },
+    {
+      "item": "P01_implicit",
+      "current_path": "X:\\Backside\\_models\\_Models\\P01_implicit",
+      "target_path": "X:\\Models\\P01_implicit",
+      "disposition": "KEEP_AS_MODEL_SLOT",
+      "reason": "Canonical M/P model slot from models/MODEL_REGISTRY.json."
+    },
+    {
+      "item": "P02_recbole",
+      "current_path": "X:\\Backside\\_models\\_Models\\P02_recbole",
+      "target_path": "X:\\Models\\P02_recbole",
+      "disposition": "KEEP_AS_MODEL_SLOT",
+      "reason": "Canonical M/P model slot from models/MODEL_REGISTRY.json."
+    },
+    {
+      "item": "P03_lightfm",
+      "current_path": "X:\\Backside\\_models\\_Models\\P03_lightfm",
+      "target_path": "X:\\Models\\P03_lightfm",
+      "disposition": "KEEP_AS_MODEL_SLOT",
+      "reason": "Canonical M/P model slot from models/MODEL_REGISTRY.json."
+    },
+    {
+      "item": "P04_paper_recommender",
+      "current_path": "X:\\Backside\\_models\\_Models\\P04_paper_recommender",
+      "target_path": "X:\\Models\\P04_paper_recommender",
+      "disposition": "KEEP_AS_MODEL_SLOT",
+      "reason": "Canonical M/P model slot from models/MODEL_REGISTRY.json."
+    },
+    {
+      "item": "P05_ppk",
+      "current_path": "X:\\Backside\\_models\\_Models\\P05_ppk",
+      "target_path": "X:\\Models\\P05_ppk",
+      "disposition": "KEEP_AS_MODEL_SLOT",
+      "reason": "Canonical M/P model slot from models/MODEL_REGISTRY.json."
+    },
+    {
+      "item": "P06_river",
+      "current_path": "X:\\Backside\\_models\\_Models\\P06_river",
+      "target_path": "X:\\Models\\P06_river",
+      "disposition": "KEEP_AS_MODEL_SLOT",
+      "reason": "Canonical M/P model slot from models/MODEL_REGISTRY.json."
+    },
+    {
+      "item": "P07_markovify",
+      "current_path": "X:\\Backside\\_models\\_Models\\P07_markovify",
+      "target_path": "X:\\Models\\P07_markovify",
+      "disposition": "KEEP_AS_MODEL_SLOT",
+      "reason": "Canonical M/P model slot from models/MODEL_REGISTRY.json."
+    },
+    {
+      "item": "sbert_minilm",
+      "current_path": "X:\\Backside\\_models\\_Models\\sbert_minilm",
+      "target_path": "X:\\Models\\_fallbacks\\sbert_minilm",
+      "disposition": "MOVE_TO_FALLBACKS",
+      "reason": "M02 metadata/weight files are degraded; MiniLM is the safe canonical embedder copy.",
+      "for_slot": "M02_embedder"
+    },
+    {
+      "item": "deberta_nli",
+      "current_path": "X:\\Backside\\_models\\_Models\\deberta_nli",
+      "target_path": "X:\\Models\\_fallbacks\\deberta_nli",
+      "disposition": "MOVE_TO_FALLBACKS",
+      "reason": "M03 metadata files are degraded; DeBERTa NLI is the safe canonical contradiction fallback.",
+      "for_slot": "M03_contradiction"
+    },
+    {
+      "item": "huggingface",
+      "current_path": "X:\\Backside\\_models\\_Models\\huggingface",
+      "target_path": "X:\\Models\\_cache\\huggingface",
+      "disposition": "MOVE_TO_CACHE",
+      "reason": "Known NAS root clutter class from operator-provided inventory; verify before moving."
+    },
+    {
+      "item": "d_brain_huggingface_hub",
+      "current_path": "X:\\Backside\\_models\\_Models\\d_brain_huggingface_hub",
+      "target_path": "X:\\Models\\_cache\\d_brain_huggingface_hub",
+      "disposition": "MOVE_TO_CACHE",
+      "reason": "Known NAS root clutter class from operator-provided inventory; verify before moving."
+    },
+    {
+      "item": ".venv_science_nlp",
+      "current_path": "X:\\Backside\\_models\\_Models\\.venv_science_nlp",
+      "target_path": "X:\\Models\\_envs\\science_nlp",
+      "disposition": "MOVE_TO_ENVS",
+      "reason": "Known NAS root clutter class from operator-provided inventory; verify before moving."
+    },
+    {
+      "item": "scripts",
+      "current_path": "X:\\Backside\\_models\\_Models\\scripts",
+      "target_path": "X:\\Models\\_ops\\scripts",
+      "disposition": "MOVE_TO_OPS",
+      "reason": "Known NAS root clutter class from operator-provided inventory; verify before moving."
+    },
+    {
+      "item": "health_reports",
+      "current_path": "X:\\Backside\\_models\\_Models\\health_reports",
+      "target_path": "X:\\Models\\_ops\\health_reports",
+      "disposition": "MOVE_TO_OPS",
+      "reason": "Known NAS root clutter class from operator-provided inventory; verify before moving."
+    },
+    {
+      "item": "loose .bat files",
+      "current_path": "X:\\Backside\\_models\\_Models\\loose .bat files",
+      "target_path": "X:\\Models\\_ops\\loose .bat files",
+      "disposition": "MOVE_TO_OPS",
+      "reason": "Known NAS root clutter class from operator-provided inventory; verify before moving."
+    },
+    {
+      "item": "loose .md files",
+      "current_path": "X:\\Backside\\_models\\_Models\\loose .md files",
+      "target_path": "X:\\Models\\_ops\\loose .md files",
+      "disposition": "MOVE_TO_OPS",
+      "reason": "Known NAS root clutter class from operator-provided inventory; verify before moving."
+    },
+    {
+      "item": "loose .py files",
+      "current_path": "X:\\Backside\\_models\\_Models\\loose .py files",
+      "target_path": "X:\\Models\\_ops\\loose .py files",
+      "disposition": "MOVE_TO_OPS",
+      "reason": "Known NAS root clutter class from operator-provided inventory; verify before moving."
+    },
+    {
+      "item": "nlp_layer.py",
+      "current_path": "X:\\Backside\\_models\\_Models\\nlp_layer.py",
+      "target_path": "X:\\Models\\_ops\\nlp_layer.py",
+      "disposition": "MOVE_TO_OPS",
+      "reason": "Known NAS root clutter class from operator-provided inventory; verify before moving."
+    },
+    {
+      "item": "requirements.txt",
+      "current_path": "X:\\Backside\\_models\\_Models\\requirements.txt",
+      "target_path": "X:\\Models\\_ops\\requirements.txt",
+      "disposition": "MOVE_TO_OPS",
+      "reason": "Known NAS root clutter class from operator-provided inventory; verify before moving."
+    },
+    {
+      "item": "_legacy",
+      "current_path": "X:\\Backside\\_models\\_Models\\_legacy",
+      "target_path": "X:\\Models\\_legacy",
+      "disposition": "MOVE_TO_LEGACY",
+      "reason": "Known NAS root clutter class from operator-provided inventory; verify before moving."
+    },
+    {
+      "item": "any unclassified loose root file or folder",
+      "current_path": "X:\\Backside\\_models\\_Models\\<unknown>",
+      "target_path": null,
+      "disposition": "NEEDS_DAVID_CALL",
+      "reason": "If a file/folder is not explicitly classified in this packet, document it and ask before moving."
+    }
+  ],
+  "hardcoded_reference_audit": [
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "line": 30,
+      "text": "| Model weights | `X:\\Backside\\_models\\_Models\\M01-M12, P01-P07` |"
+    },
+    {
+      "path": "docs/MODEL_NAS_LAYOUT.md",
+      "line": 4,
+      "text": "current runtime body is still `X:\\Backside\\_models\\_Models`; the cleaner target"
+    },
+    {
+      "path": "docs/MODEL_NAS_LAYOUT.md",
+      "line": 5,
+      "text": "front door is `X:\\Models` or a `MODELS_ROOT` alias that resolves there after an"
+    },
+    {
+      "path": "docs/MODEL_NAS_LAYOUT.md",
+      "line": 15,
+      "text": "- Prefer `%MODELS_ROOT%` / `$env:MODELS_ROOT` indirection over hardcoded paths."
+    },
+    {
+      "path": "docs/MODEL_NAS_LAYOUT.md",
+      "line": 19,
+      "text": "`X:\\Backside\\_models\\_Models` mixes canonical model slots with fallbacks, Hugging"
+    },
+    {
+      "path": "docs/MODEL_NAS_LAYOUT.md",
+      "line": 77,
+      "text": "1. Confirm or create `$env:MODELS_ROOT` / `%MODELS_ROOT%` on NAS."
+    },
+    {
+      "path": "docs/MODEL_NAS_LAYOUT.md",
+      "line": 82,
+      "text": "scripts, station configs, and docs from old hardcoded root to `MODELS_ROOT` or"
+    },
+    {
+      "path": "docs/PREFERENCE_ENGINE.md",
+      "line": 21,
+      "text": "Slot folders live at `X:\\Backside\\_models\\_Models\\P01-P07` (renamed from"
+    },
+    {
+      "path": "docs/TROUBLESHOOTING.md",
+      "line": 23,
+      "text": "- `models_root` moved to the M/P scheme on 2026-06-10"
+    },
+    {
+      "path": "models/MODEL_FALLBACKS.json",
+      "line": 7,
+      "text": "\"current_models_root\": \"X:\\\\Backside\\\\_models\\\\_Models\","
+    },
+    {
+      "path": "models/MODEL_FALLBACKS.json",
+      "line": 8,
+      "text": "\"proposed_models_root\": \"X:\\\\Models\","
+    },
+    {
+      "path": "models/MODEL_FALLBACKS.json",
+      "line": 9,
+      "text": "\"models_root_env\": \"MODELS_ROOT\""
+    },
+    {
+      "path": "models/MODEL_REGISTRY.json",
+      "line": 4,
+      "text": "\"rule\": \"Configs only. Weights stay on NAS under MODELS_ROOT (currently X:\\\\Backside\\\\_models\\\\_Models; proposed X:\\\\Models) and are never committed.\","
+    },
+    {
+      "path": "models/MODEL_REGISTRY.json",
+      "line": 19,
+      "text": "\"current_models_root\": \"X:\\\\Backside\\\\_models\\\\_Models\","
+    },
+    {
+      "path": "models/MODEL_REGISTRY.json",
+      "line": 20,
+      "text": "\"proposed_models_root\": \"X:\\\\Models\","
+    },
+    {
+      "path": "models/MODEL_REGISTRY.json",
+      "line": 21,
+      "text": "\"models_root_env\": \"MODELS_ROOT\","
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 5,
+      "text": "\"current_models_root\": \"X:\\\\Backside\\\\_models\\\\_Models\","
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 6,
+      "text": "\"target_models_root\": \"X:\\\\Models\","
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 7,
+      "text": "\"models_root_env\": \"MODELS_ROOT\","
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 12,
+      "text": "\"Prefer MODELS_ROOT indirection over hardcoded paths.\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 272,
+      "text": "\"text\": \"- `models_root` moved to the M/P scheme on 2026-06-10\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 277,
+      "text": "\"text\": \"\\\"current_models_root\\\": \\\"X:\\\\\\\\Backside\\\\\\\\_models\\\\\\\\_Models\\\",\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 282,
+      "text": "\"text\": \"\\\"target_models_root\\\": \\\"X:\\\\\\\\Models\\\",\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 287,
+      "text": "\"text\": \"\\\"models_root_env\\\": \\\"MODELS_ROOT\\\",\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 292,
+      "text": "\"text\": \"\\\"Prefer MODELS_ROOT indirection over hardcoded paths.\\\"\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 297,
+      "text": "\"text\": \"\\\"text\\\": \\\"- `models_root` moved to the M/P scheme on 2026-06-10\\\"\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 302,
+      "text": "\"text\": \"\\\"text\\\": \\\"\\\\\\\"models_root\\\\\\\": \\\\\\\"X:\\\\\\\\\\\\\\\\Backside\\\\\\\\\\\\\\\\_models\\\\\\\\\\\\\\\\_Models\\\\\\\",\\\"\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 307,
+      "text": "\"text\": \"\\\"text\\\": \\\"\\\\\\\"models_root\\\\\\\": \\\\\\\"X:\\\\\\\\\\\\\\\\Backside\\\\\\\\\\\\\\\\_models\\\\\\\\\\\\\\\\_Models\\\\\\\",\\\"\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 312,
+      "text": "\"text\": \"\\\"text\\\": \\\"if CURRENT_ROOT in line or \\\\\\\"Backside\\\\\\\\\\\\\\\\_models\\\\\\\\\\\\\\\\_Models\\\\\\\" in line or \\\\\\\"models_root\\\\\\\" in line or \\\\\\\"MODELS_ROOT\\\\\\\" in line:\\\"\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 317,
+      "text": "\"text\": \"\\\"text\\\": \\\"\\\\\\\"current_models_root\\\\\\\": CURRENT_ROOT,\\\"\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 322,
+      "text": "\"text\": \"\\\"text\\\": \\\"\\\\\\\"target_models_root\\\\\\\": TARGET_ROOT,\\\"\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 327,
+      "text": "\"text\": \"\\\"text\\\": \\\"\\\\\\\"models_root_env\\\\\\\": \\\\\\\"MODELS_ROOT\\\\\\\",\\\"\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 332,
+      "text": "\"text\": \"\\\"text\\\": \\\"\\\\\\\"Prefer MODELS_ROOT indirection over hardcoded paths.\\\\\\\",\\\"\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 337,
+      "text": "\"text\": \"\\\"text\\\": \\\"\\\\\\\"Set/verify MODELS_ROOT on NAS or shell profile.\\\\\\\",\\\"\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 342,
+      "text": "\"text\": \"\\\"text\\\": \\\"\\\\\\\"Update MODEL_REGISTRY and MODEL_FALLBACKS paths from current root to MODELS_ROOT/X:\\\\\\\\\\\\\\\\Models after the physical move is approved.\\\\\\\",\\\"\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 347,
+      "text": "\"text\": \"\\\"Set/verify MODELS_ROOT on NAS or shell profile.\\\",\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 352,
+      "text": "\"text\": \"\\\"Update MODEL_REGISTRY and MODEL_FALLBACKS paths from current root to MODELS_ROOT/X:\\\\\\\\Models after the physical move is approved.\\\",\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 357,
+      "text": "\"text\": \"\\\"models_root\\\": \\\"X:\\\\\\\\Backside\\\\\\\\_models\\\\\\\\_Models\\\",\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 362,
+      "text": "\"text\": \"\\\"models_root\\\": \\\"X:\\\\\\\\Backside\\\\\\\\_models\\\\\\\\_Models\\\",\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 367,
+      "text": "\"text\": \"if CURRENT_ROOT in line or \\\"Backside\\\\\\\\_models\\\\\\\\_Models\\\" in line or \\\"models_root\\\" in line or \\\"MODELS_ROOT\\\" in line:\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 372,
+      "text": "\"text\": \"\\\"current_models_root\\\": CURRENT_ROOT,\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 377,
+      "text": "\"text\": \"\\\"target_models_root\\\": TARGET_ROOT,\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 382,
+      "text": "\"text\": \"\\\"models_root_env\\\": \\\"MODELS_ROOT\\\",\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 387,
+      "text": "\"text\": \"\\\"Prefer MODELS_ROOT indirection over hardcoded paths.\\\",\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 392,
+      "text": "\"text\": \"\\\"Set/verify MODELS_ROOT on NAS or shell profile.\\\",\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 397,
+      "text": "\"text\": \"\\\"Update MODEL_REGISTRY and MODEL_FALLBACKS paths from current root to MODELS_ROOT/X:\\\\\\\\Models after the physical move is approved.\\\",\""
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 407,
+      "text": "\"Set/verify MODELS_ROOT on NAS or shell profile.\","
+    },
+    {
+      "path": "models/MODEL_ROOT_MIGRATION_PACKET.json",
+      "line": 409,
+      "text": "\"Update MODEL_REGISTRY and MODEL_FALLBACKS paths from current root to MODELS_ROOT/X:\\\\Models after the physical move is approved.\","
+    },
+    {
+      "path": "models/nlp/nlp-pipeline.json",
+      "line": 4,
+      "text": "\"models_root\": \"X:\\\\Backside\\\\_models\\\\_Models\","
+    },
+    {
+      "path": "pipeline.config.example.json",
+      "line": 9,
+      "text": "\"models_root\": \"X:\\\\Backside\\\\_models\\\\_Models\","
+    },
+    {
+      "path": "scripts/generate_model_root_migration_packet.py",
+      "line": 82,
+      "text": "if CURRENT_ROOT in line or \"Backside\\\\_models\\\\_Models\" in line or \"models_root\" in line or \"MODELS_ROOT\" in line:"
+    },
+    {
+      "path": "scripts/generate_model_root_migration_packet.py",
+      "line": 159,
+      "text": "\"current_models_root\": CURRENT_ROOT,"
+    },
+    {
+      "path": "scripts/generate_model_root_migration_packet.py",
+      "line": 160,
+      "text": "\"target_models_root\": TARGET_ROOT,"
+    },
+    {
+      "path": "scripts/generate_model_root_migration_packet.py",
+      "line": 161,
+      "text": "\"models_root_env\": \"MODELS_ROOT\","
+    },
+    {
+      "path": "scripts/generate_model_root_migration_packet.py",
+      "line": 166,
+      "text": "\"Prefer MODELS_ROOT indirection over hardcoded paths.\","
+    },
+    {
+      "path": "scripts/generate_model_root_migration_packet.py",
+      "line": 186,
+      "text": "\"Set/verify MODELS_ROOT on NAS or shell profile.\","
+    },
+    {
+      "path": "scripts/generate_model_root_migration_packet.py",
+      "line": 188,
+      "text": "\"Update MODEL_REGISTRY and MODEL_FALLBACKS paths from current root to MODELS_ROOT/X:\\\\Models after the physical move is approved.\","
+    },
+    {
+      "path": "tests/test_model_registry.py",
+      "line": 41,
+      "text": "current_root = fallbacks[\"_meta\"][\"current_models_root\"]"
+    },
+    {
+      "path": "tests/test_model_registry.py",
+      "line": 46,
+      "text": "assert fallback[\"target_path\"].startswith(fallbacks[\"_meta\"][\"proposed_models_root\"] + \"\\\\_fallbacks\")"
+    },
+    {
+      "path": "tests/test_model_registry.py",
+      "line": 66,
+      "text": "def test_model_registry_paths_are_under_current_models_root():"
+    },
+    {
+      "path": "tests/test_model_registry.py",
+      "line": 68,
+      "text": "current_root = registry[\"_meta\"][\"current_models_root\"]"
+    },
+    {
+      "path": "tests/test_model_registry.py",
+      "line": 70,
+      "text": "assert registry[\"_meta\"][\"models_root_env\"] == \"MODELS_ROOT\""
+    },
+    {
+      "path": "tests/test_model_registry.py",
+      "line": 71,
+      "text": "assert registry[\"_meta\"][\"proposed_models_root\"] == \"X:\\\\Models\""
+    },
+    {
+      "path": "tests/test_model_registry.py",
+      "line": 82,
+      "text": "assert packet[\"_meta\"][\"current_models_root\"] == registry[\"_meta\"][\"current_models_root\"]"
+    },
+    {
+      "path": "tests/test_model_registry.py",
+      "line": 83,
+      "text": "assert packet[\"_meta\"][\"target_models_root\"] == registry[\"_meta\"][\"proposed_models_root\"]"
+    },
+    {
+      "path": "tests/test_model_registry.py",
+      "line": 84,
+      "text": "assert packet[\"_meta\"][\"models_root_env\"] == \"MODELS_ROOT\""
+    }
+  ],
+  "risky_moves_avoided": [
+    "No NAS files were moved.",
+    "No model weights were uploaded.",
+    "No runtime scripts were rewritten in this planning PR.",
+    "No station configs were repointed to X:\\Models yet."
+  ],
+  "next_pr_plan": [
+    "Set/verify MODELS_ROOT on NAS or shell profile.",
+    "Create target directories on NAS and perform a dry-run move report.",
+    "Update MODEL_REGISTRY and MODEL_FALLBACKS paths from current root to MODELS_ROOT/X:\\Models after the physical move is approved.",
+    "Update runtime scripts and station configs in small tested batches."
+  ]
+}
