@@ -1,0 +1,73 @@
+{
+  "package_version": "1.0.0-canonical-v4",
+  "canonical_status": "RESOLVED",
+  "canonical_form": "chi(X) = C_W[product(i=1..9, X_i)]",
+  "domain": "X in [0,1]^9; chi in [0,1]",
+  "coordinate_order": ["X_G", "X_M", "X_E", "X_S", "X_T", "X_K", "X_Q", "X_R", "X_F"],
+  "wrapper": "C_W",
+  "wrapper_is_tenth_factor": false,
+  "motion_layer": "dX/dt = W*grad(chi) + eta(X,t)",
+  "authority_order": [
+    "THE_MASTER_EQUATION_CANONICAL_DOCUMENT_20260809.md",
+    "MASTER_EQUATION_CANONICAL_LOCK_v4.md",
+    "CANON_RESOLVER_FIX_LIST_20260922.md",
+    "CANONICAL_DEFINITIONS_20260922.json",
+    "TEN_LAWS_CANONICAL_COMBINED_20260716.md",
+    "historical candidates"
+  ],
+  "sources": [
+    {
+      "file": "THE_MASTER_EQUATION_CANONICAL_DOCUMENT_20260809.md",
+      "role": "controlling_ballot_ratified_canonical_document",
+      "sha256": "E8400CA16D33703352A7F914D5E98A0A2C5461A431241B50F7D033E10A4BAA40"
+    },
+    {
+      "file": "CANON_RESOLVER_FIX_LIST_20260922.md",
+      "role": "current_resolver_and_drift_audit",
+      "sha256": "3BD9B9CFC0E1BF27D1E4F50E1E8DD2DB7FCD49D09CEAAEEEF9DC0C69F1EB2EFC"
+    },
+    {
+      "file": "CANONICAL_DEFINITIONS_20260922.json",
+      "role": "machine_readable_initial_mathematical_core",
+      "sha256": "7CDAEC3FA6A62A3CD5FD53B913899952775703038394531DD3EAA865740A41C6",
+      "fresh_build": false,
+      "receipt_commit_match": "NOT_VERIFIED"
+    },
+    {
+      "file": "TEN_LAWS_CANONICAL_COMBINED_20260716.md",
+      "role": "historical_combined_source_corpus",
+      "sha256": "BED4DF0AEB29848E6BEA88DE5AD6ADD377353107C3FC628B92F371380AF4D81F"
+    },
+    {
+      "file": "CANDIDATE_D_AXIOM_FLOW_COMPOSITE.md",
+      "role": "historical_derivation_composite",
+      "sha256": "C1CEB37873EFFD73A68BDB44CC47A3CB5A9974012C46CF5CFF1A037FF0B38756"
+    }
+  ],
+  "ruled_dictionary": {
+    "X_G": {"eponym": "Newton-Grace", "physics": "Gravitation", "spiritual": "Grace-Sin", "grade": "MAPPED"},
+    "X_M": {"eponym": "Newton-Momentum", "physics": "Mechanics of response", "spiritual": "Sin Nature-Repentance", "grade": "MAPPED"},
+    "X_E": {"eponym": "Maxwell-Truth", "physics": "Electromagnetism", "spiritual": "Truth-Deception", "grade": "MAPPED"},
+    "X_S": {"eponym": "Yukawa-Agape", "physics": "Strong nuclear force", "spiritual": "Love-Captivity", "grade": "MAPPED_TIER1_PARTIAL_DERIVATION"},
+    "X_T": {"eponym": "Clausius-Judgment", "physics": "Thermodynamics", "spiritual": "Judgment-Heat death", "grade": "DERIVED"},
+    "X_K": {"eponym": "Shannon-Logos", "physics": "Information", "spiritual": "Logos-Chaos", "grade": "SPLIT"},
+    "X_Q": {"eponym": "Heisenberg-Faith", "physics": "Quantum mechanics", "spiritual": "Faith-Doubt-Control", "grade": "PARTIAL"},
+    "X_R": {"eponym": "Einstein-Frame", "physics": "Relativity", "spiritual": "Grace-Frame-Frame-lock", "grade": "OPEN"},
+    "X_F": {"eponym": "Fermi-Conservation", "physics": "Weak nuclear force", "spiritual": "Moral conservation", "grade": "LOCKED"},
+    "C_W": {"eponym": "Coherence-Christ", "physics": "Coherence operator", "spiritual": "Christ-wrapper", "grade": "DEFINITIONAL"}
+  },
+  "retired_forms": [
+    "triple-integral ten-letter product ending in C",
+    "C as a tenth peer factor",
+    "Law 2 as Einstein-Meaning or E=mc^2",
+    "unruled candidate symbol dictionaries"
+  ],
+  "api_rules": {
+    "exact_paper_quote_required": true,
+    "mention_is_not_substantive_engagement": true,
+    "preserve_canonical_law_grade": true,
+    "separate_math_model_bridge_and_theology": true,
+    "claim_fresh_lean_verification": false,
+    "retired_forms_may_override_canon": false
+  }
+}
