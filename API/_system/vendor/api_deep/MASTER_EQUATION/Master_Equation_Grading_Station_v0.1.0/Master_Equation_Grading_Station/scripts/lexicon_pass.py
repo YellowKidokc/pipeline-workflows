@@ -1,25 +1,27 @@
-"""lexicon_pass.py -- Stage 1 of the Fruits of the Spirit grading pipeline.
+"""lexicon_pass.py -- Stage 1 of the Master Equation grading pipeline.
 
 Sentence-by-sentence, word-by-word lexicon scoring. No API calls.
+Adapted from the Fruits of the Spirit grading station (lexicon_pass_v1);
+the sentence splitter and output schema are unchanged.
 
 Inputs:
   --paper   Path to a Markdown/text paper (UTF-8).
-  Lexicon workbooks (read-only):
-    * Fruits Template (4).xlsx  (Fruit / Anti-Fruit / Grounding / Contradiction /
-      Jargon / Propaganda / Archetypes sheets, Weights sheet)
-    * LEXICON_V2.xlsx           (SEMANTIC_BUCKETS, HEDGE_TERMS, ABSOLUTE_TERMS,
-      FRUITS / FRUITS_LEX / FRUIT_BLEND for fruit-axis attribution,
-      ANTI_FRUITS / ANTI_FRUIT_MAP for anti-fruit attribution)
-      The AAVE-Ebonics sheet is skipped entirely: it contains broken
-      #NAME? formulas and is recorded as skipped-broken in the manifest.
+  Lexicon workbook (read-only):
+    * ME_LEXICON_V1.xlsx  (built by me_lexicon_build.py; Slot_G..Slot_C /
+      Product_Test / Fit_Language / Canon_Status / Drift_Marker /
+      Grounding / Contradiction / Jargon / Propaganda sheets, Weights sheet,
+      SEMANTIC_BUCKETS, HEDGE_TERMS, ABSOLUTE_TERMS)
+      Expected at STATION_DIR.parents[1] (the MASTER_EQUATION folder).
 
 Lexicons are extracted once to scripts/lexicon_cache.json and rebuilt when the
-cache is missing or older than either workbook.
+cache is missing or older than the workbook.
 
 Output:
   grading_out/<paper>.lexicon.json -- per-sentence records with char offsets,
-  word counts, per-category hits/matched terms/weighted scores, fruit-axis and
-  anti-fruit-axis attribution, claim-strength counts, hedge/absolute counts.
+  word counts, per-category hits/matched terms/weighted scores, slot-axis
+  attribution, claim-strength counts, hedge/absolute counts.
+  (anti_fruit_axes is kept as an empty mapping for downstream schema
+  compatibility; the ME domain has no anti-fruit axis.)
 """
 
 import argparse
@@ -39,13 +41,12 @@ OUT_DIR = STATION_DIR / "grading_out"
 CACHE_PATH = Path(__file__).resolve().parent / "lexicon_cache.json"
 WEIGHTS_PATH = Path(__file__).resolve().parent / "weights.json"
 
-TEMPLATE_XLSX = STATION_DIR.parents[1] / "Fruits Template (4).xlsx"  # ONE_MENU: FRUITS folder, not a drive path
-LEXICON_V2_XLSX = STATION_DIR.parents[1] / "LEXICON_V2.xlsx"  # ONE_MENU: FRUITS folder, not a drive path
+ME_LEXICON_XLSX = STATION_DIR.parents[1] / "ME_LEXICON_V1.xlsx"  # MASTER_EQUATION folder
 
-FRUIT_AXES = [
-    "love", "joy", "peace", "patience", "kindness",
-    "goodness", "faithfulness", "gentleness", "self_control",
-]
+SLOT_AXES = ["g", "m", "e", "s_eff", "t", "k", "r", "q", "f", "c"]
+
+SLOT_SHEETS = {f"slot_{a}": f"Slot_{a.upper() if a != 's_eff' else 'S_eff'}"
+               for a in SLOT_AXES}
 
 # Category weights come from scripts/weights.json (fallback) and the
 # workbook's Weights sheet (authoritative when present).
@@ -87,10 +88,6 @@ def sha256_file(path):
     return h.hexdigest()
 
 
-def norm_axis(name):
-    return clean(name).lower().replace("-", "_").replace(" ", "_")
-
-
 # ---------------------------------------------------------------------------
 # Workbook extraction
 # ---------------------------------------------------------------------------
@@ -111,8 +108,8 @@ def _find_header(rows, first_cell_names):
 
 
 def _extract_template_terms(rows, active_required=True):
-    """Extract terms from a Fruit/Anti-Fruit/Grounding/Contradiction/Jargon/
-    Propaganda sheet: term in col A, Active flag must be 'Y'."""
+    """Extract terms from a category sheet: term in col A, Active flag must
+    be 'Y'."""
     hi, header = _find_header(rows, {"term", "term/phrase"})
     if hi is None:
         return []
@@ -140,43 +137,26 @@ def _extract_template_terms(rows, active_required=True):
     return terms
 
 
-def extract_template(path, default_weights):
+def extract_categories(path, default_weights):
+    """Extract the ME category sheets plus the Weights sheet from
+    ME_LEXICON_V1.xlsx."""
     wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
     try:
-        sheet_map = {
-            "fruit": "Fruit",
-            "anti_fruit": "Anti-Fruit",
+        sheet_map = dict(SLOT_SHEETS)
+        sheet_map.update({
+            "product_test": "Product_Test",
+            "fit_language": "Fit_Language",
+            "canon_status": "Canon_Status",
+            "drift_marker": "Drift_Marker",
             "grounding": "Grounding",
             "contradiction": "Contradiction",
             "jargon": "Jargon",
             "propaganda": "Propaganda",
-        }
+        })
         categories = {}
         for key, sheet in sheet_map.items():
             rows = _read_sheet_rows(wb, sheet)
             categories[key] = _extract_template_terms(rows) if rows else []
-
-        # Archetypes: key markers (comma-separated) become informational terms.
-        archetypes = []
-        rows = _read_sheet_rows(wb, "Archetypes")
-        if rows:
-            hi, header = _find_header(rows, {"archetype/role"})
-            if hi is not None:
-                marker_col = next(
-                    (i for i, h in enumerate(header) if h.startswith("key markers")), None
-                )
-                for row in rows[hi + 1:]:
-                    if not row:
-                        continue
-                    name = clean(row[0])
-                    if not name or is_broken(name):
-                        continue
-                    if marker_col is not None and marker_col < len(row):
-                        for marker in clean(row[marker_col]).split(","):
-                            marker = marker.strip()
-                            if marker and not is_broken(marker):
-                                archetypes.append({"term": marker, "subcategory": name})
-        categories["archetype"] = archetypes
 
         # Weights sheet (authoritative); weights.json category_weights is the fallback.
         weights = dict(default_weights)
@@ -185,12 +165,10 @@ def extract_template(path, default_weights):
             hi, header = _find_header(rows, {"category"})
             if hi is not None:
                 wcol = header.index("weight") if "weight" in header else 1
-                name_map = {"academic_jargon": "jargon"}
                 for row in rows[hi + 1:]:
                     if not row:
                         continue
                     cat = clean(row[0]).lower()
-                    cat = name_map.get(cat, cat)
                     if cat in weights and not is_broken(row[wcol]):
                         try:
                             weights[cat] = float(row[wcol])
@@ -201,16 +179,13 @@ def extract_template(path, default_weights):
         wb.close()
 
 
-def extract_v2(path):
-    """Extract claim-strength buckets, hedges, absolutes, and fruit/anti-fruit
-    axis maps from LEXICON_V2.xlsx. The AAVE-Ebonics sheet is skipped
-    (broken #NAME? formulas)."""
+def extract_generic(path):
+    """Extract claim-strength buckets, hedges and absolutes from
+    ME_LEXICON_V1.xlsx (SEMANTIC_BUCKETS / HEDGE_TERMS / ABSOLUTE_TERMS)."""
     wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
     try:
         claim_strength = {k: [] for k in ("weak", "moderate", "strong", "forbidden")}
         hedges, absolutes = [], []
-        fruit_axes = {}        # term -> set of fruit axes
-        anti_fruit_axes = {}   # term -> set of axis labels
 
         rows = _read_sheet_rows(wb, "SEMANTIC_BUCKETS")
         if rows:
@@ -232,7 +207,7 @@ def extract_v2(path):
             rows = _read_sheet_rows(wb, sheet)
             if rows:
                 header = [clean(c).lower() for c in rows[0]]
-                tcol = header.index("term") if "term" in header else 3
+                tcol = header.index("term") if "term" in header else 0
                 for row in rows[1:]:
                     if not row or tcol >= len(row):
                         continue
@@ -240,91 +215,41 @@ def extract_v2(path):
                     if term and not is_broken(term):
                         target.append(term)
 
-        def add_axis(mapping, term, axis):
-            term, axis = clean(term), norm_axis(axis)
-            if term and axis and not is_broken(term) and not is_broken(axis):
-                mapping.setdefault(term.lower(), set()).add(axis)
-
-        # key = fruit axis, value = term
-        for sheet in ("FRUITS", "FRUITS_LEX"):
-            rows = _read_sheet_rows(wb, sheet)
-            if rows:
-                header = [clean(c).lower() for c in rows[0]]
-                if "key" in header and "value" in header:
-                    kc, vc = header.index("key"), header.index("value")
-                    for row in rows[1:]:
-                        if row and len(row) > max(kc, vc):
-                            add_axis(fruit_axes, row[vc], row[kc])
-
-        # FRUIT_BLEND: subkey positive -> fruit signal, negative -> anti signal.
-        rows = _read_sheet_rows(wb, "FRUIT_BLEND")
-        if rows:
-            header = [clean(c).lower() for c in rows[0]]
-            if {"key", "subkey", "value"} <= set(header):
-                kc, sc, vc = header.index("key"), header.index("subkey"), header.index("value")
-                for row in rows[1:]:
-                    if not row or len(row) <= max(kc, sc, vc):
-                        continue
-                    sub = clean(row[sc]).lower()
-                    if sub == "positive":
-                        add_axis(fruit_axes, row[vc], row[kc])
-                    elif sub == "negative":
-                        add_axis(anti_fruit_axes, row[vc], row[kc])
-
-        # ANTI_FRUITS: key = axis, value = anti-term.
-        rows = _read_sheet_rows(wb, "ANTI_FRUITS")
-        if rows:
-            header = [clean(c).lower() for c in rows[0]]
-            if "key" in header and "value" in header:
-                kc, vc = header.index("key"), header.index("value")
-                for row in rows[1:]:
-                    if row and len(row) > max(kc, vc):
-                        add_axis(anti_fruit_axes, row[vc], row[kc])
-
-        # ANTI_FRUIT_MAP: key = anti-fruit label, value = marker term.
-        rows = _read_sheet_rows(wb, "ANTI_FRUIT_MAP")
-        if rows:
-            header = [clean(c).lower() for c in rows[0]]
-            if "key" in header and "value" in header:
-                kc, vc = header.index("key"), header.index("value")
-                for row in rows[1:]:
-                    if row and len(row) > max(kc, vc):
-                        add_axis(anti_fruit_axes, row[vc], row[kc])
-
         return {
             "claim_strength": {k: sorted(set(v)) for k, v in claim_strength.items()},
             "hedges": sorted(set(hedges)),
             "absolutes": sorted(set(absolutes)),
-            "fruit_axes": {t: sorted(a) for t, a in sorted(fruit_axes.items())},
-            "anti_fruit_axes": {t: sorted(a) for t, a in sorted(anti_fruit_axes.items())},
         }
     finally:
         wb.close()
 
 
-def build_cache(template_path, v2_path, default_weights, force=False):
+def build_cache(lexicon_path, default_weights, force=False):
     if not force and CACHE_PATH.exists():
         cache_mtime = CACHE_PATH.stat().st_mtime
-        if all(cache_mtime >= p.stat().st_mtime for p in (template_path, v2_path)):
+        if cache_mtime >= lexicon_path.stat().st_mtime:
             with open(CACHE_PATH, encoding="utf-8") as f:
                 return json.load(f), False
-    categories, weights = extract_template(template_path, default_weights)
-    v2 = extract_v2(v2_path)
+    categories, weights = extract_categories(lexicon_path, default_weights)
+    generic = extract_generic(lexicon_path)
+    # Slot-axis attribution map: every term on a slot sheet attributes to that
+    # slot axis.
+    slot_axes = {}
+    for axis in SLOT_AXES:
+        for t in categories[f"slot_{axis}"]:
+            term = t["term"].lower()
+            if term:
+                slot_axes.setdefault(term, set()).add(axis)
     cache = {
         "built_at": now_iso(),
         "sources": {
-            str(template_path): {"mtime": template_path.stat().st_mtime},
-            str(v2_path): {"mtime": v2_path.stat().st_mtime},
+            str(lexicon_path): {"mtime": lexicon_path.stat().st_mtime},
         },
-        "skipped_sources": [
-            {
-                "sheet": "AAVE-Ebonics (LEXICON_V2.xlsx)",
-                "reason": "skipped-broken: contains #NAME? broken formulas",
-            }
-        ],
+        "skipped_sources": [],
         "weights": weights,
         "categories": categories,
-        **v2,
+        "slot_axes": {t: sorted(a) for t, a in sorted(slot_axes.items())},
+        **generic,
     }
     CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(CACHE_PATH, "w", encoding="utf-8") as f:
@@ -411,21 +336,22 @@ def match_terms(regex, text):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Stage 1: lexicon pass (no API).")
+    ap = argparse.ArgumentParser(description="Stage 1: ME lexicon pass (no API).")
     ap.add_argument("--paper", required=True, help="Path to the paper (md/txt).")
-    ap.add_argument("--template", default=str(TEMPLATE_XLSX))
-    ap.add_argument("--lexicon-v2", default=str(LEXICON_V2_XLSX))
+    ap.add_argument("--lexicon", default=str(ME_LEXICON_XLSX))
     ap.add_argument("--force-rebuild", action="store_true",
                     help="Rebuild lexicon_cache.json even if fresh.")
     args = ap.parse_args()
 
     paper_path = Path(args.paper)
-    template_path = Path(args.template)
-    v2_path = Path(args.lexicon_v2)
+    lexicon_path = Path(args.lexicon)
+    if not lexicon_path.exists():
+        sys.exit(f"ERROR: lexicon workbook not found: {lexicon_path}\n"
+                 "Run scripts/me_lexicon_build.py first.")
 
     tuning = load_weights()
     weights_sha = sha256_file(WEIGHTS_PATH)
-    cache, rebuilt = build_cache(template_path, v2_path,
+    cache, rebuilt = build_cache(lexicon_path,
                                  tuning["category_weights"], force=args.force_rebuild)
     print(f"[lexicon] cache {'rebuilt' if rebuilt else 'loaded'}: {CACHE_PATH}")
 
@@ -437,8 +363,7 @@ def main():
     cs_regex = {k: compile_matcher(v) for k, v in cache["claim_strength"].items()}
     hedge_re = compile_matcher(cache["hedges"])
     abs_re = compile_matcher(cache["absolutes"])
-    fruit_axes_map = cache["fruit_axes"]
-    anti_axes_map = cache["anti_fruit_axes"]
+    slot_axes_map = cache["slot_axes"]
 
     sent_tuples = split_sentences(text)
     para_starts = [m.start() for m in PARA_BREAK_RE.finditer(text)]
@@ -456,14 +381,11 @@ def main():
                 "matched_terms": uniq,
                 "weighted_score": round(len(hits) * weights.get(cat, 0.0), 4),
             }
-        fruit_axes = {}
-        for term in cats["fruit"]["matched_terms"]:
-            for axis in fruit_axes_map.get(term, []):
-                fruit_axes[axis] = fruit_axes.get(axis, 0) + 1
-        anti_axes = {}
-        for term in cats["anti_fruit"]["matched_terms"]:
-            for axis in anti_axes_map.get(term, []):
-                anti_axes[axis] = anti_axes.get(axis, 0) + 1
+        slot_axes = {}
+        for axis in SLOT_AXES:
+            for term in cats[f"slot_{axis}"]["matched_terms"]:
+                for a in slot_axes_map.get(term, []):
+                    slot_axes[a] = slot_axes.get(a, 0) + 1
         sentences.append({
             "idx": i,
             "start": start,
@@ -472,8 +394,8 @@ def main():
             "text": stext,
             "word_count": len(words),
             "categories": cats,
-            "fruit_axes": fruit_axes,
-            "anti_fruit_axes": anti_axes,
+            "slot_axes": slot_axes,
+            "anti_fruit_axes": {},
             "claim_strength": {k: len(match_terms(r, stext)) for k, r in cs_regex.items()},
             "hedges": len(match_terms(hedge_re, stext)),
             "absolutes": len(match_terms(abs_re, stext)),
@@ -493,10 +415,10 @@ def main():
     }
     totals["hedges"] = sum(s["hedges"] for s in sentences)
     totals["absolutes"] = sum(s["absolutes"] for s in sentences)
-    totals["fruit_axes"] = {}
+    totals["slot_axes"] = {}
     for s in sentences:
-        for a, n in s["fruit_axes"].items():
-            totals["fruit_axes"][a] = totals["fruit_axes"].get(a, 0) + n
+        for a, n in s["slot_axes"].items():
+            totals["slot_axes"][a] = totals["slot_axes"].get(a, 0) + n
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     out_path = OUT_DIR / f"{paper_path.stem}.lexicon.json"
@@ -504,7 +426,7 @@ def main():
         "paper": str(paper_path),
         "paper_name": paper_path.stem,
         "generated_at": now_iso(),
-        "stage": "lexicon_pass_v1",
+        "stage": "me_lexicon_pass_v1",
         "char_count": len(text),
         "sentence_count": len(sentences),
         "paragraph_count": (sentences[-1]["paragraph"] + 1) if sentences else 0,

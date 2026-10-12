@@ -1,0 +1,36 @@
+{
+  "rubric_id": "me.canon.v0.1.0",
+  "title": "Master Equation Span Judgment Rubric",
+  "span_roles": [
+    {"id": "SLOT_CLAIM", "meaning": "The span states or proposes what plays a Master Equation slot role (G, M, E, S_eff, T, K, R, Q, F, C), or makes a claim about a slot's behavior."},
+    {"id": "PRODUCT_TEST", "meaning": "The span engages the product test: whether removing or zeroing one ingredient collapses the whole (multiplicative) or only weakens it (additive), thresholds, zero-collapse, veto."},
+    {"id": "FIT_CLAIM", "meaning": "The span rates or discusses how something maps onto the Master Equation: direct, analogous, stretched, or absent."},
+    {"id": "DEFINITION", "meaning": "The span defines a term, symbol, factor, or concept."},
+    {"id": "KILL_CONDITION", "meaning": "The span states or implies a falsification or kill condition: what would show the claim is wrong."},
+    {"id": "EVIDENCE", "meaning": "The span offers evidence, observation, derivation, or citation in support of a claim."},
+    {"id": "MECHANISM", "meaning": "The span explains how something works: the mechanism, not the claim or the evidence."},
+    {"id": "RHETORIC", "meaning": "Everything else: framing, story, exhortation, transition, style."}
+  ],
+  "slots": [
+    {"id": "slot.g", "symbol": "G", "name": "External Negentropy Influx", "definition": "Coherence cannot be self-sufficient in a closed system; it needs an outside influx."},
+    {"id": "slot.m", "symbol": "M", "name": "Alignment Cosine", "definition": "Coupling is strongest when the system is aligned with its reference."},
+    {"id": "slot.e", "symbol": "E", "name": "Signal Propagation Fidelity", "definition": "Whether truth survives transmission through noise."},
+    {"id": "slot.s_eff", "symbol": "S_eff", "name": "Effective Entropy Factor", "definition": "Entropy enters as what lowers the coherence contribution."},
+    {"id": "slot.t", "symbol": "T", "name": "Temporal Integration", "definition": "Time turns possibility into accumulated consequence."},
+    {"id": "slot.k", "symbol": "K", "name": "Information Compression Ratio", "definition": "Ordered meaning compresses and noise does not."},
+    {"id": "slot.r", "symbol": "R", "name": "Phase Transition Indicator", "definition": "Some thresholds change state, not just degree."},
+    {"id": "slot.q", "symbol": "Q", "name": "Superposition Measure", "definition": "Open possibility stays unresolved until actualized."},
+    {"id": "slot.f", "symbol": "F", "name": "Non-Local Correlation Strength", "definition": "Related systems are no longer independent."},
+    {"id": "slot.c", "symbol": "C", "name": "Total Integration Measure", "definition": "The local integrator inside the product."}
+  ],
+  "fit_vocabulary": ["direct", "analogous", "stretched", "absent"],
+  "canon_conditions": [
+    {"id": "no_address", "meaning": "The claim carries no canonical address (no unique ID, no one home). Flag when the span's claim could not be entered into a ledger as stated."},
+    {"id": "ungraded_vocabulary", "meaning": "The claim uses a grade or status label outside the ruled vocabulary (LOCKED, DERIVED, CANDIDATE; lifecycle INTAKE, OPENING, REVIEW, FROZEN, ADMITTED). Flag when the span invents its own status language."},
+    {"id": "receipt_missing", "meaning": "The claim asserts proof, derivation, or formal verification, but no recorded receipt is cited. Flag when 'proven/derived/verified' language appears with no receipt pointer."},
+    {"id": "authority_missing", "meaning": "The claim asserts canonicity (canonical, locked, ratified) but cites no ruling. Flag when canonicity is claimed with no ruling citation (a canonical ruling line, a ratification, a dated ruling)."},
+    {"id": "conflict_suspect", "meaning": "The span contradicts another claim's slot assignment or a protected marker. Flag when the span collides with canon rather than fitting it."}
+  ],
+  "kill_condition_rule": "When a span states or implies a falsification or kill condition (what would show the claim wrong), capture it verbatim in kill_condition. Empty string when the span carries none.",
+  "grading_note": "Grade OBSERVABLE TEXT ONLY. Quotes must be verbatim substrings of the span. Where evidence is missing, say so. Never invent precision."
+}

@@ -184,6 +184,65 @@ def fruit_profile_svg(profile, lex_hits, row_h=30, vbw=1040):
     return "".join(parts)
 
 
+def slot_profile_svg(lex_hits, span_signals, row_h=30, vbw=1040):
+    """Ten ME slots. lex_hits[axis] = lexicon hit count; span_signals[axis] =
+    {"+":n, "-":n}. Absent slots (0 lexicon hits AND 0 signals) get a visible
+    dashed gap marker labeled ABSENT -- never silently zero-height."""
+    label_w = 120
+    lex_x, lex_w = label_w + 8, 420
+    sig_c = lex_x + lex_w + 120
+    sig_half = 140
+    axes = list(lex_hits.keys())
+    vbh = 30 + row_h * len(axes) + 24
+    max_lex = max(list(lex_hits.values()) + [1])
+    max_sig = max([p["+"] + p["-"] for p in span_signals.values()] + [1])
+
+    parts = [f'<svg viewBox="0 0 {vbw} {vbh}" width="100%" style="display:block" '
+             f'data-component="data-viz" data-name="slot-profile-svg">']
+    parts.append(f'<text x="{label_w}" y="16" font-size="10" fill="{MUTED}" '
+                 f'font-family="JetBrains Mono,monospace" letter-spacing="1">SLOT</text>')
+    parts.append(f'<text x="{lex_x}" y="16" font-size="10" fill="{MUTED}" '
+                 f'font-family="JetBrains Mono,monospace" letter-spacing="1">LEXICON HITS</text>')
+    parts.append(f'<text x="{sig_c}" y="16" text-anchor="middle" font-size="10" fill="{MUTED}" '
+                 f'font-family="JetBrains Mono,monospace" letter-spacing="1">SPAN SIGNALS  − | +</text>')
+
+    for i, a in enumerate(axes):
+        y = 30 + i * row_h
+        cy = y + row_h / 2
+        lv = lex_hits[a]
+        p = span_signals[a]
+        absent = lv == 0 and p["+"] == 0 and p["-"] == 0
+        label_fill = RED if absent else "#e5e3df"
+        parts.append(f'<text x="{label_w - 8}" y="{cy + 4}" text-anchor="end" font-size="12" '
+                     f'fill="{label_fill}" font-family="Crimson Text,serif">{esc(a.replace("_", " "))}</text>')
+        if absent:
+            # visible gap marker: dashed outline box + ABSENT tag
+            parts.append(f'<rect x="{lex_x}" y="{y + 6}" width="90" height="{row_h - 12}" rx="2" '
+                         f'fill="none" stroke="{RED}" stroke-width="1" stroke-dasharray="4,3"/>')
+            parts.append(f'<text x="{lex_x + 8}" y="{cy + 4}" font-size="9" fill="{RED}" '
+                         f'font-family="JetBrains Mono,monospace" letter-spacing="1">ABSENT</text>')
+            parts.append(f'<text x="{sig_c + sig_half + 8}" y="{cy + 4}" font-size="10" '
+                         f'fill="{MUTED}" font-family="JetBrains Mono,monospace">+0 / −0</text>')
+            continue
+        lw = round(lv / max_lex * lex_w, 1)
+        parts.append(f'<rect x="{lex_x}" y="{y + 6}" width="{max(lw, 0.5)}" height="{row_h - 12}" '
+                     f'rx="2" fill="{BLUE}" fill-opacity="0.75"/>')
+        parts.append(f'<text x="{lex_x + lw + 6}" y="{cy + 4}" font-size="10" fill="{MUTED}" '
+                     f'font-family="JetBrains Mono,monospace">{lv}</text>')
+        parts.append(f'<line x1="{sig_c}" y1="{y + 4}" x2="{sig_c}" y2="{y + row_h - 4}" '
+                     f'stroke="rgba(229,227,223,0.25)" stroke-width="1"/>')
+        w_pos = round(p["+"] / max_sig * sig_half, 1)
+        w_neg = round(p["-"] / max_sig * sig_half, 1)
+        if w_pos:
+            parts.append(f'<rect x="{sig_c}" y="{y + 6}" width="{w_pos}" height="{row_h - 12}" fill="{GREEN}"/>')
+        if w_neg:
+            parts.append(f'<rect x="{sig_c - w_neg}" y="{y + 6}" width="{w_neg}" height="{row_h - 12}" fill="{RED}"/>')
+        parts.append(f'<text x="{sig_c + sig_half + 8}" y="{cy + 4}" font-size="10" '
+                     f'fill="{MUTED}" font-family="JetBrains Mono,monospace">+{p["+"]} / −{p["-"]}</text>')
+    parts.append("</svg>")
+    return "".join(parts)
+
+
 def donut_svg(items, size=240, thickness=34):
     """items: list of (label, value, color). Donut via stroke-dasharray circles."""
     import math

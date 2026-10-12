@@ -1,15 +1,17 @@
-"""stats_workbook.py -- Excel export for the Fruits of the Spirit pipeline.
+"""stats_workbook.py -- Excel export for the Master Equation pipeline.
 
 Reads grading_out/<paper>.stats.json + <paper>.lexicon.json (+
 <paper>.spans.json when present) and writes grading_out/<paper>.stats.xlsx --
-"the Excel of all the statistics".
+"the Excel of all the statistics". Adapted from the Fruits of the Spirit
+grading station; same six-sheet shape with ME labels/categories.
 
 Sheets:
   Summary        in_report stats, formatted
   All_Statistics every stat key/value/unit/note/in_report
   Per_Sentence   one row per sentence: idx, excerpt, word count, per-category
                  hits + weighted scores, claim-strength counts
-  Fruit_Profile  nine axes x (lexicon hits, span signals +/- and enacted/about)
+  Slot_Profile   ten slots x (lexicon hits, span signals +/- and enacted/about
+                 when a spans file from a later stage exists)
   Spikes         top spikes per category with sentence refs and excerpts
   Spans          span table (role, flags, confidence, uncertainty) when spans exist
 
@@ -31,10 +33,13 @@ sys.stdout.reconfigure(encoding="utf-8")
 STATION_DIR = Path(__file__).resolve().parent.parent
 OUT_DIR = STATION_DIR / "grading_out"
 
-CATEGORIES = ["fruit", "anti_fruit", "grounding", "contradiction", "jargon", "propaganda", "archetype"]
+SLOT_AXES = ["g", "m", "e", "s_eff", "t", "k", "r", "q", "f", "c"]
+SLOT_CATEGORIES = [f"slot_{a}" for a in SLOT_AXES]
+CATEGORIES = SLOT_CATEGORIES + [
+    "product_test", "fit_language", "canon_status", "drift_marker",
+    "grounding", "contradiction", "jargon", "propaganda",
+]
 CLAIM_KEYS = ["weak", "moderate", "strong", "forbidden"]
-FRUIT_AXES = ["love", "joy", "peace", "patience", "kindness",
-              "goodness", "faithfulness", "gentleness", "self_control"]
 
 HDR_FILL = PatternFill("solid", fgColor="141923")
 HDR_FONT = Font(color="D9A94A", bold=True)
@@ -114,27 +119,29 @@ def main():
         ws.append(row)
     style_sheet(ws, [6, 80, 10] + [8] * (len(header) - 3), wrap_cols=(2,))
 
-    # --- Fruit_Profile ---------------------------------------------------------
-    ws = wb.create_sheet("Fruit_Profile")
-    ws.append(["axis", "lexicon_hits",
+    # --- Slot_Profile ----------------------------------------------------------
+    ws = wb.create_sheet("Slot_Profile")
+    ws.append(["slot", "lexicon_hits",
                "span_signals_+", "span_signals_-",
                "enacted_+", "enacted_-", "about_+", "about_-"])
     profile = {a: {"+": 0, "-": 0, "enacted+": 0, "enacted-": 0, "about+": 0, "about-": 0}
-               for a in FRUIT_AXES}
+               for a in SLOT_AXES}
     if spans_doc:
         for sp in spans_doc["spans"]:
             if sp["status"] != "ok":
                 continue
-            for fs in sp["judgment"]["fruit_signals"]:
-                axis = fs.get("fruit_id", "").replace("fruit.", "")
+            for fs in sp["judgment"].get("slot_signals", sp["judgment"].get("fruit_signals", [])):
+                axis = fs.get("slot_id", fs.get("fruit_id", "")).replace("slot.", "").replace("fruit.", "")
                 if axis not in profile:
                     continue
-                pol = fs.get("polarity", "+")
+                pol = {1: "+", -1: "-", "+": "+", "-": "-"}.get(fs.get("polarity"))
+                if pol is None:  # polarity 0: discussed, no fill verdict
+                    continue
                 kind = fs.get("polarity_kind", "about")
                 profile[axis][pol] += 1
                 profile[axis][f"{kind}{pol}"] += 1
-    for a in FRUIT_AXES:
-        lex_hits = stat_by_key.get(f"fruit_axis.{a}.total", {}).get("value", 0)
+    for a in SLOT_AXES:
+        lex_hits = stat_by_key.get(f"slot_axis.{a}.total", {}).get("value", 0)
         p = profile[a]
         ws.append([a, lex_hits, p["+"], p["-"],
                    p["enacted+"], p["enacted-"], p["about+"], p["about-"]])
@@ -152,8 +159,8 @@ def main():
     # --- Spans ------------------------------------------------------------------
     if spans_doc:
         ws = wb.create_sheet("Spans")
-        ws.append(["span_id", "sent_range", "role", "fruit_signals",
-                   "gate_flags", "veto_flags", "counterfeit_suspect",
+        ws.append(["span_id", "sent_range", "role", "slot_signals",
+                   "gate_flags", "kill_condition", "dropped_signals",
                    "confidence", "uncertainty_note"])
         for sp in spans_doc["spans"]:
             if sp["status"] != "ok":
@@ -161,13 +168,14 @@ def main():
                            "INVALID", "", "", "", "", "", sp.get("error", "")])
                 continue
             j = sp["judgment"]
+            signals = j.get("slot_signals", j.get("fruit_signals", []))
             sig = "; ".join(
-                f"{fs['fruit_id'].replace('fruit.', '')} {fs['polarity']}"
-                f"({fs.get('polarity_kind', '?')},s{fs['strength']})"
-                for fs in j["fruit_signals"])
+                f"{fs.get('slot_id', fs.get('fruit_id', '?')).replace('slot.', '').replace('fruit.', '')} {fs.get('polarity', '?')}"
+                f"({fs.get('fit', fs.get('polarity_kind', '?'))},{fs.get('quote_status', '?')})"
+                for fs in signals)
             ws.append([sp["span_id"], f"s{sp['sent_idx_start']}-{sp['sent_idx_end']}",
                        j["role"], sig, ", ".join(j["gate_flags"]),
-                       ", ".join(j["veto_flags"]), j["counterfeit_suspect"],
+                       j.get("kill_condition", ""), len(sp.get("dropped_signals", [])),
                        j["confidence"], j["uncertainty_note"]])
         style_sheet(ws, [8, 12, 12, 46, 40, 40, 12, 11, 80], wrap_cols=(4, 5, 6, 9))
 

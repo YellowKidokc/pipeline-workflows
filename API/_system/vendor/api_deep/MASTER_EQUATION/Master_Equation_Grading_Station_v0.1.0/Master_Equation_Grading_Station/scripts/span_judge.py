@@ -1,4 +1,4 @@
-"""span_judge.py -- Stage 3 of the Fruits of the Spirit grading pipeline.
+"""span_judge.py -- Stage 3 of the Master Equation grading pipeline.
 
 Span-level judgment pass using the DeepSeek chat API. Groups Stage 1 sentences
 into spans (~3 sentences each, never crossing a blank-line paragraph break),
@@ -6,9 +6,14 @@ sends each span plus its Stage 1 lexicon hits as evidence, and collects a
 strict-JSON judgment per span.
 
 Also (re)generates the station's system prompt file
-scripts/prompts/fruits_system_v0.3.0.txt from the rubric
-scripts/rubric/fruits_rubric_v0.3.0.json, quoting the nine fruit mechanisms
-and five veto conditions verbatim.
+scripts/prompts/me_system_v0.1.0.txt from the rubric
+scripts/rubric/me_rubric_v0.1.0.json, quoting the ten slot definitions and
+five canon conditions verbatim.
+
+Slot-signal quotes are verified against the source after every call:
+exact / whitespace+quote-normalized / corrected (found elsewhere in the
+corpus, sentence indices fixed) / dropped (unverifiable -- never presented
+as data; recorded under dropped_signals instead).
 
 Inputs:
   --paper <path>   the graded paper (its .lexicon.json must exist in
@@ -17,7 +22,8 @@ Inputs:
 
 Output:
   grading_out/<paper>.spans.json  (per-span judgments + run manifest with
-  model, prompt sha256, rubric sha256, lexicon-cache sha256, timestamps)
+  model, prompt sha256, rubric sha256, lexicon-cache sha256, quote
+  verification counts, timestamps)
   grading_out/diagnostics/        raw invalid API responses (never presented
                                   as grades)
 
@@ -45,8 +51,8 @@ STATION_DIR = Path(__file__).resolve().parent.parent
 SCRIPTS_DIR = Path(__file__).resolve().parent
 OUT_DIR = STATION_DIR / "grading_out"
 DIAG_DIR = OUT_DIR / "diagnostics"
-RUBRIC_PATH = SCRIPTS_DIR / "rubric" / "fruits_rubric_v0.3.0.json"
-PROMPT_PATH = SCRIPTS_DIR / "prompts" / "fruits_system_v0.3.0.txt"
+RUBRIC_PATH = SCRIPTS_DIR / "rubric" / "me_rubric_v0.1.0.json"
+PROMPT_PATH = SCRIPTS_DIR / "prompts" / "me_system_v0.1.0.txt"
 LEXICON_CACHE = SCRIPTS_DIR / "lexicon_cache.json"
 WEIGHTS_PATH = SCRIPTS_DIR / "weights.json"
 
@@ -57,10 +63,24 @@ MAX_TOKENS = 2000
 TIMEOUT_S = 240
 CONCURRENCY = 2
 
-ROLES = ["CLAIM", "EVIDENCE", "MECHANISM", "DEFINITION",
-         "OBJECTION", "CONCESSION", "BOUNDARY", "RHETORIC"]
+ROLES = ["SLOT_CLAIM", "PRODUCT_TEST", "FIT_CLAIM", "DEFINITION",
+         "KILL_CONDITION", "EVIDENCE", "MECHANISM", "RHETORIC"]
 
-PROMPT_VERSION = "v0.3.1"
+SLOT_IDS = [f"slot.{a}" for a in
+            ("g", "m", "e", "s_eff", "t", "k", "r", "q", "f", "c")]
+FIT_VOCAB = ["direct", "analogous", "stretched", "absent"]
+CANON_FLAGS = ["no_address", "ungraded_vocabulary", "receipt_missing",
+               "authority_missing", "conflict_suspect"]
+
+# Categories shown to the model as lexicon evidence.
+EVIDENCE_CATEGORIES = [
+    "slot_g", "slot_m", "slot_e", "slot_s_eff", "slot_t",
+    "slot_k", "slot_r", "slot_q", "slot_f", "slot_c",
+    "product_test", "fit_language", "canon_status", "drift_marker",
+    "grounding", "contradiction", "jargon", "propaganda",
+]
+
+PROMPT_VERSION = "v0.1.0"
 
 
 def load_weights():
@@ -89,76 +109,75 @@ def sha256_text(s):
 
 
 # ---------------------------------------------------------------------------
-# System prompt (built from the rubric; mechanisms and vetoes quoted verbatim)
+# System prompt (built from the rubric; slot definitions and canon conditions
+# quoted verbatim)
 # ---------------------------------------------------------------------------
 
 def build_system_prompt(rubric):
-    fruit_lines = []
-    for fr in rubric["fruits"]:
-        fruit_lines.append(
-            f'- {fr["id"]} ({fr["name"]}): mechanism: "{fr["mechanism"]}"\n'
-            f'  anti-fruit: {fr["anti_fruit"]}\n'
-            f'  counterfeit: {fr["counterfeit"]}'
+    slot_lines = []
+    for sl in rubric["slots"]:
+        slot_lines.append(
+            f'- {sl["id"]} ({sl["symbol"]} — {sl["name"]}): {sl["definition"]}'
         )
-    veto_lines = "\n".join(f"- {v}" for v in rubric["veto_conditions"])
-    gate_lines = "\n".join(
-        f'- {g["id"]} ({"HARD" if g["hard"] else "soft"}): {g["question"]}'
-        for g in rubric["gates"]
+    role_lines = "\n".join(
+        f'- {r["id"]}: {r["meaning"]}' for r in rubric["span_roles"]
     )
-    role_lines = ", ".join(ROLES)
-    return f"""You are the Fruits of the Spirit span-mode grader {PROMPT_VERSION} (rubric {rubric["rubric_id"]}).
+    condition_lines = "\n".join(
+        f'- {c["id"]}: {c["meaning"]}' for c in rubric["canon_conditions"]
+    )
+    return f"""You are the Master Equation span-mode judge {PROMPT_VERSION} (rubric {rubric["rubric_id"]}).
 
 You grade OBSERVABLE TEXT ONLY. Rules you must never break:
 - No inference about hidden motives, salvation status, or divine origin.
-- Vocabulary is not character evidence; match signals to mechanisms, not vibes.
+- Vocabulary is not structure; match slot signals to slot definitions, not vibes.
 - Where evidence is missing, say so explicitly. Never invent precision.
 - Return STRICT JSON ONLY. No prose, no markdown fences, no commentary.
 
-THE NINE FRUIT MECHANISMS (verbatim from the rubric):
-{chr(10).join(fruit_lines)}
+THE TEN MASTER EQUATION SLOTS (verbatim from the rubric):
+{chr(10).join(slot_lines)}
 
-GATES:
-{gate_lines}
+SPAN ROLES (assign exactly one per span):
+{role_lines}
 
-THE FIVE VETO CONDITIONS (verbatim from the rubric):
-{veto_lines}
+THE FIVE CANON CONDITIONS — flag a span when the claim it carries would fail
+the condition as stated (verbatim from the rubric):
+{condition_lines}
+
+KILL CONDITIONS: {rubric["kill_condition_rule"]}
 
 For each span you receive the span text and a lexicon-evidence block (per-sentence
 matched terms per category, claim-strength counts, hedge/absolute counts). Treat the
 lexicon hits as evidence pointers, not verdicts; confirm or discount them against the
 actual span text.
 
-Assign the span exactly one rhetorical role from: {role_lines}.
-
-FRUIT SIGNAL RULES (strict):
-- A fruit_signal may map a span to a fruit ONLY when the span engages that fruit's
-  mechanism as quoted above. A bare mention of the fruit's name or vocabulary is NOT
-  a signal. If no mechanism is engaged, omit the signal entirely.
-- Each signal carries TWO polarity fields:
-  * "polarity": "+" if the mechanism is expressed/present, "-" if its anti-fruit is.
-  * "polarity_kind": "enacted" if the text itself exhibits the fruit or anti-fruit
-    (the writing/speaker does the thing), or "about" if the text merely reports,
-    discusses, or describes it in the world (e.g. a study finding, a quoted third
-    party, a historical trend).
-- Do not map a term to a fruit axis it does not belong to. If an anti-fruit concept
-  has no clean axis, say so in uncertainty_note instead of forcing a mapping.
+SLOT SIGNAL RULES (strict):
+- A slot_signal maps a span to a slot ONLY when the span engages that slot's
+  definition as quoted above. A bare mention of the slot's symbol or vocabulary
+  is NOT a signal. If no definition is engaged, omit the signal entirely.
+- Each signal carries:
+  * "slot_id": exactly one of {", ".join(SLOT_IDS)}.
+  * "polarity": +1 if the span says the slot is filled / present / satisfied,
+    -1 if it says the slot is empty / failed / violated, 0 if it merely
+    discusses the slot without a fill verdict.
+  * "fit": one of {", ".join(FIT_VOCAB)} — how the paper's content maps onto the
+    slot. "absent" is a normal answer; do not fill slots to look complete.
+  * "quote": a VERBATIM substring of the span text carrying the signal.
+- Do not force a mapping. If a concept has no clean slot, say so in
+  uncertainty_note instead.
 
 Respond with ONE JSON object of exactly this shape:
 {{
-  "role": one of {role_lines},
-  "fruit_signals": [{{"fruit_id": "fruit.<axis>", "polarity": "+" or "-",
-                      "polarity_kind": "enacted" or "about",
-                      "strength": 1-4, "evidence_quote": "<verbatim substring of the span>"}}],
-  "gate_flags": ["<gate_id>", ...],
-  "veto_flags": ["<veto condition name>", ...],
-  "counterfeit_suspect": true or false,
+  "role": one of {", ".join(ROLES)},
+  "slot_signals": [{{"slot_id": "slot.<axis>", "polarity": +1 or -1 or 0,
+                     "fit": "direct|analogous|stretched|absent",
+                     "quote": "<verbatim substring of the span>"}}],
+  "gate_flags": ["<canon condition id>", ...],
+  "kill_condition": "<verbatim falsification/kill condition, or empty string>",
   "confidence": 0.0-1.0,
   "uncertainty_note": "<what is missing or ambiguous; empty string if nothing>"
 }}
-Use fruit_id values fruit.love, fruit.joy, fruit.peace, fruit.patience, fruit.kindness,
-fruit.goodness, fruit.faithfulness, fruit.gentleness, fruit.self_control.
-Empty arrays are correct when there is no signal. Evidence quotes must be verbatim
-substrings of the span text."""
+Empty arrays are correct when there is no signal. Quotes must be verbatim
+substrings of the span text; unverifiable quotes are dropped."""
 
 
 def ensure_prompt_file(rubric):
@@ -190,11 +209,9 @@ def build_spans(sentences, target):
 
 
 def span_evidence(span_sents):
-    per_sent = []
-    for s in sentences_compact(span_sents):
-        per_sent.append(s)
+    per_sent = sentences_compact(span_sents)
     totals = {}
-    for cat in ("fruit", "anti_fruit", "grounding", "contradiction", "jargon", "propaganda"):
+    for cat in EVIDENCE_CATEGORIES:
         terms = sorted({t for s in span_sents for t in s["categories"][cat]["matched_terms"]})
         if terms:
             totals[cat] = {"hits": sum(s["categories"][cat]["hits"] for s in span_sents),
@@ -211,12 +228,69 @@ def sentences_compact(span_sents):
     out = []
     for s in span_sents:
         matched = {c: s["categories"][c]["matched_terms"]
-                   for c in ("fruit", "anti_fruit", "grounding", "contradiction", "jargon", "propaganda")
+                   for c in EVIDENCE_CATEGORIES
                    if s["categories"][c]["matched_terms"]}
         out.append({"idx": s["idx"], "matched": matched,
                     "claim_strength": {k: v for k, v in s["claim_strength"].items() if v},
                     "hedges": s["hedges"], "absolutes": s["absolutes"]})
     return out
+
+
+# ---------------------------------------------------------------------------
+# Quote verification (same discipline as relational_pass:
+# exact / normalized / corrected / dropped)
+# ---------------------------------------------------------------------------
+
+_WS = re.compile(r"\s+")
+_QUOTE_MAP = str.maketrans({
+    "‘": "'", "’": "'", "“": '"', "”": '"',
+    "…": "...", "—": "--", "–": "-",
+})
+
+
+def norm_text(s):
+    return _WS.sub(" ", str(s).translate(_QUOTE_MAP)).strip().lower()
+
+
+def verify_signal_quote(quote, span_sents, sent_by_idx):
+    """Return (status, corrected_sent_range_or_None).
+    status: exact | normalized | corrected | failed.
+    exact/normalized: found inside the span. corrected: found elsewhere in the
+    paper's sentences. failed: unverifiable."""
+    quote = str(quote or "").strip()
+    if not quote:
+        return "failed", None
+    joined = " ".join(s["text"] for s in span_sents)
+    if quote in joined:
+        return "exact", None
+    nq = norm_text(quote)
+    if nq and nq in norm_text(joined):
+        return "normalized", None
+    hits = [i for i, s in sent_by_idx.items() if nq and nq in norm_text(s["text"])]
+    if hits:
+        return "corrected", [min(hits), max(hits)]
+    return "failed", None
+
+
+def verify_signals(judgment, span_sents, sent_by_idx):
+    """Verify every slot_signal quote. Returns
+    (verified_signals, dropped_signals, counts). Dropped signals are recorded,
+    never presented as data."""
+    verified, dropped = [], []
+    counts = {"exact": 0, "normalized": 0, "corrected": 0, "dropped": 0}
+    for sig in judgment.get("slot_signals", []):
+        status, fixed_range = verify_signal_quote(sig.get("quote"), span_sents, sent_by_idx)
+        if status == "failed":
+            counts["dropped"] += 1
+            dropped.append({"signal": sig, "reason": "quote_not_found"})
+            continue
+        counts[status] += 1
+        sig = dict(sig)
+        sig["quote_status"] = status
+        if fixed_range is not None:
+            sig["corrected_sent_range"] = fixed_range
+        verified.append(sig)
+    return verified, dropped, counts
 
 
 # ---------------------------------------------------------------------------
@@ -275,19 +349,57 @@ def save_diagnostic(span_id, raw, reason):
     return str(path)
 
 
+def _norm_polarity(v):
+    """Normalize polarity to +1/-1/0. Raises ValueError on anything else."""
+    if v in (1, "+1", "+"):
+        return 1
+    if v in (-1, "-1", "-"):
+        return -1
+    if v in (0, "0"):
+        return 0
+    raise ValueError(f"invalid polarity: {v!r}")
+
+
 def validate_judgment(obj):
+    """Structural validation of one span judgment. Raises ValueError on any
+    violation (bad slot_id, bad fit, bad polarity, unknown gate flag)."""
     if not isinstance(obj, dict):
         raise ValueError("judgment is not a JSON object")
-    for key in ("role", "fruit_signals", "gate_flags", "veto_flags",
-                "counterfeit_suspect", "confidence", "uncertainty_note"):
+    for key in ("role", "slot_signals", "gate_flags", "kill_condition",
+                "confidence", "uncertainty_note"):
         if key not in obj:
             raise ValueError(f"missing key: {key}")
     if obj["role"] not in ROLES:
         raise ValueError(f"invalid role: {obj['role']}")
+    if not isinstance(obj["slot_signals"], list):
+        raise ValueError("slot_signals is not a list")
+    for sig in obj["slot_signals"]:
+        if not isinstance(sig, dict):
+            raise ValueError("slot_signal is not an object")
+        slot_id = sig.get("slot_id")
+        if slot_id not in SLOT_IDS:
+            raise ValueError(f"invalid slot_id: {slot_id!r}")
+        sig["polarity"] = _norm_polarity(sig.get("polarity"))
+        fit = str(sig.get("fit", "")).strip().lower()
+        if fit not in FIT_VOCAB:
+            raise ValueError(f"invalid fit: {fit!r}")
+        sig["fit"] = fit
+        if not str(sig.get("quote", "")).strip():
+            raise ValueError("slot_signal quote is empty")
+    for flag in obj["gate_flags"]:
+        if flag not in CANON_FLAGS:
+            raise ValueError(f"invalid gate flag: {flag!r}")
+    if not isinstance(obj["kill_condition"], str):
+        raise ValueError("kill_condition is not a string")
+    try:
+        obj["confidence"] = max(0.0, min(1.0, float(obj["confidence"])))
+    except (TypeError, ValueError):
+        raise ValueError(f"invalid confidence: {obj['confidence']!r}")
+    obj["uncertainty_note"] = str(obj.get("uncertainty_note", ""))
     return obj
 
 
-def grade_span(session, api_key, system_prompt, span_id, span_sents):
+def grade_span(session, api_key, system_prompt, span_id, span_sents, sent_by_idx):
     text = "\n".join(s["text"] for s in span_sents)
     user_payload = json.dumps({
         "span_id": span_id,
@@ -306,7 +418,11 @@ def grade_span(session, api_key, system_prompt, span_id, span_sents):
             raw, json_mode, usage = call_api(session, api_key, system_prompt, user_payload)
             last_raw = raw
             judgment = validate_judgment(extract_json(raw))
+            verified, dropped, qcounts = verify_signals(judgment, span_sents, sent_by_idx)
+            judgment["slot_signals"] = verified
             record.update({"status": "ok", "judgment": judgment,
+                           "dropped_signals": dropped,
+                           "quote_counts": qcounts,
                            "attempts": attempt, "json_mode": json_mode,
                            "usage": usage})
             return record
@@ -319,7 +435,8 @@ def grade_span(session, api_key, system_prompt, span_id, span_sents):
                     "span_text": text,
                     "lexicon_evidence": span_evidence(span_sents),
                     "correction": ("Your previous reply was not valid strict JSON of the "
-                                   "required shape. Reply with ONLY the JSON object."),
+                                   "required shape. Reply with ONLY the JSON object. "
+                                   f"The error was: {last_err}"),
                 }, ensure_ascii=False)
         except requests.RequestException as e:
             last_err = f"request error: {e}"
@@ -334,7 +451,7 @@ def grade_span(session, api_key, system_prompt, span_id, span_sents):
 # ---------------------------------------------------------------------------
 
 def main():
-    ap = argparse.ArgumentParser(description="Stage 3: span-level judgment pass (DeepSeek API).")
+    ap = argparse.ArgumentParser(description="Stage 3: ME span-level judgment pass (DeepSeek API).")
     ap.add_argument("--paper", required=True, help="Path to the graded paper.")
     ap.add_argument("--limit", type=int, default=None,
                     help="Grade only the first N spans (pilot).")
@@ -353,14 +470,19 @@ def main():
 
     with open(RUBRIC_PATH, encoding="utf-8") as f:
         rubric = json.load(f)
+    rubric_roles = [r["id"] for r in rubric["span_roles"]]
+    if rubric_roles != ROLES:
+        sys.exit(f"ERROR: rubric span_roles {rubric_roles} do not match the "
+                 f"judge's role list {ROLES}")
     tuning = load_weights()
     system_prompt = ensure_prompt_file(rubric)
 
     spans = build_spans(lex["sentences"], int(tuning.get("span_size", 3)))
+    sent_by_idx = {s["idx"]: s for s in lex["sentences"]}
     total_spans = len(spans)
     if args.limit is not None:
         spans = spans[:args.limit]
-    print(f"[span] {total_spans} spans total; grading {len(spans)} "
+    print(f"[span] {total_spans} spans total; judging {len(spans)} "
           f"(model={MODEL}, concurrency={CONCURRENCY})")
 
     manifest = {
@@ -389,7 +511,7 @@ def main():
     results = {}
     with ThreadPoolExecutor(max_workers=CONCURRENCY) as pool:
         futures = {
-            pool.submit(grade_span, session, api_key, system_prompt, i, span): i
+            pool.submit(grade_span, session, api_key, system_prompt, i, span, sent_by_idx): i
             for i, span in enumerate(spans)
         }
         done = 0
@@ -397,7 +519,11 @@ def main():
             rec = fut.result()
             results[rec["span_id"]] = rec
             done += 1
-            flag = "ok" if rec["status"] == "ok" else f"INVALID ({rec.get('error')})"
+            if rec["status"] == "ok":
+                j = rec["judgment"]
+                flag = f"ok role={j['role']} signals={len(j['slot_signals'])}"
+            else:
+                flag = f"INVALID ({rec.get('error')})"
             print(f"[span] {done}/{len(spans)} span {rec['span_id']} "
                   f"s{rec['sent_idx_start']}-s{rec['sent_idx_end']}: {flag}")
 
@@ -413,18 +539,24 @@ def main():
         "cache_hit": tok("prompt_cache_hit_tokens"),
         "cache_miss": tok("prompt_cache_miss_tokens"),
     }
+    for k in ("exact", "normalized", "corrected", "dropped"):
+        manifest[f"quotes_{k}"] = sum((r.get("quote_counts") or {}).get(k, 0)
+                                      for r in results.values())
 
     out_path = OUT_DIR / f"{paper_path.stem}.spans.json"
     payload = {
         "paper": str(paper_path),
         "paper_name": paper_path.stem,
-        "stage": "span_judge_v1",
+        "stage": "me_span_judge_v1",
         "manifest": manifest,
         "spans": [results[i] for i in sorted(results)],
     }
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=1)
-    print(f"[span] ok={manifest['ok']} invalid={manifest['invalid']} -> {out_path}")
+    print(f"[span] ok={manifest['ok']} invalid={manifest['invalid']} "
+          f"quotes: {manifest['quotes_exact']} exact / {manifest['quotes_normalized']} normalized / "
+          f"{manifest['quotes_corrected']} corrected / {manifest['quotes_dropped']} dropped "
+          f"-> {out_path}")
 
 
 if __name__ == "__main__":
