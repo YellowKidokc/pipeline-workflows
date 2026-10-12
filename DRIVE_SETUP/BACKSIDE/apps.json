@@ -1,0 +1,32 @@
+{
+  "_about": "What 1 FIND APPS looks for. A folder counts as the app when every file in 'marker' exists inside it. 'hints' are checked first ({LOCALAPPDATA}, {USERPROFILE}, {DRIVE} are filled in); then each drive is searched a few folders deep. 'exe' entries are found on PATH or in hints. Add a block to look for something new.",
+  "apps": [
+    {"name": "pipeline-workflows", "need": true,  "marker": ["API/_system/engine/console.py"],
+     "hints": ["{DRIVE}GitHub/pipeline-workflows", "{DRIVE}-PIPELINE/pipeline-workflows", "{DRIVE}-PIPELINE"]},
+    {"name": "David-OS", "need": true, "marker": ["file-intelligence-system/fis_folder_memory.py"],
+     "hints": ["{DRIVE}GitHub/David-OS", "{DRIVE}David-OS"]},
+    {"name": "file-intelligence-system", "need": true, "marker": ["fis_folder_memory.py"],
+     "hints": ["{DRIVE}GitHub/David-OS/file-intelligence-system"]},
+    {"name": "FIS brain server (FAST API)", "need": false, "marker": ["brain_server.py", "PORTS.json"],
+     "hints": ["{DRIVE}GitHub/pipeline-workflows/FAST API"]},
+    {"name": "SQLite search engine (AUTOFOLDER)", "need": false, "marker": ["indexer.py", "theo.py"],
+     "hints": ["{DRIVE}GitHub/pipeline-workflows/AUTOFOLDER/search_engine"]},
+    {"name": "nerve (source)", "need": false, "marker": ["source/Cargo.toml", "source/src/pipeline.rs"],
+     "hints": ["{DRIVE}GitHub/nerve"]},
+    {"name": "nerve (installed)", "need": false, "marker": ["nerve.exe", "html"],
+     "hints": ["{LOCALAPPDATA}/ClipSync"]},
+    {"name": "Python-WEB (top bar)", "need": false, "marker": ["top_bar_bottom_bar.py"],
+     "hints": ["{DRIVE}GitHub/Python-WEB"]},
+    {"name": "ConversionStation", "need": false, "marker": ["ConversionStation"],
+     "hints": ["{DRIVE}GitHub/pipeline-workflows"], "note": "marker is the folder inside pipeline-workflows"},
+    {"name": "Obsidian", "need": false, "exe": "Obsidian.exe",
+     "hints": ["{LOCALAPPDATA}/Programs/Obsidian", "C:/Program Files/Obsidian"]},
+    {"name": "Python 3.12", "need": true, "exe": "python.exe",
+     "hints": ["{LOCALAPPDATA}/Programs/Python/Python312"]},
+    {"name": "git", "need": true, "exe": "git.exe", "hints": ["C:/Program Files/Git/cmd"]}
+  ],
+  "keys": ["DEEPSEEK_API_KEY", "OPENROUTER_API_KEY", "OPENAI_API_KEY", "MOONSHOT_API_KEY"],
+  "skip_dirs": ["Windows", "$Recycle.Bin", "#recycle", "System Volume Information", "ProgramData", "node_modules", ".git",
+                "__pycache__", ".venv", "venv", "target", "ZZZ Archive", "_archive", "AppData", "WindowsApps"],
+  "depth": 3
+}
