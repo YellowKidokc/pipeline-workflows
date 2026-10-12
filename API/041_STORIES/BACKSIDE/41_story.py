@@ -19,9 +19,13 @@ GROUP = 15
 # One call answers for at most this many paragraphs: past ~200 rows the reply runs out of output tokens.
 ONE_CALL = 150
 WINDOW = 120
-# Above this the paper does not fit one model call at all (DeepSeek reads 128K tokens); split it first.
-MAX_CHARS = 380_000
+# One call reads at most this much of a paper (DeepSeek reads 128K tokens); a longer paper is read in parts.
+MAX_CHARS = 300_000
 
+# The series reply has to fit one answer (8000 tokens) however many papers the series has.
+SERIES_LIMITS = ("\n\nKeep the reply short enough for a long series: each paper's role in at most 15 words; a handoff "
+                 "note only when its score is 3 or less, at most 25 words; at most 8 repeats, 8 missing beats, "
+                 "8 contradictions and 8 fixes, most important first; proposed_order only if it changes something.")
 ONLY_OVERVIEW = ("\n\nThis paper is long: do NOT list the paragraphs (return \"paragraphs\": []); they are tabled "
                  "separately. Everything else as asked, over the whole paper.")
 
@@ -44,21 +48,48 @@ def for_series(p1: dict | None) -> dict | None:
     return keep
 
 
+def overview(ctx, head: str, paragraphs) -> dict | None:
+    """A paper too long for one call: read it in parts (each under MAX_CHARS, in order), then merge the parts'
+    checks into one for the whole paper. All of it on the same provider."""
+    parts, size = [[]], 0
+    for p in paragraphs:
+        n = len(p.text) + len(p.id) + 4
+        if parts[-1] and size + n > MAX_CHARS:
+            parts.append([])
+            size = 0
+        parts[-1].append(p)
+        size += n
+    ctx.step(f"pass 1: {sum(len(paras_text(x)) for x in parts):,} characters, read in {len(parts)} part(s)")
+    checks = []
+    for i, part in enumerate(parts, 1):
+        where = "first part (the opening)" if i == 1 else "last part (the ending)" if i == len(parts) else "a middle part"
+        prompt = (f"{head}{ONLY_OVERVIEW}\nThis is part {i} of {len(parts)}, {where}; judge it as a stretch of the paper."
+                  f"\n\nIDS: {part[0].id} .. {part[-1].id}\n\nPAPER:\n{paras_text(part)}")
+        reply = ctx.cached(f"pass1-part-{part[0].id}", lambda: ctx.call_json("story_paper", prompt))
+        if not isinstance(reply, dict):
+            ctx.errors.append(f"story_paper: part {i} of {len(parts)} gave no answer")
+            return None
+        checks.append({"part": i, "ids": f"{part[0].id}..{part[-1].id}", "check": reply})
+    if len(checks) == 1:
+        return checks[0]["check"]
+    prompt = f"{(HERE / 'PASS1_MERGE.md').read_text(encoding='utf-8')}\n\nPARTS:\n{json.dumps(checks, ensure_ascii=False)}"
+    merged = ctx.cached("pass1-merge", lambda: ctx.call_json("story_paper", prompt))
+    return merged if isinstance(merged, dict) else None
+
+
 def pass1(ctx) -> dict | None:
     paragraphs, _ = segment(ctx.text)
     ctx.step(f"pass 1: {len(paragraphs)} paragraphs")
     paper = paras_text(paragraphs)
-    if len(paper) > MAX_CHARS:
-        ctx.errors.append(f"story_paper: {len(paper):,} characters is more than one model call can read; split the paper first")
-        return None
     head = (HERE / 'PASS1.md').read_text(encoding='utf-8')
-    if len(paragraphs) <= ONE_CALL:
+    if len(paragraphs) <= ONE_CALL and len(paper) <= MAX_CHARS:
         prompt = f"{head}\n\nIDS: {', '.join(p.id for p in paragraphs)}\n\nPAPER:\n{paper}"
         data = ctx.cached("pass1", lambda: ctx.call_json("story_paper", prompt))
         return data if isinstance(data, dict) else None
     # Long paper: the verdict over the whole text, then the paragraph table in windows.
-    prompt = f"{head}{ONLY_OVERVIEW}\n\nIDS: {paragraphs[0].id} .. {paragraphs[-1].id}\n\nPAPER:\n{paper}"
-    data = ctx.cached("pass1-overview", lambda: ctx.call_json("story_paper", prompt))
+    data = overview(ctx, head, paragraphs) if len(paper) > MAX_CHARS else ctx.cached(
+        "pass1-overview", lambda: ctx.call_json(
+            "story_paper", f"{head}{ONLY_OVERVIEW}\n\nIDS: {paragraphs[0].id} .. {paragraphs[-1].id}\n\nPAPER:\n{paper}"))
     if not isinstance(data, dict):
         return None
     roles_head = (HERE / 'PASS1_ROLES.md').read_text(encoding='utf-8')
@@ -81,7 +112,7 @@ def pass1(ctx) -> dict | None:
 
 
 def main() -> int:
-    station = Station(LABEL, prompt_files=["PASS1.md", "PASS1_ROLES.md", "PASS2.md", "PASS3.md"],
+    station = Station(LABEL, prompt_files=["PASS1.md", "PASS1_ROLES.md", "PASS1_MERGE.md", "PASS2.md", "PASS3.md"],
                       extra_args=lambda p: p.add_argument("--force-lines", action="store_true", help="write lines even when not coherent"))
     items = station.items()
     if station.args.dry_run or not items:
@@ -111,7 +142,7 @@ def main() -> int:
             blocks.append({"id": m.id, "title": m.title, "pass1": for_series(first[m.id][0]),
                            "first_paragraph": ps[0].text[:1500] if ps else "", "last_paragraph": ps[-1].text[:1500] if ps else ""})
         ctx = first[members[0].id][1]
-        prompt = f"{(HERE / 'PASS2.md').read_text(encoding='utf-8')}\n\nSERIES: {name}\nORDER: {', '.join(m.id for m in members)}\n\n{json.dumps(blocks, ensure_ascii=False)}"
+        prompt = f"{(HERE / 'PASS2.md').read_text(encoding='utf-8')}{SERIES_LIMITS if len(members) > 8 else ''}\n\nSERIES: {name}\nORDER: {', '.join(m.id for m in members)}\n\n{json.dumps(blocks, ensure_ascii=False)}"
         station.say(f"41_STORY phase B: series '{name}': {len(members)} papers")
         series_result[name] = ctx.cached(f"pass2-{name}", lambda: ctx.call_json("story_series", prompt),
                                          extra=",".join(m.source_hash[:8] for m in members))
