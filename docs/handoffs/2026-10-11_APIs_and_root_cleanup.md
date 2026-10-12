@@ -22,7 +22,12 @@ The rest of APIs went to `ZZZ Archive/APIs_portable_2026-09-22/`.
 `scripts/openintel_install_templates.py` moved with them, because they only work with those folders.
 All moves were `git mv` (510 renames). Nothing was deleted.
 
-## Open decision: ConversionStation (NOT moved)
+## Decided: ConversionStation stays in place
+
+**Decision (2026-10-11, owner): keep `ConversionStation/` at the repo root.** Don't move it, make it a station, or archive it.
+`paths.json` and `convert` stay as they are. The background below is kept for reference.
+
+### Background
 
 `ConversionStation/` is still in use. The local, untracked `API/_system/config/paths.json` sets
 `conversion_station` to `D:\GitHub\pipeline-workflows\ConversionStation`, and `API/_ACTIONS/actions/convert.py`
@@ -36,6 +41,8 @@ If it moves: move the whole folder on the filesystem so the ignored data goes to
 update `paths.json`, and test that `convert` still works. A moved venv may break, and rebuilding it is the fix.
 
 ## Things to follow up
+
+The owner deferred all of these on 2026-10-11. Pick them up only when asked.
 
 - `API/_system/vendor/reusable_tools/` is reference material that has never been run (see its `START_HERE.md` and `INVENTORY.csv`).
   Each tool needs its config, imports and paths fixed before use. Destructive or in-place operations should copy first.
