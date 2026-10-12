@@ -16,22 +16,72 @@ from engine.text import segment  # noqa: E402
 LABEL = "41_STORY"
 HERE = Path(__file__).resolve().parent
 GROUP = 15
+# One call answers for at most this many paragraphs: past ~200 rows the reply runs out of output tokens.
+ONE_CALL = 150
+WINDOW = 120
+# Above this the paper does not fit one model call at all (DeepSeek reads 128K tokens); split it first.
+MAX_CHARS = 380_000
+
+ONLY_OVERVIEW = ("\n\nThis paper is long: do NOT list the paragraphs (return \"paragraphs\": []); they are tabled "
+                 "separately. Everything else as asked, over the whole paper.")
 
 
 def paras_text(paragraphs) -> str:
     return "\n\n".join(f"[{p.id}] {p.text}" for p in paragraphs)
 
 
+def for_series(p1: dict | None) -> dict | None:
+    """Pass 1 as the series pass needs it: the whole table of every paper would not fit one call, so it gets the
+    verdict, the through-line and the paragraphs that do not serve or sit out of order (at most 40)."""
+    if not isinstance(p1, dict):
+        return p1
+    flagged = [x for x in p1.get("paragraphs", []) if x.get("serves") != "yes" or x.get("out_of_order")]
+    keep = {k: v for k, v in p1.items() if k != "paragraphs"}
+    keep["drift"] = (p1.get("drift") or [])[:15]
+    keep["contradictions"] = (p1.get("contradictions") or [])[:10]
+    keep["paragraph_count"] = len(p1.get("paragraphs", []))
+    keep["flagged_paragraphs"] = flagged[:40]
+    return keep
+
+
 def pass1(ctx) -> dict | None:
     paragraphs, _ = segment(ctx.text)
     ctx.step(f"pass 1: {len(paragraphs)} paragraphs")
-    prompt = f"{(HERE / 'PASS1.md').read_text(encoding='utf-8')}\n\nIDS: {', '.join(p.id for p in paragraphs)}\n\nPAPER:\n{paras_text(paragraphs)}"
-    data = ctx.cached("pass1", lambda: ctx.call_json("story_paper", prompt))
-    return data if isinstance(data, dict) else None
+    paper = paras_text(paragraphs)
+    if len(paper) > MAX_CHARS:
+        ctx.errors.append(f"story_paper: {len(paper):,} characters is more than one model call can read; split the paper first")
+        return None
+    head = (HERE / 'PASS1.md').read_text(encoding='utf-8')
+    if len(paragraphs) <= ONE_CALL:
+        prompt = f"{head}\n\nIDS: {', '.join(p.id for p in paragraphs)}\n\nPAPER:\n{paper}"
+        data = ctx.cached("pass1", lambda: ctx.call_json("story_paper", prompt))
+        return data if isinstance(data, dict) else None
+    # Long paper: the verdict over the whole text, then the paragraph table in windows.
+    prompt = f"{head}{ONLY_OVERVIEW}\n\nIDS: {paragraphs[0].id} .. {paragraphs[-1].id}\n\nPAPER:\n{paper}"
+    data = ctx.cached("pass1-overview", lambda: ctx.call_json("story_paper", prompt))
+    if not isinstance(data, dict):
+        return None
+    roles_head = (HERE / 'PASS1_ROLES.md').read_text(encoding='utf-8')
+    windows = [paragraphs[i:i + WINDOW] for i in range(0, len(paragraphs), WINDOW)]
+    ctx.step(f"pass 1: long paper, overview + {len(windows)} paragraph window(s) of {WINDOW}")
+    table, drift, contradictions = [], list(data.get("drift") or []), list(data.get("contradictions") or [])
+    for w in windows:
+        prompt = (f"{roles_head}\n\nTHROUGH-LINE: {data.get('through_line', '')}\n"
+                  f"IDS: {', '.join(p.id for p in w)}\n\nPARAGRAPHS:\n{paras_text(w)}")
+        reply = ctx.cached(f"pass1-roles-{w[0].id}", lambda: ctx.call_json("story_paper", prompt), extra=data.get("through_line", ""))
+        if not isinstance(reply, dict):
+            ctx.warnings.append(f"story_paper: no paragraph table for {w[0].id}..{w[-1].id}")
+            continue
+        wanted = {p.id for p in w}
+        table += [x for x in reply.get("paragraphs", []) if x.get("id") in wanted]
+        drift += reply.get("drift") or []
+        contradictions += reply.get("contradictions") or []
+    data.update(paragraphs=table, drift=drift, contradictions=contradictions)
+    return data
 
 
 def main() -> int:
-    station = Station(LABEL, prompt_files=["PASS1.md", "PASS2.md", "PASS3.md"],
+    station = Station(LABEL, prompt_files=["PASS1.md", "PASS1_ROLES.md", "PASS2.md", "PASS3.md"],
                       extra_args=lambda p: p.add_argument("--force-lines", action="store_true", help="write lines even when not coherent"))
     items = station.items()
     if station.args.dry_run or not items:
@@ -58,7 +108,7 @@ def main() -> int:
         blocks = []
         for m in members:
             ps, _ = segment(m.text())
-            blocks.append({"id": m.id, "title": m.title, "pass1": first[m.id][0],
+            blocks.append({"id": m.id, "title": m.title, "pass1": for_series(first[m.id][0]),
                            "first_paragraph": ps[0].text[:1500] if ps else "", "last_paragraph": ps[-1].text[:1500] if ps else ""})
         ctx = first[members[0].id][1]
         prompt = f"{(HERE / 'PASS2.md').read_text(encoding='utf-8')}\n\nSERIES: {name}\nORDER: {', '.join(m.id for m in members)}\n\n{json.dumps(blocks, ensure_ascii=False)}"

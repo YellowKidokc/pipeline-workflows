@@ -315,7 +315,9 @@ class Station:
         if result.markdown:
             (out / f"{self.label}.md").write_text(result.markdown, encoding="utf-8")
         if self.args.outbox and item:                     # flat copy for the front folder's OUTBOX (David's rule)
-            flat = Path(self.args.outbox)
+            # "@source": next to the note it came from, so each article folder of a series keeps its own outputs
+            flat = (Path(item.meta.get("original_path") or item.folder).parent if self.args.outbox == "@source"
+                    else Path(self.args.outbox))
             flat.mkdir(parents=True, exist_ok=True)
             src = item.meta.get("source_file") or ""          # named after the note, so publish_analysis finds it
             stem = Path(src).stem if src else (re.sub(r'[<>:"/\\|?*]', "", item.title)[:120].strip() or item.id)

@@ -144,11 +144,24 @@ def _video_id(text: str, fallback: str) -> str:
     return match.group(1) if match else fallback
 
 
+def series_of(note: Path) -> tuple[str, int | None]:
+    """A note in <series>/<NN_NAME>/note.md belongs to that series when <series>/BACKSIDE/series.json exists:
+    the series is its "name", the order is the article folder's NN. Otherwise the folder name, as before."""
+    note = note.resolve()
+    folder = note.parent.parent if note.parent.name == "_originals" else note.parent
+    spec = folder.parent / "BACKSIDE" / "series.json"
+    if spec.is_file():
+        name = json.loads(spec.read_text(encoding="utf-8")).get("name") or folder.parent.name
+        order = re.match(r"(\d+)", folder.name)
+        return name, int(order.group(1)) if order else None
+    return folder.name, None
+
+
 def ensure_video(transcript: Path) -> Item:
     """Video item folder for a transcript .md (from ytgrab: '# title', '**Video ID:**', '## Transcript')."""
     transcript = transcript.resolve()
     text = transcript.read_text(encoding="utf-8", errors="replace")
-    channel = transcript.parent.name if transcript.parent.name != "_originals" else transcript.parent.parent.name
+    channel, order = series_of(transcript)
     title = _title_from(transcript)
     vid = _video_id(text, sha256_file(transcript)[:11])
     root = external("yt_work", create=True) / channel
@@ -157,9 +170,12 @@ def ensure_video(transcript: Path) -> Item:
     if (folder / "video.json").exists():
         item = Item("video", folder)
         meta = item.meta
-        if meta.get("source_hash") != digest:
-            meta["source_hash"] = _copy_source(transcript, folder)
-            meta["source_file"] = transcript.name
+        place = {"series_order": order, "original_path": str(transcript)}
+        if meta.get("source_hash") != digest or any(meta.get(k) != v for k, v in place.items()):
+            if meta.get("source_hash") != digest:
+                meta["source_hash"] = _copy_source(transcript, folder)
+                meta["source_file"] = transcript.name
+            meta.update(place)
             item.save_meta(meta)
         return item
     root.mkdir(parents=True, exist_ok=True)
@@ -168,6 +184,7 @@ def ensure_video(transcript: Path) -> Item:
     url = re.search(r"\*\*URL:\*\*\s*<?(\S+?)>?\s*$", text, re.M)
     item = Item("video", folder)
     item.save_meta({"id": vid, "kind": "video", "title": title, "channel": channel, "series": channel,
+                    "series_order": order,
                     "url": url.group(1) if url else f"https://www.youtube.com/watch?v={vid}",
                     "source_hash": digest, "source_file": transcript.name, "original_path": str(transcript),
                     "created_at": datetime.now(timezone.utc).isoformat(), "stations_run": [], "tags": {}})
