@@ -1,3 +1,3 @@
 @echo off
-python "%~dp0scripts\unified.py" %*
+python "%~dp0BACKSIDE\scripts\unified.py" %*
 exit /b %ERRORLEVEL%

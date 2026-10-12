@@ -102,7 +102,7 @@ workflow should behave before any station starts:
 - where outputs should land
 - how much detail David wants in summaries
 
-Global defaults live in `preferences/defaults.json`. Workflow packets can
+Global defaults live in `BACKSIDE/preferences/defaults.json`. Workflow packets can
 override them in `workflows/PROCESS_NAME/PREFS/preferences.json`.
 
 ## Claude CLI Pattern
@@ -132,12 +132,12 @@ On Windows, double-click `ACTION_CENTER.bat` for a searchable desktop menu of
 the repository's existing actions. It organizes the launchers without moving or
 deleting them, supports file and folder selection for curated actions, previews
 the exact command, and asks for confirmation before launch. See
-[`tools/action_center/README.md`](tools/action_center/README.md).
+[`BACKSIDE/tools/action_center/README.md`](BACKSIDE/tools/action_center/README.md).
 
 Or create a new workflow packet from the command line:
 
 ```bat
-scripts\create_workflow_packet.bat PaperGrading
+BACKSIDE\scripts\create_workflow_packet.bat PaperGrading
 ```
 
 Then drop files into:
