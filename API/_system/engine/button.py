@@ -118,6 +118,36 @@ def gather(sources: list[Path]) -> list[Path]:
     return list(dict.fromkeys(notes))
 
 
+RECORD_EXTS = {".json", ".yaml", ".yml"}
+
+
+def record_files(root: Path) -> list[Path]:
+    """JSON/YAML records under a file or folder, excluding archived output."""
+    if root.is_file():
+        return [root] if root.suffix.lower() in RECORD_EXTS else []
+    return sorted(p for p in root.rglob("*") if p.is_file() and p.suffix.lower() in RECORD_EXTS
+                  and "_older" not in p.parts and "OUTBOX" not in p.parts)
+
+
+def run_records(mode: str, front: Path, st: dict) -> int:
+    """Run a local data station without titling, altering, or publishing onto sources."""
+    if mode == "here":
+        roots = [front / "INBOX"]
+    else:
+        raw = ask("Where is the folder or record file? (drag it here) ")
+        roots = [Path(raw)] if raw else []
+    records = list(dict.fromkeys(p for root in roots if root.exists() for p in record_files(root)))
+    if not records:
+        print("No .json, .yaml, or .yml records found.")
+        return 0
+    out = front / "OUTBOX"
+    out.mkdir(parents=True, exist_ok=True)
+    listfile = out / LAST
+    listfile.write_text("\n".join(map(str, records)) + "\n", encoding="utf-8")
+    say(f"{st['label']}: {len(records)} record file(s), results -> {out}")
+    return run_station(front, st, records, out, 1, [])
+
+
 def priority_notes(sources: list[Path]) -> list[Path]:
     """Everything in INBOX/00_PRIORITY: putting it there is the tick, so no pick list and no "how many?"."""
     notes: list[Path] = []
@@ -276,7 +306,7 @@ def run_station(front: Path, st: dict, notes: list[Path], out: Path, workers: in
         from engine.bundle import run_bundle
         return run_bundle(front, st, notes, out, workers, focus, lambda n, dirs: publish_on_note([n], dirs),
                           lambda n, o: None)             # the ANALYSIS.md rewrite happens once, in main(), in the right folder
-    row = next(r for r in station_rows() if r["number"] == st["number"])
+    row = next((r for r in station_rows() if r["number"] == st["number"]), None)
     if st.get("kind") == "legacy":                      # a wrapped older tool: it reads its own inputs, run as before
         cmd = [sys.executable, str(SYSTEM / "engine" / "menu.py"), st["number"], "--yes", "--workers", str(workers)]
         if st.get("items"):
@@ -284,7 +314,8 @@ def run_station(front: Path, st: dict, notes: list[Path], out: Path, workers: in
         else:
             say("legacy station: its configured evidence/data root is used; selected notes are not forwarded")
     else:                                               # engine station: these notes, flat copies into `out`
-        cmd = [sys.executable, "-u", str(station_dir(row["label"]) / row["script"]), f"@{listfile}",
+        script = front / "BACKSIDE" / st["script"] if st.get("script") else station_dir(row["label"]) / row["script"]
+        cmd = [sys.executable, "-u", str(script), f"@{listfile}",
                "--outbox", str(out), "--workers", str(workers)] + (["--focus", "; ".join(focus)] if focus else [])
         if st["number"] in ("48", "49"):
             topic = ask("What topic should this station synthesize? ")
@@ -344,6 +375,8 @@ def main(mode: str, front: Path) -> int:
     base = parent_station(front)
     title = f"{st['label']}" + (f"  (layer of {station_of(base)['label']})" if base else "")
     print(f"\n{title}\n{'=' * len(title)}")
+    if st.get("items") == "records":
+        return run_records(mode, front, st)
     if st.get("items") == "lean" and mode == "here" and not base:
         return lean_here(front, st)
     if base and mode == "here" and not st.get("own_inbox"):
