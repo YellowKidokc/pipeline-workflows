@@ -4,12 +4,12 @@ set "SYS=%~dp0"
 :findsys
 if exist "%SYS%_system\engine\menu.py" goto :sysok
 for %%I in ("%SYS%..") do set "UP=%%~fI"
-if not "%UP:~-1%"=="\" set "UP=%UP%\\"
+if not "%UP:~-1%"=="\" set "UP=%UP%\"
 if /i "%UP%"=="%SYS%" echo Cannot find _system above %~dp0 & pause & exit /b 1
 set "SYS=%UP%"
 goto :findsys
 :sysok
-set "SYS=%SYS%_system\\"
+set "SYS=%SYS%_system\"
 set "PY=python" & where py >nul 2>nul && set "PY=py -3"
 %PY% "%SYS%engine\button.py" here "%~dp0."
 pause
