@@ -1,0 +1,107 @@
+# Copy this file when designing a permanent API station.
+# Runtime choices currently live in ACTIVE.yaml, questions.yaml, outputs.yaml, and station.json.
+template_version: 1
+
+identity:
+  number: "NN"
+  name: NEW_STATION
+  label: NN_NEW_STATION
+  description: One sentence describing the decision or artifact this station produces.
+  owner: David
+  register: analysis
+  uses_api: true
+
+input:
+  item_kind: papers
+  accepted_extensions: [.md, .txt]
+  source_policy: frozen_original
+  lanes: [00_PRIORITY, 01_SERIES, 02_GENERAL]
+  strip_prior_analysis: true
+  duplicate_policy: source_sha256
+  preserve_original: true
+
+execution:
+  mode: separate                 # separate or bundle
+  workers: inherited             # shared workbench setting
+  provider: inherited
+  model: inherited
+  retries: inherited
+  fallback: inherited
+  cache_key:
+    - source_sha256
+    - prompt_hash
+    - questions_hash
+    - output_contract_hash
+    - provider
+    - model
+    - focus_hash
+  finish_item_before_next: true
+  skip_completed: true
+  interruption_policy: keep_finished
+  continue_on_question_error: true
+
+prompt:
+  active: PROMPT.md
+  versioned_by_hash: true
+  permanent_rules:
+    - separate source facts from interpretation
+    - attach evidence to findings
+    - never make human rulings
+    - preserve contrary evidence
+  one_time_focus:
+    maximum_questions: 5
+    saved_in_receipt: true
+
+questions:
+  file: questions.yaml
+  entry_contract:
+    id: unique_machine_key
+    enabled: true
+    title: Human-readable title
+    output_key: stable_result_key
+    answer_type: object           # object, array, string, number, boolean
+    question: Full independent question.
+    required_fields: []
+  ordering: file_order
+  disabled_questions_make_no_call: true
+  missing_answer_policy: null
+  evidence_required: true
+
+output:
+  profiles_file: outputs.yaml
+  active_profile: json_and_markdown
+  canonical_bundle:
+    - json
+    - markdown
+    - html
+  receipt:
+    - source_sha256
+    - station
+    - prompt_version
+    - enabled_question_ids
+    - provider
+    - model
+    - token_counts
+    - started_at
+    - finished_at
+    - errors
+    - warnings
+  archive_replaced: true
+  archive_folder: _older
+  publish_requires_human_button: true
+
+validation:
+  valid_json_when_requested: true
+  one_repair_attempt: inherited
+  required_field_check: true
+  truncated_reply_is_error: true
+  scores_must_be_computed_or_evidenced: true
+  compiler_facts_separate: true
+  ai_proposals_labeled: true
+
+security:
+  keys_in_station_folder: false
+  keys_from_environment: true
+  commit_inbox: false
+  commit_outbox: false
+  machine_paths_in_code: false
