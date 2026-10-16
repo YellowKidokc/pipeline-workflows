@@ -1,0 +1,22 @@
+version: 1
+profiles:
+  json:
+    format: json
+    save_json: true
+    save_markdown: false
+    instruction: Return one valid JSON object. Use the question's output_key as the top-level key.
+  markdown:
+    format: markdown
+    save_json: false
+    save_markdown: true
+    instruction: Return concise Markdown with evidence beneath every finding.
+  json_and_markdown:
+    format: json
+    save_json: true
+    save_markdown: true
+    instruction: Return one valid JSON object. The station will render a readable Markdown copy.
+  raw:
+    format: text
+    save_json: false
+    save_markdown: true
+    instruction: Return the requested answer as plain Markdown without a JSON wrapper.
