@@ -1,0 +1,16 @@
+version: 1
+active_prompt: PROMPT.md
+active_questions: questions.yaml
+active_outputs: outputs.yaml
+active_output_profile: json_and_markdown
+
+execution:
+  mode: separate
+  max_questions_per_bundle: 6
+  continue_on_question_error: true
+
+defaults:
+  temperature: 0.2
+  max_tokens: 6000
+  evidence_required: true
+  unanswered_value: null
