@@ -1,0 +1,163 @@
+version: 1
+question_set: paper_lifecycle_core
+description: Each enabled entry is one independently receipted API question. Reorder freely.
+
+questions:
+  - id: identity
+    enabled: true
+    title: Intake and identity
+    output_key: identity
+    answer_type: object
+    question: >
+      Identify the document's title, author, date, source type, likely topic,
+      series membership, register (declaration or canon), and any visible prior-version clues.
+      Mark missing fields null. Do not mint a permanent UUID or ruling.
+    required_fields: [title, author, written, source_type, topic, series, register, version_clues, evidence]
+
+  - id: claims
+    enabled: true
+    title: Atomic claims
+    output_key: claims
+    answer_type: array
+    question: >
+      Extract the distinct atomic claims. For each, give source wording or an exact locator,
+      epistemic mode, warrant class, load-bearing status, hidden premises, and overclaim terms.
+      Do not combine several claims into one.
+    required_fields: [local_id, claim, source_quote, epistemic_mode, warrant_class, load_bearing, hidden_premises, overclaim_terms]
+
+  - id: definitions
+    enabled: false
+    title: Definitions and vocabulary
+    output_key: definitions
+    answer_type: array
+    question: >
+      List technical terms that require definitions, their apparent meaning here,
+      possible collisions or drift, and whether plain and technical definitions are present.
+    required_fields: [term, apparent_meaning, first_use, plain_definition_present, technical_definition_present, collision_risk, evidence]
+
+  - id: math
+    enabled: false
+    title: Mathematical verification targets
+    output_key: mathematics
+    answer_type: object
+    question: >
+      Extract equations and numerical claims. Identify undefined variables, unit questions,
+      limiting-case questions, sign or boundary risks, recomputation needs, and possible Lean targets.
+      Do not claim a theorem compiled unless a receipt is in the source.
+    required_fields: [equations, numerical_claims, verification_tasks, lean_candidates, evidence]
+
+  - id: triage
+    enabled: true
+    title: Lawyer's triage
+    output_key: triage
+    answer_type: array
+    question: >
+      Test each important claim as HELD, OVERSTATED, FALSE, or MISSING based only on the supplied source.
+      Give the exact reason, defensible revision when needed, and blast radius INERT, LOCAL, or STRUCTURAL.
+      Treat uncertainty as MISSING rather than inventing support.
+    required_fields: [claim_ref, status, reason, evidence, defensible_revision, blast_radius]
+
+  - id: contradictions
+    enabled: false
+    title: Contradictions and tensions
+    output_key: conflicts
+    answer_type: array
+    question: >
+      Find internal contradictions, tensions, scope conflicts, and terminology collisions.
+      Do not compare against an external canon unless that canon is supplied in the input.
+    required_fields: [conflict_type, side_a, side_b, evidence_a, evidence_b, blast_radius, proposed_not_ruled]
+
+  - id: originality
+    enabled: false
+    title: Prior-art questions
+    output_key: originality
+    answer_type: array
+    question: >
+      Identify claims that require external prior-art research, the nearest-neighbor question,
+      strongest-opponent question, historical-witness question, and the possible original bridge.
+      Do not assert originality from model memory.
+    required_fields: [claim_ref, research_question, likely_search_domains, originality_status, evidence]
+
+  - id: research_legs
+    enabled: false
+    title: External research legs
+    output_key: research_legs
+    answer_type: array
+    question: >
+      Convert contested or unsupported claims into neutral research questions.
+      Split each into independent legs, state any premise the question assumes,
+      and include an opposing leg.
+    required_fields: [claim_ref, neutral_question, assumed_premise, legs, opposing_leg]
+
+  - id: graph
+    enabled: false
+    title: Knowledge-graph proposals
+    output_key: proposed_edges
+    answer_type: array
+    question: >
+      Propose links among claims, evidence, definitions, equations, Master Equation nodes,
+      whole-case arguments, and related topics. Use only the closed relations:
+      mentions, supports, opposes, proves, depends_on, implies, predicts, tests, defines,
+      maps_to, touches, witnesses, version_of, successor_of, helps, hurts.
+      Every edge must remain proposed.
+    required_fields: [source, relation, target, proposer, status, reason, evidence]
+
+  - id: predictions
+    enabled: false
+    title: Predictions and kill conditions
+    output_key: predictions
+    answer_type: array
+    question: >
+      Identify testable predictions and possible kill conditions for load-bearing claims.
+      Separate genuine advance predictions from retrodictions. Do not create a preregistration hash.
+    required_fields: [claim_ref, prediction, prediction_type, kill_condition, measurable_outcome, evidence]
+
+  - id: rebuild
+    enabled: false
+    title: Rebuild instructions
+    output_key: rebuild
+    answer_type: object
+    question: >
+      Produce an edit plan, not a rewritten paper: what to keep, cut, narrow, define,
+      support, reorder, and move to private audit. Preserve the author's voice.
+    required_fields: [keep, cut, narrow, define, support, reorder, private_audit, proposed_title]
+
+  - id: story
+    enabled: false
+    title: Story layer
+    output_key: story_layer
+    answer_type: object
+    question: >
+      Identify possible human anchors, story facts, memorable lines, and whether the story spine
+      actually carries the argument spine. Do not invent a story absent from the source.
+    required_fields: [human_anchors, story_facts, memorable_lines, story_argument_alignment, reuse_risks]
+
+  - id: reader
+    enabled: false
+    title: Reader and accessibility layer
+    output_key: reader_layer
+    answer_type: object
+    question: >
+      Assess public, college, technical, and formal-reader needs; terms needing plain language;
+      equation translations; mobile readability; and accessibility work.
+    required_fields: [reader_levels, plain_language_needs, equation_translations, difficulty, accessibility]
+
+  - id: citations
+    enabled: false
+    title: Citation verification queue
+    output_key: citation_queue
+    answer_type: array
+    question: >
+      List every citation, quote, attribution, Scripture reference, statistic, and link that must
+      be fetched or checked. Do not mark verified unless verification material is supplied.
+    required_fields: [kind, cited_item, claim_supported, source_location, verification_status, required_check]
+
+  - id: ruling_queue
+    enabled: false
+    title: Human ruling queue
+    output_key: ruling_queue
+    answer_type: array
+    question: >
+      List decisions that require David's judgment. Prioritize structural blast radius.
+      The model may frame choices and evidence but may not select the ruling.
+    required_fields: [decision, options, evidence, blast_radius, dependencies, ai_recommendation_status]
