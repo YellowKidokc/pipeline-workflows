@@ -1,0 +1,27 @@
+{
+  "number": "66",
+  "name": "REUSABLE_API_CALL",
+  "label": "66_REUSABLE_API_CALL",
+  "kind": "native",
+  "description": "Run a swappable prompt, individually enabled questions, and a selectable output contract over papers or transcripts.",
+  "script": "66_reusable_api_call.py",
+  "items": "papers",
+  "uses_api": true,
+  "on_note": false,
+  "options": [
+    "workers",
+    "provider",
+    "model",
+    "focus",
+    "redo",
+    "outbox"
+  ],
+  "goals": [
+    {
+      "id": "API-66",
+      "title": "CONFIGURED_API_CALL",
+      "task": "configured",
+      "asks": "The enabled questions in BACKSIDE/questions.yaml using ACTIVE.yaml."
+    }
+  ]
+}
