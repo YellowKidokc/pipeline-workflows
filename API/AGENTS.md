@@ -72,6 +72,19 @@ A station with `"kind": "chain"` and a `"chain"` list of station numbers (063_PA
 the same notes, each the way its own button runs it, all into the one output folder. Edit the list to add, drop or reorder a step.
 The same list is routine `G` in `ONE_MENU`.
 
+## 2d. The workspace page
+
+`ONE_MENU.bat workspace` (or `API PIPELINE\OPEN WORKSPACE.bat`) starts `_system\engine\workspace.py` on 127.0.0.1 and opens
+`_system\workspace\index.html`: a home page per group (read from the station.json files, never a hand-kept list).
+- **Run** picks the stations and their order, the notes, the output folder, how many at once, up to 5 questions and the
+  layers, then calls `button.py plan <station> <plan.json>`: the buttons' own code after the questions, not a copy. A
+  sequence runs its stations one after another on the same notes (under their new names once titled). Every call goes
+  through one relay (`gateway.py`), so the limit is global. Mock sends nothing.
+- **Piece by piece** sends one prompt at a time (`llm.py`): `BACKSIDE\pieces.json`, else the S/A sections of
+  `BACKSIDE\templates\*.md` (a draft breakdown), else `PROMPT.md`. An accepted answer is saved at once to
+  `<output>\PIECES\<note>\`; "Assemble" writes `<note> · PIECES.md`.
+- The page may write only `PROMPT.md`, `FOCUS.md` and `pieces.json` in a BACKSIDE (old version to `BACKSIDE\_older\`).
+
 ## 3. Where results go
 
 - **On the note.** `publish_analysis.py` writes one block between `<!-- analysis:start -->` and `<!-- analysis:end -->`, above the transcript. Inside it, in order:

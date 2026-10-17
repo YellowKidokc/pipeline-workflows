@@ -17,6 +17,12 @@ Base station (020_CKG), in order:
   6 layers   offers the layer stations in its OUTBOX, run on the same notes
 Layer station: here = the notes its parent just ran (<parent>/OUTBOX/_last_run.txt); folder = asks. Its results go
 into its own OUTBOX.
+
+    python button.py plan "<its folder>" plan.json
+
+The same run with the questions already answered (the workspace page, engine/workspace.py):
+{"notes": [paths], "out": "", "workers": 8, "focus": [...], "layers": [{"folder": "010_CKG_THEOLOGY", "focus": []}],
+ "topic": ""}. Everything after the questions is the same code as the buttons.
 """
 from __future__ import annotations
 
@@ -43,6 +49,7 @@ YT_RAW = (".srt", ".vtt")
 SUBFOLDERS = ("Clean MD", "Prompts", "Channel Summary")
 LANES = {"00_PRIORITY", "01_SERIES", "02_GENERAL", "02_GROUP"}
 PRIORITY = "00_PRIORITY"
+PLAN: dict = {}                                       # plan mode: the answers, given up front
 
 
 def action(name: str):
@@ -287,7 +294,7 @@ def run_station(front: Path, st: dict, notes: list[Path], out: Path, workers: in
         cmd = [sys.executable, "-u", str(station_dir(row["label"]) / row["script"]), f"@{listfile}",
                "--outbox", str(out), "--workers", str(workers)] + (["--focus", "; ".join(focus)] if focus else [])
         if st["number"] in ("48", "49"):
-            topic = ask("What topic should this station synthesize? ")
+            topic = PLAN.get("topic") or ask("What topic should this station synthesize? ")
             if not topic:
                 print("A topic is required.")
                 return 2
@@ -314,19 +321,26 @@ def ask_focus() -> list[str]:
     return focus
 
 
-def lean_here(front: Path, st: dict) -> int:
+def lean_here(front: Path, st: dict, plan: dict | None = None) -> int:
     """A Lean station reads its own INBOX (00_PRIORITY, 01_SERIES, 02_GENERAL; .lean as well as .md), so the notes are not
     gathered here: it runs on its INBOX, then offers the layers in its OUTBOX (050 congruence matrix, 051, 052...)."""
-    workers = ask_int("How many at once?", 8, 1, 30)
-    focus = ask_focus()
-    if ask(f"\nRun {st['label']} on its INBOX, {workers} at once? [Y/n] ").lower() in ("n", "no"):
-        return 1
+    if plan is not None:
+        workers, focus = plan_workers(plan), plan.get("focus") or []
+    else:
+        workers = ask_int("How many at once?", 8, 1, 30)
+        focus = ask_focus()
+        if ask(f"\nRun {st['label']} on its INBOX, {workers} at once? [Y/n] ").lower() in ("n", "no"):
+            return 1
     row = next(r for r in station_rows() if r["number"] == st["number"])
     say(f"{st['label']}: its INBOX, {workers} at once")
     code = run_guarded([sys.executable, "-u", str(station_dir(row["label"]) / row["script"]), "--workers", str(workers)]
                        + (["--focus", "; ".join(focus)] if focus else []), MAIN)
     layers = sorted(d for d in (front / "OUTBOX").iterdir() if d.is_dir() and (d / "BACKSIDE" / "station.json").is_file())
-    if layers:
+    if plan is not None:
+        for d, layer_focus in plan_layers(front, plan):
+            print(f"\n{d.name}")
+            code |= run_station(d, station_of(d), [], d / "OUTBOX", workers, layer_focus)
+    elif layers:
         menu = "  ".join(f"{i} {d.name.split('_', 1)[1].replace('_', ' ').title()}" for i, d in enumerate(layers, 1))
         picked = ask(f"\nAlso run a layer? {menu}  (numbers, Enter = none) ").replace(",", " ").split()
         for i, d in enumerate(layers, 1):
@@ -384,6 +398,13 @@ def main(mode: str, front: Path) -> int:
     focus = ask_focus()                                 # up to 5 extra questions for this pass
     if ask(f"\nRun {st['label']} on {len(notes)} note(s), {workers} at once? [Y/n] ").lower() in ("n", "no"):
         return 1
+    return carry_out(front, st, base, notes, out, workers, focus, None)
+
+
+def carry_out(front: Path, st: dict, base: Path | None, notes: list[Path], out: Path, workers: int, focus: list[str],
+              plan: dict | None) -> int:
+    """Everything after the questions: title, run, scriptures, layers, publish, the newest ANALYSIS.md, Story Bank.
+    plan = None asks which layers; a plan names them."""
     on_note = st.get("on_note", True)                  # false: the notes are only read (series sheet): no title, no YAML, no publish
     if not base and on_note:
         say("title: notes without their standard title")
@@ -400,7 +421,13 @@ def main(mode: str, front: Path) -> int:
             n.write_text(N.set_fields(n.read_text(encoding="utf-8"), r["yaml"]), encoding="utf-8")
     layers = sorted(d for d in (front / "OUTBOX").iterdir() if d.is_dir() and (d / "BACKSIDE" / "station.json").is_file())
     looked = [out]
-    if layers and not base:
+    if plan is not None and not base:
+        for d, layer_focus in plan_layers(front, plan):
+            print(f"\n{d.name}")
+            layer_out = d / "OUTBOX" if out == front / "OUTBOX" else out / d.name
+            code |= run_station(d, station_of(d), notes, layer_out, workers, layer_focus)
+            looked.append(layer_out)
+    elif layers and not base:
         menu = "  ".join(f"{i} {d.name.split('_', 1)[1].replace('_', ' ').title()}" for i, d in enumerate(layers, 1))
         picked = ask(f"\nPut a second layer on these notes? {menu}  (numbers, Enter = none) ").replace(",", " ").split()
         for i, d in enumerate(layers, 1):
@@ -420,6 +447,52 @@ def main(mode: str, front: Path) -> int:
     return code
 
 
+# ------------------------------------------------------------------ plan mode (the workspace page)
+
+def plan_workers(plan: dict) -> int:
+    return max(1, min(60, int(plan.get("workers") or 8)))
+
+
+def plan_layers(front: Path, plan: dict) -> list[tuple[Path, list[str]]]:
+    """The layers a plan names (by folder name), in the order given, that really sit in this station's OUTBOX."""
+    found = []
+    for entry in plan.get("layers") or []:
+        d = front / "OUTBOX" / entry["folder"]
+        if (d / "BACKSIDE" / "station.json").is_file():
+            found.append((d, entry.get("focus") or []))
+        else:
+            say(f"layer not found, skipped: {d}")
+    return found
+
+
+def run_plan(front: Path, plan_file: Path) -> int:
+    """The button run with every question answered by plan_file. The notes were picked on the page (picking them is
+    the tick), so no X list and no "how many?"; everything after that is carry_out(), the buttons' own code."""
+    plan = json.loads(plan_file.read_text(encoding="utf-8"))
+    PLAN.update(plan)
+    st = station_of(front)
+    base = parent_station(front)
+    title = f"{st['label']}" + (f"  (layer of {station_of(base)['label']})" if base else "")
+    print(f"\n{title}\n{'=' * len(title)}", flush=True)
+    if st.get("items") == "lean" and not base:
+        return lean_here(front, st, plan)
+    notes = [Path(n) for n in plan.get("notes") or []]
+    missing = [n for n in notes if not n.is_file()]
+    for n in missing:
+        say(f"not found, skipped: {n}")
+    notes = list(dict.fromkeys(n for n in notes if n.is_file()))
+    if not notes:
+        say("no notes to run")
+        return 0
+    out = Path(plan["out"]) if plan.get("out") else front / "OUTBOX"
+    workers = plan_workers(plan)
+    focus = (plan.get("focus") or [])[:5]
+    say(f"plan: {len(notes)} note(s), {workers} at once, output {out}")
+    return carry_out(front, st, base, notes, out, workers, focus, plan)
+
+
 if __name__ == "__main__":
+    if len(sys.argv) > 3 and sys.argv[1] == "plan":
+        raise SystemExit(run_plan(Path(sys.argv[2]).resolve(), Path(sys.argv[3])))
     raise SystemExit(main(sys.argv[1] if len(sys.argv) > 1 else "here",
                           Path(sys.argv[2]).resolve() if len(sys.argv) > 2 else Path.cwd()))

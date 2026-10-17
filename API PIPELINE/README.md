@@ -1,5 +1,10 @@
 # API PIPELINE
 
+**Live version:** double-click **OPEN WORKSPACE.bat** (same as `API\ONE_MENU.bat workspace`). It opens the working
+workspace page (`API\_system\workspace\index.html`), served on this machine only, with real groups, real folders and
+real runs through the station engine. Tick **Mock** on the page to test without sending anything. index.html below stays
+the design prototype.
+
 Open **index.html** in a browser. This is a self-contained black-and-gold interface prototype, not a connected execution service.
 
 The interface contains API group home pages, Run/Settings/Results/Backside views, reorderable template sections, Python placeholders, ordered workflows, seven HTML assembly companions, and an HTML review queue. Run plays a labeled sample activity log; it does not send API requests or save generated answers to disk.

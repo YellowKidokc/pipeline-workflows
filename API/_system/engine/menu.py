@@ -12,6 +12,7 @@ No questions when arguments are given:
   ONE_MENU.bat find resurrection --min 5        tagger search
   ONE_MENU.bat goals                            list every API goal id
   ONE_MENU.bat results                          open the (hidden) results folder
+  ONE_MENU.bat workspace                        the workspace page in your browser (engine/workspace.py)
 """
 from __future__ import annotations
 
@@ -399,6 +400,10 @@ def open_results() -> int:
 
 def run(argv=None) -> int:
     ensure_runtime_dirs()
+    argv = sys.argv[1:] if argv is None else argv
+    if argv[:1] and argv[0].lower() == "workspace":
+        from engine.workspace import main as workspace
+        return workspace(argv[1:])
     args = parse(argv)
     if args.selection and args.selection[0].lower() == "find":
         from engine.tagger import print_search
