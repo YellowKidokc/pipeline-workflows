@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pipeline · API Workspace</title>
+<style>
+:root{color-scheme:dark;--bg:#050505;--panel:#0a0a0a;--surface:#111;--line:#292929;--text:#e8e6e1;--muted:#aaa7a0;--gold:#d4af37;--ok:#9ed0ac;--bad:#e08080}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 system-ui,sans-serif}
+button,input,select,textarea{font:inherit;border:1px solid #3d3a32;background:#101010;color:var(--text);border-radius:5px;padding:8px 11px}
+button{cursor:pointer}button:hover{border-color:var(--gold);color:#e6cc79}button:disabled{opacity:.45;cursor:default}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+button.active{background:#191609;color:var(--gold);border-color:#5c4b20}button.primary{background:var(--gold);color:#090909;border-color:var(--gold);font-weight:700}
+button.mini{padding:3px 8px;font-size:12px}
+header{min-height:64px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:28px;padding:0 24px;background:var(--panel);flex-wrap:wrap}
+.brand{letter-spacing:.3em;color:var(--gold);font-size:17px}
+.topnav{display:flex;align-self:stretch;gap:14px}.topnav button,.tabs button{border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent;padding:16px 10px}
+.topnav button.active,.tabs button.active{color:var(--gold);border-bottom-color:var(--gold)}
+.live{margin-left:auto;font-size:12px;color:var(--muted)}.live b{color:var(--ok);font-weight:500}.live b.off{color:var(--bad)}
+.shell{display:grid;grid-template-columns:230px minmax(0,1fr);min-height:calc(100vh - 64px)}
+aside{align-self:start;background:var(--panel);border-right:1px solid var(--line);padding:22px 14px;max-height:calc(100vh - 64px);overflow:auto;position:sticky;top:0}
+aside h2{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:0 0 8px}
+aside button{display:flex;justify-content:space-between;width:100%;text-align:left;margin:3px 0;background:transparent;border-color:transparent;padding:7px 10px}
+aside .count{color:var(--muted);font-size:12px}
+main{padding:24px 30px 40px;max-width:1600px;width:100%;margin:auto;align-self:start}
+h1{font-size:28px;line-height:1.2;margin:0}h2{font-size:15px;margin:0 0 4px}h3{font-size:14px;margin:0 0 6px}
+p{margin:4px 0 14px;color:var(--muted)}.small{font-size:12px;color:var(--muted)}code{font:12px ui-monospace,monospace;color:#e6cc79}
+.tabs{display:flex;gap:18px;border-bottom:1px solid var(--line);margin:14px 0 20px;flex-wrap:wrap}
+.panel{border:1px solid var(--line);background:var(--panel);border-radius:7px;padding:18px;margin-bottom:18px}
+.panel-head{display:flex;justify-content:space-between;gap:14px;align-items:start;margin-bottom:12px;flex-wrap:wrap}
+.panel-head p{margin:2px 0 0;font-size:12px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.grow{flex:1;min-width:180px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+label.field{display:block;font-size:12px;color:var(--muted)}label.field input,label.field select,label.field textarea{display:block;width:100%;margin-top:5px;color:var(--text)}
+.stations{display:grid;gap:8px}
+.st{display:grid;grid-template-columns:auto 40px minmax(0,1fr) auto;gap:12px;align-items:center;border:1px solid var(--line);border-radius:6px;padding:10px 12px;background:var(--surface)}
+.st.on{border-color:#5c4b20;background:#13110a}.st.focus{outline:1px solid var(--gold)}
+.st input[type=checkbox]{accent-color:var(--gold);width:17px;height:17px}.st .pos{color:var(--gold);font-weight:700;text-align:center}
+.st .name{font-weight:600}.st .desc{font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.badge{display:inline-block;font-size:11px;border:1px solid #3d3a32;border-radius:10px;padding:0 7px;margin-left:6px;color:var(--muted);font-weight:400}
+.badge.api{color:var(--gold);border-color:#5c4b20}.badge.pri{color:#f0b070;border-color:#7a5524}.badge.ok{color:var(--ok);border-color:#365b40}
+.tablewrap{overflow:auto;max-height:420px;border:1px solid var(--line);border-radius:6px}
+table{width:100%;border-collapse:collapse;text-align:left}th,td{padding:7px 9px;border-bottom:1px solid var(--line);font-size:13px;vertical-align:top}
+th{color:var(--muted);font-weight:500;position:sticky;top:0;background:var(--panel)}td.name{word-break:break-word}
+tr.clickable{cursor:pointer}tr.clickable:hover td{background:#14120b}
+.run-green{background:#258347;border-color:#3aab62;color:#fff;font-size:19px;font-weight:750;min-width:170px;padding:12px 26px}
+.stop-red{background:#9d3030;border-color:#d04e4e;color:#fff;font-size:19px;font-weight:700;min-width:120px;padding:12px 22px}
+.run-green:hover,.stop-red:hover{color:#fff}
+.stages{list-style:none;display:flex;gap:8px;padding:0;flex-wrap:wrap;margin:0 0 14px}
+.stages li{border:1px solid var(--line);border-radius:5px;padding:6px 10px;color:var(--muted);font-size:12px}
+.stages li.current{border-color:var(--gold);color:var(--gold);background:#191609}.stages li.done{color:var(--ok);border-color:#365b40}.stages li.failed{color:var(--bad);border-color:#6b3030}
+pre.log{background:#070907;border:1px solid #26382b;color:#b8d2bf;padding:16px;min-height:260px;max-height:520px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.75 ui-monospace,Consolas,monospace;margin:10px 0}
+pre.view{background:#0c0c0c;border:1px solid var(--line);padding:16px;max-height:640px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.7 ui-monospace,monospace;margin:0}
+textarea.code{width:100%;font:12px/1.7 ui-monospace,monospace;resize:vertical}
+.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:8px 0}.stats div{border:1px solid var(--line);border-radius:6px;padding:8px 10px}
+.stats strong{display:block;font-size:19px}
+.pieces{display:grid;grid-template-columns:300px minmax(0,1fr);gap:18px}
+.plist{max-height:720px;overflow:auto;display:grid;gap:4px;align-content:start}
+.plist .p{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:6px;align-items:center;text-align:left;font-size:12px;padding:6px 8px}
+.plist .p .n{color:var(--muted)}.plist .p.cur{border-color:var(--gold);color:var(--gold);background:#191609}
+.plist .p .s{font-size:11px}.s.saved{color:var(--ok)}.s.err{color:var(--bad)}.s.got{color:var(--gold)}
+.notice{border:1px solid #5c4b20;background:#14110a;border-radius:6px;padding:10px 12px;font-size:13px;margin:0 0 14px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#201b0b;border:1px solid var(--gold);padding:11px 18px;border-radius:6px;max-width:90vw;z-index:9}
+dialog{background:#0a0a0a;color:var(--text);border:1px solid #5c4b20;border-radius:8px;max-width:760px;width:92%;padding:22px}dialog::backdrop{background:#000b}
+.dirs{max-height:380px;overflow:auto;display:grid;gap:3px;margin:10px 0}.dirs button{text-align:left;font-size:13px;padding:6px 10px;background:transparent}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+[hidden]{display:none!important}
+@media(max-width:1000px){.shell{grid-template-columns:190px 1fr}.grid3{grid-template-columns:1fr 1fr}.pieces{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){header{padding:10px 16px;gap:8px}.topnav{order:3;width:100%}.shell{display:block}aside{position:static;max-height:none;border-right:0;border-bottom:1px solid var(--line);padding:10px 16px}
+ aside #groups{display:flex;gap:6px;overflow:auto}aside button{white-space:nowrap;width:auto;margin:0}aside h2{display:none}main{padding:18px 16px}.grid2,.grid3{grid-template-columns:1fr}
+ .st{grid-template-columns:auto 30px minmax(0,1fr)}.st .arrows{grid-column:1/-1}.stats{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">PIPELINE</div>
+  <nav class="topnav" aria-label="Main">
+    <button class="active" data-page="calls">API Calls</button>
+    <button data-page="workflows">Workflows</button>
+    <button data-page="runs">Runs</button>
+    <button data-page="settings">Settings</button>
+  </nav>
+  <span class="live" id="live">connecting…</span>
+</header>
+<div class="shell">
+<aside><h2>API groups</h2><div id="groups"></div></aside>
+<main>
+
+<!-- ================= API group home ================= -->
+<section id="page-calls">
+  <div class="row"><h1 id="g-title">…</h1><span class="small" id="g-path"></span></div>
+  <p>Pick the stations, their order, the notes and how many at once. Run uses the same code as the buttons.</p>
+
+  <div class="panel">
+    <div class="panel-head">
+      <div><h2>Stations in this group</h2><p>Tick the ones to run. They run one after another, in this order, on the same notes. Click a name to open it in Piece by piece, Results and Backside.</p></div>
+      <div class="row"><button class="mini" id="st-all">Tick all</button><button class="mini" id="st-none">Untick all</button></div>
+    </div>
+    <div class="stations" id="stations"></div>
+  </div>
+
+  <nav class="tabs" aria-label="Group views">
+    <button class="active" data-tab="run">Run</button>
+    <button data-tab="pieces">Piece by piece</button>
+    <button data-tab="results">Results</button>
+    <button data-tab="backside">Backside</button>
+  </nav>
+
+  <!-- ---------- Run ---------- -->
+  <section id="tab-run">
+    <div class="panel">
+      <div class="panel-head"><div><h2>1 · Where are the notes?</h2><p>A station INBOX, or any folder or note on this machine (inside or outside API).</p></div></div>
+      <div class="row">
+        <input class="grow" id="in-folder" placeholder="Paste or browse to a folder or note">
+        <button id="in-browse">Browse…</button><button id="in-inbox">Use the INBOX</button><button class="primary" id="in-load">Load notes</button>
+      </div>
+      <div id="own-inbox" class="notice" hidden style="margin-top:12px"></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <div><h2>2 · Which notes?</h2><p id="notes-sub">Load a folder first.</p></div>
+        <div class="row">
+          <button class="mini" id="n-all">All</button><button class="mini" id="n-none">None</button><button class="mini" id="n-ticked">Ticked in _PICK.md</button>
+          <span class="small">Newest</span><input id="n-newest" type="number" min="1" value="5" style="width:70px"><button class="mini" id="n-newest-go">Pick</button>
+        </div>
+      </div>
+      <div class="tablewrap"><table><thead><tr><th></th><th>Note</th><th>Date</th><th>Words</th><th>Folder</th></tr></thead><tbody id="notes"></tbody></table></div>
+      <p class="small" id="notes-count" style="margin-top:10px"></p>
+    </div>
+
+    <div class="grid2">
+      <div class="panel">
+        <h2>3 · Where does the output go?</h2>
+        <p>Blank = each station's own OUTBOX. Answers always also go onto each note.</p>
+        <div class="row"><input class="grow" id="out-folder" placeholder="Blank = each station's OUTBOX"><button id="out-browse">Browse…</button></div>
+      </div>
+      <div class="panel">
+        <h2>4 · How many at once?</h2>
+        <p>API calls side by side, shared by everything running from this page (one relay, one limit).</p>
+        <div class="row"><input id="workers" type="number" min="1" max="60" value="8" style="width:90px"><span class="small">1–30 · turbo:</span><span id="turbo"></span></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>5 · Anything else to look for?</h2>
+      <p>Up to 5 extra questions. Each is answered in a "Your questions" section.</p>
+      <div class="grid3" id="focus"></div>
+      <div id="topic-box" hidden style="margin-top:14px"><label class="field">Topic for 048 / 049 (required)<input id="topic"></label></div>
+    </div>
+
+    <div class="panel" id="layers-panel" hidden>
+      <h2>6 · Layers on the same notes</h2>
+      <p>Layers sit inside a station's OUTBOX and run after it, on the notes it just did.</p>
+      <div id="layers"></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <div><h2>Ready to run</h2><p id="plan-line">Pick stations and notes.</p></div>
+        <label class="small"><input type="checkbox" id="mock"> Mock (fake replies, nothing leaves this machine)</label>
+      </div>
+      <div id="plan-warn" class="notice" hidden></div>
+      <div class="row"><button class="run-green" id="run">▶ Run</button><button class="stop-red" id="stop" disabled>■ Stop</button>
+        <span class="small">Stop ends the station that is running. Notes already finished keep their results; run again to do the rest.</span></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head"><div><h2>Live activity</h2><p id="run-status">Nothing running.</p></div>
+        <div class="row"><label class="small"><input type="checkbox" id="follow" checked> Follow latest</label><button class="mini" id="log-dl">Download log</button></div></div>
+      <ol class="stages" id="stages"></ol>
+      <div class="stats" id="stats"></div>
+      <pre class="log" id="log" tabindex="0" aria-label="Run log">Every step prints a timestamped line here.</pre>
+    </div>
+  </section>
+
+  <!-- ---------- Piece by piece ---------- -->
+  <section id="tab-pieces" hidden>
+    <div class="panel">
+      <h2>Piece by piece</h2>
+      <p>One prompt at a time on one note. Read each answer, then accept it (saved at once) or send it again. Nothing waits for the end.</p>
+      <div class="grid3">
+        <label class="field">Station<select id="pc-station"></select></label>
+        <label class="field">Note (picked on the Run tab)<select id="pc-note"></select></label>
+        <label class="field">Provider · model<select id="pc-provider"></select></label>
+      </div>
+      <p class="small" id="pc-source" style="margin:10px 0 0"></p>
+    </div>
+    <div class="pieces">
+      <div class="panel">
+        <div class="panel-head"><h2>Pieces</h2><div class="row"><button class="mini" id="pc-add">+ Add</button><button class="mini" id="pc-savelist">Save breakdown</button></div></div>
+        <div class="plist" id="pc-list"></div>
+        <div class="row" style="margin-top:12px"><button class="mini" id="pc-up">↑ Up</button><button class="mini" id="pc-down">↓ Down</button>
+          <span class="small">to</span><input id="pc-pos" type="number" min="1" style="width:60px"><button class="mini" id="pc-move">Move</button><button class="mini" id="pc-del">Delete</button></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><div><h2 id="pc-title">—</h2><p>The prompt and its output template travel together. Edit either before sending.</p></div>
+          <button class="mini" id="pc-assemble">Assemble saved pieces</button></div>
+        <div class="row"><label class="field grow">Id<input id="pc-id"></label><label class="field grow" style="flex:3">Title<input id="pc-ptitle"></label></div>
+        <label class="field" style="margin-top:10px">Prompt<textarea class="code" id="pc-prompt" rows="5"></textarea></label>
+        <label class="field" style="margin-top:10px">Output template<textarea class="code" id="pc-output" rows="8"></textarea></label>
+        <div class="row" style="margin-top:12px"><button class="primary" id="pc-send">▶ Send this piece</button><button id="pc-auto">▶▶ Send the rest, one by one</button><button id="pc-halt" disabled>■ Halt after this one</button></div>
+        <p class="small" id="pc-info" style="margin-top:10px"></p>
+        <label class="field">Answer (edit before accepting if you want)<textarea class="code" id="pc-answer" rows="16"></textarea></label>
+        <div class="row" style="margin-top:12px"><button class="run-green" id="pc-accept" style="font-size:15px;min-width:0;padding:9px 18px">✓ Accept &amp; save, next</button><button id="pc-redo">↻ Send again</button><button id="pc-skip">Skip</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- Results ---------- -->
+  <section id="tab-results" hidden>
+    <div class="panel">
+      <div class="panel-head"><div><h2>Results</h2><p id="rs-sub">Newest first. Replaced versions stay in <code>_older</code>.</p></div>
+        <div class="row"><select id="rs-station"></select><button class="mini" id="rs-refresh">Refresh</button></div></div>
+      <div class="grid2"><div class="tablewrap" style="max-height:640px"><table><thead><tr><th>File</th><th>Saved</th></tr></thead><tbody id="rs-files"></tbody></table></div>
+        <pre class="view" id="rs-view">Pick a file.</pre></div>
+    </div>
+  </section>
+
+  <!-- ---------- Backside ---------- -->
+  <section id="tab-backside" hidden>
+    <div class="panel">
+      <div class="panel-head"><div><h2>Backside</h2><p>The station's own files. PROMPT.md and FOCUS.md can be edited here; the version replaced goes to <code>BACKSIDE\_older</code>.</p></div>
+        <select id="bs-station"></select></div>
+      <div class="row" id="bs-files" style="margin-bottom:12px"></div>
+      <textarea class="code" id="bs-text" rows="24" readonly></textarea>
+      <div class="row" style="margin-top:10px"><button class="primary" id="bs-save" disabled>Save</button><span class="small" id="bs-info"></span></div>
+    </div>
+  </section>
+</section>
+
+<!-- ================= Workflows ================= -->
+<section id="page-workflows" hidden>
+  <h1>Workflows</h1>
+  <p>Named sequences from <code>_system\config\routines.json</code>. Open one to run its stations in order on the same notes, with the same Run page.</p>
+  <div class="cards" id="routines"></div>
+</section>
+
+<!-- ================= Runs ================= -->
+<section id="page-runs" hidden>
+  <h1>Runs</h1>
+  <p>Everything started from this page since the workspace opened. Each run's record is in <code>_system\LOGS\workspace-run-*.json</code>.</p>
+  <div class="panel"><div class="tablewrap"><table><thead><tr><th>Run</th><th>Stations</th><th>Status</th><th>Seconds</th></tr></thead><tbody id="runs"></tbody></table></div></div>
+</section>
+
+<!-- ================= Settings ================= -->
+<section id="page-settings" hidden>
+  <h1>Settings</h1>
+  <p>Read from <code>_system\config\settings.json</code> and <code>providers.json</code>. Change them there; this page reads them on reload.</p>
+  <div class="panel"><pre class="view" id="settings"></pre></div>
+</section>
+</main>
+</div>
+
+<dialog id="browser">
+  <h2>Pick a folder</h2>
+  <div class="row" id="br-roots" style="margin:8px 0"></div>
+  <div class="row"><input class="grow" id="br-path"><button id="br-go">Go</button><button id="br-up">↑ Up</button></div>
+  <p class="small" id="br-info"></p>
+  <div class="dirs" id="br-dirs"></div>
+  <div class="row"><button class="primary" id="br-pick">Use this folder</button><button id="br-cancel">Cancel</button></div>
+</dialog>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+const TOKEN = "__WORKSPACE_TOKEN__";
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+const store = {get(k, d) { try { const v = localStorage.getItem("ws:" + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
+               set(k, v) { try { localStorage.setItem("ws:" + k, JSON.stringify(v)); } catch {} }};
+
+async function api(path, body) {
+  const r = await fetch(path, {method: body ? "POST" : "GET", headers: {"X-Workspace-Token": TOKEN, "Content-Type": "application/json"},
+                               body: body ? JSON.stringify(body) : undefined});
+  const data = await r.json().catch(() => ({error: `HTTP ${r.status}`}));
+  if (!r.ok) throw new Error(data.error || `HTTP ${r.status}`);
+  return data;
+}
+let toastTimer;
+function toast(msg) { const t = $("#toast"); t.textContent = msg; t.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => t.hidden = true, 4500); }
+
+// ------------------------------------------------------------ state
+let CAT = null;            // catalog from the server
+let G = null;              // the open group: {id, title, path, stations, virtual?}
+let ORDER = [];            // station paths in display order
+let ON = new Set();        // ticked station paths
+let FOCUS_ST = null;       // station path open in pieces / results / backside
+let NOTES = [];            // loaded notes
+let PICKED = new Set();    // picked note paths
+let RUN = null;            // {id, next}
+const byPath = {};         // station path -> station info (layers included)
+
+function flatten(st, parent) { byPath[st.path] = {...st, parent}; st.layers.forEach(l => flatten(l, st.path)); }
+const countAll = list => list.reduce((n, s) => n + 1 + countAll(s.layers), 0);
+const allLayers = s => s.layers.flatMap(l => [l.path, ...allLayers(l)]);
+
+async function boot() {
+  try { CAT = await api("/api/catalog"); }
+  catch (e) { $("#live").innerHTML = `<b class="off">not connected</b> · open this page with ONE_MENU.bat workspace (${esc(e.message)})`; return; }
+  CAT.groups.forEach(g => g.stations.forEach(s => flatten(s, null)));
+  $("#live").innerHTML = `<b>live</b> · ${CAT.groups.length} groups · ${Object.keys(byPath).length} stations · ${esc(CAT.main)}`;
+  $("#groups").innerHTML = CAT.groups.map(g =>
+    `<button data-group="${esc(g.id)}"><span>${esc(g.id)}</span><span class="count">${countAll(g.stations)}</span></button>`).join("");
+  $$("#groups button").forEach(b => b.onclick = () => openGroup(CAT.groups.find(g => g.id === b.dataset.group)));
+  const tp = CAT.settings.turbo_presets || {};
+  $("#turbo").innerHTML = ["1", "2", "3"].filter(k => tp[k]).map(k => `<button class="mini" data-w="${tp[k]}">${tp[k]}</button>`).join(" ");
+  $$("#turbo button").forEach(b => b.onclick = () => { $("#workers").value = b.dataset.w; store.set("workers:" + G.id, +b.dataset.w); planLine(); });
+  $("#focus").innerHTML = [1, 2, 3, 4, 5].map(i => `<input data-f="${i}" placeholder="Question ${i} (optional)" aria-label="Extra question ${i}">`).join("");
+  $("#pc-provider").innerHTML = (CAT.settings.allowed_providers || []).map(p =>
+    `<option value="${esc(p)}">${esc(p)} · ${esc((CAT.settings.models || {})[p] || "")}</option>`).join("");
+  $("#pc-provider").value = CAT.settings.default_provider;
+  $("#settings").textContent = JSON.stringify({api_folder: CAT.main, settings: CAT.settings,
+    keys_present_in_this_window: CAT.keys, folders_from_paths_json: CAT.roots}, null, 2);
+  renderRoutines();
+  const last = store.get("group", null);
+  openGroup(CAT.groups.find(g => g.id === last) || CAT.groups[0]);
+}
+
+// ------------------------------------------------------------ pages and tabs
+$$(".topnav button").forEach(b => b.onclick = () => showPage(b.dataset.page));
+function showPage(p) {
+  $$(".topnav button").forEach(x => x.classList.toggle("active", x.dataset.page === p));
+  $$("main > section").forEach(s => s.hidden = s.id !== "page-" + p);
+  if (p === "runs") renderRuns();
+}
+$$(".tabs button").forEach(b => b.onclick = () => showTab(b.dataset.tab));
+function showTab(t) {
+  $$(".tabs button").forEach(x => x.classList.toggle("active", x.dataset.tab === t));
+  ["run", "pieces", "results", "backside"].forEach(n => $("#tab-" + n).hidden = n !== t);
+  if (t === "pieces") loadPieces();
+  if (t === "results") loadResults();
+  if (t === "backside") loadBackside();
+}
+function refreshFocusTabs() { showTab($(".tabs button.active").dataset.tab); }
+
+// ------------------------------------------------------------ group home
+function openGroup(g) {
+  if (!g) return;
+  G = g; showPage("calls");
+  $$("#groups button").forEach(b => b.classList.toggle("active", b.dataset.group === g.id));
+  if (!g.virtual) store.set("group", g.id);
+  $("#g-title").textContent = g.virtual ? g.title : `${g.id} · ${g.title}`;
+  $("#g-path").textContent = g.path || "";
+  const saved = store.get("order:" + g.id, null);
+  const paths = g.stations.map(s => s.path);
+  ORDER = saved ? [...saved.filter(p => paths.includes(p)), ...paths.filter(p => !saved.includes(p))] : paths;
+  ON = new Set(store.get("on:" + g.id, g.virtual || paths.length === 1 ? paths : []).filter(p => paths.includes(p)));
+  FOCUS_ST = ORDER[0];
+  $("#in-folder").value = store.get("folder:" + g.id, "") || (byPath[ORDER[0]] ? byPath[ORDER[0]].inbox : "");
+  $("#out-folder").value = store.get("out:" + g.id, "");
+  $("#workers").value = store.get("workers:" + g.id, 8);
+  NOTES = []; PICKED = new Set();
+  renderStations(); renderNotes(); showTab("run");
+}
+
+function renderStations() {
+  const rows = ORDER.map(p => byPath[p]);
+  let n = 0;
+  $("#stations").innerHTML = rows.map((s, i) => {
+    const on = ON.has(s.path), pos = on ? ++n : "";
+    return `<div class="st ${on ? "on" : ""} ${FOCUS_ST === s.path ? "focus" : ""}" data-p="${esc(s.path)}">
+      <input type="checkbox" ${on ? "checked" : ""} aria-label="Run ${esc(s.folder)}">
+      <span class="pos">${pos}</span>
+      <div style="min-width:0"><div class="name"><a href="#" class="open" style="color:inherit">${esc(s.folder)}</a>
+        ${s.uses_api ? '<span class="badge api">API</span>' : '<span class="badge">local</span>'}<span class="badge">${esc(s.kind)}</span>
+        ${s.layers.length ? `<span class="badge">${s.layers.length} layer${s.layers.length > 1 ? "s" : ""}</span>` : ""}
+        ${s.own_inbox ? '<span class="badge pri">own INBOX</span>' : ""}${s.chain.length ? `<span class="badge">chain ${esc(s.chain.join("→"))}</span>` : ""}</div>
+        <div class="desc" title="${esc(s.description)}">${esc(s.description)}</div></div>
+      <div class="row arrows"><button class="mini up" ${i === 0 ? "disabled" : ""} aria-label="Move up">↑</button><button class="mini down" ${i === rows.length - 1 ? "disabled" : ""} aria-label="Move down">↓</button>
+        <input class="to" type="number" min="1" max="${rows.length}" style="width:56px;padding:3px 6px" title="Move to position" placeholder="#" aria-label="Move to position"></div></div>`;
+  }).join("");
+  $$("#stations .st").forEach(el => {
+    const p = el.dataset.p;
+    el.querySelector("input[type=checkbox]").onchange = e => { e.target.checked ? ON.add(p) : ON.delete(p); saveOrder(); renderStations(); };
+    el.querySelector(".open").onclick = e => { e.preventDefault(); FOCUS_ST = p; renderStations(); refreshFocusTabs(); };
+    el.querySelector(".up").onclick = () => move(p, ORDER.indexOf(p) - 1);
+    el.querySelector(".down").onclick = () => move(p, ORDER.indexOf(p) + 1);
+    el.querySelector(".to").onchange = e => move(p, (parseInt(e.target.value, 10) || 1) - 1);
+  });
+  renderLayers(); planLine(); stationSelects();
+}
+function move(p, to) {
+  to = Math.max(0, Math.min(ORDER.length - 1, to));
+  ORDER.splice(ORDER.indexOf(p), 1); ORDER.splice(to, 0, p); saveOrder(); renderStations();
+}
+function saveOrder() { store.set("order:" + G.id, ORDER); store.set("on:" + G.id, [...ON]); }
+$("#st-all").onclick = () => { ORDER.forEach(p => ON.add(p)); saveOrder(); renderStations(); };
+$("#st-none").onclick = () => { ON.clear(); saveOrder(); renderStations(); };
+const sequence = () => ORDER.filter(p => ON.has(p));
+
+function stationSelects() {
+  const opts = ORDER.flatMap(p => [p, ...allLayers(byPath[p])]).map(p =>
+    `<option value="${esc(p)}">${byPath[p].parent ? "└ " : ""}${esc(byPath[p].folder)}</option>`).join("");
+  ["#pc-station", "#rs-station", "#bs-station"].forEach(id => { $(id).innerHTML = opts; $(id).value = FOCUS_ST; });
+}
+["#pc-station", "#rs-station", "#bs-station"].forEach(id => $(id).onchange = e => { FOCUS_ST = e.target.value; renderStations(); refreshFocusTabs(); });
+
+function renderLayers() {
+  const seq = sequence().filter(p => byPath[p].layers.length);
+  $("#layers-panel").hidden = !seq.length;
+  const chosen = store.get("layers:" + G.id, {});
+  $("#layers").innerHTML = seq.map(p => `<div style="margin-bottom:10px"><h3>${esc(byPath[p].folder)}</h3><div class="row">` +
+    byPath[p].layers.map(l => `<label class="small" style="color:var(--text)"><input type="checkbox" data-st="${esc(p)}" data-layer="${esc(l.folder)}"
+      ${(chosen[p] || []).includes(l.folder) ? "checked" : ""}> ${esc(l.folder)} ${l.uses_api ? '<span class="badge api">API</span>' : ""}</label>`).join("") +
+    `</div></div>`).join("");
+  $$("#layers input").forEach(i => i.onchange = () => {
+    const c = {}; $$("#layers input:checked").forEach(x => (c[x.dataset.st] ||= []).push(x.dataset.layer));
+    store.set("layers:" + G.id, c); planLine();
+  });
+  $("#topic-box").hidden = !sequence().some(p => byPath[p].needs_topic);
+  const own = sequence().filter(p => byPath[p].own_inbox);
+  $("#own-inbox").hidden = !own.length;
+  $("#own-inbox").textContent = own.length ? `${own.map(p => byPath[p].folder).join(", ")} reads its own INBOX (Lean): the notes picked below are not used by it.` : "";
+}
+
+// ------------------------------------------------------------ folders and notes
+$("#in-inbox").onclick = () => { const s = byPath[sequence()[0] || ORDER[0]]; if (s) { $("#in-folder").value = s.inbox; loadNotes(); } };
+$("#in-load").onclick = () => loadNotes();
+$("#in-folder").onkeydown = e => { if (e.key === "Enter") loadNotes(); };
+$("#in-browse").onclick = () => browseFor($("#in-folder"), loadNotes);
+$("#out-browse").onclick = () => browseFor($("#out-folder"), () => store.set("out:" + G.id, $("#out-folder").value.trim()));
+$("#out-folder").onchange = () => store.set("out:" + G.id, $("#out-folder").value.trim());
+$("#workers").onchange = () => { store.set("workers:" + G.id, +$("#workers").value); planLine(); };
+
+async function loadNotes() {
+  const path = $("#in-folder").value.trim().replace(/^"|"$/g, "");
+  if (!path) return toast("Paste or browse to a folder first.");
+  try {
+    const d = await api("/api/notes?path=" + encodeURIComponent(path));
+    store.set("folder:" + G.id, path);
+    NOTES = d.notes;
+    const pri = NOTES.filter(n => n.priority), ticked = NOTES.filter(n => n.ticked);
+    // the buttons' rule: 00_PRIORITY counts as ticked; else the _PICK.md ticks; a small folder runs whole; a big one picks nothing by accident
+    PICKED = new Set((pri.length ? pri : ticked.length ? ticked : NOTES.length <= d.pick_free ? NOTES : []).map(n => n.path));
+    $("#notes-sub").textContent = `${NOTES.length} note(s) in ${d.path}` + (pri.length ? ` · ${pri.length} in 00_PRIORITY (picked, they run first)` : "")
+      + (d.has_pick ? ` · _PICK.md: ${ticked.length} ticked` : "")
+      + (NOTES.length > d.pick_free && !pri.length && !ticked.length ? ` · more than ${d.pick_free}: nothing picked until you choose` : "");
+    renderNotes();
+  } catch (e) { toast(e.message); }
+}
+function renderNotes() {
+  $("#notes").innerHTML = NOTES.map((n, i) => `<tr><td><input type="checkbox" data-i="${i}" ${PICKED.has(n.path) ? "checked" : ""} aria-label="Pick ${esc(n.name)}"></td>
+    <td class="name">${esc(n.name)}${n.priority ? '<span class="badge pri">priority</span>' : ""}${n.ticked ? '<span class="badge ok">ticked</span>' : ""}</td>
+    <td>${esc(n.date)}</td><td>${(n.words / 1000).toFixed(1)}k</td><td class="small">${esc(n.folder === "." ? "" : n.folder)}</td></tr>`).join("")
+    || `<tr><td colspan="5" class="small">No notes loaded.</td></tr>`;
+  $$("#notes input").forEach(c => c.onchange = () => { const p = NOTES[c.dataset.i].path; c.checked ? PICKED.add(p) : PICKED.delete(p); countNotes(); });
+  countNotes();
+}
+function countNotes() {
+  const picked = NOTES.filter(n => PICKED.has(n.path));
+  $("#notes-count").textContent = NOTES.length ? `${picked.length} of ${NOTES.length} picked · ${(picked.reduce((a, n) => a + n.words, 0) / 1000).toFixed(1)}k words` : "";
+  planLine(); pcNotes();
+}
+$("#n-all").onclick = () => { PICKED = new Set(NOTES.map(n => n.path)); renderNotes(); };
+$("#n-none").onclick = () => { PICKED = new Set(); renderNotes(); };
+$("#n-ticked").onclick = () => { PICKED = new Set(NOTES.filter(n => n.ticked || n.priority).map(n => n.path)); renderNotes(); };
+$("#n-newest-go").onclick = () => { PICKED = new Set(NOTES.slice(0, +$("#n-newest").value || 0).map(n => n.path)); renderNotes(); };
+
+// folder browser
+let brTarget = null, brDone = null;
+function browseFor(input, done) {
+  brTarget = input; brDone = done;
+  $("#br-roots").innerHTML = CAT.roots.map(r => `<button class="mini" data-p="${esc(r.path)}">${esc(r.name)}</button>`).join("");
+  $$("#br-roots button").forEach(b => b.onclick = () => brOpen(b.dataset.p));
+  $("#browser").showModal(); brOpen(input.value.trim() || CAT.main);
+}
+async function brOpen(path) {
+  try {
+    const d = await api("/api/browse?path=" + encodeURIComponent(path));
+    $("#br-path").value = d.path; $("#br-up").dataset.p = d.parent;
+    $("#br-info").textContent = `${d.notes} note(s) here · ${d.dirs.length} folder(s)`;
+    $("#br-dirs").innerHTML = d.dirs.map(x => `<button data-p="${esc(x.path)}">📁 ${esc(x.name)}</button>`).join("") || '<span class="small">No folders inside.</span>';
+    $$("#br-dirs button").forEach(b => b.onclick = () => brOpen(b.dataset.p));
+  } catch (e) { $("#br-info").textContent = e.message; }
+}
+$("#br-go").onclick = () => brOpen($("#br-path").value);
+$("#br-path").onkeydown = e => { if (e.key === "Enter") brOpen($("#br-path").value); };
+$("#br-up").onclick = e => e.target.dataset.p && brOpen(e.target.dataset.p);
+$("#br-cancel").onclick = () => $("#browser").close();
+$("#br-pick").onclick = () => { brTarget.value = $("#br-path").value; $("#browser").close(); brDone && brDone(); };
+
+// ------------------------------------------------------------ run
+const focusList = () => $$("#focus input").map(i => i.value.trim()).filter(Boolean).slice(0, 5);
+document.addEventListener("input", e => { if (e.target.matches("#focus input, #topic")) planLine(); });
+$("#mock").onchange = planLine;
+function planLine() {
+  if (!G || !CAT) return;
+  const seq = sequence(), notes = [...PICKED], w = +$("#workers").value || 8;
+  const layerBoxes = $$("#layers input:checked");
+  const apiSteps = seq.filter(p => byPath[p].uses_api).length
+    + layerBoxes.filter(x => (byPath[x.dataset.st].layers.find(y => y.folder === x.dataset.layer) || {}).uses_api).length;
+  const est = (CAT.settings.estimated_tokens_per_item || 0) * notes.length * apiSteps;
+  $("#plan-line").innerHTML = seq.length
+    ? `${seq.map((p, i) => `${i + 1}. ${esc(byPath[p].folder)}`).join(" → ")}${layerBoxes.length ? ` · ${layerBoxes.length} layer(s)` : ""} · <b>${notes.length}</b> note(s) · ${w} at once`
+      + (est ? ` · roughly ${(est / 1e6).toFixed(2)}M tokens (rough guess from settings.json, not a measurement)` : "")
+    : "Tick at least one station above.";
+  const warn = [];
+  if (w > 30 && w !== 60) warn.push("More than 30 at once is turbo only (60). It will run at 30.");
+  if (notes.length > 10) warn.push(`${notes.length} notes will go through. You will be asked to confirm.`);
+  if (seq.some(p => byPath[p].needs_topic) && !$("#topic").value.trim()) warn.push("048 / 049 need a topic.");
+  if (!$("#mock").checked && seq.some(p => byPath[p].uses_api) && !Object.values(CAT.keys).some(Boolean))
+    warn.push("No API key is set in the workspace window (DEEPSEEK_API_KEY…). Run SETUP.bat and restart the workspace, or tick Mock to test.");
+  $("#plan-warn").hidden = !warn.length; $("#plan-warn").innerHTML = warn.map(esc).join("<br>");
+}
+
+$("#run").onclick = async () => {
+  const seq = sequence(), notes = NOTES.filter(n => PICKED.has(n.path)).map(n => n.path);
+  if (!seq.length) return toast("Tick at least one station.");
+  if (!notes.length && !seq.every(p => byPath[p].own_inbox)) return toast("Pick at least one note.");
+  if (seq.some(p => byPath[p].needs_topic) && !$("#topic").value.trim()) return toast("048 / 049 need a topic.");
+  let w = Math.max(1, Math.min(60, +$("#workers").value || 8)); if (w > 30 && w !== 60) w = 30;
+  if (notes.length > 10 && !confirm(`Send ${notes.length} notes through ${seq.length} station(s)${$("#mock").checked ? " (mock)" : " to the API"}?`)) return;
+  const layers = {}; $$("#layers input:checked").forEach(x => (layers[x.dataset.st] ||= []).push({folder: x.dataset.layer, focus: []}));
+  try {
+    const r = await api("/api/run", {sequence: seq, notes, out: $("#out-folder").value.trim(), workers: w, focus: focusList(),
+                                     layers, topic: $("#topic").value.trim(), mock: $("#mock").checked});
+    RUN = {id: r.id, next: 0}; $("#log").textContent = ""; $("#stop").disabled = false; $("#run").disabled = true;
+    $("#stages").innerHTML = seq.map(p => `<li>${esc(byPath[p].folder)}</li>`).join("");
+    poll();
+  } catch (e) { toast(e.message); }
+};
+$("#stop").onclick = async () => {
+  if (RUN && confirm("Stop this run? Notes already finished keep their results.")) await api(`/api/runs/${RUN.id}/stop`, {}).catch(e => toast(e.message));
+};
+async function poll() {
+  if (!RUN) return;
+  try {
+    const v = await api(`/api/runs/${RUN.id}?since=${RUN.next}`);
+    RUN.next = v.next;
+    if (v.lines.length) { $("#log").textContent += v.lines.join("\n") + "\n"; if ($("#follow").checked) $("#log").scrollTop = $("#log").scrollHeight; }
+    $$("#stages li").forEach((li, i) => { const r = v.results[i];
+      li.className = r ? (r.returncode ? "failed" : "done") : (i + 1 === v.step && v.status === "running" ? "current" : ""); });
+    const s = v.stats;
+    $("#stats").innerHTML = [["Step", `${v.step}/${v.steps}`], ["Calls", s.calls], ["Running", s.running], ["Failed calls", s.failed], ["Tokens", s.tokens.toLocaleString()]]
+      .map(([k, x]) => `<div><span class="small">${k}</span><strong>${x}</strong></div>`).join("");
+    $("#run-status").textContent = `${v.status} · ${v.current} · ${v.seconds} s · call totals cover everything run from this page`;
+    if (v.status === "running") return setTimeout(poll, 1000);
+    $("#stop").disabled = true; $("#run").disabled = false; toast(`Run ${v.status}.`);
+    const renamed = new Set(v.notes);                // titling renames notes: show them under their new names, still picked
+    if ($("#in-folder").value.trim()) { await loadNotes(); PICKED = new Set(NOTES.filter(n => renamed.has(n.path)).map(n => n.path)); renderNotes(); }
+  } catch (e) { $("#run-status").textContent = "lost the workspace server: " + e.message; $("#run").disabled = false; }
+}
+$("#log-dl").onclick = () => {
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([$("#log").textContent], {type: "text/plain"}));
+  a.download = `workspace-run-${RUN ? RUN.id : "log"}.txt`; a.click();
+};
+
+// ------------------------------------------------------------ piece by piece
+let PC = {pieces: [], cur: 0, state: {}, halt: false};
+const fsafe = s => s.replace(/[<>:"/\\|?*]/g, "_").trim().slice(0, 80);
+function pcNotes() {
+  const list = NOTES.filter(n => PICKED.has(n.path)), keep = $("#pc-note").value;
+  $("#pc-note").innerHTML = (list.length ? list : NOTES).map(n => `<option value="${esc(n.path)}">${esc(n.name)}</option>`).join("")
+    || '<option value="">Load notes on the Run tab first</option>';
+  if (keep && [...$("#pc-note").options].some(o => o.value === keep)) $("#pc-note").value = keep;
+}
+$("#pc-note").onchange = () => { PC.state = {}; pcRender(); pcSaved(); };
+async function loadPieces() {
+  pcNotes();
+  try {
+    const d = await api("/api/pieces?front=" + encodeURIComponent(FOCUS_ST));
+    PC.pieces = d.pieces.map(p => ({...p})); PC.cur = 0; PC.state = {};
+    $("#pc-source").textContent = `${byPath[FOCUS_ST].folder}: ${d.pieces.length} piece(s) from ${d.source}. Accepted answers save to `
+      + `${$("#out-folder").value.trim() || byPath[FOCUS_ST].outbox}/PIECES/<note>/ the moment you accept them.`;
+    pcRender(); pcSaved();
+  } catch (e) { toast(e.message); }
+}
+function pcRender() {
+  $("#pc-list").innerHTML = PC.pieces.map((p, i) => {
+    const st = PC.state[i] || "";
+    return `<button class="p ${i === PC.cur ? "cur" : ""}" data-i="${i}"><span class="n">${i + 1}</span><span>${esc(p.id)} · ${esc(p.title)}</span>`
+      + `<span class="s ${st}">${{saved: "✓ saved", err: "✗ error", got: "answer"}[st] || ""}</span></button>`;
+  }).join("");
+  $$("#pc-list .p").forEach(b => b.onclick = () => { pcKeep(); PC.cur = +b.dataset.i; pcRender(); });
+  const p = PC.pieces[PC.cur] || {id: "", title: "", prompt: "", output: ""};
+  $("#pc-title").textContent = PC.pieces.length ? `${PC.cur + 1} / ${PC.pieces.length} · ${p.id} · ${p.title}` : "No pieces";
+  $("#pc-id").value = p.id; $("#pc-ptitle").value = p.title; $("#pc-prompt").value = p.prompt; $("#pc-output").value = p.output || "";
+  $("#pc-answer").value = p._answer || ""; $("#pc-info").textContent = p._info || ""; $("#pc-pos").value = PC.cur + 1;
+}
+function pcKeep() {
+  const p = PC.pieces[PC.cur]; if (!p) return;
+  p.id = $("#pc-id").value.trim() || p.id; p.title = $("#pc-ptitle").value; p.prompt = $("#pc-prompt").value;
+  p.output = $("#pc-output").value; p._answer = $("#pc-answer").value;
+}
+const pcReq = extra => ({front: FOCUS_ST, note: $("#pc-note").value, out: $("#out-folder").value.trim(), ...extra});
+async function pcSaved() {
+  if (!$("#pc-note").value) return;
+  try {
+    const d = await api("/api/piece/saved", pcReq({}));
+    const ids = new Set(d.files.map(f => (f.name.match(/^\d+ (.+?) · /) || [])[1]));
+    PC.pieces.forEach((p, i) => { if (ids.has(fsafe(p.id))) PC.state[i] = "saved"; });
+    pcRender();
+  } catch (e) { toast(e.message); }
+}
+async function pcSend() {
+  pcKeep();
+  const p = PC.pieces[PC.cur];
+  if (!p || !$("#pc-note").value) { toast("Pick a note first (load notes on the Run tab)."); return false; }
+  $("#pc-send").disabled = $("#pc-redo").disabled = true; $("#pc-info").textContent = `sending ${p.id}…`;
+  try {
+    const r = await api("/api/piece/call", pcReq({piece: {id: p.id, title: p.title, prompt: p.prompt, output: p.output},
+                                                 provider: $("#pc-provider").value, focus: focusList()}));
+    p._answer = r.text;
+    p._info = `${r.provider} · ${r.model} · ${r.prompt_tokens.toLocaleString()} in / ${r.completion_tokens.toLocaleString()} out · ${r.seconds} s`
+      + (r.error ? ` · ERROR: ${r.error}` : "");
+    PC.state[PC.cur] = r.error ? "err" : "got";
+    pcRender(); return !r.error;
+  } catch (e) { p._info = e.message; PC.state[PC.cur] = "err"; pcRender(); return false; }
+  finally { $("#pc-send").disabled = $("#pc-redo").disabled = false; }
+}
+async function pcAccept() {
+  pcKeep();
+  const p = PC.pieces[PC.cur];
+  if (!p || !$("#pc-answer").value.trim()) { toast("No answer to save."); return false; }
+  if (PC.state[PC.cur] === "err" && !confirm("This answer came back with an error (it may be cut off). Save it anyway?")) return false;
+  try {
+    const r = await api("/api/piece/save", pcReq({piece: {id: p.id, title: p.title}, position: PC.cur + 1, text: $("#pc-answer").value}));
+    PC.state[PC.cur] = "saved"; p._info = "saved: " + r.saved;
+    if (PC.cur < PC.pieces.length - 1) PC.cur++;
+    pcRender(); return true;
+  } catch (e) { toast(e.message); return false; }
+}
+$("#pc-send").onclick = pcSend; $("#pc-redo").onclick = pcSend; $("#pc-accept").onclick = pcAccept;
+$("#pc-skip").onclick = () => { pcKeep(); if (PC.cur < PC.pieces.length - 1) { PC.cur++; pcRender(); } };
+$("#pc-auto").onclick = async () => {
+  PC.halt = false; $("#pc-halt").disabled = false; $("#pc-auto").disabled = true;
+  while (!PC.halt) {
+    if (PC.pieces.every((_, i) => PC.state[i] === "saved")) { toast("Every piece is saved."); break; }
+    if (PC.state[PC.cur] === "saved") { if (PC.cur < PC.pieces.length - 1) { PC.cur++; pcRender(); continue; } PC.cur = 0; pcRender(); continue; }
+    if (!(await pcSend()) || !(await pcAccept())) { toast("Stopped: that piece needs a look."); break; }
+  }
+  $("#pc-halt").disabled = true; $("#pc-auto").disabled = false;
+};
+$("#pc-halt").onclick = () => { PC.halt = true; toast("Halting after the piece in flight."); };
+$("#pc-add").onclick = () => { pcKeep(); PC.pieces.splice(PC.cur + 1, 0, {id: `P${PC.pieces.length + 1}`, title: "New piece", prompt: "", output: ""}); PC.state = {}; PC.cur++; pcRender(); pcSaved(); };
+$("#pc-del").onclick = () => { if (PC.pieces.length && confirm("Delete this piece from the breakdown? (Save breakdown to keep the change.)")) { PC.pieces.splice(PC.cur, 1); PC.state = {}; PC.cur = Math.max(0, PC.cur - 1); pcRender(); pcSaved(); } };
+function pcMove(to) { pcKeep(); to = Math.max(0, Math.min(PC.pieces.length - 1, to)); const [p] = PC.pieces.splice(PC.cur, 1); PC.pieces.splice(to, 0, p); PC.state = {}; PC.cur = to; pcRender(); pcSaved(); }
+$("#pc-up").onclick = () => pcMove(PC.cur - 1); $("#pc-down").onclick = () => pcMove(PC.cur + 1); $("#pc-move").onclick = () => pcMove((+$("#pc-pos").value || 1) - 1);
+$("#pc-savelist").onclick = async () => {
+  pcKeep();
+  const pieces = PC.pieces.map(({id, title, prompt, output}) => ({id, title, prompt, output}));
+  try { const r = await api("/api/backside", {front: FOCUS_ST, name: "pieces.json", text: JSON.stringify({pieces}, null, 2)}); toast("Saved " + r.saved); }
+  catch (e) { toast(e.message); }
+};
+$("#pc-assemble").onclick = async () => {
+  try { const r = await api("/api/piece/assemble", pcReq({})); toast(`Assembled ${r.pieces} piece(s): ${r.saved}`); } catch (e) { toast(e.message); }
+};
+
+// ------------------------------------------------------------ results
+async function loadResults() {
+  try {
+    const d = await api("/api/results?front=" + encodeURIComponent(FOCUS_ST));
+    $("#rs-sub").textContent = `${d.total} file(s) in ${d.outbox}. Newest first; replaced versions stay in _older.`;
+    $("#rs-files").innerHTML = d.files.map(f => `<tr class="clickable" data-p="${esc(f.path)}"><td class="name">${esc(f.rel)}</td><td class="small">${esc(f.modified)}</td></tr>`).join("")
+      || '<tr><td colspan="2" class="small">Nothing saved yet.</td></tr>';
+    $$("#rs-files tr.clickable").forEach(tr => tr.onclick = () => view(tr.dataset.p, $("#rs-view")));
+  } catch (e) { toast(e.message); }
+}
+$("#rs-refresh").onclick = loadResults;
+async function view(path, el) {
+  try { const d = await api("/api/file?path=" + encodeURIComponent(path)); el.textContent = d.text + (d.cut ? "\n\n… (cut at 2 MB)" : ""); }
+  catch (e) { el.textContent = e.message; }
+}
+
+// ------------------------------------------------------------ backside
+const EDITABLE = ["PROMPT.md", "FOCUS.md"];
+let BS = null;
+function loadBackside() {
+  const s = byPath[FOCUS_ST];
+  $("#bs-files").innerHTML = s.files.map(f => `<button class="mini" data-f="${esc(f)}">${esc(f)}</button>`).join("") || '<span class="small">No files.</span>';
+  $$("#bs-files button").forEach(b => b.onclick = () => bsOpen(b.dataset.f));
+  $("#bs-text").value = s.description; $("#bs-save").disabled = true; $("#bs-text").readOnly = true; $("#bs-info").textContent = s.path;
+  if (s.files.includes("PROMPT.md")) bsOpen("PROMPT.md");
+}
+async function bsOpen(name) {
+  const s = byPath[FOCUS_ST], sep = s.path.includes("\\") ? "\\" : "/";
+  $$("#bs-files button").forEach(b => b.classList.toggle("active", b.dataset.f === name));
+  try {
+    const d = await api("/api/file?path=" + encodeURIComponent(s.path + sep + "BACKSIDE" + sep + name));
+    BS = name; $("#bs-text").value = d.text; const edit = EDITABLE.includes(name);
+    $("#bs-text").readOnly = !edit; $("#bs-save").disabled = !edit;
+    $("#bs-info").textContent = `${name} · saved ${d.modified}` + (edit ? "" : " · read only here");
+  } catch (e) { toast(e.message); }
+}
+$("#bs-save").onclick = async () => {
+  try { const r = await api("/api/backside", {front: FOCUS_ST, name: BS, text: $("#bs-text").value}); toast("Saved " + r.saved); } catch (e) { toast(e.message); }
+};
+
+// ------------------------------------------------------------ workflows and runs
+function renderRoutines() {
+  const num = {}; Object.values(byPath).forEach(s => { if (s.number) num[s.number] = s; });
+  const entries = Object.entries(CAT.routines || {}).filter(([k]) => !k.startsWith("_"));
+  $("#routines").innerHTML = entries.map(([k, r]) => {
+    const st = (r.stations || []).map(n => num[n]);
+    return `<div class="panel" style="margin:0"><h2>${esc(k)} · ${esc(r.name)}</h2>
+      <p class="small">${st.map((s, i) => s ? esc(s.folder) : `<span style="color:var(--bad)">${esc(r.stations[i])}: not found</span>`).join(" → ")}</p>
+      <button class="primary" data-k="${esc(k)}">Open</button></div>`;
+  }).join("") || "<p>No routines in routines.json.</p>";
+  $$("#routines button").forEach(b => b.onclick = () => {
+    const r = CAT.routines[b.dataset.k];
+    const stations = (r.stations || []).map(n => num[n]).filter(Boolean);
+    openGroup({id: "routine:" + b.dataset.k, title: `Workflow ${b.dataset.k} · ${r.name}`, path: "routines.json", stations, virtual: true});
+  });
+}
+async function renderRuns() {
+  try {
+    const d = await api("/api/runs");
+    $("#runs").innerHTML = d.runs.reverse().map(r => `<tr><td>${esc(r.id)}</td><td class="small">${esc(r.sequence.join(" → "))}</td><td>${esc(r.status)}</td><td>${r.seconds}</td></tr>`).join("")
+      || '<tr><td colspan="4" class="small">No runs yet.</td></tr>';
+  } catch (e) { toast(e.message); }
+}
+
+boot();
+</script>
+</body>
+</html>
