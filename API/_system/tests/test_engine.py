@@ -70,7 +70,7 @@ class Portability(unittest.TestCase):
         for row in registry:
             folder = paths.station_dir(row["label"])
             if folder.name == "BACKSIDE":   # out in its front folder: 0NN_<name>/BACKSIDE
-                self.assertTrue(folder.parent.name.startswith(f"0{row['number']}_"), folder.parent.name)
+                self.assertTrue(folder.parent.name.startswith(f"{int(row['number']):03d}_"), folder.parent.name)
             else:
                 self.assertEqual(folder.name, f"{row['number']}_{row['name']}")
             self.assertEqual(row["script"], f"{row['number']}_{row['name'].lower()}.py")
