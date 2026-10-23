@@ -1,0 +1,16 @@
+{
+  "number": "103",
+  "name": "FIS_CLASSIFY",
+  "label": "103_FIS_CLASSIFY",
+  "folder": "../10_FIS/103_FIS_CLASSIFY/BACKSIDE",
+  "script": "103_fis_classify.py",
+  "kind": "native",
+  "uses_api": true,
+  "items": "roots",
+  "on_note": false,
+  "options": [
+    "outbox"
+  ],
+  "engine": "David-OSv3 engine/understand.py (paths.json: david_osv3)",
+  "description": "FIS classify: the engine's rules first; only the unresolved folders go to Forge (names + extension mix, never contents). Thin wrapper around understand.py. Dry run by default."
+}

@@ -1,0 +1,16 @@
+{
+  "number": "101",
+  "name": "FIS_INVENTORY",
+  "label": "101_FIS_INVENTORY",
+  "folder": "../10_FIS/101_FIS_INVENTORY/BACKSIDE",
+  "script": "101_fis_inventory.py",
+  "kind": "native",
+  "uses_api": false,
+  "items": "roots",
+  "on_note": false,
+  "options": [
+    "outbox"
+  ],
+  "engine": "David-OSv3 engine/understand.py (paths.json: david_osv3)",
+  "description": "FIS stage 1: inventory the FIS roots (registry or INBOX lists) into David-OSv3's FIS database, in one scan. Thin wrapper around engine/understand.py. Dry run by default; read-only on every root."
+}
