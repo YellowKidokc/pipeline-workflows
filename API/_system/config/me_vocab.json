@@ -1,0 +1,32 @@
+{
+  "_note": "WORKING VOCABULARY for the Master Equation namer. NOT canon. Drafted 2026-10-23 by Claude from 10_VAULTS/14_MASTER_EQUATION/020_LAW_EXPANSIONS/00_INDEX.md (the current governing order; that vault is itself marked CANDIDATE_DRAFT, NOT ADMITTED). David reviews before anything relies on it.",
+  "grammar": "ME-LAW<nn> is the primary law the item bears on; optional secondaries joined with + (max 2), e.g. ME-LAW05+LAW09. Special ids: ME-CORE, ME-NONE, ME-UNSURE. The model may only choose from this list.",
+  "laws": [
+    {"id": "LAW01", "n": 1,  "physical": "Gravitation (GR)",              "spiritual": "Grace"},
+    {"id": "LAW02", "n": 2,  "physical": "Mass-Energy (E=mc^2) and momentum", "spiritual": "Meaning (rest term); Motion family from p"},
+    {"id": "LAW03", "n": 3,  "physical": "Electromagnetism (Maxwell)",    "spiritual": "Truth"},
+    {"id": "LAW04", "n": 4,  "physical": "Strong Force (QCD)",            "spiritual": "Love"},
+    {"id": "LAW05", "n": 5,  "physical": "Thermodynamics",                "spiritual": "Judgment"},
+    {"id": "LAW06", "n": 6,  "physical": "Information (Shannon)",         "spiritual": "Logos"},
+    {"id": "LAW07", "n": 7,  "physical": "Quantum Mechanics",             "spiritual": "Faith"},
+    {"id": "LAW08", "n": 8,  "physical": "Relativity (Poincare)",         "spiritual": "Covenant"},
+    {"id": "LAW09", "n": 9,  "physical": "Weak Interaction (decay)",      "spiritual": "Sin / moral conservation"},
+    {"id": "LAW10", "n": 10, "physical": "Coherence (C_W[.] = chi)",      "spiritual": "Christ"}
+  ],
+  "special": [
+    {"id": "ME-CORE",   "meaning": "about the Master Equation or chi as a whole, not one law"},
+    {"id": "ME-NONE",   "meaning": "does not bear on the equation"},
+    {"id": "ME-UNSURE", "meaning": "the model could not decide; must carry a reason"}
+  ],
+  "retired_numbering": [
+    {"old_file": "LAW_08_FERMI_CONSERVATION.md", "old_number": 8, "content": "Weak Force / Moral Conservation", "current": "LAW09"},
+    {"old_file": "LAW_09_EINSTEIN_FRAME.md",     "old_number": 9, "content": "Relativity / Frame",             "current": "LAW08"}
+  ],
+  "rulings": [
+    {"date": "2026-10-16", "law": "LAW02", "text": "M = (mc^2, pc). Invariant part = Meaning; frame-dependent part = Motion (Repentance, Conversion, Sin Nature as inertia derive from p). Source: RULING_LAW_02_M_SEAT_2026-10-16.md"}
+  ],
+  "open_conflicts_for_david": [
+    "The April 19 'NT spiritual terms' table lists Law 2 as Motion (F=ma) and Law 8 as Grace<->Frame Lock. The vault index (newer, and the Oct 16 Law 2 ruling) says Law 2 Mass-Energy/Meaning and Law 8 Relativity/Covenant. This file follows the vault.",
+    "Items that cite the OLD file numbering (Law 8 = Fermi, Law 9 = Einstein) will be mis-assigned unless the retired_numbering map is applied. The vault's own drift note calls a silent return of the old numbering STRUCTURAL."
+  ]
+}

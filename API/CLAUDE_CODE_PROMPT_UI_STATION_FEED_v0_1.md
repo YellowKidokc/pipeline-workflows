@@ -26,12 +26,16 @@ If any restatement is wrong, stop and ask.
 2. Give the page ONE source: Forge serves `GET /api/stations` (same JSON shape as `console.py list`, produced by
    importing or running it; do not copy its logic) and the page `fetch`es it at load. If Forge cannot reach the
    pipeline folder, return a clear error the page shows; never fall back to a typed-in list silently.
-3. Group stations by `family`. Stations with no family (the 000, 041, 042, 047, 048, 049, 060 ones) get a visible
+3. Group stations by `family`. Stations with no family (the 000, 041, 042, 047, 048, 049 ones) get a visible
    group called "Front stations" so nothing is hidden. Keep the existing 8 group names and order.
+   **David's ruling (2026-10-23): everything is shown EXCEPT the OpenAI stations (`060_OPENAI_STATIONS`).**
+   Keep that exclusion in ONE list (`EXCLUDED_FROM_PAGE`) that both the page and the test read. The station
+   stays registered and in the feed; the page just does not show it.
 4. One station card shows: number, name, kind, `uses_api`, buttons, inbox and outbox counts, last run.
 5. Forge's address comes from `FORGE_URL` (default `http://127.0.0.1:8790`). No provider URLs or keys in the page.
 6. A completeness test that FAILS when any `station.json` on disk is not in the feed, or any feed station has no
-   visible group. Put it where the pipeline's other tests live and say how to run it.
+   visible group, with the one exception of what is listed in `EXCLUDED_FROM_PAGE`. Put it where the pipeline's
+   other tests live and say how to run it.
 
 ## 3. Safety
 Read-only on station folders. Do not run any station. Do not edit the other two page copies. Branch from
@@ -39,9 +43,9 @@ Read-only on station folders. Do not run any station. Do not edit the other two 
 Never push to main or master.
 
 ## 4. Acceptance (pending, on David's machine)
-Start Forge, open the page: expect 66 stations visible (63 in the feed today, which includes 2 under `_system`,
-plus the 3 newly registered), the 8 front stations under "Front stations", and `000_QUICK_CALL` among them. Say "acceptance pending on target
-machine" in the PR description.
+Start Forge, open the page: expect 65 stations visible (63 in the feed today, which includes 2 under `_system`,
+plus the 3 newly registered, minus the 1 excluded OpenAI station), 7 front stations under "Front stations",
+and `000_QUICK_CALL` among them. Say "acceptance pending on target machine" in the PR description.
 
 ## 5. Out of scope
 The FIS group (`10_FIS`, separate prompt), running stations from the page, restyling, Rust beyond the one endpoint.
