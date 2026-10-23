@@ -9,10 +9,12 @@ If any restatement is wrong, stop and ask.
 ## 0. Stop-check (do this first)
 You run in a cloud container and can only see GitHub. David's FIS engine lives in `David-OSv3`
 (`engine/understand.py`, `engine/path_write_policy.py`, `engine/flatten_dedupe.py`, the GUIs, tests).
-As of 2026-10-23 that code was **uncommitted and on a local-only branch** (`claude/03-classify-renamer`
-is not on GitHub; about 40 files modified and about 90 untracked). If you cannot read
-`engine/understand.py` on the branch David names, **STOP and tell David the snapshot has not been
-pushed.** Do not rewrite it from the spec.
+It was pushed on 2026-10-23 as branch **`wip/fis-snapshot-2026-10-23`** of `YellowKidokc/David-OSv3`
+(commit `46bf081`, 252 files; secret scan clean). Work from that branch. If you cannot read
+`engine/understand.py` there, **STOP and tell David.** Do not rewrite it from the spec.
+Heads-up: David's local folders are named confusingly. `D:\GitHub\David-OS` is a clone of the
+David-OSv3 repo on branch `agent/top-of-mind-pwa-keeper`; `D:\GitHub\David-OS-v2-source` is a clone of
+the repo named `David-OS` (branch `OBS-Plugin-Final-Claude`). Folder name does not equal repo name.
 
 ## 1. What FIS is (spec: `David-OSv3/docs/FIS_UNDERSTAND_PIPELINE.md`)
 Eight stages, in this order: 1 Inventory, 2 Identify+extract, 3 Exact copies (size, then SHA-256),
@@ -58,7 +60,7 @@ Register the group in `API/_system/config/stations.json` and in `API/api-workspa
 
 ## 5. Branches and acceptance
 - pipeline-workflows: branch from `wip/api-restructure-2026-10-23` (it holds the current stations). Draft PR.
-- David-OSv3: only the minimum needed so the stations can call the engine; on the branch David names.
+- David-OSv3: branch from `wip/fis-snapshot-2026-10-23`; only the minimum needed so the stations can call the engine.
 - Never push to main or master anywhere.
 - Acceptance happens on David's machine and is PENDING: run 101 and 102 over the five roots in section 2;
   expect `D:\_FIS_ROOT_SIDECAR_ARCHIVE` to come back as almost entirely exact copies of the David-OSv3 archive.
