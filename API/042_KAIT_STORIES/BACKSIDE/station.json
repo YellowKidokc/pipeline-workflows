@@ -1,0 +1,29 @@
+{
+  "number": "69",
+  "name": "KAIT_STORIES",
+  "label": "042_KAIT_STORIES",
+  "kind": "native",
+  "description": "Map a paper to Kait Willett moves: three alternative spines with loop IDs for OpenWriter.",
+  "items": "papers",
+  "options": [
+    "limit",
+    "workers",
+    "provider",
+    "model",
+    "focus",
+    "redo",
+    "outbox"
+  ],
+  "uses_api": true,
+  "goals": [
+    {
+      "id": "API-69.1",
+      "title": "KAIT_SPINE",
+      "task": "kait_spine",
+      "asks": "three alternative spines for the paper, each beat mapped to a Kait move ID, with canonical-point carry and why"
+    }
+  ],
+  "prompt_files": [
+    "PROMPT.md"
+  ]
+}

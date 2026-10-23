@@ -18,6 +18,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 FRONT = HERE.parent
+CALL_DIR = None   # set by --call NAME: BACKSIDE/calls/NAME holds its own prompt.txt, input/, settings.txt
 URL = os.environ.get("QUICK_CALL_URL", "https://api.deepseek.com/chat/completions")
 TEXT = {".txt", ".md", ".csv", ".json", ".xml", ".html", ".htm", ".py", ".lean", ".tex", ".bib", ".yaml", ".yml",
         ".toml", ".ini", ".log", ".sql", ".rst", ".js", ".ts", ".srt", ".vtt"}
@@ -25,8 +26,9 @@ TEXT = {".txt", ".md", ".csv", ".json", ".xml", ".html", ".htm", ".py", ".lean",
 
 def settings() -> dict:
     out = {"MODE": "each", "WORKERS": "30", "MODEL": "deepseek-chat", "MAX_TOKENS": "8000", "TEMPERATURE": "0.3"}
-    f = HERE / "settings.txt"
-    if f.exists():
+    for f in [HERE / "settings.txt"] + ([CALL_DIR / "settings.txt"] if CALL_DIR else []):   # a call's settings win
+        if not f.exists():
+            continue
         for line in f.read_text(encoding="utf-8").splitlines():
             if "=" in line and not line.lstrip().startswith("#"):
                 k, v = line.split("=", 1)
@@ -42,12 +44,12 @@ def api_key() -> str:
 
 
 def prompt_text() -> str:
-    lines = (HERE / "prompt.txt").read_text(encoding="utf-8").splitlines()
+    lines = ((CALL_DIR or HERE) / "prompt.txt").read_text(encoding="utf-8").splitlines()
     return "\n".join(l for l in lines if not l.lstrip().startswith("#")).strip()
 
 
 def inputs() -> list[Path]:
-    folder = FRONT / "INBOX"
+    folder = CALL_DIR / "input" if CALL_DIR else FRONT / "INBOX"
     return sorted(p for p in folder.rglob("*") if p.is_file() and p.suffix.lower() in TEXT and not p.name.startswith("."))
 
 
@@ -81,7 +83,17 @@ def main() -> int:
     ap.add_argument("--workers", type=int)
     ap.add_argument("--outbox")
     ap.add_argument("--focus", action="append", default=[])
+    ap.add_argument("--call", help="run a saved call: BACKSIDE/calls/NAME (its own prompt.txt, input/, settings.txt)")
     a = ap.parse_args()
+    global CALL_DIR
+    if a.call:
+        matches = [d for d in (HERE / "calls").glob("*") if d.is_dir() and (d.name == a.call or d.name.startswith(a.call + "_"))]
+        if len(matches) != 1:
+            print(f"No single saved call matches {a.call!r}. Saved calls: "
+                  + ", ".join(d.name for d in sorted((HERE / "calls").glob("*")) if d.is_dir()))
+            return 1
+        CALL_DIR = matches[0]
+        print(f"Saved call: {CALL_DIR.name}")
     cfg, prompt = settings(), prompt_text()
     cfg["WORKERS"] = str(a.workers or cfg["WORKERS"])
     roots = [Path(x[1:]) if x.startswith("@") else Path(x) for x in a.items]
@@ -94,8 +106,8 @@ def main() -> int:
     files = sorted(dict.fromkeys(files)) if files else inputs()
     if a.focus:
         prompt += "\n\n## EXTRA FOCUS FROM DAVID:\n" + "\n".join(f"- {x}" for x in a.focus)
-    out = Path(a.outbox) if a.outbox else FRONT / "OUTBOX"
-    out.mkdir(exist_ok=True)
+    out = Path(a.outbox) if a.outbox else (FRONT / "OUTBOX" / CALL_DIR.name if CALL_DIR else FRONT / "OUTBOX")
+    out.mkdir(parents=True, exist_ok=True)
     tag = hashlib.sha256(prompt.encode()).hexdigest()[:6]   # a new prompt means new answers
     if not prompt:
         print("prompt.txt is empty.")

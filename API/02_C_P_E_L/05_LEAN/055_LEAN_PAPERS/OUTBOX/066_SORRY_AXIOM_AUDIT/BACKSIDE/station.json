@@ -1,0 +1,30 @@
+{
+  "number": "66",
+  "name": "SORRY_AXIOM_AUDIT",
+  "label": "66_SORRY_AXIOM_AUDIT",
+  "kind": "native",
+  "description": "Every sorry/admit/axiom/native_decide in a Lean source, found in code first (free), then classified by one JSON call per file; remediation docket, blockers first.",
+  "items": "lean",
+  "own_inbox": true,
+  "options": [
+    "limit",
+    "workers",
+    "provider",
+    "model",
+    "focus",
+    "redo",
+    "outbox"
+  ],
+  "uses_api": true,
+  "prompt_files": [
+    "PROMPT.md"
+  ],
+  "goals": [
+    {
+      "id": "API-66.1",
+      "title": "SORRY_AXIOM_AUDIT",
+      "task": "sorry_axiom_audit",
+      "asks": "classify each code-found sorry/admit/axiom/native_decide: placeholder|spec_by_design|hard_gap|copied_test|intended_axiom, what closes it, severity blocker|cosmetic|note"
+    }
+  ]
+}

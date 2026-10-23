@@ -166,6 +166,9 @@ class Gateway:
                 pass
         ok = error is None and 0 < status < 400
         self.stats.end(station, ok, pt, ct)
+        if ok:
+            try: self._take_notes(station, task, payload, streaming)
+            except Exception: pass   # notes are a side channel; they must never break a call
         from .goals import goal_id
         self._receipt({"goal_id": goal_id(station, task), "station": station, "provider": provider, "model": model, "task": task, "status": status,
                        "attempts": attempts, "error": error, "prompt_tokens": pt, "completion_tokens": ct,
@@ -174,6 +177,35 @@ class Gateway:
             payload = json.dumps({"error": {"message": error or "upstream failure", "type": "one_menu_gateway"}}).encode()
             status, ctype = 502, "application/json"
         self._reply(request, status, payload, ctype, attempts, error)
+
+    def _take_notes(self, station: str, task: str, payload: bytes, streaming: bool) -> None:
+        """Copy the GLOBAL_FOCUS answers ('## Focus findings' / focus_findings) and any 'NOTE:' lines
+        from a reply into DEEPSEEK_NOTES/<date>.md. The station's own output is untouched."""
+        import re
+        raw = payload.decode("utf-8", "replace")
+        text = ""
+        if streaming or payload[:5] == b"data:":
+            for line in raw.splitlines():
+                if line.startswith("data:") and line[5:].strip() not in ("", "[DONE]"):
+                    try: text += ((json.loads(line[5:]).get("choices") or [{}])[0].get("delta") or {}).get("content") or ""
+                    except ValueError: pass
+        else:
+            text = ((json.loads(raw).get("choices") or [{}])[0].get("message") or {}).get("content") or ""
+        found = []
+        m = re.search(r"^#+\s*Focus findings\s*$(.*?)(?=^#{1,2}\s|\Z)", text, re.S | re.M | re.I)
+        if m and m.group(1).strip(): found.append(m.group(1).strip())
+        try:
+            obj = json.loads(text)
+            if isinstance(obj, dict) and obj.get("focus_findings"):
+                found.append(json.dumps(obj["focus_findings"], ensure_ascii=False, indent=1))
+        except ValueError: pass
+        found += [l.strip() for l in text.splitlines() if l.strip().upper().startswith("NOTE:") and not any(l.strip() in x for x in found)]
+        if not found: return
+        folder = notes_dir(); folder.mkdir(parents=True, exist_ok=True)
+        now = datetime.now(timezone.utc)
+        block = f"\n## {now.strftime('%H:%M:%S')}Z  ·  {station}  ·  {task or '-'}\n\n" + "\n\n".join(dict.fromkeys(found)) + "\n"
+        with self._write_lock, (folder / f"{now.strftime('%Y-%m-%d')}.md").open("a", encoding="utf-8") as f:
+            f.write(block)
 
     def _prepare(self, station: str, body: bytes, engine_focus: bool) -> tuple[bytes, str, bool]:
         try:
@@ -240,3 +272,16 @@ def summary_line(stats: dict[str, Any]) -> str:
 
 def gateway_path() -> Path:
     return Path(__file__)
+
+
+def notes_dir() -> Path:
+    """DEEPSEEK_NOTES: the shared notebook. Lives beside the pipeline outputs (paths.json api_pipeline_out);
+    falls back to _data/DEEPSEEK_NOTES if that key is missing or the NAS is unreachable."""
+    try:
+        cfg = json.loads(inside("config", "paths.json").read_text(encoding="utf-8"))
+        root = Path(cfg.get("api_pipeline_out") or "")
+        if str(root) and root.exists():
+            return root / "DEEPSEEK_NOTES"
+    except Exception:
+        pass
+    return inside("..", "_data", "DEEPSEEK_NOTES")

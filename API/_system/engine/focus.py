@@ -84,7 +84,10 @@ def resolve_run_focus(raw: str | list[str]) -> list[str]:
 
 def compose(station_dir: Path, item_dir: Path | None = None, run_focus: str | list[str] = "",
             channel_focus: Path | None = None) -> tuple[str, str]:
-    """Return (focus block, sha256 of the block). Empty focus -> ('', hash of '')."""
+    """Return (focus block, sha256 of the block). Empty focus -> ('', hash of '').
+    GLOBAL focus (config/GLOBAL_FOCUS.md) rides on every call of every station but is deliberately
+    EXCLUDED from the hash: the hash decides 'already done, skip', and a global note must never
+    force the whole corpus to re-run."""
     points: list[str] = []
     points.extend(points_from_markdown(station_dir / "FOCUS.md"))
     if item_dir:
@@ -92,8 +95,12 @@ def compose(station_dir: Path, item_dir: Path | None = None, run_focus: str | li
     points.extend(points_from_channel(channel_focus))
     points.extend(resolve_run_focus(run_focus))
     points = list(dict.fromkeys(p for p in points if p))
-    text = "" if not points else f"{HEADER}\n\n{REQUIRED}\n\n" + "\n".join(f"- {p}" for p in points)
-    return text, hashlib.sha256(text.encode("utf-8")).hexdigest()
+    core = "" if not points else f"{HEADER}\n\n{REQUIRED}\n\n" + "\n".join(f"- {p}" for p in points)
+    glob = [p for p in points_from_markdown(inside("config", "GLOBAL_FOCUS.md")) if p not in points]
+    if not glob:
+        return core, hashlib.sha256(core.encode("utf-8")).hexdigest()
+    text = (core or f"{HEADER}\n\n{REQUIRED}") + "\n" + "\n".join(f"- {p}" for p in glob)
+    return text, hashlib.sha256(core.encode("utf-8")).hexdigest()
 
 
 def findings_md(findings) -> list[str]:

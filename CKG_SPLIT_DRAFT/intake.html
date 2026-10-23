@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Intake</title>
+<style>
+:root{--bg:#f6f5f2;--panel:#fff;--ink:#1d1d1b;--mute:#6b6a66;--line:#dedcd6;--acc:#2f5d8a;--sel:#e8eef5;--ok:#3d7a4a;--bad:#b0412e;--warn:#a8701a}
+@media (prefers-color-scheme:dark){:root{--bg:#18191b;--panel:#202225;--ink:#e8e6e1;--mute:#9a978f;--line:#33363a;--acc:#7fb0e0;--sel:#26313d;--ok:#7cc48b;--bad:#e8826e;--warn:#e0b060}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,Segoe UI,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-bottom:14px}
+.card h2{margin:0 0 10px;font-size:15px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:6px 0}.lbl{color:var(--mute);min-width:90px}
+input[type=text],select{font:inherit;padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+input.wide{flex:1;min-width:260px}
+button{font:inherit;padding:6px 14px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:6px;cursor:pointer}
+button.pri{background:var(--acc);color:#fff;border-color:var(--acc)}button:disabled{opacity:.5}
+.note{color:var(--mute);font-size:12px}.msg{color:var(--bad)}.okm{color:var(--ok)}
+.wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}td,th{padding:5px 6px;border-top:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--mute);font-weight:500;white-space:nowrap}td.h{font-family:ui-monospace,Consolas,monospace;font-size:11.5px;color:var(--mute)}
+.exact{color:var(--bad)}.near{color:var(--warn)}
+td input[type=text]{width:100%;min-width:180px}
+.cls{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.cls button{text-align:left;padding:8px 10px}.cls small{display:block;color:var(--mute)}
+pre{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:10px;font-size:12px;overflow:auto;max-height:340px}
+</style></head><body><script src="/nav.js"></script>
+<main>
+<div class="card">
+  <h2>1 · Intake: give each paper an identity before anything runs</h2>
+  <p class="note">Hashes every file, checks for exact and near duplicates against everything already taken in, then mints a permanent UUID, freezes an untouched copy, and writes the YAML header. Your original file is never edited or moved.</p>
+  <div class="row"><span class="lbl">Folder</span><input type="text" class="wide" id="folder" placeholder="D:\path\to\papers"><button id="scan">Scan (read-only)</button></div>
+  <div class="row"><span class="lbl">Defaults</span>
+    <label>Origin <select id="origin"><option value="D">D house</option><option value="A">A analysis</option><option value="X">X external</option></select></label>
+    <label>Type <select id="type"><option value="P">P paper</option><option value="N">N note/draft</option><option value="W">W web page</option><option value="B">B book</option><option value="J">J journal</option><option value="Y">Y video</option><option value="H">H hub run</option></select></label>
+    <label>Lane <select id="lane"><option>general</option><option>priority</option><option>series</option></select></label>
+    <label>Register <select id="register"><option value="">decide later</option><option>declaration</option><option>canon</option></select></label>
+    <label>Topic <select id="topic"></select></label>
+  </div>
+  <div class="row"><span class="lbl">Keep together</span>
+    <label><input type="radio" name="ck" value="series" checked> Series (numbered parts)</label>
+    <label><input type="radio" name="ck" value="grouping"> Grouping (together, no order)</label>
+    <input type="text" id="cname" class="wide" placeholder="name, e.g. The Truth Series (blank = not kept together)"></div>
+  <div class="row"><span class="lbl">New topic</span>
+    <input type="text" id="nname" class="wide" placeholder="Type the topic name, e.g. Truth Is Ontological">
+    <span class="note">code</span> <input type="text" id="ncode" size="6" style="text-transform:uppercase">
+    <label>part of <select id="nparent"><option value="">nothing (its own topic)</option></select></label>
+    <button id="addtopic">Add topic</button></div>
+  <div class="row"><span class="lbl"></span><span class="note" id="nhint">The code fills in from the name; change it if you like.</span></div>
+  <p class="note">Readable ID = <b>TOPIC-ORIGIN-TYPE-NNNN</b> (e.g. MIM-D-P-0001), numbered per topic/origin/type. Pick a topic to get one; with none, the file gets its UUID now and its readable ID later.</p>
+  <div id="msg" class="msg"></div>
+</div>
+
+<div class="card" id="scanned" hidden>
+  <h2 id="sumline"></h2>
+  <div class="wrap"><table><thead><tr><th>Take</th><th>File</th><th>Title</th><th>Part</th><th>Role</th><th>Topic</th><th>Format</th><th>Duplicate</th><th>SHA-256</th></tr></thead><tbody id="rows"></tbody></table></div>
+  <div class="row" style="margin-top:10px"><button class="pri" id="commit">Take in checked files</button><span id="cmsg"></span></div>
+</div>
+
+<div class="card">
+  <h2>Then classify (03_CLASSIFY)</h2>
+  <p class="note">These open your existing David-OSv3 tools in their own windows. Readable ID and topic are filled there; intake leaves them blank on purpose.</p>
+  <div class="cls" id="cls"></div>
+</div>
+
+<div class="card">
+  <h2>Already taken in <span class="note" id="regcount"></span></h2>
+  <div class="wrap"><table><thead><tr><th>Readable ID</th><th>Title</th><th>UUID</th><th>Locations</th><th>Ingested</th><th>Sidecar</th></tr></thead><tbody id="reg"></tbody></table></div>
+  <p class="note" id="counts"></p>
+  <pre id="yaml" hidden></pre>
+</div>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const post = (u, b) => fetch(u,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)}).then(async r=>{const j=await r.json(); if(!r.ok) throw new Error(j.error); return j;});
+let scanned = [];
+try { $('folder').value = localStorage.getItem('intake.folder') || ''; } catch(e) {}
+const TOOLS = [['PROFILE','Profile the folder','01_PROFILE · the doorway wizard', true],['REVIEW','Review window','03_CLASSIFY · accept / edit suggestions'],
+  ['VALIDATE','Validate sidecars','03_CLASSIFY · check against the rules', true],['REPORT','Classifications report','03_CLASSIFY · rebuild the doc'],
+  ['ADAPT','Adapt old cards','04_ADAPT · stamp legacy cards mim.v1', true]];
+let TOPICS = [];
+const topicOpts = (sel, blank) => (blank?`<option value="">${blank}</option>`:'') + TOPICS.map(t=>`<option value="${t.code}" ${t.code===sel?'selected':''}>${t.code} · ${esc(t.name)}</option>`).join('');
+function fillTopics(){
+  const keep = $('topic').value;
+  $('topic').innerHTML = topicOpts(keep, '(none yet: UUID only)');
+  $('nparent').innerHTML = '<option value="">nothing (its own topic)</option>' + TOPICS.filter(t=>t.code.split('.').length<3).map(t=>`<option value="${t.code}">${t.code} · ${esc(t.name)}</option>`).join('');
+}
+function loadReg(){
+  fetch('/intake/registry').then(r=>r.json()).then(d=>{
+    TOPICS = d.topics.filter(t=>t.kind==='topic'); fillTopics();
+    $('regcount').textContent = `(${d.items.length} shown, newest first)`;
+    $('reg').innerHTML = d.items.map(r=>`<tr><td><b>${esc(r.id||'—')}</b></td><td>${esc(r.title)}</td><td class="h">${r.uuid}</td><td>${(r.where||[]).length}</td><td>${esc(r.ingested)}</td>
+      <td><button data-u="${r.uuid}">view</button></td></tr>`).join('') || '<tr><td colspan="6" class="note">Nothing taken in yet.</td></tr>';
+    $('reg').querySelectorAll('button').forEach(b=>b.onclick=async()=>{ const t=await fetch(`/intake/sidecar/${b.dataset.u}`).then(r=>r.json()); $('yaml').hidden=false; $('yaml').textContent=t.text; });
+    $('counts').textContent = 'Counts: ' + (Object.entries(d.counts).map(([t,c])=>`${t} ${Object.entries(c).map(([k,n])=>`${k}:${n}`).join(' ')}`).join(' · ') || 'none yet');
+    $('cls').innerHTML = TOOLS.map(([k,t,s,usesFolder])=>`<button data-k="${k}" data-f="${usesFolder?1:''}" ${d.classify[k]?'':'disabled'}>${t}<small>${s}${d.classify[k]?'':' (not found)'}</small></button>`).join('');
+    $('cls').querySelectorAll('button').forEach(b=>b.onclick=()=>post('/launch',{name:b.dataset.k, arg: b.dataset.f ? $('folder').value.trim() : ''}).catch(e=>alert(e.message)));
+  });
+}
+$('scan').onclick = async () => {
+  $('msg').textContent='';
+  const folder = $('folder').value.trim();
+  try { localStorage.setItem('intake.folder', folder); } catch(e) {}
+  try {
+    const d = await post('/intake/scan',{folder}); scanned = d.items;
+    const ex = scanned.filter(i=>i.duplicate.startsWith('exact')).length, nr = scanned.filter(i=>i.duplicate.startsWith('near')).length;
+    $('sumline').textContent = `${scanned.length} file(s) · ${ex} exact duplicate(s) · ${nr} near duplicate(s) · ${d.registry_count} already in the registry`;
+    $('rows').innerHTML = scanned.map((i,k)=>`<tr><td><input type="checkbox" data-k="${k}" ${i.take?'checked':''}></td>
+      <td>${esc(i.name)}</td><td><input type="text" data-t="${k}" value="${esc(i.title)}"></td>
+      <td><input type="text" data-n="${k}" value="${i.part??''}" style="width:3em;min-width:0"></td>
+      <td><select data-r="${k}">${['part','index','companion','source','support'].map(r=>`<option ${r===i.role?'selected':''}>${r}</option>`).join('')}</select></td>
+      <td><select data-p="${k}">${topicOpts($('topic').value, '(default)')}</select></td><td>${i.format}</td>
+      <td class="${i.duplicate.split(' ')[0]}">${i.duplicate?esc(i.duplicate)+'<br><small>'+esc(i.duplicate_of)+(i.action==='location'?' · will add this path as a location':'')+'</small>':'—'}</td>
+      <td class="h">${i.sha256.slice(0,16)}…</td></tr>`).join('');
+    $('scanned').hidden = false;
+  } catch(e) { $('msg').textContent = e.message; }
+};
+$('commit').onclick = async () => {
+  const items = scanned.map((i,k)=>({...i, title: document.querySelector(`[data-t="${k}"]`).value, topic: document.querySelector(`[data-p="${k}"]`).value,
+      part: parseInt(document.querySelector(`[data-n="${k}"]`).value) || null, role: document.querySelector(`[data-r="${k}"]`).value}))
+    .filter((i,k)=>document.querySelector(`[data-k="${k}"]`).checked);
+  if(!items.length) return;
+  if(!confirm(`Take in ${items.length} file(s)? Each gets a permanent UUID and a frozen copy. Originals stay where they are.`)) return;
+  try {
+    const r = await post('/intake/commit',{items, defaults:{origin:$('origin').value,type:$('type').value,lane:$('lane').value,collection_name:$('cname').value.trim(),collection_kind:document.querySelector('input[name=ck]:checked').value,register:$('register').value,topic:$('topic').value.trim()}});
+    $('cmsg').innerHTML = `<span class="okm">${r.done.length} taken in${r.done.length?' ('+r.done.map(d=>esc(d.id||d.name)).join(', ')+')':''}; ${r.located.length} new location(s).</span> ` + r.skipped.map(s=>`${esc(s.name)}: ${esc(s.why)}`).join('; ');
+    loadReg(); $('scan').click();
+  } catch(e) { $('cmsg').innerHTML = `<span class="msg">${esc(e.message)}</span>`; }
+};
+// Code from the name: initials of the main words (2–4 letters), else the first letters; skip codes already taken.
+const SMALL = new Set(['the','a','an','of','and','is','in','on','to','for','as','at','by']);
+function suggestCode(name, parent){
+  // Your convention (MIM = Math Is Moral, ME.WEAK = Weak force): initials of every word except a leading
+  // "The"/"A"; drop the small words only if that runs too long; one word = its first letters (GRAC, ATONE).
+  let words = name.toUpperCase().replace(/[^A-Z\s]/g,' ').split(/\s+/).filter(Boolean);
+  if (!words.length) return '';
+  if (words.length > 1 && ['THE','A','AN'].includes(words[0])) words = words.slice(1);
+  const main = words.filter(w=>!SMALL.has(w.toLowerCase()));
+  const max = parent ? 5 : 4;
+  let cands = [];
+  if (words.length === 1) {
+    for (let n=max;n>=2;n--) cands.push(words[0].slice(0,n));
+  } else {
+    const all = words.map(w=>w[0]).join(''), mainIni = main.map(w=>w[0]).join('');
+    if (all.length<=max) cands.push(all);
+    if (mainIni.length>=2) cands.push(mainIni.slice(0,max));
+    cands.push((words[0].slice(0,2)+words.slice(1).map(w=>w[0]).join('')).slice(0,max));
+    for (let n=3;n<=max;n++) cands.push(main.join('').slice(0,n));
+  }
+  const taken = c => TOPICS.some(t=>t.code===(parent?parent+'.'+c:c));
+  return cands.find(c=>c.length>=2 && !taken(c)) || '';
+}
+let codeEdited = false;
+$('nname').oninput = () => { if(!codeEdited) $('ncode').value = suggestCode($('nname').value, $('nparent').value); preview(); };
+$('nparent').onchange = () => { if(!codeEdited) $('ncode').value = suggestCode($('nname').value, $('nparent').value); preview(); };
+$('ncode').oninput = () => { codeEdited = !!$('ncode').value; $('ncode').value = $('ncode').value.toUpperCase().replace(/[^A-Z]/g,''); preview(); };
+function preview(){
+  const c = $('ncode').value, p = $('nparent').value, full = p ? `${p}.${c}` : c;
+  if(!$('nname').value.trim()) { $('nhint').textContent = 'The code fills in from the name; change it if you like.'; return; }
+  const max = p?6:4, ok = c.length>=2 && c.length<=max, taken = TOPICS.some(t=>t.code===full);
+  $('nhint').innerHTML = taken ? `<span class="msg">${full} is already used. Pick another code.</span>`
+    : ok ? `Will add <b>${full}</b> · ${esc($('nname').value.trim())}. Papers under it get IDs like <b>${full}-D-P-0001</b>.`
+    : `<span class="msg">Code needs 2–${max} letters.</span>`;
+}
+$('addtopic').onclick = async () => {
+  try { const d = await post('/intake/topic',{code:$('ncode').value, name:$('nname').value, parent:$('nparent').value});
+    TOPICS = d.topics.filter(t=>t.kind==='topic');
+    const added = ($('nparent').value ? $('nparent').value+'.' : '') + $('ncode').value;
+    fillTopics(); $('topic').value = added; document.querySelectorAll('[data-p]').forEach(s=>{ s.innerHTML = topicOpts(added,'(default)'); });
+    $('nhint').innerHTML = `<span class="okm">Added ${added}. It's now the topic for this batch.</span>`;
+    $('ncode').value=''; $('nname').value=''; codeEdited=false; $('msg').textContent=''; }
+  catch(e) { $('nhint').innerHTML = `<span class="msg">${esc(e.message)}</span>`; }
+};
+loadReg();
+</script></body></html>

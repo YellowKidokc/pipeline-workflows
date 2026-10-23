@@ -1,0 +1,8 @@
+# Quick-call settings for RESEARCH_ROUTER
+# MODE=together sends all files in one prompt so the model can synthesize across the corpus.
+# If the corpus is too large for context, switch to MODE=each.
+MODE=together
+WORKERS=30
+MODEL=deepseek-chat
+MAX_TOKENS=8000
+TEMPERATURE=0.3

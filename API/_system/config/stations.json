@@ -147,7 +147,7 @@
     "number": "21",
     "name": "CKG_EXTRACT_CPE",
     "label": "21_CKG_EXTRACT_CPE",
-    "folder": "../01_CKG/020_CKG/OUTBOX/021_CLAIMS_PROOFS_EVIDENCE/BACKSIDE",
+    "folder": "../02_C_P_E_L/021_CLAIMS_PROOFS_EVIDENCE/BACKSIDE",
     "script": "21_ckg_extract_cpe.py",
     "rank": 16,
     "retired": false
@@ -159,6 +159,33 @@
     "folder": "../01_CKG/020_CKG/BACKSIDE/022_CKG_INBOX_CHECK/BACKSIDE",
     "script": "22_ckg_inbox_check.py",
     "rank": 30,
+    "retired": false
+  },
+  {
+    "number": "23",
+    "name": "CPEL",
+    "label": "23_CPEL",
+    "folder": "../02_C_P_E_L/023_CPEL/BACKSIDE",
+    "script": "23_cpel.py",
+    "rank": 17,
+    "retired": false
+  },
+  {
+    "number": "24",
+    "name": "CRAFT_PASS",
+    "label": "24_CRAFT_PASS",
+    "folder": "../041_STORIES/OUTBOX/024_CRAFT_PASS/BACKSIDE",
+    "script": "24_craft_pass.py",
+    "rank": 18,
+    "retired": false
+  },
+  {
+    "number": "25",
+    "name": "CKG_V4",
+    "label": "25_CKG_V4",
+    "folder": "../01_CKG/025_CKG_V4/BACKSIDE",
+    "script": "25_ckg_v4.py",
+    "rank": 19,
     "retired": false
   },
   {
@@ -175,7 +202,7 @@
     "number": "31",
     "name": "EVIDENCE_MERGE_ORIGINALS",
     "label": "31_EVIDENCE_MERGE_ORIGINALS",
-    "folder": "../03_EVIDENCE/031_EVIDENCE_MERGE_ORIGINALS/BACKSIDE",
+    "folder": "../02_C_P_E_L/03_EVIDENCE/031_EVIDENCE_MERGE_ORIGINALS/BACKSIDE",
     "script": "31_evidence_merge_originals.py",
     "rank": 25,
     "retired": false
@@ -202,7 +229,7 @@
     "number": "34",
     "name": "EVIDENCE_SERIES_SYNTHESIS",
     "label": "34_EVIDENCE_SERIES_SYNTHESIS",
-    "folder": "../03_EVIDENCE/034_EVIDENCE_SERIES_SYNTHESIS/BACKSIDE",
+    "folder": "../02_C_P_E_L/03_EVIDENCE/034_EVIDENCE_SERIES_SYNTHESIS/BACKSIDE",
     "script": "34_evidence_series_synthesis.py",
     "rank": 22,
     "retired": false
@@ -211,7 +238,7 @@
     "number": "35",
     "name": "EVIDENCE_SERIES_ARCS",
     "label": "35_EVIDENCE_SERIES_ARCS",
-    "folder": "../03_EVIDENCE/035_EVIDENCE_SERIES_ARCS/BACKSIDE",
+    "folder": "../02_C_P_E_L/03_EVIDENCE/035_EVIDENCE_SERIES_ARCS/BACKSIDE",
     "script": "35_evidence_series_arcs.py",
     "rank": 23,
     "retired": false
@@ -220,7 +247,7 @@
     "number": "36",
     "name": "EVIDENCE_THREE_DIALS",
     "label": "36_EVIDENCE_THREE_DIALS",
-    "folder": "../03_EVIDENCE/036_EVIDENCE_THREE_DIALS/BACKSIDE",
+    "folder": "../02_C_P_E_L/03_EVIDENCE/036_EVIDENCE_THREE_DIALS/BACKSIDE",
     "script": "36_evidence_three_dials.py",
     "rank": 26,
     "retired": false
@@ -229,7 +256,7 @@
     "number": "37",
     "name": "EVIDENCE_SQLITE_SYNC",
     "label": "37_EVIDENCE_SQLITE_SYNC",
-    "folder": "../037_EVIDENCE_SQLITE_SYNC/BACKSIDE",
+    "folder": "../02_C_P_E_L/037_EVIDENCE_SQLITE_SYNC/BACKSIDE",
     "script": "37_evidence_sqlite_sync.py",
     "rank": 27,
     "retired": false
@@ -238,7 +265,7 @@
     "number": "38",
     "name": "EVIDENCE_SIDECARS",
     "label": "38_EVIDENCE_SIDECARS",
-    "folder": "../038_EVIDENCE_SIDECARS/BACKSIDE",
+    "folder": "../02_C_P_E_L/038_EVIDENCE_SIDECARS/BACKSIDE",
     "script": "38_evidence_sidecars.py",
     "rank": 31,
     "retired": false
@@ -247,7 +274,7 @@
     "number": "39",
     "name": "EVIDENCE_CHAIN_INTAKE_V2",
     "label": "39_EVIDENCE_CHAIN_INTAKE_V2",
-    "folder": "../03_EVIDENCE/039_EVIDENCE_CHAIN_INTAKE_V2/BACKSIDE",
+    "folder": "../02_C_P_E_L/03_EVIDENCE/039_EVIDENCE_CHAIN_INTAKE_V2/BACKSIDE",
     "script": "39_evidence_chain_intake_v2.py",
     "rank": 32,
     "retired": false
@@ -269,6 +296,16 @@
     "script": "41_story.py",
     "rank": 14,
     "retired": false
+  },
+  {
+    "number": "69",
+    "name": "KAIT_STORIES",
+    "label": "042_KAIT_STORIES",
+    "folder": "../042_KAIT_STORIES/BACKSIDE",
+    "script": "42_kait_stories.py",
+    "rank": 15,
+    "retired": false,
+    "description": "Map a paper to Kait Willett moves: three alternative spines with loop IDs for OpenWriter."
   },
   {
     "number": "42",
@@ -347,7 +384,7 @@
     "number": "50",
     "name": "LEAN_PAIR_AXIOMS",
     "label": "50_LEAN_PAIR_AXIOMS",
-    "folder": "../03_EVIDENCE/050_LEAN_PAIR_AXIOMS/BACKSIDE",
+    "folder": "../02_C_P_E_L/03_EVIDENCE/050_LEAN_PAIR_AXIOMS/BACKSIDE",
     "script": "50_lean_pair_axioms.py",
     "rank": 24,
     "retired": false
@@ -356,7 +393,7 @@
     "number": "51",
     "name": "LEAN_GOD_IS_UNPROVEN",
     "label": "51_LEAN_GOD_IS_UNPROVEN",
-    "folder": "../03_EVIDENCE/051_LEAN_GOD_IS_UNPROVEN/BACKSIDE",
+    "folder": "../02_C_P_E_L/03_EVIDENCE/051_LEAN_GOD_IS_UNPROVEN/BACKSIDE",
     "script": "51_lean_god_is_unproven.py",
     "rank": 29,
     "retired": false
@@ -365,7 +402,7 @@
     "number": "52",
     "name": "LEAN_ATOM_EXTRACTOR",
     "label": "52_LEAN_ATOM_EXTRACTOR",
-    "folder": "../05_LEAN/055_LEAN_PAPERS/OUTBOX/052_LEAN_ATOM_EXTRACTOR/BACKSIDE",
+    "folder": "../02_C_P_E_L/05_LEAN/055_LEAN_PAPERS/OUTBOX/052_LEAN_ATOM_EXTRACTOR/BACKSIDE",
     "script": "52_lean_atom_extractor.py",
     "rank": 33,
     "retired": false
@@ -392,7 +429,7 @@
     "number": "55",
     "name": "LEAN_PAPERS",
     "label": "55_LEAN_PAPERS",
-    "folder": "../05_LEAN/055_LEAN_PAPERS/BACKSIDE",
+    "folder": "../02_C_P_E_L/05_LEAN/055_LEAN_PAPERS/BACKSIDE",
     "script": "55_lean_papers.py",
     "rank": 45,
     "retired": false
@@ -488,7 +525,7 @@
     "number": "61",
     "name": "SERIES_SHEET",
     "label": "61_SERIES_SHEET",
-    "folder": "../03_EVIDENCE/061_SERIES_SHEET/BACKSIDE",
+    "folder": "../02_C_P_E_L/03_EVIDENCE/061_SERIES_SHEET/BACKSIDE",
     "script": "61_series_sheet.py",
     "rank": 61,
     "retired": false
@@ -527,6 +564,33 @@
     "folder": "../04_ACADEMIA/065_PAPER_INTELLIGENCE/BACKSIDE",
     "script": "65_paper_intelligence.py",
     "rank": 55,
+    "retired": false
+  },
+  {
+    "number": "66",
+    "name": "SORRY_AXIOM_AUDIT",
+    "label": "66_SORRY_AXIOM_AUDIT",
+    "folder": "../02_C_P_E_L/05_LEAN/055_LEAN_PAPERS/OUTBOX/066_SORRY_AXIOM_AUDIT/BACKSIDE",
+    "script": "66_sorry_axiom_audit.py",
+    "rank": 62,
+    "retired": false
+  },
+  {
+    "number": "67",
+    "name": "LEAN_TRIAGE",
+    "label": "67_LEAN_TRIAGE",
+    "folder": "../02_C_P_E_L/05_LEAN/055_LEAN_PAPERS/OUTBOX/067_LEAN_TRIAGE/BACKSIDE",
+    "script": "67_lean_triage.py",
+    "rank": 63,
+    "retired": false
+  },
+  {
+    "number": "68",
+    "name": "FORMALIZE_TARGETS",
+    "label": "68_FORMALIZE_TARGETS",
+    "folder": "../02_C_P_E_L/05_LEAN/055_LEAN_PAPERS/OUTBOX/068_FORMALIZE_TARGETS/BACKSIDE",
+    "script": "68_formalize_targets.py",
+    "rank": 64,
     "retired": false
   }
 ]

@@ -1,0 +1,30 @@
+{
+  "number": "68",
+  "name": "FORMALIZE_TARGETS",
+  "label": "68_FORMALIZE_TARGETS",
+  "kind": "native",
+  "description": "One claim note in (canon docket, HOLD claims especially), one proposed Lean 4 statement out — always labelled PROPOSED; the compiler adjudicates later.",
+  "items": "lean",
+  "own_inbox": true,
+  "options": [
+    "limit",
+    "workers",
+    "provider",
+    "model",
+    "focus",
+    "redo",
+    "outbox"
+  ],
+  "uses_api": true,
+  "prompt_files": [
+    "PROMPT.md"
+  ],
+  "goals": [
+    {
+      "id": "API-68.1",
+      "title": "FORMALIZE_TARGETS",
+      "task": "formalize_targets",
+      "asks": "claim_id, a complete compilable-looking Lean 4 statement with imports, slot_refs, confidence, what it would prove, what it would NOT prove"
+    }
+  ]
+}

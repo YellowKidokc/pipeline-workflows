@@ -260,6 +260,11 @@ def run_station(front: Path, st: dict, notes: list[Path], out: Path, workers: in
     out.mkdir(parents=True, exist_ok=True)
     listfile = front / "OUTBOX" / LAST                 # every station keeps the list of notes it last ran
     listfile.write_text("\n".join(map(str, notes)) + "\n", encoding="utf-8")
+    try:                                               # every input lands in ORIGINALS once
+        from engine.originals import archive
+        archive(notes, st.get("label", ""))
+    except Exception as e:
+        print(f"  originals: skipped ({e})")
     say(f"{st['label']}: {len(notes)} note(s), {workers} at once, results -> {out}"
         + (f", looking for: {' | '.join(focus)}" if focus else ""))
     if st["number"] == "20":
@@ -344,7 +349,7 @@ def main(mode: str, front: Path) -> int:
     base = parent_station(front)
     title = f"{st['label']}" + (f"  (layer of {station_of(base)['label']})" if base else "")
     print(f"\n{title}\n{'=' * len(title)}")
-    if st.get("items") == "lean" and mode == "here" and not base:
+    if st.get("items") == "lean" and mode == "here" and (not base or st.get("own_inbox")):
         return lean_here(front, st)
     if base and mode == "here" and not st.get("own_inbox"):
         listed = base / "OUTBOX" / LAST

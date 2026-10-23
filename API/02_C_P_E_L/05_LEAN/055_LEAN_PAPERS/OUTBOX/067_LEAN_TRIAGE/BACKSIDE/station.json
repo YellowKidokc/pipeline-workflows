@@ -1,0 +1,30 @@
+{
+  "number": "67",
+  "name": "LEAN_TRIAGE",
+  "label": "67_LEAN_TRIAGE",
+  "kind": "native",
+  "description": "Whole-corpus Lean triage: one compact JSON call per file — file kind, purpose, quality, duplicate hint, action; master 00_TRIAGE.md sorted by action.",
+  "items": "lean",
+  "own_inbox": true,
+  "options": [
+    "limit",
+    "workers",
+    "provider",
+    "model",
+    "focus",
+    "redo",
+    "outbox"
+  ],
+  "uses_api": true,
+  "prompt_files": [
+    "PROMPT.md"
+  ],
+  "goals": [
+    {
+      "id": "API-67.1",
+      "title": "LEAN_TRIAGE",
+      "task": "lean_triage",
+      "asks": "file_kind (proof|spec|scratch|test|docs_extract|duplicate), one_line_purpose, quality (floor_candidate|solid|draft|noise), duplicate_of_hint, action (nominate_floor|keep|archive|delete_candidate)"
+    }
+  ]
+}

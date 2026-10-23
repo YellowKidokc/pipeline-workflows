@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CKG Run</title>
+<style>
+:root{--bg:#f6f5f2;--panel:#fff;--ink:#1d1d1b;--mute:#6b6a66;--line:#dedcd6;--acc:#2f5d8a;--ok:#3d7a4a;--bad:#b0412e;--track:#e9e7e2}
+@media (prefers-color-scheme:dark){:root{--bg:#18191b;--panel:#202225;--ink:#e8e6e1;--mute:#9a978f;--line:#33363a;--acc:#7fb0e0;--ok:#7cc48b;--bad:#e8826e;--track:#2c2f33}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,Segoe UI,sans-serif}
+header{display:flex;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--panel)}
+header h1{font-size:16px;margin:0}header .sp{flex:1}a{color:var(--acc)}
+main{max-width:980px;margin:0 auto;padding:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-bottom:14px}
+.row{display:grid;grid-template-columns:130px 1fr;gap:10px;align-items:center;padding:6px 0}
+@media (max-width:600px){.row{grid-template-columns:1fr}}
+.lbl{color:var(--mute)}input[type=text]{width:100%;font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+label.opt{margin-right:16px;white-space:nowrap}
+button{font:inherit;padding:7px 16px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:6px;cursor:pointer}
+button.pri{background:var(--acc);color:#fff;border-color:var(--acc)}button:disabled{opacity:.5;cursor:default}
+.warn{color:var(--bad)}.note{color:var(--mute);font-size:12px}
+.sum{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px;font-variant-numeric:tabular-nums}
+.bar{height:8px;background:var(--track);border-radius:4px;overflow:hidden}.bar i{display:block;height:100%;background:var(--acc)}
+table{width:100%;border-collapse:collapse;font-size:13px}td,th{padding:5px 6px;border-top:1px solid var(--line);text-align:left;vertical-align:middle}
+th{color:var(--mute);font-weight:500}td.b{width:28%}.done{color:var(--ok)}.failed{color:var(--bad)}.running{color:var(--acc)}
+.err{color:var(--bad);font-size:12px}
+</style></head><body>
+<script src="/nav.js"></script>
+<main>
+<div class="card">
+  <div class="row"><span class="lbl">Folder</span><input type="text" id="folder" placeholder="D:\path\to\notes"></div>
+  <div class="row"><span class="lbl">Variants</span><div id="vars"></div></div>
+  <div class="row"><span class="lbl">Order</span><div>
+    <label class="opt"><input type="radio" name="mode" value="per_note" checked> all variants on a note, then the next note</label>
+    <label class="opt"><input type="radio" name="mode" value="per_variant"> one variant over the folder, then the next</label></div></div>
+  <div class="row"><span class="lbl">In parallel</span><div><input type="range" id="workers" min="1" max="20" value="4"> <b id="wv">4</b> at a time</div></div>
+  <div class="row"><span class="lbl">Mode</span><div>
+    <label class="opt"><input type="radio" name="dry" value="1" checked> Dry run: build every prompt, call nothing, cost $0</label>
+    <label class="opt"><input type="radio" name="dry" value="0"> Real run (DeepSeek)</label>
+    <div id="keynote" class="note"></div></div></div>
+  <div class="row"><span></span><div><button class="pri" id="go">Run</button> <button id="stop" disabled>Stop</button> <span id="msg" class="warn"></span></div></div>
+</div>
+<div class="card" id="prog" hidden>
+  <div class="sum" id="sum"></div>
+  <div class="bar"><i id="bar" style="width:0"></i></div>
+  <table><thead><tr><th>Note</th><th>Variant</th><th>Step</th><th>Progress</th><th>State</th></tr></thead><tbody id="rows"></tbody></table>
+</div>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+let timer = null, hasKey = false;
+try { $('folder').value = localStorage.getItem('ckg.folder') || ''; } catch(e) {}
+$('workers').oninput = e => $('wv').textContent = e.target.value;
+fetch('/variants').then(r=>r.json()).then(d=>{
+  hasKey = d.has_key;
+  $('vars').innerHTML = d.variants.map(v=>`<label class="opt"><input type="checkbox" value="${v}" checked> ${v}</label>`).join('') +
+    (d.variants.length < 2 ? '<div class="note">Add more variants as variants\\&lt;name&gt;\\ (a copy of ckg.json + calls\\).</div>' : '');
+  $('keynote').textContent = hasKey ? '' : 'DEEPSEEK_API_KEY is not set for the server, so a real run will fail on its first call.';
+});
+const esc = s => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+function show(s){
+  if(!s.items || !s.items.length) return;
+  $('prog').hidden = false;
+  const pct = s.total ? Math.round(100*(s.done+s.failed)/s.total) : 0;
+  $('sum').innerHTML = `<b>${s.done} of ${s.total} done</b><span>${s.running} running</span>` +
+    `<span class="${s.failed?'failed':''}">${s.failed} failed</span><span>${s.elapsed}s</span>` +
+    `<span>${s.dry_run?'dry run':'real run'} · ${s.workers} at a time</span>${s.finished?'<b>finished</b>':''}`;
+  $('bar').style.width = pct + '%';
+  $('rows').innerHTML = s.items.map(i=>`<tr><td>${esc(i.name)}${i.error?`<div class="err">${esc(i.error)}</div>`:''}</td><td>${esc(i.variant)}</td>
+    <td>${esc(i.step)}</td><td class="b"><div class="bar"><i style="width:${i.total?100*i.done/i.total:0}%"></i></div></td>
+    <td class="${i.state}">${i.state}${i.state==='running'?` ${i.done}/${i.total}`:''}</td></tr>`).join('');
+  $('stop').disabled = s.finished; $('go').disabled = !s.finished;
+  if(s.finished){ clearInterval(timer); timer = null; }
+}
+const poll = () => fetch('/progress').then(r=>r.json()).then(show);
+$('go').onclick = async () => {
+  $('msg').textContent = '';
+  const body = { folder: $('folder').value.trim(),
+    variants: [...document.querySelectorAll('#vars input:checked')].map(i=>i.value),
+    mode: document.querySelector('input[name=mode]:checked').value,
+    workers: +$('workers').value,
+    dry_run: document.querySelector('input[name=dry]:checked').value === '1' };
+  if(!body.dry_run && !confirm('Real run: this calls DeepSeek and costs money. Go?')) return;
+  try { localStorage.setItem('ckg.folder', body.folder); } catch(e) {}
+  const r = await fetch('/run',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  const j = await r.json();
+  if(!r.ok){ $('msg').textContent = j.error; return; }
+  if(!timer) timer = setInterval(poll, 700); poll();
+};
+$('stop').onclick = () => fetch('/stop',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'});
+poll().then(()=>{ if($('go').disabled && !timer) timer = setInterval(poll, 700); });
+</script></body></html>

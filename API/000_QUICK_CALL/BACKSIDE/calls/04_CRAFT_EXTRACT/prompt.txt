@@ -1,0 +1,32 @@
+# ============================================================
+#  SAVED CALL 04: CRAFT EXTRACTOR - one craft video -> technique cards (JSON).
+#  Run once per video. The cards become the craft library the Craft Pass reads.
+#  Pass the transcript paths on the command line; nothing is copied.
+# ============================================================
+
+The attached file is the transcript of a video that teaches a communication or writing craft (speaking, persuasion, storytelling, sentences, openings, showing vs. telling).
+
+Turn it into technique cards. A technique is one concrete, repeatable move the video teaches. Skip the video's self-promotion, sponsor reads, and small talk. If the video teaches a step-by-step method, each step is its own card, and note the order.
+
+Return ONLY a JSON object, no other text, in this shape:
+{
+  "source_title": "the video title",
+  "channel": "the teacher or channel, if stated",
+  "summary": "two sentences: what this video teaches and its central idea",
+  "techniques": [
+    {
+      "name": "short name for the move",
+      "what_it_does": "one sentence",
+      "bad_example": "the weak version, quoted or closely paraphrased from the video, under 25 words",
+      "good_example": "the strong version, quoted or closely paraphrased from the video, under 25 words",
+      "why_it_works": "one sentence on the mechanism",
+      "when_to_use": "one sentence",
+      "when_it_backfires": "one sentence; say 'not stated' if the video gives no limit",
+      "serves": "one of: opening | paragraph | sentence | memorable_line | analogy | story | structure | close | delivery",
+      "for_written_prose": "yes | partly | no, with a few words on why (some speaking moves don't carry to the page)",
+      "step": "its position if part of a numbered method, else null"
+    }
+  ]
+}
+
+Be faithful to the video. Do not add techniques it does not teach.

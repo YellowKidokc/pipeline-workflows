@@ -9,42 +9,38 @@ from each station's `station.json`; do not edit by hand. Receipts and saved repl
 | `API-10.1` | THEOLOGY_TRIAGE | 10_CKG_THEOLOGY | 17-probe verdicts + expansions, collapse question, platform notes, argument layer (claims, premises, hidden premises, edges, tests, win condition) |
 | `API-10.2` | THEOLOGY_SCRIPTURES | 10_CKG_THEOLOGY | every Bible passage used (cited / mentioned / alluded), where, and what the speaker does with it; the references found in code must all appear |
 | `API-11.1` | PHYSICS_MIRROR | 11_CKG_PHYSICS | mirrors between theological events and physics processes: stages in order, direction, level (identity / structural / analogy / none), transferring prediction, breaks, law axis |
-| `API-14.1` | STORY_SECTION | 14_STORY | Story Material records for one ~3,500-word section of the transcript (JSON) |
+| `API-14.1` | STORY_SECTION | 14_STORY | Story Material records for one ~2,500-word section of the transcript (JSON) |
 | `API-14.2` | STORY_SPINE | 14_STORY | the whole-presentation spine from every record's gist, only once every section was read |
+| `API-34.0` | EVIDENCE_SERIES_SYNTHESIS | 34_EVIDENCE_SERIES_SYNTHESIS | the prompts built into the wrapped script |
+| `API-35.0` | EVIDENCE_SERIES_ARCS | 35_EVIDENCE_SERIES_ARCS | the prompts built into the wrapped script |
+| `API-36.0` | EVIDENCE_THREE_DIALS | 36_EVIDENCE_THREE_DIALS | the prompts built into the wrapped script |
+| `API-39.0` | EVIDENCE_CHAIN_INTAKE_V2 | 39_EVIDENCE_CHAIN_INTAKE_V2 | the prompts built into the wrapped script |
+| `API-55.1` | LEAN_ASSUMPTIONS | 55_LEAN_PAPERS | every assumption with line, kind, load-bearing, plus the assumptions paper |
+| `API-55.2` | LEAN_CLAIMS | 55_LEAN_PAPERS | up to 12 claims for the claim template (no assumptions inside) |
+| `API-55.3` | LEAN_FORMAL_PAPER | 55_LEAN_PAPERS | paper 1: formal, for Lean readers |
+| `API-55.4` | LEAN_READER_PAPER | 55_LEAN_PAPERS | paper 2: for someone new to Lean |
+| `API-55.5` | LEAN_CLAIM_LEDGER | 55_LEAN_PAPERS | one ledger entry per declaration: name, line, kind, plain statement, what it does not prove, the claim it receipts, grade suggestion (FLOOR/VERIFIED only with a cited build receipt, else coerced to DRAFT in code) |
+| `API-52.0` | LEAN_ATOM_EXTRACTOR | 52_LEAN_ATOM_EXTRACTOR | the prompts built into the wrapped script |
+| `API-66.1` | SORRY_AXIOM_AUDIT | 66_SORRY_AXIOM_AUDIT | classify each code-found sorry/admit/axiom/native_decide: placeholder|spec_by_design|hard_gap|copied_test|intended_axiom, what closes it, severity blocker|cosmetic|note |
+| `API-67.1` | LEAN_TRIAGE | 67_LEAN_TRIAGE | file_kind (proof|spec|scratch|test|docs_extract|duplicate), one_line_purpose, quality (floor_candidate|solid|draft|noise), duplicate_of_hint, action (nominate_floor|keep|archive|delete_candidate) |
+| `API-68.1` | FORMALIZE_TARGETS | 68_FORMALIZE_TARGETS | claim_id, a complete compilable-looking Lean 4 statement with imports, slot_refs, confidence, what it would prove, what it would NOT prove |
 | `API-03.0` | YT_INDEX | 03_YT_INDEX | the prompts built into the wrapped script |
 | `API-04.0` | YT_LENSES | 04_YT_LENSES | the prompts built into the wrapped script |
 | `API-06.0` | YT_WATCH | 06_YT_WATCH | the prompts built into the wrapped script |
 | `API-08.1` | YT_SUMMARY | 08_YT_SUMMARY | answers to QUESTIONS.md (base summary) with timestamps |
 | `API-09.1` | YT_DEEP_ANALYSIS | 09_YT_DEEP | detailed analysis per DETAIL.md, building on the 08 summary |
 | `API-13.1` | YT_CHANNEL_SUMMARY | 13_YT_CHANNEL_SUMMARY | three-sentence summary, 2-3 keywords, one value per COLUMNS.md column |
-| `API-30.0` | EVIDENCE_INTAKE | 30_EVIDENCE_INTAKE | the prompts built into the wrapped script |
-| `API-33.0` | EVIDENCE_BUILD_ONE_ARGUMENT | 33_EVIDENCE_BUILD_ONE_ARGUMENT | the prompts built into the wrapped script |
-| `API-34.0` | EVIDENCE_SERIES_SYNTHESIS | 34_EVIDENCE_SERIES_SYNTHESIS | the prompts built into the wrapped script |
-| `API-35.0` | EVIDENCE_SERIES_ARCS | 35_EVIDENCE_SERIES_ARCS | the prompts built into the wrapped script |
-| `API-36.0` | EVIDENCE_THREE_DIALS | 36_EVIDENCE_THREE_DIALS | the prompts built into the wrapped script |
-| `API-39.0` | EVIDENCE_CHAIN_INTAKE_V2 | 39_EVIDENCE_CHAIN_INTAKE_V2 | the prompts built into the wrapped script |
-| `API-40.1` | FRUITS_SENTENCES | 40_ANALYTICAL_ARMS | -2..+2 per fruit for every sentence in an output range, whole paper each call |
-| `API-40.2` | FRUITS_VERDICT | 40_ANALYTICAL_ARMS | rubric v0.3.0 gated verdict citing the curve spikes and lexicon gap |
-| `API-40.3` | MASTER_EQUATION_ANALOG | 40_ANALYTICAL_ARMS | what plays the role of the master equation; product test; 10-slot map (run twice) |
-| `API-40.4` | AXIOM_NODES | 40_ANALYTICAL_ARMS | engaged axiom nodes with alignment, exact quote, confidence |
-| `API-40.5` | COHERENCE | 40_ANALYTICAL_ARMS | 4 coherence dimensions, contradictions, tensions, missing definitions |
 | `API-41.1` | STORY_PAPER_PASS | 41_STORY | hook, paragraph roles, through-line, drift, landing, verdict |
 | `API-41.2` | STORY_SERIES_PASS | 41_STORY | series through-line, handoffs, repeats, missing beats |
 | `API-41.3` | STORY_MEMORABLE_LINES | 41_STORY | one memorable line per paragraph (only when coherent) |
-| `API-44.1` | TAG_CONFIRM | 44_TAGGER | confirm/adjust 0-10 per candidate tag with a quote or timestamp and a reason |
-| `API-45.0` | CLAIM_ATOMS | 45_CLAIM_ATOMS | the prompts built into the wrapped script |
+| `API-69.1` | KAIT_SPINE | 042_KAIT_STORIES | three alternative spines for the paper, each beat mapped to a Kait move ID, with canonical-point carry and why |
 | `API-48.1` | EXTRACT_TOPIC_ARGUMENTS | 48_TOPIC_SYNTHESIS | every argument about the topic in one item: steps, kind, who holds it, quote/timestamp, strength, objections |
 | `API-48.2` | SYNTHESIZE_ARGUMENT | 48_TOPIC_SYNTHESIS | strongest form of one cross-referenced argument, lineage, objections and replies |
 | `API-48.3` | SYNTHESIS_OVERVIEW | 48_TOPIC_SYNTHESIS | ranked overview report across all synthesized arguments |
 | `API-49.1` | OWN_CLAIMS | 49_GAP_MAP | David's claims about the topic, with sentence ids |
 | `API-49.2` | COVERAGE_MATCH | 49_GAP_MAP | does David's work cover this best argument: covered / partial / missing |
 | `API-49.3` | PRIOR_ART | 49_GAP_MAP | who else made this claim in the corpus (quotes) -> cite, or appears original |
-| `API-52.0` | LEAN_ATOM_EXTRACTOR | 52_LEAN_ATOM_EXTRACTOR | the prompts built into the wrapped script |
-| `API-54.0` | AXIOM_NODES_RUNNER | 54_AXIOM_NODES_RUNNER | the prompts built into the wrapped script |
-| `API-55.1` | LEAN_ASSUMPTIONS | 55_LEAN_PAPERS | every assumption with line, kind, load-bearing, plus the assumptions paper |
-| `API-55.2` | LEAN_CLAIMS | 55_LEAN_PAPERS | up to 12 claims for the claim template (no assumptions inside) |
-| `API-55.3` | LEAN_FORMAL_PAPER | 55_LEAN_PAPERS | paper 1: formal, for Lean readers |
-| `API-55.4` | LEAN_READER_PAPER | 55_LEAN_PAPERS | paper 2: for someone new to Lean |
+| `API-44.1` | TAG_CONFIRM | 44_TAGGER | confirm/adjust 0-10 per candidate tag with a quote or timestamp and a reason |
 | `API-60.01` | LINGUISTICS_WORD_GAME | 60_OPENAI_STATIONS | api_call_01 prompt (prompts/01_LINGUISTICS_WORD_GAME/prompt.txt) |
 | `API-60.02` | FRAMEWORK_ALIGNMENT_CHI | 60_OPENAI_STATIONS | api_call_02 prompt (prompts/02_FRAMEWORK_ALIGNMENT_CHI/prompt.txt) |
 | `API-60.03` | READER_STRUCTURE | 60_OPENAI_STATIONS | api_call_03 prompt (prompts/03_READER_STRUCTURE/prompt.txt) |
@@ -78,3 +74,10 @@ from each station's `station.json`; do not edit by hand. Receipts and saved repl
 | `API-60.B8` | BUNDLE_PUBLISHING | 60_OPENAI_STATIONS | one call answering: API-60.18, API-60.19 |
 | `API-60.B9` | BUNDLE_REGISTRY_HTML | 60_OPENAI_STATIONS | one call answering: API-60.13 |
 | `API-60.B10` | BUNDLE_FINAL | 60_OPENAI_STATIONS | one call answering: API-60.10 |
+| `API-54.0` | AXIOM_NODES_RUNNER | 54_AXIOM_NODES_RUNNER | the prompts built into the wrapped script |
+| `API-33.0` | EVIDENCE_BUILD_ONE_ARGUMENT | 33_EVIDENCE_BUILD_ONE_ARGUMENT | the prompts built into the wrapped script |
+| `API-40.1` | FRUITS_SENTENCES | 40_ANALYTICAL_ARMS | -2..+2 per fruit for every sentence in an output range, whole paper each call |
+| `API-40.2` | FRUITS_VERDICT | 40_ANALYTICAL_ARMS | rubric v0.3.0 gated verdict citing the curve spikes and lexicon gap |
+| `API-40.3` | MASTER_EQUATION_ANALOG | 40_ANALYTICAL_ARMS | what plays the role of the master equation; product test; 10-slot map (run twice) |
+| `API-40.4` | AXIOM_NODES | 40_ANALYTICAL_ARMS | engaged axiom nodes with alignment, exact quote, confidence |
+| `API-40.5` | COHERENCE | 40_ANALYTICAL_ARMS | 4 coherence dimensions, contradictions, tensions, missing definitions |

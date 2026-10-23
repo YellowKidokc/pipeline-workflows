@@ -1,0 +1,1602 @@
+# Script Classification Report
+
+Scanned roots: 3
+Scripts found: 1490
+
+## Risk Counts
+
+- `admin`: 103
+- `caution`: 376
+- `destructive`: 152
+- `safe`: 859
+
+## Categories
+
+### Apps (26)
+
+- **Enable Rdp** [bat, admin]
+  - Source: `PowerShell-main`
+  - Summary: :: Script to enable Remote Desktop on a machine (must run locally) :: Open the firewall to allow incoming connections
+  - Keywords: start, enable, remote, desktop, machine, firewall, connections, reg
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\enable-RDP.bat`
+- **Actions** [py, caution]
+  - Source: `Python-master`
+  - Summary: win32con = importlib.import_module("win32con") win32gui = importlib.import_module("win32gui")
+  - Keywords: win32gui, name, app, not, win32con, none, importlib, apps
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\JARVIS\actions.py`
+- **Demerge Pdfs** [py, caution]
+  - Source: `Python-master`
+  - Summary: Python program to split large pdf(typically textbook) into small set of pdfs, maybe chapterwise to enhance the experience of reading and feasibility to study only specific parts fr
+  - Keywords: pdf, path, ctr, name, pypdf2, input, merged, numpages
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\PDF\demerge_pdfs.py`
+- **Snake** [py, caution]
+  - Source: `Python-master`
+  - Summary: SNAKES GAME Use ARROW KEYS to play, SPACE BAR for pausing/resuming and Esc Key for exiting
+  - Keywords: key, win, curses, snake, food, score, esc, game
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\snake.py`
+- **Cli** [py, destructive]
+  - Source: `Python-master`
+  - Summary: def should_exit(text): return normalize_text(text) in {"exit", "quit", "bye", "cik", "çık", "stop jarvis", "kapat jarvis"}
+  - Keywords: text, mode, normalize, def, exit, wants, type, yaz
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\JARVIS\cli.py`
+- **Close Task Manager** [ps1, destructive]
+  - Source: `PowerShell-main`
+  - Summary: Closes the Task Manager
+  - Keywords: close-task-manager, closes, task, manager, fleschutz, synopsis, description, application
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\close-task-manager.ps1`
+- **Background** [py, safe]
+  - Source: `Python-master`
+  - Summary: Classe para gerar um plano de fundo animado
+  - Keywords: self, instance, image, width, height, background, canvas, geometry
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Flappy Bird - created with tkinter\Background.py`
+- **Basic Cal** [py, safe]
+  - Source: `Python-master`
+  - Summary: while True: print(eval(input("enter digits with operator (e.g. 5+5)\n")))
+  - Keywords: input, try, print, eval, calculator, basic, cal, while
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\basic_cal.py`
+- **Browser Status** [py, safe]
+  - Source: `Python-master`
+  - Summary: browsers = ["chrome.exe", "firefox.exe", "edge.exe", "iexplore.exe"] ADD DOWNLOADS PATH HERE::: r is for raw string enter the path
+  - Keywords: path, exe, browser, downloads, watch, process, psutil, watcher
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Downloaded Files Organizer\browser_status.py`
+- **Calculator With Simple Ui** [py, safe]
+  - Source: `Python-master`
+  - Summary: This function adds two numbers. Examples: >>> add(2, 3) 5 >>> add(5, 9) 14 >>> add(-1, 2) 1
+  - Keywords: num2, num1, def, self, divide, add, function, two
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Calculator with simple ui.py`
+- **Close Chrome** [ps1, safe]
+  - Source: `PowerShell-main`
+  - Summary: Closes the Chrome browser
+  - Keywords: chrome, close-chrome, closes, browser, google, fleschutz, synopsis, description
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\close-chrome.ps1`
+- **Close File Explorer** [ps1, safe]
+  - Source: `PowerShell-main`
+  - Summary: Closes the File Explorer
+  - Keywords: close-file-explorer, closes, file, explorer, application, fleschutz, synopsis, description
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\close-file-explorer.ps1`
+- **Close Firefox** [ps1, safe]
+  - Source: `PowerShell-main`
+  - Summary: Closes the Firefox browser
+  - Keywords: firefox, close-firefox, closes, browser, mozilla, fleschutz, synopsis, description
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\close-firefox.ps1`
+- **Close Notepad** [ps1, safe]
+  - Source: `PowerShell-main`
+  - Summary: Closes the Notepad app
+  - Keywords: notepad, close-notepad, closes, ps1, fleschutz, synopsis, app, description
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\close-notepad.ps1`
+- **Ex20** [py, safe]
+  - Source: `Python-master`
+  - Summary: script, input_file = argv def print_all(f):
+  - Keywords: current, print, file, def, rewind, let, argv, input
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\ex20.py`
+- **Exception Handling In Python** [py, safe]
+  - Source: `Python-master`
+  - Summary: Exception handling using python a = int(input())
+  - Keywords: print, except, int, input, try, cannot, errors, eval
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Exception_Handling_in_Python.py`
+- **Face Recofnation First** [py, safe]
+  - Source: `Python-master`
+  - Summary: Detects faces and eyes in real-time using the webcam. Press 'q' to exit the program.
+  - Keywords: faces, eyes, frame, face, eye, cascade, img, detect
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Face and eye Recognition\face_recofnation_first.py`
+- **Friday** [py, safe]
+  - Source: `Python-master`
+  - Summary: while var > 0: pyttsx3.speak("How can I help you Sir")
+  - Keywords: pyttsx3, sir, notepad, var, speak, how, can, help
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\friday.py`
+- **One Rep Max Calculator** [py, safe]
+  - Source: `Python-master`
+  - Summary: A class to calculate the one-repetition maximum (1RM) for a weightlifting exercise.
+  - Keywords: self, max, one, rep, weight, lifted, def, reps
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\nitkarshchourasia\to_sort\one_rep_max_calculator\one_rep_max_calculator.py`
+- **Open Firefox** [ps1, safe]
+  - Source: `PowerShell-main`
+  - Summary: Launches the Firefox browser
+  - Keywords: firefox, url, app, fleschutz, open-firefox, launches, browser, mozilla
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\open-firefox.ps1`
+- **Resistance** [py, safe]
+  - Source: `Python-master`
+  - Summary: material is a string indicating the material of the wire length is a floating value indicating the length of the wire in meters diameter is a floating value indicating the diameter
+  - Keywords: rho, coefficient, material, indicating, wire, materials, length, float
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Electronics_Algorithms\resistance.py`
+- **Simple Calculator** [py, safe]
+  - Source: `Python-master`
+  - Summary: Simple Calculator Module. Provides basic operations: add, subtract, multiply, divide. Example usage: >>> add(2, 3) 5 >>> subtract(10, 4) 6 >>> multiply(3, 4) 12 >>> divide(8, 2) 4.
+  - Keywords: float, add, subtract, def, choice, num1, calculator, multiply
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\simple_calculator.py`
+- **Simple Calculator** [py, safe]
+  - Source: `Python-master`
+  - Summary: Define functions for each operation def add(x, y):
+  - Keywords: print, choice, num1, num2, def, input, enter, operation
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\simple_calculator\simple_calculator.py`
+- **Special Symbol After Word** [py, safe]
+  - Source: `Python-master`
+  - Summary: with open("happy.txt", "r") as F: for i in F.read().split():
+  - Keywords: word, print, method, split, end, special, symbol, after
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\1 File handle\File handle text\special symbol after word.py`
+- **Special Symbol After Word** [py, safe]
+  - Source: `Python-master`
+  - Summary: with open("happy.txt", "r") as F: for i in F.read().split():
+  - Keywords: word, print, method, split, end, special, symbol, after
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\file_handle\File handle text\special symbol after word.py`
+- **Sqlite Table Check** [py, safe]
+  - Source: `Python-master`
+  - Summary: Script Name	: sqlite_table_check.py Author		: Craig Richards
+  - Keywords: master, cursor, sqlite, table, config, version, conn, print
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\sqlite_table_check.py`
+
+### Audio (94)
+
+- **  Main  ** [py, caution]
+  - Source: `Python-master`
+  - Summary: shutil.rmtree("spoken") os.mkdir("spoken")
+  - Keywords: spoken, speeches, playsound, wav, time, shutil, callback, recognizer
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\VoiceRepeater\__main__.py`
+- **Jarvis 2.0** [py, caution]
+  - Source: `Python-master`
+  - Summary: JARVIS: - Control windows programs with your voice
+  - Keywords: install, pyttsx3, speech, recognition, jarvis, pynput, datetime, module
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\JARVIS\JARVIS_2.0.py`
+- **Jarvis 2.0** [py, caution]
+  - Source: `Python-master`
+  - Summary: JARVIS: - Control windows programs with your voice
+  - Keywords: install, pyttsx3, speech, recognition, jarvis, pynput, datetime, module
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\nitkarshchourasia\to_sort\JARVIS_python_bot\JARVIS_2.0.py`
+- **List Voices** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: List installed text-to-speech voices
+  - Keywords: list-voices, installed, text-to-speech, voices, name, culture, gender, age
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-voices.ps1`
+- **Play Mp3** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Plays a .MP3 sound file
+  - Keywords: path, file, mp3, sound, mediaplayer, milliseconds, fullpath, play-mp3
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\play-mp3.ps1`
+- **Python Voice Generator** [py, caution]
+  - Source: `Python-master`
+  - Summary: install and import google text-to-speech library gtts provide user input text
+  - Keywords: text, voice, gtts, input, save, output, mp3, generator
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Python Voice Generator.py`
+- **Speak Arabic** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Arabic
+  - Keywords: text, arabic, voice, tts, speak, speak-arabic, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-arabic.ps1`
+- **Speak Croatian** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Croatian
+  - Keywords: text, croatian, voice, tts, speak, speak-croatian, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-croatian.ps1`
+- **Speak Danish** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Danish
+  - Keywords: text, danish, voice, tts, speak, speak-danish, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-danish.ps1`
+- **Speak Dutch** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Dutch
+  - Keywords: text, dutch, voice, tts, speak, speak-dutch, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-dutch.ps1`
+- **Speak Esperanto** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Esperanto
+  - Keywords: text, esperanto, voice, tts, speak, speak-esperanto, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-esperanto.ps1`
+- **Speak Finnish** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Finnish
+  - Keywords: text, finnish, voice, tts, speak, speak-finnish, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-finnish.ps1`
+- **Speak French** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in French
+  - Keywords: text, french, voice, tts, speak, speak-french, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-french.ps1`
+- **Speak German** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in German
+  - Keywords: text, german, voice, tts, speak, speak-german, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-german.ps1`
+- **Speak Greek** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Greek
+  - Keywords: text, greek, voice, tts, speak, speak-greek, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-greek.ps1`
+- **Speak Hebrew** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Hebrew
+  - Keywords: text, hebrew, voice, tts, speak, speak-hebrew, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-hebrew.ps1`
+- **Speak Hindi** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Hindi
+  - Keywords: text, hindi, voice, tts, speak, speak-hindi, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-hindi.ps1`
+- **Speak Italian** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Italian
+  - Keywords: text, italian, voice, tts, speak, speak-italian, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-italian.ps1`
+- **Speak Japanese** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Japanese
+  - Keywords: text, japanese, voice, tts, speak, speak-japanese, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-japanese.ps1`
+- **Speak Korean** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Korean
+  - Keywords: text, korean, voice, tts, speak, speak-korean, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-korean.ps1`
+- **Speak Latin** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Latin
+  - Keywords: text, latin, voice, tts, speak, speak-latin, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-latin.ps1`
+- **Speak Mandarin** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Mandarin
+  - Keywords: text, mandarin, voice, tts, speak, speak-mandarin, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-mandarin.ps1`
+- **Speak Norwegian** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Norwegian
+  - Keywords: text, norwegian, voice, tts, speak, speak-norwegian, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-norwegian.ps1`
+- **Speak Polish** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Polish
+  - Keywords: text, polish, voice, tts, speak, speak-polish, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-polish.ps1`
+- **Speak Portuguese** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Portuguese
+  - Keywords: text, portuguese, voice, tts, speak, speak-portuguese, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-portuguese.ps1`
+- **Speak Russian** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Russian
+  - Keywords: text, russian, voice, tts, speak-russian, speaks, text-to-speech, fleschutz
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-russian.ps1`
+- **Speak Spanish** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Spanish
+  - Keywords: text, spanish, voice, tts, speak, speak-spanish, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-spanish.ps1`
+- **Speak Swedish** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Swedish
+  - Keywords: text, swedish, voice, tts, speak, speak-swedish, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-swedish.ps1`
+- **Speak Test** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Performs a text-to-speech test
+  - Keywords: rate, voice, speak, speed, speaking, very, default, volume
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-test.ps1`
+- **Speak Thai** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Thai
+  - Keywords: text, thai, voice, tts, speak, speak-thai, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-thai.ps1`
+- **Speak Turkish** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Turkish
+  - Keywords: text, turkish, voice, tts, speak, speak-turkish, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-turkish.ps1`
+- **Speak Ukrainian** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Speaks text in Ukrainian
+  - Keywords: text, voice, ukrainian, tts, speak, speak-ukrainian, speaks, text-to-speech
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-ukrainian.ps1`
+- **Speak Checklist** [ps1, destructive]
+  - Source: `PowerShell-main`
+  - Summary: Speaks a checklist by text-to-speech
+  - Keywords: name, checklist, engine, system, speech, grammar, speak-checklist, speaks
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\speak-checklist.ps1`
+- **Uninstall Bloatware** [ps1, destructive]
+  - Source: `PowerShell-main`
+  - Summary: Uninstalls bloatware
+  - Keywords: winget, uninstall, microsoft, windows, uninstall-bloatware, uninstalls, applications, fleschutz
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\uninstall-bloatware.ps1`
+- **Audiobook Gen** [py, safe]
+  - Source: `Python-master`
+  - Summary: book = open(input("Enter the book name: "), "rb") pg_no = int(
+  - Keywords: book, page, text, pdf, reader, speaker, pypdf2, pyttsx3
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Turn your PDFs into audio books\audiobook_gen.py`
+- **Check Day** [ps1, safe]
+  - Source: `PowerShell-main`
+  - Summary: Determines the current day
+  - Keywords: check-day, determines, current, day, fleschutz, system, weekday, exit
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\check-day.ps1`
+- **Check Easter Sunday** [ps1, safe]
+  - Source: `PowerShell-main`
+  - Summary: Checks the time until Easter Sunday
+  - Keywords: easter, now, sunday, diff, days, check-easter-sunday, checks, time
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\check-easter-sunday.ps1`
+- **Check Independence Day** [ps1, safe]
+  - Source: `PowerShell-main`
+  - Summary: Checks the time until Independence Day
+  - Keywords: now, day, independenceday, diff, days, independence, ps1, check-independence-day
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\check-independence-day.ps1`
+- **Check Iss Position** [ps1, safe]
+  - Source: `PowerShell-main`
+  - Summary: Checks the ISS position
+  - Keywords: iss, position, check-iss-position, international, space, station, fleschutz, longitude
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\check-iss-position.ps1`
+- **Check Midnight** [ps1, safe]
+  - Source: `PowerShell-main`
+  - Summary: Checks for Midnight
+  - Keywords: midnight, delta, result, timespan, now, hours, hour, timespantostring
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\check-midnight.ps1`
+- ... 54 more in JSON inventory
+
+### Dev (61)
+
+- **Backend** [py, admin]
+  - Source: `Python-master`
+  - Summary: CREATE TABLE IF NOT EXISTS bank ( acc_no INTEGER PRIMARY KEY, name TEXT, age INTEGER, address TEXT, balance INTEGER, account_type TEXT, mobile_number TEXT )
+  - Keywords: self, text, cur, name, execute, path, integer, admin
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\bank_managment_system\backend.py`
+- **Heap Sort** [py, admin]
+  - Source: `Python-master`
+  - Summary: Python program for implementation of heap Sort To heapify subtree rooted at index i.
+  - Keywords: arr, largest, root, heapify, heap, sort, size, def
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Sorting Algorithms\Heap sort.py`
+- **Merge Linked List** [py, admin]
+  - Source: `Python-master`
+  - Summary: Python3 program merge two sorted linked in third linked list using recursive.
+  - Keywords: self, node, data, none, temp, new, linked, def
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Merge_linked_list.py`
+- **Sendemail** [py, admin]
+  - Source: `Python-master`
+  - Summary: Create a message for an email. Args: sender: Email address of the sender. to: Email address of the receiver. subject: The subject of the email message. msgHtml: Html message to be 
+  - Keywords: credentials, path, credential, email, dir, mime, client, flow
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\sendemail.py`
+- **Trending Youtube Videos** [py, admin]
+  - Source: `Python-master`
+  - Summary: Python program that uses the YouTube Data API to fetch the top 10 trending YouTube videos. You’ll need to have an API key from Google Cloud Platform to use the YouTube Data API. Fi
+  - Keywords: api, youtube, key, videos, trending, your, you, top
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Trending youtube videos.py`
+- **Check Repo** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Checks a Git repo
+  - Keywords: git, local, repository, path, querying, fleschutz, check-repo, integrity
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\check-repo.ps1`
+- **Clone Shallow** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Clones a shallow Git repo
+  - Keywords: url, git, branch, branchname, repository, fleschutz, stopwatch, elapsed
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\clone-shallow.ps1`
+- **Infix To Postfix** [py, caution]
+  - Source: `Python-master`
+  - Summary: Python program to convert infix expression to postfix Class to convert the expression
+  - Keywords: self, def, top, stack, array, class, capacity, precedence
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Infix_to_Postfix.py`
+- **Launch Gui** [bat, caution]
+  - Source: `Python-master`
+  - Summary: echo ================================================ echo   NeuralForge GUI Tester
+  - Keywords: echo, gui, tests, test, pyqt6, launch, off, neuralforge
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\ML\LAUNCH_GUI.bat`
+- **List Branches** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Lists Git branches
+  - Keywords: git, branches, pathtorepo, list, throw, default, lastexitcode, branch
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-branches.ps1`
+- **List Commit Stats** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Lists the Git commit statistics
+  - Keywords: git, path, write-progress, fleschutz, repository, commits, author, markus
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-commit-stats.ps1`
+- **List Commits** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Lists Git commits
+  - Keywords: git, pretty, pathtorepo, format, fleschutz, throw, list-commits, lists
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-commits.ps1`
+- **List Latest Tag** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Lists the repo's latest tag
+  - Keywords: git, repodir, tag, latesttagcommit, list-latest-tag, lists, latest, local
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-latest-tag.ps1`
+- **List Latest Tags** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Lists the latests tags in all Git repositories in a folder
+  - Keywords: git, folder, tags, parentdir, throw, folders, list-latest-tags, lists
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-latest-tags.ps1`
+- **List Tags** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Lists all tags in a repo
+  - Keywords: git, tags, repodir, write-progress, repository, throw, list-tags, lists
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-tags.ps1`
+- **New Tag** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Creates a new tag in a Git repository
+  - Keywords: git, tag, repodir, throw, tagname, new, repository, lastexitcode
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\new-tag.ps1`
+- **Run** [ps1, caution]
+  - Source: `Python-master`
+  - Summary: Write-Host "==========================================" -ForegroundColor Cyan Write-Host "NeuralForge - Neural Architecture Search" -ForegroundColor Cyan
+  - Keywords: write-host, foregroundcolor, cyan, not, test-command, erroractionpreference, yellow, new-item
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\ML\run.ps1`
+- **Switch Branch** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Switches the Git branch
+  - Keywords: git, branch, repository, branchname, updates, path, local, main
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\switch-branch.ps1`
+- **List Old Branches** [ps1, destructive]
+  - Source: `PowerShell-main`
+  - Summary: Lists old Git branches
+  - Keywords: git, pathtorepo, branches, branch, branchnamepattern, repository, merged, parameter
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-old-branches.ps1`
+- **Notepad Support** [py, destructive]
+  - Source: `Python-master`
+  - Summary: DELETE FROM notes WHERE id = {0};
+  - Keywords: cursor, sql, command, global, text, try, except, database
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\notepad\notepad_support.py`
+- **Password Manager** [py, destructive]
+  - Source: `Python-master`
+  - Summary: CREATE TABLE STORE (SERVICE TEXT PRIMARY KEY NOT NULL, USERNAME TEXT NOT NULL, PASSWORD TEXT NOT NULL);
+  - Keywords: password, service, admin, conn, command, connect, username, getpass
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\password_manager.py`
+- **Remove Tag** [ps1, destructive]
+  - Source: `PowerShell-main`
+  - Summary: Removes a Git tag (locally, remote, or both)
+  - Keywords: git, tag, locally, mode, both, tagname, repodir, remote
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\remove-tag.ps1`
+- **Areaoftriangle** [py, safe]
+  - Source: `Python-master`
+  - Summary: Python Program to find the area of triangle when all three side-lengths are known! Uncomment below to take inputs from the user
+  - Keywords: area, float, input, enter, side, triangle, calculate, areaoftriangle
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\AreaOfTriangle.py`
+- **Armstrongnumber** [py, safe]
+  - Source: `Python-master`
+  - Summary: Python program to check if the number is an Armstrong number or not take input from the user
+  - Keywords: number, num, sum, temp, armstrong, digit, not, input
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\armstrongnumber.py`
+- **Backend** [py, safe]
+  - Source: `Python-master`
+  - Summary: It works by building a `WordMap` that stores words to word-follower-count ---------------------------- e.g. To train the following statement: It is not enough to just know how tool
+  - Keywords: use, not, sqlite3, enough, just, them, fired, class
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\AutoComplete_App\backend.py`
+- **Backend** [py, safe]
+  - Source: `Python-master`
+  - Summary: Used for automatic question-answering It works by building a reverse index store that maps words to an id. To find the indexed questions that contain a certain the words in the use
+  - Keywords: sqlite3, self, question, tables, exist, conn, text, class
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\QuestionAnswerVirtualAssistant\backend.py`
+- **Backend** [py, safe]
+  - Source: `Python-master`
+  - Summary: It works by building a reverse index store that maps words to an id. To find the document(s) that contain a certain search term, we then take an intersection of the ids
+  - Keywords: self, sqlite3, conn, execute, tables, exist, create, cur
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Search_Engine\backend.py`
+- **Bricksort** [py, safe]
+  - Source: `Python-master`
+  - Summary: Python Program to implement Odd-Even / Brick Sort
+  - Keywords: arr, issorted, range, oddevensort, bricksort, program, implement, odd-even
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Sorting Algorithms\brickSort.py`
+- **Build Repo** [ps1, safe]
+  - Source: `PowerShell-main`
+  - Summary: Builds a repo
+  - Keywords: cmake, path, results, builds, global, ninja, executing, architecture
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\build-repo.ps1`
+- **Build Repos** [ps1, safe]
+  - Source: `PowerShell-main`
+  - Summary: Build Git repos
+  - Keywords: parentdir, folder, git, stopwatch, folders, numfolders, elapsed, build-repos
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\build-repos.ps1`
+- **Cd Repo** [ps1, safe]
+  - Source: `PowerShell-main`
+  - Summary: Set working directory to a repo
+  - Keywords: test-path, pathtype, container, repositories, elseif, git, repos, cd-repo
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\cd-repo.ps1`
+- **Classify Article** [py, safe]
+  - Source: `Codex-Powershell_GUI`
+  - Summary: Article Classifier — Top Bar Scoring POF 2828 | faiththruphysics.com Scans an article (HTML or MD) and scores it against the 20 taxonomy categories. Outputs JSON matching the meta.
+  - Keywords: article, classify, json, taxonomy, categories, color, keywords, classifier
+  - Path: `D:\DONT TOUCH BOOT UP\Codex-Powershell_GUI\classify_article.py`
+- **Find Factorial Of A Number** [py, safe]
+  - Source: `Python-master`
+  - Summary: Python program to find the factorial of a number provided by the user. def factorial(n):
+  - Keywords: factorial, number, function, find, user, not, possible, input
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\FIND FACTORIAL OF A NUMBER.py`
+- **Finding Lcm** [py, safe]
+  - Source: `Python-master`
+  - Summary: Python Program to find the L.C.M. of two input number def compute_lcm(x, y):
+  - Keywords: greater, lcm, number, compute, num1, num2, finding, program
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\finding LCM.py`
+- **Four Digit Num Combination** [py, safe]
+  - Source: `Python-master`
+  - Summary: small script to learn how to print out all 4-digit num
+  - Keywords: digit, numbers, print, code, all, out, combinations, four
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\four_digit_num_combination.py`
+- **Gcd** [py, safe]
+  - Source: `Python-master`
+  - Summary: although there is function to find gcd in python but this is the code which takes two inputs and prints gcd of the two.
+  - Keywords: gcd, two, int, input, enter, number, although, there
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\gcd.py`
+- **Greaterno** [py, safe]
+  - Source: `Python-master`
+  - Summary: Python program to find the largest number among the three input numbers change the values of num1, num2 and num3
+  - Keywords: num1, num2, largest, num3, number, input, float, enter
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\greaterno.py`
+- **Greattwono** [py, safe]
+  - Source: `Python-master`
+  - Summary: Python Program to find the largest of two numbers using an arithmetic operator a = int(input("Enter the first number: "))
+  - Keywords: int, input, enter, number, print, greater, greattwono, program
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\greattwono.py`
+- **Happy Num** [py, safe]
+  - Source: `Python-master`
+  - Summary: isHappyNumber() will determine whether a number is happy or not def isHappyNumber(num):
+  - Keywords: num, number, happy, result, way, sum, not, rem
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\happy_num.py`
+- **Image Grapper** [py, safe]
+  - Source: `Python-master`
+  - Summary: -------------------------***Thank You For Using***-------------------------
+  - Keywords: image, create, search, ssl, directory, https, google, images
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Google_Image_Downloader\image_grapper.py`
+- ... 21 more in JSON inventory
+
+### Files (200)
+
+- **Cd Recycle Bin** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Sets the working dir to the recycle bin folder
+  - Keywords: path, recycle, bin, files, folders, folder, directory, cd-recycle-bin
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\cd-recycle-bin.ps1`
+- **Cd Trash** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Sets the working dir to the trash folder
+  - Keywords: path, trash, files, folders, folder, directory, cd-trash, working
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\cd-trash.ps1`
+- **Install Calibre Server** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Installs the Calibre server (needs admin rights)
+  - Keywords: opt, calibre, parameter, specifies, default, file, port, path
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\install-calibre-server.ps1`
+- **Install Fonts** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: requires -version 5.1 [string]$sourceFolder = ""
+  - Keywords: font, fonts, folder, path, sourcefolder, destination, name, source
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\install-fonts.ps1`
+- **List Special Folders** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Lists special folders
+  - Keywords: tryfolder, home, path, folder, name, env, function, temp
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-special-folders.ps1`
+- **Query Smart Data** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Queries and saves the S.M.A.R.T. data of your HDD's/SSD's
+  - Keywords: directory, smartctl, data, write-output, devices, device, query-smart-data, queries
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\query-smart-data.ps1`
+- **Script Hub** [py, admin]
+  - Source: `Codex-Powershell_GUI`
+  - Summary: Codex Script Hub A PySide6 launcher for PowerShell, Python, and batch scripts. It discovers scripts from user-defined roots, groups them by folder, and provides quick actions for r
+  - Keywords: pyside6, dir, config, hub, path, scripts, json, app
+  - Path: `D:\DONT TOUCH BOOT UP\Codex-Powershell_GUI\script_hub.py`
+- **Assembler** [py, caution]
+  - Source: `Python-master`
+  - Summary: loadFile: This function loads the file and reads its lines.
+  - Keywords: tokens, token, lines, def, register, class, self, function
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Assembler\assembler.py`
+- **Batch File Rename** [py, caution]
+  - Source: `Python-master`
+  - Summary: This will batch rename a group of files in a given directory, once you pass the current and new extensions
+  - Keywords: file, ext, rename, work, dir, batch, files, new
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\batch_file_rename.py`
+- **Cd Dropbox** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Sets the working directory to the user's Dropbox folder
+  - Keywords: dropbox, directory, path, files, folders, folder, cd-dropbox, working
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\cd-dropbox.ps1`
+- **Cd Jenkins** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Changes to the Jenkins home directory
+  - Keywords: jenkins, directory, path, files, folders, home, cd-jenkins, changes
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\cd-jenkins.ps1`
+- **Cd Nextcloud** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Sets the working directory to the user's NextCloud folder
+  - Keywords: nextcloud, directory, path, folder, files, folders, cd-nextcloud, working
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\cd-nextcloud.ps1`
+- **Cd Onedrive** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Sets the working dir to the OneDrive folder
+  - Keywords: onedrive, path, directory, files, folders, folder, cd-onedrive, sets
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\cd-onedrive.ps1`
+- **Cd Ssh** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Sets the working dir to the SSH folder
+  - Keywords: path, ssh, files, folder, directory, cd-ssh, working, markus
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\cd-ssh.ps1`
+- **Cd Sync** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Sets the working directory to the user's Sync folder
+  - Keywords: directory, sync, path, files, folders, folder, cd-sync, working
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\cd-sync.ps1`
+- **Check Repos** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Checks Git repositories
+  - Keywords: folder, parentdir, repos, git, checking, numfolders, parent, stopwatch
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\check-repos.ps1`
+- **Clean Repos** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Cleans all Git repositories in a folder from untracked files
+  - Keywords: git, folder, parentdir, parent, clean-repos, cleans, all, repositories
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\clean-repos.ps1`
+- **Clone Repos** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Clones Git repos
+  - Keywords: git, repos, write-host, target, directory, targetdir, data, popular-repos
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\clone-repos.ps1`
+- **Convert Dir27Z** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Converts a directory into a .7z file
+  - Keywords: dirpath, targetfile, into, zip, directory, file, path, stopwatch
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\convert-dir27z.ps1`
+- **Convert Docx2Md** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Converts .DOCX file(s) into Markdown
+  - Keywords: docx, file, filepattern, pandoc, stopwatch, elapsed, convert-docx2md, converts
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\convert-docx2md.ps1`
+- **Convert Frames2Mp4** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Converts frames to a .MP4 video
+  - Keywords: file, frames, ffmpeg, sourcepattern, video, image, pattern, targetfile
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\convert-frames2mp4.ps1`
+- **Convert Image2Blurred Frames** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Converts an image into blurred frames
+  - Keywords: file, imagefile, image, frames, path, targetdir, target, imagemagick
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\convert-image2blurred-frames.ps1`
+- **Convert Image2Pixelated Frames** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Converts an image into pixelated frames
+  - Keywords: file, sourcefile, image, frames, path, source, targetdir, target
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\convert-image2pixelated-frames.ps1`
+- **Convert Md2Html** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Converts Markdown file(s) into HTML
+  - Keywords: file, filepattern, markdown, html, pandoc, stopwatch, elapsed, convert-md2html
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\convert-md2html.ps1`
+- **Copy Broken File** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: ######################### ## This script copies a file, ignoring device I/O errors that abort the reading of files in most applications. ## ## .DESCRIPTION ########################
+  - Keywords: file, errorcode, buffer, destination, errors, copy, blocks, not
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\copy-broken-file.ps1`
+- **Copy Photos Sorted** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Copy photos sorted by year and month
+  - Keywords: targetdir, year, string, month, sourcedir, myphotos, int, date
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\copy-photos-sorted.ps1`
+- **Copy Videos Sorted** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Copy videos sorted by year and month
+  - Keywords: targetdir, year, string, month, filename, monthdir, sourcedir, int
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\copy-videos-sorted.ps1`
+- **Count Lines** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Counts the number of lines
+  - Keywords: pathtodirtree, lines, ps1, within, directory, tree, path, stopwatch
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\count-lines.ps1`
+- **Counting Sort** [py, caution]
+  - Source: `Python-master`
+  - Summary: Python program for counting sort def countingSort(array):
+  - Keywords: array, count, size, output, elements, range, data, counting
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Sorting Algorithms\Counting Sort.py`
+- **Fetch Repo** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Fetches updates into a Git repo
+  - Keywords: git, path, updates, local, repository, into, including, submodules
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\fetch-repo.ps1`
+- **Fetch Repos** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Fetches updates into Git repos
+  - Keywords: git, parentdirpath, folder, into, parent, write-host, fetch-repos, fetches
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\fetch-repos.ps1`
+- **File Ext Changer** [py, caution]
+  - Source: `Python-master`
+  - Summary: ' Multiple extension changer
+  - Keywords: xten, chfile, len, chxten, file, append, range, files
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\file_ext_changer.py`
+- **First** [py, caution]
+  - Source: `Python-master`
+  - Summary: Author : Dhruv B Kakadiya
+  - Keywords: row, board, col, pos, modules, checker, mouse, clock
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Checker_game_by_dz\first.py`
+- **Folder Duplicator** [py, caution]
+  - Source: `Codex-Powershell_GUI`
+  - Summary: Folder Structure Duplicator POF 2828 | David Lowe Simple GUI tool to duplicate folder structures with options: - Main folders only (depth 1) - All folders recursively (no files) - 
+  - Keywords: self, style, root, configure, font, folder, segoe, duplicator
+  - Path: `D:\DONT TOUCH BOOT UP\Codex-Powershell_GUI\folder_duplicator.py`
+- **Food** [py, caution]
+  - Source: `Python-master`
+  - Summary: This file handles the creation of food. Its placement is now controlled by the main game logic to ensure it spawns within the correct boundaries.
+  - Keywords: random, self, wall, food, margin, int, turtle, game
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Snake Game Using Turtle\food.py`
+- **Gui** [py, caution]
+  - Source: `Python-master`
+  - Summary: def main(): except ImportError:
+  - Keywords: path, pyqt6, dirname, dir, sys, print, install, neuralforge
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\ML\src\python\neuralforge\cli\gui.py`
+- **Insertion Sort** [py, caution]
+  - Source: `Python-master`
+  - Summary: def insertion_sort(nums): Start on the second element as we assume the first element is sorted
+  - Keywords: nums, item, insert, insertion, sort, element, random, list
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Sorting Algorithms\insertion_sort.py`
+- **List Dir Tree** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Lists a directory tree
+  - Keywords: bytes, path, directory, tree, string, function, list-dir-tree, lists
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-dir-tree.ps1`
+- **List Empty Dirs** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Lists empty directories in a directory tree
+  - Keywords: path, empty, directory, directories, count, tree, stopwatch, elapsed
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-empty-dirs.ps1`
+- **List Empty Files** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Lists all empty files in a directory tree
+  - Keywords: path, empty, files, directory, tree, stopwatch, count, elapsed
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-empty-files.ps1`
+- ... 160 more in JSON inventory
+
+### Network (443)
+
+- **Admin** [py, admin]
+  - Source: `Python-master`
+  - Summary: Register your models here. admin.site.register(Todo)
+  - Keywords: admin, models, todo, register, django, contrib, your, here
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\nitkarshchourasia\to_sort\django_projects\ToDo_webapp\todo\admin.py`
+- **Audio Summarizer** [py, admin]
+  - Source: `Python-master`
+  - Summary: def transcript_generator(): Load Whisper model
+  - Keywords: text, openai, model, api, summarizer, whisper, audio, result
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Audio_Summarizer.py`
+- **Bubblesortpgm** [py, admin]
+  - Source: `Python-master`
+  - Summary: Bubble Sort Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order. Example: First Pass: ( 5 1 4 2 8 ) –> 
+  - Keywords: swap, algorithm, elements, since, pass, bubble, sort, are
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Sorting Algorithms\bubblesortpgm.py`
+- **Check Network** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Checks the network
+  - Keywords: ps1, psscriptroot, check-network, network, fleschutz, synopsis, checks, description
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\check-network.ps1`
+- **Check Smart Devices** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Checks the SMART device status
+  - Keywords: bytes, devices, smartctl, device, check-smart-devices, status, ssd, fleschutz
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\check-smart-devices.ps1`
+- **Convert Sql2Csv** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Converts a SQL database table to a .CSV file
+  - Keywords: database, password, server, username, query, parameter, specifies, string
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\convert-sql2csv.ps1`
+- **Disable Ipv6** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Disables IPv6 (requires admin rights)
+  - Keywords: ipv6, disable-ipv6, disables, requires, rights, disabled, now, fleschutz
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\disable-ipv6.ps1`
+- **Facebook Autologin Bot** [py, admin]
+  - Source: `Python-master`
+  - Summary: tts = pyttsx3.init() rate = tts.getProperty("rate")
+  - Keywords: text, print, speak, your, tts, facebook, welcome, autobot
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\facebook-autologin-bot.py`
+- **Ftp Send Receive** [py, admin]
+  - Source: `Python-master`
+  - Summary: File transfer protocol used to send and receive files using FTP server. Use credentials to provide access to the FTP client Note: Do not use root username & password for security r
+  - Keywords: ftp, file, filename, send, user, directory, receive, server
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\ftp_send_receive.py`
+- **Get Youtube View** [py, admin]
+  - Source: `Python-master`
+  - Summary: Created on Thu Apr 27 16:28:36 2017 @author: barnabysandeford
+  - Keywords: video, length, url, pafy, input, refreshrate, safari, browser
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\get_youtube_view.py`
+- **Gstin Scraper** [py, admin]
+  - Source: `Python-master`
+  - Summary: Description : GSTIN, short for Goods and Services Tax Identification Number, is a unique 15 digit identification number assigned to every taxpayer (primarily dealer or supplier or 
+  - Keywords: company, list, gstin, name, enter, scraper, identification, number
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\gstin_scraper.py`
+- **Install Basic Snaps** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Installs basic Snap apps
+  - Keywords: snap, sudo, install, classic, apps, stopwatch, install-basic-snaps, installs
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\install-basic-snaps.ps1`
+- **Install Evcc** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Installs evcc
+  - Keywords: evcc, sudo, https, stopwatch, installing, apt, elapsed, install-evcc
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\install-evcc.ps1`
+- **Install Gitlab** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: requires -version 5.1 "1. Install and configure the necessary dependencies"
+  - Keywords: install, sudo, apt-get, gitlab, curl, package, install-gitlab, requires
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\install-gitlab.ps1`
+- **Install H2Static** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Installs h2static
+  - Keywords: h2static, snap, pathtomedia, sudo, port, stopwatch, configuring, elapsed
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\install-h2static.ps1`
+- **Install Jenkins Agent** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Installs the Jenkins Agent
+  - Keywords: jenkins, agent, installdir, jenkinsurl, secretkey, jar, string, install-jenkins-agent
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\install-jenkins-agent.ps1`
+- **Install Knot Resolver** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Installs Knot Resolver (needs admin rights)
+  - Keywords: resolver, knot, step, sudo, snap, knot-resolver-gael, stopwatch, kresd
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\install-knot-resolver.ps1`
+- **Install Mini Dlna** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Installs MiniDLNA
+  - Keywords: minidlna, snap, stopwatch, minidlna-jdstrand, elapsed, install-mini-dlna, installs, fleschutz
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\install-mini-dlna.ps1`
+- **Install Octoprint** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: ﻿#requires -version 5.1 "⏳ Installing OctoPrint (snap 'octoprint-pfs', channel 'edge')..."
+  - Keywords: snap, octoprint-pfs, octoprint, edge, install, lastexitcode, exit, error
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\install-octoprint.ps1`
+- **Install Passbolt Server** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Installs passbolt server
+  - Keywords: passbolt, passbolt-repo-setup, https, com, stopwatch, passbolt-ce-sha512sum, txt, elapsed
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\install-passbolt-server.ps1`
+- **Install Ssh Server** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Installs a SSH server (needs admin rights)
+  - Keywords: server, sshd, ssh, name, stopwatch, openssh, firewall, should
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\install-ssh-server.ps1`
+- **Install Unbound Server** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Installs Unbound server (needs admin rights)
+  - Keywords: unbound, lastexitcode, throw, failed, sudo, apt, unbound-anchor, install-unbound-server
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\install-unbound-server.ps1`
+- **List Fritzbox Calls** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Lists the phone calls of the FRITZ!Box device
+  - Keywords: fritz, box, password, username, system, xml, net, serviceinfo
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-fritzbox-calls.ps1`
+- **List Nic** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Lists NIC details
+  - Keywords: list-nic, lists, details, description, fleschutz, exit, error, synopsis
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-nic.ps1`
+- **List Scripts** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Lists the PowerShell scripts
+  - Keywords: category, description, row, scripts, data, list-scripts, lists, param
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-scripts.ps1`
+- **Locate City** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Shows the geographic location of a city
+  - Keywords: city, row, population, lat, lng, name, amsterdam, country
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\locate-city.ps1`
+- **New User** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Create a new user
+  - Keywords: user, username, new, account, encrypted, home, directory, stopwatch
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\new-user.ps1`
+- **Ping Local Devices** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Ping local devices
+  - Keywords: fritz, ping-local-devices, ping, local, devices, epson, raspi, tux
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\ping-local-devices.ps1`
+- **Set Wallpaper** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Sets the given image file as desktop wallpaper
+  - Keywords: string, desktop, style, wallpaperstyle, image, path, tile, span
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\set-wallpaper.ps1`
+- **Settings** [py, admin]
+  - Source: `Python-master`
+  - Summary: Django settings for todo_site project. Generated by 'django-admin startproject' using Django 4.2.5. For more information on this file, see https://docs.djangoproject.com/en/4.2/top
+  - Keywords: django, contrib, settings, see, https, docs, djangoproject, com
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\nitkarshchourasia\to_sort\django_projects\ToDo_webapp\todo_site\settings.py`
+- **Slack Message** [py, admin]
+  - Source: `Python-master`
+  - Summary: Created by sarathkaul on 11/11/19 Set the webhook_url to the one provided by Slack when you create the webhook at https://my.slack.com/services/new/incoming-webhook/
+  - Keywords: slack, response, request, webhook, json, url, data, print
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\slack_message.py`
+- **Upload File** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Uploads a local file to a FTP server
+  - Keywords: file, url, password, local, username, bool, true, ftp
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\upload-file.ps1`
+- **Weather** [py, admin]
+  - Source: `Python-master`
+  - Summary: TODO - refactor & clean code TODO - Add input checking
+  - Keywords: webdriver, options, selenium, driver, input, city, state, datetime
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Weather Scrapper\weather.py`
+- **Web Scraper** [py, admin]
+  - Source: `Python-master`
+  - Summary: Author: Chayan Chawra git: github.com/Chayan-19 Requirements: selenium, BeautifulSoup
+  - Keywords: webdriver, html, job, driver, all, count, beautifulsoup, url
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Web_Scraper.py`
+- **Whatsapp Monitor** [py, admin]
+  - Source: `Python-master`
+  - Summary: Author- Tony Stark download https://github.com/mozilla/geckodriver/releases set path paste binary file /usr/local/bin install requirements: python -m pip install selenium
+  - Keywords: div, driver, time, name, find, element, span, search
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\whatsapp-monitor.py`
+- **Whatsapp Schedule** [py, admin]
+  - Source: `Python-master`
+  - Summary: Author- Richmond Nyamekye download https://github.com/mozilla/geckodriver/releases install requirements: python -m pip install selenium
+  - Keywords: msg, phone, group, hour, send, int, minute, input
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\whatsapp-schedule.py`
+- **Windefender** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Configure Windows defender
+  - Keywords: defender, monitoring, windows, write-host, real-time, break, real, time
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\windefender.ps1`
+- **Youtubedownloader** [py, admin]
+  - Source: `Python-master`
+  - Summary: modules for Using of app this function for mulple code runes at a time
+  - Keywords: download, youtube, filename, root, messagebox, modules, function, video
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\youtubedownloader.py`
+- **8 Puzzle** [py, caution]
+  - Source: `Python-master`
+  - Summary: Represents a state in 8-puzzle solving with A* algorithm.
+  - Keywords: self, goal, moves, list, int, def, board, previous
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\8_puzzle.py`
+- **Alert** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Handles and escalates an alert
+  - Keywords: alert, message, handles, escalates, https, com, fleschutz, header
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\alert.ps1`
+- ... 403 more in JSON inventory
+
+### Other (88)
+
+- **Code** [py, admin]
+  - Source: `Python-master`
+  - Summary: class LaundryService: def __init__(
+  - Keywords: self, customer, type, cloth, print, name, contact, email
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Laundary System\code.py`
+- **Iterative Merge Sort** [py, admin]
+  - Source: `Python-master`
+  - Summary: Iterative Merge sort (Bottom Up) Iterative mergesort function to
+  - Keywords: size, current, left, merge, sub, array, len, iterative
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Sorting Algorithms\Iterative Merge Sort.py`
+- **Sudoku** [py, admin]
+  - Source: `Python-master`
+  - Summary: board = [ [7, 8, 0, 4, 0, 0, 1, 2, 0],
+  - Keywords: pos, box, range, row, find, col, false, num
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\sudoku.py`
+- **Balance Parenthesis** [py, caution]
+  - Source: `Python-master`
+  - Summary: class Stack: def __init__(self):
+  - Keywords: self, def, items, true, bal, else, false, index
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\balance_parenthesis.py`
+- **Vigenere Cipher** [py, caution]
+  - Source: `Python-master`
+  - Summary: text = "mrttaqrhknsw ih puggrur" custom_key = "happycoding"
+  - Keywords: key, message, index, char, text, alphabet, vigenere, final
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\vigenere_cipher.py`
+- **Levenshtein Distance** [py, destructive]
+  - Source: `Python-master`
+  - Summary: def levenshtein_dis(wordA, wordB): wordA = wordA.lower()  # making the wordA lower case
+  - Keywords: length, len, worda, max, diff, distance, wordb, words
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\levenshtein_distance.py`
+- **Tuple** [py, destructive]
+  - Source: `Python-master`
+  - Summary: a = (1, 2, 3, 4, 5) print("Individual elements of Tuple are")
+  - Keywords: print, tuple, value, are, index, individual, elements, end
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\tuple.py`
+- **  Init  ** [py, safe]
+  - Source: `Python-master`
+  - Summary:   Init  
+  - Keywords: init
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Checker_game_by_dz\__init__.py`
+- **  Init  ** [py, safe]
+  - Source: `Python-master`
+  - Summary: Jarvis local desktop assistant.
+  - Keywords: init, jarvis, local, desktop, assistant
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\JARVIS\__init__.py`
+- **  Init  ** [py, safe]
+  - Source: `Python-master`
+  - Summary: Author : Dhruv B Kakadiya
+  - Keywords: init, author, dhruv, kakadiya
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Checker_game_by_dz\modules\__init__.py`
+- **  Init  ** [py, safe]
+  - Source: `Python-master`
+  - Summary:   Init  
+  - Keywords: init
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Industrial_developed_hangman\tests\__init__.py`
+- **  Init  ** [py, safe]
+  - Source: `Python-master`
+  - Summary:   Init  
+  - Keywords: init
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Industrial_developed_hangman\src\hangman\__init__.py`
+- **  Init  ** [py, safe]
+  - Source: `Python-master`
+  - Summary:   Init  
+  - Keywords: init
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Industrial_developed_hangman\tests\test_hangman\__init__.py`
+- **  Init  ** [py, safe]
+  - Source: `Python-master`
+  - Summary:   Init  
+  - Keywords: init
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\nitkarshchourasia\to_sort\django_projects\ToDo_webapp\todo\__init__.py`
+- **  Init  ** [py, safe]
+  - Source: `Python-master`
+  - Summary:   Init  
+  - Keywords: init
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\nitkarshchourasia\to_sort\django_projects\ToDo_webapp\todo_site\__init__.py`
+- **  Init  ** [py, safe]
+  - Source: `Python-master`
+  - Summary:   Init  
+  - Keywords: init
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\nitkarshchourasia\to_sort\django_projects\ToDo_webapp\todo\migrations\__init__.py`
+- **  Init  ** [py, safe]
+  - Source: `Python-master`
+  - Summary:   Init  
+  - Keywords: init
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\PongPong_Game\pong\__init__.py`
+- **A Solution To Project Euler Problem 3** [py, safe]
+  - Source: `Python-master`
+  - Summary: Problem: The prime factors of 13195 are 5,7,13 and 29. What is the largest prime factor of a given number N? e.g. for 10, largest prime factor = 5. For 17, largest prime factor = 1
+  - Keywords: solution, int, parameter, must, prime, largest, factor, traceback
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\A solution to project euler problem 3.py`
+- **Add Two Number** [py, safe]
+  - Source: `Python-master`
+  - Summary: user_input = (input("type type 'start' to run program:")).lower() if user_input == "start":
+  - Keywords: input, user, game, running, number, type, num1, num2
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\add_two_number.py`
+- **Area Of Triangle** [py, safe]
+  - Source: `Python-master`
+  - Summary: def get_valid_side(prompt:str): while True:
+  - Keywords: side, area, valid, value, print, enter, triangle, prompt
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\AREA OF TRIANGLE.py`
+- **Asciivaluecharacter** [py, safe]
+  - Source: `Python-master`
+  - Summary: Program to find the ASCII value of the given character print("The ASCII value of '" + c + "' is", ord(c))
+  - Keywords: ascii, value, asciivaluecharacter, program, find, given, character, print
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\ASCIIvaluecharacter.py`
+- **Billing** [py, safe]
+  - Source: `Python-master`
+  - Summary: Press 1 for apple Press 2 for soap Press 3 for soda Press 4 for pie Press 5 for cake Press 6 for bill
+  - Keywords: print, total, choice, items, price, apple, press, added
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\billing.py`
+- **Bodymass** [py, safe]
+  - Source: `Python-master`
+  - Summary: kilo = float(input("kilonuzu giriniz(örnek: 84.9): ")) boy = float(input("Boyunuzu m cinsinden giriniz: "))
+  - Keywords: vki, print, vucut, kitle, indeksiniz, elif, derece, obezsiniz
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\bodymass.py`
+- **Calci** [py, safe]
+  - Source: `Python-master`
+  - Summary: First = int(input("enter first value")) Second = int(input("enter second value"))
+  - Keywords: first, second, int, input, enter, value, add, calci
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\calci.py`
+- **Calci2** [py, safe]
+  - Source: `Python-master`
+  - Summary: prices = [22.3, 6.66, 9.22] total = sum(prices)
+  - Keywords: prices, total, calci2, sum, print
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\calci2.py`
+- **Calculate Resistance** [py, safe]
+  - Source: `Python-master`
+  - Summary: def res(R1, R2): sum = R1 + R2
+  - Keywords: input, sum, option, enter, print, resistance, res, series
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Calculate resistance.py`
+- **Chaos** [py, safe]
+  - Source: `Python-master`
+  - Summary: A simple program illustrating chaotic behaviour def main():
+  - Keywords: print, main, enter, number, program, chaotic, please, correct
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\chaos.py`
+- **Check Whether The String Is Symmetrical Or Palindrome** [py, safe]
+  - Source: `Python-master`
+  - Summary: def palindrome(a): mid = (len(a) - 1) // 2
+  - Keywords: string, mid, flag, palindrome, else, start1, start2, start
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\check whether the string is Symmetrical or Palindrome.py`
+- **Collatz Sequence** [py, safe]
+  - Source: `Python-master`
+  - Summary: Generate and print the Collatz sequence for n.
+  - Keywords: sequence, print, collatz, steps, num, enter, else, input
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Collatz Sequence\Collatz Sequence.py`
+- **Compass Code** [py, safe]
+  - Source: `Python-master`
+  - Summary: def degree_to_direction(deg): directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"]
+  - Keywords: deg, degree, direction, directions, compass, code, def, int
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\compass_code.py`
+- **Crc** [py, safe]
+  - Source: `Python-master`
+  - Summary: def crc_check(data, div): l = len(div)
+  - Keywords: data, crc, temp, div, len, range, print, int
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\CRC\crc.py`
+- **Dec To Hex** [py, safe]
+  - Source: `Python-master`
+  - Summary: dec_num = input("Enter the decimal number\n") print(hex(int(dec_num)))
+  - Keywords: dec, hex, num, input, enter, decimal, number, print
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\dec_to_hex.py`
+- **Decimal Number To Binary Function** [py, safe]
+  - Source: `Python-master`
+  - Summary: decimal number number = int(input("Enter any decimal number: "))
+  - Keywords: number, decimal, binary, print, equivalent, function, int, input
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Decimal number to binary function.py`
+- **Diamond** [py, safe]
+  - Source: `Python-master`
+  - Summary: def draw_diamond(n): if n % 2 != 0:
+  - Keywords: diamond, draw, print, int, while, odd, number, def
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\diamond.py`
+- **Factorial Perm Comp** [py, safe]
+  - Source: `Python-master`
+  - Summary: Script Name		: factorial_perm_comp.py Author			: Ebiwari Williams
+  - Keywords: factorial, print, permutation, def, fact, input, combination, while
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\factorial_perm_comp.py`
+- **Fibonacci Sequence Recursive Sol** [py, safe]
+  - Source: `Python-master`
+  - Summary: def fib(term): if term <= 1:
+  - Keywords: term, fib, number, terms, sequence, fibonacci, recursive, sol
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Fibonacci_sequence_recursive_sol.py`
+- **Fibonaccinumberswithgenerators** [py, safe]
+  - Source: `Python-master`
+  - Summary: Generating function up to n fibonacci numbers iteratively Params: n: int Return: int
+  - Keywords: fibonacci, generator, none, int, yield, fibo, fibonaccinumberswithgenerators, def
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\FibonacciNumbersWithGenerators.py`
+- **Find Cube Root** [py, safe]
+  - Source: `Python-master`
+  - Summary: This method is called exhaustive numeration! I am checking every possible value
+  - Keywords: ans, cont, input, cube, root, cuberoot, abs, print
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\find_cube_root.py`
+- **Fizzbuzz** [py, safe]
+  - Source: `Python-master`
+  - Summary: A program that prints the numbers from 1 to num (User given number)! For multiples of ‘3’ print “Fizz” instead of the number.
+  - Keywords: print, fizzbuzz, number, num, prints, given, multiples, fizz
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\FizzBuzz.py`
+- **Generate Permutations** [py, safe]
+  - Source: `Python-master`
+  - Summary: def generate(A, k): if k == 1:
+  - Keywords: generate, else, permutations, def, print, range, test-case, len
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\generate_permutations.py`
+- ... 48 more in JSON inventory
+
+### System (390)
+
+- **Add Firewall Rules** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Adds firewall rules for executables (needs admin rights).
+  - Keywords: executables, pathtoexecutables, firewall, path, direction, rules, parameter, specifies
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\add-firewall-rules.ps1`
+- **Arka** [py, admin]
+  - Source: `Python-master`
+  - Summary: def sumOfSeries(n): x = n * (n + 1) / 2
+  - Keywords: sumofseries, arka, def, int, driver, function, print
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\ARKA.py`
+- **Cd Etc** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Changes to /etc
+  - Keywords: path, etc, directory, files, folders, cd-etc, changes, system32
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\cd-etc.ps1`
+- **Check Admin** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Check for admin rights
+  - Keywords: principal, rights, has, user, security, admin, username, check-admin
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\check-admin.ps1`
+- **Check Bios** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Checks the BIOS status
+  - Keywords: model, version, details, bios, serial, sudo, dmidecode, releasedate
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\check-bios.ps1`
+- **Check File System** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Checks the file system of a drive (needs admin rights)
+  - Keywords: drive, file, system, check-file-system, checks, needs, admin, rights
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\check-file-system.ps1`
+- **Check Firewall** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Checks the firewall status
+  - Keywords: firewall, status, write-host, check-firewall, fleschutz, else, enabled, exit
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\check-firewall.ps1`
+- **Check Gpu** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Checks the GPU status
+  - Keywords: bytes, gpu, status, check-gpu, ram, pixels, fleschutz, bytes2string
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\check-gpu.ps1`
+- **Check Windows System Files** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Checks the validity of the Windows system files (requires admin rights)
+  - Keywords: windows, system, files, requires, check-windows-system-files, checks, validity, admin
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\check-windows-system-files.ps1`
+- **Cloning A List** [py, admin]
+  - Source: `Python-master`
+  - Summary: Python program to copy or clone a list Using the Slice Operator
+  - Keywords: li1, cloning, list, li2, print, program, copy, clone
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\cloning_a_list.py`
+- **Cycle Sort** [py, admin]
+  - Source: `Python-master`
+  - Summary: Python program to impleament cycle sort def cycleSort(array):
+  - Keywords: array, item, pos, cyclestart, cycle, writes, put, find
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Sorting Algorithms\Cycle Sort.py`
+- **Decimal To Binary** [py, admin]
+  - Source: `Python-master`
+  - Summary: ======= Program: Decimal to Binary converter. THis program accepts fractional values, the accuracy can be set below:
+  - Keywords: decimal, num, accuracy, whole, fractional, while, number, binary
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Decimal_To_Binary.py`
+- **Divide Operator** [py, admin]
+  - Source: `Python-master`
+  - Summary: class DivisionOperation: INT_MAX = float("inf")
+  - Keywords: self, num2, num1, result, division, quotient, divisionoperation, neg
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Divide Operator.py`
+- **Find Triplets With Zero Sum** [py, admin]
+  - Source: `Python-master`
+  - Summary: Author : Mohit Kumar Python program to find triplets in a given array whose sum is zero
+  - Keywords: sum, arr, zero, array, triplets, left, right, found
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Triplets with zero sum\find_Triplets_with_zero_sum.py`
+- **Inheritance Yahv1729** [py, admin]
+  - Source: `Python-master`
+  - Summary: A Python program to demonstrate inheritance Base or Super class. Note object in bracket.
+  - Keywords: person, class, object, self, emp, name, def, employee
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\inheritance_YahV1729.py`
+- **Install Chocolatey** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Installs Chocolatey (needs admin rights)
+  - Keywords: chocolatey, install-chocolatey, installs, needs, admin, rights, ps1, https
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\install-chocolatey.ps1`
+- **Install Edit** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Installs Edit
+  - Keywords: microsoft, edit, installed, install, installing, store, stopwatch, elapsed
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\install-edit.ps1`
+- **Install Github Cli** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Installs GitHub CLI
+  - Keywords: github, cli, installed, stopwatch, install, elapsed, install-github-cli, installs
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\install-github-cli.ps1`
+- **Install Signal Cli** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Installs signal-cli
+  - Keywords: version, signal-cli, wget, lastexitcode, tar, github, com, throw
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\install-signal-cli.ps1`
+- **Install Ssh Client** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Installs a SSH client (needs admin rights)
+  - Keywords: client, ssh, stopwatch, elapsed, install-ssh-client, installs, needs, admin
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\install-ssh-client.ps1`
+- **Install Syncthing** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Installs Syncthing
+  - Keywords: syncthing, winget, installing, stopwatch, elapsed, install-syncthing, installs, https
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\install-syncthing.ps1`
+- **List Admin Users** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: List admin users
+  - Keywords: admingroup, group, list-admin-users, users, fleschutz, culture, name, get-localgroupmember
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-admin-users.ps1`
+- **List Printers** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Lists the printers
+  - Keywords: computername, list-printers, lists, printers, fleschutz, format-table, exit, error
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-printers.ps1`
+- **List Processes** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Lists all local computer processes
+  - Keywords: cpu, list-processes, lists, all, local, computer, processes, processname
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-processes.ps1`
+- **List Restore Points** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Lists restore points
+  - Keywords: exit, list-restore-points, lists, restore, points, fleschutz, get-computerrestorepoint, lastexitcode
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-restore-points.ps1`
+- **List System Info** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Lists system information of the local computer
+  - Keywords: ram, system, computer, get-wmiobject, totalvisiblememorysize, freephysicalmemory, win32, math
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-system-info.ps1`
+- **List User Groups** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Lists the user groups
+  - Keywords: list-user-groups, lists, user, groups, description, computer, administrators, fleschutz
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-user-groups.ps1`
+- **Manage** [py, admin]
+  - Source: `Python-master`
+  - Summary: Django's command-line utility for administrative tasks.
+  - Keywords: django, main, administrative, tasks, sys, settings, execute, command
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\nitkarshchourasia\to_sort\django_projects\ToDo_webapp\manage.py`
+- **Merge Sort** [py, admin]
+  - Source: `Python-master`
+  - Summary: Python program for implementation of MergeSort Merges two subarrays of arr[].
+  - Keywords: arr, subarray, index, merge, temp, arrays, copy, initial
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Sorting Algorithms\Merge Sort.py`
+- **New Memory Load** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Maintains a target physical memory usage percentage for a specified duration.
+  - Keywords: memory, target, physical, usage, percentage, specified, duration, blocks
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\new-memory-load.ps1`
+- **New Restore Point** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Creates a restore point
+  - Keywords: restore, point, description, new-restore-point, exit, creates, ps1, created
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\new-restore-point.ps1`
+- **Open Rdp** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Opens the RDP app
+  - Keywords: mstsc, hostname, open-rdp, rdp, https, com, fleschutz, start-process
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\open-rdp.ps1`
+- **Python Program For Factorial Of A Number** [py, admin]
+  - Source: `Python-master`
+  - Summary: Factorial of a non-negative integer, is multiplication of all integers smaller than or equal to n. For example factorial of 6 is 6*5*4*3*2*1 which is 720.
+  - Keywords: factorial, num, program, number, find, fact, given, def
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Python Programs\Python Program for factorial of a number.py`
+- **Python Swapping** [py, admin]
+  - Source: `Python-master`
+  - Summary: Python3 program to swap first and last element of a list
+  - Keywords: newlist, size, swapping, swap, swaplist, temp, python3, program
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Python_swapping.py`
+- **Quick Sort** [py, admin]
+  - Source: `Python-master`
+  - Summary: def partition(arr, low, high): i = low - 1  # index of smaller element
+  - Keywords: arr, high, low, index, quicksort, partition, pivot, sort
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Sorting Algorithms\Quick sort.py`
+- **Restart Network Adapters** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Restarts the network adapters (needs admin rights)
+  - Keywords: network, adapters, stopwatch, elapsed, restart-network-adapters, restarts, needs, admin
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\restart-network-adapters.ps1`
+- **Save Credentials** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Saves credentials encrypted
+  - Keywords: credentials, encrypted, targetfile, password, save-credentials, saves, target, file
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\save-credentials.ps1`
+- **Shell Sort** [py, admin]
+  - Source: `Python-master`
+  - Summary: Python program for implementation of Shell Sort def shellSort(arr):
+  - Keywords: gap, arr, temp, print, sort, elements, range, shell
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Sorting Algorithms\Shell Sort.py`
+- **Sort The Values Of First List Using Second List** [py, admin]
+  - Source: `Python-master`
+  - Summary: one list using the other list
+  - Keywords: list, sort, list1, list2, zipped, pairs, print, values
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Sorting Algorithms\Sort the values of first list using second list.py`
+- **Battery Notifier** [py, caution]
+  - Source: `Python-master`
+  - Summary: psutil.sensors_battery() will return the information related to battery battery = psutil.sensors_battery()
+  - Keywords: battery, charging, message, notification, percent, psutil, plyer, pip
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Battery_notifier.py`
+- ... 350 more in JSON inventory
+
+### Utilities (183)
+
+- **Backup Automater Services** [py, admin]
+  - Source: `Python-master`
+  - Summary: Script Name	: backup_automater_services.py Author			: Craig Richards
+  - Keywords: services, library, today, variable, path, backup, automater, name
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\backup_automater_services.py`
+- **Caller** [py, admin]
+  - Source: `Python-master`
+  - Summary: The project automates calls for people from the firebase cloud database and the schedular keeps it running and checks for entries every 1 hour using aps scedular
+  - Keywords: time, firebase, database, credentials, client, call, project, calls
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Automated Scheduled Call Reminders\caller.py`
+- **Check Credentials** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Checks credentials
+  - Keywords: credentials, username, password, credsfromuser, runtime, interopservices, marshal, home
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\check-credentials.ps1`
+- **Check Password** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Checks a password
+  - Keywords: string, hash, password, security, com, split, pwn, check-password
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\check-password.ps1`
+- **List Fritzbox Devices** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Lists FRITZ!Box's known devices
+  - Keywords: fritz, box, password, username, string, envelope, list-fritzbox-devices, lists
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-fritzbox-devices.ps1`
+- **List Services** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Lists the installed services
+  - Keywords: list-services, lists, installed, services, fleschutz, exit, error, synopsis
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-services.ps1`
+- **List Sql Tables** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Lists all tables of a SQL server database
+  - Keywords: database, server, tables, parameter, mandatory, true, sql, table
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-sql-tables.ps1`
+- **List Updates** [ps1, admin]
+  - Source: `PowerShell-main`
+  - Summary: Lists available software updates
+  - Keywords: updates, querying, get-command, apt, erroraction, silentlycontinue, write-host, foregroundcolor
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-updates.ps1`
+- **Python Program To Reverse A Linked List** [py, admin]
+  - Source: `Python-master`
+  - Summary: Python program to reverse a linked list Time Complexity : O(n)
+  - Keywords: self, node, next, head, llist, data, current, new
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Python Programs\Python Program to Reverse a linked list.py`
+- **Qtfrontend** [py, admin]
+  - Source: `Python-master`
+  - Summary: Create a styled QFrame with optional minimum size and custom style.
+  - Keywords: employee, page, update, balance, search, admin, add, money
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\bank_managment_system\QTFrontend.py`
+- **Check Apps** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Query the app status
+  - Keywords: installed, apps, status, path, count, write-progress, numnonok, app
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\check-apps.ps1`
+- **Check Dusk** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Checks the time of dusk
+  - Keywords: dusk, delta, result, hours, hour, minute, now, timespan
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\check-dusk.ps1`
+- **Chrome Dino Automater** [py, caution]
+  - Source: `Python-master`
+  - Summary: def hit(key): pyautogui.press(key)
+  - Keywords: range, data, hit, image, pyautogui, draw, rectangle, dino
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Chrome Dino Automater.py`
+- **Fighter** [py, caution]
+  - Source: `Python-master`
+  - Summary: class Fighter: def __init__(self, player, x, y, flip, data, sprite_sheet, animation_steps, sound):
+  - Keywords: self, animation, data, steps, list, false, pygame, player
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Street_Fighter\src\fighter.py`
+- **File Handle 12 Length Of Line In Text File** [py, caution]
+  - Source: `Python-master`
+  - Summary: file_name = input("Enter the file name to create:- ") print(file_name)
+  - Keywords: file, name, lines, text, print, less, than, input
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\1 File handle\File handle text\file handle 12 length of line in text file.py`
+- **File Handle 12 Length Of Line In Text File** [py, caution]
+  - Source: `Python-master`
+  - Summary: file_name = input("Enter the file name to create:- ") print(file_name)
+  - Keywords: file, name, lines, text, print, less, than, input
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\file_handle\File handle text\file handle 12 length of line in text file.py`
+- **Gui Test** [py, caution]
+  - Source: `Python-master`
+  - Summary: sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..')) QHBoxLayout, QPushButton, QLabel, QLineEdit,
+  - Keywords: path, image, self, classes, pyqt6, pyqtsignal, transforms, model
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\ML\tests\gui_test.py`
+- **Heap Sort** [py, caution]
+  - Source: `Python-master`
+  - Summary: def heapify(nums, heap_size, root_index): Assume the index of the largest element is the root index
+  - Keywords: largest, nums, root, index, child, element, heap, left
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Sorting Algorithms\heap_sort.py`
+- **Heapsort Linkedlist** [py, caution]
+  - Source: `Python-master`
+  - Summary: class Node: def __init__(self, data):
+  - Keywords: current, self, data, next, head, def, largest, node
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Sorting Algorithims\heapsort_linkedlist.py`
+- **Hibernate** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Hibernates the computer
+  - Keywords: hibernate, hibernates, computer, going, sleep, now, fleschutz, system
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\hibernate.ps1`
+- **List Calendar** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Lists the calendar
+  - Keywords: year, month, lists, calendar, list-calendar, get-date, firstdayofmonth, example
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-calendar.ps1`
+- **List Clipboard** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Lists the contents of the clipboard
+  - Keywords: list-clipboard, lists, contents, clipboard, fleschutz, text, exit, error
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-clipboard.ps1`
+- **List Coffee Prices** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: List coffee prices
+  - Keywords: num, write-host, nonewline, elseif, coffee, alphavantage, value, list-coffee-prices
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-coffee-prices.ps1`
+- **List Earthquakes** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Lists major earthquakes
+  - Keywords: depth, minmagnitude, magnitude, mag, format, orderby, quake, list-earthquakes
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-earthquakes.ps1`
+- **List Installed Hotfixes** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Lists the installed hotfixes
+  - Keywords: list-installed-hotfixes, lists, installed, hotfixes, description, fleschutz, exit, error
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-installed-hotfixes.ps1`
+- **List Memos** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Lists your remembered entries
+  - Keywords: path, remember, exit, row, text, list-memos, lists, your
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-memos.ps1`
+- **List Mysql Tables** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Lists all tables of a MySQL database
+  - Keywords: database, tables, true, mysql, parameter, mandatory, lists, all
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-mysql-tables.ps1`
+- **List Nina Warnings** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Lists the current NINA warnings
+  - Keywords: warning, warnings, title, nina, severe, string, type, list-nina-warnings
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-nina-warnings.ps1`
+- **List Times** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Lists the times world-wide
+  - Keywords: time, timeas, standard, system, write-host, list-times, lists, world-wide
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-times.ps1`
+- **List Unused Files** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: List unused files in a directory tree
+  - Keywords: path, days, unused, files, directory, tree, access, int
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\list-unused-files.ps1`
+- **Menu** [py, caution]
+  - Source: `Python-master`
+  - Summary: Display a table with list of tasks and their associated commands.
+  - Keywords: table, add, row, console, text, search, read, menu
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\VoiceAssistant\Project_Basic_struct\menu.py`
+- **Message Automation** [py, caution]
+  - Source: `Python-master`
+  - Summary: Do you want to include the message counter? make a class of it.
+  - Keywords: message, send, enter, repetitions, delay, input, pyautogui, sleep
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\send_message_automation\message_automation.py`
+- **Question 2** [py, caution]
+  - Source: `Python-master`
+  - Summary: Write a method/function DISPLAYWORDS() in python to read lines from a text file STORY.TXT, using read function and display those words, which are less than 4 characters.
+  - Keywords: file, words, less, print, word, path, than, read
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\1 File handle\File handle text\question 2.py`
+- **Question 2** [py, caution]
+  - Source: `Python-master`
+  - Summary: Write a method/function DISPLAYWORDS() in python to read lines from a text file STORY.TXT, using read function and display those words, which are less than 4 characters.
+  - Keywords: file, words, less, print, word, path, than, read
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\file_handle\File handle text\question 2.py`
+- **Question 5** [py, caution]
+  - Source: `Python-master`
+  - Summary: Write a function in python to count the number of lowercase alphabets present in a text file “happy.txt
+  - Keywords: file, path, counter, total, print, number, lowercase, time
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\1 File handle\File handle text\question 5.py`
+- **Question 5** [py, caution]
+  - Source: `Python-master`
+  - Summary: Write a function in python to count the number of lowercase alphabets present in a text file “happy.txt
+  - Keywords: file, path, counter, total, print, number, lowercase, time
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\file_handle\File handle text\question 5.py`
+- **Question3** [py, caution]
+  - Source: `Python-master`
+  - Summary: Write a user-defined function named count() that will read the contents of text file named “happy.txt” and count the number of lines which starts with either “I‟ or “M‟.
+  - Keywords: file, name, count, text, first, letters, lines, input
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\1 File handle\File handle text\question3.py`
+- **Question3** [py, caution]
+  - Source: `Python-master`
+  - Summary: Write a user-defined function named count() that will read the contents of text file named “happy.txt” and count the number of lines which starts with either “I‟ or “M‟.
+  - Keywords: file, name, count, text, first, letters, lines, input
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\file_handle\File handle text\question3.py`
+- **Remember** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Remembers a text
+  - Keywords: path, remember, text1, text, string, timestampstring, csv, stopwatch
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\remember.ps1`
+- **Search Repo** [ps1, caution]
+  - Source: `PowerShell-main`
+  - Summary: Searches for text in a repo
+  - Keywords: git, path, textpattern, text, pattern, repository, ps1, throw
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\search-repo.ps1`
+- ... 143 more in JSON inventory
+
+### Web (5)
+
+- **Mad Libs Generator** [py, safe]
+  - Source: `Python-master`
+  - Summary: Loop back to this point once code finishes while loop < 10:
+  - Keywords: noun, print, loop, input, choose, place, adjective, back
+  - Path: `D:\DONT TOUCH BOOT UP\Python-master\Mad Libs Generator.py`
+- **Open Google News** [ps1, safe]
+  - Source: `PowerShell-main`
+  - Summary: Opens Google News
+  - Keywords: google, news, open-google-news, ps1, https, com, fleschutz, synopsis
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\open-google-news.ps1`
+- **Open Windy** [ps1, safe]
+  - Source: `PowerShell-main`
+  - Summary: Opens the Windy website
+  - Keywords: windy, open-windy, website, weather, radar, ps1, https, com
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\open-windy.ps1`
+- **Play Ascii Video** [ps1, safe]
+  - Source: `PowerShell-main`
+  - Summary: Plays an ASCII video
+  - Keywords: ascii, play-ascii-video, fleschutz, curl, live, forrest, synopsis, plays
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\play-ascii-video.ps1`
+- **Play Rick** [ps1, safe]
+  - Source: `PowerShell-main`
+  - Summary: Plays Rick Astley
+  - Keywords: rick, ps1, you, been, rick-rolled, psscriptroot, play-rick, astley
+  - Path: `D:\DONT TOUCH BOOT UP\PowerShell-main\scripts\play-rick.ps1`

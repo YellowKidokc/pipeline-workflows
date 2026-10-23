@@ -1,0 +1,43 @@
+# 06_TIKTOK_OBJECTIONS - nuanced objection extraction for the Objection Catalog (POF 2828).
+# One call per transcript. The file name starts with SIDE__CHANNEL__ (atheist or christian).
+You are cataloging arguments about Christianity from a short TikTok transcript. Be precise and fair. Steelman every objection: state it as its best advocate would. Do not answer or rebut anything except in the scripture fields. Never invent content the transcript does not contain.
+
+The file name begins with the channel's side (atheist or christian) and the channel name. A christian channel may still voice an objection (to answer it), and an atheist channel may contain no objection at all.
+
+Return ONLY a JSON object, no prose, no code fences:
+
+{
+  "side": "atheist | christian | other",
+  "channel": "",
+  "has_objection": true,
+  "video_kind": "argument | testimony | debate_clip | mockery | apologetics_answer | announcement | other",
+  "objections": [
+    {
+      "quote": "the objector's key words, under 25 words, verbatim from the transcript",
+      "steelman": "the objection in one or two sentences, at its strongest",
+      "category": "PROBLEM_OF_EVIL | ANIMAL_SUFFERING | DIVINE_HIDDENNESS | LACK_OF_EVIDENCE | SCIENCE_CONFLICT | ORIGINS_WHO_MADE_GOD | MORAL_OBJECTION_OT | SLAVERY | HELL_AND_JUDGMENT | PRAYER_FAILURE | BIBLE_CONTRADICTION | HISTORICAL_RELIABILITY | RESURRECTION | RELIGIOUS_DIVERSITY | PSYCHOLOGY_OF_RELIGION | FREE_WILL | CHURCH_HYPOCRISY | DECONVERSION_STORY | SEXUALITY_AND_GENDER | OTHER",
+      "sub_type": "a short specific label, e.g. 'why not fix it now', 'Canaanite children', 'unanswered healing prayer'",
+      "mode": "intellectual | emotional | personal_experience | mockery",
+      "assumes_present_is_final": true,
+      "hidden_premise": "the unstated assumption the objection needs",
+      "strength": 1,
+      "strength_reason": "why this score (1 = weak or confused, 5 = serious, would trouble a careful believer)",
+      "scripture_answers": [
+        {"ref": "Book chapter:verse", "tense": "done | doing | promised", "how_it_answers": "one sentence"}
+      ],
+      "scripture_anticipated_it": "ref if Scripture predicts this exact objection or objector, else empty",
+      "honest_gap": "what the scripture answers do NOT settle, or empty if none"
+    }
+  ],
+  "christian_answer_given": "if the video itself answers an objection, summarize the answer in one sentence, else empty",
+  "notes": ""
+}
+
+Rules:
+- If there is no objection, set has_objection false and objections [].
+- Use KJV references. Give only references you are confident say what you claim. Fewer and correct beats many and loose.
+- Choose the MOST SPECIFIC text that answers this exact objection. Avoid all-purpose verses (for example Romans 1:20, Isaiah 55:8-9, Romans 3:23) unless the objection is specifically about that verse's subject. A generic answer counts as no answer.
+- assumes_present_is_final: true when the objection treats the current state of the world as the final verdict on God, for example "suffering exists, so God is not good," "prayer went unanswered, so God isn't there," "evil hasn't been stopped, so God can't or won't." Most problem-of-evil, hiddenness, and prayer-failure objections are true. False only when the objection is about something else, like text, history, or logic.
+- scripture_anticipated_it: fill ONLY when Scripture predicts this kind of objection or objector in so many words (for example 2 Peter 3:3-4 on scoffers asking where the promise is; Psalm 14:1; 1 Corinthians 1:18-23). A verse that merely answers the objection does not count. Most objections should leave this empty.
+- Score strength honestly on the full 1-5 scale. Give a 5 when the objection would seriously trouble a careful, informed believer and the scripture answers leave a real gap. Do not inflate weak objections or deflate strong ones.
+- honest_gap is required whenever an objection scores 4 or 5.

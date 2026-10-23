@@ -1,0 +1,66 @@
+{
+  "variant": "cpel",
+  "label": "CPEL — Claims, Proofs, Evidence, Lean (one call each)",
+  "source_template": "D:\\GitHub\\pipeline-workflows\\API\\02_C_P_E_L (10_CLAIM_ATOM_NODE_TYPES, CLAIM_EVIDENCE_LANE_FRAMEWORK, EVIDENCE_COVERAGE_METHOD, EVIDENCE_CONTRACT_POINTER)",
+  "source_sha256": null,
+  "model": "deepseek-chat",
+  "workers": 4,
+  "write_to": "outbox",
+  "output_as": "markdown",
+  "calls": [
+    {
+      "id": "CLAIMS",
+      "title": "C — Claims",
+      "kind": "ai",
+      "on": true,
+      "folder": "calls/001_CLAIMS",
+      "run_group": 0,
+      "page_order": 1,
+      "output_format": "markdown",
+      "run_order": 1
+    },
+    {
+      "id": "PROOFS",
+      "title": "P — Proofs",
+      "kind": "ai",
+      "on": true,
+      "folder": "calls/002_PROOFS",
+      "run_group": 1,
+      "page_order": 2,
+      "output_format": "markdown",
+      "run_order": 2
+    },
+    {
+      "id": "EVIDENCE",
+      "title": "E — Evidence",
+      "kind": "ai",
+      "on": true,
+      "folder": "calls/003_EVIDENCE",
+      "run_group": 1,
+      "page_order": 3,
+      "output_format": "markdown",
+      "run_order": 3
+    },
+    {
+      "id": "LEAN",
+      "title": "L — Lean",
+      "kind": "ai",
+      "on": true,
+      "folder": "calls/004_LEAN",
+      "run_group": 2,
+      "page_order": 4,
+      "output_format": "markdown",
+      "run_order": 4
+    },
+    {
+      "id": "ORIGINAL",
+      "title": "ORIGINAL ARTICLE",
+      "kind": "paste_source",
+      "on": false,
+      "folder": "calls/005_ORIGINAL",
+      "run_group": null,
+      "page_order": 5,
+      "output_format": "markdown"
+    }
+  ]
+}

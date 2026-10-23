@@ -1,0 +1,36 @@
+{
+  "_note": "LOCKED port registry. Never reassign a slot; retire it instead. status: live = known running before; planned = decided, not built; legacy = old server, kept for reference; unassigned = needs a ruling.",
+  "_resolved_conflicts": [
+    "FIS had three homes (28282 Jun 20, 28289 Aug 19, fihub 10000 Jul 12): FIS = 28289; fihub 10000 kept as legacy.",
+    "28290 was double-booked (Open WebUI Jun 20 vs Canon Guard Aug 19): Canon Guard keeps 28290 (latest plan); Open WebUI unassigned until its real port is confirmed in Portainer.",
+    "Both FastAPI-application copies are empty on disk (checked 2026-10-11); this kit replaces them."
+  ],
+  "services": [
+    {"port": 28280, "name": "Master API / Drive Brain", "status": "live", "host": "127.0.0.1", "source": "FAST API/brain_server.py"},
+    {"port": 28283, "name": "NLP Pipeline", "status": "planned", "host": "127.0.0.1"},
+    {"port": 28285, "name": "TTS", "status": "planned", "host": "127.0.0.1"},
+    {"port": 28286, "name": "Lossless Compression", "status": "planned", "host": "127.0.0.1"},
+    {"port": 28287, "name": "Comms Hub", "status": "planned", "host": "127.0.0.1"},
+    {"port": 28288, "name": "Clipboard", "status": "planned", "host": "127.0.0.1"},
+    {"port": 28289, "name": "FIS Scanner / Tagger", "status": "planned", "host": "127.0.0.1"},
+    {"port": 28290, "name": "Canon Guard", "status": "planned", "host": "127.0.0.1"},
+    {"port": 28291, "name": "Deep Research (LangGraph)", "status": "planned", "host": "127.0.0.1"},
+    {"port": 28292, "name": "Consolidation Scanner", "status": "planned", "host": "127.0.0.1"},
+    {"port": 28293, "name": "DeepSeek proxy", "status": "planned", "host": "127.0.0.1"},
+    {"port": 28294, "name": "Ollama proxy", "status": "planned", "host": "127.0.0.1"},
+    {"port": 28320, "name": "Preference Engine (River/BIL)", "status": "planned", "host": "127.0.0.1"},
+    {"port": 28410, "name": "Codex / AI Worker", "status": "planned", "host": "127.0.0.1"},
+    {"port": 11434, "name": "Ollama", "status": "live", "host": "127.0.0.1"},
+    {"port": 10777, "name": "Mattermost bridge control panel", "status": "live", "host": "127.0.0.1"},
+    {"port": 10779, "name": "FIS search (fis_search.py)", "status": "live", "host": "127.0.0.1"},
+    {"port": 10000, "name": "fihub (File Intelligence Hub)", "status": "legacy", "host": "127.0.0.1"},
+    {"port": 8700, "name": "NLP model service (BACKSIDE-NLP)", "status": "legacy", "host": "127.0.0.1"},
+    {"port": 3456, "name": "Theophysics_HUB api_server", "status": "legacy", "host": "127.0.0.1"},
+    {"port": 3000, "name": "Brain REST API (theophysics_rest.py)", "status": "legacy", "host": "127.0.0.1"},
+    {"port": 8065, "name": "Mattermost", "status": "live", "host": "192.168.1.93"},
+    {"port": 5432, "name": "PostgreSQL", "status": "live", "host": "127.0.0.1"}
+  ],
+  "ranges": [
+    {"from": 8500, "to": 8530, "name": "Streamlit apps (locked registry, Apr 28)"}
+  ]
+}

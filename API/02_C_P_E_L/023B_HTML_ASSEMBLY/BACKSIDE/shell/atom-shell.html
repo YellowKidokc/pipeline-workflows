@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-field="atom.title">Consilience Atlas — Universal Atom</title>
+<link rel="stylesheet" href="atom-shell.css">
+<base target="_blank">
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════════════════════════
+     DATA INJECTION POINT
+     For generated per-atom pages, replace this block with the atom JSON.
+     For the universal viewer, leave it empty and use ?atom=path/to/atom.json
+     ════════════════════════════════════════════════════════════════════════════════ -->
+<script type="application/json" id="atom-data"></script>
+
+<!-- ════════════════════════════════════════════════════════════════════════════════
+     1. IDENTITY BAND
+     ════════════════════════════════════════════════════════════════════════════════ -->
+<header class="identity-band" data-section="identity-band">
+  <div class="identity-inner">
+    <div class="id-row">
+      <span class="id-uuid" data-field="identity.uuid">UUID</span>
+      <span class="id-code" data-field="identity.semantic_code">ATOM.ID</span>
+      <span class="id-label" data-field="identity.human_label">Atom Title</span>
+    </div>
+    <div class="meta-row">
+      <span class="meta-pill status-canon" data-field="identity.publication_state"><span class="dot"></span> State</span>
+      <span class="meta-pill" data-field="identity.version">v0.0</span>
+      <span class="meta-pill" data-field="identity.source_hash">sha256:...</span>
+      <span class="meta-pill" data-field="identity.last_computed">—</span>
+      <span class="meta-pill" data-field="resolution">Resolution: LOCAL</span>
+    </div>
+  </div>
+</header>
+
+<!-- ════════════════════════════════════════════════════════════════════════════════
+     2. NABLA BAND
+     ════════════════════════════════════════════════════════════════════════════════ -->
+<section class="nabla-band" data-section="nabla-band">
+  <span class="nabla-label">Nabla</span>
+  <span class="nabla-address" data-field="nabla.address">—</span>
+  <div class="nabla-vector">
+    <span class="nabla-v" data-nabla="G" title="Ground">G0</span>
+    <span class="nabla-v" data-nabla="M" title="Mechanism">M0</span>
+    <span class="nabla-v" data-nabla="E" title="Disorder">E0</span>
+    <span class="nabla-v" data-nabla="S" title="Identity">S0</span>
+    <span class="nabla-v" data-nabla="T" title="Time">T0</span>
+    <span class="nabla-v" data-nabla="K" title="Knowledge">K0</span>
+    <span class="nabla-v" data-nabla="R" title="Relation">R0</span>
+    <span class="nabla-v" data-nabla="Q" title="Experience">Q0</span>
+    <span class="nabla-v" data-nabla="F" title="Faith">F0</span>
+    <span class="nabla-v" data-nabla="C" title="Coherence">C0</span>
+  </div>
+  <span class="nabla-hash" data-field="nabla.hash">—</span>
+  <button class="nabla-decode-btn" onclick="alert('Nabla decode panel')">Decode</button>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════════════
+     3. EPISTEMIC + SCOPE BAND
+     ════════════════════════════════════════════════════════════════════════════════ -->
+<section class="epistemic-band" data-section="epistemic-band">
+  <div class="epistemic-inner">
+    <div class="epi-section">
+      <span class="epi-label">Epistemic</span>
+      <span class="epi-value epi-theorem" data-field="epistemic.class">—</span>
+    </div>
+    <div class="epi-section">
+      <span class="epi-label">Scope</span>
+      <span class="scope-badge scope-g2" data-field="epistemic.scope_class.level">—</span>
+      <span class="epi-value" data-field="epistemic.scope_class.label" style="font-size:10px;">—</span>
+    </div>
+    <div class="epi-section">
+      <span class="epi-label">Derivation</span>
+      <span class="epi-value" data-field="epistemic.derivation_status" style="font-size:10px;font-weight:400;color:var(--textdim);">—</span>
+    </div>
+    <div class="epi-section">
+      <span class="epi-label">Independence</span>
+      <span class="epi-value" data-field="epistemic.external_independence" style="font-size:10px;font-weight:400;color:var(--textdim);">—</span>
+    </div>
+    <div class="epi-basis" data-field="epistemic.scope_class.basis">—</div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════════════
+     4. PERIODIC-15 TILE
+     ════════════════════════════════════════════════════════════════════════════════ -->
+<section class="p15-band" data-section="periodic-15">
+  <div class="p15-header">
+    <span class="p15-title">Periodic-15 — Invariant Grammar</span>
+    <span style="font-size:10px;color:var(--textfaint);">Marker positions do not move; lens labels change with type</span>
+  </div>
+  <div class="p15-grid" id="p15-grid"></div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════════════
+     5. CONTROL BAR
+     ════════════════════════════════════════════════════════════════════════════════ -->
+<nav class="control-bar" data-section="control-bar">
+  <div class="res-toggle" data-toggle="resolution">
+    <button class="res-btn active" data-res="local" onclick="setResolution('local')">Local</button>
+    <button class="res-btn" data-res="series" onclick="setResolution('series')">Series</button>
+    <button class="res-btn" data-res="global" onclick="setResolution('global')">Global</button>
+    <button class="res-btn" data-res="resonance" onclick="setResolution('resonance')">Resonance</button>
+  </div>
+
+  <div class="state-toggle">
+    <span class="state-label">Graph:</span>
+    <div class="toggle-pair" data-toggle="graph-state">
+      <button class="toggle-btn active" data-state="admitted" onclick="setGraphState('admitted')">Admitted</button>
+      <button class="toggle-btn" data-state="candidate" onclick="setGraphState('candidate')">Candidate</button>
+    </div>
+  </div>
+
+  <div class="state-toggle">
+    <span class="state-label">View:</span>
+    <div class="toggle-pair" data-toggle="snapshot-state">
+      <button class="toggle-btn active" data-state="current" onclick="setSnapshot('current')">Current Atlas</button>
+      <button class="toggle-btn" data-state="publication" onclick="setSnapshot('publication')">Publication</button>
+    </div>
+  </div>
+
+  <div class="state-toggle">
+    <span class="state-label">Sample:</span>
+    <select class="sample-select" id="sample-loader">
+      <option value="">— load sample —</option>
+      <option value="sample-claim.json">Claim</option>
+      <option value="sample-proof.json">Proof</option>
+      <option value="sample-evidence.json">Evidence</option>
+      <option value="sample-lean.json">Lean</option>
+    </select>
+  </div>
+
+  <div class="breadcrumb" data-field="breadcrumb">
+    <a href="#">GLOBAL</a><span class="sep">›</span>
+    <a href="#">SERIES</a><span class="sep">›</span>
+    <a href="#">PAPER</a><span class="sep">›</span>
+    <span style="color:var(--gold);">ATOM</span>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════════════════════════════
+     6. MAIN LAYOUT
+     ════════════════════════════════════════════════════════════════════════════════ -->
+<div class="main-wrap">
+
+  <!-- LEFT RAIL -->
+  <aside class="side-rail" data-section="left-rail">
+    <div class="rail-card">
+      <div class="rail-title">Graph Signature</div>
+      <div class="rail-stat"><span class="lbl">Blast Radius</span><span class="val" data-field="computed.blast_radius">—</span></div>
+      <div class="rail-stat"><span class="lbl">Articulation</span><span class="val" data-field="computed.articulation_point">—</span></div>
+      <div class="rail-stat"><span class="lbl">Depth</span><span class="val" data-field="computed.dependency_depth">—</span></div>
+      <div class="rail-stat"><span class="lbl">Reach Up</span><span class="val" data-field="computed.reachability_up">—</span></div>
+      <div class="rail-stat"><span class="lbl">Reach Down</span><span class="val" data-field="computed.reachability_down">—</span></div>
+    </div>
+    <div class="rail-card">
+      <div class="rail-title">Receipts</div>
+      <div class="rail-stat"><span class="lbl">Human</span><span class="val" data-field="receipts.human.result">—</span></div>
+      <div class="rail-stat"><span class="lbl">Python</span><span class="val" data-field="receipts.python.result">—</span></div>
+      <div class="rail-stat"><span class="lbl">API</span><span class="val" data-field="receipts.api.result">—</span></div>
+      <div class="rail-stat"><span class="lbl">Convergence</span><span class="val" data-field="receipts.method_convergence">—</span></div>
+    </div>
+  </aside>
+
+  <!-- CENTER PANEL -->
+  <main class="center-panel" data-section="center-panel">
+    <div class="tab-nav" data-section="tab-nav">
+      <button class="tab-btn active" data-tab="atom-note" onclick="switchTab('atom-note')">Atom Note</button>
+      <button class="tab-btn" data-tab="dependency" onclick="switchTab('dependency')">Dependency Spine</button>
+      <button class="tab-btn" data-tab="evidence-graph" onclick="switchTab('evidence-graph')">Evidence Graph</button>
+      <button class="tab-btn" data-tab="warrant" onclick="switchTab('warrant')">Warrant</button>
+      <button class="tab-btn" data-tab="dynamics" onclick="switchTab('dynamics')">Dynamics</button>
+      <button class="tab-btn" data-tab="atd" onclick="switchTab('atd')">Ascent / Translation / Descent</button>
+      <button class="tab-btn" data-tab="bridges" onclick="switchTab('bridges')">Bridges</button>
+      <button class="tab-btn" data-tab="reality" onclick="switchTab('reality')">Reality Mirror</button>
+    </div>
+
+    <!-- TAB: Atom Note -->
+    <div class="tab-pane active" id="tab-atom-note" data-tab-pane="atom-note">
+      <div id="atom-note-container"></div>
+    </div>
+
+    <!-- TAB: Dependency Spine -->
+    <div class="tab-pane" id="tab-dependency" data-tab-pane="dependency">
+      <div class="spine-wrap" data-section="dependency-spine">
+        <div class="spine-section" data-spine="upstream">
+          <div class="spine-header">Upstream <span class="spine-count" data-field="dependency_spine.upstream.length">0 nodes</span></div>
+          <div class="spine-body" id="upstream-container"></div>
+        </div>
+        <div class="spine-arrow">▼</div>
+        <div class="spine-section" data-spine="center">
+          <div class="spine-header">Selected Object</div>
+          <div class="spine-body" id="center-container"></div>
+        </div>
+        <div class="spine-arrow">▼</div>
+        <div class="spine-section" data-spine="downstream">
+          <div class="spine-header">Downstream <span class="spine-count" data-field="dependency_spine.downstream.length">0 nodes</span></div>
+          <div class="spine-body" id="downstream-container"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Evidence Graph -->
+    <div class="tab-pane" id="tab-evidence-graph" data-tab-pane="evidence-graph">
+      <div class="evidence-graph" id="evidence-graph-stage">
+        <svg class="edges" id="evidence-graph-edges"></svg>
+      </div>
+    </div>
+
+    <!-- TAB: Warrant -->
+    <div class="tab-pane" id="tab-warrant" data-tab-pane="warrant">
+      <div class="section-card">
+        <div class="section-title">Claim</div>
+        <p data-field="warrant.claim" style="font-size:13px;color:var(--text);line-height:1.6;">—</p>
+      </div>
+      <div class="section-card">
+        <div class="section-title">Kill Conditions</div>
+        <div id="kill-container"></div>
+      </div>
+      <div class="section-card">
+        <div class="section-title">Grade Summary</div>
+        <div class="field-grid">
+          <div class="field-row"><span class="field-label">Native Grade</span><span class="field-value mono" data-field="warrant.native_grade">—</span></div>
+          <div class="field-row"><span class="field-label">Normalized Grade</span><span class="field-value mono" data-field="warrant.normalized_grade">—</span></div>
+          <div class="field-row"><span class="field-label">Coverage</span><span class="field-value mono" data-field="warrant.coverage">—</span></div>
+          <div class="field-row"><span class="field-label">Strength</span><span class="field-value mono" data-field="warrant.strength">—</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Dynamics -->
+    <div class="tab-pane" id="tab-dynamics" data-tab-pane="dynamics">
+      <table class="dynamics-table">
+        <thead><tr><th>#</th><th>Question</th><th>Answer</th><th>Status</th></tr></thead>
+        <tbody id="dynamics-container"></tbody>
+      </table>
+    </div>
+
+    <!-- TAB: ATD -->
+    <div class="tab-pane" id="tab-atd" data-tab-pane="atd">
+      <div class="section-card" style="margin-bottom:10px;">
+        <div class="section-title">Meeting State: <span data-field="ascent_translation_descent.meeting_state" style="color:var(--green);">—</span></div>
+      </div>
+      <div class="atd-grid">
+        <div class="atd-col">
+          <div class="atd-label">Ascent</div>
+          <div id="ascent-container"></div>
+        </div>
+        <div class="atd-col middle">
+          <div class="atd-label">Translation</div>
+          <div style="font-size:10px;color:var(--golddim);margin-bottom:6px;text-align:center;">PRESERVED / LOST / INTRODUCED / FORBIDDEN</div>
+          <div id="translation-container"></div>
+        </div>
+        <div class="atd-col">
+          <div class="atd-label">Descent</div>
+          <div id="descent-container"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Bridges -->
+    <div class="tab-pane" id="tab-bridges" data-tab-pane="bridges">
+      <div id="bridges-container"></div>
+    </div>
+
+    <!-- TAB: Reality Mirror -->
+    <div class="tab-pane" id="tab-reality" data-tab-pane="reality">
+      <div class="section-card">
+        <div class="section-title">External Anchor</div>
+        <div class="field-grid">
+          <div class="field-row"><span class="field-label">Class</span><span class="field-value mono" data-field="reality_mirror.class">—</span></div>
+          <div class="field-row"><span class="field-label">Status</span><span class="field-value mono" data-field="reality_mirror.status">—</span></div>
+          <div class="field-row full"><span class="field-label">Anchor Object</span><span class="field-value" data-field="reality_mirror.anchor_object">—</span></div>
+          <div class="field-row"><span class="field-label">Independence</span><span class="field-value" data-field="reality_mirror.independence">—</span></div>
+          <div class="field-row"><span class="field-label">Closed-Loop Warning</span><span class="field-value" data-field="reality_mirror.closed_loop_warning">—</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- RIGHT RAIL -->
+  <aside class="side-rail" data-section="right-rail">
+    <div class="rail-card">
+      <div class="rail-title">Alerts / Open Items</div>
+      <div id="alerts-container"></div>
+    </div>
+    <div class="rail-card">
+      <div class="rail-title">Quick Actions</div>
+      <button class="nabla-decode-btn" style="width:100%;margin-bottom:6px;" onclick="alert('Find Resonance')">Find Resonance</button>
+      <button class="nabla-decode-btn" style="width:100%;" onclick="alert('Launch Φ Comparison')">Launch Φ Comparison</button>
+    </div>
+  </aside>
+
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════════════════
+     7. FOOTER
+     ════════════════════════════════════════════════════════════════════════════════ -->
+<footer class="atlas-footer">
+  CONSILIENCE ATLAS — Universal Atom Shell v1.2
+</footer>
+
+<script src="atom-shell.js"></script>
+</body>
+</html>

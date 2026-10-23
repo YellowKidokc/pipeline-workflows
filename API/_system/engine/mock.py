@@ -195,6 +195,33 @@ def theology_triage(p: str) -> dict:
             "keywords": ["resurrection"], "source_reliability": "mixed"}
 
 
+def lean_claim_ledger(p: str) -> dict:
+    """One entry, FLOOR without a cited receipt on purpose: the station must coerce it to DRAFT."""
+    return {"ledger": [{"name": "mock_theorem", "line": 1, "kind": "theorem",
+                        "plain_statement": "MOCK plain statement", "does_not_prove": "MOCK limit",
+                        "receipts_claim": "none", "grade_suggestion": "FLOOR", "grade_evidence": ""}]}
+
+
+def sorry_axiom_audit(p: str) -> dict:
+    """Classify every occurrence the station listed (OCC <line> <kind> lines in the prompt)."""
+    occ = re.findall(r"^OCC (\d+) (\w+)", p, re.M)
+    return {"occurrences": [{"line": int(line), "kind": kind, "classification": "placeholder",
+                             "closes_with": "MOCK: close it with a real proof", "severity": "blocker"}
+                            for line, kind in occ]}
+
+
+def lean_triage(p: str) -> dict:
+    return {"file_kind": "proof", "one_line_purpose": "MOCK purpose", "quality": "draft",
+            "duplicate_of_hint": "", "action": "keep"}
+
+
+def formalize_targets(p: str) -> dict:
+    """Claims VERIFIED on purpose: the station must relabel it PROPOSED."""
+    return {"claim_id": _line(p, "ITEM", "MOCK-CLAIM"), "proposed_lean": "theorem mock_formalization : True := trivial",
+            "slot_refs": [], "confidence": "low", "what_it_would_prove": "MOCK: the claim, formally",
+            "what_it_would_not_prove": "MOCK: the physics behind it", "status": "VERIFIED"}
+
+
 def physics_mirror(p: str) -> dict:
     """Two mirrors: one honest ANALOGY, one overclaimed STRUCTURAL with a stage out of order (the rules must downgrade it)."""
     stages = [{"n": i, "physics": f"MOCK stage {i}", "theology": f"MOCK counterpart {i}", "timestamp": f"0{i}:00", "match": "analogous"}
@@ -214,5 +241,5 @@ HANDLERS = {
     "axiom_nodes": axiom_nodes, "coherence": coherence, "story_paper": story_paper, "story_series": story_series,
     "story_lines": story_lines, "tagger": tagger, "extract_arguments": extract_arguments,
     "synthesize_cluster": synthesize_cluster, "synthesis_overview": synthesis_overview, "gap_match": gap_match,
-    "prior_art": prior_art, "own_claims": own_claims, "yt_summary": yt_summary, "yt_channel_summary": yt_channel_summary, "lean_assumptions": lean_assumptions, "lean_claims": lean_claims, "yt_deep": yt_deep, "theology_triage": theology_triage, "theology_scriptures": lambda p: {"scriptures": []}, "physics_mirror": physics_mirror,
+    "prior_art": prior_art, "own_claims": own_claims, "yt_summary": yt_summary, "yt_channel_summary": yt_channel_summary, "lean_assumptions": lean_assumptions, "lean_claims": lean_claims, "lean_claim_ledger": lean_claim_ledger, "sorry_axiom_audit": sorry_axiom_audit, "lean_triage": lean_triage, "formalize_targets": formalize_targets, "yt_deep": yt_deep, "theology_triage": theology_triage, "theology_scriptures": lambda p: {"scriptures": []}, "physics_mirror": physics_mirror,
 }

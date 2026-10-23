@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>David-OS Home</title>
+<style>
+:root{--bg:#f6f5f2;--panel:#fff;--ink:#1d1d1b;--mute:#6b6a66;--line:#dedcd6;--acc:#2f5d8a;--sel:#e8eef5;--ok:#3d7a4a}
+@media (prefers-color-scheme:dark){:root{--bg:#18191b;--panel:#202225;--ink:#e8e6e1;--mute:#9a978f;--line:#33363a;--acc:#7fb0e0;--sel:#26313d;--ok:#7cc48b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,Segoe UI,sans-serif}
+main{max-width:1040px;margin:0 auto;padding:20px 16px}
+.flow{color:var(--mute);margin:0 0 6px}.rule{color:var(--mute);margin:0 0 16px;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+a.tile{display:block;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;color:inherit;text-decoration:none}
+a.tile:hover{border-color:var(--acc)}a.tile h2{margin:0 0 4px;font-size:16px}a.tile p{margin:0 0 6px;color:var(--mute)}
+a.tile .s{font-size:12px;color:var(--mute)}
+.n{color:var(--acc);font-weight:700;margin-right:6px}
+.tag{font-size:11px;border-radius:4px;padding:0 6px;margin-left:6px;border:1px solid var(--line);color:var(--mute)}
+.tag.live{border-color:var(--ok);color:var(--ok)}
+</style></head><body><script src="/nav.js"></script>
+<main>
+<p class="flow">One paper moves through eight stages as one object: <b>Intake → Decompose → Verify → Research → Ruling → Rebuild → Publish → Feedback</b>.</p>
+<p class="rule">Claims get canonized, not papers. The program is the clerk; David is the judge. Nothing auto-publishes.</p>
+<div class="grid">
+<a class="tile" href="/intake"><h2><span class="n">1</span>Intake<span class="tag live">works</span></h2>
+ <p>UUID, hash, frozen original, duplicate check, topic + readable ID, YAML header.</p><span class="s">Checklist §1, §24 · 03_CLASSIFY, 01_PROFILE</span></a>
+<a class="tile" href="/run"><h2><span class="n">2</span>Decompose<span class="tag live">Run + API Calls work</span></h2>
+ <p>Atoms, definitions, equations, inference map. CKG runs here.</p><span class="s">§2, §3 · CKG variants</span></a>
+<a class="tile" href="/verify"><h2><span class="n">3</span>Verify<span class="tag">soon</span></h2>
+ <p>Math checks, Lean receipts, triage (HELD / OVERSTATED / FALSE / MISSING), contradictions, citations.</p><span class="s">§4, §5, §6, §16</span></a>
+<a class="tile" href="/research"><h2><span class="n">4</span>Research<span class="tag">soon</span></h2>
+ <p>Prior art, witnesses, hub questions and legs, cross-argument impact.</p><span class="s">§7, §8, §9</span></a>
+<a class="tile" href="/ruling"><h2><span class="n">5</span>Ruling<span class="tag">soon</span></h2>
+ <p>Your queue: CANON / OPEN / RETIRED / HOLD, ballots, kill conditions, dependencies.</p><span class="s">§10, §11, §12</span></a>
+<a class="tile" href="/rebuild"><h2><span class="n">6</span>Rebuild<span class="tag">soon</span></h2>
+ <p>New paper from CANON + OPEN claims, story layer, reader levels, diff vs. original.</p><span class="s">§13, §14, §15</span></a>
+<a class="tile" href="/publish"><h2><span class="n">7</span>Publish<span class="tag">soon</span></h2>
+ <p>Private audit file, HTML / docx / Markdown, Zenodo DOI, product tiers. Human button only.</p><span class="s">§17, §18, §19</span></a>
+<a class="tile" href="/feedback"><h2><span class="n">8</span>Feedback<span class="tag">soon</span></h2>
+ <p>Vector library, ledgers, topic index, contradiction re-run, writing queue, metrics.</p><span class="s">§20, §21</span></a>
+<a class="tile" href="/settings"><h2>Settings<span class="tag">soon</span></h2>
+ <p>Keys, models per station, folders, budget, parallel limit, receipts.</p><span class="s">§22, §23</span></a>
+</div></main></body></html>

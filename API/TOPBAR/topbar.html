@@ -1,0 +1,212 @@
+<!-- Pipeline topbar component — drop-in header for api-workspace.html and related pages.
+     Style based on faiththruphysics-universal-shell.html (ftp-* prefix, dark translucent bar, gold accents).
+     The API Deep menu is built from the calls in 08_API_DEEP / 040_ANALYTICAL_ARMS / 057_API_DEEP / 059_CHI_EVALUATOR.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pipeline Topbar Component</title>
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #050505;
+  --panel: #0a0a0a;
+  --surface: #111;
+  --surface2: #161616;
+  --line: #292929;
+  --border-gold: rgba(212,175,55,.35);
+  --text: #e8e6e1;
+  --muted: #aaa7a0;
+  --gold: #d4af37;
+  --gold-dim: rgba(212,175,55,.12);
+  --header-h: 46px;
+  --max: 1600px;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.5 system-ui, sans-serif; padding-top: var(--header-h); }
+
+.ftp-top {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(5,5,5,.93);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+}
+.ftp-top-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; align-items: center; height: var(--header-h);
+  padding: 0 1rem; gap: .5rem;
+}
+
+.ftp-brand {
+  display: flex; align-items: center; gap: .35rem; flex-shrink: 0;
+  color: var(--text); text-decoration: none; font-weight: 600;
+}
+.ftp-brand-chi {
+  display: flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 6px;
+  background: var(--gold-dim); color: var(--gold);
+  border: 1px solid var(--border-gold);
+  font-family: var(--mono); font-size: .9rem;
+}
+.ftp-brand-name { font-size: .85rem; letter-spacing: .04em; }
+
+.ftp-vdiv {
+  width: 1px; height: 22px; background: var(--line); margin: 0 .25rem; flex-shrink: 0;
+}
+.ftp-spacer { flex: 1; min-width: .5rem; }
+
+.ftp-nav {
+  display: flex; gap: 2px; align-items: center; flex-shrink: 0;
+}
+.ftp-nav-link,
+.ftp-tool-btn {
+  display: flex; align-items: center; gap: .35rem;
+  font-family: var(--mono); font-size: .6rem; color: var(--muted);
+  text-decoration: none; background: transparent;
+  border: 1px solid transparent; border-radius: 6px;
+  padding: .35rem .55rem; cursor: pointer; white-space: nowrap;
+}
+.ftp-nav-link:hover,
+.ftp-tool-btn:hover { color: var(--gold); background: var(--gold-dim); border-color: var(--border-gold); }
+.ftp-nav-link.active { color: var(--gold); background: var(--gold-dim); border-color: var(--border-gold); }
+
+.ftp-count {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px;
+  background: var(--gold-dim); color: var(--gold); border: 1px solid var(--border-gold);
+  font-size: .55rem; margin-left: 2px;
+}
+
+.ftp-tool-group { position: relative; flex-shrink: 0; }
+.ftp-tool-menu {
+  position: absolute; top: calc(100% + 6px); left: 0;
+  min-width: 220px; max-width: 320px;
+  background: rgba(10,10,10,.98); border: 1px solid var(--line); border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.55);
+  padding: 8px; display: none; flex-direction: column; gap: 6px;
+}
+.ftp-tool-group:hover .ftp-tool-menu,
+.ftp-tool-group:focus-within .ftp-tool-menu { display: flex; }
+.ftp-tool-section { display: flex; flex-direction: column; gap: 2px; }
+.ftp-tool-section strong {
+  font-size: .55rem; text-transform: uppercase; letter-spacing: .08em;
+  color: var(--muted); padding: 4px 8px;
+}
+.ftp-tool-section a {
+  font-size: .7rem; color: var(--text); text-decoration: none;
+  padding: 5px 8px; border-radius: 5px;
+}
+.ftp-tool-section a:hover { background: var(--gold-dim); color: var(--gold); }
+
+.ftp-levels {
+  display: flex; gap: 2px; background: var(--surface2);
+  padding: 3px; border-radius: 6px; border: 1px solid var(--line);
+  flex-shrink: 0;
+}
+.ftp-level {
+  font-family: var(--mono); font-size: .55rem; color: var(--muted);
+  background: transparent; border: 1px solid transparent; border-radius: 4px;
+  padding: .3rem .5rem; cursor: pointer;
+}
+.ftp-level.active { color: var(--gold); background: var(--gold-dim); border-color: var(--border-gold); }
+
+.ftp-search-btn {
+  display: flex; align-items: center; gap: .35rem;
+  font-family: var(--mono); font-size: .6rem; color: var(--muted);
+  background: transparent; border: 1px solid var(--line); border-radius: 6px;
+  padding: .3rem .5rem; cursor: pointer; flex-shrink: 0;
+}
+.ftp-search-btn:hover { color: var(--gold); border-color: var(--border-gold); }
+.ftp-search-btn kbd {
+  font-size: .55rem; padding: 1px 4px; border-radius: 3px;
+  background: var(--surface2); border: 1px solid var(--line);
+}
+
+.ftp-prototype {
+  margin-left: auto; color: var(--muted); font-size: .6rem;
+  font-family: var(--mono); white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .ftp-top-inner { flex-wrap: wrap; height: auto; padding: .5rem; }
+  .ftp-top { position: relative; }
+  body { padding-top: 0; }
+  .ftp-nav { order: 3; width: 100%; overflow: auto; }
+  .ftp-prototype { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="ftp-top">
+  <div class="ftp-top-inner">
+
+    <a href="api-workspace.html" class="ftp-brand" title="Pipeline API Workspace">
+      <span class="ftp-brand-chi">χ</span>
+      <span class="ftp-brand-name">PIPELINE</span>
+    </a>
+
+    <span class="ftp-vdiv"></span>
+
+    <nav class="ftp-nav" aria-label="Main navigation">
+      <a href="#calls" class="ftp-nav-link active" data-page="calls">API Calls</a>
+      <a href="#workflows" class="ftp-nav-link" data-page="workflows">Workflows</a>
+      <a href="#assemblies" class="ftp-nav-link" data-page="assemblies">Assemblies</a>
+      <a href="#reviews" class="ftp-nav-link" data-page="reviews">Reviews <span class="ftp-count">2</span></a>
+      <a href="#python" class="ftp-nav-link" data-page="python">Python</a>
+      <a href="#settings" class="ftp-nav-link" data-page="settings">Settings</a>
+    </nav>
+
+    <span class="ftp-vdiv"></span>
+
+    <div class="ftp-tool-group">
+      <button class="ftp-tool-btn" aria-haspopup="true" aria-expanded="false">API Deep ▾</button>
+      <div class="ftp-tool-menu" role="menu">
+        <div class="ftp-tool-section">
+          <strong>Analytical Arms</strong>
+          <a href="#" role="menuitem">Fruits sentence scoring</a>
+          <a href="#" role="menuitem">Fruits verdict</a>
+          <a href="#" role="menuitem">Master Equation analog</a>
+          <a href="#" role="menuitem">Axiom Nodes</a>
+          <a href="#" role="menuitem">Coherence score</a>
+        </div>
+        <div class="ftp-tool-section">
+          <strong>API Deep chain</strong>
+          <a href="#" role="menuitem">Claim atoms</a>
+          <a href="#" role="menuitem">Fruits / turns</a>
+          <a href="#" role="menuitem">Lean 4 targets</a>
+          <a href="#" role="menuitem">Stories</a>
+          <a href="#" role="menuitem">Master Equation Part B</a>
+        </div>
+        <div class="ftp-tool-section">
+          <strong>Chi Evaluator</strong>
+          <a href="#" role="menuitem">Channel scoring</a>
+          <a href="#" role="menuitem">Synthesized statements</a>
+        </div>
+      </div>
+    </div>
+
+    <span class="ftp-spacer"></span>
+
+    <div class="ftp-levels" role="tablist" aria-label="Detail level">
+      <button class="ftp-level active" data-level="compact" role="tab">Compact</button>
+      <button class="ftp-level" data-level="standard" role="tab">Standard</button>
+      <button class="ftp-level" data-level="verbose" role="tab">Verbose</button>
+    </div>
+
+    <span class="ftp-vdiv"></span>
+
+    <button class="ftp-search-btn" title="Search (Ctrl+K)">
+      <span>⌕</span><kbd>Ctrl+K</kbd>
+    </button>
+
+    <span class="ftp-prototype">Layout prototype · no APIs connected</span>
+
+  </div>
+</header>
+
+</body>
+</html>
