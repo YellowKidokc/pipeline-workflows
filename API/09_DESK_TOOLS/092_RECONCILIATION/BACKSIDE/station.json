@@ -1,0 +1,17 @@
+{
+  "number": "92",
+  "name": "RECONCILIATION",
+  "label": "092_RECONCILIATION",
+  "folder": "../09_DESK_TOOLS/092_RECONCILIATION/BACKSIDE",
+  "script": "92_reconciliation.py",
+  "kind": "native",
+  "uses_api": true,
+  "items": "files",
+  "options": [
+    "workers",
+    "focus",
+    "model",
+    "outbox"
+  ],
+  "description": "Classification reconciliation desk tool. Proposes classifications through Forge's local route; canon engine calls stay unchanged."
+}

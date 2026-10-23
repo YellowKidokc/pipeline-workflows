@@ -1,0 +1,17 @@
+{
+  "number": "91",
+  "name": "CHAT",
+  "label": "091_CHAT",
+  "folder": "../09_DESK_TOOLS/091_CHAT/BACKSIDE",
+  "script": "91_chat.py",
+  "kind": "native",
+  "uses_api": true,
+  "items": "files",
+  "options": [
+    "workers",
+    "focus",
+    "model",
+    "outbox"
+  ],
+  "description": "Interactive chat through Forge. Each message is a call; replies stream back. Files dropped in INBOX are treated as conversation context."
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Desk Chat</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f0f0f; color: #e0e0e0; padding: 12px; display: flex; flex-direction: column; height: 100vh; }
+
+.toolbar { display: flex; gap: 8px; margin-bottom: 10px; align-items: center; flex-wrap: wrap; }
+.toolbar select, .toolbar button {
+  background: #1a1a2e; color: #e0e0e0; border: 1px solid #333; border-radius: 4px;
+  padding: 5px 10px; font-size: 13px; cursor: pointer;
+}
+.toolbar select:focus, .toolbar button:focus { outline: none; border-color: #60d0ff; }
+.toolbar button { background: #1e3a5f; color: #60d0ff; font-weight: 600; }
+.toolbar button:hover { background: #264d73; }
+.toolbar button:disabled { opacity: 0.4; cursor: not-allowed; }
+label { font-size: 11px; color: #888; }
+
+.output {
+  flex: 1; overflow-y: auto; background: #111122; border: 1px solid #222; border-radius: 6px;
+  padding: 12px; margin-bottom: 10px; font-size: 13px; line-height: 1.5; white-space: pre-wrap;
+  word-wrap: break-word; min-height: 100px;
+}
+.output .msg { margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #1a1a2e; }
+.output .msg:last-child { border-bottom: none; margin-bottom: 0; }
+.output .msg-role { font-size: 11px; font-weight: 700; margin-bottom: 3px; }
+.output .msg-role.user { color: #60d0ff; }
+.output .msg-role.assistant { color: #c0a0ff; }
+.output .msg-content { color: #ccc; }
+.output .error { color: #ff6060; }
+.output .thinking { color: #888; font-style: italic; }
+.output .system { color: #888; font-style: italic; font-size: 12px; }
+
+.input-area { display: flex; gap: 8px; }
+textarea {
+  flex: 1; background: #1a1a2e; color: #e0e0e0; border: 1px solid #333; border-radius: 6px;
+  padding: 10px; font-size: 13px; font-family: inherit; resize: vertical; min-height: 80px; max-height: 300px;
+}
+textarea:focus { outline: none; border-color: #60d0ff; }
+.send-btn {
+  background: #1e3a5f; color: #60d0ff; border: 1px solid #264d73; border-radius: 6px;
+  padding: 10px 18px; font-size: 14px; font-weight: 700; cursor: pointer; align-self: flex-end;
+}
+.send-btn:hover { background: #264d73; }
+.send-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <label>Model route</label>
+  <select id="model"><option value="default">default</option><option value="local">local</option></select>
+  <button onclick="clearChat()">Clear</button>
+  <span id="status" class="system" style="margin-left:auto"></span>
+</div>
+
+<div class="output" id="output"></div>
+
+<div class="input-area">
+  <textarea id="input" placeholder="Type or paste text... Ctrl+Enter to send" rows="3"></textarea>
+  <button class="send-btn" id="sendBtn" onclick="send()">Send</button>
+</div>
+
+<script>
+const FORGE_URL = (() => {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('forge_url') || 'http://127.0.0.1:8790';
+  } catch (e) { return 'http://127.0.0.1:8790'; }
+})();
+let conversation = [];
+let currentRequestId = null;
+
+function setStatus(m) { document.getElementById('status').textContent = m; }
+
+window.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('input').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && e.ctrlKey) { e.preventDefault(); send(); }
+  });
+  setStatus('Forge: ' + FORGE_URL);
+});
+
+function addMessage(role, content) {
+  const out = document.getElementById('output');
+  const div = document.createElement('div');
+  div.className = 'msg';
+  div.innerHTML = '<div class="msg-role ' + role + '">' + role.toUpperCase() + '</div>'
+    + '<div class="msg-content"></div>';
+  div.querySelector('.msg-content').textContent = content;
+  out.appendChild(div);
+  out.scrollTop = out.scrollHeight;
+}
+
+function addError(msg) {
+  const out = document.getElementById('output');
+  const div = document.createElement('div');
+  div.className = 'msg';
+  div.innerHTML = '<div class="error"></div>';
+  div.querySelector('.error').textContent = 'Error: ' + msg;
+  out.appendChild(div);
+  out.scrollTop = out.scrollHeight;
+}
+
+function showThinking() {
+  const out = document.getElementById('output');
+  let el = document.getElementById('thinking');
+  if (!el) { el = document.createElement('div'); el.id = 'thinking'; el.className = 'thinking'; el.textContent = 'Thinking...'; out.appendChild(el); }
+  out.scrollTop = out.scrollHeight;
+}
+function hideThinking() { const el = document.getElementById('thinking'); if (el) el.remove(); }
+
+async function send() {
+  const input = document.getElementById('input');
+  const text = input.value.trim();
+  if (!text) return;
+
+  const model = document.getElementById('model').value;
+  addMessage('user', text);
+  conversation.push({ role: 'user', content: text });
+  input.value = '';
+  showThinking();
+
+  currentRequestId = 'req_' + Date.now();
+  document.getElementById('sendBtn').disabled = true;
+  setStatus('Calling Forge ...');
+
+  try {
+    const r = await fetch(FORGE_URL + '/v1/chat/completions', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        model: model,
+        messages: [{ role: 'system', content: 'You are a helpful research assistant.' }].concat(conversation),
+        stream: false
+      })
+    });
+    if (!r.ok) {
+      const err = await r.text();
+      throw new Error('Forge returned ' + r.status + ': ' + err);
+    }
+    const data = await r.json();
+    const content = data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content || '';
+    hideThinking();
+    addMessage('assistant', content);
+    conversation.push({ role: 'assistant', content: content });
+    setStatus('Forge: ' + FORGE_URL);
+  } catch (e) {
+    hideThinking();
+    addError(e.message + '. Is Forge running at ' + FORGE_URL + '?');
+    setStatus('Forge unreachable');
+  } finally {
+    document.getElementById('sendBtn').disabled = false;
+  }
+}
+
+function clearChat() { conversation = []; document.getElementById('output').innerHTML = ''; }
+</script>
+</body>
+</html>
