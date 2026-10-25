@@ -1,0 +1,16 @@
+{
+  "number": "102",
+  "name": "FIS_EXACT_COPIES",
+  "label": "102_FIS_EXACT_COPIES",
+  "folder": "../10_FIS/102_FIS_EXACT_COPIES/BACKSIDE",
+  "script": "102_fis_exact_copies.py",
+  "kind": "native",
+  "uses_api": false,
+  "items": "roots",
+  "on_note": false,
+  "options": [
+    "outbox"
+  ],
+  "engine": "David-OSv3 engine/understand.py (paths.json: david_osv3)",
+  "description": "FIS stage 3: exact copies (size, then SHA-256) on 101's scan; every location kept. Thin wrapper around understand.find_duplicates. Dry run by default."
+}
