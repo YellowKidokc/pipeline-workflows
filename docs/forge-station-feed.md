@@ -13,7 +13,9 @@ there is no copied prompt catalog in Rust. It never runs a station, makes a mode
 call, repairs paths, or changes a prompt. A stale script path is an explicit error.
 
 Registered the existing `23B_HTML_ASSEMBLY`, `091_CHAT`, and
-`092_RECONCILIATION` folders without renumbering or moving them.
+`092_RECONCILIATION` folders without moving them. Chat uses its padded menu key `091` to avoid colliding
+with the existing `91_RELOCATE`; station labels and on-disk numbers are preserved.
+HTML Assembly now accepts `--dry-run` without writing output.
 
 Run from the repository root:
 

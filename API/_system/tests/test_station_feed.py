@@ -12,6 +12,8 @@ from engine.paths import MAIN, station_dir, station_rows
 
 class StationFeedTests(unittest.TestCase):
     def test_every_station_on_disk_is_registered_and_visible(self):
+        numbers = [row["number"] for row in station_rows()]
+        self.assertEqual(len(numbers), len(set(numbers)), "Menu keys must be unique")
         before = (SYSTEM / "config/stations.json").read_bytes()
         feed = listing()
         self.assertEqual(before, (SYSTEM / "config/stations.json").read_bytes())
