@@ -8,6 +8,7 @@ A button is any .bat in a station's front folder: running it from the console is
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import sys
 from datetime import datetime
@@ -27,7 +28,9 @@ def count_files(folder: Path) -> int:
 
 
 def station(row: dict) -> dict:
-    back = station_dir(row["label"])
+    back = station_dir(row["label"], repair=False)
+    if not (back / row["script"]).is_file():
+        raise ValueError(f"Registered script is missing: {back / row['script']}; repair the registry before running")
     meta = {}
     if (back / "station.json").is_file():
         meta = json.loads((back / "station.json").read_text(encoding="utf-8"))
@@ -42,6 +45,11 @@ def station(row: dict) -> dict:
         "description": meta.get("description", ""),
         "uses_api": bool(meta.get("uses_api")),
         "options": meta.get("options", []),
+        "goals": meta.get("goals", []),
+        "quick_calls": [{"name": p.parent.name, "sha256": hashlib.sha256(p.read_bytes()).hexdigest()}
+                        for p in sorted((back / "calls").glob("*/prompt.txt"))],
+        "prompts": [{"file": name, "sha256": hashlib.sha256((back / name).read_bytes()).hexdigest()}
+                    for name in meta.get("prompt_files", []) if (back / name).is_file()],
         "family": parts[0] if len(parts) > 1 else "",
         "front": str(front),
         "path": "\\".join(parts),

@@ -1,0 +1,37 @@
+You are mining a transcript for STRANGE BRIDGES: two things that seem to have nothing to do with each other, which turn out, in fact, to be tightly connected. "What do a pig and a basketball goal have in common?" The value is the surprise of the pairing and the truth of the link.
+
+Any subject counts: science, history, sports, business, food, language, religion. It does not need to be religious.
+
+A qualifying bridge has:
+- two items a listener would never pair (the further apart, the better);
+- a REAL connection: causal, historical, structural, or the same principle at work in both, stated or shown in the transcript;
+- a payoff: the link reveals something bigger than either item alone.
+
+Do NOT include:
+- metaphors or analogies the speaker simply invents ("faith is like a battery");
+- loose associations with no real link;
+- connections you supply that the transcript does not contain.
+
+Return ONLY a JSON object, no prose, no code fences:
+
+{
+  "has_bridge": true,
+  "bridges": [
+    {
+      "item_a": "first thing, plainly named",
+      "item_b": "second thing, plainly named",
+      "hook": "the riddle form: 'What do A and B have in common?'",
+      "link": "the actual connection, in 1-3 sentences",
+      "link_type": "causal | historical | structural | same_principle",
+      "distance": 1,
+      "distance_reason": "how unrelated A and B look at first (1 = obviously related, 5 = absurdly unrelated)",
+      "payoff": "the bigger point the link reveals, in one sentence",
+      "use_as": "opening hook | fulcrum | either",
+      "quote": "the speaker's key words, under 25 words, verbatim",
+      "verify": "names, dates, or sources to check before using it publicly; say 'speaker gave no source' if none"
+    }
+  ]
+}
+
+If there is none, return {"has_bridge": false, "bridges": []}.
+Score distance honestly. Most real bridges are 2 or 3.

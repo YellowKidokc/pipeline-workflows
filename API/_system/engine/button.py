@@ -342,6 +342,29 @@ def lean_here(front: Path, st: dict) -> int:
     return code
 
 
+def roots_run(front: Path, st: dict, mode: str) -> int:
+    """FIS stations (10_FIS): a plan first, then the real run on a yes. Roots come from the station (INBOX lists or the
+    FIS registry) for RUN HERE, or the one folder dragged in for RUN ON FOLDER. Nothing is written onto the folders."""
+    row = next(r for r in station_rows() if r["number"] == st["number"])
+    script = [sys.executable, "-u", str(station_dir(row["label"]) / row["script"])]
+    roots = []
+    if mode != "here":
+        raw = ask("Which folder? (drag it here) ").strip().strip('"')
+        if not raw or not Path(raw).is_dir():
+            print(f"Not a folder: {raw}")
+            return 2
+        roots = [raw]
+    say("plan (dry run)")
+    code = run_guarded(script + roots, MAIN)
+    if code:
+        return code
+    if ask(f"\nRun {st['label']} for real? Read-only on every root; output to the FIS database and OUTBOX. [y/N] ").lower() not in ("y", "yes"):
+        return 0
+    code = run_guarded(script + roots + ["--apply"], MAIN)
+    say(f"done. Results: {front / 'OUTBOX'}")
+    return code
+
+
 # ------------------------------------------------------------------ main
 
 def main(mode: str, front: Path) -> int:
@@ -351,6 +374,8 @@ def main(mode: str, front: Path) -> int:
     print(f"\n{title}\n{'=' * len(title)}")
     if st.get("items") == "lean" and mode == "here" and (not base or st.get("own_inbox")):
         return lean_here(front, st)
+    if st.get("items") == "roots":                    # FIS: folders to inventory, never notes (no title, YAML or ORIGINALS)
+        return roots_run(front, st, mode)
     if base and mode == "here" and not st.get("own_inbox"):
         listed = base / "OUTBOX" / LAST
         notes = [p for p in pick.read_list(listed) if p.is_file()] if listed.is_file() else []

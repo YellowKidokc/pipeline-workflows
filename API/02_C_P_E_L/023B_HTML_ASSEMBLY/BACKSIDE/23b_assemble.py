@@ -161,10 +161,16 @@ def main() -> int:
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--workers", default="1")      # accepted for the shared buttons; assembly is instant
     ap.add_argument("--focus", default="")         # accepted for the shared buttons; not used
+    ap.add_argument("--dry-run", action="store_true", help="list inputs without writing pages")
     a = ap.parse_args()
 
-    shell, shell_stamp = load_shell()
     files = gather(a.items)
+    if a.dry_run:
+        print(f"23B HTML assembly dry run: {len(files)} atom file(s); no files written")
+        for source in files:
+            print(source)
+        return 0
+    shell, shell_stamp = load_shell()
     out = Path(a.outbox)
     out.mkdir(parents=True, exist_ok=True)
     print(f"[{datetime.now():%H:%M:%S}] 23B HTML assembly: {len(files)} atom file(s), shell from {shell_dir()}")

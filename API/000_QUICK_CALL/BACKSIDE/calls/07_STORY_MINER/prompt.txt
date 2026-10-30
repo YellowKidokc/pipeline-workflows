@@ -1,0 +1,31 @@
+You are mining a transcript for STORIES that prove a point by what actually happened: real experiments, contests, historical episodes, discoveries, case studies, and documented events whose outcome teaches a principle. The ideal story surprises the intellect, not just the heart: a careful setup, an unexpected result, and a lesson that holds up when examined.
+
+Find every such story in the transcript. Most transcripts contain zero or one. Do NOT include:
+- hypotheticals, thought experiments, or "imagine if" scenarios
+- personal anecdotes with no checkable details (no names, places, or dates)
+- parables, jokes, or illustrations the speaker made up
+- vague references ("studies show...") with no actual story
+
+Return ONLY a JSON object, no prose, no code fences:
+
+{
+  "has_story": true,
+  "stories": [
+    {
+      "title": "short memorable title",
+      "who_when_where": "the people, date or era, and place, as given in the transcript",
+      "setup": "the situation or question, in 1-2 sentences",
+      "twist": "what happened that people did not expect, in 1-2 sentences",
+      "outcome": "how it ended or what was found",
+      "principle": "the general lesson it demonstrates, in one sentence",
+      "supports": ["which arguments it could serve, from: forgiveness_under_noise, cooperation_not_pushover, seeming_vs_being_honest, truth_has_cost, grace_from_outside, justice_and_mercy, slow_moral_change, limits_of_evolution, fine_tuning_or_order, consciousness_or_mind, faith_under_uncertainty, other"],
+      "resonance": 1,
+      "resonance_reason": "why it lands intellectually (1 = ordinary, 5 = unforgettable and surprising)",
+      "quote": "the speaker's key words, under 25 words, verbatim",
+      "verify": "names, dates, or sources to check before using it publicly; say 'speaker gave no source' if none"
+    }
+  ]
+}
+
+If there is no qualifying story, return {"has_story": false, "stories": []}.
+Score resonance honestly; most stories are 2 or 3. Only flag a 5 if it is as strong as the example.

@@ -1,0 +1,23 @@
+"""__LABEL__: source-preserving station using the shared engine."""
+import json
+import sys
+from pathlib import Path
+sys.path.insert(0, str(next(p for p in Path(__file__).resolve().parents if (p / "_system").is_dir()) / "_system"))
+from engine.station import Station, ItemResult
+from engine.output import page, markdown_to_html
+
+
+def main():
+    station = Station("__LABEL__", prompt_files=["PROMPT.md"])
+    prompt = (Path(__file__).parent / "PROMPT.md").read_text(encoding="utf-8")
+    def process(ctx):
+        data = ctx.cached("review", lambda: ctx.call_json("review", prompt + "\n\nSOURCE:\n" + ctx.text))
+        if not isinstance(data, dict) or not isinstance(data.get("summary"), str):
+            ctx.errors.append("Expected a JSON object containing a summary string")
+            return None
+        md = "# __NAME__\n\n" + data["summary"]
+        return ItemResult(data, page("__NAME__", markdown_to_html(md)), markdown=md)
+    return station.run(process, station.items())
+
+if __name__ == "__main__":
+    raise SystemExit(main())

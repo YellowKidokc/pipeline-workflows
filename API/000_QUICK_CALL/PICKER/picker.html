@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Picker</title>
+<style>
+:root{--bg:#f6f5f2;--panel:#fff;--ink:#1f2328;--mute:#6b7280;--line:#e3e0da;--accent:#1d4ed8;--ok:#15803d;--bad:#b91c1c}
+@media (prefers-color-scheme:dark){:root{--bg:#16181c;--panel:#1f2228;--ink:#e8e6e1;--mute:#9aa0a8;--line:#30343b;--accent:#7aa2ff;--ok:#4ade80;--bad:#f87171}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,Segoe UI,sans-serif}
+header{padding:14px 20px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:center}
+header h1{font-size:18px;margin:0}header span{color:var(--mute);font-size:13px}
+main{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;padding:16px 20px}
+section{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;min-width:0}
+h2{font-size:14px;margin:0 0 10px;text-transform:uppercase;letter-spacing:.05em;color:var(--mute)}
+input,select,textarea,button{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:7px 9px}
+input[type=text],select,textarea{width:100%}textarea{min-height:110px;font:13px/1.4 ui-monospace,Consolas,monospace}
+button{cursor:pointer;background:var(--accent);color:#fff;border:none;padding:8px 14px}button.ghost{background:transparent;color:var(--accent);border:1px solid var(--line)}
+.row{display:flex;gap:8px;align-items:center;margin-bottom:8px}.row>*{flex:1}.row>button{flex:0 0 auto}
+#files{max-height:58vh;overflow:auto;border:1px solid var(--line);border-radius:7px}
+#files label{display:flex;gap:8px;padding:5px 8px;border-bottom:1px solid var(--line);font-size:13px;align-items:center}
+#files label:hover{background:var(--bg)}#files .kb{margin-left:auto;color:var(--mute);white-space:nowrap}
+.tag{font-size:11px;color:var(--ok);border:1px solid var(--ok);border-radius:4px;padding:0 4px}
+#log{font:12px/1.4 ui-monospace,Consolas,monospace;max-height:220px;overflow:auto;white-space:pre-wrap;background:var(--bg);border-radius:7px;padding:8px}
+.bar{height:8px;background:var(--line);border-radius:4px;overflow:hidden;margin:8px 0}.bar i{display:block;height:100%;background:var(--accent);width:0}
+#preview{white-space:pre-wrap;font:12px/1.4 ui-monospace,Consolas,monospace;max-height:300px;overflow:auto;background:var(--bg);border-radius:7px;padding:8px}
+.mute{color:var(--mute);font-size:13px}
+@media (max-width:900px){main{grid-template-columns:1fr}}
+</style></head><body>
+<header><h1>Picker</h1><span>pick a folder → check files → choose a preset → run. Answers save next to each file.</span></header>
+<main>
+<section>
+  <h2>1 · Files</h2>
+  <div class="row"><input id="folder" type="text" value="D:\GitHub\Research-Acquisition\yt-transcript-downloader\subtitles"><button onclick="load()">Load</button></div>
+  <div class="row"><input id="filter" type="text" placeholder="filter by name or channel…" oninput="draw()">
+    <button class="ghost" onclick="pick(true)">Check visible</button><button class="ghost" onclick="pick(false)">Clear</button></div>
+  <div class="row mute"><label style="flex:0 0 auto"><input type="checkbox" id="hideDone" onchange="draw()"> hide files already answered by this preset</label></div>
+  <div id="files"><p class="mute" style="padding:8px">Load a folder to see its files.</p></div>
+  <p class="mute" id="count"></p>
+</section>
+<section>
+  <h2>2 · Preset</h2>
+  <div class="row"><select id="preset" onchange="showPreset()"></select></div>
+  <label class="mute">Instructions (the question you ask every file)</label>
+  <textarea id="prompt"></textarea>
+  <label class="mute">Example output (show it exactly what you want back)</label>
+  <textarea id="example"></textarea>
+  <div class="row"><input id="newname" type="text" placeholder="save as preset name…"><button class="ghost" onclick="savePreset()">Save preset</button></div>
+  <h2 style="margin-top:14px">3 · Run</h2>
+  <div class="row"><label class="mute" style="flex:0 0 auto"><input type="checkbox" id="overwrite"> redo files already answered</label><button onclick="run()">Run on checked files</button></div>
+  <div class="bar"><i id="bar"></i></div><p class="mute" id="stat"></p>
+  <div id="log"></div>
+  <h2 style="margin-top:14px">Preview</h2><div id="preview" class="mute">Click a file name to preview it.</div>
+</section>
+</main>
+<script>
+let FILES=[],CHECK=new Set(),PRESETS=[];
+const $=id=>document.getElementById(id);
+async function j(u,o){const r=await fetch(u,o);return r.json()}
+async function loadPresets(){PRESETS=await j('/api/presets');$('preset').innerHTML=PRESETS.map(p=>`<option>${p.name}</option>`).join('');showPreset()}
+function showPreset(){const p=PRESETS.find(x=>x.name==$('preset').value);if(!p)return;$('prompt').value=p.prompt;$('example').value=p.example;$('newname').value='';draw()}
+async function load(){$('files').innerHTML='<p class="mute" style="padding:8px">Loading…</p>';const r=await j('/api/files?folder='+encodeURIComponent($('folder').value));
+ if(r.error){$('files').innerHTML=`<p style="padding:8px;color:var(--bad)">${r.error}</p>`;return}FILES=r.files;CHECK.clear();draw()}
+function visible(){const f=$('filter').value.toLowerCase(),pr=$('preset').value,h=$('hideDone').checked;
+ return FILES.filter(x=>(!f||x.rel.toLowerCase().includes(f))&&!(h&&x.done.includes(pr)))}
+function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function draw(){const v=visible(),pr=$('preset').value;const shown=v.slice(0,2000);
+ $('files').innerHTML=shown.map((x,i)=>`<label><input type="checkbox" data-p="${esc(x.path)}" ${CHECK.has(x.path)?'checked':''} onchange="tog(this)">
+ <span onclick="prev(event,'${encodeURIComponent(x.path)}')" style="cursor:pointer">${esc(x.rel)}</span>${x.done.includes(pr)?'<span class="tag">answered</span>':''}<span class="kb">${x.kb} KB</span></label>`).join('')||'<p class="mute" style="padding:8px">No files.</p>';
+ $('count').textContent=`${FILES.length} files · ${v.length} shown${v.length>2000?' (first 2000 drawn)':''} · ${CHECK.size} checked`}
+function tog(el){el.checked?CHECK.add(el.dataset.p):CHECK.delete(el.dataset.p);$('count').textContent=$('count').textContent.replace(/\d+ checked/,CHECK.size+' checked')}
+function pick(on){visible().forEach(x=>on?CHECK.add(x.path):CHECK.delete(x.path));draw()}
+async function prev(e,p){e.preventDefault();const r=await j('/api/preview?path='+p);$('preview').textContent=r.text||'(empty)'}
+async function savePreset(){const name=$('newname').value||$('preset').value;const r=await j('/api/preset',{method:'POST',body:JSON.stringify({name,prompt:$('prompt').value,example:$('example').value})});
+ if(r.error)return alert(r.error);await loadPresets();$('preset').value=r.saved;showPreset()}
+async function run(){if(!CHECK.size)return alert('Check some files first.');
+ if(!confirm(`Run preset "${$('preset').value}" on ${CHECK.size} files? Save any edits to the instructions first.`))return;
+ const r=await j('/api/run',{method:'POST',body:JSON.stringify({files:[...CHECK],preset:$('preset').value,overwrite:$('overwrite').checked})});
+ if(r.error)return alert(r.error);poll()}
+async function poll(){const s=await j('/api/status');$('bar').style.width=(s.total?100*s.done/s.total:0)+'%';
+ $('stat').textContent=`${s.done}/${s.total} done · ${s.failed} failed · ${s.tokens.toLocaleString()} tokens${s.running?' · running…':' · finished'}`;
+ $('log').textContent=s.log.join('\n');if(s.running)setTimeout(poll,1500);else load()}
+loadPresets();
+</script></body></html>
