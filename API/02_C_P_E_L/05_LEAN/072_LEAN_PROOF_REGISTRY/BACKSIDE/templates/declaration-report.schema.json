@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LeanDeclarationReport",
+  "type": "object",
+  "required": [
+    "identity",
+    "toolchain",
+    "negative_controls",
+    "formal_evidence",
+    "explanation",
+    "human_review"
+  ],
+  "properties": {
+    "identity": {"type": "object"},
+    "toolchain": {"type": "object"},
+    "negative_controls": {"type": "array"},
+    "formal_evidence": {"type": "object"},
+    "explanation": {
+      "type": "object",
+      "required": ["status", "is_formal_consequence"],
+      "properties": {
+        "status": {"type": "string"},
+        "mathematical_meaning": {"type": ["string", "null"]},
+        "plain_language": {"type": ["string", "null"]},
+        "limitations": {"type": "array", "items": {"type": "string"}},
+        "philosophical_interpretation_nonformal": {"type": ["string", "null"]},
+        "theological_interpretation_nonformal": {"type": ["string", "null"]},
+        "interpretation_confidence": {"type": ["string", "null"]},
+        "is_formal_consequence": {"const": false}
+      }
+    },
+    "human_review": {"type": "object"}
+  }
+}
+

@@ -1,0 +1,2 @@
+"""Lean proof registry station."""
+

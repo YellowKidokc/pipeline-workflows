@@ -1,0 +1,26 @@
+{
+  "number": "72",
+  "name": "LEAN_PROOF_REGISTRY",
+  "label": "72_LEAN_PROOF_REGISTRY",
+  "kind": "native",
+  "description": "Actual Lean verification receipts plus separately labeled mathematical, plain-language, philosophical, and theological explanations.",
+  "items": "json",
+  "options": ["limit", "provider", "model", "redo", "outbox"],
+  "uses_api": true,
+  "prompt_files": ["../README.md"],
+  "goals": [
+    {
+      "id": "API-72.1",
+      "title": "LEAN_FORMAL_RECEIPT",
+      "task": "lean_verify",
+      "asks": "actual toolchain, negative controls, declaration inspection, axioms, hashes and explicit statuses"
+    },
+    {
+      "id": "API-72.2",
+      "title": "LEAN_READER_REPORT",
+      "task": "lean_explain",
+      "asks": "precise mathematical meaning, average-reader explanation, limitations and separately labeled interpretations"
+    }
+  ]
+}
+

@@ -1,0 +1,17 @@
+[project]
+canonical_root = "C:\\path\\to\\approved-lean-project"
+read_only_sources = true
+
+[toolchain]
+elan = "elan"
+lean = "lean"
+lake = "lake"
+
+[jobs]
+negative_controls_first = true
+timeout_seconds = 900
+
+[outputs]
+registry = "work/registry"
+outbox = "../OUTBOX"
+
