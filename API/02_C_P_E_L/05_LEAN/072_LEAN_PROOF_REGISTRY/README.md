@@ -1,5 +1,8 @@
 # 72 — Lean Proof Registry
 
+> Before working here, read `../00_READ_ME_FIRST_LEAN_LOCATIONS.md`. It defines
+> the three authorized Lean locations and the preserve-before-migration rule.
+
 ## CODEX ONLINE: START HERE
 
 Your assignment is to build the governed Lean 4 verification-and-explanation
