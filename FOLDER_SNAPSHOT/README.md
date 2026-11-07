@@ -22,3 +22,10 @@ python folder_snapshot.py "D:\big folder" --ai --max-files 20000 --max-ai 200 -o
 
 ## examples/
 The two hand-built reference pages this tool grew from (`STATISTICS_MATRIX_PROTOTYPE.html`, `Paper_Information_Matrix.html`) and a sample run on `ONE_MENU_SOURCES`.
+
+## Statistics to Excel
+- **`STATS_TO_EXCEL.bat`** gathers every paper's `03_REPORT/statistics.json` (written by station
+  `42_STATISTICS_WALL`) into `API\_data\ALL_STATISTICS.xlsx`: a Matrix sheet (paper x metric), a Long
+  sheet (with percentiles and change since last run), a Guide sheet (what each metric is, which way is better)
+  and a Sources sheet (exactly which files were read).
+- **`SNAPSHOT_AND_STATS.bat`** does both: folder snapshot, then the Excel roll-up.
